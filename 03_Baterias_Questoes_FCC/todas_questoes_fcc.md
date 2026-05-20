@@ -1,0 +1,4361 @@
+# Compilado Geral de Questões FCC — TJ-CE 2026
+
+Este arquivo reúne as 225 questões (15 por tema, de 16/05 a 20/05) geradas com base no perfil da banca FCC para o cargo de Analista de TI.
+
+---
+
+
+# Sábado 16/05
+
+
+Este arquivo contém 45 questões da banca FCC (15 por tema estudado) com gabarito comentado ocultável. Tente resolver cada questão antes de expandir o gabarito.
+
+---
+
+## 📝 TEMA 1: Engenharia de Software — Ciclo de Vida e Modelo Cascata
+
+### Questão 1 (FCC - TRT 11ª Região - Analista Judiciário - Tecnologia da Informação)
+No contexto do ciclo de vida de desenvolvimento de software, a atividade que se preocupa em avaliar se o sistema correto foi construído, garantindo que atende às necessidades de negócio reais do usuário final, é denominada:
+A) Verificação.
+B) Validação.
+C) Depuração (Debugging).
+D) Análise de Requisitos.
+E) Projeto de Arquitetura.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** 
+- **Validação:** Responde à pergunta "Estamos construindo o produto correto?" (garante que atende ao negócio/cliente).
+- **Verificação:** Responde à pergunta "Estamos construindo o produto corretamente?" (garante que está de acordo com as especificações técnicas). A FCC adora cobrar essa diferença clássica de Barry Boehm.
+</details>
+
+---
+
+### Questão 2 (FCC - TRT 24ª Região - Analista - Sistemas)
+Considere o Modelo de Ciclo de Vida Cascata (Waterfall). Uma de suas características fundamentais é:
+A) A possibilidade de refinar requisitos e alterar o escopo dinamicamente em qualquer fase do projeto sem custos adicionais.
+B) A execução concorrente e sobreposta de todas as fases, permitindo que a codificação comece no dia 1 do projeto.
+C) O caráter linear e sequencial, no qual a fase seguinte só se inicia após a conclusão e documentação da anterior.
+D) A entrega frequente de protótipos incrementais e funcionais ao cliente ao final de cada iteração de duas semanas.
+E) O foco principal na gestão de riscos operacionais em cada uma das fases do ciclo de desenvolvimento.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O modelo Cascata (linear/sequencial) divide o desenvolvimento em fases sucessivas que ocorrem em uma ordem rígida (Requisitos -> Projeto -> Codificação -> Teste -> Implantação -> Manutenção), com cada fase gerando documentos de saída formalizados antes da próxima começar.
+</details>
+
+---
+
+### Questão 3 (FCC - TRT 15ª Região - Analista Judiciário - TI)
+No Modelo em V de desenvolvimento de software, a fase de testes que se correlaciona diretamente com a fase de Análise de Requisitos de Negócio (Requisitos do Sistema) é o teste de:
+A) Unidade (Unitário).
+B) Integração.
+C) Sistema.
+D) Aceitação.
+E) Regressão.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** No Modelo em V:
+- Requisitos de Negócio / Aceitação ↔ Testes de Aceitação.
+- Requisitos do Sistema / Arquitetura ↔ Testes de Sistema.
+- Projeto Detalhado / Componentes ↔ Testes de Integração.
+- Codificação ↔ Testes Unitários.
+</details>
+
+---
+
+### Questão 4 (FCC - TRT 4ª Região - Analista de Sistemas)
+Em um projeto de software gerenciado sob o modelo Cascata, a descoberta tardia de inconsistências nos requisitos durante a fase de testes de aceitação resulta em:
+A) Baixo custo de correção, pois o sistema já está codificado e empacotado.
+B) Facilidade de correção imediata, devido à flexibilidade típica do modelo linear.
+C) Retorno imediato à fase de projeto de banco de dados sem a necessidade de reescrever códigos.
+D) Alto custo de correção, uma vez que as fases de requisitos, projeto e codificação já foram finalizadas e precisam ser retrabalhadas.
+E) Nenhuma alteração no cronograma, pois a fase de implantação já absorveu os prazos.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** Um dos maiores pontos fracos do Modelo Cascata é o alto custo do retrabalho caso erros de fases iniciais (Requisitos) só sejam detectados nas fases finais (Testes). Como o modelo é rígido, redefinir requisitos significa refazer o projeto e a implementação correspondente.
+</details>
+
+---
+
+### Questão 5 (FCC - Assembleia Legislativa da Paraíba - Analista - Sistemas)
+Considere as fases do Ciclo de Vida clássico de um software. A fase que tem por objetivo traduzir os requisitos de software em uma estrutura lógica, detalhando arquitetura de componentes, interfaces de comunicação e diagramas de banco de dados, é denominada:
+A) Análise de Requisitos.
+B) Implementação.
+C) Projeto (Design).
+D) Engenharia de Negócios.
+E) Verificação.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O **Projeto (Design)** é a fase de engenharia em que se planeja *como* o sistema será estruturado para atender aos requisitos levantados na fase de Análise. É nela que são desenhados diagramas UML, arquitetura física, interfaces e o modelo de banco de dados.
+</details>
+
+---
+
+### Questão 6 (FCC - PGE-CE - Analista de Sistemas)
+Sobre a atividade de Manutenção de Software no ciclo de vida, a manutenção que é motivada pela necessidade de ajustar o software a mudanças no ambiente operacional externo (como atualização do sistema operacional ou do SGBD) sem alterar a funcionalidade do software é classificada como:
+A) Corretiva.
+B) Adaptativa.
+C) Perfectiva (ou Evolutiva).
+D) Preventiva.
+E) Preditiva.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** 
+- **Adaptativa:** Ajustes para rodar em novos ambientes (hardware, OS, SGBD, etc.).
+- **Corretiva:** Conserto de erros reais do software.
+- **Perfectiva:** Inserção de novos recursos/melhorias.
+- **Preventiva:** Refatoração para evitar erros futuros.
+</details>
+
+---
+
+### Questão 7 (FCC - Sabesp - Analista de Sistemas)
+O modelo de desenvolvimento que combina aspectos do ciclo de vida clássico com a prototipação sistemática, organizando o projeto em ciclos iterativos que dão ênfase primordial à análise e mitigação de riscos, é o modelo:
+A) Incremental.
+B) Cascata.
+C) Espiral (de Boehm).
+D) RAD (Rapid Application Development).
+E) RUP (Rational Unified Process).
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O modelo **Espiral** (proposto por Barry Boehm) é caracterizado por ciclos repetitivos que integram protótipos e focam intensamente em **análise de riscos** antes de dar o próximo passo do projeto.
+</details>
+
+---
+
+### Questão 8 (FCC - TRF 3ª Região - Analista Judiciário)
+O modelo Cascata de ciclo de vida de desenvolvimento de software é mais adequado para projetos que possuam:
+A) Requisitos altamente dinâmicos, com constantes alterações solicitadas pelos stakeholders.
+B) Requisitos conhecidos, estáveis e bem documentados desde o início do projeto.
+C) Alta incerteza tecnológica, exigindo protótipos funcionais recorrentes.
+D) Prazos extremamente curtos que exijam codificação imediata sem planejamento prévio.
+E) Equipes que utilizem metodologias ágeis e auto-gerenciáveis como Scrum.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O modelo Cascata funciona perfeitamente quando os requisitos do projeto são perfeitamente estáveis, claros e conhecidos pela equipe desde o início, reduzindo o risco de alterações de escopo ao longo do ciclo.
+</details>
+
+---
+
+### Questão 9 (FCC - TRT 6ª Região - Tecnologia da Informação)
+No ciclo de vida de desenvolvimento, a verificação estatística de que o código escrito atende às especificações de design construídas na fase anterior é realizada primariamente na fase de:
+A) Projeto Físico.
+B) Testes Unitários e de Integração.
+C) Análise de Requisitos.
+D) Levantamento de Dados.
+E) Implantação do Sistema.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Os testes unitários e de integração servem para verificar se o código escrito reflete e respeita as especificações detalhadas do projeto, validando se os componentes se integram conforme a arquitetura planejada.
+</details>
+
+---
+
+### Questão 10 (FCC - MPE-RS - Analista - Banco de Dados)
+A engenharia de requisitos possui uma atividade que busca assegurar que a especificação de requisitos definida de fato descreve o comportamento pretendido do sistema e é aceitável pelos stakeholders. Essa atividade é denominada:
+A) Elicitação de requisitos.
+B) Análise e negociação.
+C) Validação de requisitos.
+D) Gerenciamento de requisitos.
+E) Projeto de dados.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A **Validação de Requisitos** é a fase onde se revisam os requisitos junto ao cliente e especialistas para certificar que eles estão corretos, consistentes, completos e condizentes com a realidade de negócio.
+</details>
+
+---
+
+### Questão 11 (FCC - TRT 11ª Região - Analista)
+Em um projeto desenvolvido sob o modelo Cascata, a fase de testes sistemáticos de todo o sistema integrado, simulando o ambiente de produção antes do aceite final do cliente, é:
+A) Teste de Unidade.
+B) Teste de Sistema.
+C) Teste de Caixa-Preta Individual.
+D) Depuração de Compilação.
+E) Validação Unitária.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O **Teste de Sistema** valida o comportamento global do software integrado rodando em condições similares às de produção, focando nas especificações do sistema de ponta a ponta.
+</details>
+
+---
+
+### Questão 12 (FCC - ARTESP - Analista de Sistemas)
+No contexto do ciclo de vida de software, as atividades de engenharia destinadas a determinar as restrições operacionais e os limites físicos de desempenho do sistema que não estão diretamente ligados às funções de negócio são classificados na fase de requisitos como:
+A) Requisitos Funcionais.
+B) Requisitos Não Funcionais.
+C) Requisitos de Domínio.
+D) Casos de Uso Físicos.
+E) Regras de Negócio Primárias.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Os **Requisitos Não Funcionais (RNFs)** determinam aspectos qualitativos do sistema (desempenho, segurança, portabilidade, usabilidade, disponibilidade) e restrições de tecnologia.
+</details>
+
+---
+
+### Questão 13 (FCC - TRT 20ª Região - Tecnologia da Informação)
+Uma das desvantagens mais apontadas do modelo linear clássico (Cascata) no desenvolvimento moderno de aplicações de software corporativas é:
+A) A falta de estruturação e documentação nas entregas de cada etapa.
+B) A exigência de constante interação do cliente ao longo de todas as semanas do ciclo.
+C) A indisponibilidade de um produto funcional (software executável) até que as fases finais do ciclo estejam concluídas.
+D) A dependência excessiva de ferramentas CASE de modelagem visual.
+E) A natureza caótica de codificação e correção contínua sem regras de transição.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** No modelo Cascata, como o software só é construído de fato nas etapas tardias (implementação/teste), o cliente passa a maior parte do tempo vendo apenas papéis e especificações, tendo acesso à primeira versão executável apenas no final do projeto.
+</details>
+
+---
+
+### Questão 14 (FCC - Sabesp - Analista)
+O modelo de ciclo de vida que se baseia na filosofia de reuso sistemático e no desenvolvimento de múltiplos ciclos curtos e rápidos, focando no desenvolvimento e na avaliação conjunta com o usuário por meio de ferramentas visuais e geradores de código, é o modelo:
+A) RUP.
+B) Cascata puro.
+C) RAD (Rapid Application Development).
+D) Espiral de 4 quadrantes.
+E) Ciclo de Vida Clássico com Revisões.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O modelo **RAD** (Desenvolvimento Rápido de Aplicações) busca acelerar o ciclo de desenvolvimento usando ferramentas de alta produtividade (como geradores automáticos de código e interfaces visuais) e foca fortemente no reuso de componentes de software.
+</details>
+
+---
+
+### Questão 15 (FCC - TRF 3ª Região - Analista)
+A primeira fase formal do Ciclo de Vida de Software que tem como principal entregável o Estudo de Viabilidade Econômica, Técnica e Organizacional, respondendo se o desenvolvimento do sistema proposto faz sentido para a instituição, é denominada:
+A) Análise de Requisitos.
+B) Planejamento / Investigação Preliminar.
+C) Projeto Lógico.
+D) Codificação e Provas.
+E) Implantação e Transição.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O **Planejamento** (ou Estudo de Viabilidade / Análise Preliminar) avalia se o projeto deve prosseguir ou não, gerando relatórios de viabilidade financeira e técnica antes de alocar recursos para o levantamento de requisitos.
+</details>
+
+---
+
+## 📝 TEMA 2: Banco de Dados — Modelo Relacional e Conceitos de Chave
+
+### Questão 16 (FCC - TRT 11ª Região - Analista Judiciário - TI)
+No modelo de dados relacional, uma restrição de integridade que determina que nenhum valor pertencente à chave primária de uma tabela (relação) pode receber um valor nulo (NULL) é denominada:
+A) Integridade Referencial.
+B) Integridade de Domínio.
+C) Integridade de Entidade.
+D) Integridade de Chave Estrangeira.
+E) Restrição de Nulidade Comum.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A **Integridade de Entidade** é a regra formal que garante que nenhuma tupla de uma tabela possua valores nulos na coluna (ou conjunto de colunas) da Chave Primária (PK). Afinal, o nulo impede a identificação única do registro.
+</details>
+
+---
+
+### Questão 17 (FCC - TRT 24ª Região - Analista - Tecnologia da Informação)
+Considere duas tabelas no modelo relacional: `CLIENTES` (com chave primária `id_cliente`) e `VENDAS` (com chave primária `id_venda` e uma chave estrangeira `id_cliente` que referencia a tabela `CLIENTES`). Se tentarmos excluir um cliente da tabela `CLIENTES` que possui registros de vendas vinculados na tabela `VENDAS`, e o banco de dados disparar um erro bloqueando a transação, a política de integridade referencial configurada para esta exclusão é:
+A) ON DELETE CASCADE.
+B) ON DELETE SET NULL.
+C) ON DELETE NO ACTION (ou RESTRICT).
+D) ON DELETE DEFAULT.
+E) ON DELETE BLOCK.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A política **RESTRICT** ou **NO ACTION** impede/bloqueia a exclusão da tupla pai caso existam tuplas filhas vinculadas pela chave estrangeira.
+- `CASCADE` excluiria as vendas filhas automaticamente.
+- `SET NULL` colocaria `NULL` no campo `id_cliente` das vendas.
+</details>
+
+---
+
+### Questão 18 (FCC - TRT 3ª Região - Analista - Banco de Dados)
+Em termos formais de bancos de dados relacionais, o número de colunas (atributos) que constituem uma relação (tabela) e o número de linhas (tuplas) nela armazenadas em um determinado momento são denominados, respectivamente:
+A) Grau e Cardinalidade.
+B) Cardinalidade e Grau.
+C) Domínio e Instância.
+D) Esquema e Extensão.
+E) Grau e Domínio.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** 
+- **Grau:** Quantidade de colunas (atributos).
+- **Cardinalidade:** Quantidade de linhas (tuplas). 
+Isso cai com muita frequência nas provas de TI da FCC.
+</details>
+
+---
+
+### Questão 19 (FCC - PGE-CE - Analista de Sistemas)
+No modelo relacional de bancos de dados, qualquer conjunto de um ou mais atributos cujos valores identificam unicamente cada tupla de uma relação é classificado conceitualmente como:
+A) Superchave.
+B) Chave Alternativa.
+C) Chave Estrangeira.
+D) Domínio Unívoco.
+E) Chave Surrogada.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** Uma **Superchave** é um conjunto de atributos que identifica unicamente uma tupla de uma relação. Se uma superchave não possuir nenhum subconjunto próprio que também seja uma superchave, ela é uma **Chave Candidata** (superchave minimal).
+</details>
+
+---
+
+### Questão 20 (FCC - TRF 3ª Região - Analista TI)
+Ao projetar uma tabela `FUNCIONARIOS` em um banco de dados relacional, constatou-se que as colunas `CPF` e `EMAIL` possuem valores únicos e não nulos para todos os registros. O analista de banco de dados escolheu a coluna `CPF` como a Chave Primária (PK) da tabela. Conceitualmente, a coluna `EMAIL` será classificada como uma:
+A) Chave Primária Secundária.
+B) Chave Estrangeira.
+C) Chave Candidata que se tornou Chave Alternativa.
+D) Chave Alternativa que se tornou Chave Candidata.
+E) Superchave Não Candidata.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** CPF e EMAIL são **Chaves Candidatas** (podem identificar unicamente a tupla). Ao selecionar o CPF como Chave Primária, as chaves candidatas restantes (neste caso, o EMAIL) tornam-se **Chaves Alternativas**.
+</details>
+
+---
+
+### Questão 21 (FCC - Sabesp - Analista)
+Em uma modelagem de banco de dados relacional, a restrição que define o conjunto de valores admissíveis para uma determinada coluna da tabela, determinando seu tipo (ex: inteiro, data, texto de 20 caracteres) e limites adicionais, é a restrição de:
+A) Chave Primária.
+B) Integridade de Domínio.
+C) Integridade Referencial.
+D) Chave Estrangeira.
+E) Autenticidade de Atributo.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A **Integridade de Domínio** define o conjunto de valores válidos para um atributo. Inclui tipo de dados, formato e restrições de verificação (CHECK constraints).
+</details>
+
+---
+
+### Questão 22 (FCC - MPE-RS - Engenheiro de Dados)
+Considere a seguinte regra sobre chaves no modelo relacional: "Uma chave estrangeira em uma relação R1 refere-se aos valores da chave primária em outra relação R2." O que acontece se uma tupla em R1 contiver um valor na chave estrangeira que não existe na chave primária de R2?
+A) O modelo relacional aceita a inclusão normalmente se a tabela R1 possuir mais de 100 registros.
+B) A restrição de integridade de entidade é violada e o banco de dados altera os valores de R2 automaticamente.
+C) A restrição de integridade referencial é violada e o SGBD impede a transação.
+D) O SGBD cria automaticamente uma linha correspondente em R2 para restabelecer a integridade.
+E) A tabela R1 é destruída (DROP) pelo banco de dados por motivos de segurança estrutural.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A **Integridade Referencial** impede que existam "ponteiros órfãos", ou seja, valores de chave estrangeira (FK) que não possuam correspondente exato na tabela referenciada (PK). O SGBD impedirá a transação de inserção ou atualização que viole essa regra.
+</details>
+
+---
+
+### Questão 23 (FCC - TRT 6ª Região - Tecnologia da Informação)
+Uma chave artificial (ou sintética), gerada de forma automatizada pelo próprio SGBD (por exemplo, usando auto-incremento, sequências ou UUID) com a única finalidade de servir como chave primária simplificada de uma relação, sem possuir qualquer significado para o negócio, é denominada:
+A) Chave Estrangeira Redundante.
+B) Chave Alternativa.
+C) Chave Composta.
+D) Chave Surrogada (Surrogate Key).
+E) Chave de Domínio Interno.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** A **Chave Surrogada (Surrogate Key)** é um identificador único artificial gerado pelo sistema (ex: ID numérico incremental) que serve de PK para contornar problemas de chaves naturais complexas ou instáveis.
+</details>
+
+---
+
+### Questão 24 (FCC - TRT 20ª Região - Analista Judiciário)
+Em bancos de dados relacionais, o valor especial `NULL` representa:
+A) O valor numérico zero.
+B) Uma string de texto vazia `""`.
+C) A ausência de valor ou um valor desconhecido.
+D) Um erro crítico de corrupção física do disco.
+E) O ponteiro de endereço do início da tabela.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O `NULL` no modelo relacional e em SQL não significa zero ou string vazia, mas sim que o valor é **ausente, omitido ou desconhecido**.
+</details>
+
+---
+
+### Questão 25 (FCC - DPE-SP - Analista de Tecnologia da Informação)
+Considere as propriedades do Modelo Relacional de Dados. Qual das seguintes afirmações está correta?
+A) Uma relação pode conter linhas duplicadas em sua totalidade (idênticas em todas as colunas).
+B) A ordem física de armazenamento das linhas em uma tabela altera o resultado lógico das consultas SQL relacionais.
+C) A ordem de exibição das colunas no esquema lógico de uma tabela interfere na integridade física do banco de dados.
+D) Cada célula (interseção de linha e coluna) em uma relação clássica deve conter um valor atômico (único e indivisível).
+E) O número de tuplas em uma relação deve ser sempre um múltiplo do grau da relação.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** No modelo relacional clássico (baseado na Primeira Forma Normal - 1FN), as relações não admitem atributos multivalorados ou compostos. Toda interseção de linha e coluna deve armazenar valores **atômicos**.
+</details>
+
+---
+
+### Questão 26 (FCC - TRF 3ª Região - Analista de Sistemas)
+Se uma chave primária é composta por mais de uma coluna, o mecanismo de banco de dados garante que:
+A) Apenas a primeira coluna selecionada na PK não pode conter valores nulos.
+B) A combinação de valores de todas as colunas que compõem a PK deve ser única e nenhuma das colunas pode ser NULL.
+C) O SGBD cria automaticamente tabelas virtuais para cada coluna da chave composta.
+D) O grau da tabela é multiplicado pela quantidade de colunas da chave composta.
+E) A tabela passa a aceitar chaves estrangeiras sem verificação referencial.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Em uma **Chave Primária Composta**, a restrição de unicidade e a restrição de não-nulidade aplicam-se ao conjunto e a cada um dos atributos individuais envolvidos.
+</details>
+
+---
+
+### Questão 27 (FCC - ARTESP - Especialista)
+Qual das seguintes operações pode vir a violar a integridade de entidade em um banco de dados relacional?
+A) Inserir uma linha na tabela filha cuja FK aponte para um pai existente.
+B) Atualizar a PK de um registro para um valor já existente ou para NULL.
+C) Deletar uma linha de uma tabela que não é referenciada por nenhuma outra.
+D) Alterar a coluna de descrição (texto) de um registro para NULL.
+E) Consultar registros de uma tabela ordenando por uma coluna indexada.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A integridade de entidade proíbe que a PK seja nula ou duplicada. Ao tentar atualizar a PK de um registro existente para `NULL` ou para um valor idêntico ao de outra linha, violamos essa integridade.
+</details>
+
+---
+
+### Questão 28 (FCC - TRT 15ª Região - Analista)
+Em uma tabela chamada `PRODUTOS`, deseja-se criar uma coluna `preco` que não permita valores negativos. A restrição que garante essa regra a nível de banco de dados é classificada como:
+A) Restrição de Integridade Referencial.
+B) Restrição de Integridade de Entidade.
+C) Restrição de Verificação (CHECK constraint), que é um tipo de integridade de domínio.
+D) Restrição de Chave Alternativa.
+E) Gatilho de Sistema (System Trigger).
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A restrição do tipo `CHECK (preco >= 0)` limita os valores válidos para uma coluna no seu domínio, sendo uma restrição de integridade de domínio.
+</details>
+
+---
+
+### Questão 29 (FCC - Sabesp - TI)
+No modelo relacional, quando dizemos que as tabelas são "relações", estamos nos baseando no conceito matemático de:
+A) Matrizes bidimensionais indexadas.
+B) Relação matemática, que é um subconjunto do produto cartesiano de domínios.
+C) Teoria dos Grafos direcionados acíclicos.
+D) Árvores binárias de busca balanceada.
+E) Cálculo diferencial multivariável.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Edgar F. Codd baseou o modelo relacional na matemática de conjuntos, definindo uma "relação" como um subconjunto do produto cartesiano dos domínios dos seus atributos.
+</details>
+
+---
+
+### Questão 30 (FCC - TRT 9ª Região - Tecnologia da Informação)
+Uma tabela `CONTRATOS` possui os atributos `numero_contrato`, `ano_contrato`, `id_cliente` e `valor`. Sabendo que a identificação unívoca de cada contrato exige a combinação de `numero_contrato` e `ano_contrato`, qual será o grau mínimo de integridade de entidade exigido para essa tabela?
+A) Que apenas o `numero_contrato` não seja nulo.
+B) Que nem `numero_contrato` nem `ano_contrato` contenham valores nulos e a sua combinação nunca se repita.
+C) Que `id_cliente` seja cadastrado na tabela de clientes.
+D) Que o `valor` seja um decimal positivo maior que zero.
+E) Que a tabela possua no máximo duas chaves estrangeiras.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Sendo a chave primária composta por `(numero_contrato, ano_contrato)`, ambos os campos são obrigatórios (não nulos) e a combinação deve ser unívoca em toda a tabela.
+</details>
+
+---
+
+## 📝 TEMA 3: Língua Portuguesa — Compreensão e Interpretação de Textos
+
+*Instruções: Leia os textos sugeridos para responder às questões correspondentes, seguindo o perfil rigoroso de leitura lógica e análise semântica da FCC.*
+
+---
+
+### Texto I
+> *"O avanço tecnológico, longe de simplesmente extinguir o labor humano, desloca-o para zonas de maior abstração. O artesão que outrora moldava o ferro à força do braço vê-se hoje obrigado a programar o algoritmo da prensa automatizada. Não houve alívio da exigência de rigor ou de dedicação intelectual; houve, isto sim, uma alteração de sintaxe produtiva. Aqueles que advogam o fim do trabalho ignoram a persistente necessidade de mediação interpretativa que as máquinas exigem."*
+
+### Questão 31 (FCC - Adaptada)
+Segundo o autor do Texto I, o advento da tecnologia no processo de produção industrial:
+A) Reduziu a carga de dedicação intelectual exigida do trabalhador fabril.
+B) Eliminou completamente a presença humana na sintaxe produtiva.
+C) Transferiu o esforço humano para atividades que demandam maior capacidade de abstração.
+D) Confirmou a tese de que o trabalho humano será extinto em curto prazo pelas máquinas.
+E) Restabeleceu o trabalho puramente braçal como a base de valor da economia de mercado.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O texto afirma expressamente no primeiro período: *"O avanço tecnológico, longe de simplesmente extinguir o labor humano, desloca-o para zonas de maior abstração."* As outras alternativas distorcem ou contradizem as ideias do autor.
+</details>
+
+---
+
+### Questão 32 (FCC - Adaptada)
+Infere-se do Texto I que o autor:
+A) Vê a automação como um retrocesso civilizatório que precariza a capacitação do trabalhador.
+B) Acredita que as máquinas dependem da inteligência humana para operar e contextualizar as tarefas.
+C) Considera que a programação de algoritmos exige menor esforço que a atividade do antigo artesão.
+D) Defende a abolição imediata da tecnologia para preservar os postos de trabalho tradicionais.
+E) Considera as máquinas autossuficientes na interpretação e execução de seus próprios processos.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A inferência é sustentada pela última frase do texto: *"Aqueles que advogam o fim do trabalho ignoram a persistente necessidade de mediação interpretativa que as máquinas exigem."* Isso demonstra que as máquinas ainda demandam a mediação da capacidade humana de interpretar dados.
+</details>
+
+---
+
+### Questão 33 (FCC - Adaptada)
+No trecho *"O artesão que outrora moldava o ferro à força do braço vê-se hoje obrigado a programar o algoritmo..."*, o termo sublinhado **outrora** estabelece uma relação lógica de:
+A) Oposição às condições atuais de trabalho.
+B) Concessão a fatos históricos irrelevantes.
+C) Causa do desenvolvimento de prensa automatizada.
+D) Tempo, situando a atividade do artesão em um período passado.
+E) Consequência imediata da inserção de computadores na indústria.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** O advérbio **outrora** significa "em outro tempo", "antigamente", possuindo valor puramente temporal que contrasta o passado do artesão com o seu presente (*"vê-se hoje..."*).
+</details>
+
+---
+
+### Questão 34 (FCC - Adaptada)
+Sem prejuízo para o sentido original e mantendo a correção gramatical do texto, a expressão *"longe de simplesmente extinguir"* poderia ser substituída por:
+A) Apesar de extinguir de modo sumário.
+B) Sem que isso implique a mera extinção.
+C) Contanto que se elimine de forma simples.
+D) À medida que se extingue sumariamente.
+E) Conquanto extinga de forma definitiva.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A expressão *"longe de simplesmente extinguir"* indica que a extinção não é o resultado real da tecnologia, apenas um deslocamento. A opção B preserva esse sentido de forma gramaticalmente correta.
+</details>
+
+---
+
+### Texto II
+> *"A pressa contemporânea por respostas prontas tem esvaziado o debate público de sua necessária espessura reflexiva. O cidadão, saturado por fluxos ininterruptos de dados digitais, confunde a posse da informação com a aquisição do conhecimento. A primeira é externa, instantânea e acumulável; o segundo exige tempo de maturação, confronto de hipóteses e silêncio cognitivo."*
+
+### Questão 35 (FCC - Adaptada)
+Com base no Texto II, é correto afirmar que:
+A) O debate público atual está mais profundo devido à abundância de informações na internet.
+B) A posse de informações garante automaticamente a evolução cultural do indivíduo.
+C) Informação e conhecimento são apresentados pelo autor como conceitos distintos e com dinâmicas próprias.
+D) O fluxo incessante de dados impede que o cidadão tenha acesso à informação de qualidade.
+E) O silêncio cognitivo é prejudicial para o debate político.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O autor descreve a informação como *"externa, instantânea e acumulável"* e o conhecimento como algo que *"exige tempo de maturação, confronto de hipóteses e silêncio cognitivo"*, explicitando que a posse de dados não equivale à inteligência ou sabedoria.
+</details>
+
+---
+
+### Questão 36 (FCC - Adaptada)
+No Texto II, a oração *"confunde a posse da informação com a aquisição do conhecimento"* revela:
+A) Uma atitude crítica do autor diante do comportamento cognitivo gerado pela velocidade das redes digitais.
+B) O endosso do autor à fusão definitiva desses dois conceitos na era moderna.
+C) A incapacidade biológica do cérebro humano em processar dados computacionais.
+D) Um elogio do autor à inteligência do cidadão contemporâneo na triagem de dados.
+E) Uma justificativa de ordem econômica para o esvaziamento das bibliotecas físicas.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** O autor critica a "pressa contemporânea" e a confusão mental gerada pelo excesso de dados, que empobrece a qualidade do debate público e da reflexão pessoal.
+</details>
+
+---
+
+### Questão 37 (FCC - Adaptada)
+De acordo com o Texto II, o conhecimento, diferentemente da informação, pressupõe:
+A) Velocidade de replicação digital.
+B) Acúmulo de dados desestruturados.
+C) Processos internos de análise e reflexão no decorrer do tempo.
+D) Acesso imediato a respostas curtas nas redes sociais.
+E) Esvaziamento completo da memória individual de longo prazo.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O texto diz expressamente que o conhecimento *"exige tempo de maturação, confronto de hipóteses e silêncio cognitivo"*, o que nos direciona para processos reflexivos internos.
+</details>
+
+---
+
+### Questão 38 (FCC - Adaptada)
+*"A primeira é externa, instantânea e acumulável; o segundo exige tempo..."*
+Nesse trecho do Texto II, os pronomes sublinhados referem-se, respectivamente, a:
+A) Pressa e resposta.
+B) Espessura e informação.
+C) Posse e aquisição.
+D) Informação e conhecimento.
+E) Informação e cidadão.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** Pela regra gramatical de coesão referencial por anáfora:
+- "A primeira" retoma a última palavra feminina listada na comparação anterior: **informação**.
+- "O segundo" retoma o último termo masculino correspondente: **conhecimento**.
+</details>
+
+---
+
+### Texto III
+> *"Não há dúvida de que o cumprimento estrito das formalidades processuais constitui garantia inalienável do cidadão contra os arbítrios do poder estatal. Entretanto, a hipertrofia de ritos burocráticos, quando apartada da razoabilidade e do anseio de pacificação social, degenera em mero formalismo vazio. O direito que se perde em labirintos procedimentais nega-se a si mesmo, convertendo-se em instrumento de protelação e injustiça."*
+
+### Questão 39 (FCC - Adaptada)
+A ideia central defendida pelo autor no Texto III é:
+A) O formalismo processual deve ser completamente abandonado para acelerar os julgamentos.
+B) A burocracia é o único mecanismo capaz de impedir a corrupção institucional do judiciário.
+C) O excesso de formalidades processuais, quando desprovido de sentido prático e de justiça, prejudica a própria finalidade do direito.
+D) O cidadão comum prefere a protelação do processo à obtenção de sentenças rápidas.
+E) O poder estatal deve intervir nos processos para garantir que os ritos sejam executados de forma rápida.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O texto argumenta que embora as formalidades sejam garantias contra o arbítrio, o excesso sem nexo e sem razoabilidade (hipertrofia) transforma o direito em um labirinto protelatório inútil.
+</details>
+
+---
+
+### Questão 40 (FCC - Adaptada)
+No Texto III, a palavra **Entretanto** inicia o período introduzindo uma relação lógica de:
+A) Explicação do período anterior.
+B) Conclusão sobre as garantias inalienáveis.
+C) Concessão às decisões da justiça estatal.
+D) Oposição e limitação às ideias já apresentadas.
+E) Comparação entre burocracia e formalismo.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** A palavra **Entretanto** é uma conjunção adversativa, introduzindo uma ideia de contraposição ou limitação em relação à afirmação de que as formalidades são garantias inalienáveis.
+</details>
+
+---
+
+### Questão 41 (FCC - Adaptada)
+Considere a frase do Texto III: *"Entretanto, a hipertrofia de ritos burocráticos, quando apartada da razoabilidade..."*
+A palavra **apartada** pode ser substituída, sem alteração de sentido no contexto, por:
+A) Unida.
+B) Separada.
+C) Protegida.
+D) Identificada.
+E) Conduzida.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** "Apartado" significa isolado, separado, afastado de algo. No contexto, significa que a burocracia foi separada/desconectada da razoabilidade.
+</details>
+
+---
+
+### Questão 42 (FCC - Adaptada)
+A última oração do Texto III (*"...convertendo-se em instrumento de protelação..."*) indica que o direito degenerado atua como causa de:
+A) Julgamentos eficientes.
+B) Atrasos desnecessários na solução de conflitos.
+C) Transparência absoluta do poder do Estado.
+D) Inclusão das minorias no sistema legal.
+E) Redução imediata das custas processuais.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A palavra **protelação** significa adiar, atrasar, postergar. Logo, converter-se em instrumento de protelação significa atuar gerando atrasos na justiça.
+</details>
+
+---
+
+### Questão 43 (FCC - Adaptada)
+O autor do Texto III qualifica as formalidades processuais como *"garantia inalienável"*. Com essa expressão, infere-se que tais formalidades:
+A) Podem ser vendidas ou trocadas pelos advogados no decorrer do processo.
+B) São dispensáveis sempre que o réu for considerado culpado de antemão.
+C) São direitos fundamentais de defesa que não podem ser retirados do cidadão.
+D) Devem ser ditadas unicamente pela força policial.
+E) Foram revogadas pelas leis processuais modernas.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A palavra **inalienável** qualifica algo de que não se pode abrir mão, transferir ou renunciar. Logo, as formalidades são retratadas como direitos fundamentais insubstituíveis e irrenunciáveis.
+</details>
+
+---
+
+### Questão 44 (FCC - Adaptada)
+*"O direito que se perde em labirintos procedimentais nega-se a si mesmo..."*
+A metáfora **labirintos procedimentais** sugere:
+A) O caminho reto e simples traçado pelas leis modernas.
+B) A transparência do atendimento judiciário em balcões digitais.
+C) A complexidade confusa e inútil que dificulta a resolução dos processos.
+D) O mapeamento lógico do fluxo de dados em computadores de alto desempenho.
+E) A arquitetura física moderna das varas dos tribunais de justiça.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A figura de linguagem do "labirinto" evoca caminhos confusos, perdas de rumo e dificuldades de saída, aplicando-se à burocracia processual exagerada que impede o cidadão de obter uma resposta rápida da justiça.
+</details>
+
+---
+
+### Questão 45 (FCC - Adaptada)
+Qual das seguintes atitudes é incompatível com o posicionamento geral do autor do Texto III?
+A) Simplificar etapas do rito processual respeitando o contraditório e a ampla defesa.
+B) Exigir que todas as petições passem por múltiplos cartórios redundantes apenas para recolher assinaturas burocráticas sem valor prático.
+C) Promover a conciliação judicial para acelerar a pacificação social.
+D) Ponderar a aplicação de regras processuais rígidas com base no bom senso e na razoabilidade.
+E) Garantir que o réu tenha amplo acesso aos recursos legais previstos em lei contra o abuso de autoridade.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O autor critica a "hipertrofia de ritos burocráticos" e o "formalismo vazio", logo, a atitude descrita em B (burocracia redundante inútil) vai diretamente contra a tese defendida no texto.
+</details>
+
+
+---
+
+
+# Domingo 17/05
+
+
+Este arquivo contém 45 questões da banca FCC (15 por tema estudado) com gabarito comentado ocultável.
+
+---
+
+## 📝 TEMA 1: Engenharia de Software — Scrum (Guia Oficial 2020)
+
+### Questão 1 (FCC - TRT 23ª Região - Analista Judiciário - TI)
+De acordo com o Guia Scrum Oficial (2020), o framework Scrum está fundamentado em quais teorias ou filosofias de gestão?
+A) Programação Extrema (XP) e Desenvolvimento Orientado a Recursos (RDD).
+B) Empirismo (controle de processo empírico) e Lean Thinking (pensamento enxuto).
+C) Teoria dos Sistemas Complexos e Gerenciamento de Projetos Tradicional (PMBOK).
+D) Cascata Iterativa e Design Thinking.
+E) Modelo de Maturidade CMMI e Ciclo PDCA Clínico.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O Guia Scrum afirma expressamente que *"O Scrum é fundamentado no empirismo e no Lean Thinking. O empirismo afirma que o conhecimento vem da experiência [...] O Lean Thinking reduz o desperdício e foca no essencial."*
+</details>
+
+---
+
+### Questão 2 (FCC - TRT 14ª Região - Tecnologia da Informação)
+O Scrum define três pilares empíricos fundamentais. A alternativa que descreve corretamente o pilar da **Transparência** é:
+A) O código-fonte do produto deve ser disponibilizado publicamente em repositórios abertos.
+B) As decisões financeiras e custos de desenvolvimento devem ser expostos a todos os colaboradores da empresa.
+C) Os aspectos importantes do processo e do trabalho devem ser visíveis tanto para quem realiza o trabalho quanto para quem o recebe.
+D) O Scrum Master deve documentar e publicar relatórios diários de horas de trabalho da equipe.
+E) O cliente deve participar ativamente de todas as reuniões diárias (Daily Scrum).
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** De acordo com o Guia, a Transparência exige que os elementos do processo que afetam o resultado sejam visíveis e compreensíveis para aqueles que executam e recebem o trabalho, permitindo decisões seguras.
+</details>
+
+---
+
+### Questão 3 (FCC - TRF 3ª Região - Analista - Sistemas)
+Considere as diretrizes do Guia Scrum (2020) sobre o tamanho do Scrum Team. É correto afirmar que o time deve ser:
+A) Composto por exatamente 15 membros para garantir a correta divisão de especialidades técnicas.
+B) Pequeno o suficiente para se manter ágil, tipicamente 10 pessoas ou menos, e grande o suficiente para concluir trabalhos significativos.
+C) Dividido em sub-equipes funcionais independentes com seus próprios Scrum Masters dedicados.
+D) Reduzido para no máximo 3 pessoas nas Sprints que possuem metas simples.
+E) Liderado hierarquicamente pelo Product Owner, que atua como o gerente de projetos da equipe.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O Guia Scrum 2020 indica que o tamanho ideal do Scrum Team é de **10 pessoas ou menos** para facilitar a comunicação e produtividade, mantendo o time coeso e auto-gerenciável.
+</details>
+
+---
+
+### Questão 4 (FCC - Sabesp - Analista)
+Sobre as características estruturais e organizacionais do Scrum Team, assinale a afirmação correta:
+A) Os membros do time dividem-se em sub-times especializados, como equipe de QA, equipe de UX e equipe de codificação.
+B) É uma organização sem hierarquias, sendo um grupo coeso de profissionais focado em um único objetivo por vez.
+C) Os desenvolvedores (Developers) são auto-organizados, mas dependem da autorização formal do Scrum Master para definir a arquitetura técnica.
+D) O Product Owner define a quantidade de trabalho que os Developers devem puxar e concluir na Sprint.
+E) O gerente de projetos é o responsável por coordenar a distribuição de tarefas na Reunião Diária.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O Scrum Team é caracterizado por não possuir sub-times ou hierarquias internas. Todos trabalham juntos focados na meta do produto, com responsabilidade compartilhada e foco colaborativo horizontal.
+</details>
+
+---
+
+### Questão 5 (FCC - TRT 11ª Região - Analista)
+No Scrum, a responsabilidade exclusiva por ordenar, gerenciar e comunicar de forma clara os itens do Product Backlog, visando a maximização do valor do produto final, pertence ao:
+A) Scrum Master.
+B) Patrocinador do Projeto (Sponsor).
+C) Product Owner.
+D) Comitê de Governança de TI da Organização.
+E) Líder Técnico da equipe de Developers.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O **Product Owner (PO)** é o único responsável pela gestão do Product Backlog. Ele decide a priorização e ordem dos itens baseando-se no valor de negócio e alinhamento com a Meta do Produto.
+</details>
+
+---
+
+### Questão 6 (FCC - ARTESP - Especialista)
+Qual das seguintes alternativas descreve um serviço prestado diretamente pelo **Scrum Master** ao **Product Owner**?
+A) Estimar as horas exatas necessárias para desenvolver cada item do Product Backlog.
+B) Codificar componentes complexos da camada de banco de dados para acelerar o deploy.
+C) Ajudar a encontrar técnicas para a definição eficaz do Product Goal e gestão do Product Backlog.
+D) Definir a arquitetura lógica e os frameworks JavaScript a serem usados na Sprint.
+E) Negociar prazos e assinar contratos comerciais com os fornecedores externos.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** Conforme o Guia, o Scrum Master serve ao PO de diversas maneiras, incluindo o auxílio no estabelecimento de uma gestão de backlog eficaz e transparente e no planejamento empírico do produto.
+</details>
+
+---
+
+### Questão 7 (FCC - Assembleia Legislativa - PB)
+Considere a duração e as regras aplicadas ao evento **Sprint**. De acordo com as prescrições do Scrum, a Sprint possui duração de:
+A) No máximo duas semanas, sendo proibida a adoção de durações mensais.
+B) Tempo variável definido dinamicamente em cada reunião diária de acordo com a velocidade do time.
+C) Duração fixa de até um mês (quatro semanas), iniciando-se uma nova Sprint imediatamente após o término da anterior.
+D) Prazo flexível que pode ser prorrogado pelos desenvolvedores caso as tarefas programadas não estejam prontas.
+E) Exatamente 7 dias úteis para todos os projetos de engenharia de software da instituição.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A Sprint é o container dos outros eventos e tem duração fixa de **até um mês**. Uma nova Sprint começa assim que a anterior termina, sem hiatos ou extensões temporais.
+</details>
+
+---
+
+### Questão 8 (FCC - TRF 3ª Região - Analista)
+Quem possui autoridade formal e exclusiva dentro do Scrum Team para determinar o cancelamento de uma Sprint e sob qual condição esse cancelamento pode ocorrer?
+A) O Scrum Master, se a equipe entrar em conflito interpessoal grave.
+B) Os Developers, caso a infraestrutura de servidores fique fora do ar por mais de 24 horas.
+C) O Product Owner, se a Meta da Sprint (Sprint Goal) se tornar obsoleta.
+D) O Stakeholder Principal, caso os custos do projeto superem o orçamento planejado.
+E) O Gerente de TI, se o comitê decidir alterar a linguagem de programação.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** Somente o **Product Owner** pode cancelar uma Sprint, e ele só faz isso se a meta estabelecida para aquela iteração (Sprint Goal) perder o sentido estratégico para o negócio (tornar-se obsoleta).
+</details>
+
+---
+
+### Questão 9 (FCC - PGE-CE - Analista)
+O evento do Scrum que inicia a Sprint, estabelecendo o trabalho a ser realizado, com timebox máximo de 8 horas para uma Sprint de um mês, é o:
+A) Sprint Planning.
+B) Daily Scrum.
+C) Sprint Review.
+D) Refinamento de Backlog.
+E) Kick-off Meeting.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** O **Sprint Planning** serve para planejar o trabalho a ser feito na Sprint. Seu timebox máximo é de 8 horas para Sprints de 1 mês.
+</details>
+
+---
+
+### Questão 10 (FCC - TRT 6ª Região - TI)
+A Reunião Diária (Daily Scrum) é um evento com timebox estrito de 15 minutos. Sobre esse evento, o Guia Scrum (2020) determina que:
+A) O Scrum Master deve conduzir a reunião fazendo as três perguntas clássicas a cada um dos presentes.
+B) É um evento exclusivo para os Developers inspecionarem o progresso rumo ao Sprint Goal e adaptarem o Sprint Backlog.
+C) O Product Owner deve usar a reunião para repassar tarefas e monitorar o desempenho individual de cada desenvolvedor.
+D) Os clientes e stakeholders devem comparecer para opinar sobre a qualidade parcial da codificação.
+E) A reunião deve ocorrer de forma online em horários variados para acomodar a rotina de trabalho remoto.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A Daily Scrum é para os **Developers**. Se o SM ou o PO participarem ativamente, devem fazê-lo apenas se estiverem trabalhando como Developers na execução de itens de backlog. A estrutura é livre, contanto que foque no progresso rumo à meta da Sprint.
+</details>
+
+---
+
+### Questão 11 (FCC - TRT 24ª Região - Analista)
+No contexto dos eventos do Scrum, a reunião que ocorre ao final da Sprint para inspecionar o incremento produzido e determinar adaptações futuras no Product Backlog, reunindo o Scrum Team e os stakeholders convidados em uma dinâmica de trabalho colaborativo, é a:
+A) Sprint Retrospective.
+B) Daily Scrum.
+C) Sprint Review.
+D) Reunião de Homologação de Deploy.
+E) Demo-Day Comercial.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A **Sprint Review** é o evento de inspeção do incremento produzido na Sprint. Nele, o time apresenta o resultado aos stakeholders para colher feedback e ajustar o Product Backlog.
+</details>
+
+---
+
+### Questão 12 (FCC - Sabesp - Analista de Sistemas)
+A Reunião de Retrospectiva da Sprint (Sprint Retrospective) tem como objetivo principal:
+A) Demonstrar a interface gráfica finalizada para aprovação do cliente.
+B) Planejar melhorias nos processos, relacionamentos, ferramentas e na própria Definição de Pronto (DoD) para aumentar a eficácia do time.
+C) Realizar estimativas de Story Points para os próximos meses de trabalho.
+D) Permitir ao PO reordenar as prioridades do Product Backlog com base em novos requisitos.
+E) Apresentar o relatório de desempenho individual dos desenvolvedores para a gerência de recursos humanos.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A **Retrospectiva** foca na melhoria contínua do time. O time inspeciona a si mesmo (processos, relações, ferramentas) para planejar mudanças práticas para a próxima Sprint.
+</details>
+
+---
+
+### Questão 13 (FCC - TRT 15ª Região - Analista)
+O Guia Scrum (2020) associa a cada um dos três artefatos oficiais um compromisso metodológico. A alternativa que apresenta a correlação correta entre o **artefato** e seu **compromisso** é:
+A) Product Backlog ➔ Sprint Goal.
+B) Sprint Backlog ➔ Definition of Done (DoD).
+C) Incremento ➔ Product Goal.
+D) Product Backlog ➔ Product Goal.
+E) Sprint Backlog ➔ Burndown Chart.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** A correlação exata estabelecida no Guia 2020 é:
+- Product Backlog ➔ **Product Goal**
+- Sprint Backlog ➔ **Sprint Goal**
+- Incremento ➔ **Definition of Done (DoD)**
+</details>
+
+---
+
+### Questão 14 (FCC - TRT 20ª Região - TI)
+Se um item de backlog em desenvolvimento não atende inteiramente à Definição de Pronto (Definition of Done - DoD) ao final da Sprint, a conduta prescrita pelo Scrum é:
+A) Apresentar o item incompleto na Sprint Review para mostrar o progresso parcial ao cliente.
+B) Mudar o status do item para "Pronto Parcial" e lançá-lo em produção com aviso de bug.
+C) Não apresentar o item na Sprint Review, não considerá-lo como parte do incremento e retorná-lo ao Product Backlog para planejamento futuro.
+D) Punir os desenvolvedores responsáveis pelo atraso na Reunião de Retrospectiva.
+E) Modificar a Definição de Pronto temporariamente para que o item seja aceito sem restrições.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** Um incremento só é gerado se estiver "Pronto" (DoD). Itens que não atendem à DoD não podem ser demonstrados nem implantados. Eles retornam ao Product Backlog para Sprints futuras.
+</details>
+
+---
+
+### Questão 15 (FCC - MPE-RS - Analista)
+No Guia Scrum 2020, o termo "Time de Desenvolvimento" (Development Team) que existia na versão de 2017 foi extinto e substituído por:
+A) Product Delivery Unit (PDU).
+B) Developers (Desenvolvedores) integrantes do único Scrum Team.
+C) Squad de Engenharia Ágil.
+D) Agile Task Force.
+E) Code Makers.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O Guia 2020 eliminou o termo "Time de Desenvolvimento" para evitar divisões internas no Scrum Team ("nós contra eles"). Agora, há apenas um time (Scrum Team), constituído de PO, SM e **Developers**.
+</details>
+
+---
+
+## 📝 TEMA 2: Banco de Dados — SQL Básico (SELECT, WHERE e JOINs)
+
+### Questão 16 (FCC - Adaptada - TRT 11ª Região)
+Considere a tabela `FUNCIONARIOS` com a seguinte estrutura e dados:
+| id | nome | id_gerente | salario |
+|---|---|---|---|
+| 1 | Carlos | NULL | 9000 |
+| 2 | Ana | 1 | 5000 |
+| 3 | Marcos | 1 | NULL |
+
+Se executarmos a consulta abaixo, qual será o resultado retornado pelo SGBD?
+```sql
+SELECT COUNT(*) FROM FUNCIONARIOS WHERE salario <> 5000 OR salario IS NULL;
+```
+A) 1.
+B) 2.
+C) 3.
+D) 0.
+E) O SGBD retornará um erro sintático devido à comparação com NULL.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** 
+- Linha 1: salario é 9000. `9000 <> 5000` é TRUE. (Conta 1).
+- Linha 2: salario é 5000. `5000 <> 5000` é FALSE. (Não conta).
+- Linha 3: salario é NULL. `NULL <> 5000` resulta em UNKNOWN. Porém, a condição tem `OR salario IS NULL`. Como `salario IS NULL` é TRUE para Marcos, a expressão lógica total do WHERE é TRUE. (Conta 2).
+- Logo, o COUNT(*) trará 2 linhas (Carlos e Marcos).
+</details>
+
+---
+
+### Questão 17 (FCC - TRT 24ª Região - Analista Judiciário - TI)
+Considere que a tabela `DEPARTAMENTOS` possua a coluna `id_dept` com os valores (10, 20, NULL). Um analista de banco de dados executa a seguinte instrução SQL:
+```sql
+SELECT nome_func FROM EMPREGADOS WHERE id_dept NOT IN (10, 20, NULL);
+```
+O comportamento lógico esperado dessa consulta é:
+A) Retornar todos os empregados cujos departamentos sejam diferentes de 10 e 20.
+B) Retornar os empregados cujos departamentos sejam nulos (NULL).
+C) Retornar um erro crítico de execução, pois listas de NOT IN não aceitam NULL.
+D) Retornar zero linhas (conjunto vazio), independentemente do conteúdo da tabela empregados.
+E) Substituir automaticamente o NULL da lista por zero e executar a busca.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** A expressão `id_dept NOT IN (10, 20, NULL)` é equivalente a `id_dept <> 10 AND id_dept <> 20 AND id_dept <> NULL`. Como qualquer comparação lógica com `NULL` resulta em `UNKNOWN`, a conjunção de `AND` inteira resultará sempre em `UNKNOWN` ou `FALSE`. Logo, o banco de dados não retornará nenhuma linha.
+</details>
+
+---
+
+### Questão 18 (FCC - TRT 3ª Região - Analista)
+Deseja-se realizar uma pesquisa na tabela `CLIENTES` para encontrar todos os registros onde a coluna `nome` comece com a letra "M" e possua exatamente 5 caracteres no total. A cláusula WHERE correta para essa consulta em SQL padrão é:
+A) WHERE nome LIKE 'M____'; (M seguido de 4 sublinhados)
+B) WHERE nome LIKE 'M%';
+C) WHERE nome LIKE 'M_____'; (M seguido de 5 sublinhados)
+D) WHERE nome LIKE 'M*5';
+E) WHERE nome REGEXP 'M{5}';
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** No operador `LIKE`, o caractere curinga `%` representa qualquer quantidade de caracteres (inclusive zero), enquanto o caractere sublinhado `_` representa **exatamente um** caractere. Para ter 5 caracteres no total iniciando em M, precisamos de M seguido por exatamente 4 sublinhados (`M____`).
+</details>
+
+---
+
+### Questão 19 (FCC - PGE-CE - Analista de Sistemas)
+A cláusula SQL que permite filtrar linhas que estejam contidas em um intervalo fechado e inclusivo de valores (por exemplo, salários entre 3000 e 5000) é:
+A) WHERE salario IN (3000, 5000);
+B) WHERE salario LIKE '3000-5000';
+C) WHERE salario BETWEEN 3000 AND 5000;
+D) WHERE salario MATCH (3000, 5000);
+E) WHERE salario >= 3000 OR salario <= 5000;
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O operador `BETWEEN` é **inclusivo** no padrão SQL, equivalente à expressão `salario >= 3000 AND salario <= 5000`.
+</details>
+
+---
+
+### Questão 20 (FCC - TRT 6ª Região - Tecnologia da Informação)
+Considere as tabelas `CURSO` (com 4 registros) e `ALUNO` (com 10 registros). Se executarmos um comando SQL que realize um `CROSS JOIN` entre essas duas tabelas, o número total de linhas geradas no resultado será:
+A) 14.
+B) 6.
+C) 40.
+D) 10.
+E) 4.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O `CROSS JOIN` produz o produto cartesiano das tabelas envolvidas, multiplicando a quantidade de linhas de ambas: $4 \times 10 = 40$ linhas.
+</details>
+
+---
+
+### Questão 21 (FCC - Sabesp - Analista)
+Considere a tabela `PROJETOS` (P) e a tabela `GERENTES` (G). Deseja-se listar todos os gerentes da tabela G, independentemente de estarem ou não associados a algum projeto na tabela P. A junção SQL recomendada para obter este resultado mantendo a tabela G como principal é:
+A) INNER JOIN.
+B) LEFT JOIN (com GERENTES do lado esquerdo do JOIN).
+C) NATURAL JOIN.
+D) INNER JOIN com WHERE P.id_gerente IS NULL.
+E) CROSS JOIN.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O `LEFT JOIN` preserva todos os registros da tabela à esquerda (neste caso, `GERENTES`), trazendo dados do projeto quando houver par ou preenchendo as colunas de `PROJETOS` com `NULL` quando não houver correspondência.
+</details>
+
+---
+
+### Questão 22 (FCC - TRT 15ª Região - Analista)
+Ao utilizar um `LEFT JOIN` entre as tabelas `CLIENTES` (C) e `CONTRATOS` (T) através da cláusula `ON C.id_cliente = T.id_cliente`, o resultado do descasamento (clientes que não possuem nenhum contrato) será representado nas colunas originárias da tabela `CONTRATOS` por valores:
+A) Zero `0`.
+B) Strings vazias `""`.
+C) `NULL`.
+D) Um erro de chave primária ausente.
+E) Espaços em branco.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** Onde não houver correspondência na tabela secundária de um Outer Join (neste caso, a tabela à direita de um LEFT JOIN), o SQL preenche todas as colunas com `NULL`.
+</details>
+
+---
+
+### Questão 23 (FCC - TRT 20ª Região - TI)
+Analise as duas consultas SQL abaixo executadas sobre o esquema `CURSOS` (C) e `MATRICULAS` (M):
+
+**Consulta 1:**
+```sql
+SELECT C.nome_curso FROM CURSOS C 
+LEFT JOIN MATRICULAS M ON C.id_curso = M.id_curso 
+WHERE M.status = 'Ativa';
+```
+
+**Consulta 2:**
+```sql
+SELECT C.nome_curso FROM CURSOS C 
+LEFT JOIN MATRICULAS M ON C.id_curso = M.id_curso AND M.status = 'Ativa';
+```
+
+Sobre o resultado gerado por ambas, é correto afirmar:
+A) Ambas geram resultados idênticos em todas as situações de dados.
+B) A Consulta 1 comporta-se na prática como um `INNER JOIN`, eliminando cursos que não tenham matrículas ativas. A Consulta 2 preserva todos os cursos da tabela à esquerda.
+C) A Consulta 2 trará apenas registros com status de matrícula igual a 'Ativa' excluindo cursos sem matrículas.
+D) Ambas as consultas retornarão erro de sintaxe pela colocação inadequada de operadores de igualdade.
+E) A Consulta 1 trará mais linhas que a Consulta 2 na totalidade dos casos.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** 
+- **Consulta 1:** O filtro `M.status = 'Ativa'` está no `WHERE`. Como o `WHERE` roda *depois* do JOIN, os registros da direita que vieram NULL devido ao descasamento do LEFT JOIN serão descartados (já que `NULL = 'Ativa'` resulta em UNKNOWN). Isso força a consulta a agir como um `INNER JOIN`.
+- **Consulta 2:** O filtro está no `ON`. O `LEFT JOIN` é obrigado a trazer todas as linhas de `CURSOS` (tabela da esquerda), mesmo que o status da matrícula seja nulo ou diferente de 'Ativa'.
+</details>
+
+---
+
+### Questão 24 (FCC - TRT 9ª Região - Tecnologia da Informação)
+A cláusula SQL que permite realizar o agrupamento de linhas de dados com base em uma ou mais colunas para aplicação de funções agregadas (como SUM ou AVG) é:
+A) ORDER BY.
+B) GROUP BY.
+C) SORT BY.
+D) MERGE BY.
+E) COLLECT BY.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O **GROUP BY** é a cláusula padrão de agrupamento que aglutina registros com o mesmo valor de coluna para permitir sumarizações de dados.
+</details>
+
+---
+
+### Questão 25 (FCC - ARTESP - Especialista)
+Qual a diferença conceitual e de execução entre as cláusulas `WHERE` e `HAVING` em consultas SQL agrupadas?
+A) Ambas são idênticas, mas o `HAVING` é restrito a SGBDs comerciais.
+B) O `WHERE` filtra linhas antes do agrupamento (GROUP BY); o `HAVING` filtra os grupos resultantes após o agrupamento.
+C) O `HAVING` é usado para filtrar tabelas de sistema e o `WHERE` para tabelas de usuários.
+D) O `WHERE` só aceita funções agregadas como `SUM` e `COUNT`, enquanto o `HAVING` não as aceita.
+E) O `GROUP BY` anula a execução do `WHERE` na consulta.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O interpretador SQL executa o `WHERE` primeiro (filtrando as linhas base). Em seguida, agrupa os registros remanescentes via `GROUP BY`. Por fim, aplica o `HAVING` para filtrar as agregações (grupos).
+</details>
+
+---
+
+### Questão 26 (FCC - MPE-RS - Analista)
+Em uma instrução SQL agrupada, se uma coluna de retorno no `SELECT` não fizer parte de uma função agregada (como `MAX`, `MIN`, `AVG`), essa coluna deve obrigatoriamente:
+A) Ser do tipo de dado caractere (`VARCHAR`).
+B) Conter chaves primárias.
+C) Estar listada na cláusula `GROUP BY`.
+D) Ser do tipo numérica e não nula.
+E) Estar referenciada no `ORDER BY DESC`.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** No padrão SQL ANSI, qualquer atributo presente na lista de projeção do `SELECT` que não seja parâmetro de uma função de agregação deve obrigatoriamente constar na cláusula `GROUP BY` para evitar ambiguidades de agrupamento.
+</details>
+
+---
+
+### Questão 27 (FCC - Sabesp - TI)
+A função agregada do SQL que calcula a média aritmética dos valores de uma determinada coluna, desconsiderando linhas com valores nulos (NULL) no cálculo, é a:
+A) SUM.
+B) MEAN.
+C) AVG.
+D) MEDIAN.
+E) COUNT.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A função **AVG** calcula a média aritmética. No padrão SQL, funções de agregação (com exceção do `COUNT(*)`) ignoram valores nulos nas suas operações de soma e divisão.
+</details>
+
+---
+
+### Questão 28 (FCC - TRF 3ª Região - Analista)
+Deseja-se realizar uma junção implícita de duas tabelas com base em colunas que possuem exatamente o mesmo nome e tipo de dados em ambas. A junção SQL que faz isso de forma implícita e automática é:
+A) NATURAL JOIN.
+B) INNER JOIN ON.
+C) CROSS JOIN.
+D) LEFT OUTER JOIN.
+E) SELF JOIN.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** O **NATURAL JOIN** realiza a junção de forma implícita, varrendo as tabelas e unindo-as pelas colunas que compartilham o mesmo nome lógico.
+</details>
+
+---
+
+### Questão 29 (FCC - TRT 11ª Região - Analista)
+Considere os seguintes comandos SQL: `CREATE`, `ALTER` e `DROP`. Estas instruções pertencem à qual subdivisão da linguagem SQL?
+A) DML (Data Manipulation Language).
+B) DDL (Data Definition Language).
+C) DCL (Data Control Language).
+D) DQL (Data Query Language).
+E) TCL (Transaction Control Language).
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Os comandos que definem ou alteram a estrutura física/lógica de objetos do banco (como tabelas, índices e visões) são comandos **DDL** (Linguagem de Definição de Dados).
+</details>
+
+---
+
+### Questão 30 (FCC - TRT 14ª Região - Tecnologia da Informação)
+Qual dos seguintes comandos pertence à categoria **DML** (Data Manipulation Language) da linguagem SQL?
+A) GRANT.
+B) CREATE TABLE.
+C) UPDATE.
+D) ALTER DATABASE.
+E) COMMIT.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O comando **UPDATE** altera os dados dentro das linhas das tabelas, sendo uma operação **DML** (Linguagem de Manipulação de Dados).
+- `GRANT` é DCL.
+- `CREATE` e `ALTER` são DDL.
+- `COMMIT` é TCL.
+</details>
+
+---
+
+## 📝 TEMA 3: Língua Portuguesa — Tipologia Textual
+
+### Questão 31 (FCC - Adaptada)
+A diferença conceitual básica entre **Gênero Textual** e **Tipo Textual** reside em:
+A) Os gêneros textuais são limitados (existem apenas cinco); os tipos textuais são infinitos e dinâmicos.
+B) O gênero textual define a estrutura gramatical e verbal das sentenças; o tipo textual define a finalidade de comunicação no dia a dia.
+C) O gênero textual possui função sócio-comunicativa e estrutura variável adaptada ao cotidiano; o tipo textual possui base linguística-estrutural rígida e limitada.
+D) Apenas textos literários possuem gêneros; textos científicos possuem exclusivamente tipos.
+E) Gênero e tipo textual são sinônimos perfeitos na linguística clássica.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** Os gêneros (e-mail, receita, notícia, crônica) são manifestações sociais infinitas de textos. Os tipos (narrativo, descritivo, injuntivo, dissertativo-argumentativo, dissertativo-expositivo) são as estruturas linguísticas subjacentes que compõem os textos.
+</details>
+
+---
+
+### Questão 32 (FCC - Adaptada)
+*Leia o trecho abaixo:*
+> *"O vento batia nas persianas de madeira escura da varanda, produzindo um som oco e ritmado. A sala exibia móveis antigos de jacarandá, cobertos por uma fina camada de poeira cinzenta que denunciava a ausência prolongada dos donos daquela casa isolada."*
+
+A tipologia textual que predomina no trecho acima é a:
+A) Narrativa.
+B) Dissertativa-Argumentativa.
+C) Descritiva.
+D) Injuntiva.
+E) Expositiva.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O texto exibe uma descrição de ambiente congelada no tempo, rica em adjetivações (*"madeira escura"*, *"som oco e ritmado"*, *"móveis antigos de jacarandá"*, *"fina camada de poeira cinzenta"*), sem progressão cronológica de eventos (ações sucessivas).
+</details>
+
+---
+
+### Questão 33 (FCC - Adaptada)
+*Leia o trecho abaixo:*
+> *"Pedro girou a chave na fechadura metálica e abriu a porta com lentidão. Ao entrar na sala empoeirada, avistou os móveis cobertos de panos brancos, caminhou até a janela principal e abriu-a para deixar o vento entrar."*
+
+A tipologia textual predominante desse fragmento é:
+A) Descritiva.
+B) Narrativa.
+C) Injuntiva.
+D) Argumentativa.
+E) Expositiva.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Diferente da questão anterior, há aqui uma clara **progressão temporal** marcada por ações sucessivas de uma personagem (girou, abriu, entrou, avistou, caminhou, abriu) no pretérito perfeito do indicativo.
+</details>
+
+---
+
+### Questão 34 (FCC - Adaptada)
+A tipologia **Dissertativo-Argumentativa** caracteriza-se por:
+A) Instruir o leitor passo a passo sobre como configurar sistemas operacionais.
+B) Relatar fatos ocorridos com personagens definidos no espaço e no tempo.
+C) Descrever paisagens usando adjetivações subjetivas de caráter sensorial.
+D) Defender um ponto de vista (tese) por meio de argumentos lógicos e juízos de valor estruturados para convencer o leitor.
+E) Apresentar conceitos científicos de forma fria, neutra e puramente dicionária.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** A essência do texto argumentativo é a persuasão. O autor emite juízos de valor e constrói argumentos estruturados com o intuito claro de convencer o leitor de sua tese.
+</details>
+
+---
+
+### Questão 35 (FCC - Adaptada)
+*Leia o trecho abaixo:*
+> *"O Produto Interno Bruto (PIB) do Brasil cresceu 2,9% no ano de 2023, impulsionado pelo desempenho recorde da atividade agropecuária e pela resiliência do setor de serviços. Os dados foram divulgados pelo Instituto Brasileiro de Geografia e Estatística (IBGE) no relatório trimestral de contas nacionais públicas."*
+
+A tipologia predominante do fragmento acima é:
+A) Dissertativa-Argumentativa.
+B) Dissertativa-Expositiva.
+C) Narrativa Literária.
+D) Injuntiva.
+E) Descritiva Estática.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O texto tem finalidade puramente informativa e conceitual. Não há argumentos, opiniões pessoais do autor ou juízo de valor político/social. É uma exposição de fatos reais com dados estatísticos objetivos (Dissertativo-Expositivo).
+</details>
+
+---
+
+### Questão 36 (FCC - Adaptada)
+Os manuais de instrução, bulas de remédios, receitas culinárias e leis em geral são exemplos de gêneros textuais estruturados sob a tipologia:
+A) Narrativa.
+B) Descritiva.
+C) Injuntiva (ou Instrucional).
+D) Dissertativa.
+E) Poética.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O tipo **Injuntivo** serve para instruir, mandar ou ensinar o leitor a realizar determinada tarefa, utilizando verbos no modo imperativo ou infinitivo.
+</details>
+
+---
+
+### Questão 37 (FCC - Adaptada)
+Uma das principais marcas linguísticas associadas à tipologia **Narrativa** é a predominância de:
+A) Verbos de ligação e adjetivos abundantes.
+B) Verbos no modo imperativo ditando comportamentos.
+C) Verbos de ação conjugados predominantemente nos tempos do passado (Pretérito Perfeito e Imperfeito) e marcadores temporais.
+D) Termos valorativos e adjetivos de opinião crítica do autor.
+E) Linguagem matemática em sentenças declarativas simples.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A narrativa lida com o fluir do tempo. Os verbos no pretérito perfeito (ações concluídas) e imperfeito (ações de fundo) dão a movimentação e cronologia necessárias para contar a história.
+</details>
+
+---
+
+### Questão 38 (FCC - Adaptada)
+A presença constante de adjetivos qualificadores de caráter sensorial e verbos de ligação (como *ser, estar, parecer*) caracteriza predominantemente qual tipologia?
+A) Injuntiva.
+B) Expositiva.
+C) Descritiva.
+D) Argumentativa.
+E) Narrativa.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A descrição foca nas qualidades e propriedades estáticas do objeto ou cenário, logo, o uso de adjetivos qualificadores e verbos de estado/ligação é a marca gramatical dominante.
+</details>
+
+---
+
+### Questão 39 (FCC - Adaptada)
+No que se refere ao modo verbal, o uso constante do **Imperativo** (*"faça", "leia", "insira", "evite"*) é a marca linguística clássica do tipo de texto:
+A) Dissertativo-Argumentativo.
+B) Injuntivo.
+C) Narrativo.
+D) Descritivo.
+E) Expositivo.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O imperativo é o modo verbal de comando e instrução, características exclusivas da tipologia injuntiva.
+</details>
+
+---
+
+### Questão 40 (FCC - Adaptada)
+*Leia o trecho abaixo:*
+> *"O descarte inadequado de resíduos eletrônicos provoca danos irreversíveis ao ecossistema local, além de comprometer a saúde das populações vizinhas aos lixões. Diante dessa realidade alarmante, urge que as autoridades municipais implementem coletas seletivas e punam as empresas negligentes com multas severas."*
+
+A tipologia textual predominante no fragmento é:
+A) Dissertativa-Expositiva.
+B) Dissertativa-Argumentativa.
+C) Injuntiva.
+D) Narrativa.
+E) Descritiva.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O autor apresenta opinião explícita com termos valorativos (*"danos irreversíveis"*, *"realidade alarmante"*, *"negligentes"*) e defende uma ação governamental (*"urge que as autoridades..."*), configurando uma estrutura argumentativa de persuasão e cobrança.
+</details>
+
+---
+
+### Questão 41 (FCC - Adaptada)
+A **Interpenetração Textual** significa que:
+A) Um texto nunca pode conter traços de mais de uma tipologia.
+B) As tipologias textuais misturam-se no decorrer de um texto complexo, embora exista uma tipologia predominante que define a intenção comunicativa soberana do autor.
+C) Os textos científicos não admitem nenhuma variação de gênero.
+D) A narração exclui obrigatoriamente qualquer forma de descrição de personagens.
+E) A tipologia injuntiva só existe em formato de poesia clássica.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Textos reais são híbridos (interpenetração). Uma crônica narrativa conterá descrições e argumentos reflexivos, mas a sua estrutura global (a intenção soberana do autor) determinará a tipologia dominante (neste caso, a narrativa).
+</details>
+
+---
+
+### Questão 42 (FCC - Adaptada)
+*Leia o trecho abaixo:*
+> *"A inflação acumulada no ano atingiu a marca de 4,5%, superando o teto da meta definido pelo conselho monetário. De acordo com o Banco Central, a alta de preços foi pressionada pelo aumento nos custos dos combustíveis e da energia elétrica de uso comercial."*
+
+Qual a tipologia predominante do fragmento acima e qual a intenção comunicativa demonstrada pelo autor?
+A) Narrativa; contar a história do conselho monetário.
+B) Dissertativa-Argumentativa; convencer o leitor de que a inflação é positiva para a economia.
+C) Dissertativa-Expositiva; informar fatos e dados sobre a inflação de forma neutra.
+D) Descritiva; caracterizar fisicamente as notas de papel-moeda.
+E) Injuntiva; ordenar ao Banco Central a redução de taxas de juros.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O fragmento apresenta fatos e dados econômicos com linguagem impessoal, objetiva e descritiva de fatos, sem emitir juízos de valor ideológicos ou argumentos persuasivos (Expositivo).
+</details>
+
+---
+
+### Questão 43 (FCC - Adaptada)
+Se um autor insere a história da vida de um grande cientista (Narração) com a finalidade exclusiva de comprovar a validade científica de uma nova vacina que ele defende em seu artigo de opinião (Argumentação), o texto como um todo deve ser classificado como:
+A) Predominantemente Narrativo.
+B) Predominantemente Descritivo.
+C) Predominantemente Dissertativo-Argumentativo.
+D) Injuntivo puro.
+E) Expositivo puro.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A narração é apenas um recurso retórico (ilustração) subordinado à intenção principal do autor, que é persuadir o leitor sobre a eficácia da vacina. A tipologia predominante é a argumentativa.
+</details>
+
+---
+
+### Questão 44 (FCC - Adaptada)
+*Leia o trecho abaixo:*
+> *"Para atualizar os dados cadastrais no portal do TJ-CE, acesse o menu Configurações, selecione a opção Perfil do Usuário e preencha as informações necessárias nos campos editáveis."*
+
+A tipologia predominante do trecho é:
+A) Descritiva.
+B) Narrativa.
+C) Dissertativa-Expositiva.
+D) Injuntiva.
+E) Dissertativa-Argumentativa.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** O trecho orienta e ensina o usuário a executar um procedimento técnico, utilizando verbos no imperativo (*"acesse"*, *"selecione"*, *"preencha"*). Trata-se do tipo injuntivo.
+</details>
+
+---
+
+### Questão 45 (FCC - Adaptada)
+Qual das seguintes marcas linguísticas seria incomum em um texto de tipologia estritamente **Dissertativo-Expositiva**?
+A) Uso da terceira pessoa para manter a impessoalidade do relato.
+B) Termos técnicos padronizados de uma área científica ou do direito.
+C) Adjetivos de forte impacto emocional e juízos de valor pessoal do autor.
+D) Definições de conceitos extraídos de dicionários ou enciclopédias.
+E) Apresentação de dados estatísticos sem tomadas de posição política.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O texto expositivo busca neutralidade. Adjetivos passionais, julgamentos morais e termos de opinião forte são típicos da argumentação persuasiva, e não da mera exposição informativa.
+</details>
+
+
+---
+
+
+# Segunda-feira 18/05
+
+
+Este arquivo contém 45 questões da banca FCC (15 por tema estudado) com gabarito comentado ocultável.
+
+---
+
+## 📝 TEMA 1: Infraestrutura e Redes — Modelo OSI (7 Camadas)
+
+### Questão 1 (FCC - TRT 11ª Região - Analista Judiciário - TI)
+No modelo de referência ISO/OSI, a camada responsável por realizar o roteamento de pacotes através de múltiplos nós de rede, determinando o melhor caminho físico que os dados devem percorrer, é a camada de:
+A) Transporte.
+B) Enlace.
+C) Rede.
+D) Sessão.
+E) Física.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A camada de **Rede** (Camada 3) é responsável pelo endereçamento lógico (IP) e pelo roteamento (escolha do melhor caminho para o tráfego de pacotes entre a origem e o destino através de redes distintas).
+</details>
+
+---
+
+### Questão 2 (FCC - TRT 24ª Região - Analista - Tecnologia da Informação)
+No contexto do modelo OSI, a camada que trata do controle de acesso ao meio físico (MAC), da detecção e correção opcional de erros ocorridos no link de comunicação física, agrupando os bits em quadros (frames), é a camada de:
+A) Rede.
+B) Enlace.
+C) Física.
+D) Transporte.
+E) Apresentação.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A camada de **Enlace de Dados** (Camada 2) divide-se nas subcamadas LLC e MAC. Ela transforma o meio de transmissão físico bruto em um link confiável, agrupando bits em **quadros (frames)** e controlando o fluxo e erros locais (hop-to-hop).
+</details>
+
+---
+
+### Questão 3 (FCC - TRF 3ª Região - Analista)
+Em relação às Unidades de Dados de Protocolo (PDUs) nas diferentes camadas do modelo OSI, a associação correta é:
+A) Camada Física ➔ Pacotes.
+B) Camada de Enlace ➔ Segmentos.
+C) Camada de Rede ➔ Quadros (Frames).
+D) Camada de Transporte ➔ Segmentos (no TCP) ou Datagramas (no UDP).
+E) Camada de Aplicação ➔ Bits.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** A associação correta das PDUs é:
+- Camada Física ➔ **Bits**
+- Camada de Enlace ➔ **Quadros (Frames)**
+- Camada de Rede ➔ **Pacotes (Packets) / Datagramas IP**
+- Camada de Transporte ➔ **Segmentos (TCP) / Datagramas (UDP)**
+- Camadas superiores ➔ **Dados (Data)**
+</details>
+
+---
+
+### Questão 4 (FCC - Sabesp - Analista)
+Um Switch convencional de Camada 2 (Layer 2 Switch) atua primariamente na camada OSI de:
+A) Física, repetindo os sinais elétricos em todas as portas de saída.
+B) Enlace de Dados, encaminhando quadros com base no endereço físico MAC.
+C) Rede, analisando o cabeçalho IP dos pacotes para definir a sub-rede.
+D) Transporte, gerenciando as portas de socket ativas.
+E) Aplicação, realizando a tradução de protocolos HTTP.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Switches L2 operam na camada de **Enlace de Dados** (Camada 2). Eles leem o cabeçalho do quadro (especificamente o endereço MAC de destino) para encaminhar o tráfego apenas para a porta física correta, reduzindo colisões.
+</details>
+
+---
+
+### Questão 5 (FCC - Assembleia Legislativa - PB)
+A camada do modelo OSI que atua na tradução, formatação e representação dos dados, realizando serviços como compressão de dados, conversão de formatos de texto (ex: ASCII para EBCDIC) e criptografia, é a camada de:
+A) Aplicação.
+B) Sessão.
+C) Apresentação.
+D) Transporte.
+E) Rede.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A camada de **Apresentação** (Camada 6) cuida da sintaxe e da representação dos dados entregues à aplicação. Compressão, criptografia e formatação (ex: JPEG, ASCII) ocorrem aqui.
+</details>
+
+---
+
+### Questão 6 (FCC - PGE-CE - Analista)
+Qual a principal diferença funcional entre o controle de erros realizado pela camada de **Enlace** e o realizado pela camada de **Transporte** no modelo OSI?
+A) O da camada de Enlace é executado de ponta a ponta (end-to-end); o de Transporte é executado entre nós vizinhos (hop-to-hop).
+B) O da camada de Enlace aplica-se a bits brutos; o de Transporte aplica-se a pacotes IP.
+C) O da camada de Enlace é executado localmente entre dois nós adjacentes conectados fisicamente; o de Transporte é executado de ponta a ponta entre a aplicação de origem e a de destino.
+D) O de Enlace utiliza o protocolo TCP; o de Transporte utiliza o protocolo ARP.
+E) Não há diferença; ambas realizam exatamente o mesmo controle sobre a mesma PDU física.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A camada de Enlace garante a entrega livre de erros sobre o link físico direto (entre dois aparelhos adjacentes). A camada de Transporte abstrai a rede física intermediária e realiza o controle de erros de ponta a ponta (end-to-end, entre o host de origem e o de destino).
+</details>
+
+---
+
+### Questão 7 (FCC - TRT 15ª Região - Analista)
+Um Hub e um Roteador atuam, respectivamente, em quais camadas do modelo de referência OSI?
+A) Física e Rede.
+B) Enlace e Transporte.
+C) Física e Enlace.
+D) Rede e Aplicação.
+E) Enlace e Rede.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** 
+- **Hub:** É um repetidor elétrico burro de portas, operando na Camada 1 (**Física**).
+- **Roteador:** Toma decisões com base no endereçamento IP, operando na Camada 3 (**Rede**).
+</details>
+
+---
+
+### Questão 8 (FCC - TRT 6ª Região - TI)
+A camada do modelo OSI que gerencia o diálogo entre aplicações de hosts diferentes, estabelecendo, controlando e sincronizando a comunicação (através de pontos de sincronização para recuperação de falhas), é a camada de:
+A) Transporte.
+B) Sessão.
+C) Apresentação.
+D) Rede.
+E) Enlace.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A camada de **Sessão** (Camada 5) permite que usuários em diferentes máquinas estabeleçam sessões de comunicação entre si, oferecendo controle de diálogo (simplex, half-duplex ou full-duplex) e inserindo pontos de sincronização (checkpoints).
+</details>
+
+---
+
+### Questão 9 (FCC - ARTESP - Especialista)
+O processo pelo qual uma camada inferior adiciona informações de controle (na forma de cabeçalhos e rodapés) a uma PDU recebida da camada superior é denominado:
+A) Modulação.
+B) Segmentação.
+C) Multiplexação.
+D) Encapsulamento.
+E) Roteamento.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** O **Encapsulamento** ocorre à medida que os dados descem na pilha de protocolos: cada camada envelopa a PDU da camada superior adicionando seu próprio cabeçalho (header) e, opcionalmente, rodapé (trailer).
+</details>
+
+---
+
+### Questão 10 (FCC - MPE-RS - Analista)
+Em uma transmissão de rede de dados, cabos de par trançado UTP Categoria 6, conectores RJ-45 e fibras ópticas monomodo são componentes padronizados pela camada OSI de nível:
+A) 1.
+B) 2.
+C) 3.
+D) 4.
+E) 7.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** Conectores, cabos, propriedades elétricas e mecânicas dos meios de transmissão pertencem à Camada 1 (**Física**).
+</details>
+
+---
+
+### Questão 11 (FCC - TRT 20ª Região - TI)
+Durante a navegação na internet, o navegador do usuário envia dados requisitando uma página HTML. O sistema operacional encapsula a requisição HTTP. Quando esses dados chegam à placa de rede para transmissão de sinais elétricos ou ópticos, o fluxo de dados transformou-se em:
+A) Pacotes IP.
+B) Segmentos de bytes.
+C) Sinais em formato de Bits.
+D) Quadros Ethernet criptografados.
+E) Tabelas de roteamento.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A placa de rede (no nível físico de transmissão de cabo/ar/fibra) transmite as informações como pulsos de tensão, luz ou ondas eletromagnéticas, o que equivale conceitualmente a **Bits** (Camada Física).
+</details>
+
+---
+
+### Questão 12 (FCC - Sabesp - Analista de Sistemas)
+A camada de **Transporte** (Camada 4) do modelo OSI tem como uma de suas funções primordiais:
+A) O controle de acesso ao meio compartilhado usando CSMA/CD.
+B) A multiplexação de múltiplas conexões de aplicações utilizando portas lógicas (sockets).
+C) O mapeamento físico de endereços lógicos em endereços de hardware locais.
+D) A renderização de tags de marcação XML e JSON.
+E) O roteamento estático com base na distância de saltos (hops).
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A camada de Transporte realiza a **multiplexação/demultiplexação** de conexões através do uso de números de portas (Sockets), permitindo que múltiplos aplicativos em execução no mesmo computador enviem e recebam dados simultaneamente na rede.
+</details>
+
+---
+
+### Questão 13 (FCC - TRT 9ª Região - TI)
+Qual dispositivo de rede atua na Camada 3 do modelo OSI e impede que mensagens de Broadcast locais se propaguem para outras redes físicas?
+A) Switch L2.
+B) Hub.
+C) Roteador.
+D) Repetidor de Sinal.
+E) Bridge (Ponte).
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O **Roteador** delimita o domínio de broadcast. Pacotes direcionados ao endereço de broadcast de uma rede local (ex: `255.255.255.255`) não são encaminhados por roteadores para outras redes.
+</details>
+
+---
+
+### Questão 14 (FCC - TRT 15ª Região - Analista)
+Em relação às camadas OSI, os protocolos HTTP, FTP e SMTP pertencem à camada de número:
+A) 4.
+B) 5.
+C) 6.
+D) 7.
+E) 3.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** HTTP, FTP e SMTP interagem diretamente com o usuário e os softwares de aplicação, pertencendo à Camada 7 (**Aplicação**).
+</details>
+
+---
+
+### Questão 15 (FCC - Sabesp - TI)
+Uma falha na sincronização lógica de uma transação de longa duração entre dois sistemas corporativos distribuídos, em que o envio foi interrompido na metade e o sistema de recepção não sabe de qual ponto continuar a gravação de dados, aponta um problema de projeto relacionado primariamente à camada OSI de:
+A) Apresentação.
+B) Transporte.
+C) Sessão.
+D) Enlace.
+E) Física.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A camada de **Sessão** cuida da reinicialização de conexões e sincronização lógica de diálogos complexos inserindo pontos de verificação (checkpoints) nas transmissões de grandes arquivos para evitar a retransmissão completa do zero.
+</details>
+
+---
+
+## 📝 TEMA 2: Infraestrutura e Redes — TCP/IP e Sub-redes
+
+### Questão 16 (FCC - TRT 11ª Região - Analista Judiciário - TI)
+Sobre os protocolos da camada de transporte da pilha TCP/IP, TCP e UDP, é correto afirmar:
+A) O TCP e o UDP são protocolos orientados a conexão que garantem a entrega de pacotes sem duplicidades.
+B) O UDP possui menor overhead de cabeçalho (8 bytes) em comparação ao TCP (mínimo de 20 bytes), tornando-o mais rápido e adequado para transmissões em tempo real (como VoIP).
+C) O TCP utiliza o mecanismo de "Three-Way Handshake" apenas para finalizar conexões ativas.
+D) O UDP possui controle de congestionamento nativo que reduz a vazão de envio ao detectar perda de datagramas na rede.
+E) Ambos utilizam a mesma estrutura de flags de controle como SYN, ACK e FIN.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O UDP não tem conexão, controle de fluxo ou retransmissão, o que resulta em um cabeçalho muito enxuto de apenas **8 bytes**. Isso o torna extremamente rápido e perfeito para streaming e VoIP. O TCP exige mais recursos, com cabeçalho de no mínimo **20 bytes**.
+</details>
+
+---
+
+### Questão 17 (FCC - TRT 24ª Região - Analista)
+Associe os protocolos da pilha TCP/IP com suas respectivas funções padrão:
+1. **ARP**
+2. **ICMP**
+3. **DNS**
+4. **DHCP**
+
+( ) Traduz nomes de domínio legíveis por humanos em endereços IP.
+( ) Atribui dinamicamente endereços IP e parâmetros de rede a hosts na inicialização.
+( ) Descobre o endereço físico MAC a partir de um endereço IP conhecido na rede local.
+( ) Utilizado para enviar mensagens de controle e relatórios de erro de roteamento (ex: ping).
+
+A sequência correta de preenchimento dos parênteses, de cima para baixo, é:
+A) 3 - 4 - 1 - 2.
+B) 4 - 3 - 2 - 1.
+C) 3 - 4 - 2 - 1.
+D) 1 - 2 - 3 - 4.
+E) 2 - 1 - 4 - 3.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** 
+- DNS (3) realiza a resolução de nomes para IP.
+- DHCP (4) distribui IPs dinamicamente.
+- ARP (1) mapeia IP para endereço MAC físico.
+- ICMP (2) é usado para testes de conectividade e reporte de erros de entrega.
+</details>
+
+---
+
+### Questão 18 (FCC - TRF 3ª Região - Analista)
+Considere as portas lógicas TCP padrão utilizadas por diferentes servidores de aplicação na internet. A porta padrão do protocolo de transferência de hipertexto seguro (HTTPS) e a porta padrão do servidor de nomes de domínio (DNS) são, respectivamente:
+A) 80 e 53.
+B) 443 e 53.
+C) 443 e 80.
+D) 22 e 25.
+E) 80 e 110.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** 
+- HTTPS ➔ **443** (TCP)
+- DNS ➔ **53** (tipicamente UDP, podendo usar TCP para transferências de zona)
+- HTTP comum utiliza a porta 80.
+</details>
+
+---
+
+### Questão 19 (FCC - Sabesp - Analista)
+A RFC 1918 define faixas de endereços IPv4 reservados para uso exclusivo em redes privadas (não roteáveis na internet pública). Qual dos seguintes endereços IPv4 pertence a uma dessas faixas privadas?
+A) 192.169.10.1.
+B) 172.31.254.10.
+C) 10.256.0.1.
+D) 127.0.0.1.
+E) 224.0.0.1.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** As faixas privadas da RFC 1918 são:
+- Classe A: `10.0.0.0` a `10.255.255.255`
+- Classe B: `172.16.0.0` a `172.31.255.255`
+- Classe C: `192.168.0.0` a `192.168.255.255`
+O IP `172.31.254.10` está contido na faixa de classe B privada.
+</details>
+
+---
+
+### Questão 20 (FCC - PGE-CE - Analista de Sistemas)
+No endereçamento IPv6, os endereços possuem um comprimento de bits e um formato de representação composto por grupos hexadecimais separados por dois-pontos. Esse tamanho de endereço em bits e a quantidade máxima de grupos hexadecimais são, respectivamente:
+A) 64 bits e 8 grupos.
+B) 128 bits e 8 grupos.
+C) 128 bits e 16 grupos.
+D) 256 bits e 8 grupos.
+E) 64 bits e 4 grupos.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O IPv6 utiliza endereços de **128 bits** divididos em **8 grupos** de 16 bits cada (hextetos), representados por caracteres hexadecimais separados por dois-pontos (ex: `2001:db8:0:0:0:0:2:1`).
+</details>
+
+---
+
+### Questão 21 (FCC - Sabesp - TI)
+Uma das principais diferenças funcionais no envio de dados no protocolo IPv6 em relação ao IPv4 é a eliminação completa do tipo de transmissão por:
+A) Unicast.
+B) Multicast.
+C) Broadcast.
+D) Anycast.
+E) Point-to-Point.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O IPv6 **não utiliza transmissões por Broadcast**. No lugar, ele implementa transmissões por Multicast especializadas (como o endereço multicast de nó solicitado), o que otimiza o uso do meio físico evitando interrupções em hosts que não devem receber o pacote.
+</details>
+
+---
+
+### Questão 22 (FCC - TRT 15ª Região - Analista)
+Considere a simplificação de escrita de endereços IPv6 de acordo com a RFC 5952. O endereço original `2001:0db8:0000:0000:0000:ff00:0042:8329` pode ser simplificado de forma correta e minimal para:
+A) `2001:db8::ff00:42:8329`
+B) `2001:0db8::ff::42:8329`
+C) `2001:db8:0:0:0:ff00:42:8329`
+D) `2001:db8::ff00:0042:8329`
+E) `2001:db8:::ff00:42:8329`
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** Regras de simplificação:
+1. Remover zeros à esquerda de cada grupo: `2001:0db8` vira `2001:db8` e `0042` vira `42`.
+2. Substituir a maior sequência contígua de grupos zerados por dois-pontos duplos `::`. Isso só pode ser feito **uma única vez** no endereço.
+Resultado: `2001:db8::ff00:42:8329`.
+</details>
+
+---
+
+### Questão 23 (FCC - TRT 20ª Região - Analista Judiciário)
+Um administrador de rede configurou um servidor com o endereço IP `192.168.10.75` e a máscara de sub-rede `/26` (notação CIDR). O endereço lógico de rede (Network Address) e o endereço de Broadcast desta sub-rede específica são, respectivamente:
+A) `192.168.10.0` e `192.168.10.255`
+B) `192.168.10.64` e `192.168.10.127`
+C) `192.168.10.64` e `192.168.10.128`
+D) `192.168.10.32` e `192.168.10.95`
+E) `192.168.10.0` e `192.168.10.63`
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** 
+- A máscara `/26` divide a rede em sub-redes com blocos de $2^{32-26} = 2^6 = 64$ endereços cada.
+- Sub-redes possíveis:
+  - Sub-rede 0: `0` a `63`
+  - Sub-rede 1: `64` a `127` (O IP `75` está nesta faixa)
+  - Sub-rede 2: `128` a `191`...
+- Para a sub-rede que contém o IP `75`:
+  - Endereço de Rede (primeiro do bloco): `192.168.10.64`
+  - Endereço de Broadcast (último do bloco): `192.168.10.127`
+</details>
+
+---
+
+### Questão 24 (FCC - TRT 6ª Região - TI)
+Uma sub-rede com máscara de rede `/29` permite configurar, no máximo, quantos endereços IP utilizáveis para hosts físicos conectados na rede local?
+A) 8.
+B) 6.
+C) 14.
+D) 30.
+E) 2.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O total de IPs em um bloco `/29` é $2^{32-29} = 2^3 = 8$. Como devemos descontar obrigatoriamente 2 endereços (o de rede e o de broadcast), restam $8 - 2 = 6$ endereços utilizáveis para hosts.
+</details>
+
+---
+
+### Questão 25 (FCC - ARTESP - Especialista)
+Deseja-se dividir a rede `10.0.0.0/24` em 4 sub-redes de tamanho idêntico. A nova máscara CIDR de sub-rede que deve ser aplicada e a quantidade de hosts utilizáveis por sub-rede resultante são, respectivamente:
+A) `/26` e 62 hosts.
+B) `/28` e 14 hosts.
+C) `/26` e 64 hosts.
+D) `/25` e 126 hosts.
+E) `/27` e 30 hosts.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** Para criar 4 sub-redes ($2^2$), precisamos tomar emprestados 2 bits da máscara original `/24`. A nova máscara será `/24 + 2 = /26`.
+- Cada bloco terá $2^{32-26} = 2^6 = 64$ endereços.
+- Descontando os endereços de rede e broadcast, temos $64 - 2 = 62$ hosts utilizáveis por sub-rede.
+</details>
+
+---
+
+### Questão 26 (FCC - MPE-RS - Analista)
+O protocolo TCP garante a entrega ordenada e confiável dos dados na rede. Qual mecanismo de controle é utilizado pelo transmissor para enviar múltiplos segmentos antes de receber uma confirmação (ACK), ajustando dinamicamente o fluxo com base na capacidade informada pelo receptor?
+A) Handshake de 3 vias.
+B) Janela Deslizante (Sliding Window).
+C) Algoritmo de Dijkstra.
+D) Timeout de Retransmissão Fixo.
+E) Controle de Acesso ao Meio Físico CSMA/CA.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O mecanismo de **Janela Deslizante** permite ao TCP controlar o fluxo de dados, evitando que o transmissor sobrecarregue o buffer do receptor (Flow Control). O receptor envia o tamanho da janela livre no cabeçalho do ACK.
+</details>
+
+---
+
+### Questão 27 (FCC - TRF 3ª Região - Analista)
+Em uma infraestrutura de rede corporativa, o protocolo responsável por converter dinamicamente os pacotes com IPs privados internos para um IP público válido na internet no momento em que saem pelo roteador de borda é o:
+A) DHCP.
+B) DNS.
+C) NAT (Network Address Translation).
+D) OSPF.
+E) ARP.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O **NAT** traduz endereços de IPs privados locais em endereços IPs públicos globais válidos para tráfego na internet, economizando escassos IPs IPv4 públicos.
+</details>
+
+---
+
+### Questão 28 (FCC - Sabesp - TI)
+Durante o processo de resolução de nomes realizado pelo sistema de DNS, quando o servidor DNS local da instituição não conhece o IP correspondente ao endereço digitado e realiza consultas sucessivas a outros servidores externos (como Root Servers, TLD Servers e Autoridade do domínio) repassando o resultado intermediário, a consulta é denominada:
+A) Consulta Recursiva.
+B) Consulta Iterativa.
+C) Consulta Direta Cacheada.
+D) Resolução Reversa Invertida.
+E) Requisição de Zona Estática.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Na consulta **Iterativa**, o servidor consultado não resolve ele mesmo, mas indica para qual servidor o cliente DNS local deve perguntar a seguir. O servidor local gerencia o processo. (Na recursiva, o servidor consultado assume a responsabilidade de obter a resposta final e entregá-la ao cliente).
+</details>
+
+---
+
+### Questão 29 (FCC - TRT 9ª Região - Tecnologia da Informação)
+O comando do sistema operacional Windows ou Linux que utiliza o envio de mensagens do protocolo ICMP do tipo *Echo Request* para verificar se um determinado host remoto está ativo e respondendo na rede é o:
+A) ipconfig.
+B) ping.
+C) nslookup.
+D) netstat.
+E) route.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O comando **ping** envia pacotes ICMP *Echo Request* (Tipo 8) e aguarda respostas do tipo ICMP *Echo Reply* (Tipo 0) do host destino para medir latência e perda de pacotes.
+</details>
+
+---
+
+### Questão 30 (FCC - TRT 15ª Região - Analista)
+Uma empresa recebeu a faixa IP `192.168.1.0/24`. O administrador dividiu a rede de modo a obter sub-redes com máscara `255.255.255.240`. O número total de sub-redes criadas e a máscara em notação CIDR correspondente são:
+A) 8 sub-redes e `/27`
+B) 16 sub-redes e `/28`
+C) 32 sub-redes e `/29`
+D) 4 sub-redes e `/26`
+E) 16 sub-redes e `/27`
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** 
+- A máscara `255.255.255.240` possui no último octeto o valor binário `11110000` ($128+64+32+16=240$).
+- Logo, a máscara CIDR possui $24 + 4 = 28$ bits ativos (`/28`).
+- Como a rede original era `/24` e agora é `/28`, foram usados 4 bits adicionais para sub-redes, totalizando $2^4 = 16$ sub-redes.
+</details>
+
+---
+
+## 📝 TEMA 3: Raciocínio Lógico-Matemático — Estruturas Lógicas (Proposições e Conectivos)
+
+### Questão 31 (FCC - TRT 23ª Região - Analista - TI)
+De acordo com os princípios da lógica matemática proposicional clássica, qual das seguintes sentenças representa uma proposição lógica?
+A) Que dia maravilhoso para fazer provas de tribunal!
+B) O processo eletrônico do TJ-CE será atualizado amanhã?
+C) Desenvolva o código do módulo de segurança imediatamente.
+D) O número 101 é um número primo.
+E) Ele é um excelente analista de sistemas de informação.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** Uma proposição lógica deve ser uma sentença declarativa, afirmativa, de sentido completo, que possa ser classificada de forma única como Verdadeira (V) ou Falsa (F).
+- A é exclamativa.
+- B é interrogativa.
+- C é imperativa (ordem).
+- E possui sujeito indefinido ("Ele"), sendo uma sentença aberta (não proposição).
+- D é uma declaração matemática completa e fechada (pode ser valorada como F ou V).
+</details>
+
+---
+
+### Questão 32 (FCC - TRT 14ª Região - Analista)
+Considere a proposição composta: *"Se o servidor de banco de dados cair ou a rede física ficar lenta, então o sistema de processos ficará fora do ar."*
+Identifique os conectivos lógicos presentes nessa proposição composta na ordem de leitura:
+A) Conjunção, Condicional.
+B) Disjunção Inclusiva, Condicional.
+C) Disjunção Exclusiva, Bicondicional.
+D) Conjunção, Bicondicional.
+E) Disjunção Inclusiva, Conjunção.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** 
+- *"ou"* representa a **Disjunção Inclusiva** ($\lor$).
+- *"Se... então"* representa o conectivo **Condicional** ($\rightarrow$).
+</details>
+
+---
+
+### Questão 33 (FCC - TRF 3ª Região - Analista Judiciário)
+Dadas as proposições simples:
+- $p$: O switch está configurado.
+- $q$: A rede está ativa.
+
+A tradução para a linguagem simbólica matemática da sentença *"O switch não está configurado e a rede está ativa"* é dada por:
+A) $p \land q$
+B) $\sim p \lor q$
+C) $\sim p \land q$
+D) $p \rightarrow \sim q$
+E) $\sim(p \land q)$
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** 
+- *"não está configurado"* ➔ $\sim p$ (negação)
+- *"e"* ➔ $\land$ (conjunção)
+- *"a rede está ativa"* ➔ $q$
+Resultado: $\sim p \land q$.
+</details>
+
+---
+
+### Questão 34 (FCC - Sabesp - Analista)
+Na lógica proposicional clássica, a conjunção de duas proposições quaisquer, $A \land B$, é valorada como Verdadeira (V) somente quando:
+A) Pelo menos uma das proposições simples for Verdadeira.
+B) Ambas as proposições simples forem Falsas.
+C) Ambas as proposições simples forem Verdadeiras.
+D) A proposição $A$ for Verdadeira e a proposição $B$ for Falsa.
+E) A proposição $A$ for Falsa, independente do valor de $B$.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A tabela-verdade do conectivo "E" (conjunção $\land$) exige que **todas** as proposições envolvidas sejam Verdadeiras para que a sentença total resulte em Verdadeiro.
+</details>
+
+---
+
+### Questão 35 (FCC - Assembleia Legislativa - PB)
+A proposição composta do tipo Condicional, representado simbolicamente por $p \rightarrow q$ ("Se $p$, então $q$"), assume valor lógico Falso (F) em uma única linha de sua tabela-verdade. Essa situação ocorre quando:
+A) $p$ é Falso e $q$ é Verdadeiro.
+B) $p$ é Verdadeiro e $q$ é Falso.
+C) Tanto $p$ quanto $q$ são Verdadeiros.
+D) Tanto $p$ quanto $q$ são Falsos.
+E) O valor lógico de $q$ for o dobro do valor lógico de $p$.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O conectivo condicional ($\rightarrow$) só é falso na situação clássica apelidada de "Vera Fischer" (Antecedente Verdadeiro $\rightarrow$ Consequente Falso). Nas demais combinações (V$\rightarrow$V, F$\rightarrow$V, F$\rightarrow$F), a condicional é Verdadeira.
+</details>
+
+---
+
+### Questão 36 (FCC - PGE-CE - Analista)
+Considere a proposição composta: *"Carlos é programador ou Ana é analista de testes, mas não ambos."* O conectivo lógico que representa esta estrutura gramatical é denominado:
+A) Disjunção Inclusiva.
+B) Disjunção Exclusiva (ou...ou).
+C) Conjunção Condicional.
+D) Bicondicional (se e somente se).
+E) Negação da Conjunção.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A expressão *"ou um ou outro, mas não ambos"* define a **Disjunção Exclusiva** (símbolo $\underline{\lor}$ ou $\oplus$), onde a proposição composta só é verdadeira se as proposições simples tiverem valores lógicos opostos.
+</details>
+
+---
+
+### Questão 37 (FCC - TRT 15ª Região - Analista)
+Qual a valoração lógica da proposição composta dada pela sentença: *"Se $3 + 2 = 7$, então $5 \times 2 = 10$"?*
+A) Falsa, pois a premissa inicial ($3+2=7$) é matematicamente incorreta.
+B) Verdadeira, pois o consequente ($5\times2=10$) é verdadeiro, e uma condicional com antecedente falso é sempre verdadeira.
+C) Invalida, pois não é possível associar lógica clássica a fórmulas da aritmética básica.
+D) Falsa, porque a conjunção de equações aritméticas resulta em nulo.
+E) Indeterminada, dependendo do referencial numérico adotado.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** 
+- Antecedente: $3 + 2 = 7$ (Falso).
+- Consequente: $5 \times 2 = 10$ (Verdadeiro).
+- Tabela-verdade da condicional: F $\rightarrow$ V resulta em **Verdadero** (V).
+</details>
+
+---
+
+### Questão 38 (FCC - TRT 6ª Região - TI)
+A tabela-verdade do conectivo **Bicondicional** ($p \leftrightarrow q$, "se e somente se") é caracterizada por ser Verdadeira somente quando:
+A) O antecedente $p$ for falso e o consequente $q$ for verdadeiro.
+B) Pelo menos uma das proposições for verdadeira.
+C) Ambas as proposições simples tiverem o mesmo valor lógico (ambas V ou ambas F).
+D) As proposições simples apresentarem valorações lógicas alternadas e contrárias.
+E) Nenhuma das proposições simples possuir valor definido.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O conectivo bicondicional determina que a equivalência lógica é verdadeira se e somente se ambas as partes compartilham da mesma verdade ou da mesma falsidade (V$\leftrightarrow$V = V; F$\leftrightarrow$F = V).
+</details>
+
+---
+
+### Questão 39 (FCC - ARTESP - Especialista)
+Sabendo que a proposição simples $A$ é Verdadeira e que a proposição $B$ é Falsa, assinale a alternativa que apresenta uma proposição composta de valor lógico Falso:
+A) $A \lor B$
+B) $\sim B \rightarrow A$
+C) $A \leftrightarrow \sim B$
+D) $A \land B$
+E) $\sim(A \land B)$
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** 
+- A) V $\lor$ F = V.
+- B) V $\rightarrow$ V = V.
+- C) V $\leftrightarrow$ V = V.
+- D) V $\land$ F = **F** (Gabarito).
+- E) $\sim$(F) = V.
+</details>
+
+---
+
+### Questão 40 (FCC - MPE-RS - Analista)
+Quantas linhas possui a tabela-verdade completa de uma proposição composta que contém 4 proposições simples independentes (ex: $p, q, r, s$)?
+A) 8.
+B) 16.
+C) 4.
+D) 32.
+E) 12.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O número de linhas da tabela-verdade de uma proposição composta contendo $n$ proposições simples é dado pela fórmula matemática $2^n$. Como temos 4 proposições simples, temos $2^4 = 16$ linhas.
+</details>
+
+---
+
+### Questão 41 (FCC - TRT 20ª Região - TI)
+A sentença *"Se João estuda engenharia de software, então ele sabe codificar em Java"* possui como antecedente e consequente, respectivamente:
+A) João estuda engenharia de software / ele sabe codificar em Java.
+B) João sabe codificar em Java / ele estuda engenharia de software.
+C) João estuda / ele sabe codificar.
+D) Se João / então ele sabe.
+E) Não existem antecedente e consequente em proposições condicionais.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** Na condicional $p \rightarrow q$:
+- A cláusula que vem após o "Se" ($p$) é o **antecedente** (premissa).
+- A cláusula que vem após o "então" ($q$) é o **consequente** (conclusão).
+</details>
+
+---
+
+### Questão 42 (FCC - Sabesp - Analista de Sistemas)
+A negação lógica de uma proposição simples $P$ (representada por $\sim P$) tem como propriedade fundamental:
+A) Manter o valor lógico original da proposição em qualquer cenário.
+B) Inverter o valor lógico da proposição (se $P$ é V, $\sim P$ é F; se $P$ é F, $\sim P$ é V).
+C) Transformar a frase em uma pergunta.
+D) Anular a estrutura da sentença proposicional, convertendo-a em sentença aberta.
+E) Multiplicar a quantidade de proposições por dois.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A negação ($\sim$ ou $\neg$) é um operador unário que altera a valoração lógica de uma proposição para o seu exato oposto no sistema binário clássico (Princípio do Terceiro Excluído).
+</details>
+
+---
+
+### Questão 43 (FCC - TRT 9ª Região - TI)
+Considere a seguinte frase em linguagem natural: *"Não é verdade que Lucas é administrador e Mariana não é engenheira."*
+Representando por $p$ a proposição "Lucas é administrador" e por $q$ "Mariana é engenheira", a tradução simbólica correta dessa frase é:
+A) $\sim(p \land q)$
+B) $\sim p \land \sim q$
+C) $\sim(p \land \sim q)$
+D) $\sim p \rightarrow q$
+E) $\sim(p \lor \sim q)$
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** 
+- *"Lucas é administrador"* ➔ $p$
+- *"Mariana não é engenheira"* ➔ $\sim q$
+- *"Lucas é administrador e Mariana não é engenheira"* ➔ $p \land \sim q$
+- *"Não é verdade que..."* nega a conjunção inteira ➔ $\sim(p \land \sim q)$.
+</details>
+
+---
+
+### Questão 44 (FCC - TRT 15ª Região - Analista)
+Na lógica de proposições, qual conectivo possui precedência de resolução padrão mais alta em expressões lógicas complexas sem parênteses?
+A) Condicional ($\rightarrow$).
+B) Bicondicional ($\leftrightarrow$).
+C) Disjunção ($\lor$).
+D) Negação ($\sim$).
+E) Conjunção ($\land$).
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** A ordem de precedência padrão dos operadores lógicos na ausência de parênteses delimitadores é:
+1. **Negação** ($\sim$)
+2. **Conjunção** ($\land$) e **Disjunção** ($\lor$) (resolvidas da esquerda para a direita)
+3. **Condicional** ($\rightarrow$)
+4. **Bicondicional** ($\leftrightarrow$)
+</details>
+
+---
+
+### Questão 45 (FCC - Sabesp - TI)
+Qual das seguintes alternativas não constitui uma proposição válida da lógica bivalente clássica?
+A) O Sol é uma estrela de nêutrons fria.
+B) Todos os computadores do tribunal possuem Linux instalado.
+C) Que Deus te acompanhe nesta jornada de estudos!
+D) O número 2 é o único número primo que é par.
+E) A capital do estado do Ceará é a cidade de Fortaleza.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A alternativa C expressa um desejo, uma bênção/exclamação (sentença optativa/exclamativa). Sentenças desse tipo não possuem caráter declarativo e não podem ser avaliadas como V ou F, logo, não são proposições.
+</details>
+
+
+---
+
+
+# Terça-feira 19/05
+
+
+Este arquivo contém 45 questões da banca FCC (15 por tema estudado) com gabarito comentado ocultável.
+
+---
+
+## 📝 TEMA 1: Segurança da Informação — ABNT NBR ISO/IEC 27001 (SGSI)
+
+### Questão 1 (FCC - TRT 11ª Região - Analista Judiciário - TI)
+A norma ABNT NBR ISO/IEC 27001 especifica os requisitos para estabelecer, implementar, manter e melhorar continuamente um Sistema de Gestão de Segurança da Informação (SGSI). Sob a ótica dessa norma, o objetivo fundamental do SGSI é:
+A) Adquirir os softwares antivírus mais caros e modernos do mercado de TI.
+B) Garantir a confidencialidade, integridade e disponibilidade da informação através da aplicação de um processo de gestão de riscos.
+C) Eliminar 100% de todas as ameaças físicas e cibersegurança da instituição de forma definitiva.
+D) Padronizar a codificação de sistemas com base na tecnologia Java.
+E) Substituir a auditoria financeira interna por auditorias de TI.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O SGSI preserva a **confidencialidade, integridade e disponibilidade (tríade CID)** da informação. Ele faz isso aplicando um processo de gestão de riscos adequado e dando confiança às partes interessadas de que os riscos são gerenciados.
+</details>
+
+---
+
+### Questão 2 (FCC - TRT 24ª Região - Analista)
+Considere a aplicação clássica do ciclo **PDCA** (Plan-Do-Check-Act) na estruturação de um SGSI baseado na norma ISO/IEC 27001. A atividade de realizar auditorias internas periódicas e analisar criticamente o desempenho do SGSI pela direção enquadra-se na fase de:
+A) Plan (Planejar).
+B) Do (Fazer/Executar).
+C) Check (Verificar/Monitorar).
+D) Act (Agir/Melhorar).
+E) Design (Projetar).
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** Na fase **Check (Verificar)**, realizam-se o monitoramento e a medição do desempenho frente à política e objetivos do SGSI, incluindo a condução de auditorias internas e análises críticas periódicas.
+</details>
+
+---
+
+### Questão 3 (FCC - TRF 3ª Região - Analista)
+Na norma ISO/IEC 27001, a seção que exige que a organização determine os fatores externos e internos que são relevantes para seu propósito de negócio e que afetam sua capacidade de alcançar os resultados pretendidos do SGSI é a:
+A) Seção 5 — Liderança.
+B) Seção 6 — Planejamento.
+C) Seção 4 — Contexto da Organização.
+D) Seção 8 — Operação.
+E) Seção 9 — Avaliação de Desempenho.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A **Seção 4 — Contexto da Organização** trata da identificação de questões internas e externas, partes interessadas e seus requisitos, estabelecendo o escopo do SGSI.
+</details>
+
+---
+
+### Questão 4 (FCC - Sabesp - Analista)
+De acordo com a seção 6.1.3 da ISO/IEC 27001, o documento que compara os controles de segurança recomendados (como os do Anexo A) com os controles efetivamente selecionados pela organização, justificando as inclusões e exclusões, denomina-se:
+A) Relatório de Impacto à Proteção de Dados (RIPD).
+B) Declaração de Aplicabilidade (SoA - Statement of Applicability).
+C) Termo de Compromisso e Sigilo (NDA).
+D) Plano de Continuidade de Negócios (PCN).
+E) Relatório de Auditoria Forense Digital.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A **Declaração de Aplicabilidade (SoA)** lista os controles selecionados para tratar os riscos do SGSI, indicando o status de implementação e as justificativas para inclusão ou exclusão de cada controle.
+</details>
+
+---
+
+### Questão 5 (FCC - Assembleia Legislativa - PB)
+No processo de gestão de riscos prescrito pela ISO/IEC 27001, a probabilidade residual de ocorrência de incidentes que permanece mesmo após a implementação de todas as medidas de segurança e tratamento de riscos selecionadas é denominada:
+A) Risco Inerente.
+B) Risco Evitado.
+C) Risco Residual.
+D) Risco Descartado.
+E) Risco Financeiro Máximo.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O **Risco Residual** é o risco que sobra após a aplicação de controles de tratamento de risco. A alta administração deve analisar e aprovar formalmente a aceitação desse risco residual.
+</details>
+
+---
+
+### Questão 6 (FCC - PGE-CE - Analista)
+No âmbito do tratamento de riscos de segurança da informação (ISO/IEC 27001), quando uma organização contrata uma apólice de seguro contra ataques de ransomware para cobrir perdas financeiras, ela optou por qual modalidade de tratamento de risco?
+A) Redução ou mitigação do risco.
+B) Retenção ou aceitação do risco.
+C) Evitação do risco.
+D) Compartilhamento ou transferência do risco.
+E) Eliminação da vulnerabilidade associada.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** A contratação de seguros transfere o impacto financeiro do risco para terceiros, constituindo um **compartilhamento/transferência** do risco.
+</details>
+
+---
+
+### Questão 7 (FCC - TRT 15ª Região - Analista)
+De acordo com a Seção 5 — Liderança da ISO/IEC 27001, qual das seguintes atribuições deve ser assumida diretamente pela alta direção da organização?
+A) Configurar as regras de firewall de borda da rede corporativa.
+B) Garantir que a política de segurança e os objetivos do SGSI sejam estabelecidos e alinhados com a estratégia do negócio.
+C) Executar os backups incrementais diários dos bancos de dados.
+D) Conduzir auditorias de segurança de código-fonte individual de desenvolvedores.
+E) Definir as permissões de gravação nas pastas compartilhadas dos servidores.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A alta direção deve demonstrar liderança e comprometimento garantindo que a política e objetivos do SGSI estejam em perfeita harmonia com o direcionamento estratégico da organização.
+</details>
+
+---
+
+### Questão 8 (FCC - TRT 6ª Região - TI)
+A Seção 7 da norma ISO/IEC 27001 trata do "Apoio" (Support). Entre os requisitos desta seção, a necessidade de garantir que todas as pessoas que realizam trabalhos sob o controle da organização estejam cientes da política de segurança da informação e de sua contribuição para a eficácia do SGSI refere-se ao requisito de:
+A) Competência.
+B) Conscientização (Awareness).
+C) Comunicação Técnica Externa.
+D) Informação Documentada de Acesso.
+E) Recrutamento e Seleção de Recursos Humanos.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O requisito de **Conscientização** determina que as pessoas sob controle da organização saibam da existência da Política de Segurança, dos riscos de suas atividades e de sua importância na proteção dos ativos organizacionais.
+</details>
+
+---
+
+### Questão 9 (FCC - ARTESP - Especialista)
+Sobre os requisitos de "Informação Documentada" descritos na ISO/IEC 27001 (Seção 7.5), a organização deve garantir que os documentos do SGSI:
+A) Sejam armazenados exclusivamente em formato impresso para evitar ataques cibernéticos.
+B) Sejam disponibilizados de forma pública e irrestrita na internet corporativa.
+C) Estejam devidamente protegidos contra perda de confidencialidade, uso inadequado ou perda de integridade.
+D) Sejam revisados anualmente apenas por agências reguladoras federais.
+E) Sejam redigidos em linguagem estritamente acadêmica de nível de doutorado.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A informação documentada exigida pelo SGSI deve ser controlada para assegurar que esteja disponível e adequada para uso, e protegida contra violações de integridade e confidencialidade.
+</details>
+
+---
+
+### Questão 10 (FCC - MPE-RS - Analista)
+Em conformidade com a Seção 9 — Avaliação de Desempenho da ISO/IEC 27001, qual das seguintes atividades deve ser realizada em intervalos planejados para avaliar a conformidade e a eficácia do SGSI?
+A) Modificação física de firewalls.
+B) Condução de Auditorias Internas.
+C) Aquisição de licenças de novos servidores.
+D) Modificação unilateral do escopo da política de segurança.
+E) Troca periódica de gerentes de projetos.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A organização deve conduzir **Auditorias Internas** planejadas para fornecer informações se o SGSI está em conformidade com os próprios requisitos da organização e com os requisitos da norma ISO 27001.
+</details>
+
+---
+
+### Questão 11 (FCC - TRT 20ª Região - TI)
+Quando ocorre um incidente de segurança da informação ou uma não conformidade no SGSI, a conduta imediata e corretiva prescrita pela Seção 10 da ISO/IEC 27001 é:
+A) Encerrar o SGSI e reiniciar o planejamento do zero.
+B) Reagir à não conformidade, tomar medidas para controlá-la/corrigi-la e lidar com as consequências.
+C) Demitir imediatamente o analista que operava o sistema afetado.
+D) Ocultar o incidente das auditorias internas para evitar perda de certificações.
+E) Desligar toda a rede física da instituição por 30 dias.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A Seção 10 (Melhoria) determina que ao ocorrer uma não conformidade, a organização deve agir de forma corretiva para controlar, mitigar consequências e analisar a causa raiz para evitar reincidência.
+</details>
+
+---
+
+### Questão 12 (FCC - Sabesp - Analista de Sistemas)
+A etapa "Do" (Fazer) do ciclo PDCA no contexto do SGSI da ISO 27001 envolve:
+A) Elaborar políticas e objetivos gerais de segurança com análise de cenários futuros.
+B) Implementar e operar a política do SGSI, os controles de segurança, processos e procedimentos definidos.
+C) Auditar os resultados contra os objetivos estratégicos de longo prazo.
+D) Realizar ajustes estratégicos e melhorias corretivas na estrutura corporativa.
+E) Escolher os auditores externos de certificação.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A fase **Do** foca na execução prática: implementar o plano de tratamento de risco, colocar em prática as políticas de segurança e treinar as pessoas.
+</details>
+
+---
+
+### Questão 13 (FCC - TRT 9ª Região - TI)
+No processo de avaliação de riscos de segurança da informação (ISO/IEC 27001), a atividade que consiste em comparar o nível de risco estimado na análise com os critérios de risco previamente estabelecidos, de forma a determinar a necessidade e prioridade de tratamento de risco, é denominada:
+A) Identificação de Riscos.
+B) Análise de Riscos.
+C) Avaliação de Riscos.
+D) Aceitação de Riscos Coletiva.
+E) Mitigação Física.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A **Avaliação de Riscos (Risk Evaluation)** compara os níveis de risco encontrados com a régua de aceitação de riscos da organização para decidir a necessidade de intervenção/tratamento.
+</details>
+
+---
+
+### Questão 14 (FCC - TRT 15ª Região - Analista)
+Em relação ao escopo de aplicação de um SGSI baseado na ISO/IEC 27001, é correto afirmar:
+A) O escopo deve abranger obrigatoriamente 100% de todos os departamentos físicos e lógicos da organização.
+B) O escopo pode ser delimitado a áreas específicas do negócio, contanto que as exclusões sejam justificadas e documentadas.
+C) O escopo é definido de forma automática pela banca auditora no início do processo de certificação.
+D) O escopo de segurança da informação não necessita de aprovação formal por escrito.
+E) O escopo deve excluir sempre a área de desenvolvimento de software da instituição.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A organização tem autonomia para definir as fronteiras e aplicabilidade do SGSI, podendo certificar apenas um setor específico (ex: o Datacenter ou a área de Processamento Judicial), desde que o escopo esteja claramente documentado.
+</details>
+
+---
+
+### Questão 15 (FCC - Sabesp - TI)
+A avaliação periódica da eficácia do SGSI feita pela alta direção da organização, com o objetivo de garantir sua contínua adequação, suficiência e eficácia, é denominada pela ISO/IEC 27001 como:
+A) Auditoria Externa de Recertificação.
+B) Análise Crítica pela Direção (Management Review).
+C) Análise de Vulnerabilidade Perimétrica.
+D) Teste de Intrusão em Produção (Pentest).
+E) Reunião Geral de TI.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A **Análise Crítica pela Direção (Management Review)** é uma exigência da Seção 9.3 da ISO 27001, em que a alta liderança revisa formalmente o status de ações anteriores, mudanças contextuais, métricas de incidentes e auditorias para direcionar melhorias.
+</details>
+
+---
+
+## 📝 TEMA 2: Segurança da Informação — ABNT NBR ISO/IEC 27002:2022
+
+### Questão 16 (FCC - TRT 11ª Região - Analista Judiciário - TI)
+Na atualização da norma ABNT NBR ISO/IEC 27002 publicada em 2022, houve uma grande reestruturação na organização dos controles de segurança da informação. A antiga estrutura com 14 seções foi consolidada em quantos **Temas** principais de controles?
+A) 10 temas.
+B) 4 temas.
+C) 7 temas.
+D) 14 temas.
+E) 12 temas.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A ISO/IEC 27002:2022 simplificou a classificação agrupando os controles em **4 temas**:
+1. Controles Organizacionais (37 controles)
+2. Controles de Pessoas (8 controles)
+3. Controles Físicos (14 controles)
+4. Controles Tecnológicos (34 controles)
+</details>
+
+---
+
+### Questão 17 (FCC - TRT 24ª Região - Analista)
+Considere os temas de controles da ISO/IEC 27002:2022. Os controles *"Triagem de candidatos a emprego (Screening)"* e *"Termos e condições de emprego (Terms and conditions of employment)"* são classificados sob o tema:
+A) Controles Organizacionais.
+B) Controles Tecnológicos.
+C) Controles de Pessoas.
+D) Controles Físicos.
+E) Controles Administrativos.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** Os controles que lidam com a relação de trabalho antes, durante e após o desligamento de funcionários ou terceirizados pertencem ao tema **Controles de Pessoas**.
+</details>
+
+---
+
+### Questão 18 (FCC - TRF 3ª Região - Analista)
+O controle *"Áreas de trabalho seguras (Securing offices, rooms and facilities)"*, que visa proteger instalações físicas contra acessos não autorizados ou danos acidentais, pertence ao seguinte tema de controles da ISO/IEC 27002:2022:
+A) Controles Organizacionais.
+B) Controles de Pessoas.
+C) Controles Físicos.
+D) Controles Tecnológicos.
+E) Controles Perimétricos.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** Tudo o que envolve segurança de barreiras tangíveis, escritórios, datacenters locais, cabeamento de energia e destruição de mídia física pertence ao tema **Controles Físicos**.
+</details>
+
+---
+
+### Questão 19 (FCC - Sabesp - Analista)
+O controle *"Criptografia (Use of cryptography)"*, que visa garantir o uso adequado e eficaz da criptografia para proteger a confidencialidade e integridade da informação, é classificado como um:
+A) Controle Organizacional.
+B) Controle Tecnológico.
+C) Controle Físico.
+D) Controle de Pessoas.
+E) Controle de Infraestrutura Passiva.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O controle de criptografia é executado por sistemas de software e hardware, configurando um **Controle Tecnológico**.
+</details>
+
+---
+
+### Questão 20 (FCC - PGE-CE - Analista de Sistemas)
+A versão 2022 da ISO/IEC 27002 introduziu uma taxonomia baseada em **Atributos (Attributes)** para categorizar os controles de segurança. Qual das seguintes alternativas apresenta um exemplo correto de atributo de controle relacionado às **Propriedades de Segurança da Informação (Information Security Properties)**?
+A) Preventivo, Detectivo, Corretivo.
+B) Identificar, Proteger, Detectar.
+C) Confidencialidade, Integridade, Disponibilidade.
+D) Governança, Gestão, Auditoria.
+E) Engenharia de Requisitos, Modelagem, Testes.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O atributo "Propriedades de Segurança da Informação" mapeia quais pilares da tríade de segurança o controle ajuda a preservar: **Confidencialidade**, **Integridade** e/ou **Disponibilidade**.
+</details>
+
+---
+
+### Questão 21 (FCC - Sabesp - TI)
+De acordo com os atributos introduzidos na ISO/IEC 27002:2022, o atributo **Tipo de Controle (Control Type)** classifica os controles sob a perspectiva de *quando* e *como* o controle afeta o risco de segurança. As classificações possíveis sob este atributo são:
+A) Físico, Lógico e Humano.
+B) Identificar, Proteger, Detectar, Responder e Recuperar.
+C) Preventivo, Detectivo e Corretivo.
+D) Operacional, Tático e Estratégico.
+E) Baixo, Médio e Alto.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O atributo **Tipo de Controle** possui exatamente os valores **Preventivo** (evita a ocorrência), **Detectivo** (identifica a ocorrência) e **Corretivo** (restabelece após ocorrência).
+</details>
+
+---
+
+### Questão 22 (FCC - TRT 15ª Região - Analista)
+Em relação aos atributos de controles da ISO/IEC 27002:2022, o atributo de **Conceitos de Cibersegurança (Cybersecurity Concepts)** alinha-se ao framework NIST. Os valores que este atributo pode assumir são:
+A) Confidencialidade, Integridade e Disponibilidade.
+B) Identificar (Identify), Proteger (Protect), Detectar (Detect), Responder (Respond) e Recuperar (Recover).
+C) Autenticidade, Não Repúdio e Legalidade.
+D) Planejar, Executar, Verificar e Agir.
+E) Interno, Externo, Misto e Regulatório.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Os valores do atributo **Conceitos de Cibersegurança** seguem a classificação do framework de cibersegurança NIST: **Identify**, **Protect**, **Detect**, **Respond** e **Recover**.
+</details>
+
+---
+
+### Questão 23 (FCC - TRT 20ª Região - TI)
+O controle da ISO/IEC 27002:2022 denominado *"Gerenciamento de direitos de acesso (Access rights)"* estabelece que a concessão e a modificação de direitos de acesso a ativos e sistemas devem ser baseadas em políticas rígidas. O princípio que fundamenta a concessão do menor nível de privilégios necessários para o trabalho de um usuário é o princípio do:
+A) Privilégio Máximo Controlado.
+B) Segregação de Funções Compartilhadas.
+C) Menor Privilégio (Need-to-know / Least Privilege).
+D) Bloqueio de Login Automático.
+E) Compartilhamento de Credenciais Administrativas.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O princípio do **Menor Privilégio** determina que o usuário deve ter acesso estritamente necessário para exercer suas funções funcionais de negócio, limitando o impacto em caso de vazamento de credenciais.
+</details>
+
+---
+
+### Questão 24 (FCC - TRT 6ª Região - TI)
+Na ISO/IEC 27002:2022, o controle *"Segurança em redes (Security of network services)"* recomenda a segregação de redes físicas e lógicas corporativas. A tecnologia de redes locais virtuais comumente empregada para criar esta separação lógica de tráfego é a:
+A) VPN.
+B) VLAN (Virtual Local Area Network).
+C) NAT.
+D) DHCP Snooping.
+E) DNSSEC.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** **VLANs** segregam logicamente as redes locais em domínios de broadcast distintos na Camada 2, isolando grupos de trabalho diferentes (ex: rede de visitantes isolada da rede de servidores internos do Tribunal).
+</details>
+
+---
+
+### Questão 25 (FCC - ARTESP - Especialista)
+O controle *"Cópia de segurança (Backup)"* é um item crítico classificado na ISO/IEC 27002:2022 no tema:
+A) Controles Organizacionais.
+B) Controles Físicos.
+C) Controles de Pessoas.
+D) Controles Tecnológicos.
+E) Controles Administrativos de Backup.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** O backup de informações, softwares e sistemas lógicos é executado via rotinas de software e armazenamento digital de dados, classificando-se no tema **Controles Tecnológicos**.
+</details>
+
+---
+
+### Questão 26 (FCC - MPE-RS - Analista)
+Em relação à quantidade total de controles descritos no corpo da norma, a ISO/IEC 27002 na versão de 2022 reduziu a quantidade de itens em relação à versão anterior (2013). Os números de controles em cada versão são, respectivamente:
+A) 114 controles (2013) e 93 controles (2022).
+B) 93 controles (2013) e 114 controles (2022).
+C) 133 controles (2013) e 93 controles (2022).
+D) 114 controles (2013) e 114 controles (2022).
+E) 150 controles (2013) e 100 controles (2022).
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** A versão de 2013 possuía 114 controles divididos em 14 seções (A.5 a A.18). A versão de 2022 consolidou vários controles obsoletos ou redundantes, reduzindo o número total para **93 controles** agrupados em 4 temas.
+</details>
+
+---
+
+### Questão 27 (FCC - TRF 3ª Região - Analista)
+O controle *"Gestão de ativos (Inventory of information and other associated assets)"*, que visa identificar ativos de informação da organização para garantir sua proteção apropriada, é classificado como um:
+A) Controle Físico.
+B) Controle de Pessoas.
+C) Controle Organizacional.
+D) Controle Tecnológico.
+E) Controle de Infraestrutura Passiva.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A gestão e o inventário de ativos constituem regras de processo interno e organização administrativa da segurança da informação, sendo classificados no tema **Controles Organizacionais** (Controle 5.9).
+</details>
+
+---
+
+### Questão 28 (FCC - Sabesp - TI)
+Sob a ótica do controle de *"Criptografia"* (ISO 27002:2022), o gerenciamento correto do ciclo de vida das chaves criptográficas (geração, distribuição, armazenamento e revogação) é um requisito essencial. A disciplina de gestão dessas chaves lógicas é conhecida como:
+A) Hashing Simétrico.
+B) Gestão de Chaves (Key Management).
+C) Assinatura Digital Privada.
+D) Certificação SSL Unilateral.
+E) Salting de Senhas.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O controle 8.24 (Uso de Criptografia) destaca que o uso eficaz exige uma política robusta de **Key Management** (Gestão de Chaves) para evitar que chaves de criptografia sejam perdidas ou vazadas.
+</details>
+
+---
+
+### Questão 29 (FCC - TRT 9ª Região - Tecnologia da Informação)
+Qual dos seguintes controles da ISO/IEC 27002:2022 é classificado no tema de **Controles Físicos**?
+A) Engenharia social.
+B) Segurança em redes.
+C) Monitoramento de segurança física (Physical security monitoring).
+D) Triagem de pessoal.
+E) Propriedade intelectual.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O monitoramento de segurança física (ex: câmeras de CFTV, alarmes de invasão em perímetros) lida com proteção física corporativa, inserindo-se no tema **Controles Físicos**.
+</details>
+
+---
+
+### Questão 30 (FCC - TRT 15ª Região - Analista)
+No atributo "Capacidades Operacionais (Operational Capabilities)" introduzido na ISO/IEC 27002:2022, o controle *"Segurança de código-fonte (Application security)"* refere-se à capacidade operacional de:
+A) Governança de TI.
+B) Segurança física e ambiental.
+C) Segurança de aplicações (Application security).
+D) Defesa contra engenharia de computadores.
+E) Gestão de vulnerabilidades técnicas corporativas.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A capacidade operacional de **Segurança de Aplicações (Application Security)** agrupa os controles relacionados à codificação segura, testes de software e validação de código de sistemas em produção.
+</details>
+
+---
+
+## 📝 TEMA 3: Raciocínio Lógico-Matemático — Tabelas-Verdade e Negações Lógicas
+
+### Questão 31 (FCC - TRT 23ª Região - Analista - TI)
+Uma proposição composta é considerada uma **Tautologia** quando seu valor lógico na tabela-verdade completa:
+A) É sempre Falso (F) para qualquer combinação de valores das proposições simples.
+B) É sempre Verdadeiro (V) para qualquer combinação de valores das proposições simples.
+C) Depende da verdade histórica de fatos empíricos.
+D) É alternado entre Verdadeiro e Falso de acordo com a ordem alfabética das proposições.
+E) Possui a metade das linhas Verdadeiras e a outra metade Falsas.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Uma **Tautologia** é uma proposição composta cujo valor lógico final é sempre Verdadeiro (V), independentemente dos valores lógicos das proposições simples que a compõem. (Contradição é sempre F, e Contingência possui valores V e F).
+</details>
+
+---
+
+### Questão 32 (FCC - TRT 14ª Região - Analista)
+Considere a proposição composta: *"O switch está queimado e o cabo óptico está rompido."*
+A negação lógica correta dessa proposição, de acordo com as Leis de De Morgan, é:
+A) O switch não está queimado e o cabo óptico não está rompido.
+B) O switch não está queimado ou o cabo óptico não está rompido.
+C) Se o switch não está queimado, então o cabo óptico está rompido.
+D) O switch está queimado se e somente se o cabo óptico estiver rompido.
+E) O switch não está queimado ou o cabo óptico está rompido.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Primeira Lei de De Morgan: $\sim(p \land q) \equiv \sim p \lor \sim q$.
+- Negamos a primeira: *"O switch não está queimado"*
+- Trocamos o "e" pelo "ou" ($\lor$)
+- Negamos a segunda: *"o cabo óptico não está rompido"*
+</details>
+
+---
+
+### Questão 33 (FCC - TRF 3ª Região - Analista Judiciário)
+A negação lógica da proposição condicional *"Se o backup foi feito, então os dados estão protegidos"* é equivalente a:
+A) O backup foi feito ou os dados não estão protegidos.
+B) Se os dados não estão protegidos, então o backup não foi feito.
+C) O backup foi feito e os dados não estão protegidos.
+D) O backup não foi feito e os dados não estão protegidos.
+E) Se o backup não foi feito, então os dados não estão protegidos.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A negação da condicional é dada pela regra $\sim(p \rightarrow q) \equiv p \land \sim q$ (mantém a primeira parte **E** nega a segunda).
+- Primeira parte mantida: *"O backup foi feito"*
+- Conectivo: *"e"*
+- Segunda parte negada: *"os dados não estão protegidos"*
+</details>
+
+---
+
+### Questão 34 (FCC - Sabesp - Analista)
+Na lógica de proposições, qual das seguintes proposições compostas representa uma **Contradição** (sempre Falsa)?
+A) $p \lor \sim p$
+B) $p \rightarrow \sim p$
+C) $p \land \sim p$
+D) $\sim(\sim p)$
+E) $p \leftrightarrow p$
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A proposição $p \land \sim p$ exige que $p$ e sua negação sejam verdadeiros ao mesmo tempo. Na tabela-verdade:
+- Se $p$ é V: V $\land$ F = F.
+- Se $p$ é F: F $\land$ V = F.
+O resultado é sempre **Falso**, configurando uma contradição.
+</details>
+
+---
+
+### Questão 35 (FCC - Assembleia Legislativa - PB)
+A proposição composta $P \rightarrow Q$ ("Se $P$, então $Q$") é logicamente equivalente a:
+A) $\sim P \rightarrow \sim Q$
+B) $\sim Q \rightarrow \sim P$
+C) $Q \rightarrow P$
+D) $P \land \sim Q$
+E) $\sim(P \lor Q)$
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Equivalência clássica da condicional (Equivalência por Contrapositiva): $P \rightarrow Q \equiv \sim Q \rightarrow \sim P$ (inverte as proposições negando ambas).
+</details>
+
+---
+
+### Questão 36 (FCC - PGE-CE - Analista)
+Outra equivalência lógica extremamente cobrada para a condicional $p \rightarrow q$ (conhecida como equivalência disjuntiva) é dada por:
+A) $\sim p \land q$
+B) $\sim p \lor q$
+C) $p \lor \sim q$
+D) $\sim(p \rightarrow \sim q)$
+E) $p \land q$
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A equivalência disjuntiva da condicional é: $p \rightarrow q \equiv \sim p \lor q$ (nega a primeira parte **OU** mantém a segunda).
+</details>
+
+---
+
+### Questão 37 (FCC - TRT 15ª Região - Analista)
+A negação lógica da proposição disjuntiva *"Estudo banco de dados ou pratico programação"* é dada por:
+A) Não estudo banco de dados e não pratico programação.
+B) Não estudo banco de dados ou não pratico programação.
+C) Se não estudo banco de dados, então pratico programação.
+D) Estudo banco de dados se e somente se praticar programação.
+E) Estudo banco de dados e não pratico programação.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** Segunda Lei de De Morgan: $\sim(p \lor q) \equiv \sim p \land \sim q$.
+- Negamos a primeira: *"Não estudo banco de dados"*
+- Conectivo: *"e"*
+- Negamos a segunda: *"não pratico programação"*
+</details>
+
+---
+
+### Questão 38 (FCC - TRT 6ª Região - TI)
+Considere as colunas da tabela-verdade das proposições simples $P$ e $Q$. A proposição composta representada pela coluna resultante da operação $(P \land Q) \rightarrow P$ é classificada como:
+A) Contradição.
+B) Contingência.
+C) Tautologia.
+D) Sentença Aberta Nula.
+E) Proposição Simples Falsa.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** Montando a tabela-verdade:
+| P | Q | P ∧ Q | (P ∧ Q) ➔ P |
+|---|---|---|---|
+| V | V | V | V ➔ V = **V** |
+| V | F | F | F ➔ V = **V** |
+| F | V | F | F ➔ F = **V** |
+| F | F | F | F ➔ F = **V** |
+Todas as linhas resultam em Verdadeiro (V), sendo uma **Tautologia**.
+</details>
+
+---
+
+### Questão 39 (FCC - ARTESP - Especialista)
+A negação de *"Se João passar no concurso do TJ-CE, então ele comprará um carro e viajará para a Europa"* é:
+A) Se João não passar no concurso do TJ-CE, então ele não comprará um carro ou não viajará para a Europa.
+B) João passará no concurso do TJ-CE e ele não comprará um carro ou não viajará para a Europa.
+C) João não passará no concurso do TJ-CE e ele comprará um carro ou viajará para a Europa.
+D) João passará no concurso do TJ-CE e ele comprará um carro e viajará para a Europa.
+E) João não passará no concurso do TJ-CE ou ele não comprará um carro e viajará para a Europa.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** 
+- Queremos negar a estrutura $A \rightarrow (B \land C)$.
+- A negação de condicional é $A \land \sim(B \land C)$.
+- Pela Lei de De Morgan, a negação de $B \land C$ é $\sim B \lor \sim C$.
+- Unindo tudo: $A \land (\sim B \lor \sim C)$ ➔ *"João passará no concurso do TJ-CE E ele não comprará um carro OU não viajará para a Europa"*.
+</details>
+
+---
+
+### Questão 40 (FCC - MPE-RS - Analista)
+Qual das seguintes proposições compostas é uma **Contingência**?
+A) $A \lor \sim A$
+B) $A \land \sim A$
+C) $A \rightarrow (A \lor B)$
+D) $A \land B$
+E) $(A \land \sim A) \rightarrow B$
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** Contingência é uma proposição que possui pelo menos uma linha verdadeira e uma falsa em sua tabela-verdade. A proposição $A \land B$ assume V se ambos forem V, e F nas demais situações.
+- A e C são tautologias.
+- B é contradição.
+- E é tautologia (antecedente falso implica condicional sempre verdadeira).
+</details>
+
+---
+
+### Questão 41 (FCC - TRT 20ª Região - TI)
+A negação lógica de *"Nenhum servidor do tribunal é incompetente"* é equivalente a:
+A) Todos os servidores do tribunal são incompetentes.
+B) Algum servidor do tribunal é incompetente.
+C) Nenhum servidor do tribunal é competente.
+D) Algum servidor do tribunal não é competente.
+E) Pelo menos um servidor do tribunal é competente.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A negação do quantificador universal negativo *"Nenhum A é B"* é o quantificador existencial *"Algum A é B"* (ou *"Pelo menos um A é B"*).
+- Negação de *"Nenhum servidor é incompetente"* ➔ *"Algum servidor é incompetente"*.
+</details>
+
+---
+
+### Questão 42 (FCC - Sabesp - Analista de Sistemas)
+A negação lógica de *"Todo programador é focado"* é dada por:
+A) Nenhum programador é focado.
+B) Todo programador é desfocado.
+C) Pelo menos um programador não é focado.
+D) Algum programador é focado.
+E) Nenhum programador é desfocado.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A negação do quantificador universal afirmativo *"Todo A é B"* exige apenas um contraexemplo, isto é: *"Algum A não é B"* (ou *"Pelo menos um A não é B"*).
+</details>
+
+---
+
+### Questão 43 (FCC - TRT 9ª Região - TI)
+A proposição composta $P \leftrightarrow Q$ ("P se e somente se Q") é logicamente equivalente a:
+A) $(P \rightarrow Q) \lor (Q \rightarrow P)$
+B) $(P \rightarrow Q) \land (Q \rightarrow P)$
+C) $(P \land Q) \lor (\sim P \land \sim Q)$
+D) Ambas as opções B e C estão corretas.
+E) Nenhuma das alternativas.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** A bicondicional $P \leftrightarrow Q$ indica uma dupla condicional: $(P \rightarrow Q) \land (Q \rightarrow P)$ (opção B).
+Também é verdadeira quando ambos têm o mesmo valor lógico, isto é: $(P \land Q) \lor (\sim P \land \sim Q)$ (opção C). Como ambas as opções estão corretas, o gabarito é D.
+</details>
+
+---
+
+### Questão 44 (FCC - TRT 15ª Região - Analista)
+Considere a afirmação: *"Se a chave de segurança é alterada, o acesso remoto é bloqueado."* Uma afirmação equivalente à condicional apresentada é:
+A) Se o acesso remoto é bloqueado, a chave de segurança é alterada.
+B) Se o acesso remoto não é bloqueado, a chave de segurança não é alterada.
+C) A chave de segurança não é alterada e o acesso remoto é bloqueado.
+D) Se a chave de segurança não é alterada, o acesso remoto não é bloqueado.
+E) A chave de segurança é alterada ou o acesso remoto é bloqueado.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Aplicando a equivalência contrapositiva de $p \rightarrow q$, que é $\sim q \rightarrow \sim p$:
+- Negamos o consequente: *"Se o acesso remoto NÃO é bloqueado"*
+- Conectivo: *"então"*
+- Negamos o antecedente: *"a chave de segurança NÃO é alterada"*
+</details>
+
+---
+
+### Questão 45 (FCC - Sabesp - TI)
+Qual a negação lógica da proposição composta *"Se João joga futebol, então Maria joga vôlei e Carlos não joga basquete"*?
+A) João joga futebol e Maria não joga vôlei ou Carlos joga basquete.
+B) Se João não joga futebol, então Maria não joga vôlei e Carlos joga basquete.
+C) João não joga futebol e Maria joga vôlei e Carlos não joga basquete.
+D) João joga futebol ou Maria não joga vôlei e Carlos joga basquete.
+E) João não joga futebol ou Maria não joga vôlei ou Carlos joga basquete.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** 
+- Estrutura: $p \rightarrow (q \land \sim r)$.
+- Negação: $p \land \sim(q \land \sim r)$.
+- Pelo De Morgan: $\sim(q \land \sim r) \equiv \sim q \lor r$.
+- Sentença final: $p \land (\sim q \lor r)$ ➔ *"João joga futebol E Maria NÃO joga vôlei OU Carlos joga basquete"*.
+</details>
+
+
+---
+
+
+# Quarta-feira 20/05
+
+
+Este arquivo contém 45 questões da banca FCC (15 por tema estudado) com gabarito comentado ocultável.
+
+---
+
+## 📝 TEMA 1: Governança de TI — COBIT 2019
+
+### Questão 1 (FCC - TRT 11ª Região - Analista Judiciário - TI)
+No modelo de referência do framework COBIT 2019, as atribuições de Governança de TI e de Gestão de TI são mantidas separadas e distintas. A Governança compreende atividades de alta direção voltadas a:
+A) Planejar, construir, executar e monitorar soluções de TI corporativas.
+B) Avaliar as necessidades dos stakeholders, direcionar decisões estratégicas e monitorar o desempenho e conformidade da TI (EDM).
+C) Configurar a infraestrutura de rede, roteadores e servidores locais de arquivos.
+D) Gerenciar a equipe de suporte (Service Desk) e solucionar incidentes operacionais.
+E) Conduzir auditorias de segurança cibernética de código e testar softwares.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O COBIT 2019 separa rigidamente:
+- **Governança (EDM):** Avaliar (Evaluate), Direcionar (Direct) e Monitorar (Monitor). Realizada pela alta administração (Board).
+- **Gestão:** Planejar (Plan), Construir (Build), Executar (Run) e Monitorar (Monitor). Realizada pela gerência executiva (domínios APO, BAI, DSS, MEA).
+</details>
+
+---
+
+### Questão 2 (FCC - TRT 24ª Região - Analista)
+Considere os domínios do modelo core do COBIT 2019. O domínio da área de **Gestão** que se concentra primordialmente na entrega operacional de serviços de TI, operações físicas e suporte técnico ao usuário é o:
+A) EDM (Avaliar, Direcionar e Monitorar).
+B) APO (Alinhar, Planejar e Organizar).
+C) BAI (Construir, Adquirir e Implementar).
+D) DSS (Entregar, Servir e Suportar).
+E) MEA (Monitorar, Avaliar e Medir).
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** O domínio **DSS (Deliver, Service and Support)** gerencia a operação diária da infraestrutura e o suporte físico de serviços de TI aos usuários finais corporativos.
+</details>
+
+---
+
+### Questão 3 (FCC - TRF 3ª Região - Analista)
+O modelo conceitual do COBIT 2019 (Core Model) define, ao todo, quantos Objetivos de Governança e Gestão organizados em seus domínios padrão?
+A) 40 objetivos.
+B) 37 objetivos.
+C) 14 objetivos.
+D) 5 objetivos.
+E) 114 objetivos.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** O COBIT 2019 Core Model possui exatamente **40 objetivos de governança e gestão** (5 no EDM, 14 no APO, 11 no BAI, 6 no DSS e 4 no MEA).
+</details>
+
+---
+
+### Questão 4 (FCC - Sabesp - Analista)
+O COBIT 2019 diferencia princípios que orientam o **sistema de governança** daqueles que regem a **estrutura de governança**. Qual das alternativas apresenta um princípio aplicável estritamente a um **Sistema de Governança**?
+A) Aberto e Flexível.
+B) Baseado em um Modelo Conceitual.
+C) Alinhado com os Principais Padrões globais.
+D) Sistema de Governança Dinâmico.
+E) Baseado em Gerenciamento Ágil e Scrum.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** 
+- Princípios para um **Sistema de Governança** (6 itens): Prover valor, Holístico, Dinâmico, Distinto da gestão, Adaptado, De ponta a ponta.
+- Princípios para uma **Estrutura de Governança** (3 itens): Baseada em modelo conceitual, Aberta e flexível, Alinhada com padrões.
+</details>
+
+---
+
+### Questão 5 (FCC - Assembleia Legislativa - PB)
+Os parâmetros organizacionais que influenciam o projeto de um sistema de governança de TI adaptado à realidade de cada empresa (como estratégia corporativa, perfil de risco, cenário de ameaças e tamanho da organização) são denominados pelo COBIT 2019 como:
+A) Componentes Organizacionais.
+B) Áreas de Foco (Focus Areas).
+C) Fatores de Design (Design Factors).
+D) Níveis de Maturidade Organizacional.
+E) Diretrizes de TI Integradas.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** Os **Fatores de Design (11 fatores no total)** são parâmetros customizadores que permitem calibrar o modelo padrão do COBIT para as necessidades operacionais e estratégicas específicas de cada instituição.
+</details>
+
+---
+
+### Questão 6 (FCC - PGE-CE - Analista)
+Assinale a alternativa que apresenta um item que **não** constitui um dos 11 Fatores de Design descritos oficialmente no framework COBIT 2019:
+A) Requisitos de Conformidade.
+B) Papel da TI para o negócio.
+C) Modelo de Fornecimento de TI (Cloud vs On-premise).
+D) Linguagem de Programação Utilizada para Codificação (Java vs C#).
+E) Cenário de Ameaças externas.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** A linguagem de programação utilizada pela engenharia de software é um detalhe de nível puramente técnico que não consta da taxonomia estratégica dos 11 Fatores de Design do COBIT.
+</details>
+
+---
+
+### Questão 7 (FCC - TRT 15ª Região - Analista)
+No COBIT 2019, a descrição de tópicos ou domínios de governança específicos que podem requerer customizações adicionais do Core Model (por exemplo, segurança cibernética, DevOps ou atendimento a pequenas empresas) define o conceito de:
+A) Componentes do Sistema.
+B) Áreas de Foco (Focus Areas).
+C) Fatores de Design Tecnológicos.
+D) Níveis de Capacidade SPICE.
+E) Objetivos do domínio MEA.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** **Áreas de Foco (Focus Areas)** descrevem temas específicos de interesse prático que podem ser adicionados ao modelo de governança de TI. Diferenciam-se dos Fatores de Design, que são variáveis de entrada para personalização geral.
+</details>
+
+---
+
+### Questão 8 (FCC - TRT 6ª Região - TI)
+O COBIT 2019 mede a capacidade individual de cada um de seus processos por meio do CPM (Capability Process Model), alinhado com o padrão internacional ISO/IEC 15504. A escala de capacidade do CPM varia de:
+A) 1 a 5.
+B) 0 a 5.
+C) 0 a 10.
+D) 1 a 3.
+E) A a E.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A escala de capacidade de processo do COBIT 2019 varia de **0** (Incompleto) a **5** (Otimizado), baseando-se no padrão SPICE e CMMI.
+</details>
+
+---
+
+### Questão 9 (FCC - ARTESP - Especialista)
+No CPM (Modelo de Capacidade de Processo) do COBIT 2019, um processo cuja execução é documentada e estruturada segundo os padrões corporativos previamente estabelecidos da organização é classificado no nível de capacidade:
+A) Nível 1 — Executado.
+B) Nível 2 — Gerenciado.
+C) Nível 3 — Estabelecido.
+D) Nível 4 — Previsível.
+E) Nível 5 — Otimizado.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** 
+- Nível 2 (Gerenciado): O processo é planejado, monitorado e ajustado dentro de uma área.
+- Nível 3 (Estabelecido): O processo utiliza os **padrões formais definidos para toda a organização**.
+</details>
+
+---
+
+### Questão 10 (FCC - MPE-RS - Analista)
+Um dos 6 princípios do **Sistema de Governança** do COBIT 2019 determina que o sistema não deve tratar apenas a função ou o departamento de TI de forma isolada, mas sim considerar a informação e tecnologia de forma integrada e corporativa em toda a instituição. Este princípio é o:
+A) Adaptado às Necessidades da Organização.
+B) Sistema de Governança de Ponta a Ponta (End-to-End).
+C) Prover Valor aos Stakeholders.
+D) Abordagem Holística.
+E) Alinhamento de Padrões.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O princípio de **Ponta a Ponta (End-to-End)** exige que o sistema de governança de I&T cubra todas as funções e processos de negócio de toda a corporação onde dados e tecnologias são processados.
+</details>
+
+---
+
+### Questão 11 (FCC - TRT 20ª Região - TI)
+No CPM do COBIT 2019, a principal característica que diferencia um processo no **Nível 4 (Previsível)** daquele no **Nível 5 (Otimizado)** é:
+A) O uso de programação orientada a objetos no nível 5.
+B) O processo de auditoria externa obrigatória no nível 4.
+C) No nível 4, o processo é controlado de forma quantitativa com métricas estatísticas; no nível 5, o foco está na melhoria contínua a partir de inovações tecnológicas e mudanças estruturais.
+D) O nível 5 não exige documentação formal por ser dinâmico.
+E) O nível 4 é restrito a empresas multinacionais.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** O **Nível 4 (Previsível/Gerenciado Quantitativamente)** foca na análise estatística de estabilidade do processo. O **Nível 5 (Otimizado)** utiliza a base estatística estabelecida no nível 4 para impulsionar a inovação tecnológica e melhorias preventivas contínuas.
+</details>
+
+---
+
+### Questão 12 (FCC - Sabesp - Analista de Sistemas)
+O COBIT 2019 define 7 categorias de **Componentes do Sistema de Governança** (antigamente denominados Habilitadores ou Enablers no COBIT 5) que interagem para criar a governança. A alternativa que apresenta um desses 7 componentes é:
+A) Story Points e Sprints de TI.
+B) Estruturas Organizacionais (Organizational Structures).
+C) Servidores de Banco de Dados na Nuvem.
+D) Linguagens de marcação de dados como JSON.
+E) Contratos de Outsourcing com fornecedores.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Os 7 componentes do COBIT 2019 são: Processos; **Estruturas organizacionais**; Princípios, políticas e estruturas; Fluxos de informação; Pessoas, habilidades e competências; Cultura, ética e comportamento; Serviços, infraestrutura e aplicativos.
+</details>
+
+---
+
+### Questão 13 (FCC - TRT 9ª Região - TI)
+A alta administração de um órgão judiciário precisa decidir qual a melhor ferramenta para governar a TI institucional. Diante dos padrões internacionais, a equipe de TI deve esclarecer que:
+A) O COBIT 2019 é incompatível com o ITIL v4 e ambos não podem coexistir.
+B) O COBIT atua como framework "guarda-chuva" de governança integradora (diz *o que* governar), alinhando-se com frameworks focados na gestão de serviços como o ITIL (que detalha *como* gerenciar).
+C) O COBIT deve ser implementado apenas se a organização não possuir PMBOK instalado.
+D) O COBIT 2019 é uma norma certificável que substitui a ISO/IEC 27001 para segurança.
+E) O COBIT 2019 foi extinto com o surgimento do manifesto ágil.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O COBIT 2019 é um framework integrador. Ele atua na camada estratégica mapeando diretrizes gerais de I&T que fazem referência e se integram com frameworks especialistas como ITIL, TOGAF, PMBOK e normas ISO.
+</details>
+
+---
+
+### Questão 14 (FCC - TRT 15ª Região - Analista)
+Em relação ao domínio **APO (Alinhar, Planejar e Organizar)** do COBIT 2019, qual o seu foco primário de gestão?
+A) Monitorar a conformidade interna e a aderência a leis.
+B) Definir a estratégia de TI, a arquitetura corporativa, gestão de recursos, inovação e estruturação da governança operacional.
+C) Desenvolver sistemas e realizar testes de integração de software.
+D) Atender chamados de suporte técnico do Service Desk.
+E) Tomar decisões de investimentos financeiros do Conselho de Administração.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O domínio **APO** abrange a parte tática e de planejamento da TI: definição de estratégia, arquitetura organizacional, gestão do portfólio, inovação, orçamento, riscos, recursos humanos e relacionamento com clientes internos.
+</details>
+
+---
+
+### Questão 15 (FCC - Sabesp - TI)
+Considere as novidades e melhorias do COBIT 2019 em comparação com a versão do COBIT 5. Assinale a afirmação correta sobre a evolução metodológica:
+A) O COBIT 2019 reduziu a quantidade de processos de 37 para 15 objetivos lógicos.
+B) O COBIT 2019 introduziu os Fatores de Design e atualizou o modelo de capacidade para se alinhar ao CMMI, substituindo a escala ISO 15504 pura adotada anteriormente.
+C) O COBIT 2019 extinguiu o domínio EDM.
+D) O COBIT 2019 tornou-se focado exclusivamente no gerenciamento de hardware local.
+E) A versão de 2019 removeu os princípios do sistema de governança.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A grande evolução do COBIT 2019 em relação ao COBIT 5 foi a introdução formal de guias e ferramentas de design baseados nos **Fatores de Design** para customização, e a adequação do modelo de capacidade de processo (CPM) ao padrão global CMMI.
+</details>
+
+---
+
+## 📝 TEMA 2: Engenharia de Software — Kanban
+
+### Questão 16 (FCC - TRT 11ª Região - Analista Judiciário - TI)
+O método Kanban, estruturado por David J. Anderson para o desenvolvimento de software e trabalho de conhecimento, fundamenta-se em princípios de gestão de mudança evolucionária. Qual das alternativas apresenta um desses **Princípios de Gestão de Mudança**?
+A) Exigir a demissão imediata de gerentes de projetos obsoletos para iniciar o fluxo.
+B) Começar com o que você faz hoje, respeitando papéis, responsabilidades e cargos existentes.
+C) Definir timeboxes fixos e inflexíveis de duas semanas para todas as entregas do fluxo.
+D) Criar novos papéis obrigatórios na equipe, como Kanban Master e Product Owner.
+E) Proibir reuniões de equipe diárias para manter o foco na codificação pura.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O Kanban respeita a estrutura atual da empresa para evitar resistências traumáticas. Seu primeiro princípio de gestão de mudança é: **"Comece com o que você faz hoje"** (respeitando papéis, responsabilidades e títulos atuais e promovendo a melhoria evolucionária gradual).
+</details>
+
+---
+
+### Questão 17 (FCC - TRT 24ª Região - Analista)
+O Kanban estabelece 6 práticas gerais essenciais para gerenciar e otimizar o fluxo de trabalho. A prática que consiste em estipular limites quantitativos máximos de tarefas permitidas em cada coluna do quadro visual, com o objetivo de evitar a multitarefa e expor gargalos de processo, é denominada:
+A) Tornar as Políticas Explícitas.
+B) Limitar o Trabalho em Progresso (Limit WIP).
+C) Gerenciar o Fluxo.
+D) Implementar Ciclos de Feedback (Cadências).
+E) Visualizar o Fluxo de Valor.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A prática de **Limitar o WIP (Work in Progress)** impede a sobrecarga de tarefas na equipe, forçando a finalização de itens antigos antes de puxar novos (conceito de sistema puxado: *"pare de começar, comece a terminar"*).
+</details>
+
+---
+
+### Questão 18 (FCC - TRF 3ª Região - Analista)
+Em relação às métricas de tempo de fluxo utilizadas no Kanban, considere a diferença conceitual entre **Lead Time** e **Cycle Time**. A alternativa que descreve corretamente esses tempos sob a ótica do método é:
+A) O Lead Time é o tempo em que a tarefa fica parada na fila; o Cycle Time é a soma de todos os Lead Times da Sprint.
+B) O Lead Time mede o tempo total desde o pedido do cliente até a entrega final; o Cycle Time mede o tempo que a equipe gasta trabalhando ativamente para produzir o item.
+C) O Cycle Time mede a experiência do cliente; o Lead Time mede a velocidade física do compilador de software.
+D) O Lead Time e o Cycle Time são rigorosamente idênticos em sistemas Kanban que adotam limites de WIP maiores que 50.
+E) O Lead Time começa a contar quando o desenvolvedor puxa a tarefa; o Cycle Time termina quando o código vai para homologação.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** 
+- **Lead Time:** Perspectiva do Cliente. Tempo decorrido entre a solicitação inicial e a entrega funcional pronta.
+- **Cycle Time:** Perspectiva do Processo Interno. Tempo gasto para processar a tarefa ativamente (desde que entra em execução até a conclusão).
+</details>
+
+---
+
+### Questão 19 (FCC - Sabesp - Analista)
+A Lei de Little, herdada matematicamente da teoria das filas e aplicada à gestão de fluxos de trabalho Kanban estáveis, relaciona o Trabalho em Progresso (WIP), a Vazão (Throughput) e o Lead Time médio do sistema. A fórmula que expressa essa correlação matemática é:
+A) $\text{Lead Time} = \text{WIP} \times \text{Throughput}$
+B) $\text{WIP} = \text{Throughput} \times \text{Lead Time}$
+C) $\text{Throughput} = \text{WIP} \times \text{Lead Time}$
+D) $\text{Lead Time} = \frac{\text{Throughput}}{\text{WIP}}$
+E) $\text{WIP} = \frac{\text{Throughput}}{\text{Lead Time}}$
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A **Lei de Little** define que em um sistema estável: $\text{WIP} = \text{Throughput} \times \text{Lead Time}$. 
+Logo, podemos encontrar o Lead Time médio dividindo o WIP médio pela Vazão média ($\text{Lead Time} = \frac{\text{WIP}}{\text{Throughput}}$).
+</details>
+
+---
+
+### Questão 20 (FCC - PGE-CE - Analista de Sistemas)
+Uma equipe de desenvolvimento do TJ-CE adota o Kanban e possui uma vazão (Throughput) estável de **5 tarefas prontas por semana**. Ao analisar o quadro visual, observou-se que o limite médio de trabalho em andamento (WIP) da coluna de desenvolvimento é de **15 tarefas**. Aplicando a Lei de Little, qual o Lead Time médio de entrega de uma nova tarefa iniciada pelo time?
+A) 75 semanas.
+B) 3 semanas.
+C) 0,33 semanas.
+D) 10 dias.
+E) 15 dias.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Aplicando a fórmula rearranjada da Lei de Little:
+$$\text{Lead Time} = \frac{\text{WIP}}{\text{Throughput}}$$
+$$\text{Lead Time} = \frac{15}{5} = 3 \text{ semanas}$$
+</details>
+
+---
+
+### Questão 21 (FCC - Sabesp - TI)
+No Kanban, as reuniões estruturadas para revisão de fluxo, alinhamento técnico e reabastecimento de backlog que ocorrem em cadências específicas são classificadas na prática geral de:
+A) Visualizar o Fluxo.
+B) Implementar Ciclos de Feedback (Feedback Loops).
+C) Limitar o Trabalho em Progresso.
+D) Tornar as Políticas Explícitas.
+E) Evoluir Colaborativamente com Métricas de TI.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O estabelecimento de reuniões com propósitos e frequências definidas (Cadências Kanban) refere-se à prática de **Implementar Ciclos de Feedback**, garantindo a inspeção e adaptação contínua do fluxo de valor.
+</details>
+
+---
+
+### Questão 22 (FCC - TRT 15ª Região - Analista)
+Considere a prática Kanban de **Tornar as Políticas Explícitas**. Um exemplo prático da aplicação desta regra em um projeto de desenvolvimento de software é:
+A) Manter a planilha de salários do time visível na parede do escritório.
+B) Definir e documentar claramente quais critérios técnicos devem ser cumpridos para que uma tarefa seja puxada da coluna "Desenvolvimento" para a coluna "Testes" (DoD parcial).
+C) Enviar relatórios de horas diárias para os gerentes seniores da diretoria de TI.
+D) Proibir o uso de fones de ouvido durante a jornada de trabalho.
+E) Permitir que qualquer membro altere o quadro de tarefas sem consultar o time.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Tornar as políticas explícitas significa definir as regras de negócio de operação do fluxo (ex: critérios de transição entre colunas, limites de WIP, regras de desvio para bugs urgentes) de modo que todos conheçam as regras do jogo.
+</details>
+
+---
+
+### Questão 23 (FCC - TRT 20ª Região - Analista Judiciário)
+O gráfico estatístico bidimensional de fluxo comumente utilizado em equipes Kanban para monitorar visualmente a estabilidade do sistema, mostrando o acúmulo de tarefas ao longo do tempo nas diferentes colunas do fluxo de trabalho é o:
+A) Gráfico de Burndown.
+B) Cumulative Flow Diagram (CFD - Diagrama de Fluxo Cumulativo).
+C) Gráfico de Gantt de Caminho Crítico.
+D) Gráfico de Pareto de Bugs.
+E) Histograma de Story Points por Desenvolvedor.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O **CFD (Cumulative Flow Diagram)** é o gráfico mais importante para o Kanban. Ele mostra visualmente o WIP (distância vertical entre curvas), o Lead Time (distância horizontal) e o Throughput (inclinação das retas), facilitando o diagnóstico de gargalos.
+</details>
+
+---
+
+### Questão 24 (FCC - TRT 6ª Região - TI)
+A equipe de engenharia de software de um tribunal deseja implementar um sistema Kanban. Para que o quadro de tarefas visualizado no painel seja considerado um **Sistema Kanban** legítimo, e não apenas um gerenciador visual comum (Task Board ou quadro de To-Do), é requisito obrigatório a presença de:
+A) Papéis ágeis formais como Scrum Master e Product Owner.
+B) Uso de estimativas de esforço baseadas em Story Points e sequência de Fibonacci.
+C) Limites formais de Trabalho em Progresso (WIP) nas colunas de execução ativa e operação de fluxo puxado.
+D) Sprints com timebox fixo de 2 a 4 semanas.
+E) Utilização obrigatória de um software comercial específico (como o Jira ou Trello).
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** Um sistema Kanban exige limites de WIP. Um quadro sem limites de WIP é apenas um quadro de tarefas visual (Task Board), que opera em um modelo empurrado de tarefas e não expõe gargalos de fluxo de forma dinâmica.
+</details>
+
+---
+
+### Questão 25 (FCC - ARTESP - Especialista)
+No Kanban, a quantidade de itens de trabalho (como bugs resolvidos, funcionalidades desenvolvidas ou chamados atendidos) entregues de forma completa e satisfatória pela equipe por unidade de tempo é denominada:
+A) Throughput (Vazão).
+B) Lead Time.
+C) Cycle Time.
+D) WIP.
+E) Velocity.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** O **Throughput (Vazão)** mede o ritmo de entrega da equipe (ex: 5 tarefas por semana, 2 deploys por dia), sendo essencial para previsibilidade estatística e aplicação da Lei de Little.
+</details>
+
+---
+
+## 📝 TEMA 3: Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)
+
+### Questão 26 (FCC - TRT 11ª Região - Analista Judiciário - TI)
+A Convenção da ONU sobre os Direitos das Pessoas com Deficiência e seu Protocolo Facultativo foram aprovados no Congresso Nacional brasileiro em conformidade com o rito do Artigo 5º, § 3º da Constituição Federal de 1988. Diante disso, no ordenamento jurídico pátrio, essa Convenção possui status hierárquico equivalente a:
+A) Lei Ordinária Federal.
+B) Lei Complementar Federal.
+C) Emenda Constitucional.
+D) Decreto Legislativo Autônomo.
+E) Medida Provisória Presidencial.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** Tratados internacionais sobre direitos humanos aprovados em dois turnos em cada casa do Congresso por 3/5 dos votos equivalem formalmente a **Emendas Constitucionais**, integrando o Bloco de Constitucionalidade.
+</details>
+
+---
+
+### Questão 27 (FCC - TRT 24ª Região - Analista)
+A Lei Federal nº 13.146/2015 (Estatuto da Pessoa com Deficiência ou LBI) estabelece em seu Artigo 2º o conceito social de deficiência, rompendo com o paradigma exclusivamente médico. De acordo com o texto da lei, considera-se pessoa com deficiência aquela que possui impedimento de:
+A) Curto prazo de natureza puramente física ou neurológica.
+B) Longo prazo de natureza física, mental, intelectual ou sensorial, o qual, em interação com uma ou mais barreiras, pode obstruir sua participação plena na sociedade.
+C) Caráter definitivo e visível a olho nu que a impossibilite de realizar qualquer atividade laboral.
+D) Natureza psicológica tratada sob internação psiquiátrica prolongada.
+E) Longo prazo de natureza financeira ou educacional que impeça o acesso ao mercado de TI.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O Art. 2º da LBI adota o modelo social de deficiência: *"impedimento de **longo prazo** de natureza **física, mental, intelectual ou sensorial**, o qual, em interação com uma ou mais **barreiras**, pode obstruir sua participação plena e efetiva na sociedade em igualdade de condições com as demais pessoas."*
+</details>
+
+---
+
+### Questão 28 (FCC - TRF 3ª Região - Analista)
+De acordo com o § 1º do Artigo 2º da Lei nº 13.146/2015, quando a avaliação da deficiência for necessária, ela será de caráter:
+A) Estritamente médico e pericial, realizada por médico do trabalho credenciado pelo INSS.
+B) Biopsicossocial, realizada por equipe multiprofissional e interdisciplinar.
+C) Clínico e psicológico, realizada em clínicas credenciadas de saúde mental.
+D) Assistencial e financeiro, realizada por assistentes sociais da prefeitura local.
+E) Judiciário, homologada por sentença em ação declaratória de interdição civil.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A LBI determina que a avaliação da deficiência, quando necessária, será **biopsicossocial**, realizada por equipe **multiprofissional e interdisciplinar**, considerando fatores biológicos, socioambientais, psicológicos e pessoais.
+</details>
+
+---
+
+### Questão 29 (FCC - Sabesp - Analista)
+Ao realizar a avaliação biopsicossocial da deficiência de um indivíduo, a equipe multiprofissional deve considerar, nos termos da Lei nº 13.146/2015, os seguintes elementos, exceto:
+A) Os impedimentos nas funções e nas estruturas do corpo.
+B) Os fatores socioambientais, psicológicos e pessoais.
+C) A limitação no desempenho de atividades corporais e a restrição de participação.
+D) A renda familiar per capita mensal e o nível de escolaridade formal da pessoa.
+E) Nenhuma das alternativas. Os itens A, B e C estão listados no Art. 2º.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** O Art. 2º, § 1º da LBI lista exatamente os itens A, B e C (impedimentos corporais, fatores socioambientais/psicológicos/pessoais, limitação de atividades e restrição de participação). Renda familiar e escolaridade não são parâmetros da avaliação biopsicossocial da deficiência.
+</details>
+
+---
+
+### Questão 30 (FCC - Assembleia Legislativa - PB)
+Considere as definições expressas no Artigo 3º da Lei nº 13.146/2015. A concepção de produtos, ambientes, programas e serviços a serem usados por todas as pessoas, na máxima extensão possível, sem necessidade de adaptação ou de projeto específico, é denominada:
+A) Tecnologia Assistiva.
+B) Desenho Universal.
+C) Acessibilidade Arquitetônica.
+D) Adaptação Razoável de Espaço.
+E) Mobiliário Urbano Inclusivo.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O **Desenho Universal (Universal Design)** visa a criação de produtos e ambientes que atendam a todos desde a sua concepção inicial, tornando a adaptação posterior uma exceção desnecessária.
+</details>
+
+---
+
+### Questão 31 (FCC - PGE-CE - Analista)
+Produtos, equipamentos, dispositivos, recursos, metodologias, estratégias, práticas e serviços que objetivam promover a funcionalidade, relacionada à atividade e à participação de pessoas com deficiência ou com mobilidade reduzida, visando à sua autonomia, independência, qualidade de vida e inclusão social são classificados pelo Artigo 3º da LBI como:
+A) Acessibilidade Pessoal.
+B) Tecnologia Assistiva ou Ajuda Técnica.
+C) Desenho Adaptado Especializado.
+D) Atendente Pessoal do Trabalho.
+E) Prótese Funcional Externa.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Trata-se da definição literal de **Tecnologia Assistiva (ou Ajuda Técnica)** descrita no Art. 3º, inciso III da Lei nº 13.146/2015.
+</details>
+
+---
+
+### Questão 32 (FCC - TRT 15ª Região - Analista)
+Um servidor do TJ-CE atua na fiscalização de acessibilidade predial. Ele constata que a calçada em frente ao prédio do tribunal não possui rampas de acesso e apresenta buracos que impedem a circulação de cadeirantes. Nos termos do Artigo 3º da LBI, os buracos e a falta de rampas na calçada externa constituem uma:
+A) Barreira Urbanística.
+B) Barreira Arquitetônica.
+C) Barreira nos Transportes.
+D) Barreira Atitudinal.
+E) Barreira Tecnológica.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** 
+- **Barreiras Urbanísticas:** Localizam-se nas vias públicas e espaços públicos/privados abertos ao público. (Como a calçada externa).
+- **Barreiras Arquitetônicas:** Localizam-se no interior dos edifícios.
+</details>
+
+---
+
+### Questão 33 (FCC - TRT 6ª Região - TI)
+No prédio do fórum judicial, a porta giratória com detector de metais na entrada principal bloqueia a cadeira de rodas e não há entrada alternativa acessível. Esta restrição física configura, nos termos do Artigo 3º da LBI, uma:
+A) Barreira Urbanística.
+B) Barreira Arquitetônica.
+C) Barreira Atitudinal.
+D) Barreira Tecnológica.
+E) Barreira nos Transportes.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Por se localizar na entrada/interior das instalações físicas de um edifício (público ou privado), o obstáculo é classificado como uma **Barreira Arquitetônica** (Art. 3º, inciso II, alínea b).
+</details>
+
+---
+
+### Questão 34 (FCC - ARTESP - Especialista)
+O portal da internet do TJ-CE foi atualizado, mas a nova versão não é compatível com leitores de tela e comandos de teclado utilizados por pessoas com deficiência visual. Conforme o Artigo 3º do Estatuto da PCD, essa barreira que impede o acesso de usuários a serviços de computadores e internet é classificada como:
+A) Barreira nas Comunicações e na Informação.
+B) Barreira Tecnológica.
+C) Barreira Urbanística Digital.
+D) Barreira Atitudinal Sistêmica.
+E) Barreira Arquitetônica Lógica.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** O Art. 3º, inciso II, alínea f, conceitua as **Barreiras Tecnológicas** como aquelas que dificultam ou impedem o acesso da pessoa com deficiência às tecnologias da informação e da comunicação (como sistemas web, aplicativos mobile, etc.).
+</details>
+
+---
+
+### Questão 35 (FCC - MPE-RS - Analista)
+Em uma audiência judicial, um servidor do tribunal demonstra impaciência e recusa-se a atender um cidadão com deficiência intelectual, alegando de forma pejorativa que ele *"não tem capacidade de compreender os termos jurídicos"*. De acordo com a classificação de barreiras da LBI, o comportamento preconceituoso do servidor representa uma:
+A) Barreira nas Comunicações.
+B) Barreira Atitudinal.
+C) Barreira Organizacional do Trabalho.
+D) Barreira Tecnológica Mental.
+E) Prática Discriminatória Dispensável.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** **Barreiras Atitudinais** (Art. 3º, inciso II, alínea e) são atitudes ou comportamentos que impeçam ou limitem a participação social da pessoa com deficiência em igualdade de condições com as demais pessoas, como o preconceito, estigmatização e subestimação.
+</details>
+
+---
+
+### Questão 36 (FCC - TRT 20ª Região - TI)
+Diferencie os conceitos de **Acompanhante** e **Atendente Pessoal** dispostos no Artigo 3º da Lei nº 13.146/2015. A alternativa correta é:
+A) Acompanhante é o profissional de saúde regulamentado (médico/enfermeiro); Atendente Pessoal é um familiar voluntário sem atribuições técnicas.
+B) Acompanhante é a pessoa que acompanha a PCD, podendo ou não desempenhar funções de atendente pessoal; Atendente Pessoal assiste a PCD em cuidados básicos diários, excluídas atividades de profissões regulamentadas.
+C) Ambos são termos perfeitamente idênticos e intercambiáveis de acordo com a LBI.
+D) O Atendente Pessoal deve ser obrigatoriamente um funcionário público contratado pelo município.
+E) O Acompanhante é a pessoa indicada pela equipe biopsicossocial médica para exercer a tutela legal da PCD.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Definições literais da LBI (Art. 3º, incisos XIII e XIV):
+- **Acompanhante:** Aquele que acompanha a pessoa com deficiência, podendo ou não desempenhar funções de atendente pessoal.
+- **Atendente Pessoal:** Pessoa que assiste ou presta cuidados diários (higiene, alimentação, etc.), excluindo-se as técnicas ou procedimentos de profissões legalmente regulamentadas (ex: serviços de enfermagem ou fisioterapia).
+</details>
+
+---
+
+### Questão 37 (FCC - Sabesp - Analista de Sistemas)
+A possibilidade e condição de alcance para utilização, com segurança e autonomia, de espaços, mobiliários, edificações, transportes, informação e comunicação, por pessoa com deficiência ou com mobilidade reduzida, define conceitualmente:
+A) Tecnologia Assistiva.
+B) Desenho Universal.
+C) Acessibilidade.
+D) Adaptação Razoável.
+E) Elemento de Urbanização.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** Trata-se da definição de **Acessibilidade** contida no Art. 3º, inciso I da Lei nº 13.146/2015.
+</details>
+
+---
+
+### Questão 38 (FCC - TRT 9ª Região - TI)
+No que se refere ao direito à igualdade e não discriminação disposto no Artigo 4º do Estatuto da PCD, considera-se discriminação em razão da deficiência:
+A) Qualquer distinção, restrição ou exclusão que tenha o propósito de impedir os direitos de PCD.
+B) A recusa em fornecer adaptações razoáveis e de fornecer tecnologias assistivas necessárias.
+C) Apenas atos de agressão física comprovados por laudo policial.
+D) As opções A e B estão corretas.
+E) Nenhuma das alternativas.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** Conforme o Art. 4º, § 1º da LBI: *"Considera-se discriminação em razão da deficiência toda forma de distinção, restrição ou exclusão, por ação ou omissão, que tenha o propósito ou o efeito de prejudicar, impedir ou anular o reconhecimento ou o exercício dos direitos [...] incluindo a recusa de adaptações razoáveis e de fornecimento de tecnologias assistivas."* Como A e B estão corretos, o gabarito é D.
+</details>
+
+---
+
+### Questão 39 (FCC - TRT 15ª Região - Analista)
+Em relação ao direito à moradia, o Estatuto da PCD (Art. 32) determina a reserva mínima de vagas para pessoas com deficiência em programas habitacionais públicos ou subsidiados por recursos públicos. Esse percentual mínimo de reserva de imóveis é de:
+A) 2%.
+B) 3%.
+C) 5%.
+D) 10%.
+E) 1%.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Conforme o Art. 32, § 1º, inciso I, da LBI: nos programas habitacionais, públicos ou subsidiados com recursos públicos, a pessoa com deficiência ou o seu responsável goza de prioridade na aquisição de imóvel para moradia própria, observado o seguinte: *"reserva de, no mínimo, **3% (três por cento)** das unidades habitacionais para pessoa com deficiência."*
+</details>
+
+---
+
+### Questão 40 (FCC - Sabesp - TI)
+De acordo com o Estatuto da Pessoa com Deficiência (Art. 34), a pessoa com deficiência tem direito ao trabalho de sua livre escolha e aceitação, em ambiente acessível e inclusivo. Nesse contexto, é vedada a discriminação em todas as etapas, exceto:
+A) No processo de recrutamento e seleção de candidatos.
+B) Nas condições de trabalho e de salário para funções idênticas.
+C) Na ascensão e promoção profissional dentro da empresa.
+D) Nenhuma das alternativas. A discriminação é proibida em todas as etapas e áreas sem exceção.
+E) No desligamento da empresa se o funcionário tiver menos de 1 ano de contrato.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+**Justificativa:** O Art. 34, § 1º estabelece expressamente a proibição de qualquer discriminação em relação à admissão, permanência, salário, ascensão ou qualquer aspecto do trabalho, garantindo igualdade plena de oportunidades.
+</details>
+
+---
+
+### Questão 41 (FCC - TRT 14ª Região - Tecnologia da Informação)
+Uma das prioridades estabelecidas pelo Estatuto da PCD (Art. 9º) garante a tramitação processual prioritária em processos judiciais e administrativos. Para usufruir desse direito, a pessoa com deficiência deve:
+A) Aguardar a avaliação biopsicossocial do perito do tribunal de justiça.
+B) Fazer requerimento formal à autoridade competente, munida de documento comprobatório de sua condição.
+C) Estar sob regime de curatela extraordinária homologada em juízo.
+D) Comprovar renda inferior a dois salários mínimos nacionais.
+E) Contratar obrigatoriamente um defensor público estadual.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** Conforme o Art. 9º, § 1º, a tramitação prioritária depende de requerimento do interessado acompanhado da prova de sua deficiência junto à autoridade judicial ou administrativa correspondente.
+</details>
+
+---
+
+### Questão 42 (FCC - TRT 3ª Região - Analista)
+Em relação ao direito à saúde disposto no Estatuto da PCD, é vedado às operadoras de planos e seguros privados de saúde cobrar valores diferenciados em suas mensalidades em razão da deficiência do beneficiário?
+A) Sim, é proibido por lei cobrar qualquer valor adicional ou franquia diferenciada por motivo de deficiência.
+B) Não, as operadoras podem cobrar adicionais desde que justificados por laudo médico do sinistro.
+C) A lei permite a cobrança apenas se a deficiência for congênita.
+D) É permitido cobrar valores adicionais de acompanhantes, mas não do beneficiário.
+E) A LBI é omissa sobre planos de saúde privados.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** O Art. 23 do Estatuto da PCD proíbe expressamente a cobrança de valores diferenciados de mensalidade, taxas de adesão ou franquias em planos de saúde privados sob alegação de deficiência do usuário.
+</details>
+
+---
+
+### Questão 43 (FCC - Sabesp - Analista)
+No tocante ao direito de acesso à justiça da pessoa com deficiência, a LBI determina que os órgãos do poder judiciário devem garantir a acessibilidade de suas instalações e também disponibilizar:
+A) Intérpretes de Libras e documentos judiciais em formatos acessíveis (como braile ou áudio).
+B) Defensores privados pagos integralmente pelo erário público do estado.
+C) Prédios exclusivos para julgamentos de processos de pessoas com deficiência.
+D) Isenção automática de todas as condenações penais aplicadas.
+E) Softwares de inteligência artificial que profiram sentenças automáticas.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+**Justificativa:** O acesso à justiça exige adaptações procedimentais, arquitetônicas e de comunicação, incluindo tradutores de Libras, braile, audiodescrição e outros formatos acessíveis para garantir a plena defesa.
+</details>
+
+---
+
+### Questão 44 (FCC - TRT 11ª Região - Analista)
+Qual das seguintes situações de preconceito caracteriza uma **Barreira Atitudinal** clássica de acordo com o Estatuto da PCD?
+A) Um prédio público do tribunal de justiça sem elevador para cadeirantes.
+B) Um ônibus do sistema público municipal de transporte com elevador quebrado.
+C) A crença de que uma pessoa com deficiência visual não é capaz de programar softwares complexos com eficiência, resultando na sua exclusão de entrevistas de emprego.
+D) Um portal institucional da web incompatível com leitores de tela de cegos.
+E) A ausência de tradutor de Libras em pronunciamentos públicos das autoridades estaduais.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+**Justificativa:** A crença preconceituosa que subestima as capacidades de uma pessoa com deficiência e gera sua exclusão social ou profissional é o exemplo mais comum de **Barreira Atitudinal** (ligada a comportamento e atitude humana).
+- A é arquitetônica.
+- B é de transporte.
+- D é tecnológica.
+- E é de comunicação.
+</details>
+
+---
+
+### Questão 45 (FCC - Sabesp - TI)
+A NBR 9050 é a norma técnica da ABNT que estabelece critérios e parâmetros técnicos a serem observados quanto ao projeto, construção, instalação e adaptação do meio urbano e edifícios às condições de acessibilidade. A LBI determina que a observância das normas técnicas de acessibilidade da ABNT nas edificações públicas e privadas de uso coletivo é:
+A) Opcional para prédios com menos de cinco andares de altura.
+B) Obrigatória para todas as edificações novas e reformas prediais corporativas.
+C) Exigida apenas para prédios federais localizados na capital do país.
+D) Restrita a residências particulares unifamiliares.
+E) Recomendada, mas sem força de sanção legal em caso de descumprimento.
+
+<details>
+<summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+**Justificativa:** A LBI e os decretos de acessibilidade federais determinam a **obrigatoriedade** absoluta de seguir os parâmetros técnicos de acessibilidade (como a NBR 9050) em todas as fases de projetos, construções e reformas de prédios públicos e coletivos privados.
+</details>
+
+
+---
