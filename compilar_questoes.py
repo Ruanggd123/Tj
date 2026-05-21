@@ -7,17 +7,32 @@ def compile_questions():
     workspace_dir = r"c:\Users\Ruan Gomes\Downloads\TJC"
     questoes_dir = os.path.join(workspace_dir, "03_Baterias_Questoes_FCC")
     
-    files = [
-        "dia_16_05_questoes.md",
-        "dia_17_05_questoes.md",
-        "dia_18_05_questoes.md",
-        "dia_19_05_questoes.md",
-        "dia_20_05_questoes.md"
-    ]
+    # Encontrar e ordenar os arquivos de questões dinamicamente
+    pattern = re.compile(r"^dia_(\d{2})_(\d{2})_questoes\.md$")
+    found_files = []
+    for filename in os.listdir(questoes_dir):
+        m = pattern.match(filename)
+        if m:
+            day = int(m.group(1))
+            month = int(m.group(2))
+            found_files.append((day, month, filename))
+            
+    # Ordenar por mês e depois por dia
+    found_files.sort(key=lambda x: (x[1], x[0]))
+    
+    files = [x[2] for x in found_files]
+    if not files:
+        print("Erro: Nenhum arquivo de questões encontrado em", questoes_dir)
+        return
+        
+    min_date = f"{found_files[0][0]:02d}/{found_files[0][1]:02d}"
+    max_date = f"{found_files[-1][0]:02d}/{found_files[-1][1]:02d}"
+    num_questions = len(files) * 45
+    num_days = len(files)
     
     merged_markdown = []
     merged_markdown.append("# Compilado Geral de Questões FCC — TJ-CE 2026\n")
-    merged_markdown.append("Este arquivo reúne as 225 questões (15 por tema, de 16/05 a 20/05) geradas com base no perfil da banca FCC para o cargo de Analista de TI.\n\n---\n")
+    merged_markdown.append(f"Este arquivo reúne as {num_questions} questões (15 por tema, de {min_date} a {max_date}) geradas com base no perfil da banca FCC para o cargo de Analista de TI.\n\n---\n")
     
     html_content_blocks = []
     
@@ -62,6 +77,14 @@ def compile_questions():
     
     # Criar HTML interativo completo
     all_days_html = "\n".join(html_content_blocks)
+    
+    # Construir botões de filtro dinamicamente
+    filter_buttons_list = ['<button class="btn active" onclick="filterDay(\'all\', this)">Ver Todas</button>']
+    for day, month, filename in found_files:
+        day_id = filename.replace("_questoes.md", "")
+        filter_buttons_list.append(f'<button class="btn" onclick="filterDay(\'{day_id}\', this)">Dia {day:02d}/{month:02d}</button>')
+    filter_buttons_str = "\n                ".join(filter_buttons_list)
+
     
     html_template = f"""<!DOCTYPE html>
 <html lang="pt-BR">
@@ -481,14 +504,14 @@ def compile_questions():
     <header>
         <div class="header-container">
             <h1>Simulador FCC — TJ-CE 2026</h1>
-            <p class="subtitle">Banco Completo de Questões comentadas de Engenharia de Software, Banco de Dados, Redes, Segurança, RLM, Português e Direito da PCD.</p>
+            <p class="subtitle">Banco Completo de Questões comentadas de Engenharia de Software, Banco de Dados, Redes, Segurança, RLM, Português, Direito da PCD e Legislação Previdenciária de {min_date} a {max_date}.</p>
             <div class="stats-bar">
                 <div class="stat-card">
-                    <div class="stat-val">225</div>
+                    <div class="stat-val">{num_questions}</div>
                     <div class="stat-lbl">Questões</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-val">5 dias</div>
+                    <div class="stat-val">{num_days} dias</div>
                     <div class="stat-lbl">Estudados</div>
                 </div>
                 <div class="stat-card">
@@ -502,12 +525,7 @@ def compile_questions():
     <div class="toolbar">
         <div class="toolbar-container">
             <div class="filter-buttons">
-                <button class="btn active" onclick="filterDay('all', this)">Ver Todas</button>
-                <button class="btn" onclick="filterDay('dia_16_05', this)">Dia 16/05</button>
-                <button class="btn" onclick="filterDay('dia_17_05', this)">Dia 17/05</button>
-                <button class="btn" onclick="filterDay('dia_18_05', this)">Dia 18/05</button>
-                <button class="btn" onclick="filterDay('dia_19_05', this)">Dia 19/05</button>
-                <button class="btn" onclick="filterDay('dia_20_05', this)">Dia 20/05</button>
+                {filter_buttons_str}
             </div>
             
             <div class="action-buttons">

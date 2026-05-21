@@ -9,7 +9,9 @@ class StudyPDF(FPDF):
         # Arial bold 8
         self.set_font('Arial', 'B', 8)
         self.set_text_color(128, 128, 128)
-        self.cell(0, 10, self.safe('TJ-CE 2026 — Banco de Questões FCC (16/05 a 20/05)'), 0, 0, 'L')
+        period = getattr(self, 'title_period', '')
+        header_text = f'TJ-CE 2026 — Banco de Questões FCC {period}' if period else 'TJ-CE 2026 — Banco de Questões FCC'
+        self.cell(0, 10, self.safe(header_text), 0, 0, 'L')
         self.cell(0, 10, self.safe('Analista de TI'), 0, 1, 'R')
         self.line(10, 18, 200, 18)
         self.ln(5)
@@ -65,7 +67,27 @@ def generate_pdf():
     
     # Configurar PDF
     print("Iniciando geração do PDF...")
+    
+    # Encontrar arquivos para determinar o período dinamicamente
+    pattern = re.compile(r"^dia_(\d{2})_(\d{2})_questoes\.md$")
+    found_files = []
+    for f in os.listdir(questoes_dir):
+        m = pattern.match(f)
+        if m:
+            day = int(m.group(1))
+            month = int(m.group(2))
+            found_files.append((day, month))
+            
+    found_files.sort(key=lambda x: (x[1], x[0]))
+    
+    period_str = ""
+    if found_files:
+        min_date = f"{found_files[0][0]:02d}/{found_files[0][1]:02d}"
+        max_date = f"{found_files[-1][0]:02d}/{found_files[-1][1]:02d}"
+        period_str = f"({min_date} a {max_date})"
+        
     pdf = StudyPDF()
+    pdf.title_period = period_str
     pdf.alias_nb_pages()
     pdf.set_margins(10, 20, 10)
     pdf.add_page()
