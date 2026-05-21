@@ -12,7 +12,7 @@
 ### SEMANA 01: O Início (Hoje 15/05 a 21/05)
 - **Dia 01 (Hoje):** Organização do Ambiente + Leitura do Edital + Português (Interpretação - FCC).
 - **Dia 02:** Engenharia de Software (Ciclos de Vida) + Questões FCC.
-- **Dia 03:** Direito Administrativo (Princípios) + Java Básico/POO.
+- **Dia 03:** Direitos PCD (LBI - Lei 13.146/15) + Java Básico/POO.
 - **Dia 04:** Banco de Dados (SQL e Modelagem) + Revisão.
 - **Dia 05:** Português (Sintaxe) + Redação (Estrutura FCC).
 - **Dia 06:** Segurança da Informação (LGPD + ISO 27001).
