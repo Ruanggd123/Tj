@@ -13,7 +13,7 @@ Responda a estas **6 perguntas rápidas** no rascunho antes de começar a escrev
 *   **[3 - PROBLEMA]:** Qual é o principal risco ético, conflito ou impasse social que isso gera? *(Ex: o linchamento virtual e o silenciamento sistemático do dissenso)*
 *   **[4 - CAUSA]:** Por que esse problema acontece? Qual a causa raiz? *(Ex: a ilusão de anonimato e a busca incessante por validação em bolhas digitais)*
 *   **[5 - CONSEQUÊNCIA]:** Qual o impacto negativo que esse problema gera na prática social? *(Ex: a polarização extrema e o adoecimento das dinâmicas comunicativas)*
-*   **[6 - SOLUÇÃO]:** Como o governo, as instituições ou a sociedade podem resolver ou atenuar o impasse? *(Ex: uma cultura voltada à empatia virtual e o fortalecimento de canais plurais de mediação)*
+*   **[6 - SOLUÇÃO]:** Como resolver ou atenuar o impasse? (Recomendação Coringa Universal: *políticas de governança e fiscalização, mediante o fortalecimento de canais de controle e de conscientização social, a fim de resguardar as garantias fundamentais da cidadania*)
 
 ---
 

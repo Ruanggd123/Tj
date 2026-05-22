@@ -13,7 +13,7 @@ Responda a estas **6 perguntas rápidas** no rascunho antes de começar a escrev
 *   **[3 - PROBLEMA]:** Qual é o principal risco ético, conflito ou impasse social que isso gera? *(Ex: a falta de transparência e a discriminação de minorias)*
 *   **[4 - CAUSA]:** Por que esse problema acontece? Qual a causa raiz? *(Ex: a opacidade das regras lógicas dos códigos e a falta de fiscalização humana)*
 *   **[5 - CONSEQUÊNCIA]:** Qual o impacto negativo que esse problema gera na prática social? *(Ex: decisões enviesadas que ferem a equidade e os direitos civis)*
-*   **[6 - SOLUÇÃO]:** Como o governo, as instituições ou a sociedade podem resolver ou atenuar o impasse? *(Ex: auditorias algorítmicas frequentes e governança de dados robusta)*
+*   **[6 - SOLUÇÃO]:** Como resolver ou atenuar o impasse? (Recomendação Coringa Universal: *políticas de governança e fiscalização, mediante o fortalecimento de canais de controle e de conscientização social, a fim de resguardar as garantias fundamentais da cidadania*)
 
 ---
 
