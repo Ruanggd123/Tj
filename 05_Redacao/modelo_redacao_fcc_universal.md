@@ -24,4 +24,45 @@ Responda a estas **5 perguntas rápidas** no rascunho antes de começar a escrev
 > 
 > Entretanto, a aceitação cega e desenfreada desses comportamentos acende um sinal de alerta. O principal óbice reside na **[4 - CAUSA]**, o que frequentemente deságua em **[5 - CONSEQUÊNCIA]**. *Sob essa perspectiva, a aplicação desprovida de sensibilidade humana e discernimento crítico corre o risco de enfraquecer o tecido social.* Portanto, a busca pelo progresso ou pela mera conveniência não pode atropelar as garantias da cidadania.
 > 
-> Em suma, a presença desse cenário contemporâneo não deve ser puramente rechaçada, mas compreendida criticamente como um fator que exige estrita conscientização. A fim de atenuar os desafios atrelados a **[3 - PROBLEMA]**, torna-se imperativo que o Poder Público implemente políticas de governança e fiscalização, mediante o fortalecimento de canais de controle e de conscientização social, a fim de resguardar as garantias fundamentais da cidadania. Dessa forma, será possível equilibrar a dinâmica do mundo contemporâneo com a equidade e o respeito à dignidade humana.
+> Em suma, a presença desse cenário contemporâneo não deve ser puramente rechaçada, mas compreendida criticamente como um fator que exige estrita conscientização. A fim de atenuar os desafios atrelados a **[3 - PROBLEMA]**, torna-se imperativo que o Poder Público implemente políticas de governança e fiscalização, mediante o fortalecimento de canais de controle e de conscientização social, a fim de resguardar las garantias fundamentais da cidadania. Dessa forma, será possível equilibrar a dinâmica do mundo contemporâneo com a equidade e o respeito à dignidade humana.
+
+---
+
+## ⚡ Os 2 Blocos Decoreba Coringas (Copiar e Colar)
+
+Escolha o bloco que se encaixa no tema da sua prova, copie as respostas e cole nas lacunas do modelo.
+
+### 💻 BLOCO 1: Temas de Tecnologia, Dados ou Internet
+*(Uso de IA, vazamento de dados, automação, redes sociais, privacidade, segurança cibernética)*
+
+*   **[1 - TEMA]:** `da digitalização e do uso de novas tecnologias`
+*   **[2 - PONTO POSITIVO]:** `a celeridade e a eficiência na prestação de serviços`
+*   **[3 - PROBLEMA]:** `a exposição de vulnerabilidades e o risco à privacidade dos indivíduos`
+*   **[4 - CAUSA]:** `a ausência de controle rigoroso e de resiliência cibernética`
+*   **[5 - CONSEQUÊNCIA]:** `a violação de garantias fundamentais protegidas pela LGPD`
+
+### 👥 BLOCO 2: Temas Sociais, Comportamentais ou Éticos
+*(Intolerância, empatia, pressa, consumo, individualismo, relações virtuais)*
+
+*   **[1 - TEMA]:** `das novas relações humanas no mundo moderno`
+*   **[2 - PONTO POSITIVO]:** `a facilidade de comunicação e o dinamismo social`
+*   **[3 - PROBLEMA]:** `a superficialidade e a perda de valores éticos essenciais`
+*   **[4 - CAUSA]:** `a busca por conveniência e o individualismo extremo`
+*   **[5 - CONSEQUÊNCIA]:** `o enfraquecimento da empatia e da alteridade no cotidiano`
+
+---
+
+## 🎯 Como Garantir Nota 100: A Regra das 3 Palavras-Chave da Prova
+
+Para tirar nota máxima, você deve mesclar o bloco que decorou com palavras reais que a banca usou no texto da prova.
+
+### O Passo a Passo:
+1. Leia o texto de apoio da prova e circule **3 termos importantes** relacionados ao tema.
+2. Pegue o seu Bloco decorado e substitua ou adicione esses termos nas lacunas **[3]**, **[4]** ou **[5]**.
+
+### Exemplo Prático de Adaptação:
+*   **Texto da prova citou:** *"sequestro de dados (ransomware)"* e *"exposição de dados sensíveis"*.
+*   **Bloco 1 Puro (Sem adaptação):** 
+    *   *Lacuna 4:* `a ausência de controle rigoroso e de resiliência cibernética`
+*   **Bloco 1 Adaptado (Com as palavras da prova - NOTA 100):**
+    *   *Lacuna 4:* `a ocorrência de **sequestros de dados (ransomware)** devido à ausência de controle rigoroso e de resiliência cibernética`
