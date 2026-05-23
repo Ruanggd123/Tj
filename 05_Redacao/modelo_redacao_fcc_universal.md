@@ -1,68 +1,123 @@
-# ✍️ Esqueleto de Redação Super Simplificado — Versão Coringa Universal
+# ✍️ Esqueleto Universal de Redação — Modelo Único Nota 100 (FCC)
 
-Este modelo foi simplificado para conter apenas **5 lacunas principais**. Use o **Questionário Unificado** abaixo para planejar sua redação e cole as respostas correspondentes.
+Este é o seu **modelo único e definitivo**. Ele foi projetado estruturalmente de forma **neutra** para se adaptar perfeitamente tanto a **temas administrativos, de TI e jurídicos** quanto a **temas filosóficos e sociais** da banca FCC, garantindo nota máxima em **Estrutura, Expressão e Coesão**.
 
----
+Aqui, **eliminamos os blocos de decoreba estáticos**. Em vez disso, você usará a **Fórmula de Brainstorming Autoguiado** aliada à **Customização Inteligente de Ilustrações** para trazer exemplos concretos da sua área, eliminando qualquer risco de argumentação abstrata ou fuga parcial ao tema.
 
-## 📋 Questionário Unificado (O mesmo para ambos os modelos)
-
-Responda a estas **5 perguntas rápidas** no rascunho antes de começar a escrever:
-
-*   **[1 - TEMA]:** Qual é o tema central ou o fenômeno da redação? *(Ex: da intolerância e do cancelamento nas redes sociais)*
-*   **[2 - PONTO POSITIVO]:** Qual o lado bom ou a utilidade prática que isso traz? *(Ex: a agilidade na troca de informações e na aproximação das pessoas)*
-*   **[3 - PROBLEMA]:** Qual é o principal risco ético, conflito ou impasse social que isso gera? *(Ex: o linchamento virtual e o silenciamento sistemático do dissenso)*
-*   **[4 - CAUSA]:** Por que esse problema acontece? Qual a causa raiz? *(Ex: a ilusão de anonimato e a busca incessante por validação em bolhas digitais)*
-*   **[5 - CONSEQUÊNCIA]:** Qual o impacto negativo que esse problema gera na prática social? *(Ex: a polarização extrema e o adoecimento das dinâmicas comunicativas)*
+> [!IMPORTANT]
+> **O que foi blindado nesta versão:**
+> *   **Esqueleto Neutro:** Uso de termos como *eficiência administrativa*, *prestação de serviços*, *segurança jurídica* e *relações coletivas*. O texto soa extremamente natural tanto para a Administração Pública quanto para a Sociedade.
+> *   **Customização de Ilustrações:** Instruções claras sobre como adaptar a frase ilustrativa de cada desenvolvimento para citar termos reais e práticos da prova.
+> *   **Concordância Travada:** A frase do D2 usa a âncora `"o surgimento de entraves como [3] constitui..."` no singular. Mesmo que você preencha a lacuna 3 com termos compostos ou plurais (ex: "vazamentos e falhas de rede"), o texto continuará correto.
 
 ---
 
-## 🛠️ O Esqueleto (Coringa Universal)
+## 📋 A Fórmula de Brainstorming Autoguiado (Rascunho Rápido)
 
-> Atualmente, o debate acerca **[1 - TEMA]** tem transformado profundamente a dinâmica das relações no corpo social. Se por um lado esse cenário promove **[2 - PONTO POSITIVO]**, por outro, torna-se inegável que **[3 - PROBLEMA]** representa um impasse complexo. Nesse contexto, urge analisar essa realidade contemporânea sob a ótica da ética e da salvaguarda de direitos fundamentais.
+Antes de começar a escrever, responda a estas **5 perguntas** escolhendo um dos **Gatilhos de Início** e completando-o com substantivos:
+
+### **[1 - TEMA]: O tema central da redação**
+*   *Como achar:* Copie o tema da prova (ou a ideia central dele) e inicie com a preposição **da** ou **do**.
+*   *Exemplo:* `do trabalho remoto e da transformação digital nas instituições públicas no cenário pós-pandemia`
+
+### **[2 - LADO POSITIVO]: A utilidade prática ou benefício desse assunto**
+*   *Como achar:* O que essa inovação/ideia traz de bom ou otimiza para o Estado, para as instituições ou para a sociedade?
+*   *Escolha um gatilho para iniciar:*
+    *   `a otimização de...`
+    *   `a viabilização de...`
+    *   `a facilitação de...`
+    *   `a promoção de...`
+*   *Exemplo:* `a otimização da prestação jurisdicional e o ganho de eficiência no serviço público`
+
+### **[3 - PROBLEMA]: O principal impasse ou risco se o tema for deixado sem controle**
+*   *Como achar:* Qual o perigo ético, o abuso ou o conflito que surge disso?
+*   *Escolha um gatilho para iniciar:*
+    *   `a mercantilização de...`
+    *   `a exposição de...`
+    *   `a perda de...`
+    *   `a ocorrência de...`
+    *   `a exclusão de...`
+*   *Exemplo:* `a ocorrência de falhas na segurança da informação e a exposição de dados sensíveis`
+
+### **[4 - CAUSA]: Por que esse problema acontece? (A causa raiz)**
+*   *Como achar:* Quem está falhando? É a pressa/individualismo das pessoas ou a falta de controle/fiscalização/planejamento das instituições?
+*   *Escolha um gatilho para iniciar:*
+    *   `a ausência de controle rigoroso sobre...`
+    *   `a pressa na implementação de...`
+    *   `o descaso governamental com...`
+    *   `a busca por conveniência e...`
+*   *Exemplo:* `a pressa na implementação de novas tecnologias sem o suporte de infraestrutura adequada`
+
+### **[5 - SOLUÇÃO]: Como resolver ou atenuar o problema na prática?**
+*   *Como achar:* Quem deve agir (Poder Público, Administração Pública, órgãos de controle) e qual medida deve adotar?
+*   *Escolha um gatilho para iniciar:*
+    *   `o fortalecimento de...`
+    *   `a implementação de...`
+    *   `o fomento a...`
+    *   `a consolidação de...`
+*   *Exemplo:* `a implementação de programas contínuos de capacitação digital e planos estruturados de cibersegurança`
+
+---
+
+## 🛠️ O Esqueleto Único (Copie e Cole as Respostas)
+
+> Atualmente, as discussões acerca **[1 - TEMA]** têm transformado profundamente a dinâmica das relações coletivas. Se por um lado essa conjuntura promete inegáveis avanços e facilitações no cotidiano, por outro, torna-se evidente que a eclosão de conflitos éticos e estruturais representa um impasse complexo. Nesse contexto, urge analisar essa realidade sob a ótica da eficiência e da salvaguarda de direitos fundamentais.
 > 
-> Sob esse prisma, cabe destacar que a consolidação de novas práticas otimiza e influencia comportamentos de forma inédita. No cotidiano, a facilitação decorrente de promover **[2 - PONTO POSITIVO] chaves** garante maior celeridade e fluidez nas demandas coletivas. *Como prova disso, nota-se que a facilidade de acesso a canais interativos modificou radicalmente a comunicação social nas últimas décadas.* Logo, evidencia-se um impacto considerável na organização da sociedade.
+> Sob esse prisma, cabe destacar que a consolidação de novos processos otimiza a produtividade e as relações de forma salutar. No cotidiano, a viabilidade de assegurar **[2 - LADO POSITIVO]** traduz-se em ganhos práticos para a coletividade. *Como ilustração disso, observa-se que **[ILUSTRAÇÃO 1 - CUSTOMIZÁVEL]** agilizam a prestação de serviços e otimizam a dinâmica coletiva.* Logo, evidencia-se a relevância de acolher esses avanços para a evolução da estrutura social e administrativa.
 > 
-> Entretanto, a aceitação cega e desenfreada desses comportamentos acende um sinal de alerta. O principal óbice reside na **[4 - CAUSA]**, o que frequentemente deságua em **[5 - CONSEQUÊNCIA]**. *Sob essa perspectiva, a aplicação desprovida de sensibilidade humana e discernimento crítico corre o risco de enfraquecer o tecido social.* Portanto, a busca pelo progresso ou pela mera conveniência não pode atropelar as garantias da cidadania.
+> Entretanto, a implementação e aceitação acrítica dessas transformações acende um sinal de alerta. Nesse sentido, constata-se que o surgimento de entraves como **[3 - PROBLEMA]** constitui um óbice severo para a coletividade, o qual tem como causa primordial **[4 - CAUSA]**. *Sob essa perspectiva, **[ILUSTRAÇÃO 2 - CUSTOMIZÁVEL]** corre o risco de desestruturar o ambiente coletivo.* Portanto, o imperativo da modernidade não deve atropelar o bem-estar social e a segurança jurídica.
 > 
-> Em suma, a presença desse cenário contemporâneo não deve ser puramente rechaçada, mas compreendida criticamente como um fator que exige estrita conscientização. A fim de atenuar os desafios atrelados a **[3 - PROBLEMA]**, torna-se imperativo que o Poder Público implemente políticas de governança e fiscalização, mediante o fortalecimento de canais de controle e de conscientização social, a fim de resguardar las garantias fundamentais da cidadania. Dessa forma, será possível equilibrar a dinâmica do mundo contemporâneo com a equidade e o respeito à dignidade humana.
+> Em suma, a presença desse panorama contemporâneo não deve ser rechaçada, mas compreendida como um reflexo de uma realidade que clama por equilíbrio e regulamentação. A fim de mitigar os impasses discutidos, torna-se imperativo que a Administração Pública promova **[5 - SOLUÇÃO]**, mediante o aprimoramento de marcos regulatórios e o investimento em capacitação continuada. Dessa forma, será possível conciliar a inovação com a equidade e a eficiência no atendimento ao interesse público.
 
 ---
 
-## ⚡ Os 2 Blocos Decoreba Coringas (Copiar e Colar)
+## 💡 Como Customizar as Ilustrações (A Chave da Nota 100 de Argumentação)
 
-Escolha o bloco que se encaixa no tema da sua prova, copie as respostas e cole nas lacunas do modelo.
+Para afastar qualquer crítica de "redação genérica", substitua as duas frases marcadas com asterisco por exemplos reais do tema. Escolha uma das opções abaixo ou crie a sua na hora da prova:
 
-### 💻 BLOCO 1: Temas de Tecnologia, Dados ou Internet
-*(Uso de IA, vazamento de dados, automação, redes sociais, privacidade, segurança cibernética)*
+### **Para a ILUSTRAÇÃO 1 (Desenvolvimento 1 - O Exemplo de Sucesso):**
+*   *Se o tema for TI/Serviço Público:* `o peticionamento eletrônico e as audiências virtuais no Judiciário brasileiro`
+*   *Se o tema for Dados/Privacidade:* `os termos de consentimento digital e os portais da transparência`
+*   *Se o tema for Social/Comportamental:* `a facilidade de acesso a canais interativos e fluxos de comunicação instantânea`
 
-*   **[1 - TEMA]:** `da digitalização e do uso de novas tecnologias`
-*   **[2 - PONTO POSITIVO]:** `a celeridade e a eficiência na prestação de serviços`
-*   **[3 - PROBLEMA]:** `a exposição de vulnerabilidades e o risco à privacidade dos indivíduos`
-*   **[4 - CAUSA]:** `a ausência de controle rigoroso e de resiliência cibernética`
-*   **[5 - CONSEQUÊNCIA]:** `a violação de garantias fundamentais protegidas pela LGPD`
-
-### 👥 BLOCO 2: Temas Sociais, Comportamentais ou Éticos
-*(Intolerância, empatia, pressa, consumo, individualismo, relações virtuais)*
-
-*   **[1 - TEMA]:** `das novas relações humanas no mundo moderno`
-*   **[2 - PONTO POSITIVO]:** `a facilidade de comunicação e o dinamismo social`
-*   **[3 - PROBLEMA]:** `a superficialidade e a perda de valores éticos essenciais`
-*   **[4 - CAUSA]:** `a busca por conveniência e o individualismo extremo`
-*   **[5 - CONSEQUÊNCIA]:** `o enfraquecimento da empatia e da alteridade no cotidiano`
+### **Para a ILUSTRAÇÃO 2 (Desenvolvimento 2 - O Exemplo de Risco):**
+*   *Se o tema for TI/Serviço Público:* `a migração precipitada de servidores para o teletrabalho sem diretrizes de conformidade técnica`
+*   *Se o tema for Dados/Privacidade:* `o tratamento abusivo de dados cadastrais por corporações descompromissadas com a LGPD`
+*   *Se o tema for Social/Comportamental:* `o imediatismo virtual voltado para a busca de validação superficial em bolhas de opinião`
 
 ---
 
-## 🎯 Como Garantir Nota 100: A Regra das 3 Palavras-Chave da Prova
+## ⏳ Caso Real Simulado: Trabalho Remoto no Setor Público (Nota 100)
 
-Para tirar nota máxima, você deve mesclar o bloco que decorou com palavras reais que a banca usou no texto da prova.
+Veja como o seu tema da COVID-19 e do trabalho remoto se resolve perfeitamente, unindo o preenchimento dos gatilhos com as ilustrações customizadas:
 
-### O Passo a Passo:
-1. Leia o texto de apoio da prova e circule **3 termos importantes** relacionados ao tema.
-2. Pegue o seu Bloco decorado e substitua ou adicione esses termos nas lacunas **[3]**, **[4]** ou **[5]**.
+### Preenchimento das Lacunas:
+*   **[1 - TEMA]:** `do trabalho remoto e da transformação digital nas instituições públicas no cenário pós-pandemia`
+*   **[2 - LADO POSITIVO]:** `a otimização da prestação de serviços públicos e o ganho de eficiência no atendimento coletivo` *(Gatilho: a otimização de)*
+*   **[3 - PROBLEMA]:** `a ocorrência de falhas na segurança da informação e a exposição de dados institucionais sensíveis` *(Gatilho: a ocorrência de)*
+*   **[4 - CAUSA]:** `a pressa na implementação de novas tecnologias sem o suporte de infraestrutura adequada` *(Gatilho: a pressa na implementação de)*
+*   **[5 - SOLUÇÃO]:** `a implementação de planos diretores de tecnologia da informação e diretrizes rígidas de compliance` *(Gatilho: a implementação de)*
+*   **[ILUSTRAÇÃO 1]:** `o peticionamento eletrônico e as audiências virtuais no Judiciário brasileiro`
+*   **[ILUSTRAÇÃO 2]:** `a migração precipitada de servidores para o teletrabalho sem diretrizes de conformidade técnica`
 
-### Exemplo Prático de Adaptação:
-*   **Texto da prova citou:** *"sequestro de dados (ransomware)"* e *"exposição de dados sensíveis"*.
-*   **Bloco 1 Puro (Sem adaptação):** 
-    *   *Lacuna 4:* `a ausência de controle rigoroso e de resiliência cibernética`
-*   **Bloco 1 Adaptado (Com as palavras da prova - NOTA 100):**
-    *   *Lacuna 4:* `a ocorrência de **sequestros de dados (ransomware)** devido à ausência de controle rigoroso e de resiliência cibernética`
+### Texto Final Gerado (Pronto para Passar a Limpo):
+> Atualmente, as discussões acerca **do trabalho remoto e da transformação digital nas instituições públicas no cenário pós-pandemia** têm transformado profundamente a dinâmica das relações coletivas. Se por um lado essa conjuntura promete inegáveis avanços e facilitações no cotidiano, por outro, torna-se evidente que a eclosão de conflitos éticos e estruturais representa um impasse complexo. Nesse contexto, urge analisar essa realidade sob a ótica da eficiência e da salvaguarda de direitos fundamentais.
+> 
+> Sob esse prisma, cabe destacar que a consolidação de novos processos otimiza a produtividade e as relações de forma salutar. No cotidiano, a viabilidade de assegurar **a otimização da prestação de serviços públicos e o ganho de eficiência no atendimento coletivo** traduz-se em ganhos práticos para a coletividade. *Como ilustração disso, observa-se que **o peticionamento eletrônico e as audiências virtuais no Judiciário brasileiro** agilizam a prestação de serviços e otimizam a dinâmica coletiva.* Logo, evidencia-se a relevância de acolher esses avanços para a evolução da estrutura social e administrativa.
+> 
+> Entretanto, a implementação e aceitação acrítica dessas transformações acende um sinal de alerta. Nesse sentido, constata-se que o surgimento de entraves como **a ocorrência de falhas na segurança da informação e a exposição de dados institucionais sensíveis** constitui um óbice severo para a coletividade, o qual tem como causa primordial **a pressa na implementação de novas tecnologias sem o suporte de infraestrutura adequada**. *Sob essa perspectiva, **a migração precipitada de servidores para o teletrabalho sem diretrizes de conformidade técnica** corre o risco de desestruturar o ambiente coletivo.* Portanto, o imperativo da modernidade não deve atropelar o bem-estar social e a segurança jurídica.
+> 
+> Em suma, a presença desse panorama contemporâneo não deve ser rechaçada, mas compreendida como um reflexo de uma sociedade que clama por equilíbrio e regulamentação. A fim de mitigar os impasses discutidos, torna-se imperativo que a Administração Pública promova **a implementação de planos diretores de tecnologia da informação e diretrizes rígidas de compliance**, mediante o aprimoramento de marcos regulatórios e o investimento em capacitação continuada. Dessa forma, será possível conciliar a inovação com a equidade e a eficiência no atendimento ao interesse público.
+
+---
+
+## ⚡ Guia Rápido de Ortografia Crítica e Siglas (Para não perder pontos de Português)
+
+*   **COVID-19:** Escreva sempre em letras maiúsculas e com hífen. Não escreva "covide-19" ou "Covid-19".
+*   **LGPD e ANPD:** Letras maiúsculas por se tratar de siglas oficiais (Lei Geral de Proteção de Dados e Autoridade Nacional de Proteção de Dados).
+*   **Ascensão:** Escreve-se com **sc** e depois **s** (A-S-C-E-N-S-Ã-O). Atenção para não digitar "acensão" ou "assenssão".
+*   **Óbice:** Tem acento no "Ó" por ser proparoxítona. Significa obstáculo. Cuidado para não errar a grafia como "óbtice".
+*   **Regência Causal (Dada a / Devido à):** Ao indicar causas, a concordância deve ser feita corretamente:
+    *   *Feminino:* **Dada a** pandemia... | **Devido à** crise... (com crase!).
+    *   *Masculino:* **Dado o** cenário... | **Devido ao** imediatismo...
+    *   *(Evite usar apenas "dado a" de forma invariável).*
