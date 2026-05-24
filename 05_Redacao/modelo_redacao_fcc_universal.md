@@ -4,6 +4,13 @@
 
 No dia da prova, a sua primeira tarefa no rascunho é fatiar o tema e encontrar os **4 Elementos**. Como a FCC odeia repetição de palavras, você precisa de um **Sinônimo (Gêmeo)** para cada um. 
 
+**❓ O DETETIVE: Como achar os 4 Elementos na hora do nervosismo?**
+Para não dar branco, basta fazer estas 4 perguntas simples para o tema da prova:
+1. **Para achar o [ 1 - TEMA ]:** Pergunte *"Do que exatamente esse texto está falando?"* (É a palavra principal).
+2. **Para achar a [ 2 - AÇÃO ]:** Pergunte *"O que esse tema faz na prática?"* (É o efeito, a mudança no dia a dia).
+3. **Para achar o [ 3 - ALVO ]:** Pergunte *"Quem é a maior vítima (ou beneficiado) de tudo isso?"* (Geralmente são as pessoas).
+4. **Para achar o [ 4 - BEM JURÍDICO ]:** Pergunte *"Se tudo der errado, o que de mais sagrado nós vamos perder?"* (Pense em direitos: Privacidade, Liberdade, Ética, Saúde Mental).
+
 **🚨 TABELA SALVA-VIDAS (Se você não tiver vocabulário, use as "Chaves-Mestras"):**
 Você não precisa ser um dicionário ambulante! Se não souber um sinônimo na hora da prova, basta usar uma dessas expressões universais que apontam para o que você já escreveu. Elas servem para **QUALQUER** palavra do mundo:
 
