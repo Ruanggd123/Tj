@@ -12,50 +12,50 @@ I. O sistema deve emitir o relatório em, no máximo, 5 segundos.
 II. O sistema deve validar a assinatura digital ICP-Brasil.
 III. O desenvolvimento da interface deve ser realizado no framework Angular homologado pelo tribunal.
 De acordo com Sommerville, os itens I, II e III correspondem a requisitos:
-A) Não funcional de produto; Funcional; Não funcional organizacional.
+A) Não funcional de desempenho; Não funcional de segurança; Funcional.
 B) Funcional; Não funcional de produto; Não funcional externo.
-C) Não funcional de desempenho; Não funcional de segurança; Funcional.
+C) Não funcional de produto; Funcional; Não funcional organizacional.
 D) Funcional; Funcional; Não funcional de produto.
 E) Não funcional externo; Funcional; Não funcional organizacional.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. I = Desempenho (Produto); II = Ação (Funcional); III = Restrição corporativa (Organizacional).
+**Gabarito: C**. I = Desempenho (Produto); II = Ação (Funcional); III = Restrição corporativa (Organizacional).
 </details>
 
 ### Questão 2 (FCC)
 Em um diagrama de Casos de Uso, quando o comportamento de B só é executado caso certa regra ocorra durante A, esse relacionamento é:
-A) `<<include>>`, B para A.
+A) `<<extend>>`, B para A.
 B) Generalização, A para B.
-C) `<<extend>>`, B para A.
+C) `<<include>>`, B para A.
 D) `<<extend>>`, A para B.
 E) `<<include>>`, A para B.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. Relacionamento opcional é `<<extend>>`, apontando do estendido (B) para o base (A).
+**Gabarito: A**. Relacionamento opcional é `<<extend>>`, apontando do estendido (B)  para o base (C) .
 </details>
 
 ### Questão 3 (FCC)
 A capacidade de relacionar um requisito a um trecho de código que o implementa é:
 A) Rastreabilidade de origem.
-B) Rastreabilidade de requisitos.
-C) Rastreabilidade de projeto (forward traceability).
+B) Rastreabilidade de projeto (forward traceability).
+C) Rastreabilidade de requisitos.
 D) Rastreabilidade de design.
 E) Rastreabilidade horizontal.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. Forward traceability liga requisitos aos artefatos gerados (design, código).
+**Gabarito: B**. Forward traceability liga requisitos aos artefatos gerados (design, código).
 </details>
 
 ### Questão 4 (FCC)
 A respeito do Dicionário de Dados na engenharia de requisitos, ele atua para:
 A) Gerar automaticamente o modelo físico.
 B) Armazenar logs de falhas.
-C) Evitar conflitos de nomes, definindo a semântica e formato dos dados.
+C) Permitir alteração de tabelas em produção.
 D) Substituir os casos de uso.
-E) Permitir alteração de tabelas em produção.
+E) Evitar conflitos de nomes, definindo a semântica e formato dos dados.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. O dicionário centraliza definições de dados, prevenindo redundâncias e inconsistências.
+**Gabarito: E**. O dicionário centraliza definições de dados, prevenindo redundâncias e inconsistências.
 </details>
 
 ### Questão 5 (FCC)
@@ -73,25 +73,25 @@ E) Requisito de Interface.
 ### Questão 6 (FCC)
 O relacionamento `<<include>>` em Casos de Uso serve fundamentalmente para:
 A) Representar funcionalidades que ocorrem apenas em erros.
-B) Evitar a repetição de um fluxo de eventos que é comum a dois ou mais casos de uso.
+B) Demonstrar a ordem cronológica de execução.
 C) Substituir a herança de atores.
-D) Demonstrar a ordem cronológica de execução.
+D) Evitar a repetição de um fluxo de eventos que é comum a dois ou mais casos de uso.
 E) Descrever requisitos não funcionais.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. O `<<include>>` extrai comportamentos comuns e obrigatórios para reutilização.
+**Gabarito: D**. O `<<include>>` extrai comportamentos comuns e obrigatórios para reutilização.
 </details>
 
 ### Questão 7 (FCC)
 Qual das alternativas apresenta exclusivamente requisitos não funcionais?
 A) Calcular folha de pagamento; Tempo de resposta de 2s.
 B) Emitir nota fiscal; Autenticar usuário.
-C) Criptografia AES-256; Interface compatível com leitores de tela; Disponibilidade de 99,9%.
-D) Exportar para PDF; Tolerância a falhas.
+C) Exportar para PDF; Tolerância a falhas.
+D) Criptografia AES-256; Interface compatível com leitores de tela; Disponibilidade de 99,9%.
 E) Exibir histórico; Compatibilidade com navegadores web.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. Todos os três definem "como" o sistema deve ser (segurança, usabilidade, confiabilidade).
+**Gabarito: D**. Todos os três definem "como" o sistema deve ser (segurança, usabilidade, confiabilidade).
 </details>
 
 ### Questão 8 (FCC)
@@ -109,13 +109,13 @@ E) Recebe os relacionamentos de `<<extend>>`.
 ### Questão 9 (FCC)
 Durante a elicitação, a técnica que envolve criar uma versão inicial rápida do software para validação do usuário é chamada de:
 A) JAD (Joint Application Development).
-B) Prototipação.
-C) Brainstorming.
+B) Brainstorming.
+C) Prototipação.
 D) Etnografia.
 E) Entrevista Estruturada.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. A prototipação constrói modelos descartáveis ou evolutivos para refinar requisitos.
+**Gabarito: C**. A prototipação constrói modelos descartáveis ou evolutivos para refinar requisitos.
 </details>
 
 ### Questão 10 (FCC)
@@ -133,13 +133,13 @@ E) Substitui o levantamento de requisitos funcionais.
 ### Questão 11 (FCC)
 Um "Requisito de Domínio" (Domain Requirement):
 A) Sempre diz respeito à rede de computadores (domínio Windows).
-B) Deriva do campo de aplicação do sistema e pode criar novos requisitos ou restringir os existentes.
+B) É aplicável apenas em metodologias ágeis.
 C) É obrigatoriamente um requisito não funcional.
-D) É aplicável apenas em metodologias ágeis.
+D) Deriva do campo de aplicação do sistema e pode criar novos requisitos ou restringir os existentes.
 E) Não pode ser modelado em Casos de Uso.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. Requisitos de domínio refletem as regras do negócio (ex: regras médicas em um sistema de saúde).
+**Gabarito: D**. Requisitos de domínio refletem as regras do negócio (ex: regras médicas em um sistema de saúde).
 </details>
 
 ### Questão 12 (FCC)
@@ -157,37 +157,37 @@ E) Requisitos Não Funcionais.
 ### Questão 13 (FCC)
 A validação de requisitos responde à pergunta:
 A) Estamos construindo o produto corretamente?
-B) Estamos construindo o produto correto (aquele que o cliente realmente quer)?
+B) Quanto custará o projeto?
 C) O código possui bugs?
 D) Qual a linguagem ideal para o sistema?
-E) Quanto custará o projeto?
+E) Estamos construindo o produto correto (aquele que o cliente realmente quer)?
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. Validação verifica se o software atende à necessidade real do cliente. (A alternativa A refere-se à Verificação).
+**Gabarito: E**. Validação verifica se o software atende à necessidade real do cliente. (A alternativa A refere-se à Verificação).
 </details>
 
 ### Questão 14 (FCC)
 A matriz de rastreabilidade é uma ferramenta clássica para:
-A) Compilar o código-fonte.
-B) Analisar o impacto de mudanças em um requisito sobre os demais artefatos do projeto.
+A) Analisar o impacto de mudanças em um requisito sobre os demais artefatos do projeto.
+B) Compilar o código-fonte.
 C) Gerar os diagramas UML automaticamente.
 D) Definir a arquitetura de rede.
 E) Medir o desempenho do banco de dados.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. A matriz cruza os requisitos com os artefatos, mostrando o que será afetado se um requisito mudar.
+**Gabarito: A**. A matriz cruza os requisitos com os artefatos, mostrando o que será afetado se um requisito mudar.
 </details>
 
 ### Questão 15 (FCC)
 Em Engenharia de Requisitos, "Elicitação" significa:
 A) Programar o requisito no código.
-B) O processo de descobrir, levantar e compreender as necessidades dos stakeholders.
+B) Publicar o manual do usuário.
 C) Excluir requisitos obsoletos.
-D) Publicar o manual do usuário.
+D) O processo de descobrir, levantar e compreender as necessidades dos stakeholders.
 E) Traduzir requisitos funcionais para linguagem de máquina.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. Elicitação é a primeira fase: extrair/descobrir a informação junto ao cliente.
+**Gabarito: D**. Elicitação é a primeira fase: extrair/descobrir a informação junto ao cliente.
 </details>
 
 ---
@@ -197,49 +197,49 @@ E) Traduzir requisitos funcionais para linguagem de máquina.
 ### Questão 16 (FCC)
 No Oracle, a pseudo-coluna ROWNUM:
 A) É alocada após a cláusula ORDER BY ser executada.
-B) Aceita comparações do tipo `ROWNUM = 2` diretamente no WHERE.
-C) Indica a ordem em que o Oracle seleciona a linha da tabela antes da ordenação.
+B) Indica a ordem em que o Oracle seleciona a linha da tabela antes da ordenação.
+C) Aceita comparações do tipo `ROWNUM = 2` diretamente no WHERE.
 D) Substitui a Primary Key.
 E) É idêntica ao LIMIT do PostgreSQL.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. ROWNUM é atribuído *antes* da ordenação, o que causa pegadinhas em paginações sem subconsultas.
+**Gabarito: B**. ROWNUM é atribuído *antes* da ordenação, o que causa pegadinhas em paginações sem subconsultas.
 </details>
 
 ### Questão 17 (FCC)
 A tabela especial do Oracle que possui apenas uma linha e a coluna DUMMY chama-se:
-A) SYSTEM
-B) DUAL
+A) DUAL
+B) SYSTEM
 C) SINGLE
 D) TEMP
 E) ROOT
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. A tabela `DUAL` garante retornos de uma única linha para avaliações de funções (ex: SYSDATE).
+**Gabarito: A**. A tabela `DUAL` garante retornos de uma única linha para avaliações de funções (ex: SYSDATE).
 </details>
 
 ### Questão 18 (FCC)
 Para criar uma chave primária auto-incrementada no PostgreSQL (versões clássicas), utiliza-se o tipo:
-A) AUTO_INCREMENT
+A) SERIAL
 B) SEQUENCE_ID
 C) IDENTITY
-D) SERIAL
+D) AUTO_INCREMENT
 E) ROWNUM
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. O tipo `SERIAL` cria implicitamente uma sequência para gerenciar o auto-incremento.
+**Gabarito: A**. O tipo `SERIAL` cria implicitamente uma sequência para gerenciar o auto-incremento.
 </details>
 
 ### Questão 19 (FCC)
 Para pular 50 registros e retornar 10 em PostgreSQL, usa-se:
-A) LIMIT 10 OFFSET 50
-B) ROWS 50 TO 60
+A) ROWS 50 TO 60
+B) LIMIT 10 OFFSET 50
 C) ROWNUM BETWEEN 51 AND 60
 D) SKIP 50 TAKE 10
 E) LIMIT 50, 10
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. A sintaxe ANSI suportada pelo PostgreSQL usa `LIMIT` (quantidade) e `OFFSET` (quantos pular).
+**Gabarito: B**. A sintaxe ANSI suportada pelo PostgreSQL usa `LIMIT` (quantidade) e `OFFSET` (quantos pular).
 </details>
 
 ### Questão 20 (FCC)
@@ -256,38 +256,38 @@ E) Exige licenciamento comercial pago.
 
 ### Questão 21 (FCC)
 No Oracle, para gerar o próximo valor de uma Sequence criada chamada SEQ_EMP, usa-se:
-A) SELECT SEQ_EMP.NEXTVAL FROM DUAL;
+A) SELECT SEQ_EMP.VAL FROM SYSTEM;
 B) SELECT NEXT_ID(SEQ_EMP);
 C) SELECT SEQ_EMP.INCREMENT;
 D) GET NEXT SEQ_EMP;
-E) SELECT SEQ_EMP.VAL FROM SYSTEM;
+E) SELECT SEQ_EMP.NEXTVAL FROM DUAL;
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. Usa-se a pseudo-coluna `NEXTVAL` associada ao nome da sequência, lendo da tabela `DUAL`.
+**Gabarito: E**. Usa-se a pseudo-coluna `NEXTVAL` associada ao nome da sequência, lendo da tabela `DUAL`.
 </details>
 
 ### Questão 22 (FCC)
 No PostgreSQL, o suporte nativo a dados estruturados permite indexar e consultar diretamente colunas do tipo:
 A) VARCHAR2 e CLOB (exclusivos).
-B) JSON e JSONB.
+B) DUAL_DATA.
 C) ROWID.
-D) DUAL_DATA.
+D) JSON e JSONB.
 E) MEMORY_TABLE.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. O PostgreSQL é famoso por tratar muito bem documentos JSON (especialmente o JSONB, que é binário e indexável).
+**Gabarito: D**. O PostgreSQL é famoso por tratar muito bem documentos JSON (especialmente o JSONB, que é binário e indexável).
 </details>
 
 ### Questão 23 (FCC)
 Ao realizar uma consulta `SELECT * FROM tab WHERE ROWNUM > 1;` no Oracle, o resultado será:
 A) Apenas a última linha.
 B) Todas as linhas, exceto a primeira.
-C) Nenhuma linha (conjunto vazio).
+C) A segunda linha em diante, ordenada pela PK.
 D) Um erro de sintaxe.
-E) A segunda linha em diante, ordenada pela PK.
+E) Nenhuma linha (conjunto vazio).
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. Como a 1ª linha falha na condição `> 1` e é descartada, a "próxima" lida ganha o ROWNUM 1 de novo e falha também. O resultado é sempre vazio.
+**Gabarito: E**. Como a 1ª linha falha na condição `> 1` e é descartada, a "próxima" lida ganha o ROWNUM 1 de novo e falha também. O resultado é sempre vazio.
 </details>
 
 ### Questão 24 (FCC)
@@ -305,25 +305,25 @@ E) O Oracle exige backticks (`) para tabelas.
 ### Questão 25 (FCC)
 O modo de compatibilidade do H2 Database permite:
 A) Conectar-se fisicamente ao Oracle via dblink nativo.
-B) Emular sintaxes e comportamentos específicos de outros SGBDs (como PostgreSQL, Oracle e MySQL) facilitando testes.
+B) Desabilitar o padrão ANSI.
 C) Replicar dados automaticamente para a AWS.
 D) Converter código Java para PL/SQL.
-E) Desabilitar o padrão ANSI.
+E) Emular sintaxes e comportamentos específicos de outros SGBDs (como PostgreSQL, Oracle e MySQL) facilitando testes.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. O H2 possui modos de compatibilidade (ex: `;MODE=PostgreSQL`) que aceitam funções nativas desses bancos para não quebrar queries nos testes.
+**Gabarito: E**. O H2 possui modos de compatibilidade (ex: `;MODE=PostgreSQL`) que aceitam funções nativas desses bancos para não quebrar queries nos testes.
 </details>
 
 ### Questão 26 (FCC)
 Em PostgreSQL, se uma coluna é declarada como `SERIAL`, após inserir dados e querer acessar o último valor gerado nesta sessão, usa-se a função:
-A) LAST_INSERT_ID()
-B) currval() ou lastval()
+A) currval() ou lastval()
+B) LAST_INSERT_ID()
 C) SYSDATE()
 D) SEQ.LASTVAL
 E) RETURNING ID
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. As funções `currval('nome_seq')` ou `lastval()` retornam o valor gerado na transação/sessão atual. A cláusula `RETURNING` também é usada no `INSERT`.
+**Gabarito: A**. As funções `currval('nome_seq')` ou `lastval()` retornam o valor gerado na transação/sessão atual. A cláusula `RETURNING` também é usada no `INSERT`.
 </details>
 
 ### Questão 27 (FCC)
@@ -340,26 +340,26 @@ E) Calcular a nova visão (New View Level).
 
 ### Questão 28 (FCC)
 Ao definir uma Sequence no Oracle com a cláusula `CACHE 20`, o banco de dados irá:
-A) Limitar a sequência a apenas 20 valores máximos.
-B) Prealocar e manter 20 valores em memória RAM para acesso mais rápido, reduzindo I/O em disco.
+A) Prealocar e manter 20 valores em memória RAM para acesso mais rápido, reduzindo I/O em disco.
+B) Limitar a sequência a apenas 20 valores máximos.
 C) Criar uma tabela DUAL secundária de 20 linhas.
 D) Bloquear inserções concorrentes após 20 tentativas.
 E) Limpar o buffer de memória a cada 20 minutos.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. O `CACHE` melhora o desempenho das sequências guardando blocos numéricos na memória.
+**Gabarito: A**. O `CACHE` melhora o desempenho das sequências guardando blocos numéricos na memória.
 </details>
 
 ### Questão 29 (FCC)
 Diferentemente do PostgreSQL, para concatenar strings no Oracle, o operador nativo clássico (além da função CONCAT) é:
 A) `+`
-B) `&`
-C) `||`
+B) `||`
+C) `&`
 D) `.`
 E) `::`
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. Tanto Oracle quanto PostgreSQL suportam o operador padrão ANSI `||` para concatenação de strings.
+**Gabarito: B**. Tanto Oracle quanto PostgreSQL suportam o operador padrão ANSI `||` para concatenação de strings.
 </details>
 
 ### Questão 30 (FCC)
@@ -380,74 +380,74 @@ E) Access Control, Identity, Domain.
 
 ### Questão 31 (FCC)
 Assinale a frase gramaticalmente correta quanto à colocação pronominal:
-A) Me entregaram o processo ontem.
+A) Quando me disseram a verdade, encerrei o caso.
 B) Não manifestou-se a respeito do caso.
 C) Os colegas que dispuseram-se a ajudar folgarão amanhã.
-D) Quando me disseram a verdade, encerrei o caso.
+D) Me entregaram o processo ontem.
 E) Daria-te a resposta se a tivesse.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. A conjunção "Quando" atrai a próclise. (Em E, o certo seria "Dar-te-ia").
+**Gabarito: A**. A conjunção "Quando" atrai a próclise. (Em E, o certo seria "Dar-te-ia").
 </details>
 
 ### Questão 32 (FCC)
 A próclise em "Em se confirmando a suspeita..." ocorre por causa de:
 A) Início de período.
-B) Preposição "em" associada a verbo no gerúndio.
+B) Verbo no particípio.
 C) Palavra atrativa negativa.
-D) Verbo no particípio.
+D) Preposição "em" associada a verbo no gerúndio.
 E) Mesóclise deslocada.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. Regra clássica: EM + PRONOME + GERÚNDIO atrai a próclise.
+**Gabarito: D**. Regra clássica: EM + PRONOME + GERÚNDIO atrai a próclise.
 </details>
 
 ### Questão 33 (FCC)
 Assinale a alternativa incorreta quanto à colocação em locução verbal:
 A) O sistema estava testando-se.
-B) Ele não havia avisado-nos.
-C) Pretendiam apresentar-lhe os dados.
+B) Pretendiam apresentar-lhe os dados.
+C) Ele não havia avisado-nos.
 D) A equipe vinha preparando-se para o deploy.
 E) Não se podia compreender a falha.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. O verbo principal "avisado" está no particípio. Particípios JAMAIS aceitam ênclise.
+**Gabarito: C**. O verbo principal "avisado" está no particípio. Particípios JAMAIS aceitam ênclise.
 </details>
 
 ### Questão 34 (FCC)
 Na frase "O juiz considerou a alegação incabível", "incabível" é:
-A) Adjetivo.
-B) Advérbio.
+A) Advérbio.
+B) Adjetivo.
 C) Substantivo.
 D) Pronome.
 E) Preposição.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. Caracteriza o substantivo "alegação".
+**Gabarito: B**. Caracteriza o substantivo "alegação".
 </details>
 
 ### Questão 35 (FCC)
 Em qual frase a palavra "bastante" deve ser flexionada no plural?
 A) Eles trabalharam bastante.
 B) Elas estavam bastante cansadas.
-C) Havia bastante tarefa no projeto.
+C) São alunos bastante aplicados.
 D) Correram bastante hoje.
-E) São alunos bastante aplicados.
+E) Havia bastante tarefa no projeto.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. Acompanha substantivo (tarefa), logo é variável (bastantes tarefas). Nas demais, modifica verbo/adjetivo (advérbio invariável).
+**Gabarito: E**. Acompanha substantivo (tarefa), logo é variável (bastantes tarefas). Nas demais, modifica verbo/adjetivo (advérbio invariável).
 </details>
 
 ### Questão 36 (FCC)
 Assinale a alternativa em que há erro de colocação pronominal:
 A) Nunca se esqueça dos requisitos.
 B) Jamais me perdoaria por isso.
-C) Alguém avisou-me do prazo limite.
+C) Poucos se importaram com o erro.
 D) Tudo se resolve com calma.
-E) Poucos se importaram com o erro.
+E) Alguém avisou-me do prazo limite.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. O pronome indefinido "Alguém" é palavra atrativa. O correto é "Alguém me avisou".
+**Gabarito: E**. O pronome indefinido "Alguém" é palavra atrativa. O correto é "Alguém me avisou".
 </details>
 
 ### Questão 37 (FCC)
@@ -455,35 +455,35 @@ Os pronomes oblíquos átonos "o, a, os, as", quando ligados a verbos terminados
 A) no, na, nos, nas.
 B) lho, lha.
 C) mo, ma.
-D) lo, la, los, las.
-E) me, te, se.
+D) me, te, se.
+E) lo, la, los, las.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. O verbo perde a letra final (r, s, z) e o pronome ganha L (ex: fazer + o = fazê-lo).
+**Gabarito: E**. O verbo perde a letra final (r, s, z) e o pronome ganha L (ex: fazer + o = fazê-lo).
 </details>
 
 ### Questão 38 (FCC)
 Nas locuções verbais cujo verbo principal está no infinitivo ou gerúndio e HÁ palavra atrativa (ex: NÃO), onde o pronome pode ser colocado?
 A) Apenas antes do auxiliar.
 B) Apenas depois do principal.
-C) Antes do auxiliar ou depois do principal (ênclise ao infinitivo/gerúndio).
+C) Antes do principal.
 D) No meio do auxiliar (mesóclise).
-E) Antes do principal.
+E) Antes do auxiliar ou depois do principal (ênclise ao infinitivo/gerúndio).
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. Ex: "Não o quero ver" ou "Não quero vê-lo". Ambas corretas! (A FCC tenta colocar no meio com hífen "Não quero-o ver" - incorreto).
+**Gabarito: E**. Ex: "Não o quero ver" ou "Não quero vê-lo". Ambas corretas! (A FCC tenta colocar no meio com hífen "Não quero-o ver" - incorreto).
 </details>
 
 ### Questão 39 (FCC)
 Em "Aquela foi a solução **que** nos salvou", a próclise ocorreu porque:
 A) "Aquela" atrai o pronome.
 B) O verbo está no passado.
-C) O pronome relativo "que" exige a próclise.
-D) "solução" é substantivo feminino.
+C) "solução" é substantivo feminino.
+D) O pronome relativo "que" exige a próclise.
 E) A frase é negativa.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. O pronome relativo (que, o qual, onde) é uma forte palavra atrativa para a próclise.
+**Gabarito: D**. O pronome relativo (que, o qual, onde) é uma forte palavra atrativa para a próclise.
 </details>
 
 ### Questão 40 (FCC)
@@ -500,60 +500,60 @@ E) A decisão foi-lhe favorável.
 
 ### Questão 41 (FCC)
 Das classes gramaticais abaixo, a única invariável (que não sofre flexão de gênero e número) é:
-A) Substantivo.
+A) Advérbio.
 B) Adjetivo.
 C) Pronome.
-D) Advérbio.
+D) Substantivo.
 E) Numeral.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. Advérbios, preposições e conjunções são invariáveis.
+**Gabarito: A**. Advérbios, preposições e conjunções são invariáveis.
 </details>
 
 ### Questão 42 (FCC)
 Mesóclise é obrigatória quando:
 A) O verbo inicia a frase e está no presente.
-B) O verbo está no futuro do presente ou futuro do pretérito, e NÃO HÁ palavra atrativa justificando próclise.
+B) Ocorre gerúndio precedido de preposição.
 C) A oração é exclamativa ou interrogativa.
-D) Ocorre gerúndio precedido de preposição.
+D) O verbo está no futuro do presente ou futuro do pretérito, e NÃO HÁ palavra atrativa justificando próclise.
 E) O verbo está no particípio.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. Ex: "Convidar-te-ei para a festa". Se houvesse atrativa: "Não te convidarei".
+**Gabarito: D**. Ex: "Convidar-te-ei para a festa". Se houvesse atrativa: "Não te convidarei".
 </details>
 
 ### Questão 43 (FCC)
 A palavra "certo" atua como adjetivo (flexível) e como pronome indefinido dependendo de sua posição em relação ao substantivo. Assinale a alternativa onde "certo" é Pronome Indefinido:
-A) O resultado estava certo.
+A) Certas pessoas não merecem confiança.
 B) Ele sempre pega o caminho certo.
-C) Certas pessoas não merecem confiança.
+C) O resultado estava certo.
 D) Falou a coisa certa na hora certa.
 E) O relógio não está certo.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. Quando vem ANTES do substantivo de forma vaga ("Certas pessoas"), atua como pronome indefinido. Depois do substantivo, significa "correto" (adjetivo).
+**Gabarito: A**. Quando vem ANTES do substantivo de forma vaga ("Certas pessoas"), atua como pronome indefinido. Depois do substantivo, significa "correto" (adjetivo).
 </details>
 
 ### Questão 44 (FCC)
 Assinale a frase em que o adjetivo exerce função de predicativo do sujeito:
 A) O analista competente resolveu o bug.
 B) Comprei um computador rápido.
-C) O sistema rápido falhou hoje.
+C) O tribunal permanece fechado aos domingos.
 D) O diretor considerou o sistema lento.
-E) O tribunal permanece fechado aos domingos.
+E) O sistema rápido falhou hoje.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. O adjetivo "fechado" modifica o sujeito "tribunal" através do verbo de ligação "permanece". (Na D, é predicativo do objeto).
+**Gabarito: C**. O adjetivo "fechado" modifica o sujeito "tribunal" através do verbo de ligação "permanece". (Na D, é predicativo do objeto).
 </details>
 
 ### Questão 45 (FCC)
 "Dar-nos-ia muito prazer sua presença." A colocação pronominal apresentada:
 A) Está incorreta, o certo seria "Daria-nos".
 B) Está incorreta, o certo seria "Nos daria".
-C) Está correta (mesóclise), justificada pelo verbo no futuro do pretérito iniciando a oração sem palavra atrativa.
-D) Está correta, pois o pronome "nos" só pode atuar como objeto direto.
+C) Está correta, pois o pronome "nos" só pode atuar como objeto direto.
+D) Está correta (mesóclise), justificada pelo verbo no futuro do pretérito iniciando a oração sem palavra atrativa.
 E) É facultativa em relação a "Daria-nos".
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. Verbo no futuro iniciando a frase exige obrigatoriamente a mesóclise na norma-padrão.
+**Gabarito: D**. Verbo no futuro iniciando a frase exige obrigatoriamente a mesóclise na norma-padrão.
 </details>

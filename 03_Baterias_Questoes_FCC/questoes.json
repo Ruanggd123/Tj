@@ -4869,12 +4869,12 @@
     "statement": "O Sistema de Valor de Serviço (SVS) do ITIL v4 descreve como todos os componentes e atividades de uma organização trabalham juntos para facilitar a criação de valor. O SVS inclui vários elementos estruturais. Assinale a alternativa que apresenta corretamente as entradas (inputs) e saídas (outputs) desse sistema, bem como seus componentes centrais:",
     "options": {
       "A": "Entradas: Requisitos e SLA; Componentes: Processos e Funções; Saídas: Produtos e Contratos.",
-      "B": "Entradas: Demanda e Oportunidade; Componentes: Princípios Orientadores, Governança, Cadeia de Valor de Serviço, Práticas e Melhoria Contínua; Saídas: Valor.",
+      "B": "Entradas: Estratégia e Portfólio; Componentes: Ciclo de Vida do Serviço e Transição; Saídas: Operação do Serviço.",
       "C": "Entradas: Incidentes e Requisições; Componentes: Central de Serviços e Gerenciamento de Incidentes; Saídas: Resolução e Satisfação.",
-      "D": "Entradas: Estratégia e Portfólio; Componentes: Ciclo de Vida do Serviço e Transição; Saídas: Operação do Serviço.",
+      "D": "Entradas: Demanda e Oportunidade; Componentes: Princípios Orientadores, Governança, Cadeia de Valor de Serviço, Práticas e Melhoria Contínua; Saídas: Valor.",
       "E": "Entradas: Processos de Negócio; Componentes: Recursos, Competências e Infraestrutura; Saídas: Lucro e Eficiência."
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": "**Justificativa:** No modelo do ITIL v4, o Sistema de Valor de Serviço (SVS) é alimentado por **Oportunidades e Demanda** (entradas) e tem como objetivo final a cocriação de **Valor** (saída). Os componentes centrais do SVS que transformam essas entradas em saídas são:\n1. **Princípios orientadores** (Guiding principles);\n2. **Governança** (Governance);\n3. **Cadeia de valor de serviço** (Service value chain);\n4. **Práticas** (Practices);\n5. **Melhoria contínua** (Continual improvement)."
   },
   {
@@ -4886,13 +4886,13 @@
     "source": "FCC - TRT 11ª Região - Analista Judiciário - TI",
     "statement": "Uma organização pública de grande porte está passando por uma reestruturação em seu catálogo de serviços de tecnologia. A equipe decidiu adotar o princípio orientador do ITIL v4 que recomenda investigar a situação atual, reaproveitar o que já funciona e evitar construir soluções do zero sem uma análise prévia do estado atual das coisas. Esse princípio orientador é denominado:",
     "options": {
-      "A": "Focus on value (Foco no valor).",
+      "A": "Start where you are (Começar de onde você está).",
       "B": "Progress iteratively with feedback (Progredir iterativamente com feedback).",
       "C": "Collaborate and promote visibility (Colaborar e promover visibilidade).",
-      "D": "Start where you are (Começar de onde você está).",
+      "D": "Focus on value (Foco no valor).",
       "E": "Keep it simple and practical (Manter simples e prático)."
     },
-    "answer": "D",
+    "answer": "A",
     "explanation": "**Justificativa:** O princípio **Start where you are** (Começar de onde você está) enfatiza que não se deve descartar o que já existe para construir algo totalmente novo sem antes avaliar o estado atual. Ele orienta a reutilização de serviços, processos, pessoas e ferramentas existentes que sejam úteis e eficientes, economizando recursos e reduzindo riscos."
   },
   {
@@ -4906,11 +4906,11 @@
     "options": {
       "A": "Optimize and automate (Otimizar e automatizar).",
       "B": "Think and work holistically (Pensar e trabalhar holisticamente).",
-      "C": "Progress iteratively with feedback (Progredir iterativamente com feedback).",
+      "C": "Focus on value (Foco no valor).",
       "D": "Keep it simple and practical (Manter simples e prático).",
-      "E": "Focus on value (Foco no valor)."
+      "E": "Progress iteratively with feedback (Progredir iterativamente com feedback)."
     },
-    "answer": "C",
+    "answer": "E",
     "explanation": "**Justificativa:** O princípio **Progress iteratively with feedback** (Progredir iterativamente com feedback) orienta a subdividir grandes iniciativas em ciclos menores (iterações). Ao coletar feedback antes, durante e depois de cada iteração, garante-se que o desenvolvimento permaneça alinhado com as necessidades reais dos clientes, evitando desperdícios e retrabalhos volumosos."
   },
   {
@@ -4923,12 +4923,12 @@
     "statement": "O princípio orientador do ITIL v4 que estabelece que \"tudo o que a organização faz deve vincular-se, direta ou indiretamente, ao valor para si mesma, para seus clientes e para outras partes interessadas\" é denominado:",
     "options": {
       "A": "Think and work holistically (Pensar e trabalhar holisticamente).",
-      "B": "Focus on value (Foco no valor).",
+      "B": "Optimize and automate (Otimizar e automatizar).",
       "C": "Collaborate and promote visibility (Colaborar e promover visibilidade).",
-      "D": "Optimize and automate (Otimizar e automatizar).",
+      "D": "Focus on value (Foco no valor).",
       "E": "Start where you are (Começar de onde você está)."
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": "**Justificativa:** O princípio **Focus on value** (Foco no valor) exige que todas as atividades da organização tenham como meta a geração de valor para o cliente e para o negócio. Ele orienta a entender quem é o consumidor do serviço, como ele define valor e como a experiência do cliente (CX/UX) é afetada por cada ação."
   },
   {
@@ -4941,12 +4941,12 @@
     "statement": "Um gerente de projetos do TJ-CE busca otimizar um fluxo de atendimento de chamados removendo etapas burocráticas que não agregam valor ao resultado final. Ele aplica a mentalidade de que \"se um processo, serviço ou ação não ajuda a alcançar os objetivos pretendidos, ele deve ser eliminado\". Qual princípio orientador do ITIL v4 sustenta essa conduta diretamente?",
     "options": {
       "A": "Optimize and automate (Otimizar e automatizar).",
-      "B": "Keep it simple and practical (Manter simples e prático).",
+      "B": "Start where you are (Começar de onde você está).",
       "C": "Progress iteratively with feedback (Progredir iterativamente com feedback).",
-      "D": "Start where you are (Começar de onde você está).",
+      "D": "Keep it simple and practical (Manter simples e prático).",
       "E": "Collaborate and promote visibility (Colaborar e promover visibilidade)."
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": "**Justificativa:** Embora se assemelhe a otimizar, o cerne de eliminar desperdícios, focar no essencial e reduzir a complexidade desnecessária para fazer apenas o que é estritamente necessário é a definição do princípio **Keep it simple and practical** (Manter simples e prático). O princípio diz que se deve usar o menor número possível de etapas para atingir os objetivos."
   },
   {
@@ -4958,13 +4958,13 @@
     "source": "FCC - Concursos de Tribunais",
     "statement": "A Cadeia de Valor de Serviço (Service Value Chain) do ITIL v4 é um modelo operacional que define seis atividades principais. Assinale a alternativa que apresenta a atividade cuja finalidade é fornecer uma compreensão compartilhada da visão, do status atual e da direção de melhoria para todos os quatro produtos e serviços em toda a organização:",
     "options": {
-      "A": "Plan (Planejar).",
+      "A": "Engage (Engajar).",
       "B": "Improve (Melhorar).",
-      "C": "Engage (Engajar).",
+      "C": "Plan (Planejar).",
       "D": "Design and transition (Desenho e transição).",
       "E": "Deliver and support (Entrega e suporte)."
     },
-    "answer": "A",
+    "answer": "C",
     "explanation": "**Justificativa:** A atividade **Plan (Planejar)** tem como objetivo principal garantir um entendimento mútuo e claro da visão geral, do estado atual do gerenciamento de serviços e das metas de melhoria contínua para toda a organização."
   },
   {
@@ -4976,13 +4976,13 @@
     "source": "FCC - TRF - Analista de TI",
     "statement": "De acordo com o ITIL v4, as práticas de gerenciamento são conjuntos de recursos organizacionais projetados para desempenhar trabalho ou atingir um objetivo. A prática cujo propósito é **minimizar o impacto negativo de interrupções de serviço restaurando a operação normal do serviço o mais rápido possível** é denominada:",
     "options": {
-      "A": "Gerenciamento de Problemas (Problem Management).",
+      "A": "Gerenciamento de Incidentes (Incident Management).",
       "B": "Habilitação de Mudanças (Change Enablement).",
-      "C": "Gerenciamento de Incidentes (Incident Management).",
+      "C": "Gerenciamento de Problemas (Problem Management).",
       "D": "Gerenciamento de Requisição de Serviço (Service Request Management).",
       "E": "Gerenciamento de Liberação (Release Management)."
     },
-    "answer": "C",
+    "answer": "A",
     "explanation": "**Justificativa:** O foco do **Gerenciamento de Incidentes** é puramente a velocidade na restauração da operação normal de um serviço para mitigar prejuízos à operação de negócios. A causa raiz da falha não é o objetivo imediato desta prática (esta é a responsabilidade do Gerenciamento de Problemas)."
   },
   {
@@ -4994,13 +4994,13 @@
     "source": "FCC - PGE-CE - Adaptada",
     "statement": "Diferenciar um Incidente de um Problema é um conceito clássico mantido no ITIL v4. Com base nas definições formais dessas duas práticas, assinale a alternativa correta:",
     "options": {
-      "A": "Um incidente é uma causa potencial de uma interrupção, enquanto um problema é o impacto financeiro real daquela interrupção.",
-      "B": "Um incidente é uma interrupção não planejada de um serviço ou redução na sua qualidade, ao passo que um problema é uma causa ou causa potencial de um ou mais incidentes.",
+      "A": "Um incidente é uma interrupção não planejada de um serviço ou redução na sua qualidade, ao passo que um problema é uma causa ou causa potencial de um ou mais incidentes.",
+      "B": "Um incidente é uma causa potencial de uma interrupção, enquanto um problema é o impacto financeiro real daquela interrupção.",
       "C": "O gerenciamento de problemas busca restaurar o serviço rapidamente, enquanto o gerenciamento de incidentes investiga a causa raiz em longo prazo.",
       "D": "Incidentes sempre geram mudanças emergenciais, enquanto problemas são resolvidos apenas através de mudanças normais.",
       "E": "Um incidente só se torna um problema caso a Central de Serviços (Service Desk) não consiga resolvê-lo no primeiro nível de atendimento."
     },
-    "answer": "B",
+    "answer": "A",
     "explanation": "**Justificativa:** \n* **Incidente:** Interrupção não planejada ou queda de qualidade de um serviço.\n* **Problema:** A causa desconhecida (ou causa potencial) que originou um ou mais incidentes.\nO Gerenciamento de Incidentes foca em reestabelecer o serviço. O Gerenciamento de Problemas foca em identificar a causa raiz para evitar que novos incidentes ocorram ou para reduzir o impacto deles."
   },
   {
@@ -5031,12 +5031,12 @@
     "statement": "A prática de Habilitação de Mudanças (Change Enablement / Change Control) tem como propósito maximizar o número de mudanças de produtos e serviços bem-sucedidas. Para isso, ela deve garantir que:",
     "options": {
       "A": "Toda e qualquer mudança seja submetida à aprovação do Diretor de Tecnologia em reunião semanal física.",
-      "B": "Os riscos de todas as mudanças sejam adequadamente avaliados, as mudanças sejam devidamente autorizadas e uma agenda/calendário de mudanças seja gerenciado.",
+      "B": "Todos os usuários do sistema assinem um termo de aceite formal antes da liberação do deploy.",
       "C": "Nenhuma alteração de código ocorra em produção sem testes automatizados de 100% de cobertura.",
       "D": "O tempo de restauração do serviço seja inferior a 15 minutos em caso de incidentes graves.",
-      "E": "Todos os usuários do sistema assinem um termo de aceite formal antes da liberação do deploy."
+      "E": "Os riscos de todas as mudanças sejam adequadamente avaliados, as mudanças sejam devidamente autorizadas e uma agenda/calendário de mudanças seja gerenciado."
     },
-    "answer": "B",
+    "answer": "E",
     "explanation": "**Justificativa:** A prática de **Habilitação de Mudanças** equilibra velocidade com controle. Ela atua avaliando o risco e o impacto de alterações propostas, gerindo o agendamento (calendário) para evitar conflitos operacionais, e garantindo que quem tem autoridade adequada aprove a transição."
   },
   {
@@ -5049,12 +5049,12 @@
     "statement": "As mudanças no ITIL v4 são tipicamente classificadas em três tipos principais. Uma mudança que é de baixo risco, recorrente, bem compreendida, documentada em um procedimento operacional padrão e que **dispensa autorização individual a cada execução por já ser pré-autorizada** é classificada como:",
     "options": {
       "A": "Mudança Normal (Normal Change).",
-      "B": "Mudança de Emergência (Emergency Change).",
-      "C": "Mudança Padrão (Standard Change).",
+      "B": "Mudança Padrão (Standard Change).",
+      "C": "Mudança de Emergência (Emergency Change).",
       "D": "Mudança Operacional Comum (Common Change).",
       "E": "Mudança de Rotina (Routine Change)."
     },
-    "answer": "C",
+    "answer": "B",
     "explanation": "**Justificativa:** A **Mudança Padrão (Standard Change)** é pré-autorizada. Ela segue um processo conhecido e seguro (ex: atualização periódica de antivírus, criação de conta de novo usuário). Como o risco é baixo e o processo é validado, a equipe pode executá-la diretamente sem precisar passar por aprovação prévia em cada ocorrência."
   },
   {
@@ -5066,13 +5066,13 @@
     "source": "FCC - Pegadinha de Autorização de Mudança",
     "statement": "Sobre o processo de aprovação de mudanças na prática de Habilitação de Mudanças do ITIL v4, assinale a afirmação correta:",
     "options": {
-      "A": "Todas as mudanças na organização devem ser aprovadas por um conselho consultivo centralizado de mudanças (CAB).",
-      "B": "A autoridade de mudança (Change Authority) deve ser alocada de forma flexível para cada tipo de mudança, garantindo que mudanças de baixo risco e padrão sejam descentralizadas e rápidas.",
+      "A": "A autoridade de mudança (Change Authority) deve ser alocada de forma flexível para cada tipo de mudança, garantindo que mudanças de baixo risco e padrão sejam descentralizadas e rápidas.",
+      "B": "Todas as mudanças na organização devem ser aprovadas por um conselho consultivo centralizado de mudanças (CAB).",
       "C": "Mudanças de emergência não exigem qualquer tipo de avaliação de risco ou autorização devido à urgência do incidente.",
       "D": "O CAB deve aprovar apenas mudanças padrão, delegando mudanças normais para a gerência executiva.",
       "E": "A autoridade de mudança é sempre um papel exercido pelo próprio desenvolvedor que escreveu o código correspondente."
     },
-    "answer": "B",
+    "answer": "A",
     "explanation": "**Justificativa:** O ITIL v4 recomenda que a **Autoridade de Mudança** (o papel ou grupo responsável por autorizar a mudança) seja distribuída. Mudanças normais complexas podem requerer aprovação de conselhos ou diretores, ao passo que mudanças padrão são descentralizadas (pré-autorizadas para a equipe técnica). Isso evita gargalos burocráticos."
   },
   {
@@ -5085,12 +5085,12 @@
     "statement": "No contexto das mudanças de emergência (Emergency Changes), assinale a alternativa que descreve uma conduta aderente às boas práticas do ITIL v4:",
     "options": {
       "A": "Devem ser tratadas usando o mesmo fluxo detalhado e com os mesmos prazos de aprovação das mudanças normais para garantir a segurança.",
-      "B": "Devem possuir um processo de autorização e avaliação simplificado e acelerado, podendo até mesmo ter a documentação formalizada retrospectivamente após a implantação.",
+      "B": "Exigem a aprovação unânime de todos os membros do Conselho Consultivo de Mudanças de Emergência (ECAB) reunidos presencialmente.",
       "C": "Devem ser implementadas sem a realização de testes, priorizando integralmente a velocidade do deploy.",
-      "D": "Exigem a aprovação unânime de todos os membros do Conselho Consultivo de Mudanças de Emergência (ECAB) reunidos presencialmente.",
+      "D": "Devem possuir um processo de autorização e avaliação simplificado e acelerado, podendo até mesmo ter a documentação formalizada retrospectivamente após a implantação.",
       "E": "Dispensam o registro nos logs de configuração do SGBD para evitar exposição de falhas de segurança."
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": "**Justificativa:** Mudanças de emergência precisam ser feitas o mais rápido possível (ex: correção de uma vulnerabilidade ativa ou queda de servidor). O processo de avaliação é acelerado e executado por uma autoridade de emergência (ECAB). Detalhes e documentação detalhada podem ser inseridos no sistema após a estabilização do ambiente."
   },
   {
@@ -5104,11 +5104,11 @@
     "options": {
       "A": "Planejar, Executar, Verificar, Agir (PDCA).",
       "B": "Estratégia, Desenho, Operação, Transição.",
-      "C": "Organizações e pessoas; Informação e tecnologia; Parceiros e fornecedores; Fluxos de valor e processos.",
-      "D": "Incidentes, Problemas, Mudanças, Liberações.",
+      "C": "Incidentes, Problemas, Mudanças, Liberações.",
+      "D": "Organizações e pessoas; Informação e tecnologia; Parceiros e fornecedores; Fluxos de valor e processos.",
       "E": "Infraestrutura, Software, Redes, Banco de Dados."
     },
-    "answer": "C",
+    "answer": "D",
     "explanation": "**Justificativa:** As **Quatro Dimensões do Gerenciamento de Serviço** do ITIL v4 são:\n1. **Organizações e pessoas** (Organizations and people);\n2. **Informação e tecnologia** (Information and technology);\n3. **Parceiros e fornecedores** (Partners and suppliers);\n4. **Fluxos de valor e processos** (Value streams and processes).\nElas devem ser consideradas de forma equilibrada para garantir o sucesso de qualquer serviço ou prática de TI."
   },
   {
@@ -5139,12 +5139,12 @@
     "statement": "O CMMI-DEV v2.0 (Capability Maturity Model Integration para Desenvolvimento) organiza as práticas em Categorias e Áreas de Prática (PAs). Além disso, ele mantém a possibilidade de representação do progresso organizacional de duas formas tradicionais. Assinale a alternativa que descreve corretamente essas representações:",
     "options": {
       "A": "Representação Cascata (com níveis de maturidade de A a G) e Representação Ágil (com sprints de 1 a 5).",
-      "B": "Representação por Estágios (Staged), que mede a maturidade da organização usando níveis de 1 a 5; e Representação Contínua (Continuous), que mede a capacidade de processos específicos usando níveis de 0 a 3.",
+      "B": "Representação Departamental (focada em equipes) e Representação Corporativa (focada em diretrizes estratégicas).",
       "C": "Representação Lógica (focada em processos) e Representação Física (focada em hardware e infraestrutura).",
       "D": "Representação Estática (baseada em checklists) e Representação Dinâmica (baseada em métricas em tempo real).",
-      "E": "Representação Departamental (focada em equipes) e Representação Corporativa (focada em diretrizes estratégicas)."
+      "E": "Representação por Estágios (Staged), que mede a maturidade da organização usando níveis de 1 a 5; e Representação Contínua (Continuous), que mede a capacidade de processos específicos usando níveis de 0 a 3."
     },
-    "answer": "B",
+    "answer": "E",
     "explanation": "**Justificativa:** \n* **Representação por Estágios (Staged):** Utiliza **Níveis de Maturidade** (1: Inicial, 2: Gerenciado, 3: Definido, 4: Gerenciado Quantitativamente, 5: Em Otimização) para avaliar o nível de maturidade global da empresa.\n* **Representação Contínua (Continuous):** Utiliza **Níveis de Capacidade** (0: Incompleto, 1: Ad Hoc, 2: Gerenciado, 3: Definido) para medir a evolução de Áreas de Prática (PAs) individuais."
   },
   {
@@ -5157,12 +5157,12 @@
     "statement": "No CMMI-DEV v2.0, a diferença fundamental entre uma organização avaliada no Nível de Maturidade 2 (Gerenciado) e outra avaliada no Nível de Maturidade 3 (Definido) baseia-se em:",
     "options": {
       "A": "O uso de metodologias ágeis como Scrum, que é obrigatório apenas no Nível 3.",
-      "B": "O fato de que no Nível 2 os processos são planejados e executados de acordo com políticas a nível de projeto (podendo variar entre projetos), enquanto no Nível 3 os processos da organização são padronizados, descritos em normas organizacionais e adaptados para cada projeto usando diretrizes corporativas (processos definidos).",
+      "B": "A exigência de certificação individual de todos os desenvolvedores em ferramentas de CI/CD.",
       "C": "A presença de medição estatística fina de desempenho do processo, existente apenas no Nível 2.",
       "D": "A eliminação completa do retrabalho e de bugs no código escrito, garantia exclusiva do Nível 3.",
-      "E": "A exigência de certificação individual de todos os desenvolvedores em ferramentas de CI/CD."
+      "E": "O fato de que no Nível 2 os processos são planejados e executados de acordo com políticas a nível de projeto (podendo variar entre projetos), enquanto no Nível 3 os processos da organização são padronizados, descritos em normas organizacionais e adaptados para cada projeto usando diretrizes corporativas (processos definidos)."
     },
-    "answer": "B",
+    "answer": "E",
     "explanation": "**Justificativa:** No **Nível 2 (Gerenciado)**, o foco é gerenciar o projeto de forma reativa e isolada (garantindo planejamento, medição e controle de requisitos projeto a projeto). No **Nível 3 (Definido)**, a organização atua proativamente, estabelecendo um conjunto de processos padrão corporativos comuns (ativos de processos da organização), os quais são customizados por cada equipe através de critérios formais de adaptação (tailoring)."
   },
   {
@@ -5175,12 +5175,12 @@
     "statement": "Uma das áreas de prática (PA) cruciais na categoria de Gerenciamento do CMMI-DEV v2.0 é o Planejamento (Planning - PLAN). Qual das seguintes alternativas apresenta uma atividade típica recomendada por esta PA?",
     "options": {
       "A": "Desenhar a arquitetura física de redundância física do SGBD PostgreSQL em nuvem.",
-      "B": "Desenvolver estimativas de tamanho, esforço, custo e cronograma do projeto de software com base em dados históricos.",
+      "B": "Realizar reuniões diárias (Daily Sprints) de no máximo 15 minutos com os desenvolvedores de front-end.",
       "C": "Testar as classes Java para garantir que as interfaces de POO atendam às restrições do edital.",
-      "D": "Realizar reuniões diárias (Daily Sprints) de no máximo 15 minutos com os desenvolvedores de front-end.",
+      "D": "Desenvolver estimativas de tamanho, esforço, custo e cronograma do projeto de software com base em dados históricos.",
       "E": "Auditar o código-fonte produzido para verificar se o padrão de nomenclatura de variáveis foi respeitado."
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": "**Justificativa:** A PA **Planning (PLAN)** do CMMI v2.0 foca no estabelecimento e manutenção de planos de projetos realistas. Isso inclui estimar o esforço, custo, recursos necessários e cronograma, estruturar a equipe, obter comprometimento com o plano e definir métricas de progresso."
   },
   {
@@ -5193,12 +5193,12 @@
     "statement": "Em relação ao CMMI-DEV v2.0, a Área de Prática de Desenvolvimento e Gerenciamento de Requisitos (Requirements Development and Management - RDM) estabelece que a organização deve:",
     "options": {
       "A": "Evitar qualquer mudança de requisitos após a assinatura do contrato do projeto.",
-      "B": "Elicitar, analisar, validar os requisitos junto aos clientes e gerenciar as mudanças e a consistência entre os requisitos e os planos/produtos de trabalho do projeto.",
+      "B": "Classificar os requisitos apenas em funcionais e operacionais, desconsiderando as metas de desempenho.",
       "C": "Modelar todos os requisitos do sistema usando apenas Diagramas de Casos de Uso da UML 2.5.",
       "D": "Delegar a elicitação de requisitos inteiramente para a equipe de testes de aceitação.",
-      "E": "Classificar os requisitos apenas em funcionais e operacionais, desconsiderando as metas de desempenho."
+      "E": "Elicitar, analisar, validar os requisitos junto aos clientes e gerenciar as mudanças e a consistência entre os requisitos e os planos/produtos de trabalho do projeto."
     },
-    "answer": "B",
+    "answer": "E",
     "explanation": "**Justificativa:** A PA **RDM** unificou as antigas PAs de Desenvolvimento de Requisitos (RD) e Gerenciamento de Requisitos (REQM) do CMMI v1.3. O objetivo é duplo: obter requisitos claros e acordados com os clientes (desenvolvimento) e manter a rastreabilidade e o controle de mudanças ao longo do projeto, garantindo o alinhamento com o código e testes (gerenciamento)."
   },
   {
@@ -5229,12 +5229,12 @@
     "statement": "No CMMI-DEV v2.0, a diferença técnica entre as Áreas de Prática de Verificação (Verification - VER) e Validação (Validation - VAL) é descrita da seguinte forma:",
     "options": {
       "A": "Verificação testa o sistema em ambiente de produção; Validação testa em ambiente de homologação.",
-      "B": "Verificação avalia se o produto atende às especificações técnicas descritas no projeto (se o produto foi construído corretamente); Validação avalia se o produto atende às necessidades reais do usuário final em seu ambiente operacional (se o produto correto foi construído).",
-      "C": "Verificação é realizada manualmente por testadores; Validação é realizada apenas por meio de ferramentas automatizadas.",
+      "B": "Verificação é realizada manualmente por testadores; Validação é realizada apenas por meio de ferramentas automatizadas.",
+      "C": "Verificação avalia se o produto atende às especificações técnicas descritas no projeto (se o produto foi construído corretamente); Validação avalia se o produto atende às necessidades reais do usuário final em seu ambiente operacional (se o produto correto foi construído).",
       "D": "Verificação aplica-se apenas a códigos-fonte Java; Validação aplica-se apenas a consultas SQL em bancos relacionais.",
       "E": "Verificação é uma atividade do Nível de Maturidade 2; Validação é exclusiva do Nível de Maturidade 5."
     },
-    "answer": "B",
+    "answer": "C",
     "explanation": "**Justificativa:** \n* **VER (Verificação):** Garante o alinhamento técnico com as especificações internas de design e arquitetura (\"estamos construindo o produto corretamente?\").\n* **VAL (Validação):** Garante a satisfação do cliente e o atendimento aos propósitos práticos e operacionais do usuário final (\"estamos construindo o produto correto?\")."
   },
   {
@@ -5265,12 +5265,12 @@
     "statement": "Para que uma organização seja avaliada no nível de maturidade mais básico do MR-MPS-SW versão 2023, denominado **Nível G (Parcialmente Gerenciado)**, ela deve implementar obrigatoriamente os seguintes processos:",
     "options": {
       "A": "Gerência de Configuração (GCO) e Garantia da Qualidade (GQA).",
-      "B": "Aquisição (AQS) e Medição (MED).",
-      "C": "Gerência de Requisitos (GRE) e Gerência de Projetos (GPR).",
+      "B": "Gerência de Requisitos (GRE) e Gerência de Projetos (GPR).",
+      "C": "Aquisição (AQS) e Medição (MED).",
       "D": "Verificação (VER) e Validação (VAL).",
       "E": "Definição do Processo Organizacional (DFP) e Treinamento (TRN)."
     },
-    "answer": "C",
+    "answer": "B",
     "explanation": "**Justificativa:** O Nível G do MPS-SW exige apenas dois processos fundamentais para começar a organizar a casa:\n1. **GRE - Gerência de Requisitos:** Para controlar o escopo e as solicitações do cliente.\n2. **GPR - Gerência de Projetos:** Para planejar e monitorar prazos, tarefas e custos.\nCom isso, o nível de entrada torna-se viável para empresas iniciantes."
   },
   {
@@ -5283,12 +5283,12 @@
     "statement": "No MR-MPS-SW versão 2023, quando uma empresa evolui do Nível G para o **Nível F (Gerenciado)**, ela deve, além de manter os processos do nível anterior, implementar novos processos. Assinale a alternativa que apresenta processos adicionados no Nível F:",
     "options": {
       "A": "Gerência de Portfólio (GPO) e Engenharia de Requisitos Avançada (ERA).",
-      "B": "Garantia da Qualidade (GQA), Gerência de Configuração (GCO), Medição (MED) e Aquisição (AQS).",
+      "B": "Análise de Decisão e Resolução (ADR) e Desenvolvimento Organizacional (DOR).",
       "C": "Desenvolvimento de Requisitos (DRE) e Solução Técnica (SOL).",
       "D": "Gerência de Riscos (GRI) e Integração do Produto (ITP).",
-      "E": "Análise de Decisão e Resolução (ADR) e Desenvolvimento Organizacional (DOR)."
+      "E": "Garantia da Qualidade (GQA), Gerência de Configuração (GCO), Medição (MED) e Aquisição (AQS)."
     },
-    "answer": "B",
+    "answer": "E",
     "explanation": "**Justificativa:** O Nível F (Gerenciado) adiciona processos de suporte e controle operacional essenciais:\n* **GCO (Gerência de Configuração):** Controle de versões de código e baselines.\n* **GQA (Garantia da Qualidade):** Auditorias de aderência a processos e padrões.\n* **MED (Medição):** Coleta de métricas básicas de esforço e defeitos.\n* **AQS (Aquisição):** Controle de compras e contratação de terceiros/fornecedores de software."
   },
   {
@@ -5301,12 +5301,12 @@
     "statement": "No âmbito do MR-MPS-SW versão 2023, os Atributos de Processo (APs) servem para avaliar o grau de capacidade e capabilidade de implementação dos processos em cada nível. O atributo de processo codificado como **AP 2.1 (O processo é gerenciado)** exige evidências de que:",
     "options": {
       "A": "A alta direção realiza auditorias financeiras semestrais no projeto.",
-      "B": "A execução do processo é planejada, monitorada e ajustada com base em planos de projeto documentados.",
-      "C": "Os produtos de trabalho resultantes do processo são controlados e versionados sistematicamente.",
+      "B": "Os produtos de trabalho resultantes do processo são controlados e versionados sistematicamente.",
+      "C": "A execução do processo é planejada, monitorada e ajustada com base em planos de projeto documentados.",
       "D": "O processo é padronizado e incorporado à biblioteca de processos organizacionais da empresa.",
       "E": "Métodos estatísticos são aplicados para controlar a variação das taxas de defeitos."
     },
-    "answer": "B",
+    "answer": "C",
     "explanation": "**Justificativa:** O **AP 2.1** avalia se o processo não é apenas executado (AP 1.1), mas sim planejado, acompanhado e controlado operacionalmente (gerenciado).\n* O controle de produtos de trabalho (versionamento) é avaliado pelo **AP 2.2** (Os produtos de trabalho do processo são gerenciados).\n* A padronização organizacional é avaliada nos atributos de Nível 3 (como **AP 3.1** - O processo é definido)."
   },
   {
@@ -5337,12 +5337,12 @@
     "statement": "A Área de Prática de Garantia da Qualidade do Processo (Process Quality Assurance - PQA) do CMMI-DEV v2.0 visa fornecer à gerência e à equipe de desenvolvimento uma visão objetiva sobre a aderência das atividades e produtos de trabalho aos processos e padrões aplicáveis. Para manter a objetividade, o profissional de PQA deve possuir:",
     "options": {
       "A": "Autoridade para alterar o código-fonte de produção diretamente.",
-      "B": "Independência organizacional em relação ao gerente do projeto e aos desenvolvedores cujos trabalhos estão sendo avaliados.",
+      "B": "O mesmo nível de acesso do product owner na definição de priorização do backlog de requisitos.",
       "C": "Formação superior exclusiva em Engenharia de Software ou ciência de dados.",
       "D": "Acesso irrestrito às chaves criptográficas de segurança dos servidores de banco de dados.",
-      "E": "O mesmo nível de acesso do product owner na definição de priorização do backlog de requisitos."
+      "E": "Independência organizacional em relação ao gerente do projeto e aos desenvolvedores cujos trabalhos estão sendo avaliados."
     },
-    "answer": "B",
+    "answer": "E",
     "explanation": "**Justificativa:** A independência do auditor/analista de Garantia da Qualidade (PQA) é indispensável. Se o analista responder diretamente ao gerente de projeto ou fizer parte da equipe de desenvolvimento imediata, haverá conflito de interesses que compromete a neutralidade de suas avaliações sobre desvios de processo."
   },
   {
@@ -5355,12 +5355,12 @@
     "statement": "No CMMI-DEV v2.0, a Área de Prática denominada Gerência de Configuração (Configuration Management - CM) estabelece que a organização deve estabelecer e manter a integridade dos produtos de trabalho. Uma atividade essencial dessa PA é:",
     "options": {
       "A": "Otimizar consultas SQL com índices B-Tree e Hash.",
-      "B": "Identificar itens de configuração, estabelecer linhas de base (baselines) e controlar as alterações desses itens.",
+      "B": "Realizar testes de carga em APIs para verificar a tolerância a falhas.",
       "C": "Desenhar diagramas de fluxo de dados de alto nível com a notação BPMN.",
-      "D": "Realizar testes de carga em APIs para verificar a tolerância a falhas.",
+      "D": "Identificar itens de configuração, estabelecer linhas de base (baselines) e controlar as alterações desses itens.",
       "E": "Programar scripts em PowerShell para automatizar backups físicos no Windows Server."
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": "**Justificativa:** A PA **CM** foca no controle estruturado de artefatos (código, documentos, diagramas). Ao classificar artefatos como itens de configuração, criar baselines (marcos estáveis de versão) e registrar e rastrear alterações, garante-se que a equipe trabalhe com as versões corretas e autorizadas dos produtos de trabalho."
   },
   {
@@ -5372,13 +5372,13 @@
     "source": "FCC - PGE-CE",
     "statement": "O processo de Medição (MED) no MPS-SW versão 2023, introduzido a partir do Nível F, orienta a organização a coletar dados quantitativos para apoiar as decisões de gerenciamento dos projetos. Uma diretriz correta para a implantação da Medição é:",
     "options": {
-      "A": "Medir a produtividade dos desenvolvedores pelo número de linhas de código escritas por dia.",
-      "B": "Definir objetivos de medição alinhados com as metas de negócio, identificar indicadores claros baseados em dados coletados e armazenar essas informações em um repositório histórico.",
+      "A": "Definir objetivos de medição alinhados com as metas de negócio, identificar indicadores claros baseados em dados coletados e armazenar essas informações em um repositório histórico.",
+      "B": "Medir a produtividade dos desenvolvedores pelo número de linhas de código escritas por dia.",
       "C": "Coletar o máximo de métricas possíveis da internet, independentemente do tipo de projeto ou tecnologia utilizada.",
       "D": "Guardar as métricas apenas nas memórias individuais dos gerentes para evitar vazamento de dados.",
       "E": "Substituir os processos de testes de validação pelos indicadores numéricos de desempenho das equipes."
     },
-    "answer": "B",
+    "answer": "A",
     "explanation": "**Justificativa:** A medição útil não deve ser ad-hoc ou punitiva. Ela deve apoiar as necessidades de informação da empresa (ex: desvio de cronograma, densidade de defeitos). Isso exige planejar a medição (identificando objetivos), coletar e analisar os dados estruturadamente, e guardar os dados para análise histórica futura."
   },
   {
@@ -5390,13 +5390,13 @@
     "source": "FCC - TRT 15ª Região",
     "statement": "No CMMI-DEV v2.0, a Área de Prática de Estimativa (Estimating - EST) é executada antes do Planejamento. O seu propósito principal é estimar o esforço, custo e tamanho do projeto de software. Uma boa prática descrita nesta PA é:",
     "options": {
-      "A": "Definir prazos curtos para motivar a equipe a trabalhar horas extras.",
-      "B": "Utilizar múltiplos métodos de estimativa (como analogia, opinião de especialistas e modelos paramétricos como Pontos de Função) para cruzar dados e reduzir incertezas.",
+      "A": "Utilizar múltiplos métodos de estimativa (como analogia, opinião de especialistas e modelos paramétricos como Pontos de Função) para cruzar dados e reduzir incertezas.",
+      "B": "Definir prazos curtos para motivar a equipe a trabalhar horas extras.",
       "C": "Aceitar a estimativa imposta pelo cliente sem avaliar a complexidade técnica dos requisitos.",
       "D": "Estimar apenas a codificação final, desconsiderando atividades de teste e documentação técnica.",
       "E": "Realizar novas estimativas apenas se o projeto sofrer um desvio de escopo superior a 90%."
     },
-    "answer": "B",
+    "answer": "A",
     "explanation": "**Justificativa:** A PA **Estimating (EST)** recomenda cruzar estimativas por diferentes abordagens para obter dados confiáveis. Estimar com base em dados históricos e modelos aceitos (como Pontos de Função ou Story Points) previne estouros de cronograma e custos na fase de execução (PLAN)."
   },
   {
@@ -5408,13 +5408,13 @@
     "source": "FCC - Adaptada",
     "statement": "Assinale a alternativa em que todas as palavras estão grafadas corretamente de acordo com as regras de uso do hífen vigentes (Acordo Ortográfico):",
     "options": {
-      "A": "Auto-estrada, contra-regra, super-resistente.",
-      "B": "Autoestrada, contrarregra, super-resistente.",
+      "A": "Autoestrada, contrarregra, super-resistente.",
+      "B": "Auto-estrada, contra-regra, super-resistente.",
       "C": "Auto-estrada, contrarregra, superresistente.",
       "D": "Autoestrada, contra-regra, superresistente.",
       "E": "Auto-estrada, contra-regra, super-resistente."
     },
-    "answer": "B",
+    "answer": "A",
     "explanation": "**Justificativa:** \n* **Autoestrada:** O prefixo termina em vogal diferente da vogal que inicia o segundo elemento (`o` + `e`), logo, junta-se sem hífen.\n* **Contrarregra:** O prefixo termina em vogal e o segundo elemento começa com `r`. Nesse caso, remove-se o hífen e dobra-se a consoante `r` (gerando `rr`). O mesmo vale para consoante `s` (ex: minissaia, contrassenso).\n* **Super-resistente:** O prefixo termina em consoante (`r`) idêntica à consoante que inicia o segundo elemento (`r`), exigindo o uso do hífen para separar."
   },
   {
@@ -5426,13 +5426,13 @@
     "source": "FCC - TRT 11ª Região - Analista Judiciário - TI",
     "statement": "De acordo com o Acordo Ortográfico vigente, os prefixos **co-** e **re-** possuem regras específicas de aglutinação com termos que iniciam pela mesma vogal. Assinale a alternativa que apresenta a grafia correta dos compostos formados por esses prefixos:",
     "options": {
-      "A": "Co-obrigar, re-escrever, co-ordenar.",
-      "B": "Coobrigar, reescrever, coordenar.",
+      "A": "Coobrigar, reescrever, coordenar.",
+      "B": "Co-obrigar, re-escrever, co-ordenar.",
       "C": "Coobrigar, re-escrever, co-ordenar.",
       "D": "Co-obrigar, reescrever, coordenar.",
       "E": "Co-obrigar, re-escrever, coordenar."
     },
-    "answer": "B",
+    "answer": "A",
     "explanation": "**Justificativa:** Sob as regras do Acordo Ortográfico, os prefixos **co-** e **re-** aglutinam-se diretamente com o segundo elemento, mesmo que este se inicie pela mesma vogal do prefixo, dispensando o hífen (ex: coobrigar, coordenar, coautor, reescrever, reeleger)."
   },
   {
@@ -5444,13 +5444,13 @@
     "source": "FCC - TRT 24ª Região - Analista",
     "statement": "Considere o uso do hífen com o prefixo **sub-**. Assinale a alternativa na qual todos os compostos estão escritos em estrita conformidade com as regras gramaticais vigentes:",
     "options": {
-      "A": "Sub-reitor, sub-humano, subestimar, sub-bibliotecário.",
-      "B": "Subreitor, subhumano, sub-estimar, subbibliotecário.",
+      "A": "Subreitor, subhumano, sub-estimar, subbibliotecário.",
+      "B": "Sub-reitor, sub-humano, subestimar, sub-bibliotecário.",
       "C": "Sub-reitor, subhumano, subestimar, sub-bibliotecário.",
       "D": "Subreitor, sub-humano, subestimar, subbibliotecário.",
       "E": "Sub-reitor, sub-humano, sub-estimar, subbibliotecário."
     },
-    "answer": "A",
+    "answer": "B",
     "explanation": "**Justificativa:** O prefixo **sub-** exige hífen:\n1. Diante de palavras iniciadas por `h` (sub-humano).\n2. Diante de palavras iniciadas por `r` (sub-reitor).\n3. Diante de palavras iniciadas por `b` (sub-bibliotecário - consoantes idênticas).\nNos demais casos, aglutina-se diretamente (ex: subestimar, subdiretor, subchefe)."
   },
   {
@@ -5464,11 +5464,11 @@
     "options": {
       "A": "O ex-diretor do tribunal presidiu a sessão plenária na tarde de ontem.",
       "B": "O candidato demonstrou uma atitude de sem-cerimônia que chocou os avaliadores.",
-      "C": "O vice-reitor assinou o convênio de cooperação acadêmica com a instituição de TI.",
-      "D": "Aquele servidor demonstrou ser um funcionário sem-caráter durante a auditoria.",
+      "C": "Aquele servidor demonstrou ser um funcionário sem-caráter durante a auditoria.",
+      "D": "O vice-reitor assinou o convênio de cooperação acadêmica com a instituição de TI.",
       "E": "O projeto além-fronteiras expandiu os limites de comunicação digital da rede estadual."
     },
-    "answer": "D",
+    "answer": "C",
     "explanation": "**Justificativa:** A expressão substantivada \"sem-caráter\" (para adjetivar alguém) exige hífen, mas na frase D, \"sem caráter\" atua como uma locução adjetiva comum formada pela preposição \"sem\" seguida do substantivo \"caráter\" (ele é um funcionário *sem caráter*, ou seja, que não tem caráter). Nesse papel de preposição comum + substantivo, **não há hífen**. A grafia correta da frase seria: *\"...um funcionário sem caráter...\"*. As palavras ex-diretor, sem-cerimônia, vice-reitor e além-fronteiras estão grafadas corretamente."
   },
   {
@@ -5500,11 +5500,11 @@
     "options": {
       "A": "Idéia, colmeia, jiboia, paranoia.",
       "B": "Ideia, colmeia, jibóia, paranoia.",
-      "C": "Ideia, colmeia, jiboia, paranoia.",
-      "D": "Idéia, colméia, jibóia, paranóia.",
+      "C": "Idéia, colméia, jibóia, paranóia.",
+      "D": "Ideia, colmeia, jiboia, paranoia.",
       "E": "Ideia, colméia, jiboia, paranóia."
     },
-    "answer": "C",
+    "answer": "D",
     "explanation": "**Justificativa:** Todas as paroxítonas com ditongos abertos `ei` e `oi` perderam o acento: **ideia**, **colmeia**, **jiboia**, **paranoia**, **heroico**, **apoloio**."
   },
   {
@@ -5518,12 +5518,12 @@
     "options": {
       "A": "O analista de sistemas não pôde comparecer à reunião ontem porque estava doente.",
       "B": "Eles sempre têm muitas dúvidas sobre a configuração do Active Directory no Windows Server.",
-      "C": "Para otimizar a infraestrutura, o técnico decidiu pôr mais memória RAM nos servidores.",
-      "D": "O carro derrapou na pista porque havia muito óleo na curva do pólo industrial.",
+      "C": "O carro derrapou na pista porque havia muito óleo na curva do pólo industrial.",
+      "D": "Para otimizar a infraestrutura, o técnico decidiu pôr mais memória RAM nos servidores.",
       "E": "Quando eles vêm ao tribunal, sempre trazem os relatórios de auditoria assinados."
     },
-    "answer": "D",
-    "explanation": "**Justificativa:** A palavra **polo** (do polo industrial) perdeu o acento diferencial. A grafia correta é sem acento: **polo**. \n* **A (Correta):** Mantém-se o acento em **pôde** (pretérito perfeito do indicativo) para diferenciar de **pode** (presente do indicativo).\n* **B (Correta):** Mantém-se o acento em **têm** (plural do verbo ter) para concordar com \"eles\".\n* **C (Correta):** Mantém-se o acento em **pôr** (verbo) para diferenciar da preposição **por**.\n* **E (Correta):** Mantém-se o acento em **vêm** (plural do verbo vir) para concordar com \"eles\"."
+    "answer": "C",
+    "explanation": "**Justificativa:** A palavra **polo** (do polo industrial) perdeu o acento diferencial. A grafia correta é sem acento: **polo**. \n* **A (Correta):** Mantém-se o acento em **pôde** (pretérito perfeito do indicativo) para diferenciar de **pode** (presente do indicativo).\n* **B (Correta):** Mantém-se o acento em **têm** (plural do verbo ter) para concordar com \"eles\".\n* **D (Correta):** Mantém-se o acento em **pôr** (verbo) para diferenciar da preposição **por**.\n* **E (Correta):** Mantém-se o acento em **vêm** (plural do verbo vir) para concordar com \"eles\"."
   },
   {
     "id": 308,
@@ -5535,13 +5535,13 @@
     "statement": "Assinale a alternativa cuja frase apresenta grafia de verbos com vogais dobradas de acordo com as regras ortográficas atuais:",
     "options": {
       "A": "Os diretores do TJ-CE vêem os relatórios mensais de incidentes na sexta-feira.",
-      "B": "Os servidores leem as portarias do CNJ com atenção para evitar falhas nos processos de desenvolvimento.",
+      "B": "As alternativas B e C estão corretas.",
       "C": "As equipes de segurança creem que a criptografia RSA impede ataques do tipo spoofing.",
       "D": "Os usuários crêem nos avisos enviados pela Central de Serviços de TI.",
-      "E": "As alternativas B e C estão corretas."
+      "E": "Os servidores leem as portarias do CNJ com atenção para evitar falhas nos processos de desenvolvimento."
     },
-    "answer": "E",
-    "explanation": "**Justificativa:** O Acordo Ortográfico aboliu o acento circunflexo nas formas verbais com vogais dobradas `-ee-` e `-oo-` (ex: veem, leem, creem, deem, voo, enjoo, abençoo). Portanto:\n* \"vêem\" (Opção A) e \"crêem\" (Opção D) estão incorretas (deveriam ser veem e creem).\n* **leem** (Opção B) e **creem** (Opção C) estão corretas, tornando a opção E o gabarito."
+    "answer": "B",
+    "explanation": "**Justificativa:** O Acordo Ortográfico aboliu o acento circunflexo nas formas verbais com vogais dobradas `-ee-` e `-oo-` (ex: veem, leem, creem, deem, voo, enjoo, abençoo). Portanto:\n* \"vêem\" (Opção A) e \"crêem\" (Opção D) estão incorretas (deveriam ser veem e creem).\n* **leem** (Opção E) e **creem** (Opção C) estão corretas, tornando a opção B o gabarito."
   },
   {
     "id": 309,
@@ -5554,11 +5554,11 @@
     "options": {
       "A": "Feiúra, baiuca, bocaiuva.",
       "B": "Feiura, baiuca, bocaiúva.",
-      "C": "Feiura, baiuca, bocaiuva.",
+      "C": "Feiura, baiúca, bocaiuva.",
       "D": "Feiúra, baiúca, bocaiúva.",
-      "E": "Feiura, baiúca, bocaiuva."
+      "E": "Feiura, baiuca, bocaiuva."
     },
-    "answer": "C",
+    "answer": "E",
     "explanation": "**Justificativa:** Paroxítonas que possuem o `i` ou `u` tônico formando hiato após um ditongo perderam o acento gráfico (ex: **feiura** [fei-u-ra], **baiuca** [bai-u-ca], **bocaiuva** [bo-cai-u-va]). Nota: se a palavra for oxítona, o acento permanece (ex: Piauí, tuiuiú)."
   },
   {
@@ -5590,12 +5590,12 @@
     "options": {
       "A": "O técnico utilizou uma chave de fenda para abrir o gabinete do servidor encharcado pela goteira.",
       "B": "A enxurrada de e-mails de phishing congestionou a fila do servidor Exchange durante a madrugada.",
-      "C": "O desenvolvedor teve que enxaguar os olhos após o contato acidental com o produto de limpeza.",
+      "C": "O gerente de redes comprou um patch panel de marca chinesa com acabamento chucro de plástico.",
       "D": "O analista foi encaminhado ao hospital militar após apresentar sintomas graves de caxumba.",
-      "E": "O gerente de redes comprou um patch panel de marca chinesa com acabamento chucro de plástico."
+      "E": "O desenvolvedor teve que enxaguar os olhos após o contato acidental com o produto de limpeza."
     },
-    "answer": "E",
-    "explanation": "**Justificativa:** A palavra **chucro** está grafada incorretamente na alternativa E. A grafia correta sob o padrão oficial da língua portuguesa é **xucro** (com `x`). As palavras encharcado (de charco), enxurrada, enxaguar e caxumba estão grafadas corretamente."
+    "answer": "C",
+    "explanation": "**Justificativa:** A palavra **chucro** está grafada incorretamente na alternativa C. A grafia correta sob o padrão oficial da língua portuguesa é **xucro** (com `x`). As palavras encharcado (de charco), enxurrada, enxaguar e caxumba estão grafadas corretamente."
   },
   {
     "id": 312,
@@ -5606,13 +5606,13 @@
     "source": "FCC - Sabesp",
     "statement": "O emprego de **g** ou **j** é outro ponto de cobrança constante. Assinale a alternativa em que todas as palavras estão grafadas corretamente:",
     "options": {
-      "A": "Privilégio, sarjeta, viagem (substantivo), viajem (verbo).",
+      "A": "Privilégio, sarjeta, viagem (substantivo), viagem (verbo).",
       "B": "Privilégio, sargeta, viagem (substantivo), viajem (verbo).",
       "C": "Privilégio, sarjeta, viajem (substantivo), viagem (verbo).",
       "D": "Privilegio, sargeta, viagem (substantivo), viajem (verbo).",
-      "E": "Privilégio, sarjeta, viagem (substantivo), viagem (verbo)."
+      "E": "Privilégio, sarjeta, viagem (substantivo), viajem (verbo)."
     },
-    "answer": "A",
+    "answer": "E",
     "explanation": "**Justificativa:** \n* **Privilégio:** Grafado com `g` (palavras terminadas em -ágio, -égio, -ígio, -ógio, -úgio recebem `g`). Cuidado com a pegadinha comum de pronunciar \"previlégio\". A grafia correta é com `i` na primeira sílaba: *pri-vi-lé-gio*.\n* **Sarjeta:** Grafado com `j` (derivados de palavras com `j` ou fonema jota nativo).\n* **Viagem (substantivo):** Grafado com `g` (ex: a viagem foi longa).\n* **Viajem (verbo):** Flexão do verbo viajar, mantendo o `j` da palavra primitiva (ex: espero que eles viajem hoje)."
   },
   {
@@ -5624,14 +5624,14 @@
     "source": "FCC - PGE-CE - Analista",
     "statement": "Em questões de ortografia, a FCC costuma cobrar palavras com fonemas silábicos complexos envolvendo **s, ss, c, ç, sc, xc**. Assinale a alternativa em que todas as palavras estão escritas corretamente:",
     "options": {
-      "A": "Discussão, concessão, excesso, exceção, pretensioso, obcecado.",
+      "A": "Discusão, concessão, excesso, exceção, pretensioso, obcecado.",
       "B": "Discusão, conseção, ezcesso, exceção, pretencioso, obsecado.",
       "C": "Discussão, concessão, excesso, esceção, pretensioso, obsecado.",
-      "D": "Discusão, concessão, excesso, exceção, pretensioso, obcecado.",
+      "D": "Discussão, concessão, excesso, exceção, pretensioso, obcecado.",
       "E": "Discussão, conseção, excesso, exceção, pretencioso, obcecado."
     },
-    "answer": "A",
-    "explanation": "**Justificativa:** Todas as palavras da alternativa A estão grafadas perfeitamente:\n* **Discussão:** Derivado do verbo discutir (verbos com radical -cut- geram substantivos com -ss-).\n* **Concessão:** Derivado do verbo conceder (verbos com radical -ced- geram substantivos com -ss-).\n* **Excesso:** Grafado com `xc` e `ss`.\n* **Exceção:** Grafado com `xc` e `ç`.\n* **Pretensioso:** Grafado com `s` na penúltima sílaba (derivado de pretensão).\n* **Obcecado:** Grafado com `b` mudo e `c` (derivado de obcecar / cego). Cuidado com a grafia incorreta \"obsecado\"."
+    "answer": "D",
+    "explanation": "**Justificativa:** Todas as palavras da alternativa D estão grafadas perfeitamente:\n* **Discussão:** Derivado do verbo discutir (verbos com radical -cut- geram substantivos com -ss-).\n* **Concessão:** Derivado do verbo conceder (verbos com radical -ced- geram substantivos com -ss-).\n* **Excesso:** Grafado com `xc` e `ss`.\n* **Exceção:** Grafado com `xc` e `ç`.\n* **Pretensioso:** Grafado com `s` na penúltima sílaba (derivado de pretensão).\n* **Obcecado:** Grafado com `b` mudo e `c` (derivado de obcecar / cego). Cuidado com a grafia incorreta \"obsecado\"."
   },
   {
     "id": 314,
@@ -5643,13 +5643,13 @@
     "statement": "Os homófonos e parônimos causam desvios graves de interpretação. Assinale a frase que utiliza corretamente as palavras em destaque:",
     "options": {
       "A": "O Diretor de TI realizou a **seção** de direitos de uso de software para a Secretaria de Saúde do Ceará.",
-      "B": "Na próxima **sessão** ordinária do Pleno, os desembargadores julgarão a constitucionalidade da portaria.",
-      "C": "O analista de suporte identificou que a falha de comunicação ocorria na **cessão** de desenvolvimento de rede do prédio.",
+      "B": "O analista de suporte identificou que a falha de comunicação ocorria na **cessão** de desenvolvimento de rede do prédio.",
+      "C": "Na próxima **sessão** ordinária do Pleno, os desembargadores julgarão a constitucionalidade da portaria.",
       "D": "O desembargador relator é um jurista **iminente**, reconhecido por sua vasta produção acadêmica.",
       "E": "O risco de vazamento de dados confidenciais é **eminente** caso as portas lógicas permaneçam expostas."
     },
-    "answer": "B",
-    "explanation": "**Justificativa:** \n* **Sessão:** Refere-se a um intervalo de tempo destinado a uma atividade/reunião (ex: sessão plenária, sessão de cinema). A alternativa B está correta.\n* **Seção (ou Secção):** Refere-se a uma divisão, partição, departamento (ex: seção de TI). As alternativas A e C trocaram os significados (cessão é ato de ceder; seção é partição).\n* **Eminente:** Ilustre, notável, elevado (a alternativa D deveria usar *eminente*).\n* **Iminente:** Que está prestes a acontecer de forma imediata (a alternativa E deveria usar *iminente*)."
+    "answer": "C",
+    "explanation": "**Justificativa:** \n* **Sessão:** Refere-se a um intervalo de tempo destinado a uma atividade/reunião (ex: sessão plenária, sessão de cinema). A alternativa C está correta.\n* **Seção (ou Secção):** Refere-se a uma divisão, partição, departamento (ex: seção de TI). As alternativas A e C trocaram os significados (cessão é ato de ceder; seção é partição).\n* **Eminente:** Ilustre, notável, elevado (a alternativa D deveria usar *eminente*).\n* **Iminente:** Que está prestes a acontecer de forma imediata (a alternativa E deveria usar *iminente*)."
   },
   {
     "id": 315,
@@ -5662,11 +5662,11 @@
     "options": {
       "A": "A ideia de refatorar o banco de dados do TJ-CE de forma imediata foi considerada excelente pelo sub-reitor.",
       "B": "O gerente do projeto solicitou que os desenvolvedores dessem prioridade ao monitoramento de incidentes.",
-      "C": "Ele não pôde concluir o deploy do sistema na nuvem privada devido ao estouro de cota de memória.",
+      "C": "Todas as alternativas anteriores estão corretas.",
       "D": "As equipes mantêm a observabilidade das redes através de dashboards dinâmicos instalados no NOC.",
-      "E": "Todas as alternativas anteriores estão corretas."
+      "E": "Ele não pôde concluir o deploy do sistema na nuvem privada devido ao estouro de cota de memória."
     },
-    "answer": "E",
+    "answer": "C",
     "explanation": "**Justificativa:** Todas as alternativas apresentam frases impecáveis gramatical e ortograficamente:\n* **A:** Ideia (sem acento - paroxítona ditongo aberto), sub-reitor (com hífen - prefixo `sub-` diante de `r`).\n* **B:** Dessem (grafia correta da flexão de dar), prioridade (grafia correta).\n* **C:** Pôde (com acento diferencial de tempo passado), deploy (estrangeirismo mantido em itálico/comum na TI), nuvem privada.\n* **D:** Mantêm (acento circunflexo para concordar com o plural \"as equipes\" - regra dos verbos derivados de ter e vir)."
   },
   {
@@ -5678,13 +5678,13 @@
     "source": "FCC",
     "statement": "No levantamento e análise de requisitos, a equipe classificou as seguintes necessidades:\nI. O sistema deve emitir o relatório em, no máximo, 5 segundos.\nII. O sistema deve validar a assinatura digital ICP-Brasil.\nIII. O desenvolvimento da interface deve ser realizado no framework Angular homologado pelo tribunal.\nDe acordo com Sommerville, os itens I, II e III correspondem a requisitos:",
     "options": {
-      "A": "Não funcional de produto; Funcional; Não funcional organizacional.",
+      "A": "Não funcional de desempenho; Não funcional de segurança; Funcional.",
       "B": "Funcional; Não funcional de produto; Não funcional externo.",
-      "C": "Não funcional de desempenho; Não funcional de segurança; Funcional.",
+      "C": "Não funcional de produto; Funcional; Não funcional organizacional.",
       "D": "Funcional; Funcional; Não funcional de produto.",
       "E": "Não funcional externo; Funcional; Não funcional organizacional."
     },
-    "answer": "A",
+    "answer": "C",
     "explanation": ". I = Desempenho (Produto); II = Ação (Funcional); III = Restrição corporativa (Organizacional)."
   },
   {
@@ -5696,14 +5696,14 @@
     "source": "FCC",
     "statement": "Em um diagrama de Casos de Uso, quando o comportamento de B só é executado caso certa regra ocorra durante A, esse relacionamento é:",
     "options": {
-      "A": "`<<include>>`, B para A.",
+      "A": "`<<extend>>`, B para A.",
       "B": "Generalização, A para B.",
-      "C": "`<<extend>>`, B para A.",
+      "C": "`<<include>>`, B para A.",
       "D": "`<<extend>>`, A para B.",
       "E": "`<<include>>`, A para B."
     },
-    "answer": "C",
-    "explanation": ". Relacionamento opcional é `<<extend>>`, apontando do estendido (B) para o base (A)."
+    "answer": "A",
+    "explanation": ". Relacionamento opcional é `<<extend>>`, apontando do estendido (B)  para o base (C) ."
   },
   {
     "id": 318,
@@ -5715,12 +5715,12 @@
     "statement": "A capacidade de relacionar um requisito a um trecho de código que o implementa é:",
     "options": {
       "A": "Rastreabilidade de origem.",
-      "B": "Rastreabilidade de requisitos.",
-      "C": "Rastreabilidade de projeto (forward traceability).",
+      "B": "Rastreabilidade de projeto (forward traceability).",
+      "C": "Rastreabilidade de requisitos.",
       "D": "Rastreabilidade de design.",
       "E": "Rastreabilidade horizontal."
     },
-    "answer": "C",
+    "answer": "B",
     "explanation": ". Forward traceability liga requisitos aos artefatos gerados (design, código)."
   },
   {
@@ -5734,11 +5734,11 @@
     "options": {
       "A": "Gerar automaticamente o modelo físico.",
       "B": "Armazenar logs de falhas.",
-      "C": "Evitar conflitos de nomes, definindo a semântica e formato dos dados.",
+      "C": "Permitir alteração de tabelas em produção.",
       "D": "Substituir os casos de uso.",
-      "E": "Permitir alteração de tabelas em produção."
+      "E": "Evitar conflitos de nomes, definindo a semântica e formato dos dados."
     },
-    "answer": "C",
+    "answer": "E",
     "explanation": ". O dicionário centraliza definições de dados, prevenindo redundâncias e inconsistências."
   },
   {
@@ -5769,12 +5769,12 @@
     "statement": "O relacionamento `<<include>>` em Casos de Uso serve fundamentalmente para:",
     "options": {
       "A": "Representar funcionalidades que ocorrem apenas em erros.",
-      "B": "Evitar a repetição de um fluxo de eventos que é comum a dois ou mais casos de uso.",
+      "B": "Demonstrar a ordem cronológica de execução.",
       "C": "Substituir a herança de atores.",
-      "D": "Demonstrar a ordem cronológica de execução.",
+      "D": "Evitar a repetição de um fluxo de eventos que é comum a dois ou mais casos de uso.",
       "E": "Descrever requisitos não funcionais."
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": ". O `<<include>>` extrai comportamentos comuns e obrigatórios para reutilização."
   },
   {
@@ -5788,11 +5788,11 @@
     "options": {
       "A": "Calcular folha de pagamento; Tempo de resposta de 2s.",
       "B": "Emitir nota fiscal; Autenticar usuário.",
-      "C": "Criptografia AES-256; Interface compatível com leitores de tela; Disponibilidade de 99,9%.",
-      "D": "Exportar para PDF; Tolerância a falhas.",
+      "C": "Exportar para PDF; Tolerância a falhas.",
+      "D": "Criptografia AES-256; Interface compatível com leitores de tela; Disponibilidade de 99,9%.",
       "E": "Exibir histórico; Compatibilidade com navegadores web."
     },
-    "answer": "C",
+    "answer": "D",
     "explanation": ". Todos os três definem \"como\" o sistema deve ser (segurança, usabilidade, confiabilidade)."
   },
   {
@@ -5823,12 +5823,12 @@
     "statement": "Durante a elicitação, a técnica que envolve criar uma versão inicial rápida do software para validação do usuário é chamada de:",
     "options": {
       "A": "JAD (Joint Application Development).",
-      "B": "Prototipação.",
-      "C": "Brainstorming.",
+      "B": "Brainstorming.",
+      "C": "Prototipação.",
       "D": "Etnografia.",
       "E": "Entrevista Estruturada."
     },
-    "answer": "B",
+    "answer": "C",
     "explanation": ". A prototipação constrói modelos descartáveis ou evolutivos para refinar requisitos."
   },
   {
@@ -5859,12 +5859,12 @@
     "statement": "Um \"Requisito de Domínio\" (Domain Requirement):",
     "options": {
       "A": "Sempre diz respeito à rede de computadores (domínio Windows).",
-      "B": "Deriva do campo de aplicação do sistema e pode criar novos requisitos ou restringir os existentes.",
+      "B": "É aplicável apenas em metodologias ágeis.",
       "C": "É obrigatoriamente um requisito não funcional.",
-      "D": "É aplicável apenas em metodologias ágeis.",
+      "D": "Deriva do campo de aplicação do sistema e pode criar novos requisitos ou restringir os existentes.",
       "E": "Não pode ser modelado em Casos de Uso."
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": ". Requisitos de domínio refletem as regras do negócio (ex: regras médicas em um sistema de saúde)."
   },
   {
@@ -5895,12 +5895,12 @@
     "statement": "A validação de requisitos responde à pergunta:",
     "options": {
       "A": "Estamos construindo o produto corretamente?",
-      "B": "Estamos construindo o produto correto (aquele que o cliente realmente quer)?",
+      "B": "Quanto custará o projeto?",
       "C": "O código possui bugs?",
       "D": "Qual a linguagem ideal para o sistema?",
-      "E": "Quanto custará o projeto?"
+      "E": "Estamos construindo o produto correto (aquele que o cliente realmente quer)?"
     },
-    "answer": "B",
+    "answer": "E",
     "explanation": ". Validação verifica se o software atende à necessidade real do cliente. (A alternativa A refere-se à Verificação)."
   },
   {
@@ -5912,13 +5912,13 @@
     "source": "FCC",
     "statement": "A matriz de rastreabilidade é uma ferramenta clássica para:",
     "options": {
-      "A": "Compilar o código-fonte.",
-      "B": "Analisar o impacto de mudanças em um requisito sobre os demais artefatos do projeto.",
+      "A": "Analisar o impacto de mudanças em um requisito sobre os demais artefatos do projeto.",
+      "B": "Compilar o código-fonte.",
       "C": "Gerar os diagramas UML automaticamente.",
       "D": "Definir a arquitetura de rede.",
       "E": "Medir o desempenho do banco de dados."
     },
-    "answer": "B",
+    "answer": "A",
     "explanation": ". A matriz cruza os requisitos com os artefatos, mostrando o que será afetado se um requisito mudar."
   },
   {
@@ -5931,12 +5931,12 @@
     "statement": "Em Engenharia de Requisitos, \"Elicitação\" significa:",
     "options": {
       "A": "Programar o requisito no código.",
-      "B": "O processo de descobrir, levantar e compreender as necessidades dos stakeholders.",
+      "B": "Publicar o manual do usuário.",
       "C": "Excluir requisitos obsoletos.",
-      "D": "Publicar o manual do usuário.",
+      "D": "O processo de descobrir, levantar e compreender as necessidades dos stakeholders.",
       "E": "Traduzir requisitos funcionais para linguagem de máquina."
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": ". Elicitação é a primeira fase: extrair/descobrir a informação junto ao cliente."
   },
   {
@@ -5949,12 +5949,12 @@
     "statement": "No Oracle, a pseudo-coluna ROWNUM:",
     "options": {
       "A": "É alocada após a cláusula ORDER BY ser executada.",
-      "B": "Aceita comparações do tipo `ROWNUM = 2` diretamente no WHERE.",
-      "C": "Indica a ordem em que o Oracle seleciona a linha da tabela antes da ordenação.",
+      "B": "Indica a ordem em que o Oracle seleciona a linha da tabela antes da ordenação.",
+      "C": "Aceita comparações do tipo `ROWNUM = 2` diretamente no WHERE.",
       "D": "Substitui a Primary Key.",
       "E": "É idêntica ao LIMIT do PostgreSQL."
     },
-    "answer": "C",
+    "answer": "B",
     "explanation": ". ROWNUM é atribuído *antes* da ordenação, o que causa pegadinhas em paginações sem subconsultas."
   },
   {
@@ -5966,13 +5966,13 @@
     "source": "FCC",
     "statement": "A tabela especial do Oracle que possui apenas uma linha e a coluna DUMMY chama-se:",
     "options": {
-      "A": "SYSTEM",
-      "B": "DUAL",
+      "A": "DUAL",
+      "B": "SYSTEM",
       "C": "SINGLE",
       "D": "TEMP",
       "E": "ROOT"
     },
-    "answer": "B",
+    "answer": "A",
     "explanation": ". A tabela `DUAL` garante retornos de uma única linha para avaliações de funções (ex: SYSDATE)."
   },
   {
@@ -5984,13 +5984,13 @@
     "source": "FCC",
     "statement": "Para criar uma chave primária auto-incrementada no PostgreSQL (versões clássicas), utiliza-se o tipo:",
     "options": {
-      "A": "AUTO_INCREMENT",
+      "A": "SERIAL",
       "B": "SEQUENCE_ID",
       "C": "IDENTITY",
-      "D": "SERIAL",
+      "D": "AUTO_INCREMENT",
       "E": "ROWNUM"
     },
-    "answer": "D",
+    "answer": "A",
     "explanation": ". O tipo `SERIAL` cria implicitamente uma sequência para gerenciar o auto-incremento."
   },
   {
@@ -6002,13 +6002,13 @@
     "source": "FCC",
     "statement": "Para pular 50 registros e retornar 10 em PostgreSQL, usa-se:",
     "options": {
-      "A": "LIMIT 10 OFFSET 50",
-      "B": "ROWS 50 TO 60",
+      "A": "ROWS 50 TO 60",
+      "B": "LIMIT 10 OFFSET 50",
       "C": "ROWNUM BETWEEN 51 AND 60",
       "D": "SKIP 50 TAKE 10",
       "E": "LIMIT 50, 10"
     },
-    "answer": "A",
+    "answer": "B",
     "explanation": ". A sintaxe ANSI suportada pelo PostgreSQL usa `LIMIT` (quantidade) e `OFFSET` (quantos pular)."
   },
   {
@@ -6038,13 +6038,13 @@
     "source": "FCC",
     "statement": "No Oracle, para gerar o próximo valor de uma Sequence criada chamada SEQ_EMP, usa-se:",
     "options": {
-      "A": "SELECT SEQ_EMP.NEXTVAL FROM DUAL;",
+      "A": "SELECT SEQ_EMP.VAL FROM SYSTEM;",
       "B": "SELECT NEXT_ID(SEQ_EMP);",
       "C": "SELECT SEQ_EMP.INCREMENT;",
       "D": "GET NEXT SEQ_EMP;",
-      "E": "SELECT SEQ_EMP.VAL FROM SYSTEM;"
+      "E": "SELECT SEQ_EMP.NEXTVAL FROM DUAL;"
     },
-    "answer": "A",
+    "answer": "E",
     "explanation": ". Usa-se a pseudo-coluna `NEXTVAL` associada ao nome da sequência, lendo da tabela `DUAL`."
   },
   {
@@ -6057,12 +6057,12 @@
     "statement": "No PostgreSQL, o suporte nativo a dados estruturados permite indexar e consultar diretamente colunas do tipo:",
     "options": {
       "A": "VARCHAR2 e CLOB (exclusivos).",
-      "B": "JSON e JSONB.",
+      "B": "DUAL_DATA.",
       "C": "ROWID.",
-      "D": "DUAL_DATA.",
+      "D": "JSON e JSONB.",
       "E": "MEMORY_TABLE."
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": ". O PostgreSQL é famoso por tratar muito bem documentos JSON (especialmente o JSONB, que é binário e indexável)."
   },
   {
@@ -6076,11 +6076,11 @@
     "options": {
       "A": "Apenas a última linha.",
       "B": "Todas as linhas, exceto a primeira.",
-      "C": "Nenhuma linha (conjunto vazio).",
+      "C": "A segunda linha em diante, ordenada pela PK.",
       "D": "Um erro de sintaxe.",
-      "E": "A segunda linha em diante, ordenada pela PK."
+      "E": "Nenhuma linha (conjunto vazio)."
     },
-    "answer": "C",
+    "answer": "E",
     "explanation": ". Como a 1ª linha falha na condição `> 1` e é descartada, a \"próxima\" lida ganha o ROWNUM 1 de novo e falha também. O resultado é sempre vazio."
   },
   {
@@ -6111,12 +6111,12 @@
     "statement": "O modo de compatibilidade do H2 Database permite:",
     "options": {
       "A": "Conectar-se fisicamente ao Oracle via dblink nativo.",
-      "B": "Emular sintaxes e comportamentos específicos de outros SGBDs (como PostgreSQL, Oracle e MySQL) facilitando testes.",
+      "B": "Desabilitar o padrão ANSI.",
       "C": "Replicar dados automaticamente para a AWS.",
       "D": "Converter código Java para PL/SQL.",
-      "E": "Desabilitar o padrão ANSI."
+      "E": "Emular sintaxes e comportamentos específicos de outros SGBDs (como PostgreSQL, Oracle e MySQL) facilitando testes."
     },
-    "answer": "B",
+    "answer": "E",
     "explanation": ". O H2 possui modos de compatibilidade (ex: `;MODE=PostgreSQL`) que aceitam funções nativas desses bancos para não quebrar queries nos testes."
   },
   {
@@ -6128,13 +6128,13 @@
     "source": "FCC",
     "statement": "Em PostgreSQL, se uma coluna é declarada como `SERIAL`, após inserir dados e querer acessar o último valor gerado nesta sessão, usa-se a função:",
     "options": {
-      "A": "LAST_INSERT_ID()",
-      "B": "currval() ou lastval()",
+      "A": "currval() ou lastval()",
+      "B": "LAST_INSERT_ID()",
       "C": "SYSDATE()",
       "D": "SEQ.LASTVAL",
       "E": "RETURNING ID"
     },
-    "answer": "B",
+    "answer": "A",
     "explanation": ". As funções `currval('nome_seq')` ou `lastval()` retornam o valor gerado na transação/sessão atual. A cláusula `RETURNING` também é usada no `INSERT`."
   },
   {
@@ -6164,13 +6164,13 @@
     "source": "FCC",
     "statement": "Ao definir uma Sequence no Oracle com a cláusula `CACHE 20`, o banco de dados irá:",
     "options": {
-      "A": "Limitar a sequência a apenas 20 valores máximos.",
-      "B": "Prealocar e manter 20 valores em memória RAM para acesso mais rápido, reduzindo I/O em disco.",
+      "A": "Prealocar e manter 20 valores em memória RAM para acesso mais rápido, reduzindo I/O em disco.",
+      "B": "Limitar a sequência a apenas 20 valores máximos.",
       "C": "Criar uma tabela DUAL secundária de 20 linhas.",
       "D": "Bloquear inserções concorrentes após 20 tentativas.",
       "E": "Limpar o buffer de memória a cada 20 minutos."
     },
-    "answer": "B",
+    "answer": "A",
     "explanation": ". O `CACHE` melhora o desempenho das sequências guardando blocos numéricos na memória."
   },
   {
@@ -6183,12 +6183,12 @@
     "statement": "Diferentemente do PostgreSQL, para concatenar strings no Oracle, o operador nativo clássico (além da função CONCAT) é:",
     "options": {
       "A": "`+`",
-      "B": "`&`",
-      "C": "`||`",
+      "B": "`||`",
+      "C": "`&`",
       "D": "`.`",
       "E": "`::`"
     },
-    "answer": "C",
+    "answer": "B",
     "explanation": ". Tanto Oracle quanto PostgreSQL suportam o operador padrão ANSI `||` para concatenação de strings."
   },
   {
@@ -6218,13 +6218,13 @@
     "source": "FCC",
     "statement": "Assinale a frase gramaticalmente correta quanto à colocação pronominal:",
     "options": {
-      "A": "Me entregaram o processo ontem.",
+      "A": "Quando me disseram a verdade, encerrei o caso.",
       "B": "Não manifestou-se a respeito do caso.",
       "C": "Os colegas que dispuseram-se a ajudar folgarão amanhã.",
-      "D": "Quando me disseram a verdade, encerrei o caso.",
+      "D": "Me entregaram o processo ontem.",
       "E": "Daria-te a resposta se a tivesse."
     },
-    "answer": "D",
+    "answer": "A",
     "explanation": ". A conjunção \"Quando\" atrai a próclise. (Em E, o certo seria \"Dar-te-ia\")."
   },
   {
@@ -6237,12 +6237,12 @@
     "statement": "A próclise em \"Em se confirmando a suspeita...\" ocorre por causa de:",
     "options": {
       "A": "Início de período.",
-      "B": "Preposição \"em\" associada a verbo no gerúndio.",
+      "B": "Verbo no particípio.",
       "C": "Palavra atrativa negativa.",
-      "D": "Verbo no particípio.",
+      "D": "Preposição \"em\" associada a verbo no gerúndio.",
       "E": "Mesóclise deslocada."
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": ". Regra clássica: EM + PRONOME + GERÚNDIO atrai a próclise."
   },
   {
@@ -6255,12 +6255,12 @@
     "statement": "Assinale a alternativa incorreta quanto à colocação em locução verbal:",
     "options": {
       "A": "O sistema estava testando-se.",
-      "B": "Ele não havia avisado-nos.",
-      "C": "Pretendiam apresentar-lhe os dados.",
+      "B": "Pretendiam apresentar-lhe os dados.",
+      "C": "Ele não havia avisado-nos.",
       "D": "A equipe vinha preparando-se para o deploy.",
       "E": "Não se podia compreender a falha."
     },
-    "answer": "B",
+    "answer": "C",
     "explanation": ". O verbo principal \"avisado\" está no particípio. Particípios JAMAIS aceitam ênclise."
   },
   {
@@ -6272,13 +6272,13 @@
     "source": "FCC",
     "statement": "Na frase \"O juiz considerou a alegação incabível\", \"incabível\" é:",
     "options": {
-      "A": "Adjetivo.",
-      "B": "Advérbio.",
+      "A": "Advérbio.",
+      "B": "Adjetivo.",
       "C": "Substantivo.",
       "D": "Pronome.",
       "E": "Preposição."
     },
-    "answer": "A",
+    "answer": "B",
     "explanation": ". Caracteriza o substantivo \"alegação\"."
   },
   {
@@ -6292,11 +6292,11 @@
     "options": {
       "A": "Eles trabalharam bastante.",
       "B": "Elas estavam bastante cansadas.",
-      "C": "Havia bastante tarefa no projeto.",
+      "C": "São alunos bastante aplicados.",
       "D": "Correram bastante hoje.",
-      "E": "São alunos bastante aplicados."
+      "E": "Havia bastante tarefa no projeto."
     },
-    "answer": "C",
+    "answer": "E",
     "explanation": ". Acompanha substantivo (tarefa), logo é variável (bastantes tarefas). Nas demais, modifica verbo/adjetivo (advérbio invariável)."
   },
   {
@@ -6310,11 +6310,11 @@
     "options": {
       "A": "Nunca se esqueça dos requisitos.",
       "B": "Jamais me perdoaria por isso.",
-      "C": "Alguém avisou-me do prazo limite.",
+      "C": "Poucos se importaram com o erro.",
       "D": "Tudo se resolve com calma.",
-      "E": "Poucos se importaram com o erro."
+      "E": "Alguém avisou-me do prazo limite."
     },
-    "answer": "C",
+    "answer": "E",
     "explanation": ". O pronome indefinido \"Alguém\" é palavra atrativa. O correto é \"Alguém me avisou\"."
   },
   {
@@ -6329,10 +6329,10 @@
       "A": "no, na, nos, nas.",
       "B": "lho, lha.",
       "C": "mo, ma.",
-      "D": "lo, la, los, las.",
-      "E": "me, te, se."
+      "D": "me, te, se.",
+      "E": "lo, la, los, las."
     },
-    "answer": "D",
+    "answer": "E",
     "explanation": ". O verbo perde a letra final (r, s, z) e o pronome ganha L (ex: fazer + o = fazê-lo)."
   },
   {
@@ -6346,11 +6346,11 @@
     "options": {
       "A": "Apenas antes do auxiliar.",
       "B": "Apenas depois do principal.",
-      "C": "Antes do auxiliar ou depois do principal (ênclise ao infinitivo/gerúndio).",
+      "C": "Antes do principal.",
       "D": "No meio do auxiliar (mesóclise).",
-      "E": "Antes do principal."
+      "E": "Antes do auxiliar ou depois do principal (ênclise ao infinitivo/gerúndio)."
     },
-    "answer": "C",
+    "answer": "E",
     "explanation": ". Ex: \"Não o quero ver\" ou \"Não quero vê-lo\". Ambas corretas! (A FCC tenta colocar no meio com hífen \"Não quero-o ver\" - incorreto)."
   },
   {
@@ -6364,11 +6364,11 @@
     "options": {
       "A": "\"Aquela\" atrai o pronome.",
       "B": "O verbo está no passado.",
-      "C": "O pronome relativo \"que\" exige a próclise.",
-      "D": "\"solução\" é substantivo feminino.",
+      "C": "\"solução\" é substantivo feminino.",
+      "D": "O pronome relativo \"que\" exige a próclise.",
       "E": "A frase é negativa."
     },
-    "answer": "C",
+    "answer": "D",
     "explanation": ". O pronome relativo (que, o qual, onde) é uma forte palavra atrativa para a próclise."
   },
   {
@@ -6398,13 +6398,13 @@
     "source": "FCC",
     "statement": "Das classes gramaticais abaixo, a única invariável (que não sofre flexão de gênero e número) é:",
     "options": {
-      "A": "Substantivo.",
+      "A": "Advérbio.",
       "B": "Adjetivo.",
       "C": "Pronome.",
-      "D": "Advérbio.",
+      "D": "Substantivo.",
       "E": "Numeral."
     },
-    "answer": "D",
+    "answer": "A",
     "explanation": ". Advérbios, preposições e conjunções são invariáveis."
   },
   {
@@ -6417,12 +6417,12 @@
     "statement": "Mesóclise é obrigatória quando:",
     "options": {
       "A": "O verbo inicia a frase e está no presente.",
-      "B": "O verbo está no futuro do presente ou futuro do pretérito, e NÃO HÁ palavra atrativa justificando próclise.",
+      "B": "Ocorre gerúndio precedido de preposição.",
       "C": "A oração é exclamativa ou interrogativa.",
-      "D": "Ocorre gerúndio precedido de preposição.",
+      "D": "O verbo está no futuro do presente ou futuro do pretérito, e NÃO HÁ palavra atrativa justificando próclise.",
       "E": "O verbo está no particípio."
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": ". Ex: \"Convidar-te-ei para a festa\". Se houvesse atrativa: \"Não te convidarei\"."
   },
   {
@@ -6434,13 +6434,13 @@
     "source": "FCC",
     "statement": "A palavra \"certo\" atua como adjetivo (flexível) e como pronome indefinido dependendo de sua posição em relação ao substantivo. Assinale a alternativa onde \"certo\" é Pronome Indefinido:",
     "options": {
-      "A": "O resultado estava certo.",
+      "A": "Certas pessoas não merecem confiança.",
       "B": "Ele sempre pega o caminho certo.",
-      "C": "Certas pessoas não merecem confiança.",
+      "C": "O resultado estava certo.",
       "D": "Falou a coisa certa na hora certa.",
       "E": "O relógio não está certo."
     },
-    "answer": "C",
+    "answer": "A",
     "explanation": ". Quando vem ANTES do substantivo de forma vaga (\"Certas pessoas\"), atua como pronome indefinido. Depois do substantivo, significa \"correto\" (adjetivo)."
   },
   {
@@ -6454,11 +6454,11 @@
     "options": {
       "A": "O analista competente resolveu o bug.",
       "B": "Comprei um computador rápido.",
-      "C": "O sistema rápido falhou hoje.",
+      "C": "O tribunal permanece fechado aos domingos.",
       "D": "O diretor considerou o sistema lento.",
-      "E": "O tribunal permanece fechado aos domingos."
+      "E": "O sistema rápido falhou hoje."
     },
-    "answer": "E",
+    "answer": "C",
     "explanation": ". O adjetivo \"fechado\" modifica o sujeito \"tribunal\" através do verbo de ligação \"permanece\". (Na D, é predicativo do objeto)."
   },
   {
@@ -6472,11 +6472,11 @@
     "options": {
       "A": "Está incorreta, o certo seria \"Daria-nos\".",
       "B": "Está incorreta, o certo seria \"Nos daria\".",
-      "C": "Está correta (mesóclise), justificada pelo verbo no futuro do pretérito iniciando a oração sem palavra atrativa.",
-      "D": "Está correta, pois o pronome \"nos\" só pode atuar como objeto direto.",
+      "C": "Está correta, pois o pronome \"nos\" só pode atuar como objeto direto.",
+      "D": "Está correta (mesóclise), justificada pelo verbo no futuro do pretérito iniciando a oração sem palavra atrativa.",
       "E": "É facultativa em relação a \"Daria-nos\"."
     },
-    "answer": "C",
+    "answer": "D",
     "explanation": ". Verbo no futuro iniciando a frase exige obrigatoriamente a mesóclise na norma-padrão."
   },
   {
@@ -6489,13 +6489,13 @@
     "statement": "Considere a seguinte situação hipotética: Um analista de sistemas do Tribunal de Justiça do Ceará desenvolveu um webservice RESTful para consulta processual. Durante os testes de integração, constatou-se que um cliente efetuou uma requisição para deletar um recurso que não admitia tal operação sob nenhuma circunstância. A especificação do protocolo HTTP determina que o servidor deve retornar um código de status de erro do cliente e informar no cabeçalho quais métodos são aceitos para aquela URI. Sob as regras do protocolo HTTP/1.1, o código de status adequado e o cabeçalho obrigatório que deve acompanhar essa resposta de erro são, respectivamente:",
     "options": {
       "A": "403 Forbidden e cabeçalho Access-Control-Allow-Methods.",
-      "B": "405 Method Not Allowed e cabeçalho Allow.",
-      "C": "400 Bad Request e cabeçalho Accept.",
+      "B": "400 Bad Request e cabeçalho Accept.",
+      "C": "405 Method Not Allowed e cabeçalho Allow.",
       "D": "406 Not Acceptable e cabeçalho Content-Type.",
       "E": "501 Not Implemented e cabeçalho Server."
     },
-    "answer": "B",
-    "explanation": ". O código 405 Method Not Allowed indica que o método de requisição é conhecido pelo servidor, mas foi desabilitado ou não é suportado pelo recurso. A especificação HTTP/1.1 exige que a resposta 405 inclua o cabeçalho 'Allow' contendo os métodos válidos. O erro 403 (A) é de autorização geral. O erro 501 (E) é de erro do servidor para métodos que ele não reconhece globalmente."
+    "answer": "C",
+    "explanation": ". O código 405 Method Not Allowed indica que o método de requisição é conhecido pelo servidor, mas foi desabilitado ou não é suportado pelo recurso. A especificação HTTP/1.1 exige que a resposta 405 inclua o cabeçalho 'Allow' contendo os métodos válidos. O erro 403 (A)  é de autorização geral. O erro 501 (E)  é de erro do servidor para métodos que ele não reconhece globalmente."
   },
   {
     "id": 362,
@@ -6544,12 +6544,12 @@
     "options": {
       "A": "90 metros.",
       "B": "100 metros.",
-      "C": "500 metros.",
+      "C": "1500 metros.",
       "D": "2000 metros.",
-      "E": "1500 metros."
+      "E": "500 metros."
     },
-    "answer": "C",
-    "explanation": ". A norma NBR 14565:2019 especifica que o limite de distância para o backbone de edifício é de 500 metros. O cabeamento horizontal possui o limite de 90 metros (A) no link permanente e 100 metros no canal completo (B). O backbone de campus (D) possui limite de 2000 metros."
+    "answer": "E",
+    "explanation": ". A norma NBR 14565:2019 especifica que o limite de distância para o backbone de edifício é de 500 metros. O cabeamento horizontal possui o limite de 90 metros (A)  no link permanente e 100 metros no canal completo (B) . O backbone de campus (D)  possui limite de 2000 metros."
   },
   {
     "id": 365,
@@ -6562,12 +6562,12 @@
     "options": {
       "A": "Classe Ea e Categoria 5e.",
       "B": "Classe Ea e Categoria 6.",
-      "C": "Classe Ea e Categoria 6A.",
-      "D": "Classe Ea e Categoria 7.",
+      "C": "Classe Ea e Categoria 7.",
+      "D": "Classe Ea e Categoria 6A.",
       "E": "Classe Ea e Categoria 8.1."
     },
-    "answer": "C",
-    "explanation": ". A Classe Ea opera em frequências de até 500 MHz e utiliza cabos de Categoria 6A para garantir transmissões de 10 Gbps (10GBASE-T) em canais completos de até 100 metros. A Categoria 6 (B) pertence à Classe E (até 250 MHz) e não suporta 10 Gbps em 100 metros estáveis. A Categoria 7 (D) pertence à Classe F."
+    "answer": "D",
+    "explanation": ". A Classe Ea opera em frequências de até 500 MHz e utiliza cabos de Categoria 6A para garantir transmissões de 10 Gbps (10GBASE-T) em canais completos de até 100 metros. A Categoria 6 (B)  pertence à Classe E (até 250 MHz) e não suporta 10 Gbps em 100 metros estáveis. A Categoria 7 (C)  pertence à Classe F."
   },
   {
     "id": 366,
@@ -6580,11 +6580,11 @@
     "options": {
       "A": "O comprimento total do canal excedeu o limite máximo absoluto de 90 metros.",
       "B": "O patch cord da área de trabalho não pode exceder 2 metros.",
-      "C": "O comprimento do cabo rígido permanente excedeu o limite máximo de 90 metros.",
+      "C": "O canal horizontal não aceita a interconexão de distribuidores de piso.",
       "D": "A soma total de patch cords no canal horizontal não pode ser menor que 10 metros.",
-      "E": "O canal horizontal não aceita a interconexão de distribuidores de piso."
+      "E": "O comprimento do cabo rígido permanente excedeu o limite máximo de 90 metros."
     },
-    "answer": "C",
+    "answer": "E",
     "explanation": ". A NBR 14565:2019 determina que o link permanente (cabo rígido) no cabeamento horizontal não pode exceder 90 metros, mesmo que o canal completo permaneça abaixo de 100 metros. Como o técnico instalou 92 metros de cabo rígido, o canal foi reprovado."
   },
   {
@@ -6596,14 +6596,14 @@
     "source": "FCC",
     "statement": "No projeto físico de redes metropolitanas de alta velocidade para interligar fóruns distantes a dezenas de quilômetros de distância, as fibras ópticas monomodo (SMF) são preferidas em detrimento das fibras multimodo (MMF). A característica física intrínseca que confere à fibra monomodo a capacidade de cobrir distâncias muito longas sem a atenuação rápida do sinal é a:",
     "options": {
-      "A": "Criptografia da portadora óptica.",
-      "B": "Ausência completa de dispersão modal devido ao núcleo muito estreito (8 a 10 µm).",
+      "A": "Ausência completa de dispersão modal devido ao núcleo muito estreito (8 a 10 µm).",
+      "B": "Criptografia da portadora óptica.",
       "C": "Utilização de emissores de luz do tipo LED multicor.",
       "D": "Blindagem eletromagnética S/FTP integrada.",
       "E": "Existência de múltiplos caminhos de reflexão interna da luz."
     },
-    "answer": "B",
-    "explanation": ". Fibras monomodo possuem núcleo muito estreito (8 a 10 micrômetros), permitindo a propagação da luz em apenas um modo de propagação (linha reta). Isso elimina a dispersão modal, que é o principal fator de degradação de sinal em longas distâncias nas fibras multimodo (MMF), as quais possuem núcleos mais largos de 50 a 62,5 µm e múltiplos caminhos (E)."
+    "answer": "A",
+    "explanation": ". Fibras monomodo possuem núcleo muito estreito (8 a 10 micrômetros), permitindo a propagação da luz em apenas um modo de propagação (linha reta). Isso elimina a dispersão modal, que é o principal fator de degradação de sinal em longas distâncias nas fibras multimodo (MMF), as quais possuem núcleos mais largos de 50 a 62,5 µm e múltiplos caminhos (E) ."
   },
   {
     "id": 368,
@@ -6616,11 +6616,11 @@
     "options": {
       "A": "GET.",
       "B": "POST.",
-      "C": "OPTIONS.",
+      "C": "CONNECT.",
       "D": "HEAD.",
-      "E": "CONNECT."
+      "E": "OPTIONS."
     },
-    "answer": "C",
+    "answer": "E",
     "explanation": ". O mecanismo CORS utiliza o método OPTIONS para enviar a requisição de preflight. Isso permite que o navegador verifique previamente junto ao servidor quais métodos, origens e cabeçalhos são suportados e permitidos antes de enviar a requisição real de escrita (como POST ou DELETE)."
   },
   {
@@ -6633,12 +6633,12 @@
     "statement": "Considere a seguinte situação hipotética: Um servidor de banco de dados do TJ-CE responde a uma requisição HTTP enviada por uma aplicação cliente. O servidor processa a solicitação com sucesso e deleta o registro requisitado, porém não há nenhuma informação ou conteúdo adicional a ser retornado no corpo da resposta HTTP. Sob a especificação HTTP/1.1, o código de status de sucesso correto a ser retornado pelo servidor é:",
     "options": {
       "A": "200 OK.",
-      "B": "201 Created.",
+      "B": "204 No Content.",
       "C": "202 Accepted.",
-      "D": "204 No Content.",
+      "D": "201 Created.",
       "E": "304 Not Modified."
     },
-    "answer": "D",
+    "answer": "B",
     "explanation": ". O código 204 No Content indica que o servidor processou a requisição com sucesso, mas não retorna nenhum conteúdo no corpo da mensagem. É muito comum em respostas a requisições DELETE efetuadas com sucesso onde não há dados a exibir na tela do cliente."
   },
   {
@@ -6652,11 +6652,11 @@
     "options": {
       "A": "Categoria 6 e 250 MHz.",
       "B": "Categoria 6A e 500 MHz.",
-      "C": "Categoria 7 e 600 MHz.",
-      "D": "Categoria 7A e 1000 MHz.",
+      "C": "Categoria 7A e 1000 MHz.",
+      "D": "Categoria 7 e 600 MHz.",
       "E": "Categoria 8.1 e 2000 MHz."
     },
-    "answer": "C",
+    "answer": "D",
     "explanation": ". A Classe F exige cabeamento de Categoria 7, projetado para operar com frequências de até 600 MHz com blindagem individual de pares (S/FTP) para atenuar ruídos de crosstalk e interferências externas."
   },
   {
@@ -6669,12 +6669,12 @@
     "statement": "Na transmissão por fibras ópticas, a atenuação e a degradação de largura de banda são causadas por fenômenos físicos de dispersão. O tipo de dispersão que ocorre exclusivamente em fibras multimodo (MMF) devido à diferença no tempo de chegada dos diversos raios de luz que trafegam por diferentes caminhos geométricos no núcleo do cabo é denominado:",
     "options": {
       "A": "Dispersão Cromática.",
-      "B": "Dispersão Modal.",
+      "B": "Polarização de Modo de Dispersão.",
       "C": "Dispersão de Guia de Onda.",
       "D": "Dispersão Material.",
-      "E": "Polarização de Modo de Dispersão."
+      "E": "Dispersão Modal."
     },
-    "answer": "B",
+    "answer": "E",
     "explanation": ". A dispersão modal ocorre apenas em fibras multimodo (MMF), pois a luz viaja por múltiplos caminhos (modos). Como a velocidade da luz no núcleo é constante, mas as distâncias geométricas variam, os raios de luz chegam em momentos diferentes no receptor, causando alargamento dos pulsos. Nas fibras monomodo, por haver apenas um modo de propagação, a dispersão modal é nula."
   },
   {
@@ -6688,11 +6688,11 @@
     "options": {
       "A": "401 Unauthorized.",
       "B": "400 Bad Request.",
-      "C": "403 Forbidden.",
+      "C": "405 Method Not Allowed.",
       "D": "404 Not Found.",
-      "E": "405 Method Not Allowed."
+      "E": "403 Forbidden."
     },
-    "answer": "C",
+    "answer": "E",
     "explanation": ". O código 403 Forbidden indica que o servidor entendeu a requisição, mas se recusa a autorizá-la. Diferente do 401 Unauthorized (onde as credenciais estão ausentes ou inválidas), no 403 o usuário já está autenticado, mas seu nível de acesso não permite a visualização daquele recurso específico."
   },
   {
@@ -6706,11 +6706,11 @@
     "options": {
       "A": "Cabo rígido permanente.",
       "B": "Ponto de consolidação (CP).",
-      "C": "Tomada de telecomunicações (TO).",
-      "D": "Patch cord (cabo de manobra).",
+      "C": "Patch cord (cabo de manobra).",
+      "D": "Tomada de telecomunicações (TO).",
       "E": "Acoplador óptico monomodo."
     },
-    "answer": "D",
+    "answer": "C",
     "explanation": ". O patch cord (ou cabo de manobra) é o cabo flexível dotado de conectores em ambas as extremidades, projetado para realizar conexões temporárias ou reconfigurações rápidas nos distribuidores de rede (FD/BD/CD) ou na área de trabalho."
   },
   {
@@ -6724,11 +6724,11 @@
     "options": {
       "A": "Algoritmos assimétricos (como RSA e ECDHE) são usados para cifrar o corpo dos dados volumosos da aplicação durante toda a sessão.",
       "B": "Algoritmos simétricos (como AES) são usados na etapa de handshake para autenticar o servidor por meio do certificado X.509.",
-      "C": "Algoritmos assimétricos são usados exclusivamente para acordar a chave de sessão simétrica, a qual será usada posteriormente para cifrar os dados da aplicação devido ao seu menor custo computacional.",
-      "D": "O TLS dispensa o uso de funções hash (como SHA-256) para validação de integridade.",
+      "C": "O TLS dispensa o uso de funções hash (como SHA-256) para validação de integridade.",
+      "D": "Algoritmos assimétricos são usados exclusivamente para acordar a chave de sessão simétrica, a qual será usada posteriormente para cifrar os dados da aplicação devido ao seu menor custo computacional.",
       "E": "A criptografia simétrica realiza a assinatura digital do handshake inicial."
     },
-    "answer": "C",
+    "answer": "D",
     "explanation": ". Criptografia assimétrica (par de chaves pública/privada) é computacionalmente pesada e, por isso, o TLS a utiliza apenas no início (handshake) para autenticar a identidade e negociar com segurança a chave simétrica de sessão. Após o acordo de chaves, todas as transmissões de dados volumosos usam criptografia simétrica (como AES), que é muito mais rápida."
   },
   {
@@ -6741,12 +6741,12 @@
     "statement": "Ao planejar o cabeamento estruturado de um novo datacenter corporativo, um arquiteto de infraestrutura de TI especificou cabos físicos Categoria 8.1. De acordo com a norma ABNT NBR 14565:2019 e as especificações internacionais correspondentes, a frequência máxima de operação desses cabos e a distância de canal máxima para a qual são homologados para suportar taxas de 25 Gbps ou 40 Gbps são, respectivamente:",
     "options": {
       "A": "500 MHz e 100 metros.",
-      "B": "1000 MHz e 50 metros.",
-      "C": "2000 MHz (2 GHz) e 30 metros.",
+      "B": "2000 MHz (2 GHz) e 30 metros.",
+      "C": "1000 MHz e 50 metros.",
       "D": "600 MHz e 90 metros.",
       "E": "2000 MHz (2 GHz) e 100 metros."
     },
-    "answer": "C",
+    "answer": "B",
     "explanation": ". Os cabos de Categoria 8 (8.1 e 8.2) operam a uma frequência de 2000 MHz (2 GHz) e foram desenvolvidos para curtas distâncias de até 30 metros em datacenters para suportar 25GBASE-T ou 40GBASE-T. Extensões maiores que 30 metros causam atenuações severas nessa alta frequência."
   },
   {
@@ -6777,12 +6777,12 @@
     "statement": "Durante uma sessão TCP ativa, o receptor monitora constantemente o seu buffer de entrada disponível e anuncia esse valor ao transmissor no cabeçalho de cada segmento enviado de volta. Esse mecanismo do protocolo TCP, que impede que o transmissor envie dados mais rápido do que a aplicação receptora é capaz de processar, é conhecido como:",
     "options": {
       "A": "Janela de Congestionamento (cwnd).",
-      "B": "Slow Start (Partida Lenta).",
-      "C": "Janela Deslizante (Sliding Window) para Controle de Fluxo.",
+      "B": "Janela Deslizante (Sliding Window) para Controle de Fluxo.",
+      "C": "Slow Start (Partida Lenta).",
       "D": "Fast Recovery (Recuperação Rápida).",
       "E": "Handshake de Encerramento por flags FIN."
     },
-    "answer": "C",
+    "answer": "B",
     "explanation": ". A Janela Deslizante (Sliding Window) realiza o Controle de Fluxo (Flow Control), permitindo ao receptor gerenciar a taxa de envio do emissor de acordo com seu buffer disponível (anunciado no campo Window Size do cabeçalho TCP). O controle de congestionamento (A, B, D) é um mecanismo diferente, voltado a proteger os roteadores da rede intermediária, e não o buffer do receptor."
   },
   {
@@ -6794,13 +6794,13 @@
     "source": "FCC",
     "statement": "Considere a seguinte situação hipotética: Uma aplicação de monitoramento de infraestrutura de TI do TJ-CE precisa coletar métricas de tráfego de switches usando o protocolo SNMP e sincronizar o relógio dos servidores do tribunal via protocolo NTP. De acordo com os padrões da IANA, os serviços de gerenciamento de rede SNMP (porta padrão para requisições do gerente ao agente) e sincronização de tempo NTP utilizam, respectivamente, as portas bem conhecidas e o protocolo da camada de transporte:",
     "options": {
-      "A": "Portas 161 e 123, rodando sobre UDP.",
+      "A": "Portas 162 e 514, rodando sobre TCP.",
       "B": "Portas 162 e 123, rodando sobre TCP.",
       "C": "Portas 161 e 514, rodando sobre UDP.",
-      "D": "Portas 162 e 514, rodando sobre TCP.",
+      "D": "Portas 161 e 123, rodando sobre UDP.",
       "E": "Portas 389 e 123, rodando sobre UDP."
     },
-    "answer": "A",
+    "answer": "D",
     "explanation": ". O SNMP opera por padrão na porta UDP 161 (para consultas enviadas ao agente) e na porta UDP 162 (para traps enviadas ao gerente). O NTP opera por padrão na porta UDP 123. Ambos são protocolos que exigem baixo overhead e latência, utilizando a porta de transporte UDP."
   },
   {
@@ -6814,12 +6814,12 @@
     "options": {
       "A": "Linear, adicionando 1 MSS a cada RTT.",
       "B": "Logarítmica, dividindo cwnd pelo fator de perda.",
-      "C": "Exponencial, dobrando o valor de cwnd a cada RTT.",
+      "C": "Quadrática, multiplicando ssthresh por cwnd.",
       "D": "Constante, mantendo-se fixa até ocorrer perda de pacotes.",
-      "E": "Quadrática, multiplicando ssthresh por cwnd."
+      "E": "Exponencial, dobrando o valor de cwnd a cada RTT."
     },
-    "answer": "C",
-    "explanation": ". No estado de Slow Start (Partida Lenta), a janela de congestionamento (cwnd) começa pequena e cresce de forma exponencial (dobra a cada RTT - Round Trip Time), aumentando 1 MSS para cada ACK recebido com sucesso. Quando cwnd atinge ssthresh, o algoritmo passa para o estado de Congestion Avoidance, onde o crescimento torna-se linear (A)."
+    "answer": "E",
+    "explanation": ". No estado de Slow Start (Partida Lenta), a janela de congestionamento (cwnd) começa pequena e cresce de forma exponencial (dobra a cada RTT - Round Trip Time), aumentando 1 MSS para cada ACK recebido com sucesso. Quando cwnd atinge ssthresh, o algoritmo passa para o estado de Congestion Avoidance, onde o crescimento torna-se linear (A) ."
   },
   {
     "id": 380,
@@ -6849,13 +6849,13 @@
     "statement": "Embora o protocolo UDP não forneça confiabilidade, controle de fluxo ou reordenação, ele é amplamente utilizado em diversas aplicações modernas na Internet. A alternativa que apresenta um cabeçalho completo e correto com todos os campos existentes em um segmento UDP padrão é:",
     "options": {
       "A": "Porta de Origem, Porta de Destino, Número de Sequência, Checksum.",
-      "B": "Porta de Origem, Porta de Destino, Comprimento do Segmento, Checksum.",
+      "B": "Porta de Origem, Porta de Destino, Flags (SYN, ACK), Acknowledgment.",
       "C": "Porta de Origem, Porta de Destino, Window Size, Checksum.",
-      "D": "Porta de Origem, Porta de Destino, Flags (SYN, ACK), Acknowledgment.",
+      "D": "Porta de Origem, Porta de Destino, Comprimento do Segmento, Checksum.",
       "E": "Porta de Origem, Porta de Destino, Tipo de Serviço (ToS), Time to Live (TTL)."
     },
-    "answer": "B",
-    "explanation": ". O cabeçalho UDP é minimalista e possui exatamente 8 bytes, contendo apenas 4 campos de 2 bytes cada: Porta de Origem, Porta de Destino, Comprimento do Segmento (Length) e Checksum. Campos como número de sequência (A), Window Size (C) e Flags (D) são exclusivos do cabeçalho TCP. TTL (E) pertence ao cabeçalho IP."
+    "answer": "D",
+    "explanation": ". O cabeçalho UDP é minimalista e possui exatamente 8 bytes, contendo apenas 4 campos de 2 bytes cada: Porta de Origem, Porta de Destino, Comprimento do Segmento (Length) e Checksum. Campos como número de sequência (A) , Window Size (C)  e Flags (B)  são exclusivos do cabeçalho TCP. TTL (E)  pertence ao cabeçalho IP."
   },
   {
     "id": 382,
@@ -6868,12 +6868,12 @@
     "options": {
       "A": "RST (Reset).",
       "B": "SYN (Synchronize).",
-      "C": "PSH (Push).",
-      "D": "FIN (Finish).",
+      "C": "FIN (Finish).",
+      "D": "PSH (Push).",
       "E": "URG (Urgent)."
     },
-    "answer": "D",
-    "explanation": ". A flag FIN (Finish) é utilizada para sinalizar o término da transmissão e iniciar o processo de encerramento da conexão em 4 etapas (FIN -> ACK -> FIN -> ACK). O RST (A) fecha a conexão de forma abrupta em caso de erro grave."
+    "answer": "C",
+    "explanation": ". A flag FIN (Finish) é utilizada para sinalizar o término da transmissão e iniciar o processo de encerramento da conexão em 4 etapas (FIN -> ACK -> FIN -> ACK). O RST (A)  fecha a conexão de forma abrupta em caso de erro grave."
   },
   {
     "id": 383,
@@ -6884,12 +6884,13 @@
     "source": "FCC",
     "statement": "Para garantir a segurança de seus sistemas e portas abertas em seus servidores de aplicação contra acessos externos não autorizados, a equipe de infraestrutura de TI do TJ-CE fechou todas as portas não essenciais no firewall de borda. Sabendo que o tribunal utiliza LDAP para serviços de diretório, SSH para administração remota e RDP para conexão de área de trabalho remota para técnicos, quais portas TCP padrão devem permanecer obrigatoriamente abertas para estes serviços, respectivamente?",
     "options": {
-      "A": "389, 22 e 3389.",
-      "B": "389, 21 e 1433.",
-      "D": "443, 22 e 80.",
+      "A": "443, 22 e 80.",
+      "B": "636, 23 e 3389.",
+      "C": "389, 21 e 1433.",
+      "D": "389, 22 e 3389.",
       "E": "161, 23 e 3389."
     },
-    "answer": "A",
+    "answer": "D",
     "explanation": ". LDAP opera na porta padrão TCP 389 (LDAPS seguro opera em 636). SSH opera na porta padrão TCP 22 (Telnet inseguro opera em 23). O RDP da Microsoft opera na porta padrão TCP 3389."
   },
   {
@@ -6902,12 +6903,12 @@
     "statement": "No controle de congestionamento do TCP, após o acionamento dos mecanismos de Fast Retransmit (Retransmissão Rápida) e Fast Recovery (Recuperação Rápida), o transmissor não reinicia a transmissão via Slow Start. Em vez disso, ele define o ssthresh para a metade da janela atual, e a janela de congestionamento (cwnd) é ajustada de forma a reiniciar a transmissão diretamente na fase de:",
     "options": {
       "A": "Slow Start com crescimento exponencial.",
-      "B": "Congestion Avoidance com crescimento linear.",
+      "B": "Timeout RTO passivo.",
       "C": "Controle de Fluxo passivo.",
       "D": "Multiplicative Increase exponencial.",
-      "E": "Timeout RTO passivo."
+      "E": "Congestion Avoidance com crescimento linear."
     },
-    "answer": "B",
+    "answer": "E",
     "explanation": ". O mecanismo de Fast Recovery assume que a rede não está congestionada a ponto de exigir Slow Start (pois os ACKs duplicados mostram que pacotes continuam passando). Por isso, ele divide o ssthresh e define cwnd de forma a continuar transmitindo em Congestion Avoidance (linear), evitando a queda brusca de vazão gerada pelo Slow Start."
   },
   {
@@ -6919,13 +6920,13 @@
     "source": "FCC",
     "statement": "O protocolo TCP garante a entrega ordenada e livre de erros de pacotes através de um mecanismo denominado ARQ (Automatic Repeat Request). Esse mecanismo baseia-se no envio de confirmações pelo receptor. No TCP clássico, quando o receptor envia uma mensagem ACK com o valor de confirmação $N$, isso significa que o receptor:",
     "options": {
-      "A": "Recebeu todos os bytes até $N-1$ com sucesso, e espera receber o byte $N$ em seguida (Confirmação Cumulativa).",
+      "A": "Reiniciou o tamanho da sua janela de recepção para $N$ bytes.",
       "B": "Recebeu apenas o byte $N$, e os pacotes anteriores a $N$ foram perdidos.",
       "C": "Solicita que o transmissor repita o pacote $N-1$ imediatamente.",
       "D": "Confirma a recepção do byte $N+1$ em diante, pulando o byte $N$.",
-      "E": "Reiniciou o tamanho da sua janela de recepção para $N$ bytes."
+      "E": "Recebeu todos os bytes até $N-1$ com sucesso, e espera receber o byte $N$ em seguida (Confirmação Cumulativa)."
     },
-    "answer": "A",
+    "answer": "E",
     "explanation": ". O ACK do TCP é cumulativo. Um ACK de número $N$ confirma que todos os bytes anteriores a $N$ (ou seja, de $0$ a $N-1$) foram recebidos em ordem e sem erros, e que o receptor está pronto para receber o byte de sequência número $N$."
   },
   {
@@ -6955,13 +6956,13 @@
     "source": "FCC",
     "statement": "Durante o desenvolvimento de um aplicativo mobile corporativo, a equipe de TI optou por enviar as requisições de atualização de geolocalização dos técnicos utilizando o protocolo UDP em vez do TCP. Sob a perspectiva de engenharia de software e redes, a principal justificativa para esta escolha é:",
     "options": {
-      "A": "O UDP garante a reordenação automática dos pacotes que chegam fora de sequência no servidor.",
+      "A": "O UDP elimina o overhead de estabelecimento de conexão e confirmações de recebimento, fornecendo latência mínima e maior eficiência para transmissões frequentes de dados em tempo real.",
       "B": "O UDP dispensa a necessidade de verificação de portas de comunicação no servidor ativo.",
-      "C": "O UDP elimina o overhead de estabelecimento de conexão e confirmações de recebimento, fornecendo latência mínima e maior eficiência para transmissões frequentes de dados em tempo real.",
+      "C": "O UDP garante a reordenação automática dos pacotes que chegam fora de sequência no servidor.",
       "D": "O UDP possui cabeçalho de 20 bytes idêntico ao TCP, mas suporta compressão nativa de dados.",
       "E": "O UDP realiza o controle de fluxo na camada física de transmissão óptica."
     },
-    "answer": "C",
+    "answer": "A",
     "explanation": ". A grande vantagem do UDP é a ausência de conexão prévia (sem handshake) e a falta de retransmissões/confirmações. Para atualizações constantes onde a perda de um pacote individual é insignificante (pois a próxima atualização virá logo em seguida), o UDP oferece latência mínima e economiza banda de rede."
   },
   {
@@ -6973,14 +6974,14 @@
     "source": "FCC",
     "statement": "Considere a seguinte situação hipotética: Um servidor proxy de borda do TJ-CE monitora conexões TCP ativas e detecta um tráfego anômalo que viola as políticas de segurança corporativas. Para encerrar de forma imediata e abrupta a sessão de transmissão do invasor sem passar pelo handshake de encerramento normal (FIN-ACK), o firewall deve enviar um pacote contendo a seguinte flag ativada no cabeçalho TCP:",
     "options": {
-      "A": "FIN.",
+      "A": "RST.",
       "B": "SYN.",
       "C": "PSH.",
       "D": "URG.",
-      "E": "RST."
+      "E": "FIN."
     },
-    "answer": "E",
-    "explanation": ". A flag RST (Reset) força o encerramento abrupto e imediato de uma conexão TCP, descartando os buffers associados de ambas as pontas imediatamente, sem necessidade da negociação elegante de 4 passos iniciada pelo FIN (A)."
+    "answer": "A",
+    "explanation": ". A flag RST (Reset) força o encerramento abrupto e imediato de uma conexão TCP, descartando os buffers associados de ambas as pontas imediatamente, sem necessidade da negociação elegante de 4 passos iniciada pelo FIN (E) ."
   },
   {
     "id": 389,
@@ -7010,12 +7011,12 @@
     "statement": "Para garantir o envio de e-mails institucionais de forma integrada com o sistema de processos eletrônicos e permitir a leitura e o gerenciamento das pastas de e-mails dos usuários diretamente nos servidores centrais, a equipe de TI do TJ-CE deve configurar no servidor, respectivamente, os protocolos de envio SMTP e de recebimento e gerenciamento online IMAP nas portas padrão TCP:",
     "options": {
       "A": "25 e 110.",
-      "B": "25 e 143.",
-      "C": "110 e 143.",
+      "B": "110 e 143.",
+      "C": "25 e 143.",
       "D": "80 e 443.",
       "E": "21 e 110."
     },
-    "answer": "B",
+    "answer": "C",
     "explanation": ". O SMTP (Simple Mail Transfer Protocol) é o protocolo padrão para envio de e-mails e opera na porta TCP 25 (para servidores). O IMAP (Internet Message Access Protocol) é usado para recebimento e sincronização online de mensagens com o servidor e opera na porta TCP 143. A porta 110 (A, C, E) pertence ao protocolo POP3, que faz download e apaga do servidor, não mantendo o gerenciamento online."
   },
   {
@@ -7029,11 +7030,11 @@
     "options": {
       "A": "A LGPD foi violada, mas o tribunal não foi notificado.",
       "B": "O tribunal foi notificado e a LGPD não foi violada.",
-      "C": "A LGPD não foi violada.",
-      "D": "Se o tribunal for notificado, então a LGPD foi violada.",
+      "C": "Se o tribunal for notificado, então a LGPD foi violada.",
+      "D": "A LGPD não foi violada.",
       "E": "A multa administrativa foi aplicada e o tribunal não foi notificado."
     },
-    "answer": "C",
+    "answer": "D",
     "explanation": ". Traduzindo em proposições simples: $V$: LGPD violada; $N$: Tribunal notificado; $M$: Multa aplicada. Premissas: 1. $V \\rightarrow (N \\land M)$ e 2. $\\neg M$. Pela propriedade da conjunção, se $\\neg M$ é verdadeiro, $(N \\land M)$ é falso. Aplicando a regra do Modus Tollens no condicional $V \\rightarrow (N \\land M)$, se o consequente é falso, o antecedente deve ser falso. Logo, $\\neg V$ é verdadeiro (A LGPD não foi violada)."
   },
   {
@@ -7063,14 +7064,14 @@
     "source": "FCC",
     "statement": "Considere a seguinte situação hipotética: Quatro técnicos judiciários do setor de TI do TJ-CE (André, Bruno, Carlos e Daniel) possuem, cada um, uma única especialização profissional distinta (Banco de Dados, Redes, Segurança e Programação). As seguintes afirmações sobre suas especializações são verdadeiras:\n1. André ou Carlos é o especialista em Segurança.\n2. Se Bruno for o especialista em Programação, então Daniel é o especialista em Redes.\n3. Se Carlos for o especialista em Segurança, então Bruno é o especialista em Programação.\n4. Sabe-se que Daniel não é o especialista em Redes.\nCom base nas premissas lógicas fornecidas, é correto concluir que o especialista em Segurança e o especialista em Programação são, respectivamente:",
     "options": {
-      "A": "André e Bruno.",
+      "A": "André e Carlos.",
       "B": "Carlos e André.",
-      "C": "André e Carlos.",
+      "C": "André e Bruno.",
       "D": "Carlos e Bruno.",
       "E": "Daniel e André."
     },
-    "answer": "A",
-    "explanation": ". Vamos analisar passo a passo:\n* Premissa 4 afirma: Daniel NÃO é especialista em Redes ($\\neg DR$ é verdadeiro).\n* Na premissa 2, temos o condicional: $BP \\rightarrow DR$. Como sabemos que $DR$ é falso, por Modus Tollens concluímos que $BP$ também é falso ($\\neg BP$ é verdadeiro - Bruno NÃO é especialista em Programação).\n* Na premissa 3, temos o condicional: $CS \\rightarrow BP$. Como concluímos que $BP$ é falso, por Modus Tollens concluímos que $CS$ também é falso ($\\neg CS$ é verdadeiro - Carlos NÃO é especialista em Segurança).\n* Na premissa 1, temos a disjunção: $AS \\lor CS$. Como $CS$ é falso, para a disjunção ser verdadeira, $AS$ deve ser verdadeiro (André é o especialista em Segurança).\n* Como Daniel não é redes, Carlos não é segurança, André é segurança. Sobram Programação, Banco de Dados e Redes.\n* O condicional da premissa 2 está satisfeito pois a premissa $BP$ (Bruno Programação) é falsa. Quem pode ser programação? Daniel ou Bruno não são (Daniel não é redes, Bruno não é programação).\n* Ajustando a associação: André = Segurança. Bruno = Programação? Não, pois descobrimos $\\neg BP$. Então Bruno não é Programação. As posições restantes para Banco de Dados, Redes e Programação devem ser distribuídas. Como Bruno não é Programação, resta que Bruno é Redes ou Banco de Dados. Daniel não é Redes. \n* Espera, vamos reavaliar: se Bruno não é Programação, e Carlos não é Segurança. André é Segurança. Sobram para Carlos, Bruno e Daniel as especialidades: Programação, Banco de Dados e Redes.\n* Como Daniel não é redes, Daniel deve ser Programação ou Banco de Dados.\n* Bruno não é Programação, logo Bruno deve ser Banco de Dados ou Redes.\n* Se Daniel não é Redes, e André é Segurança, as opções de Redes são Bruno ou Carlos.\n* Se Carlos é Redes, Bruno é Banco de Dados, Daniel é Programação. Isso valida todas as premissas perfeitamente.\n* A questão pergunta quem é Segurança e quem é Programação. Segurança = André. Programação = Daniel (e não Bruno).\n* Espera! Vamos reler as alternativas. A alternativa A diz: André e Bruno. Mas Bruno não é programação.\n* Vamos refazer a lógica. E se a premissa 2 $BP \\rightarrow DR$ tiver $BP$ falso, a condicional é verdadeira.\n* Vamos olhar o gabarito das alternativas: se André é Segurança ($AS = V$), Carlos não é Segurança ($CS = F$).\n* Se Carlos não é Segurança, o antecedente da premissa 3 é falso ($CS = F$). A condicional $CS \\rightarrow BP$ é logicamente verdadeira, independentemente de Bruno ser Programação ($BP$) ou não.\n* Isso significa que Bruno ser Programação ($BP$) pode ser Verdadeiro ou Falso!\n* Mas espere! Se Bruno for Programação ($BP = V$), a premissa 2 ($BP \\rightarrow DR$) exige que Daniel seja Redes ($DR = V$).\n* Mas a premissa 4 diz que Daniel NÃO é especialista em Redes ($DR = F$).\n* Logo, se Daniel não é redes ($DR = F$), pela premissa 2 ($BP \\rightarrow DR$), por Modus Tollens, Bruno NÃO pode ser Programação ($BP = F$).\n* Portanto, Bruno não é Programação. E Carlos não é Segurança. André é Segurança.\n* E quem sobrou para ser Programação? Daniel ou Carlos.\n* Vamos ver as opções: A pergunta é quem é \"Segurança\" e \"Programação\" respectivamente. Segurança é André.\n* A única alternativa com André em Segurança é a A (André e Bruno) ou C (André e Carlos).\n* Se a alternativa correta for C (André e Carlos), significa que Carlos é Programação.\n* Se Carlos for Programação, Daniel é Banco de Dados, Bruno é Redes. \n* Vamos testar esse cenário:\n  * André = Segurança.\n  * Carlos = Programação.\n  * Bruno = Redes.\n  * Daniel = Banco de Dados.\n  * Teste das premissas:\n    1. André ou Carlos é Segurança? Sim (André é).\n    2. Se Bruno for Programação (Falso), então Daniel é Redes (Falso). F -> F é Verdadeiro.\n    3. Se Carlos for Segurança (Falso), então Bruno é Programação (Falso). F -> F é Verdadeiro.\n    4. Daniel não é Redes? Verdadeiro (ele é BD).\n  * Todas as premissas são verdadeiras! E a resposta correta de quem é Segurança e Programação seria André e Carlos.\n* E se André for Segurança e Bruno for Programação? \n  * Se Bruno for Programação ($BP = V$), a premissa 2 diz que Daniel deve ser Redes ($DR = V$). Mas isso contradiz a premissa 4 (Daniel não é Redes). Logo, Bruno não pode ser Programação.\n* Logo, a única conclusão lógica válida é que André é Segurança e Carlos é Programação.\n* Portanto, o especialista em Segurança é André e o de Programação é Carlos.\n* **Gabarito correto: C.**"
+    "answer": "C",
+    "explanation": ". Vamos analisar passo a passo:\n* Premissa 4 afirma: Daniel NÃO é especialista em Redes ($\\neg DR$ é verdadeiro).\n* Na premissa 2, temos o condicional: $BP \\rightarrow DR$. Como sabemos que $DR$ é falso, por Modus Tollens concluímos que $BP$ também é falso ($\\neg BP$ é verdadeiro - Bruno NÃO é especialista em Programação).\n* Na premissa 3, temos o condicional: $CS \\rightarrow BP$. Como concluímos que $BP$ é falso, por Modus Tollens concluímos que $CS$ também é falso ($\\neg CS$ é verdadeiro - Carlos NÃO é especialista em Segurança).\n* Na premissa 1, temos a disjunção: $AS \\lor CS$. Como $CS$ é falso, para a disjunção ser verdadeira, $AS$ deve ser verdadeiro (André é o especialista em Segurança).\n* Como Daniel não é redes, Carlos não é segurança, André é segurança. Sobram Programação, Banco de Dados e Redes.\n* O condicional da premissa 2 está satisfeito pois a premissa $BP$ (Bruno Programação) é falsa. Quem pode ser programação? Daniel ou Bruno não são (Daniel não é redes, Bruno não é programação).\n* Ajustando a associação: André = Segurança. Bruno = Programação? Não, pois descobrimos $\\neg BP$. Então Bruno não é Programação. As posições restantes para Banco de Dados, Redes e Programação devem ser distribuídas. Como Bruno não é Programação, resta que Bruno é Redes ou Banco de Dados. Daniel não é Redes. \n* Espera, vamos reavaliar: se Bruno não é Programação, e Carlos não é Segurança. André é Segurança. Sobram para Carlos, Bruno e Daniel as especialidades: Programação, Banco de Dados e Redes.\n* Como Daniel não é redes, Daniel deve ser Programação ou Banco de Dados.\n* Bruno não é Programação, logo Bruno deve ser Banco de Dados ou Redes.\n* Se Daniel não é Redes, e André é Segurança, as opções de Redes são Bruno ou Carlos.\n* Se Carlos é Redes, Bruno é Banco de Dados, Daniel é Programação. Isso valida todas as premissas perfeitamente.\n* A questão pergunta quem é Segurança e quem é Programação. Segurança = André. Programação = Daniel (e não Bruno).\n* Espera! Vamos reler as alternativas. A alternativa C diz: André e Bruno. Mas Bruno não é programação.\n* Vamos refazer a lógica. E se a premissa 2 $BP \\rightarrow DR$ tiver $BP$ falso, a condicional é verdadeira.\n* Vamos olhar o gabarito das alternativas: se André é Segurança ($AS = V$), Carlos não é Segurança ($CS = F$).\n* Se Carlos não é Segurança, o antecedente da premissa 3 é falso ($CS = F$). A condicional $CS \\rightarrow BP$ é logicamente verdadeira, independentemente de Bruno ser Programação ($BP$) ou não.\n* Isso significa que Bruno ser Programação ($BP$) pode ser Verdadeiro ou Falso!\n* Mas espere! Se Bruno for Programação ($BP = V$), a premissa 2 ($BP \\rightarrow DR$) exige que Daniel seja Redes ($DR = V$).\n* Mas a premissa 4 diz que Daniel NÃO é especialista em Redes ($DR = F$).\n* Logo, se Daniel não é redes ($DR = F$), pela premissa 2 ($BP \\rightarrow DR$), por Modus Tollens, Bruno NÃO pode ser Programação ($BP = F$).\n* Portanto, Bruno não é Programação. E Carlos não é Segurança. André é Segurança.\n* E quem sobrou para ser Programação? Daniel ou Carlos.\n* Vamos ver as opções: A pergunta é quem é \"Segurança\" e \"Programação\" respectivamente. Segurança é André.\n* A única alternativa com André em Segurança é a A (André e Bruno) ou C (André e Carlos).\n* Se a alternativa correta for C (André e Carlos), significa que Carlos é Programação.\n* Se Carlos for Programação, Daniel é Banco de Dados, Bruno é Redes. \n* Vamos testar esse cenário:\n  * André = Segurança.\n  * Carlos = Programação.\n  * Bruno = Redes.\n  * Daniel = Banco de Dados.\n  * Teste das premissas:\n    1. André ou Carlos é Segurança? Sim (André é).\n    2. Se Bruno for Programação (Falso), então Daniel é Redes (Falso). F -> F é Verdadeiro.\n    3. Se Carlos for Segurança (Falso), então Bruno é Programação (Falso). F -> F é Verdadeiro.\n    4. Daniel não é Redes? Verdadeiro (ele é BD).\n  * Todas as premissas são verdadeiras! E a resposta correta de quem é Segurança e Programação seria André e Carlos.\n* E se André for Segurança e Bruno for Programação? \n  * Se Bruno for Programação ($BP = V$), a premissa 2 diz que Daniel deve ser Redes ($DR = V$). Mas isso contradiz a premissa 4 (Daniel não é Redes). Logo, Bruno não pode ser Programação.\n* Logo, a única conclusão lógica válida é que André é Segurança e Carlos é Programação.\n* Portanto, o especialista em Segurança é André e o de Programação é Carlos.\n* **Gabarito correto: C.**"
   },
   {
     "id": 394,
@@ -7081,14 +7082,14 @@
     "source": "FCC",
     "statement": "A regra de inferência válida conhecida como Modus Tollens (ou negação do consequente) estabelece que, se temos uma proposição condicional verdadeira e a negação de seu consequente também é verdadeira, podemos inferir a negação do antecedente. A representação simbólica correta dessa regra de inferência é:",
     "options": {
-      "A": "$(p \\rightarrow q) \\land p \\implies q$",
+      "A": "$(p \\rightarrow q) \\land \\neg q \\implies \\neg p$",
       "B": "$(p \\rightarrow q) \\land q \\implies p$",
-      "C": "$(p \\rightarrow q) \\land \\neg q \\implies \\neg p$",
+      "C": "$(p \\rightarrow q) \\land p \\implies q$",
       "D": "$(p \\rightarrow q) \\land \\neg p \\implies \\neg q$",
       "E": "$(p \\rightarrow \\neg q) \\land q \\implies p$"
     },
-    "answer": "C",
-    "explanation": ". O Modus Tollens é formalizado como: dada a condicional $p \\rightarrow q$ e a negação do consequente $\\neg q$, conclui-se a negação do antecedente $\\neg p$. A alternativa A representa o Modus Ponens. A alternativa B representa a falácia da afirmação do consequente. A alternativa D representa a falácia da negação do antecedente."
+    "answer": "A",
+    "explanation": ". O Modus Tollens é formalizado como: dada a condicional $p \\rightarrow q$ e a negação do consequente $\\neg q$, conclui-se a negação do antecedente $\\neg p$. A alternativa C representa o Modus Ponens. A alternativa B representa a falácia da afirmação do consequente. A alternativa D representa a falácia da negação do antecedente."
   },
   {
     "id": 395,
@@ -7099,13 +7100,13 @@
     "source": "FCC",
     "statement": "A proposição composta *\"Se o log de auditoria registrar o erro, então o alerta de segurança é disparado\"* possui equivalência lógica com a proposição disjuntiva expressa em:",
     "options": {
-      "A": "O log de auditoria registra o erro e o alerta de segurança é disparado.",
-      "B": "O log de auditoria não registra o erro ou o alerta de segurança é disparado.",
+      "A": "O log de auditoria não registra o erro ou o alerta de segurança é disparado.",
+      "B": "O log de auditoria registra o erro e o alerta de segurança é disparado.",
       "C": "O log de auditoria registra o erro ou o alerta de segurança não é disparado.",
       "D": "Se o alerta de segurança não for disparado, então o log de auditoria não registra o erro.",
       "E": "O log de auditoria não registra o erro e o alerta de segurança não é disparado."
     },
-    "answer": "B",
+    "answer": "A",
     "explanation": ". A condicional $P \\rightarrow Q$ equivale disjuntivamente a $\\neg P \\lor Q$ (regra Nega-Ou: nega a primeira parte, troca por 'ou', mantém a segunda parte). Portanto, a equivalência disjuntiva correta é: *\"O log de auditoria não registra o erro (negando P) ou o alerta de segurança é disparado (mantendo Q)\"*. A alternativa D é equivalente, mas é condicional (contrapositiva), não disjuntiva."
   },
   {
@@ -7118,12 +7119,12 @@
     "statement": "Considere a seguinte situação hipotética: Três servidores do TJ-CE (Eunice, Francisco e Glória) foram ouvidos pela comissão de auditoria para identificar o responsável por um vazamento acidental de chaves criptográficas. Sabe-se que apenas um dos servidores mentiu no depoimento.\n* Eunice declarou: *\"O responsável foi o Francisco.\"*\n* Francisco declarou: *\"O responsável foi a Glória.\"*\n* Glória declarou: *\"O Francisco mentiu em seu depoimento.\"*\nA partir das premissas lógicas apresentadas, o servidor que mentiu no depoimento e o real responsável pelo vazamento das chaves são, respectivamente:",
     "options": {
       "A": "Eunice e Francisco.",
-      "B": "Francisco e Glória.",
+      "B": "Francisco e Eunice.",
       "C": "Glória e Eunice.",
-      "D": "Francisco e Eunice.",
+      "D": "Francisco e Glória.",
       "E": "Eunice e Glória."
     },
-    "answer": "D",
+    "answer": "B",
     "explanation": ". Vamos analisar as declarações de Francisco e Glória. Eles fazem declarações contraditórias: Francisco diz que Glória é responsável, e Glória diz que Francisco mentiu. \n* Como são contraditórias, obrigatoriamente um deles fala a verdade e o outro mente.\n* Como o enunciado diz que apenas um dos três mentiu, isso significa que Eunice obrigatoriamente fala a VERDADE.\n* Se Eunice fala a verdade, a sua declaração *\"O responsável foi o Francisco\"* é verdadeira. Logo, Francisco é o responsável.\n* Agora analisamos o depoimento de Francisco: *\"O responsável foi a Glória.\"* Como o responsável é Francisco, a fala dele é Falsa (ele mentiu).\n* Glória declarou: *\"O Francisco mentiu.\"* Como Francisco realmente mentiu, a fala de Glória é Verdadeira.\n* Portanto, quem mentiu foi Francisco, e o responsável pelo vazamento foi Francisco.\n* **Gabarito correto: D.**"
   },
   {
@@ -7178,7 +7179,7 @@
       "E": "Pelo menos uma transmissão de dados sem criptografia TLS é considerada insegura."
     },
     "answer": "B",
-    "explanation": ". A negação de \"Todo A é B\" é \"Algum A não é B\" (ou \"Existe pelo menos um A que não é B\"). Portanto, a negação de *\"Toda transmissão... é insegura\"* é *\"Alguma transmissão... não é considerada insegura\"*. Negar com \"Nenhuma\" (A) é um erro clássico de lógica formal."
+    "explanation": ". A negação de \"Todo A é B\" é \"Algum A não é B\" (ou \"Existe pelo menos um A que não é B\"). Portanto, a negação de *\"Toda transmissão... é insegura\"* é *\"Alguma transmissão... não é considerada insegura\"*. Negar com \"Nenhuma\" (A)  é um erro clássico de lógica formal."
   },
   {
     "id": 400,
@@ -7207,13 +7208,13 @@
     "source": "FCC",
     "statement": "Considere as seguintes premissas lógicas de um regulamento interno do tribunal:\n1. Todos os analistas de sistemas são focados em desenvolvimento ou redes.\n2. Nenhum analista focado em redes desconhece a norma NBR 14565.\n3. Tiago é analista de sistemas focado em redes.\nCom base nas premissas fornecidas, deduz-se de forma logicamente válida e sem ambiguidades que Tiago:",
     "options": {
-      "A": "Desconhece a norma NBR 14565.",
+      "A": "Não desconhece a norma NBR 14565.",
       "B": "É focado em desenvolvimento de sistemas.",
-      "C": "Não desconhece a norma NBR 14565.",
+      "C": "Desconhece a norma NBR 14565.",
       "D": "É o único que conhece a norma NBR 14565 no tribunal.",
       "E": "Não é analista de sistemas focado em redes."
     },
-    "answer": "C",
+    "answer": "A",
     "explanation": ". Premissa 3 afirma que Tiago é analista focado em redes. A premissa 2 diz que \"Nenhum analista focado em redes desconhece a norma NBR 14565\", o que equivale a dizer que \"Todos os analistas focados em redes conhecem a norma\". Logo, Tiago conhece a norma, ou seja, Tiago não desconhece a norma NBR 14565."
   },
   {
@@ -7225,13 +7226,13 @@
     "source": "FCC",
     "statement": "Na lógica de argumentação, comete-se um erro de raciocínio chamado falácia quando se adota uma estrutura de argumento inválida que aparenta ser válida. Considere o argumento: *\"Se o servidor de banco de dados do tribunal for atacado, então o sistema fica fora do ar. Constatou-se que o sistema ficou fora do ar. Logo, o servidor de banco de dados do tribunal foi atacado.\"* Este argumento é inválido porque comete a falácia da:",
     "options": {
-      "A": "Negação do Antecedente.",
-      "B": "Afirmação do Consequente.",
+      "A": "Afirmação do Consequente.",
+      "B": "Negação do Antecedente.",
       "C": "Generalização Apressada.",
       "D": "Petitio Principii (Petição de Princípio).",
       "E": "Falsa Dicotomia."
     },
-    "answer": "B",
+    "answer": "A",
     "explanation": ". O argumento tem a forma: $A \\rightarrow B$; constatou-se $B$; conclui-se $A$. Esta é a clássica falácia da afirmação do consequente. O fato do sistema estar fora do ar ($B$) não implica que o motivo tenha sido obrigatoriamente um ataque ao banco ($A$); o sistema poderia estar fora do ar devido a uma manutenção programada, falta de energia ou erro de rede horizontal."
   },
   {
@@ -7244,12 +7245,12 @@
     "statement": "A negação lógica da proposição composta *\"O analista programa em Java ou o analista configura o switch de rede\"* é expressa corretamente por:",
     "options": {
       "A": "O analista não programa em Java ou o analista não configura o switch de rede.",
-      "B": "O analista não programa em Java e o analista não configura o switch de rede.",
+      "B": "O analista programa em Java e o analista não configura o switch de rede.",
       "C": "Se o analista não programa em Java, então ele configura o switch de rede.",
-      "D": "O analista programa em Java e o analista não configura o switch de rede.",
+      "D": "O analista não programa em Java e o analista não configura o switch de rede.",
       "E": "O analista não programa em Java ou ele configura o switch de rede."
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": ". Pela 2ª Lei de De Morgan, para negar a disjunção $P \\lor Q$, nega-se ambas as proposições e troca-se o conectivo 'ou' pelo conectivo 'e': $\\neg P \\land \\neg Q$. Logo, a tradução é: *\"O analista NÃO programa em Java E o analista NÃO configura o switch de rede\"*."
   },
   {
@@ -7263,11 +7264,11 @@
     "options": {
       "A": "Se o tempo de resposta da aplicação reduzir, então o administrador de banco de dados realizou o tuning da consulta SQL.",
       "B": "Se o administrador de banco de dados não realizar o tuning da consulta SQL, então o tempo de resposta da aplicação não reduz.",
-      "C": "Se o tempo de resposta da aplicação não reduzir, então o administrador de banco de dados não realizou o tuning da consulta SQL.",
+      "C": "O administrador de banco de dados realiza o tuning da consulta SQL e o tempo de resposta da aplicação não reduz.",
       "D": "O administrador de banco de dados não realiza o tuning da consulta SQL ou o tempo de resposta da aplicação reduz.",
-      "E": "O administrador de banco de dados realiza o tuning da consulta SQL e o tempo de resposta da aplicação não reduz."
+      "E": "Se o tempo de resposta da aplicação não reduzir, então o administrador de banco de dados não realizou o tuning da consulta SQL."
     },
-    "answer": "C",
+    "answer": "E",
     "explanation": ". A contrapositiva de $P \\rightarrow Q$ é $\\neg Q \\rightarrow \\neg P$ (inverte a ordem negando ambas as proposições simples). Traduzindo: *\"Se o tempo de resposta da aplicação NÃO reduzir, então o administrador de banco de dados NÃO realizou o tuning da consulta SQL\"*. Nota: a alternativa D também é equivalente, mas é a equivalência disjuntiva (Nega-Ou), e a questão pediu especificamente a Contrapositiva."
   },
   {
@@ -7279,14 +7280,14 @@
     "source": "FCC",
     "statement": "Considere as seguintes afirmações verdadeiras sobre três analistas de sistemas (Marcos, Paulo e Sandro) e suas respectivas linguagens de desenvolvimento favoritas (Java, Python e C#):\n1. Se Marcos não programa em C#, então Sandro programa em Java.\n2. Se Paulo programa em Python, então Marcos não programa em C#.\n3. Sabe-se que Sandro programa em C#.\nCom base nas premissas lógicas apresentadas, as linguagens favoritas de Marcos, Paulo e Sandro são, respectivamente:",
     "options": {
-      "A": "Java, Python e C#.",
+      "A": "C#, Java e C#.",
       "B": "Python, Java e C#.",
       "C": "Java, Java e C#.",
       "D": "Python, Python e C#.",
-      "E": "C#, Java e C#."
+      "E": "Java, Python e C#."
     },
-    "answer": "E",
-    "explanation": ". Vamos analisar as premissas estruturadas:\n* Premissa 3 afirma: Sandro programa em C# ($SC = V$). Como cada um tem uma linguagem favorita distinta, concluímos que Sandro NÃO programa em Java ($SJ = F$).\n* Premissa 1 afirma: $\\neg MC \\rightarrow SJ$ (Se Marcos não programa em C#, então Sandro programa em Java).\n* Como sabemos que $SJ$ é falso ($SJ = F$), por Modus Tollens na premissa 1 concluímos que o antecedente $\\neg MC$ deve ser Falso, o que significa que $MC$ é Verdadeiro (Marcos programa em C#).\n* Agora analisamos a premissa 2: $PP \\rightarrow \\neg MC$ (Se Paulo programa em Python, então Marcos não programa em C#).\n* Como concluímos que Marcos programa em C# ($MC = V$), a proposição $\\neg MC$ é Falsa ($\\neg MC = F$).\n* Por Modus Tollens na premissa 2, se o consequente é falso, o antecedente também deve ser falso. Logo, $\\neg PP$ é Verdadeiro (Paulo NÃO programa em Python).\n* Como Marcos é C#, restam Python e Java para Paulo e Sandro.\n* Mas já sabemos que Sandro é C#? Espera!\n* A premissa 3 diz: *\"Sandro programa em C#.\"*\n* Mas se Marcos também programa em C#, haveria duas pessoas programando em C#. A regra implícita diz \"suas respectivas linguagens de desenvolvimento favoritas\".\n* Vamos reanalisar sem assumir a exclusividade estrita caso ela não esteja explícita, ou ver as alternativas.\n* As alternativas listam as linguagens favoritas de Marcos, Paulo e Sandro, respectivamente:\n  * A) Java, Python, C#\n  * B) Python, Java, C#\n  * C) Java, Java, C# (Paulo e Marcos repetidos? Não, Marcos é Java, Paulo é Java, Sandro é C#).\n  * D) Python, Python, C#\n  * E) C#, Java, C#\n* Se Sandro programa em C# ($SC = V$), então ele não programa em Java ($SJ = F$).\n* Pela premissa 1 ($\\neg MC \\rightarrow SJ$), como $SJ = F$, temos que $MC = V$ (Marcos programa em C#).\n* Se Marcos programa em C#, então a proposição $\\neg MC$ é falsa.\n* Pela premissa 2 ($PP \\rightarrow \\neg MC$), como $\\neg MC = F$, concluímos por Modus Tollens que $PP$ é falso (Paulo não programa em Python).\n* Se Paulo não programa em Python, e Sandro é C#, Paulo deve programar em Java ou C#.\n* Se Marcos é C#, Paulo é Java, Sandro é C#.\n* A alternativa E lista: Marcos = C#, Paulo = Java, Sandro = C#. Isso bate exatamente com a nossa dedução lógica de que Marcos é C#, Paulo não é Python (logo é Java), e Sandro é C#!\n* Embora tanto Marcos quanto Sandro tenham C# como favorita (o que é permitido pelas premissas e explícito na alternativa E), a lógica do argumento fecha perfeitamente.\n* **Gabarito correto: E.**"
+    "answer": "A",
+    "explanation": ". Vamos analisar as premissas estruturadas:\n* Premissa 3 afirma: Sandro programa em C# ($SC = V$). Como cada um tem uma linguagem favorita distinta, concluímos que Sandro NÃO programa em Java ($SJ = F$).\n* Premissa 1 afirma: $\\neg MC \\rightarrow SJ$ (Se Marcos não programa em C#, então Sandro programa em Java).\n* Como sabemos que $SJ$ é falso ($SJ = F$), por Modus Tollens na premissa 1 concluímos que o antecedente $\\neg MC$ deve ser Falso, o que significa que $MC$ é Verdadeiro (Marcos programa em C#).\n* Agora analisamos a premissa 2: $PP \\rightarrow \\neg MC$ (Se Paulo programa em Python, então Marcos não programa em C#).\n* Como concluímos que Marcos programa em C# ($MC = V$), a proposição $\\neg MC$ é Falsa ($\\neg MC = F$).\n* Por Modus Tollens na premissa 2, se o consequente é falso, o antecedente também deve ser falso. Logo, $\\neg PP$ é Verdadeiro (Paulo NÃO programa em Python).\n* Como Marcos é C#, restam Python e Java para Paulo e Sandro.\n* Mas já sabemos que Sandro é C#? Espera!\n* A premissa 3 diz: *\"Sandro programa em C#.\"*\n* Mas se Marcos também programa em C#, haveria duas pessoas programando em C#. A regra implícita diz \"suas respectivas linguagens de desenvolvimento favoritas\".\n* Vamos reanalisar sem assumir a exclusividade estrita caso ela não esteja explícita, ou ver as alternativas.\n* As alternativas listam as linguagens favoritas de Marcos, Paulo e Sandro, respectivamente:\n  * E) Java, Python, C#\n  * B) Python, Java, C#\n  * C) Java, Java, C# (Paulo e Marcos repetidos? Não, Marcos é Java, Paulo é Java, Sandro é C#).\n  * D) Python, Python, C#\n  * A) C#, Java, C#\n* Se Sandro programa em C# ($SC = V$), então ele não programa em Java ($SJ = F$).\n* Pela premissa 1 ($\\neg MC \\rightarrow SJ$), como $SJ = F$, temos que $MC = V$ (Marcos programa em C#).\n* Se Marcos programa em C#, então a proposição $\\neg MC$ é falsa.\n* Pela premissa 2 ($PP \\rightarrow \\neg MC$), como $\\neg MC = F$, concluímos por Modus Tollens que $PP$ é falso (Paulo não programa em Python).\n* Se Paulo não programa em Python, e Sandro é C#, Paulo deve programar em Java ou C#.\n* Se Marcos é C#, Paulo é Java, Sandro é C#.\n* A alternativa A lista: Marcos = C#, Paulo = Java, Sandro = C#. Isso bate exatamente com a nossa dedução lógica de que Marcos é C#, Paulo não é Python (logo é Java), e Sandro é C#!\n* Embora tanto Marcos quanto Sandro tenham C# como favorita (o que é permitido pelas premissas e explícito na alternativa A), a lógica do argumento fecha perfeitamente.\n* **Gabarito correto: E.**"
   },
   {
     "id": 406,
@@ -7297,13 +7298,13 @@
     "source": "FCC",
     "statement": "Considere a seguinte situação hipotética: O Tribunal de Justiça do Ceará implementou um novo sistema para digitalização de processos históricos. Durante o processo de migração, um analista sugeriu coletar dados complementares dos réus, tais como suas preferências de lazer e histórico de compras em lojas físicas, argumentando que essas informações poderiam ser úteis para traçar perfis comportamentais em pesquisas acadêmicas futuras. Sob a ótica da Lei Geral de Proteção de Dados (Lei nº 13.709/2018), essa proposta de coleta de dados adicionais viola frontalmente o princípio do tratamento de dados pessoais da:",
     "options": {
-      "A": "Adequação, uma vez que a finalidade foi formalmente declarada no edital de licitação do sistema.",
+      "A": "Necessidade, a qual determina a limitação do tratamento ao mínimo necessário para a realização de suas finalidades, com abrangência dos dados pertinentes e não excessivos.",
       "B": "Transparência, pois os dados seriam mantidos em sigilo absoluto na base de dados do tribunal.",
       "C": "Livre acesso, visto que os jurisdicionados não teriam acesso facilitado às pesquisas geradas.",
-      "D": "Necessidade, a qual determina a limitação do tratamento ao mínimo necessário para a realização de suas finalidades, com abrangência dos dados pertinentes e não excessivos.",
+      "D": "Adequação, uma vez que a finalidade foi formalmente declarada no edital de licitação do sistema.",
       "E": "Prevenção, tendo em vista que a coleta desses dados não aumenta a vulnerabilidade física dos servidores do tribunal."
     },
-    "answer": "D",
+    "answer": "A",
     "explanation": ". O princípio da Necessidade (Art. 6º, inciso III, da LGPD) estabelece que a coleta e o tratamento de dados pessoais devem ser estritamente proporcionais e limitados ao mínimo indispensável para atingir a finalidade pública proposta. A coleta de preferências de lazer e histórico de compras de réus para um sistema de digitalização de processos históricos configura excesso de dados irrelevantes e não essenciais, violando o princípio."
   },
   {
@@ -7316,12 +7317,12 @@
     "statement": "De acordo com as regras estabelecidas pelo Capítulo IV da Lei Geral de Proteção de Dados (Lei nº 13.709/2018), o tratamento de dados pessoais pelas pessoas jurídicas de direito público deve ser realizado para o cumprimento de competências legais ou atribuições constitucionais. Nesse contexto, a lei determina que as entidades públicas:",
     "options": {
       "A": "Devem dispensar a indicação de encarregado de proteção de dados, haja vista a publicidade inerente aos atos administrativos.",
-      "B": "São autorizadas a comercializar bases de dados a entidades privadas, desde que o valor arrecadado seja revertido em melhorias de TI.",
-      "C": "Devem fornecer informações claras e atualizadas sobre a previsão legal, a finalidade, os procedimentos e as práticas utilizadas para executar o tratamento de dados pessoais.",
+      "B": "Devem fornecer informações claras e atualizadas sobre a previsão legal, a finalidade, os procedimentos e as práticas utilizadas para executar o tratamento de dados pessoais.",
+      "C": "São autorizadas a comercializar bases de dados a entidades privadas, desde que o valor arrecadado seja revertido em melhorias de TI.",
       "D": "Podem dispensar a indicação de finalidade específica para o tratamento quando este for realizado no âmbito de processos judiciais em segredo de justiça.",
       "E": "São isentas da observância dos princípios da finalidade e da adequação em virtude da supremacia do interesse público."
     },
-    "answer": "C",
+    "answer": "B",
     "explanation": ". De acordo com o Art. 23, inciso I, da LGPD, as pessoas jurídicas de direito público devem fornecer informações claras e atualizadas sobre a previsão legal, a finalidade, os procedimentos e as práticas utilizadas para executar o tratamento de dados pessoais, preferencialmente em seus portais institucionais."
   },
   {
@@ -7335,12 +7336,12 @@
     "options": {
       "A": "Advertência, com indicação de prazo para adoção de medidas corretivas.",
       "B": "Publicização da infração após devidamente apurada e confirmada a sua ocorrência.",
-      "C": "Multa simples de até 2% do faturamento da entidade pública, limitada ao teto de R$ 50.000.000,00 por infração.",
+      "C": "Eliminação dos dados pessoais a que se refere a infração.",
       "D": "Bloqueio dos dados pessoais a que se refere a infração até a sua regularização.",
-      "E": "Eliminação dos dados pessoais a que se refere a infração."
+      "E": "Multa simples de até 2% do faturamento da entidade pública, limitada ao teto de R$ 50.000.000,00 por infração."
     },
-    "answer": "C",
-    "explanation": ". Conforme o Art. 52, § 3º da LGPD, as sanções de multa simples e multa diária (incisos II e III) não se aplicam às pessoas jurídicas de direito público (órgãos públicos, autarquias, fundações). O tribunal pode sofrer advertência (A), publicização da infração (B), bloqueio (D) e eliminação dos dados (E), mas não multas pecuniárias."
+    "answer": "E",
+    "explanation": ". Conforme o Art. 52, § 3º da LGPD, as sanções de multa simples e multa diária (incisos II e III) não se aplicam às pessoas jurídicas de direito público (órgãos públicos, autarquias, fundações). O tribunal pode sofrer advertência (A) , publicização da infração (B) , bloqueio (D)  e eliminação dos dados (C) , mas não multas pecuniárias."
   },
   {
     "id": 409,
@@ -7353,11 +7354,11 @@
     "options": {
       "A": "É amplamente permitida para qualquer finalidade de fomento à economia digital.",
       "B": "É vedada em qualquer hipótese, inexistindo exceções legais devido ao princípio da indisponibilidade do interesse público.",
-      "C": "É permitida apenas em casos de execução descentralizada de atividade pública que exija o compartilhamento, ou nos casos em que os dados forem acessíveis publicamente, respeitadas as finalidades legais.",
+      "C": "É liberada desde que a entidade privada assine um termo de confidencialidade unilateral e pague tarifa de acesso.",
       "D": "Depende exclusivamente de autorização prévia por meio de decisão liminar do Conselho Nacional de Justiça (CNJ).",
-      "E": "É liberada desde que a entidade privada assine um termo de confidencialidade unilateral e pague tarifa de acesso."
+      "E": "É permitida apenas em casos de execução descentralizada de atividade pública que exija o compartilhamento, ou nos casos em que os dados forem acessíveis publicamente, respeitadas as finalidades legais."
     },
-    "answer": "C",
+    "answer": "E",
     "explanation": ". O Art. 26, § 1º da LGPD veda, em regra, a transferência de dados do Poder Público para entidades privadas, mas estabelece exceções claras: em casos de execução descentralizada de atividade pública que exija o compartilhamento (como convênios ou contratos administrativos); quando os dados forem acessíveis publicamente; ou quando houver previsão legal expressa ou finalidade exclusiva de prevenção a fraudes e segurança."
   },
   {
@@ -7370,13 +7371,13 @@
     "statement": "O titular de dados pessoais possui uma série de direitos assegurados pela LGPD, que podem ser exercidos diretamente perante o controlador dos dados. De acordo com o Artigo 18 da Lei nº 13.709/2018, o titular tem o direito de obter do controlador, mediante requisição e a qualquer momento:",
     "options": {
       "A": "O pagamento de indenização tarifada por danos morais presumidos sem necessidade de prova de vazamento.",
-      "B": "A confirmação da existência de tratamento e o acesso facilitado e gratuito aos seus dados pessoais.",
-      "C": "A alteração retroativa de registros públicos históricos para apagar condenações transitadas em julgado.",
+      "B": "A alteração retroativa de registros públicos históricos para apagar condenações transitadas em julgado.",
+      "C": "A confirmação da existência de tratamento e o acesso facilitado e gratuito aos seus dados pessoais.",
       "D": "A portabilidade dos dados pessoais a qualquer outra entidade pública sem necessidade de regulamentação adicional.",
       "E": "A exclusão de seus dados de prontuários médicos hospitalares de urgência mesmo antes da alta clínica."
     },
-    "answer": "B",
-    "explanation": ". O Art. 18, incisos I e II da LGPD garante ao titular o direito de obter a confirmação da existência de tratamento e o acesso aos dados pessoais de forma facilitada e gratuita. Portabilidade (D) necessita de regulamentação da ANPD e exclusão (E) encontra limites em obrigações legais de conservação de prontuários."
+    "answer": "C",
+    "explanation": ". O Art. 18, incisos I e II da LGPD garante ao titular o direito de obter a confirmação da existência de tratamento e o acesso aos dados pessoais de forma facilitada e gratuita. Portabilidade (D)  necessita de regulamentação da ANPD e exclusão (E)  encontra limites em obrigações legais de conservação de prontuários."
   },
   {
     "id": 411,
@@ -7388,12 +7389,12 @@
     "statement": "Considere a seguinte situação hipotética: O Tribunal de Justiça do Ceará estruturou seu Comitê de Proteção de Dados para adequação à LGPD. De acordo com a lei, o tribunal deve indicar um profissional para atuar como canal de comunicação entre o controlador (o TJ-CE), os titulares dos dados (cidadãos e servidores) e a ANPD. Nos termos da Lei nº 13.709/2018, essa função é denominada:",
     "options": {
       "A": "Operador de Segurança da Informação.",
-      "B": "Encarregado pelo Tratamento de Dados Pessoais (DPO).",
-      "C": "Ouvidor-Geral de Proteção de Dados Judiciais.",
+      "B": "Ouvidor-Geral de Proteção de Dados Judiciais.",
+      "C": "Encarregado pelo Tratamento de Dados Pessoais (DPO).",
       "D": "Agente de Fomento à Conformidade Digital.",
       "E": "Encarregado de Infraestrutura Física e Lógica."
     },
-    "answer": "B",
+    "answer": "C",
     "explanation": ". O Encarregado (conhecido internacionalmente como DPO - Data Protection Officer) é o agente indicado pelo controlador para atuar como canal de comunicação entre o controlador, os titulares dos dados e a Autoridade Nacional de Proteção de Dados (ANPD), conforme o Art. 5º, inciso VIII da LGPD."
   },
   {
@@ -7407,11 +7408,11 @@
     "options": {
       "A": "O número do Cadastro de Pessoas Físicas (CPF) e a geolocalização em tempo real do dispositivo.",
       "B": "O endereço residencial e o histórico de remuneração líquida do servidor público.",
-      "C": "Dado pessoal sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico.",
-      "D": "O número do título de eleitor e o registro geral de identidade (RG).",
+      "C": "O número do título de eleitor e o registro geral de identidade (RG).",
+      "D": "Dado pessoal sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico.",
       "E": "A carteira nacional de habilitação (CNH) e a lista de dependentes legais declarados no imposto de renda."
     },
-    "answer": "C",
+    "answer": "D",
     "explanation": ". A LGP define de forma estrita e taxativa os dados pessoais sensíveis em seu Art. 5º, inciso II. Informações sobre origem racial, convicção religiosa, dados de saúde, genéticos ou biométricos são classificados como sensíveis e exigem hipóteses legais de tratamento muito mais restritivas."
   },
   {
@@ -7425,11 +7426,11 @@
     "options": {
       "A": "Encarregado e Controlador.",
       "B": "Operador e Encarregado.",
-      "C": "Controlador e Operador.",
-      "D": "Controlador e Encarregado.",
+      "C": "Controlador e Encarregado.",
+      "D": "Controlador e Operador.",
       "E": "Operador e Controlador."
     },
-    "answer": "C",
+    "answer": "D",
     "explanation": ". O Controlador é a pessoa natural ou jurídica a quem competem as decisões referentes ao tratamento de dados pessoais (no caso, o TJ-CE). O Operador é a pessoa natural ou jurídica que realiza o tratamento em nome do controlador (no caso, a empresa de hospedagem em nuvem que age sob as ordens do tribunal), nos termos do Art. 5º, incisos VI e VII da LGPD."
   },
   {
@@ -7443,11 +7444,11 @@
     "options": {
       "A": "Adequação.",
       "B": "Prevenção.",
-      "C": "Responsabilização e prestação de contas (accountability).",
+      "C": "Segurança e blindagem lógica.",
       "D": "Transparência de governança.",
-      "E": "Segurança e blindagem lógica."
+      "E": "Responsabilização e prestação de contas (accountability)."
     },
-    "answer": "C",
+    "answer": "E",
     "explanation": ". O princípio da Responsabilização e Prestação de Contas (Art. 6º, inciso X) exige que os controladores e operadores não apenas cumpram a lei, mas sejam capazes de **comprovar documentadamente** que adotaram salvaguardas eficazes para proteger os dados sob sua guarda."
   },
   {
@@ -7460,12 +7461,12 @@
     "statement": "Considere os aspectos organizacionais e a natureza jurídica da Autoridade Nacional de Proteção de Dados (ANPD). A partir das alterações promovidas pela Lei nº 14.460/2022, a ANPD passou a ser classificada juridicamente como:",
     "options": {
       "A": "Órgão interno consultivo integrante da Presidência da República, sem orçamento próprio.",
-      "B": "Autarquia de regime especial, dotada de autonomia técnica e decisória, com patrimônio próprio.",
-      "C": "Empresa pública federal vinculada ao Ministério do Desenvolvimento e Tecnologia.",
+      "B": "Empresa pública federal vinculada ao Ministério do Desenvolvimento e Tecnologia.",
+      "C": "Autarquia de regime especial, dotada de autonomia técnica e decisória, com patrimônio próprio.",
       "D": "Organização Social privada conveniada ao Conselho Nacional de Justiça (CNJ).",
       "E": "Tribunal administrativo independente subordinado ao Ministério Público Federal."
     },
-    "answer": "B",
+    "answer": "C",
     "explanation": ". A Lei nº 14.460/2022 transformou a ANPD em uma autarquia de regime especial, garantindo autonomia técnica, decisória e administrativa, com patrimônio e receitas próprias, o que fortalece sua independência regulatória."
   },
   {
@@ -7495,13 +7496,13 @@
     "source": "FCC",
     "statement": "A Lei Geral de Proteção de Dados Pessoais (LGPD) estabelece limites claros sobre a sua própria aplicação. Nos termos do Artigo 4º da Lei nº 13.709/2018, a lei não se aplica ao tratamento de dados pessoais quando este for realizado por pessoa natural para fins exclusivamente:",
     "options": {
-      "A": "Comerciais e publicitários locais.",
-      "B": "Particulares e não econômicos.",
+      "A": "Particulares e não econômicos.",
+      "B": "Comerciais e publicitários locais.",
       "C": "Científicos e de pesquisa clínica em saúde pública.",
       "D": "Jornalísticos e artísticos sem autorização da ANPD.",
       "E": "Judiciais e de segurança de fronteiras."
     },
-    "answer": "B",
+    "answer": "A",
     "explanation": ". Conforme o Art. 4º, inciso I da LGPD, a lei não se aplica ao tratamento de dados pessoais realizado por pessoa natural para fins exclusivamente particulares e não econômicos (como manter uma agenda pessoal de contatos telefônicos)."
   },
   {
@@ -7531,13 +7532,13 @@
     "source": "FCC",
     "statement": "Dentre os princípios dispostos no Artigo 6º da LGPD, aquele que estabelece a impossibilidade de realização do tratamento de dados pessoais para fins discriminatórios ilícitos ou abusivos é o princípio da:",
     "options": {
-      "A": "Transparência.",
+      "A": "Não discriminação.",
       "B": "Prevenção.",
       "C": "Livre Acesso.",
-      "D": "Não discriminação.",
+      "D": "Transparência.",
       "E": "Qualidade dos Dados."
     },
-    "answer": "D",
+    "answer": "A",
     "explanation": ". O princípio da Não Discriminação (Art. 6º, inciso IX) veda expressamente a utilização de dados pessoais para fins discriminatórios abusivos ou ilícitos (como recusar crédito ou contratação funcional baseado em dados de origem racial ou orientação sexual)."
   },
   {
@@ -7550,13 +7551,13 @@
     "statement": "Considere a seguinte situação hipotética: Um cidadão solicitou ao TJ-CE a eliminação completa de seus dados pessoais coletados durante o trâmite de uma ação judicial de cobrança que já foi arquivada definitivamente. O tribunal, no entanto, negou o pedido de eliminação integral dos dados do sistema sob a alegação de necessidade de conservação legal. De acordo com o Artigo 16 da LGPD, a eliminação dos dados pessoais após o término de seu tratamento pode ser dispensada para fins de conservação autorizada nas seguintes hipóteses, EXCETO:",
     "options": {
       "A": "Cumprimento de obrigação legal ou regulatória pelo controlador.",
-      "B": "Estudo por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados pessoais.",
-      "C": "Uso exclusivo do controlador, com acesso por terceiros livre de restrições, desde que os dados sejam de natureza pública.",
+      "B": "Uso exclusivo do controlador, com acesso por terceiros livre de restrições, desde que os dados sejam de natureza pública.",
+      "C": "Estudo por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados pessoais.",
       "D": "Transferência a terceiro, desde que respeitados os requisitos de tratamento de dados dispostos na lei.",
       "E": "Uso exclusivo do controlador, vedado seu acesso por terceiros, e desde que anonimizados os dados."
     },
-    "answer": "C",
-    "explanation": ". De acordo com o Art. 16, inciso IV da LGPD, a conservação para uso exclusivo do controlador é permitida, **desde que vedado seu acesso por terceiros e que os dados estejam anonimizados**. A alternativa C erra ao afirmar que o acesso por terceiros seria livre de restrições."
+    "answer": "B",
+    "explanation": ". De acordo com o Art. 16, inciso IV da LGPD, a conservação para uso exclusivo do controlador é permitida, **desde que vedado seu acesso por terceiros e que os dados estejam anonimizados**. A alternativa B erra ao afirmar que o acesso por terceiros seria livre de restrições."
   },
   {
     "id": 421,
@@ -7568,12 +7569,12 @@
     "statement": "A linguagem de programação Java apoia-se em conceitos rígidos de Programação Orientada a Objetos (POO). Sobre o pilar da herança em Java, assinale a alternativa que descreve corretamente a regra de estrutura de classes da linguagem:",
     "options": {
       "A": "Uma classe pode estender múltiplas classes (herança múltipla de implementação) utilizando a palavra-chave `extends`.",
-      "B": "Uma classe pode estender apenas uma classe mãe, mas pode implementar múltiplas interfaces.",
-      "C": "Uma interface Java não pode estender outras interfaces, sendo obrigatória a sua implementação direta.",
+      "B": "Uma interface Java não pode estender outras interfaces, sendo obrigatória a sua implementação direta.",
+      "C": "Uma classe pode estender apenas uma classe mãe, mas pode implementar múltiplas interfaces.",
       "D": "Classes abstratas não podem herdar de outras classes abstratas.",
       "E": "O uso da palavra-chave `implements` permite herdar atributos concretos privados de interfaces."
     },
-    "answer": "B",
+    "answer": "C",
     "explanation": ". Java adota o modelo de herança simples para classes para evitar conflitos de implementação múltipla (como o problema do diamante). Assim, uma classe estende (`extends`) apenas uma superclasse. Porém, para fins de polimorfismo e contratos de comportamento, uma classe Java pode implementar (`implements`) múltiplas interfaces."
   },
   {
@@ -7622,12 +7623,12 @@
     "statement": "No desenvolvimento de aplicações web corporativas baseadas em Java EE (Jakarta EE), os Servlets desempenham papel fundamental no processamento de requisições e respostas HTTP dinâmicas. Sobre o ciclo de vida de um Servlet executado em um Web Container (como Apache Tomcat), é correto afirmar:",
     "options": {
       "A": "O método `init()` é executado a cada nova requisição HTTP enviada pelo cliente.",
-      "B": "Apenas o método `service()` é responsável pela criação física da instância da classe do Servlet na memória RAM.",
-      "C": "O método `destroy()` é acionado pelo Container uma única vez ao final do ciclo de vida do Servlet para liberar recursos.",
+      "B": "O método `destroy()` é acionado pelo Container uma única vez ao final do ciclo de vida do Servlet para liberar recursos.",
+      "C": "Apenas o método `service()` é responsável pela criação física da instância da classe do Servlet na memória RAM.",
       "D": "Os métodos `doGet()` e `doPost()` devem instanciar manualmente objetos do tipo `HttpServletRequest` a cada chamada.",
       "E": "Servlets são descartados pelo Container imediatamente após responderem à primeira requisição do cliente."
     },
-    "answer": "C",
+    "answer": "B",
     "explanation": ". O ciclo de vida de um Servlet é gerenciado pelo Web Container e consiste em: 1) Carregamento e instanciação; 2) Inicialização chamando `init()` uma única vez; 3) Processamento de requisições chamando `service()` (que despacha para `doGet`, `doPost`, etc.) a cada requisição; e 4) Destruição chamando `destroy()` uma única vez antes de remover o servlet da memória."
   },
   {
@@ -7658,12 +7659,12 @@
     "statement": "O Spring Framework utiliza conceitos modernos de design para reduzir o acoplamento de classes e facilitar testes unitários em aplicações Java. A técnica de arquitetura que consiste em remover da classe a responsabilidade de criar ou localizar os objetos dos quais ela depende, transferindo essa tarefa para o container do Spring, é denominada:",
     "options": {
       "A": "Programação Orientada a Aspectos (POA).",
-      "B": "Injeção de Dependências (DI), que implementa o princípio da Inversão de Controle (IoC).",
-      "C": "Acoplamento forte orientado a serviços.",
+      "B": "Acoplamento forte orientado a serviços.",
+      "C": "Injeção de Dependências (DI), que implementa o princípio da Inversão de Controle (IoC).",
       "D": "Mapeamento Objeto-Relacional declarativo.",
       "E": "MVC (Model-View-Controller) síncrono."
     },
-    "answer": "B",
+    "answer": "C",
     "explanation": ". A Injeção de Dependências (Dependency Injection) é um padrão de design no qual o framework gerencia o ciclo de vida dos objetos (Beans) e injeta as dependências necessárias nas classes em tempo de execução (usando `@Autowired` ou via construtor), implementando a Inversão de Controle (IoC)."
   },
   {
@@ -7676,12 +7677,12 @@
     "statement": "Interfaces em Java tradicionalmente continham apenas declarações de métodos abstratos (sem implementação). No entanto, a partir do Java 8, a linguagem passou a permitir que interfaces contenham métodos concretos (com corpo/implementação) para facilitar a evolução de APIs sem quebrar retrocompatibilidade. Esses métodos concretos em interfaces são chamados de:",
     "options": {
       "A": "Métodos estáticos virtuais.",
-      "B": "Métodos padrão (Default Methods).",
-      "C": "Métodos protegidos abstratos.",
+      "B": "Métodos protegidos abstratos.",
+      "C": "Métodos padrão (Default Methods).",
       "D": "Construtores de Interface.",
       "E": "Métodos finais herdados."
     },
-    "answer": "B",
+    "answer": "C",
     "explanation": ". Métodos padrão (Default Methods) utilizam a palavra-chave `default` antes de sua assinatura na interface e fornecem uma implementação padrão que pode ser herdada diretamente pelas classes implementadoras, evitando erros de compilação em códigos legados."
   },
   {
@@ -7694,12 +7695,12 @@
     "statement": "A tecnologia JSP (JavaServer Pages) permite misturar código Java com elementos HTML estáticos para renderizar páginas dinamicamente no servidor. Em relação à arquitetura MVC (Model-View-Controller), as páginas JSP são utilizadas majoritariamente na camada de:",
     "options": {
       "A": "Model (Modelo), gerenciando o acesso direto a bancos de dados JDBC.",
-      "B": "Controller (Controlador), interceptando e roteando requisições HTTP de clientes.",
-      "C": "View (Visão), apresentando os dados processados e gerando a resposta em HTML para o navegador.",
+      "B": "View (Visão), apresentando os dados processados e gerando a resposta em HTML para o navegador.",
+      "C": "Controller (Controlador), interceptando e roteando requisições HTTP de clientes.",
       "D": "Service (Serviço), executando as regras de negócio complexas de forma transacional.",
       "E": "Repository (Repositório), mapeando as queries SQL ANSI corporativas."
     },
-    "answer": "C",
+    "answer": "B",
     "explanation": ". No padrão MVC clássico voltado à arquitetura Java Web, os Servlets atuam como Controllers (controladores de fluxo) e as páginas JSP atuam como Views (visualização/apresentação), renderizando as telas dinâmicas enviadas de volta ao cliente."
   },
   {
@@ -7730,12 +7731,12 @@
     "statement": "Classes abstratas e Interfaces são recursos importantes para a Abstração em Java. Sobre a diferença técnica entre eles em Java SE moderno, é correto afirmar:",
     "options": {
       "A": "Uma classe pode estender múltiplas classes abstratas, mas pode implementar apenas uma interface.",
-      "B": "Classes abstratas não admitem métodos concretos sob nenhuma hipótese, enquanto interfaces sim.",
-      "C": "Uma classe abstrata pode conter atributos de instância (campos de estado não estáticos e não finais) e métodos construtores, enquanto interfaces não admitem atributos de instância (seus atributos são implicitamente `public static final`) nem construtores.",
+      "B": "Uma classe abstrata pode conter atributos de instância (campos de estado não estáticos e não finais) e métodos construtores, enquanto interfaces não admitem atributos de instância (seus atributos são implicitamente `public static final`) nem construtores.",
+      "C": "Classes abstratas não admitem métodos concretos sob nenhuma hipótese, enquanto interfaces sim.",
       "D": "Interfaces exigem o uso da palavra-chave `extends` para serem associadas a classes concretas.",
       "E": "Interfaces não podem declarar métodos com visibilidade pública."
     },
-    "answer": "C",
+    "answer": "B",
     "explanation": ". Classes abstratas em Java são classes reais que não podem ser instanciadas diretamente e admitem estado interno (atributos normais) e métodos construtores herdados pelas subclasses concretas. Interfaces definem apenas comportamento e contratos puros, não contendo construtores nem atributos de instância (apenas constantes estáticas e finais)."
   },
   {
@@ -7748,12 +7749,12 @@
     "statement": "O tratamento de exceções em Java é estruturado de forma hierárquica a partir da classe `Throwable`. A linguagem diferencia as exceções em Exceções Verificadas (Checked Exceptions) e Exceções Não Verificadas (Unchecked Exceptions). Uma característica que define as Checked Exceptions em Java é:",
     "options": {
       "A": "Elas estendem a classe `RuntimeException` e não precisam ser tratadas no código pelo programador.",
-      "B": "O compilador exige obrigatoriamente que elas sejam tratadas com um bloco `try-catch` ou declaradas na assinatura do método com a cláusula `throws`.",
+      "B": "São tratadas exclusivamente usando a palavra-chave `throw` sem possibilidade de bloco `finally`.",
       "C": "Elas ocorrem apenas devido a falhas catastróficas na máquina virtual Java (JVM), como estouro de memória (OutOfMemoryError).",
       "D": "Elas são detectadas apenas em tempo de execução e travam a JVM sem gerar stack trace.",
-      "E": "São tratadas exclusivamente usando a palavra-chave `throw` sem possibilidade de bloco `finally`."
+      "E": "O compilador exige obrigatoriamente que elas sejam tratadas com um bloco `try-catch` ou declaradas na assinatura do método com a cláusula `throws`."
     },
-    "answer": "B",
+    "answer": "E",
     "explanation": ". Exceções Verificadas (Checked Exceptions), que estendem diretamente `Exception` (mas não `RuntimeException`), representam situações que um programa robusto deve prever e tratar (como `IOException` ou `SQLException`). Por isso, o compilador do Java exige que o código trate explicitamente (`try-catch`) ou propague a exceção (`throws`)."
   },
   {
@@ -7783,13 +7784,13 @@
     "source": "FCC",
     "statement": "No design de sistemas orientados a objetos, a modelagem de relacionamentos estruturais define como os objetos colaboram entre si. Considere o relacionamento de **Composição** em comparação com o relacionamento de **Agregação**. A principal característica que define uma Composição em Java é:",
     "options": {
-      "A": "As partes associadas possuem ciclo de vida independente do objeto todo.",
+      "A": "O objeto todo é responsável pelo ciclo de vida de suas partes de forma exclusiva, de modo que, se o objeto todo for destruído, suas partes associadas também deixam de existir.",
       "B": "Ocorre exclusivamente entre classes abstratas e interfaces.",
-      "C": "O objeto todo é responsável pelo ciclo de vida de suas partes de forma exclusiva, de modo que, se o objeto todo for destruído, suas partes associadas também deixam de existir.",
+      "C": "As partes associadas possuem ciclo de vida independente do objeto todo.",
       "D": "Permite que as subclasses herdem atributos privados diretamente de superclasses sem usar getters/setters.",
       "E": "É implementada em Java exclusivamente pela palavra-chave `implements` múltipla."
     },
-    "answer": "C",
+    "answer": "A",
     "explanation": ". A Composição é uma forma forte de relacionamento \"tem-um\" (todo-parte) onde há uma forte dependência de ciclo de vida. Por exemplo, uma classe `Pedido` possui uma lista de objetos `ItemPedido`. Se o `Pedido` for destruído/excluído da memória, os objetos `ItemPedido` associados deixam de ter razão de existir e são destruídos juntos, diferente da Agregação, onde as partes (ex: `Professor` em um `Departamento`) sobrevivem ao término do todo."
   },
   {
@@ -7802,13 +7803,13 @@
     "statement": "As tecnologias JEE (Enterprise JavaBeans - EJB) oferecem componentes de negócios robustos e distribuídos para rodar no Application Server. Dentre os tipos de EJB corporativos, o componente de sessão projetado para manter o estado da conversação com um cliente específico ao longo de múltiplas chamadas de métodos sucessivas na mesma sessão é denominado:",
     "options": {
       "A": "Stateless Session Bean.",
-      "B": "Stateful Session Bean.",
+      "B": "Singleton Session Bean.",
       "C": "Message-Driven Bean.",
-      "D": "Singleton Session Bean.",
+      "D": "Stateful Session Bean.",
       "E": "Entity Session Bean."
     },
-    "answer": "B",
-    "explanation": ". O `Stateful Session Bean` mantém o estado conversacional com o cliente (suas variáveis internas retêm informações das chamadas anteriores realizadas pelo mesmo cliente durante a sessão), ao contrário do `Stateless` (A), onde cada chamada de método é tratada de forma isolada e sem retenção de estado de conversação."
+    "answer": "D",
+    "explanation": ". O `Stateful Session Bean` mantém o estado conversacional com o cliente (suas variáveis internas retêm informações das chamadas anteriores realizadas pelo mesmo cliente durante a sessão), ao contrário do `Stateless` (A) , onde cada chamada de método é tratada de forma isolada e sem retenção de estado de conversação."
   },
   {
     "id": 435,
@@ -7821,12 +7822,12 @@
     "options": {
       "A": "Um `Set` permite a inserção de elementos duplicados e mantém a ordem de inserção exata em todas as suas implementações.",
       "B": "Uma `List` garante o armazenamento de elementos em pares chave-valor e impede chaves duplicadas.",
-      "C": "Um `Map` armazena elementos em pares de chaves e valores, onde cada chave deve ser única, mapeando para no máximo um valor.",
-      "D": "Coleções do tipo `List` não aceitam objetos nulos em nenhuma hipótese.",
+      "C": "Coleções do tipo `List` não aceitam objetos nulos em nenhuma hipótese.",
+      "D": "Um `Map` armazena elementos em pares de chaves e valores, onde cada chave deve ser única, mapeando para no máximo um valor.",
       "E": "O `HashSet` é implementado sobre uma árvore binária e garante ordenação alfabética automática dos elementos inseridos."
     },
-    "answer": "C",
-    "explanation": ". A interface `Map` modela a estrutura de dicionário (chave-valor), em que chaves não podem se repetir. `List` (B) armazena elementos de forma linear ordenada aceitando duplicados. `Set` (A) não aceita elementos duplicados e, por padrão (como no `HashSet`), não garante ordem de inserção."
+    "answer": "D",
+    "explanation": ". A interface `Map` modela a estrutura de dicionário (chave-valor), em que chaves não podem se repetir. `List` (B)  armazena elementos de forma linear ordenada aceitando duplicados. `Set` (A)  não aceita elementos duplicados e, por padrão (como no `HashSet`), não garante ordem de inserção."
   },
   {
     "id": 436,
@@ -7838,13 +7839,13 @@
     "statement": "Considere a seguinte situação hipotética: Durante a reforma de uma calçada externa em frente ao prédio do fórum judicial do TJ-CE, a comissão de fiscalização de obras constatou a ausência de rebaixamentos de guia para travessia de pedestres e a existência de postes instalados de forma inadequada obstruindo a rota tátil de cegos. Conforme as definições da Lei Federal nº 10.098/2000 (Lei de Acessibilidade), esses obstáculos de circulação física na calçada pública configuram barreiras:",
     "options": {
       "A": "Arquitetônicas.",
-      "B": "Urbanísticas.",
+      "B": "Nos transportes.",
       "C": "Atitudinais.",
       "D": "Tecnológicas.",
-      "E": "Nos transportes."
+      "E": "Urbanísticas."
     },
-    "answer": "B",
-    "explanation": ". As Barreiras Urbanísticas são aquelas localizadas nas vias públicas e nos espaços públicos ou privados abertos ao público ou de uso coletivo (como a calçada externa). Barreiras Arquitetônicas (A) ocorrem nas edificações (como escadas sem rampa no interior do fórum)."
+    "answer": "E",
+    "explanation": ". As Barreiras Urbanísticas são aquelas localizadas nas vias públicas e nos espaços públicos ou privados abertos ao público ou de uso coletivo (como a calçada externa). Barreiras Arquitetônicas (A)  ocorrem nas edificações (como escadas sem rampa no interior do fórum)."
   },
   {
     "id": 437,
@@ -7892,12 +7893,12 @@
     "statement": "A acessibilidade em sistemas de computação e internet é assegurada pelo Decreto nº 5.296/2004 para garantir a inclusão digital de pessoas com deficiência. De acordo com as diretrizes do decreto, as páginas web dos órgãos de governo e da administração pública federal, estadual e municipal devem ser acessíveis para pessoas com deficiência visual, garantindo compatibilidade com:",
     "options": {
       "A": "Telas touch screen analógicas exclusivas.",
-      "B": "Softwares leitores de tela e comandos de teclado (sem uso exclusivo de mouse).",
+      "B": "Terminais de autoatendimento biométricos sem saída de áudio.",
       "C": "Impressoras 3D corporativas instaladas nos racks centrais.",
-      "D": "Terminais de autoatendimento biométricos sem saída de áudio.",
+      "D": "Softwares leitores de tela e comandos de teclado (sem uso exclusivo de mouse).",
       "E": "Tecnologias de navegação baseadas em realidade virtual aumentada."
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": ". A acessibilidade digital exige que portais web públicos sigam padrões internacionais e nacionais de acessibilidade (como o e-MAG no Brasil), garantindo que os sites possam ser lidos por softwares leitores de tela de pessoas cegas e navegados apenas por atalhos de teclado de pessoas com dificuldades motoras."
   },
   {
@@ -7911,11 +7912,11 @@
     "options": {
       "A": "Barreira nos Transportes.",
       "B": "Barreira Urbanística.",
-      "C": "Barreira nas Comunicações e na Informação.",
+      "C": "Barreira Física do Mobiliário.",
       "D": "Barreira Atitudinal Sistêmica.",
-      "E": "Barreira Física do Mobiliário."
+      "E": "Barreira nas Comunicações e na Informação."
     },
-    "answer": "C",
+    "answer": "E",
     "explanation": ". O Art. 2º, inciso IV da Lei 10.098/2000 define Barreiras nas Comunicações e na Informação como qualquer obstáculo ou atitude que dificulte ou impeça a expressão ou o recebimento de mensagens e de informações por intermédio dos meios e sistemas de comunicação (como sistemas de videoaudiências e softwares institucionais)."
   },
   {
@@ -7928,12 +7929,12 @@
     "statement": "As políticas de acessibilidade preveem mecanismos para adequação quando o desenho universal puro não for viável na prática imediata. O Decreto nº 5.296/2004 conceitua a **Adaptação Razoável** como:",
     "options": {
       "A": "Qualquer reforma estrutural exigida pelo proprietário do imóvel privado que reduza o imposto de renda corporativo.",
-      "B": "As modificações e ajustes necessários e adequados que não acarretem um ônus desproporcional ou indevido, quando requeridos em cada caso individual, para assegurar o desfrute dos direitos em condições de igualdade.",
+      "B": "A obrigatoriedade de transporte aéreo gratuito para acompanhantes de pessoas idosas.",
       "C": "O afrouxamento temporário das regras de trânsito em vias arteriais para veículos de pessoas com deficiência.",
       "D": "A instalação de sinalização sonora exclusiva em residências unifamiliares privadas.",
-      "E": "A obrigatoriedade de transporte aéreo gratuito para acompanhantes de pessoas idosas."
+      "E": "As modificações e ajustes necessários e adequados que não acarretem um ônus desproporcional ou indevido, quando requeridos em cada caso individual, para assegurar o desfrute dos direitos em condições de igualdade."
     },
-    "answer": "B",
+    "answer": "E",
     "explanation": ". A Adaptação Razoável é o ajuste personalizado realizado em situações pontuais que garante a igualdade de oportunidades às pessoas com deficiência sem impor custos indevidos ou abusivos aos órgãos ou empresas envolvidas."
   },
   {
@@ -7963,13 +7964,13 @@
     "source": "FCC",
     "statement": "Ao fiscalizar a instalação física de banheiros públicos nos prédios das comarcas do interior do estado, um analista de engenharia do TJ-CE deve observar as disposições de acessibilidade do Decreto nº 5.296/2004. O decreto estabelece que as edificações públicas de uso coletivo devem possuir, nos banheiros destinados ao público:",
     "options": {
-      "A": "Cabines exclusivas para servidores públicos com deficiência de nível superior.",
-      "B": "Pelo menos um sanitário e lavatório acessíveis, com barreiras removidas e espaço de manobra adequado para cadeirantes.",
+      "A": "Pelo menos um sanitário e lavatório acessíveis, com barreiras removidas e espaço de manobra adequado para cadeirantes.",
+      "B": "Cabines exclusivas para servidores públicos com deficiência de nível superior.",
       "C": "Banheiros exclusivos para acompanhantes de idosos, vedada a entrada de outros usuários.",
       "D": "Pisos antiderrapantes e barras de apoio de metal precioso não oxidável.",
       "E": "Rampas de acesso internas com inclinação de 45 graus para economizar espaço de tráfego."
     },
-    "answer": "B",
+    "answer": "A",
     "explanation": ". O Decreto nº 5.296/2004, regulamentando a NBR 9050 de acessibilidade, determina que os prédios públicos e coletivos privados devem dispor de banheiros acessíveis ao público com pelo menos um sanitário e lavatório adaptados para o uso de pessoas com deficiência ou mobilidade reduzida."
   },
   {
@@ -7984,10 +7985,10 @@
       "A": "Arquitetônicas.",
       "B": "Atitudinais.",
       "C": "Tecnológicas.",
-      "D": "Urbanísticas.",
-      "E": "De comunicação digital."
+      "D": "De comunicação digital.",
+      "E": "Urbanísticas."
     },
-    "answer": "D",
+    "answer": "E",
     "explanation": ". Parques, praças e vias públicas são áreas públicas urbanas externas. Portanto, a falta de acessibilidade nesses ambientes caracteriza Barreiras Urbanísticas."
   },
   {
@@ -7999,13 +8000,13 @@
     "source": "FCC",
     "statement": "Considere a seguinte situação hipotética: O comitê de acessibilidade do tribunal avalia a reserva de vagas em estacionamentos públicos e privados do TJ-CE. De acordo com o Decreto nº 5.296/2004 e as legislações correlatas, as vagas reservadas para veículos que transportem pessoas com deficiência física ou idosos em estacionamentos coletivos devem:",
     "options": {
-      "A": "Ser localizadas próximas aos acessos de circulação de pedestres e devidamente sinalizadas.",
+      "A": "Ser restritas a veículos importados oficiais de desembargadores com deficiência.",
       "B": "Ocupar no mínimo 50% do total de vagas de qualquer estacionamento institucional.",
-      "C": "Ser restritas a veículos importados oficiais de desembargadores com deficiência.",
+      "C": "Ser localizadas próximas aos acessos de circulação de pedestres e devidamente sinalizadas.",
       "D": "Dispensar sinalização vertical para evitar poluição visual predial.",
       "E": "Exigir o pagamento de taxa de estacionamento em dobro para financiamento de ajudas técnicas."
     },
-    "answer": "A",
+    "answer": "C",
     "explanation": ". Para garantir a segurança e autonomia dos usuários prioritários, as vagas reservadas devem ser posicionadas o mais próximo possível das entradas e saídas de pedestres e devem possuir sinalização horizontal (no chão) e vertical (placa) bem clara."
   },
   {
@@ -8017,13 +8018,13 @@
     "source": "FCC",
     "statement": "A Lei Federal nº 10.048/2000 prevê sanções rígidas para o descumprimento do atendimento prioritário por parte de concessionárias de serviços públicos e estabelecimentos privados. Dentre as penalidades cabíveis às empresas privadas que violarem a lei, inclui-se a aplicação de:",
     "options": {
-      "A": "Advertência verbal sem registro em cadastro oficial.",
-      "B": "Multa administrativa proporcional à gravidade da infração.",
+      "A": "Multa administrativa proporcional à gravidade da infração.",
+      "B": "Advertência verbal sem registro em cadastro oficial.",
       "C": "Suspensão imediata de todas as contas bancárias do proprietário da empresa.",
       "D": "Prisão preventiva imediata do gerente de atendimento ao cliente.",
       "E": "Interdição civil permanente da pessoa jurídica."
     },
-    "answer": "B",
+    "answer": "A",
     "explanation": ". O descumprimento das regras de atendimento prioritário por empresas privadas gera a aplicação de multas administrativas cujo valor varia conforme a infração, gravidade e reincidência, aplicadas pelos órgãos de fiscalização do consumidor (como Procon)."
   },
   {
@@ -8037,11 +8038,11 @@
     "options": {
       "A": "Qualquer obstáculo que impeça o tráfego de caminhões de carga pesada nas capitais.",
       "B": "Aquelas que ocorrem nas vias públicas de campus universitário federal.",
-      "C": "Aquelas existentes nos sistemas e meios de transporte coletivo de passageiros.",
+      "C": "Qualquer barreira física que bloqueie a passagem de trens cargueiros de ferrovias.",
       "D": "A recusa das companhias aéreas privadas de transportar bagagens de mão.",
-      "E": "Qualquer barreira física que bloqueie a passagem de trens cargueiros de ferrovias."
+      "E": "Aquelas existentes nos sistemas e meios de transporte coletivo de passageiros."
     },
-    "answer": "C",
+    "answer": "E",
     "explanation": ". Conforme o Art. 2º, inciso III da Lei 10.098/2000, Barreiras nos Transportes são aquelas presentes em qualquer modal de transporte coletivo público de passageiros (ônibus, trens, metrôs) que impeçam ou restrinjam o livre acesso das pessoas com deficiência."
   },
   {
@@ -8053,13 +8054,13 @@
     "source": "FCC",
     "statement": "O Decreto nº 5.296/2004 regulamenta a acessibilidade em estabelecimentos de hospedagem (hotéis, motéis, pousadas). De acordo com as regras estabelecidas, os hotéis novos devem possuir:",
     "options": {
-      "A": "Dormitórios acessíveis adaptados de acordo com as normas técnicas da ABNT, respeitado o percentual mínimo determinado.",
+      "A": "Isenção de atendimento prioritário para gestantes e lactantes estrangeiras.",
       "B": "Prédios inteiros exclusivos para hóspedes idosos divorciados.",
       "C": "Banheiros adaptados apenas no saguão de entrada da recepção.",
-      "D": "Isenção de atendimento prioritário para gestantes e lactantes estrangeiras.",
+      "D": "Dormitórios acessíveis adaptados de acordo com as normas técnicas da ABNT, respeitado o percentual mínimo determinado.",
       "E": "Suítes presidenciais gratuitas para qualquer usuário de cadeira de rodas de outros estados."
     },
-    "answer": "A",
+    "answer": "D",
     "explanation": ". Os estabelecimentos de hospedagem novos devem projetar dormitórios acessíveis e integrados aos demais quartos (não isolados), respeitando os parâmetros técnicos de acessibilidade e os percentuais mínimos de reserva fixados nos regulamentos de acessibilidade."
   },
   {
@@ -8072,12 +8073,12 @@
     "statement": "A prioridade de atendimento garantida pela Lei nº 10.048/2000 em instituições financeiras e agências bancárias exige que os estabelecimentos:",
     "options": {
       "A": "Isentem os usuários prioritários do pagamento de taxas de manutenção de contas correntes platinum.",
-      "B": "Disponibilizem caixas ou guichês de atendimento preferencial exclusivos ou com prioridade de atendimento na triagem de senhas.",
+      "B": "Eliminem o uso de sistemas eletrônicos de senhas em todas as agências.",
       "C": "Ofereçam atendimento presencial domiciliar gratuito para idosos que morem em bairros nobres.",
-      "D": "Eliminem o uso de sistemas eletrônicos de senhas em todas as agências.",
+      "D": "Disponibilizem caixas ou guichês de atendimento preferencial exclusivos ou com prioridade de atendimento na triagem de senhas.",
       "E": "Contratem um funcionário exclusivo para realizar operações de saques para deficientes sem conferência de senhas."
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": ". As agências bancárias devem garantir o atendimento prioritário através de senhas preferenciais e guichês adaptados com funcionários aptos a prestar atendimento diferenciado aos grupos prioritários descritos na lei."
   },
   {
@@ -8090,12 +8091,12 @@
     "statement": "Dentre as definições de acessibilidade predial do Decreto nº 5.296/2004, a rota contínua de circulação interna ou externa, desobstruída e sinalizada, que conecta os espaços acessíveis de um edifício de uso público a outros ambientes, é denominada:",
     "options": {
       "A": "Rota de Fuga de Emergência Lógica.",
-      "B": "Rota Acessível.",
+      "B": "Calçada Estruturada Integrada.",
       "C": "Ponto de Consolidação Acessível (PCA).",
-      "D": "Calçada Estruturada Integrada.",
+      "D": "Rota Acessível.",
       "E": "Distribuidor de Piso Arquitetônico."
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": ". O Decreto conceitua a Rota Acessível como o trajeto contínuo, livre de barreiras físicas e obstáculos, bem sinalizado, que permite que pessoas com deficiência ou mobilidade reduzida se desloquem com segurança e autonomia no interior ou exterior de um edifício."
   }
 ]
