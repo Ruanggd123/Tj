@@ -1,0 +1,812 @@
+[
+  {
+    "id": 181,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Governança de TI — COBIT 2019",
+    "context": "",
+    "source": "FCC - TRT 11ª Região - Analista Judiciário - TI",
+    "statement": "No modelo de referência do framework COBIT 2019, as atribuições de Governança de TI e de Gestão de TI são mantidas separadas e distintas. A Governança compreende atividades de alta direção voltadas a:",
+    "options": {
+      "A": "Planejar, construir, executar e monitorar soluções de TI corporativas.",
+      "B": "Avaliar as necessidades dos stakeholders, direcionar decisões estratégicas e monitorar o desempenho e conformidade da TI (EDM).",
+      "C": "Configurar a infraestrutura de rede, roteadores e servidores locais de arquivos.",
+      "D": "Gerenciar a equipe de suporte (Service Desk) e solucionar incidentes operacionais.",
+      "E": "Conduzir auditorias de segurança cibernética de código e testar softwares."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** O COBIT 2019 separa rigidamente:\n- **Governança (EDM):** Avaliar (Evaluate), Direcionar (Direct) e Monitorar (Monitor). Realizada pela alta administração (Board).\n- **Gestão:** Planejar (Plan), Construir (Build), Executar (Run) e Monitorar (Monitor). Realizada pela gerência executiva (domínios APO, BAI, DSS, MEA)."
+  },
+  {
+    "id": 182,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Governança de TI — COBIT 2019",
+    "context": "",
+    "source": "FCC - TRT 24ª Região - Analista",
+    "statement": "Considere os domínios do modelo core do COBIT 2019. O domínio da área de **Gestão** que se concentra primordialmente na entrega operacional de serviços de TI, operações físicas e suporte técnico ao usuário é o:",
+    "options": {
+      "A": "EDM (Avaliar, Direcionar e Monitorar).",
+      "B": "APO (Alinhar, Planejar e Organizar).",
+      "C": "BAI (Construir, Adquirir e Implementar).",
+      "D": "DSS (Entregar, Servir e Suportar).",
+      "E": "MEA (Monitorar, Avaliar e Medir)."
+    },
+    "answer": "D",
+    "explanation": "**Justificativa:** O domínio **DSS (Deliver, Service and Support)** gerencia a operação diária da infraestrutura e o suporte físico de serviços de TI aos usuários finais corporativos."
+  },
+  {
+    "id": 183,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Governança de TI — COBIT 2019",
+    "context": "",
+    "source": "FCC - TRF 3ª Região - Analista",
+    "statement": "O modelo conceitual do COBIT 2019 (Core Model) define, ao todo, quantos Objetivos de Governança e Gestão organizados em seus domínios padrão?",
+    "options": {
+      "A": "40 objetivos.",
+      "B": "37 objetivos.",
+      "C": "14 objetivos.",
+      "D": "5 objetivos.",
+      "E": "114 objetivos."
+    },
+    "answer": "A",
+    "explanation": "**Justificativa:** O COBIT 2019 Core Model possui exatamente **40 objetivos de governança e gestão** (5 no EDM, 14 no APO, 11 no BAI, 6 no DSS e 4 no MEA)."
+  },
+  {
+    "id": 184,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Governança de TI — COBIT 2019",
+    "context": "",
+    "source": "FCC - Sabesp - Analista",
+    "statement": "O COBIT 2019 diferencia princípios que orientam o **sistema de governança** daqueles que regem a **estrutura de governança**. Qual das alternativas apresenta um princípio aplicável estritamente a um **Sistema de Governança**?",
+    "options": {
+      "A": "Aberto e Flexível.",
+      "B": "Baseado em um Modelo Conceitual.",
+      "C": "Alinhado com os Principais Padrões globais.",
+      "D": "Sistema de Governança Dinâmico.",
+      "E": "Baseado em Gerenciamento Ágil e Scrum."
+    },
+    "answer": "D",
+    "explanation": "**Justificativa:** \n- Princípios para um **Sistema de Governança** (6 itens): Prover valor, Holístico, Dinâmico, Distinto da gestão, Adaptado, De ponta a ponta.\n- Princípios para uma **Estrutura de Governança** (3 itens): Baseada em modelo conceitual, Aberta e flexível, Alinhada com padrões."
+  },
+  {
+    "id": 185,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Governança de TI — COBIT 2019",
+    "context": "",
+    "source": "FCC - Assembleia Legislativa - PB",
+    "statement": "Os parâmetros organizacionais que influenciam o projeto de um sistema de governança de TI adaptado à realidade de cada empresa (como estratégia corporativa, perfil de risco, cenário de ameaças e tamanho da organização) são denominados pelo COBIT 2019 como:",
+    "options": {
+      "A": "Componentes Organizacionais.",
+      "B": "Áreas de Foco (Focus Areas).",
+      "C": "Fatores de Design (Design Factors).",
+      "D": "Níveis de Maturidade Organizacional.",
+      "E": "Diretrizes de TI Integradas."
+    },
+    "answer": "C",
+    "explanation": "**Justificativa:** Os **Fatores de Design (11 fatores no total)** são parâmetros customizadores que permitem calibrar o modelo padrão do COBIT para as necessidades operacionais e estratégicas específicas de cada instituição."
+  },
+  {
+    "id": 186,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Governança de TI — COBIT 2019",
+    "context": "",
+    "source": "FCC - PGE-CE - Analista",
+    "statement": "Assinale a alternativa que apresenta um item que **não** constitui um dos 11 Fatores de Design descritos oficialmente no framework COBIT 2019:",
+    "options": {
+      "A": "Requisitos de Conformidade.",
+      "B": "Papel da TI para o negócio.",
+      "C": "Modelo de Fornecimento de TI (Cloud vs On-premise).",
+      "D": "Linguagem de Programação Utilizada para Codificação (Java vs C#).",
+      "E": "Cenário de Ameaças externas."
+    },
+    "answer": "D",
+    "explanation": "**Justificativa:** A linguagem de programação utilizada pela engenharia de software é um detalhe de nível puramente técnico que não consta da taxonomia estratégica dos 11 Fatores de Design do COBIT."
+  },
+  {
+    "id": 187,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Governança de TI — COBIT 2019",
+    "context": "",
+    "source": "FCC - TRT 15ª Região - Analista",
+    "statement": "No COBIT 2019, a descrição de tópicos ou domínios de governança específicos que podem requerer customizações adicionais do Core Model (por exemplo, segurança cibernética, DevOps ou atendimento a pequenas empresas) define o conceito de:",
+    "options": {
+      "A": "Componentes do Sistema.",
+      "B": "Áreas de Foco (Focus Areas).",
+      "C": "Fatores de Design Tecnológicos.",
+      "D": "Níveis de Capacidade SPICE.",
+      "E": "Objetivos do domínio MEA."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** **Áreas de Foco (Focus Areas)** descrevem temas específicos de interesse prático que podem ser adicionados ao modelo de governança de TI. Diferenciam-se dos Fatores de Design, que são variáveis de entrada para personalização geral."
+  },
+  {
+    "id": 188,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Governança de TI — COBIT 2019",
+    "context": "",
+    "source": "FCC - TRT 6ª Região - TI",
+    "statement": "O COBIT 2019 mede a capacidade individual de cada um de seus processos por meio do CPM (Capability Process Model), alinhado com o padrão internacional ISO/IEC 15504. A escala de capacidade do CPM varia de:",
+    "options": {
+      "A": "1 a 5.",
+      "B": "0 a 5.",
+      "C": "0 a 10.",
+      "D": "1 a 3.",
+      "E": "A a E."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** A escala de capacidade de processo do COBIT 2019 varia de **0** (Incompleto) a **5** (Otimizado), baseando-se no padrão SPICE e CMMI."
+  },
+  {
+    "id": 189,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Governança de TI — COBIT 2019",
+    "context": "",
+    "source": "FCC - ARTESP - Especialista",
+    "statement": "No CPM (Modelo de Capacidade de Processo) do COBIT 2019, um processo cuja execução é documentada e estruturada segundo os padrões corporativos previamente estabelecidos da organização é classificado no nível de capacidade:",
+    "options": {
+      "A": "Nível 1 — Executado.",
+      "B": "Nível 2 — Gerenciado.",
+      "C": "Nível 3 — Estabelecido.",
+      "D": "Nível 4 — Previsível.",
+      "E": "Nível 5 — Otimizado."
+    },
+    "answer": "C",
+    "explanation": "**Justificativa:** \n- Nível 2 (Gerenciado): O processo é planejado, monitorado e ajustado dentro de uma área.\n- Nível 3 (Estabelecido): O processo utiliza os **padrões formais definidos para toda a organização**."
+  },
+  {
+    "id": 190,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Governança de TI — COBIT 2019",
+    "context": "",
+    "source": "FCC - MPE-RS - Analista",
+    "statement": "Um dos 6 princípios do **Sistema de Governança** do COBIT 2019 determina que o sistema não deve tratar apenas a função ou o departamento de TI de forma isolada, mas sim considerar a informação e tecnologia de forma integrada e corporativa em toda a instituição. Este princípio é o:",
+    "options": {
+      "A": "Adaptado às Necessidades da Organização.",
+      "B": "Sistema de Governança de Ponta a Ponta (End-to-End).",
+      "C": "Prover Valor aos Stakeholders.",
+      "D": "Abordagem Holística.",
+      "E": "Alinhamento de Padrões."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** O princípio de **Ponta a Ponta (End-to-End)** exige que o sistema de governança de I&T cubra todas as funções e processos de negócio de toda a corporação onde dados e tecnologias são processados."
+  },
+  {
+    "id": 191,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Governança de TI — COBIT 2019",
+    "context": "",
+    "source": "FCC - TRT 20ª Região - TI",
+    "statement": "No CPM do COBIT 2019, a principal característica que diferencia um processo no **Nível 4 (Previsível)** daquele no **Nível 5 (Otimizado)** é:",
+    "options": {
+      "A": "O uso de programação orientada a objetos no nível 5.",
+      "B": "O processo de auditoria externa obrigatória no nível 4.",
+      "C": "No nível 4, o processo é controlado de forma quantitativa com métricas estatísticas; no nível 5, o foco está na melhoria contínua a partir de inovações tecnológicas e mudanças estruturais.",
+      "D": "O nível 5 não exige documentação formal por ser dinâmico.",
+      "E": "O nível 4 é restrito a empresas multinacionais."
+    },
+    "answer": "C",
+    "explanation": "**Justificativa:** O **Nível 4 (Previsível/Gerenciado Quantitativamente)** foca na análise estatística de estabilidade do processo. O **Nível 5 (Otimizado)** utiliza a base estatística estabelecida no nível 4 para impulsionar a inovação tecnológica e melhorias preventivas contínuas."
+  },
+  {
+    "id": 192,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Governança de TI — COBIT 2019",
+    "context": "",
+    "source": "FCC - Sabesp - Analista de Sistemas",
+    "statement": "O COBIT 2019 define 7 categorias de **Componentes do Sistema de Governança** (antigamente denominados Habilitadores ou Enablers no COBIT 5) que interagem para criar a governança. A alternativa que apresenta um desses 7 componentes é:",
+    "options": {
+      "A": "Story Points e Sprints de TI.",
+      "B": "Estruturas Organizacionais (Organizational Structures).",
+      "C": "Servidores de Banco de Dados na Nuvem.",
+      "D": "Linguagens de marcação de dados como JSON.",
+      "E": "Contratos de Outsourcing com fornecedores."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** Os 7 componentes do COBIT 2019 são: Processos; **Estruturas organizacionais**; Princípios, políticas e estruturas; Fluxos de informação; Pessoas, habilidades e competências; Cultura, ética e comportamento; Serviços, infraestrutura e aplicativos."
+  },
+  {
+    "id": 193,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Governança de TI — COBIT 2019",
+    "context": "",
+    "source": "FCC - TRT 9ª Região - TI",
+    "statement": "A alta administração de um órgão judiciário precisa decidir qual a melhor ferramenta para governar a TI institucional. Diante dos padrões internacionais, a equipe de TI deve esclarecer que:",
+    "options": {
+      "A": "O COBIT 2019 é incompatível com o ITIL v4 e ambos não podem coexistir.",
+      "B": "O COBIT atua como framework \"guarda-chuva\" de governança integradora (diz *o que* governar), alinhando-se com frameworks focados na gestão de serviços como o ITIL (que detalha *como* gerenciar).",
+      "C": "O COBIT deve ser implementado apenas se a organização não possuir PMBOK instalado.",
+      "D": "O COBIT 2019 é uma norma certificável que substitui a ISO/IEC 27001 para segurança.",
+      "E": "O COBIT 2019 foi extinto com o surgimento do manifesto ágil."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** O COBIT 2019 é um framework integrador. Ele atua na camada estratégica mapeando diretrizes gerais de I&T que fazem referência e se integram com frameworks especialistas como ITIL, TOGAF, PMBOK e normas ISO."
+  },
+  {
+    "id": 194,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Governança de TI — COBIT 2019",
+    "context": "",
+    "source": "FCC - TRT 15ª Região - Analista",
+    "statement": "Em relação ao domínio **APO (Alinhar, Planejar e Organizar)** do COBIT 2019, qual o seu foco primário de gestão?",
+    "options": {
+      "A": "Monitorar a conformidade interna e a aderência a leis.",
+      "B": "Definir a estratégia de TI, a arquitetura corporativa, gestão de recursos, inovação e estruturação da governança operacional.",
+      "C": "Desenvolver sistemas e realizar testes de integração de software.",
+      "D": "Atender chamados de suporte técnico do Service Desk.",
+      "E": "Tomar decisões de investimentos financeiros do Conselho de Administração."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** O domínio **APO** abrange a parte tática e de planejamento da TI: definição de estratégia, arquitetura organizacional, gestão do portfólio, inovação, orçamento, riscos, recursos humanos e relacionamento com clientes internos."
+  },
+  {
+    "id": 195,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Governança de TI — COBIT 2019",
+    "context": "",
+    "source": "FCC - Sabesp - TI",
+    "statement": "Considere as novidades e melhorias do COBIT 2019 em comparação com a versão do COBIT 5. Assinale a afirmação correta sobre a evolução metodológica:",
+    "options": {
+      "A": "O COBIT 2019 reduziu a quantidade de processos de 37 para 15 objetivos lógicos.",
+      "B": "O COBIT 2019 introduziu os Fatores de Design e atualizou o modelo de capacidade para se alinhar ao CMMI, substituindo a escala ISO 15504 pura adotada anteriormente.",
+      "C": "O COBIT 2019 extinguiu o domínio EDM.",
+      "D": "O COBIT 2019 tornou-se focado exclusivamente no gerenciamento de hardware local.",
+      "E": "A versão de 2019 removeu os princípios do sistema de governança."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** A grande evolução do COBIT 2019 em relação ao COBIT 5 foi a introdução formal de guias e ferramentas de design baseados nos **Fatores de Design** para customização, e a adequação do modelo de capacidade de processo (CPM) ao padrão global CMMI."
+  },
+  {
+    "id": 196,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Engenharia de Software — Kanban",
+    "context": "",
+    "source": "FCC - TRT 11ª Região - Analista Judiciário - TI",
+    "statement": "O método Kanban, estruturado por David J. Anderson para o desenvolvimento de software e trabalho de conhecimento, fundamenta-se em princípios de gestão de mudança evolucionária. Qual das alternativas apresenta um desses **Princípios de Gestão de Mudança**?",
+    "options": {
+      "A": "Exigir a demissão imediata de gerentes de projetos obsoletos para iniciar o fluxo.",
+      "B": "Começar com o que você faz hoje, respeitando papéis, responsabilidades e cargos existentes.",
+      "C": "Definir timeboxes fixos e inflexíveis de duas semanas para todas as entregas do fluxo.",
+      "D": "Criar novos papéis obrigatórios na equipe, como Kanban Master e Product Owner.",
+      "E": "Proibir reuniões de equipe diárias para manter o foco na codificação pura."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** O Kanban respeita a estrutura atual da empresa para evitar resistências traumáticas. Seu primeiro princípio de gestão de mudança é: **\"Comece com o que você faz hoje\"** (respeitando papéis, responsabilidades e títulos atuais e promovendo a melhoria evolucionária gradual)."
+  },
+  {
+    "id": 197,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Engenharia de Software — Kanban",
+    "context": "",
+    "source": "FCC - TRT 24ª Região - Analista",
+    "statement": "O Kanban estabelece 6 práticas gerais essenciais para gerenciar e otimizar o fluxo de trabalho. A prática que consiste em estipular limites quantitativos máximos de tarefas permitidas em cada coluna do quadro visual, com o objetivo de evitar a multitarefa e expor gargalos de processo, é denominada:",
+    "options": {
+      "A": "Tornar as Políticas Explícitas.",
+      "B": "Limitar o Trabalho em Progresso (Limit WIP).",
+      "C": "Gerenciar o Fluxo.",
+      "D": "Implementar Ciclos de Feedback (Cadências).",
+      "E": "Visualizar o Fluxo de Valor."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** A prática de **Limitar o WIP (Work in Progress)** impede a sobrecarga de tarefas na equipe, forçando a finalização de itens antigos antes de puxar novos (conceito de sistema puxado: *\"pare de começar, comece a terminar\"*)."
+  },
+  {
+    "id": 198,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Engenharia de Software — Kanban",
+    "context": "",
+    "source": "FCC - TRF 3ª Região - Analista",
+    "statement": "Em relação às métricas de tempo de fluxo utilizadas no Kanban, considere a diferença conceitual entre **Lead Time** e **Cycle Time**. A alternativa que descreve corretamente esses tempos sob a ótica do método é:",
+    "options": {
+      "A": "O Lead Time é o tempo em que a tarefa fica parada na fila; o Cycle Time é a soma de todos os Lead Times da Sprint.",
+      "B": "O Lead Time mede o tempo total desde o pedido do cliente até a entrega final; o Cycle Time mede o tempo que a equipe gasta trabalhando ativamente para produzir o item.",
+      "C": "O Cycle Time mede a experiência do cliente; o Lead Time mede a velocidade física do compilador de software.",
+      "D": "O Lead Time e o Cycle Time são rigorosamente idênticos em sistemas Kanban que adotam limites de WIP maiores que 50.",
+      "E": "O Lead Time começa a contar quando o desenvolvedor puxa a tarefa; o Cycle Time termina quando o código vai para homologação."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** \n- **Lead Time:** Perspectiva do Cliente. Tempo decorrido entre a solicitação inicial e a entrega funcional pronta.\n- **Cycle Time:** Perspectiva do Processo Interno. Tempo gasto para processar a tarefa ativamente (desde que entra em execução até a conclusão)."
+  },
+  {
+    "id": 199,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Engenharia de Software — Kanban",
+    "context": "",
+    "source": "FCC - Sabesp - Analista",
+    "statement": "A Lei de Little, herdada matematicamente da teoria das filas e aplicada à gestão de fluxos de trabalho Kanban estáveis, relaciona o Trabalho em Progresso (WIP), a Vazão (Throughput) e o Lead Time médio do sistema. A fórmula que expressa essa correlação matemática é:",
+    "options": {
+      "A": "$\\text{Lead Time} = \\text{WIP} \\times \\text{Throughput}$",
+      "B": "$\\text{WIP} = \\text{Throughput} \\times \\text{Lead Time}$",
+      "C": "$\\text{Throughput} = \\text{WIP} \\times \\text{Lead Time}$",
+      "D": "$\\text{Lead Time} = \\frac{\\text{Throughput}}{\\text{WIP}}$",
+      "E": "$\\text{WIP} = \\frac{\\text{Throughput}}{\\text{Lead Time}}$"
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** A **Lei de Little** define que em um sistema estável: $\\text{WIP} = \\text{Throughput} \\times \\text{Lead Time}$. \nLogo, podemos encontrar o Lead Time médio dividindo o WIP médio pela Vazão média ($\\text{Lead Time} = \\frac{\\text{WIP}}{\\text{Throughput}}$)."
+  },
+  {
+    "id": 200,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Engenharia de Software — Kanban",
+    "context": "",
+    "source": "FCC - PGE-CE - Analista de Sistemas",
+    "statement": "Uma equipe de desenvolvimento do TJ-CE adota o Kanban e possui uma vazão (Throughput) estável de **5 tarefas prontas por semana**. Ao analisar o quadro visual, observou-se que o limite médio de trabalho em andamento (WIP) da coluna de desenvolvimento é de **15 tarefas**. Aplicando a Lei de Little, qual o Lead Time médio de entrega de uma nova tarefa iniciada pelo time?",
+    "options": {
+      "A": "75 semanas.",
+      "B": "3 semanas.",
+      "C": "0,33 semanas.",
+      "D": "10 dias.",
+      "E": "15 dias."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** Aplicando a fórmula rearranjada da Lei de Little:\n$$\\text{Lead Time} = \\frac{\\text{WIP}}{\\text{Throughput}}$$\n$$\\text{Lead Time} = \\frac{15}{5} = 3 \\text{ semanas}$$"
+  },
+  {
+    "id": 201,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Engenharia de Software — Kanban",
+    "context": "",
+    "source": "FCC - Sabesp - TI",
+    "statement": "No Kanban, as reuniões estruturadas para revisão de fluxo, alinhamento técnico e reabastecimento de backlog que ocorrem em cadências específicas são classificadas na prática geral de:",
+    "options": {
+      "A": "Visualizar o Fluxo.",
+      "B": "Implementar Ciclos de Feedback (Feedback Loops).",
+      "C": "Limitar o Trabalho em Progresso.",
+      "D": "Tornar as Políticas Explícitas.",
+      "E": "Evoluir Colaborativamente com Métricas de TI."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** O estabelecimento de reuniões com propósitos e frequências definidas (Cadências Kanban) refere-se à prática de **Implementar Ciclos de Feedback**, garantindo a inspeção e adaptação contínua do fluxo de valor."
+  },
+  {
+    "id": 202,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Engenharia de Software — Kanban",
+    "context": "",
+    "source": "FCC - TRT 15ª Região - Analista",
+    "statement": "Considere a prática Kanban de **Tornar as Políticas Explícitas**. Um exemplo prático da aplicação desta regra em um projeto de desenvolvimento de software é:",
+    "options": {
+      "A": "Manter a planilha de salários do time visível na parede do escritório.",
+      "B": "Definir e documentar claramente quais critérios técnicos devem ser cumpridos para que uma tarefa seja puxada da coluna \"Desenvolvimento\" para a coluna \"Testes\" (DoD parcial).",
+      "C": "Enviar relatórios de horas diárias para os gerentes seniores da diretoria de TI.",
+      "D": "Proibir o uso de fones de ouvido durante a jornada de trabalho.",
+      "E": "Permitir que qualquer membro altere o quadro de tarefas sem consultar o time."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** Tornar as políticas explícitas significa definir as regras de negócio de operação do fluxo (ex: critérios de transição entre colunas, limites de WIP, regras de desvio para bugs urgentes) de modo que todos conheçam as regras do jogo."
+  },
+  {
+    "id": 203,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Engenharia de Software — Kanban",
+    "context": "",
+    "source": "FCC - TRT 20ª Região - Analista Judiciário",
+    "statement": "O gráfico estatístico bidimensional de fluxo comumente utilizado em equipes Kanban para monitorar visualmente a estabilidade do sistema, mostrando o acúmulo de tarefas ao longo do tempo nas diferentes colunas do fluxo de trabalho é o:",
+    "options": {
+      "A": "Gráfico de Burndown.",
+      "B": "Cumulative Flow Diagram (CFD - Diagrama de Fluxo Cumulativo).",
+      "C": "Gráfico de Gantt de Caminho Crítico.",
+      "D": "Gráfico de Pareto de Bugs.",
+      "E": "Histograma de Story Points por Desenvolvedor."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** O **CFD (Cumulative Flow Diagram)** é o gráfico mais importante para o Kanban. Ele mostra visualmente o WIP (distância vertical entre curvas), o Lead Time (distância horizontal) e o Throughput (inclinação das retas), facilitando o diagnóstico de gargalos."
+  },
+  {
+    "id": 204,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Engenharia de Software — Kanban",
+    "context": "",
+    "source": "FCC - TRT 6ª Região - TI",
+    "statement": "A equipe de engenharia de software de um tribunal deseja implementar um sistema Kanban. Para que o quadro de tarefas visualizado no painel seja considerado um **Sistema Kanban** legítimo, e não apenas um gerenciador visual comum (Task Board ou quadro de To-Do), é requisito obrigatório a presença de:",
+    "options": {
+      "A": "Papéis ágeis formais como Scrum Master e Product Owner.",
+      "B": "Uso de estimativas de esforço baseadas em Story Points e sequência de Fibonacci.",
+      "C": "Limites formais de Trabalho em Progresso (WIP) nas colunas de execução ativa e operação de fluxo puxado.",
+      "D": "Sprints com timebox fixo de 2 a 4 semanas.",
+      "E": "Utilização obrigatória de um software comercial específico (como o Jira ou Trello)."
+    },
+    "answer": "C",
+    "explanation": "**Justificativa:** Um sistema Kanban exige limites de WIP. Um quadro sem limites de WIP é apenas um quadro de tarefas visual (Task Board), que opera em um modelo empurrado de tarefas e não expõe gargalos de fluxo de forma dinâmica."
+  },
+  {
+    "id": 205,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Engenharia de Software — Kanban",
+    "context": "",
+    "source": "FCC - ARTESP - Especialista",
+    "statement": "No Kanban, a quantidade de itens de trabalho (como bugs resolvidos, funcionalidades desenvolvidas ou chamados atendidos) entregues de forma completa e satisfatória pela equipe por unidade de tempo é denominada:",
+    "options": {
+      "A": "Throughput (Vazão).",
+      "B": "Lead Time.",
+      "C": "Cycle Time.",
+      "D": "WIP.",
+      "E": "Velocity."
+    },
+    "answer": "A",
+    "explanation": "**Justificativa:** O **Throughput (Vazão)** mede o ritmo de entrega da equipe (ex: 5 tarefas por semana, 2 deploys por dia), sendo essencial para previsibilidade estatística e aplicação da Lei de Little."
+  },
+  {
+    "id": 206,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - TRT 11ª Região - Analista Judiciário - TI",
+    "statement": "A Convenção da ONU sobre os Direitos das Pessoas com Deficiência e seu Protocolo Facultativo foram aprovados no Congresso Nacional brasileiro em conformidade com o rito do Artigo 5º, § 3º da Constituição Federal de 1988. Diante disso, no ordenamento jurídico pátrio, essa Convenção possui status hierárquico equivalente a:",
+    "options": {
+      "A": "Lei Ordinária Federal.",
+      "B": "Lei Complementar Federal.",
+      "C": "Emenda Constitucional.",
+      "D": "Decreto Legislativo Autônomo.",
+      "E": "Medida Provisória Presidencial."
+    },
+    "answer": "C",
+    "explanation": "**Justificativa:** Tratados internacionais sobre direitos humanos aprovados em dois turnos em cada casa do Congresso por 3/5 dos votos equivalem formalmente a **Emendas Constitucionais**, integrando o Bloco de Constitucionalidade."
+  },
+  {
+    "id": 207,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - TRT 24ª Região - Analista",
+    "statement": "A Lei Federal nº 13.146/2015 (Estatuto da Pessoa com Deficiência ou LBI) estabelece em seu Artigo 2º o conceito social de deficiência, rompendo com o paradigma exclusivamente médico. De acordo com o texto da lei, considera-se pessoa com deficiência aquela que possui impedimento de:",
+    "options": {
+      "A": "Curto prazo de natureza puramente física ou neurológica.",
+      "B": "Longo prazo de natureza física, mental, intelectual ou sensorial, o qual, em interação com uma ou mais barreiras, pode obstruir sua participação plena na sociedade.",
+      "C": "Caráter definitivo e visível a olho nu que a impossibilite de realizar qualquer atividade laboral.",
+      "D": "Natureza psicológica tratada sob internação psiquiátrica prolongada.",
+      "E": "Longo prazo de natureza financeira ou educacional que impeça o acesso ao mercado de TI."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** O Art. 2º da LBI adota o modelo social de deficiência: *\"impedimento de **longo prazo** de natureza **física, mental, intelectual ou sensorial**, o qual, em interação com uma ou mais **barreiras**, pode obstruir sua participação plena e efetiva na sociedade em igualdade de condições com as demais pessoas.\"*"
+  },
+  {
+    "id": 208,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - TRF 3ª Região - Analista",
+    "statement": "De acordo com o § 1º do Artigo 2º da Lei nº 13.146/2015, quando a avaliação da deficiência for necessária, ela será de caráter:",
+    "options": {
+      "A": "Estritamente médico e pericial, realizada por médico do trabalho credenciado pelo INSS.",
+      "B": "Biopsicossocial, realizada por equipe multiprofissional e interdisciplinar.",
+      "C": "Clínico e psicológico, realizada em clínicas credenciadas de saúde mental.",
+      "D": "Assistencial e financeiro, realizada por assistentes sociais da prefeitura local.",
+      "E": "Judiciário, homologada por sentença em ação declaratória de interdição civil."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** A LBI determina que a avaliação da deficiência, quando necessária, será **biopsicossocial**, realizada por equipe **multiprofissional e interdisciplinar**, considerando fatores biológicos, socioambientais, psicológicos e pessoais."
+  },
+  {
+    "id": 209,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - Sabesp - Analista",
+    "statement": "Ao realizar a avaliação biopsicossocial da deficiência de um indivíduo, a equipe multiprofissional deve considerar, nos termos da Lei nº 13.146/2015, os seguintes elementos, exceto:",
+    "options": {
+      "A": "Os impedimentos nas funções e nas estruturas do corpo.",
+      "B": "Os fatores socioambientais, psicológicos e pessoais.",
+      "C": "A limitação no desempenho de atividades corporais e a restrição de participação.",
+      "D": "A renda familiar per capita mensal e o nível de escolaridade formal da pessoa.",
+      "E": "Nenhuma das alternativas. Os itens A, B e C estão listados no Art. 2º."
+    },
+    "answer": "D",
+    "explanation": "**Justificativa:** O Art. 2º, § 1º da LBI lista exatamente os itens A, B e C (impedimentos corporais, fatores socioambientais/psicológicos/pessoais, limitação de atividades e restrição de participação). Renda familiar e escolaridade não são parâmetros da avaliação biopsicossocial da deficiência."
+  },
+  {
+    "id": 210,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - Assembleia Legislativa - PB",
+    "statement": "Considere as definições expressas no Artigo 3º da Lei nº 13.146/2015. A concepção de produtos, ambientes, programas e serviços a serem usados por todas as pessoas, na máxima extensão possível, sem necessidade de adaptação ou de projeto específico, é denominada:",
+    "options": {
+      "A": "Tecnologia Assistiva.",
+      "B": "Desenho Universal.",
+      "C": "Acessibilidade Arquitetônica.",
+      "D": "Adaptação Razoável de Espaço.",
+      "E": "Mobiliário Urbano Inclusivo."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** O **Desenho Universal (Universal Design)** visa a criação de produtos e ambientes que atendam a todos desde a sua concepção inicial, tornando a adaptação posterior uma exceção desnecessária."
+  },
+  {
+    "id": 211,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - PGE-CE - Analista",
+    "statement": "Produtos, equipamentos, dispositivos, recursos, metodologias, estratégias, práticas e serviços que objetivam promover a funcionalidade, relacionada à atividade e à participação de pessoas com deficiência ou com mobilidade reduzida, visando à sua autonomia, independência, qualidade de vida e inclusão social são classificados pelo Artigo 3º da LBI como:",
+    "options": {
+      "A": "Acessibilidade Pessoal.",
+      "B": "Tecnologia Assistiva ou Ajuda Técnica.",
+      "C": "Desenho Adaptado Especializado.",
+      "D": "Atendente Pessoal do Trabalho.",
+      "E": "Prótese Funcional Externa."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** Trata-se da definição literal de **Tecnologia Assistiva (ou Ajuda Técnica)** descrita no Art. 3º, inciso III da Lei nº 13.146/2015."
+  },
+  {
+    "id": 212,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - TRT 15ª Região - Analista",
+    "statement": "Um servidor do TJ-CE atua na fiscalização de acessibilidade predial. Ele constata que a calçada em frente ao prédio do tribunal não possui rampas de acesso e apresenta buracos que impedem a circulação de cadeirantes. Nos termos do Artigo 3º da LBI, os buracos e a falta de rampas na calçada externa constituem uma:",
+    "options": {
+      "A": "Barreira Urbanística.",
+      "B": "Barreira Arquitetônica.",
+      "C": "Barreira nos Transportes.",
+      "D": "Barreira Atitudinal.",
+      "E": "Barreira Tecnológica."
+    },
+    "answer": "A",
+    "explanation": "**Justificativa:** \n- **Barreiras Urbanísticas:** Localizam-se nas vias públicas e espaços públicos/privados abertos ao público. (Como a calçada externa).\n- **Barreiras Arquitetônicas:** Localizam-se no interior dos edifícios."
+  },
+  {
+    "id": 213,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - TRT 6ª Região - TI",
+    "statement": "No prédio do fórum judicial, a porta giratória com detector de metais na entrada principal bloqueia a cadeira de rodas e não há entrada alternativa acessível. Esta restrição física configura, nos termos do Artigo 3º da LBI, uma:",
+    "options": {
+      "A": "Barreira Urbanística.",
+      "B": "Barreira Arquitetônica.",
+      "C": "Barreira Atitudinal.",
+      "D": "Barreira Tecnológica.",
+      "E": "Barreira nos Transportes."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** Por se localizar na entrada/interior das instalações físicas de um edifício (público ou privado), o obstáculo é classificado como uma **Barreira Arquitetônica** (Art. 3º, inciso II, alínea b)."
+  },
+  {
+    "id": 214,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - ARTESP - Especialista",
+    "statement": "O portal da internet do TJ-CE foi atualizado, mas a nova versão não é compatível com leitores de tela e comandos de teclado utilizados por pessoas com deficiência visual. Conforme o Artigo 3º do Estatuto da PCD, essa barreira que impede o acesso de usuários a serviços de computadores e internet é classificada como:",
+    "options": {
+      "A": "Barreira nas Comunicações e na Informação.",
+      "B": "Barreira Tecnológica.",
+      "C": "Barreira Urbanística Digital.",
+      "D": "Barreira Atitudinal Sistêmica.",
+      "E": "Barreira Arquitetônica Lógica."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** O Art. 3º, inciso II, alínea f, conceitua as **Barreiras Tecnológicas** como aquelas que dificultam ou impedem o acesso da pessoa com deficiência às tecnologias da informação e da comunicação (como sistemas web, aplicativos mobile, etc.)."
+  },
+  {
+    "id": 215,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - MPE-RS - Analista",
+    "statement": "Em uma audiência judicial, um servidor do tribunal demonstra impaciência e recusa-se a atender um cidadão com deficiência intelectual, alegando de forma pejorativa que ele *\"não tem capacidade de compreender os termos jurídicos\"*. De acordo com a classificação de barreiras da LBI, o comportamento preconceituoso do servidor representa uma:",
+    "options": {
+      "A": "Barreira nas Comunicações.",
+      "B": "Barreira Atitudinal.",
+      "C": "Barreira Organizacional do Trabalho.",
+      "D": "Barreira Tecnológica Mental.",
+      "E": "Prática Discriminatória Dispensável."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** **Barreiras Atitudinais** (Art. 3º, inciso II, alínea e) são atitudes ou comportamentos que impeçam ou limitem a participação social da pessoa com deficiência em igualdade de condições com as demais pessoas, como o preconceito, estigmatização e subestimação."
+  },
+  {
+    "id": 216,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - TRT 20ª Região - TI",
+    "statement": "Diferencie os conceitos de **Acompanhante** e **Atendente Pessoal** dispostos no Artigo 3º da Lei nº 13.146/2015. A alternativa correta é:",
+    "options": {
+      "A": "Acompanhante é o profissional de saúde regulamentado (médico/enfermeiro); Atendente Pessoal é um familiar voluntário sem atribuições técnicas.",
+      "B": "Acompanhante é a pessoa que acompanha a PCD, podendo ou não desempenhar funções de atendente pessoal; Atendente Pessoal assiste a PCD em cuidados básicos diários, excluídas atividades de profissões regulamentadas.",
+      "C": "Ambos são termos perfeitamente idênticos e intercambiáveis de acordo com a LBI.",
+      "D": "O Atendente Pessoal deve ser obrigatoriamente um funcionário público contratado pelo município.",
+      "E": "O Acompanhante é a pessoa indicada pela equipe biopsicossocial médica para exercer a tutela legal da PCD."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** Definições literais da LBI (Art. 3º, incisos XIII e XIV):\n- **Acompanhante:** Aquele que acompanha a pessoa com deficiência, podendo ou não desempenhar funções de atendente pessoal.\n- **Atendente Pessoal:** Pessoa que assiste ou presta cuidados diários (higiene, alimentação, etc.), excluindo-se as técnicas ou procedimentos de profissões legalmente regulamentadas (ex: serviços de enfermagem ou fisioterapia)."
+  },
+  {
+    "id": 217,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - Sabesp - Analista de Sistemas",
+    "statement": "A possibilidade e condição de alcance para utilização, com segurança e autonomia, de espaços, mobiliários, edificações, transportes, informação e comunicação, por pessoa com deficiência ou com mobilidade reduzida, define conceitualmente:",
+    "options": {
+      "A": "Tecnologia Assistiva.",
+      "B": "Desenho Universal.",
+      "C": "Acessibilidade.",
+      "D": "Adaptação Razoável.",
+      "E": "Elemento de Urbanização."
+    },
+    "answer": "C",
+    "explanation": "**Justificativa:** Trata-se da definição de **Acessibilidade** contida no Art. 3º, inciso I da Lei nº 13.146/2015."
+  },
+  {
+    "id": 218,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - TRT 9ª Região - TI",
+    "statement": "No que se refere ao direito à igualdade e não discriminação disposto no Artigo 4º do Estatuto da PCD, considera-se discriminação em razão da deficiência:",
+    "options": {
+      "A": "Qualquer distinção, restrição ou exclusão que tenha o propósito de impedir os direitos de PCD.",
+      "B": "A recusa em fornecer adaptações razoáveis e de fornecer tecnologias assistivas necessárias.",
+      "C": "Apenas atos de agressão física comprovados por laudo policial.",
+      "D": "As opções A e B estão corretas.",
+      "E": "Nenhuma das alternativas."
+    },
+    "answer": "D",
+    "explanation": "**Justificativa:** Conforme o Art. 4º, § 1º da LBI: *\"Considera-se discriminação em razão da deficiência toda forma de distinção, restrição ou exclusão, por ação ou omissão, que tenha o propósito ou o efeito de prejudicar, impedir ou anular o reconhecimento ou o exercício dos direitos [...] incluindo a recusa de adaptações razoáveis e de fornecimento de tecnologias assistivas.\"* Como A e B estão corretos, o gabarito é D."
+  },
+  {
+    "id": 219,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - TRT 15ª Região - Analista",
+    "statement": "Em relação ao direito à moradia, o Estatuto da PCD (Art. 32) determina a reserva mínima de vagas para pessoas com deficiência em programas habitacionais públicos ou subsidiados por recursos públicos. Esse percentual mínimo de reserva de imóveis é de:",
+    "options": {
+      "A": "2%.",
+      "B": "3%.",
+      "C": "5%.",
+      "D": "10%.",
+      "E": "1%."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** Conforme o Art. 32, § 1º, inciso I, da LBI: nos programas habitacionais, públicos ou subsidiados com recursos públicos, a pessoa com deficiência ou o seu responsável goza de prioridade na aquisição de imóvel para moradia própria, observado o seguinte: *\"reserva de, no mínimo, **3% (três por cento)** das unidades habitacionais para pessoa com deficiência.\"*"
+  },
+  {
+    "id": 220,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - Sabesp - TI",
+    "statement": "De acordo com o Estatuto da Pessoa com Deficiência (Art. 34), a pessoa com deficiência tem direito ao trabalho de sua livre escolha e aceitação, em ambiente acessível e inclusivo. Nesse contexto, é vedada a discriminação em todas as etapas, exceto:",
+    "options": {
+      "A": "No processo de recrutamento e seleção de candidatos.",
+      "B": "Nas condições de trabalho e de salário para funções idênticas.",
+      "C": "Na ascensão e promoção profissional dentro da empresa.",
+      "D": "Nenhuma das alternativas. A discriminação é proibida em todas as etapas e áreas sem exceção.",
+      "E": "No desligamento da empresa se o funcionário tiver menos de 1 ano de contrato."
+    },
+    "answer": "D",
+    "explanation": "**Justificativa:** O Art. 34, § 1º estabelece expressamente a proibição de qualquer discriminação em relação à admissão, permanência, salário, ascensão ou qualquer aspecto do trabalho, garantindo igualdade plena de oportunidades."
+  },
+  {
+    "id": 221,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - TRT 14ª Região - Tecnologia da Informação",
+    "statement": "Uma das prioridades estabelecidas pelo Estatuto da PCD (Art. 9º) garante a tramitação processual prioritária em processos judiciais e administrativos. Para usufruir desse direito, a pessoa com deficiência deve:",
+    "options": {
+      "A": "Aguardar a avaliação biopsicossocial do perito do tribunal de justiça.",
+      "B": "Fazer requerimento formal à autoridade competente, munida de documento comprobatório de sua condição.",
+      "C": "Estar sob regime de curatela extraordinária homologada em juízo.",
+      "D": "Comprovar renda inferior a dois salários mínimos nacionais.",
+      "E": "Contratar obrigatoriamente um defensor público estadual."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** Conforme o Art. 9º, § 1º, a tramitação prioritária depende de requerimento do interessado acompanhado da prova de sua deficiência junto à autoridade judicial ou administrativa correspondente."
+  },
+  {
+    "id": 222,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - TRT 3ª Região - Analista",
+    "statement": "Em relação ao direito à saúde disposto no Estatuto da PCD, é vedado às operadoras de planos e seguros privados de saúde cobrar valores diferenciados em suas mensalidades em razão da deficiência do beneficiário?",
+    "options": {
+      "A": "Sim, é proibido por lei cobrar qualquer valor adicional ou franquia diferenciada por motivo de deficiência.",
+      "B": "Não, as operadoras podem cobrar adicionais desde que justificados por laudo médico do sinistro.",
+      "C": "A lei permite a cobrança apenas se a deficiência for congênita.",
+      "D": "É permitido cobrar valores adicionais de acompanhantes, mas não do beneficiário.",
+      "E": "A LBI é omissa sobre planos de saúde privados."
+    },
+    "answer": "A",
+    "explanation": "**Justificativa:** O Art. 23 do Estatuto da PCD proíbe expressamente a cobrança de valores diferenciados de mensalidade, taxas de adesão ou franquias em planos de saúde privados sob alegação de deficiência do usuário."
+  },
+  {
+    "id": 223,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - Sabesp - Analista",
+    "statement": "No tocante ao direito de acesso à justiça da pessoa com deficiência, a LBI determina que os órgãos do poder judiciário devem garantir a acessibilidade de suas instalações e também disponibilizar:",
+    "options": {
+      "A": "Intérpretes de Libras e documentos judiciais em formatos acessíveis (como braile ou áudio).",
+      "B": "Defensores privados pagos integralmente pelo erário público do estado.",
+      "C": "Prédios exclusivos para julgamentos de processos de pessoas com deficiência.",
+      "D": "Isenção automática de todas as condenações penais aplicadas.",
+      "E": "Softwares de inteligência artificial que profiram sentenças automáticas."
+    },
+    "answer": "A",
+    "explanation": "**Justificativa:** O acesso à justiça exige adaptações procedimentais, arquitetônicas e de comunicação, incluindo tradutores de Libras, braile, audiodescrição e outros formatos acessíveis para garantir a plena defesa."
+  },
+  {
+    "id": 224,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - TRT 11ª Região - Analista",
+    "statement": "Qual das seguintes situações de preconceito caracteriza uma **Barreira Atitudinal** clássica de acordo com o Estatuto da PCD?",
+    "options": {
+      "A": "Um prédio público do tribunal de justiça sem elevador para cadeirantes.",
+      "B": "Um ônibus do sistema público municipal de transporte com elevador quebrado.",
+      "C": "A crença de que uma pessoa com deficiência visual não é capaz de programar softwares complexos com eficiência, resultando na sua exclusão de entrevistas de emprego.",
+      "D": "Um portal institucional da web incompatível com leitores de tela de cegos.",
+      "E": "A ausência de tradutor de Libras em pronunciamentos públicos das autoridades estaduais."
+    },
+    "answer": "C",
+    "explanation": "**Justificativa:** A crença preconceituosa que subestima as capacidades de uma pessoa com deficiência e gera sua exclusão social ou profissional é o exemplo mais comum de **Barreira Atitudinal** (ligada a comportamento e atitude humana).\n- A é arquitetônica.\n- B é de transporte.\n- D é tecnológica.\n- E é de comunicação."
+  },
+  {
+    "id": 225,
+    "day_id": "dia_20_05",
+    "day_title": "Quarta-feira 20/05",
+    "theme": "Direito da Pessoa com Deficiência — Estatuto da PCD (LBI)",
+    "context": "",
+    "source": "FCC - Sabesp - TI",
+    "statement": "A NBR 9050 é a norma técnica da ABNT que estabelece critérios e parâmetros técnicos a serem observados quanto ao projeto, construção, instalação e adaptação do meio urbano e edifícios às condições de acessibilidade. A LBI determina que a observância das normas técnicas de acessibilidade da ABNT nas edificações públicas e privadas de uso coletivo é:",
+    "options": {
+      "A": "Opcional para prédios com menos de cinco andares de altura.",
+      "B": "Obrigatória para todas as edificações novas e reformas prediais corporativas.",
+      "C": "Exigida apenas para prédios federais localizados na capital do país.",
+      "D": "Restrita a residências particulares unifamiliares.",
+      "E": "Recomendada, mas sem força de sanção legal em caso de descumprimento."
+    },
+    "answer": "B",
+    "explanation": "**Justificativa:** A LBI e os decretos de acessibilidade federais determinam a **obrigatoriedade** absoluta de seguir os parâmetros técnicos de acessibilidade (como a NBR 9050) em todas as fases de projetos, construções e reformas de prédios públicos e coletivos privados."
+  }
+]

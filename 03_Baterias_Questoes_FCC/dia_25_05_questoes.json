@@ -1,0 +1,812 @@
+[
+  {
+    "id": 316,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Engenharia de Software — Engenharia de Requisitos",
+    "context": "",
+    "source": "FCC",
+    "statement": "No levantamento e análise de requisitos, a equipe classificou as seguintes necessidades:\nI. O sistema deve emitir o relatório em, no máximo, 5 segundos.\nII. O sistema deve validar a assinatura digital ICP-Brasil.\nIII. O desenvolvimento da interface deve ser realizado no framework Angular homologado pelo tribunal.\nDe acordo com Sommerville, os itens I, II e III correspondem a requisitos:",
+    "options": {
+      "A": "Não funcional de produto; Funcional; Não funcional organizacional.",
+      "B": "Funcional; Não funcional de produto; Não funcional externo.",
+      "C": "Não funcional de desempenho; Não funcional de segurança; Funcional.",
+      "D": "Funcional; Funcional; Não funcional de produto.",
+      "E": "Não funcional externo; Funcional; Não funcional organizacional."
+    },
+    "answer": "A",
+    "explanation": ". I = Desempenho (Produto); II = Ação (Funcional); III = Restrição corporativa (Organizacional)."
+  },
+  {
+    "id": 317,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Engenharia de Software — Engenharia de Requisitos",
+    "context": "",
+    "source": "FCC",
+    "statement": "Em um diagrama de Casos de Uso, quando o comportamento de B só é executado caso certa regra ocorra durante A, esse relacionamento é:",
+    "options": {
+      "A": "`<<include>>`, B para A.",
+      "B": "Generalização, A para B.",
+      "C": "`<<extend>>`, B para A.",
+      "D": "`<<extend>>`, A para B.",
+      "E": "`<<include>>`, A para B."
+    },
+    "answer": "C",
+    "explanation": ". Relacionamento opcional é `<<extend>>`, apontando do estendido (B) para o base (A)."
+  },
+  {
+    "id": 318,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Engenharia de Software — Engenharia de Requisitos",
+    "context": "",
+    "source": "FCC",
+    "statement": "A capacidade de relacionar um requisito a um trecho de código que o implementa é:",
+    "options": {
+      "A": "Rastreabilidade de origem.",
+      "B": "Rastreabilidade de requisitos.",
+      "C": "Rastreabilidade de projeto (forward traceability).",
+      "D": "Rastreabilidade de design.",
+      "E": "Rastreabilidade horizontal."
+    },
+    "answer": "C",
+    "explanation": ". Forward traceability liga requisitos aos artefatos gerados (design, código)."
+  },
+  {
+    "id": 319,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Engenharia de Software — Engenharia de Requisitos",
+    "context": "",
+    "source": "FCC",
+    "statement": "A respeito do Dicionário de Dados na engenharia de requisitos, ele atua para:",
+    "options": {
+      "A": "Gerar automaticamente o modelo físico.",
+      "B": "Armazenar logs de falhas.",
+      "C": "Evitar conflitos de nomes, definindo a semântica e formato dos dados.",
+      "D": "Substituir os casos de uso.",
+      "E": "Permitir alteração de tabelas em produção."
+    },
+    "answer": "C",
+    "explanation": ". O dicionário centraliza definições de dados, prevenindo redundâncias e inconsistências."
+  },
+  {
+    "id": 320,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Engenharia de Software — Engenharia de Requisitos",
+    "context": "",
+    "source": "FCC",
+    "statement": "Um requisito do tipo \"O sistema deve estar adequado à Lei Geral de Proteção de Dados (LGPD)\" é classicamente definido como:",
+    "options": {
+      "A": "Funcional de Produto.",
+      "B": "Não Funcional Externo.",
+      "C": "Não Funcional Organizacional.",
+      "D": "Não Funcional de Eficiência.",
+      "E": "Requisito de Interface."
+    },
+    "answer": "B",
+    "explanation": ". Leis e regulamentações governamentais impõem restrições de cunho externo à organização e ao produto."
+  },
+  {
+    "id": 321,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Engenharia de Software — Engenharia de Requisitos",
+    "context": "",
+    "source": "FCC",
+    "statement": "O relacionamento `<<include>>` em Casos de Uso serve fundamentalmente para:",
+    "options": {
+      "A": "Representar funcionalidades que ocorrem apenas em erros.",
+      "B": "Evitar a repetição de um fluxo de eventos que é comum a dois ou mais casos de uso.",
+      "C": "Substituir a herança de atores.",
+      "D": "Demonstrar a ordem cronológica de execução.",
+      "E": "Descrever requisitos não funcionais."
+    },
+    "answer": "B",
+    "explanation": ". O `<<include>>` extrai comportamentos comuns e obrigatórios para reutilização."
+  },
+  {
+    "id": 322,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Engenharia de Software — Engenharia de Requisitos",
+    "context": "",
+    "source": "FCC",
+    "statement": "Qual das alternativas apresenta exclusivamente requisitos não funcionais?",
+    "options": {
+      "A": "Calcular folha de pagamento; Tempo de resposta de 2s.",
+      "B": "Emitir nota fiscal; Autenticar usuário.",
+      "C": "Criptografia AES-256; Interface compatível com leitores de tela; Disponibilidade de 99,9%.",
+      "D": "Exportar para PDF; Tolerância a falhas.",
+      "E": "Exibir histórico; Compatibilidade com navegadores web."
+    },
+    "answer": "C",
+    "explanation": ". Todos os três definem \"como\" o sistema deve ser (segurança, usabilidade, confiabilidade)."
+  },
+  {
+    "id": 323,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Engenharia de Software — Engenharia de Requisitos",
+    "context": "",
+    "source": "FCC",
+    "statement": "Um ator em um diagrama de casos de uso:",
+    "options": {
+      "A": "Deve ser sempre um usuário humano.",
+      "B": "Pode ser um sistema externo interagindo com o sistema atual.",
+      "C": "Representa uma classe de dados no banco.",
+      "D": "Executa os requisitos não funcionais.",
+      "E": "Recebe os relacionamentos de `<<extend>>`."
+    },
+    "answer": "B",
+    "explanation": ". Atores representam papéis interagindo com o sistema, podendo ser pessoas, hardwares ou outros sistemas."
+  },
+  {
+    "id": 324,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Engenharia de Software — Engenharia de Requisitos",
+    "context": "",
+    "source": "FCC",
+    "statement": "Durante a elicitação, a técnica que envolve criar uma versão inicial rápida do software para validação do usuário é chamada de:",
+    "options": {
+      "A": "JAD (Joint Application Development).",
+      "B": "Prototipação.",
+      "C": "Brainstorming.",
+      "D": "Etnografia.",
+      "E": "Entrevista Estruturada."
+    },
+    "answer": "B",
+    "explanation": ". A prototipação constrói modelos descartáveis ou evolutivos para refinar requisitos."
+  },
+  {
+    "id": 325,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Engenharia de Software — Engenharia de Requisitos",
+    "context": "",
+    "source": "FCC",
+    "statement": "Sobre a técnica de Etnografia na elicitação:",
+    "options": {
+      "A": "Foca em reuniões fechadas com a diretoria.",
+      "B": "Exige questionários de múltipla escolha.",
+      "C": "Consiste na observação imersiva do trabalho no ambiente real do usuário.",
+      "D": "Baseia-se exclusivamente no Dicionário de Dados.",
+      "E": "Substitui o levantamento de requisitos funcionais."
+    },
+    "answer": "C",
+    "explanation": ". A Etnografia observa a rotina diária real para descobrir requisitos implícitos."
+  },
+  {
+    "id": 326,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Engenharia de Software — Engenharia de Requisitos",
+    "context": "",
+    "source": "FCC",
+    "statement": "Um \"Requisito de Domínio\" (Domain Requirement):",
+    "options": {
+      "A": "Sempre diz respeito à rede de computadores (domínio Windows).",
+      "B": "Deriva do campo de aplicação do sistema e pode criar novos requisitos ou restringir os existentes.",
+      "C": "É obrigatoriamente um requisito não funcional.",
+      "D": "É aplicável apenas em metodologias ágeis.",
+      "E": "Não pode ser modelado em Casos de Uso."
+    },
+    "answer": "B",
+    "explanation": ". Requisitos de domínio refletem as regras do negócio (ex: regras médicas em um sistema de saúde)."
+  },
+  {
+    "id": 327,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Engenharia de Software — Engenharia de Requisitos",
+    "context": "",
+    "source": "FCC",
+    "statement": "No modelo de Casos de Uso, a \"Generalização\" pode ser aplicada a:",
+    "options": {
+      "A": "Apenas Casos de Uso.",
+      "B": "Apenas Atores.",
+      "C": "Atores e Casos de Uso.",
+      "D": "Relacionamentos de Include e Extend.",
+      "E": "Requisitos Não Funcionais."
+    },
+    "answer": "C",
+    "explanation": ". A generalização (herança) aplica-se tanto a atores (ator \"Gerente\" herda de \"Funcionário\") quanto a Casos de Uso (Validar Senha herda de Validar Acesso)."
+  },
+  {
+    "id": 328,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Engenharia de Software — Engenharia de Requisitos",
+    "context": "",
+    "source": "FCC",
+    "statement": "A validação de requisitos responde à pergunta:",
+    "options": {
+      "A": "Estamos construindo o produto corretamente?",
+      "B": "Estamos construindo o produto correto (aquele que o cliente realmente quer)?",
+      "C": "O código possui bugs?",
+      "D": "Qual a linguagem ideal para o sistema?",
+      "E": "Quanto custará o projeto?"
+    },
+    "answer": "B",
+    "explanation": ". Validação verifica se o software atende à necessidade real do cliente. (A alternativa A refere-se à Verificação)."
+  },
+  {
+    "id": 329,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Engenharia de Software — Engenharia de Requisitos",
+    "context": "",
+    "source": "FCC",
+    "statement": "A matriz de rastreabilidade é uma ferramenta clássica para:",
+    "options": {
+      "A": "Compilar o código-fonte.",
+      "B": "Analisar o impacto de mudanças em um requisito sobre os demais artefatos do projeto.",
+      "C": "Gerar os diagramas UML automaticamente.",
+      "D": "Definir a arquitetura de rede.",
+      "E": "Medir o desempenho do banco de dados."
+    },
+    "answer": "B",
+    "explanation": ". A matriz cruza os requisitos com os artefatos, mostrando o que será afetado se um requisito mudar."
+  },
+  {
+    "id": 330,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Engenharia de Software — Engenharia de Requisitos",
+    "context": "",
+    "source": "FCC",
+    "statement": "Em Engenharia de Requisitos, \"Elicitação\" significa:",
+    "options": {
+      "A": "Programar o requisito no código.",
+      "B": "O processo de descobrir, levantar e compreender as necessidades dos stakeholders.",
+      "C": "Excluir requisitos obsoletos.",
+      "D": "Publicar o manual do usuário.",
+      "E": "Traduzir requisitos funcionais para linguagem de máquina."
+    },
+    "answer": "B",
+    "explanation": ". Elicitação é a primeira fase: extrair/descobrir a informação junto ao cliente."
+  },
+  {
+    "id": 331,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Banco de Dados — SGBDs Oracle, PostgreSQL e H2",
+    "context": "",
+    "source": "FCC",
+    "statement": "No Oracle, a pseudo-coluna ROWNUM:",
+    "options": {
+      "A": "É alocada após a cláusula ORDER BY ser executada.",
+      "B": "Aceita comparações do tipo `ROWNUM = 2` diretamente no WHERE.",
+      "C": "Indica a ordem em que o Oracle seleciona a linha da tabela antes da ordenação.",
+      "D": "Substitui a Primary Key.",
+      "E": "É idêntica ao LIMIT do PostgreSQL."
+    },
+    "answer": "C",
+    "explanation": ". ROWNUM é atribuído *antes* da ordenação, o que causa pegadinhas em paginações sem subconsultas."
+  },
+  {
+    "id": 332,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Banco de Dados — SGBDs Oracle, PostgreSQL e H2",
+    "context": "",
+    "source": "FCC",
+    "statement": "A tabela especial do Oracle que possui apenas uma linha e a coluna DUMMY chama-se:",
+    "options": {
+      "A": "SYSTEM",
+      "B": "DUAL",
+      "C": "SINGLE",
+      "D": "TEMP",
+      "E": "ROOT"
+    },
+    "answer": "B",
+    "explanation": ". A tabela `DUAL` garante retornos de uma única linha para avaliações de funções (ex: SYSDATE)."
+  },
+  {
+    "id": 333,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Banco de Dados — SGBDs Oracle, PostgreSQL e H2",
+    "context": "",
+    "source": "FCC",
+    "statement": "Para criar uma chave primária auto-incrementada no PostgreSQL (versões clássicas), utiliza-se o tipo:",
+    "options": {
+      "A": "AUTO_INCREMENT",
+      "B": "SEQUENCE_ID",
+      "C": "IDENTITY",
+      "D": "SERIAL",
+      "E": "ROWNUM"
+    },
+    "answer": "D",
+    "explanation": ". O tipo `SERIAL` cria implicitamente uma sequência para gerenciar o auto-incremento."
+  },
+  {
+    "id": 334,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Banco de Dados — SGBDs Oracle, PostgreSQL e H2",
+    "context": "",
+    "source": "FCC",
+    "statement": "Para pular 50 registros e retornar 10 em PostgreSQL, usa-se:",
+    "options": {
+      "A": "LIMIT 10 OFFSET 50",
+      "B": "ROWS 50 TO 60",
+      "C": "ROWNUM BETWEEN 51 AND 60",
+      "D": "SKIP 50 TAKE 10",
+      "E": "LIMIT 50, 10"
+    },
+    "answer": "A",
+    "explanation": ". A sintaxe ANSI suportada pelo PostgreSQL usa `LIMIT` (quantidade) e `OFFSET` (quantos pular)."
+  },
+  {
+    "id": 335,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Banco de Dados — SGBDs Oracle, PostgreSQL e H2",
+    "context": "",
+    "source": "FCC",
+    "statement": "Sobre o H2 Database:",
+    "options": {
+      "A": "É um banco NoSQL orientado a grafos.",
+      "B": "Roda exclusivamente no Linux.",
+      "C": "Permite execução em memória RAM (\"In-Memory\"), útil para testes isolados sem persistência obrigatória.",
+      "D": "Não suporta JDBC.",
+      "E": "Exige licenciamento comercial pago."
+    },
+    "answer": "C",
+    "explanation": ". O H2 é relacional, feito em Java, e famoso por rodar em memória (perfeito para JUnit/Spring)."
+  },
+  {
+    "id": 336,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Banco de Dados — SGBDs Oracle, PostgreSQL e H2",
+    "context": "",
+    "source": "FCC",
+    "statement": "No Oracle, para gerar o próximo valor de uma Sequence criada chamada SEQ_EMP, usa-se:",
+    "options": {
+      "A": "SELECT SEQ_EMP.NEXTVAL FROM DUAL;",
+      "B": "SELECT NEXT_ID(SEQ_EMP);",
+      "C": "SELECT SEQ_EMP.INCREMENT;",
+      "D": "GET NEXT SEQ_EMP;",
+      "E": "SELECT SEQ_EMP.VAL FROM SYSTEM;"
+    },
+    "answer": "A",
+    "explanation": ". Usa-se a pseudo-coluna `NEXTVAL` associada ao nome da sequência, lendo da tabela `DUAL`."
+  },
+  {
+    "id": 337,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Banco de Dados — SGBDs Oracle, PostgreSQL e H2",
+    "context": "",
+    "source": "FCC",
+    "statement": "No PostgreSQL, o suporte nativo a dados estruturados permite indexar e consultar diretamente colunas do tipo:",
+    "options": {
+      "A": "VARCHAR2 e CLOB (exclusivos).",
+      "B": "JSON e JSONB.",
+      "C": "ROWID.",
+      "D": "DUAL_DATA.",
+      "E": "MEMORY_TABLE."
+    },
+    "answer": "B",
+    "explanation": ". O PostgreSQL é famoso por tratar muito bem documentos JSON (especialmente o JSONB, que é binário e indexável)."
+  },
+  {
+    "id": 338,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Banco de Dados — SGBDs Oracle, PostgreSQL e H2",
+    "context": "",
+    "source": "FCC",
+    "statement": "Ao realizar uma consulta `SELECT * FROM tab WHERE ROWNUM > 1;` no Oracle, o resultado será:",
+    "options": {
+      "A": "Apenas a última linha.",
+      "B": "Todas as linhas, exceto a primeira.",
+      "C": "Nenhuma linha (conjunto vazio).",
+      "D": "Um erro de sintaxe.",
+      "E": "A segunda linha em diante, ordenada pela PK."
+    },
+    "answer": "C",
+    "explanation": ". Como a 1ª linha falha na condição `> 1` e é descartada, a \"próxima\" lida ganha o ROWNUM 1 de novo e falha também. O resultado é sempre vazio."
+  },
+  {
+    "id": 339,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Banco de Dados — SGBDs Oracle, PostgreSQL e H2",
+    "context": "",
+    "source": "FCC",
+    "statement": "Como o PostgreSQL e o Oracle diferem fundamentalmente no uso de aspas?",
+    "options": {
+      "A": "O Oracle usa aspas duplas para strings, o PostgreSQL usa simples.",
+      "B": "Ambos usam aspas duplas para literais de string.",
+      "C": "No PostgreSQL (e padrão ANSI), aspas simples delimitam strings literais, e aspas duplas delimitam identificadores (nomes de tabelas/colunas).",
+      "D": "Aspas não são permitidas no PostgreSQL.",
+      "E": "O Oracle exige backticks (`) para tabelas."
+    },
+    "answer": "C",
+    "explanation": ". Regra ANSI adotada pelo PgSQL: `'string'` e `\"identificador\"`."
+  },
+  {
+    "id": 340,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Banco de Dados — SGBDs Oracle, PostgreSQL e H2",
+    "context": "",
+    "source": "FCC",
+    "statement": "O modo de compatibilidade do H2 Database permite:",
+    "options": {
+      "A": "Conectar-se fisicamente ao Oracle via dblink nativo.",
+      "B": "Emular sintaxes e comportamentos específicos de outros SGBDs (como PostgreSQL, Oracle e MySQL) facilitando testes.",
+      "C": "Replicar dados automaticamente para a AWS.",
+      "D": "Converter código Java para PL/SQL.",
+      "E": "Desabilitar o padrão ANSI."
+    },
+    "answer": "B",
+    "explanation": ". O H2 possui modos de compatibilidade (ex: `;MODE=PostgreSQL`) que aceitam funções nativas desses bancos para não quebrar queries nos testes."
+  },
+  {
+    "id": 341,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Banco de Dados — SGBDs Oracle, PostgreSQL e H2",
+    "context": "",
+    "source": "FCC",
+    "statement": "Em PostgreSQL, se uma coluna é declarada como `SERIAL`, após inserir dados e querer acessar o último valor gerado nesta sessão, usa-se a função:",
+    "options": {
+      "A": "LAST_INSERT_ID()",
+      "B": "currval() ou lastval()",
+      "C": "SYSDATE()",
+      "D": "SEQ.LASTVAL",
+      "E": "RETURNING ID"
+    },
+    "answer": "B",
+    "explanation": ". As funções `currval('nome_seq')` ou `lastval()` retornam o valor gerado na transação/sessão atual. A cláusula `RETURNING` também é usada no `INSERT`."
+  },
+  {
+    "id": 342,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Banco de Dados — SGBDs Oracle, PostgreSQL e H2",
+    "context": "",
+    "source": "FCC",
+    "statement": "No Oracle, a função `NVL(coluna, valor_padrao)` é utilizada para:",
+    "options": {
+      "A": "Navegar entre registros.",
+      "B": "Substituir valores nulos (NULL) pelo valor padrão informado.",
+      "C": "Converter números para VARCHAR.",
+      "D": "Retornar a linha atual do ROWNUM.",
+      "E": "Calcular a nova visão (New View Level)."
+    },
+    "answer": "B",
+    "explanation": ". `NVL` (Null Value Logic) troca NULL por um valor pré-determinado (similar ao `COALESCE`)."
+  },
+  {
+    "id": 343,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Banco de Dados — SGBDs Oracle, PostgreSQL e H2",
+    "context": "",
+    "source": "FCC",
+    "statement": "Ao definir uma Sequence no Oracle com a cláusula `CACHE 20`, o banco de dados irá:",
+    "options": {
+      "A": "Limitar a sequência a apenas 20 valores máximos.",
+      "B": "Prealocar e manter 20 valores em memória RAM para acesso mais rápido, reduzindo I/O em disco.",
+      "C": "Criar uma tabela DUAL secundária de 20 linhas.",
+      "D": "Bloquear inserções concorrentes após 20 tentativas.",
+      "E": "Limpar o buffer de memória a cada 20 minutos."
+    },
+    "answer": "B",
+    "explanation": ". O `CACHE` melhora o desempenho das sequências guardando blocos numéricos na memória."
+  },
+  {
+    "id": 344,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Banco de Dados — SGBDs Oracle, PostgreSQL e H2",
+    "context": "",
+    "source": "FCC",
+    "statement": "Diferentemente do PostgreSQL, para concatenar strings no Oracle, o operador nativo clássico (além da função CONCAT) é:",
+    "options": {
+      "A": "`+`",
+      "B": "`&`",
+      "C": "`||`",
+      "D": "`.`",
+      "E": "`::`"
+    },
+    "answer": "C",
+    "explanation": ". Tanto Oracle quanto PostgreSQL suportam o operador padrão ANSI `||` para concatenação de strings."
+  },
+  {
+    "id": 345,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Banco de Dados — SGBDs Oracle, PostgreSQL e H2",
+    "context": "",
+    "source": "FCC",
+    "statement": "O termo \"ACID\" aplicado aos SGBDs relacionais como Oracle e PostgreSQL significa:",
+    "options": {
+      "A": "Asynchronous, Consistent, Isolated, Distributed.",
+      "B": "Atomicidade, Consistência, Isolamento e Durabilidade.",
+      "C": "Always Consistent In Database.",
+      "D": "Array, Character, Integer, Double.",
+      "E": "Access Control, Identity, Domain."
+    },
+    "answer": "B",
+    "explanation": ". ACID é a fundação do processamento seguro de transações em bancos relacionais."
+  },
+  {
+    "id": 346,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Língua Portuguesa — Classes de Palavras e Pronomes",
+    "context": "",
+    "source": "FCC",
+    "statement": "Assinale a frase gramaticalmente correta quanto à colocação pronominal:",
+    "options": {
+      "A": "Me entregaram o processo ontem.",
+      "B": "Não manifestou-se a respeito do caso.",
+      "C": "Os colegas que dispuseram-se a ajudar folgarão amanhã.",
+      "D": "Quando me disseram a verdade, encerrei o caso.",
+      "E": "Daria-te a resposta se a tivesse."
+    },
+    "answer": "D",
+    "explanation": ". A conjunção \"Quando\" atrai a próclise. (Em E, o certo seria \"Dar-te-ia\")."
+  },
+  {
+    "id": 347,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Língua Portuguesa — Classes de Palavras e Pronomes",
+    "context": "",
+    "source": "FCC",
+    "statement": "A próclise em \"Em se confirmando a suspeita...\" ocorre por causa de:",
+    "options": {
+      "A": "Início de período.",
+      "B": "Preposição \"em\" associada a verbo no gerúndio.",
+      "C": "Palavra atrativa negativa.",
+      "D": "Verbo no particípio.",
+      "E": "Mesóclise deslocada."
+    },
+    "answer": "B",
+    "explanation": ". Regra clássica: EM + PRONOME + GERÚNDIO atrai a próclise."
+  },
+  {
+    "id": 348,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Língua Portuguesa — Classes de Palavras e Pronomes",
+    "context": "",
+    "source": "FCC",
+    "statement": "Assinale a alternativa incorreta quanto à colocação em locução verbal:",
+    "options": {
+      "A": "O sistema estava testando-se.",
+      "B": "Ele não havia avisado-nos.",
+      "C": "Pretendiam apresentar-lhe os dados.",
+      "D": "A equipe vinha preparando-se para o deploy.",
+      "E": "Não se podia compreender a falha."
+    },
+    "answer": "B",
+    "explanation": ". O verbo principal \"avisado\" está no particípio. Particípios JAMAIS aceitam ênclise."
+  },
+  {
+    "id": 349,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Língua Portuguesa — Classes de Palavras e Pronomes",
+    "context": "",
+    "source": "FCC",
+    "statement": "Na frase \"O juiz considerou a alegação incabível\", \"incabível\" é:",
+    "options": {
+      "A": "Adjetivo.",
+      "B": "Advérbio.",
+      "C": "Substantivo.",
+      "D": "Pronome.",
+      "E": "Preposição."
+    },
+    "answer": "A",
+    "explanation": ". Caracteriza o substantivo \"alegação\"."
+  },
+  {
+    "id": 350,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Língua Portuguesa — Classes de Palavras e Pronomes",
+    "context": "",
+    "source": "FCC",
+    "statement": "Em qual frase a palavra \"bastante\" deve ser flexionada no plural?",
+    "options": {
+      "A": "Eles trabalharam bastante.",
+      "B": "Elas estavam bastante cansadas.",
+      "C": "Havia bastante tarefa no projeto.",
+      "D": "Correram bastante hoje.",
+      "E": "São alunos bastante aplicados."
+    },
+    "answer": "C",
+    "explanation": ". Acompanha substantivo (tarefa), logo é variável (bastantes tarefas). Nas demais, modifica verbo/adjetivo (advérbio invariável)."
+  },
+  {
+    "id": 351,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Língua Portuguesa — Classes de Palavras e Pronomes",
+    "context": "",
+    "source": "FCC",
+    "statement": "Assinale a alternativa em que há erro de colocação pronominal:",
+    "options": {
+      "A": "Nunca se esqueça dos requisitos.",
+      "B": "Jamais me perdoaria por isso.",
+      "C": "Alguém avisou-me do prazo limite.",
+      "D": "Tudo se resolve com calma.",
+      "E": "Poucos se importaram com o erro."
+    },
+    "answer": "C",
+    "explanation": ". O pronome indefinido \"Alguém\" é palavra atrativa. O correto é \"Alguém me avisou\"."
+  },
+  {
+    "id": 352,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Língua Portuguesa — Classes de Palavras e Pronomes",
+    "context": "",
+    "source": "FCC",
+    "statement": "Os pronomes oblíquos átonos \"o, a, os, as\", quando ligados a verbos terminados em R, S ou Z, assumem as formas:",
+    "options": {
+      "A": "no, na, nos, nas.",
+      "B": "lho, lha.",
+      "C": "mo, ma.",
+      "D": "lo, la, los, las.",
+      "E": "me, te, se."
+    },
+    "answer": "D",
+    "explanation": ". O verbo perde a letra final (r, s, z) e o pronome ganha L (ex: fazer + o = fazê-lo)."
+  },
+  {
+    "id": 353,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Língua Portuguesa — Classes de Palavras e Pronomes",
+    "context": "",
+    "source": "FCC",
+    "statement": "Nas locuções verbais cujo verbo principal está no infinitivo ou gerúndio e HÁ palavra atrativa (ex: NÃO), onde o pronome pode ser colocado?",
+    "options": {
+      "A": "Apenas antes do auxiliar.",
+      "B": "Apenas depois do principal.",
+      "C": "Antes do auxiliar ou depois do principal (ênclise ao infinitivo/gerúndio).",
+      "D": "No meio do auxiliar (mesóclise).",
+      "E": "Antes do principal."
+    },
+    "answer": "C",
+    "explanation": ". Ex: \"Não o quero ver\" ou \"Não quero vê-lo\". Ambas corretas! (A FCC tenta colocar no meio com hífen \"Não quero-o ver\" - incorreto)."
+  },
+  {
+    "id": 354,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Língua Portuguesa — Classes de Palavras e Pronomes",
+    "context": "",
+    "source": "FCC",
+    "statement": "Em \"Aquela foi a solução **que** nos salvou\", a próclise ocorreu porque:",
+    "options": {
+      "A": "\"Aquela\" atrai o pronome.",
+      "B": "O verbo está no passado.",
+      "C": "O pronome relativo \"que\" exige a próclise.",
+      "D": "\"solução\" é substantivo feminino.",
+      "E": "A frase é negativa."
+    },
+    "answer": "C",
+    "explanation": ". O pronome relativo (que, o qual, onde) é uma forte palavra atrativa para a próclise."
+  },
+  {
+    "id": 355,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Língua Portuguesa — Classes de Palavras e Pronomes",
+    "context": "",
+    "source": "FCC",
+    "statement": "Assinale a opção em que o uso do pronome lhe está INCORRETO sintaticamente:",
+    "options": {
+      "A": "Entreguei-lhe o documento.",
+      "B": "Obedeço-lhe cegamente.",
+      "C": "Vi-lhe na rua ontem à noite.",
+      "D": "Não lhe disseram a verdade.",
+      "E": "A decisão foi-lhe favorável."
+    },
+    "answer": "C",
+    "explanation": ". O verbo Ver é transitivo direto, exigindo o pronome \"o/a\" (Vi-o), e não o \"lhe\" (que atua como objeto indireto)."
+  },
+  {
+    "id": 356,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Língua Portuguesa — Classes de Palavras e Pronomes",
+    "context": "",
+    "source": "FCC",
+    "statement": "Das classes gramaticais abaixo, a única invariável (que não sofre flexão de gênero e número) é:",
+    "options": {
+      "A": "Substantivo.",
+      "B": "Adjetivo.",
+      "C": "Pronome.",
+      "D": "Advérbio.",
+      "E": "Numeral."
+    },
+    "answer": "D",
+    "explanation": ". Advérbios, preposições e conjunções são invariáveis."
+  },
+  {
+    "id": 357,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Língua Portuguesa — Classes de Palavras e Pronomes",
+    "context": "",
+    "source": "FCC",
+    "statement": "Mesóclise é obrigatória quando:",
+    "options": {
+      "A": "O verbo inicia a frase e está no presente.",
+      "B": "O verbo está no futuro do presente ou futuro do pretérito, e NÃO HÁ palavra atrativa justificando próclise.",
+      "C": "A oração é exclamativa ou interrogativa.",
+      "D": "Ocorre gerúndio precedido de preposição.",
+      "E": "O verbo está no particípio."
+    },
+    "answer": "B",
+    "explanation": ". Ex: \"Convidar-te-ei para a festa\". Se houvesse atrativa: \"Não te convidarei\"."
+  },
+  {
+    "id": 358,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Língua Portuguesa — Classes de Palavras e Pronomes",
+    "context": "",
+    "source": "FCC",
+    "statement": "A palavra \"certo\" atua como adjetivo (flexível) e como pronome indefinido dependendo de sua posição em relação ao substantivo. Assinale a alternativa onde \"certo\" é Pronome Indefinido:",
+    "options": {
+      "A": "O resultado estava certo.",
+      "B": "Ele sempre pega o caminho certo.",
+      "C": "Certas pessoas não merecem confiança.",
+      "D": "Falou a coisa certa na hora certa.",
+      "E": "O relógio não está certo."
+    },
+    "answer": "C",
+    "explanation": ". Quando vem ANTES do substantivo de forma vaga (\"Certas pessoas\"), atua como pronome indefinido. Depois do substantivo, significa \"correto\" (adjetivo)."
+  },
+  {
+    "id": 359,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Língua Portuguesa — Classes de Palavras e Pronomes",
+    "context": "",
+    "source": "FCC",
+    "statement": "Assinale a frase em que o adjetivo exerce função de predicativo do sujeito:",
+    "options": {
+      "A": "O analista competente resolveu o bug.",
+      "B": "Comprei um computador rápido.",
+      "C": "O sistema rápido falhou hoje.",
+      "D": "O diretor considerou o sistema lento.",
+      "E": "O tribunal permanece fechado aos domingos."
+    },
+    "answer": "E",
+    "explanation": ". O adjetivo \"fechado\" modifica o sujeito \"tribunal\" através do verbo de ligação \"permanece\". (Na D, é predicativo do objeto)."
+  },
+  {
+    "id": 360,
+    "day_id": "dia_25_05",
+    "day_title": "Segunda-feira 25/05",
+    "theme": "Língua Portuguesa — Classes de Palavras e Pronomes",
+    "context": "",
+    "source": "FCC",
+    "statement": "\"Dar-nos-ia muito prazer sua presença.\" A colocação pronominal apresentada:",
+    "options": {
+      "A": "Está incorreta, o certo seria \"Daria-nos\".",
+      "B": "Está incorreta, o certo seria \"Nos daria\".",
+      "C": "Está correta (mesóclise), justificada pelo verbo no futuro do pretérito iniciando a oração sem palavra atrativa.",
+      "D": "Está correta, pois o pronome \"nos\" só pode atuar como objeto direto.",
+      "E": "É facultativa em relação a \"Daria-nos\"."
+    },
+    "answer": "C",
+    "explanation": ". Verbo no futuro iniciando a frase exige obrigatoriamente a mesóclise na norma-padrão."
+  }
+]
