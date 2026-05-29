@@ -1,189 +1,232 @@
 # Bateria de Questões FCC — Quarta-feira 27/05
 
-Este arquivo contém 45 questões aprofundadas da banca FCC (15 por tema estudado no dia) com gabarito comentado detalhado, seguindo a metodologia psicométrica de distratores calibrados e cenários hipotéticos.
+Este arquivo contém 45 questões altamente calibradas nos padrões da FCC, com alternativas de comprimento similar e distratores baseados em pegadinhas reais.
 
 ---
 
 ## 📝 TEMA 1: Segurança da Informação — Lei Geral de Proteção de Dados (LGPD)
 
 ### Questão 1 (FCC)
-Considere a seguinte situação hipotética: O Tribunal de Justiça do Ceará implementou um novo sistema para digitalização de processos históricos. Durante o processo de migração, um analista sugeriu coletar dados complementares dos réus, tais como suas preferências de lazer e histórico de compras em lojas físicas, argumentando que essas informações poderiam ser úteis para traçar perfis comportamentais em pesquisas acadêmicas futuras. Sob a ótica da Lei Geral de Proteção de Dados (Lei nº 13.709/2018), essa proposta de coleta de dados adicionais viola frontalmente o princípio do tratamento de dados pessoais da:
-A) Necessidade, a qual determina a limitação do tratamento ao mínimo necessário para a realização de suas finalidades, com abrangência dos dados pertinentes e não excessivos.
-B) Transparência, pois os dados seriam mantidos em sigilo absoluto na base de dados do tribunal.
-C) Livre acesso, visto que os jurisdicionados não teriam acesso facilitado às pesquisas geradas.
-D) Adequação, uma vez que a finalidade foi formalmente declarada no edital de licitação do sistema.
-E) Prevenção, tendo em vista que a coleta desses dados não aumenta a vulnerabilidade física dos servidores do tribunal.
+A Lei Geral de Proteção de Dados (LGPD) - Lei nº 13.709/2018 - estabelece conceitos fundamentais para o tratamento de informações. A definição legal de 'Dado Pessoal Sensível' segundo a LGPD engloba:
+A) Dado pessoal sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico, quando vinculado a uma pessoa natural.
+B) Qualquer informação de natureza financeira corporativa, incluindo demonstrativos de lucros e perdas, faturamento bruto anual de empresas privadas e saldos bancários de contas correntes de pessoas jurídicas ativas.
+C) Dados de geolocalização capturados por dispositivos móveis em tempo real nas dependências físicas de órgãos públicos e comarcas judiciais do Estado.
+D) Endereço IP associado ao histórico de navegação na internet de usuários comuns que acessam portais governamentais de transparência pública.
+E) Registros de logs de acesso a servidores de banco de dados relacionais que não permitam a identificação direta ou indireta de usuários externos cadastrados.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. O princípio da Necessidade (Art. 6º, inciso III, da LGPD) estabelece que a coleta e o tratamento de dados pessoais devem ser estritamente proporcionais e limitados ao mínimo indispensável para atingir a finalidade pública proposta. A coleta de preferências de lazer e histórico de compras de réus para um sistema de digitalização de processos históricos configura excesso de dados irrelevantes e não essenciais, violando o princípio.
+
+**Gabarito: A**. A alternativa A transcreve fielmente a definição legal de Dado Pessoal Sensível constante no art. 5º, inciso II, da LGPD. As demais alternativas tratam de dados pessoais comuns ou informações corporativas não enquadradas como dados sensíveis.
 </details>
+
+---
 
 ### Questão 2 (FCC)
-De acordo com as regras estabelecidas pelo Capítulo IV da Lei Geral de Proteção de Dados (Lei nº 13.709/2018), o tratamento de dados pessoais pelas pessoas jurídicas de direito público deve ser realizado para o cumprimento de competências legais ou atribuições constitucionais. Nesse contexto, a lei determina que as entidades públicas:
-A) Devem dispensar a indicação de encarregado de proteção de dados, haja vista a publicidade inerente aos atos administrativos.
-B) Devem fornecer informações claras e atualizadas sobre a previsão legal, a finalidade, os procedimentos e as práticas utilizadas para executar o tratamento de dados pessoais.
-C) São autorizadas a comercializar bases de dados a entidades privadas, desde que o valor arrecadado seja revertido em melhorias de TI.
-D) Podem dispensar a indicação de finalidade específica para o tratamento quando este for realizado no âmbito de processos judiciais em segredo de justiça.
-E) São isentas da observância dos princípios da finalidade e da adequação em virtude da supremacia do interesse público.
+A LGPD define os agentes de tratamento de dados pessoais. Os agentes de tratamento descritos pela lei são:
+A) O Encarregado (DPO) e a Autoridade Nacional de Proteção de Dados (ANPD) de forma exclusiva no território nacional.
+B) O Controlador (a quem competem as decisões sobre o tratamento) e o Operador (que realiza o tratamento em nome do controlador).
+C) O Titular dos dados pessoais e o Encarregado do tratamento nas esferas administrativa e jurídica do tribunal.
+D) O Desenvolvedor de sistemas e o Administrador de Banco de Dados (DBA) responsáveis pela segurança lógica dos blocos de dados.
+E) A Ouvidoria Geral e a Corregedoria do órgão que fiscalizam o cumprimento das diretrizes de segurança da informação.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. De acordo com o Art. 23, inciso I, da LGPD, as pessoas jurídicas de direito público devem fornecer informações claras e atualizadas sobre a previsão legal, a finalidade, os procedimentos e as práticas utilizadas para executar o tratamento de dados pessoais, preferencialmente em seus portais institucionais.
+
+**Gabarito: B**. Segundo o art. 5º, inciso IX, da LGPD, os agentes de tratamento são o controlador e o operador. O encarregado (DPO) é o canal de comunicação, mas não é agente de tratamento no sentido da lei.
 </details>
+
+---
 
 ### Questão 3 (FCC)
-Considere a seguinte situação hipotética: A Autoridade Nacional de Proteção de Dados (ANPD) realizou uma fiscalização na infraestrutura de servidores do TJ-CE e constatou uma grave infração no tratamento de dados pessoais de servidores públicos, resultando na exposição de prontuários médicos. Em conformidade com as sanções administrativas dispostas na Lei nº 13.709/2018 (LGPD), a ANPD poderá aplicar ao tribunal as seguintes penalidades, com EXCEÇÃO de:
-A) Advertência, com indicação de prazo para adoção de medidas corretivas.
-B) Publicização da infração após devidamente apurada e confirmada a sua ocorrência.
-C) Eliminação dos dados pessoais a que se refere a infração.
-D) Bloqueio dos dados pessoais a que se refere a infração até a sua regularização.
-E) Multa simples de até 2% do faturamento da entidade pública, limitada ao teto de R$ 50.000.000,00 por infração.
+O tratamento de dados pessoais na LGPD deve observar diversos princípios de cumprimento obrigatório pelos agentes. O princípio que garante aos titulares a consulta facilitada e gratuita sobre a forma e a duração do tratamento, bem como sobre a integralidade de seus dados pessoais, é o princípio do(a):
+A) Segurança
+B) Transparência
+C) Adequação
+D) Necessidade
+E) Livre acesso
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. Conforme o Art. 52, § 3º da LGPD, as sanções de multa simples e multa diária (incisos II e III) não se aplicam às pessoas jurídicas de direito público (órgãos públicos, autarquias, fundações). O tribunal pode sofrer advertência (A) , publicização da infração (B) , bloqueio (D)  e eliminação dos dados (C) , mas não multas pecuniárias.
+
+**Gabarito: E**. O princípio do livre acesso (art. 6º, inciso IV, da LGPD) garante a consulta facilitada e gratuita dos titulares sobre a forma e duração do tratamento e a integridade de seus dados. O princípio da transparência garante informações claras e precisas sobre o tratamento e os agentes.
 </details>
+
+---
 
 ### Questão 4 (FCC)
-A transferência ou o compartilhamento de dados pessoais constantes de bases de dados do Poder Público para entidades privadas é tema de regulamentação estrita na LGPD. Nos termos do Artigo 26 da Lei nº 13.709/2018, essa transferência:
-A) É amplamente permitida para qualquer finalidade de fomento à economia digital.
-B) É vedada em qualquer hipótese, inexistindo exceções legais devido ao princípio da indisponibilidade do interesse público.
-C) É liberada desde que a entidade privada assine um termo de confidencialidade unilateral e pague tarifa de acesso.
-D) Depende exclusivamente de autorização prévia por meio de decisão liminar do Conselho Nacional de Justiça (CNJ).
-E) É permitida apenas em casos de execução descentralizada de atividade pública que exija o compartilhamento, ou nos casos em que os dados forem acessíveis publicamente, respeitadas as finalidades legais.
+Para que o tratamento de dados pessoais comuns seja lícito, a LGPD exige o enquadramento em uma das bases legais previstas no artigo 7º. Assinale a alternativa que apresenta uma base legal válida:
+A) Para a execução de contratos comerciais de consumo nos quais o titular figure como terceiro beneficiário não anuente da transação.
+B) Para o legítimo interesse exclusivo do operador, mesmo que viole os direitos e liberdades fundamentais do titular dos dados.
+C) Mediante o consentimento verbal tácito do titular obtido de forma indireta através da aceitação de cookies genéricos na internet.
+D) Para a proteção do crédito dos agentes de tratamento em transações comerciais de empresas estrangeiras sem sede no país.
+E) Para o cumprimento de obrigação legal ou regulatória pelo controlador, dispensando o consentimento do titular dos dados pessoais.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. O Art. 26, § 1º da LGPD veda, em regra, a transferência de dados do Poder Público para entidades privadas, mas estabelece exceções claras: em casos de execução descentralizada de atividade pública que exija o compartilhamento (como convênios ou contratos administrativos); quando os dados forem acessíveis publicamente; ou quando houver previsão legal expressa ou finalidade exclusiva de prevenção a fraudes e segurança.
+
+**Gabarito: E**. O art. 7º, inciso II, da LGPD estabelece como base legal o cumprimento de obrigação legal ou regulatória pelo controlador, sem necessidade de consentimento. O legítimo interesse deve respeitar os direitos e liberdades fundamentais, e o consentimento deve ser livre, informado e inequívoco.
 </details>
+
+---
 
 ### Questão 5 (FCC)
-O titular de dados pessoais possui uma série de direitos assegurados pela LGPD, que podem ser exercidos diretamente perante o controlador dos dados. De acordo com o Artigo 18 da Lei nº 13.709/2018, o titular tem o direito de obter do controlador, mediante requisição e a qualquer momento:
-A) O pagamento de indenização tarifada por danos morais presumidos sem necessidade de prova de vazamento.
-B) A alteração retroativa de registros públicos históricos para apagar condenações transitadas em julgado.
-C) A confirmação da existência de tratamento e o acesso facilitado e gratuito aos seus dados pessoais.
-D) A portabilidade dos dados pessoais a qualquer outra entidade pública sem necessidade de regulamentação adicional.
-E) A exclusão de seus dados de prontuários médicos hospitalares de urgência mesmo antes da alta clínica.
+Em relação ao tratamento de dados pessoais de crianças e adolescentes, a LGPD impõe regras estritas de proteção. O tratamento de dados de crianças exige:
+A) Apenas a notificação posterior aos responsáveis legais através de edital eletrônico publicado no portal da transparência.
+B) A autorização prévia por escrito expedida pela Autoridade Nacional de Proteção de Dados (ANPD) após auditoria física.
+C) O consentimento específico e em destaque dado por pelo menos um dos pais ou pelo responsável legal da criança.
+D) A dispensa total de consentimento caso os dados sejam tratados em sistemas de educação a distância mantidos por fundações privadas.
+E) A anonimização compulsória e instantânea de todos os dados no momento da inserção física no banco de dados relacional local.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. O Art. 18, incisos I e II da LGPD garante ao titular o direito de obter a confirmação da existência de tratamento e o acesso aos dados pessoais de forma facilitada e gratuita. Portabilidade (D)  necessita de regulamentação da ANPD e exclusão (E)  encontra limites em obrigações legais de conservação de prontuários.
+
+**Gabarito: C**. Segundo o art. 14, § 1º, da LGPD, o tratamento de dados pessoais de crianças deve ser realizado com o consentimento específico e em destaque dado por pelo menos um dos pais ou pelo responsável legal.
 </details>
+
+---
 
 ### Questão 6 (FCC)
-Considere a seguinte situação hipotética: O Tribunal de Justiça do Ceará estruturou seu Comitê de Proteção de Dados para adequação à LGPD. De acordo com a lei, o tribunal deve indicar um profissional para atuar como canal de comunicação entre o controlador (o TJ-CE), os titulares dos dados (cidadãos e servidores) e a ANPD. Nos termos da Lei nº 13.709/2018, essa função é denominada:
-A) Operador de Segurança da Informação.
-B) Ouvidor-Geral de Proteção de Dados Judiciais.
-C) Encarregado pelo Tratamento de Dados Pessoais (DPO).
-D) Agente de Fomento à Conformidade Digital.
-E) Encarregado de Infraestrutura Física e Lógica.
+Os titulares de dados pessoais possuem direitos fundamentais assegurados pela LGPD. Um direito que o titular pode exercer perante o controlador, a qualquer momento e mediante requisição, é a:
+A) Alteração unilateral dos termos de uso da aplicação web que coletou os dados pessoais sem anuência da equipe de desenvolvimento.
+B) Exclusão definitiva de todos os seus dados pessoais de registros fiscais obrigatórios exigidos pela Receita Federal do Brasil.
+C) Portabilidade dos dados a outro fornecedor de serviço ou produto, mediante requisição expressa, de acordo com a regulamentação da ANPD.
+D) Transferência compulsória da propriedade dos servidores físicos nos quais os seus dados pessoais encontram-se armazenados.
+E) Isenção de tributos estaduais associados a serviços de telecomunicações que trafeguem os seus dados em redes de fibra óptica.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. O Encarregado (conhecido internacionalmente como DPO - Data Protection Officer) é o agente indicado pelo controlador para atuar como canal de comunicação entre o controlador, os titulares dos dados e a Autoridade Nacional de Proteção de Dados (ANPD), conforme o Art. 5º, inciso VIII da LGPD.
+
+**Gabarito: C**. O titular tem direito à portabilidade dos dados a outro fornecedor (art. 18, inciso V, da LGPD), resguardados os segredos comerciais e industriais. Não cabe direito de exclusão de dados mantidos por obrigações legais fiscais ou administrativas legítimas.
 </details>
+
+---
 
 ### Questão 7 (FCC)
-A LGPD confere uma proteção especial e diferenciada aos dados pessoais que possuem maior potencial de gerar discriminação ou violação à dignidade do indivíduo. Sob a definição trazida pelo Artigo 5º, inciso II da Lei nº 13.709/2018, considera-se dado pessoal sensível:
-A) O número do Cadastro de Pessoas Físicas (CPF) e a geolocalização em tempo real do dispositivo.
-B) O endereço residencial e o histórico de remuneração líquida do servidor público.
-C) O número do título de eleitor e o registro geral de identidade (RG).
-D) Dado pessoal sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico.
-E) A carteira nacional de habilitação (CNH) e a lista de dependentes legais declarados no imposto de renda.
+Sobre a figura do Encarregado (DPO - Data Protection Officer) prevista na LGPD, assinale a alternativa que descreve corretamente as suas atribuições legais:
+A) Aplicar multas e sanções administrativas aos operadores de dados que cometerem violações de segurança no tratamento físico.
+B) Decidir de forma soberana as bases legais que serão utilizadas em cada atividade de tratamento do tribunal de justiça do Estado.
+C) Executar fisicamente as rotinas de backup e restauração dos bancos de dados relacionais nos servidores do datacenter corporativo.
+D) Aceitar reclamações e comunicações dos titulares, prestar esclarecimentos e adotar providências, bem como receber comunicações da ANPD.
+E) Representar judicialmente os titulares de dados pessoais em ações criminais decorrentes do vazamento de informações sigilosas.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. A LGP define de forma estrita e taxativa os dados pessoais sensíveis em seu Art. 5º, inciso II. Informações sobre origem racial, convicção religiosa, dados de saúde, genéticos ou biométricos são classificados como sensíveis e exigem hipóteses legais de tratamento muito mais restritivas.
+
+**Gabarito: D**. O Encarregado atua como canal de comunicação entre o controlador, os titulares e a ANPD, conforme o art. 41, § 2º, da LGPD. Ele não decide as bases legais de forma autônoma e nem aplica sanções administrativas (que competem à ANPD).
 </details>
+
+---
 
 ### Questão 8 (FCC)
-No contexto dos agentes de tratamento de dados pessoais definidos pela Lei Geral de Proteção de Dados (Lei nº 13.709/2018), o Tribunal de Justiça do Ceará atua na coleta e definição das finalidades de tratamento de dados de processos judiciais eletrônicos, enquanto uma empresa privada terceirizada executa a hospedagem física desses dados em servidores em nuvem, agindo estritamente segundo as ordens e instruções do tribunal. Nessa dinâmica, o Tribunal de Justiça e a empresa terceirizada classificam-se, respectivamente, como:
-A) Encarregado e Controlador.
-B) Operador e Encarregado.
-C) Controlador e Encarregado.
-D) Controlador e Operador.
-E) Operador e Controlador.
+Em casos de incidentes de segurança que possam acarretar risco ou dano relevante aos titulares de dados pessoais, o controlador deve:
+A) Emitir um comunicado oficial de isenção de responsabilidade civil antes de notificar qualquer órgão governamental ou fiscalizador.
+B) Suspender imediatamente e por tempo indeterminado todas as atividades e serviços de rede do tribunal de justiça do Estado.
+C) Realizar a exclusão automática de todos os backups do banco de dados para evitar que novas cópias de dados sejam vazadas na internet.
+D) Comunicar à Autoridade Nacional de Proteção de Dados (ANPD) e aos titulares em prazo razoável, conforme definido pela autoridade.
+E) Notificar a Delegacia de Crimes Células e a Receita Federal do Brasil no prazo máximo improrrogável de duas horas após o ocorrido.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. O Controlador é a pessoa natural ou jurídica a quem competem as decisões referentes ao tratamento de dados pessoais (no caso, o TJ-CE). O Operador é a pessoa natural ou jurídica que realiza o tratamento em nome do controlador (no caso, a empresa de hospedagem em nuvem que age sob as ordens do tribunal), nos termos do Art. 5º, incisos VI e VII da LGPD.
+
+**Gabarito: D**. O art. 48 da LGPD determina que o controlador deve comunicar à ANPD e aos titulares a ocorrência de incidente de segurança que possa acarretar risco ou dano relevante em prazo razoável.
 </details>
+
+---
 
 ### Questão 9 (FCC)
-O princípio estabelecido no Artigo 6º da LGPD que determina que os agentes de tratamento devem demonstrar a adoção de medidas eficazes e capazes de comprovar a observância e o cumprimento das normas de proteção de dados pessoais, inclusive da eficácia dessas medidas, é denominado princípio da:
-A) Adequação.
-B) Prevenção.
-C) Segurança e blindagem lógica.
-D) Transparência de governança.
-E) Responsabilização e prestação de contas (accountability).
+As sanções administrativas previstas na LGPD são aplicadas pela ANPD aos agentes de tratamento em caso de infrações. Uma dessas sanções administrativas é a:
+A) Proibição perpétua do exercício de qualquer atividade de tratamento de dados pessoais em âmbito público e privado em todo o país.
+B) Prisão preventiva dos diretores de TI e dos administradores de banco de dados responsáveis pelo vazamento das informações confidenciais.
+C) Cassação do registro profissional de todos os analistas de sistemas que participaram do desenvolvimento do software sob investigação.
+D) Perda imediata do patrimônio líquido da empresa operadora em favor do fundo de amparo ao trabalhador e fomento de tecnologia pública.
+E) Multa simples de até 2% do faturamento da pessoa jurídica de direito privado, limitada, no total, a cinquenta milhões de reais por infração.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. O princípio da Responsabilização e Prestação de Contas (Art. 6º, inciso X) exige que os controladores e operadores não apenas cumpram a lei, mas sejam capazes de **comprovar documentadamente** que adotaram salvaguardas eficazes para proteger os dados sob sua guarda.
+
+**Gabarito: E**. Segundo o art. 52, inciso II, da LGPD, a multa simples pode ir até 2% do faturamento da empresa, limitada a R$ 50.000.000,00 por infração. Sanções como prisão preventiva ou cassação de registros profissionais não constam nas sanções administrativas da lei.
 </details>
+
+---
 
 ### Questão 10 (FCC)
-Considere os aspectos organizacionais e a natureza jurídica da Autoridade Nacional de Proteção de Dados (ANPD). A partir das alterações promovidas pela Lei nº 14.460/2022, a ANPD passou a ser classificada juridicamente como:
-A) Órgão interno consultivo integrante da Presidência da República, sem orçamento próprio.
-B) Empresa pública federal vinculada ao Ministério do Desenvolvimento e Tecnologia.
-C) Autarquia de regime especial, dotada de autonomia técnica e decisória, com patrimônio próprio.
-D) Organização Social privada conveniada ao Conselho Nacional de Justiça (CNJ).
-E) Tribunal administrativo independente subordinado ao Ministério Público Federal.
+A LGPD prevê hipóteses em que a lei NÃO se aplica ao tratamento de dados pessoais. O tratamento de dados pessoais está excluído do escopo da LGPD quando realizado:
+A) Por empresas privadas nacionais para fins de marketing direto e criação de perfis de consumo na rede local de internet corporativa.
+B) Por órgãos públicos para fins de segurança pública, defesa nacional, segurança do Estado ou atividades de investigação de infrações penais.
+C) Por pessoa natural para fins exclusivamente particulares e não econômicos, mantendo o caráter estritamente pessoal da atividade.
+D) Por cartórios de notas e registros públicos no exercício de suas competências notariais obrigatórias de formalização documental.
+E) Por instituições financeiras privadas para a análise de risco de crédito de clientes que solicitam empréstimos bancários rápidos.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. A Lei nº 14.460/2022 transformou a ANPD em uma autarquia de regime especial, garantindo autonomia técnica, decisória e administrativa, com patrimônio e receitas próprias, o que fortalece sua independência regulatória.
+
+**Gabarito: C**. De acordo com o art. 4º, inciso I, da LGPD, a lei não se aplica ao tratamento realizado por pessoa natural para fins exclusivamente particulares e não econômicos. Tratamento para segurança pública e defesa nacional também possui regras especiais e exclusão de aplicação geral, mas a lei de proteção específica se aplicará nestes termos. A alternativa C reflete a exclusão mais pura de escopo pessoal.
 </details>
+
+---
 
 ### Questão 11 (FCC)
-Sob a égide da Lei nº 13.709/2018 (LGPD), o tratamento de dados pessoais comuns (não sensíveis) pode ser realizado sob diversas hipóteses legais que legitimam a sua operação. O Artigo 7º da LGPD enumera os casos em que o tratamento é permitido, dentre os quais NÃO se inclui:
-A) Mediante o consentimento do titular.
-B) Para o cumprimento de obrigação legal ou regulatória pelo controlador.
-C) Para a execução de políticas públicas previstas em leis e regulamentos pelo Poder Público.
-D) Para fins puramente comerciais e de marketing direcionado baseado em legítimo interesse do controlador, sem direito de oposição do titular.
-E) Para a tutela da saúde, exclusivamente, em procedimento realizado por profissionais de saúde, serviços de saúde ou autoridade sanitária.
+O princípio da finalidade na LGPD exige que o tratamento de dados pessoais seja realizado para propósitos legítimos, específicos e explícitos. Este princípio determina que:
+A) Os dados pessoais devem ser mantidos armazenados permanentemente, mesmo após alcançado o objetivo inicial que motivou a sua coleta regular.
+B) Os agentes de tratamento de dados pessoais podem alterar a destinação das informações coletadas a qualquer momento para otimizar lucros.
+C) O consentimento fornecido para uma finalidade autoriza implicitamente a coleta de novos dados sensíveis para finalidades futuras.
+D) O tratamento deve ser justificado por propósitos informados ao titular, sendo vedado o tratamento posterior incompatível com essas finalidades.
+E) O controlador fica desobrigado de declarar as razões pelas quais necessita dos dados quando o titular for servidor público efetivo.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. Embora o "legítimo interesse" (Art. 7º, inciso IX) seja uma hipótese válida de tratamento de dados comuns, a lei assegura ao titular o direito de oposição a qualquer momento se considerar o tratamento excessivo ou prejudicial à sua privacidade. Portanto, a afirmação de que não há direito de oposição torna o item D incorreto e, consequentemente, o gabarito.
+
+**Gabarito: D**. O princípio da finalidade (art. 6º, inciso I, da LGPD) exige propósitos legítimos, específicos e explícitos informados ao titular, vedando o uso de dados para propósitos diversos ou incompatíveis sem nova base legal.
 </details>
+
+---
 
 ### Questão 12 (FCC)
-A Lei Geral de Proteção de Dados Pessoais (LGPD) estabelece limites claros sobre a sua própria aplicação. Nos termos do Artigo 4º da Lei nº 13.709/2018, a lei não se aplica ao tratamento de dados pessoais quando este for realizado por pessoa natural para fins exclusivamente:
-A) Particulares e não econômicos.
-B) Comerciais e publicitários locais.
-C) Científicos e de pesquisa clínica em saúde pública.
-D) Jornalísticos e artísticos sem autorização da ANPD.
-E) Judiciais e de segurança de fronteiras.
+Em relação ao tratamento de dados pessoais sob a LGPD, o 'Legítimo Interesse' é uma das bases legais. Sobre o legítimo interesse, assinale a alternativa correta:
+A) Ele fundamenta o tratamento para finalidades legítimas do controlador, apoiado em situações concretas e respeitando os direitos do titular.
+B) Ele autoriza o tratamento de dados sensíveis relacionados à saúde e vida sexual sem necessidade de autorização ou justificativa legal.
+C) Ele é a única base legal válida que permite a transferência internacional de dados para paraísos fiscais sem supervisão da ANPD.
+D) Ele dispensa a realização do teste de proporcionalidade (LIA) sobre o impacto à privacidade dos titulares de dados afetados.
+E) Ele confere imunidade civil aos agentes de tratamento contra quaisquer pedidos de indenização decorrentes de incidentes de segurança.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. Conforme o Art. 4º, inciso I da LGPD, a lei não se aplica ao tratamento de dados pessoais realizado por pessoa natural para fins exclusivamente particulares e não econômicos (como manter uma agenda pessoal de contatos telefônicos).
+
+**Gabarito: A**. O legítimo interesse (art. 10 da LGPD) aplica-se a finalidades legítimas do controlador em situações concretas, exigindo análise de proporcionalidade (LIA) em relação aos direitos e liberdades do titular. É vedado para dados pessoais sensíveis.
 </details>
+
+---
 
 ### Questão 13 (FCC)
-Considere a seguinte situação hipotética: O Tribunal de Justiça do Ceará planeja implementar um sistema baseado em Inteligência Artificial para análise automatizada de perfis socioeconômicos de cidadãos que solicitam assistência judiciária gratuita. A ANPD, considerando o alto risco desse tratamento aos direitos fundamentais, solicita ao tribunal a elaboração de um documento que contenha a descrição dos processos de tratamento de dados pessoais que podem gerar riscos às liberdades civis, bem como medidas, salvaguardas e mecanismos de mitigação de risco. Esse documento é denominado pela LGPD como:
-A) Relatório de Impacto à Proteção de Dados Pessoais (RIPD).
-B) Plano Nacional de Contingência de Vazamentos de TI.
-C) Laudo Pericial de Vulnerabilidade Lógica.
-D) Auditoria de Conformidade e Proteção de Dados.
-E) Termo de Referência de Mapeamento Algorítmico.
+No âmbito da segurança da informação sob as diretrizes da LGPD, a anonimização é um conceito técnico relevante. A anonimização ocorre quando:
+A) Um dado perde a possibilidade de associação, direta ou indireta, a um indivíduo, considerando a utilização de meios técnicos razoáveis e disponíveis.
+B) Os dados pessoais são criptografados utilizando chaves públicas cuja chave privada de decifragem é mantida em outro servidor local.
+C) A equipe de TI altera temporariamente os nomes de usuários em relatórios visuais exibidos nas telas de sistemas de auditoria.
+D) O banco de dados relacional é configurado para apagar os registros de logs de acesso a cada período de vinte e quatro horas de uso.
+E) Os registros confidenciais são transferidos fisicamente para fitas magnéticas de backup de segurança mantidas offline no cofre.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. O Relatório de Impacto à Proteção de Dados Pessoais (RIPD) é a documentação do controlador que contém a descrição dos processos de tratamento de dados pessoais que podem gerar riscos às liberdades civis e aos direitos fundamentais, bem como medidas e salvaguardas de mitigação, definido pelo Art. 5º, inciso XVII da LGPD.
+
+**Gabarito: A**. Anonimização (art. 5º, inciso XI, da LGPD) é a utilização de meios técnicos razoáveis e disponíveis na época do tratamento, por meio dos quais um dado perde a possibilidade de associação ao titular.
 </details>
+
+---
 
 ### Questão 14 (FCC)
-Dentre os princípios dispostos no Artigo 6º da LGPD, aquele que estabelece a impossibilidade de realização do tratamento de dados pessoais para fins discriminatórios ilícitos ou abusivos é o princípio da:
-A) Não discriminação.
-B) Prevenção.
-C) Livre Acesso.
-D) Transparência.
-E) Qualidade dos Dados.
+A Autoridade Nacional de Proteção de Dados (ANPD) é o órgão responsável por zelar pela proteção de dados pessoais. Sobre a ANPD, é correto afirmar:
+A) Trata-se de uma autarquia de natureza especial com autonomia técnica e decisória, vinculada administrativamente ao Ministério da Justiça.
+B) Consiste em um conselho privado composto por representantes de bancos comerciais e empresas multinacionais de tecnologia de internet.
+C) É subordinada diretamente ao Conselho Nacional de Justiça (CNJ) e fiscaliza apenas órgãos do Poder Judiciário em nível federal.
+D) Sua atuação restringe-se à emissão de certificados de segurança digital para servidores públicos federais e estaduais do país.
+E) Ela não possui poder regulatório, limitando-se a orientar as equipes de suporte técnico dos órgãos municipais de forma facultativa.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. O princípio da Não Discriminação (Art. 6º, inciso IX) veda expressamente a utilização de dados pessoais para fins discriminatórios abusivos ou ilícitos (como recusar crédito ou contratação funcional baseado em dados de origem racial ou orientação sexual).
+
+**Gabarito: A**. A ANPD é uma autarquia de natureza especial que detém autonomia técnica e decisória, responsável por fiscalizar e regular o cumprimento da LGPD no país.
 </details>
 
+---
+
 ### Questão 15 (FCC)
-Considere a seguinte situação hipotética: Um cidadão solicitou ao TJ-CE a eliminação completa de seus dados pessoais coletados durante o trâmite de uma ação judicial de cobrança que já foi arquivada definitivamente. O tribunal, no entanto, negou o pedido de eliminação integral dos dados do sistema sob a alegação de necessidade de conservação legal. De acordo com o Artigo 16 da LGPD, a eliminação dos dados pessoais após o término de seu tratamento pode ser dispensada para fins de conservação autorizada nas seguintes hipóteses, EXCETO:
-A) Cumprimento de obrigação legal ou regulatória pelo controlador.
-B) Uso exclusivo do controlador, com acesso por terceiros livre de restrições, desde que os dados sejam de natureza pública.
-C) Estudo por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados pessoais.
-D) Transferência a terceiro, desde que respeitados os requisitos de tratamento de dados dispostos na lei.
-E) Uso exclusivo do controlador, vedado seu acesso por terceiros, e desde que anonimizados os dados.
+O término do tratamento de dados pessoais pela LGPD impõe aos agentes deveres de eliminação. A eliminação dos dados tratados pode ser dispensada para:
+A) O uso comercial exclusivo do operador em campanhas publicitárias de empresas coligadas por tempo indeterminado nas redes de dados.
+B) O cumprimento de obrigação legal ou regulatória pelo controlador, ou para transferência a terceiro, desde que respeitados os requisitos legais.
+C) Garantir a preservação de dados de navegação de usuários que foram banidos de fóruns judiciais por cometerem infrações administrativas.
+D) O enriquecimento de bases de dados de inteligência de mercado operadas por seguradoras privadas de fomento econômico nacional.
+E) Evitar custos adicionais de processamento físico de exclusão de registros que exigem a parada temporária do SGBD corporativo.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. De acordo com o Art. 16, inciso IV da LGPD, a conservação para uso exclusivo do controlador é permitida, **desde que vedado seu acesso por terceiros e que os dados estejam anonimizados**. A alternativa B erra ao afirmar que o acesso por terceiros seria livre de restrições.
+
+**Gabarito: B**. O art. 16 da LGPD prevê que, após o término do tratamento, os dados devem ser eliminados, sendo autorizada a conservação para fins como cumprimento de obrigação legal/regulatória, estudo por órgão de pesquisa, transferência a terceiro ou uso exclusivo do controlador (desde que anonimizados).
 </details>
 
 ---
@@ -191,183 +234,226 @@ E) Uso exclusivo do controlador, vedado seu acesso por terceiros, e desde que an
 ## 📝 TEMA 2: Engenharia de Software — Java, JEE e Programação Orientada a Objetos
 
 ### Questão 16 (FCC)
-A linguagem de programação Java apoia-se em conceitos rígidos de Programação Orientada a Objetos (POO). Sobre o pilar da herança em Java, assinale a alternativa que descreve corretamente a regra de estrutura de classes da linguagem:
-A) Uma classe pode estender múltiplas classes (herança múltipla de implementação) utilizando a palavra-chave `extends`.
-B) Uma interface Java não pode estender outras interfaces, sendo obrigatória a sua implementação direta.
-C) Uma classe pode estender apenas uma classe mãe, mas pode implementar múltiplas interfaces.
-D) Classes abstratas não podem herdar de outras classes abstratas.
-E) O uso da palavra-chave `implements` permite herdar atributos concretos privados de interfaces.
+Na Programação Orientada a Objetos (POO), o polimorfismo é um conceito central. O polimorfismo de sobrecarga (overloading) e o de sobreposição (overriding) diferem porque:
+A) A sobrecarga exige a utilização da palavra-chave extends em classes abstratas, enquanto a sobreposição é restrita a interfaces com métodos padrão.
+B) A sobreposição ocorre em tempo de compilação em métodos de nomes distintos, enquanto a sobrecarga é resolvida exclusivamente em tempo de execução pela JVM.
+C) A sobrecarga ocorre em métodos de mesmo nome com assinaturas diferentes na mesma classe, enquanto a sobreposição ocorre na redefinição de método da classe pai na subclasse.
+D) A sobreposição permite alterar o tipo de retorno de um método sem restrições, enquanto a sobrecarga impede a alteração dos modificadores de acesso.
+E) A sobrecarga aplica-se apenas a atributos e variáveis primitivas, enquanto a sobreposição é exclusiva para assinaturas de coleções genéricas.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. Java adota o modelo de herança simples para classes para evitar conflitos de implementação múltipla (como o problema do diamante). Assim, uma classe estende (`extends`) apenas uma superclasse. Porém, para fins de polimorfismo e contratos de comportamento, uma classe Java pode implementar (`implements`) múltiplas interfaces.
+
+**Gabarito: C**. Sobrecarga (Overloading) envolve métodos com o mesmo nome, mas diferentes parâmetros na mesma classe (polimorfismo estático/compilação). Sobrepoisção (Overriding) é a redefinição de um método herdado da classe pai na subclasse com a mesma assinatura (polimorfismo dinâmico/tempo de execução).
 </details>
+
+---
 
 ### Questão 17 (FCC)
-O polimorfismo é um dos pilares da POO e pode ocorrer de formas distintas. Em Java, quando um desenvolvedor cria dois métodos com o mesmo nome na mesma classe, mas com assinaturas diferentes (parâmetros com tipos ou quantidades distintas), e quando redefine em uma subclasse um método com a mesma assinatura herdado da superclasse, ele está aplicando, respectivamente:
-A) Sobrescrita (Method Overriding) e Sobrecarga (Method Overloading).
-B) Sobrecarga (Method Overloading) e Sobrescrita (Method Overriding).
-C) Encapsulamento Lógico e Herança Múltipla.
-D) Acoplamento Dinâmico e Polimorfismo de Coerção.
-E) Abstração e Coesão Funcional.
+Em Java, os tipos primitivos e suas respectivas classes wrappers possuem comportamentos distintos. Sobre o mecanismo de autoboxing e unboxing na JVM, assinale a alternativa correta:
+A) O tipo primitivo `double` consome mais memória RAM do que um objeto da classe wrapper `Double` correspondente na área do Heap da JVM.
+B) Autoboxing é a conversão automática que a JVM realiza de um tipo primitivo para sua classe wrapper correspondente (ex: int para Integer).
+C) A comparação de dois objetos wrappers utilizando o operador `==` compara diretamente os valores numéricos internos, sem validar referências.
+D) O unboxing consiste na conversão explícita exigida pelo compilador Java de uma classe wrapper para uma classe de coleção como ArrayList.
+E) Tipos primitivos em Java herdam métodos utilitários diretamente da classe Object, ao contrário das classes wrappers associadas.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. Sobrecarga (Overloading) ocorre na mesma classe, mantendo o mesmo nome mas variando a lista de parâmetros (static binding / tempo de compilação). Sobrescrita (Overriding) ocorre na relação de herança, redefinindo um método da superclasse com a mesma assinatura exata na subclasse (dynamic binding / tempo de execução).
+
+**Gabarito: B**. Autoboxing é a conversão automática do primitivo para wrapper correspondente (ex: int -> Integer). Unboxing é o inverso (Integer -> int). Primitivos não herdam de Object e consomem menos memória que os wrappers correspondentes. Wrappers são objetos, então o operador `==` compara referências de memória, o que exige `equals()` para comparar valores de forma segura.
 </details>
+
+---
 
 ### Questão 18 (FCC)
-Considere a seguinte situação hipotética: Um programador Java está desenvolvendo um módulo para controle de acessos judiciais e declarou o atributo `private String senhaHash` dentro da classe `Usuario`. Para permitir que outras partes do sistema alterem ou leiam esse atributo de maneira controlada, ele implementou métodos públicos `getSenhaHash()` e `setSenhaHash(String novaSenha)`. Essa prática de design em Orientação a Objetos implementa diretamente o pilar do(a):
-A) Polimorfismo estático.
-B) Abstração estrutural.
-C) Encapsulamento.
-D) Herança de comportamento.
-E) Coesão sequencial.
+O tratamento de exceções em Java separa os erros em exceções checadas (checked) e não checadas (unchecked). Sobre essa classificação, assinale a alternativa correta:
+A) As exceções do tipo NullPointerException e ArrayIndexOutOfBoundsException são exemplos clássicos de exceções checadas em Java.
+B) Exceções não checadas herdam diretamente de Throwable e o compilador exige o tratamento obrigatório na assinatura do método chamador.
+C) Exceções checadas herdam de Exception (mas não de RuntimeException) e devem ser obrigatoriamente tratadas com try-catch ou declaradas com throws.
+D) O uso de exceções checadas é restrito à execução de rotinas em bancos de dados relacionais e transações controladas pelo Spring Boot.
+E) A JVM encerra imediatamente a execução da aplicação se uma exceção checada for lançada, impedindo o tratamento com blocos catch.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. O Encapsulamento protege o estado interno de um objeto contra acessos diretos inconsistentes de fora da classe. Declarar os atributos como privados (`private`) e prover acesso seguro via métodos assessores (`getters` e `setters`) públicos é a implementação clássica de encapsulamento em Java.
+
+**Gabarito: C**. Checked exceptions (ex: IOException, SQLException) herdam de Exception (excluindo RuntimeException) e exigem tratamento obrigatório em tempo de compilação. Unchecked exceptions herdam de RuntimeException e não exigem tratamento compulsório pelo compilador.
 </details>
+
+---
 
 ### Questão 19 (FCC)
-No desenvolvimento de aplicações web corporativas baseadas em Java EE (Jakarta EE), os Servlets desempenham papel fundamental no processamento de requisições e respostas HTTP dinâmicas. Sobre o ciclo de vida de um Servlet executado em um Web Container (como Apache Tomcat), é correto afirmar:
-A) O método `init()` é executado a cada nova requisição HTTP enviada pelo cliente.
-B) O método `destroy()` é acionado pelo Container uma única vez ao final do ciclo de vida do Servlet para liberar recursos.
-C) Apenas o método `service()` é responsável pela criação física da instância da classe do Servlet na memória RAM.
-D) Os métodos `doGet()` e `doPost()` devem instanciar manualmente objetos do tipo `HttpServletRequest` a cada chamada.
-E) Servlets são descartados pelo Container imediatamente após responderem à primeira requisição do cliente.
+Em Java, as palavras-chave 'final', 'finally' e 'finalize' desempenham funções completamente distintas. Sobre elas, assinale a alternativa correta:
+A) O modificador final impede a alteração dos valores de atributos de objetos instanciados, tornando o objeto completamente imutável.
+B) Uma classe declarada como final não pode ser estendida (herdada), e o bloco finally é executado sempre após o término do bloco try-catch.
+C) O bloco finally só é executado no Java se uma exceção for lançada dentro do bloco try correspondente durante a execução da rotina.
+D) O método finalize é um método estático que o desenvolvedor deve chamar manualmente para liberar a memória RAM ocupada por objetos ativos.
+E) Um método declarado como final impede a sua sobrecarga em subclasses que herdam da classe que contém o método associado no pacote.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. O ciclo de vida de um Servlet é gerenciado pelo Web Container e consiste em: 1) Carregamento e instanciação; 2) Inicialização chamando `init()` uma única vez; 3) Processamento de requisições chamando `service()` (que despacha para `doGet`, `doPost`, etc.) a cada requisição; e 4) Destruição chamando `destroy()` uma única vez antes de remover o servlet da memória.
+
+**Gabarito: B**. Classe final não pode ser herdada; método final não pode ser sobreposto (overridden); variável final não pode ter valor alterado após inicializada. O bloco `finally` garante a execução de código de limpeza (como fechar conexões) após try-catch, independente de ter havido exceção ou não. O `finalize` é o método do garbage collector (depreciado atualmente). A opção B está correta.
 </details>
+
+---
 
 ### Questão 20 (FCC)
-A JPA (Java Persistence API) é a especificação padrão para mapeamento objeto-relacional (ORM) na plataforma Java. Ao utilizar a JPA com o framework Hibernate para mapear uma classe Java para uma tabela de banco de dados relacional, o desenvolvedor deve utilizar anotações específicas. A anotação obrigatória que define que uma classe representa uma entidade gerenciada pela JPA e a anotação que mapeia a chave primária da tabela correspondente são, respectivamente:
-A) `@Entity` e `@Id`.
-B) `@Table` e `@PrimaryKey`.
-C) `@Persistence` e `@Column`.
-D) `@Repository` e `@Id`.
-E) `@Model` e `@GeneratedValue`.
+O Java Collections Framework oferece diferentes implementações para manipulação de coleções. Sobre a diferença entre ArrayList e LinkedList, assinale a alternativa correta:
+A) O ArrayList é baseado em um array dinâmico que oferece acesso rápido por índice O(1), enquanto o LinkedList é baseado em lista duplamente encadeada.
+B) O LinkedList é mais rápido para realizar buscas aleatórias de elementos por índice do que o ArrayList em coleções de grande porte.
+C) O ArrayList consome significativamente mais memória que o LinkedList por armazenar ponteiros para os nós anterior e seguinte na memória.
+D) Ambas as classes são sincronizadas por padrão (thread-safe), dispensando o uso de blocos synchronized em concorrência paralela.
+E) O LinkedList impede a inserção de elementos duplicados ou valores nulos, comportando-se de forma idêntica a um conjunto do tipo HashSet.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. A anotação `@Entity` do pacote `jakarta.persistence` (ou `javax.persistence` em versões antigas) define que a classe é uma entidade de banco de dados gerenciada pelo EntityManager da JPA. A anotação `@Id` define qual atributo mapeia a chave primária da tabela.
+
+**Gabarito: A**. ArrayList armazena elementos em array contínuo, com busca indexada rápida O(1), mas inserções/remoções no meio exigem shift de elementos O(n). LinkedList é uma lista encadeada, excelente para inserções/remoções O(1) nas pontas, mas buscas exigem navegação O(n) e consome mais memória devido aos ponteiros dos nós.
 </details>
+
+---
 
 ### Questão 21 (FCC)
-O Spring Framework utiliza conceitos modernos de design para reduzir o acoplamento de classes e facilitar testes unitários em aplicações Java. A técnica de arquitetura que consiste em remover da classe a responsabilidade de criar ou localizar os objetos dos quais ela depende, transferindo essa tarefa para o container do Spring, é denominada:
-A) Programação Orientada a Aspectos (POA).
-B) Acoplamento forte orientado a serviços.
-C) Injeção de Dependências (DI), que implementa o princípio da Inversão de Controle (IoC).
-D) Mapeamento Objeto-Relacional declarativo.
-E) MVC (Model-View-Controller) síncrono.
+Em relação às classes HashSet e TreeSet do Java Collections Framework, assinale a alternativa que apresenta a diferença técnica de comportamento entre elas:
+A) O HashSet impede a inserção de valores nulos, enquanto o TreeSet aceita múltiplos elementos nulos de forma síncrona na coleção local.
+B) O TreeSet oferece melhor desempenho para inserções e remoções O(1) de elementos na coleção do que o HashSet baseado em hashing lógico.
+C) O HashSet não garante a ordenação dos elementos, enquanto o TreeSet armazena os elementos de forma ordenada com base em uma árvore vermelha e preta.
+D) Ambas as classes implementam a interface List, permitindo o acesso direto aos elementos através de índices numéricos inteiros.
+E) O TreeSet utiliza a tabela hash para armazenar as chaves, enquanto o HashSet organiza as chaves de forma sequencial na memória JVM.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. A Injeção de Dependências (Dependency Injection) é um padrão de design no qual o framework gerencia o ciclo de vida dos objetos (Beans) e injeta as dependências necessárias nas classes em tempo de execução (usando `@Autowired` ou via construtor), implementando a Inversão de Controle (IoC).
+
+**Gabarito: C**. HashSet é baseado em tabela hash (busca/inserção média O(1)), não mantendo nenhuma ordenação. TreeSet implementa NavigableSet (baseado em Red-Black Tree) e mantém elementos ordenados naturalmente ou por Comparator (busca/inserção O(log n)). NullPointerException ocorre ao tentar inserir null no TreeSet sem comparator customizado. A alternativa C está correta.
 </details>
+
+---
 
 ### Questão 22 (FCC)
-Interfaces em Java tradicionalmente continham apenas declarações de métodos abstratos (sem implementação). No entanto, a partir do Java 8, a linguagem passou a permitir que interfaces contenham métodos concretos (com corpo/implementação) para facilitar a evolução de APIs sem quebrar retrocompatibilidade. Esses métodos concretos em interfaces são chamados de:
-A) Métodos estáticos virtuais.
-B) Métodos protegidos abstratos.
-C) Métodos padrão (Default Methods).
-D) Construtores de Interface.
-E) Métodos finais herdados.
+A JVM organiza a memória em diferentes regiões. As regiões da memória conhecidas como Heap e Stack são utilizadas, respectivamente, para armazenar:
+A) Bibliotecas dinâmicas compartilhadas; Arquivos de código-fonte Java compilados no formato bytecode pelo desenvolvedor local.
+B) Arquivos de configuração do sistema operacional; Variáveis globais compartilhadas por todas as aplicações web Java em execução.
+C) Objetos instanciados dinamicamente; Variáveis locais e referências de controle de chamadas de métodos ativos na pilha de execução.
+D) Sessões de usuários ativas do servidor de aplicação; Parâmetros de conexões físicas estabelecidas com o banco de dados relacional.
+E) Mapeamentos do hibernate e JPA; Índices das tabelas do banco de dados relacional carregados na memória RAM do computador.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. Métodos padrão (Default Methods) utilizam a palavra-chave `default` antes de sua assinatura na interface e fornecem uma implementação padrão que pode ser herdada diretamente pelas classes implementadoras, evitando erros de compilação em códigos legados.
+
+**Gabarito: C**. Na JVM, o Heap armazena todos os objetos instanciados (via `new`). O Stack armazena as chamadas de métodos, variáveis locais e referências aos objetos contidos no Heap de cada thread de execução.
 </details>
+
+---
 
 ### Questão 23 (FCC)
-A tecnologia JSP (JavaServer Pages) permite misturar código Java com elementos HTML estáticos para renderizar páginas dinamicamente no servidor. Em relação à arquitetura MVC (Model-View-Controller), as páginas JSP são utilizadas majoritariamente na camada de:
-A) Model (Modelo), gerenciando o acesso direto a bancos de dados JDBC.
-B) View (Visão), apresentando os dados processados e gerando a resposta em HTML para o navegador.
-C) Controller (Controlador), interceptando e roteando requisições HTTP de clientes.
-D) Service (Serviço), executando as regras de negócio complexas de forma transacional.
-E) Repository (Repositório), mapeando as queries SQL ANSI corporativas.
+Em relação aos servidores de aplicação e à arquitetura JEE, os componentes EJB (Enterprise JavaBeans) desempenham papéis definidos. Os Session Beans podem ser classificados em:
+A) Checked, Unchecked e Runtime
+B) Stateless, Stateful e Singleton
+C) Request, Session e Application
+D) Entity, Controller e Boundary
+E) Local, Remote e WebService
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. No padrão MVC clássico voltado à arquitetura Java Web, os Servlets atuam como Controllers (controladores de fluxo) e as páginas JSP atuam como Views (visualização/apresentação), renderizando as telas dinâmicas enviadas de volta ao cliente.
+
+**Gabarito: B**. Os Session Beans no EJB são divididos em: Stateless (sem estado retido entre chamadas), Stateful (com estado associado à sessão do cliente) e Singleton (uma única instância compartilhada por toda a aplicação).
 </details>
+
+---
 
 ### Questão 24 (FCC)
-Ao trabalhar com persistência de dados em Java utilizando o framework Hibernate, a estratégia de mapeamento de associações de entidades que determina que coleções associadas (como a lista de processos de um réu) não sejam carregadas do banco de dados imediatamente ao carregar a entidade principal, mas apenas quando a aplicação acessar explicitamente essa coleção em código, é denominada:
-A) Eager Loading (Carregamento Imediato).
-B) Lazy Loading (Carregamento Preguiçoso/Tardio).
-C) N+1 Query Loading.
-D) Cache de Primeiro Nível síncrono.
-E) Mapeamento Transacional de Junção.
+No desenvolvimento de aplicações web baseadas em Java Servlets, a API especifica um ciclo de vida e métodos de controle. O método responsável por processar requisições HTTP POST em um Servlet é o:
+A) service(ServletRequest, ServletResponse)
+B) doPost(HttpServletRequest, HttpServletResponse)
+C) init(ServletConfig)
+D) doGet(HttpServletRequest, HttpServletResponse)
+E) destroy()
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. A estratégia de `Lazy Loading` (representada por `FetchType.LAZY`) otimiza o desempenho do sistema ao adiar consultas SQL desnecessárias no banco de dados. Os dados associados só são buscados de forma tardia (sob demanda) quando a aplicação chama métodos de acesso à coleção (como `.getProcessos()`), evitando sobrecarga de memória.
+
+**Gabarito: B**. O ciclo de vida envolve `init()`, `service()`, e `destroy()`. O método `service()` direciona as requisições HTTP para os métodos específicos: `doGet()`, `doPost()`, `doPut()`, `doDelete()` etc. O método para requisições POST é `doPost()`.
 </details>
+
+---
 
 ### Questão 25 (FCC)
-Classes abstratas e Interfaces são recursos importantes para a Abstração em Java. Sobre a diferença técnica entre eles em Java SE moderno, é correto afirmar:
-A) Uma classe pode estender múltiplas classes abstratas, mas pode implementar apenas uma interface.
-B) Uma classe abstrata pode conter atributos de instância (campos de estado não estáticos e não finais) e métodos construtores, enquanto interfaces não admitem atributos de instância (seus atributos são implicitamente `public static final`) nem construtores.
-C) Classes abstratas não admitem métodos concretos sob nenhuma hipótese, enquanto interfaces sim.
-D) Interfaces exigem o uso da palavra-chave `extends` para serem associadas a classes concretas.
-E) Interfaces não podem declarar métodos com visibilidade pública.
+A tecnologia JPA (Java Persistence API) padroniza o mapeamento objeto-relacional. Sobre os estados de ciclo de vida de uma entidade gerenciada pelo EntityManager da JPA, é correto afirmar:
+A) No estado Detached (destacado), as alterações realizadas nos atributos da entidade são refletidas de forma síncrona no banco de dados.
+B) Uma entidade passa para o estado Managed (gerenciado) logo após a execução do método persist() ou merge() do EntityManager.
+C) O estado Transient (transiente) caracteriza uma entidade que possui correspondência física e chave primária gravada no banco relacional.
+D) O método remove() altera o estado da entidade de Managed para Detached, impedindo a sua exclusão física do disco do banco de dados.
+E) As entidades no estado Managed não podem ter seus dados lidos por transações ativas configuradas em modo de leitura exclusiva.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. Classes abstratas em Java são classes reais que não podem ser instanciadas diretamente e admitem estado interno (atributos normais) e métodos construtores herdados pelas subclasses concretas. Interfaces definem apenas comportamento e contratos puros, não contendo construtores nem atributos de instância (apenas constantes estáticas e finais).
+
+**Gabarito: B**. Os estados da JPA são: Transient (nova instância, não persistida), Managed (associada ao EntityManager, alterações sincronizadas), Detached (desassociada, alterações não sincronizadas) e Removed (marcada para exclusão). O método `persist()` move a entidade para Managed. A alternativa B está correta.
 </details>
+
+---
 
 ### Questão 26 (FCC)
-O tratamento de exceções em Java é estruturado de forma hierárquica a partir da classe `Throwable`. A linguagem diferencia as exceções em Exceções Verificadas (Checked Exceptions) e Exceções Não Verificadas (Unchecked Exceptions). Uma característica que define as Checked Exceptions em Java é:
-A) Elas estendem a classe `RuntimeException` e não precisam ser tratadas no código pelo programador.
-B) São tratadas exclusivamente usando a palavra-chave `throw` sem possibilidade de bloco `finally`.
-C) Elas ocorrem apenas devido a falhas catastróficas na máquina virtual Java (JVM), como estouro de memória (OutOfMemoryError).
-D) Elas são detectadas apenas em tempo de execução e travam a JVM sem gerar stack trace.
-E) O compilador exige obrigatoriamente que elas sejam tratadas com um bloco `try-catch` ou declaradas na assinatura do método com a cláusula `throws`.
+Em programação orientada a objetos com Java, interfaces e classes abstratas são conceitos fundamentais de abstração. A diferença técnica entre elas em Java 8 ou superior é:
+A) Uma classe pode herdar de múltiplas classes abstratas de forma paralela, mas pode implementar no máximo uma interface local.
+B) Uma interface permite herança múltipla de classes abstratas de outros pacotes do projeto através da palavra-chave extends.
+C) As classes abstratas vedam a declaração de métodos com corpo físico, exigindo que todos os seus métodos sejam declarados como abstratos.
+D) As interfaces não admitem a declaração de métodos padrão (default methods) com implementação, limitando-se a assinaturas puras.
+E) Uma classe abstrata pode conter variáveis de instância (estado) e métodos construtores, enquanto uma interface pode conter apenas constantes e métodos abstratos ou default.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. Exceções Verificadas (Checked Exceptions), que estendem diretamente `Exception` (mas não `RuntimeException`), representam situações que um programa robusto deve prever e tratar (como `IOException` ou `SQLException`). Por isso, o compilador do Java exige que o código trate explicitamente (`try-catch`) ou propague a exceção (`throws`).
+
+**Gabarito: E**. Classes abstratas podem ter construtores, variáveis de instância e estado interno. Interfaces (mesmo após Java 8 introduzir `default` e `static` methods, e Java 9 introduzir private methods) não podem ter variáveis de instância (apenas constantes `public static final`) nem construtores. Uma classe pode implementar múltiplas interfaces, mas herdar de apenas uma classe (abstrata ou não).
 </details>
+
+---
 
 ### Questão 27 (FCC)
-No framework Spring MVC, a requisição HTTP enviada pelo navegador do cliente é recebida por um Servlet central do framework, que atua como o controlador frontal (Front Controller) encarregado de rotear a requisição para o método correto do controlador específico da aplicação. Esse Servlet central do Spring MVC é o:
-A) DispatcherServlet.
-B) ContextLoaderListener.
-C) HandlerMappingServlet.
-D) ViewResolverServlet.
-E) SpringApplicationServlet.
+Na arquitetura JEE, as JSP (JavaServer Pages) são traduzidas pelo container web para fins de execução. Durante a primeira requisição de um cliente a uma página JSP, esta é traduzida internamente em um(a):
+A) Servlet Java, que é compilado em bytecode e executado na JVM para renderizar a saída HTML correspondente.
+B) Procedimento armazenado (Stored Procedure) PL/SQL gravado diretamente no banco de dados relacional do tribunal.
+C) Função JavaScript executada no lado do cliente (navegador) para manipular dinamicamente o modelo DOM da página.
+D) Folha de estilo CSS dinâmica compilada em tempo de execução para garantir a acessibilidade de pessoas com deficiência.
+E) Arquivo XML estático contendo os mapeamentos das entidades persistentes definidas no framework Hibernate.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. O `DispatcherServlet` é o núcleo do Spring MVC. Ele recebe todas as requisições HTTP direcionadas à aplicação, consulta os mapeamentos de URL (`HandlerMapping`) para descobrir qual classe `@Controller` deve processar a requisição e direciona a resposta para o gerador de telas correspondente (`ViewResolver`).
+
+**Gabarito: A**. JSP é traduzida pelo container em um Servlet Java correspondente. O Servlet é então compilado em arquivo `.class` e executado pela JVM para processar a requisição e produzir a saída (geralmente HTML).
 </details>
+
+---
 
 ### Questão 28 (FCC)
-No design de sistemas orientados a objetos, a modelagem de relacionamentos estruturais define como os objetos colaboram entre si. Considere o relacionamento de **Composição** em comparação com o relacionamento de **Agregação**. A principal característica que define uma Composição em Java é:
-A) O objeto todo é responsável pelo ciclo de vida de suas partes de forma exclusiva, de modo que, se o objeto todo for destruído, suas partes associadas também deixam de existir.
-B) Ocorre exclusivamente entre classes abstratas e interfaces.
-C) As partes associadas possuem ciclo de vida independente do objeto todo.
-D) Permite que as subclasses herdem atributos privados diretamente de superclasses sem usar getters/setters.
-E) É implementada em Java exclusivamente pela palavra-chave `implements` múltipla.
+O garbage collector (coletor de lixo) é um componente essencial da JVM. A função principal do garbage collector é:
+A) Identificar e desalocar a memória Heap ocupada por objetos que não possuem mais nenhuma referência ativa na aplicação.
+B) Otimizar as queries SQL enviadas ao banco de dados relacional através do pool de conexões físicas estabelecidas.
+C) Compilar dinamicamente o código-fonte Java em bytecode executável em servidores de microsserviços do órgão público.
+D) Bloquear o acesso físico de hackers a arquivos confidenciais do sistema operacional que executam a JVM.
+E) Limpar o histórico de navegação e arquivos de cache temporários gravados na pasta de perfil do usuário no servidor.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. A Composição é uma forma forte de relacionamento "tem-um" (todo-parte) onde há uma forte dependência de ciclo de vida. Por exemplo, uma classe `Pedido` possui uma lista de objetos `ItemPedido`. Se o `Pedido` for destruído/excluído da memória, os objetos `ItemPedido` associados deixam de ter razão de existir e são destruídos juntos, diferente da Agregação, onde as partes (ex: `Professor` em um `Departamento`) sobrevivem ao término do todo.
+
+**Gabarito: A**. O GC (Garbage Collector) gerencia automaticamente a memória Heap, liberando a memória ocupada por objetos que não são mais acessíveis por nenhuma thread ativa do programa.
 </details>
+
+---
 
 ### Questão 29 (FCC)
-As tecnologias JEE (Enterprise JavaBeans - EJB) oferecem componentes de negócios robustos e distribuídos para rodar no Application Server. Dentre os tipos de EJB corporativos, o componente de sessão projetado para manter o estado da conversação com um cliente específico ao longo de múltiplas chamadas de métodos sucessivas na mesma sessão é denominado:
-A) Stateless Session Bean.
-B) Singleton Session Bean.
-C) Message-Driven Bean.
-D) Stateful Session Bean.
-E) Entity Session Bean.
+Em Java, os modificadores de acesso controlam a visibilidade de classes, atributos e métodos. Os modificadores 'protected' e default (ausência de modificador) garantem visibilidade:
+A) Apenas para classes que herdam da classe proprietária, bloqueando o acesso de outras classes do mesmo pacote.
+B) Para qualquer classe do projeto de forma irrestrita, independentemente do pacote de origem no código-fonte.
+C) Exclusivamente dentro da própria classe na qual o membro foi declarado em ambos os modificadores físicos.
+D) Apenas dentro do mesmo pacote (default), e também para subclasses em pacotes diferentes no caso do protected.
+E) Apenas para as instâncias da classe criadas na thread principal de execução do servidor de aplicação.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. O `Stateful Session Bean` mantém o estado conversacional com o cliente (suas variáveis internas retêm informações das chamadas anteriores realizadas pelo mesmo cliente durante a sessão), ao contrário do `Stateless` (A) , onde cada chamada de método é tratada de forma isolada e sem retenção de estado de conversação.
+
+**Gabarito: D**. Default (package-private) restringe o acesso ao mesmo pacote. Protected estende o default: dá acesso a qualquer classe do mesmo pacote E a subclasses em outros pacotes via herança.
 </details>
 
+---
+
 ### Questão 30 (FCC)
-O framework de coleções do Java (Java Collections Framework) fornece interfaces e classes para manipulação de grupos de objetos. Considere as características das estruturas de dados baseadas nas interfaces `List`, `Set` e `Map`. A alternativa correta sobre o comportamento dessas coleções em Java é:
-A) Um `Set` permite a inserção de elementos duplicados e mantém a ordem de inserção exata em todas as suas implementações.
-B) Uma `List` garante o armazenamento de elementos em pares chave-valor e impede chaves duplicadas.
-C) Coleções do tipo `List` não aceitam objetos nulos em nenhuma hipótese.
-D) Um `Map` armazena elementos em pares de chaves e valores, onde cada chave deve ser única, mapeando para no máximo um valor.
-E) O `HashSet` é implementado sobre uma árvore binária e garante ordenação alfabética automática dos elementos inseridos.
+No contexto de concorrência em Java, a palavra-chave 'synchronized' é utilizada para coordenar o acesso a recursos compartilhados por múltiplas threads. O uso de 'synchronized' garante:
+A) A persistência física e imediata das variáveis na tabela de logs do banco de dados relacional em lote transacional.
+B) A compilação local paralela das classes do pacote para evitar latência no processamento concorrente do banco de dados.
+C) A criação instantânea de novas threads de execução em segundo plano para otimizar o processamento de consultas lógicas.
+D) Exclusão mútua (mutual exclusion), garantindo que apenas uma thread possa executar o bloco ou método sincronizado por vez.
+E) A isenção de tratamento de exceções do tipo NullPointerException dentro do bloco de código monitorado pela JVM.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. A interface `Map` modela a estrutura de dicionário (chave-valor), em que chaves não podem se repetir. `List` (B)  armazena elementos de forma linear ordenada aceitando duplicados. `Set` (A)  não aceita elementos duplicados e, por padrão (como no `HashSet`), não garante ordem de inserção.
+
+**Gabarito: D**. A sincronização (`synchronized`) adquire um lock intrínseco (monitor) sobre o objeto/classe, garantindo exclusão mútua: apenas uma thread por vez executa o trecho de código protegido, prevenindo condições de corrida (race conditions).
 </details>
 
 ---
@@ -375,181 +461,226 @@ E) O `HashSet` é implementado sobre uma árvore binária e garante ordenação 
 ## 📝 TEMA 3: Legislação e Direitos da Pessoa com Deficiência (PCD)
 
 ### Questão 31 (FCC)
-Considere a seguinte situação hipotética: Durante a reforma de uma calçada externa em frente ao prédio do fórum judicial do TJ-CE, a comissão de fiscalização de obras constatou a ausência de rebaixamentos de guia para travessia de pedestres e a existência de postes instalados de forma inadequada obstruindo a rota tátil de cegos. Conforme as definições da Lei Federal nº 10.098/2000 (Lei de Acessibilidade), esses obstáculos de circulação física na calçada pública configuram barreiras:
-A) Arquitetônicas.
-B) Nos transportes.
-C) Atitudinais.
-D) Tecnológicas.
-E) Urbanísticas.
+A Lei Federal nº 13.146/2015 institui a Lei Brasileira de Inclusão da Pessoa com Deficiência (Estatuto da Pessoa com Deficiência). Segundo a LBI, considera-se pessoa com deficiência aquela que tem impedimento de longo prazo de natureza:
+A) Sensorial auditiva ou visual parcial que dispense a utilização de tecnologias assistivas ou atendimento prioritário em órgãos públicos.
+B) Temporária ou transitória decorrente de acidentes de trabalho, a qual impeça o exercício de atividades profissionais por período superior a trinta dias úteis.
+C) Física de caráter motor que resulte obrigatoriamente no uso de cadeira de rodas ou próteses ortopédicas de membros inferiores para locomoção.
+D) Intelectual diagnosticada na fase adulta, que comprometa de forma definitiva a capacidade de tomada de decisões civis e financeiras básicas.
+E) Física, mental, intelectual ou sensorial, o qual, em interação com uma ou mais barreiras, pode obstruir sua participação plena e efetiva na sociedade em igualdade de condições com as demais pessoas.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. As Barreiras Urbanísticas são aquelas localizadas nas vias públicas e nos espaços públicos ou privados abertos ao público ou de uso coletivo (como a calçada externa). Barreiras Arquitetônicas (A)  ocorrem nas edificações (como escadas sem rampa no interior do fórum).
+
+**Gabarito: E**. A alternativa E transcreve o conceito legal de pessoa com deficiência estabelecido no art. 2º, caput, da Lei nº 13.146/2015 (LBI). O impedimento deve ser de longo prazo e de natureza física, mental, intelectual ou sensorial.
 </details>
+
+---
 
 ### Questão 32 (FCC)
-A Lei Federal nº 10.048/2000 assegura o direito de atendimento prioritário a diversos grupos de cidadãos em órgãos públicos e instituições privadas. Dentre os beneficiários expressos na lei que devem receber atendimento prioritário imediato, NÃO se inclui:
-A) Pessoas com deficiência.
-B) Pessoas com idade igual ou superior a 60 anos (idosos).
-C) Doadores de sangue registrados, que gozam de prioridade concorrente e idêntica à de idosos e gestantes nas filas de bancos.
-D) Gestantes, lactantes e pessoas acompanhadas por crianças de colo.
-E) Pessoas com transtorno do espectro autista (TEA) e obesos.
+A LBI classifica e define diversas barreiras que impedem a participação plena das pessoas com deficiência. As barreiras que existem nas vias e nos espaços públicos e privados abertos ao público ou de uso coletivo são denominadas barreiras:
+A) Atitudinais
+B) Arquitetônicas
+C) Urbanísticas
+D) Tecnológicas
+E) Nas comunicações e na informação
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. A Lei nº 14.626/2023 garantiu atendimento prioritário a doadores de sangue, mas **apenas após o atendimento** dos demais grupos prioritários principais (PCD, idosos, gestantes, autistas, etc.), em caráter subsidiário e mediante apresentação de comprovante de doação de sangue válida. Portanto, a afirmação de que sua prioridade é "concorrente e idêntica" torna o item C o gabarito.
+
+**Gabarito: C**. Segundo o art. 3º, inciso IV, alínea 'a', da LBI, as barreiras urbanísticas são as existentes nas vias e nos espaços públicos e privados abertos ao público ou de uso coletivo. Barreiras arquitetônicas são as existentes nos edifícios (alínea 'b').
 </details>
+
+---
 
 ### Questão 33 (FCC)
-O Decreto Federal nº 5.296/2004 regulamenta a aplicação prática das políticas públicas de acessibilidade em todo o território nacional. Em seu Artigo 8º, o decreto conceitua o princípio do **Desenho Universal** como o(a):
-A) Adaptação razoável de portas internas de prédios antigos apenas quando for solicitado pelo usuário de cadeira de rodas.
-B) Projeto e concepção de produtos, ambientes, programas e serviços a serem usados por todas as pessoas, na máxima extensão possível, sem necessidade de adaptação ou de projeto específico.
-C) Instalação de sinalização visual e tátil exclusivamente nos banheiros públicos federais.
-D) Reserva de vagas em estacionamentos de shoppings baseada no modelo de carros adaptados.
-E) Isenção de impostos prediais para edifícios que cumprirem as normas técnicas da ABNT.
+O Estatuto da Pessoa com Deficiência define o conceito de 'Tecnologia Assistiva' ou 'Ajuda Técnica'. Trata-se de:
+A) Sistemas operacionais e aplicativos de computadores que permitam o controle remoto de dispositivos de automação residencial em redes de fibra óptica.
+B) Produtos, equipamentos, dispositivos, recursos, metodologias, estratégias, práticas e serviços que objetivem promover a funcionalidade, relacionada à atividade e à participação da pessoa com deficiência ou com mobilidade reduzida, visando à sua autonomia, independência, qualidade de vida e inclusão social.
+C) Técnicas de engenharia civil aplicadas para a desativação de barreiras atitudinais em prédios públicos e privados de uso coletivo do tribunal.
+D) Equipamentos hospitalares de suporte à vida utilizados exclusivamente em leitos de terapia intensiva de clínicas públicas de saúde.
+E) Processos de auditoria realizados por equipes de TI para certificar a conformidade do software do tribunal com a Lei de Acesso à Informação.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. O Desenho Universal (Universal Design) prega que produtos, ambientes, edifícios e tecnologias devem ser desenhados desde a sua concepção inicial para atender ao maior número possível de pessoas, independentemente de suas capacidades físicas, de modo que a necessidade de adaptações especiais futuras seja reduzida ao mínimo.
+
+**Gabarito: B**. A alternativa B transcreve o conceito legal de tecnologia assistiva definido no art. 3º, inciso III, da LBI.
 </details>
+
+---
 
 ### Questão 34 (FCC)
-A acessibilidade em sistemas de computação e internet é assegurada pelo Decreto nº 5.296/2004 para garantir a inclusão digital de pessoas com deficiência. De acordo com as diretrizes do decreto, as páginas web dos órgãos de governo e da administração pública federal, estadual e municipal devem ser acessíveis para pessoas com deficiência visual, garantindo compatibilidade com:
-A) Telas touch screen analógicas exclusivas.
-B) Terminais de autoatendimento biométricos sem saída de áudio.
-C) Impressoras 3D corporativas instaladas nos racks centrais.
-D) Softwares leitores de tela e comandos de teclado (sem uso exclusivo de mouse).
-E) Tecnologias de navegação baseadas em realidade virtual aumentada.
+Em relação ao direito ao trabalho da pessoa com deficiência estabelecido na LBI, é correto afirmar:
+A) O trabalho da pessoa com deficiência em regime de teletrabalho impede a percepção de adicionais de periculosidade ou insalubridade de direito.
+B) O empregador privado fica autorizado a pagar salários inferiores à pessoa com deficiência caso esta execute tarefas em tempo reduzido.
+C) O poder público é dispensado do cumprimento de cotas para pessoas com deficiência em concursos públicos civis de provimento efetivo.
+D) A pessoa com deficiência tem direito ao trabalho de sua livre escolha e aceitação, em ambiente acessível e inclusivo, em igualdade de oportunidades com as demais pessoas.
+E) As pessoas com deficiência mental ou intelectual grave são impedidas de exercer qualquer atividade de trabalho em regime competitivo.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. A acessibilidade digital exige que portais web públicos sigam padrões internacionais e nacionais de acessibilidade (como o e-MAG no Brasil), garantindo que os sites possam ser lidos por softwares leitores de tela de pessoas cegas e navegados apenas por atalhos de teclado de pessoas com dificuldades motoras.
+
+**Gabarito: D**. A alternativa D reflete o art. 34 da LBI, que assegura o direito ao trabalho em igualdade de oportunidades, ambiente acessível e inclusivo. A LBI proíbe qualquer discriminação de salários por motivo de deficiência.
 </details>
+
+---
 
 ### Questão 35 (FCC)
-Considere a seguinte situação hipotética: Em um edital de licitação para contratação de softwares de trâmite processual no TJ-CE, a comissão técnica não incluiu cláusulas que exigissem suporte a ferramentas de audiodescrição ou compatibilidade com intérpretes de Libras nos sistemas de videoaudiência. Conforme a Lei nº 10.098/2000, essa omissão na especificação técnica gera uma barreira do tipo:
-A) Barreira nos Transportes.
-B) Barreira Urbanística.
-C) Barreira Física do Mobiliário.
-D) Barreira Atitudinal Sistêmica.
-E) Barreira nas Comunicações e na Informação.
+A acessibilidade é um direito fundamental garantido pela LBI. O conceito legal de 'Universal Design' (Desenho Universal) previsto na lei é definido como:
+A) O conjunto de calçadas táteis instaladas ao longo de rodovias estaduais para guiar a locomoção de pessoas com deficiência visual profunda.
+B) Adaptação razoável e individualizada realizada em prédios antigos do tribunal de justiça para permitir a locomoção de cadeirantes em rampas físicas.
+C) Instalação de softwares de leitura de tela gratuitos em computadores de uso público localizados em bibliotecas do órgão público.
+D) A contratação de profissionais especializados em tradução e interpretação da Língua Brasileira de Sinais (LIBRAS) para eventos judiciais.
+E) Concepção de produtos, ambientes, programas e serviços a serem usados por todas as pessoas, sem necessidade de adaptação ou de projeto específico, incluindo os recursos de tecnologia assistiva.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. O Art. 2º, inciso IV da Lei 10.098/2000 define Barreiras nas Comunicações e na Informação como qualquer obstáculo ou atitude que dificulte ou impeça a expressão ou o recebimento de mensagens e de informações por intermédio dos meios e sistemas de comunicação (como sistemas de videoaudiências e softwares institucionais).
+
+**Gabarito: E**. Desenho Universal (art. 3º, inciso II, da LBI) é a concepção de produtos, ambientes, programas e serviços para serem usados por todos, na maior medida possível, sem adaptações adicionais, embora não exclua recursos de tecnologia assistiva se necessários.
 </details>
+
+---
 
 ### Questão 36 (FCC)
-As políticas de acessibilidade preveem mecanismos para adequação quando o desenho universal puro não for viável na prática imediata. O Decreto nº 5.296/2004 conceitua a **Adaptação Razoável** como:
-A) Qualquer reforma estrutural exigida pelo proprietário do imóvel privado que reduza o imposto de renda corporativo.
-B) A obrigatoriedade de transporte aéreo gratuito para acompanhantes de pessoas idosas.
-C) O afrouxamento temporário das regras de trânsito em vias arteriais para veículos de pessoas com deficiência.
-D) A instalação de sinalização sonora exclusiva em residências unifamiliares privadas.
-E) As modificações e ajustes necessários e adequados que não acarretem um ônus desproporcional ou indevido, quando requeridos em cada caso individual, para assegurar o desfrute dos direitos em condições de igualdade.
+A LBI disciplina a capacidade civil da pessoa com deficiência de forma inovadora. Sobre esse tema, assinale a regra legal correta:
+A) A pessoa com deficiência necessita obrigatoriamente de representação legal para o exercício de direitos políticos e de voto secreto.
+B) A pessoa com deficiência intelectual ou mental é considerada civilmente incapaz por direito para a prática de todos os atos da vida civil.
+C) O casamento ou a união estável da pessoa com deficiência exige a autorização judicial expressa de curador nomeado em processo judicial.
+D) A curatela é a regra geral aplicada a toda pessoa com deficiência intelectual, de forma permanente e sobre direitos patrimoniais e existenciais.
+E) A pessoa com deficiência tem assegurado o direito de decidir sobre o número de filhos e de ter acesso a informações sobre reprodução assistida.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. A Adaptação Razoável é o ajuste personalizado realizado em situações pontuais que garante a igualdade de oportunidades às pessoas com deficiência sem impor custos indevidos ou abusivos aos órgãos ou empresas envolvidas.
+
+**Gabarito: E**. A LBI alterou o Código Civil para estabelecer que a pessoa com deficiência é plenamente capaz na esfera civil. O art. 6º da LBI assegura direitos existenciais (casar, ter filhos, votar) independentemente de curatela. A curatela passou a ser uma medida extraordinária, restrita a aspectos patrimoniais e negociais. A alternativa E reflete este espírito de autonomia existencial.
 </details>
+
+---
 
 ### Questão 37 (FCC)
-A Lei Federal nº 10.048/2000 estabelece regras de atendimento prioritário em órgãos da administração pública. No caso de concessionárias de transporte coletivo rodoviário interestadual e municipal de passageiros, a lei determina a reserva de:
-A) Passagens aéreas gratuitas para qualquer acompanhante de idosos acima de 80 anos.
-B) Assentos devidamente identificados para uso preferencial de pessoas com deficiência, gestantes, idosos e pessoas com crianças de colo.
-C) Cabines exclusivas no meio do veículo com isolamento acústico.
-D) Vagas de estacionamento no teto de garagens públicas.
-E) Tarifas especiais reduzidas em 90% para todos os servidores públicos federais.
+No âmbito do processo civil, o Estatuto da Pessoa com Deficiência instituiu o 'Processo de Tomada de Decisão Apoiada'. Esse processo consiste em:
+A) A nomeação judicial compulsória de curadores públicos que assumem a gestão integral do patrimônio financeiro da pessoa com deficiência.
+B) Um mecanismo pelo qual a pessoa com deficiência escolhe pelo menos duas pessoas idôneas para apoiá-la na tomada de decisões sobre atos da vida civil.
+C) Um conselho médico composto por psicólogos e assistentes sociais que valida a legalidade de contratos celebrados pela pessoa com deficiência.
+D) A transferência do poder de voto da pessoa com deficiência para os seus familiares diretos em eleições sindicais e governamentais.
+E) A exigência de homologação prévia em cartório de notas para todas as declarações de vontade da pessoa com deficiência intelectual.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. A Lei nº 10.048/2000 determina a obrigatoriedade de reserva de assentos devidamente identificados para uso preferencial das pessoas que têm direito a atendimento prioritário nos veículos de transporte coletivo.
+
+**Gabarito: B**. A tomada de decisão apoiada (art. 116 da LBI / art. 1.783-A do Código Civil) permite que a pessoa com deficiência escolha dois apoiadores para auxiliá-la nas decisões da vida civil, diferentemente da curatela, na qual o curador decide pela pessoa.
 </details>
+
+---
 
 ### Questão 38 (FCC)
-Ao fiscalizar a instalação física de banheiros públicos nos prédios das comarcas do interior do estado, um analista de engenharia do TJ-CE deve observar as disposições de acessibilidade do Decreto nº 5.296/2004. O decreto estabelece que as edificações públicas de uso coletivo devem possuir, nos banheiros destinados ao público:
-A) Pelo menos um sanitário e lavatório acessíveis, com barreiras removidas e espaço de manobra adequado para cadeirantes.
-B) Cabines exclusivas para servidores públicos com deficiência de nível superior.
-C) Banheiros exclusivos para acompanhantes de idosos, vedada a entrada de outros usuários.
-D) Pisos antiderrapantes e barras de apoio de metal precioso não oxidável.
-E) Rampas de acesso internas com inclinação de 45 graus para economizar espaço de tráfego.
+A reserva de vagas (cotas) em concursos públicos para pessoas com deficiência é um instrumento de ação afirmativa importante. No âmbito federal, a Lei nº 8.112/90 reserva às pessoas com deficiência:
+A) Até 20% das vagas oferecidas no concurso público civil de provimento efetivo.
+B) O percentual fixo e obrigatório de 10% de todas as vagas, sem possibilidade de arredondamento matemático.
+C) Vagas exclusivas apenas em cargos que não exijam esforço intelectual ou digitação de relatórios técnicos.
+D) A totalidade das vagas de cadastro de reserva caso nenhum candidato da ampla concorrência atinja a pontuação mínima.
+E) Metade das vagas em cargos em comissão e funções de confiança da administração pública direta.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. O Decreto nº 5.296/2004, regulamentando a NBR 9050 de acessibilidade, determina que os prédios públicos e coletivos privados devem dispor de banheiros acessíveis ao público com pelo menos um sanitário e lavatório adaptados para o uso de pessoas com deficiência ou mobilidade reduzida.
+
+**Gabarito: A**. Segundo o art. 5º, § 2º, da Lei nº 8.112/90, às pessoas portadoras de deficiência serão reservadas até 20% das vagas oferecidas no concurso (no mínimo 5% segundo jurisprudência e normas de concursos). A LBI reforça essa garantia geral de inclusão.
 </details>
+
+---
 
 ### Questão 39 (FCC)
-No planejamento urbano de comarcas judiciais, a Lei Federal nº 10.098/2000 determina que os parques, praças e espaços públicos abertos ao público devem ser concebidos ou adaptados para que as pessoas com deficiência tenham pleno acesso aos seus equipamentos. Essa diretriz visa combater diretamente as barreiras de acessibilidade do tipo:
-A) Arquitetônicas.
-B) Atitudinais.
-C) Tecnológicas.
-D) De comunicação digital.
-E) Urbanísticas.
+No que concerne à acessibilidade em hotéis, pousadas e similares, a LBI estabelece regras específicas. De acordo com a lei, esses estabelecimentos devem:
+A) Construir blocos de dormitórios isolados e exclusivos para hóspedes com deficiência para garantir a segurança cibernética local.
+B) Fornecer atendimento prioritário aos hóspedes com deficiência sem necessidade de adaptar fisicamente as estruturas de banheiros e rampas.
+C) Isentar de taxas de hospedagem todos os hóspedes que apresentarem carteira oficial de tecnologia assistiva de mobilidade reduzida.
+D) Destinar metade de suas vagas de garagem exclusivas para veículos conduzidos por pessoas com deficiência física motora.
+E) Ser acessíveis e garantir pelo menos 10% de seus dormitórios acessíveis, garantido no mínimo um quarto adaptado com desenho universal.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. Parques, praças e vias públicas são áreas públicas urbanas externas. Portanto, a falta de acessibilidade nesses ambientes caracteriza Barreiras Urbanísticas.
+
+**Gabarito: E**. Segundo o art. 45 da LBI, hotéis e pousadas devem disponibilizar pelo menos 10% de dormitórios acessíveis, garantindo pelo menos um quarto totalmente acessível.
 </details>
+
+---
 
 ### Questão 40 (FCC)
-Considere a seguinte situação hipotética: O comitê de acessibilidade do tribunal avalia a reserva de vagas em estacionamentos públicos e privados do TJ-CE. De acordo com o Decreto nº 5.296/2004 e as legislações correlatas, as vagas reservadas para veículos que transportem pessoas com deficiência física ou idosos em estacionamentos coletivos devem:
-A) Ser restritas a veículos importados oficiais de desembargadores com deficiência.
-B) Ocupar no mínimo 50% do total de vagas de qualquer estacionamento institucional.
-C) Ser localizadas próximas aos acessos de circulação de pedestres e devidamente sinalizadas.
-D) Dispensar sinalização vertical para evitar poluição visual predial.
-E) Exigir o pagamento de taxa de estacionamento em dobro para financiamento de ajudas técnicas.
+A acessibilidade em sites da internet é um direito garantido por lei. A LBI estabelece que é obrigatória a acessibilidade nos portais de internet de:
+A) Fóruns judiciais que tratem exclusivamente de direito previdenciário estadual, dispensando-se a acessibilidade em outros órgãos da justiça.
+B) Bancos comerciais de fomento econômico privados de forma exclusiva, ficando os portais governamentais isentos de adaptação técnica.
+C) Órgãos de governo, concessionárias de serviços públicos e empresas com sede ou representação comercial no país, para uso de pessoas com deficiência.
+D) Redes sociais de entretenimento com mais de dez milhões de usuários ativos cadastrados no território nacional de internet.
+E) Empresas de desenvolvimento de softwares e provedores de hospedagem web baseados em servidores de nuvem internacionais.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. Para garantir a segurança e autonomia dos usuários prioritários, as vagas reservadas devem ser posicionadas o mais próximo possível das entradas e saídas de pedestres e devem possuir sinalização horizontal (no chão) e vertical (placa) bem clara.
+
+**Gabarito: C**. Conforme o art. 63 da LBI, é obrigatória a acessibilidade nos sítios da internet mantidos por órgãos de governo ou por empresas com sede ou representação comercial no País, garantindo acesso à informação em formatos acessíveis.
 </details>
+
+---
 
 ### Questão 41 (FCC)
-A Lei Federal nº 10.048/2000 prevê sanções rígidas para o descumprimento do atendimento prioritário por parte de concessionárias de serviços públicos e estabelecimentos privados. Dentre as penalidades cabíveis às empresas privadas que violarem a lei, inclui-se a aplicação de:
-A) Multa administrativa proporcional à gravidade da infração.
-B) Advertência verbal sem registro em cadastro oficial.
-C) Suspensão imediata de todas as contas bancárias do proprietário da empresa.
-D) Prisão preventiva imediata do gerente de atendimento ao cliente.
-E) Interdição civil permanente da pessoa jurídica.
+As pessoas com deficiência têm direito a prioridade na tramitação de procedimentos administrativos e judiciais. Sobre a tramitação prioritária, assinale a alternativa correta:
+A) A prioridade é concedida mediante requerimento do interessado instruído com a prova da condição de pessoa com deficiência.
+B) A prioridade é deferida automaticamente apenas se o processo judicial for proposto perante varas especializadas de direito de família.
+C) A prioridade isenta a pessoa com deficiência do recolhimento de custas judiciais e de taxas de recursos na esfera estadual.
+D) O benefício da prioridade é extinto se a pessoa com deficiência contratar advogados particulares para representá-la em juízo.
+E) A prioridade impede que o juiz profira sentenças desfavoráveis aos direitos da pessoa com deficiência na esfera cível.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. O descumprimento das regras de atendimento prioritário por empresas privadas gera a aplicação de multas administrativas cujo valor varia conforme a infração, gravidade e reincidência, aplicadas pelos órgãos de fiscalização do consumidor (como Procon).
+
+**Gabarito: A**. A tramitação prioritária de processos judiciais e administrativos (art. 9º, inciso VII, da LBI) é deferida mediante requerimento da parte interessada com a comprovação de sua deficiência.
 </details>
+
+---
 
 ### Questão 42 (FCC)
-A Lei nº 10.098/2000 conceitua as Barreiras nos Transportes como:
-A) Qualquer obstáculo que impeça o tráfego de caminhões de carga pesada nas capitais.
-B) Aquelas que ocorrem nas vias públicas de campus universitário federal.
-C) Qualquer barreira física que bloqueie a passagem de trens cargueiros de ferrovias.
-D) A recusa das companhias aéreas privadas de transportar bagagens de mão.
-E) Aquelas existentes nos sistemas e meios de transporte coletivo de passageiros.
+Em relação ao atendimento prioritário em órgãos públicos e prestadores de serviços, a LBI estende esse direito a acompanhantes. A prioridade de atendimento ao acompanhante:
+A) Impede o atendimento paralelo de outros cidadãos comuns que não possuam deficiência física ou mobilidade reduzida.
+B) Garante ao acompanhante a isenção de tarifas de transporte coletivo urbano e passagens interestaduais de forma permanente.
+C) Autoriza o acompanhante a realizar transações bancárias e firmar contratos civis em nome da pessoa com deficiência sem procuração.
+D) Fica restrita a exames médicos de emergência realizados em hospitais e clínicas da rede de saúde pública municipal do Estado.
+E) Aplica-se ao acompanhante ou atendente pessoal diretamente vinculado ao atendimento da pessoa com deficiência de forma imediata.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. Conforme o Art. 2º, inciso III da Lei 10.098/2000, Barreiras nos Transportes são aquelas presentes em qualquer modal de transporte coletivo público de passageiros (ônibus, trens, metrôs) que impeçam ou restrinjam o livre acesso das pessoas com deficiência.
+
+**Gabarito: E**. O atendimento prioritário (art. 9º, § 1º, da LBI) estende-se ao acompanhante da pessoa com deficiência ou ao seu atendente pessoal, exceto no que se refere a direitos personalíssimos (como o recebimento de valores ou voto). A alternativa E está correta.
 </details>
+
+---
 
 ### Questão 43 (FCC)
-O Decreto nº 5.296/2004 regulamenta a acessibilidade em estabelecimentos de hospedagem (hotéis, motéis, pousadas). De acordo com as regras estabelecidas, os hotéis novos devem possuir:
-A) Isenção de atendimento prioritário para gestantes e lactantes estrangeiras.
-B) Prédios inteiros exclusivos para hóspedes idosos divorciados.
-C) Banheiros adaptados apenas no saguão de entrada da recepção.
-D) Dormitórios acessíveis adaptados de acordo com as normas técnicas da ABNT, respeitado o percentual mínimo determinado.
-E) Suítes presidenciais gratuitas para qualquer usuário de cadeira de rodas de outros estados.
+A LBI tipifica crimes específicos decorrentes da discriminação de pessoas com deficiência. Assinale a conduta que constitui crime punível com reclusão nos termos da referida lei:
+A) Não fornecer softwares de leitura de tela para computadores de uso doméstico de servidores públicos inativos do tribunal.
+B) Recusar a contratação de seguros privados de saúde corporativos para pessoas com deficiência mental de forma justificada por auditoria.
+C) Deixar de instalar calçadas táteis em reformas residenciais particulares localizadas em áreas rurais de difícil acesso geográfico.
+D) Praticar, induzir ou incitar discriminação contra pessoa em razão de sua deficiência, sob qualquer pretexto social ou comercial.
+E) Cobrar taxas adicionais de hospedagem em hotéis privados para cães-guia que acompanham pessoas com deficiência visual.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. Os estabelecimentos de hospedagem novos devem projetar dormitórios acessíveis e integrados aos demais quartos (não isolados), respeitando os parâmetros técnicos de acessibilidade e os percentuais mínimos de reserva fixados nos regulamentos de acessibilidade.
+
+**Gabarito: D**. O art. 88 da LBI tipifica como crime: 'Praticar, induzir ou incitar discriminação contra pessoa em razão de sua deficiência'. A pena é de reclusão, de 1 a 3 anos, e multa. Cobrar taxas adicionais para cão-guia ou negar planos de saúde são infrações civis/administrativas específicas, mas a discriminação direta é o crime central tipificado com reclusão.
 </details>
+
+---
 
 ### Questão 44 (FCC)
-A prioridade de atendimento garantida pela Lei nº 10.048/2000 em instituições financeiras e agências bancárias exige que os estabelecimentos:
-A) Isentem os usuários prioritários do pagamento de taxas de manutenção de contas correntes platinum.
-B) Eliminem o uso de sistemas eletrônicos de senhas em todas as agências.
-C) Ofereçam atendimento presencial domiciliar gratuito para idosos que morem em bairros nobres.
-D) Disponibilizem caixas ou guichês de atendimento preferencial exclusivos ou com prioridade de atendimento na triagem de senhas.
-E) Contratem um funcionário exclusivo para realizar operações de saques para deficientes sem conferência de senhas.
+O direito à educação da pessoa com deficiência é amplamente protegido pela LBI. De acordo com a lei, as instituições privadas de ensino:
+A) Estão desobrigadas de fornecer tecnologia assistiva ou materiais adaptados quando o aluno possuir deficiência auditiva ou visual.
+B) Ficam autorizadas a cobrar taxas adicionais de matrícula para cobrir custos de contratação de profissionais de apoio e acessibilidade.
+C) Podem limitar o ingresso de alunos com deficiência a no máximo 5% do total de vagas oferecidas por turma para manter a qualidade de ensino.
+D) Devem garantir um sistema educacional inclusivo em todos os níveis, sendo vedada a cobrança de valores adicionais de qualquer natureza em suas mensalidades.
+E) Devem matricular alunos com deficiência exclusivamente em salas de aula especiais separadas dos demais estudantes da escola.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. As agências bancárias devem garantir o atendimento prioritário através de senhas preferenciais e guichês adaptados com funcionários aptos a prestar atendimento diferenciado aos grupos prioritários descritos na lei.
+
+**Gabarito: D**. O art. 28 da LBI veda expressamente a cobrança de valores adicionais de qualquer natureza em mensalidades, anuidades e matrículas por instituições privadas de ensino para o fornecimento de atendimento inclusivo, profissional de apoio ou acessibilidade. A alternativa D está correta.
 </details>
+
+---
 
 ### Questão 45 (FCC)
-Dentre as definições de acessibilidade predial do Decreto nº 5.296/2004, a rota contínua de circulação interna ou externa, desobstruída e sinalizada, que conecta os espaços acessíveis de um edifício de uso público a outros ambientes, é denominada:
-A) Rota de Fuga de Emergência Lógica.
-B) Calçada Estruturada Integrada.
-C) Ponto de Consolidação Acessível (PCA).
-D) Rota Acessível.
-E) Distribuidor de Piso Arquitetônico.
+Em relação ao direito à moradia, a LBI estabelece cotas para pessoas com deficiência em programas habitacionais públicos ou subsidiados com recursos públicos. O percentual mínimo de unidades habitacionais reservadas e adaptadas para esse fim é de:
+A) 2%
+B) 5%
+C) 10%
+D) 3%
+E) 15%
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. O Decreto conceitua a Rota Acessível como o trajeto contínuo, livre de barreiras físicas e obstáculos, bem sinalizado, que permite que pessoas com deficiência ou mobilidade reduzida se desloquem com segurança e autonomia no interior ou exterior de um edifício.
+
+**Gabarito: D**. Segundo o art. 32, § 1º, inciso I, da LBI, nos programas habitacionais públicos ou subsidiados com recursos públicos, a pessoa com deficiência ou o seu responsável tem prioridade na aquisição de imóvel para moradia própria, devendo ser reservado, no mínimo, 3% do total das unidades habitacionais para esse fim.
 </details>
+
+---

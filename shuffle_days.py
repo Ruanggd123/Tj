@@ -153,7 +153,14 @@ def main():
     workspace_dir = r"c:\Users\Ruan Gomes\Downloads\TJC"
     questoes_dir = os.path.join(workspace_dir, "03_Baterias_Questoes_FCC")
     
-    days = ['dia_22_05_questoes.md', 'dia_25_05_questoes.md', 'dia_26_05_questoes.md', 'dia_27_05_questoes.md']
+    days = [
+        'dia_22_05_questoes.md',
+        'dia_25_05_questoes.md',
+        'dia_26_05_questoes.md',
+        'dia_27_05_questoes.md',
+        'dia_28_05_questoes.md',
+        'dia_29_05_questoes.md'
+    ]
     
     for filename in days:
         filepath = os.path.join(questoes_dir, filename)

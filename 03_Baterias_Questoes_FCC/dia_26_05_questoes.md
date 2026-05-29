@@ -1,189 +1,232 @@
 # Bateria de Questões FCC — Terça-feira 26/05
 
-Este arquivo contém 45 questões aprofundadas da banca FCC (15 por tema estudado no dia) com gabarito comentado detalhado, seguindo a metodologia psicométrica de distratores calibrados e cenários hipotéticos.
+Este arquivo contém 45 questões altamente calibradas nos padrões da FCC, com alternativas de comprimento similar e distratores baseados em pegadinhas reais.
 
 ---
 
 ## 📝 TEMA 1: Redes e Infraestrutura — Protocolos HTTP/HTTPS, ABNT NBR 14565:2019 e Fibras Ópticas
 
 ### Questão 1 (FCC)
-Considere a seguinte situação hipotética: Um analista de sistemas do Tribunal de Justiça do Ceará desenvolveu um webservice RESTful para consulta processual. Durante os testes de integração, constatou-se que um cliente efetuou uma requisição para deletar um recurso que não admitia tal operação sob nenhuma circunstância. A especificação do protocolo HTTP determina que o servidor deve retornar um código de status de erro do cliente e informar no cabeçalho quais métodos são aceitos para aquela URI. Sob as regras do protocolo HTTP/1.1, o código de status adequado e o cabeçalho obrigatório que deve acompanhar essa resposta de erro são, respectivamente:
-A) 403 Forbidden e cabeçalho Access-Control-Allow-Methods.
-B) 400 Bad Request e cabeçalho Accept.
-C) 405 Method Not Allowed e cabeçalho Allow.
-D) 406 Not Acceptable e cabeçalho Content-Type.
-E) 501 Not Implemented e cabeçalho Server.
+O protocolo HTTP/1.1 é a base da comunicação de dados na Web. Sobre os métodos de requisição HTTP (verbos) e suas propriedades, assinale a alternativa correta:
+A) O método PUT é utilizado exclusivamente para remover recursos de forma permanente do diretório de armazenamento virtual do servidor HTTP local.
+B) O método POST é idempotente, o que significa que múltiplas requisições idênticas consecutivas resultarão no mesmo estado físico no servidor de banco de dados.
+C) O método GET é projetado exclusivamente para recuperar informações do servidor, devendo ser seguro e idempotente de acordo com a especificação RFC 7231.
+D) O método PATCH deve ser utilizado para substituir de forma integral o recurso existente por uma nova representação fornecida no corpo da mensagem.
+E) O método HEAD solicita que o servidor retorne os cabeçalhos de resposta HTTP e o corpo HTML correspondente para depuração local pelo analista.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. O código 405 Method Not Allowed indica que o método de requisição é conhecido pelo servidor, mas foi desabilitado ou não é suportado pelo recurso. A especificação HTTP/1.1 exige que a resposta 405 inclua o cabeçalho 'Allow' contendo os métodos válidos. O erro 403 (A)  é de autorização geral. O erro 501 (E)  é de erro do servidor para métodos que ele não reconhece globalmente.
+
+**Gabarito: C**. GET é seguro e idempotente (não deve alterar o estado do servidor e múltiplas chamadas retornam o mesmo resultado). POST não é idempotente. PUT substitui o recurso (é idempotente). PATCH faz atualizações parciais. HEAD não retorna o corpo da resposta.
 </details>
+
+---
 
 ### Questão 2 (FCC)
-Nas requisições HTTP, a idempotência é uma propriedade semântica crucial para a estabilidade de sistemas distribuídos. Entre os métodos HTTP padrão descritos na RFC 9110, assinale a opção que apresenta apenas métodos que possuem a propriedade de idempotência:
-A) GET, POST e DELETE.
-B) PUT, PATCH e OPTIONS.
-C) GET, PUT, DELETE e OPTIONS.
-D) POST, PATCH e HEAD.
-E) GET, POST, PUT e DELETE.
+Em relação aos códigos de status de resposta HTTP (Status Codes), que são divididos em classes de três dígitos, assinale a alternativa correta:
+A) O código 201 Created é utilizado para confirmar que a requisição de busca do usuário foi processada com sucesso, sem gerar novos registros.
+B) A classe 4xx indica erros internos do servidor de aplicação, significando que o servidor falhou ao processar uma requisição válida do cliente.
+C) A classe 3xx indica redirecionamento de requisições, exigindo que o navegador realize ações adicionais para completar a operação iniciada.
+D) O código 403 Forbidden indica que o recurso solicitado não existe fisicamente no servidor e nenhuma rota correspondente foi encontrada.
+E) A classe 5xx indica falhas de autenticação do cliente, apontando que o usuário não forneceu credenciais válidas na requisição HTTP ativa.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. GET, PUT, DELETE, HEAD e OPTIONS são métodos idempotentes, pois requisições idênticas repetidas não alteram o estado do recurso além do primeiro processamento. POST e PATCH não são idempotentes por padrão, pois o POST cria novos recursos sequencialmente e PATCH aplica modificações parciais que podem ter efeitos colaterais cumulativos.
+
+**Gabarito: C**. A classe 3xx é para redirecionamento. 4xx representa erro do cliente (ex: 403 Forbidden, 404 Not Found). 5xx representa erro do servidor (ex: 500 Internal Server Error). 201 Created indica que um recurso foi criado com sucesso.
 </details>
+
+---
 
 ### Questão 3 (FCC)
-Considere a seguinte situação hipotética: Para garantir o sigilo absoluto das comunicações de um sistema judicial, o TJ-CE implementou o protocolo HTTPS. Durante o processo de handshake TLS 1.2, o cliente e o servidor realizam uma série de etapas sequenciais para autenticação e troca de chaves. A etapa do handshake na qual o servidor envia o seu certificado digital X.509 e a chave pública correspondente é iniciada imediatamente após o recebimento de qual mensagem enviada pelo cliente?
-A) ClientKeyExchange.
-B) ClientHello.
-C) ChangeCipherSpec.
-D) ServerHello.
-E) Finished.
+O protocolo HTTPS adiciona uma camada de segurança sobre o HTTP utilizando os protocolos SSL ou TLS. Sobre o processo de handshake do TLS 1.2, é correto afirmar:
+A) No ServerHello, o servidor envia a sua chave privada para o cliente cifrar os dados da sessão simétrica que será estabelecida via HTTPS.
+B) No ClientHello, o cliente envia as versões do TLS que suporta, os algoritmos de criptografia (cipher suites) compatíveis e um valor aleatório.
+C) A negociação da chave de sessão simétrica ocorre de forma síncrona utilizando a infraestrutura física de rede antes do envio do ClientHello.
+D) O handshake do TLS impede o uso de certificados digitais X.509, dependendo exclusivamente de senhas de autenticação pré-compartilhadas.
+E) A verificação da identidade do servidor pelo cliente é opcional e ocorre apenas se o servidor enviar o cabeçalho HTTP de redirecionamento 301.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. O handshake TLS 1.2 inicia-se com o ClientHello enviado pelo cliente. O servidor responde com o ServerHello, seguido imediatamente pelas mensagens Certificate (contendo o certificado X.509) e ServerKeyExchange (se aplicável), finalizando com ServerHelloDone. Portanto, o servidor inicia sua sequência após receber o ClientHello.
+
+**Gabarito: B**. O handshake TLS 1.2 inicia com o ClientHello, onde o cliente envia suas capacidades criptográficas e um valor aleatório. O servidor responde com ServerHello, certificado digital, etc. A chave privada do servidor NUNCA é enviada ao cliente.
 </details>
+
+---
 
 ### Questão 4 (FCC)
-Um administrador de rede do tribunal planeja instalar o cabeamento de backbone de edifício para interligar os distribuidores de piso (FD) ao distribuidor de edifício (BD). De acordo com a norma ABNT NBR 14565:2019, o comprimento máximo permitido para o cabeamento de backbone de edifício (cabo rígido permanente) é de:
-A) 90 metros.
-B) 100 metros.
-C) 1500 metros.
-D) 2000 metros.
-E) 500 metros.
+A norma ABNT NBR 14565:2019 especifica os requisitos para sistemas de cabeamento estruturado para edifícios comerciais. Sobre essa norma, assinale a alternativa correta:
+A) Ela estabelece que a tomada de telecomunicações na área de trabalho deve possuir pelo menos quatro conectores do tipo RJ-45 de categoria 7.
+B) Ela proíbe estritamente a utilização de cabos de par trançado sem blindagem (UTP), exigindo o uso de cabos blindados do tipo STP Cat 8.
+C) O comprimento máximo recomendado para os cabos de manobra (patch cords) na área de trabalho é de vinte metros para evitar perdas de sinal.
+D) A norma veda a utilização de fibras ópticas monomodo no cabeamento de backbone de campus, restringindo o uso a cabos de cobre de categoria 5e.
+E) Ela define os subsistemas de cabeamento estruturado, dividindo-os em cabeamento de backbone (de campus e de edifício) e cabeamento horizontal.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. A norma NBR 14565:2019 especifica que o limite de distância para o backbone de edifício é de 500 metros. O cabeamento horizontal possui o limite de 90 metros (A)  no link permanente e 100 metros no canal completo (B) . O backbone de campus (D)  possui limite de 2000 metros.
+
+**Gabarito: E**. A NBR 14565:2019 padroniza os subsistemas de cabeamento estruturado, classificando o cabeamento em backbone (de campus e de edifício) e horizontal (que liga o distribuidor de piso às tomadas de telecomunicações da área de trabalho).
 </details>
+
+---
 
 ### Questão 5 (FCC)
-Na infraestrutura de cabeamento estruturado projetada conforme a norma ABNT NBR 14565:2019, os canais de transmissão são classificados em Classes de desempenho baseadas na frequência suportada. A Classe Ea e a Categoria de cabo correspondente a ela para suportar transmissões estáveis de 10 Gigabit Ethernet (10GBASE-T) em toda a extensão do cabeamento horizontal de 100 metros são:
-A) Classe Ea e Categoria 5e.
-B) Classe Ea e Categoria 6.
-C) Classe Ea e Categoria 7.
-D) Classe Ea e Categoria 6A.
-E) Classe Ea e Categoria 8.1.
+No contexto de cabeamento estruturado, as categorias de cabos de par trançado determinam a largura de banda suportada. Sobre a Categoria 6A (Cat 6A), assinale a alternativa correta:
+A) Ela é uma especificação exclusiva para cabos de fibra óptica multimodo, não se aplicando a cabos de cobre de par trançado blindados.
+B) Ela opera em frequências de até 100 MHz e é recomendada exclusivamente para redes locais baseadas em Fast Ethernet de 100 Mbps.
+C) Ela suporta taxas de 100 Gbps utilizando conectores do tipo RJ-11 em distâncias máximas de dez metros no cabeamento horizontal do prédio.
+D) Ela é especificada para operar em frequências de até 500 MHz e suporta taxas de transmissão de dados de 10 Gbps em distâncias de até 100 metros.
+E) Ela exige a substituição dos switches de rede ativos por hubs repetidores analógicos de camada física para evitar interferência cruzada.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. A Classe Ea opera em frequências de até 500 MHz e utiliza cabos de Categoria 6A para garantir transmissões de 10 Gbps (10GBASE-T) em canais completos de até 100 metros. A Categoria 6 (B)  pertence à Classe E (até 250 MHz) e não suporta 10 Gbps em 100 metros estáveis. A Categoria 7 (C)  pertence à Classe F.
+
+**Gabarito: D**. A Categoria 6A (Cat 6A) opera a até 500 MHz, permitindo transmissões estáveis de 10 Gbps (10GBASE-T) a distâncias de até 100 metros no canal físico completo.
 </details>
+
+---
 
 ### Questão 6 (FCC)
-Considere a seguinte situação hipotética: Um técnico instalou um canal de cabeamento de par trançado interligando um switch no distribuidor de piso à tomada de um computador na secretaria do TJ-CE. Ele utilizou um cabo rígido permanente de 92 metros e patch cords de 3 metros nas duas pontas, totalizando 98 metros de canal. Ao passar o certificador de cabos, o teste falhou em conformidade com as diretrizes da norma ABNT NBR 14565:2019. A falha ocorreu porque:
-A) O comprimento total do canal excedeu o limite máximo absoluto de 90 metros.
-B) O patch cord da área de trabalho não pode exceder 2 metros.
-C) O canal horizontal não aceita a interconexão de distribuidores de piso.
-D) A soma total de patch cords no canal horizontal não pode ser menor que 10 metros.
-E) O comprimento do cabo rígido permanente excedeu o limite máximo de 90 metros.
+As fibras ópticas são meios de transmissão baseados na propagação da luz. A diferença fundamental entre fibras ópticas monomodo (single-mode) e multimodo (multi-mode) é:
+A) A fibra monomodo sofre severamente com a dispersão modal, o que limita seu comprimento máximo a cinquenta metros em redes locais.
+B) A fibra multimodo possui núcleo mais estreito e utiliza lasers de alta intensidade para propagar múltiplos feixes de luz a milhares de quilômetros.
+C) A fibra monomodo é mais barata e utiliza LEDs comuns como fonte de luz, sendo amplamente aplicada no cabeamento horizontal da área de trabalho.
+D) A fibra multimodo apresenta menor atenuação do sinal óptico que a monomodo, dispensando o uso de repetidores em backbones de campus longos.
+E) A fibra monomodo possui um núcleo mais estreito e permite a propagação de apenas um modo de luz, sendo ideal para longas distâncias devido à menor dispersão.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. A NBR 14565:2019 determina que o link permanente (cabo rígido) no cabeamento horizontal não pode exceder 90 metros, mesmo que o canal completo permaneça abaixo de 100 metros. Como o técnico instalou 92 metros de cabo rígido, o canal foi reprovado.
+
+**Gabarito: E**. Fibras monomodo possuem núcleos pequenos (8 a 10 micrômetros) que guiam um único modo de propagação da luz. Têm baixa dispersão e são usadas para links de longas distâncias. Multimodo têm núcleos maiores (50 ou 62.5 micrômetros) e sofrem maior dispersão.
 </details>
+
+---
 
 ### Questão 7 (FCC)
-No projeto físico de redes metropolitanas de alta velocidade para interligar fóruns distantes a dezenas de quilômetros de distância, as fibras ópticas monomodo (SMF) são preferidas em detrimento das fibras multimodo (MMF). A característica física intrínseca que confere à fibra monomodo a capacidade de cobrir distâncias muito longas sem a atenuação rápida do sinal é a:
-A) Ausência completa de dispersão modal devido ao núcleo muito estreito (8 a 10 µm).
-B) Criptografia da portadora óptica.
-C) Utilização de emissores de luz do tipo LED multicor.
-D) Blindagem eletromagnética S/FTP integrada.
-E) Existência de múltiplos caminhos de reflexão interna da luz.
+Em sistemas de transmissão óptica, comprimentos de onda específicos (janelas de transmissão) são utilizados. Os comprimentos de onda típicos para fibras monomodo e multimodo são, respectivamente:
+A) 1310 nm / 1550 nm (monomodo) e 850 nm / 1300 nm (multimodo).
+B) 850 nm / 1300 nm (monomodo) e 1310 nm / 1550 nm (multimodo).
+C) 500 nm / 700 nm (monomodo) e 1000 nm / 1200 nm (multimodo).
+D) 1550 nm / 1625 nm (monomodo) e 450 nm / 650 nm (multimodo).
+E) 1310 nm / 850 nm (monomodo) e 1550 nm / 1300 nm (multimodo).
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. Fibras monomodo possuem núcleo muito estreito (8 a 10 micrômetros), permitindo a propagação da luz em apenas um modo de propagação (linha reta). Isso elimina a dispersão modal, que é o principal fator de degradação de sinal em longas distâncias nas fibras multimodo (MMF), as quais possuem núcleos mais largos de 50 a 62,5 µm e múltiplos caminhos (E) .
+
+**Gabarito: A**. Fibras multimodo operam nas primeiras janelas (850 nm e 1300 nm), enquanto fibras monomodo operam nas janelas superiores (1310 nm e 1550 nm), onde a atenuação física é significativamente menor.
 </details>
+
+---
 
 ### Questão 8 (FCC)
-Durante o desenvolvimento de uma aplicação web segura que realiza requisições assíncronas para APIs hospedadas em domínios diferentes (Cross-Origin), o navegador realiza uma requisição de pré-voo (preflight request). De acordo com a especificação do protocolo HTTP e do mecanismo CORS, essa requisição de preflight utiliza qual método HTTP?
-A) GET.
-B) POST.
-C) CONNECT.
-D) HEAD.
-E) OPTIONS.
+Conectores de fibra óptica são utilizados para alinhar e conectar as fibras a equipamentos de rede. Assinale a alternativa que apresenta apenas tipos válidos de conectores ópticos:
+A) TRS, XLR, SC e FC
+B) RJ-45, RJ-11, LC e SC
+C) BNC, DB-9, SC e ST
+D) LC, SC, HDMI e USB
+E) LC, SC, ST e FC
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. O mecanismo CORS utiliza o método OPTIONS para enviar a requisição de preflight. Isso permite que o navegador verifique previamente junto ao servidor quais métodos, origens e cabeçalhos são suportados e permitidos antes de enviar a requisição real de escrita (como POST ou DELETE).
+
+**Gabarito: E**. LC (Lucent Connector), SC (Subscriber Connector), ST (Straight Tip) e FC (Ferrule Connector) são conectores padronizados para terminação e acoplamento de fibras ópticas.
 </details>
+
+---
 
 ### Questão 9 (FCC)
-Considere a seguinte situação hipotética: Um servidor de banco de dados do TJ-CE responde a uma requisição HTTP enviada por uma aplicação cliente. O servidor processa a solicitação com sucesso e deleta o registro requisitado, porém não há nenhuma informação ou conteúdo adicional a ser retornado no corpo da resposta HTTP. Sob a especificação HTTP/1.1, o código de status de sucesso correto a ser retornado pelo servidor é:
-A) 200 OK.
-B) 204 No Content.
-C) 202 Accepted.
-D) 201 Created.
-E) 304 Not Modified.
+O cabeamento de backbone de edifício, segundo a norma de cabeamento estruturado, conecta o distribuidor de edifício aos distribuidores de piso. O comprimento máximo de cabo permitido para o backbone de edifício é:
+A) 90 metros para cabos de par trançado de cobre de categoria 6 ou superior no canal de transmissão de dados local.
+B) 500 metros, independentemente do tipo de meio físico (cobre ou fibra óptica) utilizado na instalação física do prédio.
+C) 2000 metros para fibras ópticas monomodo e multimodo de forma indistinta para assegurar a largura de banda nominal.
+D) 100 metros para cabos de fibra óptica e noventa metros para cabos de par trançado de cobre blindados no rack de piso.
+E) 1500 metros para cabos coaxiais de baixa impedância instalados em eletrodutos externos de concreto armado.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. O código 204 No Content indica que o servidor processou a requisição com sucesso, mas não retorna nenhum conteúdo no corpo da mensagem. É muito comum em respostas a requisições DELETE efetuadas com sucesso onde não há dados a exibir na tela do cliente.
+
+**Gabarito: B**. De acordo com as normas de cabeamento estruturado (como ISO/IEC 11801 e adaptadas pela ABNT), a distância máxima recomendada para o backbone de edifício é tipicamente de até 500 metros (especialmente para fibra óptica) para garantir o desempenho e limites de propagação.
 </details>
+
+---
 
 ### Questão 10 (FCC)
-Um engenheiro de telecomunicações está projetando a infraestrutura de rede interna do tribunal e especificou o uso de cabeamento de par trançado blindado Classe F. Para estar em conformidade com a norma ABNT NBR 14565:2019, os cabos físicos instalados nesse canal devem pertencer a qual Categoria e operar em qual frequência máxima?
-A) Categoria 6 e 250 MHz.
-B) Categoria 6A e 500 MHz.
-C) Categoria 7A e 1000 MHz.
-D) Categoria 7 e 600 MHz.
-E) Categoria 8.1 e 2000 MHz.
+Em HTTP/2, diversas melhorias foram introduzidas em relação ao HTTP/1.1 para otimizar o desempenho na web. Uma característica técnica nativa do HTTP/2 é:
+A) A exigência de que todas as páginas web sejam renderizadas no formato de dados JSON no navegador do usuário de forma exclusiva.
+B) A substituição obrigatória do protocolo TCP pelo protocolo UDP na camada de transporte para aumentar a velocidade de transmissão física.
+C) O envio de cabeçalhos HTTP criptografados em formato XML de texto plano para facilitar a compressão por servidores de proxy reverso.
+D) A multiplexação de requisições e respostas sobre uma única conexão TCP de forma paralela e assíncrona, eliminando o bloqueio de cabeça de fila.
+E) O banimento do uso de conexões seguras HTTPS, operando apenas através de canais não criptografados para reduzir o consumo de CPU.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. A Classe F exige cabeamento de Categoria 7, projetado para operar com frequências de até 600 MHz com blindagem individual de pares (S/FTP) para atenuar ruídos de crosstalk e interferências externas.
+
+**Gabarito: D**. HTTP/2 introduziu a multiplexação de streams sobre uma única conexão TCP, permitindo que vários requests e responses transitem concorrentemente, eliminando a lentidão gerada pelo 'head-of-line blocking' do HTTP/1.1.
 </details>
+
+---
 
 ### Questão 11 (FCC)
-Na transmissão por fibras ópticas, a atenuação e a degradação de largura de banda são causadas por fenômenos físicos de dispersão. O tipo de dispersão que ocorre exclusivamente em fibras multimodo (MMF) devido à diferença no tempo de chegada dos diversos raios de luz que trafegam por diferentes caminhos geométricos no núcleo do cabo é denominado:
-A) Dispersão Cromática.
-B) Polarização de Modo de Dispersão.
-C) Dispersão de Guia de Onda.
-D) Dispersão Material.
-E) Dispersão Modal.
+Os cookies são cabeçalhos HTTP importantes para o gerenciamento de estados. O atributo em um cookie HTTP que impede que scripts do lado do cliente (como JavaScript via XSS) acessem o valor do cookie é:
+A) Path
+B) Secure
+C) SameSite
+D) Domain
+E) HttpOnly
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. A dispersão modal ocorre apenas em fibras multimodo (MMF), pois a luz viaja por múltiplos caminhos (modos). Como a velocidade da luz no núcleo é constante, mas as distâncias geométricas variam, os raios de luz chegam em momentos diferentes no receptor, causando alargamento dos pulsos. Nas fibras monomodo, por haver apenas um modo de propagação, a dispersão modal é nula.
+
+**Gabarito: E**. O atributo `HttpOnly` avisa ao navegador que o cookie não deve ser exposto através de APIs de scripts (como `document.cookie`), mitigando ataques de roubo de sessão via Cross-Site Scripting (XSS).
 </details>
+
+---
 
 ### Questão 12 (FCC)
-Considere a seguinte situação hipotética: Uma aplicação cliente tentou acessar uma área administrativa restrita do portal de sistemas do TJ-CE. O cliente enviou credenciais válidas e foi autenticado com sucesso, mas o perfil associado ao usuário não possui privilégios de acesso suficientes para aquele recurso. De acordo com as diretrizes do protocolo HTTP, o servidor web deve responder a essa requisição com o código de status:
-A) 401 Unauthorized.
-B) 400 Bad Request.
-C) 405 Method Not Allowed.
-D) 404 Not Found.
-E) 403 Forbidden.
+A perda de sinal ao longo de um cabo de fibra óptica é influenciada por fatores internos e externos. O fenômeno que descreve a redução da potência do sinal óptico à medida que ele viaja pela fibra é chamado de:
+A) Diafonia (crosstalk), que representa a interferência eletromagnética gerada por cabos de cobre vizinhos localizados na mesma calha.
+B) Dispersão cromática, que consiste no alargamento temporal dos pulsos de luz devido à reflexão total nas paredes do núcleo.
+C) Refração seletiva, na qual a luz é convertida em impulsos elétricos de baixa voltagem ao passar por curvas acentuadas.
+D) Difração de Fresnel, que descreve o bloqueio completo da passagem de luz em conectores do tipo LC mal polidos na instalação.
+E) Atenuação, causada principalmente por absorção física e espalhamento da luz nas impurezas do vidro de sílica.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. O código 403 Forbidden indica que o servidor entendeu a requisição, mas se recusa a autorizá-la. Diferente do 401 Unauthorized (onde as credenciais estão ausentes ou inválidas), no 403 o usuário já está autenticado, mas seu nível de acesso não permite a visualização daquele recurso específico.
+
+**Gabarito: E**. Atenuação é a perda de potência óptica expressa em dB/km, decorrente de fatores de absorção de material e do espalhamento Rayleigh da luz nas micro-imperfeições do núcleo de vidro.
 </details>
+
+---
 
 ### Questão 13 (FCC)
-No cabeamento estruturado comercial normatizado pela ABNT NBR 14565:2019, o elemento de conexão flexível usado para fazer a manobra de interligação entre as portas do patch panel no rack e as portas dos equipamentos ativos (como switches e roteadores) localizados no Distribuidor de Piso (FD) é denominado:
-A) Cabo rígido permanente.
-B) Ponto de consolidação (CP).
-C) Patch cord (cabo de manobra).
-D) Tomada de telecomunicações (TO).
-E) Acoplador óptico monomodo.
+Na arquitetura do protocolo HTTPS, a verificação do certificado digital do servidor envolve o uso de chaves públicas. O navegador do cliente valida o certificado do servidor:
+A) Enviando o certificado completo de volta ao servidor para que ele mesmo realize a validação e retorne o código HTTP 200 OK correspondente.
+B) Decifrando a assinatura digital da autoridade emissora contida no certificado utilizando a chave privada do próprio servidor web local.
+C) Decifrando a assinatura digital da autoridade emissora contida no certificado utilizando a chave pública da própria autoridade pré-instalada no sistema.
+D) Gerando uma chave simétrica temporária e enviando-a para a Autoridade Certificadora validar a assinatura do servidor via rede.
+E) Decifrando os dados confidenciais do servidor web utilizando a chave privada do navegador do cliente acordada no ClientHello.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. O patch cord (ou cabo de manobra) é o cabo flexível dotado de conectores em ambas as extremidades, projetado para realizar conexões temporárias ou reconfigurações rápidas nos distribuidores de rede (FD/BD/CD) ou na área de trabalho.
+
+**Gabarito: C**. O navegador valida o certificado do servidor verificando a assinatura da CA (Autoridade Certificadora) que assinou o certificado. Isso é feito usando a chave pública da CA, cujos certificados raiz confiáveis já vêm pré-instalados no navegador ou no sistema operacional.
 </details>
+
+---
 
 ### Questão 14 (FCC)
-No contexto do HTTPS, a infraestrutura TLS utiliza cifras simétricas e assimétricas combinadas para garantir confidencialidade, integridade e autenticidade. Sobre o papel desses algoritmos de criptografia no protocolo TLS, é correto afirmar:
-A) Algoritmos assimétricos (como RSA e ECDHE) são usados para cifrar o corpo dos dados volumosos da aplicação durante toda a sessão.
-B) Algoritmos simétricos (como AES) são usados na etapa de handshake para autenticar o servidor por meio do certificado X.509.
-C) O TLS dispensa o uso de funções hash (como SHA-256) para validação de integridade.
-D) Algoritmos assimétricos são usados exclusivamente para acordar a chave de sessão simétrica, a qual será usada posteriormente para cifrar os dados da aplicação devido ao seu menor custo computacional.
-E) A criptografia simétrica realiza a assinatura digital do handshake inicial.
+No cabeamento horizontal comercial, a distância útil máxima recomendada de cabo entre o distribuidor de piso (patch panel) e a tomada de telecomunicações é de:
+A) 150 metros quando forem utilizadas fibras ópticas monomodo conectadas diretamente a tomadas de telecomunicações ativas.
+B) 100 metros para cabos de cobre de categoria 5e e duzentos metros para cabos de cobre de categoria 6A sem blindagem física.
+C) 50 metros para evitar a perda excessiva de sinal elétrico gerada pela diafonia e ruídos eletromagnéticos de lâmpadas fluorescentes.
+D) 90 metros, permitindo mais dez metros adicionais para cabos de manobra (patch cords) na área de trabalho e armário de telecomunicações.
+E) 75 metros para manter a largura de banda estável em redes Fast Ethernet operando em frequências de até 250 MHz no canal físico.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. Criptografia assimétrica (par de chaves pública/privada) é computacionalmente pesada e, por isso, o TLS a utiliza apenas no início (handshake) para autenticar a identidade e negociar com segurança a chave simétrica de sessão. Após o acordo de chaves, todas as transmissões de dados volumosos usam criptografia simétrica (como AES), que é muito mais rápida.
+
+**Gabarito: D**. O cabeamento horizontal (link permanente) é limitado a 90 metros de comprimento físico do cabo. O canal completo (incluindo cabos de manobra) pode chegar a 100 metros.
 </details>
 
+---
+
 ### Questão 15 (FCC)
-Ao planejar o cabeamento estruturado de um novo datacenter corporativo, um arquiteto de infraestrutura de TI especificou cabos físicos Categoria 8.1. De acordo com a norma ABNT NBR 14565:2019 e as especificações internacionais correspondentes, a frequência máxima de operação desses cabos e a distância de canal máxima para a qual são homologados para suportar taxas de 25 Gbps ou 40 Gbps são, respectivamente:
-A) 500 MHz e 100 metros.
-B) 2000 MHz (2 GHz) e 30 metros.
-C) 1000 MHz e 50 metros.
-D) 600 MHz e 90 metros.
-E) 2000 MHz (2 GHz) e 100 metros.
+Em relação ao cabeamento estruturado e à infraestrutura de rede, o Distribuidor de Edifício (BD - Building Distributor) tem a função de:
+A) Conectar diretamente os computadores e tomadas de telecomunicações da área de trabalho ao rack de piso de forma exclusiva.
+B) Interconectar o cabeamento de backbone de campus com o cabeamento de backbone de edifício nas instalações físicas da organização.
+C) Alojar exclusivamente os servidores de banco de dados e switches de camada de aplicação do tribunal de justiça estadual.
+D) Alimentar fisicamente os dispositivos ativos de rede utilizando cabos de cobre com tecnologia Power over Ethernet (PoE) redundante.
+E) Medir a taxa de atenuação das conexões ópticas de campus e reportar falhas físicas ao console de gerência de rede local.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. Os cabos de Categoria 8 (8.1 e 8.2) operam a uma frequência de 2000 MHz (2 GHz) e foram desenvolvidos para curtas distâncias de até 30 metros em datacenters para suportar 25GBASE-T ou 40GBASE-T. Extensões maiores que 30 metros causam atenuações severas nessa alta frequência.
+
+**Gabarito: B**. O BD (Building Distributor / Distribuidor de Edifício) serve de nó central do edifício, realizando a conexão entre o backbone de campus (vindo do CD - Campus Distributor) e os backbones que descem/sobem para os pisos (FD - Floor Distributor).
 </details>
 
 ---
@@ -191,183 +234,226 @@ E) 2000 MHz (2 GHz) e 100 metros.
 ## 📝 TEMA 2: Redes e Camada de Transporte — Protocolo TCP vs. UDP, Controle de Fluxo/Congestionamento e Portas Conhecidas
 
 ### Questão 16 (FCC)
-Considere a seguinte situação hipotética: Um cliente iniciou uma sessão de transferência de dados com um servidor web utilizando o protocolo TCP. Na etapa inicial de estabelecimento de conexão (Three-Way Handshake), o cliente envia um pacote inicial contendo a flag SYN ativada e o número de sequência igual a 1000. O servidor recebe o pacote e responde em conformidade com a máquina de estados do TCP. A resposta enviada pelo servidor ao cliente deve conter, obrigatoriamente, as flags ativadas e os valores dos campos correspondentes:
-A) Flags: SYN e ACK; Número de Sequência: 1001; Confirmação (ACK): 1001.
-B) Flags: SYN; Número de Sequência: 2000; Confirmação (ACK): 1000.
-C) Flags: SYN e ACK; Número de Sequência: 2000 (ou outro aleatório); Confirmação (ACK): 1001.
-D) Flags: ACK; Número de Sequência: 1001; Confirmação (ACK): 2001.
-E) Flags: RST e ACK; Número de Sequência: 1000; Confirmação (ACK): 1001.
+Os protocolos TCP e UDP operam na camada de transporte do modelo TCP/IP. A diferença fundamental de funcionamento entre o TCP e o UDP é:
+A) O TCP é um protocolo de camada de aplicação que roda sobre conexões físicas Ethernet, enquanto o UDP é um protocolo de transporte exclusivo para redes sem fio.
+B) O UDP realiza o controle de fluxo e congestionamento utilizando o mecanismo de janela deslizante, ao contrário do TCP que transmite dados sem controle.
+C) O TCP é orientado à conexão e garante a entrega ordenada e confiável de segmentos através de confirmações, enquanto o UDP é não orientado à conexão e prioriza a velocidade sem garantias de entrega.
+D) O UDP divide os dados em pacotes de tamanho fixo chamados datagramas de rede e exige o handshake de três vias (three-way handshake) para iniciar o tráfego.
+E) O TCP utiliza portas dinâmicas para comunicação em grupo (multicast), enquanto o UDP é restrito a conexões ponto a ponto (unicast) com portas fixas de controle.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. No Handshake de 3 vias do TCP, a resposta do servidor ao SYN (seq = x) deve ser um pacote com as flags SYN e ACK ativadas (SYN-ACK). O número de sequência do servidor (y) é gerado de forma aleatória pelo sistema operacional (ex: 2000), e o campo de Confirmação (Acknowledgment Number) deve ser obrigatoriamente x + 1, confirmando a recepção do SYN do cliente. Como o cliente enviou 1000, o ACK do servidor deve ser 1001.
+
+**Gabarito: C**. TCP (Transmission Control Protocol) é orientado à conexão, confiável, fornece controle de fluxo, retransmissão e entrega ordenada. UDP (User Datagram Protocol) é um protocolo simples, rápido, não confiável e sem conexão.
 </details>
+
+---
 
 ### Questão 17 (FCC)
-Durante uma sessão TCP ativa, o receptor monitora constantemente o seu buffer de entrada disponível e anuncia esse valor ao transmissor no cabeçalho de cada segmento enviado de volta. Esse mecanismo do protocolo TCP, que impede que o transmissor envie dados mais rápido do que a aplicação receptora é capaz de processar, é conhecido como:
-A) Janela de Congestionamento (cwnd).
-B) Janela Deslizante (Sliding Window) para Controle de Fluxo.
-C) Slow Start (Partida Lenta).
-D) Fast Recovery (Recuperação Rápida).
-E) Handshake de Encerramento por flags FIN.
+O estabelecimento de uma conexão TCP confiável utiliza o handshake de três vias (three-way handshake). A sequência correta de flags TCP enviadas pelos hosts cliente e servidor para estabelecer a conexão é:
+A) SYN (cliente) -> ACK (servidor) -> SYN-ACK (cliente)
+B) SYN (cliente) -> SYN-ACK (servidor) -> ACK (cliente)
+C) SYN-ACK (cliente) -> SYN (servidor) -> ACK (cliente)
+D) ACK (cliente) -> SYN (servidor) -> SYN-ACK (cliente)
+E) SYN (cliente) -> SYN (servidor) -> ACK (cliente/servidor)
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. A Janela Deslizante (Sliding Window) realiza o Controle de Fluxo (Flow Control), permitindo ao receptor gerenciar a taxa de envio do emissor de acordo com seu buffer disponível (anunciado no campo Window Size do cabeçalho TCP). O controle de congestionamento (A, B, D) é um mecanismo diferente, voltado a proteger os roteadores da rede intermediária, e não o buffer do receptor.
+
+**Gabarito: B**. O handshake de três vias do TCP consiste no envio de um segmento com flag SYN (sincronizar), a resposta com flags SYN-ACK (sincronizar e confirmar) e a confirmação final com flag ACK.
 </details>
+
+---
 
 ### Questão 18 (FCC)
-Considere a seguinte situação hipotética: Uma aplicação de monitoramento de infraestrutura de TI do TJ-CE precisa coletar métricas de tráfego de switches usando o protocolo SNMP e sincronizar o relógio dos servidores do tribunal via protocolo NTP. De acordo com os padrões da IANA, os serviços de gerenciamento de rede SNMP (porta padrão para requisições do gerente ao agente) e sincronização de tempo NTP utilizam, respectivamente, as portas bem conhecidas e o protocolo da camada de transporte:
-A) Portas 162 e 514, rodando sobre TCP.
-B) Portas 162 e 123, rodando sobre TCP.
-C) Portas 161 e 514, rodando sobre UDP.
-D) Portas 161 e 123, rodando sobre UDP.
-E) Portas 389 e 123, rodando sobre UDP.
+O controle de fluxo do TCP visa evitar que o transmissor envie dados mais rápido do que o receptor consegue processar. O mecanismo utilizado pelo TCP para realizar o controle de fluxo é:
+A) O descarte preventivo de datagramas órfãos na camada de rede (IP) quando o tempo de vida do pacote (TTL) atinge o valor limite de zero.
+B) O algoritmo Slow Start, no qual o transmissor dobra o tamanho da janela de congestionamento a cada nova confirmação recebida na sessão.
+C) A modulação por largura de pulso (PWM) que ajusta dinamicamente a taxa de transmissão física do cabo de rede no switch central do tribunal.
+D) A janela deslizante (sliding window), em que o receptor informa no cabeçalho TCP o tamanho do espaço livre em seu buffer de recepção (Advertised Window).
+E) O envio periódico de mensagens ICMP Source Quench do roteador para o host transmissor solicitando a redução imediata da banda de rede.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. O SNMP opera por padrão na porta UDP 161 (para consultas enviadas ao agente) e na porta UDP 162 (para traps enviadas ao gerente). O NTP opera por padrão na porta UDP 123. Ambos são protocolos que exigem baixo overhead e latência, utilizando a porta de transporte UDP.
+
+**Gabarito: D**. O controle de fluxo do TCP é baseado na Janela Deslizante (sliding window) anunciada pelo receptor. O campo Window Size no cabeçalho TCP informa quantos bytes o transmissor pode enviar antes de esperar por um ACK.
 </details>
+
+---
 
 ### Questão 19 (FCC)
-No algoritmo clássico de controle de congestionamento do protocolo TCP, a janela de congestionamento (cwnd) cresce de formas distintas de acordo com o estado do algoritmo. Quando o valor de cwnd é menor que o limiar ssthresh (Slow Start Threshold), a taxa de crescimento da janela ocorre de forma:
-A) Linear, adicionando 1 MSS a cada RTT.
-B) Logarítmica, dividindo cwnd pelo fator de perda.
-C) Quadrática, multiplicando ssthresh por cwnd.
-D) Constante, mantendo-se fixa até ocorrer perda de pacotes.
-E) Exponencial, dobrando o valor de cwnd a cada RTT.
+O controle de congestionamento do TCP evita que a rede de computadores entre em colapso por excesso de tráfego. Sobre a fase de Slow Start (partida lenta), assinale a alternativa correta:
+A) Ela desativa o controle de fluxo do receptor para priorizar a passagem dos pacotes de dados prioritários através dos roteadores da rede.
+B) O transmissor envia os dados na velocidade máxima permitida pela interface física de rede e reduz a taxa linearmente se ocorrer perda de pacotes.
+C) O tamanho da janela de congestionamento é mantido fixo e o transmissor altera apenas a taxa de retransmissão de segmentos temporizados.
+D) A fase de Slow Start é ativada apenas se o tempo de resposta do servidor ultrapassar o limite padrão de trinta segundos da sessão ativa.
+E) A janela de congestionamento (cwnd) começa em um tamanho pequeno (ex: 1 MSS) e cresce exponencialmente (dobrando a cada RTT) até atingir o limite ssthresh.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. No estado de Slow Start (Partida Lenta), a janela de congestionamento (cwnd) começa pequena e cresce de forma exponencial (dobra a cada RTT - Round Trip Time), aumentando 1 MSS para cada ACK recebido com sucesso. Quando cwnd atinge ssthresh, o algoritmo passa para o estado de Congestion Avoidance, onde o crescimento torna-se linear (A) .
+
+**Gabarito: E**. No Slow Start, a janela de congestionamento (cwnd) cresce exponencialmente (cwnd = cwnd * 2 a cada RTT) a partir de um valor inicial pequeno até alcançar o limiar de partida lenta (ssthresh), quando entra em Congestion Avoidance.
 </details>
+
+---
 
 ### Questão 20 (FCC)
-Considere a seguinte situação hipotética: Durante a transmissão de uma grande massa de dados via TCP, o transmissor recebe 3 confirmações de recebimento duplicadas (ACKs duplicados) referentes a um segmento específico que havia sido enviado anteriormente. De acordo com a especificação de controle de congestionamento do TCP, ao receber o terceiro ACK duplicado, o transmissor deve:
-A) Derrubar imediatamente a conexão com flag RST por perda excessiva.
-B) Reduzir a janela de congestionamento (cwnd) para 1 MSS e iniciar a fase de Slow Start.
-C) Iniciar a fase de Fast Retransmit, reenviando o segmento perdido imediatamente sem aguardar o estouro do temporizador de timeout (RTO).
-D) Duplicar o valor do ssthresh e congelar a transmissão por 1 RTT.
-E) Ignorar as mensagens de confirmação e aguardar o RTO estourar de forma passiva.
+Em controle de congestionamento TCP, após a janela de congestionamento atingir o valor de ssthresh (Slow Start Threshold), o TCP entra na fase de:
+A) Slow Start, reiniciando o crescimento exponencial da janela de transmissão a partir do valor inicial de dez segmentos TCP.
+B) Fast Recovery (recuperação rápida), na qual a janela de congestionamento é reduzida imediatamente para zero para limpar os buffers.
+C) Congestion Avoidance (evitação de congestionamento), em que a janela de congestionamento cresce linearmente (1 MSS a cada RTT).
+D) Flow Control, repassando o controle do tamanho de transmissão para o buffer físico do adaptador de rede do cliente ativo.
+E) Connection Tear-down, finalizando a conexão TCP de forma abrupta com o envio de um segmento com a flag RST (reset).
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. A recepção de 3 ACKs duplicados indica perda de segmento, mas que segmentos posteriores chegaram ao buffer do destino. Em vez de aguardar o temporizador RTO expirar (o que causaria lentidão e reinício via Slow Start), o TCP executa o Fast Retransmit, reenviando o pacote perdido imediatamente. Em seguida, inicia o Fast Recovery (Recuperação Rápida).
+
+**Gabarito: C**. Quando a janela cwnd alcança o ssthresh, o TCP muda do crescimento exponencial (Slow Start) para o crescimento linear (Congestion Avoidance), onde cwnd é incrementada em 1 MSS por RTT.
 </details>
+
+---
 
 ### Questão 21 (FCC)
-Embora o protocolo UDP não forneça confiabilidade, controle de fluxo ou reordenação, ele é amplamente utilizado em diversas aplicações modernas na Internet. A alternativa que apresenta um cabeçalho completo e correto com todos os campos existentes em um segmento UDP padrão é:
-A) Porta de Origem, Porta de Destino, Número de Sequência, Checksum.
-B) Porta de Origem, Porta de Destino, Flags (SYN, ACK), Acknowledgment.
-C) Porta de Origem, Porta de Destino, Window Size, Checksum.
-D) Porta de Origem, Porta de Destino, Comprimento do Segmento, Checksum.
-E) Porta de Origem, Porta de Destino, Tipo de Serviço (ToS), Time to Live (TTL).
+Os algoritmos Fast Retransmit (retransmissão rápida) e Fast Recovery (recuperação rápida) otimizam o comportamento do TCP sob perdas. O Fast Retransmit é disparado quando o transmissor recebe:
+A) Um pacote de sincronização (SYN) do servidor indicando que a numeração dos bytes da sessão deve ser reiniciada no buffer.
+B) Uma mensagem ICMP de destino inalcançável gerada pelo roteador de borda devido à queda física do link de fibra óptica.
+C) Um segmento TCP contendo a flag FIN ativa para solicitar o encerramento ordenado da conexão de transporte ativa.
+D) Três confirmações duplicadas (triple duplicate ACKs) consecutivas para um mesmo segmento de dados enviado anteriormente.
+E) Uma notificação do sistema operacional de que o buffer físico de envio da placa de rede local atingiu o limite de capacidade.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. O cabeçalho UDP é minimalista e possui exatamente 8 bytes, contendo apenas 4 campos de 2 bytes cada: Porta de Origem, Porta de Destino, Comprimento do Segmento (Length) e Checksum. Campos como número de sequência (A) , Window Size (C)  e Flags (B)  são exclusivos do cabeçalho TCP. TTL (E)  pertence ao cabeçalho IP.
+
+**Gabarito: D**. Se o transmissor receber 3 ACKs duplicados consecutivos (além do original, totalizando 4 ACKs para o mesmo número de sequência), ele assume que o segmento subsequente foi perdido e faz a retransmissão imediata (Fast Retransmit) sem esperar o estouro do temporizador de retransmissão (RTO).
 </details>
+
+---
 
 ### Questão 22 (FCC)
-Durante o encerramento ordenado de uma conexão TCP ativa entre um servidor de banco de dados e uma aplicação cliente, a conexão passa por diversos estados em ambas as pontas. A flag do cabeçalho TCP que é utilizada para notificar a contraparte de que o transmissor terminou de enviar seus dados e deseja fechar a conexão é a:
-A) RST (Reset).
-B) SYN (Synchronize).
-C) FIN (Finish).
-D) PSH (Push).
-E) URG (Urgent).
+Em relação ao cabeçalho do TCP, um campo que consta no cabeçalho TCP e NÃO consta no cabeçalho UDP é:
+A) Destination Port (porta de destino), utilizada para encaminhar os dados para o processo de aplicação correto.
+B) Source Port (porta de origem), que identifica o aplicativo de origem que enviou a mensagem de transporte.
+C) Sequence Number (número de sequência), utilizado para ordenar os segmentos recebidos e detectar perdas.
+D) Checksum, que é um campo de verificação de integridade utilizado para detectar erros de bits nos dados transmitidos.
+E) Length (comprimento), que indica o tamanho total do segmento de transporte incluindo cabeçalho e dados.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. A flag FIN (Finish) é utilizada para sinalizar o término da transmissão e iniciar o processo de encerramento da conexão em 4 etapas (FIN -> ACK -> FIN -> ACK). O RST (A)  fecha a conexão de forma abrupta em caso de erro grave.
+
+**Gabarito: C**. O campo Sequence Number é exclusivo do TCP, sendo fundamental para o controle de ordenação e confiabilidade. UDP não possui números de sequência. Portas e Checksum estão presentes em ambos. Length está no UDP (no TCP, o tamanho é deduzido a partir do IP).
 </details>
+
+---
 
 ### Questão 23 (FCC)
-Para garantir a segurança de seus sistemas e portas abertas em seus servidores de aplicação contra acessos externos não autorizados, a equipe de infraestrutura de TI do TJ-CE fechou todas as portas não essenciais no firewall de borda. Sabendo que o tribunal utiliza LDAP para serviços de diretório, SSH para administração remota e RDP para conexão de área de trabalho remota para técnicos, quais portas TCP padrão devem permanecer obrigatoriamente abertas para estes serviços, respectivamente?
-A) 443, 22 e 80.
-B) 636, 23 e 3389.
-C) 389, 21 e 1433.
-D) 389, 22 e 3389.
-E) 161, 23 e 3389.
+As portas de comunicação identificam processos na camada de transporte. As portas padrão associadas aos protocolos SSH, SMTP e HTTPS são, respectivamente:
+A) 22, 143 e 8080
+B) 80, 110 e 443
+C) 21, 23 e 80
+D) 22, 25 e 443
+E) 23, 25 e 8443
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. LDAP opera na porta padrão TCP 389 (LDAPS seguro opera em 636). SSH opera na porta padrão TCP 22 (Telnet inseguro opera em 23). O RDP da Microsoft opera na porta padrão TCP 3389.
+
+**Gabarito: D**. SSH opera na porta 22; SMTP na porta 25; HTTPS na porta 443. Portas clássicas muito cobradas em provas de concursos pela FCC.
 </details>
+
+---
 
 ### Questão 24 (FCC)
-No controle de congestionamento do TCP, após o acionamento dos mecanismos de Fast Retransmit (Retransmissão Rápida) e Fast Recovery (Recuperação Rápida), o transmissor não reinicia a transmissão via Slow Start. Em vez disso, ele define o ssthresh para a metade da janela atual, e a janela de congestionamento (cwnd) é ajustada de forma a reiniciar a transmissão diretamente na fase de:
-A) Slow Start com crescimento exponencial.
-B) Timeout RTO passivo.
-C) Controle de Fluxo passivo.
-D) Multiplicative Increase exponencial.
-E) Congestion Avoidance com crescimento linear.
+O encerramento de uma conexão TCP ativa é realizado de forma ordenada através de uma sequência de controle. As flags enviadas para fechar a conexão de forma bilateral são:
+A) SYN (cliente) -> ACK (servidor) -> FIN (servidor) -> ACK (cliente)
+B) FIN (cliente) -> FIN-ACK (servidor) -> ACK (cliente/servidor)
+C) RST (cliente) -> RST-ACK (servidor) -> ACK (cliente)
+D) FIN (cliente) -> ACK (servidor) -> RST (servidor) -> ACK (cliente)
+E) FIN (cliente) -> ACK (servidor) -> FIN (servidor) -> ACK (cliente)
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. O mecanismo de Fast Recovery assume que a rede não está congestionada a ponto de exigir Slow Start (pois os ACKs duplicados mostram que pacotes continuam passando). Por isso, ele divide o ssthresh e define cwnd de forma a continuar transmitindo em Congestion Avoidance (linear), evitando a queda brusca de vazão gerada pelo Slow Start.
+
+**Gabarito: E**. O encerramento ordenado (four-way handshake) utiliza a flag FIN (Finish) e a confirmação ACK em ambas as direções, pois o TCP é bidirecional (full-duplex) e cada lado deve fechar seu canal de envio de forma independente.
 </details>
+
+---
 
 ### Questão 25 (FCC)
-O protocolo TCP garante a entrega ordenada e livre de erros de pacotes através de um mecanismo denominado ARQ (Automatic Repeat Request). Esse mecanismo baseia-se no envio de confirmações pelo receptor. No TCP clássico, quando o receptor envia uma mensagem ACK com o valor de confirmação $N$, isso significa que o receptor:
-A) Reiniciou o tamanho da sua janela de recepção para $N$ bytes.
-B) Recebeu apenas o byte $N$, e os pacotes anteriores a $N$ foram perdidos.
-C) Solicita que o transmissor repita o pacote $N-1$ imediatamente.
-D) Confirma a recepção do byte $N+1$ em diante, pulando o byte $N$.
-E) Recebeu todos os bytes até $N-1$ com sucesso, e espera receber o byte $N$ em seguida (Confirmação Cumulativa).
+Em relação ao protocolo UDP, assinale a alternativa que apresenta uma aplicação típica na qual a sua utilização é preferível em relação ao TCP:
+A) Envio de e-mails corporativos contendo anexos criptografados de grande porte para auditoria da corregedoria do tribunal.
+B) Transferências de arquivos corporativos via FTP, onde a perda de um único byte pode corromper totalmente o arquivo copiado.
+C) Acesso remoto a servidores via SSH, onde a segurança e a integridade da digitação dos comandos devem ser garantidas de forma estrita.
+D) Consultas transacionais de envio de mensagens financeiras que exigem o registro cronológico rígido de logs no banco de dados.
+E) Transmissões de voz sobre IP (VoIP) e streaming de vídeo em tempo real, onde a baixa latência é mais crítica que eventuais perdas de pacotes.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. O ACK do TCP é cumulativo. Um ACK de número $N$ confirma que todos os bytes anteriores a $N$ (ou seja, de $0$ a $N-1$) foram recebidos em ordem e sem erros, e que o receptor está pronto para receber o byte de sequência número $N$.
+
+**Gabarito: E**. O UDP é ideal para aplicações de tempo real (como áudio, vídeo, jogos e VoIP) e consultas rápidas de pergunta-resposta (como DNS), onde atrasos causados por retransmissão de pacotes perdidos no TCP prejudicariam a experiência do usuário.
 </details>
+
+---
 
 ### Questão 26 (FCC)
-Diferente de protocolos baseados em texto, o protocolo DNS (Domain Name System) utiliza prioritariamente o UDP para responder a consultas simples de clientes, mas pode comutar para o protocolo TCP em situações específicas de rede. De acordo com a especificação RFC 1035, o DNS utiliza obrigatoriamente o protocolo TCP na porta 53 quando:
-A) A resposta gerada pelo servidor de nomes excede 512 bytes de tamanho ou na realização de transferência de zona (Zone Transfer) entre servidores primários e secundários.
-B) O cliente realiza uma consulta do tipo MX (Mail Exchange).
-C) O tráfego de rede local está muito congestionado, ativando o Fast Recovery.
-D) A resolução do nome falha no primeiro servidor raiz (Root Server).
-E) O cliente necessita de cache local criptografado em HTTPS.
+No cabeçalho do segmento TCP, o campo 'Header Length' (ou Data Offset) tem a finalidade técnica de:
+A) Especificar o tamanho do cabeçalho TCP medido em palavras de 32 bits, identificando onde começam os dados úteis da mensagem.
+B) Indicar o tamanho máximo do segmento (MSS) que o host receptor aceita receber na sessão ativa de transporte local.
+C) Definir a quantidade de memória RAM que o servidor de aplicação deve alocar para processar a requisição de rede HTTP.
+D) Informar o endereço físico do adaptador de rede de destino (MAC Address) para fins de roteamento em camada de enlace.
+E) Determinar o tempo de vida útil restante do segmento TCP na rede antes de ser descartado por estouro de temporizador físico.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. O DNS tradicionalmente usa UDP na porta 53 para consultas rápidas de até 512 bytes. Para respostas maiores que 512 bytes (comum em consultas DNSSEC) ou na sincronização completa de zonas entre servidores DNS (Zone Transfer), o DNS utiliza obrigatoriamente o TCP na porta 53 devido à necessidade de confiabilidade e remontagem de fluxos maiores.
+
+**Gabarito: A**. Como o cabeçalho TCP possui o campo de 'Options' que tem tamanho variável, o campo Data Offset (Header Length) é necessário para indicar onde termina o cabeçalho e começa a carga útil (payload). Ele é expresso em palavras de 32 bits (4 bytes).
 </details>
+
+---
 
 ### Questão 27 (FCC)
-Durante o desenvolvimento de um aplicativo mobile corporativo, a equipe de TI optou por enviar as requisições de atualização de geolocalização dos técnicos utilizando o protocolo UDP em vez do TCP. Sob a perspectiva de engenharia de software e redes, a principal justificativa para esta escolha é:
-A) O UDP elimina o overhead de estabelecimento de conexão e confirmações de recebimento, fornecendo latência mínima e maior eficiência para transmissões frequentes de dados em tempo real.
-B) O UDP dispensa a necessidade de verificação de portas de comunicação no servidor ativo.
-C) O UDP garante a reordenação automática dos pacotes que chegam fora de sequência no servidor.
-D) O UDP possui cabeçalho de 20 bytes idêntico ao TCP, mas suporta compressão nativa de dados.
-E) O UDP realiza o controle de fluxo na camada física de transmissão óptica.
+Um ataque de negação de serviço comum tenta explorar a fase inicial do estabelecimento de conexões TCP. Esse ataque, que inunda o servidor com requisições SYN sem completar o handshake, é conhecido como:
+A) SYN Flood, que esgota a tabela de conexões pendentes (backlog queue) do servidor impedindo novos acessos legítimos.
+B) Buffer Overflow, que sobrescreve a memória física do roteador de borda utilizando pacotes IP de tamanho maior que o padrão MTU.
+C) Man-in-the-Middle, no qual o atacante intercepta a troca de chaves públicas do TLS para descriptografar os dados em trânsito.
+D) SQL Injection, que insere códigos maliciosos nas queries de busca enviadas ao banco de dados relacional através da camada de transporte.
+E) DNS Spoofing, que altera as tabelas de cache dos servidores de nomes locais para redirecionar o tráfego a servidores clonados.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. A grande vantagem do UDP é a ausência de conexão prévia (sem handshake) e a falta de retransmissões/confirmações. Para atualizações constantes onde a perda de um pacote individual é insignificante (pois a próxima atualização virá logo em seguida), o UDP oferece latência mínima e economiza banda de rede.
+
+**Gabarito: A**. O SYN Flood inunda o alvo com pacotes SYN. O servidor aloca memória para conexões 'semi-abertas' (SYN-RCVD) e responde com SYN-ACK, mas o atacante não envia o ACK final. Isso satura o buffer de conexões pendentes do sistema operacional.
 </details>
+
+---
 
 ### Questão 28 (FCC)
-Considere a seguinte situação hipotética: Um servidor proxy de borda do TJ-CE monitora conexões TCP ativas e detecta um tráfego anômalo que viola as políticas de segurança corporativas. Para encerrar de forma imediata e abrupta a sessão de transmissão do invasor sem passar pelo handshake de encerramento normal (FIN-ACK), o firewall deve enviar um pacote contendo a seguinte flag ativada no cabeçalho TCP:
-A) RST.
-B) SYN.
-C) PSH.
-D) URG.
-E) FIN.
+O cabeçalho UDP é extremamente simples para minimizar o overhead de transmissão. O tamanho total padrão do cabeçalho UDP em bytes é de:
+A) 8 bytes
+B) 20 bytes
+C) 32 bytes
+D) 40 bytes
+E) 12 bytes
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. A flag RST (Reset) força o encerramento abrupto e imediato de uma conexão TCP, descartando os buffers associados de ambas as pontas imediatamente, sem necessidade da negociação elegante de 4 passos iniciada pelo FIN (E) .
+
+**Gabarito: A**. O cabeçalho UDP possui exatamente 4 campos de 2 bytes cada (Source Port, Destination Port, Length, Checksum), totalizando 8 bytes. O cabeçalho TCP padrão sem opções possui 20 bytes.
 </details>
+
+---
 
 ### Questão 29 (FCC)
-No cabeçalho do protocolo TCP, a posição e a ordem lógica da flag que indica que a informação contida no segmento deve ser empurrada imediatamente para a aplicação receptora na camada superior, sem aguardar o preenchimento total do buffer de entrada do receptor, é a flag:
-A) URG (Urgent).
-B) SYN (Synchronize).
-C) PSH (Push).
-D) ACK (Acknowledgment).
-E) FIN (Finish).
+As portas lógicas de transporte são divididas em faixas pela IANA. A faixa de portas conhecidas (Well-Known Ports) e a faixa de portas registradas (Registered Ports) cobrem, respectivamente, as faixas de:
+A) 1 a 1024 e 1025 a 65535
+B) 0 a 255 e 256 a 1023
+C) 0 a 1023 e 1024 a 49151
+D) 0 a 49151 e 49152 a 65535
+E) 0 a 80 e 81 a 443
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. A flag PSH (Push) instrui o receptor a passar os dados recebidos imediatamente para a aplicação receptora na camada de aplicação, em vez de manter os dados armazenados temporariamente no buffer aguardando outros segmentos.
+
+**Gabarito: C**. A IANA classifica as portas em: Well-Known (Conhecidas/Sistema): 0 a 1023; Registered (Registradas): 1024 a 49151; Dynamic/Private (Dinâmicas/Privadas): 49152 a 65535.
 </details>
 
+---
+
 ### Questão 30 (FCC)
-Para garantir o envio de e-mails institucionais de forma integrada com o sistema de processos eletrônicos e permitir a leitura e o gerenciamento das pastas de e-mails dos usuários diretamente nos servidores centrais, a equipe de TI do TJ-CE deve configurar no servidor, respectivamente, os protocolos de envio SMTP e de recebimento e gerenciamento online IMAP nas portas padrão TCP:
-A) 25 e 110.
-B) 110 e 143.
-C) 25 e 143.
-D) 80 e 443.
-E) 21 e 110.
+O temporizador de retransmissão (RTO - Retransmission Timeout) do TCP é calculado dinamicamente. O cálculo do RTO baseia-se na medição de:
+A) Carga de processamento do roteador de borda intermediário, calculada através de mensagens ICMP Echo Request periódicas.
+B) Largura de banda da interface de rede, medida através da transmissão síncrona de rajadas de dados de teste (ping packet).
+C) RTT (Round-Trip Time), que mede o tempo decorrido entre o envio de um segmento e a chegada da sua correspondente confirmação.
+D) Quantidade de colisões ocorridas na rede local devido a conexões ethernet em modo half-duplex nos hubs da comarca.
+E) Tamanho máximo de segmento (MSS) acordado pelas interfaces de rede ativas durante o handshake do protocolo TLS.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. O SMTP (Simple Mail Transfer Protocol) é o protocolo padrão para envio de e-mails e opera na porta TCP 25 (para servidores). O IMAP (Internet Message Access Protocol) é usado para recebimento e sincronização online de mensagens com o servidor e opera na porta TCP 143. A porta 110 (A, C, E) pertence ao protocolo POP3, que faz download e apaga do servidor, não mantendo o gerenciamento online.
+
+**Gabarito: C**. O RTO é calculado com base no RTT (Round-Trip Time) estimado e sua variação (desvio padrão), garantindo que o TCP ajuste seu tempo de espera por ACKs de acordo com a latência real do caminho da rede.
 </details>
 
 ---
@@ -375,292 +461,277 @@ E) 21 e 110.
 ## 📝 TEMA 3: Raciocínio Lógico-Matemático — Lógica de Argumentação, Equivalências e Inferências (Modus Ponens e Modus Tollens)
 
 ### Questão 31 (FCC)
-Considere a seguinte situação hipotética: Durante uma auditoria interna de TIC no Tribunal de Justiça, foram estabelecidas as seguintes premissas lógicas referentes ao processamento de dados sensíveis dos cidadãos:
-1. Se a LGPD for violada, então o tribunal é notificado e uma multa administrativa é aplicada.
-2. A multa administrativa não foi aplicada.
-A partir dessas premissas, sob as regras da lógica de argumentação e inferências válidas, deduz-se corretamente que:
-A) A LGPD foi violada, mas o tribunal não foi notificado.
-B) O tribunal foi notificado e a LGPD não foi violada.
-C) Se o tribunal for notificado, então a LGPD foi violada.
-D) A LGPD não foi violada.
-E) A multa administrativa foi aplicada e o tribunal não foi notificado.
+Considere a seguinte proposição condicional: *"Se o analista de suporte realiza o backup, então o banco de dados não perde dados"*. Uma proposição logicamente equivalente a essa é:
+A) Se o banco de dados não perdeu dados, então o analista de suporte realizou o backup.
+B) Se o analista de suporte não realiza o backup, então o banco de dados perde dados.
+C) O analista de suporte realizou o backup e o banco de dados perdeu dados.
+D) Se o banco de dados perdeu dados, então o analista de suporte não realizou o backup.
+E) O analista de suporte não realiza o backup ou o banco de dados perde dados.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. Traduzindo em proposições simples: $V$: LGPD violada; $N$: Tribunal notificado; $M$: Multa aplicada. Premissas: 1. $V \rightarrow (N \land M)$ e 2. $\neg M$. Pela propriedade da conjunção, se $\neg M$ é verdadeiro, $(N \land M)$ é falso. Aplicando a regra do Modus Tollens no condicional $V \rightarrow (N \land M)$, se o consequente é falso, o antecedente deve ser falso. Logo, $\neg V$ é verdadeiro (A LGPD não foi violada).
+
+**Gabarito: D**. A equivalência da condicional $P 	o Q$ pela contrapositiva é $
+eg Q 	o 
+eg P$. Negando a consequente 'o banco de dados não perde dados' vira 'o banco de dados perde dados' (ou 'perdeu dados'). Negando a antecedente 'o analista realiza o backup' vira 'o analista não realizou o backup'. Assim: 'Se o banco de dados perdeu dados, então o analista de suporte não realizou o backup'. A alternativa D está correta.
 </details>
+
+---
 
 ### Questão 32 (FCC)
-Duas proposições compostas são logicamente equivalentes quando possuem a mesma tabela-verdade. A frase *"Se o cabeamento é Categoria 6A, então a velocidade de transmissão atinge 10 Gbps"* possui equivalência lógica com a proposição descrita em:
-A) O cabeamento é Categoria 6A ou a velocidade de transmissão não atinge 10 Gbps.
-B) Se a velocidade de transmissão não atinge 10 Gbps, então o cabeamento não é Categoria 6A.
-C) Se o cabeamento não é Categoria 6A, então a velocidade de transmissão não atinge 10 Gbps.
-D) O cabeamento não é Categoria 6A e a velocidade de transmissão atinge 10 Gbps.
-E) Se a velocidade de transmissão atinge 10 Gbps, então o cabeamento é Categoria 6A.
+Uma outra equivalência importante da condicional $P 	o Q$ na lógica proposicional é a sua conversão em uma disjunção inclusiva. A equivalência correta nesse formato para a frase *"Se estudo para o concurso do TJ, então sou aprovado"* é:
+A) Estudo para o concurso do TJ e sou aprovado.
+B) Não estudo para o concurso do TJ ou sou aprovado.
+C) Se não estudo para o concurso do TJ, então não sou aprovado.
+D) Não estudo para o concurso do TJ ou não sou aprovado.
+E) Se sou aprovado, então estudo para o concurso do TJ.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. A proposição tem a forma $P \rightarrow Q$. Uma das equivalências da condicional é a Contrapositiva: $\neg Q \rightarrow \neg P$. Traduzindo: *"Se a velocidade de transmissão não atinge 10 Gbps (negando Q), então o cabeamento não é Categoria 6A (negando P)"*. A alternativa C comete a falácia da negação do antecedente. A alternativa E comete a falácia da afirmação do consequente.
+
+**Gabarito: B**. A condicional $P 	o Q$ é logicamente equivalente a $
+eg P \lor Q$. Aplicando à proposição: $
+eg P$ = 'Não estudo para o concurso do TJ', $\lor$ = 'ou', $Q$ = 'sou aprovado'. Portanto: 'Não estudo para o concurso do TJ ou sou aprovado'. A opção B está correta.
 </details>
+
+---
 
 ### Questão 33 (FCC)
-Considere a seguinte situação hipotética: Quatro técnicos judiciários do setor de TI do TJ-CE (André, Bruno, Carlos e Daniel) possuem, cada um, uma única especialização profissional distinta (Banco de Dados, Redes, Segurança e Programação). As seguintes afirmações sobre suas especializações são verdadeiras:
-1. André ou Carlos é o especialista em Segurança.
-2. Se Bruno for o especialista em Programação, então Daniel é o especialista em Redes.
-3. Se Carlos for o especialista em Segurança, então Bruno é o especialista em Programação.
-4. Sabe-se que Daniel não é o especialista em Redes.
-Com base nas premissas lógicas fornecidas, é correto concluir que o especialista em Segurança e o especialista em Programação são, respectivamente:
-A) André e Carlos.
-B) Carlos e André.
-C) André e Bruno.
-D) Carlos e Bruno.
-E) Daniel e André.
+Deseja-se realizar a negação lógica da proposição condicional: *"Se o servidor do tribunal cometer uma falta grave, então ele será demitido"*. A negação correta dessa condicional é:
+A) O servidor do tribunal não comete uma falta grave ou ele é demitido.
+B) Se o servidor do tribunal não cometer uma falta grave, então ele não será demitido.
+C) O servidor do tribunal comete uma falta grave e não é demitido.
+D) Se o servidor do tribunal for demitido, então ele cometeu uma falta grave.
+E) O servidor do tribunal não comete uma falta grave e ele não é demitido.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: C**. Vamos analisar passo a passo:
-* Premissa 4 afirma: Daniel NÃO é especialista em Redes ($\neg DR$ é verdadeiro).
-* Na premissa 2, temos o condicional: $BP \rightarrow DR$. Como sabemos que $DR$ é falso, por Modus Tollens concluímos que $BP$ também é falso ($\neg BP$ é verdadeiro - Bruno NÃO é especialista em Programação).
-* Na premissa 3, temos o condicional: $CS \rightarrow BP$. Como concluímos que $BP$ é falso, por Modus Tollens concluímos que $CS$ também é falso ($\neg CS$ é verdadeiro - Carlos NÃO é especialista em Segurança).
-* Na premissa 1, temos a disjunção: $AS \lor CS$. Como $CS$ é falso, para a disjunção ser verdadeira, $AS$ deve ser verdadeiro (André é o especialista em Segurança).
-* Como Daniel não é redes, Carlos não é segurança, André é segurança. Sobram Programação, Banco de Dados e Redes.
-* O condicional da premissa 2 está satisfeito pois a premissa $BP$ (Bruno Programação) é falsa. Quem pode ser programação? Daniel ou Bruno não são (Daniel não é redes, Bruno não é programação).
-* Ajustando a associação: André = Segurança. Bruno = Programação? Não, pois descobrimos $\neg BP$. Então Bruno não é Programação. As posições restantes para Banco de Dados, Redes e Programação devem ser distribuídas. Como Bruno não é Programação, resta que Bruno é Redes ou Banco de Dados. Daniel não é Redes. 
-* Espera, vamos reavaliar: se Bruno não é Programação, e Carlos não é Segurança. André é Segurança. Sobram para Carlos, Bruno e Daniel as especialidades: Programação, Banco de Dados e Redes.
-* Como Daniel não é redes, Daniel deve ser Programação ou Banco de Dados.
-* Bruno não é Programação, logo Bruno deve ser Banco de Dados ou Redes.
-* Se Daniel não é Redes, e André é Segurança, as opções de Redes são Bruno ou Carlos.
-* Se Carlos é Redes, Bruno é Banco de Dados, Daniel é Programação. Isso valida todas as premissas perfeitamente.
-* A questão pergunta quem é Segurança e quem é Programação. Segurança = André. Programação = Daniel (e não Bruno).
-* Espera! Vamos reler as alternativas. A alternativa C diz: André e Bruno. Mas Bruno não é programação.
-* Vamos refazer a lógica. E se a premissa 2 $BP \rightarrow DR$ tiver $BP$ falso, a condicional é verdadeira.
-* Vamos olhar o gabarito das alternativas: se André é Segurança ($AS = V$), Carlos não é Segurança ($CS = F$).
-* Se Carlos não é Segurança, o antecedente da premissa 3 é falso ($CS = F$). A condicional $CS \rightarrow BP$ é logicamente verdadeira, independentemente de Bruno ser Programação ($BP$) ou não.
-* Isso significa que Bruno ser Programação ($BP$) pode ser Verdadeiro ou Falso!
-* Mas espere! Se Bruno for Programação ($BP = V$), a premissa 2 ($BP \rightarrow DR$) exige que Daniel seja Redes ($DR = V$).
-* Mas a premissa 4 diz que Daniel NÃO é especialista em Redes ($DR = F$).
-* Logo, se Daniel não é redes ($DR = F$), pela premissa 2 ($BP \rightarrow DR$), por Modus Tollens, Bruno NÃO pode ser Programação ($BP = F$).
-* Portanto, Bruno não é Programação. E Carlos não é Segurança. André é Segurança.
-* E quem sobrou para ser Programação? Daniel ou Carlos.
-* Vamos ver as opções: A pergunta é quem é "Segurança" e "Programação" respectivamente. Segurança é André.
-* A única alternativa com André em Segurança é a A (André e Bruno) ou C (André e Carlos).
-* Se a alternativa correta for C (André e Carlos), significa que Carlos é Programação.
-* Se Carlos for Programação, Daniel é Banco de Dados, Bruno é Redes. 
-* Vamos testar esse cenário:
-  * André = Segurança.
-  * Carlos = Programação.
-  * Bruno = Redes.
-  * Daniel = Banco de Dados.
-  * Teste das premissas:
-    1. André ou Carlos é Segurança? Sim (André é).
-    2. Se Bruno for Programação (Falso), então Daniel é Redes (Falso). F -> F é Verdadeiro.
-    3. Se Carlos for Segurança (Falso), então Bruno é Programação (Falso). F -> F é Verdadeiro.
-    4. Daniel não é Redes? Verdadeiro (ele é BD).
-  * Todas as premissas são verdadeiras! E a resposta correta de quem é Segurança e Programação seria André e Carlos.
-* E se André for Segurança e Bruno for Programação? 
-  * Se Bruno for Programação ($BP = V$), a premissa 2 diz que Daniel deve ser Redes ($DR = V$). Mas isso contradiz a premissa 4 (Daniel não é Redes). Logo, Bruno não pode ser Programação.
-* Logo, a única conclusão lógica válida é que André é Segurança e Carlos é Programação.
-* Portanto, o especialista em Segurança é André e o de Programação é Carlos.
-* **Gabarito correto: C.**
+
+**Gabarito: C**. A negação de uma condicional $
+eg(P 	o Q)$ equivale a $P \land 
+eg Q$ (regra do 'mantém a primeira E nega a segunda'). Assim: 'O servidor comete uma falta grave' (P) e ($\land$) 'não é demitido' ($
+eg Q$). A alternativa C está correta.
 </details>
+
+---
 
 ### Questão 34 (FCC)
-A regra de inferência válida conhecida como Modus Tollens (ou negação do consequente) estabelece que, se temos uma proposição condicional verdadeira e a negação de seu consequente também é verdadeira, podemos inferir a negação do antecedente. A representação simbólica correta dessa regra de inferência é:
-A) $(p \rightarrow q) \land \neg q \implies \neg p$
-B) $(p \rightarrow q) \land q \implies p$
-C) $(p \rightarrow q) \land p \implies q$
-D) $(p \rightarrow q) \land \neg p \implies \neg q$
-E) $(p \rightarrow \neg q) \land q \implies p$
+De acordo com as Leis de De Morgan na lógica matemática, a negação de uma conjunção $
+eg(P \land Q)$ e a negação de uma disjunção $
+eg(P \lor Q)$ são equivalentes, respectivamente, a:
+A) $
+eg P \lor 
+eg Q$ e $
+eg P \land 
+eg Q$
+B) $
+eg P \land 
+eg Q$ e $
+eg P \lor 
+eg Q$
+C) $
+eg P 	o 
+eg Q$ e $
+eg P \leftrightarrow 
+eg Q$
+D) $P \lor Q$ e $P \land Q$
+E) $
+eg(P \leftrightarrow Q)$ e $
+eg P \lor Q$
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. O Modus Tollens é formalizado como: dada a condicional $p \rightarrow q$ e a negação do consequente $\neg q$, conclui-se a negação do antecedente $\neg p$. A alternativa C representa o Modus Ponens. A alternativa B representa a falácia da afirmação do consequente. A alternativa D representa a falácia da negação do antecedente.
+
+**Gabarito: A**. As Leis de De Morgan determinam que: 1) a negação de 'E' vira 'OU' com as proposições negadas: $
+eg(P \land Q) \equiv 
+eg P \lor 
+eg Q$; 2) a negação de 'OU' vira 'E' com as proposições negadas: $
+eg(P \lor Q) \equiv 
+eg P \land 
+eg Q$. A opção A é a correta.
 </details>
+
+---
 
 ### Questão 35 (FCC)
-A proposição composta *"Se o log de auditoria registrar o erro, então o alerta de segurança é disparado"* possui equivalência lógica com a proposição disjuntiva expressa em:
-A) O log de auditoria não registra o erro ou o alerta de segurança é disparado.
-B) O log de auditoria registra o erro e o alerta de segurança é disparado.
-C) O log de auditoria registra o erro ou o alerta de segurança não é disparado.
-D) Se o alerta de segurança não for disparado, então o log de auditoria não registra o erro.
-E) O log de auditoria não registra o erro e o alerta de segurança não é disparado.
+Considere as seguintes premissas de um argumento lógico válido: 
+1. Se o switch de rede queimar, o acesso à internet é interrompido. 
+2. O acesso à internet não foi interrompido. 
+A partir dessas premissas, a regra de inferência Modus Tollens nos permite deduzir a seguinte conclusão lógica:
+A) O switch de rede não queimou.
+B) O switch de rede queimou ontem à noite.
+C) O acesso à internet foi reestabelecido por técnicos de TI.
+D) Se o switch de rede não queimar, o acesso é interrompido.
+E) Nenhuma conclusão lógica válida pode ser deduzida no argumento.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. A condicional $P \rightarrow Q$ equivale disjuntivamente a $\neg P \lor Q$ (regra Nega-Ou: nega a primeira parte, troca por 'ou', mantém a segunda parte). Portanto, a equivalência disjuntiva correta é: *"O log de auditoria não registra o erro (negando P) ou o alerta de segurança é disparado (mantendo Q)"*. A alternativa D é equivalente, mas é condicional (contrapositiva), não disjuntiva.
+
+**Gabarito: A**. A regra do Modus Tollens estabelece que, dadas as premissas $P 	o Q$ e $
+eg Q$, conclui-se validamente $
+eg P$. Na questão, $P$ = 'o switch de rede queimar', $Q$ = 'o acesso à internet é interrompido'. Sabendo que $
+eg Q$ ('O acesso não foi interrompido'), conclui-se $
+eg P$ ('O switch de rede não queimou'). A alternativa A é correta.
 </details>
+
+---
 
 ### Questão 36 (FCC)
-Considere a seguinte situação hipotética: Três servidores do TJ-CE (Eunice, Francisco e Glória) foram ouvidos pela comissão de auditoria para identificar o responsável por um vazamento acidental de chaves criptográficas. Sabe-se que apenas um dos servidores mentiu no depoimento.
-* Eunice declarou: *"O responsável foi o Francisco."*
-* Francisco declarou: *"O responsável foi a Glória."*
-* Glória declarou: *"O Francisco mentiu em seu depoimento."*
-A partir das premissas lógicas apresentadas, o servidor que mentiu no depoimento e o real responsável pelo vazamento das chaves são, respectivamente:
-A) Eunice e Francisco.
-B) Francisco e Eunice.
-C) Glória e Eunice.
-D) Francisco e Glória.
-E) Eunice e Glória.
+A regra de inferência lógica clássica conhecida como Modus Ponens pode ser estruturada da seguinte forma matemática nas premissas de um argumento:
+A) Dadas as premissas $P 	o Q$ e $
+eg Q$, conclui-se validamente a negação $
+eg P$ no argumento lógico.
+B) Dadas as premissas $P 	o Q$ e $P$, conclui-se validamente a proposição $Q$ no argumento lógico.
+C) Dadas as premissas $P \lor Q$ e $
+eg P$, conclui-se validamente a proposição $Q$ no argumento lógico.
+D) Dadas as premissas $P \land Q$ e $R$, conclui-se a conjunção de todas as variáveis ativas do sistema.
+E) Dadas as premissas $P 	o Q$ e $Q 	o R$, conclui-se a condicional transitiva simplificada $P 	o R$ no argumento.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. Vamos analisar as declarações de Francisco e Glória. Eles fazem declarações contraditórias: Francisco diz que Glória é responsável, e Glória diz que Francisco mentiu. 
-* Como são contraditórias, obrigatoriamente um deles fala a verdade e o outro mente.
-* Como o enunciado diz que apenas um dos três mentiu, isso significa que Eunice obrigatoriamente fala a VERDADE.
-* Se Eunice fala a verdade, a sua declaração *"O responsável foi o Francisco"* é verdadeira. Logo, Francisco é o responsável.
-* Agora analisamos o depoimento de Francisco: *"O responsável foi a Glória."* Como o responsável é Francisco, a fala dele é Falsa (ele mentiu).
-* Glória declarou: *"O Francisco mentiu."* Como Francisco realmente mentiu, a fala de Glória é Verdadeira.
-* Portanto, quem mentiu foi Francisco, e o responsável pelo vazamento foi Francisco.
-* **Gabarito correto: D.**
+
+**Gabarito: B**. O Modus Ponens (afirmação do antecedente) diz que se temos a condicional $P 	o Q$ e afirmamos a antecedente $P$, conclui-se necessariamente a consequente $Q$.
 </details>
+
+---
 
 ### Questão 37 (FCC)
-Deseja-se provar a validade do argumento: *"Se estudo redes, então passo no concurso. Se não estudo redes, então durmo cedo. Sabe-se que não dormi cedo. Logo, passei no concurso."* Sob as regras lógicas de inferência, o argumento apresentado é classificado como:
-A) Válido, justificado pela aplicação consecutiva de Modus Ponens e Modus Tollens.
-B) Válido, justificado pela aplicação consecutiva de Modus Tollens e Modus Ponens.
-C) Inválido, pois comete a falácia da negação do antecedente na primeira condicional.
-D) Inválido, pois não é possível inferir a negação de dormir cedo a partir da segunda condicional.
-E) Válido, justificado por ser um silogismo disjuntivo exclusivo direto.
+Considere a proposição composta: *"O analista de TI revisa o código ou ele realiza os testes unitários"*. A negação lógica dessa disjunção inclusiva é dada por:
+A) O analista de TI não revisa o código ou ele não realiza os testes unitários.
+B) O analista de TI não revisa o código e ele não realiza os testes unitários.
+C) Se o analista de TI não revisa o código, então ele não realiza os testes.
+D) O analista de TI revisa o código e ele realiza os testes unitários com calma.
+E) Se o analista de TI revisa o código, então ele não realiza os testes unitários.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. Vamos estruturar as premissas:
-1. $ER \rightarrow PC$ (Estudo redes -> Passo no concurso)
-2. $\neg ER \rightarrow DC$ (Não estudo redes -> Durmo cedo)
-3. $\neg DC$ (Não dormi cedo)
 
-Desenvolvimento:
-* Aplicando Modus Tollens nas premissas 2 e 3 ($\neg ER \rightarrow DC$ e $\neg DC$), concluímos a negação do antecedente da condicional, ou seja, $\neg(\neg ER) \equiv ER$ (Estudei redes).
-* Aplicando Modus Ponens na premissa 1 com a conclusão obtida ($ER \rightarrow PC$ e $ER$), concluímos o consequente: $PC$ (Passei no concurso).
-* O argumento é Válido e a sequência foi Modus Tollens seguida por Modus Ponens.
-* **Gabarito correto: B.**
+**Gabarito: B**. Negar a disjunção 'P ou Q' significa negar ambas as partes e trocar o conector 'ou' pelo 'e' ($
+eg P \land 
+eg Q$). Portanto: 'O analista não revisa o código E não realiza os testes'. A alternativa B está correta.
 </details>
+
+---
 
 ### Questão 38 (FCC)
-A negação lógica da proposição condicional complexa *"Se o firewall de borda falhar e o atacante explorar a porta 22, então os dados serão expostos"* é expressa corretamente na linguagem natural por:
-A) Se o firewall de borda não falhar ou o atacante não explorar a porta 22, então os dados não serão expostos.
-B) O firewall de borda falhou e o atacante explorou a porta 22, e os dados não foram expostos.
-C) O firewall de borda não falhou ou o atacante não explorou a porta 22, e os dados foram expostos.
-D) Se os dados não forem expostos, então o firewall de borda não falhou e o atacante não explorou a porta 22.
-E) O firewall de borda falhou e o atacante explorou a porta 22, ou os dados não foram expostos.
+Na tabela verdade, a proposição composta que resulta em valores lógicos verdadeiros em todas as suas linhas, independentemente dos valores das proposições simples que a compõem, é classificada como uma:
+A) Contradição
+B) Tautologia
+C) Contingência
+D) Equivalência condicional
+E) Falácia formal
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. A proposição tem a forma $(F \land A) \rightarrow D$. A negação da condicional exige manter o antecedente **E** negar o consequente: $(F \land A) \land \neg D$. Traduzindo: *"O firewall de borda falhou e o atacante explorou a porta 22 (mantendo o antecedente), E os dados não foram expostos (negando o consequente)"*.
+
+**Gabarito: B**. Tautologia é a proposição composta cujo valor lógico é sempre verdadeiro. Contradição é sempre falso. Contingência pode ser verdadeiro ou falso dependendo das entradas.
 </details>
+
+---
 
 ### Questão 39 (FCC)
-Considere a seguinte premissa estrutural: *"Toda transmissão de dados sem criptografia TLS é considerada insegura."* A negação lógica dessa afirmação categórica universal afirmativa é:
-A) Nenhuma transmissão de dados sem criptografia TLS é considerada insegura.
-B) Alguma transmissão de dados sem criptografia TLS não é considerada insegura.
-C) Toda transmissão de dados com criptografia TLS é considerada segura.
-D) Alguma transmissão de dados com criptografia TLS é considerada insegura.
-E) Pelo menos uma transmissão de dados sem criptografia TLS é considerada insegura.
+Assinale a alternativa que apresenta uma falácia formal clássica relacionada ao uso incorreto de regras de inferência lógica condicional:
+A) Negação da antecedente, em que se conclui que, dada a disjunção $P \lor Q$ e a negação de $P$, conclui-se validamente a negação de $Q$.
+B) Afirmação do consequente, em que se assume que, dada a condicional $P 	o Q$ e a ocorrência de $Q$, conclui-se validamente $P$.
+C) Silogismo disjuntivo, no qual a afirmação de uma das premissas exclui obrigatoriamente a veracidade da outra proposição simples.
+D) Modus Tollens aplicado a uma negação simples em que a antecedente condicional é desconsiderada durante a inferência.
+E) Dilema construtivo baseado em tabelas verdade que possuem contingências na coluna final do conectivo lógico principal.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: B**. A negação de "Todo A é B" é "Algum A não é B" (ou "Existe pelo menos um A que não é B"). Portanto, a negação de *"Toda transmissão... é insegura"* é *"Alguma transmissão... não é considerada insegura"*. Negar com "Nenhuma" (A)  é um erro clássico de lógica formal.
+
+**Gabarito: B**. A afirmação do consequente é uma falácia formal (ex: 'Se chove, a rua fica molhada. A rua está molhada, logo choveu' - a rua pode ter sido molhada por um caminhão de limpeza). Não é uma inferência dedutiva válida.
 </details>
+
+---
 
 ### Questão 40 (FCC)
-Uma tabela-verdade é uma ferramenta para analisar a validade de fórmulas proposicionais. Dada a proposição composta: $(p \lor \neg q) \rightarrow (p \land q)$, sob quais atribuições de valores lógicos para as proposições simples $p$ e $q$ a proposição composta assume o valor lógico de FALSIDADE?
-A) $p$ é Verdadeiro e $q$ é Verdadeiro.
-B) $p$ é Falso e $q$ é Falso.
-C) $p$ é Falso e $q$ é Verdadeiro.
-D) $p$ é Verdadeiro e $q$ é Falso.
-E) A proposição composta nunca assume valor lógico de falsidade (tautologia).
+Considere a proposição condicional: *"Se o processo é julgado tempestivamente, então os direitos do cidadão são plenamente assegurados"*. A contrapositiva dessa proposição é:
+A) O processo é julgado tempestivamente e os direitos do cidadão não são plenamente assegurados no tribunal.
+B) Se os direitos do cidadão são plenamente assegurados, então o processo é julgado tempestivamente.
+C) Se o processo não é julgado tempestivamente, então os direitos do cidadão não são plenamente assegurados.
+D) Se os direitos do cidadão não são plenamente assegurados, então o processo não é julgado tempestivamente.
+E) O processo não é julgado tempestivamente ou os direitos do cidadão são plenamente assegurados pelo comitê.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. Um condicional $A \rightarrow B$ só é Falso se o antecedente $A$ for Verdadeiro e o consequente $B$ for Falso.
-* Vamos testar as atribuições:
-* Se $p = V$ e $q = F$:
-  * Antecedente: $(p \lor \neg q) \equiv (V \lor \neg F) \equiv V \lor V \equiv V$ (Verdadeiro).
-  * Consequente: $(p \land q) \equiv (V \land F) \equiv F$ (Falso).
-  * Resultado: $V \rightarrow F \equiv F$ (Falso).
-* Portanto, a proposição é falsa apenas quando $p$ é Verdadeiro e $q$ é Falso.
+
+**Gabarito: D**. A contrapositiva da condicional $P 	o Q$ é $
+eg Q 	o 
+eg P$. Negando a consequente e a antecedente e invertendo a ordem, temos: 'Se os direitos do cidadão não são plenamente assegurados, então o processo não é julgado tempestivamente'. A alternativa D está correta.
 </details>
+
+---
 
 ### Questão 41 (FCC)
-Considere as seguintes premissas lógicas de um regulamento interno do tribunal:
-1. Todos os analistas de sistemas são focados em desenvolvimento ou redes.
-2. Nenhum analista focado em redes desconhece a norma NBR 14565.
-3. Tiago é analista de sistemas focado em redes.
-Com base nas premissas fornecidas, deduz-se de forma logicamente válida e sem ambiguidades que Tiago:
-A) Não desconhece a norma NBR 14565.
-B) É focado em desenvolvimento de sistemas.
-C) Desconhece a norma NBR 14565.
-D) É o único que conhece a norma NBR 14565 no tribunal.
-E) Não é analista de sistemas focado em redes.
+Uma proposição bicondicional $P \leftrightarrow Q$ é logicamente equivalente a qual das seguintes construções na lógica formal proposicional?
+A) $(P 	o Q) \land (Q 	o P)$
+B) $(P 	o Q) \lor (Q 	o P)$
+C) $(P \land Q) \lor (
+eg P \land 
+eg Q)$
+D) $(P 	o Q) 	o (Q 	o P)$
+E) $(
+eg P \lor Q) \land (P \lor 
+eg Q)$
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. Premissa 3 afirma que Tiago é analista focado em redes. A premissa 2 diz que "Nenhum analista focado em redes desconhece a norma NBR 14565", o que equivale a dizer que "Todos os analistas focados em redes conhecem a norma". Logo, Tiago conhece a norma, ou seja, Tiago não desconhece a norma NBR 14565.
+
+**Gabarito: A**. A bicondicional 'P se e somente se Q' ($P \leftrightarrow Q$) significa que P implica Q E Q implica P. Logo, é equivalente a $(P 	o Q) \land (Q 	o P)$. A opção A é a alternativa correspondente.
 </details>
+
+---
 
 ### Questão 42 (FCC)
-Na lógica de argumentação, comete-se um erro de raciocínio chamado falácia quando se adota uma estrutura de argumento inválida que aparenta ser válida. Considere o argumento: *"Se o servidor de banco de dados do tribunal for atacado, então o sistema fica fora do ar. Constatou-se que o sistema ficou fora do ar. Logo, o servidor de banco de dados do tribunal foi atacado."* Este argumento é inválido porque comete a falácia da:
-A) Afirmação do Consequente.
-B) Negação do Antecedente.
-C) Generalização Apressada.
-D) Petitio Principii (Petição de Princípio).
-E) Falsa Dicotomia.
+Qual é o valor lógico da proposição composta $(P \lor Q) 	o (P \land R)$, sabendo que os valores lógicos das proposições simples são: P é VERDADEIRO, Q é FALSO e R é FALSO?
+A) Falso
+B) Verdadeiro
+C) Inconclusivo devido à falta de dados sobre a tabela verdade.
+D) Verdadeiro ou Falso, dependendo da ordem das premissas.
+E) Nulo, pois a condicional não admite antecedente verdadeiro.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. O argumento tem a forma: $A \rightarrow B$; constatou-se $B$; conclui-se $A$. Esta é a clássica falácia da afirmação do consequente. O fato do sistema estar fora do ar ($B$) não implica que o motivo tenha sido obrigatoriamente um ataque ao banco ($A$); o sistema poderia estar fora do ar devido a uma manutenção programada, falta de energia ou erro de rede horizontal.
+
+**Gabarito: A**. Avaliando os termos: 1) $P \lor Q$ = VERDADEIRO $\lor$ FALSO = VERDADEIRO; 2) $P \land R$ = VERDADEIRO $\land$ FALSO = FALSO. A condicional fica VERDADEIRO $	o$ FALSO, que é FALSO. A alternativa A está correta.
 </details>
+
+---
 
 ### Questão 43 (FCC)
-A negação lógica da proposição composta *"O analista programa em Java ou o analista configura o switch de rede"* é expressa corretamente por:
-A) O analista não programa em Java ou o analista não configura o switch de rede.
-B) O analista programa em Java e o analista não configura o switch de rede.
-C) Se o analista não programa em Java, então ele configura o switch de rede.
-D) O analista não programa em Java e o analista não configura o switch de rede.
-E) O analista não programa em Java ou ele configura o switch de rede.
+Deseja-se demonstrar que a conjunção de duas proposições quaisquer, P e Q, é falsa. Para que a proposição composta $P \land Q$ seja classificada como FALSA, basta que:
+A) A negação da variável P seja logicamente equivalente ao valor de verdade da variável dependente secundária R.
+B) Ambas as proposições simples, P e Q, sejam obrigatoriamente classificadas como falsas de forma síncrona no sistema.
+C) A proposição P seja verdadeira e a proposição Q seja classificada como verdadeira na análise de linhas da tabela.
+D) Pelo menos uma das proposições simples, P ou Q, seja classificada como falsa na tabela verdade correspondente.
+E) O conectivo principal da oração seja alterado para uma disjunção exclusiva através da aplicação das regras de De Morgan.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: D**. Pela 2ª Lei de De Morgan, para negar a disjunção $P \lor Q$, nega-se ambas as proposições e troca-se o conectivo 'ou' pelo conectivo 'e': $\neg P \land \neg Q$. Logo, a tradução é: *"O analista NÃO programa em Java E o analista NÃO configura o switch de rede"*.
+
+**Gabarito: D**. Para que a conjunção (E)  seja falsa, basta que uma de suas componentes seja falsa. Para que ela seja verdadeira, ambas devem ser verdadeiras. A alternativa D descreve essa regra logicamente.
 </details>
+
+---
 
 ### Questão 44 (FCC)
-Considere a proposição composta: *"Se o administrador de banco de dados realizar o tuning da consulta SQL, então o tempo de resposta da aplicação reduz."* De acordo com as leis lógicas, a contrapositiva equivalente a essa condicional é:
-A) Se o tempo de resposta da aplicação reduzir, então o administrador de banco de dados realizou o tuning da consulta SQL.
-B) Se o administrador de banco de dados não realizar o tuning da consulta SQL, então o tempo de resposta da aplicação não reduz.
-C) O administrador de banco de dados realiza o tuning da consulta SQL e o tempo de resposta da aplicação não reduz.
-D) O administrador de banco de dados não realiza o tuning da consulta SQL ou o tempo de resposta da aplicação reduz.
-E) Se o tempo de resposta da aplicação não reduzir, então o administrador de banco de dados não realizou o tuning da consulta SQL.
+Considere o seguinte argumento lógico: 
+Premissa 1: Todos os analistas de sistemas sabem programar na linguagem de programação Java. 
+Premissa 2: Carlos sabe programar na linguagem de programação Java. 
+Conclusão: Carlos é um analista de sistemas. 
+Sobre a validade desse argumento lógico, assinale a alternativa correta:
+A) O argumento constitui um exemplo clássico da aplicação da regra de inferência lógica válida denominada Modus Tollens.
+B) O argumento é plenamente válido, pois a primeira premissa garante que apenas analistas sabem programar na linguagem Java.
+C) O argumento é classificado como uma tautologia matemática porque as premissas e a conclusão possuem valores lógicos verdadeiros.
+D) A conclusão deduzida no argumento é falsa porque veda a possibilidade de Carlos programar em outras linguagens do mercado.
+E) Trata-se de um argumento inválido, pois Carlos pode saber programar em Java sem necessariamente ser um analista de sistemas.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: E**. A contrapositiva de $P \rightarrow Q$ é $\neg Q \rightarrow \neg P$ (inverte a ordem negando ambas as proposições simples). Traduzindo: *"Se o tempo de resposta da aplicação NÃO reduzir, então o administrador de banco de dados NÃO realizou o tuning da consulta SQL"*. Nota: a alternativa D também é equivalente, mas é a equivalência disjuntiva (Nega-Ou), e a questão pediu especificamente a Contrapositiva.
+
+**Gabarito: E**. Esse é um argumento inválido (falácia de afirmação do consequente). O conjunto de pessoas que programam em Java engloba os analistas, mas pode conter outros profissionais (Carlos pode ser engenheiro, estudante, etc.). Logo, não podemos concluir que Carlos é analista. A alternativa E está correta.
 </details>
+
+---
 
 ### Questão 45 (FCC)
-Considere as seguintes afirmações verdadeiras sobre três analistas de sistemas (Marcos, Paulo e Sandro) e suas respectivas linguagens de desenvolvimento favoritas (Java, Python e C#):
-1. Se Marcos não programa em C#, então Sandro programa em Java.
-2. Se Paulo programa em Python, então Marcos não programa em C#.
-3. Sabe-se que Sandro programa em C#.
-Com base nas premissas lógicas apresentadas, as linguagens favoritas de Marcos, Paulo e Sandro são, respectivamente:
-A) C#, Java e C#.
-B) Python, Java e C#.
-C) Java, Java e C#.
-D) Python, Python e C#.
-E) Java, Python e C#.
+Para negar a proposição categórica universal: *"Todo servidor público do tribunal de justiça é dedicado"*, deve-se utilizar a seguinte redação:
+A) Pelo menos um servidor público do tribunal de justiça não é dedicado.
+B) Nenhum servidor público do tribunal de justiça é dedicado no exercício de suas funções.
+C) Todos os servidores públicos do tribunal de justiça não são dedicados nas comarcas.
+D) Se uma pessoa é servidora pública do tribunal de justiça, então ela não é dedicada.
+E) Pelo menos um servidor público do tribunal de justiça é dedicado em suas atividades.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-**Gabarito: A**. Vamos analisar as premissas estruturadas:
-* Premissa 3 afirma: Sandro programa em C# ($SC = V$). Como cada um tem uma linguagem favorita distinta, concluímos que Sandro NÃO programa em Java ($SJ = F$).
-* Premissa 1 afirma: $\neg MC \rightarrow SJ$ (Se Marcos não programa em C#, então Sandro programa em Java).
-* Como sabemos que $SJ$ é falso ($SJ = F$), por Modus Tollens na premissa 1 concluímos que o antecedente $\neg MC$ deve ser Falso, o que significa que $MC$ é Verdadeiro (Marcos programa em C#).
-* Agora analisamos a premissa 2: $PP \rightarrow \neg MC$ (Se Paulo programa em Python, então Marcos não programa em C#).
-* Como concluímos que Marcos programa em C# ($MC = V$), a proposição $\neg MC$ é Falsa ($\neg MC = F$).
-* Por Modus Tollens na premissa 2, se o consequente é falso, o antecedente também deve ser falso. Logo, $\neg PP$ é Verdadeiro (Paulo NÃO programa em Python).
-* Como Marcos é C#, restam Python e Java para Paulo e Sandro.
-* Mas já sabemos que Sandro é C#? Espera!
-* A premissa 3 diz: *"Sandro programa em C#."*
-* Mas se Marcos também programa em C#, haveria duas pessoas programando em C#. A regra implícita diz "suas respectivas linguagens de desenvolvimento favoritas".
-* Vamos reanalisar sem assumir a exclusividade estrita caso ela não esteja explícita, ou ver as alternativas.
-* As alternativas listam as linguagens favoritas de Marcos, Paulo e Sandro, respectivamente:
-  * E) Java, Python, C#
-  * B) Python, Java, C#
-  * C) Java, Java, C# (Paulo e Marcos repetidos? Não, Marcos é Java, Paulo é Java, Sandro é C#).
-  * D) Python, Python, C#
-  * A) C#, Java, C#
-* Se Sandro programa em C# ($SC = V$), então ele não programa em Java ($SJ = F$).
-* Pela premissa 1 ($\neg MC \rightarrow SJ$), como $SJ = F$, temos que $MC = V$ (Marcos programa em C#).
-* Se Marcos programa em C#, então a proposição $\neg MC$ é falsa.
-* Pela premissa 2 ($PP \rightarrow \neg MC$), como $\neg MC = F$, concluímos por Modus Tollens que $PP$ é falso (Paulo não programa em Python).
-* Se Paulo não programa em Python, e Sandro é C#, Paulo deve programar em Java ou C#.
-* Se Marcos é C#, Paulo é Java, Sandro é C#.
-* A alternativa A lista: Marcos = C#, Paulo = Java, Sandro = C#. Isso bate exatamente com a nossa dedução lógica de que Marcos é C#, Paulo não é Python (logo é Java), e Sandro é C#!
-* Embora tanto Marcos quanto Sandro tenham C# como favorita (o que é permitido pelas premissas e explícito na alternativa A), a lógica do argumento fecha perfeitamente.
-* **Gabarito correto: E.**
+
+**Gabarito: A**. A negação de uma proposição universal afirmativa 'Todo A é B' é uma proposição particular negativa 'Algum A não é B' (ou 'Existe A que não é B', 'Pelo menos um A não é B'). A alternativa A apresenta a forma correta.
 </details>
+
+---
