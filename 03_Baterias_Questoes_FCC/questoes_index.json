@@ -45,30 +45,30 @@
     "day_id": "dia_25_05",
     "day_title": "Segunda-feira 25/05",
     "filename": "dia_25_05_questoes.json",
-    "count": 15
+    "count": 45
   },
   {
     "day_id": "dia_26_05",
     "day_title": "Terça-feira 26/05",
     "filename": "dia_26_05_questoes.json",
-    "count": 15
+    "count": 45
   },
   {
     "day_id": "dia_27_05",
     "day_title": "Quarta-feira 27/05",
     "filename": "dia_27_05_questoes.json",
-    "count": 15
+    "count": 45
   },
   {
     "day_id": "dia_28_05",
     "day_title": "Quinta-feira 28/05",
     "filename": "dia_28_05_questoes.json",
-    "count": 15
+    "count": 45
   },
   {
     "day_id": "dia_29_05",
     "day_title": "Sexta-feira 29/05",
     "filename": "dia_29_05_questoes.json",
-    "count": 15
+    "count": 45
   }
 ]

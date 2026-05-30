@@ -3,303 +3,976 @@
 ## 📝 TEMA 1: Arquitetura de Software e Padrões de Projeto
 
 ### Questão 1 (FCC - 2018 - TRT 15ª Região - Analista Judiciário - Tecnologia da Informação)
-No padrão de arquitetura MVC (Model-View-Controller), o componente responsável por intermediar as requisições enviadas pelo usuário através da View, manipular os dados no Model e retornar a resposta adequada é o:
-A) Front Controller.
-B) Model.
-C) Controller.
-D) View.
-E) DAO (Data Access Object).
+O padrão de projeto Singleton
+A) garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela.
+B) define uma interface para criar um objeto, mas deixa as subclasses decidirem que classe instanciar.
+C) converte a interface de uma classe em outra interface, esperada pelos clientes.
+D) permite que as subclasses alterem o comportamento de parte de um algoritmo.
+E) anexa responsabilidades adicionais a um objeto dinamicamente, fornecendo uma alternativa flexível à herança.
+
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**
+**Gabarito: A**
 
-A) Incorreta. O Front Controller é um padrão de projeto estrutural (frequentemente usado junto ao MVC em sistemas web para interceptar todas as requisições em um ponto central), mas não é o componente padrão do MVC clássico definido para as funções essenciais descritas na questão.
-B) Incorreta. O Model (Modelo) é responsável pela lógica de negócios, gestão do estado da aplicação e acesso aos dados. Ele não faz o intermédio entre as requisições da View e ele mesmo.
-C) Correta. O Controller (Controlador) atua de fato como o mediador/intermediador. Ele recebe a entrada (evento/requisição) da View, processa as regras de controle ou solicita as ações necessárias ao Model e atualiza a View com o resultado.
-D) Incorreta. A View (Visão) é responsável puramente pela interface com o usuário e pela apresentação visual dos dados, não intermediando as requisições nem manipulando os dados diretamente no Model.
-E) Incorreta. O DAO (Data Access Object) é um padrão que provê uma interface abstrata para acesso a dados, ocultando detalhes do banco de dados, sem qualquer responsabilidade de intermediar lógicas de interface do MVC.
+- **A) Correta.** O padrão criacional Singleton tem como propósito fundamental assegurar que uma classe possua apenas uma única instância durante toda a execução da aplicação, além de fornecer um ponto de acesso global a essa instância.
+- **B) Incorreta.** Esta descrição corresponde ao padrão *Factory Method*, que delega a instanciação para as subclasses.
+- **C) Incorreta.** A adaptação de interfaces incompatíveis é o propósito do padrão estrutural *Adapter*.
+- **D) Incorreta.** Alterar o comportamento de parte de um algoritmo definido em uma superclasse é uma característica do padrão *Template Method*.
+- **E) Incorreta.** Adicionar responsabilidades de forma dinâmica a objetos é a função principal do padrão estrutural *Decorator*.
 </details>
 
 ---
 
-### Questão 2 (FCC - 2019 - TRF 3ª Região - Analista Judiciário - Informática)
-Na utilização de padrões de projeto (Design Patterns) do catálogo GoF (Gang of Four), existe um padrão estrutural que fornece uma interface unificada para um conjunto de interfaces em um subsistema, definindo uma interface de nível mais alto que torna o subsistema mais fácil de ser usado. Trata-se do padrão:
-A) Decorator.
-B) Adapter.
-C) Proxy.
-D) Facade.
-E) Composite.
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**
-
-A) Incorreta. O Decorator serve para anexar responsabilidades adicionais a um objeto de forma dinâmica, fornecendo uma alternativa viável ao uso de subclasses para estender funcionalidades, não unificando interfaces de um subsistema.
-B) Incorreta. O Adapter converte a interface de uma classe existente em outra interface esperada pelos clientes, permitindo que classes com interfaces diferentes trabalhem em conjunto, o que não cria uma interface de nível mais alto para múltiplos subsistemas.
-C) Incorreta. O Proxy fornece um substituto ou um marcador (placeholder) para outro objeto a fim de controlar o acesso a ele.
-D) Correta. O padrão Facade (Fachada) tem exatamente essa função estrutural no GoF: ele mascara a complexidade de um subsistema inteiro ao fornecer uma única interface unificada e simplificada (de alto nível) para que os clientes interajam.
-E) Incorreta. O Composite serve para compor objetos em estruturas de árvore que representam hierarquias partes-todo, permitindo o tratamento de classes individuais e composições uniformemente.
-</details>
-
----
-
-### Questão 3 (FCC - 2017 - TRE-SP - Analista Judiciário - Análise de Sistemas)
-Um dos padrões de projeto comportamentais do GoF define uma dependência um-para-muitos entre objetos, de maneira que, quando um objeto muda de estado, todos os seus dependentes são notificados e atualizados automaticamente. Esse padrão é conhecido como:
+### Questão 2 (FCC - 2018 - TRT 6ª Região (PE) - Analista Judiciário - Tecnologia da Informação)
+No contexto de padrões de projeto (Design Patterns), quando é necessário definir uma dependência um-para-muitos entre objetos, de maneira que, quando o estado de um objeto muda, todos os seus dependentes são notificados e atualizados automaticamente, deve-se utilizar o padrão
 A) Strategy.
-B) Command.
-C) Observer.
-D) State.
-E) Mediator.
+B) Observer.
+C) Iterator.
+D) Command.
+E) State.
+
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**
+**Gabarito: B**
 
-A) Incorreta. O Strategy encapsula uma família de algoritmos e os torna intercambiáveis, focando na flexibilidade da escolha do algoritmo em tempo de execução.
-B) Incorreta. O Command encapsula solicitações como objetos paramétricos, permitindo criar filas de requisições, log e suporte para operações de desfazer/refazer.
-C) Correta. O Observer estabelece uma típica arquitetura de publicador e assinantes (Publisher/Subscriber). Nele há o "Subject" que, quando sofre alteração de estado interno, realiza um broadcast automático de notificação para seus dependentes (Observers).
-D) Incorreta. O State permite a um objeto mudar seu comportamento dependendo de alterações ocorridas no seu estado interno, de modo que parece que o próprio objeto trocou de classe.
-E) Incorreta. O Mediator define um objeto central para encapsular como um conjunto de objetos interagem entre si, reduzindo o acoplamento excessivo (many-to-many) promovendo comunicação isolada através dele.
+- **A) Incorreta.** O padrão *Strategy* serve para encapsular uma família de algoritmos e torná-los intercambiáveis, não tendo relação com notificação de dependentes.
+- **B) Correta.** O padrão comportamental *Observer* (também conhecido como Publish-Subscribe) define exatamente uma relação um-para-muitos. Quando o objeto observado (Subject) tem seu estado modificado, todos os observadores (Observers) vinculados são notificados e atualizados de maneira automática.
+- **C) Incorreta.** O padrão *Iterator* fornece uma maneira de acessar os elementos de um agregado (como listas e coleções) sequencialmente, sem expor sua representação interna.
+- **D) Incorreta.** O padrão *Command* encapsula uma solicitação como um objeto, permitindo parametrizar clientes com diferentes requisições, enfileirar solicitações e suportar operações que podem ser desfeitas.
+- **E) Incorreta.** O padrão *State* permite que um objeto altere seu comportamento quando o seu estado interno muda.
 </details>
 
 ---
 
-### Questão 4 (FCC - 2022 - TRT 22ª Região - Analista Judiciário - TI)
-A arquitetura de microsserviços é uma abordagem para desenvolver um aplicativo único como um conjunto de pequenos serviços autônomos. Uma das características que a distingue de uma arquitetura monolítica tradicional é:
-A) A utilização de um único banco de dados centralizado obrigatoriamente compartilhado por todos os microsserviços do sistema.
-B) O alto e forte acoplamento entre os módulos em código-fonte, visando otimizar a performance por chamadas na mesma memória.
-C) A implantação de todos os componentes da aplicação condensados em um único processo físico.
-D) A governança de dados descentralizada, em que cada serviço isola e gerencia seu próprio banco de dados e esquema.
-E) A padronização corporativa restrita de uma única linguagem de programação obrigatória para toda a solução.
+### Questão 3 (FCC - 2018 - SABESP - Analista de Sistemas)
+No padrão de arquitetura MVC (Model-View-Controller), a camada Controller é responsável por
+A) armazenar os dados e manter o estado da aplicação.
+B) exibir os dados ao usuário através de interfaces gráficas.
+C) intermediar a interação do usuário com a View e realizar a atualização do Model.
+D) garantir a persistência dos dados em um banco de dados relacional.
+E) implementar toda a regra de negócio central e conectar-se diretamente com APIs de terceiros isolando o Model.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- **A) Incorreta.** O armazenamento de dados e manutenção do estado da aplicação são responsabilidades do *Model*.
+- **B) Incorreta.** A exibição de dados e a interface com o usuário são responsabilidades exclusivas da *View*.
+- **C) Correta.** O *Controller* atua como o maestro do fluxo: ele recebe as entradas e interações do usuário feitas na *View*, processa esses comandos e realiza as devidas atualizações na camada *Model*, além de acionar ou modificar a *View*.
+- **D) Incorreta.** A comunicação com o banco de dados e a persistência não devem ser feitas pelo *Controller*, e sim pelo *Model* (ou por camadas de repositório subordinadas a ele).
+- **E) Incorreta.** As regras de negócio centrais e de domínio pertencem essencialmente à camada *Model*. O *Controller* não deve estar sobrecarregado com regras de negócio, atuando apenas como roteador ou coordenador.
+</details>
+
+---
+
+### Questão 4 (FCC - 2019 - TRF 3ª Região - Analista Judiciário - Informática)
+Um desenvolvedor precisa fornecer uma interface unificada para um conjunto de interfaces em um subsistema, definindo uma interface de nível mais alto que torne o subsistema mais fácil de ser usado. O padrão de projeto adequado para essa necessidade é o
+A) Adapter.
+B) Bridge.
+C) Decorator.
+D) Facade.
+E) Proxy.
+
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: D**
 
-A) Incorreta. Os microsserviços desencorajam fortemente bancos de dados unificados (Shared Database Pattern), pois isso cria pontos únicos de falha e acoplamento forte entre serviços.
-B) Incorreta. A meta máxima dos microsserviços é garantir um BAIXO acoplamento. A comunicação geralmente ocorre por rede, o que reduz performance bruta, mas eleva a flexibilidade.
-C) Incorreta. Empacotar tudo em um único processo e diretório define essencialmente um padrão arquitetural monolítico, o oposto de microsserviços.
-D) Correta. Em microsserviços, preconiza-se a gestão de dados descentralizada. Se há o serviço de Pagamentos e o de Clientes, cada um deles detém posse, autonomia e isolamento de seus respectivos bancos de dados.
-E) Incorreta. A arquitetura de microsserviços apoia fortemente o uso de "tecnologias poliglotas", permitindo que cada serviço adote a stack (linguagem/banco) que melhor resolva seu domínio específico.
+- **A) Incorreta.** O *Adapter* não visa unificar um conjunto de interfaces, mas sim adaptar uma interface específica para outra que o cliente espera, viabilizando o uso de classes incompatíveis.
+- **B) Incorreta.** O *Bridge* separa uma abstração da sua implementação, de modo que ambas possam variar independentemente, o que não se encaixa na simplificação de subsistemas complexos.
+- **C) Incorreta.** O *Decorator* anexa dinamicamente novas responsabilidades e comportamentos a um objeto, evitando a expansão via herança.
+- **D) Correta.** O padrão *Facade* (Fachada) tem exatamente o objetivo de criar uma interface de alto nível simplificada que encapsula e unifica a complexidade de diversas classes de um subsistema, facilitando o seu uso.
+- **E) Incorreta.** O *Proxy* fornece um objeto substituto ou um "representante" de outro objeto para controlar o acesso a ele (como lazy loading ou proteção).
 </details>
 
 ---
 
-### Questão 5 (FCC - 2018 - TRT 2ª Região - Analista Judiciário - TI)
-Na arquitetura REST (Representational State Transfer), o princípio fundamental denominado de "Stateless" (sem estado) determina que:
-A) As sessões e histórico dos clientes devem ser salvos persistentemente no cache interno do servidor web.
-B) A arquitetura requer que o servidor retenha em memória todos os atributos de estado entre cada requisição feita pelo cliente.
-C) Cada requisição do cliente para o servidor deve conter todas as informações contextuais necessárias para sua interpretação e processamento.
-D) O cliente perde o estado atual da aplicação, restando ao servidor a exclusiva responsabilidade de gerar interfaces fixas.
-E) É proibido ao servidor alterar os dados mantidos no banco de dados, configurando serviços estritamente de leitura.
+### Questão 5 (FCC - 2017 - TST - Analista Judiciário - Suporte em Tecnologia da Informação)
+O padrão de projeto Decorator tem como objetivo principal
+A) garantir que uma classe possua apenas uma instância na memória.
+B) permitir a criação de famílias de objetos relacionados ou dependentes sem especificar suas classes concretas.
+C) anexar responsabilidades adicionais a um objeto dinamicamente, oferecendo uma alternativa flexível à herança para estender funcionalidades.
+D) definir uma família de algoritmos, encapsular cada um deles e torná-los intercambiáveis.
+E) encapsular uma solicitação como um objeto, parametrizando clientes com diferentes solicitações.
+
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-A) Incorreta. Armazenar estado da sessão do cliente no servidor viola diretamente o requisito de que o servidor deve ser stateless.
-B) Incorreta. Assim como a alternativa A, reter contexto de estado na memória do servidor para amarrar requisições cria forte dependência, impossibilitando escalabilidade facilitada, o que o REST proíbe.
-C) Correta. Pelo princípio Stateless, o servidor não armazena nenhuma sessão em memória a respeito do cliente. Logo, toda requisição feita pelo cliente (como pedir um saldo ou gerar um relatório) deve enviar também o estado (tokens de autenticação, parâmetros de busca etc.) necessário para executá-la isoladamente.
-D) Incorreta. É o cliente (e não o servidor) que deve manter em suas mãos o estado transitório da sessão ou tela (Client-Side State).
-E) Incorreta. O servidor gerencia os "Recursos" do sistema e pode, sim, alterar o banco de dados livremente (através de POST, PUT, DELETE, etc.). O termo "sem estado" aplica-se ao estado conversacional da comunicação, e não aos dados reais.
+- **A) Incorreta.** Refere-se à finalidade principal e clara do padrão *Singleton*.
+- **B) Incorreta.** Refere-se ao propósito fundamental do padrão criacional *Abstract Factory*.
+- **C) Correta.** O padrão estrutural *Decorator* foi desenhado para adicionar (decorar) responsabilidades e comportamentos extras a um objeto em tempo de execução, promovendo composição em detrimento da criação estática de muitas subclasses via herança.
+- **D) Incorreta.** Trata-se da intenção formal do padrão comportamental *Strategy*.
+- **E) Incorreta.** Refere-se à descrição e intenção do padrão comportamental *Command*.
 </details>
 
 ---
+
+### Questão 6 (FCC - 2022 - TRT 22ª Região (PI) - Analista Judiciário - Tecnologia da Informação)
+O padrão de projeto comportamental que define uma família de algoritmos, encapsula cada um deles e os torna intercambiáveis, permitindo que o algoritmo varie independentemente dos clientes que o utilizam, é denominado
+A) Template Method.
+B) Strategy.
+C) Visitor.
+D) Observer.
+E) Mediator.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- **A) Incorreta.** O *Template Method* define o esqueleto de um algoritmo na superclasse, permitindo que subclasses sobrescrevam etapas específicas sem alterar a estrutura global do algoritmo.
+- **B) Correta.** O padrão *Strategy* encapsula algoritmos em classes separadas (com uma interface comum), permitindo que o cliente troque a estratégia (algoritmo) utilizada no objeto de contexto em tempo de execução, sem causar impacto na sua estrutura.
+- **C) Incorreta.** O padrão *Visitor* permite adicionar novas operações a serem executadas sobre uma estrutura de objetos sem alterar as classes desses próprios objetos.
+- **D) Incorreta.** O *Observer* estabelece o mecanismo de notificação para objetos dependentes mediante a mudança de estado de um objeto sujeito.
+- **E) Incorreta.** O *Mediator* encapsula como um conjunto de objetos interage, promovendo o fraco acoplamento ao evitar que objetos referenciem explicitamente uns aos outros.
+</details>
+
+---
+
+### Questão 7 (FCC - 2016 - TRT 20ª Região (SE) - Analista Judiciário - Tecnologia da Informação)
+Considere a necessidade de adaptar a interface de uma classe para outra interface esperada pelos clientes. O padrão de projeto estrutural que permite que classes trabalhem em conjunto, o que, de outra forma, seria impossível devido a interfaces incompatíveis, é o
+A) Adapter.
+B) Composite.
+C) Proxy.
+D) Decorator.
+E) Facade.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+- **A) Correta.** O *Adapter* atua literalmente como um "adaptador" no desenvolvimento de software, convertendo a interface original de uma classe em outra interface compatível e aceita pelo cliente, permitindo a interoperabilidade entre componentes.
+- **B) Incorreta.** O padrão *Composite* visa tratar objetos individuais e composições em estrutura de árvore de forma uniforme, e não tem papel em adaptações de interface.
+- **C) Incorreta.** O *Proxy* visa servir de intermediário ou escudo que intercepta e controla o acesso a um objeto principal.
+- **D) Incorreta.** O *Decorator* foca em anexar novos comportamentos a um objeto em tempo de execução.
+- **E) Incorreta.** O *Facade* apenas fornece uma interface centralizada e simplificada para um subsistema completo.
+</details>
+
+---
+
+### Questão 8 (FCC - 2015 - TRE-AP - Analista Judiciário - Análise de Sistemas)
+O padrão de projeto Abstract Factory
+A) separa a construção de um objeto complexo de sua representação.
+B) garante que uma classe seja instanciada apenas uma vez em todo o sistema.
+C) fornece uma interface para criar famílias de objetos relacionados ou dependentes sem especificar suas classes concretas.
+D) define uma interface para criar um objeto, deixando as subclasses decidirem qual classe instanciar.
+E) cria novos objetos copiando os dados de um objeto existente (protótipo).
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- **A) Incorreta.** Esta é a intenção e definição formal do padrão *Builder*.
+- **B) Incorreta.** Essa descrição corresponde precisamente ao padrão *Singleton*.
+- **C) Correta.** O *Abstract Factory* tem a missão principal de fabricar não apenas um produto simples, mas sim "famílias" de produtos que operam juntos (compatíveis/dependentes entre si), abstraindo e isolando a instanciação das classes concretas envolvidas.
+- **D) Incorreta.** Esta definição se refere especificamente ao padrão *Factory Method*, que delega a criação de um único tipo de objeto para as subclasses, em vez de famílias inteiras.
+- **E) Incorreta.** A criação dinâmica a partir da clonagem ou cópia de um objeto previamente existente (protótipo) é a intenção do padrão *Prototype*.
+</details>
+
+---
+
+### Questão 9 (FCC - 2017 - TRE-PR - Analista Judiciário - Análise de Sistemas)
+No contexto dos padrões de projeto GoF (Gang of Four), o padrão de projeto que define o esqueleto de um algoritmo em uma operação, postergando a definição de alguns passos para subclasses, é o
+A) Command.
+B) State.
+C) Chain of Responsibility.
+D) Template Method.
+E) Strategy.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+- **A) Incorreta.** O padrão *Command* foca em transformar uma solicitação em um objeto invocável de maneira independente e enfileirável.
+- **B) Incorreta.** O padrão *State* gerencia a mudança do comportamento de um objeto de forma fluida, baseado na alteração de seu estado interno.
+- **C) Incorreta.** O *Chain of Responsibility* passa requisições ao longo de uma cadeia sucessiva de objetos processadores até que algum a trate.
+- **D) Correta.** A definição trazida na questão é exata para o padrão *Template Method*. Ele monta o alicerce ou "esqueleto" de um algoritmo genérico numa classe-mãe abstrata, determinando a ordem de execução, porém delega a implementação (ou os passos pormenorizados) para os métodos das subclasses.
+- **E) Incorreta.** O *Strategy* não prevê um esqueleto herdado; ele encapsula o algoritmo inteiro numa estratégia independente de maneira totalmente intercambiável.
+</details>
+
+---
+
+### Questão 10 (FCC - 2014 - TRF 4ª Região - Analista Judiciário - Informática)
+A Arquitetura Orientada a Serviços (SOA) é um estilo arquitetural para construção de aplicações de software baseadas em serviços. Um conceito fundamental em SOA, que permite a publicação e a descoberta de serviços por meio de um registro central, facilitando a interação entre provedores e consumidores de serviços, baseia-se na especificação:
+A) UDDI.
+B) SOAP.
+C) WSDL.
+D) XML.
+E) REST.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+- **A) Correta.** Dentro dos padrões clássicos de Web Services e da arquitetura SOA, o **UDDI** (*Universal Description, Discovery and Integration*) atua exatamente como esse "registro amarelo" central. É nele que os serviços são catalogados e publicados pelos provedores para poderem ser pesquisados e descobertos pelos potenciais consumidores.
+- **B) Incorreta.** O *SOAP* (*Simple Object Access Protocol*) é o envelope/protocolo padronizado para troca de mensagens estruturadas na rede, não é um registro.
+- **C) Incorreta.** O *WSDL* (*Web Services Description Language*) é a linguagem que documenta e descreve a assinatura técnica do serviço (métodos, tipos e conectores), não sendo o catálogo central de descoberta (papel do UDDI).
+- **D) Incorreta.** O *XML* é apenas a metalinguagem universal e genérica de marcação estruturada usada como alicerce tecnológico.
+- **E) Incorreta.** O *REST* é outro paradigma/estilo arquitetural (frequentemente rival do SOAP/SOA clássico) e dispensa repositórios de publicação engessados como o UDDI.
+</details>
+
+---
+
+### Questão 11 (FCC - 2018 - TRT 2ª Região (SP) - Analista Judiciário - Tecnologia da Informação)
+A arquitetura de microsserviços propõe a construção de aplicações como um conjunto de pequenos serviços. Uma característica comum dessa arquitetura é que cada microsserviço
+A) compartilha a mesma base de dados unificada de todos os outros serviços para garantir a integridade referencial.
+B) deve ser implementado, obrigatoriamente, utilizando a mesma linguagem de programação dos demais serviços.
+C) roda em seu próprio processo e se comunica com mecanismos leves, geralmente uma API de recursos HTTP.
+D) requer implantação síncrona de todos os componentes do sistema ao mesmo tempo.
+E) utiliza uma camada de apresentação (View) fortemente acoplada ao banco de dados relacional.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- **A) Incorreta.** Em uma arquitetura canônica de microsserviços, os serviços evitam fortemente o compartilhamento de banco de dados. O padrão estabelecido é o *database-per-service* (um banco/esquema independente para cada serviço), sacrificando a integridade referencial direta para garantir alto nível de autonomia e isolamento.
+- **B) Incorreta.** Uma das maiores promessas desse modelo é a liberdade tecnológica (*polyglot programming*). Cada equipe tem liberdade para escolher a linguagem e banco adequados para o problema específico de cada microsserviço.
+- **C) Correta.** Como definido pelos criadores do termo (como Martin Fowler), cada microsserviço é um pequeno aplicativo autônomo. Eles rodam em processos isolados e a interação ocorre por meio de mecanismos leves na rede, quase sempre APIs baseadas em HTTP e tecnologias REST.
+- **D) Incorreta.** A implantação (deploy) deve ser independente. Os serviços devem poder subir de maneira isolada sem depender da inicialização global do ecossistema inteiro.
+- **E) Incorreta.** Camadas de front-end independentes são encorajadas, sem que haja forte acoplamento (especialmente direto com um banco de dados relacional).
+</details>
+
+---
+
+### Questão 12 (FCC - 2015 - TRT 3ª Região (MG) - Analista Judiciário - Tecnologia da Informação)
+Ao desenvolver um sistema de arquivos computacional, o desenvolvedor nota que diretórios podem conter arquivos ou outros diretórios. Para tratar arquivos e diretórios de forma uniforme, permitindo que os clientes os acessem de maneira transparente, o padrão de projeto estrutural apropriado é o
+A) Bridge.
+B) Facade.
+C) Composite.
+D) Decorator.
+E) Proxy.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- **A) Incorreta.** O padrão *Bridge* desacopla a abstração de sua implementação (especialmente útil em variações multiplataforma), de forma independente e sem relação estrutural de árvores.
+- **B) Incorreta.** O padrão *Facade* apenas encapsula e simplifica os métodos de um subsistema de bastidores complexos.
+- **C) Correta.** O padrão *Composite* foi desenhado perfeitamente para este fim: permitir que instâncias individuais (folhas = arquivos) e instâncias compostas (ramos = diretórios) compartilhem a mesma interface superior. Assim, o cliente (navegador do sistema) trata a árvore recursiva e os componentes individuais com exata uniformidade.
+- **D) Incorreta.** O padrão *Decorator* foca em envelopar objetos em camadas que adicionam novos comportamentos modulares.
+- **E) Incorreta.** O padrão *Proxy* funciona como um intermediador entre o sistema real para propósitos de segurança, auditoria ou cache.
+</details>
+
+---
+
+### Questão 13 (FCC - 2016 - TRT 23ª Região (MT) - Analista Judiciário - Tecnologia da Informação)
+O padrão GoF Factory Method é um padrão de projeto
+A) comportamental que encapsula as solicitações como objetos.
+B) de criação que define uma interface para criar um objeto, mas deixa as subclasses decidirem qual classe instanciar.
+C) estrutural que compõe objetos em estruturas de árvore para representar hierarquias partes-todo.
+D) estrutural que fornece um substituto ou marcador da localização de outro objeto para controlar o acesso a ele.
+E) de criação que garante a existência de uma única instância de uma classe, provendo um ponto global de acesso à mesma.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- **A) Incorreta.** Esta alternativa descreve a natureza do padrão comportamental *Command*.
+- **B) Correta.** A definição é o extrato literal do GoF para o padrão de criação *Factory Method*. Ele atua como um criador abstrato, cujo método fabril é herdado pelas subclasses, delegando somente a estas a responsabilidade de decidir qual classe concreta deverá realmente ser construída.
+- **C) Incorreta.** A descrição em questão ilustra detalhadamente o padrão estrutural *Composite*.
+- **D) Incorreta.** Essa é a definição clara do padrão estrutural *Proxy*.
+- **E) Incorreta.** Essa alternativa evoca inequivocamente a semântica do padrão de criação *Singleton*.
+</details>
+
+---
+
+### Questão 14 (FCC - 2019 - TRF 4ª Região - Analista Judiciário - Tecnologia da Informação)
+O estilo arquitetural REST (Representational State Transfer) estabelece um conjunto de restrições para a criação de serviços web. Uma dessas restrições é a de que a comunicação entre o cliente e o servidor deve ser
+A) stateful, armazenando o contexto da sessão do cliente no servidor entre as requisições.
+B) assíncrona, exigindo que o cliente aguarde confirmações usando WebSockets em todas as transações.
+C) stateless, de modo que cada requisição do cliente para o servidor deve conter todas as informações necessárias para entender a requisição, não aproveitando nenhum contexto armazenado no servidor.
+D) centralizada no protocolo SOAP para garantir segurança e atomicidade das operações de rede.
+E) limitada ao formato XML para padronizar a troca de mensagens na camada de transporte.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- **A) Incorreta.** REST baseia-se na filosofia oposta. A retenção do estado de aplicação (*stateful*) não pode ser imposta ao servidor entre uma requisição e outra.
+- **B) Incorreta.** Protocolos como WebSockets permitem conexões bidirecionais e full-duplex contínuas, mas a base de construção comum do REST não obriga sua adoção nem restringe-se a assincronismo.
+- **C) Correta.** O conceito central do *Stateless* (sem estado), um pilar do REST, define que toda solicitação deve ser feita ao servidor como uma entidade completa. O cliente precisa enviar todos os dados, tokens e contexto para que o servidor possa analisar sem recorrer a memórias temporárias prévias de sessões ativas do cliente.
+- **D) Incorreta.** Serviços baseados em REST rivalizam filosoficamente com o modelo de serviços baseados nos contratos complexos e envelopamentos do SOAP (embora não sejam estritamente incompatíveis). Mas REST rejeita o engessamento dessa estrutura.
+- **E) Incorreta.** REST suporta e incentiva representações em múltiplos tipos de mídia flexíveis: HTML, XML, YAML e mais notadamente o JSON.
+</details>
+
+---
+
+### Questão 15 (FCC - 2023 - TRT 18ª Região (GO) - Analista Judiciário - Tecnologia da Informação)
+O padrão de projeto que provê uma maneira de acessar sequencialmente os elementos de um objeto agregado sem expor sua representação subjacente é conhecido como
+A) Iterator.
+B) Observer.
+C) Mediator.
+D) Visitor.
+E) Memento.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+- **A) Correta.** O padrão comportamental *Iterator* tem o objetivo direto e declarado de extrair e unificar o comportamento de travessia (iteração/varredura) de uma coleção. Ele expõe métodos padrões (`next()`, `hasNext()`) permitindo o acesso sequencial a cada elemento sem que o cliente precise entender se, no backend, essa coleção opera como fila, array, pilha ou árvore balanceada.
+- **B) Incorreta.** O *Observer* estabelece as bases de notificação dinâmica orientada a eventos para um conjunto de entidades dependentes.
+- **C) Incorreta.** O *Mediator* concentra redes de comunicações caóticas, roteando os fluxos por meio de um hub estruturado.
+- **D) Incorreta.** O *Visitor* externaliza comportamentos que precisam rodar em hierarquias e elementos múltiplos, evitando poluição interna das classes bases.
+- **E) Incorreta.** O *Memento* objetiva estritamente a captura e o salvamento em formato seguro de "fotografias" de estado interno de um sistema, a fim de possibilitar operações de "desfazer" ou "rollback".
+</details>
+
+---
+
 
 ## 📝 TEMA 2: Integração Contínua e DevOps
 
-### Questão 6 (FCC - 2018 - TRT 15ª Região - Analista Judiciário - TI)
-A Integração Contínua (Continuous Integration - CI) é uma prática de desenvolvimento de software em que a equipe integra e valida o código frequentemente. Dentre as exigências para o sucesso da Integração Contínua, destaca-se:
-A) O uso estrito de branches de desenvolvimento isoladas por longos meses, integrando o código uma única vez antes da entrega.
-B) A automação da compilação e execução de testes após cada commit efetuado no repositório de controle de versão.
-C) A não utilização de suítes de testes unitários para priorizar construções rápidas e delegar a verificação aos testadores manuais no fim do ciclo.
-D) A proibição de deploys automatizados, assegurando que toda construção de código dependa de revisões físicas demoradas e complexas.
-E) A implantação e liberação automática para os usuários finais (Continuous Deployment) sempre que houver falhas no pipeline para forçar correções emergenciais.
+### Questão 1 (FCC - 2023 - TRT 11ª Região (AM e RR) - Analista Judiciário - Tecnologia da Informação)
+A cultura DevOps baseia-se em princípios fundamentais que visam aproximar o desenvolvimento (Dev) da operação (Ops). Um acrônimo frequentemente utilizado para resumir os pilares essenciais do DevOps é o CALMS. Neste contexto, a letra "A" do acrônimo refere-se a:
+A) Agility, promovendo a adoção de metodologias ágeis como Scrum e Kanban.
+B) Automation, buscando a automação contínua de processos de build, teste e deploy.
+C) Architecture, focando no desenho de arquiteturas orientadas a microsserviços.
+D) Analytics, enfatizando a análise de dados para tomada de decisões operacionais.
+E) Availability, garantindo a alta disponibilidade dos serviços em produção.
+
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-A) Incorreta. O uso de "Long-lived branches" (ramificações longas e raramente mescladas) culmina em pesados problemas de conflitos de código ("Integration Hell"), sendo uma prática avessa à CI, que pede integrações diárias ou várias vezes ao dia.
-B) Correta. A essência do CI é a verificação automática de integração cada vez que um desenvolvedor submete um novo código. O servidor de CI detecta a mudança, compila (build) a aplicação, executa os testes automatizados e retorna um feedback rápido em caso de quebras.
-C) Incorreta. Os testes automatizados (unitários, integração) são o pilar da verificação do CI. Remover esses testes destrói a segurança da prática e impede a validação real de que nada foi quebrado.
-D) Incorreta. Processos demorados e estritamente manuais sem automação quebram a cultura de agilidade e feedback contínuo.
-E) Incorreta. Uma liberação automática para produção só ocorre no "Continuous Deployment" e somente se TODAS as etapas (compilação e testes) passarem sem erros. Falhas bloqueiam o processo imediatamente, impedindo entregas danosas ao usuário.
+O acrônimo CALMS foi cunhado por Jez Humble e é a base conceitual do DevOps:
+- **C (Culture)**: Mudança cultural, colaboração entre equipes.
+- **A (Automation)**: Automação de tarefas repetitivas (CI/CD, testes, IaC). A alternativa B está correta.
+- **L (Lean)**: Princípios Lean, eliminação de desperdícios, foco no fluxo de valor.
+- **M (Measurement)**: Medição de tudo, coleta de métricas e KPIs.
+- **S (Sharing)**: Compartilhamento de conhecimento, ferramentas e responsabilidades.
+
+Portanto, as outras alternativas estão incorretas:
+A) Incorreta. Agilidade é um conceito relacionado, mas o "A" do CALMS é de Automação.
+C) Incorreta. Arquitetura (como microsserviços) facilita o DevOps, mas não compõe o acrônimo.
+D) Incorreta. Analytics não é o termo correto (o foco em métricas é dado pelo "M" de Measurement).
+E) Incorreta. Availability é uma meta operacional (tratada também por SRE), não sendo o pilar "A" do CALMS.
 </details>
 
 ---
+### Questão 2 (FCC - 2022 - TRT 22ª Região (PI) - Analista Judiciário - Tecnologia da Informação)
+Na adoção de práticas ágeis e DevOps, os conceitos de Integração Contínua (CI), Entrega Contínua (CD) e Implantação Contínua (CD) desempenham papéis cruciais, mas distintos. A principal diferença entre Entrega Contínua (Continuous Delivery) e Implantação Contínua (Continuous Deployment) é que:
+A) a Entrega Contínua requer que o código seja compilado automaticamente, enquanto a Implantação Contínua dispensa a compilação.
+B) na Entrega Contínua, a liberação para o ambiente de produção exige uma aprovação manual, enquanto na Implantação Contínua a passagem para produção é automatizada, sem intervenção humana.
+C) a Implantação Contínua é utilizada exclusivamente em ambientes de homologação, ao passo que a Entrega Contínua afeta apenas o ambiente de produção.
+D) a Entrega Contínua foca apenas na automação de testes unitários, enquanto a Implantação Contínua foca na automação de testes de integração e de carga.
+E) não existe diferença prática; os termos são sinônimos e cunhados por autores diferentes na literatura de DevOps.
 
-### Questão 7 (FCC - 2019 - TRF 3ª Região - Técnico Judiciário - Informática)
-O Docker popularizou a virtualização baseada em contêineres na indústria. Sobre os conceitos fundamentais desta tecnologia em ambientes DevOps, é correto afirmar:
-A) A Imagem Docker é uma instância transiente e em execução de um Contêiner empacotado.
-B) O Contêiner Docker usa emulação de hardware, encapsulando um kernel hospedeiro inteiro com um Guest OS pesado.
-C) O arquivo Dockerfile consiste em um documento textual determinístico que contém as instruções para o Docker construir uma Imagem.
-D) Contêineres Docker são projetados de forma a não possuir nenhum tipo de isolamento de processos nem de redes, operando exatamente como processos nativos compartilhados.
-E) O Docker Compose é utilizado primariamente para construir e gerenciar grandes clusters multimáquinas geodistribuídos em ambientes cloud.
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- **Integração Contínua (CI)**: Consiste em integrar o código de vários desenvolvedores em um repositório centralizado frequentemente, acompanhado de build e testes automatizados.
+- **Entrega Contínua (Continuous Delivery)**: Extensão do CI, onde o software é construído de forma que possa ser liberado para produção a qualquer momento. No entanto, a decisão de fazer o deploy (a implantação real em produção) é **manual**.
+- **Implantação Contínua (Continuous Deployment)**: Vai um passo além da Entrega Contínua. Toda alteração que passa nos testes automatizados é implantada **automaticamente** em produção, sem intervenção manual.
+
+Analisando as alternativas:
+A) Incorreta. Ambas exigem build/compilação automatizada (oriunda da CI).
+B) Correta. A diferença fundamental está na necessidade (ou não) de aprovação manual para o deploy em produção.
+C) Incorreta. Ambas visam a produção, mas de formas diferentes (manual vs. automática).
+D) Incorreta. Ambas dependem de todos os níveis de testes para garantir a qualidade do software antes da produção.
+E) Incorreta. Existem diferenças cruciais na automação da etapa final (deploy).
+</details>
+
+---
+### Questão 3 (FCC - 2023 - TRT 12ª Região (SC) - Analista Judiciário - Tecnologia da Informação)
+Uma das práticas fundamentais no DevOps é a utilização de pipelines de CI/CD para automatizar o ciclo de vida do desenvolvimento. Ao utilizar o Jenkins, a criação de pipelines como código (Pipeline as Code) geralmente é feita por meio de um arquivo que define os estágios de execução. Este arquivo é denominado por padrão como:
+A) docker-compose.yml
+B) Jenkinsfile
+C) build.xml
+D) pom.xml
+E) playbook.yml
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+O conceito de Pipeline as Code permite que o processo de build, teste e deploy seja versionado junto com o código da aplicação.
+No Jenkins, esse arquivo é chamado de **Jenkinsfile**.
+
+Analisando as alternativas:
+A) Incorreta. `docker-compose.yml` é utilizado pelo Docker Compose para definir e executar aplicativos Docker multicontêineres.
+B) Correta. O `Jenkinsfile` é o arquivo de configuração de pipelines no Jenkins (escrito em sintaxe Declarativa ou Scripted).
+C) Incorreta. `build.xml` é o arquivo de configuração padrão do Apache Ant.
+D) Incorreta. `pom.xml` (Project Object Model) é o arquivo de configuração e dependências do Apache Maven.
+E) Incorreta. `playbook.yml` é um arquivo de configuração do Ansible (ferramenta de gerência de configuração/IaC).
+</details>
+
+---
+### Questão 4 (FCC - 2024 - TRF 3ª Região - Analista Judiciário - Tecnologia da Informação)
+No contexto de implantação de microsserviços sem indisponibilidade (Zero Downtime Deployment), duas estratégias muito utilizadas são o *Blue-Green Deployment* e o *Canary Release*. Sobre o *Blue-Green Deployment*, é correto afirmar que:
+A) direciona gradualmente e em pequenas porcentagens o tráfego de usuários para a nova versão, monitorando os erros antes de liberar para o restante.
+B) mantém dois ambientes de produção idênticos, alternando o roteamento do tráfego do ambiente atual (ativo) para o novo ambiente, reduzindo riscos de downtime.
+C) realiza a atualização da infraestrutura substituindo os nós do cluster um a um (Rolling Update), mantendo a mesma base de dados ativa para ambas as versões.
+D) desativa completamente o ambiente de produção para realizar a atualização, e após testes, restabelece o tráfego; embora gere downtime, garante a integridade.
+E) é uma técnica exclusiva do Kubernetes que utiliza o conceito de HPA (Horizontal Pod Autoscaler) para balanceamento de carga entre pods.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- **Blue-Green Deployment**: Consiste em manter dois ambientes de produção distintos e idênticos (Blue e Green). Apenas um deles está ativo (recebendo tráfego real) por vez. A nova versão é implantada no ambiente inativo. Após testes, o roteador/load balancer é alterado para apontar para o novo ambiente, o que torna o rollback extremamente simples e instantâneo.
+- **Canary Release**: Libera a nova versão para uma pequena parcela de usuários (ex: 5%), monitorando erros. Se tudo correr bem, o tráfego é ampliado gradativamente (a alternativa A descreve isso).
+
+Analisando as alternativas:
+A) Incorreta. Esta é a definição exata de *Canary Release*.
+B) Correta. Descreve perfeitamente o *Blue-Green Deployment*.
+C) Incorreta. Refere-se à técnica de *Rolling Update* (ou *Rolling Deployment*).
+D) Incorreta. Isso caracteriza um *Recreate Deployment* ou *Big Bang*, que gera indisponibilidade (downtime).
+E) Incorreta. Blue-Green é um padrão arquitetural que independe da ferramenta e não está intrinsecamente ligado ao HPA.
+</details>
+
+---
+### Questão 5 (FCC - 2018 - TRT 15ª Região (SP) - Analista Judiciário - Tecnologia da Informação)
+O Docker tornou-se uma ferramenta de infraestrutura padrão em ambientes de CI/CD. Na arquitetura do Docker, a estrutura responsável por armazenar em formato somente leitura (read-only) os templates que contêm instruções para criar um contêiner é chamada de:
+A) Docker Daemon (dockerd).
+B) Docker Compose.
+C) Docker Image (Imagem).
+D) Docker Registry.
+E) Docker Swarm.
+
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-A) Incorreta. A definição está propositalmente invertida: o Contêiner é que é a instância (em execução) derivada de uma Imagem Docker (que é o template estático, inativo).
-B) Incorreta. O Docker não realiza emulação de hardware com um Sistema Operacional Convidado (Guest OS) para cada contêiner — isso é feito pelas Máquinas Virtuais (VMs). O Docker compartilha o Kernel do Sistema Operacional nativo do Host.
-C) Correta. O Dockerfile é uma receita de instruções sequenciais (`FROM`, `RUN`, `COPY`, `CMD` etc.) utilizadas pela engine do Docker para criar as camadas de uma nova Imagem de maneira automatizada e documentada.
-D) Incorreta. Embora sejam mais leves, os contêineres Docker fornecem um altíssimo grau de isolamento em nível de SO (usando `namespaces` e `cgroups` do Linux) separando processos, montagens e redes.
-E) Incorreta. O Docker Compose é usado para orquestrar múltiplos contêineres apenas em ambientes de máquina única (single-host) para desenvolvimento. Para clusters em múltiplos nós e nuvem, usa-se Docker Swarm ou Kubernetes.
+Para entender o Docker, é preciso conhecer seus principais componentes:
+A) Incorreta. O Docker Daemon é o serviço que roda no host responsável por gerenciar os objetos do Docker, como imagens, contêineres e redes.
+B) Incorreta. Docker Compose é uma ferramenta para definir e executar aplicações multi-contêineres, orquestrando-os localmente.
+C) Correta. Uma **Imagem Docker** é um template read-only contendo um conjunto de instruções para a criação de um contêiner (a aplicação em execução).
+D) Incorreta. Docker Registry é um repositório centralizado onde as imagens são armazenadas e distribuídas (ex: Docker Hub).
+E) Incorreta. Docker Swarm é a ferramenta nativa de orquestração de contêineres em cluster do Docker.
 </details>
 
 ---
+### Questão 6 (FCC - 2022 - TRT 5ª Região (BA) - Analista Judiciário - Tecnologia da Informação)
+O uso de Infraestrutura como Código (IaC - Infrastructure as Code) é um dos pilares do DevOps para automação do provisionamento. Duas abordagens comuns no IaC são a declarativa e a imperativa. Uma das ferramentas de IaC baseadas no modelo declarativo, mantida pela HashiCorp, muito utilizada para provisionar recursos em diferentes provedores de nuvem, é o:
+A) Terraform.
+B) Chef.
+C) Jenkins.
+D) Git.
+E) Ansible.
 
-### Questão 8 (FCC - 2021 - TRT 6ª Região - Analista Judiciário - TI)
-No Kubernetes (K8s), a orquestração de ambientes conteinerizados escaláveis requer conhecimentos de seus componentes. A menor unidade atômica computacional que pode ser implantada, criada e gerenciada nativamente pela plataforma e que representa um conjunto de um ou mais contêineres é chamada de:
-A) ReplicaSet.
-B) Pod.
-C) Node.
-D) Ingress.
-E) Cluster.
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+No paradigma declarativo, o usuário define o "estado desejado" da infraestrutura, e a ferramenta se encarrega de realizar os passos necessários para alcançar esse estado. No imperativo, o usuário define os comandos específicos ("como fazer") para chegar ao estado.
+
+A) Correta. O **Terraform** (da HashiCorp) é a ferramenta de provisionamento de IaC mais popular, usando HCL (HashiCorp Configuration Language) em um modelo declarativo.
+B) Incorreta. O Chef é voltado primariamente para gerência de configuração (assim como Puppet), tendendo frequentemente ao uso de receitas imperativas (baseadas em Ruby).
+C) Incorreta. Jenkins é focado em CI/CD e não é uma ferramenta nativa de provisionamento IaC.
+D) Incorreta. Git é um sistema de controle de versão (VCS), servindo de base para o IaC (e GitOps), mas não provisiona infraestrutura por si só.
+E) Incorreta. O Ansible é excelente para gerência de configuração. Embora seja YAML e tenha características declarativas, é mais procedural/imperativo do que o Terraform quando o assunto é o provisionamento do ciclo de vida da infraestrutura de nuvem, e não é mantido pela HashiCorp (é da Red Hat/IBM).
+</details>
+
+---
+### Questão 7 (FCC - 2021 - TCE-SC - Auditor Fiscal de Controle Externo - Informática)
+A inserção de práticas de segurança diretamente nos pipelines de integração e entrega contínua, visando tratar falhas de segurança nas etapas iniciais de desenvolvimento, remete ao termo DevSecOps. Uma das práticas mais comuns adotadas no CI/CD para analisar estaticamente o código-fonte em busca de vulnerabilidades antes mesmo da compilação é denominada:
+A) DAST (Dynamic Application Security Testing).
+B) SAST (Static Application Security Testing).
+C) RASP (Runtime Application Self-Protection).
+D) IAST (Interactive Application Security Testing).
+E) Pentest (Testes de Intrusão manuais).
+
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-A) Incorreta. O ReplicaSet gerencia a garantia da existência e replicação em execução de um número "X" especificado daquela unidade atômica.
-B) Correta. O "Pod" é o menor e mais básico objeto dentro do universo Kubernetes. O Kubernetes não implanta ou interage diretamente com "contêineres individuais", mas empacota um (mais comum) ou múltiplos contêineres estreitamente acoplados num único Pod, compartilhando volumes de rede e de armazenamento (mesmo IP e localhost).
-C) Incorreta. O Node (Nó) representa a máquina (virtual ou física) do cluster, onde o agente Kubelet opera e hospeda fisicamente a alocação dos Pods.
-D) Incorreta. Ingress é um objeto que gerencia as regras de acesso externo (como HTTP/HTTPS, balanceamento de carga, terminação SSL) para alcançar os serviços internos.
-E) Incorreta. O Cluster é toda a junção do Control Plane (Gerência central) mais os inúmeros Nodes de processamento.
+DevSecOps promove a abordagem *Shift-Left*, antecipando testes de segurança:
+A) Incorreta. DAST é análise **dinâmica**. Ocorre com a aplicação em execução para identificar falhas de injeção, XSS, etc.
+B) Correta. SAST é análise **estática**. Inspeciona o código-fonte, o bytecode ou os binários sem executar a aplicação (ex: SonarQube, Checkmarx). Pode e deve ser rodado logo no início do pipeline.
+C) Incorreta. RASP é uma tecnologia que fica dentro da aplicação em tempo de execução (runtime), capaz de detectar e bloquear ataques enquanto acontecem.
+D) Incorreta. IAST é uma abordagem híbrida, combinando técnicas de análise estática e dinâmica na aplicação rodando.
+E) Incorreta. Pentest manual geralmente é feito em fases mais tardias, embora essencial, não é focado na automação inicial do código.
 </details>
 
 ---
+### Questão 8 (FCC - 2023 - TST - Analista Judiciário - Tecnologia da Informação)
+No ecossistema de orquestração de contêineres e DevOps, o Kubernetes (K8s) desempenha um papel central. Na arquitetura do Kubernetes, o componente do *Control Plane* responsável por expor a API do Kubernetes, atuando como o ponto de entrada principal para os comandos executados via `kubectl`, é o:
+A) kube-scheduler.
+B) etcd.
+C) kube-apiserver.
+D) kube-controller-manager.
+E) kubelet.
 
-### Questão 9 (FCC - 2022 - TRT 22ª Região - Analista Judiciário - TI)
-Como uma das práticas avançadas no pilar de automação da cultura DevOps, a Infraestrutura como Código (Infrastructure as Code - IaC) apresenta diversos benefícios. Um dos objetivos diretos e corretos do emprego de ferramentas de IaC (como Terraform ou Ansible) é:
-A) Substituir os processos diários de backup de bancos de dados por códigos declarativos nos servidores.
-B) Reduzir drasticamente o controle de versão para os artefatos de infraestrutura, garantindo independência do setor de operações.
-C) Centralizar toda a gestão de configurações através de pesadas e lentas intervenções via interface gráfica de painéis em Cloud (ClickOps).
-D) Possibilitar que ambientes inteiros sejam provisionados de forma rápida, repetível, idempotente e documentada em arquivos legíveis por humanos e máquinas.
-E) Impedir implantações automatizadas em ambientes híbridos, bloqueando integração de serviços on-premise com recursos em nuvem pública.
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+A arquitetura do Kubernetes se divide em Master (Control Plane) e Worker Nodes:
+A) Incorreta. O `kube-scheduler` é o responsável por decidir em qual nó um novo Pod (contêiner) vai ser executado, baseando-se em recursos disponíveis e regras de afinidade.
+B) Incorreta. O `etcd` é um armazenamento de chave-valor distribuído e altamente disponível usado como o banco de dados de suporte do Kubernetes para todos os dados do cluster.
+C) Correta. O `kube-apiserver` é o *front-end* do Control Plane. Toda a comunicação dentro e fora do cluster K8s passa por ele (incluindo as ações do `kubectl`).
+D) Incorreta. O `kube-controller-manager` gerencia os controladores que regulam o estado do cluster, como o Node Controller e o ReplicaSet Controller.
+E) Incorreta. O `kubelet` não faz parte do Control Plane. É o agente que roda em cada *Worker Node*, garantindo que os contêineres estejam em execução e saudáveis nos Pods.
+</details>
+
+---
+### Questão 9 (FCC - 2024 - TRF 3ª Região - Analista Judiciário - Tecnologia da Informação)
+O GitOps é um modelo operacional em evolução no contexto DevOps que utiliza o Git como a fonte única da verdade (Single Source of Truth) para infraestrutura e aplicações declarativas. Uma das características fundamentais do modelo GitOps é o uso de agentes *pull-based* (operadores). Diferente de abordagens tradicionais de CI/CD baseadas em *push*, em um modelo *pull* no GitOps:
+A) o repositório Git envia ativamente comandos via SSH para os servidores de produção assim que um novo commit é recebido.
+B) um operador rodando dentro do próprio cluster de destino (como o ArgoCD ou Flux) monitora o repositório Git e aplica as mudanças para sincronizar o estado atual com o estado desejado.
+C) as imagens Docker geradas no CI enviam uma notificação para o cluster, forçando-o a baixar as novas versões.
+D) o Jenkins invoca scripts Terraform a partir de gatilhos acionados manualmente por um administrador de redes.
+E) a sincronização com a infraestrutura é feita exclusivamente pela execução manual do comando `git pull` nos nós de produção.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+GitOps baseia-se em infraestrutura declarativa onde as configurações residem no Git.
+A) Incorreta. Essa é uma descrição de um modelo *Push* (como frequentemente feito pelo Jenkins ou GitLab CI tradicional).
+B) Correta. No GitOps puro (*Pull-based*), existem ferramentas (como ArgoCD ou FluxCD) instaladas *dentro* do cluster de destino. Elas "puxam" as informações monitorando o repositório Git. Se houver divergência entre o estado do cluster e o que está no Git, elas convergem o cluster para o estado do Git automaticamente (ou sob demanda).
+C) Incorreta. Imagens não controlam o deploy ativamente, elas são apenas artefatos armazenados em um Registry.
+D) Incorreta. Descreve uma ação tradicional orientada a CI/CD, não a filosofia autônoma pull-based do GitOps.
+E) Incorreta. GitOps preza pela automação extrema; `git pull` manual contradiz seus princípios fundamentais.
+</details>
+
+---
+### Questão 10 (FCC - 2018 - TRT 2ª Região (SP) - Analista Judiciário - Tecnologia da Informação)
+Nas pipelines de integração contínua (CI), a análise da qualidade do código-fonte é um passo recomendado. Uma ferramenta amplamente utilizada para medir a qualidade do código (avaliando cobertura de testes, complexidade ciclomática, código duplicado, vulnerabilidades e "code smells") e que se integra nativamente à maioria dos servidores de CI é o:
+A) Ansible.
+B) Kubernetes.
+C) SonarQube.
+D) Maven.
+E) Docker.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+A) Incorreta. Ansible é para gerência de configuração e IaC.
+B) Incorreta. Kubernetes orquestra contêineres em produção.
+C) Correta. O **SonarQube** (ou SonarCloud) é a ferramenta líder em inspeção contínua da qualidade e segurança do código, reportando "Code Smells" (códigos que cheiram mal, ou seja, são difíceis de manter), bugs, vulnerabilidades de segurança e cobertura de código (porcentagem do código coberto por testes unitários).
+D) Incorreta. Maven é uma ferramenta de build e gestão de dependências em Java, e embora execute testes e gere relatórios, a inspeção de qualidade centralizada é papel do SonarQube.
+E) Incorreta. Docker isola a aplicação em contêineres.
+</details>
+
+---
+### Questão 11 (FCC - 2023 - TRT 11ª Região (AM e RR) - Analista Judiciário - Tecnologia da Informação)
+O conceito de "Shift-Left" no ciclo de vida de desenvolvimento de software e DevOps significa:
+A) deslocar os servidores de produção física para a nuvem pública, priorizando a lateral esquerda de diagramas de topologia de rede.
+B) atrasar a execução dos testes até que todo o código esteja implementado, garantindo a avaliação do produto de forma integral no lado direito do cronograma.
+C) antecipar e incorporar as práticas de testes, segurança e qualidade para as fases mais iniciais (à esquerda) do ciclo de desenvolvimento, em vez de deixá-las para o final.
+D) promover desenvolvedores seniores a posições gerenciais (deslocamento para o lado esquerdo do organograma da empresa).
+E) migrar as bases de dados relacionais (SQL) para não relacionais (NoSQL).
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+Imagine o fluxo de ciclo de vida de desenvolvimento de software (SDLC) da esquerda para a direita (Requisitos -> Design -> Código -> Testes -> Deploy -> Manutenção).
+A) Incorreta. Não tem relação com diagramas de rede ou migração para nuvem.
+B) Incorreta. Isso descreve o oposto do "Shift-Left"; seria postergar (Shift-Right) e é característico de processos em cascata.
+C) Correta. **Shift-Left** significa "deslocar para a esquerda", ou seja, realizar tarefas vitais (como integração, testes e verificações de segurança) o mais cedo possível no ciclo. Encontrar um erro na fase de codificação é muito mais barato e rápido de corrigir do que em produção.
+D) Incorreta. Falsa e irrelevante conceitualmente.
+E) Incorreta. Não tem nenhuma relação com escolha de banco de dados.
+</details>
+
+---
+### Questão 12 (FCC - 2019 - TRF 4ª Região - Analista Judiciário - Tecnologia da Informação)
+O conceito de arquitetura de microsserviços harmoniza-se de forma profunda com a cultura DevOps. Entre os motivos para a adoção de microsserviços visando maximizar os benefícios do DevOps, destaca-se:
+A) a centralização de todos os serviços em um único banco de dados monolítico, o que facilita o versionamento dos esquemas através de CI/CD.
+B) a dependência forte entre os módulos (alto acoplamento), obrigando os times de infraestrutura e desenvolvimento a trabalharem nas mesmas linguagens de programação.
+C) a autonomia na implantação (deploy), permitindo que pequenas equipes desenvolvam, testem e liberem serviços independentemente dos demais componentes do sistema.
+D) a eliminação da necessidade de orquestração de contêineres e testes automatizados, já que cada serviço é pequeno o suficiente para não conter erros críticos.
+E) a redução da complexidade na monitoração, tendo em vista que microsserviços interagem de forma síncrona sem gerar latência na rede.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+Os microsserviços quebram a aplicação em pequenos serviços independentes.
+A) Incorreta. Uma premissa dos microsserviços é a descentralização de dados, onde frequentemente cada serviço possui seu próprio banco de dados isolado (Database per Service) para evitar acoplamento.
+B) Incorreta. Os microsserviços buscam o **baixo acoplamento**, e permitem autonomia tecnológica (Polyglot Persistence/Programming).
+C) Correta. A autonomia de deploy é o grande benefício para o DevOps. Um time pode liberar a versão do serviço A sem precisar compilar, testar ou sincronizar o deploy com os serviços B, C e D.
+D) Incorreta. Pelo contrário; microsserviços exigem **mais** automação de deploy, orquestração rigorosa (como K8s) e testes minuciosos, devido à complexidade da infraestrutura distribuída.
+E) Incorreta. A complexidade de monitoramento **aumenta** exponencialmente nos microsserviços, exigindo práticas avançadas de Observabilidade, tracing distribuído e logs centralizados.
+</details>
+
+---
+### Questão 13 (FCC - 2022 - TRT 14ª Região (RO e AC) - Analista Judiciário - Tecnologia da Informação)
+No contexto de versionamento e DevOps, o Git desempenha papel crítico. Uma estratégia de ramificação (*branching strategy*) bastante popular para projetos versionados no Git é o GitFlow. No modelo original do GitFlow, as duas *branches* principais de longo tempo de vida que existem durante toda a vida do projeto são:
+A) `master` (ou `main`) e `develop`.
+B) `feature` e `release`.
+C) `hotfix` e `bugfix`.
+D) `trunk` e `tag`.
+E) `production` e `homologation`.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+O GitFlow (criado por Vincent Driessen) organiza o repositório da seguinte maneira:
+A) Correta. O modelo possui duas branches perenes (de vida longa):
+- `master` (ou `main`): Contém o código oficial de produção; sempre está em estado implantável.
+- `develop`: Contém os últimos códigos entregues para as próximas releases; é a branch de integração.
+B) Incorreta. As branches `feature` (novas funcionalidades) e `release` (preparação para produção) são temporárias (efêmeras); são apagadas após o merge.
+C) Incorreta. `hotfix` é uma branch temporária, derivada da `master` para correções rápidas em produção, e feito o merge, ela é deletada.
+D) Incorreta. *Trunk* é o termo base para o Trunk-Based Development, outra estratégia (diferente do GitFlow), que foca na branch master/main apenas.
+E) Incorreta. Estas não são nomenclaturas padrão do modelo GitFlow.
+</details>
+
+---
+### Questão 14 (FCC - 2023 - TRT 12ª Região (SC) - Analista Judiciário - Tecnologia da Informação)
+Dentro da cultura DevOps e de Engenharia de Confiabilidade de Sites (SRE - Site Reliability Engineering), o estabelecimento de métricas quantificáveis de sucesso e disponibilidade dos serviços é essencial. Considere a afirmativa: "O percentual ou número absoluto de requisições falhas aceitáveis que o sistema pode tolerar durante um período sem que haja quebra do compromisso estabelecido com o negócio ou o cliente final". O termo que melhor define este conceito no SRE é o:
+A) SLA (Service Level Agreement).
+B) SLI (Service Level Indicator).
+C) SLO (Service Level Objective).
+D) Error Budget (Orçamento de Erro).
+E) MTTR (Mean Time To Recovery).
+
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: D**
 
-A) Incorreta. O IaC gerencia infraestrutura (redes, instâncias, firewall), mas a garantia e o plano de continuidade de rotinas de backup de dados gerados pelos sistemas (dados de tabelas) vão muito além do mero IaC.
-B) Incorreta. O IaC baseia-se exatamente NO AUMENTO DO USO do controle de versão (Git) aplicado às operações (GitOps), trazendo o rigor do código fonte para a infraestrutura.
-C) Incorreta. A Infraestrutura como Código combate radicalmente as intervenções e gestões via click (ClickOps). O uso de painéis lentos e guiados por interface web são desencorajados em prol de scripts executáveis e automatizados.
-D) Correta. A essência do IaC é fornecer ambientes seguros. Se um ambiente de desenvolvimento precisar ser levado para testes, basta executar o mesmo script, o que provê repetibilidade confiável, auditoria, segurança e documentação da infraestrutura vigente (idempotência nas ferramentas declarativas).
-E) Incorreta. O IaC lida perfeitamente bem com ambientes multiplataformas, híbridos e multi-cloud. O Terraform, por exemplo, dispõe de centenas de "Providers" que cobrem redes tanto na AWS quanto em VMware interno na organização.
+A Google introduziu o SRE com conceitos chaves:
+- **SLA**: Acordo contratual de negócio; caso não cumprido, gera multas.
+- **SLO**: Objetivo interno da equipe (ex: 99.9% das requisições com sucesso em 30 dias).
+- **SLI**: Indicador real medido (ex: qual foi o percentual atingido hoje, digamos 99.95%).
+A) Incorreta. SLA é o contrato.
+B) Incorreta. SLI é a métrica pontual real.
+C) Incorreta. SLO é o alvo.
+D) Correta. O **Error Budget** é a margem de erro. Se o SLO é 99.9%, o Error Budget é 0.1%. É a quantidade de falhas "tolerada" que a equipe tem para gastar com novas implementações e experimentações. Se o orçamento esgota, os deploys de novas *features* são congelados e o foco passa a ser 100% estabilidade.
+E) Incorreta. MTTR é o Tempo Médio de Recuperação, métrica de quanto tempo demora para o sistema voltar ao ar após cair.
 </details>
 
 ---
+### Questão 15 (FCC - 2021 - TCE-SC - Auditor Fiscal de Controle Externo - Informática)
+Uma das práticas modernas de colaboração suportadas pelo DevOps é o chamado "ChatOps". O principal objetivo do ChatOps é:
+A) criar fóruns assíncronos para que a equipe de suporte tire dúvidas de usuários finais.
+B) permitir a execução de ferramentas, implantações e fluxos de trabalho operacionais diretamente a partir de comandos em interfaces de chat da equipe de desenvolvimento e operação, colaborando de forma transparente.
+C) utilizar inteligência artificial para ler códigos fonte e responder a dúvidas de desenvolvedores juniores em uma interface de bate-papo.
+D) substituir as metodologias ágeis (como as reuniões diárias do Scrum) por aplicativos de mensagens corporativas visando reduzir o tempo perdido.
+E) garantir que toda a comunicação da equipe de projeto seja criptografada e não possa ser rastreada.
 
-### Questão 10 (FCC - 2017 - TST - Analista Judiciário - Suporte em TI)
-Em um pipeline completo sob os paradigmas do DevOps, é essencial diferenciar "Entrega Contínua" (Continuous Delivery) de "Implantação Contínua" (Continuous Deployment). A diferença conceitual mais expressiva e correta entre essas duas esteiras automatizadas é que:
-A) Na Entrega Contínua o código é liberado para produção sem intervenção humana, enquanto a Implantação Contínua paralisa o código no teste unitário.
-B) Na Implantação Contínua os testes devem ser executados apenas manualmente por analistas de qualidade (QA), em contraste com a Entrega Contínua.
-C) A Implantação Contínua envia o artefato homologado automática e diretamente para a produção caso todos os testes passem, não existindo aprovação humana, enquanto na Entrega Contínua o deploy em produção necessita de aprovação e acionamento humano explícito.
-D) A Entrega Contínua foca unicamente em infraestruturas baseadas em contêineres (Docker), ignorando o pipeline lógico, diferentemente da Implantação Contínua.
-E) Ambos possuem rigorosamente o mesmo significado na literatura ágil, sendo o termo "Deployment" usado exclusivamente no Brasil.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**
+**Gabarito: B**
 
-A) Incorreta. A definição exposta na afirmativa inverte frontalmente o conceito. O que ocorre sem intervenção (automático) é a Implantação Contínua.
-B) Incorreta. Tanto CD (Entrega) quanto CD (Implantação) requerem baterias massivas de testes automatizados e desprezam a validação totalmente manual como via de regra de pipeline.
-C) Correta. A principal linha divisória é a aprovação humana de liberação em negócios. Continuous Delivery garante que sua aplicação PODE ser implantada na produção a qualquer momento de forma segura (botão disponível). Continuous Deployment vai além: a implantação na produção É a última etapa da esteira automatizada sem clicar de botões, confiando-se 100% no suite de testes.
-D) Incorreta. As práticas citadas dizem respeito à engenharia de liberação de software de forma independente da tecnologia final adotada (contêineres, VMs, Serverless etc).
-E) Incorreta. Existe uma clara divergência conceitual e técnica formal em âmbito internacional no papel humano de aceite final (Release) perante a engenharia de software e os guias DevOps.
+O conceito de **ChatOps**:
+A) Incorreta. Não é focado no atendimento ao usuário final, mas nas operações da própria equipe de engenharia.
+B) Correta. ChatOps é o uso de plataformas de comunicação colaborativa (como Slack, Microsoft Teams ou Discord) integradas a bots (Chatbots) e ferramentas de CI/CD. Por exemplo, um desenvolvedor digita `/deploy production v2.1` no chat, e todos da sala acompanham o comando sendo processado e o log de resultado postado pelo Bot. Traz extrema visibilidade e unifica comunicação e execução.
+C) Incorreta. Isso seria uso de Assistentes IA de código, não é o foco histórico e primário do ChatOps (que engloba executar *operações*).
+D) Incorreta. O ChatOps não visa substituir metodologias ágeis, e sim adicionar automação e transparência operacional.
+E) Incorreta. É um detalhe técnico de segurança, não a finalidade e definição da cultura de ChatOps.
 </details>
 
 ---
+
 
 ## 📝 TEMA 3: Direito Constitucional
 
-### Questão 11 (FCC - 2018 - TRT 15ª Região - Técnico Judiciário - Área Administrativa)
-Um servidor público necessita de acesso a informações e registros referentes à sua própria pessoa constantes de um complexo banco de dados pertencente a um órgão governamental, mas o órgão se recusa ilicitamente a fornecer a informação. Conforme os direitos e garantias fundamentais previstos na Constituição Federal de 1988 (Art. 5º), o remédio constitucional apto para sanar este tipo de lesão é o:
-A) Mandado de Injunção.
-B) Habeas Corpus.
-C) Mandado de Segurança.
-D) Habeas Data.
-E) Ação Civil Pública.
+### Questão 1 (FCC - 2022 - TRT 4 - Analista Judiciário)
+Sobre os direitos e garantias fundamentais previstos na Constituição Federal:
+A) A lei penal não retroagirá, salvo para beneficiar o réu.
+B) É permitida a pena de morte em qualquer hipótese de comoção interna grave.
+C) É livre a manifestação do pensamento, sendo permitido o anonimato nas denúncias.
+D) A prática do racismo constitui crime inafiançável, sujeito a pena de detenção.
+E) As associações poderão ser compulsoriamente dissolvidas por ato do Poder Executivo.
+
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**
+**Gabarito: A**
 
-A) Incorreta. O Mandado de Injunção é utilizado quando há omissão legislativa total ou parcial (falta de norma regulamentadora) que torne inviável o exercício de direitos previstos constitucionalmente.
-B) Incorreta. O Habeas Corpus tem o escopo exclusivo de combater ou ameaçar combater violências e coações contra a liberdade de locomoção (direito de ir e vir).
-C) Incorreta. O Mandado de Segurança protege direito líquido e certo não amparado por *Habeas Corpus* nem por *Habeas Data*. É uma regra residual e subsidiária perante informações pessoais, visto que existe ação específica.
-D) Correta. Nos termos do art. 5º, inciso LXXII, CF/88, o Habeas Data será concedido para assegurar o conhecimento de informações relativas à pessoa do impetrante (informações personalíssimas), constantes de registros ou bancos de dados de entidades governamentais ou de caráter público. 
-E) Incorreta. A Ação Civil Pública é promovida (frequentemente pelo Ministério Público) com o fim de proteger direitos difusos e coletivos perante meio-ambiente, consumidor etc., não informações sobre indivíduo em específico.
+A) **Correta.** Nos termos do art. 5º, XL da CF/88, "a lei penal não retroagirá, salvo para beneficiar o réu". É o princípio da irretroatividade da lei penal gravosa.
+B) **Incorreta.** A pena de morte é vedada no Brasil, existindo uma única exceção: em caso de guerra declarada, conforme art. 5º, XLVII, "a".
+C) **Incorreta.** O art. 5º, IV consagra que é livre a manifestação do pensamento, sendo expressamente VEDADO o anonimato.
+D) **Incorreta.** O crime de racismo é inafiançável e imprescritível, sujeito à pena de RECLUSÃO (e não detenção), nos termos do art. 5º, XLII da CF/88.
+E) **Incorreta.** As associações só poderão ser compulsoriamente dissolvidas ou ter suas atividades suspensas por decisão judicial, exigindo-se, no primeiro caso, o trânsito em julgado (art. 5º, XIX).
 </details>
 
 ---
 
-### Questão 12 (FCC - 2019 - TRF 4ª Região - Analista Judiciário - Área Judiciária)
-Em regra geral expressa no Art. 37 da Constituição Federal acerca da Administração Pública, veda-se estritamente a acumulação remunerada de cargos públicos. No entanto, a referida norma exsurge com exceções pontuais onde a acumulação lícita é autorizada, desde que observada rigorosamente a compatibilidade de horários, como, por exemplo, na acumulação de:
-A) Um cargo técnico do Judiciário com um cargo isolado em comissão de livre nomeação.
-B) Dois cargos ou empregos unicamente privativos de profissionais de saúde, possuindo ambos profissões regulamentadas.
-C) Três cargos na esfera do magistério estadual e municipal.
-D) Um cargo de médico em uma fundação pública com outros dois cargos em autarquias em municípios vizinhos.
-E) Um mandato de Prefeito Municipal concomitantemente com os vencimentos de proventos de dois cargos inativos de segurança.
+### Questão 2 (FCC - 2023 - TRT 18 - Analista Judiciário)
+Em relação aos direitos sociais expressos na Constituição Federal de 1988:
+A) São direitos sociais a educação, a saúde, a alimentação, o trabalho, a moradia, o transporte, o lazer, a segurança, a previdência social, a proteção à maternidade e à infância, a assistência aos desamparados.
+B) É garantido o salário mínimo nacional, mas sua fixação e reajustes são definidos por convenção coletiva, sem força de lei.
+C) O repouso semanal remunerado deve ocorrer preferencialmente aos sábados e domingos.
+D) A licença à gestante é fixada constitucionalmente em cento e oitenta dias, sem prejuízo do emprego e do salário.
+E) O aviso prévio é garantido a todos os trabalhadores, sendo sempre fixo e de trinta dias independentemente do tempo de serviço.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+A) **Correta.** Corresponde à exata literalidade do art. 6º, *caput*, da Constituição Federal, que elenca os direitos sociais fundamentais, incluindo as atualizações introduzidas por Emendas Constitucionais (como o direito ao transporte).
+B) **Incorreta.** O salário mínimo deve ser fixado em LEI, nacionalmente unificado, conforme o art. 7º, IV da CF/88.
+C) **Incorreta.** A Constituição determina que o repouso semanal remunerado será concedido "preferencialmente aos domingos" (art. 7º, XV), e não sábados e domingos.
+D) **Incorreta.** A CF estabelece, em seu art. 7º, XVIII, a licença à gestante pelo prazo de cento e vinte (120) dias.
+E) **Incorreta.** O aviso prévio é proporcional ao tempo de serviço, sendo no mínimo de trinta dias, nos termos da lei (art. 7º, XXI).
+</details>
+
+---
+
+### Questão 3 (FCC - 2018 - TRT 15 - Analista Judiciário)
+Sobre a organização do Estado, a Constituição prevê que os Estados-membros:
+A) Podem se subdividir em Municípios, mas não podem se incorporar entre si.
+B) Possuem autonomia política, administrativa e financeira, nos termos da Constituição.
+C) Podem editar normas gerais e privativas sobre direito civil e penal caso haja urgência.
+D) Têm a mesma competência tributária para criar contribuições sociais que a União.
+E) Podem criar, mediante lei complementar própria da Assembleia Legislativa, novos Estados em seus territórios.
+
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-A) Incorreta. O exercício em cargo comissionado por quem possui cargo técnico efetivo implica dedicação ao cargo comissionado (não se trata de acumular duas matrículas para desempenhos simultâneos, o servidor afasta-se para exercer o comissionado com opção de remuneração ditada na lei do ente).
-B) Correta. O artigo 37, inciso XVI, "c" da Constituição Federal autoriza de forma expressa a acumulação de "dois cargos ou empregos privativos de profissionais de saúde, com profissões regulamentadas". 
-C) Incorreta. O limite máximo da norma para magistério não admite três vínculos, mas sim a estrita de "dois cargos de professor" (art. 37, XVI, "a").
-D) Incorreta. Estaríamos diante de três cargos para profissionais de saúde (um médico e outros dois), o que extrapola a baliza rígida de "dois cargos". Tripla acumulação para esta categoria é vedada pelo STF.
-E) Incorreta. Conforme o Art. 38, o agente investido em mandato de Prefeito precisará licenciar-se de seu cargo originário e exercer a escolha opcional de remuneração, sendo vetada também qualquer quebra do teto remuneratório em acumulações anômalas com Segurança.
+A) **Incorreta.** Os Estados podem incorporar-se entre si, subdividir-se ou desmembrar-se para se anexarem a outros (art. 18, § 3º).
+B) **Correta.** Os Estados organizam-se por suas próprias Constituições, respeitados os princípios da CF, possuindo plena autonomia (capacidade de auto-organização, autogoverno e autoadministração).
+C) **Incorreta.** Legislar sobre direito civil e penal é competência privativa da União (art. 22, I), não havendo previsão para edição pelos Estados sob justificativa de urgência genérica.
+D) **Incorreta.** A União tem competência para a maior parte das contribuições sociais; os Estados podem cobrar contribuição apenas de seus servidores para regime próprio de previdência (art. 149, § 1º).
+E) **Incorreta.** A criação de novos Estados é feita por lei complementar federal, editada pelo Congresso Nacional, e não por lei estadual (art. 18, § 3º).
 </details>
 
 ---
 
-### Questão 13 (FCC - 2021 - TRT 6ª Região - Técnico Judiciário - Área Administrativa)
-A Constituição da República de 1988 dotou o Supremo Tribunal Federal (STF) da importante prerrogativa de editar Súmulas Vinculantes (Art. 103-A), ferramenta criada na Emenda Constitucional nº 45. Sobre este instrumento, é pertinente afirmar que:
-A) Pode versar sobre matéria puramente infraconstitucional, em caso de severas divergências nas justiças estaduais.
-B) Obriga estritamente e exime de sua aplicação imediata todos os demais órgãos do Poder Judiciário, mas não incide o seu poder na administração pública do Poder Executivo estadual e municipal.
-C) Exige-se que sua aprovação, bem como sua posterior revisão ou mesmo cancelamento no plenário, seja respaldada por um quórum de dois terços dos seus membros constituintes (oito Ministros).
-D) A edição não poderá, sob nenhuma hipótese, ser provocada, mas será executada de ofício, com caráter monopolista de iniciativa, de forma irretratável, por seu Presidente.
-E) O Defensor Público Geral da União consta nas opções entre os legitimados sem permissão para propor, revisar ou editar.
+### Questão 4 (FCC - 2021 - TRT 11 - Técnico Judiciário)
+O Poder Legislativo da União, conforme a Constituição Federal, é exercido pelo Congresso Nacional, que se compõe de:
+A) Câmara dos Deputados e Supremo Tribunal Federal.
+B) Câmara dos Deputados e Senado Federal.
+C) Senado Federal e Conselho Nacional de Justiça.
+D) Câmara dos Deputados e Tribunal de Contas da União.
+E) Senado Federal e Câmara de Vereadores do Distrito Federal.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A) **Incorreta.** O Supremo Tribunal Federal é o órgão de cúpula do Poder Judiciário.
+B) **Correta.** Conforme o art. 44 da CF/88: "O Poder Legislativo é exercido pelo Congresso Nacional, que se compõe da Câmara dos Deputados e do Senado Federal". É a consagração do sistema bicameral no plano federal.
+C) **Incorreta.** O Conselho Nacional de Justiça (CNJ) é órgão integrante do Poder Judiciário.
+D) **Incorreta.** O TCU, embora auxilie o Congresso Nacional no controle externo, não compõe o Poder Legislativo como uma de suas Casas.
+E) **Incorreta.** O DF possui Câmara Legislativa, composta por Deputados Distritais, não fazendo parte do Congresso Nacional.
+</details>
+
+---
+
+### Questão 5 (FCC - 2019 - TRF 3 - Analista Judiciário)
+A respeito do Poder Executivo, é correto afirmar que o Presidente da República:
+A) Não pode ser responsabilizado por atos estranhos ao exercício de suas funções na vigência de seu mandato.
+B) Pode ser submetido à prisão cautelar a qualquer tempo, mesmo nas infrações comuns sem condenação.
+C) Responde originariamente e sempre no Supremo Tribunal Federal quando cometer crimes de responsabilidade.
+D) Pode ausentar-se do País por mais de 30 dias sem licença do Congresso Nacional.
+E) Pode ser processado criminalmente no STF sem necessidade de qualquer autorização legislativa.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+A) **Correta.** De acordo com o art. 86, § 4º da CF/88, "O Presidente da República, na vigência de seu mandato, não pode ser responsabilizado por atos estranhos ao exercício de suas funções" (imunidade material temporária).
+B) **Incorreta.** O Presidente não está sujeito a prisão nas infrações comuns, enquanto não sobrevier sentença condenatória (art. 86, § 3º).
+C) **Incorreta.** Nos crimes de responsabilidade, o Presidente da República é julgado pelo Senado Federal, e não pelo STF (art. 86, caput).
+D) **Incorreta.** Ele e o Vice não podem ausentar-se do País por período superior a 15 dias sem licença do Congresso, sob pena de perda do cargo (art. 83).
+E) **Incorreta.** Tanto para infrações penais comuns (no STF) quanto para crimes de responsabilidade (no Senado), exige-se prévia autorização por dois terços da Câmara dos Deputados (art. 86, caput).
+</details>
+
+---
+
+### Questão 6 (FCC - 2017 - TRE SP - Técnico Judiciário)
+O Poder Judiciário tem como um de seus órgãos o Supremo Tribunal Federal (STF). Sobre o STF, a Constituição Federal dispõe que ele se compõe de:
+A) Onze Ministros, escolhidos dentre cidadãos com mais de trinta e cinco e menos de setenta anos de idade, de notável saber jurídico e reputação ilibada.
+B) Trinta e três Ministros, nomeados pelo Presidente da República e aprovados pela Câmara dos Deputados.
+C) Vinte e sete Ministros, um representando cada unidade da federação, indicados pelos Governadores.
+D) Quinze Ministros, escolhidos dentre membros do Ministério Público e advogados de notório saber jurídico.
+E) Onze Ministros, aprovados exclusivamente pelo Conselho Nacional de Justiça.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+A) **Correta.** Segundo o art. 101 da CF/88 (com a redação dada pela EC nº 122/2022, que alterou a idade máxima), o STF compõe-se de 11 Ministros, escolhidos dentre cidadãos com mais de 35 e menos de 70 anos de idade, de notável saber jurídico e reputação ilibada.
+B) **Incorreta.** Trinta e três (33) é a composição mínima do Superior Tribunal de Justiça (STJ).
+C) **Incorreta.** Os Ministros não são representantes dos Estados, e são escolhidos pelo Presidente da República (após aprovação do Senado), não por Governadores.
+D) **Incorreta.** Quinze (15) é a composição do Superior Tribunal Militar (STM).
+E) **Incorreta.** Os Ministros do STF são indicados pelo Presidente e aprovados pelo Senado Federal (por maioria absoluta), não havendo participação do CNJ na aprovação.
+</details>
+
+---
+
+### Questão 7 (FCC - 2016 - TRT 20 - Técnico Judiciário)
+No tocante ao processo legislativo federal, a iniciativa das leis complementares e ordinárias cabe:
+A) Exclusivamente ao Presidente da República e aos membros da Mesa do Senado Federal.
+B) A qualquer cidadão, bastando apresentar o texto da lei no protocolo da Câmara sem qualquer número mínimo de assinaturas.
+C) A qualquer membro ou comissão da Câmara dos Deputados, do Senado Federal ou do Congresso Nacional, ao Presidente da República, ao Supremo Tribunal Federal, aos Tribunais Superiores, ao Procurador-Geral da República e aos cidadãos.
+D) Ao Conselho Nacional de Justiça e aos Ministros de Estado privativamente.
+E) Ao Tribunal de Contas da União, especialmente em matéria tributária e orçamentária.
+
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-A) Incorreta. A súmula vinculante, de acordo com o texto da Constituição, só tem cabimento acerca de interpretações válidas atinentes a matéria unicamente "constitucional".
-B) Incorreta. A súmula terá efeito perante todos os "órgãos do Poder Judiciário" e abrange totalmente a "Administração Pública direta e indireta nas esferas federal, estadual e municipal" (mas não vincula o Poder Legislativo na sua função legiferante).
-C) Correta. A aprovação, revisão ou o cancelamento da Súmula Vinculante pelo STF será feita somente se acatada pela ampla e qualificada maioria de dois terços dos seus membros (dois terços de onze membros = 8 Ministros da Corte).
-D) Incorreta. As Súmulas podem ser aprovadas "de ofício ou por provocação". O poder de proposição da súmula vinculante existe na lei para entes arrolados no art. 103.
-E) Incorreta. A Lei 11.417/2006 explicitou os legitimados e o art. 103-A remete à Constituição a indicação da ampla gama daqueles que detêm a possibilidade de provocar este recurso, incluído a Defensoria.
+A) **Incorreta.** A iniciativa legislativa não é exclusiva destes; o rol é amplo e inclui diversos órgãos e os cidadãos.
+B) **Incorreta.** A iniciativa popular de lei federal exige requisitos rigorosos: subscrição de, no mínimo, um por cento do eleitorado nacional, distribuído pelo menos por cinco Estados, com não menos de três décimos por cento dos eleitores de cada um deles (art. 61, § 2º).
+C) **Correta.** É o que prescreve textualmente o *caput* do art. 61 da Constituição Federal.
+D) **Incorreta.** O CNJ e os Ministros de Estado não figuram no rol de legitimados para iniciativa geral de leis federais no art. 61.
+E) **Incorreta.** O TCU não possui iniciativa legislativa própria, muito menos para matéria tributária e orçamentária (cuja iniciativa principal é do Executivo).
 </details>
 
 ---
 
-### Questão 14 (FCC - 2017 - TST - Técnico Judiciário - Área Administrativa)
-No que tange aos direitos de Nacionalidade (art. 12 da Constituição Federal), entende-se por critério válido, sendo considerados brasileiros natos:
-A) Os originários de países de língua portuguesa, como Angola, que possuam de forma comprovada idoneidade moral, além da residência ininterrupta no Brasil por longos dois anos.
-B) Os que nasceram na República Federativa do Brasil, filhos exclusivos de pais estrangeiros, desde que ambos esses genitores alienígenas estejam prestando serviços ao seu país de origem em uma representação consular em São Paulo.
-C) Os cidadãos de Portugal, após cinco anos ininterruptos residentes nos estados da união com requisição aprovada junto ao ministério de Relações Exteriores e Justiça.
-D) Os nascidos no estrangeiro, sendo de pai brasileiro ou de mãe brasileira, desde que qualquer um dos pais esteja oficialmente a serviço da República Federativa do Brasil.
-E) Os nascidos em território estrangeiro de pai brasileiro, não sendo registrados na respectiva embaixada ou repartição consular e que decidam jamais retornar nem vir ao Brasil possuindo assim cidadania transnacional por mera descendência sanguínea.
+### Questão 8 (FCC - 2019 - TRF 4 - Técnico Judiciário)
+Entre os direitos e garantias fundamentais previstos na CF/88, o mandado de injunção será concedido:
+A) Sempre que a falta de norma regulamentadora torne inviável o exercício dos direitos e liberdades constitucionais e das prerrogativas inerentes à nacionalidade, à soberania e à cidadania.
+B) Sempre que alguém sofrer ou se achar ameaçado de sofrer violência ou coação em sua liberdade de locomoção, por ilegalidade ou abuso de poder.
+C) Para proteger direito líquido e certo, não amparado por habeas corpus ou habeas data.
+D) Para anular ato lesivo ao patrimônio público ou de entidade de que o Estado participe, à moralidade administrativa, ao meio ambiente e ao patrimônio histórico e cultural.
+E) Para assegurar o conhecimento de informações relativas à pessoa do impetrante, constantes de registros ou bancos de dados de entidades governamentais.
+
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**
+**Gabarito: A**
 
-A) Incorreta. Indivíduos enquadrados neste aspecto não detêm o pódio de brasileiros natos, e sim de brasileiros naturalizados (naturalização ordinária de países lusófonos - um ano apenas).
-B) Incorreta. Se nascer no Brasil de pais estrangeiros que estejam ambos prestando serviços ou trabalhando pelo respectivo país em terras tupiniquins (diplomatas), não receberá a nacionalidade nata (exceção à regra do *jus soli* fixada no art. 12, I, a).
-C) Incorreta. Os portugueses recebem tratamento próprio em lei que gera equiparação legal e reciprocidade com sua naturalização, não sendo por óbvio "brasileiros natos".
-D) Correta. Trata-se do clássico e explícito critério "jus sanguinis + critério funcional" contido na alínea "b" do art. 12, I, em que o filho de brasileiros que preste qualquer ofício ao Brasil (esferas ou estados da federação e suas entidades) no exterior é, desde já e para sempre, considerado um brasileiro nato.
-E) Incorreta. Não basta descendência para os demais sem a filiação formal (registro na repartição consular) ou, caso ausente a última, a futura vinda a residir no Brasil com subsequente opção formal pelo título nos tribunais maiores (alínea "c").
+A) **Correta.** O art. 5º, LXXI da CF/88 traz a exata definição do cabimento do Mandado de Injunção, utilizado para combater omissões legislativas que inviabilizem o exercício de direitos constitucionais.
+B) **Incorreta.** Trata-se do cabimento do Habeas Corpus (art. 5º, LXVIII).
+C) **Incorreta.** Trata-se do cabimento do Mandado de Segurança (art. 5º, LXIX).
+D) **Incorreta.** Trata-se do cabimento da Ação Popular (art. 5º, LXXIII).
+E) **Incorreta.** Trata-se do cabimento do Habeas Data (art. 5º, LXXII, "a").
 </details>
 
 ---
 
-### Questão 15 (FCC - 2018 - TRT 2ª Região - Analista Judiciário - Área Administrativa)
-Considerando a organização dos poderes e órgãos constitucionais pátrios (Das Funções Essenciais à Justiça), qual instituição encontra-se expressamente amparada pela definição permanente, incumbida fundamentalmente da orientação jurídica de necessitados e responsável pela promoção dos direitos humanos, defendendo as frentes judiciais e extrajudiciais dos direitos individuais e coletivos, de forma integral e totalmente gratuita aos cidadãos de menor renda?
-A) O Ministério Público.
-B) O Conselho Nacional de Justiça.
-C) O Ministério da Justiça e Cidadania da União.
-D) A Defensoria Pública.
-E) A Advocacia e Ordem dos Advogados (OAB).
+### Questão 9 (FCC - 2018 - TRT 6 - Analista Judiciário)
+A respeito do controle de constitucionalidade no Direito brasileiro, o controle exercido por via de exceção ou defesa, também conhecido como controle difuso, pode ser realizado:
+A) Apenas pelo Supremo Tribunal Federal, em decisões proferidas em controle abstrato.
+B) Exclusivamente por Tribunais de segunda instância, sendo vedado aos juízes singulares.
+C) Por qualquer juiz ou tribunal, incidenter tantum, no julgamento do caso concreto.
+D) Apenas no julgamento da Ação Direta de Inconstitucionalidade.
+E) Somente quando provocado pelo Procurador-Geral da República.
+
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**
+**Gabarito: C**
 
-A) Incorreta. O Ministério Público foca precipuamente na defesa e vigia da ordem jurídica geral, o resguardo do regime democrático de direitos, mas não foca a sua missão institucional direta na advocacia gratuita orientadora de "necessitados" em caráter exclusivo. 
-B) Incorreta. O Conselho Nacional de Justiça atua precipuamente visando controle e controle disciplinar, não desempenhando jamais a função de procuradoria ou advocatícia para hipossuficientes.
-C) Incorreta. Trata-se do ramo do executivo focado nas macropolíticas criminais, mas que não advoga gratuita nem compõe as Funções Essenciais descritas nesse texto normativo de defesa da população sem renda.
-D) Correta. O comando da questão espelha de forma absolutamente idêntica a disposição trazida no art. 134, *caput*, da CF/88, o qual coroa e estabelece perfeitamente o escopo total que cabe à Defensoria Pública como um instrumento promotor da democracia e assistência jurídica integral a todos que comprovem carência econômica.
-E) Incorreta. Os advogados são essenciais também, mas a OAB é uma entidade particular e de classe que não carrega a exigência magna institucional para o ônus financeiro gratuito contínuo nos estados providos por orçamentos em prol dos necessitados.
+A) **Incorreta.** O Supremo Tribunal Federal exerce primordialmente o controle concentrado, mas o controle difuso é aberto a qualquer órgão jurisdicional.
+B) **Incorreta.** Os juízes singulares (1ª instância) também detêm a competência para exercer o controle de constitucionalidade de forma difusa (incidental).
+C) **Correta.** No sistema brasileiro, o controle difuso (ou incidental) caracteriza-se por poder ser exercido por qualquer juiz ou tribunal ao analisar um caso concreto submetido à sua jurisdição. A declaração de inconstitucionalidade é mero pressuposto para resolver a lide principal.
+D) **Incorreta.** A Ação Direta de Inconstitucionalidade (ADI) é instrumento típico de controle CONCENTRADO (abstrato) de constitucionalidade.
+E) **Incorreta.** O Procurador-Geral da República é um dos legitimados do art. 103 para propor ações do controle concentrado, mas o controle difuso pode ser provocado por qualquer parte em qualquer processo.
 </details>
+
+---
+
+### Questão 10 (FCC - 2022 - TRT 22 - Técnico Judiciário)
+Segundo a literalidade da Constituição Federal a respeito dos direitos fundamentais, é correto afirmar sobre a locomoção no território nacional:
+A) É garantida a livre locomoção em qualquer tempo, inclusive nos estados de sítio e defesa sem possibilidade de restrições.
+B) É livre a locomoção no território nacional em tempo de paz, podendo qualquer pessoa, nos termos da lei, nele entrar, permanecer ou dele sair com seus bens.
+C) É garantida somente para brasileiros natos, sendo restrita e rigorosamente controlada a circulação de estrangeiros independentemente de estarem regulares.
+D) É permitida apenas para os agentes públicos em regular exercício de função oficial, cabendo autorização específica para civis cruzarem fronteiras estaduais.
+E) Ocorre sem sujeição a qualquer tipo de lei restritiva de trânsito, inclusive dispensando passaportes ou vistos de estrangeiros.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A) **Incorreta.** Durante os estados de exceção constitucionais (estado de sítio e defesa), a liberdade de locomoção pode sofrer medidas coercitivas temporárias.
+B) **Correta.** A redação copia o art. 5º, XV, da CF/88, consagrando a liberdade de locomoção (direito de ir, vir e permanecer), destacando ser "em tempo de paz" e condicionada "nos termos da lei".
+C) **Incorreta.** A liberdade se estende a qualquer pessoa (brasileiros natos, naturalizados e estrangeiros residentes ou em trânsito no país).
+D) **Incorreta.** O direito pertence a todas as pessoas, não sendo prerrogativa exclusiva de agentes públicos.
+E) **Incorreta.** O texto constitucional diz expressamente "nos termos da lei", permitindo a exigência de vistos, passaportes, habilitação de trânsito, etc.
+</details>
+
+---
+
+### Questão 11 (FCC - 2017 - TST - Analista Judiciário)
+A Constituição da República prevê um Capítulo específico destinado às denominadas "Funções Essenciais à Justiça". Assinale a alternativa que indica Instituições abrigadas nesse Capítulo:
+A) A Magistratura, o Ministério Público e o Tribunal de Contas da União.
+B) O Ministério Público, a Advocacia Pública, a Advocacia e a Defensoria Pública.
+C) A Polícia Federal, as Polícias Civis e a Magistratura.
+D) A Defensoria Pública, o Supremo Tribunal Federal e os Tribunais Regionais Eleitorais.
+E) A Advocacia-Geral da União, as Forças Armadas e o Ministério da Justiça.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A) **Incorreta.** A Magistratura pertence ao Poder Judiciário; o TCU está vinculado à organização do Legislativo (função de controle externo).
+B) **Correta.** O Título IV, Capítulo IV, da CF/88 elenca as Funções Essenciais à Justiça: Seção I (Ministério Público), Seção II (Advocacia Pública), Seção III (Advocacia) e Seção IV (Defensoria Pública).
+C) **Incorreta.** Polícias pertencem à Segurança Pública (Capítulo III do Título V) e Magistratura ao Poder Judiciário.
+D) **Incorreta.** STF e TREs são órgãos do Poder Judiciário (Capítulo III do Título IV).
+E) **Incorreta.** As Forças Armadas estão localizadas no Capítulo da Defesa do Estado e das Instituições Democráticas.
+</details>
+
+---
+
+### Questão 12 (FCC - 2015 - TRT 3 - Analista Judiciário)
+De acordo com as regras constitucionais referentes à nacionalidade brasileira, é correto afirmar que é brasileiro nato:
+A) O nascido na República Federativa do Brasil, ainda que de pais estrangeiros, desde que estes não estejam a serviço de seu país.
+B) O estrangeiro de qualquer nacionalidade que venha a residir no Brasil por mais de quinze anos ininterruptos e sem condenação penal, requerendo a nacionalidade.
+C) O nascido no exterior, de pai ou mãe brasileira, desde que o Brasil os registre compulsoriamente assim que completarem dezoito anos.
+D) O estrangeiro de país originário de língua portuguesa que fixe residência por um ano ininterrupto no Brasil e possua idoneidade moral.
+E) O nascido na República Federativa do Brasil, de pais estrangeiros, mesmo no caso em que ambos estejam no país a serviço da nação de origem.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+A) **Correta.** Reflete a adoção da regra do *jus soli* (critério territorial) constante do art. 12, I, "a": são brasileiros natos os nascidos na República Federativa do Brasil, ainda que de pais estrangeiros, desde que estes não estejam a serviço de seu país.
+B) **Incorreta.** Esta hipótese caracteriza a nacionalidade brasileira NATURALIZADA extraordinária (quinzenária), não nata (art. 12, II, "b").
+C) **Incorreta.** O registro não é compulsório pelo Estado aos 18 anos. A CF prevê hipóteses de registro em repartição consular ou de opção após a maioridade caso venham residir no Brasil (art. 12, I, "c").
+D) **Incorreta.** Trata-se de nacionalidade brasileira NATURALIZADA ordinária (art. 12, II, "a").
+E) **Incorreta.** Pela ressalva do *jus soli*, se os pais (estrangeiros) estiverem a serviço de seu país de origem, o filho nascido no Brasil NÃO será brasileiro nato.
+</details>
+
+---
+
+### Questão 13 (FCC - 2014 - TRT 19 - Técnico Judiciário)
+Sobre a intervenção federal, a Constituição determina que a União NÃO intervirá nos Estados nem no Distrito Federal, EXCETO em determinadas hipóteses, entre as quais encontra-se o fim de:
+A) Manter a integridade nacional.
+B) Assegurar o pagamento prioritário de dívidas trabalhistas de empresas públicas.
+C) Garantir o livre exercício dos Conselhos Tutelares municipais.
+D) Promover o processo de reeleição de governadores, quando houver grave perturbação eleitoral.
+E) Garantir a plena e irrestrita autonomia financeira das capitais dos Estados.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+A) **Correta.** Art. 34 da CF: "A União não intervirá nos Estados nem no Distrito Federal, exceto para: I - manter a integridade nacional". É hipótese expressa no texto magno para afastar, excepcionalmente, a autonomia estadual/distrital.
+B) **Incorreta.** O pagamento de dívida trabalhista de empresas públicas não enseja decretação de intervenção federal na unidade da federação.
+C) **Incorreta.** O art. 34, IV, fala em garantir o livre exercício de qualquer dos Poderes nas unidades da Federação, o que não engloba genericamente conselhos tutelares municipais como "poder de Estado".
+D) **Incorreta.** Não há qualquer previsão sobre promoção de reeleições para intervenção federal.
+E) **Incorreta.** A garantia de autonomia de capitais não consta no rol taxativo do art. 34 da CF/88.
+</details>
+
+---
+
+### Questão 14 (FCC - 2013 - TRT 12 - Analista Judiciário)
+Acerca da organização político-administrativa da República Federativa do Brasil, é correto afirmar que Brasília, de acordo com o texto da Constituição Federal, é:
+A) A Capital Federal.
+B) Um Município autônomo integrante do Distrito Federal, com Prefeito eleito.
+C) Um Território Federal em fase de transição para se tornar Estado.
+D) Um Estado membro da federação brasileira, sem direito de dividir-se em Municípios.
+E) Uma Região Administrativa independente e desvinculada tanto da União quanto do Distrito Federal.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+A) **Correta.** Em regra clara e direta, dispõe o art. 18, § 1º, da CF/88: "Brasília é a Capital Federal."
+B) **Incorreta.** O Distrito Federal não pode ser dividido em Municípios (art. 32). Brasília não tem status de Município nem possui Prefeito, mas sim de Capital e integra o DF, governado por Governador.
+C) **Incorreta.** Territórios Federais (que atualmente não existem) têm regramento próprio e integram a União; o Distrito Federal é ente federativo autônomo, e Brasília sua capital.
+D) **Incorreta.** Brasília não é Estado-membro. O ente se chama Distrito Federal, cuja capital é Brasília.
+E) **Incorreta.** Brasília integra a organização do Distrito Federal, não sendo "desvinculada" do arranjo federativo.
+</details>
+
+---
+
+### Questão 15 (FCC - 2021 - TRT 24 - Analista Judiciário)
+Constitui, de forma expressa, um OBJETIVO fundamental da República Federativa do Brasil na Constituição Federal de 1988:
+A) Construir uma sociedade livre, justa e solidária.
+B) A dignidade da pessoa humana.
+C) Os valores sociais do trabalho e da livre iniciativa.
+D) A concessão célere e irrestrita de asilo político.
+E) O pluralismo político partidário.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+A) **Correta.** De acordo com o art. 3º, I, da CF/88, é um dos OBJETIVOS fundamentais: "construir uma sociedade livre, justa e solidária". (Dica: os objetivos fundamentais costumam iniciar com verbos no infinitivo: construir, garantir, erradicar e promover).
+B) **Incorreta.** A dignidade da pessoa humana é um FUNDAMENTO da República (art. 1º, III).
+C) **Incorreta.** Os valores sociais do trabalho e da livre iniciativa são FUNDAMENTOS (art. 1º, IV).
+D) **Incorreta.** A concessão de asilo político é um PRINCÍPIO que rege a República nas suas relações internacionais (art. 4º, X).
+E) **Incorreta.** O pluralismo político é um FUNDAMENTO (art. 1º, V).
+</details>
+
+---
+
+

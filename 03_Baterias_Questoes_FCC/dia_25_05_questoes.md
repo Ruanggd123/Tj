@@ -2,354 +2,1008 @@
 
 ## 📝 TEMA 1: Engenharia de Requisitos
 
-### Questão 1 (FCC - 2023 - TRT 12ª Região - Analista Judiciário - TI)
-Sobre Engenharia de Requisitos, a técnica de elicitação de requisitos que promove reuniões conjuntas entre clientes, usuários e desenvolvedores, sendo estruturada de forma altamente focada para extrair rapidamente os requisitos com o auxílio de um facilitador neutro, é denominada:
-A) Prototipagem.
-B) Etnografia.
-C) JAD (Joint Application Design / Development).
-D) Questionários de Múltipla Escolha.
-E) Análise de Documentos Históricos.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-**Explicação:**
-- **A) Incorreta.** A prototipagem envolve a construção de versões iniciais simplificadas da interface ou do sistema para que o usuário possa interagir e refinar os requisitos. Não se trata essencialmente de uma reunião estruturada.
-- **B) Incorreta.** A etnografia é uma técnica de observação em que o engenheiro de requisitos se insere no ambiente de trabalho do usuário para observar a execução das tarefas no dia a dia, descobrindo requisitos implícitos.
-- **C) Correta.** O JAD (*Joint Application Design*) é exatamente isso: sessões ou workshops altamente estruturados, conduzidos por um facilitador neutro, reunindo especialistas do domínio, usuários e equipe de TI para debater e definir requisitos rapidamente.
-- **D) Incorreta.** Questionários são úteis para grandes públicos que estão dispersos geograficamente e baseiam-se em perguntas fechadas ou abertas, mas não consistem em uma dinâmica de grupo.
-- **E) Incorreta.** A análise de documentos foca em estudar manuais, formulários, regulamentações e documentação de sistemas legados, não em reuniões conjuntas entre stakeholders.
-</details>
-
----
-
-### Questão 2 (FCC - 2018 - TRT 15ª Região - Analista Judiciário - TI)
-Considere os requisitos abaixo, levantados para o desenvolvimento de um novo sistema corporativo:
-I. O sistema deve emitir um relatório consolidado de vendas no último dia útil do mês.
-II. O sistema deve responder a uma consulta complexa de saldo no banco de dados em menos de 2 segundos.
-III. O sistema deve ser integralmente compatível com os navegadores Google Chrome, Mozilla Firefox e Apple Safari.
-Na Engenharia de Requisitos, esses itens são classificados, respectivamente, como:
-A) Funcional, Funcional, Não Funcional.
-B) Não Funcional, Funcional, Não Funcional (Desempenho).
-C) Não Funcional (Processo), Não Funcional (Desempenho), Funcional.
-D) Funcional, Não Funcional (Desempenho), Não Funcional (Portabilidade).
-E) Funcional, Não Funcional (Usabilidade), Não Funcional (Confiabilidade).
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**
-
-**Explicação:**
-- O item I diz respeito a uma "ação" ou "serviço" que o sistema deve executar (emitir relatório). Portanto, é um **Requisito Funcional**.
-- O item II refere-se a restrições de tempo e velocidade da aplicação. Portanto, é um **Requisito Não Funcional de Desempenho** (ou Eficiência).
-- O item III diz respeito ao ambiente onde o software deve rodar, garantindo que o sistema se adapte a diferentes plataformas (navegadores). Trata-se de um **Requisito Não Funcional de Portabilidade** (ou Compatibilidade).
-- Com isso:
-- **A) Incorreta.** O II não é funcional.
-- **B) Incorreta.** O I é funcional e o II é não funcional.
-- **C) Incorreta.** Classificação errada para o I e o III.
-- **D) Correta.** Bate exatamente com Funcional, NF de Desempenho e NF de Portabilidade.
-- **E) Incorreta.** Os subtipos de não funcionais do II e III estão errados (não são de usabilidade nem confiabilidade).
-</details>
-
----
-
-### Questão 3 (FCC - 2017 - TST - Analista Judiciário - TI)
-Em diagramas de casos de uso da UML (Unified Modeling Language), quando um caso de uso 'A' incorpora obrigatoriamente o comportamento de um caso de uso 'B' como parte integral de seu próprio comportamento base, de modo que 'A' não estaria completo sem 'B', esse relacionamento é classificado como do tipo:
-A) association.
-B) dependency.
-C) extend.
-D) generalization.
-E) include.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**
-
-**Explicação:**
-- **A) Incorreta.** Uma associação liga um Ator a um Caso de Uso, demonstrando comunicação entre eles. Não é usada para descrever inclusão obrigatória de comportamentos entre casos de uso.
-- **B) Incorreta.** A dependência é um termo genérico na UML. Relacionamentos entre casos de uso são tipos específicos de dependência (como *include* ou *extend*), sendo a alternativa E mais precisa.
-- **C) Incorreta.** O relacionamento `<<extend>>` ocorre quando o comportamento de um caso de uso base pode ser (opcionalmente) estendido pelo caso de uso estendido, dependendo de uma condição ser satisfeita.
-- **D) Incorreta.** A generalização implica herança, onde um caso de uso filho herda o comportamento e o significado do caso de uso pai, podendo acrescentar ou sobrescrever comportamentos.
-- **E) Correta.** O relacionamento `<<include>>` dita que a execução do caso de uso base sempre incluirá obrigatoriamente o caso de uso incluído. O caso base muitas vezes sequer pode ser concluído sem a execução do trecho incluído.
-</details>
-
----
-
-### Questão 4 (FCC - 2019 - TRF 4ª Região - Analista Judiciário - TI)
-A rastreabilidade de requisitos é uma atividade essencial para o gerenciamento de requisitos. O uso apropriado de uma Matriz de Rastreabilidade de Requisitos (MRR) permite:
-A) Determinar de maneira exclusiva o custo financeiro do desenvolvimento de cada requisito elicitado.
-B) Acompanhar as relações entre os requisitos, os componentes de design, os módulos de código e os testes correspondentes ao longo do ciclo de vida.
-C) Eliminar completamente a necessidade de testar o software, ao garantir matematicamente que o código foi desenvolvido sem falhas.
-D) Compilar diretamente os artefatos de casos de uso da ferramenta CASE para gerar o código-fonte executável de forma automática.
-E) Substituir qualquer especificação formal de requisitos, operando como a única fonte de documentação técnica permitida.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-**Explicação:**
-- **A) Incorreta.** A rastreabilidade não serve para calcular custos financeiros de desenvolvimento, mas para acompanhar o ciclo de vida do requisito (desde as origens até a implementação e os testes).
-- **B) Correta.** Uma Matriz de Rastreabilidade permite rastrear as ligações bidirecionais (para frente e para trás). Pode-se ligar o Requisito ao Documento de Visão, à Arquitetura, ao Código, e ao Caso de Teste, facilitando a análise de impacto quando um requisito muda.
-- **C) Incorreta.** A rastreabilidade ajuda a organizar e garantir a cobertura dos testes (certificando-se de que todo requisito tem seu teste), mas de forma alguma elimina a necessidade de testar o software.
-- **D) Incorreta.** Matrizes de rastreabilidade são tabelas de mapeamento, não possuem motores de compilação ou geração automática de código a partir de UML.
-- **E) Incorreta.** A matriz complementa a documentação formal de requisitos. Ela não a substitui, pois não carrega a especificação detalhada ou as regras de negócio em si.
-</details>
-
----
-
-### Questão 5 (FCC - 2016 - TRT 20ª Região - Analista Judiciário - TI)
-Na engenharia de requisitos, após a documentação ser elaborada, a atividade de validação busca demonstrar que os requisitos realmente definem o sistema que o cliente deseja. Uma das técnicas formais e consagradas para realizar a validação dos requisitos é a:
-A) Revisão de Requisitos.
-B) Modelagem de Dados Conceitual.
-C) Etnografia e Imersão no ambiente de trabalho.
-D) Construção do Diagrama de Sequência de Sistemas.
-E) Refatoração de Código em pares (Pair Programming).
+### Questão 1 (FCC - 2018 - TRT 15ª Região - Analista de Tecnologia da Informação)
+Na engenharia de requisitos, um dos desafios é gerenciar mudanças em requisitos. Para que o processo de gerenciamento de mudanças seja eficaz, é necessário que o modelo de requisitos tenha uma propriedade que possibilite relacionar os requisitos aos seus autores, à sua origem e aos componentes de projeto correspondentes. Esta propriedade é conhecida como:
+A) rastreabilidade.
+B) coerência.
+C) completude.
+D) testabilidade.
+E) volatilidade.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: A**
 
-**Explicação:**
-- A validação responde à pergunta "Estamos construindo o produto certo?" (aquele que satisfaz a real necessidade do cliente).
-- **A) Correta.** A Revisão de Requisitos (ou inspeção de requisitos) é uma técnica na qual uma equipe de validadores (incluindo clientes e especialistas técnicos) lê o documento de requisitos criticamente, em busca de inconsistências, omissões, ambiguidades ou erros, garantindo sua qualidade antes do design/código iniciar.
-- **B) Incorreta.** Modelagem de dados conceitual é técnica de análise ou desenho para definir a estrutura dos dados, não uma técnica primária de validação de requisitos já elicidatos.
-- **C) Incorreta.** A etnografia é uma técnica de Elicitação de requisitos (descoberta), e não de validação de requisitos já escritos.
-- **D) Incorreta.** O diagrama de sequência é um elemento de modelagem dinâmica e design de sistemas (como a análise orientada a objetos ou desenho).
-- **E) Incorreta.** O pair programming (programação em par) pertence à etapa de codificação e às práticas ágeis (XP), não servindo para validar o documento de requisitos inicial junto ao cliente.
+A) A rastreabilidade (alternativa correta) é a propriedade que permite ligar os requisitos às suas fontes (origens, autores) e acompanhá-los durante todo o ciclo de vida do desenvolvimento, vinculando-os ao design, código e testes (rastreabilidade para frente e para trás).
+B) Incorreta. A coerência (ou consistência) garante que não haja requisitos conflitantes entre si, mas não se refere a acompanhar sua origem e desdobramentos de projeto.
+C) Incorreta. A completude diz respeito a os requisitos cobrirem todas as necessidades do sistema solicitadas pelos usuários, não se relacionando ao controle de mudanças e mapeamento de componentes.
+D) Incorreta. A testabilidade indica se um requisito foi escrito de tal forma que é possível projetar um teste para validar se o sistema o implementa, não estando ligado ao acompanhamento de suas origens.
+E) Incorreta. A volatilidade é uma característica de requisitos que têm alta probabilidade de sofrer mudanças ao longo do tempo, mas não é a propriedade de gestão em si, e sim um atributo que torna a rastreabilidade mais necessária.
 </details>
 
 ---
+
+### Questão 2 (FCC - 2023 - TRT 12ª Região - Analista Judiciário - Tecnologia da Informação)
+Durante a fase de Engenharia de Requisitos de um software, o levantamento de necessidades envolve técnicas para a compreensão dos serviços que o sistema deve prover. A técnica que se baseia na observação do dia a dia das pessoas envolvidas nas atividades para entender os processos de trabalho e a forma como o software pode ser útil no contexto real denomina-se:
+A) Brainstorming.
+B) Etnografia.
+C) JAD (Joint Application Design).
+D) Prototipação.
+E) Casos de Uso.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A) Incorreta. Brainstorming é uma técnica de tempestade de ideias, muito utilizada em grupos para geração de novas ideias ou requisitos, sem censura inicial. Não é focada na observação do dia a dia.
+B) A Etnografia (alternativa correta) é uma técnica observacional onde o analista se insere no ambiente de trabalho do usuário, observando a rotina e o contexto real de trabalho para descobrir requisitos implícitos que muitas vezes os usuários esquecem ou têm dificuldade de verbalizar.
+C) Incorreta. O JAD é uma técnica de oficinas colaborativas (workshops) estruturadas e intensivas com a presença de analistas, usuários e patrocinadores, para definir requisitos rapidamente. Não envolve observação direta do dia a dia, mas sim reuniões conjuntas.
+D) Incorreta. A prototipação constrói uma versão preliminar e simplificada do sistema para que os usuários possam visualizar e interagir com as telas e fluxos, validando e ajudando a extrair novos requisitos.
+E) Incorreta. Casos de Uso (Use Cases) são formas de modelar e descrever o comportamento do sistema sob o ponto de vista das interações com os atores. São um artefato de documentação e análise, não uma técnica de observação in loco.
+</details>
+
+---
+
+### Questão 3 (FCC - 2019 - TRF 4ª Região - Analista Judiciário - Sistemas da Informação)
+Sobre os Requisitos Não Funcionais de um software, é correto afirmar que:
+A) definem o que o sistema deve fazer em situações normais de operação, como cálculos matemáticos e regras de negócio.
+B) descrevem diretamente as funções e os serviços interativos fornecidos pelo sistema aos usuários.
+C) restringem os serviços ou as funções oferecidas pelo sistema, englobando restrições de tempo, limitações do processo de desenvolvimento ou restrições de padrões.
+D) dependem exclusivamente da linguagem de programação e do modelo de banco de dados utilizados na implementação.
+E) não podem ser medidos quantitativamente sob nenhuma circunstância, pois estão atrelados exclusivamente a aspectos subjetivos.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+A) Incorreta. O que o sistema deve fazer (cálculos, processamento, regras) compõe os Requisitos Funcionais.
+B) Incorreta. Descrever funções e serviços fornecidos ao usuário é a própria definição de Requisito Funcional.
+C) A alternativa (C) está correta porque requisitos não funcionais especificam propriedades emergentes (como confiabilidade, tempo de resposta, espaço em disco) e restrições (padrões de segurança, legislações, processo de desenvolvimento) sob as quais o sistema deve operar. Eles dizem "como" e com quais restrições o sistema fará o que foi solicitado.
+D) Incorreta. Requisitos não funcionais não dependem exclusivamente da tecnologia. Podem abranger restrições organizacionais (usar determinada IDE homologada pelo tribunal), regulamentares (leis de proteção de dados como a LGPD) ou de ambiente corporativo.
+E) Incorreta. Os requisitos não funcionais DEVEM ser testáveis e verificáveis. Padrões de engenharia recomendam usar métricas (como tempo em segundos, volume em MB, taxa de falhas), evitando subjetividade.
+</details>
+
+---
+
+### Questão 4 (FCC - 2018 - TRT 6ª Região - Analista Judiciário - Tecnologia da Informação)
+No contexto de Engenharia de Requisitos, a validação é um processo que objetiva certificar que os requisitos definem realmente o sistema que o cliente deseja. Existem várias técnicas usadas nesta fase, dentre elas a que envolve a construção de um modelo inicial executável ou navegável do sistema para que os usuários finais possam experimentar, descobrir problemas e validar as especificações. Essa técnica é conhecida como:
+A) Geração de Casos de Teste.
+B) Revisão de Requisitos.
+C) Inspeção Fagan.
+D) Análise de Rastreabilidade.
+E) Prototipação.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: E**
+
+A) Incorreta. Geração de casos de teste, embora seja usada na validação de requisitos para avaliar a testabilidade e evidenciar falhas lógicas, não é um modelo executável ou navegável.
+B) Incorreta. Revisões de requisitos são inspeções manuais (leituras) que envolvem equipes técnicas e de clientes analisando o documento de especificação em busca de erros, omissões e ambiguidades.
+C) Incorreta. A Inspeção Fagan é um processo formal de revisão de software (inclusive requisitos) altamente estruturado e focado em encontrar defeitos nos documentos, e não a construção de um modelo executável.
+D) Incorreta. Análise de rastreabilidade garante as conexões entre requisitos e suas origens/destinos, permitindo analisar impacto de mudanças, mas não tem foco em simular o sistema na prática.
+E) A Prototipação (alternativa correta) envolve a criação de um modelo tangível, que permite aos usuários interagirem (executável ou navegável) para que percebam o comportamento e a interface antes do código final, sendo excelente para validar se os requisitos mapeados atendem à necessidade real.
+</details>
+
+---
+
+### Questão 5 (FCC - 2017 - TST - Analista Judiciário - Análise de Sistemas)
+No processo de engenharia de requisitos, a atividade em que os requisitos documentados são minuciosamente analisados e avaliados para verificar se eles refletem de fato o que o cliente quer, além de se verificar a ocorrência de ambiguidades, ausências e consistência interna, denomina-se:
+A) Elicitação de requisitos.
+B) Validação de requisitos.
+C) Levantamento de requisitos.
+D) Síntese de requisitos.
+E) Etnografia de requisitos.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A) Incorreta. Elicitação (e levantamento) é o processo inicial de descobrir, colher e extrair as necessidades do sistema junto aos stakeholders.
+B) A validação de requisitos (alternativa correta) é a fase dedicada a demonstrar que os requisitos documentados definem de forma correta e consistente o sistema que o cliente realmente necessita. É nessa fase que procuramos erros, omissões e ambiguidades, poupando grandes custos posteriores caso fossem encontrados apenas nas fases de desenvolvimento.
+C) Incorreta. Levantamento é sinônimo da Elicitação, referindo-se a extrair informações.
+D) Incorreta. A síntese é mais comumente usada no contexto de análise e síntese do design, e não nomeia o processo formal de certificação de requisitos.
+E) Incorreta. Etnografia é uma técnica de observação inserida na fase de elicitação, não uma atividade de verificação pós-documentação.
+</details>
+
+---
+
+### Questão 6 (FCC - 2016 - TRT 20ª Região - Analista Judiciário - Tecnologia da Informação)
+Considere as seguintes afirmativas sobre engenharia e especificação de requisitos de software:
+I. Requisitos funcionais descrevem o que o sistema deve fazer, ou seja, suas funções, mapeando entradas e saídas e reações a entradas específicas.
+II. Requisitos não funcionais descrevem qualidades, restrições e propriedades do sistema, como desempenho, usabilidade, interoperabilidade e segurança.
+III. Requisitos de domínio tratam exclusivamente da tecnologia empregada no desenvolvimento do código e independem da área de negócio da aplicação.
+
+Está correto o que se afirma em:
+A) I, apenas.
+B) II, apenas.
+C) I e II, apenas.
+D) II e III, apenas.
+E) I, II e III.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+A) Incorreta, pois a assertiva II também está correta.
+B) Incorreta, pois a assertiva I também está correta.
+C) A alternativa correta, pois I e II estão precisas: os requisitos funcionais detalham os comportamentos do sistema (o que ele faz), enquanto os requisitos não funcionais apontam como e sob quais restrições o sistema deve operar (qualidade, ambiente, desempenho).
+D) Incorreta. A assertiva III é falsa e a assertiva I é verdadeira.
+E) Incorreta. A assertiva III está totalmente errada. Requisitos de domínio derivam diretamente do escopo e do ambiente do problema de negócio (por exemplo, fórmulas matemáticas contábeis em um sistema financeiro, ou normas judiciais em um sistema de tribunal). Eles não são relacionados exclusivamente à tecnologia empregada.
+</details>
+
+---
+
+### Questão 7 (FCC - 2019 - TRF 3ª Região - Analista Judiciário - Informática)
+Durante a gestão de requisitos, as políticas de rastreabilidade definem os relacionamentos. A rastreabilidade que estabelece vínculos de um requisito para os artefatos de design e de codificação que o implementam é denominada:
+A) rastreabilidade para trás (backward traceability).
+B) rastreabilidade para frente (forward traceability).
+C) rastreabilidade de origem.
+D) rastreabilidade horizontal inter-requisitos.
+E) rastreabilidade reversa.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A) Incorreta. Rastreabilidade para trás (backward) conecta o requisito à sua fonte ou origem de negócio, justificando por que ele existe (quem o pediu e qual regra embasa).
+B) Rastreabilidade para frente (forward traceability) (alternativa correta) acompanha o percurso do requisito no ciclo de vida em direção às fases posteriores, ligando o requisito ao diagrama de classes (design), ao código-fonte da aplicação e aos casos de teste que o validam.
+C) Incorreta. Rastreabilidade de origem foca em entender de onde o requisito surgiu (mesmo sentido prático da rastreabilidade para trás).
+D) Incorreta. A rastreabilidade horizontal ou entre requisitos mapeia o relacionamento e dependência de um requisito com outro requisito, mas não com as fases de projeto/código.
+E) Incorreta. Não há consolidação da literatura no termo reversa, mas remeteria à rastreabilidade para trás, ou a partir do código tentando deduzir o requisito (engenharia reversa).
+</details>
+
+---
+
+### Questão 8 (FCC - 2022 - TRT 22ª Região - Analista Judiciário - Tecnologia da Informação)
+Ao elaborar uma Especificação de Requisitos de Software (SRS), diversas características de qualidade devem ser garantidas. A característica que atesta que no documento de requisitos não existem duas ou mais declarações de requisitos que entrem em contradição entre si (por exemplo, um requisitando uma tela vermelha e outro requisitando a mesma tela azul) é a:
+A) Completude.
+B) Rastreabilidade.
+C) Consistência.
+D) Modificabilidade.
+E) Verificabilidade.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+A) Incorreta. Completude afirma que todos os requisitos do usuário foram incluídos na especificação, não havendo funcionalidades esquecidas.
+B) Incorreta. Rastreabilidade trata das conexões e origens e destinos dos requisitos ao longo do projeto.
+C) A consistência (alternativa correta) é o princípio pelo qual um conjunto de requisitos não deve possuir contradições lógicas, temporais ou de interface. Quando os requisitos não se contradizem, eles são ditos consistentes.
+D) Incorreta. Modificabilidade dita se a estrutura e estilo do documento permitem que as alterações sejam feitas com facilidade e de forma estruturada.
+E) Incorreta. Verificabilidade é o requisito estar escrito de forma que, após construído, seja possível testá-lo inequivocamente, garantindo seu funcionamento.
+</details>
+
+---
+
+### Questão 9 (FCC - 2015 - TRE PB - Analista Judiciário - Análise de Sistemas)
+Em projetos que adotam metodologias ágeis de desenvolvimento de software, os requisitos detalhados e volumosos não são normalmente especificados antecipadamente. Ao invés disso, os requisitos são frequentemente expressos em um formato leve, centrado na perspectiva do usuário, explicitando o quem, o o quê e o porquê. Esse artefato, muito utilizado no Scrum, denomina-se:
+A) Diagrama de Casos de Uso.
+B) Histórias de Usuário (User Stories).
+C) Documento Visão.
+D) Especificações Formais e Algébricas.
+E) Matriz de Rastreabilidade.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A) Incorreta. Casos de uso costumam ser adotados com maior frequência em processos mais prescritivos ou na Engenharia de Requisitos tradicional (UML), descrevendo fluxos normais e de exceção com mais rigidez, e não possuem essencialmente o formato ágil de quem, o quê e o porquê.
+B) As Histórias de Usuário (User Stories) (alternativa correta) são adotadas fortemente no desenvolvimento ágil (como XP e Scrum). A estrutura canônica de uma User Story é: Como um [papel], eu quero [objetivo/ação] para que [motivo/valor]. Trata-se de uma descrição sucinta, combinada de conversa e critérios de aceitação.
+C) Incorreta. Documento Visão descreve os requisitos em alto nível do negócio, o escopo geral, mas é um documento abrangente, não a unidade básica que detalha um requisito.
+D) Incorreta. Especificações Formais são baseadas em modelos matemáticos/algébricos e lógicos, sendo pesadas, lentas e empregadas para sistemas altamente críticos, longe do universo das práticas ágeis comuns.
+E) Incorreta. Matriz de rastreabilidade liga requisitos aos componentes; não é o formato de declaração da necessidade do usuário.
+</details>
+
+---
+
+### Questão 10 (FCC - 2017 - TRE PR - Analista Judiciário - Análise de Sistemas)
+A entrevista é uma das técnicas mais tradicionais e eficazes para o levantamento de requisitos. Uma entrevista pautada integralmente por um roteiro pré-definido e rígido, com perguntas formuladas antecipadamente, que não permite desvios pelo entrevistador, sendo útil para extrair respostas objetivas de um grande público, é classicamente categorizada como:
+A) Entrevista semi-estruturada.
+B) Entrevista não estruturada.
+C) Entrevista de observação participante.
+D) Entrevista estruturada.
+E) Brainstorming individual.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+A) Incorreta. A semi-estruturada mescla um roteiro básico, mas concede liberdade ao entrevistador para fazer novas perguntas e explorar tópicos não planejados de acordo com as respostas dadas.
+B) Incorreta. A não estruturada é conduzida de forma aberta, como uma conversa livre, sem um roteiro engessado, focada em explorar profundamente um domínio ou problema com especialistas.
+C) Incorreta. Observação participante sequer é categorizada como uma entrevista, é um método de levantamento de dados derivado da etnografia.
+D) A entrevista estruturada (alternativa correta) ocorre quando se tem um roteiro fixo e fechado de perguntas a seguir estritamente. Evita o subjetivismo do entrevistador, garante padronização e é ideal para verificar fatos ou extrair dados quantificáveis.
+E) Incorreta. Brainstorming é uma técnica de geração criativa de ideias em grupo, sem críticas na fase inicial, e não uma sessão de entrevista estruturada.
+</details>
+
+---
+
+### Questão 11 (FCC - 2018 - SABESP - Analista de Sistemas)
+A elicitação de requisitos requer comunicação constante com as partes interessadas. Uma técnica altamente focada, que consiste em reunir em um mesmo local (ou ambiente virtual intenso) os stakeholders, usuários chave, especialistas no domínio e desenvolvedores de software, sob a coordenação de um facilitador, em sessões estruturadas que visam acelerar a coleta e consolidação dos requisitos, é conhecida como:
+A) Questionários remotos.
+B) Entrevistas em cascata.
+C) JAD (Joint Application Design / Development).
+D) Observação Etnográfica.
+E) Elicitação Delphi.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+A) Incorreta. Questionários remotos, embora atinjam várias pessoas, são ferramentas assíncronas e que muitas vezes falham na negociação e debate aprofundado imediato.
+B) Incorreta. Entrevistas são, por padrão, restritas ao entrevistador e 1 ou 2 entrevistados, e não reuniões conjuntas grandes para consolidação rápida.
+C) O JAD (Joint Application Design) (alternativa correta) é uma técnica desenvolvida pela IBM nos anos 70 baseada em workshops intensos em que os usuários e as equipes de TI trabalham juntos para definir requisitos e design de tela em poucos dias, promovendo alinhamento imediato. Envolve a figura crucial do facilitador neutro.
+D) Incorreta. Observação etnográfica envolve observar a pessoa em seu ambiente rotineiro, não é um workshop fechado.
+E) Incorreta. O Método Delphi envolve enviar questionários e rodadas sucessivas para colher opiniões de especialistas de forma anônima para obter consenso, e não reúne os participantes em sessões intensas face a face.
+</details>
+
+---
+
+### Questão 12 (FCC - 2014 - TRF 3ª Região - Analista Judiciário - Informática)
+O processo de gerenciamento de requisitos deve lidar com as solicitações de mudanças de forma controlada. Uma falha recorrente em projetos mal gerenciados é o aumento gradual, contínuo e muitas vezes descontrolado das funcionalidades solicitadas e adicionadas, estourando cronograma e custo originais, fenômeno comumente referenciado na engenharia de software como:
+A) Gold plating.
+B) Scope creep.
+C) Refactoring contínuo.
+D) Baseline engessada.
+E) Technical debt (dívida técnica).
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A) Incorreta. Gold plating (folhear a ouro) acontece quando a PRÓPRIA EQUIPE de desenvolvimento decide, sem solicitação, adicionar funcionalidades e refinamentos extras que acham interessantes, entregando mais do que foi pedido (mas gastando tempo e dinheiro nisso).
+B) O Scope creep (fluência de escopo ou desvio de escopo) (alternativa correta) é o aumento não autorizado e progressivo do escopo do projeto, geralmente impulsionado pelos clientes pedindo só mais um negocinho, que de forma contínua gera atrasos graves, pois as mudanças são acatadas sem análise formal de impacto.
+C) Incorreta. Refatoração é a melhoria contínua e intencional do design do código-fonte sem mudar o comportamento externo, sendo uma prática técnica saudável.
+D) Incorreta. Uma baseline engessada é quando não se aprova nenhuma mudança, ou seja, é o extremo oposto do problema descrito.
+E) Incorreta. Dívida técnica ocorre quando o time de desenvolvimento adota soluções de código rápidas e sujas que penalizarão as manutenções futuras para entregar prazos curtos; isso não diz respeito a adição descontrolada de novos requisitos pelo cliente.
+</details>
+
+---
+
+### Questão 13 (FCC - 2017 - DPE RS - Analista - Tecnologia da Informação)
+Na Engenharia de Requisitos orientada a objetos utilizando a linguagem UML, o modelo utilizado primariamente para documentar e comunicar, em alto nível, o escopo do sistema e o comportamento esperado do ponto de vista externo dos usuários é o Diagrama de:
+A) Classes.
+B) Implantação.
+C) Atividades de Domínio.
+D) Casos de Uso.
+E) Máquina de Estados.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+A) Incorreta. Diagrama de Classes documenta a estrutura estática do sistema (tipos de objetos, atributos e métodos).
+B) Incorreta. Diagrama de Implantação ilustra a arquitetura física e de hardware onde o software rodará (servidores, nós).
+C) Incorreta. O diagrama de atividades é bom para mapear o fluxo de processos de negócio, mas não foca na visão macro das funcionalidades entre atores e sistema como a primeira ferramenta da fase de requisitos.
+D) O Diagrama de Casos de Uso (alternativa correta) é o diagrama base para as fases de requisitos e análise na modelagem UML. Ele mostra o que o sistema deverá fazer (não como) a partir da visão externa dos atores interagindo com os casos providos pelo sistema.
+E) Incorreta. Máquina de Estados foca em mapear os estados e as transições de um único objeto ou componente complexo específico.
+</details>
+
+---
+
+### Questão 14 (FCC - 2021 - TRT 11ª Região - Analista Judiciário - Tecnologia da Informação)
+A engenharia de requisitos é um processo composto por atividades iterativas. A atividade cujo foco primário é classificar as informações levantadas, organizar os requisitos em categorias, e, principalmente, resolver restrições e conflitos através de debates até chegar a um acordo mútuo com as partes interessadas é conhecida como:
+A) Elicitação de requisitos.
+B) Análise e negociação de requisitos.
+C) Validação e revisão de requisitos.
+D) Especificação e documentação formal.
+E) Monitoramento de rastreabilidade.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A) Incorreta. A elicitação foca em buscar e descobrir as informações junto aos clientes (o levantamento inicial).
+B) A Análise e negociação de requisitos (alternativa correta) é a etapa, logo após a descoberta, em que a equipe compreende a fundo as requisições colhidas. É aqui que os conflitos (por exemplo, áreas de negócio diferentes pedindo comportamentos contraditórios para o mesmo dado) vêm à tona e são resolvidos e negociados com os stakeholders.
+C) Incorreta. A validação corre lá no final do processo de definição, focada em avaliar se o documento finalizado atende à realidade antes da assinatura (revisão formal).
+D) Incorreta. Especificação é o ato físico de redigir, registrar os requisitos negociados em formato legível, seja na UML, num documento textual ou em User Stories.
+E) Incorreta. O monitoramento de rastreabilidade (gerência) permeia a manutenção, garantindo o controle de impacto de alterações já no projeto em andamento.
+</details>
+
+---
+
+### Questão 15 (FCC - 2012 - TRT 11ª Região - Analista de Tecnologia da Informação)
+Nas revisões efetuadas durante o processo de validação de requisitos, o objetivo é procurar falhas e problemas no documento especificado. Quando a equipe técnica avalia e atesta que os requisitos não possuem duplas interpretações e que estão escritos de maneira exata para evitar falhas de comunicação, está-se validando especificamente o critério de:
+A) Ausência de ambiguidade.
+B) Rastreabilidade integral.
+C) Confiabilidade de ambiente.
+D) Viabilidade de cronograma.
+E) Completude global.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+A) A ausência de ambiguidade (alternativa correta) é o critério de qualidade de um requisito cujo texto permite apenas UMA única interpretação. Frases confusas levam desenvolvedores a criarem o que acham que foi pedido e não o que o cliente realmente solicitou, sendo um dos erros mais fatais da engenharia de requisitos.
+B) Incorreta. A rastreabilidade refere-se ao encadeamento da origem do requisito às suas respectivas partes desenvolvidas e não às duplas interpretações na leitura.
+C) Incorreta. Confiabilidade é um requisito não funcional relacionado à taxa de falhas em tempo de execução, e não a forma gramatical de especificação.
+D) Incorreta. Viabilidade avalia se há tecnologia, tempo e dinheiro para construir, e não a clareza descritiva do texto do requisito.
+E) Incorreta. A completude diz respeito a nenhum requisito vital ter ficado de fora da especificação; todos os serviços solicitados foram documentados.
+</details>
+
 
 ## 📝 TEMA 2: UX/UI e Acessibilidade
 
-### Questão 6 (FCC - 2022 - TRT 5ª Região - Analista Judiciário - TI)
-Na avaliação heurística de interfaces de usuário consolidada por Jakob Nielsen, a heurística que postula que o sistema deve sempre manter os usuários informados sobre o que está acontecendo na aplicação, fornecendo feedback apropriado e dentro de um tempo de resposta razoável, é denominada:
-A) Prevenção de Erros.
-B) Visibilidade do Status do Sistema.
-C) Compatibilidade do Sistema com o Mundo Real.
-D) Consistência e Padrões.
-E) Reconhecimento em Vez de Memorização.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-**Explicação:**
-- **A) Incorreta.** Prevenção de Erros se refere a desenhar a interface de maneira que seja difícil ao usuário cometer um erro grave em primeiro lugar (ex: pedir confirmação de exclusão).
-- **B) Correta.** "Visibilidade do status do sistema" é exatamente a heurística número 1 de Nielsen. Se um download começou, deve haver uma barra de progresso. O usuário precisa de *feedback* sobre o estado atual do sistema para não se sentir perdido.
-- **C) Incorreta.** "Compatibilidade entre o sistema e o mundo real" orienta o sistema a falar a linguagem do usuário, usando palavras, frases e conceitos familiares.
-- **D) Incorreta.** A "Consistência e Padrões" postula que os usuários não devem ter que se perguntar se palavras, situações ou ações diferentes significam a mesma coisa (o layout deve seguir normas conhecidas).
-- **E) Incorreta.** "Reconhecimento em vez de memorização" diz que as opções, ações e elementos devem ser visíveis para que o usuário não tenha de lembrar das informações de uma tela para outra.
-</details>
-
----
-
-### Questão 7 (FCC - 2018 - TRT 2ª Região - Analista Judiciário - TI)
-De acordo com o W3C (World Wide Web Consortium), as Diretrizes de Acessibilidade para Conteúdo Web (WCAG 2.1) são organizadas em quatro princípios fundamentais essenciais. O princípio que estabelece que "Os componentes de interface de usuário e a navegação devem poder ser operados pela pessoa", não exigindo do usuário uma interação que ele não seja fisicamente capaz de executar (como exigir exclusivamente uso do mouse), é o Princípio:
-A) Robusto.
-B) Perceptível.
-C) Compreensível.
-D) Operável.
-E) Navegável.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**
-
-**Explicação:**
-Os 4 princípios da WCAG formam o acrônimo POCR (Perceptível, Operável, Compreensível, Robusto).
-- **A) Incorreta.** *Robusto*: o conteúdo deve ser robusto o suficiente para ser interpretado de forma confiável por uma grande variedade de agentes de usuário, incluindo tecnologias assistivas (ex: leitores de tela).
-- **B) Incorreta.** *Perceptível*: as informações e a interface devem ser apresentadas de modo que o usuário consiga percebê-las com seus sentidos (ex: texto alternativo em imagens para quem não enxerga).
-- **C) Incorreta.** *Compreensível*: a informação e a operação da interface devem ser facilmente entendidas (ex: evitar jargões complexos, navegação lógica).
-- **D) Correta.** *Operável*: os botões e navegação podem ser operados de diferentes formas. Por exemplo, navegação total via teclado para quem tem dificuldades motoras ou não usa o mouse.
-- **E) Incorreta.** "Navegável" é apenas uma sub-diretriz (dentro de Operável), e não um dos 4 Princípios de nível superior da WCAG.
-</details>
-
----
-
-### Questão 8 (FCC - 2017 - TRE PR - Analista Judiciário - TI)
-No Brasil, visando garantir que o acesso aos serviços e informações digitais seja universal, o Governo Eletrônico baseia-se em um modelo específico de acessibilidade. O objetivo principal do e-MAG (Modelo de Acessibilidade em Governo Eletrônico) é:
-A) Fornecer um framework exclusivo de testes automatizados unitários para aplicações Java do governo federal.
-B) Especificar o layout visual governamental obrigatório de todos os portais públicos, banindo a personalização de cores das secretarias.
-C) Estabelecer padrões e recomendações de acessibilidade em sítios e portais para o desenvolvimento e a adaptação de conteúdos digitais em portais governamentais brasileiros.
-D) Criar um novo protocolo de rede para comunicação web que substituirá o HTTPS nos sites governamentais para facilitar acessos lentos.
-E) Determinar rigorosas diretrizes de segurança da informação visando blindar sistemas do estado contra ataques de negação de serviço.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-**Explicação:**
-- **A) Incorreta.** O e-MAG não é um framework de código, testes automatizados ou associado restritamente à linguagem Java.
-- **B) Incorreta.** O e-MAG foca em acessibilidade, não em um "template de design padrão de layout" visual (como é o caso da Identidade Visual do Gov.br), não tem a finalidade de "banir cores".
-- **C) Correta.** O e-MAG consiste em um documento contendo diretrizes de acessibilidade focadas na realidade brasileira (alinhado internacionalmente com a WCAG) para garantir que cidadãos com deficiências possam interagir com a esfera governamental na Web.
-- **D) Incorreta.** Não há a criação de protocolos de redes novos no e-MAG (usa-se HTTP/HTTPS normalmente).
-- **E) Incorreta.** Tratamento de ataques de negação de serviço (DDoS) faz parte da Segurança da Informação, não da cartilha de Acessibilidade.
-</details>
-
----
-
-### Questão 9 (FCC - 2019 - TRF 3ª Região - Analista Judiciário - TI)
-Na área de Design Centrado no Usuário (User Experience - UX), a técnica que envolve a criação de "Personas" é muito empregada no desenvolvimento de produtos interativos e sistemas. Essas "Personas" são utilizadas com a finalidade principal de:
-A) Especificar componentes de código que simulam o cliente real por meio de autoexecução de bots em testes de estresse da interface do usuário.
-B) Desenhar os diagramas formais de Entidade-Relacionamento e os Dicionários de Dados do banco de dados relacional.
-C) Identificar estritamente e formalizar as restrições orçamentárias e financeiras do cliente patrocinador do projeto logo no início.
-D) Gerar a documentação técnica pormenorizada voltada exclusivamente para o servidor de aplicação no back-end.
-E) Representar perfis fictícios de arquétipos de usuários ideais, construídos com base em dados reais de pesquisa, para guiar e orientar as decisões de design.
+### Questão 1 (FCC - 2023 - TRT 12 - Analista Judiciário - Tecnologia da Informação)
+No contexto de avaliação Heurística de Nielsen, a heurística que afirma que os usuários frequentemente escolhem funções do sistema por engano e precisarão de uma "saída de emergência" claramente marcada para sair do estado indesejado sem ter que passar por um diálogo extenso é:
+A) Visibilidade do status do sistema.
+B) Consistência e padrões.
+C) Prevenção de erros.
+D) Ajuda e documentação.
+E) Controle e liberdade do usuário.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: E**
 
-**Explicação:**
-- **A) Incorreta.** Personas no contexto de UX não são "bots de software" que executam scripts ou testes de stress. Elas são artefatos de pesquisa e design conceitual.
-- **B) Incorreta.** Modelagem de banco de dados e diagramas ER (Entidade-Relacionamento) são tarefas de engenharia de dados/engenharia de software e não de UX (foco na jornada do usuário).
-- **C) Incorreta.** Restrições orçamentárias e financeiras são delimitadas na etapa de viabilidade e gerenciamento de projetos (Escopo/Custos), as personas não servem a esse propósito comercial.
-- **D) Incorreta.** A documentação voltada para a arquitetura back-end independe da criação de Personas. UX trata da interação com a interface (Front-End/Experiência Humana).
-- **E) Correta.** Personas são personagens fictícios criados a partir da síntese de comportamentos e dados de usuários reais. Elas trazem empatia para a equipe de desenvolvimento, humanizando o foco das decisões de design. Ex: "João, 60 anos, aposentado, usa a internet apenas no celular para ver mensagens".
+A) Incorreta. Visibilidade do status do sistema trata de manter o usuário informado sobre o que está acontecendo no momento (feedback em tempo razoável).
+B) Incorreta. Consistência e padrões refere-se a não forçar os usuários a adivinhar se palavras, situações ou ações diferentes significam a mesma coisa (usar convenções da plataforma).
+C) Incorreta. Prevenção de erros foca em um design cuidadoso que previne a ocorrência de um problema antes de mais nada (ex: mensagens de confirmação).
+D) Incorreta. Ajuda e documentação significa fornecer informações focadas na tarefa do usuário, listas de etapas etc., para quando ele precisa de auxílio.
+E) Correta. Controle e liberdade do usuário é exatamente a heurística que prega que os usuários precisam de saídas de emergência (como "Desfazer" e "Refazer") quando escolhem algo por engano, não os prendendo em processos longos.
 </details>
 
 ---
 
-### Questão 10 (FCC - 2023 - TRT 11ª Região - Analista Judiciário - TI)
-O Teste de Usabilidade é um procedimento fundamental para o fechamento de um ciclo de design de interface (UI/UX) eficiente. A atividade nuclear de um teste de usabilidade consiste em:
-A) Observar usuários reais (representativos do público-alvo) tentando realizar tarefas específicas com o produto ou protótipo para identificar problemas na navegação e interface.
-B) Realizar varreduras no código-fonte (SAST) por meio de ferramentas automatizadas em busca de falhas de segurança (vulnerabilidades) na aplicação.
-C) Executar scripts de teste de carga para medir o tempo de resposta do servidor web na presença de picos de acesso simultâneo.
-D) Automatizar, via JUnit ou similares, a verificação das regras de negócios unitárias integradas no nível da camada de persistência de dados.
-E) Validar financeiramente o custo e o esforço das horas trabalhadas pelos desenvolvedores de interface na sprint de UX do projeto.
+### Questão 2 (FCC - 2022 - TRT 22 - Analista Judiciário - Tecnologia da Informação)
+As Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.1 são estruturadas em quatro princípios fundamentais. O princípio que estabelece que "as informações e a operação da interface do usuário não podem ser invisíveis para todos os seus sentidos" e que os componentes devem ser apresentados aos usuários de forma que possam compreendê-los (como oferecer alternativas em texto) é:
+A) Perceptível.
+B) Operável.
+C) Compreensível.
+D) Robusto.
+E) Acessível.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: A**
 
-**Explicação:**
-- O termo *Usabilidade* trata da facilidade de aprendizado e eficiência de uso da interface pelas pessoas.
-- **A) Correta.** No teste de usabilidade, convida-se um usuário a tentar cumprir tarefas predeterminadas (ex: "faça uma compra neste site até a parte de pagamento"). O avaliador observa onde o usuário trava, se irrita ou não entende o fluxo, mapeando os pontos de melhoria de design.
-- **B) Incorreta.** SAST (Static Application Security Testing) é a análise estática de vulnerabilidades e pertence ao campo de Segurança / DevSecOps.
-- **C) Incorreta.** Trata-se de Teste de Desempenho / Carga / Estresse, validando a infraestrutura e a eficiência sob demanda pesada, não a experiência visual ou comportamental do usuário.
-- **D) Incorreta.** Tratam-se de Testes Unitários focados na camada *Back-end* (banco de dados/lógica), invisíveis diretamente para o quesito UX de interface.
-- **E) Incorreta.** Validação de custos está atrelada à Gestão do Projeto ou Governança, não tendo ligação com a aprovação ou validação técnica do design junto a usuários.
+A) Correta. O princípio "Perceptível" (Perceivable) dita que a informação e os componentes da interface do usuário devem ser apresentados em formas que possam ser percebidas (vistas, ouvidas, etc.) pelos usuários.
+B) Incorreta. "Operável" refere-se à possibilidade de interação com a interface (ex: navegação por teclado, tempo suficiente para leitura, evitar componentes que causem convulsões).
+C) Incorreta. "Compreensível" significa que as informações e a operação devem ser claras (texto legível, funcionamento previsível).
+D) Incorreta. "Robusto" refere-se a maximizar a compatibilidade com agentes de usuário, incluindo tecnologias assistivas.
+E) Incorreta. "Acessível" não é o nome de um dos quatro princípios do WCAG (que são Perceptível, Operável, Compreensível e Robusto - mnemônico POUR).
 </details>
 
 ---
+
+### Questão 3 (FCC - 2018 - TRT 6 - Analista Judiciário - Tecnologia da Informação)
+As heurísticas de usabilidade propostas por Jakob Nielsen são princípios fundamentais de design de interface. A heurística "Reconhecimento em vez de lembrança" (Recognition rather than recall) recomenda que o sistema deve:
+A) Utilizar linguagem familiar ao usuário em vez de termos técnicos ou orientados ao sistema.
+B) Fornecer aceleradores que permitam aos usuários experientes executar ações de forma mais rápida.
+C) Minimizar a carga de memória do usuário, deixando objetos, ações e opções visíveis. O usuário não deve ter que se lembrar de informações de uma parte do diálogo para outra.
+D) Garantir que as mensagens de erro sejam expressas em linguagem clara, indicando precisamente o problema.
+E) Manter a interface minimalista, sem informações que sejam irrelevantes ou raramente necessárias.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+A) Incorreta. Esta descrição refere-se à heurística "Correspondência entre o sistema e o mundo real" (Match between system and the real world).
+B) Incorreta. Esta é a heurística "Flexibilidade e eficiência de uso" (Flexibility and efficiency of use).
+C) Correta. "Reconhecimento em vez de lembrança" diz que é muito mais fácil reconhecer algo na tela (opções visíveis) do que ter de lembrar um comando, minimizando a carga cognitiva.
+D) Incorreta. Refere-se a "Ajudar os usuários a reconhecer, diagnosticar e recuperar-se de erros".
+E) Incorreta. Esta descrição corresponde a "Estética e design minimalista" (Aesthetic and minimalist design).
+</details>
+
+---
+
+### Questão 4 (FCC - 2019 - TRF 3 - Analista Judiciário - Informática)
+Ao projetar a experiência de um usuário (UX), a usabilidade de um software, de acordo com a norma ISO 9241-11, é definida pela medida na qual o produto pode ser usado por usuários específicos para alcançar objetivos específicos com:
+A) Rapidez, escalabilidade e manutenibilidade.
+B) Eficácia, eficiência e satisfação.
+C) Produtividade, segurança e economia.
+D) Intuitividade, engajamento e flexibilidade.
+E) Controle, adaptabilidade e padronização.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A) Incorreta. São atributos de qualidade de software voltados para arquitetura, e não métricas de usabilidade da norma ISO 9241-11.
+B) Correta. A ISO 9241-11 define usabilidade como a capacidade de um produto ser usado por usuários específicos para atingir objetivos com Eficácia (concluir a tarefa), Eficiência (recursos/tempo gastos) e Satisfação (conforto e atitudes positivas).
+C) Incorreta. A norma não utiliza esses três termos como pilares de sua definição, focando nos requisitos do usuário (eficácia, eficiência, satisfação).
+D) Incorreta. Embora sejam metas comuns de UX, não constituem a definição normativa padrão de usabilidade da ISO.
+E) Incorreta. Esses termos estão associados a design (controle), arquitetura (adaptabilidade) e heurísticas (padronização), mas não representam a definição de usabilidade da ISO 9241-11.
+</details>
+
+---
+
+### Questão 5 (FCC - 2018 - Sabesp - Analista de Gestão I - TI)
+No Modelo de Acessibilidade em Governo Eletrônico (eMAG), as recomendações de acessibilidade baseiam-se fortemente no padrão internacional WCAG. Sobre a utilização de links, o eMAG recomenda que:
+A) Todo link deve conter a expressão "Clique aqui" para guiar usuários inexperientes.
+B) Os links devem abrir em novas janelas ou abas de forma automática e sem aviso, visando a retenção na página atual.
+C) Seja evitado o uso de textos de links genéricos ou sem sentido fora do contexto, como "clique aqui" ou "leia mais".
+D) Todos os links externos recebam o atributo `rel="nofollow"` para evitar problemas de ranqueamento.
+E) Imagens que atuem como links devem ter o atributo `alt` vazio para não sobrecarregar os leitores de tela.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+A) Incorreta. O eMAG e o WCAG proíbem enfaticamente o uso de "Clique aqui", pois não descreve o destino e prejudica leitores de tela.
+B) Incorreta. Abrir em nova aba/janela sem aviso prévio desorienta usuários (especialmente cegos e idosos) e quebra o comportamento do botão "Voltar".
+C) Correta. O texto do link deve fazer sentido mesmo quando lido isoladamente (fora de contexto), facilitando a navegação por tecnologias assistivas, que muitas vezes listam apenas os links da página.
+D) Incorreta. O atributo `nofollow` é uma questão de SEO (Search Engine Optimization), e não uma recomendação primária de acessibilidade do eMAG.
+E) Incorreta. Se uma imagem atua como link, seu atributo `alt` é fundamental e DEVE descrever o destino ou a função do link; se for vazio, o leitor de tela poderá ler o nome do arquivo, confundindo o usuário.
+</details>
+
+---
+
+### Questão 6 (FCC - 2017 - TRE-PR - Analista Judiciário - Análise de Sistemas)
+No desenvolvimento de interfaces de usuário, existe um princípio que foca em minimizar surpresas e dúvidas do usuário ao navegar no sistema. Quando um analista decide utilizar ícones e botões que possuem os mesmos nomes e posições que em outros sistemas da mesma plataforma (por exemplo, usar um disquete para o botão "Salvar"), ele está aplicando primordialmente a heurística de usabilidade denominada:
+A) Prevenção de erros.
+B) Flexibilidade e eficiência de uso.
+C) Consistência e padrões.
+D) Design minimalista.
+E) Visibilidade do status do sistema.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+A) Incorreta. Prevenção de erros envolve não permitir que erros ocorram através de design cuidadoso (como caixas de confirmação).
+B) Incorreta. Flexibilidade foca em atalhos para usuários avançados não retardarem seu trabalho.
+C) Correta. A heurística de "Consistência e padrões" recomenda que não se deve forçar o usuário a adivinhar se palavras, ações ou botões diferentes têm o mesmo significado; deve-se seguir as convenções da plataforma (ex: ícone de disquete = salvar).
+D) Incorreta. Design minimalista diz respeito a não incluir informações irrelevantes na tela.
+E) Incorreta. Status do sistema é fornecer feedback (ex: barra de progresso).
+</details>
+
+---
+
+### Questão 7 (FCC - 2019 - TRT 2 - Analista Judiciário - Tecnologia da Informação)
+Uma equipe de desenvolvimento web deseja garantir que as mensagens de erro em formulários e os botões de ação em uma aplicação complexa sejam corretamente interpretados por leitores de tela. A especificação técnica recomendada pelo W3C que define um conjunto de atributos especiais (como *roles* e *states*) para tornar o conteúdo web dinâmico mais acessível é a:
+A) CSS3 (Cascading Style Sheets).
+B) WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Applications).
+C) HTML5 Semântico.
+D) WCAG 2.0.
+E) ECMAScript 6.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A) Incorreta. CSS3 é responsável pela estilização e formatação visual, não pela adição de papéis e estados semânticos dinâmicos para tecnologias assistivas.
+B) Correta. O WAI-ARIA fornece recursos estruturais adicionais (atributos de papéis - roles, estados e propriedades) para tornar aplicações ricas da internet (RIA) e widgets complexos de JavaScript compreensíveis por leitores de tela e outras tecnologias assistivas.
+C) Incorreta. O HTML5 possui tags semânticas (como `<nav>`, `<header>`), o que ajuda muito, mas o conjunto de atributos especiais voltado especificamente para componentes *dinâmicos* complexos (onde o HTML nativo não basta) é o WAI-ARIA.
+D) Incorreta. A WCAG é um conjunto de diretrizes de acessibilidade (um documento de regras), enquanto WAI-ARIA é a especificação técnica de marcação/atributos.
+E) Incorreta. ECMAScript 6 é a especificação da linguagem JavaScript, que implementa a lógica, mas não define os atributos de acessibilidade.
+</details>
+
+---
+
+### Questão 8 (FCC - 2016 - TRT 20 - Analista Judiciário - TI)
+No que tange aos níveis de conformidade estabelecidos pelo WCAG 2.0 (Web Content Accessibility Guidelines), as diretrizes são organizadas em três níveis sucessivos. O nível de conformidade que exige que todas as diretrizes de prioridade mais alta sejam atendidas, representando o mínimo essencial sem o qual alguns grupos de pessoas não conseguirão acessar o conteúdo, é o:
+A) Nível A.
+B) Nível AA.
+C) Nível AAA.
+D) Nível B.
+E) Nível Essencial.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+A) Correta. O Nível A (Level A) é o nível mais básico e mínimo de acessibilidade. Se o Nível A não for atingido, a página terá problemas críticos de acessibilidade e vários usuários ficarão totalmente impedidos de usar o site.
+B) Incorreta. O Nível AA (Duplo A) trata das principais e mais comuns barreiras, sendo o padrão normalmente exigido por leis governamentais em todo o mundo. Não é o "mínimo essencial", mas sim o nível recomendável/intermediário.
+C) Incorreta. O Nível AAA (Triplo A) é o nível mais alto e rígido, não sendo aplicável/exigido para todo o conteúdo na web.
+D) Incorreta. Não existe Nível B no padrão WCAG (são apenas A, AA e AAA).
+E) Incorreta. O termo formal é Nível A, e não Nível Essencial.
+</details>
+
+---
+
+### Questão 9 (FCC - 2019 - TRF 4 - Analista Judiciário - Sistemas da Informação)
+No contexto de design de interfaces para dispositivos móveis, a abordagem conhecida como *Mobile First* defende que:
+A) O desenvolvimento deve ser feito utilizando tecnologias nativas (Android e iOS) em vez de frameworks web responsivos.
+B) O design e desenvolvimento da aplicação devem iniciar focando na versão móvel e em suas restrições, escalando progressivamente para telas maiores (como desktops).
+C) Deve haver uma única interface web voltada estritamente para smartphones, bloqueando o acesso de navegadores desktop tradicionais.
+D) Os testes de usabilidade devem ser realizados exclusivamente em dispositivos móveis, dispensando avaliações em computadores.
+E) As imagens da aplicação devem sempre carregar na resolução máxima, e o CSS encarrega-se de redimensioná-las para os dispositivos móveis.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A) Incorreta. Mobile First não dita a tecnologia (nativa x web), mas sim a estratégia de design e priorização (começar pequeno e expandir).
+B) Correta. A estratégia Mobile First baseia-se em desenhar a arquitetura da informação e a interface primeiro para os menores e mais restritos dispositivos (celulares). Isso força a priorizar o que é mais importante (Progressive Enhancement) antes de adaptar o layout para telas maiores de desktop.
+C) Incorreta. A intenção não é bloquear desktops, mas começar o design pela versão móvel e utilizar Media Queries para adaptar a mesma aplicação para desktops (Design Responsivo).
+D) Incorreta. Testes em desktop ainda são fundamentais e necessários; Mobile First não elimina a versão de desktop.
+E) Incorreta. Isso vai contra a performance (Mobile First geralmente dita que imagens menores carregam primeiro em celulares, e telas maiores baixam versões maiores).
+</details>
+
+---
+
+### Questão 10 (FCC - 2018 - TRT 15 - Analista Judiciário - Tecnologia da Informação)
+Um dos princípios do WCAG determina que o conteúdo deve ser *Robusto*. Esse princípio se refere à:
+A) Rapidez com que o site é carregado, independentemente da velocidade da conexão do usuário.
+B) Adequação do contraste das cores utilizadas na interface, resistindo a ambientes de alta luminosidade externa.
+C) Possibilidade do sistema se recuperar automaticamente de falhas no servidor, não deixando o usuário sem resposta.
+D) Maximizar a compatibilidade com atuais e futuros agentes de usuário, incluindo tecnologias assistivas.
+E) Capacidade da interface de se redimensionar para qualquer formato de tela sem perder a formatação original.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+A) Incorreta. A velocidade de carregamento é um fator de performance (Performance Web), mas não é o que define o princípio "Robusto" do WCAG.
+B) Incorreta. O contraste de cores diz respeito ao princípio "Perceptível".
+C) Incorreta. Recuperação de falhas e resiliência de servidor são atributos de arquitetura/infraestrutura, não do princípio Robusto da acessibilidade.
+D) Correta. O princípio Robusto no WCAG determina que o conteúdo deve ser robusto o suficiente para poder ser interpretado de forma confiável por uma ampla variedade de agentes de usuário, incluindo tecnologias assistivas (leitores de tela), mesmo com a evolução das tecnologias web (HTML válido e bem formado).
+E) Incorreta. O redimensionamento diz respeito ao Design Responsivo (também englobado no princípio Perceptível), mas não define a Robustez no sentido semântico e de compatibilidade do WCAG.
+</details>
+
+---
+
+### Questão 11 (FCC - 2021 - TRT 4 - Analista Judiciário - Tecnologia da Informação)
+As dez heurísticas de Nielsen continuam sendo referências clássicas para avaliação de usabilidade. A heurística "Ajudar os usuários a reconhecer, diagnosticar e recuperar-se de erros" é exemplificada corretamente pela seguinte prática de design de interface:
+A) Ocultar todas as opções do menu que o usuário não tem permissão para acessar.
+B) Utilizar botões de tamanho ampliado e com cor contrastante para as chamadas à ação (Call to Action).
+C) Apresentar uma mensagem em linguagem simples ao invés de códigos de erro complexos (como "Erro 404"), sugerindo um link para a página inicial.
+D) Solicitar a confirmação do usuário antes de realizar a exclusão permanente de um registro importante no banco de dados.
+E) Utilizar uma barra de progresso durante o envio de um arquivo pesado para o servidor.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+A) Incorreta. Ocultar opções não permitidas relaciona-se à Prevenção de Erros ou Design Minimalista.
+B) Incorreta. Tamanho e cor de botões relacionam-se mais à Lei de Fitts, Affordance e Estética.
+C) Correta. Esta heurística orienta que mensagens de erro sejam expressas em linguagem clara (sem códigos obscuros do sistema), indiquem precisamente o problema e sugiram construtivamente uma solução. Substituir um "Erro 404" por "Página não encontrada, volte para a Home" é a aplicação direta deste princípio.
+D) Incorreta. Pedir confirmação *antes* do erro acontecer é a heurística de "Prevenção de erros".
+E) Incorreta. Barra de progresso diz respeito à "Visibilidade do status do sistema".
+</details>
+
+---
+
+### Questão 12 (FCC - 2017 - TST - Analista Judiciário - Análise de Sistemas)
+No projeto de interfaces focadas em usabilidade e em garantir uma boa Experiência do Usuário (UX), o termo *Affordance* (frequentemente traduzido como "possibilidade de ação" ou "propiciamento") refere-se:
+A) À técnica de organizar hierarquicamente os menus (Information Architecture) para que o usuário encontre rapidamente o que procura.
+B) Aos atributos e características físicas/visuais de um objeto ou elemento de interface que indicam ao usuário intuitivamente como ele pode ser utilizado (ex: um botão com relevo sugere ser clicado).
+C) Ao uso de ferramentas automatizadas para capturar dados estatísticos sobre a navegação e cliques dos usuários na interface.
+D) À medida do grau de acessibilidade de um site por usuários portadores de necessidades especiais, regulamentada pela W3C.
+E) Ao tempo de resposta que um sistema leva para processar o feedback após a interação do usuário.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A) Incorreta. Organização estrutural refere-se à Arquitetura da Informação (Information Architecture).
+B) Correta. Em UX/UI, *Affordance* são as dicas visuais que indicam como interagir com algo sem precisar de explicação. Por exemplo, um link sublinhado e em azul sugere que pode ser clicado; uma barra de rolagem indica que a tela rola para baixo; um botão com sombra aparenta que pode ser pressionado.
+C) Incorreta. Isso se refere a *Web Analytics* (como Google Analytics) e mapas de calor (Heatmaps).
+D) Incorreta. Acessibilidade é avaliada e guiada por diretrizes como as do WCAG (W3C), e não é sinônimo de Affordance.
+E) Incorreta. Tempo de resposta é uma métrica de performance e está ligado ao feedback do sistema (relacionado à Visibilidade do Status).
+</details>
+
+---
+
+### Questão 13 (FCC - 2018 - TRT 2 - Analista Judiciário - Tecnologia da Informação)
+No desenvolvimento para web acessível, conforme os guias eMAG e WCAG, o uso de tabelas de dados `<table>` em HTML:
+A) É completamente proibido para qualquer finalidade, pois leitores de tela não conseguem interpretar elementos tabulares.
+B) Deve ser utilizado tanto para exibir dados tabulares quanto para definir a estrutura de layout e colunas de toda a página (table-based layout).
+C) É permitido apenas quando combinadas com `display: none` no CSS para que os leitores de tela as ignorem.
+D) Recomenda-se para dados tabulares, sendo importante utilizar marcadores como a tag `<th>` (table header) ou o atributo `scope` para associar corretamente cabeçalhos às suas respectivas células de dados, orientando os leitores de tela.
+E) Só é aceitável se a tabela for renderizada dentro de um iframe ou convertida para imagem contendo um texto alternativo descrevendo a tabela inteira.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+A) Incorreta. As tabelas não são proibidas; elas devem ser usadas para o fim correto: exibir dados tabulares. Leitores de tela lidam muito bem com elas se estiverem semanticamente corretas.
+B) Incorreta. O eMAG e o W3C desencorajam enfaticamente o uso de tabelas para layout de página (posicionamento). Layout deve ser feito com CSS (Grid, Flexbox, etc.).
+C) Incorreta. Se usar `display: none`, a tabela inteira ficará invisível também para o leitor de tela.
+D) Correta. A acessibilidade em tabelas de dados exige que os relacionamentos entre os dados fiquem claros para tecnologias assistivas. Usa-se a tag `<th>` para cabeçalhos e atributos como `scope="row"` ou `scope="col"` para explicitar se aquele cabeçalho rege a linha ou a coluna.
+E) Incorreta. Transformar uma tabela inteira em imagem é uma péssima prática de acessibilidade, pois impede a navegação estruturada célula por célula através do leitor de tela.
+</details>
+
+---
+
+### Questão 14 (FCC - 2023 - TRT 11 - Técnico Judiciário - Tecnologia da Informação)
+Uma interface de software adota termos como "Carrinho", "Checkout" e apresenta um ícone de "Lupa" para representar a função de busca. Segundo as Heurísticas de Nielsen, essa prática se alinha fundamentalmente com:
+A) Correspondência entre o sistema e o mundo real, usando a linguagem do usuário e conceitos que lhe são familiares.
+B) Design estético e minimalista, uma vez que ícones reduzem o excesso de texto na tela.
+C) Flexibilidade e eficiência de uso, permitindo que a busca seja acionada de maneira oculta.
+D) Visibilidade do status do sistema, pois a lupa indica que o sistema está em estado de alerta.
+E) Controle e liberdade do usuário, pois o carrinho permite que o usuário desista da compra a qualquer momento.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+A) Correta. A heurística de "Correspondência entre o sistema e o mundo real" (Match between system and the real world) preconiza que o sistema deve falar a linguagem do usuário, com palavras, frases e conceitos (como "Carrinho" e a "Lupa") que sejam naturais e familiares a ele no mundo real, ao invés de usar termos orientados ao sistema.
+B) Incorreta. Embora o uso de ícones possa ajudar no minimalismo, a justificativa principal da metáfora com o mundo real recai sobre a heurística de correspondência.
+C) Incorreta. Flexibilidade envolve atalhos (como CTRL+C, teclas de atalho) para acelerar interações.
+D) Incorreta. A lupa indica ação (busca) e não o status de processamento (que seria algo como o cursor girando - loading).
+E) Incorreta. "Controle e liberdade" foca nas opções de desfazer, cancelar, voltar ou fechar janelas acidentais.
+</details>
+
+---
+
+### Questão 15 (FCC - 2017 - DPE-RS - Analista em Informática - Desenvolvimento)
+Na avaliação e no desenvolvimento de interfaces com alto grau de acessibilidade em portais corporativos governamentais regidos pelo eMAG, quando existem campos de formulário que são de preenchimento obrigatório, a melhor e mais acessível forma de indicar essa obrigatoriedade é:
+A) Exclusivamente através do uso da cor vermelha no contorno do campo de texto, visando o design minimalista.
+B) Fornecer uma indicação visual explícita (como o texto "obrigatório" ou o caractere "*") e utilizar atributos ARIA ou HTML5 pertinentes, como `required` ou `aria-required="true"`.
+C) Usar JavaScript para desabilitar o botão de "Enviar" sem exibir nenhuma mensagem de alerta inicial, até que todos os campos sejam preenchidos.
+D) Inserir um áudio em reprodução automática (`autoplay`) na página, alertando verbalmente quais campos são necessários.
+E) Ocultar a *label* (etiqueta) do campo obrigatório e usar apenas o atributo `placeholder` interno para poupar espaço e indicar a urgência.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A) Incorreta. Nunca se deve usar apenas a cor para transmitir informações (WCAG - Diretriz 1.4.1), pois pessoas com daltonismo (ou utilizando dispositivos monocromáticos) não perceberão a exigência.
+B) Correta. Para ser acessível a todos (videntes e não videntes), deve-se usar um sinal visual (como o asterisco ou a palavra escrita, garantindo leitura visual independentemente da cor) combinado com informações semânticas no código (`required` ou `aria-required="true"`) para que leitores de tela alertem os deficientes visuais sobre a obrigatoriedade do campo assim que entrarem nele.
+C) Incorreta. Desabilitar o botão sem dar feedback de quais campos faltam vai contra a usabilidade e frustra os usuários. Além disso, falha na prevenção de erros e comunicação do status.
+D) Incorreta. Áudios em `autoplay` são proibidos pelas diretrizes do WCAG porque interferem diretamente nos sintetizadores de voz (leitores de tela) dos deficientes visuais.
+E) Incorreta. A ausência de *label* prejudica a acessibilidade. O `placeholder` some ao se digitar ou clicar no campo, além de frequentemente não ter contraste suficiente ou não ser lido corretamente por tecnologias assistivas antigas.
+</details>
+
 
 ## 📝 TEMA 3: Governança ITIL/COBIT
 
-### Questão 11 (FCC - 2023 - TRT 18ª Região - Analista Judiciário - TI)
-Na estrutura da ITIL 4, os Princípios Orientadores (Guiding Principles) são recomendações universais que guiam a organização em todas as circunstâncias, independentemente de mudanças nas estratégias. O princípio orientador "Comece de onde você está" (*Start where you are*) sugere primariamente que a organização deve:
-A) Ignorar sumariamente todas as soluções legadas que não possuam documentação oficial detalhada, recriando as soluções vitais totalmente do zero.
-B) Concentrar-se exclusivamente nas inovações tecnológicas emergentes e disruptivas do mercado, sem analisar ou aproveitar os processos atuais de TI.
-C) Considerar as práticas, os serviços, a cultura e os métodos já existentes e tentar aproveitá-los e aprimorá-los de forma inteligente antes de construir ou investir em algo totalmente novo.
-D) Priorizar o foco no valor (*Focus on value*) unicamente para os acionistas que detêm capital, desconsiderando o feedback qualitativo dos usuários finais do serviço.
-E) Terceirizar imediatamente toda a infraestrutura de TI legada para provedores em nuvem como ação inicial, eliminando toda a equipe interna de suporte operacional.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-**Explicação:**
-Os 7 princípios da ITIL 4 são muito cobrados.
-- **A) Incorreta.** Recriar do zero (abordagem *rip and replace* ou *tabula rasa*) é exatamente o que o princípio "Comece de onde você está" manda evitar para não desperdiçar investimentos passados.
-- **B) Incorreta.** Ignorar processos atuais viola o princípio, que prescreve sempre observar e medir o estado atual diretamente antes de tomar decisões sobre inovações.
-- **C) Correta.** É a definição exata de "Start where you are". Não descarte tudo. Avalie o estado atual de forma objetiva, mantenha o que está funcionando e descarte ou modifique apenas o que não agrega mais valor.
-- **D) Incorreta.** Foco no valor é outro princípio (*Focus on value*), mas este valor deve abranger a perspectiva de todos os *stakeholders* relevantes (incluindo usuários e clientes), não unicamente acionistas monetários.
-- **E) Incorreta.** O princípio não faz nenhuma menção obrigatória à terceirização em nuvem. A mudança e a terceirização drástica, sem análise do estado atual, violariam as diretrizes de governança inteligente.
-</details>
-
----
-
-### Questão 12 (FCC - 2022 - TRT 14ª Região - Analista Judiciário - TI)
-No contexto das práticas de gerenciamento de serviços trazidas pela ITIL 4, a prática (anteriormente chamada de processo na ITIL v3) que tem como propósito principal "minimizar o impacto negativo das interrupções de serviço restaurando a operação normal do serviço o mais rápido possível" é o Gerenciamento de:
-A) Problemas.
-B) Incidentes.
-C) Mudanças.
-D) Configuração.
-E) Liberação.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-**Explicação:**
-Sempre é necessário saber a distinção clássica entre Incidentes e Problemas na ITIL.
-- **A) Incorreta.** Gerenciamento de Problemas foca em investigar as *causas raízes* (por que aconteceu?) dos incidentes, buscando encontrar soluções definitivas (workarounds ou mudanças) para reduzir a probabilidade de ocorrer novamente.
-- **B) Correta.** Um *Incidente* é uma interrupção não planejada ou a redução da qualidade de um serviço. O Gerenciamento de Incidentes quer "apagar o incêndio" o mais rápido possível, restaurando os níveis normais dos SLAs para o negócio, muitas vezes sem precisar descobrir a fundo a causa original naquele exato momento.
-- **C) Incorreta.** A Habilitação de Mudanças avalia, autoriza e controla alterações no ambiente produtivo para gerir riscos.
-- **D) Incorreta.** Foca em manter os registros precisos dos Itens de Configuração (CIs) que sustentam o serviço.
-- **E) Incorreta.** Gerenciamento de Liberação constrói, testa e implanta novos serviços (releases) para o uso produtivo.
-</details>
-
----
-
-### Questão 13 (FCC - 2019 - TRF 4ª Região - Analista Judiciário - TI)
-De acordo com o framework COBIT 2019, o sistema de governança de informações e tecnologia da corporação é baseado em seis princípios-chave de governança. Um desses princípios fundamentais estabelece que um sistema de governança da empresa deve ser:
-A) Baseado inteiramente no framework ITIL 4 de forma restritiva, não sendo permitida a utilização ou adaptação de frameworks e guias de mercado complementares.
-B) Estático, garantindo normativamente que os processos de tecnologia definidos pela matriz nunca sejam alterados ao longo de um ciclo estratégico de pelo menos cinco anos.
-C) Restrito aos processos, pessoas e atividades exclusivamente vinculados ao departamento formal de TI, não devendo envolver a área tática de negócios para não gerar atritos.
-D) Focado de forma exclusiva e isolada nas atividades operacionais de Entrega e Suporte (*Delivery and Support*), deixando os ciclos de planejamento estratégico fora do seu escopo direto.
-E) Dinâmico, refletindo o contexto do negócio e respondendo de maneira adequada e tempestiva às mudanças nos fatores de desenho (*design factors*) que influenciam a organização.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**
-
-**Explicação:**
-Os seis princípios para um "Sistema de Governança" no COBIT 2019 são: prover valor, abordagem holística, sistema de governança dinâmico, separar governança de gestão, adaptado às necessidades da empresa e governança fim a fim (cobrir a empresa de ponta a ponta).
-- **A) Incorreta.** O COBIT prega ser um framework "guarda-chuva", ou seja, ele é alinhado e se integra perfeitamente com os principais frameworks e normas do mercado (ITIL, PMBOK, ISO, TOGAF).
-- **B) Incorreta.** É o oposto de dinâmico. Um bom sistema de governança não pode ser estático; ele precisa de flexibilidade para mudar com a estratégia do negócio.
-- **C) Incorreta.** O COBIT defende o princípio de uma governança "Fim a fim" e que trate a TI corporativa em toda a organização (não importando o organograma tradicional restrito ao "Setor de TI"). A área de negócios é parte integrante do sistema.
-- **D) Incorreta.** O COBIT abrange Planejar, Construir, Executar (Delivery/Support) e Monitorar. Deixar o planejamento de fora viola o propósito sistêmico.
-- **E) Correta.** Princípio "Sistema de Governança Dinâmico" (Dynamic Governance System): quando os chamados *Design Factors* (fatores de desenho como estratégia, mudança de mercado, perfil de risco) mudam, o sistema de governança tem de se adaptar, reajustando os níveis de capacidade de seus processos.
-</details>
-
----
-
-### Questão 14 (FCC - 2018 - TRT 6ª Região - Analista Judiciário - TI)
-Uma das maiores inovações mantidas em alta relevância no COBIT (tanto no COBIT 5 quanto no COBIT 2019) é a separação clara e objetiva entre os papéis de Governança e as atuações de Gestão. Segundo essa divisão do framework, a esfera da Gestão (*Management*) tem como principal foco e responsabilidade típica:
-A) Garantir que os objetivos estratégicos de negócio sejam traduzidos exclusivamente pelos acionistas, prescindindo de intervenção técnica das diretorias.
-B) Avaliar de forma isolada as necessidades dos stakeholders externos para então determinar a direção estratégica de governança a ser perseguida.
-C) Fazer a condução de auditorias contábeis de terceira parte e liderar diretamente os comitês independentes avaliadores do conselho de administração.
-D) Planejar, construir, executar e monitorar as atividades em estrito alinhamento com a direção que foi previamente estabelecida pela estrutura de governança.
-E) Definir as políticas de mais alto nível para a companhia e assumir as práticas diretivas de avaliação, orientação e monitoramento da mesa diretora (EDM - *Evaluate, Direct, Monitor*).
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**
-
-**Explicação:**
-Regra de ouro do COBIT para concursos:
-**Governança = Avaliar, Direcionar e Monitorar (EDM).** É de responsabilidade do Conselho de Administração (*Board of Directors*). É quem decide o "Quê".
-**Gestão = Planejar, Construir, Executar e Monitorar (PBRM/APO, BAI, DSS, MEA).** É de responsabilidade do corpo executivo e de gerência (CEO, CIO, gerentes). É quem cuida do "Como".
-- **A) Incorreta.** Acionistas são stakeholders avaliados pela Governança, não definem o foco prático da Gestão.
-- **B) Incorreta.** Avaliar necessidades de stakeholders, determinar direção estratégica é papel da Governança (EDM).
-- **C) Incorreta.** Auditoria externa e Conselho de Administração são elementos e instâncias pertencentes à Governança, operando acima do corpo gerencial.
-- **D) Correta.** A gestão existe para executar (construir e rodar a máquina de TI) alinhada à direção e aos limites de risco criados pela estrutura de governança superior.
-- **E) Incorreta.** Práticas EDM (*Evaluate, Direct, Monitor*) pertencem exclusivamente à área e domínio da **Governança**, não da Gestão.
-</details>
-
----
-
-### Questão 15 (FCC - 2022 - TRT 22ª Região - Analista Judiciário - TI)
-A arquitetura central da ITIL 4 foi substancialmente remodelada. Ela prevê que o Sistema de Valor de Serviço (Service Value System - SVS) descreve como todos os componentes e atividades de uma organização trabalham juntos como um sistema robusto para habilitar a co-criação de valor. Dentre as alternativas a seguir, qual representa o elemento/componente que é o "coração" ou o núcleo operacional do SVS da ITIL 4?
-A) Cadeia de Valor de Serviço (Service Value Chain).
-B) Cascata de Objetivos de TI (Goals Cascade).
-C) Matriz de Atribuição de Responsabilidades (RACI).
-D) Processos de Habilitação Organizacional (Enabling Processes).
-E) Estrutura de Domínios de Projetos (PMBOK Knowledge Areas).
+### Questão 1 (FCC - 2023 - TRT 12ª Região - Analista Judiciário - TI)
+O framework COBIT 2019 estabelece dois conjuntos de princípios: princípios para o sistema de governança e princípios para um framework de governança. Um dos princípios do framework de governança determina que o framework deve ser:
+A) baseado em um modelo conceitual, identificando os principais componentes e relacionamentos para maximizar a consistência e permitir a automação.
+B) provedor de valor, alinhando as necessidades das partes interessadas aos objetivos corporativos e objetivos de alinhamento.
+C) uma abordagem holística, considerando todos os componentes que interagem e que são interconectados para a governança de I&T.
+D) responsável por separar a governança, que garante que os objetivos sejam alcançados, do gerenciamento, que planeja e constrói.
+E) adaptado às necessidades da empresa, utilizando fatores de desenho para parametrizar e customizar o sistema de governança.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: A**
 
-**Explicação:**
-A arquitetura do Sistema de Valor de Serviço (SVS) da ITIL 4 é composta por 5 componentes operando sob as entradas "Oportunidade/Demanda" gerando a saída "Valor": (1) Princípios Orientadores, (2) Governança, (3) Cadeia de Valor de Serviço (o núcleo), (4) Práticas e (5) Melhoria Contínua.
-- **A) Correta.** A **Cadeia de Valor de Serviço (*Service Value Chain*)** fica exatamente no meio do SVS e contém 6 atividades centrais (Planejar, Melhorar, Engajar, Desenho/Transição, Obter/Construir, Entregar/Suportar) através das quais a organização transforma fluxos de valor.
-- **B) Incorreta.** A *Cascata de Objetivos* é o principal mecanismo estrutural do framework **COBIT** para alinhar objetivos corporativos a metas de TI, não da ITIL.
-- **C) Incorreta.** Matriz RACI é um método consagrado no mercado para delegação de responsabilidades de processos, mas não é o núcleo estrutural que define o modelo SVS na ITIL 4.
-- **D) Incorreta.** Processos habilitadores eram conceitos centrais da arquitetura do **COBIT 5** (os *Enablers*).
-- **E) Incorreta.** Áreas de Conhecimento são componentes da estrutura do PMI (Guia PMBOK) voltadas ao gerenciamento isolado de Projetos, não do Gerenciamento de Serviços de TI da ITIL.
+A FCC exige do candidato a distinção exata entre os princípios do Sistema de Governança e os do Framework de Governança, ambos propostos pelo COBIT 2019. 
+
+- **A) Correta.** Esse é exatamente um dos três princípios de um **Framework de Governança**. O framework precisa ser baseado em um modelo conceitual estruturado e padronizado, permitindo que a organização implemente a automação e mantenha a consistência. Os outros dois princípios do framework são: ser aberto e flexível; e estar alinhado com os principais padrões (ITIL, ISO, PMBOK, etc.).
+- **B) Incorreta.** "Prover valor às partes interessadas" é o primeiro princípio do **Sistema de Governança** (a implementação prática na empresa), focando na criação de valor através do equilíbrio entre benefícios, riscos e recursos.
+- **C) Incorreta.** A "Abordagem Holística" é outro princípio do **Sistema de Governança**, o qual prega que a governança abrange processos, estruturas organizacionais, pessoas, etc.
+- **D) Incorreta.** "Separar governança de gerenciamento" é o princípio fundamental do **Sistema de Governança**, estipulando fronteiras claras entre a diretoria e a gerência executiva.
+- **E) Incorreta.** Ser "Adaptado às necessidades da empresa" é um princípio do **Sistema de Governança** que fundamenta o uso dos inovadores "Fatores de Desenho" do COBIT 2019.
 </details>
 
 ---
+
+### Questão 2 (FCC - 2022 - TRT 5ª Região - Analista Judiciário - Tecnologia da Informação)
+No contexto do ITIL 4, o Sistema de Valor de Serviço (SVS) descreve como todos os componentes e atividades da organização trabalham juntos como um sistema para habilitar a criação de valor. Um dos componentes do SVS é a Cadeia de Valor de Serviço (Service Value Chain), cujas atividades fundamentais incluem:
+A) Planejar, Desenhar, Construir, Transitar, Entregar e Suportar.
+B) Estratégia, Desenho, Transição, Operação e Melhoria.
+C) Planejar, Engajar, Melhorar, Desenho e Transição, Obter/Construir e Entregar e Suportar.
+D) Direcionar, Monitorar, Avaliar, Entregar, Planejar e Melhorar.
+E) Identificar, Proteger, Detectar, Responder e Recuperar.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+No ITIL 4, a Cadeia de Valor de Serviço (Service Value Chain - SVC) é o elemento central do Sistema de Valor de Serviço (SVS). Ela define o modelo operacional flexível para criação, entrega e melhoria contínua de serviços.
+
+- **A) Incorreta.** Trata-se de uma mistura de termos soltos das antigas versões do ITIL com alguns verbos da nova cadeia de valor, não refletindo fielmente a nomenclatura oficial.
+- **B) Incorreta.** Estes são os estágios do ciclo de vida do serviço do ITIL v3 (Estratégia, Desenho, Transição, Operação, Melhoria Contínua), arquitetura que foi abandonada e substituída no ITIL 4 pelo conceito do SVS e da Cadeia de Valor de Serviço.
+- **C) Correta.** Estas são as 6 atividades exatas e oficiais da Cadeia de Valor de Serviço no ITIL 4: Planejar (Plan), Engajar (Engage), Melhorar (Improve), Desenho e Transição (Design and Transition), Obter/Construir (Obtain/Build) e Entregar e Suportar (Deliver and Support).
+- **D) Incorreta.** Mistura as atividades do domínio de governança (EDM - Avaliar, Dirigir, Monitorar) do COBIT com atividades do ITIL.
+- **E) Incorreta.** Estas são as cinco funções essenciais do modelo de cibersegurança do NIST (NIST Cybersecurity Framework), e não atividades do ITIL 4.
+</details>
+
+---
+
+### Questão 3 (FCC - 2022 - TRT 22ª Região - Analista Judiciário - Tecnologia da Informação)
+O ITIL 4 apresenta princípios orientadores que são recomendações universais para guiar as organizações em todas as circunstâncias. O princípio "Pensar e trabalhar holisticamente" estabelece que a organização deve:
+A) compreender que os serviços são entregues aos consumidores de forma isolada, cabendo a cada departamento focar apenas nas suas métricas financeiras.
+B) reconhecer que nenhum serviço, prática, processo, departamento ou fornecedor existe isoladamente, e os resultados dependem da integração efetiva de ponta a ponta.
+C) adotar novas tecnologias e práticas do mercado apenas quando for provado matematicamente que podem reduzir os custos sistêmicos.
+D) iniciar toda nova iniciativa partindo sempre do zero (tabula rasa), visando evitar que erros sistêmicos históricos sejam repetidos.
+E) buscar alcançar os objetivos de negócios através de pequenos passos iterativos, garantindo que o progresso seja contínuo em ciclos curtos.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+Os Princípios Orientadores (Guiding Principles) do ITIL 4 são a bússola filosófica do framework. É imperativo dominar o conceito de cada um deles.
+
+- **A) Incorreta.** Pelo contrário, pensar holisticamente combate justamente o trabalho em "silos" organizacionais isolados, onde departamentos focam somente em suas próprias métricas em detrimento do valor final ao cliente.
+- **B) Correta.** O princípio "Pensar e trabalhar holisticamente" prega a visão sistêmica. A organização deve entender que o valor não é criado por processos, fornecedores ou equipes agindo em vácuo, mas pela integração de ponta a ponta que compõe o sistema como um todo.
+- **C) Incorreta.** Adotar tecnologias para melhorar eficiência financeira e sistêmica remete ao princípio "Otimizar e automatizar", e não ao trabalho holístico.
+- **D) Incorreta.** Iniciar partindo do zero viola diretamente o princípio "Começar de onde você está" (Start where you are), que prega o reaproveitamento do que já existe e funciona bem, evitando o desperdício.
+- **E) Incorreta.** Realizar pequenos passos iterativos em ciclos curtos é a definição exata do princípio "Progredir iterativamente com feedback" (Progress iteratively with feedback).
+</details>
+
+---
+
+### Questão 4 (FCC - 2021 - TCE-SC - Auditor Fiscal de Controle Externo - TI)
+O COBIT 2019 organiza seus objetivos de governança e de gerenciamento agrupando-os em domínios. O domínio que abrange a definição das estratégias e táticas organizacionais, visa direcionar o modelo de entrega de TI e identificar como a tecnologia da informação pode melhor contribuir para o alcance dos objetivos de negócio é o:
+A) Entregar, Reparar e Suportar (DSS).
+B) Construir, Adquirir e Implementar (BAI).
+C) Avaliar, Dirigir e Monitorar (EDM).
+D) Alinhar, Planejar e Organizar (APO).
+E) Monitorar, Avaliar e Analisar (MEA).
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+O modelo Core do COBIT 2019 é dividido em 5 domínios: 1 de Governança e 4 de Gerenciamento. A correta alocação de escopo entre eles é tema recorrente da FCC.
+
+- **A) Incorreta.** O domínio DSS (Deliver, Service and Support) concentra-se na entrega dos serviços, estabilidade operacional e suporte ao usuário no dia a dia, não em alinhamento estratégico.
+- **B) Incorreta.** O domínio BAI (Build, Acquire and Implement) trata da identificação de soluções, aquisições de sistemas, gestão de projetos e transição (implementação) para a operação.
+- **C) Incorreta.** O domínio EDM (Evaluate, Direct and Monitor) é exclusivo da esfera de **Governança**. Embora envolva direcionamento macro, quem traduz as metas de negócio em estratégias, arquiteturas e táticas de TI organizadas no cotidiano executivo é o domínio APO.
+- **D) Correta.** O domínio APO (Align, Plan and Organize) cobre as estratégias e táticas executivas (nível de gerenciamento), definindo a arquitetura corporativa, orçamentos, risco, portfólios de TI e qualidade, visando alinhar de forma prática as ações da TI aos objetivos corporativos.
+- **E) Incorreta.** O domínio MEA (Monitor, Evaluate and Assess) atua na verificação contínua do desempenho organizacional, monitorando controles internos e conformidade (compliance).
+</details>
+
+---
+
+### Questão 5 (FCC - 2019 - TRF 3ª Região - Analista Judiciário - Informática)
+Uma das grandes inovações trazidas pelo COBIT 2019 em relação às suas versões anteriores são os fatores de desenho (Design Factors), que podem influenciar a forma como a governança de I&T da empresa é desenhada e implementada. São exemplos de fatores de desenho no COBIT 2019:
+A) Processos, Estruturas Organizacionais e Informação.
+B) Princípios, Políticas, Cultura, Ética e Comportamento.
+C) Estratégia Corporativa, Cenário de Ameaças, Requisitos de Conformidade e Papel da TI.
+D) Prover Valor, Abordagem Holística e Sistema de Governança Dinâmico.
+E) Cascata de Objetivos, Metas de Alinhamento, Indicadores de Desempenho e Acordos de Nível de Serviço.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+Os Fatores de Desenho (Design Factors) no COBIT 2019 são variáveis ​​do ambiente da organização (como tamanho, riscos, cenário, etc.) que ajudam a desenhar um sistema de governança sob medida ("tailored"), priorizando os objetivos corretos.
+
+- **A) Incorreta.** Processos, Estruturas Organizacionais e Informação são **Componentes do Sistema de Governança** (antigos habilitadores do COBIT 5), e não fatores de desenho.
+- **B) Incorreta.** Princípios, Políticas e Cultura também são exemplos de Componentes do Sistema de Governança, utilizados para materializar e construir a governança, e não as forças externas/internas que a moldam.
+- **C) Correta.** O COBIT 2019 define 11 Fatores de Desenho. Entre eles destacam-se: Estratégia Corporativa (Enterprise Strategy), Papel da TI, Cenário de Ameaças (Threat Landscape), Requisitos de Conformidade (Compliance Requirements), Modelo de Fornecimento de TI e Métodos de Implementação de TI.
+- **D) Incorreta.** Esses itens são **Princípios do Sistema de Governança** (Prover valor, Abordagem holística, Dinamismo), conceituando a base teórica e não as variáveis específicas da empresa.
+- **E) Incorreta.** A Cascata de Objetivos e as Metas são ferramentas para traduzir estratégias, enquanto Indicadores de Desempenho (Métricas) e Acordos de Nível de Serviço são métricas de monitoramento.
+</details>
+
+---
+
+### Questão 6 (FCC - 2018 - TRT 6ª Região - Analista Judiciário - TI)
+No contexto do framework COBIT 5 (e mantido de forma similar no COBIT 2019), a Cascata de Objetivos (Goals Cascade) é o mecanismo que traduz as necessidades das partes interessadas em objetivos acionáveis, alinhando a organização. A ordem correta do fluxo de tradução da cascata de objetivos é:
+A) Necessidades das Partes Interessadas, Objetivos de TI, Objetivos Corporativos e Objetivos dos Habilitadores.
+B) Motivos (Drivers) das Partes Interessadas, Objetivos Corporativos, Objetivos de TI e Objetivos dos Processos.
+C) Necessidades das Partes Interessadas, Objetivos Corporativos, Objetivos Relacionados à TI e Objetivos dos Habilitadores.
+D) Objetivos Estratégicos, Metas de Governança, Metas de Gerenciamento e Objetivos dos Processos.
+E) Direcionadores Ambientais, Objetivos de Negócio, Metas de Governança, Metas de TI e Atividades de TI.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+A Cascata de Objetivos (Goals Cascade) é vital para demonstrar que as operações técnicas de TI estão, em última instância, contribuindo com o valor estratégico exigido pelas partes interessadas do negócio. O examinador adora embaralhar esta ordem.
+
+- **A) Incorreta.** A sequência inverte os Objetivos Corporativos e Objetivos de TI. A tecnologia deriva do negócio, e não o contrário.
+- **B) Incorreta.** Os motivos (Stakeholder Drivers - como ambiente externo e regulamentações) influenciam as necessidades, mas a cascata oficial propriamente dita segue a ordem da alternativa C. Além disso, a ponta da cascata, no COBIT 5, fala em "Objetivos dos Habilitadores" (Enabler Goals), não estritamente processos.
+- **C) Correta.** Esta é a estrutura exata preconizada pelo COBIT 5: 
+  1. Motivos das Partes Interessadas influenciam as **Necessidades das Partes Interessadas** (Stakeholder Needs);
+  2. Que se desdobram em **Objetivos Corporativos** (Enterprise Goals);
+  3. Que se desdobram em **Objetivos Relacionados à TI** (IT-related Goals / Alignment Goals no COBIT 2019);
+  4. Que se desdobram em **Objetivos dos Habilitadores** (Enabler Goals).
+- **D) Incorreta.** Inventa uma sequência não prevista pelo COBIT, utilizando nomenclaturas misturadas.
+- **E) Incorreta.** Mais uma sequência errônea de nomenclaturas distorcidas. O COBIT não utiliza "Metas de Governança" como elo da cascata, pois os objetivos abrangem tanto governança quanto gerenciamento ao mesmo tempo.
+</details>
+
+---
+
+### Questão 7 (FCC - 2022 - TRT 14ª Região - Analista Judiciário - TI)
+Para apoiar a abordagem holística do gerenciamento de serviços, o ITIL 4 define dimensões essenciais. Sem que todas essas dimensões sejam adequadamente consideradas, a prestação do serviço corre o risco de falhar. As quatro dimensões do gerenciamento de serviços do ITIL 4 são:
+A) Pessoas e Cultura, Processos e Ferramentas, Informação e Tecnologia, Organizações e Estruturas.
+B) Organizações e Pessoas, Informação e Tecnologia, Parceiros e Fornecedores, Fluxos de Valor e Processos.
+C) Pessoas e Processos, Tecnologias e Ferramentas, Fornecedores e Contratos, Estratégia e Operação.
+D) Serviços e Produtos, Consumidores e Provedores, Valor e Resultados, Custos e Riscos.
+E) Princípios Orientadores, Governança, Cadeia de Valor de Serviço, Melhoria Contínua.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+O ITIL 4 atualizou os antigos "4 P's do Desenho de Serviço" (Pessoas, Processos, Produtos, Parceiros) do ITIL v3 para as **Quatro Dimensões do Gerenciamento de Serviços**, que agora são aplicadas a todo o Sistema de Valor de Serviço (SVS).
+
+- **A) Incorreta.** Termos como "Processos e Ferramentas" e "Pessoas e Cultura" são aproximações incompletas das definições formais, misturando conceitos.
+- **B) Correta.** Estas são precisamente as 4 Dimensões Oficiais do ITIL 4: 
+  1) Organizações e Pessoas (Cultura corporativa, capacidade técnica e perfis organizacionais); 
+  2) Informação e Tecnologia (As tecnologias, softwares, dados de infra e de conhecimento aplicados ao serviço); 
+  3) Parceiros e Fornecedores (Relacionamentos com terceiros, contratos, fornecimento externo); 
+  4) Fluxos de Valor e Processos (A forma como o trabalho é organizado, sequenciado e os fluxos de ponta a ponta).
+- **C) Incorreta.** Embaralha as dimensões. "Estratégia e Operação" não configuram uma dimensão, mas sim níveis de tomada de decisão/ciclo de vida de serviços.
+- **D) Incorreta.** Cita os componentes do conceito da "Proposição de Valor e Relacionamento de Serviço" (Value, Outcomes, Costs, Risks - V.O.C.R), mas isso não representa as quatro dimensões.
+- **E) Incorreta.** Estes itens, somados às Práticas (Practices), são na verdade os cinco componentes do **Sistema de Valor de Serviço (SVS)** e não as quatro dimensões.
+</details>
+
+---
+
+### Questão 8 (FCC - 2019 - TRF 4ª Região - Analista Judiciário - TI)
+Na gestão de serviços de TI, as práticas de Gerenciamento de Incidentes e Gerenciamento de Problemas possuem propósitos essenciais para a operação do negócio, porém bastante distintos. Segundo o framework ITIL (versões 3 e 4), a principal diferença operacional entre os dois processos/práticas é que:
+A) o gerenciamento de problemas visa restaurar a operação do serviço o mais rápido possível, enquanto o gerenciamento de incidentes investiga as causas raízes a longo prazo.
+B) incidentes são tratados pelo suporte de nível 1 exclusivamente, ao passo que problemas só podem ser encaminhados a fornecedores externos (nível 3).
+C) o gerenciamento de incidentes foca em minimizar o impacto de interrupções restaurando a operação normal o mais rápido possível, enquanto o gerenciamento de problemas foca na identificação da causa raiz e prevenção de recorrências.
+D) o gerenciamento de incidentes é responsável pela autorização de mudanças urgentes nos servidores, enquanto o gerenciamento de problemas apenas planeja mudanças normais de forma consultiva.
+E) um incidente é sempre causado por um único problema oculto, mas o gerenciamento de problemas lida apenas com incidentes graves que paralisam a organização inteira (Major Incidents).
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+Essa é uma das questões mais clássicas de ITIL. O examinador busca saber se o candidato entende o aspecto corretivo-reativo imediato do Incidente versus o aspecto analítico-preventivo do Problema.
+
+- **A) Incorreta.** A alternativa inverte os conceitos. Quem visa a restauração rápida é o Gerenciamento de Incidentes.
+- **B) Incorreta.** O nível de suporte varia de acordo com a complexidade, não com a classificação primária do ticket. Incidentes complexos também vão para níveis avançados (N2/N3) ou desenvolvedores/fornecedores.
+- **C) Correta.** Essa é a definição dogmática da ITIL. **Incidente**: Foco no tempo de restabelecimento do serviço e mitigação de impacto no negócio (usando, por exemplo, "soluções de contorno" ou workarounds sem se preocupar em corrigir a causa matriz imediatamente). **Problema**: Foco investigativo e estrutural, buscando a causa raiz (Root Cause) dos incidentes, gerando "erros conhecidos" (Known Errors) e propondo correções definitivas para prevenir recorrência (exigindo análise sistemática que não se preocupa unicamente com a reativação emergencial).
+- **D) Incorreta.** Mudanças são autorizadas pela prática/processo de Gerenciamento de Mudança (Habilitação de Mudanças no ITIL 4), e não pelo processo de incidentes ou de problemas.
+- **E) Incorreta.** Incidentes Graves (Major Incidents) são tratados em um fluxo especial, mas continuam sendo tratados (e extinguidos emergencialmente) pelo Gerenciamento de Incidentes, engatilhando em paralelo um registro e uma profunda investigação de Problema, não sendo exclusividade deste último.
+</details>
+
+---
+
+### Questão 9 (FCC - 2023 - TRT 11ª Região - Analista Judiciário - TI)
+Uma das principais diretrizes estruturais estabelecidas pelo COBIT 2019 (e herdada do COBIT 5) é a clara distinção entre Governança e Gerenciamento. Sobre as responsabilidades típicas e exclusivas desses dois domínios, é correto afirmar que:
+A) o gerenciamento garante que as necessidades, condições e opções das partes interessadas sejam avaliadas para determinar objetivos corporativos, enquanto a governança foca em planejar, construir e executar as atividades.
+B) a governança é de responsabilidade da diretoria executiva, sob a liderança rigorosa do CEO (Chief Executive Officer), e o gerenciamento fica a cargo e supervisão do conselho de administração (Board of Directors).
+C) a governança é responsável por planejar, construir, executar e monitorar as atividades do dia a dia, mantendo constante alinhamento com a direção estabelecida e votada pelo gerenciamento.
+D) a governança garante que os objetivos corporativos sejam alcançados avaliando as necessidades das partes interessadas, definindo o direcionamento e monitorando o desempenho, sendo, na maioria das organizações, responsabilidade do conselho de administração.
+E) não existe separação real de responsabilidades em organizações de pequeno porte; portanto, o COBIT estabelece que, em empresas limitadas, governança e gerenciamento devem ser unificados em um único domínio chamado de Direção Corporativa.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+A distinção teórica entre os atos de governar (nível Board) e gerenciar (nível Executivo/CEO/C-Level) está na raiz do framework COBIT e é regida pela sigla EDM (Evaluate, Direct and Monitor) para Governança e PBRM (Plan, Build, Run, Monitor) para Gerenciamento.
+
+- **A) Incorreta.** Inverte as atribuições. Avaliar necessidades e determinar objetivos corporativos é papel da governança. Planejar e executar (construir) é responsabilidade do gerenciamento.
+- **B) Incorreta.** Inverte as responsabilidades organizacionais. O Conselho de Administração (Board of Directors) é responsável pela Governança. O CEO e a Diretoria Executiva conduzem o Gerenciamento para implementar as diretrizes da Governança.
+- **C) Incorreta.** Novamente as definições operacionais e os papeis foram deliberadamente invertidos pela banca. O gerenciamento é que planeja, constrói e executa as atividades baseando-se na direção ditada pela governança.
+- **D) Correta.** Esta é a definição perfeita de Governança segundo o COBIT: Avaliar (Evaluate) necessidades, Dirigir (Direct) o rumo através da priorização e Monitorar (Monitor) o desempenho corporativo sob a responsabilidade do Conselho de Administração (ou nível hierárquico equivalente).
+- **E) Incorreta.** O COBIT prega que a distinção e a separação teórica das responsabilidades se aplica a todas as organizações, de qualquer tamanho, mesmo que, numa empresa minúscula, os papéis sejam desempenhados pelas mesmas pessoas. Não há domínio unificado "Direção Corporativa" extinguindo a separação no framework.
+</details>
+
+---
+
+### Questão 10 (FCC - 2022 - TRT 22ª Região - Analista Judiciário - TI)
+No ITIL 4, a prática que lida com o controle sistêmico do ciclo de vida das modificações na infraestrutura sofreu alterações de nomenclatura e escopo, passando a chamar-se "Habilitação de Mudança" (Change Enablement). Essa prática, vital para mitigar riscos durante implantações, classifica as mudanças em três tipos principais:
+A) Operacionais, Táticas e Estratégicas.
+B) Padrão, Normais e Emergenciais.
+C) Incidentes, Requisições e Problemas.
+D) Proativas, Reativas e Preventivas.
+E) Urgentes, Agendadas e Rotineiras.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+O ITIL 4 alterou o nome de Change Management para Change Control e, posteriormente, para Change Enablement (Habilitação de Mudança) na versão revisada, buscando afastar a ideia de um "comitê burocrático que freia entregas" para um "habilitador de valor ágil e seguro". 
+
+- **A) Incorreta.** Essa é a hierarquia genérica de tomada de decisão de negócio ou planejamento nas corporações, não a tipologia de mudanças em TI no ITIL.
+- **B) Correta.** Estes são os três tipos consolidados de mudanças no ITIL: 
+  - **Padrão (Standard):** Mudanças pré-autorizadas, de baixo risco, baixo custo, maduras e documentadas por procedimentos estabelecidos. 
+  - **Normais (Normal):** Precisam ser programadas, avaliadas de acordo com seu risco, e requerem autorização prévia por uma Autoridade de Mudança (CAB) compatível com seu tamanho.
+  - **Emergenciais (Emergency):** Mudanças urgentes que precisam ser implementadas o mais rápido possível (geralmente para mitigar um incidente crítico ou segurança). O processo de autorização (ECAB - Emergency CAB) é condensado e acelerado para focar na agilidade sem comprometer fatalmente os riscos mínimos.
+- **C) Incorreta.** Esses termos referem-se às classes de tickets que interagem com o Service Desk, referenciando práticas separadas.
+- **D) Incorreta.** Essa é uma classificação típica da prática de Gerenciamento de Problemas (Proativo e Reativo) ou metodologias de manutenção de Hardware.
+- **E) Incorreta.** Nomenclaturas populares, porém ausentes e não oficiais no léxico formal da ITIL.
+</details>
+
+---
+
+### Questão 11 (FCC - 2018 - TRT 15ª Região - Analista Judiciário - TI)
+O COBIT 5 descreveu 7 Habilitadores (Enablers) que orientam e sustentam a governança de TI. Com o lançamento do COBIT 2019, esses habilitadores foram refinados e renomeados no framework para serem chamados de Componentes do Sistema de Governança. Qual alternativa lista corretamente itens que são considerados Componentes do Sistema de Governança (ou Habilitadores no COBIT 5)?
+A) Princípios orientadores, Cadeia de valor, Estratégia corporativa e Modelos operacionais.
+B) Gestão de riscos, Gestão de portfólio, Gestão de conformidade e Auditoria contínua.
+C) Estruturas Organizacionais, Processos, Cultura, Ética e Comportamento, e Informação.
+D) Direcionar, Monitorar, Avaliar, Construir e Entregar.
+E) Fatores de desenho, Áreas de foco, Matriz RACI e Acordos de Nível de Serviço (SLA).
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+Os antigos "7 Habilitadores" do COBIT 5 são a base para a criação dos "7 Componentes do Sistema de Governança" no COBIT 2019, possuindo correspondência quase literal (apenas uma pequena diferença terminológica para dar ênfase a sistemas). A FCC gosta de misturar esses componentes com outras abordagens.
+
+- **A) Incorreta.** Mistura elementos clássicos do ITIL 4 (Princípios orientadores, Cadeia de valor) com arquitetura corporativa.
+- **B) Incorreta.** Estes itens citados referem-se a objetivos de governança/gerenciamento ou processos do COBIT (como o APO12 para Risco ou APO05 para Portfólio), mas não categorizam os "Componentes" que formam o arcabouço estrutural do sistema.
+- **C) Correta.** Os 7 Componentes do Sistema de Governança no COBIT 2019 (ou Habilitadores do COBIT 5) são: 
+  1. Processos; 
+  2. Estruturas Organizacionais; 
+  3. Princípios, Políticas e Procedimentos; 
+  4. Informação; 
+  5. Cultura, Ética e Comportamento; 
+  6. Pessoas, Habilidades e Competências; 
+  7. Serviços, Infraestrutura e Aplicativos. A alternativa cita 4 dos oficiais.
+- **D) Incorreta.** Estes são os verbos (atividades operacionais) que formam os domínios EDM, BAI e DSS, e não os Componentes estruturais do sistema de governança em si.
+- **E) Incorreta.** "Fatores de Desenho" e "Áreas de Foco" são inovações de personalização trazidas pelo COBIT 2019, e não equivalem aos componentes/habilitadores do modelo núcleo operacional. RACI e SLA são ferramentas técnicas de gestão.
+</details>
+
+---
+
+### Questão 12 (FCC - 2017 - TST - Analista Judiciário - TI)
+Em relação à Central de Serviços (Service Desk) descrita exaustivamente pelas melhores práticas da ITIL, assinale a afirmativa correta:
+A) É um processo de backoffice dedicado exclusivamente ao gerenciamento e implantação física das mudanças de hardware no ambiente de infraestrutura.
+B) É uma prática estrutural focada unicamente na investigação aprofundada de causas raízes e elaboração de soluções de contorno para incidentes graves (Nível 3).
+C) Constitui o ponto único de contato (SPOC) entre o provedor de serviços de TI e os usuários, sendo responsável por registrar, classificar e resolver ou escalar incidentes e requisições de serviço.
+D) É uma equipe de desenvolvimento altamente especializada que atua no nível estratégico desenhando arquiteturas e novos serviços para compor o portfólio de longo prazo da organização.
+E) O Service Desk substitui integralmente a gestão de infraestrutura, operando todos os servidores e bancos de dados diretamente via ferramentas de automação, suprimindo o suporte humano.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+No ITIL v3, a Central de Serviços é uma **Função**. No ITIL 4, ela passou a ser categorizada como uma **Prática** (do grupo de Práticas de Gerenciamento de Serviço), mas seu propósito e sua natureza SPOC (Single Point of Contact) permaneceram idênticos e centrais em provas.
+
+- **A) Incorreta.** Isso foge completamente da definição da Central de Serviços e define, grosseiramente, as atividades da prática de Gerenciamento ou Habilitação de Mudanças e de Transição Operacional. A Central atua no front.
+- **B) Incorreta.** Investigar causas raízes e construir soluções de contorno sistêmicas estruturais e definitivas é responsabilidade primária da prática de **Gerenciamento de Problemas**.
+- **C) Correta.** É o conceito fundamental. A Central de Serviços (Service Desk) atua como Ponto Único de Contato (SPOC - Single Point Of Contact) do usuário para com a TI. O objetivo é registrar tudo (incidentes e requisições), atuar como a "linha de frente" resolvendo o máximo de chamados possíveis no Nível 1 e escalonar aquilo que necessita de especialização para outras equipes e práticas.
+- **D) Incorreta.** Equipe de desenho que compõe serviços de portfólio faz parte de atividades ligadas às práticas de Estratégia, Desenho de Serviço, e Gerenciamento de Arquitetura, não ao Service Desk operacional.
+- **E) Incorreta.** O Service Desk não supre e não substitui a necessidade da gestão técnica de infraestrutura. Pelo contrário, atua em parceria e escala os problemas sistêmicos para o suporte de Nível 2 e Nível 3 (como gestores de redes, bancos de dados, servidores) resolvê-los.
+</details>
+
+---
+
+### Questão 13 (FCC - 2022 - TRT 4ª Região - Analista Judiciário - TI)
+O modelo de Gerenciamento de Desempenho do COBIT (CPM - COBIT Performance Management) no COBIT 2019 avalia a capacidade e a maturidade dos processos baseando-se largamente nos conceitos de um padrão internacional conhecido e maduro. O CPM mede o nível de capacidade de um processo individual em uma escala que varia de:
+A) 1 a 10, de acordo com as metodologias de mensuração ágil preconizadas pelo ITIL 4.
+B) 0 a 5, fortemente influenciado e baseado no modelo CMMI (Capability Maturity Model Integration).
+C) 1 a 5, onde o nível 1 significa Incompleto e o nível 5 significa Optimizado, de acordo com o PMBOK.
+D) 0 a 4, de acordo com a norma ISO/IEC 27001, que foca na medição de riscos ligados à segurança da informação.
+E) 1 a 6, baseado nos níveis conceituais de prontidão (Readiness Levels) descritos e patenteados pelo ITIL v3.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+O COBIT 2019 refinou seu esquema de medição de desempenho (CPM), baseando os níveis de capacidade de processos explicitamente no referencial global do CMMI, tal como começou a ser feito a partir do COBIT 5 (que abandonou o modelo v4.1).
+
+- **A) Incorreta.** A escala vai de 0 a 5. Além disso, o ITIL 4 não estabelece um modelo compulsório numérico de 1 a 10 de desempenho de processos. O examinador misturou jargões independentes.
+- **B) Correta.** O CPM no COBIT 2019 mede a capacidade de cada processo em uma escala progressiva de **0 a 5**, baseada nos mesmos degraus lógicos do CMMI: 0 (Incompleto/Inexistente), 1 (Inicial/Executado), 2 (Gerenciado), 3 (Definido), 4 (Previsível/Medido Quantitativamente) e 5 (Otimizado/Focado em Melhoria Contínua). 
+- **C) Incorreta.** O nível 0 existe (Incompleto/Inexistente). A referência de modelo é CMMI, e não o PMBOK (Project Management Body of Knowledge), que por sua vez foca puramente em projetos.
+- **D) Incorreta.** A norma ISO/IEC 27001 não é um framework de medição de maturidade de processos, mas um padrão estrito focado nos requisitos e certificação de SGSI (Sistemas de Gestão da Segurança da Informação).
+- **E) Incorreta.** Readiness Levels não são originários da ITIL para medir maturidade processual, e a escala oficial do CPM é de 0 a 5.
+</details>
+
+---
+
+### Questão 14 (FCC - 2019 - TRF 3ª Região - Analista Judiciário - Informática)
+Uma mudança significativa de paradigma introduzida pelo ITIL 4 em relação às suas versões anteriores e à literatura tradicional de gestão é a nova visão sobre o conceito de geração de valor. Sob a ótica moderna do ITIL 4, o valor financeiro ou de utilidade não é mais entregue de maneira empacotada e unilateral pelo provedor ao consumidor. Pelo contrário, o valor é:
+A) imposto rigorosamente pelo provedor de serviços, garantindo aderência estrita aos acordos legais de nível de serviço estabelecidos.
+B) medido puramente por indicadores financeiros corporativos estabelecidos unicamente pelos acionistas antes mesmo da fase de desenho do serviço.
+C) cocriado por meio de uma colaboração ativa entre provedores de serviços, consumidores de serviços e outras partes interessadas (stakeholders).
+D) determinado e mensurado exclusivamente pelo consumidor, anulando a validade técnica de qualquer influência ou das restrições arquiteturais impostas pelo provedor.
+E) gerado exclusivamente durante o ciclo de transição de serviço e transferido como um produto hermético para o cliente na fase de operação.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+Um dos "pulos do gato" centrais para resolver questões de conceitos iniciais do ITIL 4 é procurar e marcar a palavra-chave **Cocriação**. 
+
+- **A) Incorreta.** Impor valor viola toda a fundação do ITIL 4, que foca na agilidade, empatia e no papel ativo do consumidor em absorver e entender a utilidade e garantir suas metas.
+- **B) Incorreta.** A definição de valor abrange mais que métricas puramente financeiras (inclui experiência, utilidade, mitigação de riscos, estabilidade psicológica/operacional), e os clientes têm voz ativa no balanço dessa equação, não só os acionistas.
+- **C) Correta.** No ITIL 4, provedor e consumidor trabalham integrados. O valor não pode ser simplesmente "entregue", ele sofre um fenômeno chamado de **cocriação (co-creation)**, onde o engajamento contínuo, a comunicação e o feedback entre TI e os clientes/consumidores viabilizam a utilidade prática daquele sistema e geram o resultado final esperado, balanceando riscos e custos em conjunto.
+- **D) Incorreta.** Embora a percepção de valor final dependa muito da experiência e dos outcomes do consumidor, os provedores são atores decisivos nessa cocriação, definindo os parâmetros de garantia (warranty), segurança e capacidade, que são fundamentais na equação de valor. O valor não é unilateral para nenhum dos lados.
+- **E) Incorreta.** Esta visão hermética e industrial de um produto passado "por cima do muro" numa linha de produção é exatamente a principal crítica que o ITIL 4 buscou desconstruir do v3, incentivando abordagens Lean e fluxos sistêmicos de valor de ponta a ponta (Value Streams).
+</details>
+
+---
+
+### Questão 15 (FCC - 2018 - TRT 15ª Região - Analista Judiciário - TI)
+Tanto no COBIT quanto na ITIL, a delegação correta de autoridade e a responsabilização pelas práticas, rotinas operacionais e processos são frequentemente mapeadas através de uma matriz padronizada que define papéis e obrigações claras em cada etapa do fluxo. A sigla global de mercado que dá nome a essa matriz (RACI) refere-se, respectivamente, aos papéis de:
+A) Responsible, Accountable, Consulted e Informed.
+B) Realistic, Achievable, Consistent e Integrated.
+C) Reporter, Administrator, Controller e Inspector.
+D) Risk, Action, Control e Incident.
+E) Responsible, Authorized, Communicated e Implemented.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+A matriz RACI é uma ferramenta basilar de Governança e Gestão de Projetos e Serviços para demarcação de autoridade e execução. É presença unânime em manuais de COBIT, ITIL e PMBOK. 
+
+- **A) Correta.** RACI significa: 
+  - **Responsible (Responsável pela Execução):** Aquele(s) que efetivamente colocam a "mão na massa" para executar a tarefa.
+  - **Accountable (Responsabilizado/Autoridade):** Aquele que tem a posse final e presta contas por todo o resultado do processo ("The buck stops here"). Há apenas um 'A' por atividade, sendo a pessoa que diz "sim" ou "não" final.
+  - **Consulted (Consultado):** Especialistas ou partes que precisam dar inputs antes da tomada de decisão ou ação (Comunicação de duas vias).
+  - **Informed (Informado):** Partes que são apenas notificadas após a decisão ou após a conclusão de uma ação (Comunicação unidirecional).
+- **B) Incorreta.** Termos que misturam falsas filosofias de metas (semelhantes ao acrônimo S.M.A.R.T, mas adulterados).
+- **C) Incorreta.** Papéis hierárquicos sistêmicos e fictícios para ludibriar quem não estuda a matriz, parecendo nomes de perfis de usuário de software.
+- **D) Incorreta.** Acrônimo que mistura nomenclaturas de gestão de risco e de suporte em TI.
+- **E) Incorreta.** Um erro comum de candidatos sem preparo é trocar o termo "Accountable" por "Authorized" e "Informed" por "Implemented". Mas os termos corretos da teoria da gestão são inevitavelmente os da alternativa A.
+</details>
+
+---
+
+
