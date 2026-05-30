@@ -641,11 +641,11 @@ E) **Incorreta.** Processamentos nativos análogos a verificações sistêmicas 
 
 ### Questão 1 (FCC - 2022 - TRT - Analista Judiciário)
 O pronome que substitui corretamente o segmento sublinhado está empregado de acordo com a norma-padrão em:
-A) O autor dedicou *seu novo livro* ao público. / O autor dedicou-lhe ao público.
-B) As pessoas sempre buscam *respostas simples*. / As pessoas sempre buscam-nas.
-C) Convém avaliar *os resultados da pesquisa* com cautela. / Convém avaliá-los com cautela.
-D) Ninguém esperava *tal atitude*. / Ninguém esperava-a.
-E) Quando encontrar *o diretor*, avise do ocorrido. / Quando encontrar-lhe, avise do ocorrido.
+A) O autor dedicou <u>seu novo livro</u> ao público. / O autor dedicou-lhe ao público.
+B) As pessoas sempre buscam <u>respostas simples</u>. / As pessoas sempre buscam-nas.
+C) Convém avaliar <u>os resultados da pesquisa</u> com cautela. / Convém avaliá-los com cautela.
+D) Ninguém esperava <u>tal atitude</u>. / Ninguém esperava-a.
+E) Quando encontrar <u>o diretor</u>, avise do ocorrido. / Quando encontrar-lhe, avise do ocorrido.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 

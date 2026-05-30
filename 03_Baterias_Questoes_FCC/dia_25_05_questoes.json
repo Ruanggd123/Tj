@@ -548,11 +548,11 @@
     "source": "FCC - 2022 - TRT - Analista Judiciário",
     "statement": "O pronome que substitui corretamente o segmento sublinhado está empregado de acordo com a norma-padrão em:",
     "options": {
-      "A": "O autor dedicou *seu novo livro* ao público. / O autor dedicou-lhe ao público.",
-      "B": "As pessoas sempre buscam *respostas simples*. / As pessoas sempre buscam-nas.",
-      "C": "Convém avaliar *os resultados da pesquisa* com cautela. / Convém avaliá-los com cautela.",
-      "D": "Ninguém esperava *tal atitude*. / Ninguém esperava-a.",
-      "E": "Quando encontrar *o diretor*, avise do ocorrido. / Quando encontrar-lhe, avise do ocorrido."
+      "A": "O autor dedicou <u>seu novo livro</u> ao público. / O autor dedicou-lhe ao público.",
+      "B": "As pessoas sempre buscam <u>respostas simples</u>. / As pessoas sempre buscam-nas.",
+      "C": "Convém avaliar <u>os resultados da pesquisa</u> com cautela. / Convém avaliá-los com cautela.",
+      "D": "Ninguém esperava <u>tal atitude</u>. / Ninguém esperava-a.",
+      "E": "Quando encontrar <u>o diretor</u>, avise do ocorrido. / Quando encontrar-lhe, avise do ocorrido."
     },
     "answer": "C",
     "explanation": "Explicação das alternativas:\nA) Incorreta. O verbo \"dedicar\" é transitivo direto (o que se dedica) e indireto (a quem se dedica). O termo \"seu novo livro\" é o objeto direto. O pronome correto para objeto direto é \"o\" (dedicou-o), e não \"lhe\", que é exclusivo de objeto indireto.\nB) Incorreta. Isoladamente, a forma \"buscam-nas\" está correta pela terminação nasal. No entanto, o advérbio \"sempre\" atua como palavra atrativa, exigindo obrigatoriamente a próclise: \"sempre as buscam\".\nC) Correta. \"Avaliar\" é verbo transitivo direto. Ao anexar o pronome \"os\", o \"r\" do infinitivo cai e adiciona-se o \"l\", resultando em \"avaliá-los\". Não há fator de atração que impeça a ênclise, pois \"convém\" é verbo e não atrai pronome do verbo principal no infinitivo.\nD) Incorreta. O pronome indefinido \"Ninguém\" é palavra atrativa forte. O uso da ênclise está errado; a próclise é obrigatória: \"Ninguém a esperava\".\nE) Incorreta. \"Encontrar\" é verbo transitivo direto. Não se pode usar \"lhe\" para objeto direto, deve-se usar \"o\". Além disso, a conjunção \"Quando\" atrai o pronome: \"Quando o encontrar\"."
