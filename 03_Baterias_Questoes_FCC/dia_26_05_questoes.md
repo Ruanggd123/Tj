@@ -1,737 +1,305 @@
 # Bateria de Questões FCC — Terça-feira 26/05
 
-Este arquivo contém 45 questões altamente calibradas nos padrões da FCC, com alternativas de comprimento similar e distratores baseados em pegadinhas reais.
+## 📝 TEMA 1: Arquitetura de Software e Padrões de Projeto
 
----
-
-## 📝 TEMA 1: Redes e Infraestrutura — Protocolos HTTP/HTTPS, ABNT NBR 14565:2019 e Fibras Ópticas
-
-### Questão 1 (FCC)
-O protocolo HTTP/1.1 é a base da comunicação de dados na Web. Sobre os métodos de requisição HTTP (verbos) e suas propriedades, assinale a alternativa correta:
-A) O método PUT é utilizado exclusivamente para remover recursos de forma permanente do diretório de armazenamento virtual do servidor HTTP local.
-B) O método POST é idempotente, o que significa que múltiplas requisições idênticas consecutivas resultarão no mesmo estado físico no servidor de banco de dados.
-C) O método GET é projetado exclusivamente para recuperar informações do servidor, devendo ser seguro e idempotente de acordo com a especificação RFC 7231.
-D) O método PATCH deve ser utilizado para substituir de forma integral o recurso existente por uma nova representação fornecida no corpo da mensagem.
-E) O método HEAD solicita que o servidor retorne os cabeçalhos de resposta HTTP e o corpo HTML correspondente para depuração local pelo analista.
-
+### Questão 1 (FCC - 2018 - TRT 15ª Região - Analista Judiciário - Tecnologia da Informação)
+No padrão de arquitetura MVC (Model-View-Controller), o componente responsável por intermediar as requisições enviadas pelo usuário através da View, manipular os dados no Model e retornar a resposta adequada é o:
+A) Front Controller.
+B) Model.
+C) Controller.
+D) View.
+E) DAO (Data Access Object).
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**. GET é seguro e idempotente (não deve alterar o estado do servidor e múltiplas chamadas retornam o mesmo resultado). POST não é idempotente. PUT substitui o recurso (é idempotente). PATCH faz atualizações parciais. HEAD não retorna o corpo da resposta.
+**Gabarito: C**
+
+A) Incorreta. O Front Controller é um padrão de projeto estrutural (frequentemente usado junto ao MVC em sistemas web para interceptar todas as requisições em um ponto central), mas não é o componente padrão do MVC clássico definido para as funções essenciais descritas na questão.
+B) Incorreta. O Model (Modelo) é responsável pela lógica de negócios, gestão do estado da aplicação e acesso aos dados. Ele não faz o intermédio entre as requisições da View e ele mesmo.
+C) Correta. O Controller (Controlador) atua de fato como o mediador/intermediador. Ele recebe a entrada (evento/requisição) da View, processa as regras de controle ou solicita as ações necessárias ao Model e atualiza a View com o resultado.
+D) Incorreta. A View (Visão) é responsável puramente pela interface com o usuário e pela apresentação visual dos dados, não intermediando as requisições nem manipulando os dados diretamente no Model.
+E) Incorreta. O DAO (Data Access Object) é um padrão que provê uma interface abstrata para acesso a dados, ocultando detalhes do banco de dados, sem qualquer responsabilidade de intermediar lógicas de interface do MVC.
 </details>
 
 ---
 
-### Questão 2 (FCC)
-Em relação aos códigos de status de resposta HTTP (Status Codes), que são divididos em classes de três dígitos, assinale a alternativa correta:
-A) O código 201 Created é utilizado para confirmar que a requisição de busca do usuário foi processada com sucesso, sem gerar novos registros.
-B) A classe 4xx indica erros internos do servidor de aplicação, significando que o servidor falhou ao processar uma requisição válida do cliente.
-C) A classe 3xx indica redirecionamento de requisições, exigindo que o navegador realize ações adicionais para completar a operação iniciada.
-D) O código 403 Forbidden indica que o recurso solicitado não existe fisicamente no servidor e nenhuma rota correspondente foi encontrada.
-E) A classe 5xx indica falhas de autenticação do cliente, apontando que o usuário não forneceu credenciais válidas na requisição HTTP ativa.
-
+### Questão 2 (FCC - 2019 - TRF 3ª Região - Analista Judiciário - Informática)
+Na utilização de padrões de projeto (Design Patterns) do catálogo GoF (Gang of Four), existe um padrão estrutural que fornece uma interface unificada para um conjunto de interfaces em um subsistema, definindo uma interface de nível mais alto que torna o subsistema mais fácil de ser usado. Trata-se do padrão:
+A) Decorator.
+B) Adapter.
+C) Proxy.
+D) Facade.
+E) Composite.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**. A classe 3xx é para redirecionamento. 4xx representa erro do cliente (ex: 403 Forbidden, 404 Not Found). 5xx representa erro do servidor (ex: 500 Internal Server Error). 201 Created indica que um recurso foi criado com sucesso.
+**Gabarito: D**
+
+A) Incorreta. O Decorator serve para anexar responsabilidades adicionais a um objeto de forma dinâmica, fornecendo uma alternativa viável ao uso de subclasses para estender funcionalidades, não unificando interfaces de um subsistema.
+B) Incorreta. O Adapter converte a interface de uma classe existente em outra interface esperada pelos clientes, permitindo que classes com interfaces diferentes trabalhem em conjunto, o que não cria uma interface de nível mais alto para múltiplos subsistemas.
+C) Incorreta. O Proxy fornece um substituto ou um marcador (placeholder) para outro objeto a fim de controlar o acesso a ele.
+D) Correta. O padrão Facade (Fachada) tem exatamente essa função estrutural no GoF: ele mascara a complexidade de um subsistema inteiro ao fornecer uma única interface unificada e simplificada (de alto nível) para que os clientes interajam.
+E) Incorreta. O Composite serve para compor objetos em estruturas de árvore que representam hierarquias partes-todo, permitindo o tratamento de classes individuais e composições uniformemente.
 </details>
 
 ---
 
-### Questão 3 (FCC)
-O protocolo HTTPS adiciona uma camada de segurança sobre o HTTP utilizando os protocolos SSL ou TLS. Sobre o processo de handshake do TLS 1.2, é correto afirmar:
-A) No ServerHello, o servidor envia a sua chave privada para o cliente cifrar os dados da sessão simétrica que será estabelecida via HTTPS.
-B) No ClientHello, o cliente envia as versões do TLS que suporta, os algoritmos de criptografia (cipher suites) compatíveis e um valor aleatório.
-C) A negociação da chave de sessão simétrica ocorre de forma síncrona utilizando a infraestrutura física de rede antes do envio do ClientHello.
-D) O handshake do TLS impede o uso de certificados digitais X.509, dependendo exclusivamente de senhas de autenticação pré-compartilhadas.
-E) A verificação da identidade do servidor pelo cliente é opcional e ocorre apenas se o servidor enviar o cabeçalho HTTP de redirecionamento 301.
-
+### Questão 3 (FCC - 2017 - TRE-SP - Analista Judiciário - Análise de Sistemas)
+Um dos padrões de projeto comportamentais do GoF define uma dependência um-para-muitos entre objetos, de maneira que, quando um objeto muda de estado, todos os seus dependentes são notificados e atualizados automaticamente. Esse padrão é conhecido como:
+A) Strategy.
+B) Command.
+C) Observer.
+D) State.
+E) Mediator.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: B**. O handshake TLS 1.2 inicia com o ClientHello, onde o cliente envia suas capacidades criptográficas e um valor aleatório. O servidor responde com ServerHello, certificado digital, etc. A chave privada do servidor NUNCA é enviada ao cliente.
+**Gabarito: C**
+
+A) Incorreta. O Strategy encapsula uma família de algoritmos e os torna intercambiáveis, focando na flexibilidade da escolha do algoritmo em tempo de execução.
+B) Incorreta. O Command encapsula solicitações como objetos paramétricos, permitindo criar filas de requisições, log e suporte para operações de desfazer/refazer.
+C) Correta. O Observer estabelece uma típica arquitetura de publicador e assinantes (Publisher/Subscriber). Nele há o "Subject" que, quando sofre alteração de estado interno, realiza um broadcast automático de notificação para seus dependentes (Observers).
+D) Incorreta. O State permite a um objeto mudar seu comportamento dependendo de alterações ocorridas no seu estado interno, de modo que parece que o próprio objeto trocou de classe.
+E) Incorreta. O Mediator define um objeto central para encapsular como um conjunto de objetos interagem entre si, reduzindo o acoplamento excessivo (many-to-many) promovendo comunicação isolada através dele.
 </details>
 
 ---
 
-### Questão 4 (FCC)
-A norma ABNT NBR 14565:2019 especifica os requisitos para sistemas de cabeamento estruturado para edifícios comerciais. Sobre essa norma, assinale a alternativa correta:
-A) Ela estabelece que a tomada de telecomunicações na área de trabalho deve possuir pelo menos quatro conectores do tipo RJ-45 de categoria 7.
-B) Ela proíbe estritamente a utilização de cabos de par trançado sem blindagem (UTP), exigindo o uso de cabos blindados do tipo STP Cat 8.
-C) O comprimento máximo recomendado para os cabos de manobra (patch cords) na área de trabalho é de vinte metros para evitar perdas de sinal.
-D) A norma veda a utilização de fibras ópticas monomodo no cabeamento de backbone de campus, restringindo o uso a cabos de cobre de categoria 5e.
-E) Ela define os subsistemas de cabeamento estruturado, dividindo-os em cabeamento de backbone (de campus e de edifício) e cabeamento horizontal.
-
+### Questão 4 (FCC - 2022 - TRT 22ª Região - Analista Judiciário - TI)
+A arquitetura de microsserviços é uma abordagem para desenvolver um aplicativo único como um conjunto de pequenos serviços autônomos. Uma das características que a distingue de uma arquitetura monolítica tradicional é:
+A) A utilização de um único banco de dados centralizado obrigatoriamente compartilhado por todos os microsserviços do sistema.
+B) O alto e forte acoplamento entre os módulos em código-fonte, visando otimizar a performance por chamadas na mesma memória.
+C) A implantação de todos os componentes da aplicação condensados em um único processo físico.
+D) A governança de dados descentralizada, em que cada serviço isola e gerencia seu próprio banco de dados e esquema.
+E) A padronização corporativa restrita de uma única linguagem de programação obrigatória para toda a solução.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: E**. A NBR 14565:2019 padroniza os subsistemas de cabeamento estruturado, classificando o cabeamento em backbone (de campus e de edifício) e horizontal (que liga o distribuidor de piso às tomadas de telecomunicações da área de trabalho).
+**Gabarito: D**
+
+A) Incorreta. Os microsserviços desencorajam fortemente bancos de dados unificados (Shared Database Pattern), pois isso cria pontos únicos de falha e acoplamento forte entre serviços.
+B) Incorreta. A meta máxima dos microsserviços é garantir um BAIXO acoplamento. A comunicação geralmente ocorre por rede, o que reduz performance bruta, mas eleva a flexibilidade.
+C) Incorreta. Empacotar tudo em um único processo e diretório define essencialmente um padrão arquitetural monolítico, o oposto de microsserviços.
+D) Correta. Em microsserviços, preconiza-se a gestão de dados descentralizada. Se há o serviço de Pagamentos e o de Clientes, cada um deles detém posse, autonomia e isolamento de seus respectivos bancos de dados.
+E) Incorreta. A arquitetura de microsserviços apoia fortemente o uso de "tecnologias poliglotas", permitindo que cada serviço adote a stack (linguagem/banco) que melhor resolva seu domínio específico.
 </details>
 
 ---
 
-### Questão 5 (FCC)
-No contexto de cabeamento estruturado, as categorias de cabos de par trançado determinam a largura de banda suportada. Sobre a Categoria 6A (Cat 6A), assinale a alternativa correta:
-A) Ela é uma especificação exclusiva para cabos de fibra óptica multimodo, não se aplicando a cabos de cobre de par trançado blindados.
-B) Ela opera em frequências de até 100 MHz e é recomendada exclusivamente para redes locais baseadas em Fast Ethernet de 100 Mbps.
-C) Ela suporta taxas de 100 Gbps utilizando conectores do tipo RJ-11 em distâncias máximas de dez metros no cabeamento horizontal do prédio.
-D) Ela é especificada para operar em frequências de até 500 MHz e suporta taxas de transmissão de dados de 10 Gbps em distâncias de até 100 metros.
-E) Ela exige a substituição dos switches de rede ativos por hubs repetidores analógicos de camada física para evitar interferência cruzada.
-
+### Questão 5 (FCC - 2018 - TRT 2ª Região - Analista Judiciário - TI)
+Na arquitetura REST (Representational State Transfer), o princípio fundamental denominado de "Stateless" (sem estado) determina que:
+A) As sessões e histórico dos clientes devem ser salvos persistentemente no cache interno do servidor web.
+B) A arquitetura requer que o servidor retenha em memória todos os atributos de estado entre cada requisição feita pelo cliente.
+C) Cada requisição do cliente para o servidor deve conter todas as informações contextuais necessárias para sua interpretação e processamento.
+D) O cliente perde o estado atual da aplicação, restando ao servidor a exclusiva responsabilidade de gerar interfaces fixas.
+E) É proibido ao servidor alterar os dados mantidos no banco de dados, configurando serviços estritamente de leitura.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**. A Categoria 6A (Cat 6A) opera a até 500 MHz, permitindo transmissões estáveis de 10 Gbps (10GBASE-T) a distâncias de até 100 metros no canal físico completo.
+**Gabarito: C**
+
+A) Incorreta. Armazenar estado da sessão do cliente no servidor viola diretamente o requisito de que o servidor deve ser stateless.
+B) Incorreta. Assim como a alternativa A, reter contexto de estado na memória do servidor para amarrar requisições cria forte dependência, impossibilitando escalabilidade facilitada, o que o REST proíbe.
+C) Correta. Pelo princípio Stateless, o servidor não armazena nenhuma sessão em memória a respeito do cliente. Logo, toda requisição feita pelo cliente (como pedir um saldo ou gerar um relatório) deve enviar também o estado (tokens de autenticação, parâmetros de busca etc.) necessário para executá-la isoladamente.
+D) Incorreta. É o cliente (e não o servidor) que deve manter em suas mãos o estado transitório da sessão ou tela (Client-Side State).
+E) Incorreta. O servidor gerencia os "Recursos" do sistema e pode, sim, alterar o banco de dados livremente (através de POST, PUT, DELETE, etc.). O termo "sem estado" aplica-se ao estado conversacional da comunicação, e não aos dados reais.
 </details>
 
 ---
 
-### Questão 6 (FCC)
-As fibras ópticas são meios de transmissão baseados na propagação da luz. A diferença fundamental entre fibras ópticas monomodo (single-mode) e multimodo (multi-mode) é:
-A) A fibra monomodo sofre severamente com a dispersão modal, o que limita seu comprimento máximo a cinquenta metros em redes locais.
-B) A fibra multimodo possui núcleo mais estreito e utiliza lasers de alta intensidade para propagar múltiplos feixes de luz a milhares de quilômetros.
-C) A fibra monomodo é mais barata e utiliza LEDs comuns como fonte de luz, sendo amplamente aplicada no cabeamento horizontal da área de trabalho.
-D) A fibra multimodo apresenta menor atenuação do sinal óptico que a monomodo, dispensando o uso de repetidores em backbones de campus longos.
-E) A fibra monomodo possui um núcleo mais estreito e permite a propagação de apenas um modo de luz, sendo ideal para longas distâncias devido à menor dispersão.
+## 📝 TEMA 2: Integração Contínua e DevOps
 
+### Questão 6 (FCC - 2018 - TRT 15ª Região - Analista Judiciário - TI)
+A Integração Contínua (Continuous Integration - CI) é uma prática de desenvolvimento de software em que a equipe integra e valida o código frequentemente. Dentre as exigências para o sucesso da Integração Contínua, destaca-se:
+A) O uso estrito de branches de desenvolvimento isoladas por longos meses, integrando o código uma única vez antes da entrega.
+B) A automação da compilação e execução de testes após cada commit efetuado no repositório de controle de versão.
+C) A não utilização de suítes de testes unitários para priorizar construções rápidas e delegar a verificação aos testadores manuais no fim do ciclo.
+D) A proibição de deploys automatizados, assegurando que toda construção de código dependa de revisões físicas demoradas e complexas.
+E) A implantação e liberação automática para os usuários finais (Continuous Deployment) sempre que houver falhas no pipeline para forçar correções emergenciais.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: E**. Fibras monomodo possuem núcleos pequenos (8 a 10 micrômetros) que guiam um único modo de propagação da luz. Têm baixa dispersão e são usadas para links de longas distâncias. Multimodo têm núcleos maiores (50 ou 62.5 micrômetros) e sofrem maior dispersão.
+**Gabarito: B**
+
+A) Incorreta. O uso de "Long-lived branches" (ramificações longas e raramente mescladas) culmina em pesados problemas de conflitos de código ("Integration Hell"), sendo uma prática avessa à CI, que pede integrações diárias ou várias vezes ao dia.
+B) Correta. A essência do CI é a verificação automática de integração cada vez que um desenvolvedor submete um novo código. O servidor de CI detecta a mudança, compila (build) a aplicação, executa os testes automatizados e retorna um feedback rápido em caso de quebras.
+C) Incorreta. Os testes automatizados (unitários, integração) são o pilar da verificação do CI. Remover esses testes destrói a segurança da prática e impede a validação real de que nada foi quebrado.
+D) Incorreta. Processos demorados e estritamente manuais sem automação quebram a cultura de agilidade e feedback contínuo.
+E) Incorreta. Uma liberação automática para produção só ocorre no "Continuous Deployment" e somente se TODAS as etapas (compilação e testes) passarem sem erros. Falhas bloqueiam o processo imediatamente, impedindo entregas danosas ao usuário.
 </details>
 
 ---
 
-### Questão 7 (FCC)
-Em sistemas de transmissão óptica, comprimentos de onda específicos (janelas de transmissão) são utilizados. Os comprimentos de onda típicos para fibras monomodo e multimodo são, respectivamente:
-A) 1310 nm / 1550 nm (monomodo) e 850 nm / 1300 nm (multimodo).
-B) 850 nm / 1300 nm (monomodo) e 1310 nm / 1550 nm (multimodo).
-C) 500 nm / 700 nm (monomodo) e 1000 nm / 1200 nm (multimodo).
-D) 1550 nm / 1625 nm (monomodo) e 450 nm / 650 nm (multimodo).
-E) 1310 nm / 850 nm (monomodo) e 1550 nm / 1300 nm (multimodo).
-
+### Questão 7 (FCC - 2019 - TRF 3ª Região - Técnico Judiciário - Informática)
+O Docker popularizou a virtualização baseada em contêineres na indústria. Sobre os conceitos fundamentais desta tecnologia em ambientes DevOps, é correto afirmar:
+A) A Imagem Docker é uma instância transiente e em execução de um Contêiner empacotado.
+B) O Contêiner Docker usa emulação de hardware, encapsulando um kernel hospedeiro inteiro com um Guest OS pesado.
+C) O arquivo Dockerfile consiste em um documento textual determinístico que contém as instruções para o Docker construir uma Imagem.
+D) Contêineres Docker são projetados de forma a não possuir nenhum tipo de isolamento de processos nem de redes, operando exatamente como processos nativos compartilhados.
+E) O Docker Compose é utilizado primariamente para construir e gerenciar grandes clusters multimáquinas geodistribuídos em ambientes cloud.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: A**. Fibras multimodo operam nas primeiras janelas (850 nm e 1300 nm), enquanto fibras monomodo operam nas janelas superiores (1310 nm e 1550 nm), onde a atenuação física é significativamente menor.
+**Gabarito: C**
+
+A) Incorreta. A definição está propositalmente invertida: o Contêiner é que é a instância (em execução) derivada de uma Imagem Docker (que é o template estático, inativo).
+B) Incorreta. O Docker não realiza emulação de hardware com um Sistema Operacional Convidado (Guest OS) para cada contêiner — isso é feito pelas Máquinas Virtuais (VMs). O Docker compartilha o Kernel do Sistema Operacional nativo do Host.
+C) Correta. O Dockerfile é uma receita de instruções sequenciais (`FROM`, `RUN`, `COPY`, `CMD` etc.) utilizadas pela engine do Docker para criar as camadas de uma nova Imagem de maneira automatizada e documentada.
+D) Incorreta. Embora sejam mais leves, os contêineres Docker fornecem um altíssimo grau de isolamento em nível de SO (usando `namespaces` e `cgroups` do Linux) separando processos, montagens e redes.
+E) Incorreta. O Docker Compose é usado para orquestrar múltiplos contêineres apenas em ambientes de máquina única (single-host) para desenvolvimento. Para clusters em múltiplos nós e nuvem, usa-se Docker Swarm ou Kubernetes.
 </details>
 
 ---
 
-### Questão 8 (FCC)
-Conectores de fibra óptica são utilizados para alinhar e conectar as fibras a equipamentos de rede. Assinale a alternativa que apresenta apenas tipos válidos de conectores ópticos:
-A) TRS, XLR, SC e FC
-B) RJ-45, RJ-11, LC e SC
-C) BNC, DB-9, SC e ST
-D) LC, SC, HDMI e USB
-E) LC, SC, ST e FC
-
+### Questão 8 (FCC - 2021 - TRT 6ª Região - Analista Judiciário - TI)
+No Kubernetes (K8s), a orquestração de ambientes conteinerizados escaláveis requer conhecimentos de seus componentes. A menor unidade atômica computacional que pode ser implantada, criada e gerenciada nativamente pela plataforma e que representa um conjunto de um ou mais contêineres é chamada de:
+A) ReplicaSet.
+B) Pod.
+C) Node.
+D) Ingress.
+E) Cluster.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: E**. LC (Lucent Connector), SC (Subscriber Connector), ST (Straight Tip) e FC (Ferrule Connector) são conectores padronizados para terminação e acoplamento de fibras ópticas.
+**Gabarito: B**
+
+A) Incorreta. O ReplicaSet gerencia a garantia da existência e replicação em execução de um número "X" especificado daquela unidade atômica.
+B) Correta. O "Pod" é o menor e mais básico objeto dentro do universo Kubernetes. O Kubernetes não implanta ou interage diretamente com "contêineres individuais", mas empacota um (mais comum) ou múltiplos contêineres estreitamente acoplados num único Pod, compartilhando volumes de rede e de armazenamento (mesmo IP e localhost).
+C) Incorreta. O Node (Nó) representa a máquina (virtual ou física) do cluster, onde o agente Kubelet opera e hospeda fisicamente a alocação dos Pods.
+D) Incorreta. Ingress é um objeto que gerencia as regras de acesso externo (como HTTP/HTTPS, balanceamento de carga, terminação SSL) para alcançar os serviços internos.
+E) Incorreta. O Cluster é toda a junção do Control Plane (Gerência central) mais os inúmeros Nodes de processamento.
 </details>
 
 ---
 
-### Questão 9 (FCC)
-O cabeamento de backbone de edifício, segundo a norma de cabeamento estruturado, conecta o distribuidor de edifício aos distribuidores de piso. O comprimento máximo de cabo permitido para o backbone de edifício é:
-A) 90 metros para cabos de par trançado de cobre de categoria 6 ou superior no canal de transmissão de dados local.
-B) 500 metros, independentemente do tipo de meio físico (cobre ou fibra óptica) utilizado na instalação física do prédio.
-C) 2000 metros para fibras ópticas monomodo e multimodo de forma indistinta para assegurar a largura de banda nominal.
-D) 100 metros para cabos de fibra óptica e noventa metros para cabos de par trançado de cobre blindados no rack de piso.
-E) 1500 metros para cabos coaxiais de baixa impedância instalados em eletrodutos externos de concreto armado.
-
+### Questão 9 (FCC - 2022 - TRT 22ª Região - Analista Judiciário - TI)
+Como uma das práticas avançadas no pilar de automação da cultura DevOps, a Infraestrutura como Código (Infrastructure as Code - IaC) apresenta diversos benefícios. Um dos objetivos diretos e corretos do emprego de ferramentas de IaC (como Terraform ou Ansible) é:
+A) Substituir os processos diários de backup de bancos de dados por códigos declarativos nos servidores.
+B) Reduzir drasticamente o controle de versão para os artefatos de infraestrutura, garantindo independência do setor de operações.
+C) Centralizar toda a gestão de configurações através de pesadas e lentas intervenções via interface gráfica de painéis em Cloud (ClickOps).
+D) Possibilitar que ambientes inteiros sejam provisionados de forma rápida, repetível, idempotente e documentada em arquivos legíveis por humanos e máquinas.
+E) Impedir implantações automatizadas em ambientes híbridos, bloqueando integração de serviços on-premise com recursos em nuvem pública.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: B**. De acordo com as normas de cabeamento estruturado (como ISO/IEC 11801 e adaptadas pela ABNT), a distância máxima recomendada para o backbone de edifício é tipicamente de até 500 metros (especialmente para fibra óptica) para garantir o desempenho e limites de propagação.
+**Gabarito: D**
+
+A) Incorreta. O IaC gerencia infraestrutura (redes, instâncias, firewall), mas a garantia e o plano de continuidade de rotinas de backup de dados gerados pelos sistemas (dados de tabelas) vão muito além do mero IaC.
+B) Incorreta. O IaC baseia-se exatamente NO AUMENTO DO USO do controle de versão (Git) aplicado às operações (GitOps), trazendo o rigor do código fonte para a infraestrutura.
+C) Incorreta. A Infraestrutura como Código combate radicalmente as intervenções e gestões via click (ClickOps). O uso de painéis lentos e guiados por interface web são desencorajados em prol de scripts executáveis e automatizados.
+D) Correta. A essência do IaC é fornecer ambientes seguros. Se um ambiente de desenvolvimento precisar ser levado para testes, basta executar o mesmo script, o que provê repetibilidade confiável, auditoria, segurança e documentação da infraestrutura vigente (idempotência nas ferramentas declarativas).
+E) Incorreta. O IaC lida perfeitamente bem com ambientes multiplataformas, híbridos e multi-cloud. O Terraform, por exemplo, dispõe de centenas de "Providers" que cobrem redes tanto na AWS quanto em VMware interno na organização.
 </details>
 
 ---
 
-### Questão 10 (FCC)
-Em HTTP/2, diversas melhorias foram introduzidas em relação ao HTTP/1.1 para otimizar o desempenho na web. Uma característica técnica nativa do HTTP/2 é:
-A) A exigência de que todas as páginas web sejam renderizadas no formato de dados JSON no navegador do usuário de forma exclusiva.
-B) A substituição obrigatória do protocolo TCP pelo protocolo UDP na camada de transporte para aumentar a velocidade de transmissão física.
-C) O envio de cabeçalhos HTTP criptografados em formato XML de texto plano para facilitar a compressão por servidores de proxy reverso.
-D) A multiplexação de requisições e respostas sobre uma única conexão TCP de forma paralela e assíncrona, eliminando o bloqueio de cabeça de fila.
-E) O banimento do uso de conexões seguras HTTPS, operando apenas através de canais não criptografados para reduzir o consumo de CPU.
-
+### Questão 10 (FCC - 2017 - TST - Analista Judiciário - Suporte em TI)
+Em um pipeline completo sob os paradigmas do DevOps, é essencial diferenciar "Entrega Contínua" (Continuous Delivery) de "Implantação Contínua" (Continuous Deployment). A diferença conceitual mais expressiva e correta entre essas duas esteiras automatizadas é que:
+A) Na Entrega Contínua o código é liberado para produção sem intervenção humana, enquanto a Implantação Contínua paralisa o código no teste unitário.
+B) Na Implantação Contínua os testes devem ser executados apenas manualmente por analistas de qualidade (QA), em contraste com a Entrega Contínua.
+C) A Implantação Contínua envia o artefato homologado automática e diretamente para a produção caso todos os testes passem, não existindo aprovação humana, enquanto na Entrega Contínua o deploy em produção necessita de aprovação e acionamento humano explícito.
+D) A Entrega Contínua foca unicamente em infraestruturas baseadas em contêineres (Docker), ignorando o pipeline lógico, diferentemente da Implantação Contínua.
+E) Ambos possuem rigorosamente o mesmo significado na literatura ágil, sendo o termo "Deployment" usado exclusivamente no Brasil.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**. HTTP/2 introduziu a multiplexação de streams sobre uma única conexão TCP, permitindo que vários requests e responses transitem concorrentemente, eliminando a lentidão gerada pelo 'head-of-line blocking' do HTTP/1.1.
+**Gabarito: C**
+
+A) Incorreta. A definição exposta na afirmativa inverte frontalmente o conceito. O que ocorre sem intervenção (automático) é a Implantação Contínua.
+B) Incorreta. Tanto CD (Entrega) quanto CD (Implantação) requerem baterias massivas de testes automatizados e desprezam a validação totalmente manual como via de regra de pipeline.
+C) Correta. A principal linha divisória é a aprovação humana de liberação em negócios. Continuous Delivery garante que sua aplicação PODE ser implantada na produção a qualquer momento de forma segura (botão disponível). Continuous Deployment vai além: a implantação na produção É a última etapa da esteira automatizada sem clicar de botões, confiando-se 100% no suite de testes.
+D) Incorreta. As práticas citadas dizem respeito à engenharia de liberação de software de forma independente da tecnologia final adotada (contêineres, VMs, Serverless etc).
+E) Incorreta. Existe uma clara divergência conceitual e técnica formal em âmbito internacional no papel humano de aceite final (Release) perante a engenharia de software e os guias DevOps.
 </details>
 
 ---
 
-### Questão 11 (FCC)
-Os cookies são cabeçalhos HTTP importantes para o gerenciamento de estados. O atributo em um cookie HTTP que impede que scripts do lado do cliente (como JavaScript via XSS) acessem o valor do cookie é:
-A) Path
-B) Secure
-C) SameSite
-D) Domain
-E) HttpOnly
+## 📝 TEMA 3: Direito Constitucional
 
+### Questão 11 (FCC - 2018 - TRT 15ª Região - Técnico Judiciário - Área Administrativa)
+Um servidor público necessita de acesso a informações e registros referentes à sua própria pessoa constantes de um complexo banco de dados pertencente a um órgão governamental, mas o órgão se recusa ilicitamente a fornecer a informação. Conforme os direitos e garantias fundamentais previstos na Constituição Federal de 1988 (Art. 5º), o remédio constitucional apto para sanar este tipo de lesão é o:
+A) Mandado de Injunção.
+B) Habeas Corpus.
+C) Mandado de Segurança.
+D) Habeas Data.
+E) Ação Civil Pública.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: E**. O atributo `HttpOnly` avisa ao navegador que o cookie não deve ser exposto através de APIs de scripts (como `document.cookie`), mitigando ataques de roubo de sessão via Cross-Site Scripting (XSS).
+**Gabarito: D**
+
+A) Incorreta. O Mandado de Injunção é utilizado quando há omissão legislativa total ou parcial (falta de norma regulamentadora) que torne inviável o exercício de direitos previstos constitucionalmente.
+B) Incorreta. O Habeas Corpus tem o escopo exclusivo de combater ou ameaçar combater violências e coações contra a liberdade de locomoção (direito de ir e vir).
+C) Incorreta. O Mandado de Segurança protege direito líquido e certo não amparado por *Habeas Corpus* nem por *Habeas Data*. É uma regra residual e subsidiária perante informações pessoais, visto que existe ação específica.
+D) Correta. Nos termos do art. 5º, inciso LXXII, CF/88, o Habeas Data será concedido para assegurar o conhecimento de informações relativas à pessoa do impetrante (informações personalíssimas), constantes de registros ou bancos de dados de entidades governamentais ou de caráter público. 
+E) Incorreta. A Ação Civil Pública é promovida (frequentemente pelo Ministério Público) com o fim de proteger direitos difusos e coletivos perante meio-ambiente, consumidor etc., não informações sobre indivíduo em específico.
 </details>
 
 ---
 
-### Questão 12 (FCC)
-A perda de sinal ao longo de um cabo de fibra óptica é influenciada por fatores internos e externos. O fenômeno que descreve a redução da potência do sinal óptico à medida que ele viaja pela fibra é chamado de:
-A) Diafonia (crosstalk), que representa a interferência eletromagnética gerada por cabos de cobre vizinhos localizados na mesma calha.
-B) Dispersão cromática, que consiste no alargamento temporal dos pulsos de luz devido à reflexão total nas paredes do núcleo.
-C) Refração seletiva, na qual a luz é convertida em impulsos elétricos de baixa voltagem ao passar por curvas acentuadas.
-D) Difração de Fresnel, que descreve o bloqueio completo da passagem de luz em conectores do tipo LC mal polidos na instalação.
-E) Atenuação, causada principalmente por absorção física e espalhamento da luz nas impurezas do vidro de sílica.
-
+### Questão 12 (FCC - 2019 - TRF 4ª Região - Analista Judiciário - Área Judiciária)
+Em regra geral expressa no Art. 37 da Constituição Federal acerca da Administração Pública, veda-se estritamente a acumulação remunerada de cargos públicos. No entanto, a referida norma exsurge com exceções pontuais onde a acumulação lícita é autorizada, desde que observada rigorosamente a compatibilidade de horários, como, por exemplo, na acumulação de:
+A) Um cargo técnico do Judiciário com um cargo isolado em comissão de livre nomeação.
+B) Dois cargos ou empregos unicamente privativos de profissionais de saúde, possuindo ambos profissões regulamentadas.
+C) Três cargos na esfera do magistério estadual e municipal.
+D) Um cargo de médico em uma fundação pública com outros dois cargos em autarquias em municípios vizinhos.
+E) Um mandato de Prefeito Municipal concomitantemente com os vencimentos de proventos de dois cargos inativos de segurança.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: E**. Atenuação é a perda de potência óptica expressa em dB/km, decorrente de fatores de absorção de material e do espalhamento Rayleigh da luz nas micro-imperfeições do núcleo de vidro.
+**Gabarito: B**
+
+A) Incorreta. O exercício em cargo comissionado por quem possui cargo técnico efetivo implica dedicação ao cargo comissionado (não se trata de acumular duas matrículas para desempenhos simultâneos, o servidor afasta-se para exercer o comissionado com opção de remuneração ditada na lei do ente).
+B) Correta. O artigo 37, inciso XVI, "c" da Constituição Federal autoriza de forma expressa a acumulação de "dois cargos ou empregos privativos de profissionais de saúde, com profissões regulamentadas". 
+C) Incorreta. O limite máximo da norma para magistério não admite três vínculos, mas sim a estrita de "dois cargos de professor" (art. 37, XVI, "a").
+D) Incorreta. Estaríamos diante de três cargos para profissionais de saúde (um médico e outros dois), o que extrapola a baliza rígida de "dois cargos". Tripla acumulação para esta categoria é vedada pelo STF.
+E) Incorreta. Conforme o Art. 38, o agente investido em mandato de Prefeito precisará licenciar-se de seu cargo originário e exercer a escolha opcional de remuneração, sendo vetada também qualquer quebra do teto remuneratório em acumulações anômalas com Segurança.
 </details>
 
 ---
 
-### Questão 13 (FCC)
-Na arquitetura do protocolo HTTPS, a verificação do certificado digital do servidor envolve o uso de chaves públicas. O navegador do cliente valida o certificado do servidor:
-A) Enviando o certificado completo de volta ao servidor para que ele mesmo realize a validação e retorne o código HTTP 200 OK correspondente.
-B) Decifrando a assinatura digital da autoridade emissora contida no certificado utilizando a chave privada do próprio servidor web local.
-C) Decifrando a assinatura digital da autoridade emissora contida no certificado utilizando a chave pública da própria autoridade pré-instalada no sistema.
-D) Gerando uma chave simétrica temporária e enviando-a para a Autoridade Certificadora validar a assinatura do servidor via rede.
-E) Decifrando os dados confidenciais do servidor web utilizando a chave privada do navegador do cliente acordada no ClientHello.
-
+### Questão 13 (FCC - 2021 - TRT 6ª Região - Técnico Judiciário - Área Administrativa)
+A Constituição da República de 1988 dotou o Supremo Tribunal Federal (STF) da importante prerrogativa de editar Súmulas Vinculantes (Art. 103-A), ferramenta criada na Emenda Constitucional nº 45. Sobre este instrumento, é pertinente afirmar que:
+A) Pode versar sobre matéria puramente infraconstitucional, em caso de severas divergências nas justiças estaduais.
+B) Obriga estritamente e exime de sua aplicação imediata todos os demais órgãos do Poder Judiciário, mas não incide o seu poder na administração pública do Poder Executivo estadual e municipal.
+C) Exige-se que sua aprovação, bem como sua posterior revisão ou mesmo cancelamento no plenário, seja respaldada por um quórum de dois terços dos seus membros constituintes (oito Ministros).
+D) A edição não poderá, sob nenhuma hipótese, ser provocada, mas será executada de ofício, com caráter monopolista de iniciativa, de forma irretratável, por seu Presidente.
+E) O Defensor Público Geral da União consta nas opções entre os legitimados sem permissão para propor, revisar ou editar.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**. O navegador valida o certificado do servidor verificando a assinatura da CA (Autoridade Certificadora) que assinou o certificado. Isso é feito usando a chave pública da CA, cujos certificados raiz confiáveis já vêm pré-instalados no navegador ou no sistema operacional.
+**Gabarito: C**
+
+A) Incorreta. A súmula vinculante, de acordo com o texto da Constituição, só tem cabimento acerca de interpretações válidas atinentes a matéria unicamente "constitucional".
+B) Incorreta. A súmula terá efeito perante todos os "órgãos do Poder Judiciário" e abrange totalmente a "Administração Pública direta e indireta nas esferas federal, estadual e municipal" (mas não vincula o Poder Legislativo na sua função legiferante).
+C) Correta. A aprovação, revisão ou o cancelamento da Súmula Vinculante pelo STF será feita somente se acatada pela ampla e qualificada maioria de dois terços dos seus membros (dois terços de onze membros = 8 Ministros da Corte).
+D) Incorreta. As Súmulas podem ser aprovadas "de ofício ou por provocação". O poder de proposição da súmula vinculante existe na lei para entes arrolados no art. 103.
+E) Incorreta. A Lei 11.417/2006 explicitou os legitimados e o art. 103-A remete à Constituição a indicação da ampla gama daqueles que detêm a possibilidade de provocar este recurso, incluído a Defensoria.
 </details>
 
 ---
 
-### Questão 14 (FCC)
-No cabeamento horizontal comercial, a distância útil máxima recomendada de cabo entre o distribuidor de piso (patch panel) e a tomada de telecomunicações é de:
-A) 150 metros quando forem utilizadas fibras ópticas monomodo conectadas diretamente a tomadas de telecomunicações ativas.
-B) 100 metros para cabos de cobre de categoria 5e e duzentos metros para cabos de cobre de categoria 6A sem blindagem física.
-C) 50 metros para evitar a perda excessiva de sinal elétrico gerada pela diafonia e ruídos eletromagnéticos de lâmpadas fluorescentes.
-D) 90 metros, permitindo mais dez metros adicionais para cabos de manobra (patch cords) na área de trabalho e armário de telecomunicações.
-E) 75 metros para manter a largura de banda estável em redes Fast Ethernet operando em frequências de até 250 MHz no canal físico.
-
+### Questão 14 (FCC - 2017 - TST - Técnico Judiciário - Área Administrativa)
+No que tange aos direitos de Nacionalidade (art. 12 da Constituição Federal), entende-se por critério válido, sendo considerados brasileiros natos:
+A) Os originários de países de língua portuguesa, como Angola, que possuam de forma comprovada idoneidade moral, além da residência ininterrupta no Brasil por longos dois anos.
+B) Os que nasceram na República Federativa do Brasil, filhos exclusivos de pais estrangeiros, desde que ambos esses genitores alienígenas estejam prestando serviços ao seu país de origem em uma representação consular em São Paulo.
+C) Os cidadãos de Portugal, após cinco anos ininterruptos residentes nos estados da união com requisição aprovada junto ao ministério de Relações Exteriores e Justiça.
+D) Os nascidos no estrangeiro, sendo de pai brasileiro ou de mãe brasileira, desde que qualquer um dos pais esteja oficialmente a serviço da República Federativa do Brasil.
+E) Os nascidos em território estrangeiro de pai brasileiro, não sendo registrados na respectiva embaixada ou repartição consular e que decidam jamais retornar nem vir ao Brasil possuindo assim cidadania transnacional por mera descendência sanguínea.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**. O cabeamento horizontal (link permanente) é limitado a 90 metros de comprimento físico do cabo. O canal completo (incluindo cabos de manobra) pode chegar a 100 metros.
+**Gabarito: D**
+
+A) Incorreta. Indivíduos enquadrados neste aspecto não detêm o pódio de brasileiros natos, e sim de brasileiros naturalizados (naturalização ordinária de países lusófonos - um ano apenas).
+B) Incorreta. Se nascer no Brasil de pais estrangeiros que estejam ambos prestando serviços ou trabalhando pelo respectivo país em terras tupiniquins (diplomatas), não receberá a nacionalidade nata (exceção à regra do *jus soli* fixada no art. 12, I, a).
+C) Incorreta. Os portugueses recebem tratamento próprio em lei que gera equiparação legal e reciprocidade com sua naturalização, não sendo por óbvio "brasileiros natos".
+D) Correta. Trata-se do clássico e explícito critério "jus sanguinis + critério funcional" contido na alínea "b" do art. 12, I, em que o filho de brasileiros que preste qualquer ofício ao Brasil (esferas ou estados da federação e suas entidades) no exterior é, desde já e para sempre, considerado um brasileiro nato.
+E) Incorreta. Não basta descendência para os demais sem a filiação formal (registro na repartição consular) ou, caso ausente a última, a futura vinda a residir no Brasil com subsequente opção formal pelo título nos tribunais maiores (alínea "c").
 </details>
 
 ---
 
-### Questão 15 (FCC)
-Em relação ao cabeamento estruturado e à infraestrutura de rede, o Distribuidor de Edifício (BD - Building Distributor) tem a função de:
-A) Conectar diretamente os computadores e tomadas de telecomunicações da área de trabalho ao rack de piso de forma exclusiva.
-B) Interconectar o cabeamento de backbone de campus com o cabeamento de backbone de edifício nas instalações físicas da organização.
-C) Alojar exclusivamente os servidores de banco de dados e switches de camada de aplicação do tribunal de justiça estadual.
-D) Alimentar fisicamente os dispositivos ativos de rede utilizando cabos de cobre com tecnologia Power over Ethernet (PoE) redundante.
-E) Medir a taxa de atenuação das conexões ópticas de campus e reportar falhas físicas ao console de gerência de rede local.
-
+### Questão 15 (FCC - 2018 - TRT 2ª Região - Analista Judiciário - Área Administrativa)
+Considerando a organização dos poderes e órgãos constitucionais pátrios (Das Funções Essenciais à Justiça), qual instituição encontra-se expressamente amparada pela definição permanente, incumbida fundamentalmente da orientação jurídica de necessitados e responsável pela promoção dos direitos humanos, defendendo as frentes judiciais e extrajudiciais dos direitos individuais e coletivos, de forma integral e totalmente gratuita aos cidadãos de menor renda?
+A) O Ministério Público.
+B) O Conselho Nacional de Justiça.
+C) O Ministério da Justiça e Cidadania da União.
+D) A Defensoria Pública.
+E) A Advocacia e Ordem dos Advogados (OAB).
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: B**. O BD (Building Distributor / Distribuidor de Edifício) serve de nó central do edifício, realizando a conexão entre o backbone de campus (vindo do CD - Campus Distributor) e os backbones que descem/sobem para os pisos (FD - Floor Distributor).
+**Gabarito: D**
+
+A) Incorreta. O Ministério Público foca precipuamente na defesa e vigia da ordem jurídica geral, o resguardo do regime democrático de direitos, mas não foca a sua missão institucional direta na advocacia gratuita orientadora de "necessitados" em caráter exclusivo. 
+B) Incorreta. O Conselho Nacional de Justiça atua precipuamente visando controle e controle disciplinar, não desempenhando jamais a função de procuradoria ou advocatícia para hipossuficientes.
+C) Incorreta. Trata-se do ramo do executivo focado nas macropolíticas criminais, mas que não advoga gratuita nem compõe as Funções Essenciais descritas nesse texto normativo de defesa da população sem renda.
+D) Correta. O comando da questão espelha de forma absolutamente idêntica a disposição trazida no art. 134, *caput*, da CF/88, o qual coroa e estabelece perfeitamente o escopo total que cabe à Defensoria Pública como um instrumento promotor da democracia e assistência jurídica integral a todos que comprovem carência econômica.
+E) Incorreta. Os advogados são essenciais também, mas a OAB é uma entidade particular e de classe que não carrega a exigência magna institucional para o ônus financeiro gratuito contínuo nos estados providos por orçamentos em prol dos necessitados.
 </details>
-
----
-
-## 📝 TEMA 2: Redes e Camada de Transporte — Protocolo TCP vs. UDP, Controle de Fluxo/Congestionamento e Portas Conhecidas
-
-### Questão 16 (FCC)
-Os protocolos TCP e UDP operam na camada de transporte do modelo TCP/IP. A diferença fundamental de funcionamento entre o TCP e o UDP é:
-A) O TCP é um protocolo de camada de aplicação que roda sobre conexões físicas Ethernet, enquanto o UDP é um protocolo de transporte exclusivo para redes sem fio.
-B) O UDP realiza o controle de fluxo e congestionamento utilizando o mecanismo de janela deslizante, ao contrário do TCP que transmite dados sem controle.
-C) O TCP é orientado à conexão e garante a entrega ordenada e confiável de segmentos através de confirmações, enquanto o UDP é não orientado à conexão e prioriza a velocidade sem garantias de entrega.
-D) O UDP divide os dados em pacotes de tamanho fixo chamados datagramas de rede e exige o handshake de três vias (three-way handshake) para iniciar o tráfego.
-E) O TCP utiliza portas dinâmicas para comunicação em grupo (multicast), enquanto o UDP é restrito a conexões ponto a ponto (unicast) com portas fixas de controle.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. TCP (Transmission Control Protocol) é orientado à conexão, confiável, fornece controle de fluxo, retransmissão e entrega ordenada. UDP (User Datagram Protocol) é um protocolo simples, rápido, não confiável e sem conexão.
-</details>
-
----
-
-### Questão 17 (FCC)
-O estabelecimento de uma conexão TCP confiável utiliza o handshake de três vias (three-way handshake). A sequência correta de flags TCP enviadas pelos hosts cliente e servidor para estabelecer a conexão é:
-A) SYN (cliente) -> ACK (servidor) -> SYN-ACK (cliente)
-B) SYN (cliente) -> SYN-ACK (servidor) -> ACK (cliente)
-C) SYN-ACK (cliente) -> SYN (servidor) -> ACK (cliente)
-D) ACK (cliente) -> SYN (servidor) -> SYN-ACK (cliente)
-E) SYN (cliente) -> SYN (servidor) -> ACK (cliente/servidor)
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. O handshake de três vias do TCP consiste no envio de um segmento com flag SYN (sincronizar), a resposta com flags SYN-ACK (sincronizar e confirmar) e a confirmação final com flag ACK.
-</details>
-
----
-
-### Questão 18 (FCC)
-O controle de fluxo do TCP visa evitar que o transmissor envie dados mais rápido do que o receptor consegue processar. O mecanismo utilizado pelo TCP para realizar o controle de fluxo é:
-A) O descarte preventivo de datagramas órfãos na camada de rede (IP) quando o tempo de vida do pacote (TTL) atinge o valor limite de zero.
-B) O algoritmo Slow Start, no qual o transmissor dobra o tamanho da janela de congestionamento a cada nova confirmação recebida na sessão.
-C) A modulação por largura de pulso (PWM) que ajusta dinamicamente a taxa de transmissão física do cabo de rede no switch central do tribunal.
-D) A janela deslizante (sliding window), em que o receptor informa no cabeçalho TCP o tamanho do espaço livre em seu buffer de recepção (Advertised Window).
-E) O envio periódico de mensagens ICMP Source Quench do roteador para o host transmissor solicitando a redução imediata da banda de rede.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. O controle de fluxo do TCP é baseado na Janela Deslizante (sliding window) anunciada pelo receptor. O campo Window Size no cabeçalho TCP informa quantos bytes o transmissor pode enviar antes de esperar por um ACK.
-</details>
-
----
-
-### Questão 19 (FCC)
-O controle de congestionamento do TCP evita que a rede de computadores entre em colapso por excesso de tráfego. Sobre a fase de Slow Start (partida lenta), assinale a alternativa correta:
-A) Ela desativa o controle de fluxo do receptor para priorizar a passagem dos pacotes de dados prioritários através dos roteadores da rede.
-B) O transmissor envia os dados na velocidade máxima permitida pela interface física de rede e reduz a taxa linearmente se ocorrer perda de pacotes.
-C) O tamanho da janela de congestionamento é mantido fixo e o transmissor altera apenas a taxa de retransmissão de segmentos temporizados.
-D) A fase de Slow Start é ativada apenas se o tempo de resposta do servidor ultrapassar o limite padrão de trinta segundos da sessão ativa.
-E) A janela de congestionamento (cwnd) começa em um tamanho pequeno (ex: 1 MSS) e cresce exponencialmente (dobrando a cada RTT) até atingir o limite ssthresh.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. No Slow Start, a janela de congestionamento (cwnd) cresce exponencialmente (cwnd = cwnd * 2 a cada RTT) a partir de um valor inicial pequeno até alcançar o limiar de partida lenta (ssthresh), quando entra em Congestion Avoidance.
-</details>
-
----
-
-### Questão 20 (FCC)
-Em controle de congestionamento TCP, após a janela de congestionamento atingir o valor de ssthresh (Slow Start Threshold), o TCP entra na fase de:
-A) Slow Start, reiniciando o crescimento exponencial da janela de transmissão a partir do valor inicial de dez segmentos TCP.
-B) Fast Recovery (recuperação rápida), na qual a janela de congestionamento é reduzida imediatamente para zero para limpar os buffers.
-C) Congestion Avoidance (evitação de congestionamento), em que a janela de congestionamento cresce linearmente (1 MSS a cada RTT).
-D) Flow Control, repassando o controle do tamanho de transmissão para o buffer físico do adaptador de rede do cliente ativo.
-E) Connection Tear-down, finalizando a conexão TCP de forma abrupta com o envio de um segmento com a flag RST (reset).
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. Quando a janela cwnd alcança o ssthresh, o TCP muda do crescimento exponencial (Slow Start) para o crescimento linear (Congestion Avoidance), onde cwnd é incrementada em 1 MSS por RTT.
-</details>
-
----
-
-### Questão 21 (FCC)
-Os algoritmos Fast Retransmit (retransmissão rápida) e Fast Recovery (recuperação rápida) otimizam o comportamento do TCP sob perdas. O Fast Retransmit é disparado quando o transmissor recebe:
-A) Um pacote de sincronização (SYN) do servidor indicando que a numeração dos bytes da sessão deve ser reiniciada no buffer.
-B) Uma mensagem ICMP de destino inalcançável gerada pelo roteador de borda devido à queda física do link de fibra óptica.
-C) Um segmento TCP contendo a flag FIN ativa para solicitar o encerramento ordenado da conexão de transporte ativa.
-D) Três confirmações duplicadas (triple duplicate ACKs) consecutivas para um mesmo segmento de dados enviado anteriormente.
-E) Uma notificação do sistema operacional de que o buffer físico de envio da placa de rede local atingiu o limite de capacidade.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. Se o transmissor receber 3 ACKs duplicados consecutivos (além do original, totalizando 4 ACKs para o mesmo número de sequência), ele assume que o segmento subsequente foi perdido e faz a retransmissão imediata (Fast Retransmit) sem esperar o estouro do temporizador de retransmissão (RTO).
-</details>
-
----
-
-### Questão 22 (FCC)
-Em relação ao cabeçalho do TCP, um campo que consta no cabeçalho TCP e NÃO consta no cabeçalho UDP é:
-A) Destination Port (porta de destino), utilizada para encaminhar os dados para o processo de aplicação correto.
-B) Source Port (porta de origem), que identifica o aplicativo de origem que enviou a mensagem de transporte.
-C) Sequence Number (número de sequência), utilizado para ordenar os segmentos recebidos e detectar perdas.
-D) Checksum, que é um campo de verificação de integridade utilizado para detectar erros de bits nos dados transmitidos.
-E) Length (comprimento), que indica o tamanho total do segmento de transporte incluindo cabeçalho e dados.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. O campo Sequence Number é exclusivo do TCP, sendo fundamental para o controle de ordenação e confiabilidade. UDP não possui números de sequência. Portas e Checksum estão presentes em ambos. Length está no UDP (no TCP, o tamanho é deduzido a partir do IP).
-</details>
-
----
-
-### Questão 23 (FCC)
-As portas de comunicação identificam processos na camada de transporte. As portas padrão associadas aos protocolos SSH, SMTP e HTTPS são, respectivamente:
-A) 22, 143 e 8080
-B) 80, 110 e 443
-C) 21, 23 e 80
-D) 22, 25 e 443
-E) 23, 25 e 8443
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. SSH opera na porta 22; SMTP na porta 25; HTTPS na porta 443. Portas clássicas muito cobradas em provas de concursos pela FCC.
-</details>
-
----
-
-### Questão 24 (FCC)
-O encerramento de uma conexão TCP ativa é realizado de forma ordenada através de uma sequência de controle. As flags enviadas para fechar a conexão de forma bilateral são:
-A) SYN (cliente) -> ACK (servidor) -> FIN (servidor) -> ACK (cliente)
-B) FIN (cliente) -> FIN-ACK (servidor) -> ACK (cliente/servidor)
-C) RST (cliente) -> RST-ACK (servidor) -> ACK (cliente)
-D) FIN (cliente) -> ACK (servidor) -> RST (servidor) -> ACK (cliente)
-E) FIN (cliente) -> ACK (servidor) -> FIN (servidor) -> ACK (cliente)
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. O encerramento ordenado (four-way handshake) utiliza a flag FIN (Finish) e a confirmação ACK em ambas as direções, pois o TCP é bidirecional (full-duplex) e cada lado deve fechar seu canal de envio de forma independente.
-</details>
-
----
-
-### Questão 25 (FCC)
-Em relação ao protocolo UDP, assinale a alternativa que apresenta uma aplicação típica na qual a sua utilização é preferível em relação ao TCP:
-A) Envio de e-mails corporativos contendo anexos criptografados de grande porte para auditoria da corregedoria do tribunal.
-B) Transferências de arquivos corporativos via FTP, onde a perda de um único byte pode corromper totalmente o arquivo copiado.
-C) Acesso remoto a servidores via SSH, onde a segurança e a integridade da digitação dos comandos devem ser garantidas de forma estrita.
-D) Consultas transacionais de envio de mensagens financeiras que exigem o registro cronológico rígido de logs no banco de dados.
-E) Transmissões de voz sobre IP (VoIP) e streaming de vídeo em tempo real, onde a baixa latência é mais crítica que eventuais perdas de pacotes.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. O UDP é ideal para aplicações de tempo real (como áudio, vídeo, jogos e VoIP) e consultas rápidas de pergunta-resposta (como DNS), onde atrasos causados por retransmissão de pacotes perdidos no TCP prejudicariam a experiência do usuário.
-</details>
-
----
-
-### Questão 26 (FCC)
-No cabeçalho do segmento TCP, o campo 'Header Length' (ou Data Offset) tem a finalidade técnica de:
-A) Especificar o tamanho do cabeçalho TCP medido em palavras de 32 bits, identificando onde começam os dados úteis da mensagem.
-B) Indicar o tamanho máximo do segmento (MSS) que o host receptor aceita receber na sessão ativa de transporte local.
-C) Definir a quantidade de memória RAM que o servidor de aplicação deve alocar para processar a requisição de rede HTTP.
-D) Informar o endereço físico do adaptador de rede de destino (MAC Address) para fins de roteamento em camada de enlace.
-E) Determinar o tempo de vida útil restante do segmento TCP na rede antes de ser descartado por estouro de temporizador físico.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. Como o cabeçalho TCP possui o campo de 'Options' que tem tamanho variável, o campo Data Offset (Header Length) é necessário para indicar onde termina o cabeçalho e começa a carga útil (payload). Ele é expresso em palavras de 32 bits (4 bytes).
-</details>
-
----
-
-### Questão 27 (FCC)
-Um ataque de negação de serviço comum tenta explorar a fase inicial do estabelecimento de conexões TCP. Esse ataque, que inunda o servidor com requisições SYN sem completar o handshake, é conhecido como:
-A) SYN Flood, que esgota a tabela de conexões pendentes (backlog queue) do servidor impedindo novos acessos legítimos.
-B) Buffer Overflow, que sobrescreve a memória física do roteador de borda utilizando pacotes IP de tamanho maior que o padrão MTU.
-C) Man-in-the-Middle, no qual o atacante intercepta a troca de chaves públicas do TLS para descriptografar os dados em trânsito.
-D) SQL Injection, que insere códigos maliciosos nas queries de busca enviadas ao banco de dados relacional através da camada de transporte.
-E) DNS Spoofing, que altera as tabelas de cache dos servidores de nomes locais para redirecionar o tráfego a servidores clonados.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. O SYN Flood inunda o alvo com pacotes SYN. O servidor aloca memória para conexões 'semi-abertas' (SYN-RCVD) e responde com SYN-ACK, mas o atacante não envia o ACK final. Isso satura o buffer de conexões pendentes do sistema operacional.
-</details>
-
----
-
-### Questão 28 (FCC)
-O cabeçalho UDP é extremamente simples para minimizar o overhead de transmissão. O tamanho total padrão do cabeçalho UDP em bytes é de:
-A) 8 bytes
-B) 20 bytes
-C) 32 bytes
-D) 40 bytes
-E) 12 bytes
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. O cabeçalho UDP possui exatamente 4 campos de 2 bytes cada (Source Port, Destination Port, Length, Checksum), totalizando 8 bytes. O cabeçalho TCP padrão sem opções possui 20 bytes.
-</details>
-
----
-
-### Questão 29 (FCC)
-As portas lógicas de transporte são divididas em faixas pela IANA. A faixa de portas conhecidas (Well-Known Ports) e a faixa de portas registradas (Registered Ports) cobrem, respectivamente, as faixas de:
-A) 1 a 1024 e 1025 a 65535
-B) 0 a 255 e 256 a 1023
-C) 0 a 1023 e 1024 a 49151
-D) 0 a 49151 e 49152 a 65535
-E) 0 a 80 e 81 a 443
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. A IANA classifica as portas em: Well-Known (Conhecidas/Sistema): 0 a 1023; Registered (Registradas): 1024 a 49151; Dynamic/Private (Dinâmicas/Privadas): 49152 a 65535.
-</details>
-
----
-
-### Questão 30 (FCC)
-O temporizador de retransmissão (RTO - Retransmission Timeout) do TCP é calculado dinamicamente. O cálculo do RTO baseia-se na medição de:
-A) Carga de processamento do roteador de borda intermediário, calculada através de mensagens ICMP Echo Request periódicas.
-B) Largura de banda da interface de rede, medida através da transmissão síncrona de rajadas de dados de teste (ping packet).
-C) RTT (Round-Trip Time), que mede o tempo decorrido entre o envio de um segmento e a chegada da sua correspondente confirmação.
-D) Quantidade de colisões ocorridas na rede local devido a conexões ethernet em modo half-duplex nos hubs da comarca.
-E) Tamanho máximo de segmento (MSS) acordado pelas interfaces de rede ativas durante o handshake do protocolo TLS.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. O RTO é calculado com base no RTT (Round-Trip Time) estimado e sua variação (desvio padrão), garantindo que o TCP ajuste seu tempo de espera por ACKs de acordo com a latência real do caminho da rede.
-</details>
-
----
-
-## 📝 TEMA 3: Raciocínio Lógico-Matemático — Lógica de Argumentação, Equivalências e Inferências (Modus Ponens e Modus Tollens)
-
-### Questão 31 (FCC)
-Considere a seguinte proposição condicional: *"Se o analista de suporte realiza o backup, então o banco de dados não perde dados"*. Uma proposição logicamente equivalente a essa é:
-A) Se o banco de dados não perdeu dados, então o analista de suporte realizou o backup.
-B) Se o analista de suporte não realiza o backup, então o banco de dados perde dados.
-C) O analista de suporte realizou o backup e o banco de dados perdeu dados.
-D) Se o banco de dados perdeu dados, então o analista de suporte não realizou o backup.
-E) O analista de suporte não realiza o backup ou o banco de dados perde dados.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. A equivalência da condicional $P 	o Q$ pela contrapositiva é $
-eg Q 	o 
-eg P$. Negando a consequente 'o banco de dados não perde dados' vira 'o banco de dados perde dados' (ou 'perdeu dados'). Negando a antecedente 'o analista realiza o backup' vira 'o analista não realizou o backup'. Assim: 'Se o banco de dados perdeu dados, então o analista de suporte não realizou o backup'. A alternativa D está correta.
-</details>
-
----
-
-### Questão 32 (FCC)
-Uma outra equivalência importante da condicional $P 	o Q$ na lógica proposicional é a sua conversão em uma disjunção inclusiva. A equivalência correta nesse formato para a frase *"Se estudo para o concurso do TJ, então sou aprovado"* é:
-A) Estudo para o concurso do TJ e sou aprovado.
-B) Não estudo para o concurso do TJ ou sou aprovado.
-C) Se não estudo para o concurso do TJ, então não sou aprovado.
-D) Não estudo para o concurso do TJ ou não sou aprovado.
-E) Se sou aprovado, então estudo para o concurso do TJ.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A condicional $P 	o Q$ é logicamente equivalente a $
-eg P \lor Q$. Aplicando à proposição: $
-eg P$ = 'Não estudo para o concurso do TJ', $\lor$ = 'ou', $Q$ = 'sou aprovado'. Portanto: 'Não estudo para o concurso do TJ ou sou aprovado'. A opção B está correta.
-</details>
-
----
-
-### Questão 33 (FCC)
-Deseja-se realizar a negação lógica da proposição condicional: *"Se o servidor do tribunal cometer uma falta grave, então ele será demitido"*. A negação correta dessa condicional é:
-A) O servidor do tribunal não comete uma falta grave ou ele é demitido.
-B) Se o servidor do tribunal não cometer uma falta grave, então ele não será demitido.
-C) O servidor do tribunal comete uma falta grave e não é demitido.
-D) Se o servidor do tribunal for demitido, então ele cometeu uma falta grave.
-E) O servidor do tribunal não comete uma falta grave e ele não é demitido.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. A negação de uma condicional $
-eg(P 	o Q)$ equivale a $P \land 
-eg Q$ (regra do 'mantém a primeira E nega a segunda'). Assim: 'O servidor comete uma falta grave' (P) e ($\land$) 'não é demitido' ($
-eg Q$). A alternativa C está correta.
-</details>
-
----
-
-### Questão 34 (FCC)
-De acordo com as Leis de De Morgan na lógica matemática, a negação de uma conjunção $
-eg(P \land Q)$ e a negação de uma disjunção $
-eg(P \lor Q)$ são equivalentes, respectivamente, a:
-A) $
-eg P \lor 
-eg Q$ e $
-eg P \land 
-eg Q$
-B) $
-eg P \land 
-eg Q$ e $
-eg P \lor 
-eg Q$
-C) $
-eg P 	o 
-eg Q$ e $
-eg P \leftrightarrow 
-eg Q$
-D) $P \lor Q$ e $P \land Q$
-E) $
-eg(P \leftrightarrow Q)$ e $
-eg P \lor Q$
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. As Leis de De Morgan determinam que: 1) a negação de 'E' vira 'OU' com as proposições negadas: $
-eg(P \land Q) \equiv 
-eg P \lor 
-eg Q$; 2) a negação de 'OU' vira 'E' com as proposições negadas: $
-eg(P \lor Q) \equiv 
-eg P \land 
-eg Q$. A opção A é a correta.
-</details>
-
----
-
-### Questão 35 (FCC)
-Considere as seguintes premissas de um argumento lógico válido: 
-1. Se o switch de rede queimar, o acesso à internet é interrompido. 
-2. O acesso à internet não foi interrompido. 
-A partir dessas premissas, a regra de inferência Modus Tollens nos permite deduzir a seguinte conclusão lógica:
-A) O switch de rede não queimou.
-B) O switch de rede queimou ontem à noite.
-C) O acesso à internet foi reestabelecido por técnicos de TI.
-D) Se o switch de rede não queimar, o acesso é interrompido.
-E) Nenhuma conclusão lógica válida pode ser deduzida no argumento.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A regra do Modus Tollens estabelece que, dadas as premissas $P 	o Q$ e $
-eg Q$, conclui-se validamente $
-eg P$. Na questão, $P$ = 'o switch de rede queimar', $Q$ = 'o acesso à internet é interrompido'. Sabendo que $
-eg Q$ ('O acesso não foi interrompido'), conclui-se $
-eg P$ ('O switch de rede não queimou'). A alternativa A é correta.
-</details>
-
----
-
-### Questão 36 (FCC)
-A regra de inferência lógica clássica conhecida como Modus Ponens pode ser estruturada da seguinte forma matemática nas premissas de um argumento:
-A) Dadas as premissas $P 	o Q$ e $
-eg Q$, conclui-se validamente a negação $
-eg P$ no argumento lógico.
-B) Dadas as premissas $P 	o Q$ e $P$, conclui-se validamente a proposição $Q$ no argumento lógico.
-C) Dadas as premissas $P \lor Q$ e $
-eg P$, conclui-se validamente a proposição $Q$ no argumento lógico.
-D) Dadas as premissas $P \land Q$ e $R$, conclui-se a conjunção de todas as variáveis ativas do sistema.
-E) Dadas as premissas $P 	o Q$ e $Q 	o R$, conclui-se a condicional transitiva simplificada $P 	o R$ no argumento.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. O Modus Ponens (afirmação do antecedente) diz que se temos a condicional $P 	o Q$ e afirmamos a antecedente $P$, conclui-se necessariamente a consequente $Q$.
-</details>
-
----
-
-### Questão 37 (FCC)
-Considere a proposição composta: *"O analista de TI revisa o código ou ele realiza os testes unitários"*. A negação lógica dessa disjunção inclusiva é dada por:
-A) O analista de TI não revisa o código ou ele não realiza os testes unitários.
-B) O analista de TI não revisa o código e ele não realiza os testes unitários.
-C) Se o analista de TI não revisa o código, então ele não realiza os testes.
-D) O analista de TI revisa o código e ele realiza os testes unitários com calma.
-E) Se o analista de TI revisa o código, então ele não realiza os testes unitários.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. Negar a disjunção 'P ou Q' significa negar ambas as partes e trocar o conector 'ou' pelo 'e' ($
-eg P \land 
-eg Q$). Portanto: 'O analista não revisa o código E não realiza os testes'. A alternativa B está correta.
-</details>
-
----
-
-### Questão 38 (FCC)
-Na tabela verdade, a proposição composta que resulta em valores lógicos verdadeiros em todas as suas linhas, independentemente dos valores das proposições simples que a compõem, é classificada como uma:
-A) Contradição
-B) Tautologia
-C) Contingência
-D) Equivalência condicional
-E) Falácia formal
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. Tautologia é a proposição composta cujo valor lógico é sempre verdadeiro. Contradição é sempre falso. Contingência pode ser verdadeiro ou falso dependendo das entradas.
-</details>
-
----
-
-### Questão 39 (FCC)
-Assinale a alternativa que apresenta uma falácia formal clássica relacionada ao uso incorreto de regras de inferência lógica condicional:
-A) Negação da antecedente, em que se conclui que, dada a disjunção $P \lor Q$ e a negação de $P$, conclui-se validamente a negação de $Q$.
-B) Afirmação do consequente, em que se assume que, dada a condicional $P 	o Q$ e a ocorrência de $Q$, conclui-se validamente $P$.
-C) Silogismo disjuntivo, no qual a afirmação de uma das premissas exclui obrigatoriamente a veracidade da outra proposição simples.
-D) Modus Tollens aplicado a uma negação simples em que a antecedente condicional é desconsiderada durante a inferência.
-E) Dilema construtivo baseado em tabelas verdade que possuem contingências na coluna final do conectivo lógico principal.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A afirmação do consequente é uma falácia formal (ex: 'Se chove, a rua fica molhada. A rua está molhada, logo choveu' - a rua pode ter sido molhada por um caminhão de limpeza). Não é uma inferência dedutiva válida.
-</details>
-
----
-
-### Questão 40 (FCC)
-Considere a proposição condicional: *"Se o processo é julgado tempestivamente, então os direitos do cidadão são plenamente assegurados"*. A contrapositiva dessa proposição é:
-A) O processo é julgado tempestivamente e os direitos do cidadão não são plenamente assegurados no tribunal.
-B) Se os direitos do cidadão são plenamente assegurados, então o processo é julgado tempestivamente.
-C) Se o processo não é julgado tempestivamente, então os direitos do cidadão não são plenamente assegurados.
-D) Se os direitos do cidadão não são plenamente assegurados, então o processo não é julgado tempestivamente.
-E) O processo não é julgado tempestivamente ou os direitos do cidadão são plenamente assegurados pelo comitê.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. A contrapositiva da condicional $P 	o Q$ é $
-eg Q 	o 
-eg P$. Negando a consequente e a antecedente e invertendo a ordem, temos: 'Se os direitos do cidadão não são plenamente assegurados, então o processo não é julgado tempestivamente'. A alternativa D está correta.
-</details>
-
----
-
-### Questão 41 (FCC)
-Uma proposição bicondicional $P \leftrightarrow Q$ é logicamente equivalente a qual das seguintes construções na lógica formal proposicional?
-A) $(P 	o Q) \land (Q 	o P)$
-B) $(P 	o Q) \lor (Q 	o P)$
-C) $(P \land Q) \lor (
-eg P \land 
-eg Q)$
-D) $(P 	o Q) 	o (Q 	o P)$
-E) $(
-eg P \lor Q) \land (P \lor 
-eg Q)$
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A bicondicional 'P se e somente se Q' ($P \leftrightarrow Q$) significa que P implica Q E Q implica P. Logo, é equivalente a $(P 	o Q) \land (Q 	o P)$. A opção A é a alternativa correspondente.
-</details>
-
----
-
-### Questão 42 (FCC)
-Qual é o valor lógico da proposição composta $(P \lor Q) 	o (P \land R)$, sabendo que os valores lógicos das proposições simples são: P é VERDADEIRO, Q é FALSO e R é FALSO?
-A) Falso
-B) Verdadeiro
-C) Inconclusivo devido à falta de dados sobre a tabela verdade.
-D) Verdadeiro ou Falso, dependendo da ordem das premissas.
-E) Nulo, pois a condicional não admite antecedente verdadeiro.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. Avaliando os termos: 1) $P \lor Q$ = VERDADEIRO $\lor$ FALSO = VERDADEIRO; 2) $P \land R$ = VERDADEIRO $\land$ FALSO = FALSO. A condicional fica VERDADEIRO $	o$ FALSO, que é FALSO. A alternativa A está correta.
-</details>
-
----
-
-### Questão 43 (FCC)
-Deseja-se demonstrar que a conjunção de duas proposições quaisquer, P e Q, é falsa. Para que a proposição composta $P \land Q$ seja classificada como FALSA, basta que:
-A) A negação da variável P seja logicamente equivalente ao valor de verdade da variável dependente secundária R.
-B) Ambas as proposições simples, P e Q, sejam obrigatoriamente classificadas como falsas de forma síncrona no sistema.
-C) A proposição P seja verdadeira e a proposição Q seja classificada como verdadeira na análise de linhas da tabela.
-D) Pelo menos uma das proposições simples, P ou Q, seja classificada como falsa na tabela verdade correspondente.
-E) O conectivo principal da oração seja alterado para uma disjunção exclusiva através da aplicação das regras de De Morgan.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. Para que a conjunção (E)  seja falsa, basta que uma de suas componentes seja falsa. Para que ela seja verdadeira, ambas devem ser verdadeiras. A alternativa D descreve essa regra logicamente.
-</details>
-
----
-
-### Questão 44 (FCC)
-Considere o seguinte argumento lógico: 
-Premissa 1: Todos os analistas de sistemas sabem programar na linguagem de programação Java. 
-Premissa 2: Carlos sabe programar na linguagem de programação Java. 
-Conclusão: Carlos é um analista de sistemas. 
-Sobre a validade desse argumento lógico, assinale a alternativa correta:
-A) O argumento constitui um exemplo clássico da aplicação da regra de inferência lógica válida denominada Modus Tollens.
-B) O argumento é plenamente válido, pois a primeira premissa garante que apenas analistas sabem programar na linguagem Java.
-C) O argumento é classificado como uma tautologia matemática porque as premissas e a conclusão possuem valores lógicos verdadeiros.
-D) A conclusão deduzida no argumento é falsa porque veda a possibilidade de Carlos programar em outras linguagens do mercado.
-E) Trata-se de um argumento inválido, pois Carlos pode saber programar em Java sem necessariamente ser um analista de sistemas.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. Esse é um argumento inválido (falácia de afirmação do consequente). O conjunto de pessoas que programam em Java engloba os analistas, mas pode conter outros profissionais (Carlos pode ser engenheiro, estudante, etc.). Logo, não podemos concluir que Carlos é analista. A alternativa E está correta.
-</details>
-
----
-
-### Questão 45 (FCC)
-Para negar a proposição categórica universal: *"Todo servidor público do tribunal de justiça é dedicado"*, deve-se utilizar a seguinte redação:
-A) Pelo menos um servidor público do tribunal de justiça não é dedicado.
-B) Nenhum servidor público do tribunal de justiça é dedicado no exercício de suas funções.
-C) Todos os servidores públicos do tribunal de justiça não são dedicados nas comarcas.
-D) Se uma pessoa é servidora pública do tribunal de justiça, então ela não é dedicada.
-E) Pelo menos um servidor público do tribunal de justiça é dedicado em suas atividades.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A negação de uma proposição universal afirmativa 'Todo A é B' é uma proposição particular negativa 'Algum A não é B' (ou 'Existe A que não é B', 'Pelo menos um A não é B'). A alternativa A apresenta a forma correta.
-</details>
-
----

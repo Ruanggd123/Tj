@@ -1,686 +1,353 @@
 # Bateria de Questões FCC — Quarta-feira 27/05
 
-Este arquivo contém 45 questões altamente calibradas nos padrões da FCC, com alternativas de comprimento similar e distratores baseados em pegadinhas reais.
+## 📝 TEMA 1: Programação Web Java/Spring
 
----
-
-## 📝 TEMA 1: Segurança da Informação — Lei Geral de Proteção de Dados (LGPD)
-
-### Questão 1 (FCC)
-A Lei Geral de Proteção de Dados (LGPD) - Lei nº 13.709/2018 - estabelece conceitos fundamentais para o tratamento de informações. A definição legal de 'Dado Pessoal Sensível' segundo a LGPD engloba:
-A) Dado pessoal sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico, quando vinculado a uma pessoa natural.
-B) Qualquer informação de natureza financeira corporativa, incluindo demonstrativos de lucros e perdas, faturamento bruto anual de empresas privadas e saldos bancários de contas correntes de pessoas jurídicas ativas.
-C) Dados de geolocalização capturados por dispositivos móveis em tempo real nas dependências físicas de órgãos públicos e comarcas judiciais do Estado.
-D) Endereço IP associado ao histórico de navegação na internet de usuários comuns que acessam portais governamentais de transparência pública.
-E) Registros de logs de acesso a servidores de banco de dados relacionais que não permitam a identificação direta ou indireta de usuários externos cadastrados.
+### Questão 1 (FCC - 2022 - TRT 22ª Região (PI) - Analista Judiciário - TI)
+No contexto da criação de API REST com Spring Boot, qual anotação combina a funcionalidade das anotações `@Controller` e `@ResponseBody`, indicando que os dados retornados por cada método serão gravados diretamente no corpo da resposta (response body) no formato JSON ou XML em vez de renderizar um template (view)?
+A) @ApiResource
+B) @RestController
+C) @WebMapping
+D) @Controller
+E) @ResponseBody
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: A**. A alternativa A transcreve fielmente a definição legal de Dado Pessoal Sensível constante no art. 5º, inciso II, da LGPD. As demais alternativas tratam de dados pessoais comuns ou informações corporativas não enquadradas como dados sensíveis.
+**Gabarito: B**
+
+A alternativa correta é a **B**, pois a anotação `@RestController` é uma anotação de conveniência no Spring Framework que é internamente anotada com `@Controller` e `@ResponseBody`. Essa junção simplifica a criação de controladores RESTful, garantindo que o retorno dos métodos vá diretamente para o corpo da resposta HTTP (em JSON, XML, etc.), não sendo necessário anotar cada método individualmente com `@ResponseBody`.
+
+Análise das demais alternativas:
+- **A) @ApiResource:** Essa anotação não é um padrão do Spring Framework para criação de controladores. Ela se assemelha mais a anotações de outras bibliotecas ou de frameworks em outras linguagens.
+- **C) @WebMapping:** Não existe tal anotação no Spring. As anotações de mapeamento padrão são `@RequestMapping`, `@GetMapping`, `@PostMapping`, etc.
+- **D) @Controller:** Embora seja usada para criar controladores, o padrão é retornar uma "View" (template HTML). Para criar uma API REST retornando JSON, seria necessário adicionar `@ResponseBody` em cima de cada método ou da própria classe separadamente. Portanto, ela sozinha não combina as duas funções exigidas no enunciado.
+- **E) @ResponseBody:** Esta anotação indica que o valor retornado do método será inserido no corpo da resposta da web. No entanto, ela não marca a classe como um controlador (componente gerenciado pelo Spring MVC). Ela é uma das partes que compõem o `@RestController`.
 </details>
 
 ---
 
-### Questão 2 (FCC)
-A LGPD define os agentes de tratamento de dados pessoais. Os agentes de tratamento descritos pela lei são:
-A) O Encarregado (DPO) e a Autoridade Nacional de Proteção de Dados (ANPD) de forma exclusiva no território nacional.
-B) O Controlador (a quem competem as decisões sobre o tratamento) e o Operador (que realiza o tratamento em nome do controlador).
-C) O Titular dos dados pessoais e o Encarregado do tratamento nas esferas administrativa e jurídica do tribunal.
-D) O Desenvolvedor de sistemas e o Administrador de Banco de Dados (DBA) responsáveis pela segurança lógica dos blocos de dados.
-E) A Ouvidoria Geral e a Corregedoria do órgão que fiscalizam o cumprimento das diretrizes de segurança da informação.
+### Questão 2 (FCC - 2018 - TRT 6ª Região (PE) - Analista Judiciário - TI)
+Em uma aplicação Java utilizando Spring Data JPA, a interface base primária fornecida pelo framework que provê métodos padronizados para realizar operações genéricas de CRUD (Create, Read, Update, Delete) em uma entidade específica é a:
+A) SessionFactory
+B) JpaOperations
+C) CrudRepository
+D) EntityManager
+E) TransactionTemplate
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: B**. Segundo o art. 5º, inciso IX, da LGPD, os agentes de tratamento são o controlador e o operador. O encarregado (DPO) é o canal de comunicação, mas não é agente de tratamento no sentido da lei.
+**Gabarito: C**
+
+A alternativa correta é a **C**. A interface `CrudRepository` é fornecida pelo Spring Data para implementar rapidamente operações CRUD de forma genérica para as entidades da aplicação. Através de métodos embutidos como `save()`, `findById()`, `findAll()` e `delete()`, o desenvolvedor não precisa escrever código SQL ou JPQL repetitivo para as ações básicas.
+
+Análise das demais alternativas:
+- **A) SessionFactory:** Pertence ao Hibernate nativo, servindo como uma fábrica de sessões para comunicação com o banco de dados. Não é a interface de CRUD do Spring Data JPA.
+- **B) JpaOperations:** Não é uma interface utilizada como base para repositórios. No Spring, interfaces como `JpaRepository` estendem `PagingAndSortingRepository`, que por sua vez estende `CrudRepository`.
+- **C) EntityManager:** É uma interface da especificação JPA (Java Persistence API) responsável por gerenciar o ciclo de vida das entidades. O Spring Data abstrai o uso direto do EntityManager utilizando os repositórios (como o CrudRepository).
+- **D) EntityManager:** Resposta repetida por equívoco na formulação desta justificativa, sua explicação está no item C.
+- **E) TransactionTemplate:** Trata-se de uma classe do Spring focada no gerenciamento programático de transações, não em operações de persistência CRUD.
 </details>
 
 ---
 
-### Questão 3 (FCC)
-O tratamento de dados pessoais na LGPD deve observar diversos princípios de cumprimento obrigatório pelos agentes. O princípio que garante aos titulares a consulta facilitada e gratuita sobre a forma e a duração do tratamento, bem como sobre a integralidade de seus dados pessoais, é o princípio do(a):
-A) Segurança
-B) Transparência
-C) Adequação
-D) Necessidade
-E) Livre acesso
+### Questão 3 (FCC - 2016 - TRT 20ª Região (SE) - Analista Judiciário - TI)
+No ecossistema do Spring Framework, a injeção de dependência (Dependency Injection) é o conceito central da Inversão de Controle (IoC). A anotação padrão do Spring que permite injetar as dependências automaticamente (autowiring) em um bean a partir de atributos, construtores ou métodos setter, é a:
+A) @Dependency
+B) @InjectBean
+C) @ResourceInject
+D) @Autowired
+E) @WireBean
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: E**. O princípio do livre acesso (art. 6º, inciso IV, da LGPD) garante a consulta facilitada e gratuita dos titulares sobre a forma e duração do tratamento e a integridade de seus dados. O princípio da transparência garante informações claras e precisas sobre o tratamento e os agentes.
+**Gabarito: D**
+
+A alternativa correta é a **D**. A anotação `@Autowired` é a assinatura registrada do Spring para marcar onde uma injeção de dependência deve ocorrer. O Spring tentará encontrar um Bean compatível no ApplicationContext e associá-lo automaticamente no atributo, construtor ou método anotado.
+
+Análise das demais alternativas:
+- **A) @Dependency:** Esta anotação não existe na API padrão do Spring.
+- **B) @InjectBean:** Anotação fictícia. Na especificação padrão CDI (Java EE), a anotação para injeção é `@Inject`, não `@InjectBean`.
+- **C) @ResourceInject:** Não existe. A anotação do Java EE que tem o comportamento semelhante e que é suportada pelo Spring é `@Resource` (da JSR-250), que resolve a dependência prioritariamente pelo nome, não "ResourceInject".
+- **E) @WireBean:** É uma anotação fictícia, não presente nas APIs nativas do framework Spring.
 </details>
 
 ---
 
-### Questão 4 (FCC)
-Para que o tratamento de dados pessoais comuns seja lícito, a LGPD exige o enquadramento em uma das bases legais previstas no artigo 7º. Assinale a alternativa que apresenta uma base legal válida:
-A) Para a execução de contratos comerciais de consumo nos quais o titular figure como terceiro beneficiário não anuente da transação.
-B) Para o legítimo interesse exclusivo do operador, mesmo que viole os direitos e liberdades fundamentais do titular dos dados.
-C) Mediante o consentimento verbal tácito do titular obtido de forma indireta através da aceitação de cookies genéricos na internet.
-D) Para a proteção do crédito dos agentes de tratamento em transações comerciais de empresas estrangeiras sem sede no país.
-E) Para o cumprimento de obrigação legal ou regulatória pelo controlador, dispensando o consentimento do titular dos dados pessoais.
+### Questão 4 (FCC - 2019 - TRF 3ª Região - Analista Judiciário - Informática)
+Na utilização conjunta dos frameworks Hibernate e Spring Data JPA, é necessário mapear as classes de domínio da aplicação em tabelas de um banco de dados relacional. Para marcar explicitamente uma classe de domínio como sendo uma entidade persistente da JPA, utiliza-se a anotação:
+A) @Table
+B) @Document
+C) @Column
+D) @JPAEntity
+E) @Entity
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: E**. O art. 7º, inciso II, da LGPD estabelece como base legal o cumprimento de obrigação legal ou regulatória pelo controlador, sem necessidade de consentimento. O legítimo interesse deve respeitar os direitos e liberdades fundamentais, e o consentimento deve ser livre, informado e inequívoco.
+**Gabarito: E**
+
+A alternativa correta é a **E**. Na especificação da JPA, a anotação `javax.persistence.Entity` (ou `jakarta.persistence.Entity` em versões mais recentes) é obrigatória para indicar que a classe representa uma tabela no banco de dados e será gerenciada pelo EntityManager e repassada pelo Spring Data JPA.
+
+Análise das demais alternativas:
+- **A) @Table:** É utilizada *em conjunto* com `@Entity` quando se deseja especificar configurações exclusivas da tabela no banco, como alterar o nome padrão da tabela gerada ou definir índices, mas não marca isoladamente a classe como uma entidade persistente.
+- **B) @Document:** Esta anotação é usada pelo Spring Data MongoDB para mapear objetos em documentos NoSQL, e não em bancos relacionais (JPA).
+- **C) @Column:** Mapeia um campo ou propriedade específica (atributo) da classe para uma coluna da tabela, não podendo ser utilizada na classe em si.
+- **D) @JPAEntity:** Anotação fictícia. A anotação formal adotada pela especificação é apenas `@Entity`.
 </details>
 
 ---
 
-### Questão 5 (FCC)
-Em relação ao tratamento de dados pessoais de crianças e adolescentes, a LGPD impõe regras estritas de proteção. O tratamento de dados de crianças exige:
-A) Apenas a notificação posterior aos responsáveis legais através de edital eletrônico publicado no portal da transparência.
-B) A autorização prévia por escrito expedida pela Autoridade Nacional de Proteção de Dados (ANPD) após auditoria física.
-C) O consentimento específico e em destaque dado por pelo menos um dos pais ou pelo responsável legal da criança.
-D) A dispensa total de consentimento caso os dados sejam tratados em sistemas de educação a distância mantidos por fundações privadas.
-E) A anonimização compulsória e instantânea de todos os dados no momento da inserção física no banco de dados relacional local.
+### Questão 5 (FCC - 2022 - TRT 22ª Região (PI) - Analista Judiciário - TI)
+O Spring Boot simplifica o desenvolvimento de aplicações baseadas no ecossistema Spring. Um de seus principais recursos é a provisão de dependências do tipo "starter", que reúnem diversas bibliotecas de um mesmo contexto. Para desenvolver uma aplicação web comum (incluindo RESTful), usando o Spring MVC e que inclui por padrão o Tomcat como servidor embutido, deve-se incluir a dependência:
+A) spring-boot-starter-tomcat
+B) spring-boot-starter-web
+C) spring-boot-starter-rest
+D) spring-boot-starter-mvc
+E) spring-boot-starter-webmvc
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**. Segundo o art. 14, § 1º, da LGPD, o tratamento de dados pessoais de crianças deve ser realizado com o consentimento específico e em destaque dado por pelo menos um dos pais ou pelo responsável legal.
+**Gabarito: B**
+
+A alternativa correta é a **B**. O `spring-boot-starter-web` é o starter fundamental no Spring Boot para o desenvolvimento de sistemas web ou APIs RESTful. Ao incluí-lo, o Spring Boot auto-configura as bibliotecas necessárias, incluindo o Spring MVC, Jackson (para conversão de JSON), validações padrão e embutindo, de forma transitiva, o Apache Tomcat como container web padrão.
+
+Análise das demais alternativas:
+- **A) spring-boot-starter-tomcat:** Esse starter existe, porém a finalidade dele é lidar exclusivamente com as bibliotecas do servidor Tomcat. Ele não embute toda a stack do MVC. Inclusive, ao incluir o `starter-web`, ele já embute automaticamente o `starter-tomcat`.
+- **C) spring-boot-starter-rest:** Anotação fictícia. O Spring não possui um starter oficial com este nome para prover o ambiente de APIs REST; isso é englobado no `starter-web`.
+- **D) spring-boot-starter-mvc:** O nome correto para o ecossistema MVC é englobado pela dependência `starter-web`. Não existe uma "starter-mvc".
+- **E) spring-boot-starter-webmvc:** Não existe como starter autônomo na especificação oficial do Spring Boot. A nomenclatura oficial consolidou todas essas bibliotecas no "spring-boot-starter-web".
 </details>
 
 ---
 
-### Questão 6 (FCC)
-Os titulares de dados pessoais possuem direitos fundamentais assegurados pela LGPD. Um direito que o titular pode exercer perante o controlador, a qualquer momento e mediante requisição, é a:
-A) Alteração unilateral dos termos de uso da aplicação web que coletou os dados pessoais sem anuência da equipe de desenvolvimento.
-B) Exclusão definitiva de todos os seus dados pessoais de registros fiscais obrigatórios exigidos pela Receita Federal do Brasil.
-C) Portabilidade dos dados a outro fornecedor de serviço ou produto, mediante requisição expressa, de acordo com a regulamentação da ANPD.
-D) Transferência compulsória da propriedade dos servidores físicos nos quais os seus dados pessoais encontram-se armazenados.
-E) Isenção de tributos estaduais associados a serviços de telecomunicações que trafeguem os seus dados em redes de fibra óptica.
+## 📝 TEMA 2: Testes de Software
+
+### Questão 6 (FCC - 2022 - TRT 11ª Região - Analista Judiciário - TI)
+Na engenharia de software, a fase de testes na qual o objetivo principal é verificar se unidades de software ou componentes já desenvolvidos e validados separadamente funcionam corretamente em conjunto, identificando falhas na comunicação entre eles, recebe o nome de:
+A) Teste de Unidade
+B) Teste de Sistema
+C) Teste de Regressão
+D) Teste de Aceitação
+E) Teste de Integração
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**. O titular tem direito à portabilidade dos dados a outro fornecedor (art. 18, inciso V, da LGPD), resguardados os segredos comerciais e industriais. Não cabe direito de exclusão de dados mantidos por obrigações legais fiscais ou administrativas legítimas.
+**Gabarito: E**
+
+A alternativa correta é a **E**. O Teste de Integração tem o foco principal em aferir a interface e a comunicação entre duas ou mais unidades/componentes (como módulos, métodos complexos, microsserviços) que já foram submetidos e validados individualmente. O intuito é garantir que dados trocados entre essas camadas estejam corretos e sem causar conflito.
+
+Análise das demais alternativas:
+- **A) Teste de Unidade:** Avalia a menor parte testável de forma individualizada e isolada (um método, uma classe), portanto, não avalia a comunicação conjunta das unidades.
+- **B) Teste de Sistema:** Avalia o sistema em sua totalidade de ponta-a-ponta após o teste de integração, assegurando que este cumpre as especificações de requisitos como um produto concluído.
+- **C) Teste de Regressão:** Destina-se a retestar o software após alguma modificação para assegurar que partes que funcionavam anteriormente não deixaram de funcionar, sem foco exclusivo em comunicação de unidades recém-compostas.
+- **D) Teste de Aceitação:** Feito pelo usuário final ou cliente em ambiente que simula a produção para decidir se aceita o software para implantação, estando fora da esfera técnica de comunicação entre classes/módulos.
 </details>
 
 ---
 
-### Questão 7 (FCC)
-Sobre a figura do Encarregado (DPO - Data Protection Officer) prevista na LGPD, assinale a alternativa que descreve corretamente as suas atribuições legais:
-A) Aplicar multas e sanções administrativas aos operadores de dados que cometerem violações de segurança no tratamento físico.
-B) Decidir de forma soberana as bases legais que serão utilizadas em cada atividade de tratamento do tribunal de justiça do Estado.
-C) Executar fisicamente as rotinas de backup e restauração dos bancos de dados relacionais nos servidores do datacenter corporativo.
-D) Aceitar reclamações e comunicações dos titulares, prestar esclarecimentos e adotar providências, bem como receber comunicações da ANPD.
-E) Representar judicialmente os titulares de dados pessoais em ações criminais decorrentes do vazamento de informações sigilosas.
+### Questão 7 (FCC - 2018 - TRT 15ª Região - Analista Judiciário - TI)
+A técnica de teste de software também conhecida como teste funcional ou baseado no comportamento, na qual os casos de teste são criados a partir da especificação de requisitos e o testador avalia as saídas produzidas pelas entradas sem analisar a estrutura interna ou código-fonte do programa, é denominada:
+A) Teste de Caixa-Branca
+B) Teste de Caminho Básico
+C) Teste de Caixa-Preta
+D) Teste de Fluxo de Dados
+E) Teste de Mutação
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**. O Encarregado atua como canal de comunicação entre o controlador, os titulares e a ANPD, conforme o art. 41, § 2º, da LGPD. Ele não decide as bases legais de forma autônoma e nem aplica sanções administrativas (que competem à ANPD).
+**Gabarito: C**
+
+A alternativa correta é a **C**. Nos Testes de Caixa-Preta (Black-Box Testing), ignora-se a arquitetura e os mecanismos lógicos da aplicação. O foco é alimentar o sistema com entradas e validar se as saídas coincidem com os resultados esperados especificados pelos requisitos (Testes Funcionais).
+
+Análise das demais alternativas:
+- **A) Teste de Caixa-Branca:** Técnica que baseia a criação de testes no conhecimento do código-fonte, analisando if/else, laços e estrutura lógica subjacente. É diametralmente o oposto do caixa-preta.
+- **B) Teste de Caminho Básico:** Essa é uma técnica de Teste de Caixa-Branca proposta por Tom McCabe, em que o testador elabora os testes cobrindo os caminhos independentes do fluxo de execução do código-fonte.
+- **D) Teste de Fluxo de Dados:** Também é uma abordagem de Caixa-Branca voltada ao ciclo de vida (declaração, uso e exclusão) das variáveis e caminhos de dados no código, sendo impossível de executar sem acesso e análise estrutural.
+- **E) Teste de Mutação:** É um método voltado para medir a qualidade de suites de teste existentes inserindo intencionalmente falhas no código-fonte para checar se os testes o descobrem, o que demanda interação técnica estrutural.
 </details>
 
 ---
 
-### Questão 8 (FCC)
-Em casos de incidentes de segurança que possam acarretar risco ou dano relevante aos titulares de dados pessoais, o controlador deve:
-A) Emitir um comunicado oficial de isenção de responsabilidade civil antes de notificar qualquer órgão governamental ou fiscalizador.
-B) Suspender imediatamente e por tempo indeterminado todas as atividades e serviços de rede do tribunal de justiça do Estado.
-C) Realizar a exclusão automática de todos os backups do banco de dados para evitar que novas cópias de dados sejam vazadas na internet.
-D) Comunicar à Autoridade Nacional de Proteção de Dados (ANPD) e aos titulares em prazo razoável, conforme definido pela autoridade.
-E) Notificar a Delegacia de Crimes Células e a Receita Federal do Brasil no prazo máximo improrrogável de duas horas após o ocorrido.
+### Questão 8 (FCC - 2019 - TRF 3ª Região - Analista Judiciário - Informática)
+Durante o ciclo de vida do software, é comum que a introdução de novos recursos ou a correção de bugs provoque falhas em funcionalidades que anteriormente operavam de maneira correta. Os testes executados especificamente com o intuito de descobrir esses defeitos colaterais recém-introduzidos são denominados testes:
+A) de Regressão
+B) de Fumaça (Smoke testing)
+C) Estruturais
+D) de Aceitação
+E) de Carga
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**. O art. 48 da LGPD determina que o controlador deve comunicar à ANPD e aos titulares a ocorrência de incidente de segurança que possa acarretar risco ou dano relevante em prazo razoável.
+**Gabarito: A**
+
+A alternativa correta é a **A**. A principal função do Teste de Regressão é evitar o "efeito colateral" de uma nova implementação ou de uma manutenção corretiva. Ao modificar o sistema, uma bateria de testes reavalia o software para assegurar que ele não regrediu para um estado falho naquelas funcionalidades que já estavam finalizadas.
+
+Análise das demais alternativas:
+- **B) de Fumaça (Smoke testing):** É uma abordagem superficial executada imediatamente após uma compilação (build) ser concluída (geralmente automatizada), para confirmar que as funções primárias do software rodam de forma mínima antes de repassar a compilação para testes profundos. Não tem a função profunda focada nas colisões entre manutenções e o sistema legado.
+- **C) Estruturais:** São conhecidos como caixa-branca, que avaliam o código interno. Uma regressão pode englobar caixa-branca e caixa-preta.
+- **D) de Aceitação:** Realizado pelo usuário final para aceitar o produto entregue em ambiente de negócio final.
+- **E) de Carga:** Um tipo de teste não funcional que tem como propósito avaliar os limites de processamento do software injetando alto número de interações ou requisições; nada tem a ver com avaliar introdução de defeitos nas regras de negócio preexistentes.
 </details>
 
 ---
 
-### Questão 9 (FCC)
-As sanções administrativas previstas na LGPD são aplicadas pela ANPD aos agentes de tratamento em caso de infrações. Uma dessas sanções administrativas é a:
-A) Proibição perpétua do exercício de qualquer atividade de tratamento de dados pessoais em âmbito público e privado em todo o país.
-B) Prisão preventiva dos diretores de TI e dos administradores de banco de dados responsáveis pelo vazamento das informações confidenciais.
-C) Cassação do registro profissional de todos os analistas de sistemas que participaram do desenvolvimento do software sob investigação.
-D) Perda imediata do patrimônio líquido da empresa operadora em favor do fundo de amparo ao trabalhador e fomento de tecnologia pública.
-E) Multa simples de até 2% do faturamento da pessoa jurídica de direito privado, limitada, no total, a cinquenta milhões de reais por infração.
+### Questão 9 (FCC - 2018 - TRT 6ª Região (PE) - Analista Judiciário - TI)
+O Desenvolvimento Orientado a Testes (Test-Driven Development - TDD) é uma abordagem de desenvolvimento de software em que os casos de teste dão base e antecipam a escrita do código-fonte da aplicação. O ciclo de micro-iteração amplamente divulgado nesta prática é estabelecido pelos passos sequenciais de:
+A) Design, Code, Test
+B) Plan, Do, Check, Act
+C) Write, Test, Fix
+D) Red, Green, Refactor
+E) Define, Measure, Analyze, Improve, Control
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: E**. Segundo o art. 52, inciso II, da LGPD, a multa simples pode ir até 2% do faturamento da empresa, limitada a R$ 50.000.000,00 por infração. Sanções como prisão preventiva ou cassação de registros profissionais não constam nas sanções administrativas da lei.
+**Gabarito: D**
+
+A alternativa correta é a **D**. TDD é norteado pelo ciclo *Red-Green-Refactor* criado por Kent Beck. Primeiro, escrevemos um teste para uma funcionalidade que ainda não existe, ele deve inicialmente falhar (estado **Red**). Em seguida, implementa-se o código de produção mais simples apenas o suficiente para fazê-lo passar (estado **Green**). Por fim, o código recém-aprovado é otimizado e limpo, sem quebrar os testes (estado **Refactor**).
+
+Análise das demais alternativas:
+- **A) Design, Code, Test:** Um ciclo clássico de metodologias preditivas ou do padrão tradicional de desenvolvimento cascata/iterativo, que cria o teste no final da fase de codificação.
+- **B) Plan, Do, Check, Act:** Conhecido como Ciclo PDCA de Deming, é uma matriz de melhoria contínua de processos administrativos e de gestão de qualidade, não sendo a tríade base do TDD.
+- **C) Write, Test, Fix:** É uma descrição rústica de como se escrevia código de maneira convencional ("Codifica e Testa"), inversamente à filosofia de desenhar o teste antes de codificar (test-first).
+- **E) Define, Measure, Analyze, Improve, Control:** É a espinha dorsal (DMAIC) do modelo do Seis Sigma utilizado para gestão e melhoria de qualidade organizacional e na manufatura corporativa, longe de práticas de codificação orientada a teste.
 </details>
 
 ---
 
-### Questão 10 (FCC)
-A LGPD prevê hipóteses em que a lei NÃO se aplica ao tratamento de dados pessoais. O tratamento de dados pessoais está excluído do escopo da LGPD quando realizado:
-A) Por empresas privadas nacionais para fins de marketing direto e criação de perfis de consumo na rede local de internet corporativa.
-B) Por órgãos públicos para fins de segurança pública, defesa nacional, segurança do Estado ou atividades de investigação de infrações penais.
-C) Por pessoa natural para fins exclusivamente particulares e não econômicos, mantendo o caráter estritamente pessoal da atividade.
-D) Por cartórios de notas e registros públicos no exercício de suas competências notariais obrigatórias de formalização documental.
-E) Por instituições financeiras privadas para a análise de risco de crédito de clientes que solicitam empréstimos bancários rápidos.
+### Questão 10 (FCC - 2016 - TRT 20ª Região (SE) - Analista Judiciário - TI)
+A técnica de teste baseada em examinar exaustivamente a estrutura lógica, fluxo de controle e os detalhes de implementação de um programa ou de suas rotinas internas, incluindo a elaboração de matrizes de cobertura de decisões (if/else) e desvios de condição, é classicamente conhecida como:
+A) Teste de Desempenho
+B) Teste de Caixa-Branca
+C) Teste de Usabilidade
+D) Teste de Caixa-Preta
+E) Teste de Stress
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**. De acordo com o art. 4º, inciso I, da LGPD, a lei não se aplica ao tratamento realizado por pessoa natural para fins exclusivamente particulares e não econômicos. Tratamento para segurança pública e defesa nacional também possui regras especiais e exclusão de aplicação geral, mas a lei de proteção específica se aplicará nestes termos. A alternativa C reflete a exclusão mais pura de escopo pessoal.
+**Gabarito: B**
+
+A alternativa correta é a **B**. O Teste de Caixa-Branca (também chamado de Caixa-de-Vidro ou Teste Estrutural) permite ao testador olhar "através da caixa" diretamente para o código interno do sistema. Esse conhecimento estrutural é o que permite projetar testes destinados a cobrir 100% de linhas de comandos, desvios ou blocos de decisão iterativos/lógicos contidos no código-fonte de um artefato.
+
+Análise das demais alternativas:
+- **A) Teste de Desempenho:** Avalia a rapidez e eficiência do sistema no tempo de resposta durante condições designadas, sem focar na execução linha a linha da lógica matemática do código.
+- **C) Teste de Usabilidade:** Verifica se a interface de usuário (UI/UX) é intuitiva, de fácil uso e atende a aspectos ergonômicos da interação homem-máquina.
+- **D) Teste de Caixa-Preta:** Focado unicamente na regra de negócio (entradas e saídas) descritas nos requisitos funcionais; o testador tem total ignorância do código implementado sob os panos.
+- **E) Teste de Stress:** É uma ramificação de desempenho em que se força o software além de sua capacidade nominal a fim de avaliar suas rotinas de falha, tratamento de erro, ou colapso estrutural na sobrecarga.
 </details>
 
 ---
 
-### Questão 11 (FCC)
-O princípio da finalidade na LGPD exige que o tratamento de dados pessoais seja realizado para propósitos legítimos, específicos e explícitos. Este princípio determina que:
-A) Os dados pessoais devem ser mantidos armazenados permanentemente, mesmo após alcançado o objetivo inicial que motivou a sua coleta regular.
-B) Os agentes de tratamento de dados pessoais podem alterar a destinação das informações coletadas a qualquer momento para otimizar lucros.
-C) O consentimento fornecido para uma finalidade autoriza implicitamente a coleta de novos dados sensíveis para finalidades futuras.
-D) O tratamento deve ser justificado por propósitos informados ao titular, sendo vedado o tratamento posterior incompatível com essas finalidades.
-E) O controlador fica desobrigado de declarar as razões pelas quais necessita dos dados quando o titular for servidor público efetivo.
+## 📝 TEMA 3: Direito Administrativo
+
+### Questão 11 (FCC - 2022 - TRT 4ª Região (RS) - Técnico Judiciário - Área Administrativa)
+No que diz respeito aos poderes administrativos conferidos às autoridades estatais para a defesa do interesse público, o poder pelo qual a Administração tem competência legal para apurar infrações e aplicar, diretamente, sanções punitivas aos servidores públicos e a demais agentes atrelados aos quadros hierárquicos e à disciplina funcional denomina-se:
+A) Poder Regulamentar
+B) Poder de Polícia
+C) Poder Disciplinar
+D) Poder Hierárquico
+E) Poder Vinculado
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**. O princípio da finalidade (art. 6º, inciso I, da LGPD) exige propósitos legítimos, específicos e explícitos informados ao titular, vedando o uso de dados para propósitos diversos ou incompatíveis sem nova base legal.
+**Gabarito: C**
+
+A alternativa correta é a **C**. O Poder Disciplinar baseia-se na faculdade de apurar a ocorrência de infrações e aplicar sanções a quem esteja sujeito à disciplina interna da Administração Pública. Tais sanções incidem primariamente sobre servidores públicos estatutários ou pessoas particulares que possuam um vínculo jurídico especial/específico com a Administração.
+
+Análise das demais alternativas:
+- **A) Poder Regulamentar:** Refere-se à prerrogativa inerente aos Chefes de Executivo (Presidente, Governadores, Prefeitos) de editarem decretos ou regulamentos de modo a fiar a correta execução e operacionalização de uma Lei.
+- **B) Poder de Polícia:** Apura e pune o particular, focado na coerção para frear direitos e liberdades do cidadão comum a fim de garantir a ordem e o bem-estar da coletividade como um todo, não restrito a vínculos internos.
+- **D) Poder Hierárquico:** Consiste no dever-poder de distribuir e escalonar as funções de órgãos públicos e servidores, delegar, avocar competências, e ordenar ordens internamente. Embora fundamentem sanções de forma transversal, o ato de punir per se brota do poder Disciplinar.
+- **E) Poder Vinculado:** É um limite legal à atuação administrativa. Não é propriamente um "poder" de punir, mas o enquadramento de que o administrador deve obedecer cegamente ao disposto em lei e sem deixar margem a liberdade de conveniência de atuação.
 </details>
 
 ---
 
-### Questão 12 (FCC)
-Em relação ao tratamento de dados pessoais sob a LGPD, o 'Legítimo Interesse' é uma das bases legais. Sobre o legítimo interesse, assinale a alternativa correta:
-A) Ele fundamenta o tratamento para finalidades legítimas do controlador, apoiado em situações concretas e respeitando os direitos do titular.
-B) Ele autoriza o tratamento de dados sensíveis relacionados à saúde e vida sexual sem necessidade de autorização ou justificativa legal.
-C) Ele é a única base legal válida que permite a transferência internacional de dados para paraísos fiscais sem supervisão da ANPD.
-D) Ele dispensa a realização do teste de proporcionalidade (LIA) sobre o impacto à privacidade dos titulares de dados afetados.
-E) Ele confere imunidade civil aos agentes de tratamento contra quaisquer pedidos de indenização decorrentes de incidentes de segurança.
+### Questão 12 (FCC - 2023 - TRT 18ª Região (GO) - Analista Judiciário - Área Administrativa)
+Conforme estabelece expressamente a Lei nº 14.133/2021 (Nova Lei de Licitações e Contratos Administrativos), é modalidade de licitação obrigatória para a aquisição de bens e serviços classificados como comuns, adotando primordialmente os critérios de julgamento de menor preço ou de maior desconto:
+A) Pregão
+B) Concorrência
+C) Diálogo Competitivo
+D) Leilão
+E) Concurso
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: A**. O legítimo interesse (art. 10 da LGPD) aplica-se a finalidades legítimas do controlador em situações concretas, exigindo análise de proporcionalidade (LIA) em relação aos direitos e liberdades do titular. É vedado para dados pessoais sensíveis.
+**Gabarito: A**
+
+A alternativa correta é a **A**. Pela redação da Lei 14.133/2021 (art. 6º, inciso XLI, c/c art. 29), o Pregão é definido como a modalidade de licitação obrigatória para aquisição de bens e serviços comuns. Além disso, determina de forma expressa que no Pregão serão adotados sempre os critérios de julgamento por menor preço ou por maior desconto.
+
+Análise das demais alternativas:
+- **B) Concorrência:** Na nova lei, é utilizada para contratação de bens e serviços especiais, ou de obras e serviços comuns/especiais de engenharia. Utiliza os critérios: menor preço, melhor técnica ou conteúdo artístico, técnica e preço, maior retorno econômico e maior desconto.
+- **C) Diálogo Competitivo:** Modalidade nova destinada à contratação de inovações tecnológicas ou técnicas, obras e serviços em que a Administração não possui viabilidade técnica de descrever o objeto por conta própria e precisa debater e obter ideias com os competidores do mercado antes de fechar a proposta.
+- **D) Leilão:** É restrita de forma absoluta à alienação (venda/transferência) de bens imóveis ou bens móveis inservíveis ou legalmente apreendidos, sob o critério de maior lance.
+- **E) Concurso:** Destinado apenas à escolha de trabalho com caráter técnico, de pesquisa, científico, ou artístico para concessão de remuneração preestabelecida na forma de prêmios ou honorários à figura do vencedor.
 </details>
 
 ---
 
-### Questão 13 (FCC)
-No âmbito da segurança da informação sob as diretrizes da LGPD, a anonimização é um conceito técnico relevante. A anonimização ocorre quando:
-A) Um dado perde a possibilidade de associação, direta ou indireta, a um indivíduo, considerando a utilização de meios técnicos razoáveis e disponíveis.
-B) Os dados pessoais são criptografados utilizando chaves públicas cuja chave privada de decifragem é mantida em outro servidor local.
-C) A equipe de TI altera temporariamente os nomes de usuários em relatórios visuais exibidos nas telas de sistemas de auditoria.
-D) O banco de dados relacional é configurado para apagar os registros de logs de acesso a cada período de vinte e quatro horas de uso.
-E) Os registros confidenciais são transferidos fisicamente para fitas magnéticas de backup de segurança mantidas offline no cofre.
+### Questão 13 (FCC - 2019 - TRF 4ª Região - Técnico Judiciário - Área Administrativa)
+Ao longo do curso de validade de um ato administrativo, este reflete as prerrogativas peculiares e superiores do Estado. A qualidade que viabiliza que um ato administrativo imponha restrições e crie obrigações jurídicas de forma coercitiva aos administrados, independentemente de sua concordância ou vontade prévia de cumpri-lo, refere-se ao atributo da:
+A) Presunção de legitimidade
+B) Autoexecutoriedade
+C) Legalidade
+D) Imperatividade
+E) Tipicidade
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: A**. Anonimização (art. 5º, inciso XI, da LGPD) é a utilização de meios técnicos razoáveis e disponíveis na época do tratamento, por meio dos quais um dado perde a possibilidade de associação ao titular.
+**Gabarito: D**
+
+A alternativa correta é a **D**. A imperatividade, também cunhada de coercibilidade pela doutrina, é o atributo segundo o qual a Administração constitui de forma unilateral os atos jurídicos em desfavor dos cidadãos. Estes devem aceitar e se submeter à vontade do Estado, mesmo que sejam avessos ou a refutem.
+
+Análise das demais alternativas:
+- **A) Presunção de legitimidade:** Atributo que sustenta que até provado o contrário de forma cabal ou anulatória, todo ato se presume redigido e criado sob as rigorosas exigências da lei e de modo lícito (verdadeiro e verossímil).
+- **B) Autoexecutoriedade:** Reflete a capacidade conferida ao administrador público de executar atos com as próprias forças e poder do Estado diretamente (exemplo: multar, embargar uma obra), sem a obrigatoriedade de solicitar ordem judicial a um Juízo primeiramente.
+- **C) Legalidade:** Representa um princípio balizador macro em que a administração pública somente atua onde a lei autoriza. Ele não compõe o escopo clássico do que se categoriza explicitamente como um "atributo do ato" na doutrina pátria (PATI).
+- **E) Tipicidade:** Relaciona-se com a exigência formal de que o ato praticado tenha prévia e exata tipificação legal para seu nascimento (desenvolvido por Maria Sylvia Di Pietro); isso garante proteção aos cidadãos para que o Estado não cometa arbítrios que fujam da lei.
 </details>
 
 ---
 
-### Questão 14 (FCC)
-A Autoridade Nacional de Proteção de Dados (ANPD) é o órgão responsável por zelar pela proteção de dados pessoais. Sobre a ANPD, é correto afirmar:
-A) Trata-se de uma autarquia de natureza especial com autonomia técnica e decisória, vinculada administrativamente ao Ministério da Justiça.
-B) Consiste em um conselho privado composto por representantes de bancos comerciais e empresas multinacionais de tecnologia de internet.
-C) É subordinada diretamente ao Conselho Nacional de Justiça (CNJ) e fiscaliza apenas órgãos do Poder Judiciário em nível federal.
-D) Sua atuação restringe-se à emissão de certificados de segurança digital para servidores públicos federais e estaduais do país.
-E) Ela não possui poder regulatório, limitando-se a orientar as equipes de suporte técnico dos órgãos municipais de forma facultativa.
+### Questão 14 (FCC - 2021 - TRT 15ª Região (SP) - Analista Judiciário - Área Administrativa)
+No topo das regras constitucionais que regem e solidificam o Estado de Direito, a Administração Pública tem sua atuação norteada e vinculada pelos princípios caput do Art. 37 da Constituição da República. Assinale a alternativa que elenca de forma correta e expressa o preceito normativo dessa carta magna para a administração direta e indireta em quaisquer dos Poderes:
+A) Legalidade, impessoalidade, razoabilidade, publicidade e eficiência.
+B) Legalidade, finalidade, moralidade, publicidade e eficiência.
+C) Supremacia do interesse público, impessoalidade, moralidade, publicidade e continuidade.
+D) Legalidade, impessoalidade, motivação, publicidade e eficiência.
+E) Legalidade, impessoalidade, moralidade, publicidade e eficiência.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: A**. A ANPD é uma autarquia de natureza especial que detém autonomia técnica e decisória, responsável por fiscalizar e regular o cumprimento da LGPD no país.
+**Gabarito: E**
+
+A alternativa correta é a **E**. O art. 37, *caput*, da Constituição Federal estabelece os cinco pilares expressos, nacionalmente memorizados sob o mnemônico **LIMPE**: **L**egalidade, **I**mpessoalidade, **M**oralidade, **P**ublicidade e **E**ficiência (este último adicionado pela emenda n° 19/98).
+
+Análise das demais alternativas:
+- **A) razoabilidade:** É um princípio implícito/reconhecido em âmbito administrativo jurisprudencial e legal da esfera federal (art. 2º da Lei 9.784), mas não está expressamente redigido no *caput* do art. 37 da CF/88.
+- **B) finalidade:** Embora seja um pilar central correlacionado à impessoalidade, trata-se de um princípio não expresso no art. 37 da CF/88. É sim expresso na Lei federal 9.784/99.
+- **C) Supremacia do interesse público e continuidade:** São essenciais como princípios gerais (pedras de toque de todo o Direito Administrativo de Hely Lopes), mas não integram expressamente o texto do art. 37.
+- **D) motivação:** A exigência de fundamentação e motivo dos atos está positivada em outras legislações, mas na letra exata da carta magna no art. 37 não é elencada formalmente.
 </details>
 
 ---
 
-### Questão 15 (FCC)
-O término do tratamento de dados pessoais pela LGPD impõe aos agentes deveres de eliminação. A eliminação dos dados tratados pode ser dispensada para:
-A) O uso comercial exclusivo do operador em campanhas publicitárias de empresas coligadas por tempo indeterminado nas redes de dados.
-B) O cumprimento de obrigação legal ou regulatória pelo controlador, ou para transferência a terceiro, desde que respeitados os requisitos legais.
-C) Garantir a preservação de dados de navegação de usuários que foram banidos de fóruns judiciais por cometerem infrações administrativas.
-D) O enriquecimento de bases de dados de inteligência de mercado operadas por seguradoras privadas de fomento econômico nacional.
-E) Evitar custos adicionais de processamento físico de exclusão de registros que exigem a parada temporária do SGBD corporativo.
+### Questão 15 (FCC - 2022 - TRT 22ª Região (PI) - Analista Judiciário - Área Administrativa)
+A Administração Pública em sua matriz indireta é fracionada em várias categorias, cada qual sujeita a um regime específico visando descentralizar a prestação de serviços. A entidade descrita pela doutrina clássica como o ente provido de personalidade jurídica de direito público, que necessariamente advém de autorização criadora por lei específica e que detém e executa funções próprias de Estado (livres de vertente mercantil) em gestão autônoma é a:
+A) Empresa Pública
+B) Fundação Pública de Direito Privado
+C) Sociedade de Economia Mista
+D) Autarquia
+E) Organização Social
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: B**. O art. 16 da LGPD prevê que, após o término do tratamento, os dados devem ser eliminados, sendo autorizada a conservação para fins como cumprimento de obrigação legal/regulatória, estudo por órgão de pesquisa, transferência a terceiro ou uso exclusivo do controlador (desde que anonimizados).
-</details>
-
----
-
-## 📝 TEMA 2: Engenharia de Software — Java, JEE e Programação Orientada a Objetos
-
-### Questão 16 (FCC)
-Na Programação Orientada a Objetos (POO), o polimorfismo é um conceito central. O polimorfismo de sobrecarga (overloading) e o de sobreposição (overriding) diferem porque:
-A) A sobrecarga exige a utilização da palavra-chave extends em classes abstratas, enquanto a sobreposição é restrita a interfaces com métodos padrão.
-B) A sobreposição ocorre em tempo de compilação em métodos de nomes distintos, enquanto a sobrecarga é resolvida exclusivamente em tempo de execução pela JVM.
-C) A sobrecarga ocorre em métodos de mesmo nome com assinaturas diferentes na mesma classe, enquanto a sobreposição ocorre na redefinição de método da classe pai na subclasse.
-D) A sobreposição permite alterar o tipo de retorno de um método sem restrições, enquanto a sobrecarga impede a alteração dos modificadores de acesso.
-E) A sobrecarga aplica-se apenas a atributos e variáveis primitivas, enquanto a sobreposição é exclusiva para assinaturas de coleções genéricas.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. Sobrecarga (Overloading) envolve métodos com o mesmo nome, mas diferentes parâmetros na mesma classe (polimorfismo estático/compilação). Sobrepoisção (Overriding) é a redefinição de um método herdado da classe pai na subclasse com a mesma assinatura (polimorfismo dinâmico/tempo de execução).
-</details>
-
----
-
-### Questão 17 (FCC)
-Em Java, os tipos primitivos e suas respectivas classes wrappers possuem comportamentos distintos. Sobre o mecanismo de autoboxing e unboxing na JVM, assinale a alternativa correta:
-A) O tipo primitivo `double` consome mais memória RAM do que um objeto da classe wrapper `Double` correspondente na área do Heap da JVM.
-B) Autoboxing é a conversão automática que a JVM realiza de um tipo primitivo para sua classe wrapper correspondente (ex: int para Integer).
-C) A comparação de dois objetos wrappers utilizando o operador `==` compara diretamente os valores numéricos internos, sem validar referências.
-D) O unboxing consiste na conversão explícita exigida pelo compilador Java de uma classe wrapper para uma classe de coleção como ArrayList.
-E) Tipos primitivos em Java herdam métodos utilitários diretamente da classe Object, ao contrário das classes wrappers associadas.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. Autoboxing é a conversão automática do primitivo para wrapper correspondente (ex: int -> Integer). Unboxing é o inverso (Integer -> int). Primitivos não herdam de Object e consomem menos memória que os wrappers correspondentes. Wrappers são objetos, então o operador `==` compara referências de memória, o que exige `equals()` para comparar valores de forma segura.
-</details>
-
----
-
-### Questão 18 (FCC)
-O tratamento de exceções em Java separa os erros em exceções checadas (checked) e não checadas (unchecked). Sobre essa classificação, assinale a alternativa correta:
-A) As exceções do tipo NullPointerException e ArrayIndexOutOfBoundsException são exemplos clássicos de exceções checadas em Java.
-B) Exceções não checadas herdam diretamente de Throwable e o compilador exige o tratamento obrigatório na assinatura do método chamador.
-C) Exceções checadas herdam de Exception (mas não de RuntimeException) e devem ser obrigatoriamente tratadas com try-catch ou declaradas com throws.
-D) O uso de exceções checadas é restrito à execução de rotinas em bancos de dados relacionais e transações controladas pelo Spring Boot.
-E) A JVM encerra imediatamente a execução da aplicação se uma exceção checada for lançada, impedindo o tratamento com blocos catch.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. Checked exceptions (ex: IOException, SQLException) herdam de Exception (excluindo RuntimeException) e exigem tratamento obrigatório em tempo de compilação. Unchecked exceptions herdam de RuntimeException e não exigem tratamento compulsório pelo compilador.
-</details>
-
----
-
-### Questão 19 (FCC)
-Em Java, as palavras-chave 'final', 'finally' e 'finalize' desempenham funções completamente distintas. Sobre elas, assinale a alternativa correta:
-A) O modificador final impede a alteração dos valores de atributos de objetos instanciados, tornando o objeto completamente imutável.
-B) Uma classe declarada como final não pode ser estendida (herdada), e o bloco finally é executado sempre após o término do bloco try-catch.
-C) O bloco finally só é executado no Java se uma exceção for lançada dentro do bloco try correspondente durante a execução da rotina.
-D) O método finalize é um método estático que o desenvolvedor deve chamar manualmente para liberar a memória RAM ocupada por objetos ativos.
-E) Um método declarado como final impede a sua sobrecarga em subclasses que herdam da classe que contém o método associado no pacote.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. Classe final não pode ser herdada; método final não pode ser sobreposto (overridden); variável final não pode ter valor alterado após inicializada. O bloco `finally` garante a execução de código de limpeza (como fechar conexões) após try-catch, independente de ter havido exceção ou não. O `finalize` é o método do garbage collector (depreciado atualmente). A opção B está correta.
-</details>
-
----
-
-### Questão 20 (FCC)
-O Java Collections Framework oferece diferentes implementações para manipulação de coleções. Sobre a diferença entre ArrayList e LinkedList, assinale a alternativa correta:
-A) O ArrayList é baseado em um array dinâmico que oferece acesso rápido por índice O(1), enquanto o LinkedList é baseado em lista duplamente encadeada.
-B) O LinkedList é mais rápido para realizar buscas aleatórias de elementos por índice do que o ArrayList em coleções de grande porte.
-C) O ArrayList consome significativamente mais memória que o LinkedList por armazenar ponteiros para os nós anterior e seguinte na memória.
-D) Ambas as classes são sincronizadas por padrão (thread-safe), dispensando o uso de blocos synchronized em concorrência paralela.
-E) O LinkedList impede a inserção de elementos duplicados ou valores nulos, comportando-se de forma idêntica a um conjunto do tipo HashSet.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. ArrayList armazena elementos em array contínuo, com busca indexada rápida O(1), mas inserções/remoções no meio exigem shift de elementos O(n). LinkedList é uma lista encadeada, excelente para inserções/remoções O(1) nas pontas, mas buscas exigem navegação O(n) e consome mais memória devido aos ponteiros dos nós.
-</details>
-
----
-
-### Questão 21 (FCC)
-Em relação às classes HashSet e TreeSet do Java Collections Framework, assinale a alternativa que apresenta a diferença técnica de comportamento entre elas:
-A) O HashSet impede a inserção de valores nulos, enquanto o TreeSet aceita múltiplos elementos nulos de forma síncrona na coleção local.
-B) O TreeSet oferece melhor desempenho para inserções e remoções O(1) de elementos na coleção do que o HashSet baseado em hashing lógico.
-C) O HashSet não garante a ordenação dos elementos, enquanto o TreeSet armazena os elementos de forma ordenada com base em uma árvore vermelha e preta.
-D) Ambas as classes implementam a interface List, permitindo o acesso direto aos elementos através de índices numéricos inteiros.
-E) O TreeSet utiliza a tabela hash para armazenar as chaves, enquanto o HashSet organiza as chaves de forma sequencial na memória JVM.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. HashSet é baseado em tabela hash (busca/inserção média O(1)), não mantendo nenhuma ordenação. TreeSet implementa NavigableSet (baseado em Red-Black Tree) e mantém elementos ordenados naturalmente ou por Comparator (busca/inserção O(log n)). NullPointerException ocorre ao tentar inserir null no TreeSet sem comparator customizado. A alternativa C está correta.
-</details>
-
----
-
-### Questão 22 (FCC)
-A JVM organiza a memória em diferentes regiões. As regiões da memória conhecidas como Heap e Stack são utilizadas, respectivamente, para armazenar:
-A) Bibliotecas dinâmicas compartilhadas; Arquivos de código-fonte Java compilados no formato bytecode pelo desenvolvedor local.
-B) Arquivos de configuração do sistema operacional; Variáveis globais compartilhadas por todas as aplicações web Java em execução.
-C) Objetos instanciados dinamicamente; Variáveis locais e referências de controle de chamadas de métodos ativos na pilha de execução.
-D) Sessões de usuários ativas do servidor de aplicação; Parâmetros de conexões físicas estabelecidas com o banco de dados relacional.
-E) Mapeamentos do hibernate e JPA; Índices das tabelas do banco de dados relacional carregados na memória RAM do computador.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. Na JVM, o Heap armazena todos os objetos instanciados (via `new`). O Stack armazena as chamadas de métodos, variáveis locais e referências aos objetos contidos no Heap de cada thread de execução.
-</details>
-
----
-
-### Questão 23 (FCC)
-Em relação aos servidores de aplicação e à arquitetura JEE, os componentes EJB (Enterprise JavaBeans) desempenham papéis definidos. Os Session Beans podem ser classificados em:
-A) Checked, Unchecked e Runtime
-B) Stateless, Stateful e Singleton
-C) Request, Session e Application
-D) Entity, Controller e Boundary
-E) Local, Remote e WebService
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. Os Session Beans no EJB são divididos em: Stateless (sem estado retido entre chamadas), Stateful (com estado associado à sessão do cliente) e Singleton (uma única instância compartilhada por toda a aplicação).
-</details>
-
----
-
-### Questão 24 (FCC)
-No desenvolvimento de aplicações web baseadas em Java Servlets, a API especifica um ciclo de vida e métodos de controle. O método responsável por processar requisições HTTP POST em um Servlet é o:
-A) service(ServletRequest, ServletResponse)
-B) doPost(HttpServletRequest, HttpServletResponse)
-C) init(ServletConfig)
-D) doGet(HttpServletRequest, HttpServletResponse)
-E) destroy()
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. O ciclo de vida envolve `init()`, `service()`, e `destroy()`. O método `service()` direciona as requisições HTTP para os métodos específicos: `doGet()`, `doPost()`, `doPut()`, `doDelete()` etc. O método para requisições POST é `doPost()`.
-</details>
-
----
-
-### Questão 25 (FCC)
-A tecnologia JPA (Java Persistence API) padroniza o mapeamento objeto-relacional. Sobre os estados de ciclo de vida de uma entidade gerenciada pelo EntityManager da JPA, é correto afirmar:
-A) No estado Detached (destacado), as alterações realizadas nos atributos da entidade são refletidas de forma síncrona no banco de dados.
-B) Uma entidade passa para o estado Managed (gerenciado) logo após a execução do método persist() ou merge() do EntityManager.
-C) O estado Transient (transiente) caracteriza uma entidade que possui correspondência física e chave primária gravada no banco relacional.
-D) O método remove() altera o estado da entidade de Managed para Detached, impedindo a sua exclusão física do disco do banco de dados.
-E) As entidades no estado Managed não podem ter seus dados lidos por transações ativas configuradas em modo de leitura exclusiva.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. Os estados da JPA são: Transient (nova instância, não persistida), Managed (associada ao EntityManager, alterações sincronizadas), Detached (desassociada, alterações não sincronizadas) e Removed (marcada para exclusão). O método `persist()` move a entidade para Managed. A alternativa B está correta.
-</details>
-
----
-
-### Questão 26 (FCC)
-Em programação orientada a objetos com Java, interfaces e classes abstratas são conceitos fundamentais de abstração. A diferença técnica entre elas em Java 8 ou superior é:
-A) Uma classe pode herdar de múltiplas classes abstratas de forma paralela, mas pode implementar no máximo uma interface local.
-B) Uma interface permite herança múltipla de classes abstratas de outros pacotes do projeto através da palavra-chave extends.
-C) As classes abstratas vedam a declaração de métodos com corpo físico, exigindo que todos os seus métodos sejam declarados como abstratos.
-D) As interfaces não admitem a declaração de métodos padrão (default methods) com implementação, limitando-se a assinaturas puras.
-E) Uma classe abstrata pode conter variáveis de instância (estado) e métodos construtores, enquanto uma interface pode conter apenas constantes e métodos abstratos ou default.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. Classes abstratas podem ter construtores, variáveis de instância e estado interno. Interfaces (mesmo após Java 8 introduzir `default` e `static` methods, e Java 9 introduzir private methods) não podem ter variáveis de instância (apenas constantes `public static final`) nem construtores. Uma classe pode implementar múltiplas interfaces, mas herdar de apenas uma classe (abstrata ou não).
-</details>
-
----
-
-### Questão 27 (FCC)
-Na arquitetura JEE, as JSP (JavaServer Pages) são traduzidas pelo container web para fins de execução. Durante a primeira requisição de um cliente a uma página JSP, esta é traduzida internamente em um(a):
-A) Servlet Java, que é compilado em bytecode e executado na JVM para renderizar a saída HTML correspondente.
-B) Procedimento armazenado (Stored Procedure) PL/SQL gravado diretamente no banco de dados relacional do tribunal.
-C) Função JavaScript executada no lado do cliente (navegador) para manipular dinamicamente o modelo DOM da página.
-D) Folha de estilo CSS dinâmica compilada em tempo de execução para garantir a acessibilidade de pessoas com deficiência.
-E) Arquivo XML estático contendo os mapeamentos das entidades persistentes definidas no framework Hibernate.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. JSP é traduzida pelo container em um Servlet Java correspondente. O Servlet é então compilado em arquivo `.class` e executado pela JVM para processar a requisição e produzir a saída (geralmente HTML).
-</details>
-
----
-
-### Questão 28 (FCC)
-O garbage collector (coletor de lixo) é um componente essencial da JVM. A função principal do garbage collector é:
-A) Identificar e desalocar a memória Heap ocupada por objetos que não possuem mais nenhuma referência ativa na aplicação.
-B) Otimizar as queries SQL enviadas ao banco de dados relacional através do pool de conexões físicas estabelecidas.
-C) Compilar dinamicamente o código-fonte Java em bytecode executável em servidores de microsserviços do órgão público.
-D) Bloquear o acesso físico de hackers a arquivos confidenciais do sistema operacional que executam a JVM.
-E) Limpar o histórico de navegação e arquivos de cache temporários gravados na pasta de perfil do usuário no servidor.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. O GC (Garbage Collector) gerencia automaticamente a memória Heap, liberando a memória ocupada por objetos que não são mais acessíveis por nenhuma thread ativa do programa.
-</details>
-
----
-
-### Questão 29 (FCC)
-Em Java, os modificadores de acesso controlam a visibilidade de classes, atributos e métodos. Os modificadores 'protected' e default (ausência de modificador) garantem visibilidade:
-A) Apenas para classes que herdam da classe proprietária, bloqueando o acesso de outras classes do mesmo pacote.
-B) Para qualquer classe do projeto de forma irrestrita, independentemente do pacote de origem no código-fonte.
-C) Exclusivamente dentro da própria classe na qual o membro foi declarado em ambos os modificadores físicos.
-D) Apenas dentro do mesmo pacote (default), e também para subclasses em pacotes diferentes no caso do protected.
-E) Apenas para as instâncias da classe criadas na thread principal de execução do servidor de aplicação.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. Default (package-private) restringe o acesso ao mesmo pacote. Protected estende o default: dá acesso a qualquer classe do mesmo pacote E a subclasses em outros pacotes via herança.
-</details>
-
----
-
-### Questão 30 (FCC)
-No contexto de concorrência em Java, a palavra-chave 'synchronized' é utilizada para coordenar o acesso a recursos compartilhados por múltiplas threads. O uso de 'synchronized' garante:
-A) A persistência física e imediata das variáveis na tabela de logs do banco de dados relacional em lote transacional.
-B) A compilação local paralela das classes do pacote para evitar latência no processamento concorrente do banco de dados.
-C) A criação instantânea de novas threads de execução em segundo plano para otimizar o processamento de consultas lógicas.
-D) Exclusão mútua (mutual exclusion), garantindo que apenas uma thread possa executar o bloco ou método sincronizado por vez.
-E) A isenção de tratamento de exceções do tipo NullPointerException dentro do bloco de código monitorado pela JVM.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. A sincronização (`synchronized`) adquire um lock intrínseco (monitor) sobre o objeto/classe, garantindo exclusão mútua: apenas uma thread por vez executa o trecho de código protegido, prevenindo condições de corrida (race conditions).
-</details>
-
----
-
-## 📝 TEMA 3: Legislação e Direitos da Pessoa com Deficiência (PCD)
-
-### Questão 31 (FCC)
-A Lei Federal nº 13.146/2015 institui a Lei Brasileira de Inclusão da Pessoa com Deficiência (Estatuto da Pessoa com Deficiência). Segundo a LBI, considera-se pessoa com deficiência aquela que tem impedimento de longo prazo de natureza:
-A) Sensorial auditiva ou visual parcial que dispense a utilização de tecnologias assistivas ou atendimento prioritário em órgãos públicos.
-B) Temporária ou transitória decorrente de acidentes de trabalho, a qual impeça o exercício de atividades profissionais por período superior a trinta dias úteis.
-C) Física de caráter motor que resulte obrigatoriamente no uso de cadeira de rodas ou próteses ortopédicas de membros inferiores para locomoção.
-D) Intelectual diagnosticada na fase adulta, que comprometa de forma definitiva a capacidade de tomada de decisões civis e financeiras básicas.
-E) Física, mental, intelectual ou sensorial, o qual, em interação com uma ou mais barreiras, pode obstruir sua participação plena e efetiva na sociedade em igualdade de condições com as demais pessoas.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. A alternativa E transcreve o conceito legal de pessoa com deficiência estabelecido no art. 2º, caput, da Lei nº 13.146/2015 (LBI). O impedimento deve ser de longo prazo e de natureza física, mental, intelectual ou sensorial.
-</details>
-
----
-
-### Questão 32 (FCC)
-A LBI classifica e define diversas barreiras que impedem a participação plena das pessoas com deficiência. As barreiras que existem nas vias e nos espaços públicos e privados abertos ao público ou de uso coletivo são denominadas barreiras:
-A) Atitudinais
-B) Arquitetônicas
-C) Urbanísticas
-D) Tecnológicas
-E) Nas comunicações e na informação
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. Segundo o art. 3º, inciso IV, alínea 'a', da LBI, as barreiras urbanísticas são as existentes nas vias e nos espaços públicos e privados abertos ao público ou de uso coletivo. Barreiras arquitetônicas são as existentes nos edifícios (alínea 'b').
-</details>
-
----
-
-### Questão 33 (FCC)
-O Estatuto da Pessoa com Deficiência define o conceito de 'Tecnologia Assistiva' ou 'Ajuda Técnica'. Trata-se de:
-A) Sistemas operacionais e aplicativos de computadores que permitam o controle remoto de dispositivos de automação residencial em redes de fibra óptica.
-B) Produtos, equipamentos, dispositivos, recursos, metodologias, estratégias, práticas e serviços que objetivem promover a funcionalidade, relacionada à atividade e à participação da pessoa com deficiência ou com mobilidade reduzida, visando à sua autonomia, independência, qualidade de vida e inclusão social.
-C) Técnicas de engenharia civil aplicadas para a desativação de barreiras atitudinais em prédios públicos e privados de uso coletivo do tribunal.
-D) Equipamentos hospitalares de suporte à vida utilizados exclusivamente em leitos de terapia intensiva de clínicas públicas de saúde.
-E) Processos de auditoria realizados por equipes de TI para certificar a conformidade do software do tribunal com a Lei de Acesso à Informação.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A alternativa B transcreve o conceito legal de tecnologia assistiva definido no art. 3º, inciso III, da LBI.
-</details>
-
----
-
-### Questão 34 (FCC)
-Em relação ao direito ao trabalho da pessoa com deficiência estabelecido na LBI, é correto afirmar:
-A) O trabalho da pessoa com deficiência em regime de teletrabalho impede a percepção de adicionais de periculosidade ou insalubridade de direito.
-B) O empregador privado fica autorizado a pagar salários inferiores à pessoa com deficiência caso esta execute tarefas em tempo reduzido.
-C) O poder público é dispensado do cumprimento de cotas para pessoas com deficiência em concursos públicos civis de provimento efetivo.
-D) A pessoa com deficiência tem direito ao trabalho de sua livre escolha e aceitação, em ambiente acessível e inclusivo, em igualdade de oportunidades com as demais pessoas.
-E) As pessoas com deficiência mental ou intelectual grave são impedidas de exercer qualquer atividade de trabalho em regime competitivo.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. A alternativa D reflete o art. 34 da LBI, que assegura o direito ao trabalho em igualdade de oportunidades, ambiente acessível e inclusivo. A LBI proíbe qualquer discriminação de salários por motivo de deficiência.
-</details>
-
----
-
-### Questão 35 (FCC)
-A acessibilidade é um direito fundamental garantido pela LBI. O conceito legal de 'Universal Design' (Desenho Universal) previsto na lei é definido como:
-A) O conjunto de calçadas táteis instaladas ao longo de rodovias estaduais para guiar a locomoção de pessoas com deficiência visual profunda.
-B) Adaptação razoável e individualizada realizada em prédios antigos do tribunal de justiça para permitir a locomoção de cadeirantes em rampas físicas.
-C) Instalação de softwares de leitura de tela gratuitos em computadores de uso público localizados em bibliotecas do órgão público.
-D) A contratação de profissionais especializados em tradução e interpretação da Língua Brasileira de Sinais (LIBRAS) para eventos judiciais.
-E) Concepção de produtos, ambientes, programas e serviços a serem usados por todas as pessoas, sem necessidade de adaptação ou de projeto específico, incluindo os recursos de tecnologia assistiva.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. Desenho Universal (art. 3º, inciso II, da LBI) é a concepção de produtos, ambientes, programas e serviços para serem usados por todos, na maior medida possível, sem adaptações adicionais, embora não exclua recursos de tecnologia assistiva se necessários.
-</details>
-
----
-
-### Questão 36 (FCC)
-A LBI disciplina a capacidade civil da pessoa com deficiência de forma inovadora. Sobre esse tema, assinale a regra legal correta:
-A) A pessoa com deficiência necessita obrigatoriamente de representação legal para o exercício de direitos políticos e de voto secreto.
-B) A pessoa com deficiência intelectual ou mental é considerada civilmente incapaz por direito para a prática de todos os atos da vida civil.
-C) O casamento ou a união estável da pessoa com deficiência exige a autorização judicial expressa de curador nomeado em processo judicial.
-D) A curatela é a regra geral aplicada a toda pessoa com deficiência intelectual, de forma permanente e sobre direitos patrimoniais e existenciais.
-E) A pessoa com deficiência tem assegurado o direito de decidir sobre o número de filhos e de ter acesso a informações sobre reprodução assistida.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. A LBI alterou o Código Civil para estabelecer que a pessoa com deficiência é plenamente capaz na esfera civil. O art. 6º da LBI assegura direitos existenciais (casar, ter filhos, votar) independentemente de curatela. A curatela passou a ser uma medida extraordinária, restrita a aspectos patrimoniais e negociais. A alternativa E reflete este espírito de autonomia existencial.
-</details>
-
----
-
-### Questão 37 (FCC)
-No âmbito do processo civil, o Estatuto da Pessoa com Deficiência instituiu o 'Processo de Tomada de Decisão Apoiada'. Esse processo consiste em:
-A) A nomeação judicial compulsória de curadores públicos que assumem a gestão integral do patrimônio financeiro da pessoa com deficiência.
-B) Um mecanismo pelo qual a pessoa com deficiência escolhe pelo menos duas pessoas idôneas para apoiá-la na tomada de decisões sobre atos da vida civil.
-C) Um conselho médico composto por psicólogos e assistentes sociais que valida a legalidade de contratos celebrados pela pessoa com deficiência.
-D) A transferência do poder de voto da pessoa com deficiência para os seus familiares diretos em eleições sindicais e governamentais.
-E) A exigência de homologação prévia em cartório de notas para todas as declarações de vontade da pessoa com deficiência intelectual.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A tomada de decisão apoiada (art. 116 da LBI / art. 1.783-A do Código Civil) permite que a pessoa com deficiência escolha dois apoiadores para auxiliá-la nas decisões da vida civil, diferentemente da curatela, na qual o curador decide pela pessoa.
-</details>
-
----
-
-### Questão 38 (FCC)
-A reserva de vagas (cotas) em concursos públicos para pessoas com deficiência é um instrumento de ação afirmativa importante. No âmbito federal, a Lei nº 8.112/90 reserva às pessoas com deficiência:
-A) Até 20% das vagas oferecidas no concurso público civil de provimento efetivo.
-B) O percentual fixo e obrigatório de 10% de todas as vagas, sem possibilidade de arredondamento matemático.
-C) Vagas exclusivas apenas em cargos que não exijam esforço intelectual ou digitação de relatórios técnicos.
-D) A totalidade das vagas de cadastro de reserva caso nenhum candidato da ampla concorrência atinja a pontuação mínima.
-E) Metade das vagas em cargos em comissão e funções de confiança da administração pública direta.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. Segundo o art. 5º, § 2º, da Lei nº 8.112/90, às pessoas portadoras de deficiência serão reservadas até 20% das vagas oferecidas no concurso (no mínimo 5% segundo jurisprudência e normas de concursos). A LBI reforça essa garantia geral de inclusão.
-</details>
-
----
-
-### Questão 39 (FCC)
-No que concerne à acessibilidade em hotéis, pousadas e similares, a LBI estabelece regras específicas. De acordo com a lei, esses estabelecimentos devem:
-A) Construir blocos de dormitórios isolados e exclusivos para hóspedes com deficiência para garantir a segurança cibernética local.
-B) Fornecer atendimento prioritário aos hóspedes com deficiência sem necessidade de adaptar fisicamente as estruturas de banheiros e rampas.
-C) Isentar de taxas de hospedagem todos os hóspedes que apresentarem carteira oficial de tecnologia assistiva de mobilidade reduzida.
-D) Destinar metade de suas vagas de garagem exclusivas para veículos conduzidos por pessoas com deficiência física motora.
-E) Ser acessíveis e garantir pelo menos 10% de seus dormitórios acessíveis, garantido no mínimo um quarto adaptado com desenho universal.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. Segundo o art. 45 da LBI, hotéis e pousadas devem disponibilizar pelo menos 10% de dormitórios acessíveis, garantindo pelo menos um quarto totalmente acessível.
-</details>
-
----
-
-### Questão 40 (FCC)
-A acessibilidade em sites da internet é um direito garantido por lei. A LBI estabelece que é obrigatória a acessibilidade nos portais de internet de:
-A) Fóruns judiciais que tratem exclusivamente de direito previdenciário estadual, dispensando-se a acessibilidade em outros órgãos da justiça.
-B) Bancos comerciais de fomento econômico privados de forma exclusiva, ficando os portais governamentais isentos de adaptação técnica.
-C) Órgãos de governo, concessionárias de serviços públicos e empresas com sede ou representação comercial no país, para uso de pessoas com deficiência.
-D) Redes sociais de entretenimento com mais de dez milhões de usuários ativos cadastrados no território nacional de internet.
-E) Empresas de desenvolvimento de softwares e provedores de hospedagem web baseados em servidores de nuvem internacionais.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. Conforme o art. 63 da LBI, é obrigatória a acessibilidade nos sítios da internet mantidos por órgãos de governo ou por empresas com sede ou representação comercial no País, garantindo acesso à informação em formatos acessíveis.
-</details>
-
----
-
-### Questão 41 (FCC)
-As pessoas com deficiência têm direito a prioridade na tramitação de procedimentos administrativos e judiciais. Sobre a tramitação prioritária, assinale a alternativa correta:
-A) A prioridade é concedida mediante requerimento do interessado instruído com a prova da condição de pessoa com deficiência.
-B) A prioridade é deferida automaticamente apenas se o processo judicial for proposto perante varas especializadas de direito de família.
-C) A prioridade isenta a pessoa com deficiência do recolhimento de custas judiciais e de taxas de recursos na esfera estadual.
-D) O benefício da prioridade é extinto se a pessoa com deficiência contratar advogados particulares para representá-la em juízo.
-E) A prioridade impede que o juiz profira sentenças desfavoráveis aos direitos da pessoa com deficiência na esfera cível.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A tramitação prioritária de processos judiciais e administrativos (art. 9º, inciso VII, da LBI) é deferida mediante requerimento da parte interessada com a comprovação de sua deficiência.
-</details>
-
----
-
-### Questão 42 (FCC)
-Em relação ao atendimento prioritário em órgãos públicos e prestadores de serviços, a LBI estende esse direito a acompanhantes. A prioridade de atendimento ao acompanhante:
-A) Impede o atendimento paralelo de outros cidadãos comuns que não possuam deficiência física ou mobilidade reduzida.
-B) Garante ao acompanhante a isenção de tarifas de transporte coletivo urbano e passagens interestaduais de forma permanente.
-C) Autoriza o acompanhante a realizar transações bancárias e firmar contratos civis em nome da pessoa com deficiência sem procuração.
-D) Fica restrita a exames médicos de emergência realizados em hospitais e clínicas da rede de saúde pública municipal do Estado.
-E) Aplica-se ao acompanhante ou atendente pessoal diretamente vinculado ao atendimento da pessoa com deficiência de forma imediata.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. O atendimento prioritário (art. 9º, § 1º, da LBI) estende-se ao acompanhante da pessoa com deficiência ou ao seu atendente pessoal, exceto no que se refere a direitos personalíssimos (como o recebimento de valores ou voto). A alternativa E está correta.
-</details>
-
----
-
-### Questão 43 (FCC)
-A LBI tipifica crimes específicos decorrentes da discriminação de pessoas com deficiência. Assinale a conduta que constitui crime punível com reclusão nos termos da referida lei:
-A) Não fornecer softwares de leitura de tela para computadores de uso doméstico de servidores públicos inativos do tribunal.
-B) Recusar a contratação de seguros privados de saúde corporativos para pessoas com deficiência mental de forma justificada por auditoria.
-C) Deixar de instalar calçadas táteis em reformas residenciais particulares localizadas em áreas rurais de difícil acesso geográfico.
-D) Praticar, induzir ou incitar discriminação contra pessoa em razão de sua deficiência, sob qualquer pretexto social ou comercial.
-E) Cobrar taxas adicionais de hospedagem em hotéis privados para cães-guia que acompanham pessoas com deficiência visual.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. O art. 88 da LBI tipifica como crime: 'Praticar, induzir ou incitar discriminação contra pessoa em razão de sua deficiência'. A pena é de reclusão, de 1 a 3 anos, e multa. Cobrar taxas adicionais para cão-guia ou negar planos de saúde são infrações civis/administrativas específicas, mas a discriminação direta é o crime central tipificado com reclusão.
-</details>
-
----
-
-### Questão 44 (FCC)
-O direito à educação da pessoa com deficiência é amplamente protegido pela LBI. De acordo com a lei, as instituições privadas de ensino:
-A) Estão desobrigadas de fornecer tecnologia assistiva ou materiais adaptados quando o aluno possuir deficiência auditiva ou visual.
-B) Ficam autorizadas a cobrar taxas adicionais de matrícula para cobrir custos de contratação de profissionais de apoio e acessibilidade.
-C) Podem limitar o ingresso de alunos com deficiência a no máximo 5% do total de vagas oferecidas por turma para manter a qualidade de ensino.
-D) Devem garantir um sistema educacional inclusivo em todos os níveis, sendo vedada a cobrança de valores adicionais de qualquer natureza em suas mensalidades.
-E) Devem matricular alunos com deficiência exclusivamente em salas de aula especiais separadas dos demais estudantes da escola.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. O art. 28 da LBI veda expressamente a cobrança de valores adicionais de qualquer natureza em mensalidades, anuidades e matrículas por instituições privadas de ensino para o fornecimento de atendimento inclusivo, profissional de apoio ou acessibilidade. A alternativa D está correta.
-</details>
-
----
-
-### Questão 45 (FCC)
-Em relação ao direito à moradia, a LBI estabelece cotas para pessoas com deficiência em programas habitacionais públicos ou subsidiados com recursos públicos. O percentual mínimo de unidades habitacionais reservadas e adaptadas para esse fim é de:
-A) 2%
-B) 5%
-C) 10%
-D) 3%
-E) 15%
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. Segundo o art. 32, § 1º, inciso I, da LBI, nos programas habitacionais públicos ou subsidiados com recursos públicos, a pessoa com deficiência ou o seu responsável tem prioridade na aquisição de imóvel para moradia própria, devendo ser reservado, no mínimo, 3% do total das unidades habitacionais para esse fim.
+**Gabarito: D**
+
+A alternativa correta é a **D**. As Autarquias são as únicas entidades da Administração Indireta que detêm, originariamente, personalidade jurídica de Direito Público e são **criadas diretamente por lei**, com o objetivo de executar atribuições típicas de Estado sem buscar fins econômicos industriais (ex: INSS, BACEN, Ibama).
+
+Análise das demais alternativas:
+- **A) Empresa Pública:** Possui estritamente a personalidade jurídica de Direito Privado (ex: Correios, Caixa). Além disso, não é criada diretamente por lei, e sim tem a sua criação "autorizada" pela norma e seu registro e estatuto firmados como empresas mercantis.
+- **B) Fundação Pública de Direito Privado:** Tem sua criação autorizada, e não estabelecida prontamente na lei primária instituidora, não correspondendo aos ditames da pergunta que invoca pessoa jurídica de direito público.
+- **C) Sociedade de Economia Mista:** É uma S.A., e assim como as empresas públicas, goza sempre de natureza de Direito Privado, destinada comumente para prestar serviço público por meio de capital misto entre governo (majoritário) e o mercado corporativo ou sociedade em geral.
+- **E) Organização Social (OS):** Pertence ao denominado Terceiro Setor (parcerias e fomento de caráter público-privado), não compondo o organograma da Administração Pública Indireta.
 </details>
 
 ---

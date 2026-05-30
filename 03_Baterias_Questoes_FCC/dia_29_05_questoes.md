@@ -1,681 +1,352 @@
 # Bateria de Questões FCC — Sexta-feira 29/05
-Este arquivo contém 45 questões altamente calibradas nos padrões da FCC, com alternativas de comprimento similar e distratores baseados em pegadinhas reais.
 
----
-## 📝 TEMA 1: Segurança da Informação — Criptografia, Hashes, Certificados e Assinatura Digital
-### Questão 1 (FCC)
-Criptografia simétrica e assimétrica diferem essencialmente na forma de gerenciamento das chaves de segurança. Sobre essa diferença, é correto afirmar:
-A) A criptografia simétrica utiliza um par de chaves em que a chave privada cifra os dados e a chave pública decifra os dados de forma exclusiva.
-B) A criptografia assimétrica utiliza uma única chave secreta que deve ser distribuída previamente por canais físicos e seguros.
-C) A criptografia simétrica utiliza uma única chave compartilhada para cifrar e decifrar os dados, enquanto a assimétrica utiliza um par de chaves (pública e privada).
-D) A criptografia assimétrica possui menor custo computacional, sendo preferida para cifrar grandes volumes de dados de tráfego de rede.
-E) A criptografia simétrica impede o não-repúdio de forma nativa, pois cada sessão possui um par de chaves públicas geradas dinamicamente.
+## 📝 TEMA 1: Segurança da Informação (Criptografia/Certificação)
+
+### Questão 1 (FCC - 2018 - TRT 15 - Analista de TI)
+Na assinatura digital de um documento, para garantir a autenticidade e o não repúdio, o emissor deve cifrar o resumo criptográfico (hash) da mensagem utilizando
+A) a chave privada do receptor.
+B) a chave pública do receptor.
+C) a sua própria chave privada.
+D) a sua própria chave pública.
+E) uma chave simétrica compartilhada.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: C**
+
+Explicação:
+A assinatura digital baseia-se em criptografia assimétrica, garantindo autenticidade, integridade e não repúdio.
+- **A) Incorreta.** O emissor não tem acesso à chave privada do receptor, pois ela é de uso exclusivo do seu dono.
+- **B) Incorreta.** Utilizar a chave pública do receptor serve para garantir confidencialidade da mensagem (apenas ele poderá ler), não para assiná-la.
+- **C) Correta.** O emissor cifra o hash do documento com sua própria chave privada. Assim, qualquer pessoa pode usar a chave pública do emissor para verificar a assinatura, atestando a autenticidade e o não repúdio (já que só o emissor detém a sua chave privada).
+- **D) Incorreta.** A chave pública do emissor é de conhecimento público. Se a assinatura fosse feita com ela, qualquer um poderia forjar a assinatura do emissor.
+- **E) Incorreta.** A chave simétrica não garante o não repúdio, pois ambas as partes (emissor e receptor) conhecem a mesma chave e poderiam gerar a assinatura.
 </details>
 
 ---
 
-### Questão 2 (FCC)
-As funções de hash criptográfico desempenham um papel vital na segurança da informação. A propriedade que garante que é computacionalmente inviável encontrar dois inputs diferentes que gerem o mesmo valor de hash de saída é a:
-A) Resistência à segunda pré-imagem
-B) Resistência à pré-imagem
-C) Resistência à colisão
-D) Propriedade de efeito avalanche
-E) Propriedade de integridade simétrica
+### Questão 2 (FCC - 2016 - TRT 20 - Analista de TI)
+Na criptografia assimétrica, se João deseja enviar uma mensagem confidencial para Maria, de modo que apenas ela consiga ler, João deve cifrar a mensagem utilizando:
+A) a chave privada de João.
+B) a chave pública de João.
+C) a chave privada de Maria.
+D) a chave pública de Maria.
+E) uma chave de sessão simétrica pública.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: D**
+
+Explicação:
+A criptografia assimétrica usa um par de chaves: pública (distribuída livremente) e privada (mantida em segredo absoluto).
+- **A) Incorreta.** Se João usar sua chave privada, ele estará criando uma assinatura digital (autenticação). Qualquer um com a chave pública de João poderia decifrar a mensagem, logo não haveria confidencialidade.
+- **B) Incorreta.** Se João cifrar com sua própria chave pública, apenas a chave privada dele mesmo poderia decifrar a mensagem, ou seja, apenas João conseguiria ler o conteúdo.
+- **C) Incorreta.** João não tem (e não deve ter) acesso à chave privada de Maria, pois ela é secreta e de posse exclusiva dela.
+- **D) Correta.** Ao cifrar a mensagem com a chave pública de Maria (que é de acesso livre), João garante que o conteúdo só poderá ser decifrado usando a chave correspondente, que é a chave privada de Maria, garantindo assim a confidencialidade.
+- **E) Incorreta.** Não existe o conceito de "chave simétrica pública", pois na criptografia simétrica a chave deve ser secreta para ambas as partes.
 </details>
 
 ---
 
-### Questão 3 (FCC)
-Em relação aos algoritmos de criptografia simétrica clássicos e modernos, assinale a opção que apresenta um algoritmo considerado inseguro devido ao seu tamanho de chave e o algoritmo padrão que o substituiu, respectivamente:
-A) AES (chave de 128 bits) e DES (chaves de 512 bits)
-B) DES (chave de 56 bits) e AES (chaves de 128, 192 ou 256 bits)
-C) RSA (chave de 1024 bits) e AES (chaves de 128 bits)
-D) DES (chave de 56 bits) e RSA (chaves de 2048 bits)
-E) MD5 (chave de 128 bits) e SHA-256 (chaves de 256 bits)
+### Questão 3 (FCC - 2018 - TRT 6 - Analista de TI)
+As funções de Hash (resumo criptográfico) são algoritmos matemáticos aplicados sobre conjuntos de dados. Na segurança da informação, elas são amplamente utilizadas para:
+A) garantir a confidencialidade de um arquivo durante a sua transmissão em canais inseguros.
+B) assegurar a integridade de um arquivo ou mensagem, verificando se houve qualquer alteração em seu conteúdo.
+C) criptografar dados de forma reversível em disco para evitar acessos não autorizados de terceiros.
+D) ocultar a identidade do remetente de uma mensagem de e-mail na internet.
+E) gerar um par de chaves públicas e privadas para uso na certificação digital.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: B**
+
+Explicação:
+Funções hash (como SHA-256) geram um valor de tamanho fixo a partir de dados de tamanho arbitrário. Uma pequena mudança nos dados originais muda completamente o hash resultante.
+- **A) Incorreta.** O Hash não provê confidencialidade, pois não serve para cifrar os dados (ocultar a mensagem original). Quem garante a confidencialidade é a criptografia (simétrica ou assimétrica).
+- **B) Correta.** Ao comparar o hash do arquivo antes e depois do envio, é possível afirmar com precisão que a integridade foi mantida (não houve alteração acidental ou intencional).
+- **C) Incorreta.** Hashes são funções criptográficas de via única (irreversíveis). Não é possível obter o dado original a partir do hash.
+- **D) Incorreta.** Funções de hash não têm o propósito de tornar o tráfego anônimo ou ocultar identidades; este é o papel de redes como Tor ou VPNs.
+- **E) Incorreta.** A geração de pares de chaves assimétricas utiliza algoritmos matemáticos baseados em fatoração de números primos (como RSA) ou curvas elípticas, e não funções de hash.
 </details>
 
 ---
 
-### Questão 4 (FCC)
-O algoritmo RSA é um dos sistemas de criptografia assimétrica mais conhecidos. Sua segurança fundamenta-se na dificuldade matemática de realizar a seguinte operação computacional:
-A) Ordenação de chaves criptográficas em pilhas de dados recursivas orientadas.
-B) Cálculo de logaritmos discretos em corpos finitos de curvas elípticas generalizadas.
-C) Multiplicação matricial densa em bases de dados multidimensionais sem perdas.
-D) Fatoração de números inteiros grandes que são produtos de dois números primos grandes.
-E) Resolução de sistemas lineares de equações com múltiplas variáveis complexas.
+### Questão 4 (FCC - 2015 - TRE PB - Analista de TI)
+Em uma Infraestrutura de Chaves Públicas (ICP), como a ICP-Brasil, a entidade primariamente responsável por emitir, expedir, distribuir, renovar e revogar os certificados digitais é denominada:
+A) Autoridade de Registro (AR).
+B) Comitê Gestor da ICP-Brasil.
+C) Autoridade Certificadora (AC).
+D) Autoridade Carimbadora de Tempo (ACT).
+E) Entidade Emissora de Raiz (EER).
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: C**
+
+Explicação:
+O ecossistema da ICP-Brasil é dividido em várias entidades com papéis distintos.
+- **A) Incorreta.** A AR (Autoridade de Registro) é a interface com o usuário; ela recebe as solicitações, identifica o titular e encaminha o pedido para a AC. Ela não emite os certificados.
+- **B) Incorreta.** O Comitê Gestor é a autoridade máxima de formulação de políticas da ICP-Brasil. Não executa atividades operacionais como emissão de certificados.
+- **C) Correta.** A AC (Autoridade Certificadora) é a entidade responsável pelo ciclo de vida completo dos certificados digitais: emissão, renovação e revogação.
+- **D) Incorreta.** A ACT tem a função de fornecer carimbos de tempo, que atestam a data e a hora exatas em que um documento foi assinado.
+- **E) Incorreta.** A terminologia "Entidade Emissora de Raiz" não é o padrão. Na ICP-Brasil há a "AC Raiz" (ITI), mas o conceito que rege a emissão para usuários é simplesmente Autoridade Certificadora (AC).
 </details>
 
 ---
 
-### Questão 5 (FCC)
-Para garantir a integridade e o não-repúdio de um documento assinado digitalmente, a assinatura digital é gerada pelo remetente cifrando:
-A) A chave simétrica de sessão temporária utilizando a chave privada da autoridade certificadora.
-B) O documento original de forma completa utilizando a chave pública do destinatário final.
-C) O resumo criptográfico (hash) do documento original utilizando a chave pública do destinatário.
-D) O resumo criptográfico (hash) do documento original utilizando a chave privada do próprio remetente.
-E) O documento original de forma completa utilizando a chave privada do destinatário final.
+### Questão 5 (FCC - 2014 - TRF 3 - Analista de TI)
+Ao desenvolver uma solução de segurança para um tribunal, um analista de TI precisou escolher algoritmos de criptografia para diferentes propósitos. São exemplos válidos, respectivamente, de algoritmo de criptografia simétrica e de algoritmo de criptografia assimétrica:
+A) DES e AES.
+B) RSA e MD5.
+C) AES e RSA.
+D) SHA-1 e DES.
+E) RSA e ECC.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: C**
+
+Explicação:
+Questão clássica sobre classificação de algoritmos de segurança.
+- **A) Incorreta.** DES e AES são ambos algoritmos de criptografia simétrica (chave única para cifrar e decifrar).
+- **B) Incorreta.** RSA é um algoritmo assimétrico, e MD5 é um algoritmo de Hash (resumo criptográfico), não sendo usado para cifrar/decifrar.
+- **C) Correta.** AES (Advanced Encryption Standard) é o padrão atual de criptografia simétrica. O RSA (Rivest-Shamir-Adleman) é o mais famoso algoritmo de criptografia assimétrica.
+- **D) Incorreta.** SHA-1 é função de Hash e DES é simétrico. A ordem e os tipos estão incorretos para o que foi pedido.
+- **E) Incorreta.** Tanto o RSA quanto o ECC (Elliptic Curve Cryptography) são algoritmos de criptografia assimétrica.
 </details>
 
 ---
 
-### Questão 6 (FCC)
-Os certificados digitais baseados no padrão X.509 são utilizados para associar a identidade de um usuário a um par de chaves criptográficas. Um elemento que consta obrigatoriamente do certificado digital do usuário é:
-A) A chave pública do usuário associada à assinatura digital da Autoridade Certificadora emissora.
-B) A chave privada do usuário associada ao hash de validação gerado pelo navegador.
-C) A chave privada da Autoridade Certificadora responsável pela emissão da chave do usuário.
-D) A lista completa de senhas criptografadas do usuário em serviços públicos de diretório.
-E) A chave simétrica acordada no início da sessão de handshake do protocolo HTTPS.
+## 📝 TEMA 2: Programação (C, PHP, C#) e SOLID/GRASP
+
+### Questão 6 (FCC - 2017 - TRT 24 - Analista de TI)
+Na linguagem C#, a programação orientada a objetos permite a reescrita de métodos em classes derivadas. Para que um método em uma classe base possa ser sobrescrito em uma classe derivada, indicando que possui implementação, ele deve ser declarado utilizando a palavra-chave:
+A) abstract.
+B) virtual.
+C) override.
+D) sealed.
+E) new.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: B**
+
+Explicação:
+Em C#, métodos não são "sobrescrevíveis" por padrão. O desenvolvedor deve permitir isso explicitamente.
+- **A) Incorreta.** Um método `abstract` força a sobrescrita, mas **não possui** implementação na classe base, servindo apenas como um contrato.
+- **B) Correta.** A palavra-chave `virtual` permite que um método (que contém uma implementação na classe base) seja sobrescrito em uma classe derivada (usando `override`).
+- **C) Incorreta.** A palavra-chave `override` é usada na classe derivada para sobrescrever o método da classe base, e não na declaração original.
+- **D) Incorreta.** O modificador `sealed` impede a herança ou a sobrescrita, funcionando exatamente ao contrário do que pede o enunciado.
+- **E) Incorreta.** A palavra-chave `new` é utilizada para ocultar (hiding) um membro da classe base, e não para sobrescrevê-lo polimorficamente.
 </details>
 
 ---
 
-### Questão 7 (FCC)
-Para conciliar a segurança do gerenciamento de chaves e a eficiência de processamento de dados, os sistemas modernos utilizam criptografia híbrida. Na criptografia híbrida:
-A) O algoritmo de hash calcula o resumo digital, e a criptografia simétrica cifra o hash gerando a assinatura.
-B) A criptografia simétrica é usada para compartilhar a chave pública, e a criptografia assimétrica é usada para cifrar os dados da mensagem.
-C) As chaves simétrica e assimétrica são combinadas gerando uma única chave híbrida indivisível e permanente.
-D) A criptografia assimétrica realiza a cifragem dos blocos de dados, e a criptografia simétrica garante o não-repúdio.
-E) A criptografia assimétrica é usada para compartilhar a chave simétrica, e a criptografia simétrica é usada para cifrar os dados da mensagem.
+### Questão 7 (FCC - 2015 - TRT 3 - Analista de TI)
+Em desenvolvimento de sistemas web utilizando a linguagem PHP, o tráfego de dados entre o cliente e o servidor frequentemente ocorre via requisições HTTP. Para acessar os dados enviados por meio de um formulário que utiliza o método POST, utiliza-se nativamente a variável superglobal:
+A) $_GET.
+B) $_SESSION.
+C) $_COOKIE.
+D) $_POST.
+E) $_FILES.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: D**
+
+Explicação:
+Variáveis superglobais em PHP estão disponíveis em qualquer escopo do script.
+- **A) Incorreta.** A variável `$_GET` é utilizada para capturar dados enviados pela URL (via query string) ou formulários com método GET.
+- **B) Incorreta.** A `$_SESSION` armazena variáveis de sessão do lado do servidor, que persistem entre requisições.
+- **C) Incorreta.** A variável `$_COOKIE` é utilizada para acessar os valores de cookies enviados pelo navegador do cliente.
+- **D) Correta.** A variável superglobal `$_POST` é um array associativo contendo os dados passados para o script via requisição HTTP POST.
+- **E) Incorreta.** A superglobal `$_FILES` captura especificamente as informações de arquivos que foram submetidos para upload no servidor, e não os campos de texto/dados gerais do POST.
 </details>
 
 ---
 
-### Questão 8 (FCC)
-As funções hash da família SHA-2 são amplamente recomendadas para segurança de sistemas. Assinale a alternativa que apresenta apenas algoritmos válidos e pertencentes a essa família:
-A) SHA-256, MD5 e SHA-3
-B) SHA-1, SHA-2, SHA-3 e SHA-4
-C) SHA-128, SHA-256 e SHA-512
-D) SHA-224, SHA-256, SHA-384 e SHA-512
-E) SHA-256, HMAC e SHA-1
+### Questão 8 (FCC - 2018 - TRT 15 - Analista de TI)
+O Princípio do Aberto/Fechado (Open/Closed Principle - OCP), que representa a letra 'O' no acrônimo SOLID, estabelece uma regra fundamental para o bom design de software orientado a objetos. Segundo esse princípio, as entidades de software devem ser:
+A) abertas para modificação, mas fechadas para extensão.
+B) abertas para extensão, mas fechadas para modificação.
+C) abertas para testes unitários, mas fechadas para implementações de interface.
+D) fechadas para acoplamento, mas abertas para coesão.
+E) fechadas para reutilização externa, mas abertas para composição interna.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: B**
+
+Explicação:
+O Princípio do Aberto/Fechado (OCP), idealizado por Bertrand Meyer, é o cerne da flexibilidade e da manutenibilidade em OO.
+- **A) Incorreta.** Esta alternativa inverte o princípio. Se o código for aberto para modificação, aumenta-se o risco de quebrar regras de negócios existentes.
+- **B) Correta.** A entidade deve estar aberta para **extensão** (podemos adicionar novos comportamentos e funcionalidades) e fechada para **modificação** (o código-fonte original não deve ser alterado para suportar o novo comportamento, evitando bugs em funcionalidades antigas). O uso de herança e polimorfismo são técnicas comuns para atingir esse objetivo.
+- **C) Incorreta.** O OCP não trata diretamente de testes unitários ou exclusão de interfaces (na verdade, interfaces ajudam no OCP).
+- **D) Incorreta.** Mistura conceitos de design (coesão e acoplamento) que, embora corretos como boas práticas independentes, não definem o Princípio do Aberto/Fechado.
+- **E) Incorreta.** O OCP não é definido em torno das restrições de reutilização externa e composição interna.
 </details>
 
 ---
 
-### Questão 9 (FCC)
-No âmbito da Infraestrutura de Chaves Públicas Brasileira (ICP-Brasil), a entidade que atua como o topo da cadeia (Autoridade Certificadora Raiz), credenciando e fiscalizando as demais Autoridades Certificadoras (ACs), é o:
-A) ANPD (Autoridade Nacional de Proteção de Dados)
-B) ITI (Instituto Nacional de Tecnologia da Informação)
-C) CNJ (Conselho Nacional de Justiça)
-D) MCTI (Ministério da Ciência, Tecnologia e Inovação)
-E) SERPRO (Serviço Federal de Processamento de Dados)
+### Questão 9 (FCC - 2016 - TRF 3 - Analista de TI)
+Dentre os padrões de atribuição de responsabilidade GRASP (General Responsibility Assignment Software Patterns), um deles foca especificamente em determinar qual classe deve ser a responsável por instanciar uma nova classe, buscando manter o baixo acoplamento e promovendo a reutilização. Trata-se do padrão:
+A) Expert (Especialista na Informação).
+B) Creator (Criador).
+C) Controller (Controlador).
+D) Pure Fabrication (Invenção Pura).
+E) Indirection (Indireção).
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: B**
+
+Explicação:
+Os padrões GRASP guiam a atribuição de responsabilidades a classes em um modelo OO.
+- **A) Incorreta.** O *Expert* (Information Expert) dita que a responsabilidade deve ser atribuída à classe que possui a informação necessária para cumpri-la.
+- **B) Correta.** O padrão *Creator* estabelece as regras para definir quem deve criar a instância de uma classe (ex: B cria A se B contém A, B registra A, B usa A de perto ou B tem os dados para inicializar A).
+- **C) Incorreta.** O *Controller* atua como o primeiro objeto além da camada de interface de usuário que recebe e coordena uma operação do sistema.
+- **D) Incorreta.** *Pure Fabrication* é uma classe fictícia (não representa o domínio real) criada artificialmente para obter baixo acoplamento e alta coesão, quando o padrão *Expert* viola esses ideais.
+- **E) Incorreta.** *Indirection* atribui a responsabilidade de comunicação entre componentes a um objeto intermediário para que eles não sejam acoplados diretamente.
 </details>
 
 ---
 
-### Questão 10 (FCC)
-Sobre os algoritmos de hash criptográfico clássicos MD5 e SHA-1, assinale a opção que descreve corretamente o seu status atual de segurança:
-A) São os algoritmos simétricos padrão para cifragem de discos rígidos em servidores de datacenters modernos.
-B) Permanecem totalmente seguros e são recomendados pela ICP-Brasil para assinaturas de processos eletrônicos judiciais.
-C) São considerados inseguros para aplicações criptográficas de assinatura devido à descoberta de colisões práticas em tempo viável.
-D) Foram unificados no algoritmo SHA-3 para formar um único hash de 512 bits resistente a computação quântica.
-E) São restritos exclusivamente ao uso em redes locais com cabeamento estruturado de par trançado Classe F.
+### Questão 10 (FCC - 2013 - TRT 1 - Analista de TI)
+Na linguagem de programação C, o uso de ponteiros é uma característica poderosa que permite a manipulação direta da memória. O operador unário utilizado antes do nome de uma variável para obter o seu respectivo endereço de memória é o:
+A) * (asterisco).
+B) & (e comercial).
+C) % (sinal de porcentagem).
+D) -> (seta).
+E) # (cerquilha).
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: B**
+
+Explicação:
+A linguagem C diferencia explicitamente os operadores de manipulação de memória e de indireção.
+- **A) Incorreta.** O operador `*` (asterisco) atua como um desreferenciador (indireção). Ele acessa o valor armazenado no endereço para o qual o ponteiro aponta, ou é usado na declaração do tipo do ponteiro.
+- **B) Correta.** O operador `&` (e comercial), quando usado de forma unária antes de uma variável (`&var`), retorna o endereço físico de memória onde aquela variável está alocada.
+- **C) Incorreta.** O operador `%` é o operador aritmético de módulo (resto da divisão inteira).
+- **D) Incorreta.** O operador `->` é utilizado para acessar membros (atributos ou funções) de uma estrutura (struct) a partir de um ponteiro que aponta para ela.
+- **E) Incorreta.** O caractere `#` é usado em C para introduzir diretivas de pré-processador, como `#include` e `#define`.
 </details>
 
 ---
 
-### Questão 11 (FCC)
-Para verificar se um certificado digital X.509 de um servidor foi revogado antes de expirar a sua validade, o navegador cliente pode consultar periodicamente:
-A) O banco de dados de chaves simétricas negociadas durante o handshake do protocolo HTTPS.
-B) O repositório local de chaves privadas do sistema operacional ou o arquivo temporário de hosts DNS.
-C) A Lista de Revogação de Certificados (LRC / CRL) ou utilizar o protocolo online OCSP (Online Certificate Status Protocol).
-D) A Autoridade Certificadora Raiz através de uma requisição síncrona baseada em FTP.
-E) O Comitê de Acessibilidade da ICP-Brasil responsável pelo credenciamento das Autoridades de Registro.
+## 📝 TEMA 3: Língua Portuguesa (Vozes do Verbo e Flexão)
+
+### Questão 11 (FCC - 2018 - TRT 2 - Analista Judiciário)
+Transpondo-se para a voz passiva a frase "A constante inovação da tecnologia tem alterado profundamente as relações sociais", a forma verbal resultante que completa a conversão corretamente será:
+A) têm sido alteradas.
+B) tem sido alteradas.
+C) têm alterado.
+D) foram alteradas.
+E) estão sendo alteradas.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: A**
+
+Explicação:
+A transposição de voz ativa para voz passiva exige manutenção do tempo verbal e adequação da concordância com o novo sujeito paciente.
+- **A) Correta.** A frase na voz passiva analítica fica: "As relações sociais **têm sido alteradas** profundamente pela constante inovação da tecnologia". O tempo (pretérito perfeito composto do indicativo "tem alterado") foi mantido por meio da locução "têm sido alteradas". A mudança do verbo auxiliar "tem" para "têm" (com acento) ocorre para concordar no plural com o novo sujeito paciente ("As relações sociais").
+- **B) Incorreta.** "Tem" (sem acento circunflexo) está no singular e não concorda com o sujeito plural "as relações sociais".
+- **C) Incorreta.** "Têm alterado" mantém o verbo na voz ativa.
+- **D) Incorreta.** Modifica o tempo verbal. "Foram alteradas" está no pretérito perfeito simples, ao passo que a frase original utiliza o pretérito perfeito composto ("tem alterado").
+- **E) Incorreta.** Modifica o tempo verbal e o aspecto ("estão sendo alteradas" corresponde ao presente contínuo/gerúndio: "está alterando").
 </details>
 
 ---
 
-### Questão 12 (FCC)
-Ao receber um arquivo assinado digitalmente, o destinatário verifica a assinatura realizando o seguinte procedimento técnico:
-A) Calcula o hash do arquivo recebido e o compara com o hash obtido ao decifrar a assinatura com a sua própria chave privada.
-B) Decifra o arquivo completo usando a sua própria chave privada e o compara com o texto plano original enviado.
-C) Envia o arquivo para a Autoridade Certificadora autenticar usando a chave privada da autoridade.
-D) Calcula o hash do arquivo recebido e o compara com o hash obtido ao decifrar a assinatura com a chave pública do remetente.
-E) Decifra a assinatura digital usando a chave simétrica acordada no handshake do TLS.
+### Questão 12 (FCC - 2019 - TRF 4 - Analista Judiciário)
+Transpondo para a voz passiva a oração "Os cientistas desenvolverão novas vacinas para a população", a forma verbal resultante será:
+A) foram desenvolvidas.
+B) serão desenvolvidas.
+C) seriam desenvolvidas.
+D) são desenvolvidas.
+E) vêm sendo desenvolvidas.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: B**
+
+Explicação:
+Na mudança de voz, o tempo e o modo do verbo principal na voz ativa determinam o tempo e o modo do verbo auxiliar "ser" na voz passiva.
+- **A) Incorreta.** "Foram" está no pretérito perfeito. A frase original usa o verbo "desenvolverão", que está no futuro do presente.
+- **B) Correta.** A oração transformada torna-se "Novas vacinas **serão desenvolvidas** pelos cientistas...". O auxiliar "serão" acompanha o tempo do verbo principal (futuro do presente) e concorda em número/gênero com o sujeito paciente plural ("novas vacinas"), somado ao particípio "desenvolvidas".
+- **C) Incorreta.** "Seriam" está no futuro do pretérito, o que configuraria alteração de tempo verbal.
+- **D) Incorreta.** "São desenvolvidas" está no presente do indicativo.
+- **E) Incorreta.** Introduz aspecto durativo (gerúndio) que não existe na frase original (ativa não era "vêm desenvolvendo").
 </details>
 
 ---
 
-### Questão 13 (FCC)
-A Criptografia de Curvas Elípticas (ECC) possui uma vantagem técnica importante sobre os algoritmos assimétricos clássicos como o RSA:
-A) Ser imune a qualquer ataque físico ou lógico mesmo que a chave privada seja exposta publicamente.
-B) Funcionar sem a necessidade de chaves públicas, reduzindo o tráfego de dados na rede.
-C) Ser um algoritmo de criptografia simétrica com suporte nativo a blocos dinâmicos de dados.
-D) Garantir a integridade dos dados sem a necessidade de calcular funções hash adicionais.
-E) Oferecer o mesmo nível de segurança criptográfica que o RSA utilizando tamanhos de chaves significativamente menores.
+### Questão 13 (FCC - 2016 - TRT 20 - Analista Judiciário)
+Considere a frase: "Se ele ver o processo a tempo, poderá suspender a execução." Para que a flexão verbal esteja de acordo com a norma-padrão da Língua Portuguesa, a palavra sublinhada ("ver") deve ser substituída por:
+A) vir.
+B) ver.
+C) visse.
+D) virem.
+E) vier.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: A**
+
+Explicação:
+A estrutura da frase impõe uma condição futura ("Se..."), o que exige o uso do tempo Futuro do Subjuntivo do verbo "ver".
+- **A) Correta.** O futuro do subjuntivo do verbo "ver" conjuga-se assim: quando eu *vir*, quando tu *vires*, quando ele **vir**. Portanto, a forma correta é "Se ele **vir**".
+- **B) Incorreta.** "Ver" é a forma do verbo no infinitivo. Trata-se de um erro coloquial gravíssimo e comum confundir o infinitivo com o futuro do subjuntivo deste verbo.
+- **C) Incorreta.** "Visse" é o pretérito imperfeito do subjuntivo ("Se ele visse, poderia suspender..."). O uso de "visse" quebraria a correlação verbal com o "poderá" (futuro do indicativo).
+- **D) Incorreta.** "Virem" é a flexão para a terceira pessoa do plural ("se eles virem"), mas o pronome exigido pelo enunciado é singular ("ele").
+- **E) Incorreta.** "Vier" é a flexão do futuro do subjuntivo do verbo "vir" (de locomoção, chegar), e não do verbo "ver" (de enxergar).
 </details>
 
 ---
 
-### Questão 14 (FCC)
-Para validar a autenticidade de um certificado digital X.509 recebido de um servidor, o cliente realiza as seguintes verificações, com EXCEÇÃO de:
-A) Confirmar se o certificado não consta em Listas de Revogação de Certificados (CRLs) atualizadas.
-B) Verificar a validade do certificado comparando a data atual com o período de validade constante no documento.
-C) Validar a assinatura digital do certificado utilizando a chave pública da Autoridade Certificadora que o emitiu.
-D) Verificar se a chave privada do certificado do servidor corresponde à chave pública da Autoridade Certificadora emissora.
-E) Verificar se o nome de domínio (Common Name - CN) do certificado corresponde ao endereço do website acessado.
+### Questão 14 (FCC - 2017 - TRT 24 - Técnico Judiciário)
+A frase "A comissão analisou rigorosamente todos os contratos" admitirá, na transposição para a voz passiva, a seguinte forma verbal:
+A) são analisados.
+B) foram analisados.
+C) foi analisado.
+D) tinham analisado.
+E) haviam sido analisados.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: B**
+
+Explicação:
+Regra básica de vozes verbais: o objeto direto da voz ativa ("todos os contratos") vira sujeito da voz passiva, e o verbo assume forma locutória baseada no particípio.
+- **A) Incorreta.** "São analisados" está no presente do indicativo, não correspondendo ao verbo original "analisou" (pretérito perfeito).
+- **B) Correta.** A frase transposta fica: "Todos os contratos **foram analisados** rigorosamente pela comissão". O auxiliar "foram" absorve o tempo verbal "pretérito perfeito" da ativa e flexiona-se no plural para concordar com o sujeito paciente "Todos os contratos". O particípio fecha a locução ("analisados").
+- **C) Incorreta.** "Foi analisado" manteria o verbo no singular, desrespeitando a concordância obrigatória com o sujeito paciente plural "Todos os contratos".
+- **D) Incorreta.** "Tinham analisado" é um tempo composto da voz ativa (pretérito mais-que-perfeito), não formando voz passiva.
+- **E) Incorreta.** Modifica o tempo original para o pretérito mais-que-perfeito na voz passiva. O verbo não sofreu alteração na frase original para justificar o deslocamento temporal.
 </details>
 
 ---
 
-### Questão 15 (FCC)
-Em segurança da informação, o não-repúdio (irretratabilidade) é a garantia de que:
-A) Os dados transmitidos não sofreram qualquer alteração acidental ou intencional durante o trânsito na rede.
-B) O emissor de uma mensagem ou transação assinada digitalmente não pode negar a sua autoria ou criação.
-C) Apenas usuários autorizados tenham acesso à leitura do conteúdo confidencial armazenado em servidores.
-D) Os sistemas de rede estejam disponíveis e funcionais para os usuários legítimos em tempo integral.
-E) O canal de comunicação simétrico impeça o acesso físico aos servidores e switches locais.
+### Questão 15 (FCC - 2015 - TRT 3 - Técnico Judiciário)
+Assinale a alternativa que apresenta a correta flexão do verbo "manter" no pretérito perfeito do indicativo, na 3ª pessoa do plural, preenchendo adequadamente a lacuna na frase: "Os auditores _________ o parecer inicial inalterado."
+A) manteram
+B) manterão
+C) manteriam
+D) mantiveram
+E) mantião
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-## 📝 TEMA 2: Engenharia de Software — Programação em PHP, C, C# e .NET, SOLID e GRASP
-### Questão 16 (FCC)
-O princípio SOLID da Responsabilidade Única (Single Responsibility Principle - SRP) estabelece que:
-A) Uma classe só pode conter um único método público para realizar todas as operações do seu módulo.
-B) Uma classe deve ter um, e apenas um, motivo para mudar, possuindo uma única responsabilidade no sistema.
-C) Os componentes do sistema devem ser acoplados exclusivamente de forma síncrona na camada de apresentação.
-D) Toda interface deve declarar apenas um método abstrato a ser implementado pelas classes herdeiras.
-E) O banco de dados deve possuir apenas uma tabela associada a cada entidade de negócio do sistema.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 17 (FCC)
-De acordo com o princípio SOLID Aberto-Fechado (Open-Closed Principle - OCP), as entidades de software (classes, módulos, funções) devem ser:
-A) Abertas para extensão, mas fechadas para modificação.
-B) Abertas para modificação externa, mas fechadas para herança.
-C) Abertas para acesso público, mas fechadas para injeção de dependências.
-D) Abertas para persistência em disco, mas fechadas para compilação local.
-E) Abertas para alterações parciais no código, mas fechadas para refatorações.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 18 (FCC)
-O princípio SOLID da Substituição de Liskov (Liskov Substitution Principle - LSP) determina que:
-A) Toda classe derivada deve herdar diretamente de múltiplas superclasses abstratas simultaneamente.
-B) Subclasses devem sobrescrever todos os métodos da superclasse para alterar a assinatura original e forçar o polimorfismo.
-C) Objetos de uma superclasse devem ser substituíveis por objetos de suas subclasses sem que isso quebre o funcionamento correto do programa.
-D) Interfaces não podem ser estendidas por outras interfaces para evitar conflitos de implementação múltipla.
-E) Classes concretas devem substituir todas as referências a injeção de dependências por instanciação estática de objetos.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 19 (FCC)
-O princípio SOLID da Segregação de Interfaces (Interface Segregation Principle - ISP) preconiza que:
-A) Interfaces de persistência de banco de dados devem ser separadas fisicamente de classes controladoras MVC.
-B) Interfaces devem ser unificadas em um único arquivo de contrato para facilitar a manutenção de grandes sistemas Java ou C#.
-C) Módulos de alto nível não devem herdar de interfaces abstratas criadas em pacotes de baixo nível.
-D) Todas as interfaces do sistema devem declarar obrigatoriamente constantes estáticas e finais do tipo string.
-E) Muitas interfaces específicas são melhores do que uma única interface de propósito geral, evitando que classes sejam forçadas a depender de métodos que não utilizam.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 20 (FCC)
-O princípio SOLID da Inversão de Dependência (Dependency Inversion Principle - DIP) estabelece que:
-A) Módulos de alto nível não devem depender de módulos de baixo nível; ambos devem depender de abstrações. Abstrações não devem depender de detalhes; detalhes devem depender de abstrações.
-B) Módulos de baixo nível devem gerenciar o ciclo de vida e a instanciação estática dos objetos de alto nível no Spring Framework.
-C) As dependências do sistema devem ser invertidas fisicamente no disco através de links simbólicos de arquivos binários.
-D) Classes concretas devem depender diretamente de outras classes concretas, reduzindo o uso excessivo de interfaces e abstrações.
-E) A injeção de dependência deve ser realizada exclusivamente através do construtor de classes sem visibilidade pública.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 21 (FCC)
-No conjunto de padrões GRASP para atribuição de responsabilidades em POO, o padrão **Controller** (Controlador) é responsável por:
-A) Impedir que classes de domínio interajam com as classes de visualização através do acoplamento forte.
-B) Garantir que uma classe tenha apenas uma única instância física carregada na memória da máquina virtual Java ou .NET.
-C) Criar objetos de coleções complexas e encapsular o acesso físico a tabelas de banco de dados relacionais.
-D) Definir a estrutura hierárquica de classes para simular a herança múltipla de comportamento em interfaces simples.
-E) Receber eventos do sistema originados por elementos da interface do usuário (UI) e coordenar as operações de negócio adequadas.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 22 (FCC)
-De acordo com o padrão GRASP **Creator** (Criador), uma classe $A$ deve ser responsável pela criação de instâncias de uma classe $B$ se:
-A) O desenvolvedor deseja aplicar o princípio SOLID da substituição de Liskov na instanciação de Beans.
-B) A classe $B$ estende diretamente a classe $A$ através de herança simples ou múltipla de implementação.
-C) A classe $A$ não possui atributos de instância e declara apenas métodos estáticos e abstratos.
-D) A classe $A$ agrega, contém, registra ou usa de forma muito próxima as instâncias da classe $B$.
-E) O banco de dados relacional possui uma chave estrangeira de $A$ apontando para a tabela $B$ correspondente.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 23 (FCC)
-Na linguagem de programação C, o operador de desreferenciação `*` (asterisco) e o operador de endereço `&` (e comercial), quando aplicados a ponteiros e variáveis comuns, servem para, respectivamente:
-A) Acessar o valor armazenado no endereço apontado pelo ponteiro, e obter o endereço de memória de uma variável comum.
-B) Obter o endereço de memória de uma variável ponteiro, e realizar a multiplicação aritmética de dois inteiros.
-C) Alocar espaço na memória heap do sistema operacional, e liberar o espaço em memória associado à variável local.
-D) Declarar uma constante global em tempo de compilação, e verificar a igualdade lógica de dois valores booleanos.
-E) Concatenar duas sequências de caracteres na memória dinâmica, e calcular a negação lógica de bits.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 24 (FCC)
-Em PHP 8+, a declaração `namespace` e a utilização de ferramentas como o autoloader do Composer têm como finalidade principal:
-A) Substituir o uso de classes de banco de dados por consultas SQL em formato binário indexado.
-B) Compilar o código PHP em linguagem de máquina nativa do servidor, e gerenciar a segurança lógica de portas abertas.
-C) Organizar e isolar o escopo de classes evitando conflitos de nomes, e carregar os arquivos de classes sob demanda de forma automática (lazy loading).
-D) Exigir a declaração obrigatória de tipos dinâmicos para todas as variáveis globais da aplicação corporativa.
-E) Importar bibliotecas em C++ compiladas diretamente no kernel do Apache Server sem passar pelo interpretador.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 25 (FCC)
-Na linguagem C# e plataforma .NET, as variáveis são divididas em tipos de valor (value types) e tipos de referência (reference types). Sobre essa divisão, é correto afirmar:
-A) O armazenamento de tipos de referência na pilha impede a ocorrência de exceções de estouro de memória (StackOverflowException).
-B) Tipos de referência são armazenados na memória stack para garantir o acesso instantâneo e a liberação de espaço sem o Garbage Collector.
-C) Tipos de valor são gerenciados pelo Garbage Collector da plataforma .NET de forma síncrona e obrigatória.
-D) Classes em C# são classificadas como tipos de valor, enquanto as structs representam tipos de referência nativos.
-E) Tipos de valor (como structs, int, bool) são armazenados diretamente na pilha (stack), enquanto tipos de referência (como classes, interfaces, objects) são armazenados na memória heap.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 26 (FCC)
-Na linguagem C#, a instrução `using` (por exemplo, `using (var resource = new Resource()) { ... }`) é utilizada para garantir:
-A) A liberação automática de recursos não gerenciados (como conexões de rede ou arquivos) ao final do bloco de código, chamando o método Dispose().
-B) A importação de bibliotecas externas compiladas em C++ nativo e localizadas no diretório do sistema `/bin`.
-C) A herança múltipla de interfaces por classes controladoras de dados da persistência do EF Core.
-D) O tratamento obrigatório de exceções de divisão por zero e estouro de buffer em tempo de execução.
-E) A compilação em lote de arquivos de código-fonte dinâmicos associados a namespaces corporativos.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 27 (FCC)
-Na linguagem de programação C, para alocar dinamicamente 10 inteiros na memória heap e, posteriormente, liberar esse espaço na memória de forma correta, o desenvolvedor deve utilizar, respectivamente, as funções:
-A) malloc() e free()
-B) new e delete
-C) calloc() e remove()
-D) alloc() e dispose()
-E) malloc() e clean()
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 28 (FCC)
-Em C#, as propriedades (properties) com sintaxes como `{ get; set; }` são utilizadas para:
-A) Configurar o mapeamento objeto-relacional automático do framework Entity Framework sem anotações adicionais.
-B) Definir que o atributo associado será armazenado exclusivamente na memória stack de acesso rápido.
-C) Obrigar que a classe implemente herança de comportamento baseada em atributos públicos dinâmicos.
-D) Bloquear o acesso de escrita por classes herdadas na mesma assembly em tempo de execução.
-E) Implementar o encapsulamento de forma simplificada, abstraindo a criação manual de atributos privados e métodos getters/setters correspondentes.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 29 (FCC)
-O padrão GRASP **Information Expert** (Especialista na Informação) dita que a responsabilidade de executar uma determinada tarefa deve ser atribuída para:
-A) O módulo de persistência de dados encarregado do acesso ao banco de dados relacional.
-B) A classe controladora que gerencia a interface visual do sistema operacional.
-C) A classe abstrata que possui o maior número de subclasses concretas associadas.
-D) A classe que possui as informações necessárias para realizar essa responsabilidade.
-E) A interface que declara o maior número de métodos abstratos e propriedades genéricas.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 30 (FCC)
-O Garbage Collector (GC) da plataforma .NET atua de forma automática para gerenciar a memória da aplicação. A operação básica realizada pelo GC consiste em:
-A) Autenticar os certificados digitais X.509 utilizados em requisições seguras ao banco de dados.
-B) Mover todas as variáveis locais da memória stack para a memória heap para evitar erros de ponteiros nulos.
-C) Compilar dinamicamente o código C# para linguagem intermediária (IL) durante a execução do programa.
-D) Compactar fisicamente os arquivos executáveis gerados na pasta de publicação para economizar espaço em disco.
-E) Monitorar a memória heap para liberar o espaço alocado por objetos que não possuem mais nenhuma referência ativa no programa.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-## 📝 TEMA 3: Língua Portuguesa — Flexão Nominal e Verbal, Vozes do Verbo e Transposição
-### Questão 31 (FCC)
-A transposição de uma oração da voz ativa para a voz passiva analítica exige a reestruturação dos termos sintáticos. A frase *'O analista do tribunal desenvolveu o novo sistema de segurança'* transposta para a voz passiva analítica assume a seguinte redação correta:
-A) O novo sistema de segurança desenvolvera-se pelo analista do tribunal.
-B) Desenvolveu-se o novo sistema de segurança pelo analista do tribunal.
-C) O novo sistema de segurança foi desenvolvido pelo analista do tribunal.
-D) O analista do tribunal tinha desenvolvido o novo sistema de segurança.
-E) O novo sistema de segurança seria desenvolvido pelo analista do tribunal.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 32 (FCC)
-A voz passiva sintética (ou pronominal) caracteriza-se pelo uso do pronome apassivador 'se' associado a verbo transitivo direto. Assinale a frase que exemplifica corretamente o uso da voz passiva sintética:
-A) Precisa-se de novos servidores estáveis na área de infraestrutura de TI.
-B) Identificaram-se falhas graves de segurança nos servidores do tribunal.
-C) Os técnicos assistiram ao deploy do novo módulo judicial na quarta-feira.
-D) Eles referiram-se ao antigo banco de dados corporativo durante a reunião.
-E) Trabalhou-se bastante durante o fim de semana para corrigir os bugs de rede.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 33 (FCC)
-Na oração *'As novas regras de tratamento de dados pessoais foram estabelecidas pela ANPD'*, o termo *'pela ANPD'* desempenha a função sintática de:
-A) Agente da passiva
-B) Objeto direto preposicionado
-C) Adjunto adnominal
-D) Predicativo do sujeito
-E) Complemento nominal
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 34 (FCC)
-Transpondo a frase *'Os auditores analisarão todos os logs de acesso'* para a voz passiva sintética, obtém-se a forma correta:
-A) Todos os logs de acesso serão analisados pelos auditores.
-B) Analisar-se-ia todos os logs de acesso.
-C) Analisar-se-ão todos os logs de acesso.
-D) Teriam sido analisados todos os logs de acesso pelos auditores.
-E) Analisaram-se todos os logs de acesso pelos auditores.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 35 (FCC)
-Assinale a alternativa que apresenta a flexão verbal correta de acordo com a norma-padrão da língua portuguesa:
-A) Se eles manterem os backups atualizados, o risco de perda de dados diminuirá.
-B) Se eles mantiverem os backups atualizados, o risco de perda de dados diminuirá.
-C) Quando a equipe ver o relatório de erros, tomará as devidas providências.
-D) Se o diretor intervir a tempo, a falha crítica de rede não ocorrerá hoje.
-E) Eles requiseram a exclusão definitiva dos prontuários médicos da base.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 36 (FCC)
-O verbo intervir é derivado do verbo vir e deve seguir a sua conjugação. Assinale a alternativa que apresenta a flexão correta desse verbo no pretérito perfeito do indicativo:
-A) Quando o comitê intervir na tomada de decisões, as falhas serão sanadas.
-B) O comitê interviu na tomada de decisões estratégicas de segurança ontem.
-C) Os analistas interviram na tomada de decisões estratégicas de segurança ontem.
-D) Se o comitê intervisse na tomada de decisões, o projeto teria sucesso.
-E) O comitê interveio na tomada de decisões estratégicas de segurança ontem.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 37 (FCC)
-A voz reflexiva ocorre quando o sujeito pratica e sofre a ação verbal simultaneamente. A frase que exemplifica a voz reflexiva com pronome de reciprocidade (ação mútua) é:
-A) Os técnicos queixaram-se do calor excessivo dentro da sala de servidores públicos.
-B) O desenvolvedor cortou-se acidentalmente com a chapa de metal do rack de rede.
-C) O sistema operacional atualizou-se automaticamente durante a madrugada.
-D) Os dois analistas de sistemas parabenizaram-se mutuamente pelo deploy bem-sucedido.
-E) Eles arrependeram-se de não ter migrado a base de dados para o PostgreSQL.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 38 (FCC)
-Ao realizar a transposição de uma frase da voz ativa para a voz passiva analítica, o tempo e modo do verbo auxiliar da passiva deve corresponder exatamente ao tempo e modo do verbo principal da ativa. Na frase *'O switch transmitia os pacotes de dados'*, o verbo auxiliar correspondente na voz passiva analítica deve ser flexionado no:
-A) Pretérito imperfeito do indicativo (eram)
-B) Pretérito perfeito do indicativo (foram)
-C) Futuro do pretérito do indicativo (seriam)
-D) Pretérito mais-que-perfeito do indicativo (tinham sido)
-E) Presente do indicativo (são)
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 39 (FCC)
-Alguns verbos possuem dois particípios: um regular (terminado em -ado ou -ido), usado com os auxiliares ter ou haver, e outro irregular, usado com ser ou estar. Assinale a frase gramaticalmente correta em relação ao uso do particípio:
-A) O documento de requisitos foi imprimido em papel timbrado pelo analista.
-B) A proposta comercial de TI foi aceitada pela comissão de licitação do tribunal.
-C) A equipe já tinha elegido o novo coordenador de segurança da informação.
-D) O tribunal já havia aceitado todas as propostas comerciais enviadas pelas empresas.
-E) Os servidores públicos já tinham chego ao prédio do fórum judicial de manhã.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 40 (FCC)
-Na frase *'Não se tolerarão falhas graves no processamento de dados dos cidadãos'*, a função da palavra 'se' e a classificação de voz da oração são, respectivamente:
-A) Conjunção subordinada condicional e voz ativa com sujeito composto.
-B) Índice de indeterminação do sujeito e voz ativa com sujeito indeterminado.
-C) Pronome reflexivo e voz reflexiva com sujeito simples.
-D) Partícula expletiva de realce e voz ativa com sujeito oculto.
-E) Pronome apassivador e voz passiva sintética.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 41 (FCC)
-Assinale a alternativa que apresenta a flexão de plural correta do substantivo composto de acordo com a norma-padrão:
-A) Os novos decretos estabeleceram diversos salário-famílias para os servidores.
-B) Os novos decretos estabeleceram diversos salários-família para os servidores.
-C) A comissão contratou dois analistas de sistemas recém-formados para os cargos-chaves.
-D) Os técnicos instalaram os softwares-base em todos os computadores do fórum.
-E) As partes assinaram os termos de cooperação com vários estados-membros.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 42 (FCC)
-O verbo reaver é classificado como defectivo e deve ser conjugado apenas nas formas em que o verbo haver possui a letra 'v'. Assinale a alternativa que apresenta a flexão correta do verbo reaver:
-A) Nós reavemos todos os arquivos de backups que haviam sido apagados da base.
-B) Nós reouvemos todos os arquivos de backups que haviam sido apagados da base.
-C) Se a equipe reaver os arquivos de backups, o sistema voltará a funcionar.
-D) Eles reaveram o acesso físico aos servidores após a intervenção técnica.
-E) Quando a comissão reaver os documentos de licitação, o processo continuará.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 43 (FCC)
-A transposição para a voz passiva só é possível em orações que possuem objeto direto na voz ativa (verbos transitivos diretos ou transitivos diretos e indiretos). Assinale a frase que NÃO admite transposição para a voz passiva:
-A) O analista de infraestrutura instalou o sistema operacional Linux no servidor.
-B) Os técnicos de TI necessitam de novos switches gigabit ethernet de alto desempenho.
-C) O comitê de acessibilidade analisou as barreiras físicas no prédio do fórum.
-D) A empresa terceirizada entregou os cabos de manobra patch cord na terça-feira.
-E) A ANPD aplicou uma advertência administrativa formal ao órgão público.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 44 (FCC)
-Assinale a alternativa que apresenta o emprego correto do verbo no modo subjuntivo de acordo com a norma-padrão:
-A) Caso a equipe requira o acesso ao banco de dados, o administrador concederá.
-B) Caso a equipe requeira o acesso ao banco de dados, o administrador concederá.
-C) Quando o diretor propor o novo planejamento de metas, todos concordarão.
-D) Se o analista dispor de tempo livre hoje à tarde, revisará os requisitos.
-E) Se nós medirmos a velocidade do canal de cabeamento, o teste falhará.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 45 (FCC)
-Transpondo a frase *'A diretoria de TI vinha revisando os processos de deploy'* para a voz passiva analítica, obtém-se a forma correta:
-A) Os processos de deploy tinham sido revisados pela diretoria de TI.
-B) Os processos de deploy vinha sendo revisados pela diretoria de TI.
-C) Os processos de deploy vinham sendo revisados pela diretoria de TI.
-D) Os processos de deploy foram sendo revisados pela diretoria de TI.
-E) Revisavam-se os processos de deploy pela diretoria de TI.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: D**
+
+Explicação:
+Os verbos derivados do verbo "ter" (como manter, obter, conter, reter) seguem o paradigma de conjugação do verbo primitivo.
+- **A) Incorreta.** A forma "manteram" não existe na gramática normativa. É um desvio comum no português falado, conjugando o verbo como se fosse regular (como cantar -> cantaram).
+- **B) Incorreta.** "Manterão" é o verbo flexionado no futuro do presente do indicativo, indicando uma ação que ainda vai ocorrer, e não um pretérito (passado).
+- **C) Incorreta.** "Manteriam" está no futuro do pretérito do indicativo, expressando uma condição não realizada, fugindo do tempo verbal solicitado.
+- **D) Correta.** O pretérito perfeito do verbo "ter" na 3ª pessoa do plural é "tiveram". Pela regra da derivação, adiciona-se o prefixo: man + tiveram = **mantiveram**.
+- **E) Incorreta.** Além de não pertencer ao tempo solicitado, a escrita grafia "mantião" está incorreta. Se fosse o pretérito imperfeito, a grafia correta seria "mantinham".
 </details>
 
 ---

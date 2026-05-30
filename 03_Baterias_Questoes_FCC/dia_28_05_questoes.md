@@ -1,681 +1,320 @@
 # Bateria de Questões FCC — Quinta-feira 28/05
-Este arquivo contém 45 questões altamente calibradas nos padrões da FCC, com alternativas de comprimento similar e distratores baseados em pegadinhas reais (mudanças sutis de palavras-chave, restrições e termos legais).
 
----
-## 📝 TEMA 1: Banco de Dados — MongoDB, CTEs e Window Functions
-### Questão 1 (FCC)
-Considere que um analista precise definir a estrutura de dados para o novo sistema do tribunal no MongoDB. Sobre os conceitos de coleções (collections) e documentos (documents) neste banco de dados, é correto afirmar:
-A) Uma coleção não exige definição prévia de esquema (schema-less), o que permite que documentos de uma mesma coleção possuam diferentes campos e estruturas.
-B) Um documento do MongoDB possui estrutura tabular rígida, exigindo que todos os atributos sejam declarados no momento da criação da coleção correspondente.
-C) Uma coleção no MongoDB é conceitualmente idêntica a uma linha de tabela de um banco de dados relacional tradicional, armazenando múltiplos registros simples.
-D) Os documentos do MongoDB utilizam o formato XML nativo de armazenamento físico para assegurar a portabilidade e indexação rápida dos dados.
-E) O MongoDB exige que todas as coleções tenham pelo menos um relacionamento físico pré-definido (Foreign Key) com outras coleções do banco de dados.
+## 📝 TEMA 1: Banco de Dados, MongoDB e SQL
+
+### Questão 1 (FCC - 2016 - TRT 20ª Região - Analista de TI)
+No contexto de bancos de dados NoSQL orientados a documentos, em especial o MongoDB, uma "coleção" de documentos:
+A) é equivalente a uma tabela em um banco de dados relacional.
+B) exige um esquema predefinido rigoroso (schema) para a inserção de dados.
+C) armazena seus dados internamente no formato XML nativo.
+D) suporta nativamente junções complexas (JOINs) entre múltiplas coleções na mesma query como no SQL padrão.
+E) não permite a criação de índices secundários.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: A**
+
+A) Correta. No MongoDB, os dados são armazenados em documentos, e esses documentos são organizados e agrupados em estruturas chamadas "coleções" (collections). De forma análoga a um banco de dados relacional (RDBMS), uma coleção desempenha o papel de uma tabela.
+B) Incorreta. O MongoDB tem uma característica de ser *schema-less* ou ter *schema dinâmico*. Isso significa que ele não exige a definição estrita de um esquema antes da inserção dos dados; documentos em uma mesma coleção podem possuir diferentes estruturas e campos.
+C) Incorreta. O MongoDB armazena dados utilizando o formato BSON (Binary JSON), que é uma representação binária e serializada de documentos JSON, e não XML.
+D) Incorreta. Embora possua a operação de agregação `$lookup` (que atua como um JOIN simples na mesma base), o MongoDB não foi desenhado para suportar JOINs complexos de forma nativa e otimizada da mesma forma que os bancos relacionais com SQL. O design NoSQL prioriza dados desnormalizados.
+E) Incorreta. O MongoDB permite a criação de índices secundários, índices compostos e vários outros tipos (como texto e geoespacial) para otimizar a performance das consultas na coleção.
 </details>
 
 ---
 
-### Questão 2 (FCC)
-No MongoDB, o campo `_id` desempenha um papel fundamental na identificação única de documentos em uma coleção. Sobre o funcionamento e propriedades do campo `_id`, assinale a alternativa correta:
-A) O valor do ObjectId gerado pelo MongoDB é um número sequencial simples de 32 bits iniciado em zero e incrementado a cada nova inserção na coleção.
-B) O campo `_id` é opcional e, caso não seja fornecido ou gerado, a coleção aceitará múltiplos documentos sem qualquer chave primária interna.
-C) Se o usuário não especificar o campo `_id` na inserção de um documento, o MongoDB gerará automaticamente um valor do tipo ObjectId para ele.
-D) O campo `_id` pode ter valores duplicados dentro de uma mesma coleção, desde que esses documentos estejam em partições físicas (shards) distintas.
-E) O MongoDB proíbe estritamente a utilização de tipos de dados personalizados, como strings ou números inteiros, no valor do campo `_id` informado pelo usuário.
+### Questão 2 (FCC - 2018 - TRT 6ª Região - Analista de TI)
+Ao se construir uma consulta em linguagem SQL, o operador de junção `LEFT OUTER JOIN` (ou simplesmente `LEFT JOIN`):
+A) Retorna apenas os registros que possuem correspondência direta em ambas as tabelas envolvidas na cláusula.
+B) Retorna todos os registros da tabela especificada à direita, e apenas os correspondentes da tabela à esquerda.
+C) Retorna todos os registros da tabela especificada à esquerda, trazendo preenchimento com nulos (NULL) quando não houver correspondência na tabela à direita.
+D) Realiza um produto cartesiano automático entre as duas tabelas da cláusula, ignorando a chave estrangeira.
+E) Remove os registros duplicados do resultado final da query por padrão, independentemente da cláusula DISTINCT.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: C**
+
+A) Incorreta. Retornar apenas registros com correspondência em ambas as tabelas é o comportamento da junção interna (INNER JOIN).
+B) Incorreta. Retornar todos os registros da tabela à direita associando com a esquerda é o papel da cláusula RIGHT OUTER JOIN.
+C) Correta. O LEFT OUTER JOIN garante que todas as tuplas (linhas) da tabela declarada à esquerda de sua chamada aparecerão no resultado. Se essas linhas tiverem correspondência na tabela da direita, os dados da direita aparecem. Caso contrário, as colunas correspondentes à tabela da direita são preenchidas com valor nulo (NULL).
+D) Incorreta. O produto cartesiano entre as duas tabelas é obtido através da operação CROSS JOIN ou quando se omite as condições de junção.
+E) Incorreta. O LEFT JOIN por si só não remove registros duplicados; para remover duplicidade das tuplas no dataset final, utiliza-se a palavra reservada DISTINCT no comando SELECT.
 </details>
 
 ---
 
-### Questão 3 (FCC)
-Deseja-se realizar uma busca no MongoDB para localizar todos os processos na coleção `processos` cuja `prioridade` seja maior ou igual a 3. Assinale a sintaxe correta para essa consulta:
-A) db.processos.select({prioridade: {$gte: 3}})
-B) db.processos.find({prioridade: {$gt: 3}})
-C) db.processos.find({prioridade: {$eq: 3}})
-D) db.processos.query({prioridade: {$ge: 3}})
-E) db.processos.find({prioridade: {$gte: 3}})
+### Questão 3 (FCC - 2022 - TRT 22ª Região - Analista de TI)
+Sobre o MongoDB, assinale a opção que indica corretamente o formato interno de armazenamento dos documentos no disco, o qual permite acesso mais rápido e inclui tipos de dados adicionais, em relação ao JSON puro.
+A) JSON
+B) BSON
+C) XML
+D) YAML
+E) CSV
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: B**
+
+A) Incorreta. O MongoDB aceita JSON em sua interface para comunicação e visualização, mas no momento em que esses documentos são persistidos em disco pelo motor do banco, são convertidos.
+B) Correta. O formato BSON (Binary JSON) é o formato nativo com que o MongoDB armazena dados internamente. O BSON introduz um acesso a disco altamente eficiente, indexação rápida e suporta mais tipos de dados avançados (como Date, Object ID e BinData) que o JSON convencional não cobre.
+C) Incorreta. O formato XML é largamente utilizado em aplicações enterprise (como SOAP), mas os bancos documentais baseados em Mongo optam por famílias de JSON.
+D) Incorreta. YAML é usado para formatação e estruturação de arquivos de configuração, não sendo o formato físico do motor do banco de dados em questão.
+E) Incorreta. O CSV (Comma Separated Values) é uma estrutura tabular em formato de texto, incompatível com o armazenamento em árvore que o modelo documental requer nativamente.
 </details>
 
 ---
 
-### Questão 4 (FCC)
-Expressões de Tabela Comuns (CTEs) são recursos avançados do SQL. Sobre a utilização de CTEs em instruções SQL baseadas no padrão ANSI, é correto afirmar:
-A) O uso de CTEs reduz a legibilidade do código SQL, pois exige a criação de subconsultas aninhadas redundantes dentro da cláusula WHERE.
-B) Uma CTE é armazenada de forma física e permanente no disco do banco de dados, sendo visível para qualquer sessão do usuário até que seja descartada.
-C) Uma CTE é criada utilizando a palavra-chave WITH e funciona como uma tabela temporária cujo escopo é restrito à execução de uma única consulta.
-D) As CTEs não admitem a referência a si mesmas (recursividade), sendo restritas apenas a subconsultas lineares simples e agrupamentos.
-E) Uma CTE só pode ser referenciada uma única vez dentro da instrução SQL principal, sendo vedada sua reutilização na mesma consulta.
+### Questão 4 (FCC - 2014 - TRT 13ª Região - Analista de TI)
+As transações em bancos de dados relacionais devem obedecer às propriedades conhecidas pelo acrônimo ACID. A propriedade que garante que, após uma transação ter sido confirmada com sucesso (commit), as mudanças efetuadas sobreviverão a falhas de hardware, sistema ou energia, denomina-se:
+A) Atomicidade.
+B) Consistência.
+C) Isolamento.
+D) Durabilidade.
+E) Concorrência.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: D**
+
+A) Incorreta. A Atomicidade garante a regra do "tudo ou nada": uma transação será executada inteiramente, com todas as suas instruções, ou nenhuma delas será executada (em caso de rollback).
+B) Incorreta. A Consistência assegura que o banco de dados sairá de um estado válido e ficará em outro estado válido após a transação, sempre respeitando as restrições de integridade e regras de negócio.
+C) Incorreta. O Isolamento garante que transações simultâneas não interfiram uma na outra antes de seu encerramento; os dados intermediários de uma transação ficam "escondidos" (isolados) das demais.
+D) Correta. A Durabilidade garante a persistência dos efeitos da transação concluída de modo irreversível no banco de dados. Uma vez recebido o "commit", os dados sobrevivem mesmo no caso de indisponibilidades do sistema (quedas de energia, crashes de hardware).
+E) Incorreta. Concorrência não faz parte da sigla ACID, referindo-se na verdade ao ambiente onde múltiplas transações são processadas ao mesmo tempo, gerando a necessidade da propriedade de Isolamento.
 </details>
 
 ---
 
-### Questão 5 (FCC)
-As Window Functions (funções analíticas) em SQL executam cálculos em um conjunto de linhas que estão relacionadas à linha atual. A cláusula obrigatória utilizada para identificar uma Window Function é:
-A) ROWS BETWEEN
-B) PARTITION
-C) WINDOW
-D) GROUP BY
-E) OVER
+### Questão 5 (FCC - 2017 - TRE PR - Analista de TI)
+No padrão da linguagem SQL, os comandos são divididos em categorias como DDL, DML, DQL, DTL e DCL. Assinale o comando SQL que pertence à categoria DCL (Data Control Language), utilizado para fornecer privilégios de acesso a um usuário ou papel no banco de dados.
+A) REVOKE.
+B) COMMIT.
+C) GRANT.
+D) ROLLBACK.
+E) DENY.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: C**
+
+A) Incorreta. O comando REVOKE de fato é um DCL, mas a sua função não é fornecer permissões (privilégios), e sim revogar e remover permissões que tenham sido outorgadas anteriormente a um usuário.
+B) Incorreta. O COMMIT pertence à categoria DTL (Data Transaction Language), sendo utilizado para efetivar e encerrar permanentemente uma transação.
+C) Correta. O comando GRANT ("conceder") é o representante da DCL usado estritamente para fornecer privilégios e permissões explícitas a um papel (role) ou usuário perante um objeto (tabela, visão, etc.) no banco de dados.
+D) Incorreta. O ROLLBACK é um comando DTL. Ele é usado para cancelar a transação não comitada e reverter as mudanças de dados ao estado inicial.
+E) Incorreta. O comando DENY serve para negar explicitamente uma permissão, o que impede acessos mesmo que tenham sido dados por outros GRANTS de grupo, mas o enunciado pedia a concessão/fornecimento de privilégios. Além disso, não é estritamente de DCL em alguns dialetos, enquanto o GRANT é universalmente o comando padrão para dar acesso.
 </details>
 
 ---
 
-### Questão 6 (FCC)
-Sobre a diferença fundamental entre as cláusulas PARTITION BY (usada em Window Functions) e GROUP BY em consultas SQL, assinale a alternativa correta:
-A) O GROUP BY mantém todas as linhas individuais no resultado final, apenas aplicando ordenações secundárias e filtros baseados na cláusula HAVING.
-B) O GROUP BY permite a utilização de funções analíticas como ROW_NUMBER(), enquanto o PARTITION BY restringe a consulta a funções de agregação clássicas.
-C) O PARTITION BY exige que todas as colunas selecionadas no SELECT façam parte de sua cláusula, diferentemente do comportamento padrão do GROUP BY.
-D) O PARTITION BY executa cálculos sobre a janela mantendo a individualidade das linhas, enquanto o GROUP BY colapsa o conjunto de linhas em uma única linha agregada.
-E) O PARTITION BY é executado fisicamente antes da cláusula WHERE, enquanto o GROUP BY é processado na etapa final de renderização do result set.
+## 📝 TEMA 2: SO Linux (Red Hat/Oracle)
+
+### Questão 6 (FCC - 2018 - TRT 15ª Região - Analista de TI)
+Em sistemas baseados em Linux, incluindo a distribuição Red Hat Enterprise Linux, os arquivos e diretórios possuem níveis de controle de acesso para o dono, o grupo e os outros usuários. O comando utilizado pelo administrador para alterar as permissões de acesso e de execução de um arquivo de maneira numérica ou simbólica é o:
+A) chown.
+B) chgrp.
+C) chmod.
+D) passwd.
+E) umask.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: C**
+
+A) Incorreta. O comando `chown` (change owner) é utilizado para alterar o dono proprietário do arquivo (e, secundariamente, o grupo), não suas permissões específicas de ler/escrever/executar.
+B) Incorreta. O comando `chgrp` (change group) serve para modificar apenas o grupo de usuários que detém e está vinculado ao arquivo.
+C) Correta. O comando `chmod` (change mode) é a ferramenta utilizada para alterar efetivamente os modos de permissão do arquivo. Pode-se usar notação octal (ex: chmod 755) ou letras (chmod u+x).
+D) Incorreta. O comando `passwd` serve para gerenciar e modificar a senha do usuário de sistema ou de outros usuários (se executado como root).
+E) Incorreta. O `umask` não altera permissões de arquivos já existentes, mas sim define a máscara padrão de remoção de permissões para os NOVOS arquivos ou diretórios que vierem a ser criados a partir daquele momento na sessão.
 </details>
 
 ---
 
-### Questão 7 (FCC)
-Em Window Functions SQL, as funções RANK() e DENSE_RANK() são utilizadas para classificar linhas de uma partição. A diferença técnica de comportamento entre elas é que:
-A) A função RANK() é exclusiva para campos de texto, enquanto a função DENSE_RANK() é aplicada apenas a campos numéricos e datas.
-B) A função DENSE_RANK() pula posições na classificação se houver empates, enquanto a função RANK() gera números contínuos sem pular valores.
-C) A função RANK() exige a ordenação ascendente dos dados, enquanto a função DENSE_RANK() opera exclusivamente em ordenações decrescentes.
-D) A função DENSE_RANK() calcula a classificação baseada no desvio padrão dos valores, enquanto a função RANK() realiza apenas uma contagem simples de linhas.
-E) A função RANK() pula posições na sequência de classificação se houver empates, enquanto a função DENSE_RANK() gera números sequenciais contínuos sem lacunas.
+### Questão 7 (FCC - 2015 - TRE AP - Analista de TI)
+Distribuições Linux voltadas para corporações, como Red Hat Enterprise Linux (RHEL) e Oracle Linux, possuem sistemas de gerenciamento de pacotes padronizados. O gerenciador de pacotes de alto nível padrão e tradicional nessas distribuições, responsável por resolver dependências de software automaticamente via repositórios online na instalação e atualização do sistema operacional, é o:
+A) apt-get.
+B) dpkg.
+C) yum.
+D) pacman.
+E) zypper.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: C**
+
+A) Incorreta. O `apt-get` (ou `apt`) é o gerenciador de pacotes avançado padrão das distribuições baseadas na família Debian (como o próprio Debian, o Ubuntu, Mint etc), e não da família Red Hat.
+B) Incorreta. O `dpkg` é o gerenciador de nível baixo do Debian (trata apenas os pacotes locais `.deb`, sem resolver dependências complexas na rede).
+C) Correta. O `yum` (Yellowdog Updater, Modified) é, historicamente, o gerenciador de pacotes de alto nível oficial da família Red Hat, Oracle Linux e CentOS. A partir de versões mais recentes (como o RHEL 8), o `dnf` assumiu, mas o `yum` continuou aliás para retrocompatibilidade; contudo, perante as opções da questão, o YUM é indiscutivelmente o que descreve esse ecossistema.
+D) Incorreta. O `pacman` é o gerenciador oficial da distribuição Arch Linux e suas variantes.
+E) Incorreta. O `zypper` é o gerenciador de pacotes padrão e de alto nível da distribuição SUSE e openSUSE.
 </details>
 
 ---
 
-### Questão 8 (FCC)
-Para analisar dados temporais no tribunal, um analista precisa acessar o valor de uma coluna na linha imediatamente anterior da janela atual de dados. A função analítica SQL adequada para essa operação é:
-A) ROW_NUMBER()
-B) LEAD()
-C) FIRST_VALUE()
-D) NTH_VALUE()
-E) LAG()
+### Questão 8 (FCC - 2016 - TRT 20ª Região - Analista de TI)
+Em tarefas cotidianas de suporte e administração no Oracle Linux e Red Hat, é fundamental acompanhar a alocação de armazenamento. O comando que lista o espaço total e o utilizado nos sistemas de arquivos de todas as partições do sistema montadas no Linux é o:
+A) du.
+B) df.
+C) fdisk.
+D) mount.
+E) fsck.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: B**
+
+A) Incorreta. O comando `du` (Disk Usage) verifica o espaço ocupado por arquivos ou subdiretórios específicos de um caminho do disco, e não um resumo geral de sistemas de arquivos e partições.
+B) Correta. O comando `df` (Disk Free) é exatamente o utilitário projetado para exibir a quantidade de espaço em disco disponível e utilizado em todos os *file systems* montados naquele momento, podendo ser aprimorado visualmente com o parâmetro `-h` (human-readable).
+C) Incorreta. O `fdisk` é uma ferramenta de particionamento (criar, deletar e alterar partições no disco), não de contabilidade do espaço livre nos sistemas já montados.
+D) Incorreta. O `mount` acopla (monta) sistemas de arquivos em diretórios da hierarquia (pontos de montagem) ou exibe a lista montada, mas sem focar nos totais absolutos de armazenamento ocupado e livre.
+E) Incorreta. O `fsck` (File System Consistency Check) é o comando executado para buscar anomalias, reparar e checar a integridade (blocos corrompidos, inodes) em partições Linux, equivalendo ao antigo "scandisk/chkdsk".
 </details>
 
 ---
 
-### Questão 9 (FCC)
-Para implementar uma consulta SQL que percorra uma estrutura hierárquica de cargos no tribunal (como uma árvore organizacional), o desenvolvedor deve utilizar:
-A) Um operador de junção externa (LEFT OUTER JOIN) aninhado recursivamente até o limite físico de dez níveis de profundidade de tabelas.
-B) Uma subconsulta correlacionada simples associada à cláusula GROUP BY e filtrada com HAVING na instrução externa principal.
-C) Uma Window Function utilizando a cláusula OVER combinada com a função analítica LEAD() e a partição baseada na chave primária.
-D) Uma tabela temporária física criada com CREATE TEMP TABLE e indexada sequencialmente a cada iteração de um loop interno.
-E) Uma CTE definida com a cláusula WITH RECURSIVE, combinando um caso base e um caso recursivo através do operador UNION ou UNION ALL.
+### Questão 9 (FCC - 2017 - TST - Analista de Suporte)
+A partir da versão 7 do Red Hat Enterprise Linux (RHEL 7), houve uma transição brusca na gestão do sistema de inicialização e controle de serviços dos daemons, rompendo com o clássico padrão SysV. O sistema atual adotado para inicializar, gerir dependências de serviços e carregar módulos em paralelo, focado na performance, é denominado:
+A) SysVinit.
+B) Upstart.
+C) systemd.
+D) init.
+E) GRUB.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: C**
+
+A) Incorreta. O SysVinit é exatamente o formato clássico, baseado em scripts no `/etc/init.d/`, que o Red Hat decidiu abandonar na versão 7, substituindo-o para modernizar a plataforma.
+B) Incorreta. O Upstart foi uma tentativa da Canonical (Ubuntu) de criar um substituto inicial ao SysV; embora tenha tido sucesso, ele não engrenou no RHEL nem virou padrão absoluto na indústria.
+C) Correta. O `systemd` é o sistema gerenciador de serviços unificado que assumiu no RHEL 7+. Ele introduziu unidades (units/targets ao invés de runlevels), paralelizou as rotinas de boot, centralizou logs (journald) e se tornou o standard na ampla maioria das distros corporativas.
+D) Incorreta. O termo `init` é genérico referindo-se ao "processo número 1" de todo Linux. O `systemd` e o `SysV` são ambos formas de implementar o `init`. Como não é um "sistema próprio" nomeável em contraste com o resto, e o systemd é o nome canônico do projeto, essa opção é nula.
+E) Incorreta. O GRUB (Grand Unified Bootloader) é o carregador de inicialização pré-SO, responsável apenas por carregar o kernel na memória e não pelo gerenciamento dos serviços operacionais.
 </details>
 
 ---
 
-### Questão 10 (FCC)
-Para otimizar o desempenho das consultas de busca por nome de servidores na coleção `funcionarios` no MongoDB, deve-se criar um índice. O comando correto para criar um índice ascendente no campo `nome` é:
-A) db.funcionarios.setIndex({nome: true})
-B) db.funcionarios.createIndex({nome: -1})
-C) db.funcionarios.createIndex({nome: 1})
-D) db.funcionarios.addIndex({nome: 'asc'})
-E) db.funcionarios.ensureIndex({nome: '*' })
+### Questão 10 (FCC - 2014 - TRT 19ª Região - Analista de TI)
+Na árvore hierárquica do sistema de arquivos de um sistema operacional Red Hat (FHS - Filesystem Hierarchy Standard), o diretório projetado de forma unificada e quase inteiramente dedicado ao armazenamento de arquivos de configuração, scripts globais e definições tanto do sistema base quanto dos aplicativos instalados, é o:
+A) /var.
+B) /usr.
+C) /dev.
+D) /home.
+E) /etc.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: E**
+
+A) Incorreta. O diretório `/var` (variable) hospeda arquivos e dados cujo conteúdo cresce ou diminui constantemente ao longo do funcionamento, como arquivos de log (`/var/log`), spool de impressora, caixas de email e caches.
+B) Incorreta. O diretório `/usr` (User System Resources) abriga executáveis dos usuários, bibliotecas, documentações e utilitários que não são críticos ao boot cru do sistema (sendo mais como um "Program Files" em ambientes Unix).
+C) Incorreta. O diretório `/dev` armazena os nós de arquivos especiais e as interfaces dos dispositivos de hardware periférico montados e emulados pelo kernel (como discos, portas de entrada, mouse).
+D) Incorreta. O `/home` é a pasta matriz onde ficam hospedados os diretórios pessoais e arquivos individuais de cada um dos usuários padrão do sistema (onde salvam seus downloads, documentos etc).
+E) Correta. O `/etc` é o coração das definições do Linux. É ele quem abriga as configurações universais, variáveis de ambiente fundamentais, arquivos de serviços, rede, senha de usuários (passwd/shadow) que gerem os programas instalados. O nome originalmente sugeria "Et cetera", contudo "Editable Text Configuration" se tornou a sigla extraoficial de seu propósito.
 </details>
 
 ---
 
-### Questão 11 (FCC)
-Em relação à consistência e transações no MongoDB, a partir de suas versões modernas (4.0+), o banco de dados passou a oferecer suporte a:
-A) Escritas síncronas obrigatórias em disco que impedem operações de leitura paralela.
-B) Consistência estrita em tempo real sem suporte a qualquer isolamento transacional.
-C) Transações relacionais baseadas na linguagem de programação PL/SQL do Oracle.
-D) Transações ACID multi-documento em coleções na mesma partição ou em réplicas associadas.
-E) Bloqueio exclusivo de tabelas inteiras durante qualquer operação de inserção de documentos.
+## 📝 TEMA 3: Previdência CE (Regime Próprio de Previdência)
+
+### Questão 11 (FCC - 2021 - AL-CE - Analista)
+Sobre o Regime Próprio de Previdência Social (RPPS) dos servidores públicos, levando em conta os mandamentos da Constituição Federal de 1988 que embasam a legislação estadual sobre o tema, e também as contagens de tempo recíprocas, o tempo de contribuição federal, estadual ou municipal será:
+A) contado para fins de aposentadoria e o tempo de serviço correspondente para fins de disponibilidade.
+B) contado exclusivamente para fins de aposentadoria proporcional por idade.
+C) computado apenas se houver repasse financeiro prévio entre os entes no mês subsequente à contribuição.
+D) desconsiderado caso tenha sido prestado sob o regime da Consolidação das Leis do Trabalho (CLT).
+E) averbado com acréscimo fictício e em dobro, em caso de atividades insalubres exercidas antes de 1998.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: A**
+
+A) Correta. Essa afirmativa corresponde de modo exato à redação original e mantida da Constituição Federal em seu Art. 40, § 9º: "O tempo de contribuição federal, estadual ou municipal será contado para fins de aposentadoria e o tempo de serviço correspondente para fins de disponibilidade". Trata-se da regra elementar de averbação garantida a todo servidor.
+B) Incorreta. Não existe tal exclusividade. O tempo é computado para todo tipo de modalidade de aposentadoria compatível para qual o servidor preencha os requisitos, incluindo integralidade nas regras antigas de transição ou em proventos integrais, se aplicável, e não só na proporcional.
+C) Incorreta. A compensação financeira entre os diferentes regimes previdenciários (Contagem Recíproca e Compensação Financeira - Lei 9.796) deve ocorrer e está estipulada em lei, mas o repasse financeiro não funciona como pré-requisito limitador para o *cômputo* e registro do tempo na vida funcional do servidor; o ente assumirá e posteriormente demandará o outro ente via compensação.
+D) Incorreta. A Constituição garante na contagem recíproca o cruzamento e aproveitamento de tempo de contribuição da iniciativa privada (CLT/RGPS) para os regimes próprios da União, Estados e Municípios (RPPS).
+E) Incorreta. A Emenda Constitucional nº 103/2019 e a Emenda 20/1998 já consagraram a vedação da averbação de tempo de contribuição fictício no serviço público para ambos os casos de previdência e RPPS estadual, mesmo retroativamente para tempo de atividades insalubres averbado indevidamente na forma de fatores previdenciários de multiplicação.
 </details>
 
 ---
 
-### Questão 12 (FCC)
-Em uma Window Function, a cláusula que restringe o conjunto de linhas a serem consideradas no cálculo analítico a partir da linha atual (como calcular uma média móvel de 3 linhas anteriores e a atual) é:
-A) ORDER BETWEEN 3 PRECEDING AND CURRENT ROW
-B) RANGE BETWEEN 3 FOLLOWING AND CURRENT ROW
-C) ROWS BETWEEN 3 FOLLOWING AND CURRENT ROW
-D) PARTITION BETWEEN 3 PRECEDING AND CURRENT ROW
-E) ROWS BETWEEN 3 PRECEDING AND CURRENT ROW
+### Questão 12 (FCC - 2018 - ALESE - Analista)
+Considerando a proteção dos cofres estatais, o teto normativo e as disposições referentes ao Regime Próprio de Previdência Social (RPPS) dos servidores públicos contidas na Constituição e na legislação correspondente a esse regime, os proventos de aposentadoria e as pensões por morte deixadas aos dependentes, por ocasião de sua concessão, não poderão exceder:
+A) a remuneração do respectivo servidor, no cargo efetivo em que se deu a aposentadoria ou que serviu de referência para a concessão da pensão.
+B) o subsídio mensal dos Ministros do Supremo Tribunal Federal, acrescido das eventuais vantagens pessoais de caráter indenizatório não transitórias.
+C) o limite máximo pré-estabelecido pelo Governo Federal para os benefícios do Regime Geral de Previdência Social (RGPS), independentemente de o ente estadual ter instituído sua previdência complementar.
+D) a média aritmética simples das 80% maiores remunerações e verbas transitórias de todo o período de atividade laborativa contribuído.
+E) o valor idêntico da última remuneração recebida na ativa, multiplicada pelo tempo de contribuição somado até a data da aposentadoria e dividida por trinta e cinco anos lineares.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: A**
+
+A) Correta. A regra matriz está ancorada no Art. 40, § 2º, da Constituição Federal. O texto assinala imperativamente: "Os proventos de aposentadoria e as pensões, por ocasião de sua concessão, não poderão exceder a remuneração do respectivo servidor, no cargo efetivo em que se deu a aposentadoria ou que serviu de referência para a concessão da pensão". Logo, o que o servidor ganharia na ativa é o teto local intransponível do provento de passividade.
+B) Incorreta. Ainda que o teto constitucional global do serviço público (Art. 37, XI) recaia sobre o subsídio dos Ministros do STF, o teto fático dos benefícios no ato da concessão para a aposentadoria individual de um cargo menor da previdência estadual não usa o STF como limite principal daquela conta, e sim a remuneração de referência real do servidor naquele momento de passagem à inatividade.
+C) Incorreta. A redução obrigatória para o teto limitador idêntico ao do RGPS não é indiscriminada; ela se aplica primordialmente aos servidores que ingressaram no ente *após* ele ter instituído sua autarquia ou fundo próprio de Previdência Complementar (e ao servidor não aderir). Por dizer "independentemente", o item torna-se errado.
+D) Incorreta. A regra de apuração do cálculo histórico de contribuição por médias não autoriza exceder a remuneração do cargo em que ocorreu o desligamento previdenciário da atividade. E a antiga regra das 80% maiores já foi trocada pela média aritmética de 100% de todo o período contributivo após a EC 103.
+E) Incorreta. Trata-se de fórmula errônea, assemelhando-se às regras já superadas de proporcionalidade, que em nenhuma hipótese justificam, na base normativa atual de proteção ao regime estadual e RPPS, burlar o balizador da remuneração percebida no cargo.
 </details>
 
 ---
 
-### Questão 13 (FCC)
-No MongoDB, para realizar operações de agregação complexas que envolvem filtragem, agrupamento e projeção de dados (similar ao GROUP BY, WHERE e SELECT do SQL), utiliza-se:
-A) A linguagem SQL padrão enviada através de drivers JDBC compatíveis com o MongoDB.
-B) O comando `db.colecao.group()` de forma exclusiva, pois o MongoDB não possui estágios de pipeline.
-C) O framework de agregação (Aggregation Framework) através do método `db.colecao.aggregate()` recebendo uma lista de estágios (pipeline).
-D) A execução de loops imperativos em JavaScript rodando exclusivamente no navegador do cliente.
-E) O comando `db.colecao.find().groupBy()` associado a funções de redução do MapReduce clássico.
+### Questão 13 (FCC - 2019 - SEFAZ-BA - Auditor)
+Com as importantes e reiteradas alterações promovidas no texto da Constituição Federal, dentre as quais as Emendas 88/2015 e 103/2019, as quais regem todo RPPS Estadual, o servidor público amparado pelo regime próprio será aposentado de forma compulsória, sendo-lhe pagos proventos matematicamente proporcionais ao tempo de contribuição, quando alcançar as idades fixas de:
+A) 65 anos de idade, para ambos os sexos, indiscriminadamente e com regra de validade transitória única.
+B) 70 anos de idade ou aos 75 anos de idade, na forma estipulada em regramento de lei complementar.
+C) 60 anos de idade, se mulher, e 65 anos de idade, se homem, desde que não completem pedágio.
+D) 75 anos de idade taxativamente em qualquer poder, independentemente de haver ou não previsão em lei complementar vigente.
+E) 65 anos de idade, se mulher, e 70 anos de idade, se homem, acompanhado de abono fixo.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: B**
+
+A) Incorreta. A idade descrita nessa alternativa (65) representava as exigências de aposentadoria voluntária masculina nas mudanças modernas, não a da "expulsória" do serviço público.
+B) Correta. Historicamente, a idade foi alterada de uma marca inegociável de 70 anos para a atual redação do art. 40, § 1º, II da CF: "compulsoriamente, com proventos proporcionais ao tempo de contribuição, aos 70 (setenta) anos de idade, ou aos 75 (setenta e cinco) anos de idade, na forma de lei complementar". E esta lei complementar nacional posteriormente formalizou a idade generalizada para 75 anos de idade para servidores efetivos.
+C) Incorreta. As idades assinaladas se referem, grosso modo, aos cálculos base do direito a postular pela inatividade voluntária, não sobre aposentadorias de ofício em virtude do limite máximo e biológico tolerado.
+D) Incorreta. Conforme explicado, não ocorreu o fenômeno de modo incondicionado; o texto estipulou 70 OU 75 e remeteu a complementação exata da mecânica de idades à lei complementar federal que de fato materializou a chamada PEC da Bengala, portanto dizer "independentemente de haver previsão" vai contra a redação constitucional.
+E) Incorreta. Aposentadoria compulsória jamais possuiu a dicotomia de sexo para cálculo na ativa de exigibilidade da desvinculação; ela ocorre no mesmo limite cronológico biológico para homens e mulheres simultaneamente.
 </details>
 
 ---
 
-### Questão 14 (FCC)
-O MongoDB possui um limite físico padrão de tamanho para um único documento BSON para garantir que o uso de memória e a latência de rede permaneçam otimizados. Esse limite máximo é de:
-A) 8 MB
-B) 16 MB
-C) 32 MB
-D) 64 MB
-E) 4 MB
+### Questão 14 (FCC - 2022 - TRT 5ª Região - Analista)
+Em virtude da severa disciplina e das restrições constitucionais recém-incorporadas aos Regimes Próprios de Previdência Social no ordenamento pelo advento da Emenda Constitucional nº 103/2019 (Nova Previdência), a pensão por morte concedida a dependente de servidor público estadual ou federal deve seguir os seguintes rigores:
+A) será sempre equivalente ao valor fechado da totalidade dos proventos integrais do servidor falecido, independentemente de cotas, até o teto estrito do RGPS em todas as instâncias.
+B) poderá assumir valor formal inferior e ser paga aquém de um salário mínimo, caso seja comprovado e avaliado que seja a única fonte de renda formal garantida ao dependente em testamento.
+C) será devida a partir da data de óbito ou desaparecimento sem qualquer limite para o número de dependentes listados, e será sempre de caráter vitalício e integral a todos os filhos sem presunção de maioridade.
+D) deverá observar cotas familiares percentuais, não sendo permitida na base da nova regra a reversão da cota daquele cujo direito à pensão cessar (quando um dependente perde o direito).
+E) não poderá jamais, perante as novas previsões normativas, ser acumulada nem parcialmente com recebimentos de proventos de aposentadoria por tempo de serviço.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: D**
+
+A) Incorreta. Após a EC 103, a pensão não é calculada mais na totalidade do salário ou proventos. Pelo contrário, ela inicia em uma cota familiar de 50%, acrescida de cotas individuais por dependente de 10%.
+B) Incorreta. Como garantia irrenunciável ao mínimo existencial e constitucionalidade do salário mínimo, nenhum benefício ou pensionamento único de renda essencial, mesmo no RPPS ou RGPS, deve resultar em montante pecuniário que fira o patamar de remuneração de 1 salário mínimo àquele que o percebe caso atue isoladamente na sua subsistência.
+C) Incorreta. Pensionamento a filho deixou há muito de se tratar de benefício estendido de modo cego ou indiscriminadamente vitalício. Filho sem invalidez ou incapacidade perde seu vínculo dependente normativo da cota, via de regra, atingindo-se os 21 anos.
+D) Correta. A Emenda 103 introduziu severas restrições sobre a pensão. Uma das regras mais impactantes (Art. 23, § 1º) definiu que "As cotas por dependente cessarão com a perda dessa qualidade e **não serão reversíveis aos demais dependentes**". Ou seja, quando um filho faz 21 anos, os seus 10% caem por terra sem "engordar" o pedaço de 10% dos outros filhos ou os 50% básicos da cota viúva familiar na conta total.
+E) Incorreta. A EC 103 trouxe sim limitações pesadas para a acumulação (apenas 100% no benefício mais alto e redutores exponenciais nas parcelas sucessivas dos outros vínculos), todavia a *acumulação* da pensão e da aposentadoria em regimes distintos e até conexos não é 100% proibida na base radical.
 </details>
 
 ---
 
-### Questão 15 (FCC)
-A função analítica de distribuição acumulada que calcula a posição relativa de um valor dentro de um grupo de valores em SQL é a:
-A) PERCENT_RANK()
-B) CUME_DIST()
-C) NTILE()
-D) DENSE_RANK()
-E) RATIO_TO_REPORT()
+### Questão 15 (FCC - 2018 - SEFAZ-SC - Auditor)
+Considerando as vertentes estimuladoras para manutenção em atividade laborativa e não sufocar financeiramente e de forma repentina a contabilidade previdenciária, o servidor titular de cargo efetivo amparado pelo Regime Próprio de Previdência Social que alcance e complete inteiramente as exigências requisitadas de uma aposentadoria voluntária e que opte de boa vontade por permanecer em atividade fará jus a um abono de permanência que consiste em:
+A) remuneração extraordinária correspondente a uma porcentagem extra e adicional de 50% de sua remuneração, pago diretamente pelos cofres e tesouro do Estado mantenedor.
+B) bonificação em contracheque correspondente a exatos 20% do valor máximo e em evidência fixado no momento para os benefícios de limite do Regime Geral de Previdência Social.
+C) valor monetário pago comumente do fundo previdenciário estadual unificado, para justificar e compensar diretamente as contribuições de previdência que não precisarão e deixarão ser vertidas ao fim de sua idade orgânica de atividade.
+D) verba ou isenção pecuniária em valor idêntico e equivalente ao valor da sua respectiva contribuição previdenciária descontada no ato de pagamento mensal, vigente até o limite que o faça completar as exigências para sua aposentadoria compulsória.
+E) bônus adicional concedido aos proventos na proporção cravada de 1/3 do respectivo subsídio auferido, independentemente e não relacionado da contribuição previdenciária de passividade.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
+**Gabarito: D**
+
+A) Incorreta. O abono de permanência não é uma premiação genérica fixada arbitrariamente em "metade" (50%) da remuneração total e irrestrita do servidor para agradá-lo pela sua não aposentadoria. O legislador optou por um cálculo mais exato de devolução.
+B) Incorreta. O benefício do Abono não guarda relação nem de citação na estipulação ou referência a nenhum percentual que remeta aos 20% e tampouco se submete ao máximo que rege um contribuinte de mercado aberto do RGPS.
+C) Incorreta. O abono de permanência via de regra tem característica compensatória, porém quem financia o abono e absorve tal pagamento em caixa é o Tesouro (ou recurso do Poder competente do servidor), e não se tira do fundo de previdência propriamente dito, que não "ganhou o contribuinte para sua inatividade", para lhe pagar essa espécie na ativa.
+D) Correta. Conforme ditado pelas regras expressas de previdência no servidor público (Art. 40, § 19, CF e regras estaduais simétricas em Ceará/demais entes), aquele que tem condições de descansar aposentado com remuneração total voluntária e escolhe ajudar continuando na máquina do Estado, ganha no contracheque o "abono de permanência". O limite máximo dele é não dever nem um centavo mais de previdência; o valor injetado corresponde ao valor exato e idêntico descontado dele sob a rubrica da contribuição previdenciária. Esse direito flui ininterruptamente até a compulsória chegar (que é o momento em que o Estado decide afastá-lo querendo ou não).
+E) Incorreta. A proporção matemática fracionária de 1/3 não possui base ou vinculação legal com o instituto do Abono de Permanência, pois 1/3 remete geralmente a férias constitucionais em legislação estatutária ou CLT de serviço público, não tendo função de neutralizar a contribuição mensal sobre inatividade.
 </details>
-
----
-
-## 📝 TEMA 2: Sistemas Operacionais — SO Linux (Red Hat/Oracle Linux, comandos, permissões, usuários)
-### Questão 16 (FCC)
-No Linux (distribuições Red Hat / Oracle Linux), o diretório no qual são guardados os arquivos de configuração locais específicos do sistema e de seus serviços é o:
-A) /bin
-B) /var
-C) /usr/sbin
-D) /etc
-E) /home
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 17 (FCC)
-Um analista de TI precisa configurar as permissões de um arquivo de script no Linux para que o dono tenha acesso total (leitura, escrita e execução), o grupo do arquivo tenha acesso de leitura e execução, e os outros usuários tenham apenas acesso de execução. A representação numérica octal correspondente a essa configuração é:
-A) 750
-B) 755
-C) 644
-D) 775
-E) 751
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 18 (FCC)
-Sobre o sistema de permissões de arquivos e diretórios no Linux, a permissão de execução (x) quando aplicada a um diretório específico determina que o usuário:
-A) Pode compilar e rodar binários executáveis localizados exclusivamente na raiz do diretório.
-B) Pode listar o nome dos arquivos contidos no diretório (executar o comando `ls`).
-C) Pode criar, excluir e renomear arquivos dentro daquele diretório específico.
-D) Pode acessar o diretório (entrar nele com o comando `cd`) e acessar seus arquivos internos.
-E) Pode alterar o dono e o grupo do diretório usando o comando `chown` diretamente.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 19 (FCC)
-Para buscar por linhas contendo o termo 'erro' dentro de todos os arquivos de log localizados no diretório `/var/log` no Linux, o comando adequado é:
-A) locate /var/log/erro
-B) find /var/log -name 'erro'
-C) grep -r 'erro' /var/log
-D) cat /var/log | grep 'erro'
-E) awk -f 'erro' /var/log
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 20 (FCC)
-Nas distribuições Linux da família Red Hat Enterprise Linux (RHEL) e Oracle Linux, o gerenciador de pacotes de baixo nível (que instala arquivos locais sem resolver dependências externas) e o gerenciador de pacotes de alto nível (que consulta repositórios remotos e resolve dependências automaticamente) são, respectivamente:
-A) yum e rpm
-B) dpkg e apt
-C) rpm e dnf
-D) dnf e yum
-E) rpm e dpkg
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 21 (FCC)
-Para alterar o dono de um arquivo `relatorio.txt` para o usuário `ruan` e o seu grupo associado para `ti` no Linux, utiliza-se o comando:
-A) chattr ruan:ti relatorio.txt
-B) chmod ruan:ti relatorio.txt
-C) chgrp ruan:ti relatorio.txt
-D) chown ruan:ti relatorio.txt
-E) usermod ruan:ti relatorio.txt
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 22 (FCC)
-O diretório `/var/log` no Linux é de suma importância para a administração do sistema. Sua função principal é:
-A) Conter os arquivos binários essenciais de administração reservados exclusivamente ao usuário superusuário root.
-B) Guardar arquivos temporários gerados pelo sistema operacional e removidos a cada reinicialização.
-C) Armazenar arquivos de registros de eventos do sistema, mensagens de serviços e logs de aplicações em execução.
-D) Armazenar arquivos executáveis de bibliotecas dinâmicas compartilhadas pelos programas do usuário.
-E) Manter os arquivos de dados locais das contas dos usuários comuns criados no sistema.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 23 (FCC)
-O comando `tar` é amplamente utilizado no Linux. Sobre as operações realizadas pelo comando `tar -cvf backup.tar /home/usuario`, assinale a alternativa correta:
-A) Ele cria um novo arquivo de arquivo (`backup.tar`) contendo os arquivos do diretório `/home/usuario` empacotados, sem compactação nativa.
-B) Ele extrai e descompacta o arquivo `backup.tar` dentro do diretório `/home/usuario` limpando a origem.
-C) Ele realiza a compactação compacta utilizando o algoritmo gzip com taxa máxima de compressão.
-D) Ele lista o conteúdo detalhado de permissões do arquivo `backup.tar` na saída padrão do terminal.
-E) Ele remove os arquivos originais do diretório `/home/usuario` após concluir a cópia de segurança.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 24 (FCC)
-O comando `chmod o+x script.sh` aplicado a um arquivo no Linux resulta em:
-A) Tornar o arquivo `script.sh` propriedade exclusiva do grupo de usuários administradores.
-B) Remover a permissão de execução de todos os usuários do sistema do arquivo `script.sh`.
-C) Conceder permissão de escrita e leitura para o dono e o grupo associado ao arquivo `script.sh`.
-D) Adicionar a permissão de execução (x) exclusivamente para os outros usuários (others) em relação ao arquivo `script.sh`.
-E) Remover todas as permissões dos outros usuários (others) em relação ao arquivo `script.sh`.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 25 (FCC)
-Uma vantagem técnica fundamental do gerenciador de pacotes `dnf` (ou `yum`) em relação ao utilitário `rpm` no Oracle Linux é:
-A) A capacidade de calcular, baixar e instalar de forma automática todas as dependências requeridas por um pacote.
-B) A dispensa do acesso privilegiado de root para a instalação de softwares no sistema operacional.
-C) A compilação local dos arquivos de código-fonte durante a instalação dos pacotes.
-D) O funcionamento offline obrigatório que dispensa a existência de repositórios baseados em rede.
-E) O suporte exclusivo à instalação de pacotes baseados na extensão Debian (`.deb`).
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 26 (FCC)
-Para visualizar a documentação oficial detalhada e o manual de utilização do comando `iptables` no Linux, utiliza-se o comando:
-A) iptables --manual
-B) help iptables
-C) info -f iptables
-D) doc iptables
-E) man iptables
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 27 (FCC)
-O comando `pwd` na linha de comando do terminal do Linux tem a finalidade de:
-A) Alterar a senha (password) do usuário logado no sistema operacional.
-B) Exibir o caminho absoluto do diretório de trabalho atual do usuário no terminal.
-C) Listar todos os processos em execução que pertencem ao usuário atual.
-D) Exibir a quantidade de espaço em disco utilizado em cada partição física.
-E) Configurar as permissões de acesso físico de arquivos em lote.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 28 (FCC)
-Em relação à hierarquia de diretórios padrão no Linux (FHS), no diretório `/sbin` encontram-se tipicamente:
-A) Os arquivos de bibliotecas dinâmicas do sistema essenciais para a inicialização e execução de comandos do `/bin`.
-B) Os arquivos binários executáveis essenciais usados para a administração do sistema e manutenção, reservados ao root.
-C) Os arquivos de cabeçalho C e códigos-fonte do kernel necessários para desenvolvimento.
-D) Os arquivos binários executáveis de uso geral de todos os usuários comuns sem privilégios.
-E) Os arquivos de dados de configurações globais de rede e hosts do sistema.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 29 (FCC)
-Para redirecionar a saída padrão (stdout) de um comando para um arquivo de texto, sobrescrevendo qualquer conteúdo existente nesse arquivo, utiliza-se o caractere:
-A) <
-B) >>
-C) >
-D) |
-E) &
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 30 (FCC)
-O caractere `|` (pipe) é utilizado no terminal Linux com o objetivo de:
-A) Redirecionar a saída padrão (stdout) de um comando para servir como entrada padrão (stdin) de outro comando subsequente.
-B) Executar dois comandos de forma paralela e em segundo plano (background) no terminal.
-C) Enviar a saída de erro padrão (stderr) de um processo para a partição física nula `/dev/null`.
-D) Pausar temporariamente a execução de um processo até receber o sinal de interrupção SIGCONT.
-E) Criar um link simbólico físico entre dois arquivos de dados na tabela de inodes.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-## 📝 TEMA 3: Legislação Previdenciária do Estado do Ceará
-### Questão 31 (FCC)
-De acordo com a Lei Complementar Estadual nº 12/1999, que trata do Regime Próprio de Previdência Social (RPPS) do Estado do Ceará, a filiação ao regime é classificada como:
-A) Obrigatória para todos os servidores ocupantes de cargo de provimento efetivo do Estado.
-B) Facultativa para novos servidores efetivos nomeados após a aprovação de reformas.
-C) Obrigatória para cargos exclusivamente em comissão e empregos públicos temporários.
-D) Facultativa para membros do Poder Judiciário e do Ministério Público Estadual.
-E) Obrigatória apenas para servidores ativos com remuneração acima do teto do RGPS.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 32 (FCC)
-O financiamento e custeio do Regime Próprio de Previdência Social dos servidores do Ceará baseia-se em contribuições de:
-A) Caráter contributivo e solidário, mediante contribuições do Estado, dos servidores ativos, aposentados e pensionistas.
-B) Caráter exclusivamente patronal, sendo custeado integralmente pelo tesouro estadual sem descontos na folha do servidor.
-C) Caráter voluntário dos servidores efetivos associados à capitalização individual em fundos abertos de previdência.
-D) Repasses federais do Fundo de Participação dos Estados (FPE) de forma exclusiva e vinculada ao INSS.
-E) Contribuições incidentes apenas sobre a remuneração de servidores ativos de nível superior do Poder Executivo.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 33 (FCC)
-Em relação à contribuição previdenciária devida por servidores aposentados e pensionistas sob o RPPS do Ceará, assinale a regra de incidência correta:
-A) A alíquota é reduzida pela metade e incide apenas se o aposentado retornar ao serviço público em cargo em comissão.
-B) Aposentados e pensionistas são totalmente isentos de contribuição previdenciária em qualquer hipótese constitucional.
-C) A contribuição incidirá sobre o valor integral dos proventos, independentemente do teto fixado para o regime geral.
-D) Incidirá sobre a parcela dos proventos de aposentadoria e de pensão que supere o limite máximo estabelecido para os benefícios do RGPS.
-E) Incidirá sobre os proventos de aposentadoria apenas se o beneficiário residir fora do território do Estado do Ceará.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 34 (FCC)
-O sistema previdenciário público brasileiro assenta-se sobre o princípio da solidariedade. Nesse sentido, a solidariedade significa que:
-A) Os benefícios concedidos pelo RPPS dependem da rentabilidade financeira dos investimentos individuais de cada segurado.
-B) O financiamento do regime é um dever coletivo de toda a sociedade, incluindo ativos, inativos e o próprio ente público patronal.
-C) O Estado está autorizado a não repassar a cota patronal se houver crise fiscal temporária nas contas do tesouro estadual.
-D) Os servidores inativos possuem direito adquirido de não contribuir para o custeio do déficit atuarial do sistema público.
-E) As alíquotas de contribuição previdenciária devem ser idênticas para todos os entes federados e servidores do Brasil.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 35 (FCC)
-Na relação de custeio e financiamento do SUPSEC (Sistema Único de Previdência Social dos Servidores do Ceará), o Estado do Ceará figura como:
-A) Ente público patrocinador, responsável pelo repasse das contribuições de cota patronal e pelo equilíbrio atuarial do regime.
-B) Segurado obrigatório do regime de previdência, respondendo com suas receitas próprias de impostos residuais.
-C) Agente financeiro intermediário privado com fins lucrativos de exploração de fundos mobiliários.
-D) Beneficiário direto dos proventos acumulados nas contas de previdência complementar fechada.
-E) Encarregado exclusivo da fiscalização de autarquias previdenciárias de outros Estados da federação.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 36 (FCC)
-A base de cálculo sobre a qual incide a alíquota da contribuição previdenciária mensal do servidor ativo para o RPPS do Ceará é:
-A) Apenas o vencimento-base do servidor, excluindo-se qualquer adicional por tempo de serviço ou gratificação de caráter permanente.
-B) A remuneração de contribuição do servidor, composta pelo vencimento do cargo efetivo acrescido das vantagens pecuniárias permanentes estabelecidas em lei.
-C) A remuneração integral do servidor ativo incluindo parcelas indenizatórias, diárias de viagem e terço de férias.
-D) O valor correspondente ao salário-mínimo nacional vigente acrescido de abonos de produtividade da comarca.
-E) O limite correspondente a metade do teto estabelecido para os benefícios do Regime Geral de Previdência Social (RGPS).
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 37 (FCC)
-O regime de previdência pública básica (RPPS) estruturado pelo Estado do Ceará funciona sob o regime financeiro de:
-A) Poupança programada compulsória exclusiva de servidores com proventos inferiores a cinco salários-mínimos.
-B) Capitalização individual, em que as contribuições de cada servidor são acumuladas em uma conta individual e rentabilizadas em mercado.
-C) Repartição capitalizada fechada, que veda a contribuição do ente público patronal e exige investimentos em títulos internacionais.
-D) Contas nocionais abertas, baseadas no valor de reposição inflacionária calculado pelo Banco Central do Brasil.
-E) Repartição simples, em que as contribuições dos servidores ativos financiam diretamente os benefícios dos aposentados e pensionistas atuais.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**. A alternativa E descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 38 (FCC)
-Quando o beneficiário de aposentadoria sob o RPPS do Ceará for portador de doença incapacitante, a contribuição previdenciária incidirá sobre as parcelas de proventos que superem:
-A) O dobro do limite máximo estabelecido para os benefícios do RGPS de forma obrigatória e permanente.
-B) O limite máximo estabelecido para os benefícios do RGPS, nos termos das normas gerais federais aplicáveis.
-C) Três vezes o valor do salário-mínimo nacional estabelecido pelo Governo Federal.
-D) O valor correspondente a 80% do último vencimento recebido em atividade pelo servidor.
-E) Qualquer valor, isentando totalmente o aposentado do recolhimento de contribuições previdenciárias.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 39 (FCC)
-A gestão, administração e operacionalização do Regime Próprio de Previdência Social (RPPS) dos servidores do Ceará competem à fundação pública de direito público denominada:
-A) Prev-Ceará (Instituto Estadual de Seguros de Saúde e Previdência)
-B) INSS-CE
-C) SUPSEC-Autarquia
-D) Cearáprev (Fundação de Previdência Social do Estado do Ceará)
-E) Secretaria de Planejamento e Gestão Previdenciária do Ceará
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 40 (FCC)
-Se o servidor efetivo ativo do Estado do Ceará possuir remuneração de contribuição inferior ao limite máximo do RGPS (teto do INSS), a sua contribuição previdenciária:
-A) Ficará totalmente suspensa, passando o servidor à condição de isento temporário de custeio.
-B) Incidirá normalmente sobre a totalidade de sua remuneração de contribuição, aplicando-se a alíquota definida em lei.
-C) Deverá ser recolhida diretamente ao INSS por tratar-se de faixa salarial vinculada ao RGPS.
-D) Terá sua alíquota reduzida pela metade para evitar o confisco de renda de servidores de baixa remuneração.
-E) Será revertida integralmente para fundos privados de previdência complementar aberta.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 41 (FCC)
-A contribuição do Estado do Ceará (cota patronal) para o custeio do RPPS dos servidores não poderá ser:
-A) Inferior ao valor da contribuição do segurado, nem superior ao dobro desta contribuição.
-B) Superior a 10% da receita corrente líquida estadual em nenhuma hipótese atuarial.
-C) Recolhida em atraso após o quinto dia útil do mês de competência da folha de pagamento.
-D) Inferior a duas vezes o valor da contribuição de servidores inativos e pensionistas acumulados.
-E) Destinada a fins de pagamento de despesas de assistência médica ou benefícios de natureza assistencial.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 42 (FCC)
-Para garantir a higidez, a solvência e o equilíbrio financeiro e atuarial do RPPS do Estado do Ceará ao longo do tempo, a legislação exige a realização periódica de:
-A) Aumentos automáticos e semestrais nas alíquotas de contribuição de todos os segurados ativos.
-B) Sorteios de prêmios de incentivo à permanência na ativa para servidores aptos a se aposentar.
-C) Emissões compulsórias de títulos da dívida pública estadual vinculados à previdência privada.
-D) Avaliações atuariais anuais para dimensionar os compromissos futuros do regime e propor ajustes necessários de custeio.
-E) Auditorias externas trimestrais executadas por bancos comerciais privados de fomento econômico.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**. A alternativa D descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 43 (FCC)
-Os recursos obtidos através da taxa de administração cobrada pelo órgão gestor do RPPS do Ceará devem ser destinados exclusivamente a:
-A) Custear as despesas de funcionamento, manutenção e modernização administrativa do próprio órgão gestor da previdência.
-B) Financiar obras de infraestrutura urbana nas comarcas do Poder Judiciário do Estado do Ceará.
-C) Efetuar o pagamento de precatórios alimentares de servidores inativos com doenças graves.
-D) Complementar a remuneração funcional de servidores ativos da Secretaria de Fazenda Estadual.
-E) Amortizar de forma extraordinária a dívida líquida consolidada do Estado perante a União.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**. A alternativa A descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 44 (FCC)
-O abono de permanência é um benefício pecuniário garantido ao servidor que preenche todos os requisitos para a aposentadoria voluntária, mas opta por permanecer em atividade. Esse benefício corresponde ao valor de:
-A) Uma remuneração integral adicional paga anualmente no mês de aniversário do servidor efetivo.
-B) 10% de seu vencimento básico de cargo efetivo a título de gratificação de permanência extraordinária.
-C) Sua contribuição previdenciária mensal, funcionando como um reembolso de mesmo valor enquanto permanecer em atividade.
-D) Isenção total do recolhimento mensal de Imposto de Renda Retido na Fonte (IRRF) em folha.
-E) Promoção funcional automática para a classe e padrão imediatamente superiores de sua carreira.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**. A alternativa C descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
-
-### Questão 45 (FCC)
-A segregação de massas é uma técnica de estruturação de planos de custeio aplicada ao RPPS. O objetivo principal da segregação de massas no Ceará é:
-A) Separar os servidores públicos do Estado do Ceará de acordo com o Poder em que atuam (Judiciário, Executivo ou Legislativo).
-B) Dividir os segurados do regime em grupos distintos (como Fundo Financeiro e Fundo Previdenciário) para buscar o equilíbrio atuarial a longo prazo.
-C) Diferenciar servidores civis e militares para aplicar alíquotas de imposto de renda regressivas especiais.
-D) Promover a transferência dos inativos e pensionistas para fundos de previdência de bancos comerciais privados.
-E) Permitir a fusão temporária das contas de receitas de impostos do Estado com os recursos de contribuições previdenciárias.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**. A alternativa B descreve corretamente a resposta com base na especificação técnica cobrada pela banca FCC.
-</details>
-
----
