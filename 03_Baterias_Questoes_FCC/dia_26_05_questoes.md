@@ -1,978 +1,1054 @@
 # Bateria de Questões FCC — Terça-feira 26/05
 
-## 📝 TEMA 1: Arquitetura de Software e Padrões de Projeto
+## 📝 TEMA 1: Redes — HTTP/HTTPS, NBR 14565 & Fibras
 
-### Questão 1 (FCC - 2018 - TRT 15ª Região - Analista Judiciário - Tecnologia da Informação)
-O padrão de projeto Singleton
-A) garante que uma classe tenha apenas uma instância e fornece um ponto global de acesso a ela.
-B) define uma interface para criar um objeto, mas deixa as subclasses decidirem que classe instanciar.
-C) converte a interface de uma classe em outra interface, esperada pelos clientes.
-D) permite que as subclasses alterem o comportamento de parte de um algoritmo.
-E) anexa responsabilidades adicionais a um objeto dinamicamente, fornecendo uma alternativa flexível à herança.
+### Questão 1 (FCC - 2023 - TRT 18ª Região (GO) - Analista Judiciário - TI)
+O protocolo HTTPS é amplamente utilizado na internet para garantir a segurança da comunicação. Para que o HTTPS forneça comunicação criptografada e a identificação segura do servidor da web, ele faz uso do protocolo
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-- **A) Correta.** O padrão criacional Singleton tem como propósito fundamental assegurar que uma classe possua apenas uma única instância durante toda a execução da aplicação, além de fornecer um ponto de acesso global a essa instância.
-- **B) Incorreta.** Esta descrição corresponde ao padrão *Factory Method*, que delega a instanciação para as subclasses.
-- **C) Incorreta.** A adaptação de interfaces incompatíveis é o propósito do padrão estrutural *Adapter*.
-- **D) Incorreta.** Alterar o comportamento de parte de um algoritmo definido em uma superclasse é uma característica do padrão *Template Method*.
-- **E) Incorreta.** Adicionar responsabilidades de forma dinâmica a objetos é a função principal do padrão estrutural *Decorator*.
-</details>
-
----
-
-### Questão 2 (FCC - 2018 - TRT 6ª Região (PE) - Analista Judiciário - Tecnologia da Informação)
-No contexto de padrões de projeto (Design Patterns), quando é necessário definir uma dependência um-para-muitos entre objetos, de maneira que, quando o estado de um objeto muda, todos os seus dependentes são notificados e atualizados automaticamente, deve-se utilizar o padrão
-A) Strategy.
-B) Observer.
-C) Iterator.
-D) Command.
-E) State.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- **A) Incorreta.** O padrão *Strategy* serve para encapsular uma família de algoritmos e torná-los intercambiáveis, não tendo relação com notificação de dependentes.
-- **B) Correta.** O padrão comportamental *Observer* (também conhecido como Publish-Subscribe) define exatamente uma relação um-para-muitos. Quando o objeto observado (Subject) tem seu estado modificado, todos os observadores (Observers) vinculados são notificados e atualizados de maneira automática.
-- **C) Incorreta.** O padrão *Iterator* fornece uma maneira de acessar os elementos de um agregado (como listas e coleções) sequencialmente, sem expor sua representação interna.
-- **D) Incorreta.** O padrão *Command* encapsula uma solicitação como um objeto, permitindo parametrizar clientes com diferentes requisições, enfileirar solicitações e suportar operações que podem ser desfeitas.
-- **E) Incorreta.** O padrão *State* permite que um objeto altere seu comportamento quando o seu estado interno muda.
-</details>
-
----
-
-### Questão 3 (FCC - 2018 - SABESP - Analista de Sistemas)
-No padrão de arquitetura MVC (Model-View-Controller), a camada Controller é responsável por
-A) armazenar os dados e manter o estado da aplicação.
-B) exibir os dados ao usuário através de interfaces gráficas.
-C) intermediar a interação do usuário com a View e realizar a atualização do Model.
-D) garantir a persistência dos dados em um banco de dados relacional.
-E) implementar toda a regra de negócio central e conectar-se diretamente com APIs de terceiros isolando o Model.
+A) UDP em vez do TCP.
+B) SMTP sobre o IP.
+C) TLS ou SSL.
+D) IPSec sobre o UDP.
+E) SSH no lugar do FTP.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- **A) Incorreta.** O armazenamento de dados e manutenção do estado da aplicação são responsabilidades do *Model*.
-- **B) Incorreta.** A exibição de dados e a interface com o usuário são responsabilidades exclusivas da *View*.
-- **C) Correta.** O *Controller* atua como o maestro do fluxo: ele recebe as entradas e interações do usuário feitas na *View*, processa esses comandos e realiza as devidas atualizações na camada *Model*, além de acionar ou modificar a *View*.
-- **D) Incorreta.** A comunicação com o banco de dados e a persistência não devem ser feitas pelo *Controller*, e sim pelo *Model* (ou por camadas de repositório subordinadas a ele).
-- **E) Incorreta.** As regras de negócio centrais e de domínio pertencem essencialmente à camada *Model*. O *Controller* não deve estar sobrecarregado com regras de negócio, atuando apenas como roteador ou coordenador.
+- **A) Incorreta.** O HTTPS padrão das versões HTTP/1.1 e HTTP/2 utiliza o protocolo TCP na camada de transporte. O UDP é usado apenas recentemente na versão HTTP/3 (através do protocolo QUIC), mas não é a simples troca do TCP pelo UDP que fornece a criptografia, e sim a camada de segurança embarcada.
+- **B) Incorreta.** SMTP (Simple Mail Transfer Protocol) é exclusivo para envio de e-mails, não possuindo nenhuma relação com a criptografia de páginas web ou com o protocolo HTTP.
+- **C) Correta.** O HTTPS (Hyper Text Transfer Protocol Secure) nada mais é do que o HTTP transmitido através de uma camada de conexão segura, sendo os protocolos SSL (Secure Sockets Layer - obsoleto) e o TLS (Transport Layer Security - atual) os responsáveis por prover criptografia, integridade e autenticação através de certificados digitais.
+- **D) Incorreta.** O IPSec (Internet Protocol Security) atua na camada de Rede criptografando pacotes IP, muito utilizado em VPNs, mas não é o protocolo nativo utilizado para a criptografia do tráfego HTTPS em navegadores web.
+- **E) Incorreta.** O SSH (Secure Shell) é um protocolo para acesso remoto seguro e execução de comandos em servidores. O FTP é para transferência de arquivos. Nenhum deles está envolvido na operação de navegação criptografada via HTTPS.
+
 </details>
 
 ---
 
-### Questão 4 (FCC - 2019 - TRF 3ª Região - Analista Judiciário - Informática)
-Um desenvolvedor precisa fornecer uma interface unificada para um conjunto de interfaces em um subsistema, definindo uma interface de nível mais alto que torne o subsistema mais fácil de ser usado. O padrão de projeto adequado para essa necessidade é o
-A) Adapter.
-B) Bridge.
-C) Decorator.
-D) Facade.
-E) Proxy.
+### Questão 2 (FCC - 2019 - TRF 3ª Região - Técnico Judiciário - Informática)
+Considere os códigos de status do protocolo HTTP. Um código de status HTTP da classe 4xx (como o 404 - Not Found) serve fundamentalmente para indicar que ocorreu:
+
+A) Sucesso no processamento da requisição pelo servidor e a resposta contém os dados solicitados.
+B) Um redirecionamento, informando que a URL acessada mudou de endereço.
+C) Um erro interno do servidor ao tentar processar a requisição submetida.
+D) Um erro do cliente, indicando que a requisição contém sintaxe incorreta ou não pôde ser atendida (o recurso não existe ou acesso negado).
+E) Uma resposta puramente informativa, sinalizando que a requisição inicial foi recebida e o processamento continua.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: D**
 
-- **A) Incorreta.** O *Adapter* não visa unificar um conjunto de interfaces, mas sim adaptar uma interface específica para outra que o cliente espera, viabilizando o uso de classes incompatíveis.
-- **B) Incorreta.** O *Bridge* separa uma abstração da sua implementação, de modo que ambas possam variar independentemente, o que não se encaixa na simplificação de subsistemas complexos.
-- **C) Incorreta.** O *Decorator* anexa dinamicamente novas responsabilidades e comportamentos a um objeto, evitando a expansão via herança.
-- **D) Correta.** O padrão *Facade* (Fachada) tem exatamente o objetivo de criar uma interface de alto nível simplificada que encapsula e unifica a complexidade de diversas classes de um subsistema, facilitando o seu uso.
-- **E) Incorreta.** O *Proxy* fornece um objeto substituto ou um "representante" de outro objeto para controlar o acesso a ele (como lazy loading ou proteção).
+- **A) Incorreta.** Sucesso no processamento é indicado por códigos da classe 2xx (como o famoso 200 OK).
+- **B) Incorreta.** Redirecionamentos de recursos são representados pela classe 3xx (como 301 Moved Permanently ou 302 Found).
+- **C) Incorreta.** Erros do lado do servidor (como falhas de processamento interno ou serviço indisponível) utilizam a classe 5xx (como 500 Internal Server Error).
+- **D) Correta.** A classe de status 4xx (Client Error) serve estritamente para apontar problemas originados na requisição do cliente. Exemplos clássicos são o 400 Bad Request (sintaxe errada), 401 Unauthorized, 403 Forbidden e o 404 Not Found (recurso inexistente no servidor).
+- **E) Incorreta.** Mensagens meramente informativas ou de continuidade de processamento são representadas pela classe 1xx (como 100 Continue).
+
 </details>
 
 ---
 
-### Questão 5 (FCC - 2017 - TST - Analista Judiciário - Suporte em Tecnologia da Informação)
-O padrão de projeto Decorator tem como objetivo principal
-A) garantir que uma classe possua apenas uma instância na memória.
-B) permitir a criação de famílias de objetos relacionados ou dependentes sem especificar suas classes concretas.
-C) anexar responsabilidades adicionais a um objeto dinamicamente, oferecendo uma alternativa flexível à herança para estender funcionalidades.
-D) definir uma família de algoritmos, encapsular cada um deles e torná-los intercambiáveis.
-E) encapsular uma solicitação como um objeto, parametrizando clientes com diferentes solicitações.
+### Questão 3 (FCC - 2018 - TRT 15ª Região (SP) - Analista Judiciário - TI)
+No protocolo HTTP/1.1, existe um método de requisição muito utilizado quando se deseja solicitar ao servidor apenas os cabeçalhos de resposta HTTP, sem que o corpo da mensagem (message-body) seja efetivamente retornado. Esse método é extremamente útil para verificar a validade de um link ou testar a acessibilidade e o tamanho de um recurso sem fazer o download de todo o seu conteúdo. Trata-se do método:
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- **A) Incorreta.** Refere-se à finalidade principal e clara do padrão *Singleton*.
-- **B) Incorreta.** Refere-se ao propósito fundamental do padrão criacional *Abstract Factory*.
-- **C) Correta.** O padrão estrutural *Decorator* foi desenhado para adicionar (decorar) responsabilidades e comportamentos extras a um objeto em tempo de execução, promovendo composição em detrimento da criação estática de muitas subclasses via herança.
-- **D) Incorreta.** Trata-se da intenção formal do padrão comportamental *Strategy*.
-- **E) Incorreta.** Refere-se à descrição e intenção do padrão comportamental *Command*.
-</details>
-
----
-
-### Questão 6 (FCC - 2022 - TRT 22ª Região (PI) - Analista Judiciário - Tecnologia da Informação)
-O padrão de projeto comportamental que define uma família de algoritmos, encapsula cada um deles e os torna intercambiáveis, permitindo que o algoritmo varie independentemente dos clientes que o utilizam, é denominado
-A) Template Method.
-B) Strategy.
-C) Visitor.
-D) Observer.
-E) Mediator.
+A) GET.
+B) HEAD.
+C) OPTIONS.
+D) TRACE.
+E) POST.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-- **A) Incorreta.** O *Template Method* define o esqueleto de um algoritmo na superclasse, permitindo que subclasses sobrescrevam etapas específicas sem alterar a estrutura global do algoritmo.
-- **B) Correta.** O padrão *Strategy* encapsula algoritmos em classes separadas (com uma interface comum), permitindo que o cliente troque a estratégia (algoritmo) utilizada no objeto de contexto em tempo de execução, sem causar impacto na sua estrutura.
-- **C) Incorreta.** O padrão *Visitor* permite adicionar novas operações a serem executadas sobre uma estrutura de objetos sem alterar as classes desses próprios objetos.
-- **D) Incorreta.** O *Observer* estabelece o mecanismo de notificação para objetos dependentes mediante a mudança de estado de um objeto sujeito.
-- **E) Incorreta.** O *Mediator* encapsula como um conjunto de objetos interage, promovendo o fraco acoplamento ao evitar que objetos referenciem explicitamente uns aos outros.
+- **A) Incorreta.** O método GET solicita a transferência completa da representação do recurso especificado, trazendo tanto os cabeçalhos quanto o corpo da resposta (o conteúdo de fato, como o HTML da página).
+- **B) Correta.** O método HEAD é idêntico ao GET, porém o servidor é instruído a não retornar o corpo da resposta (body). O servidor envia de volta apenas as informações de cabeçalho, permitindo que o cliente descubra metadados sobre o recurso (como data de modificação, tipo de conteúdo e tamanho) economizando considerável largura de banda.
+- **C) Incorreta.** O método OPTIONS é utilizado pelo cliente para descobrir quais opções de comunicação e métodos HTTP o servidor web suporta e permite em um recurso específico. Muito comum em requisições de preflight CORS.
+- **D) Incorreta.** O TRACE invoca um loop-back da mensagem de requisição. A requisição enviada retorna para o cliente para que ele possa observar o que foi alterado ou adicionado por eventuais servidores intermediários (proxies).
+- **E) Incorreta.** O método POST é utilizado para enviar dados ao servidor para processamento, tipicamente alterando o estado da aplicação no servidor (ex: criação de um novo registro no banco de dados).
+
 </details>
 
 ---
 
-### Questão 7 (FCC - 2016 - TRT 20ª Região (SE) - Analista Judiciário - Tecnologia da Informação)
-Considere a necessidade de adaptar a interface de uma classe para outra interface esperada pelos clientes. O padrão de projeto estrutural que permite que classes trabalhem em conjunto, o que, de outra forma, seria impossível devido a interfaces incompatíveis, é o
-A) Adapter.
-B) Composite.
-C) Proxy.
-D) Decorator.
-E) Facade.
+### Questão 4 (FCC - 2016 - TRT 20ª Região (SE) - Analista Judiciário - TI)
+Ao administrar os serviços de uma rede baseada em TCP/IP, é fundamental conhecer as portas de comunicação utilizadas pelos principais protocolos. Os protocolos HTTP e HTTPS utilizam, por padrão, diferentes números de portas lógicas de destino para estabelecer a conexão TCP. As portas padrão, homologadas pela IANA, para HTTP e HTTPS são, respectivamente:
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-- **A) Correta.** O *Adapter* atua literalmente como um "adaptador" no desenvolvimento de software, convertendo a interface original de uma classe em outra interface compatível e aceita pelo cliente, permitindo a interoperabilidade entre componentes.
-- **B) Incorreta.** O padrão *Composite* visa tratar objetos individuais e composições em estrutura de árvore de forma uniforme, e não tem papel em adaptações de interface.
-- **C) Incorreta.** O *Proxy* visa servir de intermediário ou escudo que intercepta e controla o acesso a um objeto principal.
-- **D) Incorreta.** O *Decorator* foca em anexar novos comportamentos a um objeto em tempo de execução.
-- **E) Incorreta.** O *Facade* apenas fornece uma interface centralizada e simplificada para um subsistema completo.
-</details>
-
----
-
-### Questão 8 (FCC - 2015 - TRE-AP - Analista Judiciário - Análise de Sistemas)
-O padrão de projeto Abstract Factory
-A) separa a construção de um objeto complexo de sua representação.
-B) garante que uma classe seja instanciada apenas uma vez em todo o sistema.
-C) fornece uma interface para criar famílias de objetos relacionados ou dependentes sem especificar suas classes concretas.
-D) define uma interface para criar um objeto, deixando as subclasses decidirem qual classe instanciar.
-E) cria novos objetos copiando os dados de um objeto existente (protótipo).
+A) 80 e 8080.
+B) 21 e 22.
+C) 80 e 443.
+D) 8080 e 443.
+E) 443 e 80.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- **A) Incorreta.** Esta é a intenção e definição formal do padrão *Builder*.
-- **B) Incorreta.** Essa descrição corresponde precisamente ao padrão *Singleton*.
-- **C) Correta.** O *Abstract Factory* tem a missão principal de fabricar não apenas um produto simples, mas sim "famílias" de produtos que operam juntos (compatíveis/dependentes entre si), abstraindo e isolando a instanciação das classes concretas envolvidas.
-- **D) Incorreta.** Esta definição se refere especificamente ao padrão *Factory Method*, que delega a criação de um único tipo de objeto para as subclasses, em vez de famílias inteiras.
-- **E) Incorreta.** A criação dinâmica a partir da clonagem ou cópia de um objeto previamente existente (protótipo) é a intenção do padrão *Prototype*.
+- **A) Incorreta.** A porta 80 é do HTTP, mas a porta 8080 (apesar de muito utilizada de forma não oficial por servidores web alternativos e web proxies, como o Tomcat) não é a porta padrão registrada do HTTPS.
+- **B) Incorreta.** As portas 21 e 22 pertencem, respectivamente, ao protocolo FTP (transferência de arquivos) e ao SSH (acesso seguro e sftp).
+- **C) Correta.** Historicamente e por padronização da IANA, o protocolo de navegação não segura (HTTP) atende na porta TCP 80, enquanto o protocolo de navegação segura criptografada (HTTPS) escuta na porta TCP 443.
+- **D) Incorreta.** Conforme explicado na letra A, a porta oficial do HTTP é a 80, e não a 8080. A ordem e os números estão equivocados.
+- **E) Incorreta.** As portas estão invertidas em relação ao enunciado. O enunciado pede "HTTP e HTTPS, respectivamente", logo a ordem obriga que seja 80 para o primeiro e 443 para o segundo.
+
 </details>
 
 ---
 
-### Questão 9 (FCC - 2017 - TRE-PR - Analista Judiciário - Análise de Sistemas)
-No contexto dos padrões de projeto GoF (Gang of Four), o padrão de projeto que define o esqueleto de um algoritmo em uma operação, postergando a definição de alguns passos para subclasses, é o
-A) Command.
-B) State.
-C) Chain of Responsibility.
-D) Template Method.
-E) Strategy.
+### Questão 5 (FCC - 2012 - TRE PR - Analista Judiciário - TI)
+No contexto das interações do protocolo HTTP na World Wide Web, quando um usuário preenche um formulário HTML e o submete com dados que causarão modificações no lado do servidor, o método HTTP mais adequado e padronizado para encapsular os dados do formulário no corpo da requisição é o:
+
+A) PUT.
+B) TRACE.
+C) GET.
+D) CONNECT.
+E) POST.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: E**
+
+- **A) Incorreta.** O método PUT é utilizado para atualizar completamente ou substituir um recurso específico no servidor, criando-o se ele não existir. Não é o padrão clássico e primário para o envio simples de formulários em HTML tradicional, que tradicionalmente só suporta GET e POST.
+- **B) Incorreta.** TRACE é um método de diagnóstico e teste de conectividade (loop-back), jamais utilizado para envio ou processamento de dados submetidos pelo usuário.
+- **C) Incorreta.** O GET pode até ser usado em formulários (ex: buscas), mas os parâmetros ficam expostos na URL (Query String), possuindo limites de tamanho e não sendo recomendado para ações que modifiquem o estado do servidor (pois GET deve ser idempotente e seguro).
+- **D) Incorreta.** CONNECT é utilizado para instruir um servidor Proxy a estabelecer um túnel transparente TCP/IP.
+- **E) Correta.** O método POST é a ferramenta padrão e mais adequada para enviar dados processáveis para o servidor. Os dados viajam no corpo (body) da mensagem, suportando grandes volumes e formatos complexos (como uploads de arquivos), sendo o método correto para processar submissões de formulários que realizem alterações de sistema.
+
+</details>
+
+---
+
+### Questão 6 (FCC - 2017 - TST - Analista Judiciário - Suporte em TI)
+A norma brasileira ABNT NBR 14565 padroniza a concepção e instalação de cabeamento estruturado. Nela, o subsistema que interliga a Sala de Equipamentos e a Entrada de Telecomunicações com as diversas Salas de Telecomunicações distribuídas ao longo dos andares de um edifício comercial é denominado de:
+
+A) Cabeamento Horizontal.
+B) Cabeamento de Backbone.
+C) Subsistema de Área de Trabalho (Work Area).
+D) Ponto de Consolidação de Telecomunicações.
+E) Patch Cord de Manobra e Adaptação.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- **A) Incorreta.** O Cabeamento Horizontal (ou Distribuição) é responsável por interligar a Sala de Telecomunicações (andar) até a tomada de telecomunicações do usuário na Área de Trabalho, e não os hubs centrais (salas de equipamentos) entre si.
+- **B) Correta.** O Cabeamento de Backbone (ou Cabeamento Tronco / Vertical) é exatamente o subsistema encarregado de interligar as Salas de Telecomunicações aos Distribuidores Centrais, como a Sala de Equipamentos (que contém servidores) ou as Facilidades de Entrada (onde a internet do provedor entra). Ele consolida e trafega o tráfego pesado dos andares.
+- **C) Incorreta.** A Área de Trabalho é o espaço final onde o usuário e seus equipamentos (PC, telefone) se encontram, começando na tomada de telecomunicações.
+- **D) Incorreta.** O Ponto de Consolidação é uma junção ou um ponto de interconexão intermediário posicionado unicamente dentro da via do Cabeamento Horizontal.
+- **E) Incorreta.** Patch Cord é o cabo flexível utilizado nos painéis de manobra (Patch Panels) ou nas áreas de trabalho para fazer o "salto" final, não é o nome de um subsistema inteiro de infraestrutura.
+
+</details>
+
+---
+
+### Questão 7 (FCC - 2016 - TRF 3ª Região - Analista Judiciário - Informática)
+No projeto de infraestrutura de rede para um tribunal, adotou-se estritamente a norma ABNT NBR 14565. Em relação ao subsistema de Cabeamento Horizontal utilizando cabos de cobre par trançado UTP balanceados, a norma estabelece limites rígidos de distância. O comprimento máximo físico permitido do cabo instalado de forma fixa (Link Permanente), entre o painel de conexão (Patch Panel) na Sala de Telecomunicações e a tomada de telecomunicações na parede do usuário, não deve exceder:
+
+A) 100 metros.
+B) 90 metros.
+C) 150 metros.
+D) 300 metros.
+E) 50 metros.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- **A) Incorreta.** 100 metros é o comprimento máximo admitido para o "Canal" completo (Channel), que engloba o Link Permanente somado aos patch cords flexíveis nas duas extremidades (Sala de Telecomunicações e Área de Trabalho).
+- **B) Correta.** A NBR 14565 especifica que o "Link Permanente" (o cabo rígido que corre por dentro de paredes, eletrocalhas e piso falso, do patch panel até a tomada) pode ter no máximo 90 metros. Sobram, assim, 10 metros para as conexões móveis e cabos de manobra (patch cords), compondo o canal máximo de 100 metros ditado pelo padrão Ethernet.
+- **C) Incorreta.** 150 metros viola o padrão de atenuação do sinal no cabeamento UTP, o que degradaria por completo redes Fast e Gigabit Ethernet.
+- **D) Incorreta.** 300 metros é um limite que poderia se aplicar (dependendo do padrão) a certos links de fibra óptica multimodo antigos, não para Cabeamento Horizontal de cobre.
+- **E) Incorreta.** O limite é 90m. Um limite de 50m seria desnecessariamente restritivo do ponto de vista do padrão, embora seja plenamente funcional.
+
+</details>
+
+---
+
+### Questão 8 (FCC - 2015 - TRT 3ª Região (MG) - Analista Judiciário - TI)
+Com base na estruturação proposta pela norma ABNT NBR 14565 para o cabeamento de telecomunicações de um edifício, o espaço centralizado de alta complexidade que abriga o distribuidor principal, switches de núcleo (core switches), servidores da rede corporativa e sistemas de armazenamento em massa (storages), possuindo requisitos rigorosos de segurança física e refrigeração, é chamado formalmente de:
+
+A) Sala de Entrada de Facilidades (Entrance Facility).
+B) Sala de Equipamentos (Equipment Room).
+C) Área de Trabalho (Work Area).
+D) Ponto de Transição de Mídia.
+E) Sala de Telecomunicações de Andar.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- **A) Incorreta.** A Entrada de Facilidades (Entrance Facility) é o ponto onde os cabos das operadoras externas (Provedores/Operadoras de Telefonia) chegam e entram fisicamente no prédio da corporação.
+- **B) Correta.** A Sala de Equipamentos (Equipment Room - ER) funciona como o grande Data Center ou CPD do prédio no modelo de cabeamento estruturado. Diferencia-se das demais salas justamente pela complexidade do hardware ativo abrigado, concentrando servidores, roteadores principais, PABX de grande porte e o distribuidor principal (MC - Main Cross-connect).
+- **C) Incorreta.** Como visto, a Área de Trabalho é a baia e a mesa onde o funcionário conecta seu laptop ou telefone, ou seja, as extremidades da rede.
+- **D) Incorreta.** O Ponto de Transição não é uma sala. Trata-se de uma emenda técnica autorizada no cabo UTP em baixo de pisos elevados, por exemplo.
+- **E) Incorreta.** A Sala de Telecomunicações abriga primordialmente equipamentos departamentais (switches de acesso ou de andar) e painéis de manobra, sem focar no abrigo do ambiente complexo de servidores e core da rede corporativa.
+
+</details>
+
+---
+
+### Questão 9 (FCC - 2014 - TRT 1ª Região (RJ) - Analista Judiciário - TI)
+A norma ABNT NBR 14565 divide o sistema completo de cabeamento de um edifício comercial em partes menores denominadas subsistemas. Aquele subsistema que abrange os componentes presentes desde a tomada de parede de telecomunicações até o equipamento terminal do usuário (como computadores, impressoras e telefones IP) é denominado:
+
+A) Subsistema de Cabeamento de Área de Trabalho.
+B) Subsistema de Cabeamento de Backbone.
+C) Subsistema de Cabeamento Horizontal.
+D) Subsistema de Administração.
+E) Subsistema de Distribuição Principal.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+- **A) Correta.** O Subsistema de Área de Trabalho (Work Area Subsystem) compreende exatamente o espaço entre o conector fixo da parede (a Tomada de Telecomunicações) e o aparelho que irá utilizá-lo. Ele inclui, obrigatoriamente, os patch cords flexíveis (cabos de equipamento) e eventuais adaptadores de balun (se aplicáveis).
+- **B) Incorreta.** O Backbone interliga salas de infraestrutura (Salas de Telecom, Salas de Equipamentos), jamais as tomadas dos usuários finais.
+- **C) Incorreta.** O Cabeamento Horizontal é o que leva o fio da Sala de Telecomunicações de andar até a caixinha da tomada na parede. Quando atinge a tomada de parede, a jurisdição do cabeamento horizontal acaba e inicia-se a Área de Trabalho.
+- **D) Incorreta.** O Subsistema de Administração refere-se a metodologias, registros, diagramas, etiquetagem e roteiros de identificação, sendo um processo organizacional e de padronização, e não um cabeamento físico que atenda o computador do usuário final.
+- **E) Incorreta.** Distribuição Principal faz referência à interligação do Campus ou ao Main Cross-Connect (MC) focado no núcleo da rede, e não nos usuários diretos.
+
+</details>
+
+---
+
+### Questão 10 (FCC - 2018 - TRT 2ª Região (SP) - Técnico Judiciário - TI)
+No desenho de uma rede sob o escopo da NBR 14565, qual é o local físico de finalidade específica que provê um ambiente seguro e adequado para abrigar equipamentos ativos de terminação de andar (como switches de acesso) e painéis de manobra, tendo a função de conectar o cabeamento de Backbone proveniente do núcleo da rede ao cabeamento Horizontal que atende os usuários daquele pavimento?
+
+A) Ponto de Consolidação.
+B) Sala de Telecomunicações.
+C) Cross-connect Principal (MC).
+D) Área de Trabalho.
+E) Sala de Equipamentos.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- **A) Incorreta.** Um Ponto de Consolidação é apenas uma caixa passiva que agrupa cabos fixos em escritórios de conceito aberto; ele não abriga switches (equipamentos ativos) que interligam backbone e cabeamento horizontal.
+- **B) Correta.** A Sala de Telecomunicações (Telecommunications Room - TR) é um ambiente dedicado, existente geralmente em cada andar, concebido para abrigar os blocos e patch panels de terminação e também os equipamentos ativos como hubs ou switches de acesso. Ela atua como a interface entre as espinhas dorsais (backbone vertical) e a distribuição capilar por andar (cabeamento horizontal).
+- **C) Incorreta.** O Cross-connect Principal (MC) fica dentro da Sala de Equipamentos e gerencia as conexões centrais de todo o prédio.
+- **D) Incorreta.** A Área de Trabalho abriga equipamentos terminais do usuário e não cabos de backbone de andares.
+- **E) Incorreta.** A Sala de Equipamentos atende a todo o edifício ou campus e contém alta densidade de processamento central, enquanto a Sala de Telecomunicações tem foco no atendimento departamental de um pavimento ou setor específico.
+
+</details>
+
+---
+
+### Questão 11 (FCC - 2022 - TRT 22ª Região (PI) - Analista Judiciário - TI)
+Fibras ópticas são divididas primariamente em monomodo e multimodo, possuindo cada qual aplicações específicas. A respeito das fibras de categoria multimodo, é correto afirmar que elas:
+
+A) Possuem um núcleo com diâmetro muito menor que o das fibras monomodo, forçando a luz a se propagar em modo unidirecional estrito.
+B) São indicadas para conexões ópticas continentais, transoceânicas e de longuíssima distância sem o auxílio de repetidores.
+C) Têm núcleo com diâmetro consideravelmente maior em comparação às monomodo, permitindo a propagação de múltiplos raios de luz simultâneos, o que as torna sujeitas à dispersão modal.
+D) Utilizam exclusivamente fontes de luz laser de alta potência e precisão extrema, sendo a solução de maior custo de hardware nas extremidades da rede.
+E) São absolutamente imunes à atenuação, não havendo enfraquecimento do sinal não importando os quilômetros percorridos pelo enlace.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- **A) Incorreta.** É o exato oposto. O núcleo da fibra multimodo é grande (tipicamente 50 ou 62,5 mícrons), enquanto a fibra monomodo tem núcleo finíssimo (cerca de 8 a 10 mícrons).
+- **B) Incorreta.** As fibras multimodo sofrem severamente com distorções ao longo da distância, sendo recomendadas apenas para redes locais (LANs), backbones dentro de um mesmo prédio ou distâncias curtas (normalmente abaixo de 2 a 5 quilômetros, a depender da categoria OM e da velocidade). Fibras Monomodo são usadas em redes submarinas e enlaces continentais.
+- **C) Correta.** A característica definidora do multimodo é o seu núcleo relativamente largo, o que permite que incontáveis feixes de luz (modos) "quiquem" e percorram caminhos variados lá dentro simultaneamente. Isso cria um problema chamado "dispersão modal" (onde os raios de luz de um mesmo bit de informação chegam em tempos ligeiramente diferentes no destino, ofuscando o pulso em longas distâncias).
+- **D) Incorreta.** Fibras multimodo operam tipicamente com fontes de luz mais baratas e amplas, como LEDs ou lasers do tipo VCSEL, barateando imensamente os switches óticos e placas de rede compatíveis com elas.
+- **E) Incorreta.** Nenhuma fibra ótica (seja monomodo, seja multimodo) é imune à atenuação (perda de potência do sinal). A luz enfraquece por absorção pelo vidro e espalhamento microscópico.
+
+</details>
+
+---
+
+### Questão 12 (FCC - 2019 - TRF 4ª Região - Analista Judiciário - TI)
+O fenômeno físico que permite a comunicação por fibra óptica baseia-se na óptica geométrica. Para que o sinal luminoso emitido por um transmissor seja guiado e permaneça confinado dentro do núcleo de vidro da fibra durante toda a sua viagem até a outra extremidade, a fibra depende intrinsecamente do fenômeno da:
+
+A) Difração de fenda dupla.
+B) Polarização transversal da luz.
+C) Reflexão interna total.
+D) Dispersão cromática aditiva.
+E) Eletroluminescência passiva.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- **A) Incorreta.** A difração de fenda dupla é um experimento de física quântica (de Thomas Young) que prova que a luz se comporta como onda; não é o mecanismo construtivo do cabeamento óptico.
+- **B) Incorreta.** A polarização é a filtragem das ondas para oscilar em único plano (usada em óculos escuros e monitores LCD), mas não é o motivo do confinamento da luz no núcleo da fibra.
+- **C) Correta.** O princípio do funcionamento das fibras ópticas repousa na Reflexão Interna Total. A fibra é composta por um "núcleo" de vidro cercado por uma "casca" (cladding). O núcleo é dopado para ter um índice de refração ligeiramente maior que o da casca. Isso faz com que todo raio de luz que atinge a parede interna da fibra sob determinado limite angular não consiga "vazar" para fora, agindo como um espelho perfeito e rebatendo 100% da luz continuamente até o outro extremo.
+- **D) Incorreta.** A dispersão cromática é um fenômeno problemático e um dos fatores limitantes da velocidade em fibra óptica (espalhamento dos pulsos de cores diferentes na luz), não é aquilo que confina a luz na fibra.
+- **E) Incorreta.** Eletroluminescência é a propriedade de um material em emitir luz ao passar corrente (como as lâmpadas de LED). A fibra óptica é passiva e guia a luz, mas não a produz ao longo de sua estrutura.
+
+</details>
+
+---
+
+### Questão 13 (FCC - 2018 - TRT 6ª Região (PE) - Técnico Judiciário - TI)
+Quando se projeta um backbone corporativo conectando prédios diferentes de um mesmo Campus, usualmente pretere-se os cabos de par trançado de cobre em favor dos cabos de fibra óptica. Comparando as mídias físicas de rede, qual é uma vantagem correta da fibra óptica em relação ao par trançado de cobre?
+
+A) É infinitamente mais fácil e flexível para realizar manobras com ângulos de curvatura muito fechados.
+B) Possibilita atingir taxas de transmissão incrivelmente altas em distâncias muito mais extensas.
+C) Sofre da chamada diafonia óptica (crosstalk), evitando que o sinal óptico precise ser descriptografado por redes vizinhas.
+D) Tem custo final de equipamento, montagem e emenda mais baixo que o cabeamento de cobre comercial.
+E) Conduz tanto dados ópticos quanto energia elétrica em paralelo, utilizando o padrão óptico PoE para ligar câmeras e telefones.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- **A) Incorreta.** Fibras ópticas, por serem feitas fundamentalmente de vidro ou compostos poliméricos delicados, não suportam curvas acentuadas ou torções bruscas. Há um raio de curvatura mínimo muito restrito. Dobrar o cabo além desse limite gerará perdas brutais por irradiação (a luz vaza da fibra) ou rompimento físico do cabo. O cabo de cobre é mecanicamente mais indulgente em dobras do que as fibras tradicionais.
+- **B) Correta.** A maior superioridade das fibras ópticas frente ao cobre está na excepcional largura de banda (potencial de enviar altíssimas velocidades, na casa dos Terabits) mantendo a integridade do sinal em grandes distâncias, as quais chegam facilmente a dezenas de quilômetros (ou centenas em monomodo) contra o limite inflexível de 100 metros do par trançado na topologia de LANs.
+- **C) Incorreta.** "Crosstalk" (diafonia ou vazamento indesejado entre fios) é um problema gravíssimo e típico que afeta os cabos de cobre de pares metálicos, o qual a fibra óptica ironicamente soluciona. A luz em uma fibra óptica não interfere eletromagneticamente nas demais.
+- **D) Incorreta.** Os cabos ópticos são mais delicados para emenda (exigem equipamento caro para fusão, como máquinas de emenda a laser) e suas extremidades exigem polimento e conectores precisos, e as interfaces ativas de rede (transceivers) também encarecem a topologia frente a um cabo metálico simples.
+- **E) Incorreta.** O cabeamento de fibra óptica transmite feixes fotônicos guiados. Vidro e sílica são excelentes isolantes elétricos. Sendo assim, fibras ópticas comuns não transportam corrente elétrica sob nenhuma circunstância. O padrão PoE (Power over Ethernet) opera infundindo eletricidade nos pares dos cabos de cobre.
+
+</details>
+
+---
+
+### Questão 14 (FCC - 2017 - TRE PR - Analista Judiciário - TI)
+No mercado de conectividade óptica, a fibra monomodo (Single-Mode Fiber - SMF) atua em uma faixa de performance distinta da multimodo. As fibras da categoria monomodo caracterizam-se fundamentalmente por:
+
+A) Ter um núcleo de grande dimensão, usualmente 62.5 micrômetros de diâmetro, feito de material plástico de baixa impedância.
+B) Apresentar maior atenuação quilométrica total em comparação com as fibras multimodo em qualquer comprimento de onda.
+C) Propagar a luz através de feixes desorganizados, exigindo algoritmos complexos na recepção.
+D) Possuir um núcleo microscópico na ordem de 8 a 10 micrômetros, o que praticamente inibe a incidência de dispersão modal e possibilita atingir as mais elevadas distâncias operacionais.
+E) Utilizar exclusivamente emissores baseados em Diodos Emissores de Luz (LED), reduzindo enormemente o custo transacional da instalação.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: D**
 
-- **A) Incorreta.** O padrão *Command* foca em transformar uma solicitação em um objeto invocável de maneira independente e enfileirável.
-- **B) Incorreta.** O padrão *State* gerencia a mudança do comportamento de um objeto de forma fluida, baseado na alteração de seu estado interno.
-- **C) Incorreta.** O *Chain of Responsibility* passa requisições ao longo de uma cadeia sucessiva de objetos processadores até que algum a trate.
-- **D) Correta.** A definição trazida na questão é exata para o padrão *Template Method*. Ele monta o alicerce ou "esqueleto" de um algoritmo genérico numa classe-mãe abstrata, determinando a ordem de execução, porém delega a implementação (ou os passos pormenorizados) para os métodos das subclasses.
-- **E) Incorreta.** O *Strategy* não prevê um esqueleto herdado; ele encapsula o algoritmo inteiro numa estratégia independente de maneira totalmente intercambiável.
+- **A) Incorreta.** O núcleo de 62,5 ou 50 micrômetros é a definição exata das especificações da fibra Multimodo.
+- **B) Incorreta.** É a fibra multimodo que tem maior índice de atenuação (pois os raios de luz sofrem dezenas de milhares de colisões com a casca a cada quilômetro). A monomodo, ao enviar a luz em linha perfeitamente reta, ostenta as menores taxas de atenuação quilométricas possíveis.
+- **C) Incorreta.** O monomodo propaga um feixe solitário altamente coerente (apenas um modo), de forma organizadíssima.
+- **D) Correta.** Como o nome diz (Single Mode), a geometria do núcleo é projetada de forma tão fina e estrangulada (em torno de 9 mícrons) que a luz não tem espaço físico para ficar "quicando" angularmente na parede da casca, alinhando toda a luz pelo centro de forma paralela. Como não há caminhos alternativos variados, não existe Dispersão Modal, resultando em um feixe laser puro e sem borramentos ao chegar no destino, viabilizando redes operando a mais de 100 km.
+- **E) Incorreta.** LEDs produzem feixes de luz muito abertos e dispersos, que seriam barrados ao tentar adentrar a porta micro-apertada da fibra monomodo. Portanto, a fibra monomodo é emparelhada estritamente com transceivers baseados em feixes puros e potentes como Lasers de injeção ótica.
+
 </details>
 
 ---
 
-### Questão 10 (FCC - 2014 - TRF 4ª Região - Analista Judiciário - Informática)
-A Arquitetura Orientada a Serviços (SOA) é um estilo arquitetural para construção de aplicações de software baseadas em serviços. Um conceito fundamental em SOA, que permite a publicação e a descoberta de serviços por meio de um registro central, facilitando a interação entre provedores e consumidores de serviços, baseia-se na especificação:
-A) UDDI.
-B) SOAP.
-C) WSDL.
-D) XML.
-E) REST.
+### Questão 15 (FCC - 2016 - TRT 23ª Região (MT) - Analista Judiciário - TI)
+Os passivos e conectores mecânicos na ponta do cabo de fibra óptica são vitais para o bom acoplamento da luz no switch ou cordão de fibra óptica de manobra (patch cord óptico). Um dos conectores de fibra óptica mundialmente difundidos, cujo perfil apresenta formato quadrado com ferrolho cerâmico e cujo sistema de engate/trava se dá pelo movimento deslizante de encaixe tipo "push-pull" (empurrar e puxar), recebe o nome padronizado de:
+
+A) RJ-45.
+B) SC (Subscriber Connector / Standard Connector).
+C) BNC.
+D) V.35.
+E) ST (Straight Tip).
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- **A) Incorreta.** RJ-45 é o popular conector acrílico de 8 vias (8P8C) utilizado mundialmente no cabeamento de cobre par trançado em redes locais.
+- **B) Correta.** O conector SC é um dos padrões mais comuns para terminações ópticas e distribuidores ópticos (DIOs). Sua anatomia é de um bloco plástico retangular/quadrado espesso, cujo travamento mecânico não requer giro de chaves (como o ST); o técnico unicamente o empurra com o dedo para plugar (o conector trava por "click") e puxa a cápsula externa plástica para desconectar ("push-pull").
+- **C) Incorreta.** BNC é um conector de metal em formato cilíndrico dotado de uma trava com formato baioneta de meia-volta, utilizado em cabeamentos antigos de redes locais feitas em cabos coaxiais (Ethernet 10Base2) ou sistemas de antenas e câmeras CFTV analógicas.
+- **D) Incorreta.** V.35 é um conector elétrico em formato de bloco grande e robusto muito usado no passado em roteadores para conectividade síncrona com modems de linha dedicada de operadoras de telefonia padrão serial.
+- **E) Incorreta.** O conector ST (Straight Tip) até é um conector de fibra óptica antiquado e importante. Contudo, seu perfil e formato não são quadrados, mas sim metálicos cilíndricos. Ademais, o encaixe e a trava do ST não se dão por push-pull, mas via pino encaixado por rotação através de trava tipo baioneta (similar ao engate do cabo coaxial BNC).
+
+</details>
+
+---
+
+
+## 📝 TEMA 2: Redes — Protocolo TCP vs UDP
+
+### Questão 1 (FCC - 2018 - TRT 15 - Analista)
+Sobre os protocolos TCP e UDP da camada de transporte, é correto afirmar:
+A) O TCP garante a entrega dos pacotes, enquanto o UDP é um protocolo orientado a conexão, mas sem garantia de entrega.
+B) O UDP possui um cabeçalho menor que o TCP e não implementa controle de congestionamento.
+C) O TCP e o UDP utilizam o mesmo mecanismo de janela deslizante para controle de fluxo.
+D) O UDP é adequado para transferência de arquivos grandes (FTP), devido à sua maior velocidade.
+E) O TCP orienta-se a datagramas não confiáveis e o UDP a fluxos de bytes confiáveis.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A) Incorreta. O UDP não é um protocolo orientado a conexão, ele é connectionless (não requer fechamento/abertura prévia).
+B) Correta. O cabeçalho fixo do UDP possui apenas 8 bytes e o UDP não possui mecanismos complexos como o controle de congestionamento, limitando-se ao envio "best-effort" (melhor esforço).
+C) Incorreta. A janela deslizante (sliding window) é um mecanismo exclusivo do TCP. O UDP não faz controle de fluxo e não possui janela deslizante.
+D) Incorreta. A transferência de arquivos grandes como no FTP necessita garantir que o arquivo chegue perfeitamente inteiro e em ordem. Portanto, o FTP utiliza o protocolo TCP, não o UDP.
+E) Incorreta. As afirmações estão trocadas. O TCP é orientado a um fluxo contínuo de bytes e é totalmente confiável, já o UDP orienta-se a datagramas discretos e não confiáveis.
+</details>
+
+---
+
+### Questão 2 (FCC - 2016 - TRT 20 - Técnico)
+Na arquitetura TCP/IP, a camada de transporte oferece, entre outros, os protocolos TCP e UDP. Uma diferença fundamental entre eles é que:
+A) O TCP opera com entrega garantida e é orientado a conexão, enquanto o UDP não garante a entrega e não é orientado a conexão.
+B) O UDP permite controle de fluxo e de congestionamento, recursos ausentes no TCP.
+C) O TCP é utilizado preferencialmente para streaming de áudio e vídeo em tempo real, enquanto o UDP para serviços como HTTP.
+D) O cabeçalho UDP possui 20 bytes de tamanho mínimo, ao passo que o TCP possui 8 bytes.
+E) Ambos fornecem garantia de sequenciamento de pacotes, mas apenas o TCP estabelece um circuito virtual.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: A**
 
-- **A) Correta.** Dentro dos padrões clássicos de Web Services e da arquitetura SOA, o **UDDI** (*Universal Description, Discovery and Integration*) atua exatamente como esse "registro amarelo" central. É nele que os serviços são catalogados e publicados pelos provedores para poderem ser pesquisados e descobertos pelos potenciais consumidores.
-- **B) Incorreta.** O *SOAP* (*Simple Object Access Protocol*) é o envelope/protocolo padronizado para troca de mensagens estruturadas na rede, não é um registro.
-- **C) Incorreta.** O *WSDL* (*Web Services Description Language*) é a linguagem que documenta e descreve a assinatura técnica do serviço (métodos, tipos e conectores), não sendo o catálogo central de descoberta (papel do UDDI).
-- **D) Incorreta.** O *XML* é apenas a metalinguagem universal e genérica de marcação estruturada usada como alicerce tecnológico.
-- **E) Incorreta.** O *REST* é outro paradigma/estilo arquitetural (frequentemente rival do SOAP/SOA clássico) e dispensa repositórios de publicação engessados como o UDDI.
+A) Correta. Essa é a distinção mais básica da camada de transporte. O TCP cuida da garantia da comunicação e cria um canal fim-a-fim, enquanto o UDP envia a mensagem e descarta qualquer preocupação com entrega, retransmissão ou ordens.
+B) Incorreta. Na verdade, é o TCP que permite controle de fluxo e de congestionamento, recursos que são estritamente ausentes no UDP.
+C) Incorreta. A aplicação de cada protocolo foi invertida. O UDP é priorizado em streaming de áudio e vídeo (onde o atraso de retransmissões do TCP inviabilizaria o tempo real), enquanto o HTTP usa obrigatoriamente o TCP para carregar páginas web com confiabilidade.
+D) Incorreta. Os tamanhos de cabeçalho foram trocados: TCP tem 20 bytes de cabeçalho mínimo, enquanto o UDP tem apenas 8 bytes.
+E) Incorreta. O UDP não fornece nenhuma garantia de sequenciamento e não rastreia ordens de datagramas, apenas o TCP faz isso através do Sequence Number.
 </details>
 
 ---
 
-### Questão 11 (FCC - 2018 - TRT 2ª Região (SP) - Analista Judiciário - Tecnologia da Informação)
-A arquitetura de microsserviços propõe a construção de aplicações como um conjunto de pequenos serviços. Uma característica comum dessa arquitetura é que cada microsserviço
-A) compartilha a mesma base de dados unificada de todos os outros serviços para garantir a integridade referencial.
-B) deve ser implementado, obrigatoriamente, utilizando a mesma linguagem de programação dos demais serviços.
-C) roda em seu próprio processo e se comunica com mecanismos leves, geralmente uma API de recursos HTTP.
-D) requer implantação síncrona de todos os componentes do sistema ao mesmo tempo.
-E) utiliza uma camada de apresentação (View) fortemente acoplada ao banco de dados relacional.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- **A) Incorreta.** Em uma arquitetura canônica de microsserviços, os serviços evitam fortemente o compartilhamento de banco de dados. O padrão estabelecido é o *database-per-service* (um banco/esquema independente para cada serviço), sacrificando a integridade referencial direta para garantir alto nível de autonomia e isolamento.
-- **B) Incorreta.** Uma das maiores promessas desse modelo é a liberdade tecnológica (*polyglot programming*). Cada equipe tem liberdade para escolher a linguagem e banco adequados para o problema específico de cada microsserviço.
-- **C) Correta.** Como definido pelos criadores do termo (como Martin Fowler), cada microsserviço é um pequeno aplicativo autônomo. Eles rodam em processos isolados e a interação ocorre por meio de mecanismos leves na rede, quase sempre APIs baseadas em HTTP e tecnologias REST.
-- **D) Incorreta.** A implantação (deploy) deve ser independente. Os serviços devem poder subir de maneira isolada sem depender da inicialização global do ecossistema inteiro.
-- **E) Incorreta.** Camadas de front-end independentes são encorajadas, sem que haja forte acoplamento (especialmente direto com um banco de dados relacional).
-</details>
-
----
-
-### Questão 12 (FCC - 2015 - TRT 3ª Região (MG) - Analista Judiciário - Tecnologia da Informação)
-Ao desenvolver um sistema de arquivos computacional, o desenvolvedor nota que diretórios podem conter arquivos ou outros diretórios. Para tratar arquivos e diretórios de forma uniforme, permitindo que os clientes os acessem de maneira transparente, o padrão de projeto estrutural apropriado é o
-A) Bridge.
-B) Facade.
-C) Composite.
-D) Decorator.
-E) Proxy.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- **A) Incorreta.** O padrão *Bridge* desacopla a abstração de sua implementação (especialmente útil em variações multiplataforma), de forma independente e sem relação estrutural de árvores.
-- **B) Incorreta.** O padrão *Facade* apenas encapsula e simplifica os métodos de um subsistema de bastidores complexos.
-- **C) Correta.** O padrão *Composite* foi desenhado perfeitamente para este fim: permitir que instâncias individuais (folhas = arquivos) e instâncias compostas (ramos = diretórios) compartilhem a mesma interface superior. Assim, o cliente (navegador do sistema) trata a árvore recursiva e os componentes individuais com exata uniformidade.
-- **D) Incorreta.** O padrão *Decorator* foca em envelopar objetos em camadas que adicionam novos comportamentos modulares.
-- **E) Incorreta.** O padrão *Proxy* funciona como um intermediador entre o sistema real para propósitos de segurança, auditoria ou cache.
-</details>
-
----
-
-### Questão 13 (FCC - 2016 - TRT 23ª Região (MT) - Analista Judiciário - Tecnologia da Informação)
-O padrão GoF Factory Method é um padrão de projeto
-A) comportamental que encapsula as solicitações como objetos.
-B) de criação que define uma interface para criar um objeto, mas deixa as subclasses decidirem qual classe instanciar.
-C) estrutural que compõe objetos em estruturas de árvore para representar hierarquias partes-todo.
-D) estrutural que fornece um substituto ou marcador da localização de outro objeto para controlar o acesso a ele.
-E) de criação que garante a existência de uma única instância de uma classe, provendo um ponto global de acesso à mesma.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- **A) Incorreta.** Esta alternativa descreve a natureza do padrão comportamental *Command*.
-- **B) Correta.** A definição é o extrato literal do GoF para o padrão de criação *Factory Method*. Ele atua como um criador abstrato, cujo método fabril é herdado pelas subclasses, delegando somente a estas a responsabilidade de decidir qual classe concreta deverá realmente ser construída.
-- **C) Incorreta.** A descrição em questão ilustra detalhadamente o padrão estrutural *Composite*.
-- **D) Incorreta.** Essa é a definição clara do padrão estrutural *Proxy*.
-- **E) Incorreta.** Essa alternativa evoca inequivocamente a semântica do padrão de criação *Singleton*.
-</details>
-
----
-
-### Questão 14 (FCC - 2019 - TRF 4ª Região - Analista Judiciário - Tecnologia da Informação)
-O estilo arquitetural REST (Representational State Transfer) estabelece um conjunto de restrições para a criação de serviços web. Uma dessas restrições é a de que a comunicação entre o cliente e o servidor deve ser
-A) stateful, armazenando o contexto da sessão do cliente no servidor entre as requisições.
-B) assíncrona, exigindo que o cliente aguarde confirmações usando WebSockets em todas as transações.
-C) stateless, de modo que cada requisição do cliente para o servidor deve conter todas as informações necessárias para entender a requisição, não aproveitando nenhum contexto armazenado no servidor.
-D) centralizada no protocolo SOAP para garantir segurança e atomicidade das operações de rede.
-E) limitada ao formato XML para padronizar a troca de mensagens na camada de transporte.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- **A) Incorreta.** REST baseia-se na filosofia oposta. A retenção do estado de aplicação (*stateful*) não pode ser imposta ao servidor entre uma requisição e outra.
-- **B) Incorreta.** Protocolos como WebSockets permitem conexões bidirecionais e full-duplex contínuas, mas a base de construção comum do REST não obriga sua adoção nem restringe-se a assincronismo.
-- **C) Correta.** O conceito central do *Stateless* (sem estado), um pilar do REST, define que toda solicitação deve ser feita ao servidor como uma entidade completa. O cliente precisa enviar todos os dados, tokens e contexto para que o servidor possa analisar sem recorrer a memórias temporárias prévias de sessões ativas do cliente.
-- **D) Incorreta.** Serviços baseados em REST rivalizam filosoficamente com o modelo de serviços baseados nos contratos complexos e envelopamentos do SOAP (embora não sejam estritamente incompatíveis). Mas REST rejeita o engessamento dessa estrutura.
-- **E) Incorreta.** REST suporta e incentiva representações em múltiplos tipos de mídia flexíveis: HTML, XML, YAML e mais notadamente o JSON.
-</details>
-
----
-
-### Questão 15 (FCC - 2023 - TRT 18ª Região (GO) - Analista Judiciário - Tecnologia da Informação)
-O padrão de projeto que provê uma maneira de acessar sequencialmente os elementos de um objeto agregado sem expor sua representação subjacente é conhecido como
-A) Iterator.
-B) Observer.
-C) Mediator.
-D) Visitor.
-E) Memento.
+### Questão 3 (FCC - 2022 - TRT 14 - Analista)
+Analise as características abaixo sobre protocolos de transporte da arquitetura TCP/IP:
+I. Orientado a conexão.
+II. Não confiável e não orientado a conexão.
+III. Implementa controle de congestionamento e de fluxo.
+IV. Possui um cabeçalho simples de 8 bytes, contendo apenas portas de origem e destino, comprimento e checksum.
+As características descrevem, respectivamente, quais protocolos:
+A) I - TCP; II - UDP; III - TCP; IV - UDP.
+B) I - UDP; II - TCP; III - TCP; IV - UDP.
+C) I - TCP; II - UDP; III - UDP; IV - TCP.
+D) I - TCP; II - TCP; III - UDP; IV - UDP.
+E) I - UDP; II - UDP; III - TCP; IV - TCP.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: A**
 
-- **A) Correta.** O padrão comportamental *Iterator* tem o objetivo direto e declarado de extrair e unificar o comportamento de travessia (iteração/varredura) de uma coleção. Ele expõe métodos padrões (`next()`, `hasNext()`) permitindo o acesso sequencial a cada elemento sem que o cliente precise entender se, no backend, essa coleção opera como fila, array, pilha ou árvore balanceada.
-- **B) Incorreta.** O *Observer* estabelece as bases de notificação dinâmica orientada a eventos para um conjunto de entidades dependentes.
-- **C) Incorreta.** O *Mediator* concentra redes de comunicações caóticas, roteando os fluxos por meio de um hub estruturado.
-- **D) Incorreta.** O *Visitor* externaliza comportamentos que precisam rodar em hierarquias e elementos múltiplos, evitando poluição interna das classes bases.
-- **E) Incorreta.** O *Memento* objetiva estritamente a captura e o salvamento em formato seguro de "fotografias" de estado interno de um sistema, a fim de possibilitar operações de "desfazer" ou "rollback".
+A) Correta. A classificação corresponde perfeitamente: TCP exige conexão (I); UDP não tem conexão nem confiabilidade (II); TCP usa algoritmos para congestionamento e fluxo (III); UDP usa um header mínimo de apenas 8 bytes, com 4 campos (IV).
+B) Incorreta. UDP não é orientado a conexão. TCP não é desprovido de confiabilidade.
+C) Incorreta. O UDP não tem recursos de controle de fluxo e o TCP possui cabeçalho de 20 bytes.
+D) Incorreta. Invalida as assertivas de II em diante.
+E) Incorreta. Inverteu o TCP e UDP em relação aos conceitos fundamentais de I e II.
 </details>
 
 ---
 
-
-## 📝 TEMA 2: Integração Contínua e DevOps
-
-### Questão 1 (FCC - 2023 - TRT 11ª Região (AM e RR) - Analista Judiciário - Tecnologia da Informação)
-A cultura DevOps baseia-se em princípios fundamentais que visam aproximar o desenvolvimento (Dev) da operação (Ops). Um acrônimo frequentemente utilizado para resumir os pilares essenciais do DevOps é o CALMS. Neste contexto, a letra "A" do acrônimo refere-se a:
-A) Agility, promovendo a adoção de metodologias ágeis como Scrum e Kanban.
-B) Automation, buscando a automação contínua de processos de build, teste e deploy.
-C) Architecture, focando no desenho de arquiteturas orientadas a microsserviços.
-D) Analytics, enfatizando a análise de dados para tomada de decisões operacionais.
-E) Availability, garantindo a alta disponibilidade dos serviços em produção.
+### Questão 4 (FCC - 2017 - TST - Analista)
+Um Administrador de Redes está analisando o tráfego e nota pacotes relacionados ao estabelecimento de conexão TCP. O mecanismo conhecido como "3-way handshake" inicia esse processo. A sequência correta de mensagens (flags) trocadas entre o cliente e o servidor para que o estabelecimento de uma conexão TCP ocorra com sucesso é:
+A) SYN, ACK, SYN-ACK.
+B) SYN, SYN-ACK, ACK.
+C) ACK, SYN-ACK, SYN.
+D) SYN-ACK, SYN, ACK.
+E) REQ, REP-ACK, ACK.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-O acrônimo CALMS foi cunhado por Jez Humble e é a base conceitual do DevOps:
-- **C (Culture)**: Mudança cultural, colaboração entre equipes.
-- **A (Automation)**: Automação de tarefas repetitivas (CI/CD, testes, IaC). A alternativa B está correta.
-- **L (Lean)**: Princípios Lean, eliminação de desperdícios, foco no fluxo de valor.
-- **M (Measurement)**: Medição de tudo, coleta de métricas e KPIs.
-- **S (Sharing)**: Compartilhamento de conhecimento, ferramentas e responsabilidades.
-
-Portanto, as outras alternativas estão incorretas:
-A) Incorreta. Agilidade é um conceito relacionado, mas o "A" do CALMS é de Automação.
-C) Incorreta. Arquitetura (como microsserviços) facilita o DevOps, mas não compõe o acrônimo.
-D) Incorreta. Analytics não é o termo correto (o foco em métricas é dado pelo "M" de Measurement).
-E) Incorreta. Availability é uma meta operacional (tratada também por SRE), não sendo o pilar "A" do CALMS.
+A) Incorreta. A ordem dos pacotes de retorno não é apenas ACK depois SYN-ACK, as flags SYN e ACK vêm agrupadas na segunda mensagem de resposta do servidor.
+B) Correta. No "aperto de mão de três vias", o cliente inicia a conexão mandando um pacote com a flag SYN ativa. O servidor recebe o pedido e responde sincronizando sua própria sequência enquanto reconhece o pedido do cliente por meio das flags SYN e ACK ligadas simultaneamente (SYN-ACK). Por fim, o cliente finaliza o acordo mandando um último ACK.
+C) Incorreta. Nenhuma comunicação começa com um ACK do nada sem uma sincronização SYN inicial.
+D) Incorreta. O servidor não pode enviar um SYN-ACK antes de receber um SYN do cliente.
+E) Incorreta. As flags REQ e REP-ACK não existem na estrutura de flags do cabeçalho TCP.
 </details>
 
 ---
-### Questão 2 (FCC - 2022 - TRT 22ª Região (PI) - Analista Judiciário - Tecnologia da Informação)
-Na adoção de práticas ágeis e DevOps, os conceitos de Integração Contínua (CI), Entrega Contínua (CD) e Implantação Contínua (CD) desempenham papéis cruciais, mas distintos. A principal diferença entre Entrega Contínua (Continuous Delivery) e Implantação Contínua (Continuous Deployment) é que:
-A) a Entrega Contínua requer que o código seja compilado automaticamente, enquanto a Implantação Contínua dispensa a compilação.
-B) na Entrega Contínua, a liberação para o ambiente de produção exige uma aprovação manual, enquanto na Implantação Contínua a passagem para produção é automatizada, sem intervenção humana.
-C) a Implantação Contínua é utilizada exclusivamente em ambientes de homologação, ao passo que a Entrega Contínua afeta apenas o ambiente de produção.
-D) a Entrega Contínua foca apenas na automação de testes unitários, enquanto a Implantação Contínua foca na automação de testes de integração e de carga.
-E) não existe diferença prática; os termos são sinônimos e cunhados por autores diferentes na literatura de DevOps.
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- **Integração Contínua (CI)**: Consiste em integrar o código de vários desenvolvedores em um repositório centralizado frequentemente, acompanhado de build e testes automatizados.
-- **Entrega Contínua (Continuous Delivery)**: Extensão do CI, onde o software é construído de forma que possa ser liberado para produção a qualquer momento. No entanto, a decisão de fazer o deploy (a implantação real em produção) é **manual**.
-- **Implantação Contínua (Continuous Deployment)**: Vai um passo além da Entrega Contínua. Toda alteração que passa nos testes automatizados é implantada **automaticamente** em produção, sem intervenção manual.
-
-Analisando as alternativas:
-A) Incorreta. Ambas exigem build/compilação automatizada (oriunda da CI).
-B) Correta. A diferença fundamental está na necessidade (ou não) de aprovação manual para o deploy em produção.
-C) Incorreta. Ambas visam a produção, mas de formas diferentes (manual vs. automática).
-D) Incorreta. Ambas dependem de todos os níveis de testes para garantir a qualidade do software antes da produção.
-E) Incorreta. Existem diferenças cruciais na automação da etapa final (deploy).
-</details>
-
----
-### Questão 3 (FCC - 2023 - TRT 12ª Região (SC) - Analista Judiciário - Tecnologia da Informação)
-Uma das práticas fundamentais no DevOps é a utilização de pipelines de CI/CD para automatizar o ciclo de vida do desenvolvimento. Ao utilizar o Jenkins, a criação de pipelines como código (Pipeline as Code) geralmente é feita por meio de um arquivo que define os estágios de execução. Este arquivo é denominado por padrão como:
-A) docker-compose.yml
-B) Jenkinsfile
-C) build.xml
-D) pom.xml
-E) playbook.yml
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-O conceito de Pipeline as Code permite que o processo de build, teste e deploy seja versionado junto com o código da aplicação.
-No Jenkins, esse arquivo é chamado de **Jenkinsfile**.
-
-Analisando as alternativas:
-A) Incorreta. `docker-compose.yml` é utilizado pelo Docker Compose para definir e executar aplicativos Docker multicontêineres.
-B) Correta. O `Jenkinsfile` é o arquivo de configuração de pipelines no Jenkins (escrito em sintaxe Declarativa ou Scripted).
-C) Incorreta. `build.xml` é o arquivo de configuração padrão do Apache Ant.
-D) Incorreta. `pom.xml` (Project Object Model) é o arquivo de configuração e dependências do Apache Maven.
-E) Incorreta. `playbook.yml` é um arquivo de configuração do Ansible (ferramenta de gerência de configuração/IaC).
-</details>
-
----
-### Questão 4 (FCC - 2024 - TRF 3ª Região - Analista Judiciário - Tecnologia da Informação)
-No contexto de implantação de microsserviços sem indisponibilidade (Zero Downtime Deployment), duas estratégias muito utilizadas são o *Blue-Green Deployment* e o *Canary Release*. Sobre o *Blue-Green Deployment*, é correto afirmar que:
-A) direciona gradualmente e em pequenas porcentagens o tráfego de usuários para a nova versão, monitorando os erros antes de liberar para o restante.
-B) mantém dois ambientes de produção idênticos, alternando o roteamento do tráfego do ambiente atual (ativo) para o novo ambiente, reduzindo riscos de downtime.
-C) realiza a atualização da infraestrutura substituindo os nós do cluster um a um (Rolling Update), mantendo a mesma base de dados ativa para ambas as versões.
-D) desativa completamente o ambiente de produção para realizar a atualização, e após testes, restabelece o tráfego; embora gere downtime, garante a integridade.
-E) é uma técnica exclusiva do Kubernetes que utiliza o conceito de HPA (Horizontal Pod Autoscaler) para balanceamento de carga entre pods.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- **Blue-Green Deployment**: Consiste em manter dois ambientes de produção distintos e idênticos (Blue e Green). Apenas um deles está ativo (recebendo tráfego real) por vez. A nova versão é implantada no ambiente inativo. Após testes, o roteador/load balancer é alterado para apontar para o novo ambiente, o que torna o rollback extremamente simples e instantâneo.
-- **Canary Release**: Libera a nova versão para uma pequena parcela de usuários (ex: 5%), monitorando erros. Se tudo correr bem, o tráfego é ampliado gradativamente (a alternativa A descreve isso).
-
-Analisando as alternativas:
-A) Incorreta. Esta é a definição exata de *Canary Release*.
-B) Correta. Descreve perfeitamente o *Blue-Green Deployment*.
-C) Incorreta. Refere-se à técnica de *Rolling Update* (ou *Rolling Deployment*).
-D) Incorreta. Isso caracteriza um *Recreate Deployment* ou *Big Bang*, que gera indisponibilidade (downtime).
-E) Incorreta. Blue-Green é um padrão arquitetural que independe da ferramenta e não está intrinsecamente ligado ao HPA.
-</details>
-
----
-### Questão 5 (FCC - 2018 - TRT 15ª Região (SP) - Analista Judiciário - Tecnologia da Informação)
-O Docker tornou-se uma ferramenta de infraestrutura padrão em ambientes de CI/CD. Na arquitetura do Docker, a estrutura responsável por armazenar em formato somente leitura (read-only) os templates que contêm instruções para criar um contêiner é chamada de:
-A) Docker Daemon (dockerd).
-B) Docker Compose.
-C) Docker Image (Imagem).
-D) Docker Registry.
-E) Docker Swarm.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-Para entender o Docker, é preciso conhecer seus principais componentes:
-A) Incorreta. O Docker Daemon é o serviço que roda no host responsável por gerenciar os objetos do Docker, como imagens, contêineres e redes.
-B) Incorreta. Docker Compose é uma ferramenta para definir e executar aplicações multi-contêineres, orquestrando-os localmente.
-C) Correta. Uma **Imagem Docker** é um template read-only contendo um conjunto de instruções para a criação de um contêiner (a aplicação em execução).
-D) Incorreta. Docker Registry é um repositório centralizado onde as imagens são armazenadas e distribuídas (ex: Docker Hub).
-E) Incorreta. Docker Swarm é a ferramenta nativa de orquestração de contêineres em cluster do Docker.
-</details>
-
----
-### Questão 6 (FCC - 2022 - TRT 5ª Região (BA) - Analista Judiciário - Tecnologia da Informação)
-O uso de Infraestrutura como Código (IaC - Infrastructure as Code) é um dos pilares do DevOps para automação do provisionamento. Duas abordagens comuns no IaC são a declarativa e a imperativa. Uma das ferramentas de IaC baseadas no modelo declarativo, mantida pela HashiCorp, muito utilizada para provisionar recursos em diferentes provedores de nuvem, é o:
-A) Terraform.
-B) Chef.
-C) Jenkins.
-D) Git.
-E) Ansible.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-No paradigma declarativo, o usuário define o "estado desejado" da infraestrutura, e a ferramenta se encarrega de realizar os passos necessários para alcançar esse estado. No imperativo, o usuário define os comandos específicos ("como fazer") para chegar ao estado.
-
-A) Correta. O **Terraform** (da HashiCorp) é a ferramenta de provisionamento de IaC mais popular, usando HCL (HashiCorp Configuration Language) em um modelo declarativo.
-B) Incorreta. O Chef é voltado primariamente para gerência de configuração (assim como Puppet), tendendo frequentemente ao uso de receitas imperativas (baseadas em Ruby).
-C) Incorreta. Jenkins é focado em CI/CD e não é uma ferramenta nativa de provisionamento IaC.
-D) Incorreta. Git é um sistema de controle de versão (VCS), servindo de base para o IaC (e GitOps), mas não provisiona infraestrutura por si só.
-E) Incorreta. O Ansible é excelente para gerência de configuração. Embora seja YAML e tenha características declarativas, é mais procedural/imperativo do que o Terraform quando o assunto é o provisionamento do ciclo de vida da infraestrutura de nuvem, e não é mantido pela HashiCorp (é da Red Hat/IBM).
-</details>
-
----
-### Questão 7 (FCC - 2021 - TCE-SC - Auditor Fiscal de Controle Externo - Informática)
-A inserção de práticas de segurança diretamente nos pipelines de integração e entrega contínua, visando tratar falhas de segurança nas etapas iniciais de desenvolvimento, remete ao termo DevSecOps. Uma das práticas mais comuns adotadas no CI/CD para analisar estaticamente o código-fonte em busca de vulnerabilidades antes mesmo da compilação é denominada:
-A) DAST (Dynamic Application Security Testing).
-B) SAST (Static Application Security Testing).
-C) RASP (Runtime Application Self-Protection).
-D) IAST (Interactive Application Security Testing).
-E) Pentest (Testes de Intrusão manuais).
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-DevSecOps promove a abordagem *Shift-Left*, antecipando testes de segurança:
-A) Incorreta. DAST é análise **dinâmica**. Ocorre com a aplicação em execução para identificar falhas de injeção, XSS, etc.
-B) Correta. SAST é análise **estática**. Inspeciona o código-fonte, o bytecode ou os binários sem executar a aplicação (ex: SonarQube, Checkmarx). Pode e deve ser rodado logo no início do pipeline.
-C) Incorreta. RASP é uma tecnologia que fica dentro da aplicação em tempo de execução (runtime), capaz de detectar e bloquear ataques enquanto acontecem.
-D) Incorreta. IAST é uma abordagem híbrida, combinando técnicas de análise estática e dinâmica na aplicação rodando.
-E) Incorreta. Pentest manual geralmente é feito em fases mais tardias, embora essencial, não é focado na automação inicial do código.
-</details>
-
----
-### Questão 8 (FCC - 2023 - TST - Analista Judiciário - Tecnologia da Informação)
-No ecossistema de orquestração de contêineres e DevOps, o Kubernetes (K8s) desempenha um papel central. Na arquitetura do Kubernetes, o componente do *Control Plane* responsável por expor a API do Kubernetes, atuando como o ponto de entrada principal para os comandos executados via `kubectl`, é o:
-A) kube-scheduler.
-B) etcd.
-C) kube-apiserver.
-D) kube-controller-manager.
-E) kubelet.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-A arquitetura do Kubernetes se divide em Master (Control Plane) e Worker Nodes:
-A) Incorreta. O `kube-scheduler` é o responsável por decidir em qual nó um novo Pod (contêiner) vai ser executado, baseando-se em recursos disponíveis e regras de afinidade.
-B) Incorreta. O `etcd` é um armazenamento de chave-valor distribuído e altamente disponível usado como o banco de dados de suporte do Kubernetes para todos os dados do cluster.
-C) Correta. O `kube-apiserver` é o *front-end* do Control Plane. Toda a comunicação dentro e fora do cluster K8s passa por ele (incluindo as ações do `kubectl`).
-D) Incorreta. O `kube-controller-manager` gerencia os controladores que regulam o estado do cluster, como o Node Controller e o ReplicaSet Controller.
-E) Incorreta. O `kubelet` não faz parte do Control Plane. É o agente que roda em cada *Worker Node*, garantindo que os contêineres estejam em execução e saudáveis nos Pods.
-</details>
-
----
-### Questão 9 (FCC - 2024 - TRF 3ª Região - Analista Judiciário - Tecnologia da Informação)
-O GitOps é um modelo operacional em evolução no contexto DevOps que utiliza o Git como a fonte única da verdade (Single Source of Truth) para infraestrutura e aplicações declarativas. Uma das características fundamentais do modelo GitOps é o uso de agentes *pull-based* (operadores). Diferente de abordagens tradicionais de CI/CD baseadas em *push*, em um modelo *pull* no GitOps:
-A) o repositório Git envia ativamente comandos via SSH para os servidores de produção assim que um novo commit é recebido.
-B) um operador rodando dentro do próprio cluster de destino (como o ArgoCD ou Flux) monitora o repositório Git e aplica as mudanças para sincronizar o estado atual com o estado desejado.
-C) as imagens Docker geradas no CI enviam uma notificação para o cluster, forçando-o a baixar as novas versões.
-D) o Jenkins invoca scripts Terraform a partir de gatilhos acionados manualmente por um administrador de redes.
-E) a sincronização com a infraestrutura é feita exclusivamente pela execução manual do comando `git pull` nos nós de produção.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-GitOps baseia-se em infraestrutura declarativa onde as configurações residem no Git.
-A) Incorreta. Essa é uma descrição de um modelo *Push* (como frequentemente feito pelo Jenkins ou GitLab CI tradicional).
-B) Correta. No GitOps puro (*Pull-based*), existem ferramentas (como ArgoCD ou FluxCD) instaladas *dentro* do cluster de destino. Elas "puxam" as informações monitorando o repositório Git. Se houver divergência entre o estado do cluster e o que está no Git, elas convergem o cluster para o estado do Git automaticamente (ou sob demanda).
-C) Incorreta. Imagens não controlam o deploy ativamente, elas são apenas artefatos armazenados em um Registry.
-D) Incorreta. Descreve uma ação tradicional orientada a CI/CD, não a filosofia autônoma pull-based do GitOps.
-E) Incorreta. GitOps preza pela automação extrema; `git pull` manual contradiz seus princípios fundamentais.
-</details>
-
----
-### Questão 10 (FCC - 2018 - TRT 2ª Região (SP) - Analista Judiciário - Tecnologia da Informação)
-Nas pipelines de integração contínua (CI), a análise da qualidade do código-fonte é um passo recomendado. Uma ferramenta amplamente utilizada para medir a qualidade do código (avaliando cobertura de testes, complexidade ciclomática, código duplicado, vulnerabilidades e "code smells") e que se integra nativamente à maioria dos servidores de CI é o:
-A) Ansible.
-B) Kubernetes.
-C) SonarQube.
-D) Maven.
-E) Docker.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-A) Incorreta. Ansible é para gerência de configuração e IaC.
-B) Incorreta. Kubernetes orquestra contêineres em produção.
-C) Correta. O **SonarQube** (ou SonarCloud) é a ferramenta líder em inspeção contínua da qualidade e segurança do código, reportando "Code Smells" (códigos que cheiram mal, ou seja, são difíceis de manter), bugs, vulnerabilidades de segurança e cobertura de código (porcentagem do código coberto por testes unitários).
-D) Incorreta. Maven é uma ferramenta de build e gestão de dependências em Java, e embora execute testes e gere relatórios, a inspeção de qualidade centralizada é papel do SonarQube.
-E) Incorreta. Docker isola a aplicação em contêineres.
-</details>
-
----
-### Questão 11 (FCC - 2023 - TRT 11ª Região (AM e RR) - Analista Judiciário - Tecnologia da Informação)
-O conceito de "Shift-Left" no ciclo de vida de desenvolvimento de software e DevOps significa:
-A) deslocar os servidores de produção física para a nuvem pública, priorizando a lateral esquerda de diagramas de topologia de rede.
-B) atrasar a execução dos testes até que todo o código esteja implementado, garantindo a avaliação do produto de forma integral no lado direito do cronograma.
-C) antecipar e incorporar as práticas de testes, segurança e qualidade para as fases mais iniciais (à esquerda) do ciclo de desenvolvimento, em vez de deixá-las para o final.
-D) promover desenvolvedores seniores a posições gerenciais (deslocamento para o lado esquerdo do organograma da empresa).
-E) migrar as bases de dados relacionais (SQL) para não relacionais (NoSQL).
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-Imagine o fluxo de ciclo de vida de desenvolvimento de software (SDLC) da esquerda para a direita (Requisitos -> Design -> Código -> Testes -> Deploy -> Manutenção).
-A) Incorreta. Não tem relação com diagramas de rede ou migração para nuvem.
-B) Incorreta. Isso descreve o oposto do "Shift-Left"; seria postergar (Shift-Right) e é característico de processos em cascata.
-C) Correta. **Shift-Left** significa "deslocar para a esquerda", ou seja, realizar tarefas vitais (como integração, testes e verificações de segurança) o mais cedo possível no ciclo. Encontrar um erro na fase de codificação é muito mais barato e rápido de corrigir do que em produção.
-D) Incorreta. Falsa e irrelevante conceitualmente.
-E) Incorreta. Não tem nenhuma relação com escolha de banco de dados.
-</details>
-
----
-### Questão 12 (FCC - 2019 - TRF 4ª Região - Analista Judiciário - Tecnologia da Informação)
-O conceito de arquitetura de microsserviços harmoniza-se de forma profunda com a cultura DevOps. Entre os motivos para a adoção de microsserviços visando maximizar os benefícios do DevOps, destaca-se:
-A) a centralização de todos os serviços em um único banco de dados monolítico, o que facilita o versionamento dos esquemas através de CI/CD.
-B) a dependência forte entre os módulos (alto acoplamento), obrigando os times de infraestrutura e desenvolvimento a trabalharem nas mesmas linguagens de programação.
-C) a autonomia na implantação (deploy), permitindo que pequenas equipes desenvolvam, testem e liberem serviços independentemente dos demais componentes do sistema.
-D) a eliminação da necessidade de orquestração de contêineres e testes automatizados, já que cada serviço é pequeno o suficiente para não conter erros críticos.
-E) a redução da complexidade na monitoração, tendo em vista que microsserviços interagem de forma síncrona sem gerar latência na rede.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-Os microsserviços quebram a aplicação em pequenos serviços independentes.
-A) Incorreta. Uma premissa dos microsserviços é a descentralização de dados, onde frequentemente cada serviço possui seu próprio banco de dados isolado (Database per Service) para evitar acoplamento.
-B) Incorreta. Os microsserviços buscam o **baixo acoplamento**, e permitem autonomia tecnológica (Polyglot Persistence/Programming).
-C) Correta. A autonomia de deploy é o grande benefício para o DevOps. Um time pode liberar a versão do serviço A sem precisar compilar, testar ou sincronizar o deploy com os serviços B, C e D.
-D) Incorreta. Pelo contrário; microsserviços exigem **mais** automação de deploy, orquestração rigorosa (como K8s) e testes minuciosos, devido à complexidade da infraestrutura distribuída.
-E) Incorreta. A complexidade de monitoramento **aumenta** exponencialmente nos microsserviços, exigindo práticas avançadas de Observabilidade, tracing distribuído e logs centralizados.
-</details>
-
----
-### Questão 13 (FCC - 2022 - TRT 14ª Região (RO e AC) - Analista Judiciário - Tecnologia da Informação)
-No contexto de versionamento e DevOps, o Git desempenha papel crítico. Uma estratégia de ramificação (*branching strategy*) bastante popular para projetos versionados no Git é o GitFlow. No modelo original do GitFlow, as duas *branches* principais de longo tempo de vida que existem durante toda a vida do projeto são:
-A) `master` (ou `main`) e `develop`.
-B) `feature` e `release`.
-C) `hotfix` e `bugfix`.
-D) `trunk` e `tag`.
-E) `production` e `homologation`.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-O GitFlow (criado por Vincent Driessen) organiza o repositório da seguinte maneira:
-A) Correta. O modelo possui duas branches perenes (de vida longa):
-- `master` (ou `main`): Contém o código oficial de produção; sempre está em estado implantável.
-- `develop`: Contém os últimos códigos entregues para as próximas releases; é a branch de integração.
-B) Incorreta. As branches `feature` (novas funcionalidades) e `release` (preparação para produção) são temporárias (efêmeras); são apagadas após o merge.
-C) Incorreta. `hotfix` é uma branch temporária, derivada da `master` para correções rápidas em produção, e feito o merge, ela é deletada.
-D) Incorreta. *Trunk* é o termo base para o Trunk-Based Development, outra estratégia (diferente do GitFlow), que foca na branch master/main apenas.
-E) Incorreta. Estas não são nomenclaturas padrão do modelo GitFlow.
-</details>
-
----
-### Questão 14 (FCC - 2023 - TRT 12ª Região (SC) - Analista Judiciário - Tecnologia da Informação)
-Dentro da cultura DevOps e de Engenharia de Confiabilidade de Sites (SRE - Site Reliability Engineering), o estabelecimento de métricas quantificáveis de sucesso e disponibilidade dos serviços é essencial. Considere a afirmativa: "O percentual ou número absoluto de requisições falhas aceitáveis que o sistema pode tolerar durante um período sem que haja quebra do compromisso estabelecido com o negócio ou o cliente final". O termo que melhor define este conceito no SRE é o:
-A) SLA (Service Level Agreement).
-B) SLI (Service Level Indicator).
-C) SLO (Service Level Objective).
-D) Error Budget (Orçamento de Erro).
-E) MTTR (Mean Time To Recovery).
+### Questão 5 (FCC - 2014 - TRF 4 - Analista)
+Dentre as aplicações típicas da Internet, algumas preferem utilizar o UDP em vez do TCP na camada de Transporte. Uma aplicação clássica e de infraestrutura de redes que utiliza primariamente o protocolo UDP para consultas rápidas, rotineiras e de requisição/resposta curtas é o protocolo:
+A) FTP.
+B) HTTP.
+C) SMTP.
+D) DNS.
+E) SSH.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: D**
 
-A Google introduziu o SRE com conceitos chaves:
-- **SLA**: Acordo contratual de negócio; caso não cumprido, gera multas.
-- **SLO**: Objetivo interno da equipe (ex: 99.9% das requisições com sucesso em 30 dias).
-- **SLI**: Indicador real medido (ex: qual foi o percentual atingido hoje, digamos 99.95%).
-A) Incorreta. SLA é o contrato.
-B) Incorreta. SLI é a métrica pontual real.
-C) Incorreta. SLO é o alvo.
-D) Correta. O **Error Budget** é a margem de erro. Se o SLO é 99.9%, o Error Budget é 0.1%. É a quantidade de falhas "tolerada" que a equipe tem para gastar com novas implementações e experimentações. Se o orçamento esgota, os deploys de novas *features* são congelados e o foco passa a ser 100% estabilidade.
-E) Incorreta. MTTR é o Tempo Médio de Recuperação, métrica de quanto tempo demora para o sistema voltar ao ar após cair.
-</details>
-
----
-### Questão 15 (FCC - 2021 - TCE-SC - Auditor Fiscal de Controle Externo - Informática)
-Uma das práticas modernas de colaboração suportadas pelo DevOps é o chamado "ChatOps". O principal objetivo do ChatOps é:
-A) criar fóruns assíncronos para que a equipe de suporte tire dúvidas de usuários finais.
-B) permitir a execução de ferramentas, implantações e fluxos de trabalho operacionais diretamente a partir de comandos em interfaces de chat da equipe de desenvolvimento e operação, colaborando de forma transparente.
-C) utilizar inteligência artificial para ler códigos fonte e responder a dúvidas de desenvolvedores juniores em uma interface de bate-papo.
-D) substituir as metodologias ágeis (como as reuniões diárias do Scrum) por aplicativos de mensagens corporativas visando reduzir o tempo perdido.
-E) garantir que toda a comunicação da equipe de projeto seja criptografada e não possa ser rastreada.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-O conceito de **ChatOps**:
-A) Incorreta. Não é focado no atendimento ao usuário final, mas nas operações da própria equipe de engenharia.
-B) Correta. ChatOps é o uso de plataformas de comunicação colaborativa (como Slack, Microsoft Teams ou Discord) integradas a bots (Chatbots) e ferramentas de CI/CD. Por exemplo, um desenvolvedor digita `/deploy production v2.1` no chat, e todos da sala acompanham o comando sendo processado e o log de resultado postado pelo Bot. Traz extrema visibilidade e unifica comunicação e execução.
-C) Incorreta. Isso seria uso de Assistentes IA de código, não é o foco histórico e primário do ChatOps (que engloba executar *operações*).
-D) Incorreta. O ChatOps não visa substituir metodologias ágeis, e sim adicionar automação e transparência operacional.
-E) Incorreta. É um detalhe técnico de segurança, não a finalidade e definição da cultura de ChatOps.
+A) Incorreta. O File Transfer Protocol (FTP) usa as portas 20 e 21 do protocolo TCP para envio confiável de arquivos.
+B) Incorreta. O protocolo HTTP necessita que a requisição inteira e a página carreguem sem interrupções lógicas ou pedaços faltantes, usando sempre TCP.
+C) Incorreta. O Simple Mail Transfer Protocol (SMTP) exige TCP na porta 25, 465 ou 587, não sendo possível perder fragmentos de um e-mail em trânsito.
+D) Correta. O DNS (Domain Name System) atende a milhares de requisições de consultas curtas por segundo utilizando UDP na porta 53, pois um handshake TCP tornaria o tempo de resolução de nomes muito longo e pesado. O DNS utiliza TCP apenas em casos de transferência de zona e respostas grandes.
+E) Incorreta. O SSH (Secure Shell) utiliza TCP na porta 22 para prover conexões criptografadas seguras e estáveis.
 </details>
 
 ---
 
-
-## 📝 TEMA 3: Direito Constitucional
-
-### Questão 1 (FCC - 2022 - TRT 4 - Analista Judiciário)
-Sobre os direitos e garantias fundamentais previstos na Constituição Federal:
-A) A lei penal não retroagirá, salvo para beneficiar o réu.
-B) É permitida a pena de morte em qualquer hipótese de comoção interna grave.
-C) É livre a manifestação do pensamento, sendo permitido o anonimato nas denúncias.
-D) A prática do racismo constitui crime inafiançável, sujeito a pena de detenção.
-E) As associações poderão ser compulsoriamente dissolvidas por ato do Poder Executivo.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-A) **Correta.** Nos termos do art. 5º, XL da CF/88, "a lei penal não retroagirá, salvo para beneficiar o réu". É o princípio da irretroatividade da lei penal gravosa.
-B) **Incorreta.** A pena de morte é vedada no Brasil, existindo uma única exceção: em caso de guerra declarada, conforme art. 5º, XLVII, "a".
-C) **Incorreta.** O art. 5º, IV consagra que é livre a manifestação do pensamento, sendo expressamente VEDADO o anonimato.
-D) **Incorreta.** O crime de racismo é inafiançável e imprescritível, sujeito à pena de RECLUSÃO (e não detenção), nos termos do art. 5º, XLII da CF/88.
-E) **Incorreta.** As associações só poderão ser compulsoriamente dissolvidas ou ter suas atividades suspensas por decisão judicial, exigindo-se, no primeiro caso, o trânsito em julgado (art. 5º, XIX).
-</details>
-
----
-
-### Questão 2 (FCC - 2023 - TRT 18 - Analista Judiciário)
-Em relação aos direitos sociais expressos na Constituição Federal de 1988:
-A) São direitos sociais a educação, a saúde, a alimentação, o trabalho, a moradia, o transporte, o lazer, a segurança, a previdência social, a proteção à maternidade e à infância, a assistência aos desamparados.
-B) É garantido o salário mínimo nacional, mas sua fixação e reajustes são definidos por convenção coletiva, sem força de lei.
-C) O repouso semanal remunerado deve ocorrer preferencialmente aos sábados e domingos.
-D) A licença à gestante é fixada constitucionalmente em cento e oitenta dias, sem prejuízo do emprego e do salário.
-E) O aviso prévio é garantido a todos os trabalhadores, sendo sempre fixo e de trinta dias independentemente do tempo de serviço.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-A) **Correta.** Corresponde à exata literalidade do art. 6º, *caput*, da Constituição Federal, que elenca os direitos sociais fundamentais, incluindo as atualizações introduzidas por Emendas Constitucionais (como o direito ao transporte).
-B) **Incorreta.** O salário mínimo deve ser fixado em LEI, nacionalmente unificado, conforme o art. 7º, IV da CF/88.
-C) **Incorreta.** A Constituição determina que o repouso semanal remunerado será concedido "preferencialmente aos domingos" (art. 7º, XV), e não sábados e domingos.
-D) **Incorreta.** A CF estabelece, em seu art. 7º, XVIII, a licença à gestante pelo prazo de cento e vinte (120) dias.
-E) **Incorreta.** O aviso prévio é proporcional ao tempo de serviço, sendo no mínimo de trinta dias, nos termos da lei (art. 7º, XXI).
-</details>
-
----
-
-### Questão 3 (FCC - 2018 - TRT 15 - Analista Judiciário)
-Sobre a organização do Estado, a Constituição prevê que os Estados-membros:
-A) Podem se subdividir em Municípios, mas não podem se incorporar entre si.
-B) Possuem autonomia política, administrativa e financeira, nos termos da Constituição.
-C) Podem editar normas gerais e privativas sobre direito civil e penal caso haja urgência.
-D) Têm a mesma competência tributária para criar contribuições sociais que a União.
-E) Podem criar, mediante lei complementar própria da Assembleia Legislativa, novos Estados em seus territórios.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-A) **Incorreta.** Os Estados podem incorporar-se entre si, subdividir-se ou desmembrar-se para se anexarem a outros (art. 18, § 3º).
-B) **Correta.** Os Estados organizam-se por suas próprias Constituições, respeitados os princípios da CF, possuindo plena autonomia (capacidade de auto-organização, autogoverno e autoadministração).
-C) **Incorreta.** Legislar sobre direito civil e penal é competência privativa da União (art. 22, I), não havendo previsão para edição pelos Estados sob justificativa de urgência genérica.
-D) **Incorreta.** A União tem competência para a maior parte das contribuições sociais; os Estados podem cobrar contribuição apenas de seus servidores para regime próprio de previdência (art. 149, § 1º).
-E) **Incorreta.** A criação de novos Estados é feita por lei complementar federal, editada pelo Congresso Nacional, e não por lei estadual (art. 18, § 3º).
-</details>
-
----
-
-### Questão 4 (FCC - 2021 - TRT 11 - Técnico Judiciário)
-O Poder Legislativo da União, conforme a Constituição Federal, é exercido pelo Congresso Nacional, que se compõe de:
-A) Câmara dos Deputados e Supremo Tribunal Federal.
-B) Câmara dos Deputados e Senado Federal.
-C) Senado Federal e Conselho Nacional de Justiça.
-D) Câmara dos Deputados e Tribunal de Contas da União.
-E) Senado Federal e Câmara de Vereadores do Distrito Federal.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-A) **Incorreta.** O Supremo Tribunal Federal é o órgão de cúpula do Poder Judiciário.
-B) **Correta.** Conforme o art. 44 da CF/88: "O Poder Legislativo é exercido pelo Congresso Nacional, que se compõe da Câmara dos Deputados e do Senado Federal". É a consagração do sistema bicameral no plano federal.
-C) **Incorreta.** O Conselho Nacional de Justiça (CNJ) é órgão integrante do Poder Judiciário.
-D) **Incorreta.** O TCU, embora auxilie o Congresso Nacional no controle externo, não compõe o Poder Legislativo como uma de suas Casas.
-E) **Incorreta.** O DF possui Câmara Legislativa, composta por Deputados Distritais, não fazendo parte do Congresso Nacional.
-</details>
-
----
-
-### Questão 5 (FCC - 2019 - TRF 3 - Analista Judiciário)
-A respeito do Poder Executivo, é correto afirmar que o Presidente da República:
-A) Não pode ser responsabilizado por atos estranhos ao exercício de suas funções na vigência de seu mandato.
-B) Pode ser submetido à prisão cautelar a qualquer tempo, mesmo nas infrações comuns sem condenação.
-C) Responde originariamente e sempre no Supremo Tribunal Federal quando cometer crimes de responsabilidade.
-D) Pode ausentar-se do País por mais de 30 dias sem licença do Congresso Nacional.
-E) Pode ser processado criminalmente no STF sem necessidade de qualquer autorização legislativa.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-A) **Correta.** De acordo com o art. 86, § 4º da CF/88, "O Presidente da República, na vigência de seu mandato, não pode ser responsabilizado por atos estranhos ao exercício de suas funções" (imunidade material temporária).
-B) **Incorreta.** O Presidente não está sujeito a prisão nas infrações comuns, enquanto não sobrevier sentença condenatória (art. 86, § 3º).
-C) **Incorreta.** Nos crimes de responsabilidade, o Presidente da República é julgado pelo Senado Federal, e não pelo STF (art. 86, caput).
-D) **Incorreta.** Ele e o Vice não podem ausentar-se do País por período superior a 15 dias sem licença do Congresso, sob pena de perda do cargo (art. 83).
-E) **Incorreta.** Tanto para infrações penais comuns (no STF) quanto para crimes de responsabilidade (no Senado), exige-se prévia autorização por dois terços da Câmara dos Deputados (art. 86, caput).
-</details>
-
----
-
-### Questão 6 (FCC - 2017 - TRE SP - Técnico Judiciário)
-O Poder Judiciário tem como um de seus órgãos o Supremo Tribunal Federal (STF). Sobre o STF, a Constituição Federal dispõe que ele se compõe de:
-A) Onze Ministros, escolhidos dentre cidadãos com mais de trinta e cinco e menos de setenta anos de idade, de notável saber jurídico e reputação ilibada.
-B) Trinta e três Ministros, nomeados pelo Presidente da República e aprovados pela Câmara dos Deputados.
-C) Vinte e sete Ministros, um representando cada unidade da federação, indicados pelos Governadores.
-D) Quinze Ministros, escolhidos dentre membros do Ministério Público e advogados de notório saber jurídico.
-E) Onze Ministros, aprovados exclusivamente pelo Conselho Nacional de Justiça.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-A) **Correta.** Segundo o art. 101 da CF/88 (com a redação dada pela EC nº 122/2022, que alterou a idade máxima), o STF compõe-se de 11 Ministros, escolhidos dentre cidadãos com mais de 35 e menos de 70 anos de idade, de notável saber jurídico e reputação ilibada.
-B) **Incorreta.** Trinta e três (33) é a composição mínima do Superior Tribunal de Justiça (STJ).
-C) **Incorreta.** Os Ministros não são representantes dos Estados, e são escolhidos pelo Presidente da República (após aprovação do Senado), não por Governadores.
-D) **Incorreta.** Quinze (15) é a composição do Superior Tribunal Militar (STM).
-E) **Incorreta.** Os Ministros do STF são indicados pelo Presidente e aprovados pelo Senado Federal (por maioria absoluta), não havendo participação do CNJ na aprovação.
-</details>
-
----
-
-### Questão 7 (FCC - 2016 - TRT 20 - Técnico Judiciário)
-No tocante ao processo legislativo federal, a iniciativa das leis complementares e ordinárias cabe:
-A) Exclusivamente ao Presidente da República e aos membros da Mesa do Senado Federal.
-B) A qualquer cidadão, bastando apresentar o texto da lei no protocolo da Câmara sem qualquer número mínimo de assinaturas.
-C) A qualquer membro ou comissão da Câmara dos Deputados, do Senado Federal ou do Congresso Nacional, ao Presidente da República, ao Supremo Tribunal Federal, aos Tribunais Superiores, ao Procurador-Geral da República e aos cidadãos.
-D) Ao Conselho Nacional de Justiça e aos Ministros de Estado privativamente.
-E) Ao Tribunal de Contas da União, especialmente em matéria tributária e orçamentária.
+### Questão 6 (FCC - 2019 - TRF 3 - Técnico)
+O Transmission Control Protocol (TCP) fornece um serviço de comunicação orientado a conexões, confiável e full-duplex. Para o encerramento de uma conexão TCP de forma amigável (graceful teardown), utiliza-se primariamente a flag:
+A) RST.
+B) SYN.
+C) FIN.
+D) PSH.
+E) URG.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-A) **Incorreta.** A iniciativa legislativa não é exclusiva destes; o rol é amplo e inclui diversos órgãos e os cidadãos.
-B) **Incorreta.** A iniciativa popular de lei federal exige requisitos rigorosos: subscrição de, no mínimo, um por cento do eleitorado nacional, distribuído pelo menos por cinco Estados, com não menos de três décimos por cento dos eleitores de cada um deles (art. 61, § 2º).
-C) **Correta.** É o que prescreve textualmente o *caput* do art. 61 da Constituição Federal.
-D) **Incorreta.** O CNJ e os Ministros de Estado não figuram no rol de legitimados para iniciativa geral de leis federais no art. 61.
-E) **Incorreta.** O TCU não possui iniciativa legislativa própria, muito menos para matéria tributária e orçamentária (cuja iniciativa principal é do Executivo).
+A) Incorreta. A flag RST (Reset) é utilizada para derrubar a conexão instantaneamente (abortive teardown), geralmente após um erro não recuperável ou uma violação de acesso, e não de forma amigável.
+B) Incorreta. A flag SYN inicia as conexões, sincronizando números de sequência.
+C) Correta. A flag FIN (Finish) sinaliza que o remetente terminou de enviar seus dados e quer fechar sua via de comunicação, num processo educado que permite ao outro lado terminar de transmitir e também enviar o seu FIN. 
+D) Incorreta. A flag PSH (Push) determina que os dados devem ser empurrados e processados logo para a aplicação sem esperar encher o buffer.
+E) Incorreta. A flag URG (Urgent) indica que o segmento contém dados urgentes de alta prioridade.
 </details>
 
 ---
 
-### Questão 8 (FCC - 2019 - TRF 4 - Técnico Judiciário)
-Entre os direitos e garantias fundamentais previstos na CF/88, o mandado de injunção será concedido:
-A) Sempre que a falta de norma regulamentadora torne inviável o exercício dos direitos e liberdades constitucionais e das prerrogativas inerentes à nacionalidade, à soberania e à cidadania.
-B) Sempre que alguém sofrer ou se achar ameaçado de sofrer violência ou coação em sua liberdade de locomoção, por ilegalidade ou abuso de poder.
-C) Para proteger direito líquido e certo, não amparado por habeas corpus ou habeas data.
-D) Para anular ato lesivo ao patrimônio público ou de entidade de que o Estado participe, à moralidade administrativa, ao meio ambiente e ao patrimônio histórico e cultural.
-E) Para assegurar o conhecimento de informações relativas à pessoa do impetrante, constantes de registros ou bancos de dados de entidades governamentais.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-A) **Correta.** O art. 5º, LXXI da CF/88 traz a exata definição do cabimento do Mandado de Injunção, utilizado para combater omissões legislativas que inviabilizem o exercício de direitos constitucionais.
-B) **Incorreta.** Trata-se do cabimento do Habeas Corpus (art. 5º, LXVIII).
-C) **Incorreta.** Trata-se do cabimento do Mandado de Segurança (art. 5º, LXIX).
-D) **Incorreta.** Trata-se do cabimento da Ação Popular (art. 5º, LXXIII).
-E) **Incorreta.** Trata-se do cabimento do Habeas Data (art. 5º, LXXII, "a").
-</details>
-
----
-
-### Questão 9 (FCC - 2018 - TRT 6 - Analista Judiciário)
-A respeito do controle de constitucionalidade no Direito brasileiro, o controle exercido por via de exceção ou defesa, também conhecido como controle difuso, pode ser realizado:
-A) Apenas pelo Supremo Tribunal Federal, em decisões proferidas em controle abstrato.
-B) Exclusivamente por Tribunais de segunda instância, sendo vedado aos juízes singulares.
-C) Por qualquer juiz ou tribunal, incidenter tantum, no julgamento do caso concreto.
-D) Apenas no julgamento da Ação Direta de Inconstitucionalidade.
-E) Somente quando provocado pelo Procurador-Geral da República.
+### Questão 7 (FCC - 2015 - TRE PB - Analista)
+O User Datagram Protocol (UDP) é um protocolo da camada de transporte do TCP/IP. Sobre o UDP, é correto afirmar:
+A) Garante que os datagramas cheguem na mesma ordem em que foram enviados pela origem.
+B) Possui mecanismo próprio para retransmissão de pacotes perdidos ou danificados.
+C) É um protocolo de menor sobrecarga (overhead) em relação ao TCP, sendo adequado para aplicações multimídia em tempo real.
+D) Exige o estabelecimento prévio de uma sessão de comunicação (handshake) antes de enviar dados.
+E) Utiliza janela deslizante (sliding window) para evitar que um transmissor rápido sature um receptor lento.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-A) **Incorreta.** O Supremo Tribunal Federal exerce primordialmente o controle concentrado, mas o controle difuso é aberto a qualquer órgão jurisdicional.
-B) **Incorreta.** Os juízes singulares (1ª instância) também detêm a competência para exercer o controle de constitucionalidade de forma difusa (incidental).
-C) **Correta.** No sistema brasileiro, o controle difuso (ou incidental) caracteriza-se por poder ser exercido por qualquer juiz ou tribunal ao analisar um caso concreto submetido à sua jurisdição. A declaração de inconstitucionalidade é mero pressuposto para resolver a lide principal.
-D) **Incorreta.** A Ação Direta de Inconstitucionalidade (ADI) é instrumento típico de controle CONCENTRADO (abstrato) de constitucionalidade.
-E) **Incorreta.** O Procurador-Geral da República é um dos legitimados do art. 103 para propor ações do controle concentrado, mas o controle difuso pode ser provocado por qualquer parte em qualquer processo.
+A) Incorreta. O UDP não possui recurso de ordenação. Os pacotes podem chegar fora de ordem na máquina de destino.
+B) Incorreta. O UDP não retransmite pacotes perdidos. Cabe à camada de aplicação tratar a perda se ela achar necessário, o UDP não faz isso por baixo dos panos.
+C) Correta. A maior vantagem do UDP é a sua simplicidade, ausência de delays inerentes de handshake, sem janelas ou controles, gerando um cabeçalho muito enxuto, ideal para streaming de vídeos ou transmissões ao vivo e VoIP onde o atraso é pior que um engasgo na imagem.
+D) Incorreta. O UDP funciona num modelo "atirar e esquecer" (fire-and-forget), enviando imediatamente para a rede sem avisos.
+E) Incorreta. O mecanismo de janela deslizante é uma característica do controle de fluxo do TCP, o UDP ignora quão rápido ou lento é o receptor.
 </details>
 
 ---
 
-### Questão 10 (FCC - 2022 - TRT 22 - Técnico Judiciário)
-Segundo a literalidade da Constituição Federal a respeito dos direitos fundamentais, é correto afirmar sobre a locomoção no território nacional:
-A) É garantida a livre locomoção em qualquer tempo, inclusive nos estados de sítio e defesa sem possibilidade de restrições.
-B) É livre a locomoção no território nacional em tempo de paz, podendo qualquer pessoa, nos termos da lei, nele entrar, permanecer ou dele sair com seus bens.
-C) É garantida somente para brasileiros natos, sendo restrita e rigorosamente controlada a circulação de estrangeiros independentemente de estarem regulares.
-D) É permitida apenas para os agentes públicos em regular exercício de função oficial, cabendo autorização específica para civis cruzarem fronteiras estaduais.
-E) Ocorre sem sujeição a qualquer tipo de lei restritiva de trânsito, inclusive dispensando passaportes ou vistos de estrangeiros.
+### Questão 8 (FCC - 2018 - TRT 2 - Analista)
+No modelo TCP/IP, a camada de Transporte é responsável por multiplexar e demultiplexar as conexões utilizando o conceito de portas. Considere as afirmações a seguir sobre as portas TCP e UDP:
+A) Uma mesma porta, como a 80, não pode ser usada simultaneamente pelos protocolos TCP e UDP no mesmo host.
+B) O número de portas válidas em TCP ou UDP varia de 0 a 65535, pois o campo de porta tem 16 bits.
+C) Portas conhecidas (Well-Known Ports) estão no intervalo de 1024 a 49151 e requerem privilégios de administrador para vinculação.
+D) O protocolo UDP dispensa o uso de portas de origem e destino em seu cabeçalho, enviando a aplicação direto pelo endereço IP.
+E) As portas efêmeras são alocadas sempre do intervalo de 0 a 1023 pelos clientes ao se comunicarem com os servidores.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-A) **Incorreta.** Durante os estados de exceção constitucionais (estado de sítio e defesa), a liberdade de locomoção pode sofrer medidas coercitivas temporárias.
-B) **Correta.** A redação copia o art. 5º, XV, da CF/88, consagrando a liberdade de locomoção (direito de ir, vir e permanecer), destacando ser "em tempo de paz" e condicionada "nos termos da lei".
-C) **Incorreta.** A liberdade se estende a qualquer pessoa (brasileiros natos, naturalizados e estrangeiros residentes ou em trânsito no país).
-D) **Incorreta.** O direito pertence a todas as pessoas, não sendo prerrogativa exclusiva de agentes públicos.
-E) **Incorreta.** O texto constitucional diz expressamente "nos termos da lei", permitindo a exigência de vistos, passaportes, habilitação de trânsito, etc.
+A) Incorreta. TCP e UDP possuem seus próprios espaços numéricos independentes. A porta 80/TCP para um servidor Web não entra em conflito com uma aplicação usando a porta 80/UDP.
+B) Correta. O cabeçalho dos dois protocolos aloca exatos 16 bits (2 bytes) para determinar as portas de Origem e de Destino. Com 16 bits, o universo de combinações possíveis é 2 elevado a 16, ou seja, de 0 até 65535.
+C) Incorreta. As Well-Known Ports variam de 0 a 1023, não de 1024 a 49151 (este grupo é das "Registered Ports").
+D) Incorreta. O uso de portas é fundamental para o UDP, afinal, é através das portas que ocorre a entrega na camada de Transporte (demultiplexação).
+E) Incorreta. O intervalo de 0 a 1023 é privativo/well-known, reservado a servidores e daemons críticos. Portas efêmeras usadas por clientes são geradas randomicamente nas faixas mais altas (como 49152 a 65535).
 </details>
 
 ---
 
-### Questão 11 (FCC - 2017 - TST - Analista Judiciário)
-A Constituição da República prevê um Capítulo específico destinado às denominadas "Funções Essenciais à Justiça". Assinale a alternativa que indica Instituições abrigadas nesse Capítulo:
-A) A Magistratura, o Ministério Público e o Tribunal de Contas da União.
-B) O Ministério Público, a Advocacia Pública, a Advocacia e a Defensoria Pública.
-C) A Polícia Federal, as Polícias Civis e a Magistratura.
-D) A Defensoria Pública, o Supremo Tribunal Federal e os Tribunais Regionais Eleitorais.
-E) A Advocacia-Geral da União, as Forças Armadas e o Ministério da Justiça.
+### Questão 9 (FCC - 2021 - TRT 11 - Analista)
+Ao comparar o TCP com o UDP, nota-se que o cabeçalho TCP possui campos adicionais essenciais para garantir a confiabilidade e controle sobre o tráfego de rede. Um desses campos é utilizado pelo receptor para informar ao transmissor a quantidade máxima de bytes que ele é capaz de aceitar, implementando o controle de fluxo. Este campo é denominado:
+A) Sequence Number.
+B) Acknowledgment Number.
+C) Window Size.
+D) Checksum.
+E) Urgent Pointer.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+A) Incorreta. O Sequence Number assegura que cada byte seja monitorado para garantir ordenamento e detectar dados duplicados, não é para controle de fluxo.
+B) Incorreta. O campo Acknowledgment (ACK) serve para validar ao remetente quais sequências já chegaram perfeitas no destino, também compondo o suporte à confiabilidade.
+C) Correta. O campo Window Size ou Receiver Window (Tamanho da Janela) é o pilar do controle de fluxo no TCP. Ele permite que o destino diga o tamanho exato de seu buffer disponível, impedindo o emissor de atolar a máquina receptora com um grande volume de tráfego que ela não consegue absorver.
+D) Incorreta. O Checksum descobre erros ou corrompimentos locais nos dados, atuando na verificação de integridade, não controle de fluxo.
+E) Incorreta. Urgent Pointer lida unicamente com identificar onde terminam os dados com prioridade (URG) dentro do segmento.
+</details>
+
+---
+
+### Questão 10 (FCC - 2017 - TRT 11 - Técnico)
+Protocolos da camada de aplicação do modelo TCP/IP apoiam-se na camada de transporte para o tráfego de seus dados. Assinale a alternativa que contém protocolos de aplicação que utilizam respectivamente o TCP e o UDP como protocolos subjacentes de transporte:
+A) FTP e Telnet.
+B) SMTP e POP3.
+C) HTTP e SMTP.
+D) SSH e TFTP.
+E) TFTP e SNMP.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+A) Incorreta. O FTP utiliza TCP (portas 20/21) e o Telnet também utiliza TCP (porta 23).
+B) Incorreta. SMTP utiliza TCP (porta 25) e POP3 utiliza TCP (porta 110).
+C) Incorreta. HTTP utiliza TCP (porta 80) e SMTP também TCP.
+D) Correta. O SSH (Secure Shell) apoia-se no TCP para ter um console seguro criptografado (porta 22). O TFTP (Trivial File Transfer Protocol) é uma versão extremamente simplificada de FTP baseada no protocolo UDP (porta 69), para operações simples e locais de boot.
+E) Incorreta. O TFTP utiliza UDP, assim como o SNMP (porta 161/162). Portanto, seriam UDP e UDP.
+</details>
+
+---
+
+### Questão 11 (FCC - 2016 - TRF 3 - Analista)
+No protocolo TCP, existe um mecanismo que permite ajustar dinamicamente a taxa de transmissão em função de possiveis congestionamentos na rede. Um dos algoritmos se inicia enviando muito pouco, dobrando gradativamente a janela de congestionamento até que a taxa de envio atinja um limiar máximo ou ocorram perdas. Este algoritmo ou fase é conhecido como:
+A) Fast Recovery.
+B) Fast Retransmit.
+C) Slow Start (Partida Lenta).
+D) Congestion Avoidance.
+E) Silly Window Syndrome.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+A) Incorreta. Fast recovery diz respeito a reajustar a janela sem voltar o limite ao zero caso um triplo ACK ocorra, evitando reinícios severos quando a perda é isolada.
+B) Incorreta. Fast Retransmit consiste em reenviar o segmento rapidamente antes de o timer estourar quando se recebe 3 ACKs repetidos indicando pacote em falta.
+C) Correta. O processo de "Slow Start" ou Partida Lenta começa limitando a janela de congestionamento (cwnd) para 1 tamanho de segmento máximo (MSS), e a cada ACK recebido, a janela cresce de modo exponencial até um limiar, testando gradualmente até onde a rede suporta o tráfego antes de congestionar e causar perda.
+D) Incorreta. Após a Partida Lenta atingir o limite estipulado no ssthresh, entra a fase de "Congestion Avoidance", onde a janela passa a crescer de maneira conservadora e apenas linear (adicionando 1), e não exponencial.
+E) Incorreta. Silly Window Syndrome trata-se de um problema onde ocorre ineficiência e o tamanho da janela desce tanto que os cabeçalhos viram maiores que o próprio payload trafegado.
+</details>
+
+---
+
+### Questão 12 (FCC - 2013 - TRT 15 - Analista)
+Em redes de computadores, o campo Checksum (soma de verificação) está presente nos cabeçalhos de ambos os protocolos de transporte (TCP e UDP). O objetivo principal do Checksum nesses protocolos da camada de transporte é:
+A) Criptografar o payload para evitar a interceptação e leitura de dados sensíveis.
+B) Detectar erros nos dados e no cabeçalho ocorridos durante a transmissão fim-a-fim.
+C) Garantir a entrega sequencial dos datagramas e confirmar o recebimento via sinalização.
+D) Determinar o caminho mais curto na rede (roteamento) com base em métricas de salto.
+E) Evitar que os pacotes entrem em loop infinito no backbone, funcionando como um temporizador.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-A) **Incorreta.** A Magistratura pertence ao Poder Judiciário; o TCU está vinculado à organização do Legislativo (função de controle externo).
-B) **Correta.** O Título IV, Capítulo IV, da CF/88 elenca as Funções Essenciais à Justiça: Seção I (Ministério Público), Seção II (Advocacia Pública), Seção III (Advocacia) e Seção IV (Defensoria Pública).
-C) **Incorreta.** Polícias pertencem à Segurança Pública (Capítulo III do Título V) e Magistratura ao Poder Judiciário.
-D) **Incorreta.** STF e TREs são órgãos do Poder Judiciário (Capítulo III do Título IV).
-E) **Incorreta.** As Forças Armadas estão localizadas no Capítulo da Defesa do Estado e das Instituições Democráticas.
+A) Incorreta. O Checksum não executa criptografia e nenhuma confidencialidade é providenciada pela camada de transporte nua e crua. Criptografias geralmente cabem a protocolos como TLS (SSL).
+B) Correta. A soma de verificação em TCP e UDP calcula um valor de integridade pegando o Pseudo-Cabeçalho (IPs da camada de rede), o cabeçalho TCP/UDP e os dados. Se no destino os cálculos não baterem, o pacote foi corrompido ou alterado durante a viagem e é descartado silenciosamente.
+C) Incorreta. Isso é responsabilidade dos números de sequência no TCP, não possuindo nada a ver com o Checksum (inclusive o UDP não garante ordenação).
+D) Incorreta. Caminho curto e métricas são responsabilidade de protocolos de roteamento da camada de Rede (OSPF, BGP).
+E) Incorreta. Essa função cabe ao campo TTL (Time to Live) no cabeçalho do pacote IP, da camada de Rede.
 </details>
 
 ---
 
-### Questão 12 (FCC - 2015 - TRT 3 - Analista Judiciário)
-De acordo com as regras constitucionais referentes à nacionalidade brasileira, é correto afirmar que é brasileiro nato:
-A) O nascido na República Federativa do Brasil, ainda que de pais estrangeiros, desde que estes não estejam a serviço de seu país.
-B) O estrangeiro de qualquer nacionalidade que venha a residir no Brasil por mais de quinze anos ininterruptos e sem condenação penal, requerendo a nacionalidade.
-C) O nascido no exterior, de pai ou mãe brasileira, desde que o Brasil os registre compulsoriamente assim que completarem dezoito anos.
-D) O estrangeiro de país originário de língua portuguesa que fixe residência por um ano ininterrupto no Brasil e possua idoneidade moral.
-E) O nascido na República Federativa do Brasil, de pais estrangeiros, mesmo no caso em que ambos estejam no país a serviço da nação de origem.
+### Questão 13 (FCC - 2012 - TRT 6 - Analista)
+Uma das principais diferenças práticas entre o TCP (Transmission Control Protocol) e o UDP (User Datagram Protocol) reside no tratamento das informações enviadas pela rede. Em situações onde é tolerada alguma perda de pacotes, mas o atraso (delay) é altamente crítico e prejudicial à semântica da aplicação, como em transmissão de voz sobre IP (VoIP), a escolha técnica adequada de transporte é o protocolo:
+A) TCP, pois recupera conexões perdidas automaticamente, garantindo a qualidade cristalina da voz sem falhas.
+B) UDP, pois não possui atrasos inerentes à retransmissão, ao controle de fluxo e às confirmações sucessivas.
+C) TCP, devido à sua capacidade avançada de multiplexar a voz em pacotes menores de controle.
+D) UDP, porque dispõe de um mecanismo interno avançado de compressão e codificação de áudio (codecs).
+E) TCP, pois estabelece obrigatoriamente um circuito virtual dedicado antes de enviar o fluxo de voz contínuo.
 
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A) Incorreta. O TCP de fato recuperaria os pacotes de áudio, mas nesse tempo o áudio geraria ecos e instabilidades severas que o usuário humano repudia durante uma conversa por telefone.
+B) Correta. A latência é o verdadeiro inimigo da conversação em tempo real. O UDP vai enviar e não vai se preocupar se 1% da voz se perdeu ou "picotou", afinal não perderá milissegundos preciosos com 3-way handshakes, timers de retransmissão, e ACK’s atrasados. Isso é preferível para VoIP.
+C) Incorreta. O TCP não possui otimizações de multiplexação exclusivas direcionadas a dados de voz.
+D) Incorreta. UDP lida apenas com transporte. Os codecs de compressão e codificação de áudio são tarefas estritamente de softwares e protocolos que rodam sob a camada de Aplicação.
+E) Incorreta. Apesar de o TCP estabelecer conexão orientada a circuitos virtuais, isso é prejudicial, gerando maior sobrecarga e latência inicial. 
+</details>
+
+---
+
+### Questão 14 (FCC - 2018 - TRT 6 - Técnico)
+O controle de fluxo executado pelo protocolo TCP baseia-se em um esquema de janelas para garantir a eficiência na transferência da rede. O propósito intrínseco desse controle de fluxo pelo TCP é assegurar que:
+A) A rota escolhida entre o transmissor e o receptor será sempre a que possuir maior largura de banda disponível.
+B) O roteador intermediário nunca descarte pacotes TCP caso suas filas de saída estejam momentaneamente cheias.
+C) O nó transmissor mais rápido não envie uma quantidade de dados avassaladora além da capacidade do nó receptor lento de processá-los.
+D) O número de conexões ativas seja dinamicamente balanceado entre várias interfaces físicas de rede em um data center.
+E) O tráfego não confiável fique restrito e evite inundar a rede de broadcast, limitando sua expansão de domínio.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+A) Incorreta. A escolha de rotas de maior banda compete a roteadores e protocolos OSPF e BGP atuando na rede. TCP não sabe qual rota seu pacote toma.
+B) Incorreta. Controle de fluxo se dá de transmissor a receptor. O TCP não consegue proibir um roteador congestionado no trajeto de descartar pacotes (caso ocorra o descarte, é aí que atua o algoritmo de "controle de congestionamento" do TCP, não de fluxo).
+C) Correta. O mecanismo de janela deslizante existe puramente para proteger a máquina RECEPTORA (destinatário), cujos processadores e quantidade de memória RAM (buffers) podem ser limitados e fracos diante de um servidor emissor com fibra ótica de 10Gbps enviando arquivos imensos a rodo.
+D) Incorreta. Balanceamento de cargas não diz respeito ao controle de fluxo intrínseco de cada socket TCP.
+E) Incorreta. O TCP não utiliza esquemas em broadcast ou atua prevenindo domínios de broadcast (função da camada de enlace em VLANs, switches ou roteadores). 
+</details>
+
+---
+
+### Questão 15 (FCC - 2015 - TRT 4 - Analista)
+O tamanho máximo de um segmento TCP transportável sem que haja interferência é determinado no momento da negociação de uma conexão. Para otimizar o processamento e evitar problemas graves de fragmentação de rede que causam overhead excessivo (na camada IP), as duas pontas negociam um parâmetro no cabeçalho durante a troca das mensagens SYN. Esse parâmetro vital é conhecido como:
+A) PMTU (Path MTU).
+B) Window Scale.
+C) MSS (Maximum Segment Size).
+D) SACK (Selective Acknowledgment).
+E) TSO (TCP Segmentation Offload).
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+A) Incorreta. Path MTU Discovery (PMTUD) é uma técnica que depende primariamente do protocolo ICMP e da camada IP, descobrindo o menor pacote (MTU) suportado até o fim do trajeto de rede.
+B) Incorreta. Window Scale é uma opção extra que multiplica o limite imposto pelos curtos 16 bits originais do "Window Size" suportando redes gigantes mais eficientemente, mas não mexe nos limites de tamanho base do segmento ou fragmentação IP.
+C) Correta. O Maximum Segment Size (Tamanho Máximo do Segmento) estipula o maior "pedaço" de payload que um segmento do TCP conterá. Isso é combinado no envio inicial de SYNs e calculado de modo que caiba perfeitamente no MTU da placa de rede sem que o protocolo IP (uma camada abaixo) tenha que suar cortando os pacotes e colando-os novamente do outro lado. 
+D) Incorreta. O SACK serve para alertar exatamente quais os pequenos blocos de bytes faltantes precisavam ser retransmitidos num lote gigante que deu erro, em vez de retransmitir absolutamente tudo.
+E) Incorreta. TCP Segmentation Offload descarrega a tarefa árdua de dividir pacotes TCP do processador do computador direto no hardware da Placa de Rede, não sendo uma opção transacionada por flags da conexão do TCP na internet.
+</details>
+
+---
+
+
+## 📝 TEMA 3: RLM — Lógica de Argumentação & Equivalências
+
+### Questão 1 (FCC - 2022 - TRT 22ª Região - Analista Judiciário)
+Considere a afirmação: "Se o processo é complexo, então o juiz pede vista."
+Uma afirmação logicamente equivalente é:
+A) Se o juiz pede vista, então o processo é complexo.
+B) Se o processo não é complexo, então o juiz não pede vista.
+C) O processo não é complexo ou o juiz pede vista.
+D) O processo é complexo e o juiz não pede vista.
+E) Se o juiz não pede vista, então o processo é complexo.
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+A condicional "Se P, então Q" (P → Q) admite duas principais equivalências lógicas cobradas pela FCC:
+1. A Contrapositiva (~Q → ~P): Inverte-se e nega-se ambos os termos. "Se o juiz não pede vista, então o processo não é complexo."
+2. A Disjuntiva ou Regra do "Neymar" (~P ou Q): Nega-se a primeira, troca-se "se...então" por "ou" e mantém-se a segunda. "O processo não é complexo ou o juiz pede vista."
+A alternativa C traz exatamente a regra disjuntiva (~P ou Q).
+- **A) Incorreta.** Inverteu os termos, mas não os negou (Q → P). Trata-se da recíproca, que não é equivalente.
+- **B) Incorreta.** Negou os termos, mas não os inverteu (~P → ~Q). Trata-se da inversa, que não é equivalente.
+- **C) Correta.** Aplicação direta da regra de equivalência disjuntiva (~P ou Q).
+- **D) Incorreta.** Essa é a negação lógica da condicional (P e ~Q), e não uma equivalência.
+- **E) Incorreta.** Inverteu corretamente, mas negou apenas a primeira parte, mantendo a segunda afirmativa (~Q → P). Erro de construção.
+</details>
+
+---
+
+### Questão 2 (FCC - 2019 - TRF 3ª Região - Técnico Judiciário)
+Uma afirmação equivalente a "Se a testemunha comparece, então o julgamento acontece" é:
+A) A testemunha não comparece e o julgamento acontece.
+B) Se o julgamento não acontece, então a testemunha não comparece.
+C) O julgamento não acontece ou a testemunha comparece.
+D) Se a testemunha não comparece, então o julgamento não acontece.
+E) A testemunha comparece ou o julgamento não acontece.
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+Proposição: P → Q. "Se a testemunha comparece (P), então o julgamento acontece (Q)".
+A equivalência mais frequente é a contrapositiva (~Q → ~P): inverte-se e nega-se as proposições, resultando em "Se o julgamento não acontece, então a testemunha não comparece."
+- **A) Incorreta.** Essa alternativa usa o conectivo "e", o que não gera equivalência para uma condicional afirmativa (poderia ser uma negação se negasse a segunda).
+- **B) Correta.** Representa perfeitamente a contrapositiva (~Q → ~P).
+- **C) Incorreta.** Para ser a regra disjuntiva (~P ou Q), deveria ser "A testemunha não comparece ou o julgamento acontece". A alternativa trocou a ordem e os sinais.
+- **D) Incorreta.** Apenas negou sem inverter a ordem (~P → ~Q), o que constitui um erro comum chamado inversa.
+- **E) Incorreta.** Não reflete nenhuma regra de equivalência válida (seria a disjuntiva sem negar a primeira).
+</details>
+
+---
+
+### Questão 3 (FCC - 2018 - TRT 15ª Região - Técnico Judiciário)
+A proposição equivalente de "Se o servidor trabalha com afinco, então o cidadão é bem atendido" é:
+A) Se o cidadão não é bem atendido, então o servidor não trabalha com afinco.
+B) O servidor trabalha com afinco e o cidadão não é bem atendido.
+C) Se o cidadão é bem atendido, então o servidor trabalha com afinco.
+D) O cidadão é bem atendido ou o servidor trabalha com afinco.
+E) Se o servidor não trabalha com afinco, então o cidadão não é bem atendido.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: A**
 
-A) **Correta.** Reflete a adoção da regra do *jus soli* (critério territorial) constante do art. 12, I, "a": são brasileiros natos os nascidos na República Federativa do Brasil, ainda que de pais estrangeiros, desde que estes não estejam a serviço de seu país.
-B) **Incorreta.** Esta hipótese caracteriza a nacionalidade brasileira NATURALIZADA extraordinária (quinzenária), não nata (art. 12, II, "b").
-C) **Incorreta.** O registro não é compulsório pelo Estado aos 18 anos. A CF prevê hipóteses de registro em repartição consular ou de opção após a maioridade caso venham residir no Brasil (art. 12, I, "c").
-D) **Incorreta.** Trata-se de nacionalidade brasileira NATURALIZADA ordinária (art. 12, II, "a").
-E) **Incorreta.** Pela ressalva do *jus soli*, se os pais (estrangeiros) estiverem a serviço de seu país de origem, o filho nascido no Brasil NÃO será brasileiro nato.
+Proposição original: P → Q. "Se o servidor trabalha com afinco (P), então o cidadão é bem atendido (Q)".
+- **A) Correta.** Traz a equivalência por contraposição (~Q → ~P), invertendo e negando ambas as partes: "Se o cidadão não é bem atendido, então o servidor não trabalha com afinco."
+- **B) Incorreta.** Essa estrutura (P e ~Q) representa a negação da afirmação original, e não a sua equivalência lógica.
+- **C) Incorreta.** Apresenta a recíproca (Q → P), invertendo sem negar. Isso não garante a equivalência lógica.
+- **D) Incorreta.** Para usar o conectivo "ou" (equivalência disjuntiva), a primeira parte deve ser negada (~P ou Q): "O servidor NÃO trabalha com afinco ou o cidadão é bem atendido".
+- **E) Incorreta.** Negou as proposições mantendo a ordem (~P → ~Q), criando a inversa, que também não é equivalente.
 </details>
 
 ---
 
-### Questão 13 (FCC - 2014 - TRT 19 - Técnico Judiciário)
-Sobre a intervenção federal, a Constituição determina que a União NÃO intervirá nos Estados nem no Distrito Federal, EXCETO em determinadas hipóteses, entre as quais encontra-se o fim de:
-A) Manter a integridade nacional.
-B) Assegurar o pagamento prioritário de dívidas trabalhistas de empresas públicas.
-C) Garantir o livre exercício dos Conselhos Tutelares municipais.
-D) Promover o processo de reeleição de governadores, quando houver grave perturbação eleitoral.
-E) Garantir a plena e irrestrita autonomia financeira das capitais dos Estados.
+### Questão 4 (FCC - 2017 - TST - Analista Judiciário)
+Considere a seguinte afirmação: "Se o candidato estuda, então ele é aprovado no concurso".
+Uma afirmação equivalente a essa é:
+A) O candidato estuda ou ele é aprovado no concurso.
+B) O candidato não estuda e ele é aprovado no concurso.
+C) Se o candidato não é aprovado no concurso, então ele não estuda.
+D) Se o candidato é aprovado no concurso, então ele estuda.
+E) O candidato estuda e ele não é aprovado no concurso.
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
 
+**Gabarito: C**
+
+Temos a proposição: "Se o candidato estuda (P), então ele é aprovado no concurso (Q)".
+- **A) Incorreta.** A regra disjuntiva exige a negação da primeira proposição. O correto seria "~P ou Q", isto é, "O candidato NÃO estuda ou ele é aprovado...".
+- **B) Incorreta.** Essa construção (com conectivo "e" negando a primeira) não é uma equivalência válida para o "se... então".
+- **C) Correta.** Aplicação direta da contrapositiva (~Q → ~P): nega-se a segunda proposição passando-a para frente, e nega-se a primeira passando-a para trás.
+- **D) Incorreta.** É a recíproca (Q → P), que apenas inverteu os termos, sem negar. Errado.
+- **E) Incorreta.** Trata-se da regra do "Mané" para a NEGAÇÃO da condicional (P e ~Q). O comando da questão pede equivalência, não negação.
+</details>
+
+---
+
+### Questão 5 (FCC - 2018 - TRT 2ª Região - Técnico Judiciário)
+Considere a proposição: "Se as provas são consistentes e os testemunhos são coerentes, então o réu é condenado".
+Uma proposição logicamente equivalente é:
+A) Se o réu não é condenado, então as provas não são consistentes ou os testemunhos não são coerentes.
+B) Se as provas não são consistentes e os testemunhos não são coerentes, então o réu não é condenado.
+C) Se o réu é condenado, então as provas são consistentes e os testemunhos são coerentes.
+D) As provas não são consistentes e os testemunhos não são coerentes ou o réu é condenado.
+E) Se o réu não é condenado, então as provas não são consistentes e os testemunhos não são coerentes.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: A**
 
-A) **Correta.** Art. 34 da CF: "A União não intervirá nos Estados nem no Distrito Federal, exceto para: I - manter a integridade nacional". É hipótese expressa no texto magno para afastar, excepcionalmente, a autonomia estadual/distrital.
-B) **Incorreta.** O pagamento de dívida trabalhista de empresas públicas não enseja decretação de intervenção federal na unidade da federação.
-C) **Incorreta.** O art. 34, IV, fala em garantir o livre exercício de qualquer dos Poderes nas unidades da Federação, o que não engloba genericamente conselhos tutelares municipais como "poder de Estado".
-D) **Incorreta.** Não há qualquer previsão sobre promoção de reeleições para intervenção federal.
-E) **Incorreta.** A garantia de autonomia de capitais não consta no rol taxativo do art. 34 da CF/88.
+Proposição: (P e Q) → R. "Se as provas são consistentes (P) e os testemunhos são coerentes (Q), então o réu é condenado (R)".
+Aplicando a contrapositiva, temos: ~R → ~(P e Q).
+Para negar a parte (P e Q), utilizamos as Leis de De Morgan, que ditam que devemos negar tudo e trocar o "E" por "OU". Ficamos com: ~P ou ~Q.
+Logo a resposta é: "Se o réu não é condenado, então as provas não são consistentes OU os testemunhos não são coerentes."
+- **A) Correta.** Aplica a contrapositiva e a Lei de De Morgan perfeitamente, trocando o "e" por "ou".
+- **B) Incorreta.** Negou as premissas sem inverter a ordem do "se... então" (erro de estrutura).
+- **C) Incorreta.** Apenas inverteu a ordem (recíproca), sem realizar nenhuma negação, o que é inválido.
+- **D) Incorreta.** A regra da disjuntiva seria ~(P e Q) ou R, ou seja, "~P ou ~Q ou R". A opção deixou de trocar o conectivo "e" para "ou" na primeira parte.
+- **E) Incorreta.** Aplicou a contrapositiva, mas errou a Lei de De Morgan no momento da negação, pois manteve o conectivo "e" ao invés de trocar para "ou".
 </details>
 
 ---
 
-### Questão 14 (FCC - 2013 - TRT 12 - Analista Judiciário)
-Acerca da organização político-administrativa da República Federativa do Brasil, é correto afirmar que Brasília, de acordo com o texto da Constituição Federal, é:
-A) A Capital Federal.
-B) Um Município autônomo integrante do Distrito Federal, com Prefeito eleito.
-C) Um Território Federal em fase de transição para se tornar Estado.
-D) Um Estado membro da federação brasileira, sem direito de dividir-se em Municípios.
-E) Uma Região Administrativa independente e desvinculada tanto da União quanto do Distrito Federal.
+### Questão 6 (FCC - 2020 - TRF 4ª Região - Analista Judiciário)
+A negação lógica de "Se faz sol, então eu vou à praia" é:
+A) Se não faz sol, então eu não vou à praia.
+B) Faz sol e eu não vou à praia.
+C) Não faz sol ou eu vou à praia.
+D) Faz sol e eu vou à praia.
+E) Se eu não vou à praia, então não faz sol.
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
 
+**Gabarito: B**
+
+O comando pede a NEGAÇÃO lógica de uma condicional (P → Q).
+A regra prática para a negação da condicional é a regra do "Mané" (Mantém a primeira E nega a segunda): P e ~Q.
+- **A) Incorreta.** Essa é apenas a inversa (~P → ~Q) e não configura a negação da condicional.
+- **B) Correta.** Aplica a regra perfeitamente: Mantém o antecedente ("Faz sol") E nega o consequente ("eu não vou à praia").
+- **C) Incorreta.** Trata-se da equivalência disjuntiva (Regra do Neymar: ~P ou Q), que tem exatamente o mesmo valor lógico da original, e não a sua negação.
+- **D) Incorreta.** Apenas trocou "se...então" por "e", esquecendo de negar a segunda proposição.
+- **E) Incorreta.** Apresenta a equivalência pela contrapositiva (~Q → ~P), e não a sua negação.
+</details>
+
+---
+
+### Questão 7 (FCC - 2023 - TRT 11ª Região - Analista Judiciário)
+"Todos os processos de execução são analisados e nenhum processo de conhecimento é arquivado."
+A negação dessa afirmação é:
+A) Nenhum processo de execução é analisado ou todos os processos de conhecimento são arquivados.
+B) Algum processo de execução não é analisado ou algum processo de conhecimento é arquivado.
+C) Todos os processos de execução não são analisados e algum processo de conhecimento é arquivado.
+D) Algum processo de execução não é analisado e todos os processos de conhecimento são arquivados.
+E) Nenhum processo de execução é analisado e nenhum processo de conhecimento é arquivado.
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+A proposição dada é composta e unida por um conectivo "e": (P e Q).
+P = Todos os processos de execução são analisados.
+Q = Nenhum processo de conhecimento é arquivado.
+Para negar uma conjunção (P e Q), utilizamos as Leis de De Morgan: nega-se as duas proposições e troca-se "e" por "ou" (~P ou ~Q).
+Regras de negação para quantificadores lógicos:
+1. Negação de "Todo A é B": "Algum A NÃO é B" (ou pelo menos um não é).
+2. Negação de "Nenhum A é B": "Algum A é B" (ou pelo menos um é).
+Juntando tudo, temos: "Algum processo de execução não é analisado OU algum processo de conhecimento é arquivado."
+- **A) Incorreta.** Errou violentamente as regras de negação de quantificadores lógicos (A negação de "todo" jamais é "nenhum").
+- **B) Correta.** Aplica as regras de negação das proposições universais corretamente e troca o "e" pelo "ou".
+- **C) Incorreta.** A negação de "todos" não é manter "todos não são". Além disso, não houve a troca do "e" por "ou".
+- **D) Incorreta.** Embora a negação da primeira esteja correta, a alternativa manteve o conectivo "e" e errou completamente a negação da segunda.
+- **E) Incorreta.** Manteve o "e" e errou as duas negações dos quantificadores.
+</details>
+
+---
+
+### Questão 8 (FCC - 2019 - TRT 2ª Região - Analista)
+Considere o seguinte argumento:
+- Se Ana é gerente, então Bruno é diretor.
+- Se Bruno é diretor, então Carlos é presidente.
+- Ana é gerente.
+A partir dessas premissas, é válido concluir que:
+A) Bruno não é diretor.
+B) Carlos não é presidente.
+C) Carlos é presidente.
+D) Ana não é gerente.
+E) Bruno e Carlos não são diretores.
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+Estamos lidando com um argumento lógico estruturado em premissas. Vamos assumir todas como verdadeiras para derivar a conclusão:
+1. Ana gerente (A) → Bruno diretor (B)
+2. Bruno diretor (B) → Carlos presidente (C)
+3. Ana gerente (A) = Verdadeiro
+Análise de trás para frente (ou a partir das premissas categóricas):
+Pela premissa 3, "A" é Verdade.
+Substituindo na premissa 1 (A → B), se "A" é Verdade, para a condicional ser verdadeira, "B" obrigatoriamente deve ser Verdade (Bruno é diretor).
+Substituindo na premissa 2 (B → C), se "B" é Verdade, para a condicional ser verdadeira, "C" obrigatoriamente deve ser Verdade. Logo, Carlos é presidente.
+Trata-se da aplicação sucessiva do Modus Ponens (ou Silogismo Hipotético: A → B e B → C resulta em A → C).
+- **A) Incorreta.** Foi deduzido precisamente o contrário: Bruno É diretor.
+- **B) Incorreta.** Foi deduzido precisamente o contrário: Carlos É presidente.
+- **C) Correta.** Como Ana é gerente, aciona-se a cadeia de implicações afirmativas, garantindo a presidência de Carlos.
+- **D) Incorreta.** A premissa 3 já afirma categoricamente, como um fato, que Ana é gerente.
+- **E) Incorreta.** Acabamos de demonstrar que ambos exercem os referidos cargos de direção.
+</details>
+
+---
+
+### Questão 9 (FCC - 2015 - TRE-RS - Técnico Judiciário)
+Se é verdade que "Alguns A são B" e "Nenhum B é C", então é necessariamente verdade que:
+A) Nenhum A é C.
+B) Alguns A não são C.
+C) Todos os A são C.
+D) Alguns C são B.
+E) Todos os B são A.
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+Esse é um silogismo categórico que se resolve melhor com diagramas lógicos (diagrama de Euler-Venn):
+1. "Alguns A são B": Existe interseção entre o conjunto A e o conjunto B. Há pelo menos um elemento do conjunto A que também está dentro do conjunto B.
+2. "Nenhum B é C": Os conjuntos B e C são totalmente disjuntos. Absolutamente nenhum elemento de B pode pertencer a C.
+Conclusão: Sabendo que existe pelo menos um elemento que é A e B simultaneamente, e como TODO B está terminantemente fora de C, esse elemento (que é A e B) com certeza NÃO está em C.
+Logo, podemos garantir que, sem dúvida, existem elementos de A que não são C (Alguns A não são C).
+- **A) Incorreta.** Não podemos afirmar que "Nenhum A é C", pois pode haver elementos do conjunto A (aqueles que estão fora do conjunto B) que façam interseção com C.
+- **B) Correta.** Como existe interseção entre A e B, e tudo que é B jamais será C, os elementos dessa interseção são, obrigatoriamente, parte de A que não é C.
+- **C) Incorreta.** Se todos os A fossem C, os A que estão em B seriam C, o que contradiz a premissa de que nenhum B é C.
+- **D) Incorreta.** A segunda premissa diz que nenhum B é C, o que é logicamente reversível para "nenhum C é B". Afirmação falsa.
+- **E) Incorreta.** Apenas sabemos que "alguns" A são B, não há garantias de que o conjunto B está contido inteiramente no conjunto A.
+</details>
+
+---
+
+### Questão 10 (FCC - 2017 - TRE-PR - Técnico Judiciário)
+Afirmar que "Se o projeto foi aprovado, então houve recursos suficientes" é logicamente equivalente a afirmar que:
+A) Se não houve recursos suficientes, então o projeto não foi aprovado.
+B) O projeto não foi aprovado e houve recursos suficientes.
+C) Se o projeto não foi aprovado, então não houve recursos suficientes.
+D) O projeto foi aprovado ou houve recursos suficientes.
+E) Se houve recursos suficientes, então o projeto foi aprovado.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: A**
 
-A) **Correta.** Em regra clara e direta, dispõe o art. 18, § 1º, da CF/88: "Brasília é a Capital Federal."
-B) **Incorreta.** O Distrito Federal não pode ser dividido em Municípios (art. 32). Brasília não tem status de Município nem possui Prefeito, mas sim de Capital e integra o DF, governado por Governador.
-C) **Incorreta.** Territórios Federais (que atualmente não existem) têm regramento próprio e integram a União; o Distrito Federal é ente federativo autônomo, e Brasília sua capital.
-D) **Incorreta.** Brasília não é Estado-membro. O ente se chama Distrito Federal, cuja capital é Brasília.
-E) **Incorreta.** Brasília integra a organização do Distrito Federal, não sendo "desvinculada" do arranjo federativo.
+Estamos diante de um exercício direto de equivalência da condicional "Se P, então Q".
+- **A) Correta.** Apresenta de forma exata a Contrapositiva (~Q → ~P). Inverte-se o sentido e nega-se ambas as partes da frase: "Se não houve recursos suficientes, então o projeto não foi aprovado."
+- **B) Incorreta.** Estruturalmente errada. O uso do conectivo "e" seria para a negação da proposição (~P e Q não, a negação real é P e ~Q).
+- **C) Incorreta.** Negou as duas partes sem inverter a ordem (Inversa: ~P → ~Q), o que não gera equivalência.
+- **D) Incorreta.** Para ser a regra disjuntiva de equivalência (~P ou Q), seria necessário negar a primeira parte: "O projeto NÃO foi aprovado ou houve recursos suficientes".
+- **E) Incorreta.** Trata-se da recíproca (Q → P). A recíproca de uma proposição condicional não possui, em regra, o mesmo valor lógico da original.
 </details>
 
 ---
 
-### Questão 15 (FCC - 2021 - TRT 24 - Analista Judiciário)
-Constitui, de forma expressa, um OBJETIVO fundamental da República Federativa do Brasil na Constituição Federal de 1988:
-A) Construir uma sociedade livre, justa e solidária.
-B) A dignidade da pessoa humana.
-C) Os valores sociais do trabalho e da livre iniciativa.
-D) A concessão célere e irrestrita de asilo político.
-E) O pluralismo político partidário.
+### Questão 11 (FCC - 2018 - TRT 6ª Região - Analista Judiciário)
+Considere as seguintes premissas:
+P1: Se o sistema falha, então os dados são perdidos.
+P2: Os dados não são perdidos ou o backup é acionado.
+P3: O backup não é acionado.
+Logo, pode-se concluir logicamente que:
+A) O sistema falha e os dados não são perdidos.
+B) Os dados são perdidos.
+C) O sistema não falha e os dados não são perdidos.
+D) O sistema falha e o backup não é acionado.
+E) Os dados são perdidos ou o sistema falha.
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
 
+**Gabarito: C**
+
+Temos o seguinte argumento formal, onde assumimos que todas premissas são verdadeiras (V):
+P1: Falha (F) → Perda de Dados (P) = V
+P2: ~Perda de Dados (~P) ou Backup Acionado (B) = V
+P3: ~Backup Acionado (~B) = V
+Analisando de baixo para cima:
+A partir da P3, deduzimos categoricamente que ~B é Verdade. (Logo, B é falso).
+Substituindo na P2 (~P ou B): Como sabemos que "B" é falso, e para que uma disjunção "OU" seja verdadeira, ao menos um lado tem que ser verdadeiro. Logo, obrigatoriamente "~P" deve ser Verdadeiro (Os dados NÃO são perdidos).
+Substituindo na P1 (F → P): Como sabemos que ~P é verdade (logo, "P" é falso), temos F → Falso = Verdade. Pela regra do Modus Tollens, para a condicional não ser Falsa, "F" também deve ser falso. Logo, deduzimos "~F", isto é, o sistema NÃO falha.
+Conclusão consolidada: O sistema não falha (~F) e os dados não são perdidos (~P).
+- **A) Incorreta.** Concluímos que o sistema NÃO falha.
+- **B) Incorreta.** Concluímos que os dados NÃO são perdidos.
+- **C) Correta.** Contempla exatamente os valores lógicos deduzidos (~F e ~P).
+- **D) Incorreta.** Contém erro primário ao afirmar que o sistema falha.
+- **E) Incorreta.** Ambas as afirmações da disjunção ("dados são perdidos" e "sistema falha") são falsas, o que torna a alternativa E inteiramente falsa.
+</details>
+
+---
+
+### Questão 12 (FCC - 2016 - TRT 11ª Região - Analista)
+Assinale a alternativa que apresenta uma proposição equivalente à proposição "Não é verdade que, se a empresa lucrou, então os funcionários receberam bônus".
+A) A empresa lucrou e os funcionários receberam bônus.
+B) A empresa não lucrou e os funcionários não receberam bônus.
+C) A empresa lucrou e os funcionários não receberam bônus.
+D) A empresa não lucrou ou os funcionários receberam bônus.
+E) Se a empresa não lucrou, então os funcionários não receberam bônus.
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+Pegadinha clássica da FCC: quando o enunciado diz "Não é verdade que...", ele está pedindo disfarçadamente a NEGAÇÃO da proposição que vem logo a seguir (é a equivalência da negação).
+A proposição a ser negada é a condicional: "Se a empresa lucrou (P), então os funcionários receberam bônus (Q)".
+A negação de P → Q é dada pela regra do "Mané" (P e ~Q): Mantém a primeira, troca "se...então" por "e", nega a segunda.
+Assim obtemos: "A empresa lucrou E os funcionários NÃO receberam bônus."
+- **A) Incorreta.** Manteve a segunda proposição sem negá-la, ignorando a regra de negação do "se... então".
+- **B) Incorreta.** Negou ambas as pontas. A regra da negação determina a manutenção afirmativa da primeira parte.
+- **C) Correta.** Aplicação exata e direta da regra "Mané" (mantém P "e" nega Q).
+- **D) Incorreta.** Essa seria a proposição logicamente EQUIVALENTE (Regra do Neymar: ~P ou Q) da condicional original. Porém, o prefixo "não é verdade que" pedia a negação.
+- **E) Incorreta.** Trata-se de uma construção incorreta conhecida como inversa (~P → ~Q), e não da negação pedida.
+</details>
+
+---
+
+### Questão 13 (FCC - 2022 - TRT 5ª Região - Técnico Judiciário)
+Um argumento válido é dado pelas premissas:
+1. Todos os auditores são contadores.
+2. Existem peritos que são auditores.
+Conclui-se logicamente que:
+A) Todos os peritos são contadores.
+B) Existem peritos que são contadores.
+C) Todos os contadores são peritos.
+D) Nenhum perito é contador.
+E) Existem contadores que não são peritos.
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+Vamos modelar utilizando diagramas de Euler-Venn.
+Premissa 1: Todos os auditores são contadores. (O conjunto dos "auditores" está desenhado 100% dentro do conjunto dos "contadores").
+Premissa 2: Existem peritos que são auditores. (O conjunto dos "peritos" cruza com o dos "auditores", garantindo que há elementos em comum).
+Raciocínio final: Como o perito que é auditor está dentro do conjunto dos "auditores", e os "auditores" estão totalmente inseridos nos "contadores", esse perito precisa, obrigatoriamente, ser também contador. Ou seja, existe pelo menos um perito que também é contador.
+- **A) Incorreta.** Não há nenhuma garantia lógica de que TODOS os peritos sejam contadores. Alguns peritos podem estar fora tanto dos auditores quanto dos contadores.
+- **B) Correta.** Se há um perito que alcança o conjunto restrito dos auditores, ele inevitavelmente alcança o conjunto maior envoltório, que é o dos contadores.
+- **C) Incorreta.** Trata-se de uma inversão lógica indevida; o conjunto de contadores é muito mais amplo e não está inteiramente contido no de peritos.
+- **D) Incorreta.** Já provamos que há uma interseção garantida; afirmar que "nenhum" é contador contraria diametralmente a dedução do argumento.
+- **E) Incorreta.** Embora seja plausível e altamente provável no mundo real, logicamente pelas premissas não podemos AFIRMAR isso com 100% de certeza (os conjuntos poderiam ser todos iguais num caso limite hipotético).
+</details>
+
+---
+
+### Questão 14 (FCC - 2014 - TRT 16ª Região - Técnico Judiciário)
+Dizer que "Ana é advogada ou Bianca não é médica" é logicamente equivalente a dizer que:
+A) Se Bianca é médica, então Ana é advogada.
+B) Se Ana é advogada, então Bianca não é médica.
+C) Se Bianca não é médica, então Ana não é advogada.
+D) Ana é advogada e Bianca é médica.
+E) Ana não é advogada ou Bianca é médica.
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: A**
 
-A) **Correta.** De acordo com o art. 3º, I, da CF/88, é um dos OBJETIVOS fundamentais: "construir uma sociedade livre, justa e solidária". (Dica: os objetivos fundamentais costumam iniciar com verbos no infinitivo: construir, garantir, erradicar e promover).
-B) **Incorreta.** A dignidade da pessoa humana é um FUNDAMENTO da República (art. 1º, III).
-C) **Incorreta.** Os valores sociais do trabalho e da livre iniciativa são FUNDAMENTOS (art. 1º, IV).
-D) **Incorreta.** A concessão de asilo político é um PRINCÍPIO que rege a República nas suas relações internacionais (art. 4º, X).
-E) **Incorreta.** O pluralismo político é um FUNDAMENTO (art. 1º, V).
+A proposição original é uma disjunção inclusiva: P ou ~Q (Ana é advogada (P) OU Bianca não é médica (~Q)).
+A equivalência lógica que liga a Disjunção ("ou") à Condicional ("se...então") é a famosa "Regra do Neymar" (~A ou B = A → B).
+Para transformar um conectivo "OU" (A ou B) em um "Se...então", você escolhe um dos lados para NEGAR (transformando-o no antecedente) e MANTÉM o outro (como o consequente).
+Temos original: P ou ~Q.
+Se eu negar o P (~P), ele vai para frente: ~P → ~Q (Se Ana não é advogada, então Bianca não é médica).
+Se eu negar o ~Q (vira Q), ele vai para a frente: Q → P (Se Bianca é médica, então Ana é advogada).
+- **A) Correta.** Representa a forma válida Q → P. Ao negar a segunda parte ("Bianca não é médica" vira "Bianca é médica"), ela vira o antecedente da condicional, e mantém-se a primeira ("Ana é advogada") no consequente.
+- **B) Incorreta.** Essa opção (P → ~Q) seria logicamente equivalente a (~P ou ~Q), o que não reflete a afirmativa original de P.
+- **C) Incorreta.** A opção (~Q → ~P) tem como equivalente Q ou ~P (Bianca é médica ou Ana não é advogada), que é falso no nosso cenário.
+- **D) Incorreta.** Uma disjunção ("ou") não tem como equivalência simples uma conjunção ("e") sem passar pela negação global (Leis de Morgan).
+- **E) Incorreta.** Apenas inverteu os valores lógicos dos itens dentro do próprio conectivo "ou", sem aplicar o regramento apropriado.
 </details>
 
 ---
+
+### Questão 15 (FCC - 2019 - TRF 3ª Região - Analista Judiciário)
+Considere a afirmação: "Se a fiscalização é rigorosa, então a fraude não ocorre".
+Uma afirmação logicamente equivalente é:
+A) Se a fraude ocorre, então a fiscalização não é rigorosa.
+B) Se a fiscalização não é rigorosa, então a fraude ocorre.
+C) A fiscalização é rigorosa e a fraude ocorre.
+D) A fiscalização não é rigorosa e a fraude não ocorre.
+E) A fraude não ocorre ou a fiscalização é rigorosa.
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+Proposição dada: P → ~Q. "Se a fiscalização é rigorosa (P), então a fraude não ocorre (~Q)".
+Analisemos as principais equivalências:
+1. Contrapositiva: Inverte as proposições negando ambas. A negação de ~Q é Q (A fraude ocorre). A negação de P é ~P (A fiscalização não é rigorosa). Resultado: "Se a fraude ocorre, então a fiscalização não é rigorosa" (Q → ~P).
+2. Disjuntiva: Nega a primeira ou mantém a segunda (~P ou ~Q). Resultado: "A fiscalização não é rigorosa ou a fraude não ocorre".
+- **A) Correta.** Corresponde de forma exata e perfeita à Contrapositiva (Q → ~P).
+- **B) Incorreta.** O autor da questão apenas negou ambas as sentenças na ordem original, cometendo o erro lógico de construir a proposição inversa (~P → Q).
+- **C) Incorreta.** A forma (P e Q) representa a negação lógica da proposição original, não uma equivalência.
+- **D) Incorreta.** Faz uso do conectivo "e", o que impossibilita a criação de uma equivalência direta para sentenças condicionais afirmativas.
+- **E) Incorreta.** Para ser válida com "ou", a estrutura exigida era (~P ou ~Q). A alternativa diz "A fraude não ocorre (~Q) ou a fiscalização é rigorosa (P)". Faltou negar a fiscalização (~P).
+</details>
 
 

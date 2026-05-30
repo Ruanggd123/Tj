@@ -1,5 +1,338 @@
 # Bateria de Questões FCC — Quarta-feira 27/05
 
+## 📝 TEMA 1: Segurança — LGPD e Setor Público
+
+### Questão 1 (FCC - 2023 - TRT 12 - Analista Judiciário - Tecnologia da Informação)
+A Lei Geral de Proteção de Dados Pessoais (LGPD) dispõe sobre o tratamento de dados pessoais pelo Poder Público. Em relação a esse tema, a manutenção de dados em formato interoperável e estruturado para o uso compartilhado, com vistas à execução de políticas públicas, deve observar:
+A) a obrigatoriedade da anonimização de todos os dados pessoais transferidos, sem exceção, para qualquer órgão da administração pública indireta.
+B) a livre disponibilidade irrestrita a todos os entes privados, desde que justificada pelo interesse econômico e sem necessidade de registro.
+C) os princípios de proteção de dados pessoais e as diretrizes da Lei de Acesso à Informação (LAI), visando garantir a finalidade pública, o atendimento do interesse público e a transparência.
+D) a dispensa completa de medidas de segurança da informação, caso o tratamento de dados seja realizado exclusivamente entre órgãos do próprio Poder Judiciário.
+E) a comunicação obrigatória e individualizada aos titulares sempre que houver qualquer repasse interno de dados entre diferentes secretarias de um mesmo ministério.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+Explicação:
+A) Incorreta. A anonimização não é obrigatória para todos os dados transferidos, especialmente quando a identificação for essencial para a execução da própria política pública em benefício do cidadão.
+B) Incorreta. Não existe disponibilidade irrestrita a entes privados. O compartilhamento com entes privados é a exceção na LGPD (Art. 26) e possui regras rígidas e restritas.
+C) Correta. A LGPD, em seu Art. 25, prevê que os dados devem ser mantidos em formato interoperável, observando obrigatoriamente os princípios de proteção de dados e a LAI, sempre amparados na finalidade pública e na transparência.
+D) Incorreta. O fato de o compartilhamento ocorrer internamente entre órgãos do mesmo poder não dispensa a adoção de rígidas medidas técnicas e administrativas de segurança da informação.
+E) Incorreta. Não há obrigatoriedade de comunicação individualizada a cada trâmite ou repasse interno para execução de políticas públicas, desde que atenda às hipóteses legais e haja publicidade geral sobre as políticas de tratamento mantidas pelo órgão.
+</details>
+
+---
+
+### Questão 2 (FCC - 2022 - TRT 22 - Analista Judiciário - Tecnologia da Informação)
+No contexto do tratamento de dados pessoais pelo Poder Público, a LGPD estabelece regras sobre o uso de dados para o cumprimento de obrigações legais e execução de políticas públicas. Sobre o encarregado pelo tratamento de dados pessoais no setor público, a lei determina que:
+A) é facultativa a indicação de encarregado, ficando a critério discricionário do gestor máximo do órgão, mediante portaria não publicada.
+B) as pessoas jurídicas de direito público referidas no parágrafo único do art. 1º da LAI deverão indicar um encarregado quando realizarem operações de tratamento de dados pessoais.
+C) somente os órgãos do Poder Executivo estão obrigados a indicar um encarregado, enquanto, para o Judiciário e o Legislativo, a nomeação é fortemente recomendada, mas não exigida.
+D) o encarregado deverá ser, obrigatoriamente, um auditor de controle externo concursado, e sua indicação será feita exclusivamente pelo Tribunal de Contas respectivo.
+E) a identidade e as informações de contato do encarregado deverão ser informadas de forma sigilosa apenas à Autoridade Nacional de Proteção de Dados (ANPD).
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+Explicação:
+A) Incorreta. A indicação do encarregado no âmbito das pessoas jurídicas de direito público é mandatória (obrigatória), e as informações de contato devem ser publicadas amplamente (Art. 23, §3º).
+B) Correta. Conforme o Art. 23, § 3º da LGPD, as pessoas jurídicas de direito público referidas na Lei de Acesso à Informação (LAI) — o que abrange toda a administração pública — indicarão um encarregado obrigatoriamente quando realizarem tratamento de dados pessoais.
+C) Incorreta. Todos os poderes (Executivo, Legislativo e Judiciário) submetidos à LAI têm a obrigação legal incondicional de indicar o encarregado de proteção de dados.
+D) Incorreta. A LGPD não exige que o encarregado seja um auditor de controle externo ou seja nomeado por Tribunal de Contas; pode ser um servidor designado ou até pessoa jurídica contratada (terceirizado).
+E) Incorreta. A identidade e os contatos do encarregado devem ser divulgados publicamente, de forma clara e objetiva, preferencialmente no sítio eletrônico oficial do órgão, e jamais mantidos em sigilo institucional.
+</details>
+
+---
+
+### Questão 3 (FCC - 2024 - TRF 3 - Analista Judiciário - Tecnologia da Informação)
+É vedado ao Poder Público transferir a entidades privadas dados pessoais constantes de bases de dados a que tenha acesso, EXCETO, de acordo com as normas estritas da LGPD, quando:
+A) o titular não houver sido consultado e tratar-se de dado cuja finalidade precípua for fomentar o marketing direto para empresas estatais de economia mista.
+B) houver previsão legal ou a transferência for respaldada em contratos, convênios ou instrumentos congêneres, devendo tal situação ser comunicada à autoridade nacional.
+C) a entidade privada tratar-se de empresa multinacional que pretenda realizar pesquisa de mercado voltada para bens de consumo sem qualquer vínculo com o serviço público.
+D) a transferência ocorrer mediante o pagamento de compensação financeira direta ao titular dos dados pelo órgão público detentor originário da informação.
+E) se tratar de dados de saúde física e mental de servidores públicos cedidos para livre comercialização e precificação com operadoras de planos de saúde privados.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+Explicação:
+A) Incorreta. A LGPD proíbe veementemente a transferência de dados do Poder Público a entes privados para fins de marketing direto.
+B) Correta. De acordo com o Art. 26, §1º da LGPD, é vedada a transferência de dados da administração a entes privados, EXCETO em hipóteses restritas, como a execução descentralizada de atividade pública via contrato ou convênio, ou quando houver previsão legal explícita, exigindo-se comunicação formal à ANPD.
+C) Incorreta. Transferência para multinacional visando pesquisa de mercado desvinculada de serviços públicos é uma grave infração à finalidade pública exigida para dados custodiados pelo Estado.
+D) Incorreta. A LGPD não autoriza que órgãos públicos vendam dados ou façam "corretagem de dados" para a iniciativa privada pagando um percentual ao titular; o foco é sempre o interesse público.
+E) Incorreta. A lei expressamente proíbe o compartilhamento e uso de dados sensíveis de saúde para fins de precificação, seleção de riscos ou finalidades meramente comerciais por planos de saúde (Art. 11, §4º).
+</details>
+
+---
+
+### Questão 4 (FCC - 2023 - TRT 11 - Analista Judiciário - Tecnologia da Informação)
+A Lei nº 13.709/2018 (LGPD) tem abrangência nacional e impacta tanto entes públicos quanto privados, mas a legislação apresenta exceções explícitas de escopo. No que tange ao tratamento de dados pessoais no âmbito do Estado, a LGPD NÃO se aplica integralmente ao tratamento realizado para fins exclusivos de:
+A) administração de recursos humanos e geração da folha de pagamento de servidores estatutários e comissionados.
+B) segurança pública, defesa nacional, segurança do Estado ou atividades estritas de investigação e repressão de infrações penais.
+C) arrecadação tributária, gestão de impostos, fiscalização da receita e execução fiscal nas esferas estadual e federal.
+D) prestação de serviços de saúde pública à população, controle do sistema único de saúde e controle de pandemias endêmicas.
+E) formulação e execução de políticas públicas voltadas à educação básica pública, incluindo o censo escolar.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+Explicação:
+A) Incorreta. O tratamento de dados de servidores para gestão de recursos humanos e folha de pagamento submete-se integralmente à LGPD (como finalidade de cumprimento de obrigação legal por parte do Poder Público).
+B) Correta. O Art. 4º, inciso III, da LGPD, pontua taxativamente que a lei não se aplica ao tratamento de dados realizado para fins EXCLUSIVOS de segurança pública, defesa nacional, segurança do Estado ou investigação/repressão de infrações penais.
+C) Incorreta. A arrecadação e gestão tributária não é uma exceção geral ao escopo material da LGPD. As receitas federais e secretarias de fazenda devem cumprir e proteger os dados do cidadão em conformidade com a referida Lei.
+D) Incorreta. Tratamento em saúde pública está integralmente sujeito à LGPD, apoiando-se na base legal da "tutela da saúde" para operar dados, mas devendo obedecer regras de segurança e direitos dos titulares.
+E) Incorreta. Políticas de educação e estatísticas sociais são consideradas "execução de políticas públicas" (Art. 7º, III), estando, portanto, amparadas e submetidas às regras da LGPD.
+</details>
+
+---
+
+### Questão 5 (FCC - 2022 - TRT 14 - Analista Judiciário - Tecnologia da Informação)
+Uma prefeitura municipal está implementando um grande sistema informatizado para o gerenciamento do transporte escolar público na rede municipal. A coleta de dados dos estudantes, incluindo endereço residencial e renda familiar, é feita diretamente nas secretarias das escolas. Com base na LGPD, o tratamento desses dados pessoais pela administração pública local para essa finalidade específica:
+A) exige, impreterivelmente sob risco de multa pela ANPD, o consentimento formal, prévio e por escrito de ambos os pais ou responsáveis legais a cada novo ano letivo.
+B) pode ser realizado independentemente de consentimento direto, desde que seja essencialmente necessário para a execução de políticas públicas previstas em leis e regulamentos.
+C) só é lícito perante a ANPD se os dados dos estudantes forem irreversivelmente anonimizados logo após a coleta no terminal, impedindo até mesmo o direcionamento geográfico do transporte.
+D) caracteriza desvio flagrante de finalidade da política educacional, visto que dados coletados na escola jamais podem ser utilizados para fins de logística viária e transporte.
+E) depende sempre de um Relatório de Impacto à Proteção de Dados (RIPD) previamente aprovado pelo juizado da infância antes de se iniciar qualquer transporte de alunos.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+Explicação:
+A) Incorreta. O Poder Público não precisa se apoiar primariamente no consentimento. Ele atua na maioria de seus casos baseando-se no interesse e finalidade pública da execução de políticas amparadas em lei.
+B) Correta. De acordo com o Art. 7º, inciso III da LGPD, o tratamento é autorizado pela administração pública — sem a necessidade do consentimento do titular — para a execução de políticas públicas previstas em leis e regulamentos ou respaldadas em contratos, convênios ou instrumentos congêneres.
+C) Incorreta. A anonimização inviabilizaria a própria política pública: um sistema de transporte escolar precisa mapear precisamente o endereço e vincular ao estudante real para funcionar de forma eficiente.
+D) Incorreta. O transporte escolar é parte indissociável da assistência estudantil governamental. Sendo parte da política pública, seu uso de dados é lícito e não constitui desvio de finalidade educacional.
+E) Incorreta. A lei não demanda a aprovação prévia de um RIPD pelo Judiciário para que o Poder Executivo exerça rotinas triviais de políticas públicas voltadas a menores.
+</details>
+
+---
+
+### Questão 6 (FCC - 2021 - TRT 15 - Analista Judiciário - Tecnologia da Informação)
+Determinado Tribunal de Justiça assina um convênio com uma empresa privada fornecedora de software de inteligência artificial em nuvem para que esta preste serviços especializados de análise e degravação de audiências judiciais em vídeo. Para isso, o Tribunal precisará transferir dados pessoais para os servidores dessa entidade privada. Em conformidade com os regramentos da LGPD para o setor público, essa transferência de dados:
+A) é plenamente proibida em toda e qualquer hipótese material, sendo exigido legalmente que o desenvolvimento e operação da IA sejam feitos apenas por servidores públicos efetivos e in loco.
+B) é admitida de forma excepcional caso respaldada expressamente em contratos, convênios ou instrumentos congêneres regidos pelo direito público, devendo tal situação ser comunicada à Autoridade Nacional.
+C) deve prescindir (dispensar) de contrato ou convênio caso a tecnologia envolva alto grau de inovação (inteligência artificial), aplicando-se a Lei de Inovação de forma sobreposta à LGPD.
+D) apenas pode ser validamente efetuada se houver repasse financeiro (venda) da base de dados ao Tribunal, gerando receitas alternativas e caracterizando o tratamento de dados como ativo rentável do Estado.
+E) é considerada ilícita se envolver, no bojo dos vídeos, dados de agentes públicos, sendo permitida exclusivamente para o uso de dados de réus e advogados sem consentimento.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+Explicação:
+A) Incorreta. A vedação ao compartilhamento com entes privados não é absoluta. Há exceções explícitas e necessárias para a modernização da máquina pública (Art. 26, §1º da LGPD).
+B) Correta. A LGPD (Art. 26, §1º) permite o compartilhamento/transferência para entes privados quando for respaldada em contratos, convênios ou instrumentos congêneres (no caso, a contratação/convênio do serviço de IA em nuvem), devendo ser comunicada/informada à ANPD para viabilizar controle e transparência.
+C) Incorreta. A natureza da tecnologia envolvida (IA ou alto grau de inovação) não isenta o ente público da obrigatoriedade de cumprir as balizas contratuais rigorosas exigidas pela LGPD.
+D) Incorreta. A venda ou troca de dados de cidadãos pelo Poder Público para obtenção de receita privada/direta com a finalidade de monetização dos dados é vedada pelas normas fundamentais de proteção de dados e probidade.
+E) Incorreta. A LGPD não faz distinção permitindo que os dados de réus e advogados sejam vazados ou processados ilegalmente e resguardando apenas agentes públicos. A proteção incide sobre dados de pessoas naturais de maneira isonômica.
+</details>
+
+---
+
+### Questão 7 (FCC - 2024 - TCE-GO - Auditor de Controle Externo - TI)
+No tocante às sanções administrativas previstas na LGPD (Seção sobre Sanções), quando um órgão, entidade ou poder submetido à gestão do Poder Público comete infrações graves às normas de proteção de dados, a Autoridade Nacional de Proteção de Dados (ANPD):
+A) pode aplicar, isoladamente, multas simples que podem chegar a 2% (dois por cento) do orçamento total sancionado do órgão público infrator, com limite final de R$ 50 milhões.
+B) tem a competência para suspender de ofício o exercício da função pública de todos os servidores de TI envolvidos, determinando a prisão administrativa preventiva pelo prazo do inquérito.
+C) pode aplicar infrações administrativas não pecuniárias, como advertência, publicização da infração e bloqueio dos dados, pois os entes públicos não estão sujeitos a multas financeiras pela ANPD.
+D) não possui nenhuma competência fiscalizatória ou punitiva para atuar sobre entes e órgãos públicos em infrações de dados, visto que a punição de órgãos públicos cabe exclusivamente aos Tribunais de Contas.
+E) pode aplicar multa diária cumulativa, recaindo e sendo deduzida diretamente na fonte pagadora dos vencimentos da autoridade máxima (como o Governador ou Prefeito) responsável pelo órgão.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+Explicação:
+A) Incorreta. Entes e órgãos da administração pública não sofrem as sanções pecuniárias (multas financeiras) previstas na LGPD, uma vez que o pagamento de multas do Estado para o próprio Estado (via ANPD) apenas oneraria o erário sem eficácia preventiva direta.
+B) Incorreta. A ANPD não possui poder correcional para determinar prisão administrativa ou suspender diretamente servidores públicos em suas carreiras. A sanção ao servidor ocorrerá nos processos administrativos disciplinares na esfera correspondente.
+C) Correta. O Art. 52, § 3º da LGPD dispõe especificamente que as sanções de multa (simples e diária) NÃO se aplicam à União, Estados, DF e Municípios. Assim, o Poder Público pode ser penalizado pela ANPD com advertência, publicização, eliminação ou bloqueio dos dados, mas não com multa.
+D) Incorreta. A ANPD possui expressa competência legal para fiscalizar, expedir normas, investigar e aplicar sanções não pecuniárias a entes integrantes do Poder Público de qualquer esfera.
+E) Incorreta. A ANPD não aplica multa diária extraída dos vencimentos do gestor público através do regime de sanções da LGPD. Responsabilizações diretas sobre o patrimônio pessoal do agente público requerem ação de improbidade, ação de regresso ou tomadas de contas no âmbito competente, além dos limites impostos pela LGPD.
+</details>
+
+---
+
+### Questão 8 (FCC - 2023 - TRT 12 - Técnico Judiciário - Tecnologia da Informação)
+Uma Secretaria Municipal de Assistência Social precisa tratar, em um banco de dados local, informações de saúde e registros criminais de crianças e adolescentes inscritos em um programa de amparo aos jovens em situação de vulnerabilidade severa. Com relação à LGPD e ao tratamento de dados desse público-alvo por órgãos do Poder Público, assinale a opção correta.
+A) O tratamento pelo Poder Público dispensa, em qualquer situação fática, o foco no melhor interesse da criança, visto que no direito administrativo prima-se única e exclusivamente pela supremacia econômica do interesse do ente.
+B) Só pode ser realizado se houver obrigatoriamente o consentimento expresso, destacado e genérico de pelo menos um dos pais, sendo vedado integralmente nos casos em que a tutela familiar for incerta.
+C) O tratamento de dados pessoais de crianças e de adolescentes deverá ser realizado focando e assegurando primordialmente o seu melhor interesse, devendo o Poder Público aplicar as bases protetivas da LGPD.
+D) A LGPD veda terminantemente que órgãos do Poder Público municipal tratem, sem ordem judicial, dados classificados como sensíveis de menores de 18 anos, transferindo essa atribuição a organizações do terceiro setor.
+E) Desde que perfeitamente anonimizados em planilhas, os dados quantitativos e comportamentais das crianças podem ser livremente ofertados a agências de publicidade visando o financiamento cruzado do programa social pela via privada.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+Explicação:
+A) Incorreta. O melhor interesse da criança e do adolescente é um princípio vetor inafastável estabelecido pela LGPD (Art. 14), amparado pela Constituição Federal, e que se impõe indubitavelmente ao Poder Público.
+B) Incorreta. Em atividades de políticas públicas e proteção à vida e saúde, o tratamento de dados de crianças pode se valer de outras bases legais dispensando o consentimento (Art. 14, §3º c/c Art. 7º e 11). Além disso, o consentimento, quando aplicável, não pode ser genérico na ótica da LGPD.
+C) Correta. A regra de ouro estabelecida no Art. 14 da LGPD consagra que qualquer tratamento de dados de crianças e adolescentes (seja promovido pela iniciativa privada ou pelos poderes do Estado) deverá ser feito tendo como base legal o seu melhor interesse.
+D) Incorreta. O Estado, no desempenho de programas de saúde ou assistência social à infância e juventude, precisa diariamente lidar com dados sensíveis de menores sem que isso requeira, a cada instante, mandados judiciais autorizativos.
+E) Incorreta. Dados anonimizados perdem a natureza de dado pessoal, porém, o desvirtuamento moral e o desvio da finalidade pública de fornecer dados de um estrato vulnerável para lucro publicitário ofendem os princípios do serviço público, indo na contramão dos limites definidos para o uso no interesse público primário.
+</details>
+
+---
+
+### Questão 9 (FCC - 2022 - TRT 5 - Analista Judiciário - Tecnologia da Informação)
+Sobre a comunicação, transparência e o uso compartilhado de dados pessoais entre diferentes órgãos, secretarias e entidades da administração pública para a prestação de serviços diretos aos cidadãos, a Lei nº 13.709/2018 (LGPD) estabelece claramente que:
+A) deverão ser objeto de ampla publicidade as hipóteses nas quais o Poder Público realiza o tratamento de dados pessoais no estrito exercício de suas competências ou para alcançar suas finalidades públicas.
+B) é completamente dispensável o registro cronológico e formal das operações de tratamento se a comunicação de bases de dados ocorrer apenas entre órgãos vinculados e alocados dentro de uma mesma esfera federativa.
+C) é terminantemente proibido o compartilhamento estruturado de dados que revelem o CPF dos titulares civis, devendo os sistemas integrados utilizar exclusivamente números randômicos internos.
+D) a referida comunicação estruturada entre bases distintas dependerá sempre do consentimento inequívoco, expresso e destacado do titular a cada vez que houver um novo cruzamento de tabelas entre dois Ministérios de Estado.
+E) o uso compartilhado de banco de dados pessoais sensíveis para fins primordialmente jornalísticos e investigações artísticas encabeçadas pelo Estado submete-se de modo estrito e integral a todas as regulações sancionadoras da LGPD.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+Explicação:
+A) Correta. De forma direta, o Art. 23, inciso I da LGPD, consubstanciando os princípios da transparência e prestação de contas, define que o Poder Público tem o dever de informar e dar ampla publicidade às hipóteses em que realiza tratamento de dados, bem como fornecer a finalidade e base legal.
+B) Incorreta. A dispensa de elaboração e manutenção do registro das operações de tratamento (Art. 37) não existe para o Poder Público, ainda que a troca de dados se dê entre órgãos irmãos da mesma máquina estatal.
+C) Incorreta. O uso do CPF como chave primária de interoperabilidade entre bancos de dados não só é viabilizado, como é a política oficial de Governo Digital vigente no país (Lei do Governo Digital) para desburocratizar a vida do cidadão, alinhada com as disposições da LGPD.
+D) Incorreta. O compartilhamento massivo de bases para execução de políticas públicas ampara-se no interesse e finalidade pública (Art. 7º, III e Art. 26). Seria administrativamente impossível exigir consentimento para cada novo batimento de dados em políticas estatais de largo espectro.
+E) Incorreta. Tratamento de dados para finalidades exclusivamente jornalísticas ou artísticas figura entre as exceções expressas que desobrigam o controle exato por meio de algumas regras da LGPD (Art. 4º, II, "a").
+</details>
+
+---
+
+### Questão 10 (FCC - 2019 - TRF 4 - Analista Judiciário - Sistemas de Informação)
+De acordo com os princípios balizadores de Transparência e Livre Acesso instituídos pela LGPD, no contexto do Poder Público, os órgãos das administrações direta e indireta devem dar publicidade às atividades de tratamento de dados que desempenham. No entanto, o atendimento aos requerimentos decorrentes do direito de acesso do titular cidadão às informações pormenorizadas sobre o tratamento de seus dados:
+A) não pode, na ótica da LGPD, ser negado ou suprimido sob nenhuma justificativa de Estado, nem mesmo pelas classificações de sigilo impostas pela Lei de Acesso à Informação, devendo a privacidade sempre anular o sigilo estratégico.
+B) abrange e consolida juridicamente o direito material de acesso irrestrito e físico por parte do titular aos servidores informáticos e às tabelas diretas dos bancos de dados da instituição governamental controladora.
+C) deverá ser exercido pelo cidadão em franca conformidade com os prazos fixados na LGPD, mas deve e precisa ser conciliado com as exceções legais de sigilo estatal estabelecidas, por exemplo, na Lei de Acesso à Informação.
+D) dependerá do pagamento de uma taxa judiciária ou tributária mínima de desarquivamento administrativo de dados, de modo a não onerar demasiada e infundadamente os cofres públicos com pedidos frívolos e rotineiros.
+E) será sempre realizado e exigido em etapa presencial e de forma verbal no balcão de atendimento do encarregado do respectivo órgão controlador, não reconhecendo a legislação a validade de pedidos virtuais por e-mail institucional.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+Explicação:
+A) Incorreta. A LGPD não anula leis que protegem dados do Estado ou classificam documentos como ultrassecretos (ex: informações que se vazadas ameaçam o Estado). A LGPD (Art. 23) prevê que se deve observar e atuar de forma combinada com as regras de sigilo e publicidade da LAI.
+B) Incorreta. O direito de acesso refere-se a obter certidões ou extratos lógicos sobre "quais dados meus estão no seu sistema", e não a invadir os ambientes de nuvem, data centers físicos ou acesso bruto às querys (tabelas) da organização.
+C) Correta. O direito do titular a requerer o acesso e as explicações não é absoluto em contraposição aos deveres estatais. O atendimento a essas requisições deve harmonizar-se e ser conciliado com as exceções válidas previstas de sigilo (articulando as tutelas da LGPD e as restrições da Lei de Acesso à Informação – LAI).
+D) Incorreta. O exercício dos direitos dos titulares previstos perante o controlador, na forma do Art. 18, em especial o direito de confirmação e acesso aos dados (Art. 18, §5º), deve ocorrer de forma expressa, providenciada e inteiramente gratuita.
+E) Incorreta. Para concretizar e facilitar os direitos dos titulares e em atenção ao princípio do livre acesso e eficiência, os pedidos não precisam ser verbais ou presenciais. Eles costumam transitar via web (Portais de Privacidade, sistema e-SIC, formulários online), possuindo ampla validade probatória e legal.
+</details>
+
+---
+
+### Questão 11 (FCC - 2023 - TRT 12 - Técnico Judiciário - Tecnologia da Informação)
+Uma importante autarquia educacional federal sofre um grave incidente de segurança cibernética que resulta no vazamento de bases contendo metadados educacionais e dados de saúde escolar (CID e diagnósticos especiais) de milhares de cidadãos beneficiários. Em relação às posturas legais obrigatórias que devem ser adotadas segundo a LGPD aplicadas ao Poder Público, assinale a opção correta:
+A) O incidente gerado na rede da instituição não precisa, em nenhuma circunstância, ser comunicado à ANPD por tratar-se de autarquia integrante da administração federal, devendo apenas ser levado a conhecimento da Controladoria-Geral da União (CGU).
+B) A autarquia (na figura de controlador responsável) deverá comunicar oficialmente à autoridade nacional (ANPD) e aos titulares afetados a ocorrência de tal incidente de segurança de dados que tenha o potencial de acarretar risco ou dano relevante.
+C) A ANPD possui sua competência legal restringida à iniciativa privada (B2C), e não detém poderes executivos para registrar, apurar ou notificar incidentes cibernéticos originados nas esferas de Poder Público federal, devido à soberania institucional.
+D) Como os titulares afetados usufruíam de um programa de distribuição mantido integralmente por recursos subsidiados públicos, eles perdem automática e renunciavelmente qualquer direito futuro a pleitear indenizações judiciais morais ou materiais advindas do vazamento.
+E) Para não gerar pânico sistêmico nas instituições de ensino, a comunicação formal e coletiva do vazamento aos titulares pode ser adiada por um prazo fixo de até 5 (cinco) anos após o ocorrido, caso a autarquia decida realizar uma auditoria preliminar restrita de danos.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+Explicação:
+A) Incorreta. Entes do Poder Público — incluindo secretarias, ministérios, fundações e autarquias — atuam na condição de controladores de dados segundo as balizas da LGPD e devem inquestionavelmente cumprir as determinações processuais para reporte de incidentes previstas.
+B) Correta. Consubstanciado no regramento de notificação e prestação de contas delineado na LGPD (Art. 48), o agente controlador dos dados (neste caso, a autarquia federal educacional) possui o estrito dever de comunicar à ANPD e aos titulares a ocorrência imediata de qualquer incidente de segurança que venha ou que possa acarretar risco material/moral aos cidadãos.
+C) Incorreta. O espectro e o raio de atuação legal da ANPD perpassa toda a nação, tendo a referida Autoridade plena e inequívoca atribuição para zelar, implementar a regulação, investigar e aplicar deliberações sobre a Administração Pública e os órgãos vinculados aos demais poderes.
+D) Incorreta. A falha técnica ou administrativa geradora de vazamento nos repositórios mantidos pelo Estado caracteriza, dependendo do nexo, a responsabilidade civil objetiva do Estado (ou de seus concessionários). Os usuários do serviço não abdicam de seus direitos fundamentais indenizatórios devido ao fato da assistência ser pública ou custeada pelo Tesouro.
+E) Incorreta. Em decorrência e observação ao princípio da transparência e às normas regulamentares vigentes expedidas pelo corpo da ANPD, o evento (incidente gravoso) demanda ser reportado "em prazo razoável" (delimitado, usualmente, em curtos prazos de dias úteis em regulação suplementar), o que torna frontalmente impossível, ilegal e infundado atrasar as notificações aos cidadãos sob o pretexto de resguardo interno de uma auditoria de 5 anos.
+</details>
+
+---
+
+### Questão 12 (FCC - 2024 - DPE-PR - Defensor Público)
+A respeito da Autoridade Nacional de Proteção de Dados (ANPD) e de sua intrínseca relação jurídica e procedimental com as entidades componentes do Poder Público, de acordo com as normas positivadas do marco legal da LGPD, é fundamentalmente correto afirmar que:
+A) no caso prático de o cidadão (titular) não obter um atendimento célere e adequado às suas solicitações e dúvidas de privacidade por parte de um ente fiscalizador do Estado, é terminantemente proibido que este peticione ou apele diretamente e em instâncias administrativas à ANPD por quebra de competência.
+B) a Autoridade Nacional de Proteção de Dados (ANPD) possui o poder de requerer formalmente, a seu critério, que agentes do Poder Público preparem e efetuem a publicação de relatórios técnicos de impacto à proteção de dados pessoais em dadas situações sensíveis.
+C) sob a ótica organizacional e administrativa, a ANPD está caracterizada e estruturada para funcionar submissamente como um órgão operacional e dependente de vinculação orçamentária do Ministério Público da União (MPU).
+D) frente à separação dos poderes e à autonomia entificada na Carta Magna, os órgãos de cúpula do Poder Público não necessitam se curvar ou sequer observar qualquer dos padrões de interoperabilidade e segurança e demais diretrizes emanadas pelo conselho diretor da ANPD.
+E) compete em via de exclusividade originária à ANPD aplicar, no curso de julgamentos administrativos colegiados rápidos, penas e sanções criminais com privação concreta de liberdade contra as lideranças públicas identificadas no tratamento ilícito ou comércio corrompido de dados pessoais.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+Explicação:
+A) Incorreta. O titular é amplamente resguardado nos direitos estatuídos e garantias processuais elencadas no texto da LGPD (Art. 18 e parágrafos). Deste modo, o titular ostenta integral direito material de apresentar solicitações e peticionar contra o agente de tratamento, quer o mesmo pertença à iniciativa privada ou integre aos braços e secretarias do Poder Público, diretamente perante o guichê da ANPD.
+B) Correta. Expressamente, o caput do Art. 32 da Lei Geral de Proteção de Dados confere que a referida autoridade supervisora nacional de fiscalização de privacidade e segurança (ANPD) poderá e tem a prerrogativa de solicitar que agentes ligados a todo o Poder Público prestem, desenvolvam e entreguem tempestivamente ou venham a publicar em diários oficiais o competente Relatório de Impacto à Proteção de Dados Pessoais (RIPD).
+C) Incorreta. Do ponto de vista histórico, a ANPD nasceu originalmente como um órgão ligado de forma íntima e imediata à Presidência da República, não possuindo vinculações hierárquicas, estruturais ou gerenciais subordinadas aos ofícios ou prerrogativas exclusivas do Ministério Público da União (MPU), e hoje foi convertida juridicamente na roupagem de uma consolidada e robusta Autarquia Especial em suas funções e regime jurídico.
+D) Incorreta. Sem ofender as esferas constitucionais e as independências, todos os representantes que lidam com dados da população brasileira no campo institucional e orgânico (integrantes das fileiras do Poder Público) estão abarcados pelos padrões e mandamentos normativos baixados pela ANPD para o regular desenvolvimento e harmonização sistêmica de atividades com impacto nos dados de civis, não servindo uma aparente alegação de "autonomia" de Poderes para ignorá-los.
+E) Incorreta. Sob a doutrina jurídica, as agências e instâncias de controle do executivo (como a ANPD) julgam nos marcos da responsabilização administrativa sancionatória. Punir, restringir liberdade física (cárcere), processar os agentes com penas em abstrato ligadas ao diploma penal são ações privativas reservadas aos trâmites criminais a cargo do Poder Judiciário, mediante observação estrita ao Estado de Direito e do devido processo legal.
+</details>
+
+---
+
+### Questão 13 (FCC - 2022 - TRT 9 - Analista Judiciário - Tecnologia da Informação)
+No estrito e pontual exercício de suas atribuições fundamentais e constitucionais descritas, as Forças Armadas realizam operações de alto escalão voltadas única e exclusivamente à Defesa Nacional. Muitas dessas operações sigilosas de monitoramento estratégico fatalmente acabam por captar, envolver o tratamento técnico e analisar um elevado volume pervasivo e persistente de dados pessoais coletados de civis e comunicações. Sobre a incidência restritiva da LGPD nos atos de tratamento realizados nessa atividade precisa, é correto afirmar juridicamente que:
+A) em virtude da proteção superior da privacidade, a LGPD se aplica em seus estritos termos, devendo o Comando central obrigatoriamente buscar e colher ativamente o livre consentimento civil de cada indivíduo rastreado pelas equipes e admitir acessos e certidões livres às bases de inteligência cibernética pela imprensa.
+B) a atividade encontra-se de forma genérica e expressa integralmente excetuada do campo ou escopo fundamental de aplicação da LGPD, uma vez que a dita norma regulatória elenca que a Lei de Dados não se aplicará aos tratos realizados por finalidades exclusivas pautadas unicamente sobre bases de defesa nacional.
+C) todo o arcabouço de monitoramento e os metadados gerados pelo tratamento devem e podem ser coletados e tabulados, sob condição limitante estrita de apenas fluírem e serem mantidos nas operações após aprovação imediata e casuística, de maneira presencial e por documento chancelado pelo relator no STF, sob punição de usurpação legal inconstitucional e infração a cláusula de barreira.
+D) em decorrência do valor agregado das coletas, eventuais pacotes brutos capturados em bases das operações sigilosas de defesa cibernética militar do Estado podem validamente ser partilhados para monetização ou venda junto às empresas privadas do terceiro setor de vigilância desde que a Receita Federal corrobore e afiance algum viés de arrecadação compensatória à nação.
+E) nesse caso, não recairia sob o procedimento as minúcias gerais da LGPD, remanescendo unicamente ao Comando responsável submeter-se na via direta administrativa a responder pecuniariamente às custosas penalidades financeiras diárias sancionadas por multas na conta pessoal do generalato ou almirantado no caso de desvios pontuais decorrentes.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+Explicação:
+A) Incorreta. Pelas razões intrínsecas e lógicas necessárias à eficácia, ao bom desempenho de suas finalidades e a peculiaridade, os procedimentos desempenhados voltados à garantia exclusiva ou à integridade e estabilidade da Defesa Nacional estão explicitamente apartados e deslocados da abrangência imediata, das premissas generalistas e das exigências exaurientes de consentimento cívico delineadas no corpo da LGPD.
+B) Correta. Consoante às delimitações taxativas abarcadas nas disposições preliminares trazidas no corpo do Art. 4º, que define e isola os cenários limitantes e resguardos essenciais perante as esferas e finalidades do Estado de forma global. Em seu preciso enquadramento pelo inciso III, a norma dita indubitavelmente e em consonância clara que as restrições da LGPD não alcançarão tratamentos conduzidos, promovidos e estritamente atrelados às áreas voltadas ou executados no cerne das funções privativas com fins unicamente de defesa nacional, segurança do Estado, segurança pública ou para o exercício da persecução criminal, que contudo, se regulamentarão por marco legislativo complementar com esteio constitucional protetivo.
+C) Incorreta. Não tem suporte nas linhas do diploma (nem em preceitos de direito pátrio prático para operações de guerra ou soberania) a alegação de requerer exigências estritas e a paralisação indevida via chancelas físicas e em todas e reiteradas coletas pela Suprema Corte nos trâmites atinentes meramente em defesas e inteligência técnica estritamente nacionais e orgânicas executadas na legalidade pelas forças armadas.
+D) Incorreta. Mesmo resguardadas por serem parte das exceções primárias da LGPD no mérito da defesa, jamais possuíram respaldo de base para se perverter o foco elementar e os recursos coletados e submetê-los comercialmente à mercantilização de bases e à comercialização profana a setores do capital particular. Estando proibidas e vedadas penalmente negociações do tipo pela tipificação paralela de crimes graves contra a Soberania e Defesa das instituições (espionagens ou vazamentos indevidos).
+E) Incorreta. Se não está submetida às esferas civis da norma (tratando-se por exclusão do Art.4º), inviável aplicar as punições derivadas dela. Ademais, conforme a tônica assente e delineada sobre punições pecuniárias na alçada do texto (art. 52, § 3º), nenhuma das severas multas de cunho pecuniário alcançam, recaem sobre ou oneram a administração estatal por força do texto, em se referindo a infrações gerais da lei de regência de tratamento. A punição aos oficiais que exorbitarem, vazarem intencionalmente ou operarem condutas à margem de suas missões legais ocorrerão conforme diretrizes das severas penas dos códigos de direito e regimentos e instâncias do âmbito puramente militar, na inteligência e cominação correspondente às transgressões severas de inteligência lá amparadas, e não multas pecuniárias em CPF dos oficiais aplicadas por Agência (ANPD).
+</details>
+
+---
+
+### Questão 14 (FCC - 2023 - TJ-BA - Analista Judiciário - Tecnologia da Informação)
+De acordo estritamente com os normativos que regem o complexo tratamento e disponibilização de acervos de dados pelo Poder Público sob os princípios e reflexos previstos na LGPD, quando uma entidade pública municipal amparada na gestão por resultados opta e decide formalmente pela implementação ativa de um modelo maciço de "dados abertos" (Open Data Portal), disponibilizando e hospedando amplamente na internet listagens de informações governamentais organizadas e estruturadas à disposição da população, ela:
+A) em virtude e observância primária das resoluções, rompe e viola contínua e imediatamente a integridade imposta pelo princípio da não discriminação ou acessibilidade universal perante a Lei Geral, na medida em que unicamente a parcela minoritária dos cidadãos em posse de conexões e computadores conectados à internet conseguirão manusear e visualizar ou baixar os referidos bancos virtuais divulgados de dados.
+B) como regra primária e indeclinável imposta nas normativas técnicas de segurança em interfaces públicas, precisará monitorar e submeter sempre suas bases exportáveis a severo crivo prévio em cada publicação para garantir ininterruptamente e atestar de forma integral e mandatória que absolutamente nenhuma listagem, arquivo ou dado atrelado à remuneração, vínculos, cargos ou salários dos agentes públicos ou servidores da casa sofra exposição ou venha a ser incluída nos relatórios passíveis de download pela plataforma online.
+C) sob a justificativa conceitual que defende a premissa de acesso da sociedade baseada na ideologia dos dados abertos na gestão administrativa e nos dados irrestritos, é de imediato plenamente dispensada, desincumbida e eximida sem questionamentos futuros das conformidades exigidas em relatórios complexos na Lei Geral de Dados, visto que um conceito tecnológico fático mundialmente empregado não tem poder, cabimento prático ou sequer meios de viabilizar limitações e se curvar paralelamente às proibições legais de se proteger dados individuais nas plataformas abertas ou anular o efeito exauriente da LAI.
+D) só poderá se revestir de fundamentação lícita com fins de prosseguir concretamente na intenção de abrir todos e consolidar integralmente os seus registros ou cadastros à sociedade nos moldes de dados abertos para prestação pública do seu erário e políticas aplicadas, caso se assegure antes de providenciar em termo expresso e assinado pelo menos a assinatura e o consentimento expresso e documentado formalmente por absolutamente toda e qualquer pessoa citada sem omissões e preterições nos referidos anexos antes das publicações por meio eletrônico.
+E) de maneira imperiosa tem o dever constante de avaliar de perto, adequar, observar criteriosamente e mitigar atritos antes da publicação verificando sistematicamente se os vastos conjuntos tabulados de dados que estão previstos para ser massificados e disponibilizados integram, portam ou contêm em seus campos vestígios de dados pessoais indevidos que deveriam sofrer exclusões ou técnicas aplicadas de anonimização estrita, excetuadas por óbvio as divulgações explícitas abarcadas e amparadas sob bases legais transparentes inafastáveis ou as exigências de publicação das relações em portais de transparência impostas pela finalidade.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: E**
+
+Explicação:
+A) Incorreta. Não existe de modo algum a dita interpretação falaciosa e inibitória na gestão moderna de que a promoção governamental voltada fundamentalmente para o lançamento e a massificação orientada e expansão positiva do fornecimento gratuito na internet de bases voltadas à auditoria popular, uso comunitário, acadêmico, ou publicidade baseada no ambiente pautado pela cartilha do Open Data implique um rechaço ou violações conceituais frontais contra as premissas igualitárias em virtude da ausência real, infeliz ou momentânea do total acesso web por uma ou outra fatia desfavorecida de determinado público.
+B) Incorreta. Dentre as obrigações publicistas da máquina e as orientações emanadas pelo STF sob a égide constitucional de prestação de contas, há ressalvas fundamentais na publicidade ativa do custeio da máquina. Os nomes, cargos ocupados ativamente e os montantes remuneratórios (salários exatos) dos servidores integrados e agentes atrelados ou comissionados devem sim ser prestados abertamente em portais institucionais estritos de Transparência mantidos e preservados à luz de preceitos que não conflitam com a LGPD em se tratando da justa e legal visibilidade de gastos oriundos dos tesouros estatais com seus quadros.
+C) Incorreta. É flagrante erro administrativo e falha interpretativa supor ou adotar entendimentos nos quais os mecanismos e ações políticas propostas e adotadas em iniciativas pautadas puramente no louvável vetor ideológico e de governança moderna da "cultura governamental de transparência com dados abertos" estejam juridicamente distanciadas, blindadas de multas ou que de forma mágica, por simples rotulação autodeclarada, fiquem irrestritamente apartadas da responsabilidade severa e do rigor em estrita obediência aos crivos fundamentais postos pelas limitações da proteção à pessoa que permeiam a atual LGPD, eis que não operam numa zona de absoluta desregulamentação à margem dos abusos da exposição ou vazamento do privado.
+D) Incorreta. Quando se cuida e promove a tratativa amparada legalmente nos deveres exigidos para fins de promoção irrestrita e massiva na prestação exauriente da prestação de contas da máquina pública e cumprimento impositivo dos comandos de publicidade ditada, o consentimento é regra inteiramente ineficaz e materialmente dispensada em absoluto na aplicação das balizas e exigências fixadas entre a relação estado/informação com fulcro na LGPD e seus normativos complementares.
+E) Correta. A efetiva estruturação proativa da moderna e robusta política pautada pela formulação e oferta e disponibilidade de dados abertos perante o acesso social pelas instâncias da administração ou agências deve e precisa invariavelmente conviver, se adequar, e operar atrelada e de mãos dadas lado a lado à vigência e à eficácia protetiva orientada e demandada pela legislação da LGPD. Toda vez que um departamento e seu corpo gestor resolver por bem disponibilizar, publicar e submeter ativamente planilhas colossais a terceiros anônimos (dados governamentais ou abertos) o respectivo órgão gestor necessita primeiramente efetuar varredura ativa e diligenciar buscando verificar o quão grande é a exposição indevida da existência e da persistência de um grande ou sensível quantitativo não tratado ou volumoso correspondente aos dados identificáveis de caráter intimo (pessoas naturais no polo passivo ali lançadas na base) que não seriam objeto natural e óbvio de uma eventual publicação requerida em diplomas de transparência orçamentária; restando e cabendo imperiosa a recomendação imposta de aplicação e investimento diligente e sério em recursos matemáticos rigorosos de anonimizações robustas nas ditas variáveis sensíveis caso os arquivos originais necessitem sim, pela natureza dos fatos investigados, serem expostos nos meios de consulta geral para viabilizar e justificar a publicação ampla.
+</details>
+
+---
+
+### Questão 15 (FCC - 2024 - TRF 2 - Analista Judiciário - Tecnologia da Informação)
+Uma rigorosa agência reguladora autárquica federal deseja, com base em planejamento executivo, contratar provisoriamente mediante prestação de contas os serviços diligentes e auxiliares de uma organização da sociedade civil de interesse público (OSCIP) renomada no ramo pericial técnico. Para tanto, ambiciona firmar um substancial termo e documento oficial de parceria vinculativa que prevê essencial e objetivamente o intenso repasse e o acesso contínuo e irrestrito, de fato, por parte e gerência técnica da OSCIP atuante, a um denso arcabouço estruturado de dados pessoais sigilosos oriundos dos usuários administrados pelo ente autárquico. Esse compartilhamento de enorme fluxo intenciona precipuamente que tal entidade da sociedade civil promova e venha a realizar uma densa pesquisa acadêmica e elaboração científica qualitativa com foco analítico, notadamente destituída por lei de fins mercadológicos e lucrativos, que se encontra estreitamente atrelada e atinente ao desenvolvimento na mesma área exata abarcada e regulada sob o comando superior da referida agência. Tendo em vista essa descrição exata do cenário projetado, e estritamente com base nos comandos permissivos e vedativos presentes nos textos legais da vigente e aplicável LGPD no tocante ao compartilhamento estrutural estipulado e efetuado sob comando originário entre a administração estatal para com um ente terceiro submetido e amparado às leis ordinárias da iniciativa de direito privado com fito focado meramente voltado às pesquisas acadêmicas setoriais, é correto e legal afirmar que a operação mencionada e pretendida no caso em tela:
+A) é terminantemente coibida e flagrantemente proibida na estrita tipificação material do diploma e de imediato. Sendo um axioma básico que as consolidações de bancos extraídos das administrações do Estado por vias oficiais em nenhuma contingência ou sob nenhuma exceção fática prevista ou autorizativa do texto possam dar base ou referencial para apoiar e sustentar cientificamente projetos em pesquisas metodológicas perante os fóruns de inovação.
+B) é admissível juridicamente, com respaldo pacífico visto a adequação irretocável que plenamente preenche e se acosta com perfeição ao escopo amparado na exceção garantidora trazida nos moldes previstos em parte dos textos abrigados no art. 26 da lei federal, sendo hipótese cristalina direcionada para uso justificado, onde se observa e impera rigorosamente no compartilhamento voltado em essência aos estritos fins de pesquisa, que em conjunto com a imperativa notificação das transações perante a autoridade nacional de supervisão, se reforce e se exija a obrigação de anonimização perene dos dados ali trabalhados, sempre que assim comportar os padrões e as possibilidades do método desenvolvido nos polos de estudo.
+C) é francamente e estritamente admissível e estimulada para fins de paridade entre o público e o corporativo, com a única pendência essencial vinculativa estipulada expressamente no sentido de que a empresa OSCIP deva prover as medidas administrativas garantindo de ofício um pagamento legal compulsório (via recolhimento percentual) recolhido na conta na forma de direitos do tipo royalty aos bolsos dos cidadãos que integram ativamente o polo de tratamento pesquisado caso os relatórios tabulados pela iniciativa encabecem ou gerem eventualmente qualquer forma finalística pautada e consubstanciada pelo advento da emissão e de um futuro registro prático na redação de artigo validado internacionalmente.
+D) é expressa e cabalmente proibido pela referida Autoridade em qualquer instância da federação, pautado primariamente no critério e na justificativa hermenêutica adotada pela legislação de que tais organizações sociais, como entidades não governamentais englobadas genericamente no guarda-chuva amplo e lato sob o apelativo da sigla genérica das chamadas "OSCIPs", foram duramente restringidas, classificadas e rotuladas com menção honrosa desfavorável na letra da Lei Geral como operadoras irresponsáveis, taxando-as textualmente no corpo da lei à classe isolada e estigmatizada sob a pecha e perigosa função classificada como os "controladores de risco sensível e altíssimo perigo coletivo", impossibilitando terminantemente por vedação absoluta perante os ministérios sua admissão legal na consecução de pactuações e da eventual oportunidade de figurar nos quadros e no polo contratado nas execuções descentralizadas englobadas pelo termo abrangente sob acordos de convênios, no tocante aos arquivos com perfis protegidos no país.
+E) é admissível legalmente, e de forma purista unicamente autorizada para tramitação da vigência pretendida nas parcerias com exclusividade taxativa inquestionável sob uma única e irremediável conjuntura limitativa inafastável na regra em debate: a de se estipular primeiramente que todos sem faltar sequer um representante figurativo na condição estendida de ser o total absoluto, irrestrito e quantitativo correspondente de cem por cento perante a massa geral formadora atrelada aos respectivos cidadãos da referida agência, subscrevam pessoal e presencialmente em suas referidas dependências com autenticação oficial registrada ou formalmente lavrada num ofício perante as testemunhas em cartório, seu termo genérico atestando sem coação e autorizando em folha uma total submissão de sua aceitação e o completo descortinamento pessoal para os perfis traçados do respectivo órgão executor particular de pesquisas; apenas permitindo que esse ato, sem o qual torna nula qualquer vigência de tratamento inicial fático, autorize juridicamente com efeito o convênio almejado.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+Explicação:
+A) Incorreta. É grave erro conceitual asseverar apressadamente nos ditames das balizas federais sob análise que é coibida por imposição inafastável a salutar e promissora consecução, adoção ou mesmo fomento de toda e qualquer vertente voltada à realização de pesquisas científicas rigorosas e desenvolvimento apoiado na análise estrutural e fática que decorre de conjuntos oriundos das massivas e vastas bases operadas pela esfera orgânica estatal. Muito pelo contrário de se asseverar o exílio absoluto ao meio metodológico e acadêmico e das agências setoriais em prover incentivo à ciência nacional; tal viés é sim albergado pelas balizas que pautam de forma positiva e protetiva as ricas possibilidades postas na legislação protetiva sobre o campo informacional da LGPD e sua inter-relação contínua com entidades da sociedade.
+B) Correta. A moldura jurídica abrigada pela formulação literal imposta expressamente nas condicionantes da LGPD em seu Art. 26, na alocação descrita rigorosamente e textualmente em sua limitação exposta lá no seu § 1º, ampara, resguarda e possibilita e vislumbra validamente nas condicionantes excepcionadas os escopos e justificativas pelas quais o excepcional repasse formal do dado extraído do escopo público na órbita estatal com fito em partilhar com fins pontuais mediante a formalidade administrativa para o ente resguardado e amparado estritamente pelas formas exclusivas estipuladas e balizadas perante o escopo limitante do direito privado se reveste de robusta licitude legal em seus termos expressos, se e somente se as garantias processuais restarem suportadas e fundamentadamente respaldadas e se atrelarem num formato contratual sob fiscalização rígida e exigindo a comunicação (notificação oficial) de prestação de ofício direcionada diretamente, no ponto focal competente e primário representado pelos órgãos técnicos estatais encabeçados nas prerrogativas sob e sob a alçada e supervisão primárias perante os auspícios normativos fixados frente à respectiva e imperiosa formalidade reportada à própria Autoridade (ANPD). E associando estritamente aos deveres nos meandros e propósitos direcionados exclusivamente sob base na investigação amparada (nas hipóteses exclusivas de repasses destinados para institutos ou atividades de pesquisa), incide inafastável e positivamente também sobre a parte processadora nos polos dos trabalhos acadêmicos pautados, a exigência expressa positivada pelas premissas protetivas fundamentais fixadas que o manejo contínuo para apuração das amostras e investigações contidas nos metadados siga estritamente submetido em suas etapas finais perante as camadas impeditivas de reidentificação de perfil oriundas nas eficientes e obrigatórias aplicações da desassociação técnica ou restrições geradas pelo emprego ininterrupto, ressalvado e demandado pelo que dita e se impõe textualmente com força coercitiva na exigência de uso fundamental para toda tratativa de bases na modalidade acadêmica (a exigida e mandatória regra da anonimização das amostras manipuladas com foco civil restrito e anonimizado), devendo ser amplamente perseguida nos projetos com tais moldes e fins puros nos recintos do processo analítico pericial onde assim se couber sob a factibilidade fática no projeto analisado no bojo do diploma e nos processos investigados.
+C) Incorreta. O escopo e texto imperioso em análise, por ser oriundo dos parâmetros das normativas que abraçam as regulações atreladas unicamente ao tema basilar de proteção e uso justo de dados, em nenhum viés abstrato, doutrinário, literal ou mesmo periférico que seja aventado, prescreve amparos na fundamentação, estabelece ou delineia, sequer impõe nos estritos recortes, balizas impositivas sob condição peremptória e muito menos confere alíquotas obrigacionais focadas sobre qualquer vertente que aborde ou fixe como encargo ou compensação inalienável de preceito material a transferência incondicional sob exigência expressa ou de imposição pecuniária restrita pautada pelo repasse compulsório, repactuações por tributos, submissões comerciais atreladas, fixações sobre patentes pecuniárias devidas na forma material, percentuais atrelados de retornos mercadológicos e não existe qualquer encargo imposto determinando destinação finalista imbuída mediante partição por meio obrigatório sob a forma pecuniária expressa no aspecto do instituto legal nominado juridicamente sob a alcunha referida de um simples repasse material ou direito a royalty pecuniário garantido ou devolvido isoladamente caso ocorram e eventualmente surjam publicações literárias perante periódicos das respectivas entidades.
+D) Incorreta. Em relação ao absurdo contido no excerto enganoso da formulação e estigmatização da alínea pautada no cenário infundado que as atesta como ameaças jurídicas proibidas ou proscritas das relações estatais. Pode-se cravar e afirmar de forma conclusiva pela verificação direta das previsões das fontes e sem receio aos erros materiais perante os literais textos de vigência normativa primária do Estado sobre a questão (LGPD e complementares estritas), que no corpo ou em qualquer menção normativa exarada por diretrizes exaurientes vigentes que a própria lei que regulamenta e estrutura as premissas gerais que envolvem as restrições ao tratamento informacional (sob a alcunha de controle e responsabilidade da Autoridade) de forma absolutamente incontestável e de maneira cristalina sob e amparada e referenciada nas leis pátrias e normativos diretos emanados perante as esferas cabíveis de jurisdição ordinária e em seus anexos não se prestou por nenhum modo prático vislumbrável ou concebido pela exegese, a restringir o trabalho destas fundações de classe nem tachou tais associações comunitárias legalizadas da terceira via das OSCIPs ao escárnio material do veto administrativo para as licitações com rótulos taxativos difamadores imputando o cunho absurdo expresso nominando-as expressamente limitadas perante e de forma abstrata sob uma suposta menção pejorativa imposta por classe denominada com um suposto e infundado título na seara legal nomeado de supostos "controladores de altíssimo e extremo risco contínuo generalizado", inviabilizando ou proibindo parcerias para sua ampla atuação; na verdade essas restrições e rótulos limitadores inexistem na LGPD na figura de OSCIPs.
+E) Incorreta. Pela inteligência extraída de modo sistemático dos recortes hermenêuticos do tema abordado na legislação focada para tal e pautados para embasar de maneira expressa à exceção permissiva, a exegese fixada que regula os polos na base autorizativa direcionada para repasses à via de pesquisadores credenciados perante vínculos estritamente com os polos da finalidade pública e sob a submissão aos rigores que permeiam as práticas das restrições e exigências robustas das etapas pautadas no anonimato estatístico adotado perante a restrição para identificação singular (sem contar a submissão aos convênios lícitos) que mitigam pesadamente eventuais danos focais isolados ou ameaças indevidas à parte pessoal do titular; de tal forma que todo esse resguardo e garantia metodológica estrita para tais excepcionalidades da investigação atreladas de certa forma no corpo da referida excepcionalidade à dispensa do consentimento no aspecto de políticas e amparos estatais ou pesquisa autorizada sob estrito controle das esferas (notificada perante à Autoridade), restará integral e legalmente capaz, dispensada a imposição ilógica e draconiana, inviável faticamente sob vias cartoriais na amplitude coletiva do país, eximindo o ente público ou instituto no estrito cerne desse modelo regido de ter que ficar refém estrito a mendigar burocraticamente assinaturas totais, absolutas, unitárias em massa registradas perante e sem flexibilidade nos pesados moldes formais documentais ou cartoriais unânimes oriundos ou captados por cem por cento do consentimento englobando isoladamente toda a respectiva coletividade gigantesca vinculada que engloba as parcelas listadas nos repositórios mantidos nos bancos estatais gigantes.
+</details>
+
+---
+
+
 ## 📝 TEMA 1: Programação Web Java/Spring
 
 ### Questão 1 (FCC - 2018 - TRT 15 - Analista Judiciário - TI)
@@ -331,635 +664,321 @@ Para garantir conformidade de implementações de terceiros (como Jersey, RESTEa
 </details>
 
 
-## 📝 TEMA 2: Testes de Software
+## 📝 TEMA 3: PCD — Leis de Acessibilidade
 
-### Questão 1 (FCC - 2019 - TRF 4ª Região - Analista Judiciário - Sistemas da Informação)
-A equipe de desenvolvimento de um tribunal precisa testar uma aplicação com foco exclusivo nas funções e comportamentos externos do sistema, verificando as entradas e saídas sem a necessidade de observar ou conhecer a estrutura interna do código-fonte. Essa técnica é denominada teste de:
-A) Caixa preta.
-B) Caixa branca.
-C) Teste estrutural.
-D) Teste de caminho básico.
-E) Teste de mutação.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-A) A alternativa está correta. O teste de caixa preta (ou teste funcional) concentra-se em avaliar as funções, requisitos e regras de negócio do sistema. O testador fornece dados de entrada e analisa as saídas correspondentes sem precisar ter acesso ou conhecimento do código-fonte (lógica interna).
-B) A alternativa está incorreta. O teste de caixa branca, ao contrário, exige profundo conhecimento da lógica interna, fluxo de dados e da estrutura do código-fonte.
-C) A alternativa está incorreta. Teste estrutural é essencialmente um sinônimo e uma categorização de testes de caixa branca, pois avalia estritamente a estrutura interna do programa.
-D) A alternativa está incorreta. O teste de caminho básico é uma técnica específica de caixa branca, criada por McCabe, que utiliza o fluxo lógico para desenhar os casos de teste essenciais.
-E) A alternativa está incorreta. O teste de mutação insere falhas intencionais (mutantes) no código para validar não a aplicação em si, mas a eficácia da suíte de testes que foi construída para detectá-las.
-</details>
-
----
-
-### Questão 2 (FCC - 2022 - TRT 22ª Região (PI) - Analista Judiciário - Tecnologia da Informação)
-No que diz respeito à engenharia de software, o uso das técnicas de particionamento de classes de equivalência e análise de valor limite são classificadas tipicamente como técnicas de projeto de:
-A) Caixa preta.
-B) Caixa branca.
-C) Caixa cinza.
-D) Teste de mesa.
-E) Teste de integração.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-A) A alternativa está correta. Particionamento de equivalência e análise de valor limite focam em segmentar e testar os domínios dos dados de entrada e de saída baseando-se no comportamento especificado, sendo as principais técnicas do escopo do teste funcional, isto é, de caixa preta.
-B) A alternativa está incorreta. A caixa branca se preocupa com a cobertura do fluxo de controle, como cobertura de comandos, de ramificações e decisões internas.
-C) A alternativa está incorreta. A caixa cinza combina validações de comportamento (preta) com acessos pontuais ao banco ou arquitetura (branca), mas essas duas técnicas específicas derivam exclusivamente da base de conhecimentos da caixa preta.
-D) A alternativa está incorreta. O teste de mesa é uma técnica estática e manual onde o algoritmo é testado no papel, acompanhando variáveis.
-E) A alternativa está incorreta. O teste de integração cuida de validar os componentes ou módulos interagindo entre si, sem ser o guarda-chuva que define o valor limite.
-</details>
-
----
-
-### Questão 3 (FCC - 2018 - TRT 15ª Região (SP) - Analista Judiciário - Tecnologia da Informação)
-No contexto de Testes de Software, a etapa focada em verificar e garantir que diferentes componentes, pacotes ou sistemas independentes funcionem corretamente quando combinados ou acoplados para trabalharem juntos, é conhecida como Teste de:
-A) Unidade.
-B) Integração.
-C) Carga.
-D) Aceitação.
-E) Regressão.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-A) A alternativa está incorreta. O teste de unidade isola e avalia o comportamento de um micro-componente ou função (método, classe) de forma independente do resto do sistema.
-B) A alternativa está correta. A essência do teste de integração é justamente pegar unidades já testadas isoladamente e verificar a interação, comunicação e a passagem de dados (acoplamento) entre elas quando agrupadas.
-C) A alternativa está incorreta. Testes de carga avaliam requisitos não funcionais de desempenho, colocando tráfego e volume no sistema.
-D) A alternativa está incorreta. A aceitação avalia o sistema pronto, do ponto de vista do usuário final em um ambiente de homologação.
-E) A alternativa está incorreta. A regressão atua para assegurar que partes antes funcionais não quebrem ao receber novas atualizações.
-</details>
-
----
-
-### Questão 4 (FCC - 2018 - TRT 6ª Região (PE) - Analista Judiciário - Tecnologia da Informação)
-Durante a fase de manutenção de um sistema, a equipe corrige um defeito crítico apontado pelo cliente. Após a aplicação da correção, o engenheiro de qualidade executa um conjunto de casos de teste que já haviam passado em builds anteriores, visando assegurar que a nova alteração não gerou falhas em componentes que funcionavam perfeitamente. Esta prática descreve o Teste de:
-A) Estresse.
-B) Regressão.
-C) Aceitação final.
-D) Cobertura de Caminhos.
-E) Usabilidade.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-A) A alternativa está incorreta. O teste de estresse força a aplicação a ir além do seu limite operacional normal para ver quando e como ocorre a falha do sistema.
-B) A alternativa está correta. O Teste de Regressão é caracterizado justamente pela reexecução parcial ou total de uma suíte de testes antigos em versões novas. O foco é detectar "regressões", ou seja, defeitos ou efeitos colaterais inseridos acidentalmente em código previamente correto após alguma refatoração ou acréscimo de funcionalidade.
-C) A alternativa está incorreta. O teste de aceitação valida o produto em relação à necessidade real de negócio sob os olhos do cliente/usuário.
-D) A alternativa está incorreta. Teste de caminhos tem relação com o cálculo de rotas no diagrama de fluxo estrutural, sendo técnica de caixa branca.
-E) A alternativa está incorreta. A usabilidade verifica a ergonomia e facilidade de navegação por parte de humanos nas interfaces gráficas.
-</details>
-
----
-
-### Questão 5 (FCC - 2017 - TST - Analista Judiciário - Suporte em Tecnologia da Informação)
-Assinale a afirmativa correta no que se refere aos conceitos e aplicação prática de testes de caixa branca e caixa preta.
-A) O teste de caixa branca pode ser aplicado sem nenhuma visualização do código-fonte, baseando-se apenas nos casos de uso.
-B) O teste de caixa preta também é conhecido como teste comportamental e foca especificamente nas entradas fornecidas e nas saídas obtidas.
-C) A análise de valores limites é uma técnica estrutural tipicamente executada nas fases puras do teste de caixa branca.
-D) O teste de condição (validação de variáveis booleanas e ifs aninhados) é um excelente exemplo da abrangência do teste de caixa preta.
-E) No teste de caixa preta, exige-se que o testador possua elevado conhecimento técnico da linguagem de programação e arquitetura de dados utilizada.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-A) A alternativa está incorreta. Exige-se categoricamente a análise de fluxos estruturais baseados no código-fonte em um teste de caixa branca.
-B) A alternativa está correta. A caixa preta avalia o comportamento (daí ser chamado de teste comportamental) ignorando detalhes de implementação. Avaliam-se apenas as entradas e se a saída atende à especificação funcional.
-C) A alternativa está incorreta. Análise de valores limite é uma das principais técnicas do teste de caixa preta (funcional).
-D) A alternativa está incorreta. Validar condições e fluxos booleanos requer entender a lógica (caminhos no código), sendo tarefa direta do teste de caixa branca.
-E) A alternativa está incorreta. É na caixa preta que o testador age sem depender do conhecimento da linguagem, focando nos requisitos do domínio do negócio. Na caixa branca esse conhecimento avançado em código é, de fato, obrigatório.
-</details>
-
----
-
-### Questão 6 (FCC - 2014 - TRF 4ª Região - Analista Judiciário - Informática)
-TDD (Test-Driven Development) é uma prática de engenharia de software proveniente dos métodos ágeis (Extreme Programming) e possui como característica fundamental:
-A) a realização do teste de aceitação logo antes do levantamento final de requisitos, utilizando prototipagem.
-B) a codificação dos testes unitários imediatamente após o código de negócio principal do sistema estar concluído.
-C) a escrita de um teste automatizado, que inicializa falhando, precedendo a codificação mínima necessária na funcionalidade para fazê-lo passar e refatorar.
-D) o projeto dos testes em conjunto com a arquitetura e normalização do banco de dados relacional (modelo entidade-relacionamento).
-E) o papel central exercido pelos analistas de testes manuais, que não dependem do código para realizar suas validações funcionais sistêmicas.
+### Questão 1 (FCC - 2018 - TRT 15 - Analista Judiciário)
+Sobre o Estatuto da Pessoa com Deficiência (Lei nº 13.146/2015), o termo que define "concepção de produtos, ambientes, programas e serviços a serem usados por todas as pessoas, sem necessidade de adaptação ou de projeto específico, incluindo os recursos de tecnologia assistiva" é:
+A) adaptação razoável.
+B) tecnologia assistiva.
+C) desenho universal.
+D) barreira arquitetônica.
+E) ajuda técnica.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-A) A alternativa está incorreta. TDD diz respeito ao desenvolvimento guiado por testes (focado num nível de unidade/dev), e não se liga a protótipos em levantamentos de requisitos.
-B) A alternativa está incorreta. A lógica de fazer o teste APÓS o código fere completamente a filosofia "Test-Driven" (Dirigido por Testes), devendo ser feito o inverso.
-C) A alternativa está correta. O núcleo do TDD é o ciclo Red-Green-Refactor. Primeiro escreve-se um teste para a funcionalidade que ainda não existe, ele falhará (Vermelho). Então escreve-se o código de produção mínimo até o teste passar (Verde) e depois melhora-se o código (Refatoração).
-D) A alternativa está incorreta. O projeto de banco de dados não tem nenhuma correlação com a escrita sequencial de testes unitários que direcionam o design do código de aplicação.
-E) A alternativa está incorreta. TDD é uma técnica intensiva em desenvolvimento de código (orientada aos programadores) voltada aos testes unitários automatizados.
+- **A) Incorreta.** "Adaptação razoável" refere-se às modificações e aos ajustes necessários e adequados que não acarretem ônus desproporcional e indevido, quando requeridos em cada caso, para assegurar o gozo dos direitos.
+- **B) Incorreta.** "Tecnologia assistiva" engloba produtos, equipamentos, dispositivos e práticas que objetivam promover a funcionalidade e autonomia da pessoa.
+- **C) Correta.** Esta é a exata definição de "desenho universal", encontrada no art. 3º, inciso II, da Lei Brasileira de Inclusão (LBI). É o projeto para que algo seja utilizável por todos, desde sua concepção.
+- **D) Incorreta.** "Barreira arquitetônica" é o obstáculo físico existente nos edifícios públicos e privados, impedindo a acessibilidade.
+- **E) Incorreta.** "Ajuda técnica" é utilizado como sinônimo legal de tecnologia assistiva e não se confunde com o escopo amplo de desenho universal.
 </details>
 
 ---
 
-### Questão 7 (FCC - 2015 - TRE-AP - Analista Judiciário - Tecnologia da Informação)
-Para assegurar que o portal de serviços do órgão não apresentará quedas na véspera das eleições, a equipe de qualidade decidiu submeter o sistema a um volume extremo de acessos, forçando o sistema para além dos limites operacionais convencionais a fim de investigar pontos de ruptura. Essa técnica é conhecida como teste de:
-A) Estresse.
-B) Usabilidade.
-C) Regressão.
-D) Integração.
-E) Funcionalidade.
+### Questão 2 (FCC - 2019 - TRF 4 - Analista Judiciário)
+De acordo com a Lei n° 13.146/2015, a pessoa com deficiência tem direito a receber atendimento prioritário. Esse direito abrange, entre outros:
+A) prioridade no recebimento de restituição de imposto de renda.
+B) prioridade em emergências e urgências médicas independentemente de protocolo de classificação de risco.
+C) prioridade aplicável exclusivamente no âmbito das instituições públicas.
+D) a garantia de não aguardar em filas, exceto para o embarque e desembarque em transporte público.
+E) tramitação prioritária em processos e procedimentos judiciais em que figure obrigatoriamente como testemunha.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: A**
 
-A) A alternativa está correta. O teste de estresse (ou sobrecarga extrema) tem como único propósito levar os recursos do sistema ou infraestrutura a um limite além da sua capacidade normal prevista, validando como o sistema reage, falha e eventualmente como ele se recupera.
-B) A alternativa está incorreta. Testes de usabilidade referem-se à avaliação das interfaces para facilidade de uso do indivíduo.
-C) A alternativa está incorreta. Regressão trata-se de buscar defeitos secundários causados após alguma mudança no sistema.
-D) A alternativa está incorreta. O teste de integração verifica apenas os elos e o acoplamento entre os módulos.
-E) A alternativa está incorreta. O teste de funcionalidade certifica se os requisitos e os processos de negócio são atendidos sem foco específico em vazões exorbitantes de carga.
+- **A) Correta.** O art. 9º, inciso VII, da LBI garante expressamente como um dos direitos de atendimento prioritário a prioridade no recebimento de restituição de imposto de renda.
+- **B) Incorreta.** Nos serviços de saúde para urgência e emergência, o atendimento prioritário está expressamente condicionado aos protocolos médicos de classificação de risco (art. 9º, § 1º). A gravidade clínica sempre se sobrepõe.
+- **C) Incorreta.** A prioridade deve ser observada em todas as instituições e serviços de atendimento ao público, abrangendo tanto os entes públicos quanto os privados.
+- **D) Incorreta.** O atendimento e embarque preferencial aplicam-se integralmente aos transportes públicos, sem essa ressalva imposta pela alternativa.
+- **E) Incorreta.** A tramitação prioritária nos processos judiciais e administrativos ocorre quando a pessoa com deficiência for parte ou interessada, e não exigido figurar como testemunha.
 </details>
 
 ---
 
-### Questão 8 (FCC - 2018 - TRT 2ª Região (SP) - Analista Judiciário - Tecnologia da Informação)
-No nível de projeto de testes estruturais (caixa branca), uma métrica importante e um tipo de teste visam quantificar se os comandos individuais do código-fonte e todas as suas decisões ou condicionais foram executados pelo menos uma vez durante a bateria automatizada. Trata-se da técnica de:
-A) Teste de mutação.
-B) Teste de cobertura de comandos e decisões.
-C) Teste baseado em especificação de requisitos.
-D) Particionamento de classe de equivalência.
-E) Teste de transição de estados.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-A) A alternativa está incorreta. Mutação não avalia execução primária de decisões lógicas, ela introduz pequenos defeitos deliberados para observar se a própria suíte de testes existente detecta essa anomalia ou se o mutante "sobrevive".
-B) A alternativa está correta. Cobertura de comandos (ou instruções) mede a proporção de linhas de código que foram ativadas, e a cobertura de decisões (branch coverage) mede se caminhos lógicos (if/else verdadeiros e falsos) foram testados. Pertencem inteiramente à caixa branca.
-C) A alternativa está incorreta. Testes com foco exclusivo na especificação descrevem a técnica de caixa preta comportamental.
-D) A alternativa está incorreta. Essa técnica visa gerar partições para minimizar testes em domínios longos e representa ferramentas de caixa preta.
-E) A alternativa está incorreta. Transição de estados avalia as mudanças lógicas na perspectiva do negócio e comportamentos visíveis do sistema, sendo tipicamente categorizada em caixa preta.
-</details>
-
----
-
-### Questão 9 (FCC - 2019 - TRF 3ª Região - Analista Judiciário - Informática)
-Na Engenharia de Software Contemporânea e Métodos Ágeis, o BDD (Behavior-Driven Development) busca alinhar o desenvolvimento de software aos interesses de negócio, e pode ser caracterizado por:
-A) promover o desenvolvimento guiado exclusivamente pelos relatórios sintéticos de cobertura de código contínuo (Code Coverage).
-B) definir o comportamento do sistema por meio de uma linguagem ubíqua e colaborativa, tipicamente estruturando cenários em linguagem natural através do padrão Dado-Quando-Então (Given-When-Then).
-C) terceirizar, perante contratos, toda a construção de testes unitários estruturais à equipe isolada de representantes comerciais (PO).
-D) incentivar que casos de teste automatizados sejam abandonados em favor da testagem unicamente manual nas etapas finais de produção.
-E) estruturar a arquitetura técnica do código baseando-se primariamente nas restrições de desempenho da linguagem e esquemas de dados de baixo nível.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-A) A alternativa está incorreta. O BDD não é centrado em relatórios matemáticos de código. Seu foco recai sobre o comportamento documentado que atenda aos requisitos de negócios, garantindo que o que se constrói importa para o usuário.
-B) A alternativa está correta. O Behavior-Driven Development encoraja a colaboração e especifica cenários através de uma linguagem comum a todos os times (ubíqua) estruturada pelo padrão "Dado que (contexto)... Quando (ação)... Então (resultado)", permitindo automatizar facilmente as regras do negócio usando ferramentas como Cucumber.
-C) A alternativa está incorreta. BDD integra todos do time de modo multidisciplinar ("Três Amigos"), unindo programadores, testadores e o PO. Ele não é uma técnica de terceirização isolada.
-D) A alternativa está incorreta. Pelo contrário, o objetivo máximo da sintaxe BDD (Gherkin/Cucumber) é justamente servir de roteiro direto para execução de testes que se tornam facilmente automatizáveis.
-E) A alternativa está incorreta. O BDD se concentra nos cenários de negócio, no que o sistema fará do ponto de vista do usuário final, ignorando abordagens baseadas em minúcias arquiteturais de dados de baixo nível.
-</details>
-
----
-
-### Questão 10 (FCC - 2017 - TRT 11ª Região (AM/RR) - Analista Judiciário - TI)
-No fim do fluxo tradicional de desenvolvimento e aprovação, um tipo específico de validação tenta atestar a aderência do software aos contratos de requisitos de alto nível. É focado nas necessidades corporativas e executado, muitas vezes, de modo não estruturado ou usando simulações por representantes do cliente. Assinale a alternativa que dá o nome exato desta etapa:
-A) Teste Unitário.
-B) Teste de Caixa Branca.
-C) Teste de Aceitação.
-D) Teste de Estresse de Rede.
-E) Teste de Fluxo de Dados.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-A) A alternativa está incorreta. O teste unitário ocorre muito cedo, criado por dev, testando se a microcamada técnica do código faz o que deve, distante da aprovação dos requisitos pelo cliente.
-B) A alternativa está incorreta. O teste estrutural caixa branca se atém às instruções lógicas da linguagem, inacessíveis à visão do usuário/cliente comum.
-C) A alternativa está correta. O Teste de Aceitação é a última barreira formal de validação funcional antes do deploy para produção, e serve para que o cliente ou usuário chave possa confirmar se o software de fato satisfaz às regras negociais para o qual foi idealizado (famosos UAT, Alpha/Beta Testing).
-D) A alternativa está incorreta. Um foco de carga de rede enquadra testes de desempenho/comunicação e nada diz sobre se os fluxos funcionais foram aceitos pelo usuário.
-E) A alternativa está incorreta. Teste baseado no ciclo de vida de declaração, uso e destruição de variáveis é de caixa branca.
-</details>
-
----
-
-### Questão 11 (FCC - 2015 - TRT 3ª Região (MG) - Analista Judiciário - TI)
-Ao projetar casos de teste empregando de maneira técnica e pragmática a Análise de Valor Limite, o engenheiro de testes focará seus esforços em:
-A) traçar caminhos completamente independentes dentro dos grafos de controle do diagrama lógico.
-B) selecionar minuciosamente valores numéricos, lógicos ou literais que estejam posicionados exatamente nas fronteiras ou bordas extremas das classes de equivalência.
-C) explorar vulnerabilidades abertas em brechas de injeção de SQL e desvio de chamadas de buffer (buffer overflow).
-D) avaliar as métricas de tempo de resposta dos servidores e latência durante um teste intermitente e prolongado.
-E) executar inspeção e revisão do código-fonte manualmente (code review) ao lado dos pares buscando erros lógicos não óbvios.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-A) A alternativa está incorreta. Grafos de controle e determinação matemática de caminhos referem-se estritamente ao teste de caminho básico (Complexidade Ciclomática / Caixa branca).
-B) A alternativa está correta. A literatura e a prática provam que erros acontecem muito mais comumente nas transições de uma classe de equivalência para outra. Portanto, usar testes nas "fronteiras" (por exemplo, se é válido de 1 a 10, testar 0, 1, 10, 11) caracteriza a Análise de Valor Limite, sendo técnica altamente eficiente de caixa preta.
-C) A alternativa está incorreta. Esse universo descreve testes de intrusão, segurança e cibersegurança (Security Testing e Pentest).
-D) A alternativa está incorreta. Esse escopo recai nos requisitos de testes não funcionais de performance ou carga, onde se medem tempos, latência e gargalos na infra.
-E) A alternativa está incorreta. Inspeções, revisões de pares e walkthroughs configuram testes estáticos, muito longe do projeto dinâmico de valores das fronteiras.
-</details>
-
----
-
-### Questão 12 (FCC - 2012 - TST - Analista Judiciário - TI)
-A métrica conhecida como "Complexidade Ciclomática", elaborada inicialmente por Thomas McCabe, é frequentemente utilizada nos projetos de testes de software modernos e serve como um forte indicador para:
-A) estabelecer o limite quantitativo máximo de acessos simultâneos ao banco de dados e à camada de persistência.
-B) calcular matematicamente a quantidade mínima de caminhos básicos independentes, guiando assim o número essencial de casos de teste para cobrir a base lógica estrutural.
-C) definir de antemão a variação dimensional das telas para os testes de resolutividade (cross-browser).
-D) estimar a aceitação subjetiva da interface por um conjunto restrito de usuários leigos.
-E) aferir o grau exato de risco e criptografia exigida nas transações financeiras externas do sistema.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-A) A alternativa está incorreta. Esse limite é dimensionado em arquitetura, e testado com testes de estresse, sem relação com cálculo ciclomático.
-B) A alternativa está correta. A Complexidade Ciclomática é calculada num grafo de nós e arestas (V = A - N + 2). Esse número V indica a quantidade de caminhos independentes do software, permitindo que a equipe planeje o número exato de testes de caixa branca que atinjam toda a cobertura do código.
-C) A alternativa está incorreta. A usabilidade cross-browser valida layout e compatibilidade nas visões (front-end), dispensando matrizes ciclomáticas estruturais do código-fonte.
-D) A alternativa está incorreta. Aceitação trata do atendimento da satisfação das regras de negócio pelo cliente.
-E) A alternativa está incorreta. O foco em riscos criptográficos pertencerá sempre aos testes de segurança do software e compliance.
-</details>
-
----
-
-### Questão 13 (FCC - 2016 - TRT 20ª Região (SE) - Analista Judiciário - TI)
-Em um fluxo contínuo de testes de software modernos (especialmente envolvendo DevOps e TDD), a construção de um 'Stub' ou um 'Mock' (dublês de testes) é recomendada tipicamente em baterias de:
-A) Usabilidade e GUI, para automatizar cliques sequenciais imitando com perfeição as ações musculares do usuário final.
-B) Unidade ou Integração de pequeno escopo, visando simular artificialmente o comportamento de componentes, serviços de terceiros ou métodos que são pesados, lentos, ou ainda não desenvolvidos, para isolar a peça sob teste.
-C) Estresse global, para forçar intencionalmente falhas de memória RAM simulando vazamentos (leaks).
-D) Aceitação de clientes, garantindo simulações de fidelidade visual da interface frente à concorrência.
-E) Segurança e proteção de dados, exercendo a figura isolada de um invasor simulado em testes de intrusão.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-A) A alternativa está incorreta. Ferramentas de automação de UI como Selenium simulam passos em tela, mas Stubs e Mocks são artifícios implementados programaticamente no código.
-B) A alternativa está correta. Dublês de teste, como Stubs e Mocks, são muito úteis na camada Unitária e Integração menor. O princípio básico neles é falsificar (mockar) comportamentos de APIs externas, bancos de dados ou qualquer módulo complexo (que o seu alvo de teste consome), a fim de isolar estritamente seu ambiente.
-C) A alternativa está incorreta. Vazamentos de memória não dependem de mocks, e sim de rastreamentos de heap no ambiente de performance.
-D) A alternativa está incorreta. Em validações de aceitação do usuário evita-se os mocks para testar o sistema real de forma idêntica à que ele operará no mercado.
-E) A alternativa está incorreta. Simulações invasivas pertencem ao domínio dos Ethical Hackers/Testes de Vulnerabilidade, e não usam a teoria de mocks funcionais do TDD.
-</details>
-
----
-
-### Questão 14 (FCC - 2014 - TRT 19ª Região (AL) - Analista Judiciário - TI)
-Segundo as boas práticas de Engenharia e Garantia de Qualidade de Software, existe uma forte distinção conceitual sobre as atividades primordiais de "Verificação" e "Validação" (V&V). Assinale a alternativa que as diferencia adequadamente:
-A) A Verificação busca atestar se "o software está sendo construído corretamente" de acordo com padrões e designs internos; enquanto a Validação questiona se "o produto certo está sendo construído" e se ele atende plenamente o usuário.
-B) A Verificação ocorre unicamente após a entrega do produto final e a Validação acontece exclusivamente e de modo restrito no levantamento de requisitos inicial.
-C) Ambas são essencialmente técnicas exclusivas pertencentes ao escopo dos testes de desempenho não funcionais.
-D) A Validação avalia única e exclusivamente a qualidade semântica do código-fonte, englobando a caixa branca e refatorações puras, e a Verificação avalia testes finais estressantes.
-E) A Verificação é obrigatoriamente de responsabilidade absoluta dos gerentes de projeto, enquanto a Validação é dos programadores júniores em codificação.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-A) A alternativa está correta. Esta é a famosa máxima definida por Barry Boehm. A Verificação foca nos processos e em atestar que as fases e o produto aderem às especificações técnicas descritas (Estamos construindo o produto do jeito certo?). A Validação avalia o software pronto diante das necessidades e expectativas subjetivas originais do negócio do cliente (Estamos construindo o produto certo para o cliente?).
-B) A alternativa está incorreta. As duas correm em paralelo ao longo de quase todo o ciclo, seja de maneira contínua no Ágil ou com marcos delimitados nos modelos tradicionais.
-C) A alternativa está incorreta. Ambas são dimensões que englobam a totalidade dos esforços de testes e qualidade, ultrapassando questões meramente dimensionadas ao desempenho.
-D) A alternativa está incorreta. Na verdade a verificação detém o maior foco em códigos e documentações internas (garantir padrões técnicos/caixa branca). A validação recai primordialmente no teste do comportamento aos olhos do cliente/caixa preta ou aceitação.
-E) A alternativa está incorreta. Não se pode isolar e definir arbitrariamente por nível hierárquico (como gerentes x júniores) papéis que fluem organicamente envolvendo Dev, QA e PO no processo produtivo da organização.
-</details>
-
----
-
-### Questão 15 (FCC - 2022 - TRT 5ª Região (BA) - Analista Judiciário - TI)
-Dentre as abordagens especializadas e complexas de garantia de qualidade na engenharia de testes, o teste estrutural denominado "Teste de Mutação" é empregado visando:
-A) validar constantemente se os requisitos operacionais que não influenciam no produto mudaram de escopo e sentido ao longo do tempo.
-B) avaliar, com viés métrico, a real eficácia do conjunto de casos de teste automatizados existente introduzindo intencionalmente pequenas falhas isoladas ("mutantes") no código de produção.
-C) monitorar intermitentemente as instabilidades e como o binário se comporta diante das intensas mutações contínuas provenientes de falhas de hardware no servidor de infraestrutura.
-D) realizar testes visuais em série na interface do usuário (UI/UX) avaliando sua resiliência a dispositivos móveis flutuantes e mutações de tela responsivas (media queries).
-E) fornecer ferramentas de orquestração automatizada para converter testes unitários antigos e complexos (caixa branca) para testes macro e puros de sistema e aceitação (caixa preta).
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-A) A alternativa está incorreta. A atividade de validar mudanças em requisitos de projeto não remete a um tipo de testagem baseada em mutação, mas sim na gestão de ciclo de vida e requisitos de mudança corporativa.
-B) A alternativa está correta. O Teste de Mutação atua no âmago da avaliação qualitativa dos próprios casos de teste existentes. Pequenos bugs cirúrgicos (alterar um '+' por um '-') são plantados e chamados de "mutantes". Roda-se os testes: o que passar está errado, e o teste que falhar e capturar a discrepância "matou o mutante". Testes blindados matam todos eles.
-C) A alternativa está incorreta. Fatorar e analisar instabilidades em hardwares ou dependências na borda da infra refere-se a engenharia de confiabilidade (Chaos Engineering ou testes robustez), mas não ao rigor do "Teste de Mutação".
-D) A alternativa está incorreta. Essa afirmação confunde o escopo voltando para validação da Interface de Usuário adaptativa ou responsiva para web, algo absolutamente distinto de alterar o código de produção logicamente de forma intencional para verificação da suíte.
-E) A alternativa está incorreta. Na engenharia é virtualmente impossível orquestrar uma mudança estrutural (caixa branca, lógica condicional) de modo linear para um teste comportamental orientado à tela de usuário sem um alto nível de interpretação, e o Teste de Mutação não tem esse papel tradutório na sua essência.
-</details>
-
-
-## 📝 TEMA 3: Direito Administrativo
-
-### Questão 1 (FCC - 2023 - TRT 18 - Técnico Judiciário - Área Administrativa)
-No tocante aos princípios aplicáveis à Administração Pública, o princípio da impessoalidade tem como um de seus aspectos a ideia de que:
-A) a Administração não pode atuar com vistas a prejudicar ou beneficiar pessoas determinadas.
-B) as competências dos órgãos públicos devem ser definidas previamente por lei, sem influência pessoal.
-C) os atos administrativos devem ser sempre publicados em órgão oficial para conhecimento de todos.
-D) as decisões administrativas devem ser motivadas e embasadas em pareceres técnicos imparciais.
-E) a eficiência na prestação do serviço independe das características pessoais do agente público.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-A alternativa **A** é a correta, pois o princípio da impessoalidade apresenta dupla vertente no Direito Administrativo: a primeira é a vedação à promoção pessoal do agente público (art. 37, § 1º, da CF), garantindo que as realizações sejam imputadas ao Estado; a segunda impõe que a atuação estatal deve ter como objetivo o interesse público, não podendo beneficiar ou prejudicar indevidamente pessoas específicas. Portanto, a opção descreve o aspecto finalístico da impessoalidade.
-A alternativa **B** está incorreta, pois a estrita submissão dos órgãos e competências ao que está previsto em lei diz respeito ao princípio da legalidade (o agente público só faz o que a lei permite).
-A alternativa **C** está incorreta porque a obrigatoriedade de publicação oficial dos atos visa dar conhecimento ao público e marcar o início de sua eficácia, sendo um reflexo direto do princípio da publicidade, e não da impessoalidade.
-A alternativa **D** está incorreta, pois fundamentar as decisões em parâmetros técnicos é uma exigência do princípio da motivação. Embora a motivação ajude no controle da impessoalidade, ela é um instituto autônomo.
-A alternativa **E** está incorreta, visto que o alcance de produtividade e otimização de recursos refere-se primordialmente ao princípio da eficiência (incluído no art. 37, caput, da CF pela EC 19/98).
-</details>
-
----
-
-### Questão 2 (FCC - 2022 - TRT 22 - Analista Judiciário - Área Administrativa)
-Sobre a organização administrativa da União, as autarquias são compreendidas como:
-A) pessoas jurídicas de direito público, criadas por lei, com capacidade de autoadministração, para o desempenho de serviço público descentralizado.
-B) pessoas jurídicas de direito privado, cuja criação é autorizada por lei, voltadas à exploração de atividade econômica.
-C) entes da administração direta, com personalidade jurídica própria, criados por lei específica.
-D) órgãos despersonalizados criados por lei para exercerem poder de polícia, subordinados diretamente ao Ministério respectivo.
-E) entidades privadas autorizadas por lei a prestar serviços sociais não exclusivos do Estado.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-A alternativa **A** é a correta. As autarquias compõem a Administração Indireta, ostentam personalidade jurídica de direito público e são criadas diretamente por lei específica, não necessitando de registro de seus atos constitutivos (art. 37, XIX, CF e art. 5º do Decreto-Lei 200/67). Possuem autonomia financeira e administrativa para executar atividades típicas de Estado, operando a descentralização por serviços (outorga).
-A alternativa **B** é incorreta. O texto descreve as sociedades de economia mista e empresas públicas, que pertencem à Administração Indireta, mas possuem personalidade jurídica de direito privado e dependem de autorização legal seguida de registro para nascerem.
-A alternativa **C** é incorreta porque autarquias fazem parte da Administração Indireta, e não da Direta (que é composta pela União, Estados, DF e Municípios, e seus órgãos).
-A alternativa **D** é incorreta. Autarquias possuem personalidade jurídica própria. Órgãos são centros de competência despersonalizados que integram a estrutura das pessoas jurídicas (como os Ministérios ou Secretarias). Além disso, a autarquia não é subordinada, mas sim vinculada (sofre controle finalístico) ao Ministério respectivo.
-A alternativa **E** é incorreta, pois se refere às entidades do Terceiro Setor (ex: serviços sociais autônomos, como o Sistema S), que não integram a Administração Pública.
-</details>
-
----
-
-### Questão 3 (FCC - 2023 - TRT 11 - Técnico Judiciário - Área Administrativa)
-No exercício do poder de polícia, a Administração Pública ostenta atributos, dentre os quais o que permite que a decisão seja posta em prática pela própria Administração, sem a necessidade de prévia intervenção do Poder Judiciário. Trata-se do atributo da:
-A) discricionariedade.
-B) imperatividade.
-C) autoexecutoriedade.
-D) coercibilidade.
-E) presunção de legitimidade.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-A alternativa **C** está correta. A autoexecutoriedade é o atributo do poder de polícia (e dos atos administrativos em geral) que permite que a Administração execute materialmente as suas próprias decisões sem precisar recorrer previamente às vias judiciais, podendo inclusive usar a força se necessário (exemplo clássico: apreensão de mercadorias estragadas).
-A alternativa **A** está incorreta. Discricionariedade é a margem de escolha que a lei confere ao agente público para, num caso concreto, aferir a conveniência e oportunidade da medida (ex: decidir a gravidade da penalidade dentro dos limites legais).
-A alternativa **B** está incorreta. Imperatividade é a qualidade de impor obrigações aos administrados independentemente de sua concordância, criando uma restrição na esfera jurídica de terceiros, mas não se confunde com a "execução material direta".
-A alternativa **D** está incorreta. Embora a coercibilidade garanta o uso legítimo da força para obrigar o cumprimento do ato, o comando da questão ("posta em prática pela própria Administração... sem o Judiciário") é a definição doutrinária exata da autoexecutoriedade.
-A alternativa **E** está incorreta. Presunção de legitimidade significa apenas que, até prova em contrário, entende-se que o ato foi emitido em conformidade com a lei e que os fatos alegados pelo Estado são verdadeiros (presunção de veracidade).
-</details>
-
----
-
-### Questão 4 (FCC - 2018 - TRT 15 - Analista Judiciário - Área Administrativa)
-Um determinado ato administrativo possui um vício de legalidade insanável. De acordo com o entendimento sumulado do Supremo Tribunal Federal (Súmula 473) e a legislação aplicável, a Administração:
-A) deve revogar o ato, respeitados os direitos adquiridos e ressalvada, em todos os casos, a apreciação judicial.
-B) deve convalidar o ato, caso este já tenha produzido efeitos perante terceiros de boa-fé, independentemente do vício.
-C) pode anular seus próprios atos, quando eivados de vícios que os tornam ilegais, porque deles não se originam direitos.
-D) não pode invalidar o ato de ofício, dependendo de prévia provocação do particular interessado ou decisão judicial.
-E) deve anular o ato com efeitos ex nunc, a fim de garantir a segurança jurídica das relações consolidadas.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-A alternativa **C** é a correta. Ela reflete a literalidade da Súmula 473 do STF (que consagra o princípio da autotutela): "A administração pode anular seus próprios atos, quando eivados de vícios que os tornam ilegais, porque deles não se originam direitos; ou revogá-los, por motivo de conveniência ou oportunidade, respeitados os direitos adquiridos, e ressalvada, em todos os casos, a apreciação judicial".
-A alternativa **A** é incorreta. A revogação é o instrumento adequado para extinguir atos válidos (sem vício de legalidade), mas inoportunos ou inconvenientes. Atos ilegais são anulados.
-A alternativa **B** é incorreta. Atos com vícios insanáveis (como defeito de finalidade, motivo, ou forma essencial) não comportam convalidação. Apenas vícios sanáveis (competência não exclusiva e forma não essencial) podem ser convalidados.
-A alternativa **D** é incorreta. Pelo princípio da autotutela, a Administração Pública tem o dever (e o poder) de rever e invalidar seus próprios atos ilegais de ofício, não dependendo do Poder Judiciário nem de provocação de terceiro.
-A alternativa **E** é incorreta. A anulação fundamenta-se na ilegalidade originária e opera efeitos, em regra, *ex tunc* (retroativos), retroagindo para desfazer os efeitos do ato viciado, ao passo que a revogação gera efeitos *ex nunc*.
-</details>
-
----
-
-### Questão 5 (FCC - 2022 - TRT 5 - Técnico Judiciário - Área Administrativa)
-Segundo a Lei nº 14.133/2021 (Nova Lei de Licitações e Contratos), o diálogo competitivo é modalidade de licitação aplicável para contratação de:
-A) obras, serviços e compras, em que os licitantes disputam por meio de propostas e lances sucessivos de forma presencial.
-B) bens e serviços especiais, quando não for possível o atendimento à necessidade do órgão sem a adaptação de soluções disponíveis no mercado.
-C) serviços e compras de grande vulto que envolvam recursos de financiamento internacional ou inovação tecnológica padronizada.
-D) parcerias público-privadas onde haja necessidade de se aferir o menor preço global mediante disputa em lances abertos.
-E) bens ou serviços comuns, cujo critério de julgamento poderá ser o menor preço ou o maior desconto, em certame restrito a grandes empresas.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-A alternativa **B** está correta. Nos moldes do art. 32 da Lei 14.133/21, a modalidade de Diálogo Competitivo é voltada para situações de alta complexidade em que a Administração não possui as condições técnicas iniciais para descrever a solução adequada e, por isso, dialoga com o mercado em busca de soluções que envolvem inovação tecnológica/técnica, impossibilidade de atendimento sem adaptação de soluções existentes no mercado ou inviabilidade da especificação objetiva integral.
-A alternativa **A** está incorreta. Licitação comum que admite lances e propostas não caracteriza o diálogo competitivo, cuja ênfase é o debate e o desenvolvimento de alternativas prévias às propostas finais, sendo uma modalidade para bens/serviços complexos, e não de menor preço puro presencial.
-A alternativa **C** está incorreta, visto que inovações padronizadas ou serviços de prateleira podem ser adquiridos via concorrência ou pregão (desde que sejam comuns). O diálogo existe para o que NÃO for padronizado.
-A alternativa **D** está incorreta, pois as PPPs possuem lei própria e o principal foco do diálogo não é apenas "menor preço global" via lances, mas sim o critério de técnica e preço ou melhor técnica, após estruturar o edital.
-A alternativa **E** está incorreta, porque bens e serviços comuns são obrigatoriamente licitados pela modalidade Pregão, jamais pelo diálogo competitivo.
-</details>
-
----
-
-### Questão 6 (FCC - 2023 - TRE SP - Técnico Judiciário - Área Administrativa)
-A responsabilidade civil do Estado brasileiro, nos termos previstos no art. 37, §6º da Constituição Federal:
-A) adota, como regra principal, a teoria da culpa administrativa ou falta do serviço.
-B) exige, para a condenação do ente público a reparar o dano, a comprovação de dolo ou culpa de seu agente por parte do particular.
-C) adota a teoria do risco integral em todas as situações que envolvam prestação de serviço público essencial.
-D) é de natureza objetiva para as pessoas jurídicas de direito público e as de direito privado prestadoras de serviços públicos.
-E) restringe-se às condutas comissivas, não incidindo em nenhuma hipótese sobre casos de omissões da autoridade pública.
+### Questão 3 (FCC - 2021 - TRT 11 - Analista Judiciário - TI)
+De acordo com o Estatuto da Pessoa com Deficiência, a avaliação da deficiência, quando necessária, deverá ser realizada por equipe multiprofissional e interdisciplinar e considerará:
+A) estritamente os laudos médicos ortopédicos e atestados de saúde ocupacional.
+B) unicamente os impedimentos nas funções e nas estruturas do corpo aferidos pelo médico perito.
+C) critérios puramente psicológicos, de forma a garantir os devidos benefícios sociais.
+D) os fatores socioambientais, psicológicos e pessoais, a restrição de participação e a limitação no desempenho de atividades.
+E) a comprovação financeira da pessoa para determinar a viabilidade das medidas protetivas pelo Estado.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: D**
 
-A alternativa **D** é a correta. O art. 37, §6º da Constituição Federal estabelece que as pessoas jurídicas de direito público (União, Estados, Municípios, Autarquias, Fundações Públicas) e as de direito privado prestadoras de serviços públicos (Concessionárias, Empresas Públicas prestadoras de serviço) responderão pelos danos causados por seus agentes a terceiros, baseando-se na responsabilidade civil objetiva (Teoria do Risco Administrativo).
-A alternativa **A** está incorreta, pois a regra constitucional da teoria adotada é o Risco Administrativo, configurando responsabilidade objetiva. A teoria da culpa administrativa exige a prova de falha do serviço e aplica-se subsidiariamente, não como regra.
-A alternativa **B** está incorreta porque a natureza objetiva da responsabilidade significa que a vítima não precisa provar dolo ou culpa do Estado, bastando demonstrar o dano, a ação estatal e o nexo de causalidade.
-A alternativa **C** é incorreta. A regra é a Teoria do Risco Administrativo, que admite atenuantes/excludentes (ex.: culpa exclusiva da vítima, força maior). O risco integral (onde não cabem excludentes) só se aplica no Brasil em hipóteses excepcionalíssimas (ex: dano nuclear e dano ambiental), e não na prestação de todo serviço público essencial.
-A alternativa **E** é incorreta. O Estado também responde civilmente por omissões (em regra, de forma subjetiva; e, em casos de guarda e dever de vigilância, de forma objetiva), não estando sua responsabilidade limitada a condutas comissivas (ativas).
+- **A) Incorreta.** A avaliação não é meramente médica ou ortopédica; a LBI adota o modelo biopsicossocial.
+- **B) Incorreta.** O impedimento nas funções do corpo é apenas um dos critérios, sendo indispensável observar o impacto no contexto social.
+- **C) Incorreta.** A lei rejeita critérios limitados (sejam apenas médicos ou puramente psicológicos) ao exigir uma equipe multiprofissional (médicos, assistentes sociais, psicólogos, etc.).
+- **D) Correta.** Nos termos do art. 2º, § 1º, da LBI, a avaliação biopsicossocial considerará os impedimentos nas funções e estruturas do corpo; os fatores socioambientais, psicológicos e pessoais; a limitação no desempenho de atividades; e a restrição de participação.
+- **E) Incorreta.** A análise da deficiência para fins de definição da condição da pessoa não se baseia em critérios de renda ou financeiros, e sim nas barreiras enfrentadas frente aos seus impedimentos.
 </details>
 
 ---
 
-### Questão 7 (FCC - 2019 - TRF 4 - Analista Judiciário)
-Considerando o regime jurídico instituído pela Lei nº 8.112/1990, a investidura em cargo público efetivo ocorre com:
-A) a aprovação em concurso público homologado.
-B) a nomeação, independentemente de qualquer outro ato formal por parte do Estado.
-C) a posse do candidato, assinando o respectivo termo.
-D) o exercício efetivo das atribuições típicas do cargo no local de lotação.
-E) a publicação do ato de nomeação no Diário Oficial da União, tornando-se irrevogável.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-A alternativa **C** é a correta. Nos termos literais do art. 7º da Lei 8.112/1990, "A investidura em cargo público ocorrerá com a posse". É na posse, com a assinatura do respectivo termo, que o candidato manifesta expressamente a sua aceitação das atribuições, direitos e deveres, passando formalmente à condição de servidor público.
-A alternativa **A** é incorreta. A aprovação gera o direito subjetivo à nomeação (caso esteja nas vagas do edital), mas não preenche o cargo por si só, faltando as etapas de convocação.
-A alternativa **B** é incorreta. A nomeação é apenas o ato unilateral originário do Estado chamando o indivíduo aprovado; ela não consuma a relação jurídica bilateral exigida para assumir o cargo, que depende da aceitação (posse).
-A alternativa **D** é incorreta. O exercício (início efetivo das atividades laborais) decorre da posse. Se o servidor tomar posse e não entrar em exercício, será exonerado, mas a sua investidura já havia ocorrido previamente no ato da posse.
-A alternativa **E** é incorreta, pois a publicação no Diário Oficial é uma exigência de publicidade para eficácia do ato de nomeação, mas não perfaz a investidura, devendo o sujeito apresentar-se para a posse no prazo de 30 dias.
-</details>
-
----
-
-### Questão 8 (FCC - 2021 - TRT 15 - Técnico Judiciário)
-O ato de concessão inicial de aposentadoria de um servidor público federal, para ser considerado definitivo e plenamente exequível, submete-se à apreciação do Tribunal de Contas da União, que realizará o exame de legalidade para fins de registro. À luz da doutrina prevalente e da jurisprudência do STF, este ato classifica-se como:
-A) ato simples.
-B) ato complexo.
-C) ato composto.
-D) ato bilateral.
-E) ato negocial.
+### Questão 4 (FCC - 2017 - TST - Técnico Judiciário)
+Consideram-se barreiras, segundo a Lei nº 13.146/2015, qualquer entrave, obstáculo, atitude ou comportamento que limite ou impeça a participação social da pessoa, bem como o gozo e a fruição de seus direitos. As barreiras existentes nos edifícios públicos e privados são denominadas barreiras:
+A) urbanísticas.
+B) arquitetônicas.
+C) nos transportes.
+D) atitudinais.
+E) tecnológicas.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-A alternativa **B** está correta. A jurisprudência consolidada do STF pacificou o entendimento de que a concessão de aposentadoria (ou pensão e reforma) é um ato administrativo complexo. Ele se forma pela conjugação de vontades originárias e autônomas de órgãos diversos (a vontade do órgão ao qual o servidor se vincula e a vontade do Tribunal de Contas que promove o registro). Só quando o TCU registra o ato é que a aposentadoria passa a ser considerada um ato finalizado, perfeito.
-A alternativa **A** está incorreta. Ato simples é aquele que decorre da declaração de vontade de um único órgão governamental, seja ele singular ou colegiado.
-A alternativa **C** está incorreta. No ato composto, há duas vontades: uma principal e outra acessória/instrumental (homologação, visto ou aprovação). A aposentadoria poderia até se assemelhar estruturalmente, mas a classificação do STF consagrou que as duas manifestações formam a existência do ato principal, tratando-se, pois, de ato complexo, não composto.
-A alternativa **D** é incorreta. Atos bilaterais são os contratos administrativos, baseados em acordo de vontades e interesses contrapostos (Estado e particular).
-A alternativa **E** é incorreta. Os atos negociais representam declarações de vontade do Estado em harmonia com os interesses particulares (ex.: licença, permissão), mas a aposentadoria não é um negócio de interesse privado outorgado de forma precária, e sim o reconhecimento de um direito estatutário submetido a crivo complexo de validade.
+- **A) Incorreta.** As barreiras urbanísticas são aquelas existentes nas vias e nos espaços públicos e privados de uso coletivo (ex: falta de rebaixamento de guias na rua).
+- **B) Correta.** O art. 3º, inciso IV, alínea "b" da LBI, define expressamente as barreiras arquitetônicas como aquelas existentes nos edifícios públicos e privados (ex: falta de rampas ou elevadores dentro de um prédio).
+- **C) Incorreta.** Barreiras nos transportes se referem àquelas existentes nos sistemas e meios de transportes.
+- **D) Incorreta.** Barreiras atitudinais são atitudes, preconceitos ou comportamentos que impeçam ou prejudiquem a participação social da pessoa.
+- **E) Incorreta.** Barreiras tecnológicas dificultam ou impedem o acesso a tecnologias (ex: software não compatível com leitores de tela).
 </details>
 
 ---
 
-### Questão 9 (FCC - 2022 - TRT 9 - Analista Judiciário)
-Com relação às disposições da Lei de Improbidade Administrativa (Lei nº 8.429/1992, profundamente alterada pela Lei nº 14.230/2021), configura ato de improbidade:
-A) a conduta meramente culposa do agente público que gera prejuízo ao erário, se o dano for de grande vulto financeiro.
-B) a divergência na interpretação de lei, quando o agente, munido de dolo, busca finalidade expressamente lícita e amparada em jurisprudência.
-C) a ação ou omissão dolosa que importe em enriquecimento ilícito do agente público em detrimento dos cofres públicos.
-D) o exercício irregular do cargo que gere ineficiência nos serviços, mesmo na ausência de dolo e de enriquecimento próprio.
-E) qualquer ação omissiva do agente que venha a violar os princípios constitucionais da Administração de forma exclusivamente culposa.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-A alternativa **C** é a correta, figurando exatamente no art. 9º da Lei de Improbidade. Com a Lei nº 14.230/2021, passou a ser requisito inafastável para todas as modalidades (enriquecimento ilícito, prejuízo ao erário e atentado aos princípios) a presença do elemento subjetivo dolo, ou seja, a vontade livre e consciente de alcançar o resultado ilícito tipificado (dolo específico).
-A alternativa **A** é incorreta. A alteração promovida em 2021 pela Lei 14.230 extinguiu a punição por atos de improbidade na modalidade culposa, inclusive nos casos de lesão ao erário (antigo art. 10 que admitia culpa). O dolo é sempre exigido, independentemente do vulto do dano.
-A alternativa **B** é incorreta, pois o art. 1º, § 8º da Lei nº 8.429/92 expressamente exime o ato de improbidade em casos de mera divergência interpretativa da lei, fundamentada em jurisprudência ainda que não pacificada.
-A alternativa **D** é incorreta. A ineficiência e as falhas gerenciais desprovidas de intenção de locupletamento ou de causar lesão intencional não se tipificam como improbidade administrativa, embora possam atrair punição disciplinar severa.
-A alternativa **E** é incorreta, pois, assim como nas demais modalidades, os atos que atentam contra os princípios da Administração (art. 11) exigem estritamente comprovação de dolo com fim ilícito, jamais punindo a modalidade culposa.
-</details>
-
----
-
-### Questão 10 (FCC - 2023 - TRT 18 - Analista Judiciário)
-A Administração Pública resolve conceder a uma empresa particular o direito de prestar um serviço público de transporte coletivo municipal, transferindo a sua execução por prazo determinado. O contrato administrativo pelo qual o Estado delega a prestação de serviços públicos, mediante licitação, à pessoa jurídica ou consórcio de empresas que demonstre capacidade para seu desempenho, por sua conta e risco, é tecnicamente denominado:
-A) Autorização.
-B) Concessão.
-C) Permissão.
-D) Consórcio público.
-E) Franquia.
+### Questão 5 (FCC - 2018 - TRT 6 - Analista Judiciário)
+Sobre o direito ao trabalho da pessoa com deficiência, previsto na Lei Brasileira de Inclusão, é correto afirmar:
+A) A participação em cursos de formação e capacitação profissional não pode ser exigida pela empresa, sendo mera faculdade contratual.
+B) O direito ao trabalho engloba a garantia de condições justas e favoráveis, incluindo igual remuneração por trabalho de igual valor.
+C) É assegurado o trabalho de sua livre escolha, mas admitida a remuneração inferior caso a produtividade aferida seja proporcionalmente menor.
+D) É permitida a exigência de aptidão plena nos editais de concurso público, em respeito ao princípio da eficiência da administração.
+E) A colocação competitiva da pessoa com deficiência deve ocorrer exclusivamente mediante contratos de trabalho temporário ou de aprendizagem.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-A alternativa **B** é a correta. De acordo com o art. 2º, inc. II, da Lei nº 8.987/1995 (Lei de Concessões e Permissões), a "concessão de serviço público" é a delegação da sua prestação, feita pelo poder concedente, mediante licitação (tradicionalmente na modalidade de concorrência, agora incluindo o diálogo competitivo pela Lei 14.133), à pessoa jurídica ou consórcio de empresas que demonstre capacidade para seu desempenho, por sua conta e risco e por prazo determinado.
-A alternativa **A** está incorreta. A autorização de serviço público é ato administrativo (e não contrato bilateral), unilateral, discricionário e precário, não sendo precedido da formalidade de um contrato para prestação continuada de transporte regular e volumoso de grande porte.
-A alternativa **C** está incorreta. Embora seja delegação de serviço público, a Permissão é contrato de adesão firmado a título precário, e sua lei admite a prestação por pessoa física ou jurídica (a concessão é estritamente a PJ/consórcio).
-A alternativa **D** está incorreta. Consórcio público (Lei nº 11.107/05) é pessoa jurídica criada da união entre entes federativos (União, Estados, Municípios) para realização de objetivos comuns na administração, não constituindo um contrato de prestação por conta e risco voltado para o particular.
-A alternativa **E** está incorreta. O contrato de Franquia é típico de Direito Privado (empresarial), regulamentando negócios de marcas e tecnologia. No setor público, sua aplicação (como no caso dos Correios) é uma exceção e não configura o mecanismo geral de delegação de transporte, regido primariamente pela concessão.
+- **A) Incorreta.** A LBI (art. 34, § 2º) estabelece que a pessoa com deficiência tem direito à participação e ao acesso a cursos, capacitação, educação continuada e afins, sendo dever do empregador prover um ambiente inclusivo.
+- **B) Correta.** O art. 34 do Estatuto consagra que a pessoa com deficiência tem direito a igualdade de oportunidades com as demais pessoas e a condições justas de trabalho, o que inclui expressamente igual remuneração por trabalho de igual valor.
+- **C) Incorreta.** É terminantemente vedada a remuneração inferior sob a alegação de menor produtividade ou em virtude da deficiência; tal prática configura discriminação.
+- **D) Incorreta.** A lei veda expressamente a exigência de aptidão plena nos editais (art. 34, § 4º), visto que devem ser garantidas as adaptações e o respeito às limitações, focando nas atribuições compatíveis.
+- **E) Incorreta.** A colocação deve buscar a mesma regularidade contratual dos demais empregados, proibindo a limitação exclusiva a contratos precários, temporários ou apenas de aprendizagem.
 </details>
 
 ---
 
-### Questão 11 (FCC - 2018 - TRT 2 - Técnico Judiciário)
-No que se refere ao controle da Administração Pública exercido na República Federativa do Brasil, o julgamento sistemático das contas dos administradores e de demais responsáveis por dinheiros, bens e valores públicos, da administração direta e indireta, constitui competência constitucional do(a):
-A) Ministério Público Federal, que atua como instância administrativa punitiva.
-B) Controladoria-Geral da União, através de processos de auditoria vinculante.
-C) Poder Judiciário Federal, exercendo controle preventivo, repressivo e de mérito das contas.
-D) Tribunal de Contas respectivo, no exercício da sua competência de controle externo.
-E) Congresso Nacional, privativamente, exercendo julgamento contábil sem o auxílio de qualquer outro órgão estatal.
+### Questão 6 (FCC - 2022 - TRT 22 - Analista de TI)
+A Lei nº 13.146/2015 (Estatuto da Pessoa com Deficiência) promoveu importantes alterações acerca da capacidade civil. Sobre esse tema, a lei determinou expressamente que a deficiência:
+A) afeta a plena capacidade civil da pessoa, devendo todos os seus atos negociais ser submetidos à curatela.
+B) não afeta a plena capacidade civil da pessoa, garantindo-lhe, inclusive, o direito de casar-se e constituir união estável.
+C) impede, para proteção de terceiros, o exercício do direito à guarda, à tutela e à adoção por parte da pessoa com deficiência.
+D) restringe o direito à convivência familiar e comunitária nas hipóteses de impedimento de longo prazo de natureza intelectual.
+E) afeta o direito de decidir sobre o número de filhos, de modo que tal decisão deve ser chancelada por um apoiador oficial.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**
+**Gabarito: B**
 
-A alternativa **D** está correta. A Constituição Federal, no art. 71, inciso II, estabelece que compete ao Tribunal de Contas da União (extensível aos congêneres estaduais e municipais) "julgar as contas dos administradores e demais responsáveis por dinheiros, bens e valores públicos". Esse julgamento reveste-se da qualidade de atuação como órgão independente e técnico ligado à atividade de controle externo.
-A alternativa **A** está incorreta. O Ministério Público instaura inquéritos e promove ações cíveis ou penais em casos de irregularidades, não julgando contas da Administração (ato que é de competência do TCU).
-A alternativa **B** está incorreta. A CGU é o órgão máximo de controle interno do Poder Executivo Federal. Ela audita e fiscaliza, mas não tem competência jurisdicional de contas ou condão de julgamento que atinja gestores das estatais. O julgamento técnico das contas (que impõe devolução ao erário e gera títulos executivos) é prerrogativa do Tribunal de Contas.
-A alternativa **C** está incorreta. O controle jurisdicional do Judiciário é provocado e rege-se pelo princípio da inafastabilidade, operando em regra na análise de legalidade repressiva. O Judiciário não possui competência constitucional para emitir julgamento originário das prestações contábeis mensais de órgãos executivos e apreciar mérito de escolhas administrativas lícitas.
-A alternativa **E** está incorreta. O Poder Legislativo (Congresso Nacional, Assembleias) apenas detém a competência privativa de julgar politicamente as contas globais do Chefe do Poder Executivo, e isso ocorre com o indispensável auxílio técnico e parecer prévio emitido pelo Tribunal de Contas. As contas dos demais administradores são julgadas diretamente pelo TCU.
+- **A) Incorreta.** O art. 6º da LBI mudou o paradigma do Código Civil: a deficiência não afeta a plena capacidade civil. A regra é a capacidade; a curatela é a exceção aplicável a atos patrimoniais, e não a regra.
+- **B) Correta.** A LBI (art. 6º, inciso I) expressa literalmente que a deficiência não afeta a plena capacidade civil da pessoa, inclusive o seu direito de casar-se e constituir união estável.
+- **C) Incorreta.** O art. 6º, inciso VI, garante explicitamente à pessoa com deficiência o direito de exercer o direito à guarda, à tutela, à curatela e à adoção em igualdade de oportunidades.
+- **D) Incorreta.** Não há limitação ao direito fundamental de convivência familiar e comunitária (art. 6º, V).
+- **E) Incorreta.** O direito a direitos sexuais e reprodutivos é preservado. O inciso IV do art. 6º garante o direito de decidir sobre o número de filhos e de ter acesso a informações adequadas sobre reprodução, sem interferência impositiva.
 </details>
 
 ---
 
-### Questão 12 (FCC - 2017 - TRE PR - Analista Judiciário)
-O desfazimento de um ato administrativo que se formou perfeito e válido pela própria Administração Pública, tão somente em razão de ele ter se tornado inconveniente ou inoportuno perante o interesse público superveniente, opera-se de ofício mediante a:
-A) Anulação, que produzirá efeitos ex tunc, apagando o ato da ordem jurídica.
-B) Cassação, que produzirá efeitos ex nunc e aplicará a devida sanção.
-C) Revogação, que produzirá efeitos ex tunc em função do princípio da razoabilidade.
-D) Revogação, que produzirá efeitos ex nunc, respeitando os direitos já adquiridos.
-E) Anulação, que produzirá efeitos ex nunc em proteção aos terceiros de boa-fé envolvidos.
+### Questão 7 (FCC - 2018 - TRT 15 - Técnico Judiciário - TI)
+De acordo com o Estatuto da Pessoa com Deficiência, no ambiente educacional, a figura do "profissional de apoio escolar" é descrita como a pessoa que exerce atividades de alimentação, higiene e locomoção do estudante com deficiência e que atua:
+A) em todas as atividades escolares, realizando subsidiariamente o trabalho de professor, caso o titular se ausente.
+B) de forma restrita à locomoção e alimentação, sendo proibida a intervenção na higiene pessoal em respeito à privacidade.
+C) em todas as atividades escolares, exclusivamente nas instituições públicas, dado o princípio da gratuidade.
+D) nas atividades de ensino, substituindo legalmente as atribuições do pedagogo quando necessário.
+E) em todas as atividades escolares, nas instituições públicas e privadas, sendo vedada a cobrança de valores adicionais por esse serviço.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**
+**Gabarito: E**
 
-A alternativa **D** é a correta. Quando a Administração desfaz um ato porque ele deixou de atender à conveniência e à oportunidade (reapreciação do mérito), ela se vale da Revogação. O ato era legalmente expedido; logo, seus efeitos gerados no passado foram perfeitamente lícitos e não podem ser apagados, razão pela qual a revogação não tem poder retroativo, ou seja, gera efeitos apenas prospectivos (*ex nunc* — "daqui para frente"), preservando os direitos adquiridos e situações consolidadas.
-A alternativa **A** é incorreta. A anulação é a forma jurídica de extinção reservada exclusivamente para sanar vício de legalidade, originando-se de um defeito na origem, operando, em regra, com efeitos retroativos (*ex tunc*).
-A alternativa **B** é incorreta. A cassação de um ato ocorre como espécie de punição, em que o particular, após beneficiar-se do ato válido de concessão, comete falta legal posterior que extingue o benefício (ex.: hotel que passa a abrigar atividades ilícitas e tem o alvará cassado).
-A alternativa **C** é incorreta, porque a revogação nunca surte efeitos retroativos (*ex tunc*). A finalidade da revogação é amparada nos critérios de conveniência/oportunidade, que não podem desrespeitar os atos do passado validamente ocorridos.
-A alternativa **E** é incorreta. A anulação aplica-se à ilegalidade, e a regra na anulação (salvo hipóteses excepcionais de modulação pautadas na segurança jurídica) são os efeitos *ex tunc*, não havendo correspondência com a extinção por conveniência e oportunidade, que atrai o instituto da revogação.
+- **A) Incorreta.** A LBI proíbe que o profissional de apoio atue em substituição a profissionais cujas profissões são legalmente regulamentadas (ex: professor).
+- **B) Incorreta.** A lei (art. 3º, inciso XIII) coloca a higiene como uma de suas atribuições fundamentais para prover autonomia ao aluno, não havendo tal proibição.
+- **C) Incorreta.** A obrigatoriedade do apoio escolar estende-se tanto a escolas da rede pública quanto às instituições de ensino privadas.
+- **D) Incorreta.** Novamente, a atuação em substituição a atribuições legais de profissionais de ensino (pedagogo) é vedada no próprio texto legal.
+- **E) Correta.** O profissional de apoio atua em todas as atividades escolares nas instituições públicas e privadas (art. 3º, XIII), e o art. 28, § 1º proíbe explicitamente às instituições privadas a cobrança de valores adicionais de qualquer natureza em suas mensalidades e matrículas para prover esse profissional.
 </details>
 
 ---
 
-### Questão 13 (FCC - 2021 - TRT 15 - Analista Judiciário)
-Em relação aos consórcios públicos regulamentados pela Lei nº 11.107/2005, que tratam da cooperação federativa no Brasil, assinale a afirmativa correta.
-A) Os consórcios públicos poderão adquirir personalidade jurídica de direito público ou de direito privado.
-B) Apenas a União, os Estados e os Municípios podem integrar consórcio público, sendo vedada a participação expressa do Distrito Federal.
-C) A criação de um consórcio público exige, inexoravelmente, a prévia edição de lei complementar por todos os entes consorciados.
-D) Caso o consórcio adquira personalidade de direito privado, seus empregados serão regidos pelo regime jurídico único dos servidores estatutários de sua sede.
-E) A União não poderá firmar convênio com consórcios públicos, mas apenas com os entes federados individualmente para a descentralização de recursos.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-A alternativa **A** está correta e espelha perfeitamente a literalidade do art. 1º, §1º, da Lei 11.107/2005. Ao ser criado, o consórcio público constituirá associação pública, se adquirir personalidade jurídica de direito público (passando a integrar a administração indireta de todos os entes da Federação consorciados), ou será constituído sob a forma de pessoa jurídica de direito privado.
-A alternativa **B** é incorreta, porque o Distrito Federal, como ente federativo autônomo, está expressamente autorizado a figurar em consórcios públicos e participar ativamente da cooperação regional.
-A alternativa **C** é incorreta. A adesão ao consórcio e ratificação do protocolo de intenções deve ser feita por meio de edição de Lei Ordinária de cada ente, não existindo imposição constitucional e legal para edição de Lei Complementar.
-A alternativa **D** é incorreta. O art. 6º, §2º, estipula que a admissão de pessoal pelos consórcios públicos (tanto os de direito público quanto os de direito privado) ocorrerá unicamente pela égide das normas consolidadas de trabalho (regime celetista). Portanto, é proibida a adoção de regime estatutário (RJUs).
-A alternativa **E** é incorreta. A lei que rege a matéria possibilita a celebração de convênios, contratos de repasse e instrumentos congêneres da União não só com entes individualizados, mas diretamente com os próprios consórcios públicos, garantindo captação eficiente de investimentos (art. 2º, § 1º, II).
-</details>
-
----
-
-### Questão 14 (FCC - 2022 - TRT 14 - Analista Judiciário)
-Em tema de bens públicos integrantes do patrimônio da Administração, os rios navegáveis, mares, estradas estaduais, ruas e praças municipais são classificados, de acordo com o Código Civil brasileiro vigente, como:
-A) bens dominicais, sendo imprescritíveis, mas passíveis de alienação imediata para arrecadação financeira.
-B) bens de uso especial, afetados ao serviço público governamental e inalienáveis enquanto conservarem esta qualificação específica de segurança pública.
-C) bens de uso comum do povo, sendo permitida sua utilização por toda coletividade, podendo estar sujeitos a cobrança mediante regulamentos e leis.
-D) bens de posse privativa do Estado, não ostentando natureza pública, exceto se devidamente registrados em cartórios de imóveis como dominicais.
-E) bens públicos classificados como indisponíveis por natureza perpétua, sendo juridicamente impossível qualquer processo de desafetação ao longo do tempo.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-A alternativa **C** está correta. Nos precisos termos do art. 99, inciso I, do Código Civil, os bens de uso comum do povo são "tais como rios, mares, estradas, ruas e praças", sendo que o uso é acessível e livre a todos os membros da coletividade, seja de forma gratuita ou de forma remunerada (a depender do que as leis fixarem — como os pedágios ou outorgas de uso sobre calçadas), e são inalienáveis enquanto preservarem essa afetação pública.
-A alternativa **A** é incorreta. Bens dominicais (ou dominiais) formam o patrimônio de renda do Estado. São desafetados, destituídos de finalidade pública primária (como lotes vagos e fazendas desativadas), passíveis de alienação em processo formal, e não se prestam a classificar rios, mares e vias terrestres.
-A alternativa **B** é incorreta. Bens de uso especial são aqueles afetados e destinados à prestação de um serviço administrativo particular da máquina pública ou ao suporte do Estado (ex.: prédio de delegacia, hospitais públicos, veículo viatura, biblioteca estadual). O mar e a praça não servem primariamente à repartição pública, mas diretamente à população em geral.
-A alternativa **D** é incorreta. Todos esses itens (ruas, praças) gozam de natureza inteiramente de "bem público", não se misturando às regras do domínio meramente privado e, por fim, dispensando registro imobiliário para terem sua presunção de afetação por finalidade coletiva originária (nos casos de praias e mares).
-A alternativa **E** é incorreta. A afetação ou o uso comum não são perpetuamente indisponíveis de forma insuperável. Uma praça ou rua pode, mediante estudo, conveniência pública e autorização de Lei formal respectiva, sofrer procedimento de desafetação. Após a perda desse atributo, passará a ser enquadrada como bem dominical, tornando-se, excepcionalmente, passível de alienação pelas regras licitatórias.
-</details>
-
----
-
-### Questão 15 (FCC - 2023 - TRT 12 - Técnico Judiciário)
-Pelo princípio administrativo da razoabilidade (implícito na esfera federal e expresso em muitas Constituições Estaduais), um ato discricionário praticado pela autoridade administrativa pode ser perfeitamente invalidado pelo Poder Judiciário se:
-A) não houver pertinência, adequação e proporcionalidade entre o fim constitucional almejado e os meios empregados, configurando evidente excesso ou desvio nas punições ou restrições impostas.
-B) tiver sido exarado por agente administrativo sabidamente incompetente para o mister, independentemente da justiça e do mérito de sua finalidade.
-C) carecer de prévia publicação na imprensa oficial para surtir efeitos imediatos e eficazes perante a rotina dos particulares afetados.
-D) deixar de apresentar fundamentação fática pormenorizada ou argumentação analítica exaustiva em todas as suas laudas, como regra para validade de todo e qualquer despacho meramente ordinatório.
-E) a lei que embasava o seu dispositivo legal vier a ser revogada antes da finalização total da execução continuada dos efeitos pretendidos.
+### Questão 8 (FCC - 2016 - TRT 20 - Analista Judiciário)
+No que tange aos direitos fundamentais e à saúde, a pessoa com deficiência possui direito à atenção integral à saúde em todos os níveis de complexidade. Sobre o tratamento ofertado por operadoras de planos e seguros privados de saúde, de acordo com a Lei n° 13.146/2015:
+A) é vedada a cobrança de valores diferenciados em razão da condição da pessoa com deficiência.
+B) é autorizada a cobrança de mensalidades com acréscimo de até trinta por cento para custear próteses complexas.
+C) permite-se estipular prazos de carência ampliados, em razão da preexistência dos impedimentos físicos ou sensoriais.
+D) admite-se a recusa à contratação quando for iminente o uso de terapias de altíssimo custo contínuo.
+E) faculta-se a exclusão de atendimento a tratamentos multidisciplinares que se refiram diretamente à deficiência congênita.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: A**
 
-A alternativa **A** está correta. A essência do princípio da razoabilidade consiste na aferição da compatibilidade entre os meios empregados e os fins buscados na lei. Assim, ainda que o administrador atue dentro da margem de discricionariedade permitida pela norma, caso ele se exceda severamente (ou puna abusivamente quando medidas brandas seriam suficientes), a doutrina entende que houve violação dos contornos que formam o núcleo da finalidade, permitindo sua invalidação pelo Poder Judiciário em função do vício latente.
-A alternativa **B** está incorreta. A invalidação em virtude de ser emitido por agente incompetente diz respeito à manifestação objetiva do vício atrelado ao princípio basilar da legalidade ou à falta dos requisitos constitutivos (competência, sujeito), e não toca, na gênese, à mensuração das balizas da razoabilidade no âmbito da escolha de mérito.
-A alternativa **C** está incorreta. O vício na publicação em órgão oficial é defeito relativo ao princípio da publicidade ou um problema referente à eficácia (produção de efeitos do ato perante terceiros).
-A alternativa **D** está incorreta. A justificativa técnica para as decisões está lastreada no princípio específico da motivação. Além disso, no Direito Administrativo não se exige que despachos de mero expediente (sem conteúdo decisório) tenham extensa argumentação, bastando motivação aos atos que alteram, criam ou restringem direitos.
-A alternativa **E** está incorreta. Uma mudança legislativa futura em face de um ato passado que se encontrava dentro do comando de razoabilidade gera impasses associados a direito adquirido ou conflitos de aplicação temporal da lei (segurança jurídica e efeito repristinatório), não tendo vinculação intrínseca com o vício originário por descompasso na razoabilidade.
+- **A) Correta.** Segundo o art. 23 da LBI, são vedadas as operadoras de planos e seguros privados de saúde de praticar qualquer tipo de discriminação, sendo estritamente proibida a cobrança de valores diferenciados em razão da condição da pessoa.
+- **B) Incorreta.** Nenhum acréscimo percentual compensatório para justificar custos baseados na deficiência é permitido.
+- **C) Incorreta.** É ilícito imputar qualquer carência diferenciada que seja baseada exclusivamente na deficiência do usuário.
+- **D) Incorreta.** A recusa de matrícula ou renovação em razão da deficiência configura crime de discriminação, além de ferir os direitos do consumidor e as normas da LBI.
+- **E) Incorreta.** A legislação proíbe o desrespeito à atenção integral à saúde e as exclusões discriminatórias que retirem a garantia de acesso a tratamentos inerentes às necessidades do segurado.
 </details>
+
+---
+
+### Questão 9 (FCC - 2017 - TRE-PR - Técnico Judiciário)
+O processo de habilitação e de reabilitação previsto no Estatuto da Pessoa com Deficiência tem por objetivo o desenvolvimento de potencialidades, talentos e aptidões físicas, cognitivas e psicossociais. Segundo o parágrafo único do art. 14 da referida Lei, este processo baseia-se:
+A) em laudo puramente ocupacional, avaliado pelo médico do trabalho da empresa ou órgão contratante.
+B) em avaliação multidisciplinar das necessidades, habilidades e potencialidades, observadas as diretrizes da Classificação Internacional de Funcionalidade, Incapacidade e Saúde (CIF).
+C) em análise psicossocial dispensável em casos de deficiências consideradas leves ou unicamente sensoriais pela Previdência Social.
+D) na adoção de um modelo padrão de desenvolvimento de capacidades estritamente físico-motoras.
+E) em avaliação unilateral feita por assistentes sociais visando assegurar exclusivamente o Benefício de Prestação Continuada.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- **A) Incorreta.** O laudo médico único e ocupacional é um modelo ultrapassado. A LBI adota um modelo multidisciplinar.
+- **B) Correta.** O art. 14, parágrafo único, determina taxativamente que o processo de habilitação e de reabilitação baseia-se em avaliação multidisciplinar, alinhada às diretrizes da Classificação Internacional de Funcionalidade, Incapacidade e Saúde (CIF) da OMS.
+- **C) Incorreta.** A avaliação multidisciplinar é necessária para todo o escopo de habilitação, não sendo legalmente dispensável a depender da "leveza" da deficiência.
+- **D) Incorreta.** O processo não é puramente físico-motor, estendendo-se às aptidões cognitivas, sensoriais, psicossociais, atitudinais, profissionais e artísticas.
+- **E) Incorreta.** A análise não tem foco único na concessão de BPC, mas sim no pleno desenvolvimento de talentos e habilidades da pessoa, e não pode ser de avaliação unilateral (apenas um profissional).
+</details>
+
+---
+
+### Questão 10 (FCC - 2023 - TRT 18 - Analista de TI)
+A Lei nº 13.146/2015 dispõe minuciosamente sobre o acesso à informação e à comunicação. Em relação aos serviços de radiodifusão de sons e imagens e os serviços de televisão por assinatura, é obrigatório garantir o acesso às pessoas com deficiência através de recursos de acessibilidade, que englobam obrigatoriamente:
+A) janela com intérprete da Libras e audiodescrição, sendo a subtitulação um recurso facultativo na TV aberta.
+B) subtitulação por meio de legenda oculta, janela com intérprete da Libras e audiodescrição, de forma indissociável.
+C) locução em linguagem simples e em formato de fácil leitura para todas as propagandas veiculadas.
+D) subtitulação visível apenas para os assinantes de canais fechados, eximindo-se a TV aberta destes custos.
+E) audiodescrição restrita a peças publicitárias, sendo dispensável em programas ao vivo em razão da inviabilidade técnica.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- **A) Incorreta.** A subtitulação por legenda oculta não é facultativa, ela é uma das obrigações listadas na lei (art. 67).
+- **B) Correta.** O artigo 67 da LBI determina que devem ser adotados, de forma indissociável, pelo menos os seguintes recursos: subtitulação por meio de legenda oculta (closed caption), janela com intérprete da Libras e audiodescrição.
+- **C) Incorreta.** Embora a linguagem simples seja fomentada, a LBI não impõe como recurso de acessibilidade compulsório para todas as emissões televisivas a locução em linguagem simples.
+- **D) Incorreta.** As obrigações incidem tanto sobre concessionárias e permissionárias de televisão aberta quanto sobre serviços de TV por assinatura.
+- **E) Incorreta.** Os recursos de acessibilidade aplicam-se a toda a programação, inclusive os eventos e programas ao vivo, não havendo escusa na LBI.
+</details>
+
+---
+
+### Questão 11 (FCC - 2018 - TRT 6 - Técnico Judiciário - TI)
+A Lei nº 13.146/2015 tipificou diversas condutas criminosas contra as pessoas com deficiência em sua Parte Penal (Título III). Praticar, induzir ou incitar discriminação de pessoa em razão de sua deficiência tem como sanção prevista a pena de reclusão de:
+A) 1 a 3 anos, e multa.
+B) 2 a 5 anos, e multa.
+C) 6 meses a 2 anos, sem a previsão de multa.
+D) 1 a 4 anos, e multa.
+E) 2 a 4 anos, e multa.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+- **A) Correta.** O art. 88 da LBI tipifica esse crime estabelecendo claramente a pena de reclusão, de 1 (um) a 3 (três) anos, e multa.
+- **B) Incorreta.** A referida sanção básica é mais branda que 2 a 5 anos, restrita a 1 a 3 anos.
+- **C) Incorreta.** As penas fixadas no Estatuto em grande parte superam o teto do JECRIM, e existe sim a imposição cumulativa de multa.
+- **D) Incorreta.** O patamar máximo é de 3 anos para o tipo base, não 4. (Há casos de aumento de pena, mas a pena em abstrato fundamental termina em 3 anos).
+- **E) Incorreta.** A pena mínima comina-se em 1 ano, não 2 anos.
+</details>
+
+---
+
+### Questão 12 (FCC - 2021 - TRT 11 - Técnico Judiciário)
+Nos termos da Lei nº 13.146/2015, o direito à cultura, ao esporte, ao turismo e ao lazer garante à pessoa com deficiência uma infraestrutura adequada. Em relação aos hotéis, pousadas e similares já existentes, é obrigatória a disponibilização de pelo menos:
+A) 10% de seus dormitórios acessíveis, garantida, no mínimo, 1 (uma) unidade acessível.
+B) 5% de seus dormitórios acessíveis, garantida, no mínimo, 1 (uma) unidade acessível.
+C) 10% de seus dormitórios acessíveis, garantida, no mínimo, 2 (duas) unidades acessíveis.
+D) 2% de seus dormitórios acessíveis, não existindo imposição de uma quantidade mínima se o total for fracionário.
+E) 15% de seus dormitórios acessíveis, aplicável de forma compulsória e sem ressalvas aos estabelecimentos antigos e novos.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+- **A) Correta.** A letra exata do art. 45, § 1º, da LBI obriga que os estabelecimentos (hotéis e similares) já existentes disponibilizem pelo menos 10% de seus dormitórios acessíveis, assegurada, no mínimo, 1 unidade acessível.
+- **B) Incorreta.** O percentual legal mínimo é de 10%, não 5%.
+- **C) Incorreta.** O mínimo garantido é de 1 (uma) unidade caso a conta percentual represente valor menor, e não duas.
+- **D) Incorreta.** O percentual é 10% (os 2% se aplicam à regra de vagas de estacionamento, que é um dispositivo diferente da lei).
+- **E) Incorreta.** O percentual não é de 15%.
+</details>
+
+---
+
+### Questão 13 (FCC - 2019 - TRF 3 - Analista Judiciário)
+A reserva de vagas para pessoas com deficiência em estacionamentos de uso público e privado de uso coletivo é assegurada pelo Estatuto da Pessoa com Deficiência. Para o fiel cumprimento desta obrigação legal, essa reserva deve corresponder a:
+A) 1% do total de vagas, garantida no mínimo uma vaga, sendo a sinalização vertical meramente opcional.
+B) 2% do total de vagas, garantida, no mínimo, 1 (uma) vaga devidamente sinalizada, sendo que os veículos deverão exibir, em local de ampla visibilidade, a credencial de beneficiário.
+C) 5% do total de vagas, garantida no mínimo duas vagas, exigindo-se apenas comprovação da deficiência em casos de autuação.
+D) 3% do total de vagas para veículos comuns e 2% para veículos adaptados com rampas.
+E) 2% do total de vagas exclusivas estritamente nos órgãos da administração pública, facultando-se aos estacionamentos privados (shoppings e supermercados) essa reserva.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- **A) Incorreta.** A cota exigida pela lei (art. 47) é de 2%. Além disso, as vagas devem estar de acordo com os padrões ABNT e devidamente sinalizadas.
+- **B) Correta.** É o que prevê expressamente o art. 47 da LBI: em todos os estacionamentos abertos ao público, devem ser reservadas 2% (dois por cento) das vagas, garantindo-se no mínimo 1 (uma) vaga devidamente sinalizada, sendo obrigatório o uso da credencial para a fiscalização.
+- **C) Incorreta.** O percentual de 5% está incorreto e a credencial é obrigatória (art. 47, § 2º).
+- **D) Incorreta.** Não há uma divisão percentual de 3% para comuns e 2% adaptados, o dispositivo é genérico para a cota de 2%.
+- **E) Incorreta.** A LBI obriga a reserva nos estacionamentos de uso público E no de uso privado coletivo (como shoppings, supermercados e hospitais privados).
+</details>
+
+---
+
+### Questão 14 (FCC - 2018 - TRT 15 - Analista de TI)
+Quanto à curatela da pessoa com deficiência, de acordo com o Estatuto da Pessoa com Deficiência (Lei nº 13.146/2015), afirma-se corretamente que:
+A) constitui medida ordinária e presume incapacidade geral que abrange de imediato direitos de natureza patrimonial e o direito ao próprio corpo.
+B) constitui medida protetiva extraordinária, proporcional às necessidades e às circunstâncias de cada caso, durando o menor tempo possível.
+C) alcança todos os atos da vida civil, incapacitando-a absoluta e permanentemente para atos patrimoniais e matrimoniais.
+D) é obrigatória para a pessoa com deficiência intelectual grave, tornando-a, perante o Código Civil, incapaz de exprimir a sua vontade, vedada qualquer adoção de sistema de apoio.
+E) figura como única ferramenta e forma de apoio e assistência prevista pela referida Lei para facilitar o exercício da capacidade civil plena.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- **A) Incorreta.** A curatela é medida extraordinária e não alcança, em nenhuma hipótese, os direitos ao próprio corpo, à sexualidade, ao matrimônio e à saúde (art. 85, § 1º).
+- **B) Correta.** A literalidade do art. 84, § 3º, e do art. 85 consolida que a curatela é medida protetiva extraordinária, proporcional e durará o menor tempo possível.
+- **C) Incorreta.** A curatela atinge precipuamente direitos de natureza patrimonial e negocial (art. 85, caput), preservando o direito ao matrimônio e a outros atos existenciais.
+- **D) Incorreta.** A LBI retirou a incapacidade absoluta por motivos de deficiência. Além da curatela, prevê a Tomada de Decisão Apoiada.
+- **E) Incorreta.** Como exposto, além da curatela há o modelo inovador da "Tomada de Decisão Apoiada" (art. 116 da LBI, que alterou o Código Civil), sendo falso que a curatela seja a única ferramenta de apoio.
+</details>
+
+---
+
+### Questão 15 (FCC - 2018 - TRT 2 - Analista de TI)
+Em relação ao direito de moradia assegurado no art. 32 da Lei nº 13.146/2015, a pessoa com deficiência ou o seu responsável goza de prioridade na aquisição de imóvel em programas habitacionais. Nesses programas (públicos ou subsidiados com recursos públicos), devem ser reservados equipamentos e unidades habitacionais acessíveis no percentual mínimo de:
+A) 2%.
+B) 3%.
+C) 5%.
+D) 10%.
+E) 15%.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- **A) Incorreta.** 2% é o percentual reservado para vagas de estacionamento.
+- **B) Correta.** Conforme o art. 32, inciso I da LBI, nos programas habitacionais, a pessoa com deficiência tem prioridade, devendo ser reservadas, no mínimo, 3% (três por cento) das unidades habitacionais para ela.
+- **C) Incorreta.** 5% costuma remeter a outros tipos de reservas (como vagas máximas em concursos públicos ou cota em empresas com mais de 1000 funcionários), mas o mínimo em habitação é 3%.
+- **D) Incorreta.** 10% é o percentual aplicável à adaptação de dormitórios em hotéis e frotas de táxi em certas regulamentações, não a unidades habitacionais de programas públicos.
+- **E) Incorreta.** O limite fixado em lei para a garantia habitacional não alcança a obrigatoriedade de 15%.
+</details>
+
+---
 
 
