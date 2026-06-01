@@ -97,6 +97,16 @@ document.addEventListener('DOMContentLoaded', () => {
             return `__BLOCK_PLACEHOLDER_${blocks.length - 1}__`;
         });
 
+        // Special formatting for A), B), etc. and Correta/Incorreta
+        html = html.replace(/^([A-E])\)\s/gm, '<div class="exp-item"><span class="exp-opt-letter">$1)</span> ');
+        // We need to close the div before the next one or at the end. But since we just added an open div, it's safer to just do a simple replace that doesn't break HTML structure, or use spans.
+        html = html.replace(/^([A-E])\)\s/gm, '<span class="exp-opt-letter">$1)</span> ');
+        html = html.replace(/(Correta\.|Correto\.|Correta|Correto)(?=\s)/gi, '<span class="text-correct">$&</span>');
+        html = html.replace(/(Incorreta\.|Incorreto\.|Incorreta|Incorreto)(?=\s)/gi, '<span class="text-wrong">$&</span>');
+
+        // Add some breathing room between explanation options
+        html = html.replace(/\n([A-E])\)/g, '<br><br>$1)');
+
         html = html.replace(/\n/g, '<br>');
 
         html = html.replace(/__BLOCK_PLACEHOLDER_(\d+)__/g, (match, idx) => {
@@ -286,10 +296,15 @@ document.addEventListener('DOMContentLoaded', () => {
             setupFilters();
             updateStats();
             
-            // Default: load all questions
-            await loadDayData('all');
-            renderPage();
-            
+            // Auto-select the first uncompleted day
+            let defaultDay = 'all';
+            for (const item of indexData) {
+                if (!completedDays.has(item.day_id)) {
+                    defaultDay = item.day_id;
+                    break;
+                }
+            }
+            await applyFilter(defaultDay);
         } catch (error) {
             console.error(error);
             qContainer.innerHTML = `<div class="loading" style="color: var(--error)">

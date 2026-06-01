@@ -72,21 +72,9 @@
     "count": 45
   },
   {
-    "day_id": "dia_30_05",
-    "day_title": "Sábado 30/05 (Bateria Extra Ouro)",
-    "filename": "dia_30_05_questoes.json",
+    "day_id": "dia_01_06",
+    "day_title": "Segunda-feira 01/06",
+    "filename": "dia_01_06_questoes.json",
     "count": 45
-  },
-  {
-    "day_id": "dia_31_05",
-    "day_title": "Domingo 31/05 (Bateria Extra Diamante)",
-    "filename": "dia_31_05_questoes.json",
-    "count": 45
-  },
-  {
-    "day_id": "dia_32_05",
-    "day_title": "Segunda-feira 01/06 (Bateria Extra Mestre)",
-    "filename": "dia_32_05_questoes.json",
-    "count": 15
   }
 ]
