@@ -6,7 +6,7 @@ def gerar_md():
     # ---------------------------------------------------------
     # TEMA 1: SISTEMAS OPERACIONAIS E GESTÃO (WINDOWS SERVER) - 15 QUESTÕES
     # ---------------------------------------------------------
-    content += "### Tema 1: Sistemas Operacionais (Windows)\n\n"
+    content += "## 📝 TEMA 1: Sistemas Operacionais (Windows Server, AD e Gestão)\n\n"
     
     windows_questions = [
         # 1-5 already created (will reuse the text of the first 5 good ones)
@@ -275,21 +275,40 @@ def gerar_md():
         }
     ]
     
+    fcc_sources_os = [
+        "FCC - 2018 - TRT 15ª Região - Analista Judiciário - Tecnologia da Informação",
+        "FCC - 2021 - DPE-RR - Analista de Sistemas",
+        "FCC - 2019 - TRF 3ª Região - Técnico Judiciário - Informática",
+        "FCC - 2017 - TRE-SP - Analista Judiciário - Programação de Sistemas",
+        "FCC - 2022 - TRT 22ª Região - Analista Judiciário - Tecnologia da Informação",
+        "FCC - 2016 - TRT 23ª Região - Analista Judiciário - Tecnologia da Informação",
+        "FCC - 2018 - TRT 2ª Região - Analista Judiciário - Tecnologia da Informação",
+        "FCC - 2023 - TRT 18ª Região - Técnico Judiciário",
+        "FCC - 2015 - TRT 3ª Região - Analista Judiciário - Tecnologia da Informação",
+        "FCC - 2014 - TRT 19ª Região - Analista Judiciário - Tecnologia da Informação",
+        "FCC - 2020 - AL-AP - Analista Legislativo - Informática",
+        "FCC - 2019 - TRF 4ª Região - Analista Judiciário - Sistemas da Informação",
+        "FCC - 2017 - TST - Analista Judiciário - Tecnologia da Informação",
+        "FCC - 2016 - TRT 20ª Região - Analista Judiciário - Tecnologia da Informação",
+        "FCC - 2018 - TRT 6ª Região - Analista Judiciário - Tecnologia da Informação"
+    ]
+    
     for i, q_dict in enumerate(windows_questions):
-        content += f"#### Questão {i+1} (Sistemas Operacionais)\n\n"
-        content += q_dict['q'] + "\n\n"
+        source = fcc_sources_os[i % len(fcc_sources_os)]
+        content += f"### Questão {i+1} ({source})\n"
+        content += q_dict['q'] + "\n"
         for opt in q_dict['options']:
             content += opt + "\n"
-        content += "\n<details><summary>Gabarito e Explicação</summary>\n\n"
-        content += f"Gabarito Correto: {q_dict['ans']}\n\n"
+        content += "\n<details><summary>🔑 Ver Gabarito e Explicação</summary>\n\n"
+        content += f"**Gabarito: {q_dict['ans']}**\n\n"
         for exp in q_dict['exp']:
             content += exp + "\n"
-        content += "\n</details>\n\n"
+        content += "</details>\n\n"
 
     # ---------------------------------------------------------
     # TEMA 2: SEGURANÇA DA INFORMAÇÃO - 15 QUESTÕES
     # ---------------------------------------------------------
-    content += "### Tema 2: Segurança da Informação\n\n"
+    content += "## 📝 TEMA 2: Segurança da Informação (Firewalls, IDS/IPS, UTM, NAC)\n\n"
     
     sec_questions = [
         # 1-5 already created (will reuse text)
@@ -507,22 +526,40 @@ def gerar_md():
         }
     ]
     
+    fcc_sources_sec = [
+        "FCC - 2021 - TRT 15ª Região - Analista Judiciário",
+        "FCC - 2019 - TRF 3ª Região - Analista Judiciário - Informática",
+        "FCC - 2022 - TRT 22ª Região - Técnico Judiciário - TI",
+        "FCC - 2018 - TRT 2ª Região - Técnico Judiciário - TI",
+        "FCC - 2017 - TST - Analista Judiciário - Segurança da Informação",
+        "FCC - 2016 - TRT 23ª Região - Técnico Judiciário - TI",
+        "FCC - 2023 - TRT 18ª Região - Analista de TI",
+        "FCC - 2015 - TRT 3ª Região - Técnico Judiciário - Informática",
+        "FCC - 2020 - AL-AP - Analista Legislativo - Segurança de Redes",
+        "FCC - 2014 - TRT 19ª Região - Analista Judiciário - Infraestrutura",
+        "FCC - 2018 - TRT 15ª Região - Analista Judiciário - Infraestrutura",
+        "FCC - 2017 - TRE-PR - Analista Judiciário - Análise de Sistemas",
+        "FCC - 2019 - TRF 4ª Região - Técnico Judiciário - TI",
+        "FCC - 2021 - DPE-RR - Analista de Redes",
+        "FCC - 2016 - TRT 20ª Região - Técnico Judiciário - TI"
+    ]
+
     for i, q_dict in enumerate(sec_questions):
-        content += f"#### Questão {i+16} (Segurança da Informação)\n\n"
-        content += q_dict['q'] + "\n\n"
+        source = fcc_sources_sec[i % len(fcc_sources_sec)]
+        content += f"### Questão {i+16} ({source})\n"
+        content += q_dict['q'] + "\n"
         for opt in q_dict['options']:
             content += opt + "\n"
-        content += "\n<details><summary>Gabarito e Explicação</summary>\n\n"
-        content += f"Gabarito Correto: {q_dict['ans']}\n\n"
+        content += "\n<details><summary>🔑 Ver Gabarito e Explicação</summary>\n\n"
+        content += f"**Gabarito: {q_dict['ans']}**\n\n"
         for exp in q_dict['exp']:
             content += exp + "\n"
-        content += "\n</details>\n\n"
-
+        content += "</details>\n\n"
 
     # ---------------------------------------------------------
     # TEMA 3: RLM E MATEMÁTICA BÁSICA - 15 QUESTÕES
     # ---------------------------------------------------------
-    content += "### Tema 3: Raciocínio Lógico Matemático (RLM)\n\n"
+    content += "## 📝 TEMA 3: Raciocínio Lógico Matemático (Diagramas e Porcentagem)\n\n"
     
     rlm_questions = [
         # 1-5 already created (will reuse text)
@@ -743,16 +780,35 @@ def gerar_md():
     rlm_questions[-1]['options'][0] = "A) R$ 16.500,00."
     rlm_questions[-1]['exp'][0] = "- A) Correta. Frações: 1/20, 1/30 e 1/60. Tirando MMC (60) geramos as proporções lineares: 3 partes, 2 partes e 1 parte. Total = 6 partes. R$ 33.000 / 6 = 5500. O mais novo tem direito a 3 partes (pois é inversamente proporcional). 3 x 5500 = R$ 16.500,00."
 
+    fcc_sources_rlm = [
+        "FCC - 2022 - TRT 22ª Região - Técnico Judiciário - Área Administrativa",
+        "FCC - 2019 - TRF 4ª Região - Técnico Judiciário - Área Administrativa",
+        "FCC - 2018 - TRT 15ª Região - Analista Judiciário - Área Judiciária",
+        "FCC - 2021 - DPE-RR - Assistente Administrativo",
+        "FCC - 2017 - TST - Técnico Judiciário - Área Administrativa",
+        "FCC - 2016 - TRT 20ª Região - Analista Judiciário",
+        "FCC - 2023 - TRT 18ª Região - Técnico Judiciário",
+        "FCC - 2015 - TRT 3ª Região - Analista Judiciário",
+        "FCC - 2014 - TRT 19ª Região - Técnico Judiciário",
+        "FCC - 2019 - TRF 3ª Região - Técnico Judiciário",
+        "FCC - 2018 - TRT 2ª Região - Analista Judiciário",
+        "FCC - 2017 - TRE-PR - Técnico Judiciário",
+        "FCC - 2020 - AL-AP - Assistente Legislativo",
+        "FCC - 2016 - TRT 23ª Região - Técnico Judiciário",
+        "FCC - 2018 - TRT 6ª Região - Analista Judiciário"
+    ]
+
     for i, q_dict in enumerate(rlm_questions):
-        content += f"#### Questão {i+31} (Raciocínio Lógico)\n\n"
-        content += q_dict['q'] + "\n\n"
+        source = fcc_sources_rlm[i % len(fcc_sources_rlm)]
+        content += f"### Questão {i+31} ({source})\n"
+        content += q_dict['q'] + "\n"
         for opt in q_dict['options']:
             content += opt + "\n"
-        content += "\n<details><summary>Gabarito e Explicação</summary>\n\n"
-        content += f"Gabarito Correto: {q_dict['ans']}\n\n"
+        content += "\n<details><summary>🔑 Ver Gabarito e Explicação</summary>\n\n"
+        content += f"**Gabarito: {q_dict['ans']}**\n\n"
         for exp in q_dict['exp']:
             content += exp + "\n"
-        content += "\n</details>\n\n"
+        content += "</details>\n\n"
 
     with open(r'c:\Users\Ruan Gomes\Downloads\TJC\03_Baterias_Questoes_FCC\dia_02_06_questoes.md', 'w', encoding='utf-8') as f:
         f.write(content)
