@@ -22,23 +22,26 @@ FinOps não é apenas economizar dinheiro, é **fazer o dinheiro render mais (va
 * **ROI (Return on Investment)**: Retorno sobre o Investimento. Calcula-se pela fórmula: `(Ganho Obtido - Custo do Investimento) / Custo do Investimento`.
 
 ```mermaid
-mindmap
-  root((FinOps))
-    CAPEX
-      Investimento Inicial
-      Hardware/Data Center local
-      Depreciação
-    OPEX
-      Custos operacionais
-      Assinaturas / Pay-as-you-go
-      Cloud Computing
-    Métricas
-      TCO (Custo Total)
-      ROI (Retorno do Invest)
-    Fases do FinOps
-      Informar (Visibilidade)
-      Otimizar (Ajuste/Rightsizing)
-      Operar (Melhoria contínua)
+graph TD
+    A((FinOps)) --> B[CAPEX]
+    A --> C[OPEX]
+    A --> D[Métricas]
+    A --> E[Fases do FinOps]
+    
+    B --> B1(Investimento Inicial)
+    B --> B2(Hardware/Data Center local)
+    B --> B3(Depreciação)
+    
+    C --> C1(Custos operacionais)
+    C --> C2(Assinaturas / Pay-as-you-go)
+    C --> C3(Cloud Computing)
+    
+    D --> D1(TCO - Custo Total)
+    D --> D2(ROI - Retorno do Invest)
+    
+    E --> E1(Informar - Visibilidade)
+    E --> E2(Otimizar - Ajuste/Rightsizing)
+    E --> E3(Operar - Melhoria contínua)
 ```
 
 > [!WARNING] Pegadinha FCC
