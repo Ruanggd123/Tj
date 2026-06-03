@@ -2,769 +2,843 @@
 
 ## 📝 TEMA 1: Governança TI (COBIT 2019, ITIL v4 e FinOps)
 
-### Questão 1 (FCC - 2022 - TRT 22ª Região - Analista Judiciário - TI)
-Em relação aos conceitos de Gestão Financeira na Nuvem (FinOps), quando um órgão público migra seus sistemas de um datacenter local (on-premise) para um modelo de Infraestrutura como Serviço (IaaS) na nuvem pública, ocorre, do ponto de vista contábil e financeiro, a transformação de:
-A) Custos invisíveis em despesas operacionais ocultas.
-B) Despesas Operacionais (OPEX) em Despesas de Capital (CAPEX).
-C) Despesas de Capital (CAPEX) em Despesas Operacionais (OPEX).
-D) Custos variáveis de TI em custos fixos amortizados.
-E) Retorno sobre Investimento (ROI) em Custo Total de Propriedade (TCO).
+### Questão 1 (FCC - Questão Prática / Adaptada (Governança TI e FinOps))
+Considere o seguinte trecho de relatório de faturamento na nuvem (AWS Cost Explorer) exportado em JSON por um Analista de FinOps de um Tribunal:
+```json
+{
+  "ResultsByTime": [
+    {
+      "TimePeriod": { "Start": "2023-01-01", "End": "2023-01-31" },
+      "Groups": [
+        {
+          "Keys": [ "Amazon Elastic Compute Cloud - Compute" ],
+          "Metrics": { "UnblendedCost": { "Amount": "4500.00" } }
+        }
+      ]
+    }
+  ]
+}
+```
+Para otimizar esse custo (OPEX) sem alterar a arquitetura do aplicativo ou o desempenho, aplicando o princípio FinOps de 'Otimização de Taxa' (Rate Optimization), o analista deve:
+A) Refatorar o aplicativo monolítico para funções AWS Lambda (Serverless).
+B) Desligar as instâncias EC2 durante os finais de semana usando um script automatizado.
+C) Adquirir Savings Plans ou Reserved Instances (Instâncias Reservadas) para a carga de trabalho base.
+D) Alterar a classe de armazenamento do S3 de Standard para Glacier Deep Archive.
+E) Migrar as máquinas virtuais da nuvem de volta para o datacenter local (On-Premises).
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-Migrar para a nuvem significa deixar de comprar servidores físicos (Investimento de Capital / CAPEX) e passar a pagar mensalmente pelo uso do serviço (Despesa Operacional / OPEX). A FCC frequentemente inverte essa lógica em alternativas erradas.
+- C) Correta. Otimização de taxa (Rate) no FinOps refere-se a pagar menos pelo mesmo recurso (ex: descontos por comprometimento, como Reserved Instances ou Savings Plans). Desligar máquinas é Otimização de Uso (Usage Optimization). Refatorar arquitetura leva tempo e não é apenas otimização de taxa financeira.
 </details>
 
-### Questão 2 (FCC - 2023 - TRT 18ª Região - Analista Judiciário - TI)
-No framework COBIT 2019, o conceito de 'Governança' é distinguido claramente do conceito de 'Gestão'. A alternativa que apresenta exclusivamente domínios que pertencem à camada de Gestão é:
-A) Avaliar, Dirigir e Monitorar (EDM).
-B) Alinhar, Planejar e Organizar (APO) e Construir, Adquirir e Implementar (BAI).
-C) EDM e Entregar, Servir e Suportar (DSS).
-D) Construir, Adquirir e Implementar (BAI) e Monitorar, Avaliar e Medir (EDM).
-E) EDM e APO.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-No COBIT, EDM é domínio exclusivo da Governança. APO, BAI, DSS e MEA são os quatro domínios pertencentes à Gestão.
-</details>
-
-### Questão 3 (FCC - 2019 - TRF 3ª Região - Analista de TI)
-Segundo as publicações do ITIL v4, qual componente representa a espinha dorsal de todo o framework, definindo um modelo operacional que cobre todas as principais atividades necessárias para gerenciar produtos e serviços de maneira eficaz?
-A) Os Quatro Quadrantes de Governança.
-B) O Sistema de Valor de Serviço (SVS).
-C) O Catálogo de Serviços.
-D) O Banco de Dados de Gerenciamento de Configuração (CMDB).
-E) A Matriz RACI.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-O Sistema de Valor de Serviço (SVS) é o núcleo do ITIL v4, convertendo a demanda em valor através dos princípios orientadores, governança, cadeia de valor, práticas e melhoria contínua.
-</details>
-
-### Questão 4 (FCC - 2018 - TRT 15ª Região - Analista Judiciário)
-A métrica TCO (Total Cost of Ownership) na adoção de Cloud Computing deve considerar, além do custo direto pago ao provedor de nuvem:
-A) Apenas os impostos sobre serviços digitais.
-B) O valor pago pela construção do prédio do Tribunal.
-C) Custos ocultos e complementares, como treinamento da equipe, largura de banda, administração e suporte contínuo.
-D) Exclusivamente o licenciamento do Sistema Operacional.
-E) O custo depreciado dos servidores que foram desligados no Data Center antigo.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-O TCO engloba todos os custos envolvidos no ciclo de vida da solução, incluindo treinamento, refatoração de apps, largura de banda, suporte, e não apenas o pagamento da fatura da nuvem.
-</details>
-
-### Questão 5 (FCC - 2021 - DPE-RR - Analista de Sistemas)
-No ITIL v4, o Princípio Orientador 'Otimize e automatize' (Optimize and automate) preconiza que:
-A) A automação deve ser aplicada antes de qualquer otimização do processo humano.
-B) Apenas as atividades de desenvolvimento de software devem ser automatizadas.
-C) Toda intervenção humana no serviço deve ser sumariamente eliminada em 6 meses.
-D) Os recursos de todos os tipos (incluindo tempo da equipe) devem ser usados com o melhor de seu efeito. Regras e processos devem ser otimizados (simplificados) ANTES de automatizar.
-E) A governança de TI deve aprovar todas as automações por meio de um comitê do COBIT.
+### Questão 2 (FCC - Questão Prática / Adaptada (Governança TI e FinOps))
+Um Tribunal adotou o ITIL v4 para gerenciar seus serviços de TI. Durante uma auditoria, constatou-se que um script em PowerShell foi criado para criar automaticamente os usuários no Active Directory, mas o script falha frequentemente porque o processo de aprovação do RH ainda é manual, confuso e feito em papel, travando a execução do script. Qual Princípio Orientador do ITIL v4 foi violado pelo analista que automatizou a criação de usuários?
+A) Pense e trabalhe holisticamente.
+B) Progrida iterativamente com feedback.
+C) Concentre-se no valor.
+D) Otimize e automatize (Optimize and Automate).
+E) Mantenha de forma simples e prática.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: D**
 
-A recomendação central do ITIL v4 é nunca automatizar um processo falho ou ineficiente. Primeiro deve-se otimizar/simplificar, e só então automatizar para preservar recursos humanos para tarefas mais complexas.
+- D) Correta. O princípio 'Otimize e automatize' do ITIL v4 afirma explicitamente que NUNCA se deve automatizar um processo falho ou ineficiente. A regra de ouro é primeiro simplificar e otimizar o fluxo de trabalho (tirar o papel, definir aprovação digital) e SÓ ENTÃO aplicar a automação da tecnologia.
 </details>
 
-### Questão 6 (FCC - 2022 - TRT 22ª Região - Analista Judiciário - TI)
-De acordo com o ITIL v4, o conceito de 'Valor' (Value) é:
-A) Determinado exclusivamente pelo provedor do serviço de TI.
-B) Co-criado entre o provedor de serviços e o consumidor, através de uma relação colaborativa.
-C) Restrito aos lucros financeiros obtidos pelo provedor.
-D) Definido de forma imutável no Acordo de Nível de Serviço (SLA).
-E) Baseado apenas na utilidade, desconsiderando a garantia do serviço.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-Uma das maiores mudanças do ITIL v3 para o ITIL v4 é o foco na cocriação de valor (Co-creation of value). O valor não é mais 'entregue' passivamente pelo provedor, mas co-criado em parceria com o cliente.
-</details>
-
-### Questão 7 (FCC - 2023 - TRT 18ª Região - Analista Judiciário - TI)
-No COBIT 2019, os Componentes do Sistema de Governança (antigamente chamados de Habilitadores no COBIT 5) incluem:
-A) Exclusivamente processos, infraestrutura e tecnologia.
-B) Apenas a cultura organizacional e princípios éticos.
-C) Processos, Estruturas organizacionais, Princípios/Políticas, Informação, Cultura/Comportamento, Pessoas/Habilidades e Serviços/Infraestrutura/Aplicações.
-D) Governança, Gestão, TCO, ROI e CAPEX.
-E) Fatos, Dimensões e Métricas de BI.
+### Questão 3 (FCC - Questão Prática / Adaptada (Governança TI e FinOps))
+No COBIT 2019, a Cascata de Objetivos (Goals Cascade) traduz as necessidades das partes interessadas em objetivos acionáveis. Considere a seguinte necessidade de um Tribunal: 'Reduzir o vazamento de dados de processos judiciais sigilosos'. Seguindo a arquitetura do COBIT 2019, essa necessidade será primeiramente traduzida em:
+A) Objetivos de Alinhamento (Alignment Goals).
+B) Metas de TI (IT Goals).
+C) Objetivos Corporativos ou Empresariais (Enterprise Goals).
+D) Fatores de Desenho (Design Factors).
+E) Métricas de Risco de Hardware.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-O COBIT 2019 define 7 componentes essenciais para construir e sustentar o sistema de governança de TI da empresa, abrangendo processos, pessoas, cultura e tecnologia.
+- C) Correta. A cascata do COBIT 2019 funciona assim: Necessidades das Partes Interessadas -> traduzidas em Enterprise Goals (Objetivos Corporativos) -> que se desdobram em Alignment Goals (Objetivos de Alinhamento de TI) -> que definem os Governance/Management Objectives.
 </details>
 
-### Questão 8 (FCC - 2019 - TRF 3ª Região - Analista de TI)
-Na gestão financeira (FinOps), uma estratégia para reduzir o OPEX na nuvem pública (ex: AWS) sem desligar serviços é:
-A) Comprar novos nobreaks físicos para a empresa.
-B) Adotar instâncias spot e instâncias reservadas ao invés de instâncias on-demand para cargas de trabalho previsíveis.
-C) Aumentar artificialmente o tráfego de rede para ganhar descontos por volume.
-D) Trocar discos SSD por unidades de fita LTO no cloud.
-E) Contratar mais administradores de banco de dados presenciais.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-O Rightsizing e a adoção de instâncias reservadas (Savings Plans) ou Spot são as principais táticas de otimização de OPEX (Custo Operacional) no framework FinOps.
-</details>
-
-### Questão 9 (FCC - 2018 - TRT 15ª Região - Analista Judiciário)
-O COBIT 2019 introduziu o conceito de 'Fatores de Desenho' (Design Factors). O objetivo principal destes fatores é:
-A) Determinar a arquitetura de rede OSI da organização.
-B) Fornecer o código fonte base para o desenvolvimento de software corporativo.
-C) Permitir que as organizações customizem o COBIT (tailoring) para desenhar um sistema de governança de TI sob medida, baseado na estratégia da empresa, tamanho, e cenários de risco.
-D) Desenhar interfaces de usuário mais amigáveis (UX) no departamento de TI.
-E) Substituir as práticas do ITIL v4 na empresa.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-O COBIT 2019 deixou de ser um modelo rígido 'one-size-fits-all'. Os Design Factors (Fatores de Desenho) permitem adaptar o framework ao perfil real da organização (tailoring).
-</details>
-
-### Questão 10 (FCC - 2021 - DPE-RR - Analista de Sistemas)
-A Prática do ITIL v4 responsável por gerenciar solicitações de novos hardwares ou acessos de rotina feitos pelos usuários de forma padronizada chama-se:
-A) Gerenciamento de Incidentes.
-B) Central de Serviços (Service Desk).
-C) Gerenciamento de Liberação.
-D) Gerenciamento de Requisição de Serviço (Service Request Management).
-E) Gerenciamento de Problemas.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**
-
-Incidentes são falhas imprevistas. Solicitações de rotina, previsíveis e padronizadas (ex: pedir um mouse novo ou acesso a uma pasta) são tratadas pela prática de Requisição de Serviço.
-</details>
-
-### Questão 11 (FCC - 2022 - TRT 22ª Região - Analista Judiciário - TI)
-A Prática responsável por restaurar a operação normal do serviço o mais rapidamente possível e minimizar o impacto nos negócios é denominada no ITIL v4 como:
-A) Gerenciamento de Problemas.
-B) Controle de Mudanças.
-C) Gerenciamento de Incidentes.
-D) Gerenciamento de Continuidade.
-E) Gerenciamento de Implantação.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-O objetivo primário do Gerenciamento de Incidentes é restaurar a normalidade o mais rápido possível (usando workarounds se necessário), diferente de Problemas que foca em achar a causa raiz.
-</details>
-
-### Questão 12 (FCC - 2023 - TRT 18ª Região - Analista Judiciário - TI)
-Em FinOps, qual a diferença primordial entre ROI e TCO em um projeto de nuvem?
-A) O TCO foca exclusivamente no custo final de aposentadoria de servidores, enquanto o ROI calcula apenas os custos de energia elétrica.
-B) O TCO calcula o custo total acumulado de adotar e manter a solução, enquanto o ROI calcula a viabilidade financeira avaliando o lucro ou benefício trazido contra os custos.
-C) O ROI é o custo operacional (OPEX) mensal, e o TCO é o custo de capital (CAPEX) inicial.
-D) Ambos são sinônimos perfeitos na contabilidade moderna do setor público.
-E) O ROI só se aplica a projetos ágeis (Scrum), enquanto o TCO só se aplica à cascata.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-TCO mede quanto você GASTOU (direta e indiretamente) no longo prazo. ROI mede quanto você GANHOU ou economizou (retorno) em relação a esse gasto.
-</details>
-
-### Questão 13 (FCC - 2019 - TRF 3ª Região - Analista de TI)
-Um princípio básico do COBIT 2019 estabelece que o sistema de governança deve separar claramente a Governança da Gestão. Segundo o modelo, a responsabilidade primária pelo acompanhamento das atividades diárias para atingir os objetivos da empresa cabe:
-A) Ao Conselho de Administração (Board of Directors).
-B) À Alta Administração / Gestão Executiva (Management).
-C) Aos Auditores Externos independentes.
-D) Exclusivamente aos gerentes de desenvolvimento de software.
-E) Aos stakeholders (acionistas) que avaliam o sistema.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-No COBIT, a Governança (conselho) Avalia, Dirige e Monitora (EDM). A Gestão (diretoria executiva) Planeja, Constrói, Executa e Monitora as atividades rotineiras sob a direção da governança.
-</details>
-
-### Questão 14 (FCC - 2018 - TRT 15ª Região - Analista Judiciário)
-No ciclo de vida do ITIL v4, os 7 Princípios Orientadores (Guiding Principles) são universais e duradouros. Um desses princípios é 'Comece de onde você está' (Start where you are). Qual o significado central deste princípio?
-A) Descartar todos os softwares legados antes de implementar um novo serviço.
-B) Migrar imediatamente para a nuvem sem avaliar a infraestrutura local.
-C) Evitar começar do zero sem considerar o que já existe e é útil na organização atualmente; avaliar o estado atual objetivamente.
-D) Contratar novos funcionários para todas as áreas de serviço.
-E) Focar no futuro tecnológico desconsiderando completamente o passado.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-O princípio 'Start where you are' incentiva o aproveitamento de processos, serviços e habilidades já existentes na organização antes de decidir reconstruir algo do zero.
-</details>
-
-### Questão 15 (FCC - 2021 - DPE-RR - Analista de Sistemas)
-Em relação à hierarquia dos conceitos de Governança de TI, é correto afirmar que:
-A) O COBIT é usado primariamente para a execução técnica de serviços (como configurar redes), e o ITIL para a governança corporativa no conselho de administração.
-B) O COBIT e o ITIL são concorrentes excludentes, a adoção de um proíbe metodologicamente o uso do outro.
-C) O COBIT foca primariamente na governança corporativa de TI (o 'que' precisa ser alcançado e controlado), enquanto o ITIL detalha a gestão e entrega técnica e de serviços (o 'como' fazer as coisas funcionarem operacionamente).
-D) O FinOps substitui totalmente o COBIT nas empresas modernas.
-E) O ITIL v4 pertence exclusivamente ao PMBOK.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-COBIT dita o direcionamento e controle (Governança/Auditoria). ITIL é o framework complementar que entrega as melhores práticas operacionais de serviços para atender a esses objetivos corporativos.
-</details>
-
-## 📝 TEMA 2: Arquitetura de Software (Microserviços, DDD e Cloud-native)
-
-### Questão 16 (FCC - 2021 - TRT 15ª Região - Analista de TI)
-Em um ecossistema de microserviços, as falhas transitórias de rede ou a lentidão extrema de um serviço 'A' podem causar esgotamento de threads no serviço chamador 'B', levando todo o sistema a um efeito cascata. O padrão arquitetural de resiliência que intercepta essas chamadas falhas, falha rapidamente após um limiar atingido (aberto) e periodicamente testa se a conectividade voltou (meio-aberto) é conhecido como:
-A) Gateway Routing.
-B) Circuit Breaker (Disjuntor).
-C) Bulkhead Isolator.
-D) Event Sourcing.
-E) API Gateway.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-O padrão Circuit Breaker (Disjuntor) protege sistemas distribuídos contra a propagação de falhas em cascata. Ele funciona exatamente como o disjuntor da sua casa: se houver curto-circuito (muitas falhas consecutivas/timeout), ele 'abre', rejeitando novas requisições imediatamente até que o serviço volte a ficar saudável.
-</details>
-
-### Questão 17 (FCC - 2018 - TRT 2ª Região - Analista de Sistemas)
-Na abordagem de modelagem orientada ao domínio (Domain-Driven Design - DDD) proposta por Eric Evans, a delimitação semântica dentro da qual um modelo de domínio específico se aplica e é garantido como consistente (evitando ambiguidades do mesmo termo em setores diferentes) é denominada:
-A) Ubiquitous Language.
-B) Entidade.
-C) Bounded Context (Contexto Delimitado).
-D) Value Object (Objeto de Valor).
-E) Aggregate Root (Raiz de Agregação).
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-O Bounded Context cria fronteiras arquiteturais explícitas. A palavra 'Cliente' tem um significado e atributos no contexto de 'Faturamento', e outro significado no contexto de 'Suporte Técnico'. Cada microserviço geralmente engloba um ou mais Bounded Contexts.
-</details>
-
-### Questão 18 (FCC - 2023 - TRT 18ª Região - Analista de TI)
-A Arquitetura Hexagonal (ou padrão Ports and Adapters) possui como objetivo principal de design estrutural:
-A) Integrar todos os microsserviços do sistema em um único repositório monolítico (Monorepo) para otimizar os testes.
-B) Ocultar a infraestrutura de rede, de modo que o banco de dados SQL atue no centro do hexágono gerenciando as regras de negócio por Stored Procedures.
-C) Isolar o núcleo da aplicação (Lógica de Domínio) das tecnologias externas (bancos de dados, interfaces web, mensagens), permitindo que a aplicação seja testada de forma autônoma conectando mocks aos seus adaptadores.
-D) Dividir o banco de dados relacional em exatas seis tabelas centrais.
-E) Implementar padrões de resiliência baseados exclusivamente em eventos assíncronos Kafka.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-O princípio da Arquitetura Hexagonal é que a Lógica de Negócios deve ficar no centro e não depender de nada externo. Tecnologias como REST, SQL, AMQP são apenas 'detalhes' de infraestrutura que se conectam ao núcleo através de Portas (interfaces de contrato) implementadas por Adaptadores.
-</details>
-
-### Questão 19 (FCC - 2019 - TRF 4ª Região - Analista Judiciário - Sistemas)
-No desenvolvimento Cloud-native, um conceito fundamental é o dos 'Twelve-Factor Apps' (Aplicativos de Doze Fatores). De acordo com essa metodologia, como o código fonte e as dependências devem ser tratadas?
-A) Código fonte deve ser empacotado junto com o banco de dados, e as dependências instaladas globalmente no servidor hospedeiro.
-B) Deve existir um único repositório de código fonte (codebase) rastreado em controle de revisão, capaz de gerar muitos deploys em múltiplos ambientes, com dependências declaradas e isoladas explicitamente.
-C) Vários repositórios de código devem compor um único app (micro-repositórios), sem necessidade de controle de versão.
-D) As configurações dinâmicas de banco de dados e senhas devem ser versionadas em texto plano (hard-coded) no repositório.
-E) O aplicativo deve ser fortemente acoplado a um disco rígido físico local para armazenamento de estado (stateful).
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-A metodologia 12-Factor prescreve (Fator 1) um codebase único com controle de revisão e (Fator 2) a declaração/isolamento explícito das dependências (ex: pom.xml, requirements.txt, package.json), sem depender de pacotes instalados no sistema operacional.
-</details>
-
-### Questão 20 (FCC - 2016 - TRT 23ª Região - Analista Judiciário - TI)
-A complexidade de transações ACID puras em ambientes de banco de dados distribuídos na arquitetura de microserviços (Two-Phase Commit) geralmente compromete a performance e a disponibilidade. Como alternativa para manter a consistência eventual e gerenciar transações de longa duração entre múltiplos serviços, adota-se predominantemente o padrão arquitetural:
-A) CQRS (Command Query Responsibility Segregation).
-B) Strangler Fig.
-C) Saga Pattern.
-D) API Composition.
-E) Sidecar Pattern.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-O padrão Saga quebra uma transação global em uma sequência de pequenas transações locais em cada microserviço. Se um passo falhar, a Saga aciona operações de compensação (rollback lógico) nos serviços anteriores.
-</details>
-
-### Questão 21 (FCC - 2021 - TRT 15ª Região - Analista de TI)
-No contexto de microserviços, o padrão Service Mesh (Malha de Serviços) utiliza pequenos proxies inseridos junto a cada instância de serviço para gerenciar a comunicação de rede de forma invisível para a aplicação. Esse proxy adjacente é tipicamente implementado sob o padrão:
-A) Monolithic Proxy.
-B) Adapter.
-C) Backend for Frontend (BFF).
-D) Sidecar.
-E) Ambassador.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**
-
-O padrão Sidecar ('carro lateral' da moto) acopla um contêiner auxiliar à aplicação principal no mesmo Pod, assumindo funções não funcionais (como TLS, roteamento e logs do Istio/Envoy), sem que o desenvolvedor precise programar isso na aplicação em si.
-</details>
-
-### Questão 22 (FCC - 2018 - TRT 2ª Região - Analista de Sistemas)
-No Domain-Driven Design (DDD), um 'Objeto de Valor' (Value Object) se diferencia de uma 'Entidade' (Entity) porque:
-A) A Entidade não possui identidade e é definida pelos seus atributos, enquanto o Objeto de Valor possui um ID único (ex: CPF).
-B) O Objeto de Valor deve ser armazenado obrigatoriamente no banco de dados usando ORM, diferentemente das entidades.
-C) A Entidade é caracterizada pelo seu ciclo de vida contínuo e identidade única persistente (ex: Usuário, Pedido), enquanto o Objeto de Valor é definido exclusivamente pelos seus atributos, sem identidade própria e deve ser imutável (ex: Endereço, Moeda).
-D) Objetos de valor são usados apenas no desenvolvimento front-end (UI).
-E) As entidades só existem em banco de dados NoSQL (Documentos), e Objetos de Valor no SQL Relacional.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-Se dois Endereços têm a mesma rua, número e CEP, eles representam a mesma 'coisa' (Objeto de Valor imutável e sem ID próprio). Se dois Clientes têm o mesmo Nome, eles ainda são duas pessoas diferentes se seus IDs forem diferentes (Entidade com identidade contínua).
-</details>
-
-### Questão 23 (FCC - 2023 - TRT 18ª Região - Analista de TI)
-A decomposição de uma aplicação monolítica grande e legada pode ser feita de forma gradual, interceptando e redirecionando as chamadas das APIs antigas para os novos microserviços aos poucos, até que o sistema antigo seja totalmente substituído. Esse padrão de arquitetura focado na migração progressiva é chamado de:
-A) Padrão Strangler Fig (Figueira Estranguladora).
-B) Padrão Facade.
-C) Padrão API Gateway.
-D) Event Sourcing.
-E) Padrão Bulkhead.
+### Questão 4 (FCC - Questão Prática / Adaptada (Governança TI e FinOps))
+Um engenheiro de nuvem configurou alertas no AWS Budgets. Ele utilizou o seguinte comando AWS CLI para verificar as políticas do FinOps do órgão:
+```bash
+aws budgets describe-budgets --account-id 123456789012
+```
+Dentro dos pilares do FinOps, a criação de alertas de estouro de orçamento (Budgets) e a visualização de faturas detalhadas com tags (Showback/Chargeback) pertence fundamentalmente à fase de:
+A) Informar (Inform).
+B) Otimizar (Optimize).
+C) Operar (Operate).
+D) Descomissionar (Decommission).
+E) Migrar (Migrate).
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: A**
 
-Inspirado na árvore Figueira que cresce ao redor de uma árvore hospedeira até matá-la (estrangulamento), esse padrão envolve colocar um gateway/proxy no topo e ir substituindo o monólito legado pedaço a pedaço por novos microserviços, até desligar o monólito.
+- A) Correta. O ciclo de vida do FinOps tem 3 fases: Inform (visibilidade, alocação de custos, dashboards), Optimize (Rightsizing, RIs) e Operate (automação contínua, governança e mudança cultural).
 </details>
 
-### Questão 24 (FCC - 2019 - TRF 4ª Região - Analista Judiciário - Sistemas)
-O padrão arquitetural 'Backend for Frontend' (BFF) é amplamente utilizado em aplicações compostas por microserviços porque resolve o seguinte problema:
-A) Centraliza todo o código do backend e frontend em um único arquivo de deploy para evitar microserviços.
-B) Evita a criação de um gateway genérico (one-size-fits-all) que fica superlotado, criando um gateway/backend intermediário dedicado para cada tipo específico de cliente (ex: um BFF para Mobile, um BFF para Web) adaptando o payload e as chamadas.
-C) Reduz o acoplamento de banco de dados distribuídos realizando replicação assíncrona entre o SQL Web e o NoSQL Mobile.
-D) Impede ataques DDoS atuando estritamente como um WAF (Web Application Firewall) no Front-end.
-E) Permite a geração de interfaces visuais (HTML/CSS) dinâmicas diretamente do banco de dados.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-Diferentes interfaces (Mobile x Desktop Web) exigem payloads e consolidação de dados diferentes. O BFF é uma camada de orquestração sob medida (um mini API Gateway focado) para um tipo de tela específico, melhorando o tráfego de rede entre cliente e servidor.
-</details>
-
-### Questão 25 (FCC - 2016 - TRT 23ª Região - Analista Judiciário - TI)
-Ao utilizar Arquitetura Hexagonal, como é implementada a comunicação quando o Domínio precisa acionar um recurso externo (por exemplo, buscar dados no banco)?
-A) O Domínio importa diretamente o driver JDBC do banco de dados relacional (Inversão de Controle).
-B) O Domínio define uma Porta de Entrada (Input Port) em formato de interface HTTP REST, e a classe de banco de dados faz a chamada de rede ao próprio domínio.
-C) O Domínio define uma Porta de Saída (Output/Driven Port) por meio de uma Interface abstrata. Um Adaptador de Banco de Dados implementa essa interface e é injetado no Domínio via Injeção de Dependência.
-D) Utiliza-se um barramento de mensageria assíncrona para que o domínio publique um tópico solicitando os dados, sem uso de interfaces.
-E) O Domínio acessa os dados usando Stored Procedures nativas que encapsulam toda a lógica de domínio.
+### Questão 5 (FCC - Questão Prática / Adaptada (Governança TI e FinOps))
+Uma equipe de TI está resolvendo uma interrupção crítica (Incidente Maior) no sistema de Processo Eletrônico (PJe). Ao consultar o framework ITIL v4, o Gerente de Incidentes orientou a equipe a aplicar uma solução paliativa temporária (Workaround), como reiniciar o serviço do Tomcat, em vez de passar horas procurando a causa do erro no código fonte. Essa decisão baseia-se no fato de que o objetivo principal da prática de Gerenciamento de Incidentes é:
+A) Descobrir a causa raiz e reescrever o código falho definitivamente.
+B) Punir o desenvolvedor responsável pela falha no código.
+C) Restaurar a operação normal do serviço o mais rápido possível, minimizando o impacto negativo no negócio.
+D) Implantar novas funcionalidades durante o período de inatividade.
+E) Adicionar novos hardwares e instâncias de banco de dados.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-O domínio nunca enxerga o adaptador SQL. O domínio dita as regras do jogo e cria uma interface (Porta) chamada 'RepositorioDePedidos'. A camada externa de infraestrutura implementa essa porta e fornece o adaptador (MySQLAdapter) no momento de execução.
+- C) Correta. No ITIL, 'Incidente' é resolvido devolvendo o serviço ao usuário rapidamente, mesmo que com 'remendos' (workarounds). A busca e correção definitiva da causa raiz é responsabilidade de outra prática: o 'Gerenciamento de Problemas' (Problem Management).
 </details>
 
-### Questão 26 (FCC - 2021 - TRT 15ª Região - Analista de TI)
-No desenvolvimento de APIs RESTful conectando microserviços, a característica que garante que uma requisição (como PUT ou DELETE) possa ser repetida inúmeras vezes com o mesmo estado final no servidor, sem efeitos colaterais multiplicados, é chamada de:
-A) Resiliência.
-B) Observabilidade.
-C) Assincronismo.
-D) Idempotência.
-E) Polimorfismo.
+### Questão 6 (FCC - Questão Prática / Adaptada (Governança TI e FinOps))
+Para implementar o modelo do COBIT 2019 em um órgão governamental, o comitê de governança está definindo os Fatores de Desenho (Design Factors) para customizar o framework. Considere os seguintes parâmetros levantados pelo órgão:
+1 - O órgão é uma agência militar de alta segurança.
+2 - A tolerância ao risco é extremamente baixa.
+Estes parâmetros afetarão a modelagem do COBIT exigindo um peso maior nos domínios focados em:
+A) Inovação e Criação de Novos Produtos (APO04).
+B) Agilidade no Desenvolvimento de Software (BAI03).
+C) Risco, Segurança e Conformidade (APO12, APO13, MEA03).
+D) Diminuição severa do CAPEX e OPEX (FinOps).
+E) Contratação desenfreada de fornecedores externos.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. Os Design Factors do COBIT 2019 servem exatamente para isso: um banco digital ágil dará peso à inovação, enquanto uma agência governamental rígida dará peso à gestão de Risco, Segurança e Monitoramento de Conformidade (APO12, APO13).
+</details>
+
+### Questão 7 (FCC - Questão Prática / Adaptada (Governança TI e FinOps))
+Em um arquivo YAML de configuração de integração do Jira Service Management, foi definida uma transição automática de ticket baseada no ITIL v4:
+```yaml
+transition:
+  from: "Open"
+  to: "In Progress"
+  condition:
+    ticket_type: "Service Request"
+```
+No ITIL v4, a prática de 'Gerenciamento de Requisição de Serviço' (Service Request Management) é acionada corretamente em qual das seguintes situações?
+A) Quando o banco de dados principal do TRT fica offline inesperadamente.
+B) Quando um novo projeto de lei exige a reescrita total do ERP do tribunal.
+C) Quando um servidor de e-mail sofre um ataque de ransomware.
+D) Quando um funcionário solicita a instalação de um software padrão aprovado (ex: Adobe Reader) ou a redefinição de uma senha.
+E) Quando há a necessidade de investigar a causa raiz de um servidor que reiniciou 5 vezes na semana.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: D**
 
-Idempotência significa que uma operação repetida (ex: `DELETE /user/1` ou `PUT /user/1`) causa o mesmo estado final no sistema (o usuário 1 é atualizado para o mesmo estado ou permanece deletado), independentemente de ser chamada 1 ou 100 vezes.
+- D) Correta. Requisições de Serviço tratam de ações pré-aprovadas, rotineiras, de baixo risco e previsíveis (como pedir um mouse, resetar senha, liberar acesso a pasta). As outras alternativas representam Incidentes, Problemas ou Mudanças maiores.
 </details>
 
-### Questão 27 (FCC - 2018 - TRT 2ª Região - Analista de Sistemas)
-Em relação ao padrão CQRS (Command Query Responsibility Segregation), é correto afirmar que:
-A) Trata-se de um design pattern focado estritamente na interface gráfica do usuário (UI/UX).
-B) Ele sugere unificar os modelos de leitura (Query) e escrita (Command) em um mesmo Data Transfer Object (DTO) para economizar código.
-C) Separa fisicamente as rotinas ou até os bancos de dados responsáveis por gravar os dados (Command - alterações de estado) das rotinas que apenas leem os dados (Query).
-D) É uma biblioteca exclusiva da linguagem Java para gerar relatórios analíticos.
-E) Restringe a comunicação de rede a pacotes UDP para melhorar a performance de consultas pesadas.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-O padrão CQRS defende que as estruturas de dados, fluxos de código e até servidores de banco de dados utilizados para leitura (consultas complexas) devem ser separados e otimizados independentemente daqueles usados para gravação (regras de negócio pesadas/atualizações).
-</details>
-
-### Questão 28 (FCC - 2023 - TRT 18ª Região - Analista de TI)
-A comunicação entre microserviços muitas vezes exige padrões de orquestração. Qual a diferença fundamental entre Orquestração (Orchestration) e Coreografia (Choreography) na Saga de microserviços?
-A) Orquestração não usa containers Docker, enquanto a coreografia sim.
-B) Na orquestração, existe um controlador central (maestro) que diz aos demais serviços o que fazer e monitora o status. Na coreografia, não há nó central; cada serviço escuta eventos assíncronos uns dos outros e age autonomamente.
-D) A coreografia é bloqueante (síncrona REST), enquanto a orquestração é assíncrona baseada puramente em Kafka.
-E) A FCC condena a orquestração, sendo a coreografia o único modelo válido na nuvem.
-C) Não há diferença técnica, trata-se de nomenclatura comercial para orquestradores como o Kubernetes.
+### Questão 8 (FCC - Questão Prática / Adaptada (Governança TI e FinOps))
+Um dos principais desafios do FinOps é a alocação correta de custos (Cost Allocation). Para rastrear se o gasto da instância EC2 `i-0abcd1234` pertence ao Departamento de Recursos Humanos ou ao Departamento de TI, a melhor prática técnica implementável nos provedores de nuvem é:
+A) Utilizar Redes Virtuais Separadas (VPCs) fisicamente desconectadas.
+B) Implementar uma estratégia robusta e obrigatória de 'Tags' (ex: chave `CostCenter` = `RH`).
+C) Criar um banco de dados relacional manual onde o analista digita os IPs diários.
+D) Configurar o firewall NGFW para cobrar por pacote trafegado na porta 80.
+E) Comprar instâncias físicas dedicadas (Bare Metal) para o RH.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-Orquestração = Comando centralizado (um maestro rege a música). Coreografia = Eventos descentralizados (cada dançarino sabe seu passo ao ouvir o ritmo publicado no broker de mensagens).
+- B) Correta. A fundação de qualquer alocação de custos (Chargeback/Showback) na nuvem é a Taggeamento (Tagging) rigoroso de todos os recursos com chaves como Centro de Custo, Projeto e Ambiente.
 </details>
 
-### Questão 29 (FCC - 2019 - TRF 4ª Região - Analista Judiciário - Sistemas)
-Qual padrão de resiliência ajuda a proteger um serviço contra um esgotamento total de recursos ao limitar quantas requisições simultâneas ele pode processar, separando o tráfego em 'compartimentos estanques' (se um afundar, os outros sobrevivem)?
-A) Retry.
-B) Fallback.
-C) Bulkhead (Anteparo).
-D) Event Sourcing.
-E) Timeout.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-O nome 'Bulkhead' vem da engenharia naval (anteparos ou comportas de um navio). Se um módulo do serviço travar, ele satura apenas as threads daquele 'compartimento', permitindo que o resto da aplicação continue rodando sem afundar tudo.
-</details>
-
-### Questão 30 (FCC - 2016 - TRT 23ª Região - Analista Judiciário - TI)
-No paradigma Cloud-native, as aplicações devem seguir a propriedade de 'Descartabilidade' (Disposability). Isso significa, segundo os 12-Factor Apps, que:
-A) O código da aplicação deve ser apagado anualmente para evitar dívida técnica.
-B) Os contêineres/instâncias da aplicação devem iniciar rapidamente e desligar de maneira graciosa (graceful shutdown), podendo ser criados e destruídos a qualquer momento sem corromper estado ou dados persistentes.
-C) As senhas devem ser fracas, pois a infraestrutura deve ser considerada descartável e sem valor comercial.
-D) As instâncias devem salvar os logs em arquivos de texto de até 1 MB (descartando os antigos na própria máquina local).
-E) Os desenvolvedores devem evitar criar testes unitários (descartabilidade do TDD).
+### Questão 9 (FCC - Questão Prática / Adaptada (Governança TI e FinOps))
+No ITIL v4, o conceito de CMDB (Configuration Management Database) evoluiu. Considere que o Tribunal mantém um CMDB para rastrear os Itens de Configuração (CIs) e suas relações:
+`[Servidor Web] ---> depende_de ---> [Banco de Dados Oracle]`
+A prática do ITIL v4 diretamente responsável por garantir que essas informações sobre as CIs estejam precisas, atualizadas e reflitam a infraestrutura real é o:
+A) Gerenciamento de Ativos de TI (IT Asset Management).
+B) Gerenciamento da Configuração de Serviço (Service Configuration Management).
+C) Habilitação de Mudança (Change Enablement).
+D) Gerenciamento de Portfólio.
+E) Gerenciamento de Nível de Serviço (SLA).
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-Na nuvem, as instâncias (VMs ou pods Kubernetes) são efêmeras (gado, não animais de estimação). A aplicação deve subir rápido, processar, e, se o orquestrador matar o container, ele deve finalizar conexões suavemente sem corromper o banco de dados.
+- B) Correta. O Service Configuration Management foca no CMDB e nas relações/dependências lógicas entre os serviços e CIs. O Gerenciamento de Ativos (A) foca mais no valor financeiro, licenças e ciclo de vida do hardware/software.
 </details>
 
-## 📝 TEMA 3: Direitos das PCD (CSJT 386/2024 e Cão-guia)
-
-### Questão 31 (FCC - 2022 - TRT 22ª Região - Analista Judiciário)
-A Resolução CSJT nº 386/2024 aborda políticas institucionais para a promoção da acessibilidade e inclusão de pessoas com deficiência. Nos termos do Art. 6º, que trata da constituição de instâncias de apoio, cabe a quem o papel de propor, organizar e coordenar as políticas de acessibilidade e inclusão nos tribunais?
-A) Ao Tribunal Superior Eleitoral exclusivamente.
-B) Aos Comitês de Acessibilidade e Inclusão ou unidades de sustentabilidade e acessibilidade de cada tribunal.
-C) Ao Conselho Federal da OAB.
-D) Ao Ministério Público Estadual.
-E) Exclusivamente à Secretaria de Segurança Institucional de cada tribunal.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-A resolução estabelece a necessidade de órgãos diretivos específicos focados na formulação técnica das políticas de acessibilidade. Essa responsabilidade recai diretamente nos Comitês de Acessibilidade e Inclusão ou suas unidades afins estabelecidas nas instâncias.
-</details>
-
-### Questão 32 (FCC - 2018 - TRT 15ª Região - Técnico Judiciário)
-Com base na Lei nº 11.126/2005 (Direito ao Cão-Guia), é correto afirmar que a pessoa com deficiência visual que possui cão-guia tem o direito fundamental de ingressar e permanecer com o animal:
-A) Exclusivamente em prédios públicos da administração direta e indireta.
-B) Apenas em locais abertos de grande circulação, como praças e parques.
-C) Em todos os meios de transporte e em estabelecimentos abertos ao público, de uso público e privado de uso coletivo, independentemente do pagamento de taxas extras.
-D) Em estabelecimentos privados mediante a apresentação diária de laudo médico psiquiátrico emitido no máximo há 30 dias.
-E) Somente em hospitais e clínicas médicas de tratamento ocular.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-O núcleo da Lei 11.126 é garantir o acesso universal do portador de cão-guia a ambientes coletivos (públicos e privados, como shoppings, teatros, e ônibus) sem nenhum ônus financeiro adicional ou barreira legal.
-</details>
-
-### Questão 33 (FCC - 2023 - TRT 18ª Região - Analista Judiciário)
-Conforme as diretrizes protetivas e normas que regem a acessibilidade nas edificações judiciárias e o acesso com cão-guia, há exceções expressas onde a entrada do animal é vedada. Assinale a alternativa que indica uma exceção lícita e amparada pelo Decreto nº 5.904/2006 (que regulamenta a lei do cão-guia):
-A) Salas de audiência do poder judiciário durante a presença do júri popular.
-B) Praças de alimentação de Shopping Centers localizados na região central.
-C) Meios de transporte coletivos intermunicipais (ônibus) em viagens superiores a 4 horas.
-D) Setores de isolamento, áreas estéreis, UTIs e locais sujeitos a assepsia de alto nível em instituições de saúde, por risco sanitário iminente.
-E) Repartições públicas que já contem com piso tátil e funcionários designados para o guiamento de deficientes visuais.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**
-
-A única exceção legal absoluta para barrar o cão-guia são áreas hospitalares estéreis (UTIs, centros cirúrgicos) por restrições óbvias de biossegurança (assepsia). Não se pode barrar o cão-guia em tribunais ou áreas de alimentação.
-</details>
-
-### Questão 34 (FCC - 2019 - TRF 4ª Região - Analista Judiciário)
-Em relação ao Art. 6º da Resolução do CSJT sobre os Comitês de Acessibilidade, observa-se a determinação de que a inclusão deva ser promovida de forma sistêmica e transversal. Isso implica legalmente que as políticas propostas pelo Comitê devem visar:
-A) Estritamente as adaptações de rampas arquitetônicas no edifício sede do tribunal.
-B) A reserva compulsória de vagas em concurso e a diminuição da carga de trabalho para todos os servidores PcD, sem exceção.
-C) O combate abrangente a todas as dimensões de barreiras — arquitetônicas, urbanísticas, comunicacionais, tecnológicas e atitudinais — enfrentadas por servidores, magistrados, terceirizados e o público externo (jurisdicionado).
-D) O tratamento jurídico igualitário sem diferenciar as necessidades materiais e imateriais das PcD em relação aos demais.
-E) A substituição completa dos sistemas digitais do tribunal pelo Braille impresso em papel, em prazos não superiores a 1 ano.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-A visão contemporânea das políticas de inclusão no Judiciário (LBI e Resoluções CNJ/CSJT) baseia-se no combate a múltiplos tipos de barreiras (arquitetônicas, de comunicação/TI, e atitudinais/preconceito) para público interno e externo.
-</details>
-
-### Questão 35 (FCC - 2015 - TRT 3ª Região - Técnico Judiciário)
-Sobre o ato de impedir de forma intencional, com base em normativo privado ou desconhecimento gerencial, a entrada de pessoa acompanhada de cão-guia habilitado a locais de uso coletivo (Lei nº 11.126/2005), assinale a alternativa que denota a sanção ou caracterização desse ato:
-A) Constitui ato de discriminação sujeito à imposição de sanções administrativas e multa pecuniária, sem prejuízo da responsabilização civil e penal aplicável.
-B) É uma mera infração de postura municipal sujeita somente a advertência verbal pela vigilância sanitária.
-C) É considerado crime hediondo inafiançável e imprescritível perante o Código Penal Brasileiro.
-D) Trata-se do livre exercício do direito de propriedade privada do dono do estabelecimento, que possui imunidade jurídica.
-E) Impõe o cancelamento automático do alvará de funcionamento, sem direito à ampla defesa do estabelecimento.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-Constitui ato de discriminação punível com multa administrativa e interdição temporária (após ampla defesa), podendo recair também nas penalidades penais da lei geral do crime de racismo/discriminação.
-</details>
-
-### Questão 36 (FCC - 2022 - TRT 22ª Região - Analista Judiciário)
-O Comitê de Acessibilidade e Inclusão (previsto no Art. 6º da Resolução CSJT 386) deve monitorar, avaliar e propor soluções. A composição deste comitê, segundo as melhores práticas das resoluções correlatas, preza pela:
-A) Composição exclusivista de engenheiros e arquitetos civis concursados.
-B) Pluralidade e representatividade, incluindo a participação ativa de magistrados e servidores com deficiência ou que possuam dependentes com deficiência, além das unidades técnicas do tribunal.
-C) Exigência de que todos os seus membros tenham deficiência motora severa comprovada por laudo médico da junta oficial.
-D) Vinculação hierárquica direta aos terceirizados da limpeza para acompanhamento da manutenção do piso tátil.
-E) Participação exclusiva do sindicato local dos advogados trabalhistas.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-O princípio do 'Nada sobre nós, sem nós' é pilar das diretrizes de acessibilidade. Os comitês devem ter a participação direta de servidores e juízes que vivenciam as deficiências no dia a dia do Tribunal.
-</details>
-
-### Questão 37 (FCC - 2018 - TRT 15ª Região - Técnico Judiciário)
-A pessoa com deficiência visual acompanhada de um filhote de cão-guia ainda na 'fase de socialização e treinamento' possui o amparo legal para acessar locais e meios de transporte coletivos?
-A) Não. A lei é rigorosa em afirmar que apenas o cão-guia totalmente formado e com certificado definitivo goza deste privilégio.
-B) Sim. A lei estende o direito de ingresso e permanência aos treinadores, instrutores e famílias socializadoras com o cão em fase de socialização ou treinamento, mediante devida identificação.
-C) Sim, desde que o acesso do filhote seja restrito a parques e vias públicas ao ar livre, sendo proibida a entrada em transporte fechado.
-D) Não, sob justificativa de que o cão não formado pode representar risco imprevisível aos ocupantes do transporte.
-E) Dependerá da autorização exclusiva e prévia da companhia de transportes local.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-O legislador pensou na formação do animal. O direito abrange não só o cão formado com o usuário final, mas também as famílias socializadoras e treinadores (com colete e documentação próprios da fase de treino) para que o animal aprenda a se comportar em tais locais.
-</details>
-
-### Questão 38 (FCC - 2023 - TRT 18ª Região - Analista Judiciário)
-No contexto dos sistemas eletrônicos processuais do Poder Judiciário Trabalhista, qual o tipo de barreira que o Art. 6º da Resolução CSJT 386/2024 visa remover de forma premente por meio de ações capitaneadas pelo Comitê de Acessibilidade no departamento de TI?
-A) Barreiras atitudinais, substituindo servidores hostis por robôs de inteligência artificial.
-B) Barreiras metodológicas, impedindo a participação das PcD nos métodos ágeis (Scrum).
-C) Barreiras comunicacionais e tecnológicas, garantindo que o software (como PJe) obedeça a padrões web de acessibilidade (como o e-MAG ou WCAG), propiciando autonomia no trabalho dos servidores PcD e no acesso dos usuários.
-D) Barreiras urbanísticas, através da formatação de telas do software em cores quentes para compensar problemas de iluminação física.
-E) Barreiras jurídicas processuais, permitindo a prorrogação infinita de prazos legais no PJe sem a anuência de juízes.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-As áreas de TI devem focar nas barreiras tecnológicas e comunicacionais, garantindo aderência a frameworks como o W3C WCAG, atalhos de teclado, alto contraste e suporte total a leitores de tela.
-</details>
-
-### Questão 39 (FCC - 2019 - TRF 4ª Região - Analista Judiciário)
-Um servidor cadeirante lotado no Tribunal relata atitudes sistemáticas de exclusão social e desqualificação intelectual pelos colegas em reuniões técnicas. O Comitê de Acessibilidade deve endereçar políticas de conscientização focadas em remover qual barreira específica da Lei Brasileira de Inclusão e resoluções correlatas?
-A) Barreira arquitetônica.
-B) Barreira urbanística.
-C) Barreira de transporte.
-D) Barreira atitudinal.
-E) Barreira metodológica.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**
-
-Barreiras atitudinais são atitudes, comportamentos ou preconceitos (capacitismo) que impedem ou prejudicam a participação social e inclusão plena em igualdade de condições.
-</details>
-
-### Questão 40 (FCC - 2015 - TRT 3ª Região - Técnico Judiciário)
-Conforme o regulamento legal, o documento emitido por uma instituição idônea que atesta o acompanhamento e o controle do cão-guia chama-se:
-A) Carteira de Identificação e Certificado ou Carteira de Vacinação atualizada expedida pelo centro de treinamento, os quais o usuário deve portar ao ingressar nos recintos.
-B) Passaporte Canino Internacional da OMS emitido na embaixada do local de nascimento do cão.
-C) Crachá do IBAMA, atestando o animal como recurso silvestre de assistência judicial.
-D) Certidão Negativa Criminal do adestrador e do cachorro com selo em cartório.
-E) Apenas o laudo oftalmológico com CID-10 e comprovante de cegueira bilateral é aceito para a entrada do cão.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-O cão deve estar devidamente identificado (geralmente com o colete próprio de arreio), e o condutor deve portar carteira de identificação/certificado emitidos por entidade de treinamento registrada, além da carteira de vacinação com a tríplice canina em dia.
-</details>
-
-### Questão 41 (FCC - 2022 - TRT 22ª Região - Analista Judiciário)
-O Comitê de Acessibilidade propõe a instalação de pisos táteis de alerta e direcional em todas as unidades jurisdicionais do Estado, visando beneficiar:
-A) Exclusivamente os portadores de deficiência física (cadeirantes) nas rampas de inclinação máxima de 8%.
-B) Pessoas com deficiência visual (cegos ou com baixa visão), removendo barreiras físicas por meio da sinalização do piso seguro e alerta sobre escadas ou obstáculos arquitetônicos.
-C) Pessoas com transtorno do espectro autista (TEA), reduzindo estímulos sensoriais visuais excessivos na recepção.
-D) Pessoas com deficiência auditiva severa (surdos), indicando caminhos onde alarmes sonoros de incêndio operam com frequências graves não captáveis por aparelhos.
-E) Qualquer cidadão que esteja temporariamente de posse de andadores e muletas (mobilidade reduzida temporária).
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-O piso tátil (conforme ABNT NBR 9050) é tecnologia de sinalização arquitetônica/urbanística destinada ao uso de bengala de rastreamento pelos deficientes visuais (alertando desníveis e guiando percursos).
-</details>
-
-### Questão 42 (FCC - 2018 - TRT 15ª Região - Técnico Judiciário)
-Se um taxista ou motorista de aplicativo de transporte recusar corrida de passageiro com deficiência visual apenas pela presença e ingresso do cão-guia da pessoa, tal ato:
-A) Constitui exercício regular do direito, visto que motoristas privados não respondem ao regime das concessionárias de transporte público e podem vetar animais.
-B) Encontra respaldo na lei, desde que o taxista prove sofrer de alergia severa e documentada ao pelo canino e repasse a corrida para outro colega em 5 minutos.
-C) Submete o infrator e/ou a empresa responsável às penas de multa, cancelamento de alvará e eventual caracterização de crime de discriminação (art. 88 da LBI), pois veículos de transporte individual de passageiros enquadram-se na legislação federal protetiva.
-D) Pode ser solucionado legalmente cobrando uma tarifa adicional de bagagem pesada (extra 50%), homologada pelo Procon em detrimento do município.
-E) Viola a lei somente se o passageiro não conseguir provar urgência ou se estiver se dirigindo a ambiente privado.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-Táxis e veículos de transporte de aplicativos de passageiros são considerados de uso público/coletivo e não podem restringir o acesso nem cobrar a mais pelo transporte do cão-guia.
-</details>
-
-### Questão 43 (FCC - 2023 - TRT 18ª Região - Analista Judiciário)
-No mapeamento de diretrizes que embasam resoluções dos tribunais, os princípios fundamentais da 'Convenção Internacional sobre os Direitos das Pessoas com Deficiência' (ONU) foram promulgados no Brasil e adquiriram status hierárquico na pirâmide jurídica brasileira de:
-A) Decreto presidencial simples, podendo ser revogado por mera Medida Provisória assinada em exercício corrente.
-B) Lei ordinária federal genérica, estando subordinada à Lei Maior e às Leis Complementares ambientais.
-C) Emenda Constitucional, pois o tratado foi aprovado em cada Casa do Congresso Nacional, em dois turnos, por três quintos dos votos dos membros (art. 5º, § 3º da CF).
-D) Tratado Internacional supraconstitucional, situando-se em hierarquia normativa estritamente superior a toda e qualquer Constituição Federal dos países signatários.
-E) Resolução administrativa interna dos tribunais federais sem valor de lei perante os particulares e empresas privadas.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-A Convenção de Nova York da ONU foi o primeiro (e principal) tratado de Direitos Humanos aprovado no Brasil pelo rito especial do Art. 5º, §3º, entrando no ordenamento jurídico nacional com força (status) e equivalência de Emenda Constitucional.
-</details>
-
-### Questão 44 (FCC - 2019 - TRF 4ª Região - Analista Judiciário)
-Em relação ao desenho universal exigido em plataformas tecnológicas da Justiça, um software de tramitação processual (PJe/e-SAJ) que segue a lógica do Desenho Universal (Universal Design) deve:
-A) Ser concebido e desenhado desde a fase de modelagem inicial para ser utilizável pelo maior número de pessoas possível, incluindo PcD, sem a obrigatória necessidade futura de projeto especializado ou adaptação posterior custosa.
-B) Desenvolver sempre e obrigatoriamente duas versões totalmente distanciadas do sistema: uma exclusiva para uso geral e outra interface secundária 'light' simplificada focada só nos portadores de necessidades visuais.
-C) Basear-se exclusivamente na adição do código-fonte legado de plugins genéricos fabricados fora do país.
-D) Permitir apenas o acesso de leitores de tela para deficiência visual, por serem o único problema abordado nos normativos do e-MAG.
-E) Negligenciar a camada de apresentação HTML/CSS até que o sistema entre em produção e usuários abram tíquetes relatando defeito de acessibilidade para as correções.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-Desenho Universal (conceito chave em Acessibilidade e na LBI) defende que o produto, ambiente ou serviço seja projetado *desde a origem* para ser o mais acessível a todos os biotipos, minimizando as remediações ('puxadinhos') de engenharia.
-</details>
-
-### Questão 45 (FCC - 2015 - TRT 3ª Região - Técnico Judiciário)
-Sobre os cães de assistência e cães-guia em ambiente de trabalho no Poder Judiciário, assinale a premissa legal e ética exigida para com o servidor acompanhado de um animal treinado:
-A) O animal não é um pet de estimação; ele é considerado instrumento de tecnologia assistiva de mobilidade em trabalho, sendo vedado a terceiros interagir (chamar, tocar, dar alimentos) de modo a distrair o animal enquanto portar o arreio e estiver guiando o condutor.
-B) O tribunal deve impor o uso obrigatório de focinheira de ferro, de acordo com resoluções civis relativas a raças violentas.
-C) Todo cão-guia sem distinção é de posse do Estado do Ceará, devendo retornar aos canis governamentais após seu horário de trabalho de 6 horas estipuladas.
-D) A permanência do cão dispensa coleira, guia e certificado perante o setor de segurança e de recursos humanos, confiando na idoneidade presumida da deficiência.
-E) Os colegas de departamento estão autorizados por regulamento de clima organizacional a interagir livremente com o cão-guia se a pessoa portadora de deficiência não se pronunciar em contrário.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-Quando o cão-guia está de 'uniforme' (arreio/colete de trabalho), ele está executando uma função de extrema concentração e responsabilidade para a segurança da pessoa com deficiência. Interagir com o cachorro pode causar acidentes graves.
-</details>
-
-## 📝 TEMA 4: Inglês Técnico de TI (Reading Comprehension)
-
-### Texto: Microservices architecture and CAP Theorem
-
-In distributed computer systems, the CAP theorem (also named Brewer's theorem) states that any distributed data store can provide only two of the following three guarantees: Consistency, Availability, and Partition tolerance.
-
-Consistency implies that every read receives the most recent write or an error. Availability means every request receives a (non-error) response, without the guarantee that it contains the most recent write. Partition tolerance means the system continues to operate despite an arbitrary number of messages being dropped or delayed by the network between nodes.
-
-In the modern era of microservices hosted in cloud environments, networks are fundamentally unreliable. **They** can and will experience latency, packet loss, or complete disconnection across availability zones. Thus, network partition is not a choice, but an environmental reality. Consequently, software architects are forced to make a trade-off between the remaining two options: Consistency (CP models) or Availability (AP models) when the network breaks.
-
----
-
-### Questão 46 (FCC - 2021 - DPE-RR - Analista de Redes)
-According to the text, what is the main consequence of deploying microservices in modern cloud environments regarding the CAP theorem?
-A) Cloud environments guarantee 100% network reliability, meaning partition tolerance is no longer relevant to software architects.
-B) Because network failures are inevitable realities in cloud computing, architects cannot ignore Partition tolerance and must choose between sacrificing Consistency or Availability when failures occur.
-C) Software architects are able to achieve all three guarantees (C, A, and P) simultaneously by using modern container orchestration tools like Kubernetes.
-D) Consistency is automatically maintained without any errors, but Availability is permanently compromised.
-E) Brewer's theorem applies only to monolithic architectures and does not impact modern microservices.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-O texto diz que a partição de rede não é uma escolha, mas uma realidade ambiental em nuvens (as redes são não-confiáveis). Por isso, arquitetos são forçados a fazer o trade-off entre as outras duas (Consistency ou Availability).
-</details>
-
-### Questão 47 (FCC - 2018 - TRT 15ª Região - Analista Judiciário)
-In the third paragraph, the bolded pronoun '**They**' in the sentence '*They can and will experience latency...*' refers to:
-A) Availability zones.
-B) Software architects.
-C) Microservices.
-D) Distributed data stores.
-E) Networks.
+### Questão 10 (FCC - Questão Prática / Adaptada (Governança TI e FinOps))
+Ao adotar o COBIT 2019, o Diretor de TI de um tribunal foi informado de que o framework possui 7 Componentes do Sistema de Governança. Qual dos itens abaixo NÃO é um desses componentes no COBIT 2019?
+A) Processos.
+B) Princípios, Políticas e Frameworks.
+C) Estruturas Organizacionais.
+D) Cultura, Ética e Comportamento.
+E) Linguagens de Programação e IDEs.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: E**
 
-O pronome 'They' recupera o sujeito explícito da oração imediatamente anterior: 'networks are fundamentally unreliable'. Redes são inerentemente não confiáveis. Elas (They - as redes) podem e irão sofrer latência e perda de pacotes.
+- E) Correta. O COBIT é agnóstico em relação à tecnologia de baixo nível. Seus 7 componentes são: Processos; Estruturas Organizacionais; Princípios/Políticas; Informação; Cultura/Comportamento; Pessoas/Habilidades; e Serviços/Infraestrutura/Aplicações.
 </details>
 
-### Questão 48 (FCC - 2023 - TRT 18ª Região - Analista Judiciário)
-Based on the provided definitions, what is a correct description of 'Consistency' in the context of the CAP theorem?
-A) The system answers all requests successfully, even if the data returned is outdated and obsolete.
-B) The system prevents data reading completely until the partition tolerance is disabled by the network administrator.
-C) Any read operation triggered by a client will result in fetching the most recent updated data value (the most recent write), or it will result in an error message.
-D) The system ensures that all nodes operate perfectly without dropping any network messages between availability zones.
-E) It defines the ability of the microservice to run smoothly on heterogeneous cloud platforms.
+### Questão 11 (FCC - Questão Prática / Adaptada (Governança TI e FinOps))
+No contexto da prática de Habilitação de Mudanças (Change Enablement) do ITIL v4, as mudanças são classificadas para determinar a autoridade de aprovação. Se um administrador precisa aplicar um patch de segurança emergencial no firewall do Tribunal que está sob ataque ativo, essa mudança deve ser classificada como:
+A) Mudança Padrão (Standard Change).
+B) Mudança Normal (Normal Change).
+C) Mudança Emergencial (Emergency Change).
+D) Requisição de Serviço (Service Request).
+E) Incidente Crítico de Continuidade.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-O texto define claramente a consistência: 'Consistency implies that every read receives the most recent write or an error' (Consistência implica que toda leitura receba a gravação mais recente ou receba um erro).
+- C) Correta. Mudanças emergenciais devem ser implementadas o mais rápido possível para resolver incidentes graves (ou ameaças de segurança), e seu fluxo de autorização é acelerado (ex: ECAB - Comitê de Mudança de Emergência).
 </details>
 
-### Questão 49 (FCC - 2019 - TRF 4ª Região - Analista de Sistemas)
-Which of the following phrases represents a synonymous or similar expression to the term 'trade-off' used in the last sentence of the text?
-A) Absolute certainty without any losses.
-B) Technical upgrade.
-C) A compromise where one aspect is sacrificed to gain another.
-D) Full synchronization process.
-E) Hardware failure recovery.
+### Questão 12 (FCC - Questão Prática / Adaptada (Governança TI e FinOps))
+O Diretor de TI está estruturando as reuniões de diretoria e cita os componentes do domínio 'EDM' (Avaliar, Dirigir e Monitorar) do COBIT 2019. Com base na divisão de responsabilidades do COBIT, as práticas de EDM são de responsabilidade primária de qual instância organizacional?
+A) Do desenvolvedor júnior e testadores.
+B) Da equipe do Service Desk (Nível 1).
+C) Do Órgão de Governança / Conselho de Administração (Board of Directors).
+D) Dos administradores de banco de dados (DBAs).
+E) Da Gerência Executiva (Gestão de TI).
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-No jargão técnico em inglês, um 'trade-off' indica uma situação de compromisso e escolha: para ganhar ou garantir algo, você deve abrir mão de outro recurso ou benefício de forma calculada.
+- C) Correta. O COBIT separa estritamente Governança (EDM) da Gestão (APO, BAI, DSS, MEA). A Governança, que Avalia, Dirige e Monitora, é função da alta cúpula, do Conselho de Administração ou órgão governamental equivalente.
 </details>
 
-### Questão 50 (FCC - 2016 - TRT 23ª Região - Analista Judiciário)
-If an architect decides to build a highly critical banking transaction application where reading outdated balances is strictly forbidden and the network fails, according to the text, what model will the system inevitably adopt?
-A) AP model (Availability and Partition tolerance).
-B) CA model (Consistency and Availability).
-C) CP model (Consistency and Partition tolerance).
-D) It will completely shut down the database layer forever.
-E) It will bypass the CAP theorem using a local cache.
+### Questão 13 (FCC - Questão Prática / Adaptada (Governança TI e FinOps))
+A equipe de FinOps do TRT executou o script abaixo para consultar instâncias EC2 subutilizadas (CPU < 5%) no ambiente Cloud:
+```python
+import boto3
+client = boto3.client('cloudwatch')
+# Lógica para obter instâncias com baixa CPU...
+```
+Após identificar dezenas de servidores enormes rodando com 2% de CPU há meses, a equipe propõe reduzir o tamanho (ex: de m5.4xlarge para m5.large). Essa ação em FinOps é um exemplo clássico da técnica de:
+A) Left-shifting.
+B) Rightsizing (Dimensionamento correto).
+C) Serverless Migration.
+D) Storage Tiering.
+E) CAPEX Amortization.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. Rightsizing significa analisar o desempenho real do recurso e redimensioná-lo para a menor família/instância possível que ainda atenda à demanda, economizando OPEX sem afetar a performance.
+</details>
+
+### Questão 14 (FCC - Questão Prática / Adaptada (Governança TI e FinOps))
+Segundo o ITIL v4, o conceito central que descreve como todas as atividades da organização se coordenam de forma flexível para converter a Demanda/Oportunidade em Valor, abrangendo Planejar, Melhorar, Engajar, Desenho/Transição, Obter/Construir e Entrega/Suporte, é chamado de:
+A) Cadeia de Valor de Serviço (Service Value Chain).
+B) Matriz RACI.
+C) Diagrama de Ishikawa.
+D) Modelo em Cascata (Waterfall).
+E) Fatores de Desenho.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+- A) Correta. A Service Value Chain (SVC) é o coração operacional do SVS no ITIL v4, composta pelas 6 atividades centrais iterativas (PIEDOE) usadas para cocriar valor com o cliente.
+</details>
+
+### Questão 15 (FCC - Questão Prática / Adaptada (Governança TI e FinOps))
+No COBIT 2019, o alinhamento estratégico é garantido pelas Metas (Goals). Se a meta empresarial primária de um Tribunal Regional do Trabalho for 'Otimização dos custos de entrega de serviços públicos', a meta de TI (Alignment Goal) correspondente mais direta será:
+A) Entrega de programas dentro do prazo e orçamento, atendendo aos requisitos.
+B) Otimização dos ativos, recursos e capacidades de TI.
+C) Transparência de TI nos custos, benefícios e riscos.
+D) Resolução rápida de tickets de usuário e problemas de desktop.
+E) Manutenção de redes WiFi abertas ao público.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. A cascata do COBIT mapeia otimização de custo corporativo diretamente para a otimização dos ativos e capacidades de TI (fazer mais com menos, evitar desperdícios em hardware/nuvem).
+</details>
+
+## 📝 TEMA 2: Arquitetura de Software (Microserviços, DDD e Cloud-native)
+
+### Questão 16 (FCC - Questão Prática / Adaptada (Microserviços & Arquitetura))
+Um desenvolvedor Java trabalhando no ecossistema Spring Boot / Spring Cloud implementou a seguinte anotação em um método que consome um microserviço de pagamentos externo, que tem estado muito lento e sobrecarregando as threads da aplicação principal:
+```java
+@CircuitBreaker(name = "pagamentoService", fallbackMethod = "pagamentoOffline")
+public Compra processarPagamento(Pedido pedido) {
+    return restTemplate.postForObject("http://pagamento-api/process", pedido, Compra.class);
+}
+```
+O padrão arquitetural configurado no código acima tem o objetivo de:
+A) Roteamento dinâmico (API Gateway), direcionando chamadas para o microserviço com menor latência.
+B) Evitar falhas em cascata monitorando o excesso de timeouts. Se as falhas ultrapassarem um limite, ele 'abre' o circuito, rejeitando requisições imediatamente e acionando um método alternativo (fallback).
+C) Garantir a consistência ACID de transações distribuídas (Two-Phase Commit).
+D) Separar o tráfego de leitura e gravação em dois bancos de dados (CQRS).
+E) Armazenar todos os eventos do sistema como uma sequência cronológica imutável (Event Sourcing).
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. A anotação `@CircuitBreaker` (ex: Resilience4j) implementa o Disjuntor. Ele evita o esgotamento de threads e falha rapidamente ('Fail Fast') quando o serviço remoto está inoperante.
+</details>
+
+### Questão 17 (FCC - Questão Prática / Adaptada (Microserviços & Arquitetura))
+Considere o arquivo Docker Compose abaixo que implementa o padrão arquitetural 'Sidecar' para um aplicativo Python (App) e um proxy Envoy (Sidecar) para gerenciar o tráfego mTLS em um ambiente Cloud-native:
+```yaml
+version: '3.8'
+services:
+  meu-app-python:
+    image: app-python:latest
+    network_mode: "service:envoy-sidecar"
+  envoy-sidecar:
+    image: envoyproxy/envoy:v1.20
+    ports:
+      - "8080:8080"
+```
+Sobre o padrão Sidecar e a configuração de Service Mesh, assinale a correta:
+A) O contêiner do proxy (sidecar) deve residir em um datacenter geograficamente separado do contêiner do aplicativo.
+B) O padrão acopla um processo auxiliar à mesma camada de rede e ciclo de vida do aplicativo principal, absorvendo responsabilidades transversais (logs, TLS, roteamento) sem alterar o código do app.
+C) Esse padrão é recomendado apenas em arquiteturas monolíticas construídas em linguagens de baixo nível (C/C++).
+D) O aplicativo python precisará implementar a biblioteca nativa do Envoy no seu código fonte `import envoy`.
+E) O padrão Sidecar impede totalmente a comunicação assíncrona entre microserviços.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O padrão Sidecar ('Carro Lateral') permite colocar um container proxy (Envoy, Istio) compartilhando o mesmo namespace/rede do container principal da aplicação, tirando o peso de resolver regras de rede, criptografia (mTLS) e observabilidade do código do dev.
+</details>
+
+### Questão 18 (FCC - Questão Prática / Adaptada (Microserviços & Arquitetura))
+O padrão Saga é frequentemente implementado utilizando um message broker (como RabbitMQ ou Apache Kafka). Analise o diagrama conceitual de um fluxo e-commerce:
+`ServiçoPedido emite 'PedidoCriado' -> Kafka`
+`ServiçoEstoque escuta 'PedidoCriado' e reserva o item, emitindo 'EstoqueReservado' -> Kafka`
+`ServiçoPagamento escuta 'EstoqueReservado' e debita cartão...`
+Esta abordagem de Saga, onde não há um controlador central ditando as regras e cada serviço reage a eventos e toma decisões autonômas, é denominada especificamente como:
+A) Saga Orquestrada (Orchestration).
+B) Strangler Fig.
+C) Saga Coreografada (Choreography).
+D) Backend for Frontend (BFF).
+E) Bulkhead Isolator.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-O texto diz que a partição ('P') é obrigatória, restando 'C' e 'A'. Se o banco exige não mostrar saldos desatualizados sob hipótese alguma (exige estrita consistência - C), e a rede falha (P), o sistema vai abrir mão da disponibilidade (devolvendo erro ao cliente). Isso caracteriza um sistema CP (Consistency and Partition tolerance).
+- C) Correta. Na Coreografia, os serviços operam de forma reativa a eventos publico-assinante (Pub/Sub). Não há um 'maestro' central (que seria a Orquestração), os próprios serviços 'dançam no ritmo' dos eventos.
+</details>
+
+### Questão 19 (FCC - Questão Prática / Adaptada (Microserviços & Arquitetura))
+Na arquitetura orientada a domínio (Domain-Driven Design - DDD) em Java, a diferença técnica principal na modelagem de uma 'Entidade' (Entity) e de um 'Objeto de Valor' (Value Object) fica explícita no código da implementação do método `equals()` e `hashCode()`. Qual afirmação é correta segundo o livro azul de Eric Evans?
+A) Entidades são comparadas exclusivamente por seus atributos (valores), e Objetos de Valor são comparados por um identificador único (ID).
+B) Objetos de Valor nunca devem sobrescrever o método `equals()`, mantendo o padrão da classe genérica Object.
+C) Entidades possuem identidade própria, ou seja, são comparadas através de um ID único; Objetos de Valor são imutáveis e são comparados pela igualdade de TODOS os seus atributos internos (ex: Rua, Número, CEP em um objeto Endereço).
+D) Entidades só podem existir na linguagem Java, enquanto Objetos de Valor são implementações em banco de dados SQL.
+E) Tanto Entidades quanto Objetos de Valor devem conter obrigatoriamente métodos setters (`setRua()`, `setNome()`) para permitir mutabilidade total.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. No DDD, uma Entity tem um ciclo de vida e identidade contínua (ex: `Cliente` com CPF `123`, mesmo que mude o nome, ainda é ele). Value Object não tem ID e é imutável (ex: uma nota de R$ 50 é igual a qualquer outra nota de R$ 50, importam apenas seus atributos).
+</details>
+
+### Questão 20 (FCC - Questão Prática / Adaptada (Microserviços & Arquitetura))
+Um Arquiteto de Software apresentou o desenho de uma nova aplicação seguindo estritamente a Arquitetura Hexagonal (Ports and Adapters). No diagrama, o núcleo (Hexágono interno) abriga a lógica de negócios pura. Como o núcleo interage com o banco de dados Postgres externo, garantindo o princípio de Inversão de Dependência?
+A) O núcleo importa a biblioteca `java.sql.Connection` e faz chamadas diretas com strings SQL e JDBC.
+B) O núcleo define uma Interface Java (Porta de Saída/Driven Port) como `RepositorioProcesso`. Um pacote de infraestrutura externo implementa essa interface (Adaptador) conectando ao Postgres, e a injeta no núcleo via injeção de dependências.
+C) O banco de dados Postgres é embutido fisicamente dentro do núcleo, executando comandos via Stored Procedures.
+D) O núcleo usa chamadas REST HTTP síncronas para o seu próprio localhost, sem depender de interfaces.
+E) A Arquitetura Hexagonal proíbe terminantemente o uso de banco de dados relacionais.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O núcleo nunca depende da infraestrutura externa. O núcleo dita as regras (cria a interface/porta). O detalhe tecnológico (Postgres, Mongo, Arquivo TXT) atua como um Adaptador que preenche a interface. Isso torna o domínio 100% testável com Mocks.
+</details>
+
+### Questão 21 (FCC - Questão Prática / Adaptada (Microserviços & Arquitetura))
+Abaixo, um trecho de código em Python usando Flask implementa um endpoint de exclusão de usuário:
+```python
+@app.route('/usuarios/<int:user_id>', methods=['DELETE'])
+def delete_user(user_id):
+    user = db.query(User).filter_by(id=user_id).first()
+    if user:
+        db.delete(user)
+        db.commit()
+    return jsonify({"status": "deletado ou ja inexistente"}), 200
+```
+O código acima lida graciosamente com o fato de o usuário já ter sido apagado, retornando o mesmo status 200 sempre. Essa característica essencial de APIs REST, em que múltiplas requisições idênticas têm o mesmo efeito colateral no servidor de uma única requisição, é a:
+A) Statelessness (Ausência de Estado).
+B) HATEOAS.
+C) Polimorfismo.
+D) Cacheabilidade.
+E) Idempotência.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: E**
+
+- E) Correta. Idempotência garante que, ao fazer a requisição `DELETE /usuarios/10` uma, dez ou mil vezes, o estado final do servidor será o mesmo (o usuário 10 estará ausente do banco de dados). Os métodos HTTP PUT e DELETE devem ser projetados de forma idempotente.
+</details>
+
+### Questão 22 (FCC - Questão Prática / Adaptada (Microserviços & Arquitetura))
+O TRT está migrando um sistema monolítico gigante ('Monólito Legado') em PHP para dezenas de microserviços em Golang e Java. Para evitar um 'Big Bang Release' perigoso, a equipe colocou um Nginx como proxy na frente. As chamadas para `/usuarios` já vão para o novo microserviço, enquanto as chamadas para `/processos` continuam caindo no PHP legado. Conforme os meses passam, o proxy vai direcionando mais rotas para o novo ambiente até que o PHP seja desligado. Esse padrão arquitetural é mundialmente conhecido como:
+A) Padrão Bulkhead.
+B) Padrão Strangler Fig (Figueira Estranguladora).
+C) CQRS (Segregação de Responsabilidade de Comando e Consulta).
+D) API Composition.
+E) Event Sourcing.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O Padrão Strangler Fig intercepta rotas de entrada gradativamente, substituindo o sistema antigo pedaço a pedaço até que ele morra (estrangulado) e seja descartado em segurança.
+</details>
+
+### Questão 23 (FCC - Questão Prática / Adaptada (Microserviços & Arquitetura))
+Uma das regras de ouro do manifesto Twelve-Factor App (Cloud-Native) aborda como a aplicação deve lidar com Backing Services (Serviços de Apoio, como Bancos de Dados MySQL, Redis, SMTP). Qual afirmativa representa corretamente o fator 'Backing Services' (Fator 4)?
+A) Os serviços de apoio devem ser compilados de forma embutida (embedded) no binário executável da aplicação.
+B) O código fonte deve referenciar os bancos de dados apenas por IPs fixos de redes locais LAN estritas.
+C) A aplicação deve tratar serviços de apoio locais ou de terceiros (SaaS) estritamente como recursos anexados (Attached Resources) acessados via URL/Credenciais injetados via variáveis de ambiente, sem distinção ou acoplamento forte no código.
+D) O banco de dados deve rodar obrigatoriamente no mesmo contêiner Docker que a aplicação Web.
+E) A aplicação deve usar o disco local rígido do servidor host para salvar sessões contínuas.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. Para o app Cloud-native 12-factor, não importa se o MySQL roda localmente no laptop do dev, ou se é um cluster AWS RDS. Ele deve se conectar a ambos da mesma forma técnica via credenciais passadas como recursos anexados (geralmente via Environment Variables).
+</details>
+
+### Questão 24 (FCC - Questão Prática / Adaptada (Microserviços & Arquitetura))
+O front-end Web do TRT faz apenas 1 chamada HTTP, mas o front-end Mobile precisa de dados mais compactados e faz 3 chamadas HTTP diferentes devido à rede 4G limitada. Para otimizar essa arquitetura, a equipe de desenvolvimento criou dois mini-Gateways independentes:
+- `GatewayWeb` agregando dados para o portal HTML.
+- `GatewayMobile` otimizando JSONs para Android/iOS.
+Esse padrão, em que gateways específicos são criados sob medida para as necessidades de clientes (interfaces) específicos ao invés de um gateway gigantesco genérico, é o:
+A) Saga.
+B) CQRS.
+C) Service Mesh.
+D) Backend for Frontend (BFF).
+E) Outbox Pattern.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+- D) Correta. O Backend for Frontend (BFF) cria camadas de serviço personalizadas (agrupamento e filtragem de requisições) dedicadas aos clientes (Mobile vs Desktop) reduzindo o tráfego da rede na ponta do usuário e desacoplando os times de UI.
+</details>
+
+### Questão 25 (FCC - Questão Prática / Adaptada (Microserviços & Arquitetura))
+O padrão de banco de dados 'CQRS' em arquiteturas distribuídas separa claramente Command (Escrita) de Query (Leitura). Na implementação técnica mais escalável deste padrão, é comum ver a seguinte estrutura aliada a ele:
+A) Um único banco de dados SQLite salvo no disco do usuário.
+B) Bancos de dados físicos separados (ex: Postgres para gravações ACID complexas e Elasticsearch/Redis para leituras ultrarrápidas), sincronizados assincronamente por eventos (Mensageria).
+C) O uso exclusivo de Stored Procedures monolíticas para evitar a viagem dos dados.
+D) A replicação síncrona Two-Phase Commit bloqueante entre o servidor front-end e o back-end.
+E) A utilização de GraphQL para forçar operações de gravação e leitura na mesma porta lógica.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. No CQRS avançado, o modelo e até o banco de dados de Leitura podem ser completamente diferentes do modelo de Escrita. Se um usuário insere um processo (Command no SQL Relacional), um evento atualiza uma view desnormalizada NoSQL (Query) superotimizada para busca.
+</details>
+
+### Questão 26 (FCC - Questão Prática / Adaptada (Microserviços & Arquitetura))
+O arquivo `manifest.yaml` no Kubernetes (Cloud-native) segue qual modelo conceitual para gerenciamento da infraestrutura e arquitetura de implantação?
+A) Modelo Imperativo, onde o administrador define os comandos exatos de 'como' o servidor deve ser configurado linha a linha.
+B) Modelo Monolítico, hospedando UI, Backend e BD no mesmo pod.
+C) Modelo Declarativo (Infraestrutura como Código), onde se descreve o 'estado desejado' (ex: quero 3 réplicas deste pod) e o plano de controle Kubernetes se vira para atingir e manter esse estado.
+D) Modelo de Máquina Virtual Bare-Metal com hipervisores tipo 1.
+E) Modelo de Acoplamento Forte usando RPC (Remote Procedure Call) nativo.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. Cloud-native baseia-se pesadamente na Infraestrutura como Código (IaC) e modelos declarativos. Você diz ao K8s o objetivo final (3 réplicas) via YAML, e ele cria/apaga recursos sozinho (Control Loop).
+</details>
+
+### Questão 27 (FCC - Questão Prática / Adaptada (Microserviços & Arquitetura))
+Em Microserviços, o padrão 'Bulkhead' (Anteparo) é usado para isolamento de falhas. Qual implementação prática representa a aplicação clássica desse padrão no código?
+A) Implementar o cache temporário de páginas estáticas HTML no CDN.
+B) Criar Data Transfer Objects (DTOs) gigantes para trafegar todos os dados na rede de uma vez.
+C) Limitar a quantidade de threads de conexão dedicadas ao Serviço A, para que se o Serviço A ficar lento, as threads esgotadas não afetem o Serviço B que usa um pool de threads isolado no mesmo servidor.
+D) Enviar e-mails transacionais usando um job em lote cron programado para meia-noite.
+E) Unir tabelas de usuários e senhas na mesma coluna do banco.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. Semelhante aos compartimentos estanques de um submarino, o Bulkhead divide recursos (como pools de conexões e threads). Se uma integração com uma API de notas fiscais travar, o sistema esgota apenas aquele pool e o resto do site continua responsivo.
+</details>
+
+### Questão 28 (FCC - Questão Prática / Adaptada (Microserviços & Arquitetura))
+No DDD (Domain-Driven Design), o conceito de Bounded Context (Contexto Delimitado) está intimamente ligado a um padrão estratégico do modelo de domínio. No mapeamento de microserviços contemporâneo, a relação mais comum e recomendada para preservar a independência dos times e a pureza do modelo é:
+A) Um único Bounded Context global gigante que englobe todos os microserviços do Tribunal.
+B) Alinhamento onde, na maioria dos casos, há uma correspondência de 1 para 1 (ou próximo a isso) entre um Microserviço e um Bounded Context, garantindo que o modelo semântico seja estrito àquela API.
+C) Múltiplos Bounded Contexts compartilhando o exato mesmo banco de dados relacional e a mesma classe Java de domínio.
+D) Excluir o uso do Bounded Context ao trabalhar com microsserviços, já que eles substituem o DDD.
+E) Definir Bounded Contexts com base apenas nas bibliotecas Javascript do frontend.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O Bounded Context cria fronteiras lógicas no modelo de linguagem ubíqua. O microserviço é a fronteira física/técnica. Alinhá-los 1:1 é o 'sweet spot' arquitetural recomendado por especialistas para isolamento de equipes e domínio.
+</details>
+
+### Questão 29 (FCC - Questão Prática / Adaptada (Microserviços & Arquitetura))
+Analise a linha de comando Docker utilizada em um ambiente Cloud-native compatível com 12-factor apps:
+`docker run -e DATABASE_URL="postgres://user:pass@10.0.0.5:5432/mydb" my-app:latest`
+Essa abordagem satisfaz primariamente o fator do 12-factor que trata sobre:
+A) Disposability (Descartabilidade).
+B) Port Binding (Vínculo de porta).
+C) Config (Configurações).
+D) Logs.
+E) Build, release, run (Construir, lançar, executar).
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. O Fator 3 (Config) manda armazenar as configurações (credenciais, URLs dinâmicas que mudam entre dev, staging e prod) NO AMBIENTE (variáveis de ambiente), e NÃO hard-coded no código fonte do aplicativo.
+</details>
+
+### Questão 30 (FCC - Questão Prática / Adaptada (Microserviços & Arquitetura))
+Na comunicação entre microserviços, o gRPC (do Google) vem ganhando adoção como alternativa veloz ao tradicional REST/JSON. As principais tecnologias estruturais que diferenciam o gRPC para prover alta performance bidirecional são:
+A) HTTP/1.1 e XML Parsing.
+B) SOAP e WSDL (Web Services Description Language).
+C) Protocol Buffers (Protobuf) como formato binário e HTTP/2 para o transporte de rede subjacente.
+D) Mensageria baseada puramente em tópicos MQTT no port 1883.
+E) Telnet puro encapsulado sobre UDP.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. O gRPC usa Protobuf para serializar mensagens de forma binária minúscula e fortemente tipada, e trafega sobre a conexão persistente e multiplexada do HTTP/2, superando largamente a performance do REST em chamadas internas síncronas.
+</details>
+
+## 📝 TEMA 3: Direitos das PCD (CSJT 386/2024 e Cão-guia)
+
+### Questão 31 (FCC - Questão Prática / Adaptada (Normativas e Inclusão CSJT))
+Um servidor de TI cego ingressou nos quadros do TRT. Durante seu expediente no CPD (Centro de Processamento de Dados), seu gestor direto ordenou que o servidor deixasse seu Cão-Guia amarrado na portaria externa, alegando que os pelos do animal poderiam obstruir o sistema de ar-condicionado de precisão, baseando-se no Código de Postura do município e em normativos privados de segurança orgânica. Com base na Lei 11.126/05 e no Decreto 5.904/06, a atitude do gestor:
+A) É legalmente amparada, pois o CPD equipara-se rigorosamente a ambientes hospitalares de assepsia estéril de alto risco.
+B) É ilegal, constituindo ato de discriminação punível com sanções administrativas e penais, pois a restrição baseada em normas privadas ou municipais é nula diante da lei federal de acessibilidade.
+C) É válida apenas se o servidor esquecer de apresentar o laudo oftalmológico diário.
+D) É ilegal apenas se o animal estiver usando focinheira imposta pelo gestor.
+E) É perfeitamente legal, visto que a lei só garante o acesso em transportes públicos urbanos.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O direito de acesso de pessoa com deficiência visual acompanhada de cão-guia é amplo e incondicional (em ambientes de uso coletivo). A única exceção de saúde se aplica a UTIs e ambientes estéreis hospitalares reais. Ambientes de escritório, gabinetes ou CPDs não se enquadram na exceção e normas inferiores não suplantam a lei federal.
+</details>
+
+### Questão 32 (FCC - Questão Prática / Adaptada (Normativas e Inclusão CSJT))
+Para dar cumprimento à Resolução CSJT 386/2024, o Comitê de Acessibilidade solicitou à Secretaria de Tecnologia da Informação que os novos portais do TRT sejam submetidos a testes práticos para a remoção de barreiras tecnológicas. De acordo com os normativos vigentes no CNJ/CSJT, um dos parâmetros técnicos essenciais para o desenvolvimento de sistemas públicos que deve ser validado pelos programadores é a aderência ao:
+A) Modelo COBIT de segurança física das instalações.
+B) Padrão e-MAG (Modelo de Acessibilidade em Governo Eletrônico) e diretrizes WCAG (Web Content Accessibility Guidelines).
+C) Padrão de tipografia exclusiva em Comic Sans MS tamanho 12.
+D) Uso obrigatório e irrestrito da linguagem Cobol para sistemas judiciais de inclusão.
+E) Bloqueio imediato do uso de softwares leitores de tela open-source (ex: NVDA) no tribunal.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. As barreiras tecnológicas devem ser sanadas mediante obediência às cartilhas de acessibilidade W3C (WCAG) e o framework federal e-MAG, garantindo compatibilidade técnica com alto contraste, leitores de tela e atalhos de teclado.
+</details>
+
+### Questão 33 (FCC - Questão Prática / Adaptada (Normativas e Inclusão CSJT))
+Um advogado cadeirante comparece ao TRT para uma sustentação oral. A rampa de acesso do tribunal encontra-se em reformas, e o advogado é carregado pelos seguranças escada acima, num procedimento constrangedor e arriscado, devido à ausência de planejamento prévio. Em relação aos tipos de barreira definidos na LBI, a falta de rampa ou elevador adequado é classicamente classificada como:
+A) Barreira Metodológica.
+B) Barreira Arquitetônica.
+C) Barreira Atitudinal.
+D) Barreira de Comunicação e Informação.
+E) Barreira Urbanística.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. Barreiras arquitetônicas existem no *interior* dos edifícios e ambientes públicos ou privados (escadas sem rampa/elevador, portas estreitas). As urbanísticas estão nas vias e espaços públicos externos (calçadas esburacadas).
+</details>
+
+### Questão 34 (FCC - Questão Prática / Adaptada (Normativas e Inclusão CSJT))
+Um instrutor e treinador de cão-guia, que tem visão normal, adentra a sala de atendimento presencial do judiciário junto de um cão filhote identificado com um colete da fase de 'socialização'. O vigilante do tribunal barra a entrada, alegando que o privilégio legal só abrange o cão já formado acompanhando a pessoa efetivamente cega. À luz da lei e do decreto regulamentador do cão-guia, o segurança está:
+A) Correto. Filhotes em treinamento representam risco patrimonial e a lei é estrita à pessoa deficiente.
+B) Correto. Somente cães-guias com certificado internacional de habilitação definitiva são amparados.
+C) Incorreto. A legislação brasileira de forma vanguardista estendeu o idêntico direito de acesso às famílias socializadoras e treinadores portando a documentação, para garantir a ambientação pública do cão na fase de treino.
+D) Incorreto. O cão só entra se o treinador pagar uma taxa extra (pedágio animal).
+E) Correto. O treinador deve simular deficiência visual usando venda preta para fazer uso da lei.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. O Decreto 5.904/06 explicitamente estende o direito de acesso ao treinador, instrutor e família socializadora do cão em fase de treinamento, visando acostumar o animal aos estímulos de locais de uso coletivo.
+</details>
+
+### Questão 35 (FCC - Questão Prática / Adaptada (Normativas e Inclusão CSJT))
+A Resolução CSJT 386/2024 determina que os Tribunais mantenham instâncias de apoio logístico para inclusão, notadamente o Comitê de Acessibilidade e Inclusão. O perfil ideal da formação desse Comitê, alinhado à filosofia 'Nada sobre nós, sem nós', preceitua que:
+A) O comitê seja formado estritamente por procuradores do Ministério Público sem deficiência.
+B) O comitê inclua obrigatoriamente e com protagonismo a participação de servidores e magistrados com deficiência física, sensorial ou intelectual, além de pais/dependentes de pessoas com deficiência.
+C) Apenas servidores efetivos do setor de Obras e Engenharia Civil podem votar no Comitê.
+D) As deliberações ocorram de forma sigilosa para preservar a imagem do tribunal.
+E) O grupo exclua servidores terceirizados e estagiários das diretrizes propostas.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O pluralismo e a representatividade viva (dar voz a quem sofre as barreiras na pele) são os alicerces legais da composição dos Comitês de Acessibilidade no judiciário brasileiro.
+</details>
+
+### Questão 36 (FCC - Questão Prática / Adaptada (Normativas e Inclusão CSJT))
+Com o avanço do teletrabalho nos tribunais, um servidor que possui surdez bilateral severa foi excluído de diversas reuniões virtuais em plataformas de vídeoconferência sob a justificativa do chefe de que 'a plataforma não possui legendas ou tradutor de Libras, e demoraria muito tempo para escrever a ata'. Esta justificativa consubstancia principalmente uma barreira:
+A) Exclusivamente Tecnológica, já que a culpa é do fabricante do software.
+B) Atitudinal, permeada por discriminação (capacitismo) disfarçada de restrição técnica, impedindo sua participação em igualdade de condições.
+C) Arquitetônica, pela falta de espaço físico adequado para a tradução.
+D) Metodológica, pois métodos ágeis de TI excluem as atas por princípio.
+E) Urbanística, pela falta de rampa na plataforma online.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. As barreiras atitudinais referem-se a atitudes e comportamentos sociais segregacionistas ou preconceituosos. Excluir o servidor da reunião ativamente ao invés de buscar a adaptação razoável da TI (ativar closed captions) é atitude capacitista e discriminatória.
+</details>
+
+### Questão 37 (FCC - Questão Prática / Adaptada (Normativas e Inclusão CSJT))
+De acordo com as regras legais brasileiras para viagens e acesso (Transportes Coletivos e Cão-Guia), caso uma pessoa com deficiência visual acompanhada de cão-guia tente ingressar em uma aeronave ou ônibus interestadual, ela deve:
+A) Adquirir uma passagem de assento adicional pagando 50% do valor da tarifa para o animal.
+B) Despachar o cão obrigatoriamente no porão de bagagens acondicionado em caixa de transporte (kennel).
+C) Poder viajar com o cão no chão, acomodado entre suas pernas no interior da cabine de passageiros, de forma gratuita, sem a cobrança de tarifa, pedágio ou frete extra pelo animal.
+D) Exigir que a companhia de transporte ceda a poltrona da janela exclusivamente para o animal se sentar.
+E) Apresentar certidão de antecedentes criminais federal do treinador prévio.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. É terminantemente proibido cobrar tarifa ou passagem para o cão-guia. O animal deve ser transportado junto ao dono no assoalho do veículo/aeronave em posição confortável.
+</details>
+
+### Questão 38 (FCC - Questão Prática / Adaptada (Normativas e Inclusão CSJT))
+Na pirâmide normativa das normas de inclusão brasileiras, a principal base principiológica que dá força material de norma Constitucional aos direitos de tecnologia e acessibilidade (após ter sido votada sob as regras do Art. 5º, § 3º da CF) é originária de:
+A) O Decreto Cão-Guia promulgado em 2006.
+B) A Portaria Interna do TST sobre teletrabalho.
+C) O Estatuto do Idoso aprovado pelo MEC.
+D) A Convenção Internacional sobre os Direitos das Pessoas com Deficiência e seu Protocolo Facultativo (Convenção de Nova Iorque).
+E) A CLT, na sua redação original de 1943.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+- D) Correta. A Convenção de Nova Iorque (2006) sobre os direitos da PcD foi o primeiro (e mais importante) tratado internacional aprovado no Congresso com quórum qualificado, tornando-se material e formalmente equivalente a uma Emenda Constitucional.
+</details>
+
+### Questão 39 (FCC - Questão Prática / Adaptada (Normativas e Inclusão CSJT))
+Uma portaria de um condomínio empresarial onde está alocada uma Vara Trabalhista exige, por norma de segurança, que o deficiente visual retire os arreios (peitoral e alça de couro) do seu Cão-Guia antes de passar pelas catracas metálicas. Pela lei 11.126/05:
+A) É um procedimento padrão e aceitável para garantir a segurança da triagem por raios-X.
+B) É irregular. Os equipamentos de identificação do cão-guia são parte integrante da locomoção segura, sendo vedada a imposição de retirada dos arreios e do colete de identificação no momento do ingresso e permanência em locais públicos.
+C) O deficiente deverá substituir o arreio de couro por um de fibra óptica de carbono fornecido pelo condomínio.
+D) É permitido apenas se a guarda municipal do condomínio estiver presente.
+E) É uma medida que resguarda a saúde mental do cão contra irradiações de catraca.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O decreto do cão-guia proíbe exigências de uso de focinheiras ou a obrigatoriedade de retirada do arreio/identificação que são essenciais para o guiamento do usuário.
+</details>
+
+### Questão 40 (FCC - Questão Prática / Adaptada (Normativas e Inclusão CSJT))
+Nos termos da Resolução do CSJT 386/2024, para garantir a efetividade material da inclusão, o Tribunal não deve realizar apenas obras físicas, mas adotar sistematicamente políticas de 'Acessibilidade em TI'. Um dos maiores exemplos concretos e aplicáveis de acessibilidade nos sistemas web da justiça é:
+A) Utilizar captchas baseados puramente em imagens complexas difíceis de distorcer.
+B) Desenvolver os sistemas PJe e PDAs em arquiteturas que obriguem o uso irrestrito de mouse periférico externo.
+C) Fornecer alternativas em texto para todo conteúdo visual/imagens (Textos Alternativos - tags ALT) e assegurar navegação e validação completa das páginas exclusivamente via teclado, permitindo que leitores de tela interajam perfeitamente com os formulários do processo eletrônico.
+D) Remover todos os links do portal para evitar confusões de hipertexto.
+E) Implementar um tempo rígido de 15 segundos (Time-Out) para envio das petições antes do sistema deslogar.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. Atender as diretrizes WCAG engloba fornecer descrições textuais para imagens e ícones (para que cegos ouçam a descrição) e nunca prender o usuário ao uso do mouse (a navegação via 'TAB' no teclado deve ser capaz de preencher toda a petição eletrônica de forma lógica).
+</details>
+
+### Questão 41 (FCC - Questão Prática / Adaptada (Normativas e Inclusão CSJT))
+Após um servidor portador de cegueira bilateral ingressar no prédio anexo do tribunal com seu cão-guia ostentando o colete verde de identificação, o supervisor de RH exige que o servidor, todo mês, comprove que o cachorro não está transmitindo doenças. Qual a documentação sanitária que, de fato e legalmente, o usuário do cão-guia deve manter portando para eventual conferência?
+A) Certidão criminal do IBAMA e atestado psiquiátrico de estabilidade mental.
+B) Carteira de vacinação atualizada, com comprovação da vacinação múltipla (múltipla canina) e antirrábica, assinada por médico-veterinário registrado no CRMV.
+C) Laudo diário assinado por infectologista humano em conjunto com Zoonoses.
+D) Passaporte internacional chancelado pela Organização Mundial da Saúde de 10 em 10 dias.
+E) Exame de sangue e PCR para raiva do cão toda sexta-feira.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. A lei é baseada em princípios sanitaristas razoáveis. O cão-guia deve portar carteira de vacinação comum (polivalente e antirrábica) válida, carimbada por veterinário. Não se exige quarentena diária ou abusiva.
+</details>
+
+### Questão 42 (FCC - Questão Prática / Adaptada (Normativas e Inclusão CSJT))
+Um aspecto relevante do Desenho Universal adotado na lei brasileira de Inclusão e replicado na Resolução do CSJT é a concepção de espaços, artefatos e softwares que:
+A) Sejam voltados exclusivamente à segregação dos deficientes para que usem banheiros com catracas separadas de luxo.
+B) Possam ser usados, em sua máxima extensão possível, por todas as pessoas (com ou sem deficiência), sem necessidade de adaptação especial exagerada ou projetos separados caríssimos, provendo acesso democrático e autônomo (ex: portas largas o suficiente para cadeirantes que também facilitam transporte de cargas).
+C) Utilizem design alienígena de altíssima tecnologia patenteada inacessível a países do terceiro mundo.
+D) Desenhem apenas a estrutura predial do Fórum, ignorando a inclusão digital de software.
+E) Limitem o acesso da pessoa idosa e grávidas para proteger a prioridade do cadeirante.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O Desenho Universal (Universal Design) não visa criar um 'puxadinho especial para a PCD', mas criar produtos e prédios que sejam inerentemente bons e fáceis de usar para QUALQUER usuário desde o seu esboço/nascimento.
+</details>
+
+### Questão 43 (FCC - Questão Prática / Adaptada (Normativas e Inclusão CSJT))
+O servidor surdo de um tribunal solicita que a área de TI viabilize a contratação e uso do serviço de tradução por vídeo em Libras (VRI) ou presença física de um tradutor durante audiências judiciais por ele acompanhadas. Essa exigência é:
+A) Um luxo dispensável, pois se ele não escuta, não deveria trabalhar em audiências.
+B) Uma obrigação normativa de combate às barreiras comunicacionais, consubstanciando Adaptação Razoável essencial à prestação de seu serviço público digno em igualdade de condições.
+C) Ilegal, porque usar câmeras de vídeo e intérpretes ofende a Lei de Proteção de Dados (LGPD) dos jurisdicionados.
+D) Responsabilidade financeira exclusiva do próprio servidor, e não do órgão federal.
+E) Condicionada à aprovação prévia em Plenário do STF, pois altera o rito processual.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O poder público tem o dever jurídico (não é favor) de prover a tecnologia assistiva (Libras, leitores de tela) e adaptações razoáveis de infraestrutura comunicacional para garantir o exercício pleno dos direitos dos servidores PcD.
+</details>
+
+### Questão 44 (FCC - Questão Prática / Adaptada (Normativas e Inclusão CSJT))
+Constitui atitude ilegal de um restaurante ao lado do Tribunal, gerida pela lei que trata dos direitos do usuário do cão-guia:
+A) Servir comida na mesa comum onde a dupla pessoa-cão está acomodada.
+B) Isentar a cobrança de tarifa extra por causa do porte do animal de serviço.
+C) Condicionar a entrada do cão-guia ao pagamento de caução (calção em dinheiro) por precaução de danos materiais a copos e louças quebráveis do restaurante.
+D) Orientar simpaticamente a pessoa com deficiência visual sobre o caminho da mesa mais espaçosa e segura para deitar o cão.
+E) Solicitar polidamente que o usuário ateste a identidade do cão mostrando a carteira e plaqueta caso os mesmos não estejam visíveis no arreio.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. O direito ao acesso do cão-guia é gratuito por lei federal em estabelecimentos de uso público. Qualquer imposição de caução, taxa extra, ingresso, 'pedágio animal' ou caução preventiva é infração configuradora de discriminação.
+</details>
+
+### Questão 45 (FCC - Questão Prática / Adaptada (Normativas e Inclusão CSJT))
+O monitoramento da implementação e o planejamento de orçamento anual para a política de inclusão nas regionais da Justiça do Trabalho são viabilizados, formalmente, através de ações orquestradas:
+A) Exclusivamente pelas empresas terceirizadas de limpeza dos fóruns.
+B) Pela polícia legislativa federal na porta dos tribunais.
+C) Pelos Comitês de Acessibilidade e Inclusão que devem assessorar a alta administração, sugerindo e acompanhando planos de trabalho e dotações orçamentárias (Dinheiro/Verba) necessárias ao adimplemento das normas protetivas.
+D) Através de repasse financeiro de ONGs internacionais sediadas na Europa.
+E) Pelo cancelamento sumário do salário de juízes que não sabem Libras.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. O Comitê de Acessibilidade não é apenas uma roda de conversas, ele é um órgão estratégico interno que influencia o PLS (Plano de Logística Sustentável) e assessora a presidência na aprovação das verbas anuais para executar o plano de melhoria arquitetônica e tecnológica.
+</details>
+
+## 📝 TEMA 4: Inglês Técnico
+
+### Texto para as questões 46 a 50
+**Documentação AWS: Designing Cloud-Native Architectures**
+
+> "Cloud-native applications are built from the ground up to take full advantage of cloud computing models. They rely on microservices architectures, which decouple the various functionalities of a system into smaller, self-contained units. Unlike legacy monoliths, **they** allow independent scaling and faster deployment cycles.
+>
+> However, migrating a monolith to a microservices architecture is not a trivial task. Developers often utilize the Strangler Fig pattern, gradually shrinking the legacy system by placing a proxy in front of **it** and migrating traffic to the new services route by route. This approach minimizes downtime and heavily mitigates deployment risks. Furthermore, teams must embrace infrastructure as code (IaC) to effectively manage the deployment sprawl that microservices inherently create."
+
+### Questão 46 (FCC - Questão Prática / Adaptada (Inglês Técnico - Interpretação))
+In the sentence "Unlike legacy monoliths, **they** allow independent scaling..." (first paragraph), the bold pronoun **they** refers to:
+A) Ground up models.
+B) Legacy monoliths.
+C) Independent scaling features.
+D) Microservices architectures (or smaller, self-contained units).
+E) Faster deployment cycles.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+- D) Correta. A sentença contrasta o monólito legado (legacy monolith) com as arquiteturas de microserviços (microservices architectures) que, ao contrário dos monólitos, permitem que escalem ('they allow independent scaling').
+</details>
+
+### Questão 47 (FCC - Questão Prática / Adaptada (Inglês Técnico - Interpretação))
+The expression "from the ground up" in the first paragraph is closest in meaning to:
+A) Automatically generated by the compiler.
+B) From the very beginning / entirely from scratch.
+C) Upgraded using legacy hardware.
+D) Discarded into the ground.
+E) Hosted securely underground.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. A expressão idiomática 'from the ground up' significa começar algo desde a base, do zero, desde o princípio.
+</details>
+
+### Questão 48 (FCC - Questão Prática / Adaptada (Inglês Técnico - Interpretação))
+According to the text, the Strangler Fig pattern is utilized mainly to:
+A) Increase the legacy system's physical server count.
+B) Halt all traffic instantly to update the database schema.
+C) Decrease downtime and reduce deployment risks by gradually replacing the legacy monolith.
+D) Squeeze the network bandwidth intentionally to test resilience.
+E) Eliminate the necessity of using proxies in a network.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. O texto afirma explicitamente que o padrão Strangler Fig gradualmente encolhe o sistema legado, o que "minimizes downtime and heavily mitigates deployment risks" (minimiza a inatividade e reduz os riscos de implantação).
+</details>
+
+### Questão 49 (FCC - Questão Prática / Adaptada (Inglês Técnico - Interpretação))
+In the sentence "... placing a proxy in front of **it**..." (second paragraph), the pronoun **it** is replacing which noun?
+A) The proxy.
+B) The traffic.
+C) The legacy system (or legacy monolith).
+D) The Strangler Fig pattern.
+E) The development team.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. O texto diz "gradually shrinking the legacy system by placing a proxy in front of it". 'It' se refere ao sistema legado ('the legacy system').
+</details>
+
+### Questão 50 (FCC - Questão Prática / Adaptada (Inglês Técnico - Interpretação))
+The word 'sprawl' in the phrase "manage the deployment sprawl that microservices inherently create" could be best translated contextually to Portuguese as:
+A) Ocultamento ou Criptografia.
+B) Compilação de código morto.
+C) Desempenho otimizado da CPU.
+D) Espalhamento / Crescimento desordenado ou expansão massiva.
+E) Limitação estrutural física.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+- D) Correta. 'Sprawl' significa expansão ou espalhamento sem controle. No contexto, criar microserviços gera dezenas ou centenas de implantações (sprawl de deploys) que seriam difíceis de controlar sem IaC.
 </details>
 
