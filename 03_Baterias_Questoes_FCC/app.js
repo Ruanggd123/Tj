@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]);
 
                 responses.flat().forEach(q => {
-                    const qKey = `q_${q.day_id}_${q.source.replace(/[^a-zA-Z0-9]/g, '_')}`;
+                    const qKey = `q_${q.day_id}_${q.id}`;
                     answeredQuestions[qKey] = {
                         selected: q.answer,
                         isCorrect: true
@@ -496,7 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
         await loadDayData(dayId);
         
         filteredQuestions.forEach(q => {
-            const qKey = `q_${q.day_id}_${q.source.replace(/[^a-zA-Z0-9]/g, '_')}`;
+            const qKey = `q_${q.day_id}_${q.id}`;
             answeredQuestions[qKey] = {
                 selected: q.answer,
                 isCorrect: true
@@ -590,7 +590,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.className = 'question-card';
         card.dataset.id = q.id;
 
-        const qKey = `q_${q.day_id}_${q.source.replace(/[^a-zA-Z0-9]/g, '_')}`;
+        const qKey = `q_${q.day_id}_${q.id}`;
         const savedAnswer = answeredQuestions[qKey];
 
         if (savedAnswer) {
