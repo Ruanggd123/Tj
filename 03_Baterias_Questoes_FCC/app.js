@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         html = html.replace(/&lt;u&gt;/g, '<u>').replace(/&lt;\/u&gt;/g, '</u>');
 
         // 1. Code blocks: ```[lang] ... ```
-        html = html.replace(/```(?:[a-zA-Z0-9]+)?\n([\s\S]*?)\n```/g, (match, code) => {
+        html = html.replace(/```[ \t]*(?:[a-zA-Z0-9_+#-]+)?[ \t]*\r?\n([\s\S]*?)\r?\n[ \t]*```/g, (match, code) => {
             return `<pre><code>${code}</code></pre>`;
         });
 
@@ -50,19 +50,20 @@ document.addEventListener('DOMContentLoaded', () => {
         let rowCount = 0;
 
         for (let i = 0; i < lines.length; i++) {
-            let line = lines[i].trim();
-            if (line.startsWith('|')) {
+            let originalLine = lines[i];
+            let trimmedLine = originalLine.trim();
+            if (trimmedLine.startsWith('|')) {
                 if (!inTable) {
                     inTable = true;
                     tableHtml = '<table>';
                     rowCount = 0;
                 }
                 
-                if (line.match(/^\|[\s\-\|]+$/)) {
+                if (trimmedLine.match(/^\|[\s\-\|]+$/)) {
                     continue; 
                 }
                 
-                const cells = line.split('|').slice(1, -1).map(c => c.trim());
+                const cells = trimmedLine.split('|').slice(1, -1).map(c => c.trim());
                 tableHtml += '<tr>';
                 cells.forEach(cell => {
                     const tag = (rowCount === 0) ? 'th' : 'td';
@@ -77,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     resultLines.push(tableHtml);
                     tableHtml = '';
                 }
-                resultLines.push(line);
+                resultLines.push(originalLine);
             }
         }
         if (inTable) {

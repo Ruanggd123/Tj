@@ -81,12 +81,24 @@
     "day_id": "dia_02_06",
     "day_title": "Dia 02/06",
     "filename": "dia_02_06_questoes.json",
-    "count": 50
+    "count": 45
   },
   {
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "filename": "dia_03_06_questoes.json",
     "count": 50
+  },
+  {
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "filename": "dia_04_06_questoes.json",
+    "count": 60
+  },
+  {
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "filename": "dia_05_06_questoes.json",
+    "count": 60
   }
 ]

