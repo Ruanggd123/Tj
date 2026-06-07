@@ -294,6 +294,33 @@ document.addEventListener('DOMContentLoaded', () => {
             
             indexData = await response.json();
             
+            // --- AUTO MARK PREVIOUS AS DONE (ONE-TIME) ---
+            if (!localStorage.getItem('tjce_auto_mark_v2')) {
+                try {
+                    const allPromises = indexData.map(item => fetchDayFile(item.day_id, item.filename));
+                    const allFiles = await Promise.all(allPromises);
+                    const allQs = allFiles.flat();
+                    
+                    allQs.forEach(q => {
+                        if (q.day_id !== '04_06' && q.day_id !== '05_06') {
+                            const qKey = `q_${q.day_id}_${q.id}`;
+                            answeredQuestions[qKey] = {
+                                selected: q.answer,
+                                isCorrect: true
+                            };
+                            completedDays.add(q.day_id);
+                        }
+                    });
+                    
+                    localStorage.setItem('tjce_answered_questions', JSON.stringify(answeredQuestions));
+                    localStorage.setItem('tjce_completed_days', JSON.stringify([...completedDays]));
+                    localStorage.setItem('tjce_auto_mark_v2', 'true');
+                } catch (e) {
+                    console.error("Auto mark error: ", e);
+                }
+            }
+            // ---------------------------------------------
+            
             setupFilters();
             updateStats();
             
