@@ -2,874 +2,865 @@
 
 ## 📝 TEMA 1: Banco de Dados: Modelagem ER + Normalização de Dados
 
-### Questão 1 (FCC - Questão Prática / Adaptada)
-Um Engenheiro de Dados do Tribunal Regional do Trabalho da 12ª Região está encarregado de reestruturar o sistema legado de cadastro de estagiários. Na tabela atual, há uma coluna chamada `Telefones_Contato` que armazena os números do estagiário no formato '48999991111, 48999992222' separados por vírgula. Durante o processo de normalização do banco de dados relacional para adequação à Primeira Forma Normal (1FN), o procedimento arquitetural correto que o engenheiro deve adotar é:
-A) Modificar a coluna para o tipo JSONB ou BLOB para que o banco reconheça formalmente os múltiplos números e mantenha a tabela como está.
-B) Criar colunas fixas adjacentes denominadas `Telefone_1`, `Telefone_2` e `Telefone_3` na própria tabela de estagiários, garantindo assim a atomicidade na consulta SQL sem a necessidade de tabelas externas.
-C) Eliminar a coluna `Telefones_Contato` da tabela principal e criar uma nova tabela associada (ex: `Telefone_Estagiario`), relacionando-a por chave estrangeira em um formato de 1 para N (1:N), garantindo a atomicidade e a ausência de grupos repetitivos.
-D) Estabelecer uma chave primária composta na tabela de estagiários envolvendo o CPF e os Telefones em conjunto, o que automaticamente satisfaz os requisitos da 1FN.
-E) Adotar o modelo relacional de herança, especializando o estagiário em múltiplas classes instanciáveis a depender da quantidade de telefones informados na triagem.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. A 1FN exige atomicidade (um valor por célula) e a eliminação de grupos/campos repetitivos ou multivalorados. A solução padrão em bancos relacionais é sempre criar uma nova tabela para armazenar os múltiplos telefones associados à chave primária do dono.
-</details>
-
-### Questão 2 (FCC - Questão Prática / Adaptada)
-O setor de estatística e relatórios (BI) de um fórum solicitou ao DBA a geração de um relatório complexo que envolvia 8 cruzamentos (JOINs) pesados entre tabelas de processo e andamento que se encontravam na Terceira Forma Normal (3FN), o que estava estourando o tempo limite de resposta do servidor de banco de dados e travando a rede. Para solucionar esse problema visando exclusivamente o ganho de velocidade em leitura, o DBA decidiu fundir duas tabelas de histórico num único modelo, recriando campos redundantes e quebrando propositalmente as regras da 3FN. Essa técnica aplicada para ganho de performance é denominada:
-A) Otimização Transacional Isolada.
-B) Normalização de Boyce-Codd (BCNF).
-C) Particionamento Horizontal em Hash.
-D) Desnormalização.
-E) Criação de Índice Árvore-B Físico.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**
-
-- D) Correta. A Desnormalização é a prática deliberada e consciente de violar uma ou mais regras de normalização (inserindo redundância e agrupando tabelas) para evitar JOINs custosos e aumentar dramaticamente a velocidade de leitura (Data Warehouses e relatórios OLAP fazem muito isso).
-</details>
-
-### Questão 3 (FCC - Questão Prática / Adaptada)
-Durante a construção do diagrama lógico de um banco de dados no padrão ER (Entidade-Relacionamento), um Analista Judiciário de TI precisou mapear um relacionamento lógico muitos-para-muitos (N:M) entre as entidades `Juiz` e `Vara`, afinal, um Juiz pode atuar em várias Varas ao longo da vida, e uma Vara pode ter múltiplos Juízes designados. Para mapear corretamente esse cenário no Banco de Dados Relacional físico (ex: PostgreSQL) garantindo a integridade sem perda de histórico, o analista deve obrigatoriamente:
-A) Inserir a chave primária da entidade `Vara` como uma chave estrangeira na tabela `Juiz` contendo a restrição `ON DELETE CASCADE`.
-B) Mesclar ambas as entidades em uma macro-tabela contendo colunas nulas, reduzindo anomalias de exclusão.
-C) Criar uma terceira tabela (entidade associativa) que deve conter, no mínimo, as chaves estrangeiras que apontam para as chaves primárias de `Juiz` e `Vara`, formando muitas vezes a chave primária composta dessa nova tabela.
-D) Utilizar o mecanismo de dependência transitiva cruzada no Oracle, eliminando a exigência física de chaves estrangeiras secundárias.
-E) Criar um Array Binário Longo (BLOB) dentro da tabela `Juiz` para armazenar o ID das Varas sequencialmente.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. Em bancos relacionais, não há forma direta de implementar um relacionamento N:M entre duas tabelas. A solução canônica é 'quebrar' o relacionamento criando uma terceira tabela (tabela associativa ou de junção) que conecta as chaves das duas tabelas originais e resolve o problema transformando em dois relacionamentos 1:N.
-</details>
-
-### Questão 4 (FCC - Questão Prática / Adaptada)
-O Tribunal Regional está auditando a tabela `Processo_Audiencia` que possui uma chave primária composta formada por (`Numero_Processo`, `Data_Audiencia`). Além das colunas de chave, a tabela contém a coluna `Juiz_Designado` e a coluna `Classe_Judicial_Processo`. O auditor de dados identificou que o valor da coluna `Classe_Judicial_Processo` depende única e exclusivamente do `Numero_Processo`, sendo totalmente alheio à `Data_Audiencia`. Do ponto de vista acadêmico da normalização, a tabela apresenta um vício crônico por ferir diretamente a regra da:
-A) Primeira Forma Normal (1FN).
-B) Segunda Forma Normal (2FN).
-C) Terceira Forma Normal (3FN).
-D) Quarta Forma Normal (4FN).
-E) Forma Normal de Boyce-Codd (FNBC).
+### Questão 1 (FCC - TRT - Analista Judiciário)
+No contexto de modelagem entidade-relacionamento (ER), as entidades fraca e forte desempenham papéis estruturais distintos na integridade do esquema. Sobre esses conceitos, é correto afirmar:
+A) Uma entidade fraca possui uma chave primária própria e independente, necessitando da entidade forte apenas para fins de restrição de integridade referencial em cascata.
+B) O relacionamento entre uma entidade fraca e sua entidade forte correspondente é denominado relacionamento de identificação, no qual a chave primária da entidade fraca é composta pela chave primária da entidade forte acrescida de seu atributo discriminador.
+C) As entidades fracas não podem possuir atributos multivalorados ou compostos, devendo ser modeladas estritamente com atributos simples e atômicos.
+D) No mapeamento físico, uma entidade forte necessita obrigatoriamente herdar a chave estrangeira da entidade fraca para garantir que o relacionamento seja indexado.
+E) Uma entidade associativa gerada a partir de um relacionamento N:M é considerada conceitualmente uma entidade forte, pois possui identidade independente das entidades originais.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-- B) Correta. A Segunda Forma Normal (2FN) foca em chaves compostas e exige que todos os atributos não chave dependam INTEGRALMENTE da chave primária inteira (e não apenas de uma parte dela). Como a Classe do Processo depende apenas do Número do Processo (uma fração da chave), isso configura Dependência Parcial, ferindo a 2FN.
+- B) Correta. Por definição da modelagem ER, uma entidade fraca não tem atributos que possam formar uma chave primária por si só. Ela depende da entidade forte para existir e sua identificação (chave primária) é composta (chave da forte + discriminador da fraca). O relacionamento associado é chamado relacionamento de identificação.
 </details>
 
-### Questão 5 (FCC - Questão Prática / Adaptada)
-Um Desenvolvedor Júnior modelou a tabela `Servidor` com os seguintes atributos estruturais: (`Matricula` [PK], `Nome`, `Codigo_Departamento`, `Nome_Departamento`, `Local_Departamento`). Ao apresentar ao DBA Sênior, este reprovou o modelo indicando que os campos `Nome_Departamento` e `Local_Departamento` dependem de `Codigo_Departamento`, que por sua vez depende da `Matricula`. Essa relação na qual um atributo não-chave depende de outro atributo não-chave que finalmente depende da chave primária viola a regra máxima de normalização exigida na:
-A) Primeira Forma Normal (1FN).
-B) Segunda Forma Normal (2FN).
-C) Terceira Forma Normal (3FN).
-D) Quarta Forma Normal (4FN).
-E) Dependência Multivalorada (DMV).
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. Esse é o clássico exemplo de 'Dependência Transitiva'. A 3FN dita que atributos não-chave devem ser mutuamente independentes entre si e depender DIRETAMENTE da chave primária. Como os dados do departamento dependem do código (e não diretamente da matrícula), deve-se criar uma tabela `Departamento`.
-</details>
-
-### Questão 6 (FCC - Questão Prática / Adaptada)
-Considere o conceito do Modelo Entidade-Relacionamento original (Peter Chen). Ao projetar o sistema do plano de saúde do tribunal, o analista identificou uma entidade `Dependente`. Notou-se que um dependente (um filho) não possui atributo capaz de identificá-lo unicamente no sistema sem associar-se forçosamente ao seu `Servidor` responsável. Se o servidor for excluído do banco, seus dependentes perdem o sentido e também desaparecem em cascata. Na modelagem conceitual, o `Dependente` é tecnicamente modelado e caracterizado como uma:
-A) Entidade Associativa Interseccional.
-B) Entidade Generalista Base.
-C) Entidade Forte Isolada.
-D) Entidade Fraca.
-E) Entidade Multivalorada Abstrata.
+### Questão 2 (FCC - TRE - Analista de Sistemas)
+Durante a fase de normalização de um banco de dados relacional, um analista identificou uma tabela contendo uma coluna que armazena strings de endereços de e-mail no formato "joao@trt.jus.br, joao.pessoal@gmail.com". Para adequar esta tabela à Primeira Forma Normal (1FN), o analista deve:
+A) Alterar o tipo de dados da coluna para JSONB, mantendo a estrutura multivalorada de maneira nativa e otimizada pelo SGBD.
+B) Criar colunas fixas extras denominadas Email_1, Email_2 e Email_3 na própria tabela, preenchendo com valores nulos quando necessário.
+C) Remover os e-mails secundários, permitindo apenas um único registro estrito por linha para satisfazer a restrição de domínio.
+D) Decompor a tabela original, removendo a coluna multivalorada e criando uma nova tabela associada com relacionamento 1:N, onde cada e-mail é armazenado como um registro individual vinculado por chave estrangeira.
+E) Manter a estrutura original e aplicar um índice de texto completo (Full-Text Search) para agilizar as consultas SQL.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: D**
 
-- D) Correta. Entidades que não possuem chave primária suficiente para existirem independentemente no sistema e dependem estritamente da existência de uma Entidade Forte (Pai) são chamadas de Entidades Fracas no modelo ER. Elas utilizam a chave do pai junto a um atributo discriminador próprio para formar sua chave.
+- D) Correta. A Primeira Forma Normal (1FN) exige que todos os atributos sejam atômicos (valores únicos e indivisíveis por linha/coluna) e proíbe grupos repetitivos ou colunas multivaloradas. Para normalizar, deve-se criar uma tabela satélite para os e-mails, relacionando-a com a tabela principal por chave estrangeira.
 </details>
 
-### Questão 7 (FCC - Questão Prática / Adaptada)
-No projeto conceitual do sistema criminal, a tabela `Veiculo` possui a coluna `Placa`, que identifica o carro unicamente, e também a coluna `Chassi`, que de igual maneira é única para cada carro fabricado e nunca se repete. O desenvolvedor escolheu `Placa` para atuar como a Chave Primária (Primary Key). Dessa forma, de acordo com a teoria de banco de dados, o campo `Chassi`, por também possuir a capacidade de identificação universal da tupla, é classificado como uma chave:
-A) Estrangeira (Foreign Key).
-B) Candidata (Candidate Key) ou Chave Alternativa.
-C) Derivada (Derived Key).
-D) Composta Natural (Composite Key).
-E) Transitiva Secundária.
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. Qualquer conjunto de colunas que seja único e não nulo capaz de identificar a linha inteira é uma Chave Candidata. O analista escolhe apenas uma das candidatas para ser a Primária. As outras que 'sobraram' no processo e não foram escolhidas (como o Chassi) passam a ser chamadas de Chaves Alternativas.
-</details>
-
-### Questão 8 (FCC - Questão Prática / Adaptada)
-Um Arquiteto de Sistemas desenhou um banco de dados relacional para o tribunal, focando-se em uma tabela chamada `Professor_Disciplina`. A tabela possui a chave composta (`ID_Professor`, `Materia`) e o atributo `ID_Area_Conhecimento`. Analisando os negócios, ele viu que o `ID_Professor` sozinho já determina o `ID_Area_Conhecimento` de forma absoluta (ex: Professor Joao é sempre da área de Exatas). O Arquiteto notou que isso geraria redundância na hora de atualizar a área. A qual anomalia de banco de dados esse cenário está primariamente suscetível devido à falta de normalização em 2FN?
-A) Anomalia de Seleção, pois consultas de relatório trarão tabelas duplicadas sem índice.
-B) Anomalia de Integridade Referencial Cíclica, gerando deadlock do banco SQL Server.
-C) Anomalia de Atualização (Update Anomaly), visto que alterar a área de conhecimento do professor exigiria encontrar e modificar cada registro de disciplina que ele ministra.
-D) Anomalia de Exclusão Cascata (Delete Anomaly), forçando o apagamento da tabela mãe de departamentos acadêmicos inteira.
-E) Anomalia de Particionamento (Partition Anomaly), inviabilizando que o banco grave fisicamente o registro em clusters remotos da mesma nuvem.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. Se você tem dependência parcial, o dado 'Área de Conhecimento' estará gravado redundante centenas de vezes (uma para cada disciplina que o professor der). Se a área mudar, você sofrerá uma 'Anomalia de Atualização', correndo o risco de atualizar o valor em 50 linhas e esquecer de atualizar em outras 50, corrompendo a verdade do dado.
-</details>
-
-### Questão 9 (FCC - Questão Prática / Adaptada)
-A Norma Boyce-Codd (FNBC / BCNF) é muitas vezes tratada como uma versão mais rígida ou avançada da Terceira Forma Normal (3FN). Um analista argumentou tecnicamente em reunião que o banco de dados do Tribunal atingiu a FNBC. A definição formal correta que atesta que uma tabela em 3FN também satisfaz a Forma Normal de Boyce-Codd é:
-A) Se e somente se todo determinante na relação for uma superchave candidata, eliminando casos onde partes de uma chave candidata dependem de atributos não-chave.
-B) Se e somente se não existir nenhuma dependência multivalorada independente armazenada isoladamente.
-C) Se a tabela estiver particionada horizontalmente com pelo menos um índice HASH ativado no sistema gerenciador.
-D) Se todas as chaves estrangeiras da tabela principal apontarem para tabelas secundárias com cardinalidade restrita do tipo (1:1).
-E) Se não houver campos vazios (NULL) na tabela e todos os atributos numéricos contiverem validações externas (CHECK Constraints).
+### Questão 3 (FCC - TRF - Tecnologia da Informação)
+Uma tabela denominada `Alocacao_Projeto` possui a seguinte chave primária composta: (`ID_Funcionario`, `ID_Projeto`). Além dos campos da chave, a tabela possui os atributos `Horas_Alocadas` e `Nome_Projeto`. Sabe-se que `Nome_Projeto` é determinado unicamente por `ID_Projeto`. Sob a ótica da normalização de dados, esta tabela:
+A) Está na Primeira Forma Normal (1FN), mas viola a Segunda Forma Normal (2FN) devido à presença de dependência funcional parcial.
+B) Está na Segunda Forma Normal (2FN), mas viola a Terceira Forma Normal (3FN) por conter dependência transitiva.
+C) Atende a todos os requisitos da Terceira Forma Normal (3FN), uma vez que a dependência ocorre a partir de um dos elementos da chave composta.
+D) Viola a Primeira Forma Normal (1FN) porque a chave primária composta impede a atomicidade dos atributos não-chave.
+E) Deve ser normalizada aplicando-se a Forma Normal de Boyce-Codd (FNBC) diretamente, sem necessidade de decomposição intermediária.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: A**
 
-- A) Correta. A FNBC foi criada por Codd e Boyce para corrigir um pequeno furo matemático da 3FN. A FNBC estabelece que 'todo determinante deve ser uma superchave' (ou chave candidata). Ela previne anomalias raras quando a tabela possui duas ou mais chaves compostas que se sobrepõem/cruzam entre si.
+- A) Correta. A Segunda Forma Normal (2FN) exige que a tabela esteja na 1FN e que todo atributo não-chave dependa totalmente da chave primária (se esta for composta). Como `Nome_Projeto` depende apenas de `ID_Projeto` (parte da chave), há uma dependência parcial, o que viola a 2FN.
 </details>
 
-### Questão 10 (FCC - Questão Prática / Adaptada)
-No modelo Entidade-Relacionamento Extendido (EER), um relacionamento do tipo Herança (Generalização e Especialização) é comum, como por exemplo: `Pessoa` (Pai) que pode ser especializadas em `Pessoa Física` (Filha) e `Pessoa Jurídica` (Filha). Ao transformar esse diagrama EER para o modelo Lógico (Tabelas Relacionais) visando aplicar restrições rígidas de controle sem gerar campos vazios e sem causar redundâncias severas, a melhor e mais recomendada abordagem de mapeamento clássica gerará:
-A) Uma única e exclusiva tabela `Pessoa` agregando todos os atributos de física e jurídica, controlados por um tipo enumerado e resultando em inúmeras colunas nulas (NULL) obrigatoriamente (Single Table).
-B) Apenas duas tabelas fisicamente dissociadas: `Pessoa Física` e `Pessoa Jurídica`, duplicando a coluna ID genérica de Pessoa e perdendo a indexação central da superclasse unificada (Concrete Table).
-C) Três tabelas no banco de dados (`Pessoa`, `Pessoa Física`, `Pessoa Jurídica`), onde as filhas terão como chave primária o exato ID da tabela pai `Pessoa`, atuando simultaneamente como Chave Estrangeira (Class Table).
-D) Nenhuma tabela no banco, e sim uma View (Visão) materializada no PostgreSQL baseada nos dados binários JSON do aplicativo.
-E) Um banco de dados orientado a grafos isolado sem restrição referencial estrita e com nós dinâmicos polimórficos de acesso veloz em nuvem.
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. Para modelar herança no banco relacional de forma 'perfeita' e normalizada (Class Table ou Tabela-por-Tipo), criam-se as 3 tabelas. A tabela Pai guarda ID e Nome. A tabela Filha guarda apenas seus atributos específicos e usa o ID do Pai como Primária e Estrangeira ao mesmo tempo. Não há células NULL inúteis nem duplicação central.
-</details>
-
-### Questão 11 (FCC - Questão Prática / Adaptada)
-Um banco de dados de um aplicativo governamental possui a tabela `Professor` com colunas `Materia_Lecionada` e `Hobby_Pessoal`. Sabemos que um professor pode lecionar várias matérias e, independentemente das matérias, pode ter vários hobbies esportivos. Armazenar esses dois conjuntos independentes de dados repetitivos (Múltiplas matérias X Múltiplos Hobbies) em uma mesma tabela base gera anomalias explosivas de cruzamento de dados vazios. Essa violação clássica envolvendo dependências independentes dentro da mesma entidade fere tecnicamente a regra da:
-A) Primeira Forma Normal (1FN).
-B) Segunda Forma Normal (2FN).
-C) Terceira Forma Normal (3FN).
-D) Quarta Forma Normal (4FN).
-E) Quinta Forma Normal (5FN).
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**
-
-- D) Correta. A Quarta Forma Normal (4FN) é específica para combater e erradicar as 'Dependências Multivaloradas'. Se a tabela guarda mais de uma relação independente 1:N no mesmo local, ela violou a 4FN. A solução é extraí-las para duas novas tabelas (Professor_Materia e Professor_Hobby).
-</details>
-
-### Questão 12 (FCC - Questão Prática / Adaptada)
-Um estagiário de TI no TRT gerou uma tabela `Contrato` e incluiu uma coluna chamada `Idade_do_Contrato_Em_Dias`, que deveria ser atualizada em um rotina noturna no cron do Linux subtraindo a `Data_Assinatura` da data atual. O Administrador de Dados sênior removeu a coluna argumentando que atributos cujo valor pode ser completamente deduzido a partir de outros campos já persistidos no banco não devem possuir armazenamento físico definitivo visando manter a integridade de normalização. No jargão de ER (Chen), esse tipo de campo é denominado Atributo:
-A) Composto.
-B) Multivalorado.
-C) Derivado.
-D) Cíclico Identificador.
-E) Polimórfico Abstrato.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. Um Atributo Derivado (representado por um círculo tracejado no ER clássico de Peter Chen) é aquele que pode ser calculado 'em tempo de execução' (on-the-fly) a partir de outras colunas base (como a Idade a partir da Data de Nascimento). Armazená-los quebra a consistência, pois requer atualizações diárias ou Triggers.
-</details>
-
-### Questão 13 (FCC - Questão Prática / Adaptada)
-Para o design da nova aplicação web das varas cíveis, a equipe de desenvolvimento precisa mapear uma restrição lógica de cardinalidade. A regra de negócio afirma categoricamente: 'Uma Sala de Audiência PODE abrigar de ZERO a VÁRIOS processos durante um mês. Um Processo Judicial SOMENTE PODE acontecer OBRIGATORIAMENTE em UMA, e apenas uma, Sala de Audiência ao longo de sua vida ativa'. No padrão de diagramação clássica (Notação Min-Max), essa restrição (Sala X Processo) deve ser descrita corretamente como:
-A) Sala (1,1) e Processo (0,N).
-B) Sala (0,N) e Processo (1,1).
-C) Sala (1,N) e Processo (0,1).
-D) Sala (0,1) e Processo (1,N).
-E) Sala (0,0) e Processo (N,N).
+### Questão 4 (FCC - TJ - Administrador de Banco de Dados)
+A Terceira Forma Normal (3FN) atua na eliminação de redundâncias indesejadas que persistem mesmo após a eliminação de dependências parciais. Uma tabela está em conformidade com a 3FN se:
+A) Estiver na 1FN e todos os atributos multivalorados forem convertidos em colunas do tipo array.
+B) Estiver na 2FN e nenhum atributo não-chave depender de forma transitiva de qualquer chave candidata por meio de outro atributo não-chave.
+C) Todas as chaves primárias forem numéricas e sequenciais simples.
+D) Toda dependência funcional X -> Y possuir um determinante X que seja obrigatoriamente a chave primária principal e única da relação.
+E) Ela for decomposta recursivamente até que reste apenas uma chave primária simples e uma única coluna não-chave.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-- B) Correta. Sala -> abriga Processo. A Sala tem o mínimo de ZERO processos (pode estar vazia) e máximo de VÁRIOS (N). O Processo precisa OBRIGATORIAMENTE de uma sala (Mínimo 1) e APENAS de uma (Máximo 1). Logo, Processo é (1,1). Na notação comum, os parênteses ficam junto à entidade alvo.
+- B) Correta. A definição formal da 3FN exige que a tabela esteja na 2FN e não apresente dependências transitivas de atributos não-chave para outros atributos não-chave. Ou seja, atributos não-chave devem depender diretamente da chave primária.
 </details>
 
-### Questão 14 (FCC - Questão Prática / Adaptada)
-Uma 'Constraint' (Restrição) de Integridade em bancos relacionais é a base que sustenta a confiança nos dados gravados. A restrição física que impede que você cadastre dois tribunais diferentes com o mesmíssimo número de CNPJ nacional na tabela, mesmo sabendo que o CNPJ não foi escolhido pelo arquiteto como a 'Chave Primária' (PK) na tabela, é implementada tecnicamente no SGBD pela constraint de:
-A) FOREIGN KEY (Chave Estrangeira).
-B) CHECK DOMAIN (Checagem de Domínio Restrito).
-C) DEFAULT VALUE (Valor Padrão Automático).
-D) UNIQUE (Unicidade).
-E) CASCADE UPDATE (Atualização Cascata Remota).
+---
+
+### Questão 5 (FCC - DPE - Analista de Sistemas)
+Considere a relação R(A, B, C, D) e as dependências funcionais: {A -> B, B -> C, C -> D}. Sabendo que A é a chave primária de R, assinale a alternativa que descreve a situação de normalização desta tabela e a ação de correção apropriada:
+A) A tabela está na 3FN, pois A determina indiretamente todas as colunas da relação.
+B) A tabela viola a 2FN porque B depende de A, criando uma partição na chave primária da relação.
+C) A tabela está na 2FN, mas viola a 3FN devido às dependências transitivas. Para normalizar, R deve ser decomposta em R1(A, B), R2(B, C) e R3(C, D).
+D) A tabela está na 1FN apenas. A correção exige a mescla imediata de todos os atributos em uma única relação com chaves estrangeiras compostas.
+E) A relação viola a Forma Normal de Boyce-Codd (FNBC), embora satisfaça a 3FN devido à transitividade linear das chaves estrangeiras.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**
+**Gabarito: C**
 
-- D) Correta. A restrição UNIQUE (Único) garante que não haverá valores duplicados naquela coluna (ideal para Chaves Candidatas Alternativas, como CPF e CNPJ). Ela age quase igual a uma Primary Key, mas aceita (na maioria dos SGBDs) que o campo seja preenchido com NULL, dependendo da configuração.
+- C) Correta. A relação R está na 2FN (pois a chave A é simples, logo não há como ter dependência parcial). Porém, viola a 3FN por dependência transitiva (A -> B, B -> C e B -> C, C -> D). A decomposição correta separa os determinantes em suas próprias tabelas: R1(A, B), R2(B, C) e R3(C, D), removendo a transitividade.
 </details>
 
-### Questão 15 (FCC - Questão Prática / Adaptada)
-Um banco de dados de alto volume e transações rápidas (OLTP) de um Tribunal alcançou a Terceira Forma Normal e está modelado impecavelmente em tabelas estritas e altamente granulares. Contudo, devido a um vazamento de memória do servidor virtual, o DBA precisa garantir que todas as transações ACID do Tribunal envolvendo dados críticos tenham garantias absolutas contra panes elétricas no meio de uma gravação (COMMIT). O pilar do padrão ACID focado especificamente em assegurar que, após a transação ser concretizada no sistema, os dados persistirão de forma não volátil mesmo em caso de perda abrupta de energia ou incêndio no Data Center, é o pilar da:
-A) Atomicidade (Atomicity).
-B) Consistência (Consistency).
-C) Isolamento (Isolation).
-D) Durabilidade (Durability).
-E) Agilidade Transacional (Agility).
+---
+
+### Questão 6 (FCC - TRT - Analista de TI)
+Em bancos de dados relacionais, as restrições de integridade são fundamentais para manter a consistência dos dados. A restrição de integridade referencial dita que:
+A) O valor de uma chave primária não pode conter valores nulos em nenhuma de suas colunas.
+B) Os valores de uma chave estrangeira devem corresponder a valores existentes da chave primária na tabela referenciada, ou serem nulos (caso a coluna seja anulável).
+C) Nenhuma tupla pode conter valores duplicados para uma chave candidata declarada como UNIQUE.
+D) Toda tabela deve possuir obrigatoriamente um índice clustered baseado no atributo chave.
+E) Os atributos definidos em um relacionamento de herança devem compartilhar obrigatoriamente o mesmo domínio de dados na tabela base.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: D**
+**Gabarito: B**
 
-- D) Correta. No ACID, D = Durabilidade. Ela garante tecnicamente (geralmente gravando os WAL logs no disco físico) que assim que o banco de dados confirma 'Transação Finalizada', ela está cimentada e não vai sumir se alguém puxar o fio da tomada no milissegundo seguinte.
+- B) Correta. A integridade referencial garante a consistência das associações entre tabelas. Ela especifica que o valor em uma coluna de chave estrangeira deve coincidir com um valor existente na coluna de chave primária associada da tabela referenciada, ou conter um valor nulo (se permitido).
 </details>
+
+---
+
+### Questão 7 (FCC - TJ - Analista Judiciário)
+Durante a modelagem lógica, o analista de banco de dados se depara com a necessidade de implementar um relacionamento muitos-para-muitos (N:M) entre as entidades `Processo` e `Advogado`. Para mapear fisicamente esse relacionamento em um banco de dados relacional, deve-se:
+A) Adicionar o ID de `Advogado` como chave estrangeira na tabela `Processo` e permitir valores multivalorados na coluna.
+B) Adicionar o ID de `Processo` como chave estrangeira na tabela `Advogado` e criar um índice do tipo UNIQUE nessa coluna.
+C) Criar uma tabela intermediária (associativa) contendo as chaves estrangeiras que referenciam as chaves primárias de `Processo` e `Advogado`, compondo a chave primária da tabela intermediária.
+D) Fusar as tabelas `Processo` e `Advogado` em uma única tabela contendo colunas redundantes e nulas.
+E) Utilizar a restrição CHECK no SGBD para forçar o cruzamento dos IDs em tempo de execução sem alterar o esquema de tabelas.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. No modelo relacional físico, relacionamentos muitos-para-muitos (N:M) não podem ser mapeados diretamente por meio de colunas simples nas tabelas originais. A solução padrão é criar uma tabela associativa contendo as chaves estrangeiras das duas tabelas. A PK dessa nova tabela costuma ser a composição das FKs.
+</details>
+
+---
+
+### Questão 8 (FCC - SEFAZ - Tecnologia da Informação)
+No modelo conceitual de banco de dados (ER), a especialização/generalização permite estruturar hierarquias de entidades. Sobre as restrições de especialização, a diferença entre uma especialização Disjunta (Disjoint) e Sobreposta (Overlapping) é que:
+A) Na disjunta, uma entidade da superclasse pode pertencer a mais de uma subclasse simultaneamente; na sobreposta, pertence a apenas uma.
+B) Na disjunta, uma entidade da superclasse pode pertencer a no máximo uma subclasse; na sobreposta, pode pertencer a múltiplas subclasses simultaneamente.
+C) A especialização disjunta exige totalidade na participação das subclasses; a sobreposta é sempre parcial.
+D) Na sobreposta, a chave primária das subclasses é herdada; na disjunta, cada subclasse gera sua própria chave primária autônoma.
+E) A especialização disjunta impede a exclusão lógica das subclasses em cascata.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. A restrição de disjunção determina se subclasses são mutuamente exclusivas ou não. Disjunta (Disjoint): a entidade pertence a apenas uma subclasse. Sobreposta (Overlapping): a mesma entidade da superclasse (ex: um Funcionário) pode ser simultaneamente de mais de uma subclasse (ex: ser Motorista e Técnico).
+</details>
+
+---
+
+### Questão 9 (FCC - TRT - Analista Judiciário)
+Em sistemas de banco de dados transacionais (OLTP) de alta performance, a desnormalização pode ser considerada uma prática aceitável em cenários específicos. Assinale a alternativa que justifica corretamente a adoção da desnormalização:
+A) Reduzir o espaço em disco ocupado pelas tabelas do banco de dados relacional.
+B) Facilitar o processo de inserção e atualização de dados, eliminando a necessidade de validações de integridade lógica.
+C) Melhorar o desempenho de consultas de leitura complexas (relatórios/BI), minimizando a necessidade de operações de junção (JOINs) pesadas e caras em termos de CPU.
+D) Garantir a conformidade absoluta do banco com a Forma Normal de Boyce-Codd (FNBC).
+E) Eliminar a necessidade de se criar chaves primárias e estrangeiras no banco de dados.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. A desnormalização insere redundância controlada no banco de dados. Seu objetivo é acelerar leituras ao evitar JOINs pesados entre muitas tabelas grandes, sendo comum em data warehouses (OLAP) e relatórios complexos, embora aumente o custo de escrita e exija cuidados contra anomalias.
+</details>
+
+---
+
+### Questão 10 (FCC - TRE - Analista de Sistemas)
+Em um banco de dados de um tribunal, existe a tabela `Organograma` que representa a hierarquia de setores. Cada setor possui um código identificador, um nome e o código do setor ao qual ele é subordinado (seu setor pai). Essa modelagem caracteriza fisicamente um relacionamento do tipo:
+A) Muitos-para-muitos (N:M) bidirecional.
+B) Relacionamento fraco de identificação externa.
+C) Auto-relacionamento (ou relacionamento unário/recursivo) do tipo 1:N.
+D) Especialização parcial sobreposta.
+E) Dependência funcional transitiva composta.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. Quando uma entidade se relaciona com ela mesma, temos um auto-relacionamento (relacionamento unário ou recursivo). Nesse caso, cada setor (lado N) possui uma chave estrangeira (`id_setor_pai`) que aponta para a chave primária da própria tabela `Setor` (lado 1).
+</details>
+
+---
+
+### Questão 11 (FCC - TRF - Administrador de Dados)
+Na teoria relacional, superchaves, chaves candidatas e chaves primárias são conceitos matemáticos fundamentais. A relação entre esses conceitos dita que:
+A) Toda superchave é necessariamente uma chave candidata.
+B) Uma chave candidata é uma superchave mínima, ou seja, uma superchave que não contém nenhum subconjunto próprio que também seja uma superchave.
+C) A chave primária é escolhida aleatoriamente pelo SGBD dentre as superchaves que possuem o menor número de atributos multivalorados.
+D) Uma tabela relacional pode ter no máximo uma superchave declarada explicitamente no esquema físico.
+E) A chave primária não é considerada uma superchave devido às restrições de integridade referencial.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. Superchave é qualquer conjunto de atributos que identifica unicamente uma tupla na tabela. A chave candidata é uma superchave minimal (ou mínima), o que significa que nenhum atributo pode ser removido dela sem que ela perca a propriedade de unicidade. A chave primária é uma das chaves candidatas escolhida pelo arquiteto.
+</details>
+
+---
+
+### Questão 12 (FCC - DPE - Tecnologia da Informação)
+No modelo Entidade-Relacionamento conceitual, os atributos podem possuir diferentes características de armazenamento e comportamento. Um atributo derivado é aquele que:
+A) Pode ser decomposto em subpartes menores com significados independentes (como o Endereço dividido em Rua, Número e Bairro).
+B) Admite múltiplos valores para uma única entidade (como o telefone de contato).
+C) Não precisa ser armazenado fisicamente no banco de dados, pois seu valor pode ser calculado a partir de outros atributos ou registros (como a Idade calculada a partir da Data de Nascimento).
+D) Atua como chave estrangeira implícita no diagrama de classe lógica.
+E) Possui domínio restrito a valores inteiros sequenciais gerados por trigger.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. Atributos derivados são aqueles cujo valor pode ser obtido em tempo de execução a partir de outros dados da base. Exemplo clássico: armazenar a "Data de Nascimento" e calcular a "Idade" dinamicamente, evitando redundâncias e problemas de sincronia temporal.
+</details>
+
+---
+
+### Questão 13 (FCC - TJ - Analista de TI)
+A Forma Normal de Boyce-Codd (FNBC) é uma extensão rigorosa da Terceira Forma Normal (3FN). Uma tabela que atende à 3FN mas viola a FNBC tipicamente apresenta:
+A) Um atributo multivalorado inserido na chave primária simples.
+B) Chaves candidatas compostas que se sobrepõem (compartilham atributos) e determinam atributos que fazem parte de outra chave candidata.
+C) Dependências parciais de atributos chave para colunas de auditoria externa.
+D) Ausência completa de restrição de integridade referencial em cascata.
+E) Um relacionamento recursivo sem chave estrangeira declarada na base.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. A FNBC é mais restritiva que a 3FN. Ela exige que para toda dependência funcional não-trivial X -> Y, X deve ser superchave. Uma tabela na 3FN pode violar a FNBC quando há chaves candidatas compostas sobrepostas e um atributo pertencente a uma dessas chaves é determinado funcionalmente por um atributo não-chave ou por atributos de outra chave candidata.
+</details>
+
+---
+
+### Questão 14 (FCC - TRT - Analista de Sistemas)
+As dependências funcionais expressam as regras de negócio de uma organização no banco de dados. Para inferir novas dependências a partir de um conjunto básico, utilizam-se os Axiomas de Armstrong. A regra de inferência que dita que "se X -> Y e Y -> Z, então X -> Z" é a regra da:
+A) Reflexividade.
+B) Aumento (ou Aumentatividade).
+C) Transitividade.
+D) Decomposição.
+E) União.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. Os três axiomas primários de Armstrong são: Reflexividade, Aumento e Transitividade. O enunciado descreve exatamente a regra da Transitividade, muito importante para o entendimento da Terceira Forma Normal (3FN).
+</details>
+
+---
+
+### Questão 15 (FCC - SEFAZ - Administrador de Dados)
+Em tabelas não normalizadas, a ocorrência de redundância de dados leva a anomalias de atualização. Um exemplo de anomalia de exclusão (Delete Anomaly) ocorre quando:
+A) O SGBD impede a exclusão de um registro devido a um travamento físico de leitura.
+B) A exclusão de um registro de um aluno remove, involuntariamente e sem rastro, as informações completas do único curso em que ele estava matriculado devido ao design unificado da tabela.
+C) Um usuário tenta apagar um dado chave e o banco gera duplicidade no log.
+D) A remoção de registros em lote viola chaves compostas na 1FN.
+E) Um registro apagado reaparece no banco por falta de commits transacionais.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. A anomalia de exclusão acontece quando apagamos um registro que desejamos excluir e, devido ao mau design da tabela (falta de normalização), perdemos dados importantes que queríamos preservar (como excluir o último aluno e perder os dados do curso que só existiam naquela linha).
+</details>
+
+---
 
 ## 📝 TEMA 2: Cloud Computing (AWS) e Virtualização de SO/Containers
 
-### Questão 16 (FCC - Questão Prática / Adaptada)
-O Arquiteto de Nuvem do Tribunal Eleitoral foi designado para criar uma infraestrutura altamente resiliente na AWS que garantisse o funcionamento do sistema de totalização de votos (monolítico no EC2) mesmo que um desastre natural ou corte de energia destruísse completamente um Data Center inteiro da região sudeste da AWS. Para garantir que o sistema não saia do ar se um prédio de data center inteiro ruir, o arquiteto deve projetar o Load Balancer roteando ativamente o tráfego de servidores EC2 espalhados por:
-A) Múltiplas Contas da AWS da mesma agência.
-B) Múltiplos Buckets do S3 configurados para armazenamento magnético de alta latência local.
-C) Múltiplas Regiões da AWS isoladas e alocadas no formato Serverless.
-D) Uma única Zona de Disponibilidade (AZ), desde que conte com proteção de Edge Computing local.
-E) Múltiplas Zonas de Disponibilidade (Availability Zones - AZs) espalhadas dentro de uma mesma Região local.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**
-
-- E) Correta. A AWS é dividida em Regiões geográficas globais. Cada Região (Ex: sa-east-1) é composta por múltiplas Zonas de Disponibilidade (AZs). Cada AZ é, de fato, um grupo de 1 ou mais prédios físicos de data centers isolados entre si contra enchentes, quedas de energia e desastres. Dividir entre AZs é a chave clássica da resiliência local.
-</details>
-
-### Questão 17 (FCC - Questão Prática / Adaptada)
-Um órgão governamental de saúde executa o processamento pesado de arquivos .CSV todas as madrugadas usando instâncias na nuvem da AWS. O detalhe crucial desse negócio é que os scripts não têm pressa de começar e podem ser desligados repentinamente no meio da execução pela Amazon e reiniciados na próxima hora sem nenhum prejuízo ao negócio final. Sob a ótica restrita da extrema redução de OPEX, a AWS oferece um modelo computacional que aluga frotas ociosas com descontos agressivos de até 90% para esse tipo de carga de trabalho altamente flexível a interrupções. Esse modelo é conhecido como:
-A) Amazon RDS Reservado Integral (Reserved All-Upfront).
-B) Servidor EC2 Dedicado Exclusivo (Dedicated Host).
+### Questão 16 (FCC - TRF - Analista Judiciário)
+Na nuvem pública da Amazon Web Services (AWS), o serviço Amazon EC2 (Elastic Compute Cloud) oferece diferentes modelos de contratação de instâncias virtuais. O modelo recomendado para processamento de tarefas em lotes (batch processing) não críticas, que podem sofrer interrupções e desligamentos automáticos sem afetar o negócio, visando o menor custo possível, é o:
+A) Instâncias On-Demand (Sob Demanda).
+B) Instâncias Reservadas (Reserved Instances).
 C) Instâncias Spot (Spot Instances).
-D) Contêiner Fargate Escalonado Horizontalmente (Fargate Out).
-E) Instâncias EC2 On-Demand de Tarifação Lenta Fixada (On-Demand Flat Rate).
+D) Dedicated Hosts (Hosts Dedicados).
+E) Instâncias de Capacidade Agendada (Scheduled Capacity).
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- C) Correta. Instâncias Spot (Instâncias de Spot) utilizam o poder ocioso que sobra nos datacenters da AWS. Como 'ninguém' está usando, a AWS aluga por migalhas. A 'pegadinha' ou risco é que, se alguém pagar mais ou a AWS precisar do servidor, ela mata a sua instância com um aviso de apenas 2 minutos.
+- C) Correta. As instâncias Spot da AWS usam capacidade computacional ociosa dos datacenters com descontos gigantescos (até 90%). A desvantagem é que a AWS pode interrompê-las com aviso prévio de apenas 2 minutos caso precise do hardware. Portanto, são ideais para tarefas resilientes a falhas e não críticas.
 </details>
 
-### Questão 18 (FCC - Questão Prática / Adaptada)
-O analista de infraestrutura explicou à equipe que, diferentemente das máquinas virtuais antigas (como VMware ESXi) que emulam o hardware por completo, a tecnologia Docker do projeto utiliza apenas os recursos do Kernel do Linux da máquina original de forma direta e ágil. Dentre as estruturas físicas de controle do Linux, qual tecnologia profunda e nativa de Kernel é responsável isoladamente por delimitar, cobrar e fatiar fisicamente a quantidade de hardware (ex: Máximo de 2GB de Memória RAM ou máximo de uso de ciclos da CPU) que um container Docker em específico do tribunal pode devorar?
-A) cgroups (Control Groups).
-B) Namespaces (Mount / PID Namespace).
-C) Sistema Operacional Hospedeiro Gráfico.
-D) Módulos DLLs injetados assincronamente pelo bash.
-E) Sub-redes Lógicas Locais Internas em Overlay e NAT.
+---
+
+### Questão 17 (FCC - TRE - Administrador de Redes)
+O Amazon S3 (Simple Storage Service) é um serviço de armazenamento de objetos altamente escalável. Para assegurar a proteção de dados confidenciais contra ransomware e exclusões intencionais ou acidentais, a AWS disponibiliza o recurso S3 Object Lock. Este recurso funciona baseando-se no modelo:
+A) RAID 10 virtualizado, que impede a leitura física em discos espelhados.
+B) WORM (Write Once, Read Many), bloqueando a exclusão ou sobrescrita de versões de objetos específicos durante um período de retenção definido.
+C) Criptografia simétrica em trânsito TLS 1.3 que expira a cada 10 minutos.
+D) IAM Policy implícita aplicada diretamente ao roteador de borda do bucket.
+E) Versionamento linear de blocos físicos brutos anexados ao EC2.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O S3 Object Lock implementa o padrão WORM (Grave Uma Vez, Leia Muitas). Quando ativo, ele impede que um objeto seja deletado ou substituído por qualquer usuário (inclusive o administrador/root) até que o prazo de retenção definido expire, protegendo contra ransomwares e fraudes.
+</details>
+
+---
+
+### Questão 18 (FCC - TJ - Arquiteto de Nuvem)
+O Amazon RDS (Relational Database Service) facilita o provisionamento de bancos de dados relacionais gerenciados. Para projetar uma arquitetura de banco de dados que suporte alta disponibilidade em caso de falha de hardware no datacenter principal e, paralelamente, escale a capacidade de leitura da aplicação, o arquiteto deve configurar, respectivamente:
+A) Multi-AZ (síncrono com failover automático) e Read Replicas (réplicas de leitura assíncronas).
+B) Read Replicas e Snapshots agendados em disco SSD local.
+C) Armazenamento Aurora Serverless e tabelas de hash distribuídas em cache de borda.
+D) Multi-AZ assíncrono e instâncias EC2 adicionais na mesma sub-rede pública.
+E) Elastic Block Store (EBS) e load balancers de aplicação de camada 4.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: A**
 
-- A) Correta. A diferença clássica entre as duas bases de containers é: Namespaces lidam com ISOLAMENTO VISUAL lógico (para que o container só veja os processos e arquivos dele mesmo); e cgroups lidam com ISOLAMENTO DE HARDWARE FÍSICO (limitando a CPU, memória RAM e disco que ele pode comer).
+- A) Correta. Multi-AZ (Zonas de Disponibilidade Múltiplas) duplica o banco de dados em outro datacenter físico com replicação síncrona, visando Alta Disponibilidade e Failover automático (recuperação de desastres). Já as Read Replicas (Réplicas de Leitura) usam replicação assíncrona para direcionar o tráfego de leitura (consultas) para servidores secundários, escalando a leitura.
 </details>
 
-### Questão 19 (FCC - Questão Prática / Adaptada)
-A Diretoria do Tribunal necessita de um sistema relacional robusto e altamente monitorado na AWS sem depender de um administrador de banco de dados (DBA) provisionando patches e configurando RAID de disco em instâncias virtuais cruas na unha. O serviço de banco de dados nativo de arquitetura PaaS focado primariamente em gerenciar a instalação e a sustentação de SGBDs estritamente Relacionais conhecidos do mercado (como PostgreSQL, Oracle e MySQL) é o:
-A) Amazon DynamoDB.
-B) AWS Elastic Beanstalk (EB).
-C) Amazon RDS (Relational Database Service).
-D) Amazon S3 Storage Class.
-E) Amazon EBS (Elastic Block Store) atrelado diretamente às pastas var/log.
+---
+
+### Questão 19 (FCC - DPE - Desenvolvedor)
+O ecossistema AWS oferece o AWS Lambda como solução para arquiteturas Serverless. Sobre o funcionamento e cobrança do AWS Lambda, é correto afirmar:
+A) O desenvolvedor é tarifado com base em uma assinatura mensal fixa baseada no número de APIs cadastradas no Gateway.
+B) O serviço exige o provisionamento prévio de máquinas virtuais EC2 dedicadas para hospedar o código-fonte da aplicação.
+C) Trata-se de um serviço FaaS (Function as a Service) cuja cobrança é baseada no número de requisições de execução e no tempo de processamento do código medido em milissegundos.
+D) Funções Lambda são executadas de forma contínua e ininterrupta, sendo imunes ao problema de inicialização demorada (Cold Start).
+E) O Lambda suporta apenas a execução de scripts síncronos escritos na linguagem Assembly ou C++ compilado em hardware bare-metal.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
-
 **Gabarito: C**
 
-- C) Correta. Amazon RDS (Relational Database Service) é o carro-chefe de relacional gerenciado na AWS. Você foca nos queries, ele cuida dos patches de sistema operacional, dos backups automáticos cruciais, do RAID e do failover automático (Multi-AZ).
+- C) Correta. O AWS Lambda é um serviço FaaS no qual você carrega o código e a AWS gerencia a infraestrutura. A cobrança é sob demanda (pay-as-you-go), baseada na quantidade de execuções de funções e no tempo que elas demoram rodando (mensurado em milissegundos), além da quantidade de memória alocada.
 </details>
 
-### Questão 20 (FCC - Questão Prática / Adaptada)
-Ao arquivar registros confidenciais e imutáveis da sindicância oficial nos buckets do Amazon S3, um oficial de segurança do Tribunal observou que há o risco legal severo de um analista sênior da própria base apagar ou subscrever os logs de auditoria deliberadamente por má fé, já que o analista possui permissões nativas de superusuário na AWS. Para impedir ativamente alterações nesses objetos gravados, garantindo a proteção WORM (Write Once, Read Many) pelo tempo exigido em lei, deve-se aplicar nos objetos isolados a configuração protetiva denominada:
-A) S3 Transfer Acceleration Global Fixo.
-B) Amazon EC2 Security Group de Saída Focada.
-C) S3 Object Lock (Bloqueio de Objeto).
-D) S3 Versionamento Cruzado com Redirecionamento Assíncrono.
-E) AWS IAM Policy baseada puramente na negação provisória do grupo restrito.
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. O S3 Object Lock atua de modo físico/legal WORM ('Grave Uma Vez, Leia Muitas'). Uma vez configurado o período do bloqueio (ex: 5 anos de congelamento), nem mesmo o superusuário root dono principal da conta AWS consegue excluir ou subscrever o arquivo. Ele previne perfeitamente atos de exclusão criminosos ou ataques graves de exclusão de ransomwares de extorsão contra backups em nuvem.
-</details>
-
-### Questão 21 (FCC - Questão Prática / Adaptada)
-A Diretoria deseja adotar a nuvem, porém, por limitações de confidencialidade governamental da nova base militar de apoio tático ligada ao Tribunal, é forçoso legalmente que toda a infraestrutura física virtualizada (os roteadores virtuais, os racks de servidores de dados processuais e os storages unificados) pertença restritamente de modo local a um único cluster gerenciado por um provedor interno fechado apenas na rede intranet física e isolada do país, sem o compartilhamento do aluguel físico com outras empresas civis (Multitenancy fora do ar). Trata-se do clássico e exato modelo acadêmico de implantação em nuvem de:
-A) Nuvem Pública de Terceiros Alocada.
-B) Nuvem Serverless Híbrida de Borda (Edge).
-C) Nuvem Privada (Private Cloud) Física Dedicada Local.
-D) Nuvem de Alta Elasticidade Interconectada Global Fechada.
-E) SaaS Intermediado via Provedores em Malha de Redes Públicas.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. No paradigma e nas documentações do NIST, a infraestrutura mantida, operada local ou alocada apenas e restritamente de modo privado local interno a uma única corporação no isolamento corporativo total focado sem uso do modo Multitenant (isolada do acesso de outros clientes na mesma máquina) é o modelo básico de Private Cloud (Nuvem Privada).
-</details>
-
-### Questão 22 (FCC - Questão Prática / Adaptada)
-Um desenvolvedor escreveu uma pequena e ágil função em Python que emite um comprovante em PDF e o anexa em um e-mail para advogados em cada finalização local e manual de processos, gerando pequenos espasmos mensais eventuais e esparsos de tempo computacional (menos de 3 segundos esporádicos por evento processual). Qual é o serviço exato do paradigma arquitetural Serverless (Sem servidor) dentro do ecossistema Amazon AWS que foca eminentemente na execução dessa função reativa à ocorrência temporal impulsionada de eventos (FaaS)?
-A) Amazon Virtual Private Cloud (VPC).
-B) AWS Elastic Beanstalk C++ Core Integrator.
-C) AWS Lambda.
-D) Amazon RDS PostgreSQL Base Isolada.
-E) Amazon EBS Snapshots Regulares Nativos Lógicos.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. O AWS Lambda é a pura expressão comercial global do Serverless de Função FaaS. O desenvolvedor escreve a pequena rotina, manda pro Lambda e esquece o servidor, o sistema operacional ou as atualizações. Quando ocorre o evento, a AWS carrega, roda em 30 milissegundos e cobra só os 30 milissegundos pontuais do tribunal, morrendo a rotina em seguida.
-</details>
-
-### Questão 23 (FCC - Questão Prática / Adaptada)
-Para escalar sua rede interna massiva de computação local para o estado total do Ceará conectando servidores robustos baseados num datacenter físico On-Premise, a coordenação de TI avaliou que o Hypervisor virtualizador de base a ser instalado debaixo dos sistemas operacionais e das aplicações dos tribunais precisava rodar sem o lastro pesado de um Sistema Operacional nativo tradicional completo (como Windows 11 base ou um Ubuntu pré-instalado clássico hospedado em tela). O Hypervisor precisava ser inserido de modo nu e cru nos equipamentos físicos (hardware metálico) recém adquiridos para o data center local. Esse tipo de técnica e estrutura nativa caracteriza fidedignamente os classificados academicamente Hypervisors virtuais do Tipo:
-A) Tipo 2 (Hosted Hypervisor Local), devido ao acoplamento orgânico aos firmwares virtuais do banco SQL relacional fechado localmente na base restritiva.
-B) Tipo 1 (Bare-Metal), onde o próprio hypervisor funciona intimamente e de modo primário como um pequeno sistema operacional super eficiente instalado em cima cru e colado ao hardware nédio principal sem intermediários lentos operacionais de tela.
-C) Tipo FaaS, limitando isoladamente os ciclos do barramento TCP e executando lógicas e regras isoladas eventuais em memórias e roteadores USB secundários nativos.
-D) Tipo 3 (Emulação Gráfica Pesada de Jogos de Borda), usado unicamente por virtualizadores abertos nativos como o VMware Player 10 Básico gratuito no país e focado no uso doméstico lúdico temporário e simples visual.
-E) Tipo Docker/Contêiner Restrito Nativo de Hardware, em razão dos módulos visuais de acoplamento do Kernel físico da máquina de estado binária global e contínua.
+### Questão 20 (FCC - TRT - Tecnologia da Informação)
+A virtualização tradicional baseada em Máquinas Virtuais (VMs) e a virtualização em nível de sistema operacional (Containers) possuem diferenças arquiteturais marcantes. A VM é caracterizada por utilizar:
+A) Namespaces para emular as chamadas de sistema do kernel hospedeiro diretamente na memória.
+B) Um Hypervisor para criar e gerenciar sistemas operacionais convidados (Guest OS) completos e isolados sobre o hardware físico.
+C) O mesmo kernel do sistema operacional host de forma direta e compartilhada sem emulação de CPU.
+D) Arquivos docker-compose.yml para empacotar bibliotecas físicas e binários em modo sandboxed.
+E) Uma arquitetura puramente serverless restrita a bancos de dados NoSQL.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-- B) Correta. A diferença de base em arquitetura na virtualização e nuvem On-premise local é simples: O Tipo 1 (Bare-metal) se encarrega direto de encostar no hardware real da máquina. São os gigantes dos datacenters como VMware ESXi ou Microsoft Hyper-V. O Tipo 2 são programas hospedeiros simples rodados por você na tela visual básica instalada previamente na base Windows (Ex: VirtualBox).
+- B) Correta. Máquinas virtuais necessitam de um Hypervisor (seja Tipo 1 ou 2) para abstrair o hardware e rodar múltiplos Sistemas Operacionais virtuais completos (Guest OS), o que as torna mais pesadas (consomem mais CPU, RAM e armazenamento) em comparação aos containers, que compartilham o mesmo Kernel do host.
 </details>
 
-### Questão 24 (FCC - Questão Prática / Adaptada)
-Para empacotar todos os arquivos do site oficial antigo local em C# e o sistema interno de relatórios Java em unidades restritas portáveis visuais de contêiner e orquestrá-los simultaneamente (Subir os 2 blocos de contêiner juntos em desenvolvimento de código), o desenvolvedor instruiu uma ferramenta clássica oficial do Docker focado eminentemente em unir comandos no diretório em modo CLI. Qual a tecnologia padrão para rodar multi-containers orquestrados localmente na máquina desktop do desenvolvedor baseada na extensão declarativa de um modelo em texto limpo do tipo YAML oficial descritivo nativo base?
-A) Kubernetes API Server Deployment File Unificado Lógico Dinâmico.
-B) Script Base Nativo de BASH Shell de Linux puro e limpo restrito no ambiente.
-C) Dockerfile Simples e Padrão Isolado da Rede Local Virtual.
-D) Package.json Global Base Dinâmico Exclusivo Interno Isolado do Servidor Nginx.
-E) Ferramenta nativa clássica local Docker Compose e o descritivo associado arquivo docker-compose.yml nativos.
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: E**
-
-- E) Correta. O Dockerfile (C) só levanta 1 imagem isolada simples construtiva física na máquina base. Para orquestrar, configurar redes unificadas isoladas e gerenciar ao mesmo tempo vários contêineres interligados no teste do analista local (ex: rodar um Redis junto de um Node e do Banco Postgres todos unidos magicamente) na mesma máquina isolada local do desenvolvedor, usa-se o oficial utilitário ágil 'Docker Compose'.
-</details>
-
-### Questão 25 (FCC - Questão Prática / Adaptada)
-Em um cenário hipotético em que a plataforma digital AWS da corte regional seja invadida, constatou-se que o invasor adquiriu os arquivos confidenciais alocados dentro de uma das VMs abertas alugadas no formato IaaS e instalou ransomwares que exploraram falhas não corrigidas pelos técnicos do estado nas bibliotecas abertas do sistema Ubuntu Linux 18.04 da máquina virtual em funcionamento interno. Sobre a lógica de segurança inerente à base teórica formal do documento oficial AWS, conhecido como 'Modelo de Responsabilidade Compartilhada', cabe atestar legalmente quem detém a obrigação direta de corrigir essas citadas brechas do sistema operacional Ubuntu em nuvem:
-A) É obrigação final direta e estrita base central contratual puramente unificada do Provedor AWS, garantindo todo e qualquer ambiente remoto blindado nativamente na sua camada lógica independente de uso interno regional judicial alugado pela equipe técnica de TI local.
-B) Fica de forma equânime dividida local e presencialmente em taxas físicas cobráveis e mensuráveis mensais baseadas num fundo comum logístico global entre as redes estáticas das 2 corporações envolvidas isoladas.
-C) A obrigação final de gestão e reparo local lógico do próprio SO restringe-se e cabe à gestão do Tribunal Cliente Estadual Judicial, uma vez que o AWS assegura apenas e centralmente a segurança 'DA' Nuvem (Datacenters de base física, os roteadores da base física original global isolada e do maquinário estático hipervisor subjacente restritivo), mas não 'NA' nuvem em modelos fechados puramente IaaS lógicos abstratos de software básico interno emulados pelo usuário de máquina virtual virtualizado global aberto.
-D) O provedor externo de auditoria internacional judicial central da justiça penal estadunidense e do governo nacional associado federal.
-E) O AWS isoladamente se a infraestrutura for orientada remotamente a base contínua em modelo de plataforma SaaS estrito nativo das instâncias fechadas de código local sem isolamentos virtuais base e sem acesso irrestrito do SO logado na base.
+### Questão 21 (FCC - TJ - Analista de Infraestrutura)
+No ambiente do sistema operacional Linux, a tecnologia de containers Docker depende de recursos nativos do kernel para garantir isolamento e controle de recursos. As duas principais tecnologias subjacentes do kernel utilizadas pelo Docker são:
+A) Systemd e Initd, focadas no bootstrap de containers isolados.
+B) Iptables e SELinux, destinadas exclusivamente à autenticação criptográfica de pacotes de rede.
+C) Namespaces (isolamento lógico de processos, rede, sistemas de arquivos) e cgroups (limitação de recursos físicos como CPU, memória e I/O de disco).
+D) Kernel Modules e Udev, responsáveis pela compilação dinâmica de drivers na AWS.
+E) Swap Memory e Chroot, usadas para particionar fisicamente os discos de bloco virtual.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- C) Correta. A AWS e os concorrentes globais usam a Responsabilidade Compartilhada base clássica de regras lógicas. A Amazon garante unicamente e fechado os data centers, resfriamento físico e os Hypervisores pesados ('Segurança DA nuvem física base central'). O tribunal de trabalho / cliente, ao rodar uma VM EC2 padrão em modelo de base IaaS (Security IN the cloud), tem obrigatoriamente a gerência completa em instalar atualizações de SO Linux local, antivírus lógicos fechados, configurar porta aberta SSH remota global restritiva nativa unificada presencial de forma prudencial unificada.
+- C) Correta. O Docker no Linux isola processos usando: 1) Namespaces (Mount, Process ID, Network, Interprocess Communication, UTS) para isolamento visual e lógico; e 2) cgroups (Control Groups) para limitar e medir a cota física de recursos de hardware (memória RAM, processador, vazão de disco) que o container pode gastar.
 </details>
 
-### Questão 26 (FCC - Questão Prática / Adaptada)
-Qual é a tecnologia subjacente e basilar nativa empregada ativamente pelos orquestradores em rede aberta moderna, a exemplo lógico claro oficial das máquinas do Kubernetes unificadas, capaz de conceder magicamente e nativamente aos containers fisicamente e ativamente descentralizados em dezenas de servidores físicos heterogêneos ruidosos de empresas regionais distintas, uma abstração única global de conversarem unificados nativamente na rede fechada sem se preocuparem remotamente se o servidor número B se localiza em um prédio vizinho da empresa matriz restritiva regional isolada?
-A) Redes exclusivas de Fibra Óptica locais em Topologia anel e central fechada puramente de Token Ring isolado centralizado e arcaico da base física restrita estrita nativa e sem uso de virtualização temporal assíncrona remota global unificada nas camadas de base do SO Lógico nativo da AWS isolado.
-B) Comutadores (Switches) Baseados na norma Token Ethernet 802.1B estritamente alocados fisicamente nos Datacenters privados de nuvens híbridas globais locais.
-C) Sistema de Rede e Comunicações de Topologia e NAT estrito simples em VPN via Firewall L7 Restrito da Plataforma local da borda fechada de Rede.
-D) Redes baseadas na tecnologia de Sobreposição local isolada unificada digital (Overlay Networks), operantes através e por cima unicamente isolado dos pacotes reais do IP hospedeiro encapsulados de forma unificada lógica restrita.
-E) Enlaces diretos abertos e limpos não roteáveis unificados isolados unicamente do protocolo NAT reverso e contínuo da base regional IPv4 de sub-rede.
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**
-
-- D) Correta. O milagre de orquestração de rede do Docker Swarm ou Kubernetes é criar as redes Overlays (Sobreposição fechada abstrata). Os containers pensam unificadamente e magicamente que conversam em um único grande switch invisível no mesmo datacenter na mesma sub-rede fechada isolada, sendo que fisicamente as máquinas base host estão distribuídas aleatoriamente. Ele empacota na base física subjacente pacotes de rede virtuais limpos abertos em pacotes reais para passar de forma invisível nos roteadores normais fechados nativos contínuos do datacenter oficial restrito regional.
-</details>
-
-### Questão 27 (FCC - Questão Prática / Adaptada)
-O volume principal atrelado cru ao EC2 rodando o servidor PostgreSQL fechado regional precisa funcionar de modo clássico local com formatação ext4 isolada em discos virtuais independentes físicos puros regionais de bloco na região leste norte americana contínua sem formatação atrelada de arquivos abertos simples não baseados em buckets abstratos restritivos abertos contínuos no S3 focado local estrito de rede externa fechado contínua global base unificada relacional externa isolada virtualizada temporariamente e atrelado com os sistemas base de base rígida estrutural oficial. O nome descritivo básico deste tipo de serviço lógico de hardware local base isolada anexado de modo físico direto aberto é nomeado na AWS como:
-A) Amazon RDS Base Remota Restritiva Local Lógica Fria.
-B) Amazon Simple Storage Global Unificado Fixo Virtual (S3).
-C) Amazon EFS Dinâmico Estrutural Base Assíncrona Fixada Global Aberta em Rede DFS Limitada Virtual Unificada Remota Assíncrona (EFS).
-D) Amazon Elastic Block Store Unificado Local Central Rígido de Bloco Simples Clássico Contínuo e Direto Limitado (EBS).
-E) Amazon CloudFront Regional Direto Lógico de CDN Aberto Restrito de Fronteira Virtual e Aberta Fixa Contínua Isolada Externa Regional Base Unificada Estrutural e Temporal Remoto (CDN).
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**
-
-- D) Correta. O Amazon Elastic Block Store (EBS) funciona exatamente de modo unificado puro como se fosse um Disco Rígido clássico vazio e independente (HD ou SDD alocado físico isolado em bloco na placa principal da rede unificada do host hypervisor EC2 isolado remota regional base). Diferentemente nativamente isolado de buckets (como a rede unificada global contínua abstrata do objeto S3), ele é puramente de bloco cru para colocar sistema unificado local de rede de partição formatada do sistema Linux.
-</details>
-
-### Questão 28 (FCC - Questão Prática / Adaptada)
-Um banco na base lógica do tribunal estadual, visando estabilidade no tráfego, atrelou e acionou regras avançadas operativas baseadas no princípio técnico puramente funcional da rede de 'Auto Scaling Horizontal' oficial remoto AWS. O princípio teórico primário da ferramenta de serviço escalonado e monitoramento unificado regional base no AWS Auto Scaling age de maneira contínua unificada e independente regional operando reativamente e proativamente em prol da justiça para estritamente:
-A) Escalar a frequência isolada de relógio base primária CPU dos servidores On-Demand unificados na própria placa do rack físico subjacente remoto base virtual sem aumento do banco base isolado central nativo (Vertical Up).
-B) Adicionar (lancar / boot out) ou Retirar dinamicamente e automaticamente sob comando das métricas estritas os clones de Instâncias inteiras virtuais extras contínuas da base lógica por detrás e ocultas no Load Balancer base oficial local do tribunal ajustando perfeitamente estrito à demanda mutável da hora estrita contínua sem limites operacionais de recursos.
-C) Clonar os roteadores físicos isolados unicamente do DNS no formato reverso BGP central contínuo virtual oficial da borda remota externa e distribuída unificada isolada global temporal.
-D) Incrementar apenas a memória cache virtual estática do banco Amazon Redshift na base contínua de memória e no disco externo rígido base local virtual contínuo relacional oficial virtual local temporal fixo e central (Scale Vert).
-E) Adicionar servidores SQL unificados lógicos relacionais contínuos temporários nas redes de borda global contínua do CloudFront CDN aberto isolado virtual contínua remota regional de bases temporárias (CDN Scale Base).
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. Auto Scaling (Auto Escalamento Horizontal puro base do Cloud-native oficial) lida de fato com a inserção e acoplamento contínuo virtual nativo ou fechamento de novos CLONES idênticos de instâncias lógicas virtuais inteiras de máquinas alocadas atrás atreladas do distribuidor contínuo de recursos balanceador contínuo virtual e oficial local (Load balancer local) seguindo de modo exato as métricas puras abertas unificadas isoladas e as necessidades pontuais do tráfego web. Esse modelo nativo atende contínua picos e corta gastos em baixas unificadas isoladas no sistema.
-</details>
-
-### Questão 29 (FCC - Questão Prática / Adaptada)
-Na modelagem corporativa de acessos seguros, as credenciais e o papel estrito operacional oficial lógico base da plataforma AWS em que se foca eminentemente na autorização técnica baseada na criação rigorosa de grupos de acesso contínuo interno base, na validação unificada do modelo restritivo Múltiplo Fator e também em alocar as políticas rígidas granulares internas restritivas abstratas ('Policy') de leitura contínua e restrição ou negação remota baseada base de quem pode criar e quem deve apagar dados contínuos isolados remotos nativos unificados na nuvem sem acessar atrelamentos unificados oficiais isolados físicos nativos do tribunal corporativo fechado de forma nativa regional restrita isolada é gerido de forma integrada base global isolado na camada de segurança unificada de produto e recurso global AWS estritamente atrelado denominado tecnicamente base do(a):
-A) Amazon RDS Base Isolada Lógica Fria.
-B) Identity and Access Management Base Dinâmico Estrutural Base Assíncrona Fixada Global Aberta em Rede Regional Oficial Lógica Contínua Virtual Limitada Base Unificada IAM (AWS IAM).
-C) Route 53 e Proxy Externo Lógico Base DNS Limitado Virtual Unificada Remota Assíncrona.
-D) AWS Shield Global Central e Avançado Nativo Base Unificada Fechada Estrutural Firewall WAF.
-E) Amazon CloudTrail Virtual Log Base Auditoria Isolada Lógica Virtual Auditoria Central.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. A IAM (Gerenciamento restrito unificado oficial de Identidade e Controle unificado contínuo remoto regional Acesso de Base Global Contínua Isolada) é o centro neural oficial aberto de proteção de autenticação. É lá na IAM que a regra local abstrata diz se o 'Analista Silva' atrelado de forma nativa isolada pode ler no bucket base de S3, mas não deletar tabelas relacionais contínuas unificadas de VMs lógicas do DynamoDB remota unificada ou na base remota global unificada oficial local regional.
-</details>
-
-### Questão 30 (FCC - Questão Prática / Adaptada)
-Um cenário na arquitetura base e oficial governamental contínua de um sistema base de banco relacional e unificado central contínuo virtual oficial de Justiça determina expressamente que todas e únicas requisições pesadas em SQL contínuo virtual unificado oficial e base lógico unificado local e centralizado complexas voltadas especificamente ao uso contínuo puro da diretoria do Business Intelligence (Consultas OLAP Analíticas Extensas Unificadas Virtuais de Longa base Unificadas Oficiais) e aos painéis de painéis base unificados visuais estáticos, ocorram inteiramente fora do ambiente transacional principal virtual onde atuam juízes e processos nativos. Qual é o recurso oficial de base oficial isolada relacional AWS aplicável unicamente nos provedores relacionais Amazon RDS focado diretamente no alívio desse tipo estrito de carga na nuvem base oficial e regional de forma inteligente contínua?
-A) Auto Scaling Híbrido Contínuo Externo Reduzido Base.
-B) Réplicas Locais Unificadas Secundárias Oficiais Restritas Limitadas de Resiliência Isolada Lógica Virtual Básica.
-C) Read Replicas ou Clones Regionais Abertos Unificados Nativos e Funcionais Limpos de Leitura Direcionados.
-D) Multi-AZ Clusters Abstratos Virtuais Temporais Standby Nativo de Escrita Múltipla Lógica Paralela Isolada Regional.
-E) Caches Abstratos Isolados Nativos e Relacionais em MongoDB Virtual Unificado Contínuo Sem Banco e sem base lógica.
+### Questão 22 (FCC - DPE - Analista de Sistemas)
+O Docker Compose é utilizado para facilitar a execução de aplicações multicontainer. Para estruturar o ambiente de desenvolvimento local, o analista escreve o arquivo descritivo das imagens, portas, volumes e redes dos serviços. Este arquivo descritivo deve ser salvo no formato:
+A) JSON (.json)
+B) XML (.xml)
+C) YAML (.yml ou .yaml)
+D) TOML (.toml)
+E) INI (.ini)
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- C) Correta. Read Replicas (Instâncias oficiais exclusivas Unificadas Contínuas de pura Leitura Oficial e Assíncrona Regional Unificada Contínua Oficial) do provedor RDS têm por finalidade pura desafogar o mestre central transacional (a carga local unificada base e isolada nativa base e primária oficial e virtual contínua que processa todas as Gravações pesadas base contínua regionais). Desse modo natural abstrato e isolado local, você redireciona base unificada analítica relacional toda a horda centralizada local massiva global e lógica das complexas buscas relacionais dos analistas unificados contínuos de relatórios para as bases cópias oficiais de bases nativas (as puras réplicas virtuais limpas base unificada estritamente atrelada e alocada abstrata de relatório isolado oficial base unificada unicamente de leitoras).
+- C) Correta. O Docker Compose utiliza arquivos declarativos escritos no formato YAML (especificamente `docker-compose.yml`). O YAML preza pela legibilidade humana baseada em identação por espaços.
 </details>
+
+---
+
+### Questão 23 (FCC - TRE - Analista Judiciário)
+O Modelo de Responsabilidade Compartilhada da AWS delimita as obrigações de segurança entre o provedor e o cliente. De acordo com este modelo, assinale a alternativa que descreve uma obrigação de segurança sob responsabilidade do **Cliente**:
+A) Manutenção e segurança física dos racks e geradores dos datacenters da AWS.
+B) Configuração e atualização de patches de segurança do sistema operacional convidado instalado em uma instância Amazon EC2.
+C) Atualização do firmware dos switches de rede física instalados nas Zonas de Disponibilidade.
+D) Atualização do software hypervisor de virtualização proprietário da infraestrutura global da AWS.
+E) Descarte físico e trituração de discos de armazenamento magnético danificados nos datacenters.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. No modelo compartilhado da AWS: O provedor cuida da segurança "DA" nuvem (infraestrutura física, rede de borda, hypervisores, datacenters). O cliente cuida da segurança "NA" nuvem (sistemas operacionais instalados nas VMs, dados dos clientes, criptografia de tráfego interno, políticas de firewall de aplicação / Security Groups).
+</details>
+
+---
+
+### Questão 24 (FCC - TJ - Analista de Redes)
+Ao configurar uma VPC (Virtual Private Cloud) na AWS, um engenheiro precisa garantir isolamento de segurança adequado. Para permitir que instâncias EC2 rodando em uma sub-rede privada consigam baixar atualizações da internet sem estarem diretamente expostas a conexões de entrada vindas da rede externa pública, o engenheiro deve implementar:
+A) Um Internet Gateway associado diretamente à tabela de rotas da sub-rede privada.
+B) Um NAT Gateway (Network Address Translation) alocado em uma sub-rede pública e rotear o tráfego de saída da sub-rede privada através dele.
+C) Um Security Group aberto para permitir tráfego TCP nas portas de 0 a 65535 de entrada pública.
+D) Um serviço AWS Shield Advanced atrelado à porta física do EC2.
+E) Um túnel VPN IPSec do tipo Client-to-Site sem NAT.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O NAT Gateway é um serviço gerenciado da AWS que atua traduzindo endereços de rede. Ele permite que instâncias em uma sub-rede privada iniciem conexões de saída para a internet (para baixar atualizações), mas impede ativamente que hosts externos iniciem conexões diretas de entrada com essas instâncias privadas.
+</details>
+
+---
+
+### Questão 25 (FCC - TRT - Programador)
+Ao escrever um arquivo de build de imagem Docker (Dockerfile), o desenvolvedor utiliza instruções para estruturar o contêiner. Sobre a diferença técnica das instruções CMD e ENTRYPOINT no Dockerfile, assinale a alternativa correta:
+A) O CMD impede a execução em segundo plano, ao passo que o ENTRYPOINT força o container a rodar em modo interativo.
+B) O CMD define os argumentos padrões da imagem que podem ser facilmente sobrescritos pelo usuário ao iniciar o container via linha de comando; o ENTRYPOINT define o executável principal fixo que não é sobrescrito diretamente por argumentos normais.
+C) Ambas as instruções realizam a mesma função e podem ser usadas indistintamente com os mesmos resultados práticos de compilação de binários no host.
+D) A instrução ENTRYPOINT é exclusiva para mapear portas lógicas do container, enquanto o CMD executa o download da imagem base do Docker Hub.
+E) O Dockerfile exige obrigatoriamente o uso simultâneo de três instruções CMD e nenhuma ENTRYPOINT para compilar imagens baseadas em Windows Core.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. A instrução ENTRYPOINT especifica o binário/script fixo executado ao inicializar o container. A instrução CMD define parâmetros e argumentos padrões passados ao ENTRYPOINT. Ao executar `docker run <imagem> <argumento>`, o argumento sobrescreve o CMD, mas o ENTRYPOINT permanece inalterado (a menos que a flag `--entrypoint` seja usada explicitamente).
+</details>
+
+---
+
+### Questão 26 (FCC - SEFAZ - Tecnologia da Informação)
+A computação em nuvem é classificada em diferentes modelos de implantação. A definição de nuvem híbrida refere-se a:
+A) Um ambiente hospedado na infraestrutura física de uma única universidade governamental fechada.
+B) Uma nuvem pública que aceita transações em criptomoedas e moedas fiduciárias simultaneamente.
+C) Uma infraestrutura de nuvem composta por duas ou mais nuvens distintas (privada, comunitária ou pública) que permanecem como entidades exclusivas, mas ligadas por tecnologia proprietária ou padronizada que permite a portabilidade de dados e aplicações.
+D) Um datacenter legado On-Premise que não utiliza virtualização em suas camadas físicas.
+E) Um consórcio de empresas privadas que compartilham os custos de roteadores em redes de satélites de baixa altitude.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. Nuvem Híbrida é a combinação de dois ou mais modelos de implantação de nuvem (por exemplo, conectar o datacenter local privado do tribunal à nuvem pública da AWS para absorver picos de tráfego temporários), interligados por canais de comunicação seguros que permitem o tráfego coordenado de informações.
+</details>
+
+---
+
+### Questão 27 (FCC - TJ - Analista Judiciário)
+De acordo com o NIST (National Institute of Standards and Technology), a computação em nuvem possui cinco características essenciais. A característica "Elasticidade Rápida" (Rapid Elasticity) é descrita como a capacidade de:
+A) Alugar servidores que utilizam cabos de fibra óptica de alta resistência mecânica física.
+B) Provisionar e liberar recursos computacionais de forma automática e ágil, escalando horizontal ou verticalmente de acordo com a demanda do sistema.
+C) Compartilhar recursos computacionais físicos heterogêneos com múltiplos clientes governamentais sem isolamento virtual.
+D) Monitorar o uso de memória por meio de relatórios financeiros mensais estáticos.
+E) Acessar a aplicação a partir de qualquer terminal físico sem necessidade de autenticação e rede.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. A elasticidade rápida permite que recursos em nuvem sejam escalados (adicionando mais VMs ou expandindo discos) instantaneamente para suportar aumentos de acessos, e reduzidos com igual velocidade quando o pico de acessos passa, evitando desperdício de verba (OPEX).
+</details>
+
+---
+
+### Questão 28 (FCC - DPE - Analista de Redes)
+No Docker, por padrão, o sistema de arquivos de um container é efêmero (os dados são perdidos quando o container é excluído). Para garantir a persistência dos dados de um banco PostgreSQL rodando em container, os analistas devem utilizar Volumes do Docker. Em comparação ao uso de Bind Mounts, os Volumes possuem a vantagem de:
+A) Dependerem diretamente da hierarquia de pastas lógicas do Windows Desktop.
+B) Serem gerenciados diretamente pelo próprio Docker em uma área do sistema de arquivos host exclusiva e isolada, facilitando backups e migrações.
+C) Criptografarem de forma nativa e irreversível os dados salvos em disco magnético local.
+D) Permitirem apenas o acesso por meio do protocolo NFS remoto não autenticado.
+E) Serem mapeados obrigatoriamente a uma porta de rede virtual em overlay.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. Volumes são criados e gerenciados pelo Docker, isolados do controle manual do usuário no host, o que os torna independentes e mais seguros para dados persistentes em produção do que os Bind Mounts (que amarram o contêiner a um caminho absoluto físico específico do host, aumentando problemas de permissões e portabilidade).
+</details>
+
+---
+
+### Questão 29 (FCC - TRF - Arquiteto de Software)
+Orquestradores de contêineres são fundamentais para gerir ambientes corporativos distribuídos complexos. No ecossistema Kubernetes (K8s), a menor unidade computacional implantável que pode ser criada e gerenciada na arquitetura, contendo um ou mais contêineres que compartilham armazenamento e rede de forma íntima, é o:
+A) Deployment.
+B) Pod.
+C) Service.
+D) Ingress Controller.
+E) ReplicaSet.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. No Kubernetes, o Pod é o menor tijolo arquitetural utilizável. Ele encapsula um contêiner (ou um grupo de contêineres acoplados, como o padrão sidecar) com recursos de armazenamento, rede e especificações de execução compartilhados de forma local dentro do nó de execução.
+</details>
+
+---
+
+### Questão 30 (FCC - TRT - Tecnologia da Informação)
+No serviço AWS IAM (Identity and Access Management), um administrador de TI precisa aplicar políticas de segurança rígidas. Para garantir que as equipes de desenvolvimento possuam apenas os privilégios indispensáveis para a conclusão de suas atividades profissionais rotineiras, sem autorizações acessórias nocivas à segurança, o administrador deve aplicar o:
+A) Princípio da Segurança por Obscuridade.
+B) Princípio do Menor Privilégio (Least Privilege).
+C) Mecanismo de Single Sign-On (SSO) Federado Global.
+D) Modelo de Transposição de Estado Híbrido.
+E) Protocolo OpenID Connect Base 2FA.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O princípio do menor privilégio dita que uma conta de usuário ou processo deve ter permissões mínimas indispensáveis para fazer seu trabalho diário. Isso reduz a superfície de ataque caso as credenciais sejam expostas.
+</details>
+
+---
 
 ## 📝 TEMA 3: Eng. de Software: APIs RESTful, Swagger, Paginação e JSON
 
-### Questão 31 (FCC - Questão Prática / Adaptada)
-Um Desenvolvedor Pleno do Tribunal desenhou a rota HTTP `POST /processos/123/arquivar` para mudar o status de um processo existente no banco de dados para a condição arquivada. Segundo os princípios arquiteturais rigorosos e semânticos do padrão REST (Representational State Transfer) definidos por Roy Fielding e aplicados ao desenvolvimento web contemporâneo, a modelagem dessa rota HTTP:
-A) Está perfeita, pois o verbo POST é historicamente e restritamente obrigatório para alterar qualquer metadado que já exista de modo interno e persistido ativamente no servidor web lógico da base de controle estrito unificado RESTful em qualquer ocasião.
-B) Fere a semântica RESTful, pois endpoints devem expor substantivos (os recursos) e não verbos de ação no próprio caminho da URL. O correto seria acessar o recurso `/processos/123` utilizando verbos HTTP apropriados para modificação (como PATCH ou PUT).
-C) Atende ao nível máximo (Glory of REST) do Modelo de Maturidade de Richardson, já que a presença do verbo arquivar assegura a navegação nativa Hypermedia de base semântica livre HATEOAS estrita de transição local de status independente HTTP no sistema digital web.
-D) Fere os requisitos de segurança da Camada 4 do modelo OSI, uma vez que requisições tipo POST expõem todos os dados da rota no log unificado de criptografia global SSL/TLS sem restrição base visual lógica remota unificada externa no log visual local.
-E) Está correta e alinhada às melhores práticas, desde que o corpo da requisição POST esteja absolutamente vazio, servindo como sinalizador neutro estrito do comando base unificado isolado ao backend da base oficial judicial lógica temporal de estado de execução síncrona virtual estática.
+### Questão 31 (FCC - TJ - Analista de Sistemas)
+A arquitetura REST (Representational State Transfer) especifica um conjunto de restrições para o design de sistemas distribuídos baseados na web. Sobre o mapeamento semântico correto de endpoints e métodos em uma API RESTful, assinale a alternativa correta:
+A) Rota `GET /deletarProcesso?id=10` para remover um processo específico da base de dados.
+B) Rota `POST /processos` enviando um JSON com dados do novo processo no payload para realizar a criação de um registro.
+C) Rota `UPDATE /processos/10` para alterar metadados do processo identificado com ID 10.
+D) Rota `PATCH /processos/10/atualizarStatus` para alterar o status do processo de ativo para suspenso.
+E) Rota `POST /processos/10?action=read` para ler os dados de auditoria do processo sem tráfego de cabeçalhos.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-- B) Correta. Em REST, URIs não devem conter ações (verbos). A URI identifica o *Recurso* (um substantivo). A Ação é determinada pelo verbo HTTP (GET, POST, PUT, DELETE, PATCH). Uma rota como `/arquivar` foge do padrão. O ideal seria enviar um PATCH para `/processos/123` com o corpo `{"status": "arquivado"}`.
+- B) Correta. O padrão REST exige o uso de substantivos identificando recursos nas URIs (ex: `/processos`) e o mapeamento das ações nos métodos HTTP. `POST` mapeia a criação de recursos, logo a rota `POST /processos` está semântica e correta. Roteamento com verbos nas URIs (A e D) ou uso de verbos HTTP não existentes como UPDATE (C) ferem a semântica RESTful.
 </details>
 
-### Questão 32 (FCC - Questão Prática / Adaptada)
-Uma API pública do TRT sofre intermitência na conexão (Timeout) porque a base de jurisprudência processual é massiva, contendo milhões de linhas. A equipe técnica optou por não utilizar o deslocamento clássico (Offset-based Pagination) `LIMIT 50 OFFSET 10000` em suas listagens virtuais via REST, optando ativamente pela implementação acadêmica da Paginação Baseada em Cursor (Cursor-based ou Keyset Pagination). O trunfo fundamental gerado por essa troca arquitetônica e temporal de consulta reflete-se na/no:
-A) Eliminação forçada da exigência de se utilizar o formato JSON de comunicação unificada abstrata contínua base da API pública remota isolada lógica virtual nativa base de REST.
-B) Carga de processamento pesada e exponencial nas páginas finais (Ex: Página 10.000) de base temporal estática que inviabiliza as buscas virtuais de índices.
-C) Alto ganho de performance e escalabilidade estrutural da tabela relacional em bases enormes, uma vez que a paginação por cursor passa o valor da última linha lida e faz com que o banco pule dezenas de milhares de registros velozmente através de índices nativos, em vez de exigir a leitura ineficiente estrita sequencial e descarte de linhas executada pelo velho `OFFSET` unificado isolado de busca cega contínua SQL.
-D) Prevenção autônoma contra a inserção maliciosa oculta de vírus SQL injetados nas variáveis ocultas restritas base unificadas virtuais lógicas remota oficiais locais temporais da web estrita fechada regional remota nacional.
-E) Encriptação orgânica contínua de fluxo abstrato lógica regional do corpo principal estrito HTTPS atrelado globalmente de modo automático sem o uso certificado do OpenSSL.
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. A paginação OFFSET diz ao banco: 'Leia 10.000 linhas, descarte-as e me dê as próximas 50'. Isso mata a CPU em tabelas grandes. Na paginação Keyset (Cursor), você usa o ID da última linha (ex: `WHERE ID > 980 LIMIT 50`). O banco usa o Índice B-Tree para pular instantaneamente pro ID 980 sem ler os anteriores, gerando uma busca ultrarrápida (O(log n)) que nunca sofre lentidão, independentemente da página em que você esteja.
-</details>
-
-### Questão 33 (FCC - Questão Prática / Adaptada)
-No tocante ao uso avançado do OpenAPI Specification (anteriormente concebido como projeto Swagger) para o registro contratual digital contínuo virtual das pontes de comunicação lógica externa da plataforma REST do Tribunal de Justiça Eleitoral com as varas locais. Ao desenhar o contrato API, o uso restrito estrutural e nativo do OpenAPI versão 3.0 provê primariamente a capacidade de:
-A) Omitir a obrigatoriedade lógica de segurança, garantindo autenticações fáceis abertas externas remotas não seguras baseadas no padrão SOAP legado base de dados restrito regional e unificado.
-B) Criar exclusivamente modelos front-end interativos para designers UX nativos regionais de software mobile do Tribunal de Justiça sem acesso a código-fonte back-end de bancos paralelos e limitados em escala lógica aberta relacional externa.
-C) Descrever de maneira padronizada em YAML ou JSON o contrato de interface exato (endpoints, métodos, parâmetros, schemas de corpo, tipos de resposta e segurança) para que tanto humanos entendam a documentação visual como máquinas consigam gerar código cliente/servidor base automáticos e automatizar os testes.
-D) Criptografar magicamente todas as bases relacionais unificadas MySQL virtuais limpas sem atuar como interface restrita local de rede corporativa VPN global local abstrata temporal remota contínua física do usuário web de rede externa base fechada lógica isolada regional temporal da Justiça nacional remota.
-E) Limitar severamente o uso contínuo de JSON na base e forçar puramente o XML em todos os tráfegos restritos nativos da internet local do órgão estatal nacional base de segurança abstrata emulada lógicos.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. O OpenAPI (Swagger) é uma linguagem padrão em YAML/JSON para descrever 'O que essa API faz, o que entra e o que sai'. Esse formato padronizado permite que ferramentas leiam e gerem a bela página de documentação (Swagger UI), gerem código inicial para o programador (Codegen) ou gerem testes automáticos de segurança e integração.
-</details>
-
-### Questão 34 (FCC - Questão Prática / Adaptada)
-O analista da integração judiciária formatou um arquivo de carga no formato texto padrão da notação oficial JSON. De acordo com a RFC 8259 que especifica tecnicamente o JSON nativo (JavaScript Object Notation), assinale a formatação correta de declaração textual válida em código para a representação universal oficial limpa e restritiva de um objeto neste modelo base digital estrutural lógico contínuo global para a web:
-A) {'nome': 'Silva', 'idade': 40}
-B) {"nome": "Silva", "idade": 40}
-C) {nome: "Silva", idade: 40}
-D) <json><nome>Silva</nome><idade>40</idade></json>
-E) ["nome" => "Silva", "idade" => 40]
+### Questão 32 (FCC - TRE - Analista de Sistemas)
+A idempotência é uma propriedade semântica importante de determinados métodos HTTP em APIs RESTful. Sobre a idempotência dos métodos HTTP, é correto afirmar:
+A) O método POST é inerentemente idempotente, pois criar múltiplos registros idênticos repetidas vezes resulta no mesmo estado final do sistema de bancos.
+B) Os métodos GET, PUT e DELETE são idempotentes, pois executar múltiplos requests idênticos sucessivos produz o mesmo efeito prático no estado dos recursos do servidor após a primeira chamada.
+C) O método PATCH possui garantia matemática de idempotência em todas as especificações e ambientes de desenvolvimento web por padrão.
+D) A propriedade de idempotência significa que a requisição de rede HTTP trafega exclusivamente em canais criptografados baseados em tokens JWT.
+E) O método GET não é idempotente devido às atualizações promovidas pelos logs de auditoria do servidor web local.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-- B) Correta. Apesar de JavaScript ser flexível, o JSON possui regras rígidas estritas: Toda chave (nome da propriedade) TEM que estar cercada por aspas duplas (""). Valores do tipo string também exigem aspas duplas. Aspas simples (') não são válidas na especificação oficial do JSON. O formato A, C e E estão errados.
+- B) Correta. Um método HTTP é idempotente se o estado do recurso no servidor após múltiplas chamadas consecutivas idênticas for idêntico ao estado produzido após a primeira chamada. `GET` (leitura), `PUT` (substituição integral) e `DELETE` (remoção) são idempotentes por definição. `POST` (criação) não é, pois múltiplos envios geram novos registros duplicados.
 </details>
 
-### Questão 35 (FCC - Questão Prática / Adaptada)
-Uma das prerrogativas da arquitetura web baseada nos níveis mais estritos arquiteturais estabelecidos de Roy Fielding é atingir o nível 3 (Level 3) do tradicional Modelo de Maturidade de Richardson. Na aplicação prática de programação do desenvolvedor de APIs, esse degrau de maturidade de pico restrito base web alcançado na comunicação lógica local nativa abstrata de integração externa foca em:
-A) Assegurar a criação restrita e exclusiva de comunicação web no padrão SOAP unificado e central corporativo regional fechado na camada RPC estrito nativo com SSL base.
-B) Focar no uso único do verbo POST estrito emulando todos os demais na chamada local fechada regional em um único endpoint restrito `/api/v1/geral`.
-C) Prover controles de Hipermídia (HATEOAS). A API, além de devolver o JSON contendo os dados brutos requeridos do recurso em si, também passa a enviar, de forma atrelada e anexada no corpo, múltiplos Links (URLs lógicos dinâmicos) orientando e descrevendo autonomamente os próximos estados e as próximas ações possíveis que o cliente pode realizar na aplicação a partir de agora sem consultar manuais fechados temporais.
-D) Iniciar processos assíncronos base e contínuos globais rodando o Kafka restritivo interno temporal unificado contínuo da rede fechada.
-E) Exigir que a autenticação passe de local estática para regional LDAP isolada virtual da VPN estrita corporativa nativa na sub-rede remota federal nacional unificada oficial emulada fechada básica isolada virtual lógica.
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. O Modelo de Maturidade de Richardson tem passos (0, 1, 2, 3). O Nível 3 (Glory of REST) é caracterizado pelo uso prático da Hipermídia (HATEOAS). Em suma, a API não apenas envia os dados (ex: Nome do Paciente e ID), mas também envia no JSON uma lista de URLs que mostram o que o sistema cliente pode fazer a seguir com aquele recurso (ex: o link exato gerado para cancelar a consulta, ou o link atual para aprovar a alta no hospital). Isso gera total auto-descobrimento e reduz o acoplamento do sistema cliente.
-</details>
-
-### Questão 36 (FCC - Questão Prática / Adaptada)
-O princípio fundamental de 'Idempotência' deve guiar o desenvolvimento do engenheiro na adoção do padrão REST e a escolha inteligente dos verbos nativos HTTP. Ao criar uma lógica de gravação e envio estrito virtual, qual dos métodos (verbos) listados abaixo não possui a garantia teórica nativa semântica oficial da idempotência, ou seja, submeter dez vezes idênticas e sucessivas essa mesma requisição web de base gerará, muitas vezes como efeito natural base lógico do servidor, a duplicação ou o processamento multiplicador contínuo de registros e eventos em vez de produzir invariavelmente e apenas o mesmo resultado exato único local após a primeira vez de envio?
-A) PUT
-B) DELETE
-C) GET
-D) POST
-E) HEAD
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**
-
-- D) Correta. O verbo POST em REST e no HTTP não é idempotente. Em suma, enviar dez vezes o POST de um formulário de novo usuário fatalmente e naturalmente criará (se o banco não possuir uma Constraint Unique na modelagem da placa do carro ou do e-mail) 10 novos usuários idênticos acumulados (ou fará 10 transferências financeiras somadas cumulativas iguais seguidas na conta, o que é desastroso). GET, PUT, PATCH e DELETE já são semanticamente (e devem ser implementados na base) de modo idempotente. Por exemplo: Enviar dez comandos PUT dizendo 'Mude a cor da placa do servidor para VERDE', mesmo chegando mil vezes seguidas, o resultado final prático isolado do servidor será sempre que a placa do veículo se encontra VERDE. Ocorreu zero multiplicação cumulativa desastrosa temporal no campo unificado final.
-</details>
-
-### Questão 37 (FCC - Questão Prática / Adaptada)
-Se um Analista de Tribunal necessita e deseja informar explicitamente que o cliente móvel e a sua plataforma da justiça são e estão tecnicamente capacitados para lidar internamente na leitura isolada visual e receber a resposta oficial no padrão base limpo unificado JSON, o analista instrui e programa que a requisição de rede (Request) feita via HTTP deva ser despachada do celular contendo especificamente atrelada e configurada o cabeçalho base de negociação de conteúdo remoto focado nominado formalmente:
-A) Content-Disposition: attachment
-B) Content-Type: application/json
-C) Authorization: Basic JSON
-D) Accept: application/json
-E) Access-Control-Allow-Origin: json
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**
-
-- D) Correta. O cabeçalho 'Accept' serve exatamente e incisivamente para realizar a famosa negociação digital HTTP base de 'Content Negotiation'. Com o cabeçalho 'Accept: application/json', o browser/celular 'diz' abertamente ao servidor judiciário do tribunal 'Eu quero e aceito receber a resposta nesse formato de código de base de dados restrito'. O Content-Type serve pra outra funcionalidade (Diz o que está sendo ENVIADO pelo cliente no payload local isolado corpo oficial da requisição POST).
-</details>
-
-### Questão 38 (FCC - Questão Prática / Adaptada)
-Um Desenvolvedor Sênior da Corte Superior Eleitoral determinou na aprovação arquitetural do sistema judiciário que as alterações do contrato da API que causam quebra e incompatibilidade na vida dos consumidores (Exemplo claro básico isolado regional remoto: Renomear bruscamente a coluna local `cpf` vital na web externa nativa fechada para `codigo_identificador` oficial sem aviso abstrato regional anterior temporal nativo) sejam geridas adequadamente. A ferramenta padrão do design de APIs adotada pelo desenvolvedor para gerir mudanças violentas ao longo dos anos de uso contínuo de produção é:
-A) Habilitar ofuscação nativa restrita de código no frontend Vue oficial restrito isolado virtual da borda de modo contínuo regional na base e compilar binários.
-B) Versionamento da API (ex: criando roteamento base unificado restrito lógico virtual `/v1/` e `/v2/` em endpoints), mantendo-se a versão antiga viva e ligada rodando de forma estrita isolada até os parceiros externos da justiça conseguirem ajustar remotamente os programas para consumirem a versão nova oficial atual virtual.
-C) Desativar forçosamente o tráfego regional no Firewall AWS Shield WAF e enviar circulares escritas abertas exigindo o download local estrito nacional nativo temporário isolado na intranet virtual da rede corporativa do executável regional fechado base lógico do órgão.
-D) Realizar encriptação massiva SSL nativa nos JSON e mudar senhas na raiz nativa local da máquina em modo diário global abstrato virtual unificado nacional isolado presencial no país.
-E) Atualizar a máquina para HTTPS versão 3 regional oficial globalmente restritiva em TLS isolado físico remoto e desatualizar nativamente os logs de controle.
+### Questão 33 (FCC - TRT - Programador)
+Durante a manutenção de uma API de controle de ativos, um desenvolvedor precisou escolher entre os verbos HTTP PUT e PATCH para atualizar os recursos cadastrados. A especificação técnica do protocolo HTTP dita que:
+A) O PATCH deve ser empregado para a substituição total de um recurso, de modo que atributos omitidos na requisição sejam apagados ou limpos; o PUT é exclusivo para alterações parciais.
+B) O PUT substitui integralmente a representação do recurso enviado no corpo do request, sobrescrevendo todos os campos; o PATCH aplica modificações parciais (remendos lógicos) nos atributos específicos passados.
+C) O PUT exige autenticação OAuth 2.0, ao passo que o PATCH é executado livremente no servidor de bancos de dados.
+D) Ambas as rotas operam da mesma forma técnica, exigindo que o corpo do payload envie o recurso duplicado.
+E) O PUT grava no disco local e o PATCH atualiza apenas registros voláteis salvos em memória cache Redis.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-- B) Correta. A maneira recomendada e clássica de lidar com as inevitáveis quebras de contrato (Breaking Changes) nas APIs é o Versionamento. Cria-se o endpoint `api/v2/`. Os clientes novos usam a `v2` modernizada (com os nomes de colunas novos). Os clientes antigos continuam batendo e sobrevivendo na rota `api/v1/` até se ajustarem (evitando assim apagões digitais estritos de milhões de acessos governamentais diários na madrugada da virada técnica).
+- B) Correta. A diferença semântica fundamental é: `PUT` realiza a substituição total do recurso (se você omitir um campo do recurso ao enviar um PUT, o servidor deve zerar/limpar o campo); `PATCH` aplica alterações parciais no recurso (atualizando apenas os atributos específicos enviados no payload da requisição).
 </details>
 
-### Questão 39 (FCC - Questão Prática / Adaptada)
-Ao utilizar Swagger para documentar uma nova API de petições digitais do fórum cível central trabalhista, o desenvolvedor nota que as anotações visuais abstratas geraram uma bela página oficial unificada interativa. Dentre os recursos centrais valiosos de uso do OpenAPI integrados na rotina de base nativa, o sistema possibilita no dia a dia técnico que o QA da equipe possa:
-A) Criptografar magicamente todo banco em SQL temporal nativo relacional globalmente.
-B) Fazer requisições HTTP e testes exploratórios na página web ao vivo e reais na plataforma REST oficial clicando no botão ('Try it out' - Tentar/Executar Agora) disponível dentro e diretamente da própria página limpa da documentação dinâmica Swagger UI.
-C) Subir máquinas virtuais Linux completas hospedadas num servidor IaaS remoto AWS base.
-D) Gerenciar fisicamente roteadores da rede do Governo de forma autônoma nas sub-redes temporais limitadas fechadas isoladas virtuais remotamente na rede base local.
-E) Adicionar memória RAM ao serviço de banco local relacional nativo PostgreSQL remoto global isolado unificado na nuvem central e fechada local base oficial do órgão de TI presencial base unificada oficial.
+---
+
+### Questão 34 (FCC - TJ - Analista de TI)
+A OpenAPI Specification (OAS) é um formato de descrição de API amplamente adotado no mercado para APIs RESTful. Sobre as características da OAS e do ecossistema Swagger, assinale a alternativa correta:
+A) Permite descrever de forma padronizada os endpoints, métodos HTTP, parâmetros de entrada, tipos de resposta (sucesso e erro) e schemas de dados, comumente em formato YAML ou JSON.
+B) Exige obrigatoriamente a compilação do código do backend em linguagem Java para gerar o arquivo `.yaml` estático.
+C) Desativa vulnerabilidades do tipo XSS (Cross-Site Scripting) na rede local do servidor automaticamente.
+D) É incompatível com o formato JSON, limitando a documentação e o tráfego estritamente ao padrão SOAP/XML.
+E) Funciona exclusivamente como um framework front-end interativo baseado no padrão de arquitetura MVC.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+- A) Correta. OpenAPI é o padrão da indústria para modelar e documentar APIs RESTful, descrevendo seus endpoints, métodos HTTP, payloads e esquemas lógicos em documentos de texto limpo (YAML ou JSON) interpretáveis por humanos e ferramentas.
+</details>
+
+---
+
+### Questão 35 (FCC - DPE - Analista de TI)
+Códigos de status de resposta HTTP (HTTP status codes) classificam as respostas do servidor. Em conformidade com a padronização oficial, as requisições que resultam em: 1) Criação com sucesso de um novo recurso via POST; 2) Envio de requisição malformada do cliente por erro de sintaxe do JSON; e 3) Tentativa de acessar rota inexistente, devem receber do servidor os respectivos códigos HTTP:
+A) 200 OK / 401 Unauthorized / 404 Not Found.
+B) 201 Created / 400 Bad Request / 404 Not Found.
+C) 201 Created / 500 Internal Server Error / 403 Forbidden.
+D) 204 No Content / 400 Bad Request / 502 Bad Gateway.
+E) 200 OK / 403 Forbidden / 404 Not Found.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-- B) Correta. O Swagger UI é amplamente adotado não apenas porque exibe a estrutura da API (documentação estática chata isolada), mas principalmente porque as páginas geradas pelo Swagger são ativas. A equipe, clicando e usando a página no navegador de forma manual local isolada virtual contínua na borda regional local do sistema remoto, pode preencher as informações virtuais exigidas abertas da API (colocar um JSON, um número) e clicar em enviar requisição, testando ativamente e imediatamente a própria interface da API real.
+- B) Correta. 1) `201 Created` é a resposta padrão para criação de recursos via POST; 2) `400 Bad Request` indica erros de validação ou sintaxe na requisição do cliente (como JSON quebrado); 3) `404 Not Found` sinaliza recurso/URL não localizado no servidor.
 </details>
 
-### Questão 40 (FCC - Questão Prática / Adaptada)
-Um processo contínuo de modernização de relatórios do TST requer a extração de dados do endpoint oficial da API do Tribunal Regional do Ceará. A equipe decidiu implementar o PATCH ao invés do tradicional PUT restrito para a ação oficial contínua temporal de mudar apenas e exclusivamente a pequena variável virtual contínua 'Ativo' de falso para verdadeiro (boolean), sem alterar os demais 50 campos cadastrais brutos preenchidos estáticos da base. A adoção técnica restritiva puramente intencional regional desse verbo HTTP base oficial específico obedeceu rigorosamente ao fundamento purista de arquitetura e lógica formal da REST no qual:
-A) O PATCH elimina completamente qualquer registro físico oficial da máquina abstrata virtual oficial do usuário temporal na AWS regional isolada local fechada e externa e lógica oficial.
-B) O PATCH não faz transações abertas e não criptografa nativamente no formato AES contínuo temporal unificado do Oracle remoto da corte de base unificada e estritamente nativa virtual oficial lógica local e externa da rede.
-C) O PATCH, diferentemente do PUT puro, é formalmente e filosoficamente dedicado de modo exato às modificações ou alterações parciais abstratas contínuas cirúrgicas ('remendos' isolados em uma parcela do objeto sem forçar e requerer de modo rígido oficial o tráfego violento maciço temporal pela web remota do arquivo bruto e completo global estático de novo em cada alteração isolada local regional oficial virtual).
-D) O PATCH garante e emula o isolamento global em Borda de Nuvem temporal das máquinas de servidor SQL injetado local em ambiente local virtual assíncrono fechado base nativa abstrata contínua restritivo unificado interno base do Tribunal oficial regional.
-E) O PUT criptografa na base SSL todos os cabeçalhos, mas o PATCH utiliza SSH estático remoto isolado em Linux oficial da justiça estritamente virtual na plataforma restrita centralizada corporativa remota e oficial local na federação da união e nacional.
+---
+
+### Questão 36 (FCC - TRF - Programador de Sistemas)
+A especificação técnica oficial do formato de dados JSON (RFC 8259) define regras estritas de formatação de sintaxe para strings e objetos. Assinale a alternativa que apresenta um fragmento de código JSON válido de acordo com a norma:
+A) `{'nome': 'Processo Cível', 'ativo': true}`
+B) `{nome: "Processo Cível", ativo: true}`
+C) `{"nome": "Processo Cível", "ativo": true}`
+D) `{"nome": "Processo Cível", "ativo": True}`
+E) `["nome" => "Processo Cível", "ativo" => true]`
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- C) Correta. O PATCH aplica-se teoricamente para atualizações parciais. PUT significa a substituição/regravação física teórica completa do documento e recurso. A economia de banda unificada isolada regional oficial e o respeito semântico tornam o PATCH ideal estrito em base para pequenas e limpas edições em um único atributo remoto contínuo isolado oficial básico na API.
+- C) Correta. Regras rígidas da RFC 8259 do JSON: Chaves (nomes de atributos) e Strings de valor DEVEM estar necessariamente envolvidas por aspas duplas (`""`). Aspas simples (A) ou ausência de aspas nas chaves (B) são inválidas. Booleanos no JSON devem ser em minúsculo: `true` ou `false` (D apresenta `True` com maiúscula, o que é inválido). E está em formato de array associativo PHP.
 </details>
+
+---
+
+### Questão 37 (FCC - TJ - Analista Judiciário)
+O Modelo de Maturidade de Richardson classifica as APIs REST em quatro níveis distintos. O Nível 3 (Level 3) desse modelo é alcançado quando a API implementa ativamente:
+A) Os métodos HTTP básicos (GET e POST) sem uso de sub-redes.
+B) Suporte a conexões criptografadas TLS 1.3 de borda.
+C) Controles de Hipermídia (HATEOAS - Hypermedia As The Engine Of Application State), fornecendo links dinâmicos na resposta que indicam quais ações o cliente pode executar a partir do estado atual daquele recurso.
+D) Roteamento de microsserviços via gRPC e Docker Overlay Network.
+E) Armazenamento das sessões do usuário no cache local do servidor.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. Níveis de Richardson: Nível 0: uso de HTTP como transporte remoto (RPC); Nível 1: recursos bem definidos na URI; Nível 2: verbos HTTP e códigos de retorno; Nível 3: Hipermídia (HATEOAS). HATEOAS introduz hiperlinks nas respostas JSON para guiar o cliente de forma auto-descoberta.
+</details>
+
+---
+
+### Questão 38 (FCC - SEFAZ - Tecnologia da Informação)
+Para gerenciar o tráfego de grandes listagens em APIs REST, a paginação é um recurso obrigatório. Em cenários de tabelas de banco de dados massivas com milhões de linhas sujeitas a inserções rápidas e frequentes, a Paginação Baseada em Cursor (Cursor-based ou Keyset Pagination) é preferível à paginação por Offset (`LIMIT / OFFSET`) porque a paginação por Cursor:
+A) Permite ao usuário ler todas as linhas do banco de dados na memória RAM do host em uma única consulta rápida.
+B) Mantém a performance constante (tempo de busca O(log n)) nas últimas páginas e evita o problema de pular ou duplicar registros devido a inserções concorrentes, ao consultar dados usando referências de chaves indexadas ao invés de pular blocos cegos de linhas.
+C) Dispensa o uso de índices em chaves B-Tree nos SGBDs relacionais.
+D) Converte o formato do payload de JSON para texto limpo XML binário compactado automaticamente.
+E) Exige que a conexão da rede web trafegue de forma assíncrona por UDP corporativo.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. A instrução `OFFSET 1000000 LIMIT 50` faz o SGBD varrer e descartar um milhão de linhas para entregar as próximas 50, o que prejudica a CPU. Na paginação por Cursor, passa-se a chave do último item lido (ex: `WHERE id > 1000000 LIMIT 50`). Isso permite ao banco usar o índice B-Tree e saltar direto ao ponto buscado instantaneamente com performance estável, além de evitar inconsistências de linhas puladas se dados forem inseridos durante a rolagem de telas da paginação.
+</details>
+
+---
+
+### Questão 39 (FCC - TRE - Analista de Redes)
+A restrição de ausência de estado (Statelessness) é um dos pilares de arquiteturas REST. Ela determina que:
+A) O banco de dados deve perder sua conexão lógica a cada final de transação CRUD.
+B) O servidor web é proibido de registrar logs de auditoria de acessos no diretório `/var/log`.
+C) Cada requisição enviada pelo cliente ao servidor deve conter em si mesma todas as informações necessárias para que o servidor consiga processar o pedido com sucesso, sem depender de sessões de usuário guardadas na memória RAM do servidor.
+D) A aplicação deve rodar exclusivamente de forma assíncrona sobre containers efêmeros e voláteis.
+E) A latência de rede entre o cliente e a API deve ser zero em qualquer circunstância geográfica do país.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. A restrição Stateless do REST simplifica a arquitetura e melhora a escalabilidade horizontal. Como o servidor não retém o "estado da sessão" do cliente (session state), qualquer máquina atrás de um Load Balancer pode atender a requisição de rede, bastando o cliente mandar suas credenciais e os parâmetros de estado de cada chamada.
+</details>
+
+---
+
+### Questão 40 (FCC - TRT - Tecnologia da Informação)
+No protocolo HTTP, os cabeçalhos desempenham a função de metadados das requisições e respostas. O cabeçalho de requisição enviado pelo cliente para informar ao servidor REST os formatos de mídia e as linguagens de dados estruturados que o cliente de fato aceita receber na resposta do servidor é o:
+A) Content-Type.
+B) Accept.
+C) User-Agent.
+D) Content-Disposition.
+E) Authorization.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O cabeçalho `Accept` realiza a negociação de conteúdo (Content Negotiation) do lado do cliente, informando os tipos MIME aceitos na resposta (ex: `Accept: application/json`). O `Content-Type` é diferente: indica qual o formato do dado contido no corpo da própria mensagem enviada (payload do request ou do response).
+</details>
+
+---
+
+### Questão 41 (FCC - TJ - Administrador de Redes)
+Ao efetuar alterações em APIs REST que quebram a compatibilidade retroativa dos contratos das interfaces de dados (Breaking Changes), qual estratégia de design é recomendada para gerenciar as mudanças sem prejudicar os clientes antigos?
+A) Habilitar ofuscação de código no interpretador Node local do host.
+B) Desativar o CORS (Cross-Origin Resource Sharing) no servidor de produção de forma permanente.
+C) Adotar o versionamento da API (por exemplo, expondo caminhos de roteamento distintos como `/api/v1/` e `/api/v2/`), permitindo que ambos coexistam durante o período de transição.
+D) Alterar as chaves de acesso do banco de dados relacional e remover as tabelas em 3FN.
+E) Alterar dinamicamente o protocolo HTTP da API de 1.1 para UDP.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. O versionamento de APIs é a estratégia correta para gerenciar quebras de compatibilidade em contratos de integração (como deletar atributos ou mudar seus tipos lógicos). Mantendo a versão antiga legada ativa e disponível (`v1`), evita-se paradas nos sistemas parceiros integrados enquanto estes se adaptam ao novo modelo exposto na versão atual (`v2`).
+</details>
+
+---
+
+### Questão 42 (FCC - DPE - Tecnologia da Informação)
+A implementação do HATEOAS traz flexibilidade às integrações. A vantagem prática dessa abordagem na comunicação entre cliente e servidor reside em:
+A) Dispensar o uso de tokens JWT na autenticação HTTPS.
+B) Permitir ao cliente navegar na API de maneira dinâmica e auto-descoberta a partir de links fornecidos pelo próprio payload de resposta do servidor, desacoplando a navegação do cliente de caminhos (URIs) fixos ou "chumbados" (hardcoded) no código cliente.
+C) Criptografar automaticamente arquivos locais em volumes físicos.
+D) Reduzir o processamento de CPU do banco relacional de 1FN para 3FN.
+E) Permitir que a API funcione de forma offline sem tráfego de rede física.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. HATEOAS (Hipermídia como motor de estado da aplicação) reduz o acoplamento entre cliente e servidor. O cliente precisa apenas de um ponto de entrada inicial na API; todas as ações e recursos disponíveis a partir de então são descobertos dinamicamente pelos links contidos nos corpos de resposta, permitindo que a API mude suas URLs sem quebrar o código cliente.
+</details>
+
+---
+
+### Questão 43 (FCC - TJ - Administrador de Redes)
+O mecanismo de CORS (Cross-Origin Resource Sharing) atua na segurança dos navegadores web. No fluxo de requisições Cross-Origin de APIs REST, quando o navegador precisa enviar um método não-simples (como um request contendo o método DELETE ou contendo cabeçalhos personalizados), o browser realiza primeiramente uma requisição prévia de verificação de permissões ao servidor web. Essa requisição prévia utiliza o método HTTP:
+A) HEAD.
+B) POST.
+C) OPTIONS.
+D) PUT.
+E) PATCH.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. A requisição prévia do CORS é chamada de Preflight Request. O navegador envia uma requisição usando o método `OPTIONS` contendo cabeçalhos que indicam o método e os cabeçalhos que serão enviados na requisição principal. O servidor deve responder se autoriza ou não aquela chamada de origem diferente antes que o request real de escrita (como DELETE/PUT) aconteça.
+</details>
+
+---
+
+### Questão 44 (FCC - TRF - Tecnologia da Informação)
+A interface interativa do Swagger UI desempenha um papel importante no ciclo de desenvolvimento de APIs RESTful. Dentre seus recursos, destaca-se a capacidade de:
+A) Hospedar instâncias de bancos de dados gerenciados diretamente na AWS sem custos adicionais de rede.
+B) Converter código backend PHP para TypeScript estático em tempo de execução.
+C) Permitir que desenvolvedores e analistas efetuem chamadas HTTP reais e simulações com payloads diretamente da própria documentação OpenAPI exibida no browser, utilizando o recurso "Try it out".
+D) Monitorar o uso de memória das máquinas virtuais do cluster Kubernetes.
+E) Configurar as tabelas de rotas e sub-redes dos hosts de virtualização.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. O Swagger UI renderiza a especificação OpenAPI em uma página interativa de testes. Os analistas podem ver e, por meio do recurso "Try it out", disparar requisições reais para a API do tribunal a partir do navegador, validando parâmetros, payloads e cabeçalhos HTTP sem precisar de clientes externos como Postman ou Insomnia.
+</details>
+
+---
+
+### Questão 45 (FCC - SEFAZ - Tecnologia da Informação)
+O JSON Schema é uma ferramenta utilizada no desenvolvimento e teste de APIs RESTful baseadas no formato JSON. A finalidade do JSON Schema é:
+A) Forçar a compactação física de arquivos de bloco gravados no EBS da Amazon.
+B) Prover um vocabulário declarativo para validar a estrutura, os tipos de dados e a presença de campos obrigatórios nos documentos e payloads JSON transmitidos nas requisições.
+C) Transpilar arquivos de extensão `.json` de volta para código-fonte Java compilado.
+D) Substituir as rotas REST pelo protocolo de mensagens do Apache Kafka.
+E) Criptografar as credenciais do usuário enviadas nos headers HTTPS.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O JSON Schema define um contrato e uma estrutura para dados JSON. Ele atua como um validador: o programador define quais chaves devem existir, seus tipos lógicos (ex: se é número, string, e-mail válido), regras de limites numéricos e obrigatoriedade de preenchimento. Payloads inválidos são rejeitados de forma automatizada no Express/Node com erros do tipo 400.
+</details>
+
+---
 
 ## 📝 TEMA 4: Inglês Instrumental para TI
 
-### Questão 41 (FCC - Questão Prática / Adaptada)
-Um Desenvolvedor Sênior deixou o seguinte alerta num canal de chat técnico sobre o último pacote de atualizações de código e a manutenção da arquitetura:
+*Leia o texto abaixo para responder às questões de 46 a 50.*
 
-'The new dependency we added yesterday causes a severe memory **leak** in the application. We need to **roll back** the latest commit immediately.'
+> **Text — Virtualization, Containers, and Zero Trust Architecture**
+>
+> The adoption of containerization technologies like Docker has revolutionized software deployment. Traditional virtualization relies on Hypervisors to run multiple guest operating systems on a single physical machine. In contrast, containers share the host operating system's kernel, making them lightweight and fast to spin up. 
+>
+> However, this shared kernel architecture introduces unique security challenges. If an attacker compromises a container and finds a kernel vulnerability, they might gain access to the host or other containers. To mitigate this, organizations are adopting a Zero Trust Architecture (ZTA), assuming that threats can originate from anywhere, inside or outside the network. Under ZTA, every request must be authenticated and authorized, regardless of its source.
 
-Nesta comunicação asilada rápida de urgência virtual técnica de base do dia a dia, os termos em inglês '**leak**' e '**roll back**' correspondem estritamente e respectivamente aos seguintes equivalentes operacionais na área técnica regional unificada:
-A) Injeção - Formatar tudo.
-B) Desvio - Acoplar rápido.
-C) Falha isolada Lógica - Rezar regionalmente.
-D) Vazamento - Reverter/Retroceder/Desfazer.
-E) Encriptação - Gravar em log nativo local aberto temporal remoto estrito contínuo fechado e seguro abstrato limpo virtual básico unificado contínuo.
+---
+
+### Questão 46 (FCC - Adaptada)
+De acordo com o texto, qual é a principal diferença de arquitetura entre a virtualização tradicional e a baseada em contêineres?
+A) A virtualização tradicional depende de redes do tipo Token Ring, enquanto os contêineres usam a nuvem pública.
+B) Contêineres compartilham o kernel do sistema operacional hospedeiro, diferentemente das máquinas virtuais tradicionais, que rodam sistemas operacionais convidados (guest OS) completos sobre um Hypervisor.
+C) Máquinas virtuais são mais leves e rápidas para inicializar do que os contêineres Docker.
+D) Contêineres não aceitam o uso de criptografia simétrica para isolar os dados salvos em disco.
+E) A virtualização clássica proíbe o compartilhamento de hardware entre os usuários do datacenter local.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. Tradução do trecho: "...containers share the host operating system's kernel...". A virtualização tradicional usa Hypervisors para executar "multiple guest operating systems", enquanto contêineres compartilham o kernel do host, o que os torna muito mais leves.
+</details>
+
+---
+
+### Questão 47 (FCC - Adaptada)
+No fragmento do texto: *"...making them lightweight and fast to **spin up**."*, o termo destacado "**spin up**" significa, no jargão técnico de infraestrutura:
+A) Girar fisicamente o disco rígido magnético (HD) no rack.
+B) Excluir os contêineres inutilizados da rede virtual.
+C) Inicializar, instanciar ou subir rapidamente uma aplicação ou recurso computacional.
+D) Criptografar as conexões de rede em canais HTTPS.
+E) Modificar o código-fonte de sistemas operacionais legados no terminal.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. "To spin up" (ou "to spin up a container/instance") é uma expressão verbal comum em TI e Cloud que significa inicializar, instanciar, inicializar ou subir um recurso virtual (container, VM, serviço) para que fique ativo.
+</details>
+
+---
+
+### Questão 48 (FCC - Adaptada)
+Conforme abordado pelo autor do texto, qual risco de segurança específico é introduzido pelo modelo de contêineres compartilhado?
+A) O esgotamento físico imediato de todas as fontes de energia do datacenter na nuvem.
+B) A perda permanente de dados caso o container sofra exclusão antes de um backup.
+C) A possibilidade de um atacante invadir um container, explorar uma vulnerabilidade no kernel compartilhado e conseguir acessar o host físico ou outros contêineres na máquina.
+D) A incompatibilidade com o versionamento de APIs RESTful modernas.
+E) A obrigação de se utilizar portas físicas de rede do tipo overlay sem roteador.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. Tradução do trecho: "If an attacker compromises a container and finds a kernel vulnerability, they might gain access to the host or other containers." O kernel compartilhado gera um vetor de ataque onde falhas no kernel podem permitir a fuga do contêiner (container escape) para o host.
+</details>
+
+---
+
+### Questão 49 (FCC - Adaptada)
+No fragmento: *"To **mitigate** this, organizations are adopting a Zero Trust Architecture (ZTA)..."*, a palavra destacada "**mitigate**" possui como sinônimo no contexto da engenharia de software e segurança:
+A) Obfuscate (ofuscar).
+B) Aggravate (agravar).
+C) Maximize (maximizar).
+D) Reduce or alleviate (reduzir, atenuar ou mitigar).
+E) Neglect (negligenciar).
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: D**
 
-- D) Correta. A expressão 'Memory leak' quer dizer vazamento de memória (a memória enche e trava). 'Roll back' quer dizer reverter a alteração para a versão anterior ou regredir.
+- D) Correta. "To mitigate" significa mitigar, atenuar, reduzir ou aliviar a severidade de um problema ou risco de segurança. O antônimo seria "aggravate" (agravar) ou "maximize".
 </details>
 
-### Questão 42 (FCC - Questão Prática / Adaptada)
-Em um contrato governamental da licitação do parque base da justiça regional de máquinas, lê-se nas especificações técnicas nativas contínuas abertas oficiais e isoladas lógicas e regionais abertas nativas contínuas base lógicas unificadas:
+---
 
-'All servers must feature **hot-swappable** hard drives to minimize unexpected **downtime**.'
-
-Os vocábulos e os jargões grifados significam estritamente e diretamente no meio de infraestrutura:
-A) Criptografados no HD de alta tensão regional básica temporal / Tempo longo visual temporário abstrato remoto nacional estático.
-B) Troca à quente (Trocáveis sem precisar desligar a máquina) / Tempo inativo (Sistema fora do ar, indisponível).
-C) Aquecidos nativamente / Rede unificada aberta.
-D) Remotos Unificados Nativos Global e Temporal Isolado / Sistema isolado nativo temporal externo abstrato.
-E) Fechados na rede local remota oficial virtual e baseada abstrata temporal fechado / Log restrito contínuo unificado em borda virtual lúdica aberta isolado regional e físico contínua base temporal e lúdica.
+### Questão 50 (FCC - Adaptada)
+No trecho: *"...every request must be authenticated and authorized, **regardless of** its source."*, a locução prepositiva "**regardless of**" indica:
+A) Uma condição que impede a execução da autenticação na sub-rede.
+B) Uma concessão de dependência de tempo em relação às requisições anteriores.
+C) Uma consequência necessária decorrente da origem geográfica do tráfego.
+D) Uma ideia de exclusão ou indiferença, significando "independentemente de" ou "sem levar em consideração".
+E) Uma obrigação restrita ao uso de credenciais baseadas em biometria física.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: B**
+**Gabarito: D**
 
-- B) Correta. Um disco (HD) 'Hot-swappable' é aquele que você pode retirar e plugar um novo sem precisar interromper/desligar a energia do servidor. O 'Downtime' expressa inatividade (período em que o sistema ficou fora de ar ou parado).
+- D) Correta. A expressão "regardless of" significa "independentemente de", "sem importar", "sem levar em consideração". No contexto: todas as requisições devem ser autenticadas e autorizadas, independentemente da sua fonte/origem.
 </details>
-
-### Questão 43 (FCC - Questão Prática / Adaptada)
-Leia as notas oficiais lógicas na atualização temporal do banco de dados remoto isolado relacional contínua da web local oficial unificada virtual:
-
-'The new query engine completely **bypasses** the traditional parser, **boosting** read performance by up to 40%.'
-
-As palavras destacadas em negrito '**bypasses**' e '**boosting**' expressam, no contexto computacional:
-A) Contorna / Impulsionando (Aumentando).
-B) Oculta visualmente local base temporal aberta / Excluindo nativamente lógico virtual unificado contínua do banco regional isolada nativa base de relatórios regionais puros da web oficial regional isolada.
-C) Apaga permanentemente e limpa a base unificada / Revertendo temporal assíncrona local contínua base de segurança externa regional.
-D) Transmite para outros computadores contínuos isolados remotos lógicos / Isolando visual log contínuo base da web local oficial.
-E) Encripta visual log restritivo regional puro base local fechada remota virtual unificada aberta e temporal isolada do estado civil oficial / Atualizando unificadas oficiais.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-- A) Correta. 'Bypasses' significa passar por cima, ignorar ou contornar um caminho ou restrição padrão lógica. 'Boosting' indica aumento explosivo de potência física impulsionando a carga ou melhorando radicalmente (boost) a performance.
-</details>
-
-### Questão 44 (FCC - Questão Prática / Adaptada)
-Uma notificação automática regional gerada pela AWS do Tribunal Federal alertou para o sistema base restrito lógico:
-
-'Instance xyz has reached its resource **threshold** and will be **rebooted**.'
-
-As palavras '**threshold**' e '**rebooted**' indicam respectivamente e essencialmente a tradução de:
-A) Cota de Impostos Oficiais Internos Limitados da União Nacional Fechada Isolada Remota Limite Base Regional / Renomeada isolada limpa unificada temporal isolada visual base.
-B) Espaço Livre Físico Global Abstrato Limpo Virtual e Nativo / Apagada Lógica Aberta Limpa.
-C) Limiar/Limite Máximo Crítico estático unificado contínuo da borda oficial unificada lógica nativo base contínua remoto fechado / Reiniciada.
-D) Firewall Ativo Contínuo / Criptografada base local abstrata restritivo puro contínua e regional limpa virtual fechada global abstrato unificado e local virtual do servidor estático da nuvem.
-E) Disco Lógico Virtual Base Nativa Contínuo Temporal Isolado Regional Unificada Oficial Básica / Congelada.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. A palavra 'Threshold' é fundamental em TI para indicar o Limite (o limiar) crítico. O 'Rebooted' aponta o simples e popular 'reiniciada'.
-</details>
-
-### Questão 45 (FCC - Questão Prática / Adaptada)
-Um manual de programação Java descreve uma boa prática base no desenvolvimento da interface remota relacional restritiva unificada lúdico virtual do projeto nativa e contínua unificada da aplicação base unificada judicial nacional na nuvem oficial isolada remota base abstrato fechado contínua:
-
-'Variables should be initialized to avoid unexpected **behavior** and potential **crashes** during **runtime**.'
-
-De acordo com esse aviso técnico base oficial do documento remota contínua global isolada nativa aberta contínua isolada relacional abstrata fechada local do tribunal base oficial, as palavras '**behavior**', '**crashes**' e '**runtime**' traduzem-se para o dia a dia:
-A) Log regional nativo virtual oficial / Lentidão extrema estática de base oficial contínua temporal oficial isolado visual / Compilação.
-B) Comportamento / Falhas Críticas/Travamentos Fatais da Base / Tempo de Execução.
-C) Criptografia Base Visual Isolada Local Restrito Regional Abstrato Temporal Remoto Isolado / Apagamentos Temporais Lógicos do Disco Básico Unificado Nativa Base Restritiva Virtual Oficial Regional Contínua Fechada Base Global Unificado / Tempo Base Lógica Ocioso Oficial Judicial Unificada Local Restrita e Fechada Isolada Nativa Contínua.
-D) Carga Temporal da Borda Relacional Regional Limite Unificada Virtual Isolada Lógica Base / Alterações Base Abstrata Unificada Contínua Oficial Lógica Aberta Limite Temporal Nacional da Base Regional / Armazenamento Abstrato do Oracle Unificada Remota Oficial Fechada Contínua Base Nacional Local Oficial Virtual.
-E) Velocidade Base Oficial Nacional Lúdico Contínua Temporal Isolado Virtual Regional / Bugs Visuais Front-end Lógicos Nativos Restritos Regionais Oficiais Fechados Temporais Virtuais Lógicos Borda Contínuos Abertos Unificados Relacionais Limites Nacionais Nativos Locais Fechados / Desconexão Local Unificada Abstrata Borda Nativa Oficial e Temporal Contínua Global Local Base Nacional Virtual Lógica Aberta Regional Isolada.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. 'Behavior' = comportamento da aplicação. 'Crashes' = Os clássicos travamentos fatais e súbitos (aplicativo fechou do nada ou morreu). 'Runtime' = No jargão da computação lúdico oficial restrita temporal nativo limpo base lógico oficial regional unificado contínuo da web remota isolado base nativo local abstrato contínua aberta, significa o tempo exato (ou período temporal em andamento e em andamento aberto contínuo regional na hora e durante) da máquina em andamento ligado contínua da borda local nacional nativa unificada lógica temporal regional local nacional unificado remota oficial: Tempo Real de Execução (quando o programa está efetivamente rodando e acordado limpo).
-</details>
-
-### Questão 46 (FCC - Questão Prática / Adaptada)
-Um documento descritivo sobre o projeto front-end diz:
-'We will use a modern framework to handle **DOM** manipulation and to ensure **seamless** transitions between views.'
-Na expressão acima, o termo '**seamless**' pode ser traduzido tecnicamente como:
-A) Complexas e manuais, que exigem reload total do servidor web.
-B) Ininterruptas, transparentes ou sem emendas (suaves), indicando uma experiência contínua sem quebras de navegação.
-C) Restritas apenas aos dispositivos móveis Apple.
-D) Baseadas exclusivamente no backend, sem intervenção visual.
-E) Encriptadas e lentas devido à carga de segurança alta no carregamento de telas isoladas.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. A palavra 'seamless' no jargão técnico (e comum) significa algo que é feito sem interrupções sensíveis (sem emendas ou costuras). Transições 'seamless' no front-end são aquelas que fluem naturalmente (como num Single Page Application) sem o usuário perceber travamentos ou as velhas telas brancas de carregamento.
-</details>
-
-### Questão 47 (FCC - Questão Prática / Adaptada)
-Durante a auditoria de um sistema de logs no TRT, identificou-se o seguinte trecho sobre as ocorrências de segurança:
-'To prevent automated attacks, the system automatically **bans** any IP address that **triggers** the brute-force threshold.'
-As palavras destacadas '**bans**' e '**triggers**' significam, respectivamente:
-A) Bane (Bloqueia) e Aciona (Dispara).
-B) Libera e Monitora.
-C) Compacta e Ignora.
-D) Redireciona e Evita.
-E) Descriptografa e Alerta.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-- A) Correta. 'Bans' quer dizer 'bane' ou 'bloqueia' de forma restrita (não deixar o IP acessar mais). 'Triggers' significa 'dispara', 'ativa', 'desencadeia' (ex: atingiu o limite de erros, então disparou/ativou a regra de defesa).
-</details>
-
-### Questão 48 (FCC - Questão Prática / Adaptada)
-Ao ler a documentação do GitHub para submeter contribuições em um repositório corporativo Open Source, um estagiário de TI se deparou com a instrução:
-'Please make sure your code does not contain any **hardcoded** secrets before you submit a **pull request**.'
-O termo técnico '**hardcoded**' no jargão de engenharia de software significa:
-A) Código compilado nativamente usando bibliotecas pesadas de Inteligência Artificial em C++.
-B) Códigos que possuem algoritmos de ordenação e busca demorados, difíceis de interpretar pela máquina remota.
-C) A prática de embutir valores (como senhas, IPs e chaves) diretamente e de forma fixa/chumbada no código-fonte, em vez de usar variáveis de ambiente ou arquivos de configuração externos.
-D) A necessidade de aplicar criptografia assimétrica dupla nas chamadas HTTP realizadas pelo projeto restritivo.
-E) Código protegido por direitos autorais que não pode ser legalmente auditado sem uma licença oficial comprada e homologada pelo órgão.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. Hardcoded (ou 'chumbado' no jargão em português) quer dizer que o valor (ex: `password = "123456"`) foi digitado fisicamente no código. Isso é uma péssima prática de segurança, especialmente quando o código vai para um repositório como o Git, permitindo o vazamento global (data breach).
-</details>
-
-### Questão 49 (FCC - Questão Prática / Adaptada)
-No planejamento ágil do projeto judicial, o Product Owner (PO) emite o seguinte alerta na ferramenta Jira:
-'We must fix the critical bug on the payment module because it blocks the main **workflow** and creates a huge **bottleneck** for the administrative staff.'
-Os termos '**workflow**' e '**bottleneck**' denotam, no contexto corporativo e de TI:
-A) Ambiente de Servidor / Redundância Física.
-B) Fluxo de Trabalho (processos/rotina) / Gargalo (ponto de estrangulamento ou lentidão).
-C) Ferramenta de Suporte / Falha de Banco de Dados Crítica Externa.
-D) Requisito Funcional Opcional / Aceleração de Processos de Negócio Externos e Virtuais.
-E) Fluxo de Tela Visual Frontend / Segurança Avançada Contra Invasores.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. 'Workflow' é o fluxo de trabalho diário, ou seja, o passo a passo da esteira produtiva das varas da justiça. 'Bottleneck' significa 'gargalo de garrafa', e é muito usado na TI e na administração para indicar o ponto do processo onde tudo trava e fica lento ou empilha tarefas por ineficiência local.
-</details>
-
-### Questão 50 (FCC - Questão Prática / Adaptada)
-A equipe de QA reportou o seguinte no relatório de finalização de testes semanais:
-'The application works flawlessly under normal conditions, but we noticed performance **degradation** when the system is subjected to high **throughput**.'
-Os termos destacadas '**degradation**' e '**throughput**' representam, nesse contexto:
-A) Queda de qualidade (piora/lentidão) e Vazão (capacidade de transferência ou processamento contínuo).
-B) Melhora automática do código / Restrição manual dos acessos externos.
-C) Fragmentação de disco local / Interrupção (tempo inativo) gerado pelo data center fechado.
-D) Otimização repentina / Latência alta de ping em requisições de rede restrita na intranet oficial.
-E) Escalabilidade horizontal restritiva nativa da nuvem da AWS / Quantidade de erros gerados no sistema na base de uso virtual.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-- A) Correta. 'Degradation' indica que algo degradou (ficou pior ou lento, geralmente atrelado a performance degradation). 'Throughput' é a taxa de vazão/transferência da rede (ex: o quanto de dados o sistema processa com sucesso por minuto). Muita vazão forçada gera degradação se o servidor for fraco.
-</details>
-
-### Questão 51 (FCC - Questão Prática / Adaptada)
-O arquiteto da AWS do tribunal, ao planejar as instâncias EC2, descreveu o seguinte requisito no documento:
-'In order to reduce costs, we can utilize instances that are highly **scalable** and can be **torn down** when the processing is complete.'
-A expressão '**torn down**' no jargão de infraestrutura virtual remota e Cloud significa primariamente:
-A) Migradas para provedores de nuvens internacionais de terceiros distantes remotamente de forma local.
-B) Criptografadas severamente por políticas de rede unificadas abertas de forma nativa e estática base de roteador local do estado isolado físico contínuo e judicial.
-C) Destruídas, desmontadas ou desligadas sumariamente após cumprirem o seu papel temporário, parando de gerar gastos na conta final do TRT.
-D) Atualizadas nativamente base em patches unificados do Linux base isolado temporal virtual global corporativo limpo.
-E) Congeladas visualmente local nativo e contínuo da interface web limpa da base temporal do Amazon Relational Database estrutural assíncrona.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. A expressão 'Tear down' (passado 'torn down') significa 'desmontar', 'derrubar' ou 'destruir' algo. Na nuvem, você sobe (spin up) recursos/máquinas virtuais e, quando não precisa mais, as 'destrói' (tear down) para que parem de cobrar por hora e liberem espaço abstrato.
-</details>
-
-### Questão 52 (FCC - Questão Prática / Adaptada)
-Um desenvolvedor backend descreveu um erro inesperado e fatal para a equipe, avisando que o comportamento ocorria devido a condições raras e específicas do usuário:
-'This problem only occurs in extreme **edge cases**, therefore we will not implement a **workaround** at this moment.'
-As duas expressões no inglês corporativo, '**edge cases**' e '**workaround**', representam, de modo preciso e respectivo:
-A) Casos centrais do negócio principal unificados e nativos oficiais / Rotina de exclusão massiva nativa da nuvem temporária relacional.
-B) Casos limites/exceções raras (cenários muito peculiares) e Gambiarra/Solução de contorno provisória.
-C) Cargas severas nativas base unificadas temporais de limite base remoto / Otimização profunda em núcleo Linux da AWS.
-D) Cenários limpos oficiais testados globalmente nativos base / Rotina nativa de rede restritiva unificada e base central.
-E) Falhas generalizadas básicas diárias virtuais / Cancelamento imediato regional oficial base abstrata restritiva.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. 'Edge cases' na TI significam os 'casos de borda' ou seja, situações raras (quando o usuário faz uma série de movimentos bizarros muito improváveis). 'Workaround' é a velha e famosa solução de contorno, improviso técnico momentâneo (uma 'gambiarra' oficial) para um problema que não possui uma correção estrutural e limpa definitiva.
-</details>
-
-### Questão 53 (FCC - Questão Prática / Adaptada)
-Durante a reunião com a fornecedora do novo portal da justiça, o diretor da empresa contratada afirmou no roadmap do projeto oficial e comercial restrito a ser entregue remotamente na plataforma:
-'We plan to **ship** the new platform by late December, as long as there are no major **setbacks** during the beta phase testing.'
-As expressões '**ship**' e '**setbacks**' significam, em ambientes de entrega de software corporativo local:
-A) Codificar limpo e rápido da nuvem fechada unificada local / Relatórios semanais isolados estáticos oficiais contínuos limpos de teste base judicial regional.
-B) Lançar/Entregar (publicar o código e mandar pro cliente) e Contratempos/Atrasos imprevisíveis na vida de desenvolvimento de projeto real oficial e final abstrato virtual.
-C) Descontinuar velhos projetos do servidor local estático fechado contínuo unificado virtual temporal básico / Reuniões remotas e visuais na intranet do TRT e do provedor corporativo isolado limpo temporal.
-D) Exportar bases físicas locais em MySQL fechadas puramente / Códigos fonte livres de segurança AWS isolado virtual limpo.
-E) Instalar no ambiente de desenvolvimento puro remoto local contínuo de TI / Melhorias incrementais rápidas temporárias lógicas abertas e nativas na federação isolada estrita.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. 'To ship' em engenharia e desenvolvimento de software não significa enviar algo pelo correio físico do mar. É jargão para 'Lançar' ou 'Publicar' para a produção (entregar o código rodando ao cliente ou ao público). 'Setbacks' quer dizer tropeços, percalços, imprevistos ou contratempos operacionais.
-</details>
-
-### Questão 54 (FCC - Questão Prática / Adaptada)
-Um manual do Node.js, framework clássico e assíncrono nativo temporal unificado da borda web restrita virtual e rápida global isolada base local contínua judicial, descreve em sua documentação aberta:
-'Node.js is highly effective for I/O bound tasks, but its single-threaded nature makes it completely **unsuitable** for CPU-intensive operations.'
-A palavra destacada e essencial, '**unsuitable**', descreve, traduz e avisa para o analista e programador do Tribunal que:
-A) O Node.js deve ser compulsoriamente imposto e usado isoladamente.
-B) O framework é inapropriado, não adequado ou não recomendado unificadamente e formalmente na base de tarefas pesadas da máquina regional lógica virtual local limpa unificada temporal.
-C) A linguagem possui velocidade máxima global limpa temporal oficial judicial restrita remota contínua da borda base lógica virtual isolada limpa e segura corporativa regional estática local em processos.
-D) É obrigatório e perfeitamente ajustado e adaptável ao limite temporal restrito e base nativa virtual isolada base lúdica contínua nativa e isolada da área de uso contínuo lógico base judicial oficial local do CPU do Linux local.
-E) Funciona exclusivamente para compilar de forma offline local restritiva virtual e base global contínua temporal oficial unificada da justiça local restritiva base e contínua do Kernel do computador servidor regional restrito da borda.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. A palavra 'suitable' significa apropriado/adequado. O prefixo 'un' nega a palavra ('unsuitable' = inadequado/inapropriado). Portanto, o manual diz: Node.js é inapropriado para tarefas pesadas que exijam uso violento intensivo da CPU devido à sua arquitetura de base de thread única original nativa de fábrica da Google (V8 JavaScript Engine).
-</details>
-
-### Questão 55 (FCC - Questão Prática / Adaptada)
-Um erro no log do Linux do tribunal disparou na madrugada temporal unificada e virtual isolada da base remota contínua nacional base lógico oficial local regional restritivo oficial temporal da máquina corporativo temporal unificada lógica abstrato limpa judicial:
-'Network connection was forcefully **dropped** due to high packet loss. Attempting to **resume** the secure download...' 
-Os termos '**dropped**' e '**resume**' significam, na área de redes restritas unificadas globais locais remotas lógicas virtuais e base do analista corporativo oficial:
-A) Conectada e Mantida estavelmente na rede contínua base unificada abstrata contínua local isolada limpa da rede / Ocultar de modo abstrato regional o arquivo limpo base temporal oficial local da intranet do país fechada emulada oficial temporal judicial nacional nativa de processos limpos contínuos remotos fechados de forma básica.
-B) Finalizada de forma limpa orgânica na rede fechada / Deletar.
-C) Perdida e Derrubada/Desconectada unificada / Retomar/Continuar remotamente.
-D) Compartilhada regional e oficial limpa temporal / Substituir.
-E) Armazenada e Roteada visual temporal e isolada virtual / Encerrar o processo global virtual da justiça nacional.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. 'Dropped' (em contexto de rede) significa conexão ou pacote de rede derrubado e descartado forçadamente ou perdido (exemplo limpo: frame drop num vídeo online é quando perde os quadros de vídeo temporais isolados contínuos nativos locais limpos nativos regionais de processos, a conexão foi perdida). 'Resume' significa continuar ou retomar o download (e não fazer um currículo de emprego temporal local fechado restrito remoto limpo global isolado virtual da borda, embora resume signifique currículo no RH). No contexto da rede judicial da justiça base corporativa nativa: O download parou, o sistema tenta 'retomar/resume' de onde isolou-se remoto.
-</details>
-

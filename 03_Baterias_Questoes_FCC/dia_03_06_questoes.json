@@ -1,8 +1,12 @@
 [
   {
-    "id": "03_06_t1_q1",
+    "id": 631,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
-    "question": "O Tribunal Regional do Trabalho da 9ª Região iniciou um processo de migração de seus sistemas legados para a nuvem pública. Durante a transição, a equipe de infraestrutura notou que, apesar de economizarem na compra de servidores físicos (CAPEX), as despesas operacionais mensais (OPEX) estavam sofrendo picos imprevisíveis. Para resolver esse problema, o Comitê de Governança decidiu adotar o modelo FinOps. Segundo os princípios fundamentais do FinOps, a responsabilidade primária de gerenciar e otimizar o uso financeiro dos recursos em nuvem alocados para o sistema de Processo Judicial Eletrônico (PJe) recai sobre:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "O Tribunal Regional do Trabalho da 9ª Região iniciou um processo de migração de seus sistemas legados para a nuvem pública. Durante a transição, a equipe de infraestrutura notou que, apesar de economizarem na compra de servidores físicos (CAPEX), as despesas operacionais mensais (OPEX) estavam sofrendo picos imprevisíveis. Para resolver esse problema, o Comitê de Governança decidiu adotar o modelo FinOps. Segundo os princípios fundamentais do FinOps, a responsabilidade primária de gerenciar e otimizar o uso financeiro dos recursos em nuvem alocados para o sistema de Processo Judicial Eletrônico (PJe) recai sobre:",
     "options": {
       "A": "A equipe centralizada de Compras e Licitações, que deve negociar contratos de volume de dados e proibir qualquer aumento de consumo.",
       "B": "Os engenheiros de software e as equipes de produto (DevOps), que devem assumir a responsabilidade direta (ownership) pelos custos da arquitetura que desenvolvem e operam.",
@@ -11,17 +15,16 @@
       "E": "O Diretor Financeiro (CFO), de forma exclusiva, pois decisões de engenharia não devem ser influenciadas por restrições orçamentárias."
     },
     "answer": "B",
-    "explanation": "- B) Correta. Um dos princípios fundamentais do FinOps é 'Everyone takes ownership for their cloud usage'. Isso significa que as próprias equipes de engenharia/produto são as responsáveis por gerenciar o custo do que elas constroem e operam, e não apenas o departamento financeiro isolado.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "O Tribunal Regional do Trabalho da 9ª Região iniciou um processo de migração de seus sistemas legados para a nuvem pública. Durante a transição, a equipe de infraestrutura notou que, apesar de economizarem na compra de servidores físicos (CAPEX), as despesas operacionais mensais (OPEX) estavam sofrendo picos imprevisíveis. Para resolver esse problema, o Comitê de Governança decidiu adotar o modelo FinOps. Segundo os princípios fundamentais do FinOps, a responsabilidade primária de gerenciar e otimizar o uso financeiro dos recursos em nuvem alocados para o sistema de Processo Judicial Eletrônico (PJe) recai sobre:"
+    "explanation": "- B) Correta. Um dos princípios fundamentais do FinOps é 'Everyone takes ownership for their cloud usage'. Isso significa que as próprias equipes de engenharia/produto são as responsáveis por gerenciar o custo do que elas constroem e operam, e não apenas o departamento financeiro isolado."
   },
   {
-    "id": "03_06_t1_q2",
+    "id": 632,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
-    "question": "Um Analista de TI de um Tribunal foi encarregado de implementar o framework COBIT 2019 para melhorar o controle e a transparência das decisões tecnológicas. Durante o desenho do sistema de governança, ele se deparou com a necessidade de alinhar os objetivos de TI às metas estratégicas do Tribunal de 'Garantir a celeridade processual'. De acordo com o COBIT 2019, a ferramenta que traduz as necessidades das partes interessadas (Stakeholders) em metas empresariais, e estas em metas de alinhamento (TI), é denominada:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um Analista de TI de um Tribunal foi encarregado de implementar o framework COBIT 2019 para melhorar o controle e a transparência das decisões tecnológicas. Durante o desenho do sistema de governança, ele se deparou com a necessidade de alinhar os objetivos de TI às metas estratégicas do Tribunal de 'Garantir a celeridade processual'. De acordo com o COBIT 2019, a ferramenta que traduz as necessidades das partes interessadas (Stakeholders) em metas empresariais, e estas em metas de alinhamento (TI), é denominada:",
     "options": {
       "A": "Matriz de Rastreabilidade de Requisitos de Negócio.",
       "B": "Cascata de Objetivos (Goals Cascade).",
@@ -30,17 +33,16 @@
       "E": "Sistema de Valor de Serviço (SVS)."
     },
     "answer": "B",
-    "explanation": "- B) Correta. A Cascata de Objetivos (Goals Cascade) é o mecanismo central do COBIT 2019 que garante o alinhamento estratégico, traduzindo as necessidades dos stakeholders em objetivos da empresa, que depois descem (cascata) para objetivos de alinhamento de TI e, finalmente, para objetivos de governança e gestão.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um Analista de TI de um Tribunal foi encarregado de implementar o framework COBIT 2019 para melhorar o controle e a transparência das decisões tecnológicas. Durante o desenho do sistema de governança, ele se deparou com a necessidade de alinhar os objetivos de TI às metas estratégicas do Tribunal de 'Garantir a celeridade processual'. De acordo com o COBIT 2019, a ferramenta que traduz as necessidades das partes interessadas (Stakeholders) em metas empresariais, e estas em metas de alinhamento (TI), é denominada:"
+    "explanation": "- B) Correta. A Cascata de Objetivos (Goals Cascade) é o mecanismo central do COBIT 2019 que garante o alinhamento estratégico, traduzindo as necessidades dos stakeholders em objetivos da empresa, que depois descem (cascata) para objetivos de alinhamento de TI e, finalmente, para objetivos de governança e gestão."
   },
   {
-    "id": "03_06_t1_q3",
+    "id": 633,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
-    "question": "O Centro de Operações de Rede (NOC) de um Tribunal Federal adotou o ITIL v4 para lidar com a alta demanda de chamados abertos por juízes e servidores. O Diretor de TI percebeu que a equipe de suporte estava focada apenas em cumprir os prazos de fechamento de chamados (SLA), mas os juízes continuavam insatisfeitos porque o sistema ficava lento e travava durante audiências. Para corrigir isso, o Diretor instruiu a equipe a olhar não apenas para a tecnologia, mas também para os fluxos de informação, os fornecedores de link de internet e as pessoas envolvidas. Essa abordagem do Diretor reflete primariamente a aplicação de qual Princípio Orientador do ITIL v4?",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "O Centro de Operações de Rede (NOC) de um Tribunal Federal adotou o ITIL v4 para lidar com a alta demanda de chamados abertos por juízes e servidores. O Diretor de TI percebeu que a equipe de suporte estava focada apenas em cumprir os prazos de fechamento de chamados (SLA), mas os juízes continuavam insatisfeitos porque o sistema ficava lento e travava durante audiências. Para corrigir isso, o Diretor instruiu a equipe a olhar não apenas para a tecnologia, mas também para os fluxos de informação, os fornecedores de link de internet e as pessoas envolvidas. Essa abordagem do Diretor reflete primariamente a aplicação de qual Princípio Orientador do ITIL v4?",
     "options": {
       "A": "Comece de onde você está (Start where you are).",
       "B": "Otimize e automatize (Optimize and automate).",
@@ -49,17 +51,16 @@
       "E": "Progrida iterativamente com feedback (Progress iteratively with feedback)."
     },
     "answer": "C",
-    "explanation": "- C) Correta. 'Pensar e trabalhar holisticamente' significa que nenhuma prática, processo ou serviço atua de forma isolada. A equipe deve considerar as Quatro Dimensões do Gerenciamento de Serviços (Organizações e Pessoas, Informação e Tecnologia, Parceiros e Fornecedores, e Fluxos de Valor e Processos) para entregar valor real.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "O Centro de Operações de Rede (NOC) de um Tribunal Federal adotou o ITIL v4 para lidar com a alta demanda de chamados abertos por juízes e servidores. O Diretor de TI percebeu que a equipe de suporte estava focada apenas em cumprir os prazos de fechamento de chamados (SLA), mas os juízes continuavam insatisfeitos porque o sistema ficava lento e travava durante audiências. Para corrigir isso, o Diretor instruiu a equipe a olhar não apenas para a tecnologia, mas também para os fluxos de informação, os fornecedores de link de internet e as pessoas envolvidas. Essa abordagem do Diretor reflete primariamente a aplicação de qual Princípio Orientador do ITIL v4?"
+    "explanation": "- C) Correta. 'Pensar e trabalhar holisticamente' significa que nenhuma prática, processo ou serviço atua de forma isolada. A equipe deve considerar as Quatro Dimensões do Gerenciamento de Serviços (Organizações e Pessoas, Informação e Tecnologia, Parceiros e Fornecedores, e Fluxos de Valor e Processos) para entregar valor real."
   },
   {
-    "id": "03_06_t1_q4",
+    "id": 634,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
-    "question": "No Tribunal Regional Eleitoral, a equipe de FinOps realiza reuniões semanais para analisar os relatórios de uso do AWS EC2. Foi detectado que uma aplicação que roda apenas no horário de expediente (08h às 18h) está sendo cobrada 24 horas por dia por esquecimento dos desenvolvedores em desligar a máquina. A equipe de FinOps decide aplicar um script automático de liga/desliga para cortar custos. Dentro do ciclo de vida iterativo do modelo FinOps (Inform, Optimize, Operate), essa ação prática de execução automatizada de regras para atingir os objetivos financeiros situa-se majoritariamente na fase de:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "No Tribunal Regional Eleitoral, a equipe de FinOps realiza reuniões semanais para analisar os relatórios de uso do AWS EC2. Foi detectado que uma aplicação que roda apenas no horário de expediente (08h às 18h) está sendo cobrada 24 horas por dia por esquecimento dos desenvolvedores em desligar a máquina. A equipe de FinOps decide aplicar um script automático de liga/desliga para cortar custos. Dentro do ciclo de vida iterativo do modelo FinOps (Inform, Optimize, Operate), essa ação prática de execução automatizada de regras para atingir os objetivos financeiros situa-se majoritariamente na fase de:",
     "options": {
       "A": "Informar (Inform), pois gera um log de economia de recursos.",
       "B": "Otimizar (Optimize), pois é o momento em que a anomalia é descoberta e debatida.",
@@ -68,17 +69,16 @@
       "E": "Monitorar (Monitor), pois o script fica aguardando o horário para executar a parada."
     },
     "answer": "C",
-    "explanation": "- C) Correta. O ciclo FinOps é Informar (visibilidade), Otimizar (decidir o que fazer, descobrir anomalias) e Operar (executar a ação, automatizar, definir políticas). A implementação técnica da automação liga/desliga ocorre na fase 'Operate'.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "No Tribunal Regional Eleitoral, a equipe de FinOps realiza reuniões semanais para analisar os relatórios de uso do AWS EC2. Foi detectado que uma aplicação que roda apenas no horário de expediente (08h às 18h) está sendo cobrada 24 horas por dia por esquecimento dos desenvolvedores em desligar a máquina. A equipe de FinOps decide aplicar um script automático de liga/desliga para cortar custos. Dentro do ciclo de vida iterativo do modelo FinOps (Inform, Optimize, Operate), essa ação prática de execução automatizada de regras para atingir os objetivos financeiros situa-se majoritariamente na fase de:"
+    "explanation": "- C) Correta. O ciclo FinOps é Informar (visibilidade), Otimizar (decidir o que fazer, descobrir anomalias) e Operar (executar a ação, automatizar, definir políticas). A implementação técnica da automação liga/desliga ocorre na fase 'Operate'."
   },
   {
-    "id": "03_06_t1_q5",
+    "id": 635,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
-    "question": "Durante a implantação do COBIT 2019 em um Tribunal de Justiça Estadual, foi necessário personalizar o sistema de governança para adequá-lo à cultura do tribunal, que é altamente avessa a riscos e trabalha sob um modelo operacional de segurança crítica. O COBIT 2019 introduziu um componente inovador exatamente para adaptar o framework às características únicas de cada organização. O conceito que permite essa personalização das prioridades e práticas de gestão denomina-se:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Durante a implantação do COBIT 2019 em um Tribunal de Justiça Estadual, foi necessário personalizar o sistema de governança para adequá-lo à cultura do tribunal, que é altamente avessa a riscos e trabalha sob um modelo operacional de segurança crítica. O COBIT 2019 introduziu um componente inovador exatamente para adaptar o framework às características únicas de cada organização. O conceito que permite essa personalização das prioridades e práticas de gestão denomina-se:",
     "options": {
       "A": "Áreas de Foco (Focus Areas).",
       "B": "Fatores de Desenho (Design Factors).",
@@ -87,17 +87,16 @@
       "E": "Princípios Básicos de Governança Universais (Universal Core Principles)."
     },
     "answer": "B",
-    "explanation": "- B) Correta. Os Fatores de Desenho (Design Factors) são uma inovação marcante do COBIT 2019. Eles incluem variáveis como estratégia da empresa, perfil de risco (como a aversão ao risco citada), modelo de fornecimento de TI e tamanho da empresa. Eles influenciam e calibram a arquitetura do sistema de governança.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Durante a implantação do COBIT 2019 em um Tribunal de Justiça Estadual, foi necessário personalizar o sistema de governança para adequá-lo à cultura do tribunal, que é altamente avessa a riscos e trabalha sob um modelo operacional de segurança crítica. O COBIT 2019 introduziu um componente inovador exatamente para adaptar o framework às características únicas de cada organização. O conceito que permite essa personalização das prioridades e práticas de gestão denomina-se:"
+    "explanation": "- B) Correta. Os Fatores de Desenho (Design Factors) são uma inovação marcante do COBIT 2019. Eles incluem variáveis como estratégia da empresa, perfil de risco (como a aversão ao risco citada), modelo de fornecimento de TI e tamanho da empresa. Eles influenciam e calibram a arquitetura do sistema de governança."
   },
   {
-    "id": "03_06_t1_q6",
+    "id": 636,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
-    "question": "Um dos analistas do TRT sugeriu a adoção do ITIL v4, argumentando que a organização precisava de um modelo que integrasse diferentes práticas (Agile, DevOps e Lean) de maneira sistêmica. Ao estudar os componentes do ITIL v4, o Diretor compreendeu que a espinha dorsal da estrutura, que pega as 'Oportunidades ou Demandas' do ambiente externo e as transforma em 'Valor' mediante um conjunto interconectado de componentes, é chamada formalmente de:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um dos analistas do TRT sugeriu a adoção do ITIL v4, argumentando que a organização precisava de um modelo que integrasse diferentes práticas (Agile, DevOps e Lean) de maneira sistêmica. Ao estudar os componentes do ITIL v4, o Diretor compreendeu que a espinha dorsal da estrutura, que pega as 'Oportunidades ou Demandas' do ambiente externo e as transforma em 'Valor' mediante um conjunto interconectado de componentes, é chamada formalmente de:",
     "options": {
       "A": "Cadeia de Valor de Serviço (Service Value Chain).",
       "B": "Sistema de Valor de Serviço (Service Value System - SVS).",
@@ -106,17 +105,16 @@
       "E": "Banco de Dados de Gerenciamento da Configuração (CMDB)."
     },
     "answer": "B",
-    "explanation": "- B) Correta. O Sistema de Valor de Serviço (SVS) é o componente arquitetural máximo do ITIL v4. Ele pega a Demanda/Oportunidade e gera Valor. A Cadeia de Valor de Serviço é o componente central DENTRO do SVS, mas o SVS é a estrutura completa.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um dos analistas do TRT sugeriu a adoção do ITIL v4, argumentando que a organização precisava de um modelo que integrasse diferentes práticas (Agile, DevOps e Lean) de maneira sistêmica. Ao estudar os componentes do ITIL v4, o Diretor compreendeu que a espinha dorsal da estrutura, que pega as 'Oportunidades ou Demandas' do ambiente externo e as transforma em 'Valor' mediante um conjunto interconectado de componentes, é chamada formalmente de:"
+    "explanation": "- B) Correta. O Sistema de Valor de Serviço (SVS) é o componente arquitetural máximo do ITIL v4. Ele pega a Demanda/Oportunidade e gera Valor. A Cadeia de Valor de Serviço é o componente central DENTRO do SVS, mas o SVS é a estrutura completa."
   },
   {
-    "id": "03_06_t1_q7",
+    "id": 637,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
-    "question": "Um engenheiro de software de um tribunal precisa tomar uma decisão arquitetural sobre como hospedar a nova base de jurisprudência. Ele possui duas opções: adquirir instâncias virtuais sob demanda na AWS e gerenciar o banco de dados (IaaS) ou utilizar um serviço de banco de dados nativo gerenciado (PaaS). Do ponto de vista de FinOps e dos modelos de precificação em nuvem, qual o principal 'Trade-off' (compromisso) envolvido ao escolher o modelo PaaS em detrimento do IaaS gerenciado manualmente?",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um engenheiro de software de um tribunal precisa tomar uma decisão arquitetural sobre como hospedar a nova base de jurisprudência. Ele possui duas opções: adquirir instâncias virtuais sob demanda na AWS e gerenciar o banco de dados (IaaS) ou utilizar um serviço de banco de dados nativo gerenciado (PaaS). Do ponto de vista de FinOps e dos modelos de precificação em nuvem, qual o principal 'Trade-off' (compromisso) envolvido ao escolher o modelo PaaS em detrimento do IaaS gerenciado manualmente?",
     "options": {
       "A": "O modelo PaaS elimina completamente os custos operacionais (OPEX), transformando o gasto em investimento patrimonial estático.",
       "B": "O modelo PaaS costuma ter um custo unitário (por hora) maior do que o IaaS cru devido ao ágio de gerenciamento embutido pelo provedor, mas tende a economizar substancialmente os custos com engenharia humana e manutenção de infraestrutura.",
@@ -125,17 +123,16 @@
       "E": "O modelo IaaS é obrigatoriamente mais caro, pois exige que o tribunal pague antecipadamente pelas licenças anuais do hipervisor do provedor."
     },
     "answer": "B",
-    "explanation": "- B) Correta. Em Cloud/FinOps, instâncias gerenciadas (PaaS, ex: Amazon RDS) têm um custo de tarifa maior que as instâncias cruas (IaaS, ex: EC2) por causa do 'management premium'. O trade-off é aceitar pagar um pouco mais no recurso de nuvem para economizar fortunas no tempo dos administradores de banco de dados (DBAs), que não precisarão aplicar patches e fazer backups manuais.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um engenheiro de software de um tribunal precisa tomar uma decisão arquitetural sobre como hospedar a nova base de jurisprudência. Ele possui duas opções: adquirir instâncias virtuais sob demanda na AWS e gerenciar o banco de dados (IaaS) ou utilizar um serviço de banco de dados nativo gerenciado (PaaS). Do ponto de vista de FinOps e dos modelos de precificação em nuvem, qual o principal 'Trade-off' (compromisso) envolvido ao escolher o modelo PaaS em detrimento do IaaS gerenciado manualmente?"
+    "explanation": "- B) Correta. Em Cloud/FinOps, instâncias gerenciadas (PaaS, ex: Amazon RDS) têm um custo de tarifa maior que as instâncias cruas (IaaS, ex: EC2) por causa do 'management premium'. O trade-off é aceitar pagar um pouco mais no recurso de nuvem para economizar fortunas no tempo dos administradores de banco de dados (DBAs), que não precisarão aplicar patches e fazer backups manuais."
   },
   {
-    "id": "03_06_t1_q8",
+    "id": 638,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
-    "question": "No COBIT 2019, os domínios de governança e gestão são rigidamente separados. Um Presidente de Tribunal, atuando no papel de alta governança, precisa entender quais domínios competem diretamente a ele. O domínio do COBIT 2019 de responsabilidade exclusiva do Corpo Diretivo (Governança), responsável por garantir a criação de valor, o equilíbrio de recursos e a transparência para os stakeholders, é denominado:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "No COBIT 2019, os domínios de governança e gestão são rigidamente separados. Um Presidente de Tribunal, atuando no papel de alta governança, precisa entender quais domínios competem diretamente a ele. O domínio do COBIT 2019 de responsabilidade exclusiva do Corpo Diretivo (Governança), responsável por garantir a criação de valor, o equilíbrio de recursos e a transparência para os stakeholders, é denominado:",
     "options": {
       "A": "Alinhar, Planejar e Organizar (APO).",
       "B": "Construir, Adquirir e Implementar (BAI).",
@@ -144,17 +141,16 @@
       "E": "Avaliar, Dirigir e Monitorar (EDM)."
     },
     "answer": "E",
-    "explanation": "- E) Correta. O COBIT separa Governança (EDM: Evaluate, Direct and Monitor) da Gestão (APO, BAI, DSS, MEA). A governança é exercida pela alta direção (Corpo Diretivo), focando em avaliar necessidades, direcionar prioridades e monitorar o desempenho.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "No COBIT 2019, os domínios de governança e gestão são rigidamente separados. Um Presidente de Tribunal, atuando no papel de alta governança, precisa entender quais domínios competem diretamente a ele. O domínio do COBIT 2019 de responsabilidade exclusiva do Corpo Diretivo (Governança), responsável por garantir a criação de valor, o equilíbrio de recursos e a transparência para os stakeholders, é denominado:"
+    "explanation": "- E) Correta. O COBIT separa Governança (EDM: Evaluate, Direct and Monitor) da Gestão (APO, BAI, DSS, MEA). A governança é exercida pela alta direção (Corpo Diretivo), focando em avaliar necessidades, direcionar prioridades e monitorar o desempenho."
   },
   {
-    "id": "03_06_t1_q9",
+    "id": 639,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
-    "question": "A área de TI de um Tribunal foi fortemente cobrada devido a repetidas quedas no portal de serviços durante os fins de semana. O gerente decidiu adotar a prática do ITIL v4 de 'Gerenciamento de Problemas' em conjunto com 'Gerenciamento de Incidentes'. Qual cenário prático descreve adequadamente a diferença técnica de atuação entre essas duas práticas segundo o ITIL v4?",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "A área de TI de um Tribunal foi fortemente cobrada devido a repetidas quedas no portal de serviços durante os fins de semana. O gerente decidiu adotar a prática do ITIL v4 de 'Gerenciamento de Problemas' em conjunto com 'Gerenciamento de Incidentes'. Qual cenário prático descreve adequadamente a diferença técnica de atuação entre essas duas práticas segundo o ITIL v4?",
     "options": {
       "A": "O incidente é o registro financeiro da queda do portal; o problema é a solicitação do usuário por um novo portal.",
       "B": "A resolução do incidente visa identificar a causa raiz definitiva do travamento do portal (investigação demorada), enquanto o problema foca exclusivamente em devolver o portal ao ar o mais rápido possível através de um script de reinício rápido (workaround).",
@@ -163,17 +159,16 @@
       "E": "O incidente e o problema são conceitos análogos e unificados na prática de Controle de Eventos do ITIL v4, diferindo apenas na gravidade."
     },
     "answer": "C",
-    "explanation": "- C) Correta. Incidente = restaurar o serviço o mais rápido possível (apagar o incêndio). Problema = investigar e resolver a causa raiz ou gerenciar os erros conhecidos (descobrir por que pegou fogo e impedir que aconteça de novo).",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "A área de TI de um Tribunal foi fortemente cobrada devido a repetidas quedas no portal de serviços durante os fins de semana. O gerente decidiu adotar a prática do ITIL v4 de 'Gerenciamento de Problemas' em conjunto com 'Gerenciamento de Incidentes'. Qual cenário prático descreve adequadamente a diferença técnica de atuação entre essas duas práticas segundo o ITIL v4?"
+    "explanation": "- C) Correta. Incidente = restaurar o serviço o mais rápido possível (apagar o incêndio). Problema = investigar e resolver a causa raiz ou gerenciar os erros conhecidos (descobrir por que pegou fogo e impedir que aconteça de novo)."
   },
   {
-    "id": "03_06_t1_q10",
+    "id": 640,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
-    "question": "Um dos principais desafios da cultura FinOps em órgãos governamentais é alocar corretamente os custos para os departamentos certos, gerando responsabilidade (Accountability). Para alcançar esse nível de controle no Azure ou na AWS, permitindo que a presidência saiba exatamente quanto do orçamento de TI está sendo consumido pela 1ª Vara do Trabalho em oposição à 2ª Vara do Trabalho, a prática técnica mais elementar e fundamental a ser implementada é:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um dos principais desafios da cultura FinOps em órgãos governamentais é alocar corretamente os custos para os departamentos certos, gerando responsabilidade (Accountability). Para alcançar esse nível de controle no Azure ou na AWS, permitindo que a presidência saiba exatamente quanto do orçamento de TI está sendo consumido pela 1ª Vara do Trabalho em oposição à 2ª Vara do Trabalho, a prática técnica mais elementar e fundamental a ser implementada é:",
     "options": {
       "A": "O particionamento lógico de discos EBS com criptografia isolada.",
       "B": "A contratação de planos de suporte Premium do provedor.",
@@ -182,17 +177,16 @@
       "E": "O uso obrigatório de funções Lambda para todas as execuções de relatórios gerenciais."
     },
     "answer": "D",
-    "explanation": "- D) Correta. A técnica mais importante para rastrear e alocar custos de volta (chargeback/showback) para os times certos em computação em nuvem é o uso rigoroso de Tags (ex: Tag 'Departamento' com valor '1aVara'). Sem tagueamento, a fatura vem como um grande bolo genérico impossível de separar.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um dos principais desafios da cultura FinOps em órgãos governamentais é alocar corretamente os custos para os departamentos certos, gerando responsabilidade (Accountability). Para alcançar esse nível de controle no Azure ou na AWS, permitindo que a presidência saiba exatamente quanto do orçamento de TI está sendo consumido pela 1ª Vara do Trabalho em oposição à 2ª Vara do Trabalho, a prática técnica mais elementar e fundamental a ser implementada é:"
+    "explanation": "- D) Correta. A técnica mais importante para rastrear e alocar custos de volta (chargeback/showback) para os times certos em computação em nuvem é o uso rigoroso de Tags (ex: Tag 'Departamento' com valor '1aVara'). Sem tagueamento, a fatura vem como um grande bolo genérico impossível de separar."
   },
   {
-    "id": "03_06_t1_q11",
+    "id": 641,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
-    "question": "Um Analista Judiciário de TI argumentou em reunião: 'Para que a implantação de uma tecnologia no Tribunal tenha sucesso, precisamos alinhar os processos internos, capacitar os servidores e garantir que as informações fluam corretamente entre as varas'. Essa visão de que não se deve focar isoladamente na tecnologia para entregar um serviço está diretamente alinhada a qual conceito basilar do ITIL v4?",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um Analista Judiciário de TI argumentou em reunião: 'Para que a implantação de uma tecnologia no Tribunal tenha sucesso, precisamos alinhar os processos internos, capacitar os servidores e garantir que as informações fluam corretamente entre as varas'. Essa visão de que não se deve focar isoladamente na tecnologia para entregar um serviço está diretamente alinhada a qual conceito basilar do ITIL v4?",
     "options": {
       "A": "A estrutura de sete domínios de Controle e Risco.",
       "B": "O conceito de Acordos de Nível Operacional (OLAs) estritos.",
@@ -201,17 +195,16 @@
       "E": "O Gerenciamento de Mudança Organizacional focado em metodologias ágeis."
     },
     "answer": "D",
-    "explanation": "- D) Correta. A visão que exige alinhar equipes, processos, tecnologia e fornecedores é a essência do conceito das 'Quatro Dimensões' do ITIL v4, criadas para garantir que o serviço seja abordado de forma abrangente.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um Analista Judiciário de TI argumentou em reunião: 'Para que a implantação de uma tecnologia no Tribunal tenha sucesso, precisamos alinhar os processos internos, capacitar os servidores e garantir que as informações fluam corretamente entre as varas'. Essa visão de que não se deve focar isoladamente na tecnologia para entregar um serviço está diretamente alinhada a qual conceito basilar do ITIL v4?"
+    "explanation": "- D) Correta. A visão que exige alinhar equipes, processos, tecnologia e fornecedores é a essência do conceito das 'Quatro Dimensões' do ITIL v4, criadas para garantir que o serviço seja abordado de forma abrangente."
   },
   {
-    "id": "03_06_t1_q12",
+    "id": 642,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
-    "question": "A transição do COBIT 5 para o COBIT 2019 trouxe atualizações na modelagem de processos. O domínio de processos que se concentra nas soluções, assegurando que elas estejam disponíveis e operacionais para atender ao negócio, integrando os requisitos de infraestrutura e aplicações (construção, aquisição e implantação), é identificado no COBIT 2019 pela sigla:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "A transição do COBIT 5 para o COBIT 2019 trouxe atualizações na modelagem de processos. O domínio de processos que se concentra nas soluções, assegurando que elas estejam disponíveis e operacionais para atender ao negócio, integrando os requisitos de infraestrutura e aplicações (construção, aquisição e implantação), é identificado no COBIT 2019 pela sigla:",
     "options": {
       "A": "APO",
       "B": "BAI",
@@ -220,17 +213,16 @@
       "E": "EDM"
     },
     "answer": "B",
-    "explanation": "- B) Correta. O domínio BAI (Build, Acquire and Implement - Construir, Adquirir e Implementar) trata da realização dos projetos, desenvolvimento, aquisição de sistemas e gestão de mudanças, colocando a solução pronta para entrar em produção.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "A transição do COBIT 5 para o COBIT 2019 trouxe atualizações na modelagem de processos. O domínio de processos que se concentra nas soluções, assegurando que elas estejam disponíveis e operacionais para atender ao negócio, integrando os requisitos de infraestrutura e aplicações (construção, aquisição e implantação), é identificado no COBIT 2019 pela sigla:"
+    "explanation": "- B) Correta. O domínio BAI (Build, Acquire and Implement - Construir, Adquirir e Implementar) trata da realização dos projetos, desenvolvimento, aquisição de sistemas e gestão de mudanças, colocando a solução pronta para entrar em produção."
   },
   {
-    "id": "03_06_t1_q13",
+    "id": 643,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
-    "question": "Dentro da estrutura FinOps, o princípio de que 'As decisões são orientadas pelo valor comercial da nuvem' significa que a métrica de sucesso da TI não deve ser apenas reduzir a fatura total de serviços em nuvem. Qual cenário abaixo exemplifica corretamente a aplicação prática desse princípio por um Analista de TI de um Tribunal?",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Dentro da estrutura FinOps, o princípio de que 'As decisões são orientadas pelo valor comercial da nuvem' significa que a métrica de sucesso da TI não deve ser apenas reduzir a fatura total de serviços em nuvem. Qual cenário abaixo exemplifica corretamente a aplicação prática desse princípio por um Analista de TI de um Tribunal?",
     "options": {
       "A": "O analista cancelou a assinatura de todos os serviços de banco de dados porque o custo mensal subiu 15%.",
       "B": "O analista bloqueou a implantação do novo sistema de IA de leitura de petições iniciais porque ele adicionaria um custo de 5 mil dólares na fatura, ignorando o tempo de servidores economizado.",
@@ -239,17 +231,16 @@
       "E": "O analista migrou todos os sistemas da AWS para os servidores locais (on-premise) obsoletos do tribunal para garantir OPEX zero no fechamento anual."
     },
     "answer": "C",
-    "explanation": "- C) Correta. FinOps não é apenas sobre gastar o mínimo possível, é sobre obter o maior valor de negócio por cada centavo gasto. Se um aumento no gasto de nuvem gera um benefício enorme de negócio (ex: IA poupando anos de trabalho humano), então a decisão é justificada e orientada pelo valor.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Dentro da estrutura FinOps, o princípio de que 'As decisões são orientadas pelo valor comercial da nuvem' significa que a métrica de sucesso da TI não deve ser apenas reduzir a fatura total de serviços em nuvem. Qual cenário abaixo exemplifica corretamente a aplicação prática desse princípio por um Analista de TI de um Tribunal?"
+    "explanation": "- C) Correta. FinOps não é apenas sobre gastar o mínimo possível, é sobre obter o maior valor de negócio por cada centavo gasto. Se um aumento no gasto de nuvem gera um benefício enorme de negócio (ex: IA poupando anos de trabalho humano), então a decisão é justificada e orientada pelo valor."
   },
   {
-    "id": "03_06_t1_q14",
+    "id": 644,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
-    "question": "O framework COBIT 2019 estabelece componentes para o sistema de governança (antes conhecidos como habilitadores). Eles são os ingredientes necessários para que a governança funcione. Assinale a alternativa que cita corretamente componentes do sistema de governança, segundo a arquitetura oficial do COBIT 2019:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "O framework COBIT 2019 estabelece componentes para o sistema de governança (antes conhecidos como habilitadores). Eles são os ingredientes necessários para que a governança funcione. Assinale a alternativa que cita corretamente componentes do sistema de governança, segundo a arquitetura oficial do COBIT 2019:",
     "options": {
       "A": "Processos; Estruturas Organizacionais; Informação; Cultura, Ética e Comportamento.",
       "B": "Hardware Físico; Códigos-fonte; Banco de Dados; Acordos de Nível de Serviço (SLA).",
@@ -258,17 +249,16 @@
       "E": "Indicadores de Lucratividade; Taxa de Retorno (ROI); Governança de Internet; Firewall de Borda."
     },
     "answer": "A",
-    "explanation": "- A) Correta. Os 7 componentes do COBIT 2019 são: 1. Processos; 2. Estruturas Organizacionais; 3. Princípios, Políticas e Estruturas; 4. Informação; 5. Cultura, Ética e Comportamento; 6. Pessoas, Habilidades e Competências; 7. Serviços, Infraestrutura e Aplicações.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "O framework COBIT 2019 estabelece componentes para o sistema de governança (antes conhecidos como habilitadores). Eles são os ingredientes necessários para que a governança funcione. Assinale a alternativa que cita corretamente componentes do sistema de governança, segundo a arquitetura oficial do COBIT 2019:"
+    "explanation": "- A) Correta. Os 7 componentes do COBIT 2019 são: 1. Processos; 2. Estruturas Organizacionais; 3. Princípios, Políticas e Estruturas; 4. Informação; 5. Cultura, Ética e Comportamento; 6. Pessoas, Habilidades e Competências; 7. Serviços, Infraestrutura e Aplicações."
   },
   {
-    "id": "03_06_t1_q15",
+    "id": 645,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Governança TI (COBIT 2019, ITIL v4 e FinOps)",
-    "question": "A prática de 'Habilitação de Mudança' (Change Enablement) no ITIL v4 tem como propósito maximizar o número de mudanças bem-sucedidas de serviços de TI, garantindo que os riscos tenham sido avaliados corretamente. Em um órgão público, o analista separou as requisições de mudança em três tipos clássicos. Uma mudança urgente para consertar um vazamento de dados críticos que precisa ocorrer imediatamente na base de produção, sem passar pela revisão completa do comitê formal (CAB), é classificada no ITIL v4 como:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "A prática de 'Habilitação de Mudança' (Change Enablement) no ITIL v4 tem como propósito maximizar o número de mudanças bem-sucedidas de serviços de TI, garantindo que os riscos tenham sido avaliados corretamente. Em um órgão público, o analista separou as requisições de mudança em três tipos clássicos. Uma mudança urgente para consertar um vazamento de dados críticos que precisa ocorrer imediatamente na base de produção, sem passar pela revisão completa do comitê formal (CAB), é classificada no ITIL v4 como:",
     "options": {
       "A": "Mudança Padrão (Standard Change).",
       "B": "Mudança Normal (Normal Change).",
@@ -277,17 +267,16 @@
       "E": "Mudança Clandestina (Shadow Change)."
     },
     "answer": "C",
-    "explanation": "- C) Correta. A Mudança Emergencial (Emergency Change) é aquela que deve ser implementada o mais rápido possível (ex: falhas graves de segurança ou indisponibilidade). Ela usa um fluxo de aprovação acelerado (ECAB - Emergency Change Advisory Board) para não ficar travada em burocracia excessiva.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "A prática de 'Habilitação de Mudança' (Change Enablement) no ITIL v4 tem como propósito maximizar o número de mudanças bem-sucedidas de serviços de TI, garantindo que os riscos tenham sido avaliados corretamente. Em um órgão público, o analista separou as requisições de mudança em três tipos clássicos. Uma mudança urgente para consertar um vazamento de dados críticos que precisa ocorrer imediatamente na base de produção, sem passar pela revisão completa do comitê formal (CAB), é classificada no ITIL v4 como:"
+    "explanation": "- C) Correta. A Mudança Emergencial (Emergency Change) é aquela que deve ser implementada o mais rápido possível (ex: falhas graves de segurança ou indisponibilidade). Ela usa um fluxo de aprovação acelerado (ECAB - Emergency Change Advisory Board) para não ficar travada em burocracia excessiva."
   },
   {
-    "id": "03_06_t2_q16",
+    "id": 646,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
-    "question": "Um Tribunal Estadual está redesenhando seu sistema processual monolítico para uma arquitetura baseada em microsserviços. O Arquiteto Chefe estabeleceu que os serviços de 'Protocolo', 'Distribuição' e 'Assinatura' devem ser totalmente desacoplados e independentes. Ao adotar o padrão arquitetural de Microsserviços e as diretrizes do desenvolvimento Cloud-Native (como a metodologia 12-Factor App), qual das seguintes práticas de gerenciamento de dados deve ser obrigatoriamente implementada para garantir a independência estrita entre os serviços?",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um Tribunal Estadual está redesenhando seu sistema processual monolítico para uma arquitetura baseada em microsserviços. O Arquiteto Chefe estabeleceu que os serviços de 'Protocolo', 'Distribuição' e 'Assinatura' devem ser totalmente desacoplados e independentes. Ao adotar o padrão arquitetural de Microsserviços e as diretrizes do desenvolvimento Cloud-Native (como a metodologia 12-Factor App), qual das seguintes práticas de gerenciamento de dados deve ser obrigatoriamente implementada para garantir a independência estrita entre os serviços?",
     "options": {
       "A": "Todos os microsserviços devem se conectar ao mesmo esquema (schema) relacional no banco de dados Oracle centralizado, para garantir a integridade referencial nativa via chaves estrangeiras.",
       "B": "O código-fonte de todos os microsserviços deve residir em um único repositório Git monolítico, impossibilitando a implantação isolada sem compilar todo o sistema.",
@@ -296,17 +285,16 @@
       "E": "O estado da sessão do advogado logado (State) deve ser armazenado na memória RAM do servidor Web (Sticky Sessions) para reduzir o tempo de latência de login."
     },
     "answer": "C",
-    "explanation": "- C) Correta. Na arquitetura de microsserviços, o padrão Database-per-service é fundamental. Ele garante que os serviços sejam frouxamente acoplados, permitindo que cada equipe mude seu esquema de banco de dados sem quebrar outros serviços e escolha o banco ideal (SQL, NoSQL) para a sua necessidade.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um Tribunal Estadual está redesenhando seu sistema processual monolítico para uma arquitetura baseada em microsserviços. O Arquiteto Chefe estabeleceu que os serviços de 'Protocolo', 'Distribuição' e 'Assinatura' devem ser totalmente desacoplados e independentes. Ao adotar o padrão arquitetural de Microsserviços e as diretrizes do desenvolvimento Cloud-Native (como a metodologia 12-Factor App), qual das seguintes práticas de gerenciamento de dados deve ser obrigatoriamente implementada para garantir a independência estrita entre os serviços?"
+    "explanation": "- C) Correta. Na arquitetura de microsserviços, o padrão Database-per-service é fundamental. Ele garante que os serviços sejam frouxamente acoplados, permitindo que cada equipe mude seu esquema de banco de dados sem quebrar outros serviços e escolha o banco ideal (SQL, NoSQL) para a sua necessidade."
   },
   {
-    "id": "03_06_t2_q17",
+    "id": 647,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
-    "question": "Durante a modelagem de domínio (Domain-Driven Design - DDD) para um novo módulo de precatórios, o Especialista em Negócios (Domain Expert) e os desenvolvedores identificaram que o conceito de 'Processo' possui significados e regras radicalmente diferentes no contexto de 'Julgamento' (onde importa a sentença) e no contexto de 'Pagamento' (onde importa os valores financeiros). Para resolver essa ambiguidade e proteger a integridade do modelo, o DDD preconiza o uso de um padrão arquitetural que demarca claramente o limite em que um modelo particular é definido e aplicável. Esse padrão é denominado:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Durante a modelagem de domínio (Domain-Driven Design - DDD) para um novo módulo de precatórios, o Especialista em Negócios (Domain Expert) e os desenvolvedores identificaram que o conceito de 'Processo' possui significados e regras radicalmente diferentes no contexto de 'Julgamento' (onde importa a sentença) e no contexto de 'Pagamento' (onde importa os valores financeiros). Para resolver essa ambiguidade e proteger a integridade do modelo, o DDD preconiza o uso de um padrão arquitetural que demarca claramente o limite em que um modelo particular é definido e aplicável. Esse padrão é denominado:",
     "options": {
       "A": "Linguagem Ubíqua (Ubiquitous Language).",
       "B": "Contexto Delimitado (Bounded Context).",
@@ -315,17 +303,16 @@
       "E": "Objeto de Valor (Value Object)."
     },
     "answer": "B",
-    "explanation": "- B) Correta. Bounded Context (Contexto Delimitado) no DDD é a fronteira lógica (como um departamento) onde um modelo específico faz sentido. 'Processo' na Vara de Julgamento tem um conjunto de atributos; 'Processo' na Tesouraria tem outro conjunto. O Bounded Context separa as duas realidades para evitar que os desenvolvedores tentem criar uma mega classe 'Processo' com 200 atributos confusos.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Durante a modelagem de domínio (Domain-Driven Design - DDD) para um novo módulo de precatórios, o Especialista em Negócios (Domain Expert) e os desenvolvedores identificaram que o conceito de 'Processo' possui significados e regras radicalmente diferentes no contexto de 'Julgamento' (onde importa a sentença) e no contexto de 'Pagamento' (onde importa os valores financeiros). Para resolver essa ambiguidade e proteger a integridade do modelo, o DDD preconiza o uso de um padrão arquitetural que demarca claramente o limite em que um modelo particular é definido e aplicável. Esse padrão é denominado:"
+    "explanation": "- B) Correta. Bounded Context (Contexto Delimitado) no DDD é a fronteira lógica (como um departamento) onde um modelo específico faz sentido. 'Processo' na Vara de Julgamento tem um conjunto de atributos; 'Processo' na Tesouraria tem outro conjunto. O Bounded Context separa as duas realidades para evitar que os desenvolvedores tentem criar uma mega classe 'Processo' com 200 atributos confusos."
   },
   {
-    "id": "03_06_t2_q18",
+    "id": 648,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
-    "question": "A equipe de TI de um Tribunal Superior precisa garantir que o sistema judicial continue funcionando mesmo que um dos microsserviços parceiros (como o serviço dos Correios de citação de endereços) sofra uma pane completa ou lentidão extrema. A abordagem recomendada em uma arquitetura Cloud-Native para evitar falhas em cascata, interrompendo proativamente as chamadas para o serviço com falha antes que a fila de conexões de rede do tribunal seja esgotada, é a implementação do padrão (Design Pattern):",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "A equipe de TI de um Tribunal Superior precisa garantir que o sistema judicial continue funcionando mesmo que um dos microsserviços parceiros (como o serviço dos Correios de citação de endereços) sofra uma pane completa ou lentidão extrema. A abordagem recomendada em uma arquitetura Cloud-Native para evitar falhas em cascata, interrompendo proativamente as chamadas para o serviço com falha antes que a fila de conexões de rede do tribunal seja esgotada, é a implementação do padrão (Design Pattern):",
     "options": {
       "A": "Singleton.",
       "B": "Circuit Breaker.",
@@ -334,17 +321,16 @@
       "E": "Model-View-Controller (MVC)."
     },
     "answer": "B",
-    "explanation": "- B) Correta. O padrão Circuit Breaker atua como um disjuntor elétrico. Se o serviço dos Correios começar a falhar repetidamente ou demorar demais, o disjuntor 'desarma', interrompendo as chamadas imediatamente (retornando erro ou fallback) para evitar que a aplicação que chamou congele esperando e gere falha em cascata.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "A equipe de TI de um Tribunal Superior precisa garantir que o sistema judicial continue funcionando mesmo que um dos microsserviços parceiros (como o serviço dos Correios de citação de endereços) sofra uma pane completa ou lentidão extrema. A abordagem recomendada em uma arquitetura Cloud-Native para evitar falhas em cascata, interrompendo proativamente as chamadas para o serviço com falha antes que a fila de conexões de rede do tribunal seja esgotada, é a implementação do padrão (Design Pattern):"
+    "explanation": "- B) Correta. O padrão Circuit Breaker atua como um disjuntor elétrico. Se o serviço dos Correios começar a falhar repetidamente ou demorar demais, o disjuntor 'desarma', interrompendo as chamadas imediatamente (retornando erro ou fallback) para evitar que a aplicação que chamou congele esperando e gere falha em cascata."
   },
   {
-    "id": "03_06_t2_q19",
+    "id": 649,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
-    "question": "No Domain-Driven Design (DDD), é fundamental distinguir corretamente Entidades de Objetos de Valor (Value Objects). Considere o seguinte cenário: Um sistema judiciário registra um 'Advogado' com seu número da OAB, e também registra o 'Endereço Comercial' do escritório com rua, número e CEP. Com base nas premissas de DDD, assinale a classificação correta para esses elementos:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "No Domain-Driven Design (DDD), é fundamental distinguir corretamente Entidades de Objetos de Valor (Value Objects). Considere o seguinte cenário: Um sistema judiciário registra um 'Advogado' com seu número da OAB, e também registra o 'Endereço Comercial' do escritório com rua, número e CEP. Com base nas premissas de DDD, assinale a classificação correta para esses elementos:",
     "options": {
       "A": "Ambos são Entidades, pois possuem atributos passíveis de alteração ao longo da vida útil do sistema.",
       "B": "O Advogado é uma Entidade (pois tem identidade única - a OAB - que o define independentemente de seus atributos), enquanto o Endereço é um Objeto de Valor (pois é definido pelas suas características, e se qualquer atributo mudar, é outro endereço).",
@@ -353,17 +339,16 @@
       "E": "O Advogado é a Raiz de Agregação (Aggregate Root) isolada, e o Endereço é o Contexto Delimitado físico da aplicação."
     },
     "answer": "B",
-    "explanation": "- B) Correta. Em DDD, Entidades têm Identidade Contínua (mesmo que um advogado mude o nome, ele continua sendo a mesma pessoa física/OAB). Objetos de Valor (Value Objects) não possuem identidade própria e são imutáveis; eles valem pelo que contêm. Se a rua de um endereço muda, já não é o mesmo endereço, é um NOVO objeto de valor.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "No Domain-Driven Design (DDD), é fundamental distinguir corretamente Entidades de Objetos de Valor (Value Objects). Considere o seguinte cenário: Um sistema judiciário registra um 'Advogado' com seu número da OAB, e também registra o 'Endereço Comercial' do escritório com rua, número e CEP. Com base nas premissas de DDD, assinale a classificação correta para esses elementos:"
+    "explanation": "- B) Correta. Em DDD, Entidades têm Identidade Contínua (mesmo que um advogado mude o nome, ele continua sendo a mesma pessoa física/OAB). Objetos de Valor (Value Objects) não possuem identidade própria e são imutáveis; eles valem pelo que contêm. Se a rua de um endereço muda, já não é o mesmo endereço, é um NOVO objeto de valor."
   },
   {
-    "id": "03_06_t2_q20",
+    "id": 650,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
-    "question": "O Manifesto 'Twelve-Factor App' (Aplicação de 12 Fatores) é o guia fundamental para a criação de aplicativos Cloud-Native, focados em portabilidade, escalabilidade e desenvolvimento contínuo. Sobre o fator número III ('Configurações' / Config), o manifesto estabelece estritamente que:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "O Manifesto 'Twelve-Factor App' (Aplicação de 12 Fatores) é o guia fundamental para a criação de aplicativos Cloud-Native, focados em portabilidade, escalabilidade e desenvolvimento contínuo. Sobre o fator número III ('Configurações' / Config), o manifesto estabelece estritamente que:",
     "options": {
       "A": "As senhas e URLs de bancos de dados devem ser inseridas (hardcoded) diretamente no código-fonte como constantes estáticas, garantindo que o compilador as otimize.",
       "B": "A configuração deve ser armazenada inteiramente no banco de dados principal do aplicativo em uma tabela de metadados, para ser cacheada globalmente.",
@@ -372,17 +357,16 @@
       "E": "As chaves de API secretas devem ser solicitadas de forma síncrona ao usuário administrador via prompt de comando sempre que o microsserviço for iniciado."
     },
     "answer": "C",
-    "explanation": "- C) Correta. A regra III do 12-Factor App exige separar estritamente a Configuração (que muda por ambiente: senhas, hosts, portas) do Código. Elas NUNCA devem estar no código (hardcoded) ou versionadas no Git. O padrão ouro é usar Variáveis de Ambiente.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "O Manifesto 'Twelve-Factor App' (Aplicação de 12 Fatores) é o guia fundamental para a criação de aplicativos Cloud-Native, focados em portabilidade, escalabilidade e desenvolvimento contínuo. Sobre o fator número III ('Configurações' / Config), o manifesto estabelece estritamente que:"
+    "explanation": "- C) Correta. A regra III do 12-Factor App exige separar estritamente a Configuração (que muda por ambiente: senhas, hosts, portas) do Código. Elas NUNCA devem estar no código (hardcoded) ou versionadas no Git. O padrão ouro é usar Variáveis de Ambiente."
   },
   {
-    "id": "03_06_t2_q21",
+    "id": 651,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
-    "question": "Em uma arquitetura moderna orientada a microsserviços do Tribunal, existe a necessidade de processar pagamentos de honorários periciais que dependem do serviço de orçamento, do serviço de pagamentos e do serviço de contabilidade. Se a transação no serviço de contabilidade falhar, a ação realizada nos dois primeiros serviços precisa ser desfeita para manter a consistência financeira. Para gerenciar essas transações distribuídas assíncronas sem bloquear a rede (já que transações ACID tradicionais em dois estágios são inviáveis na nuvem), o padrão de arquitetura apropriado recomendado é o:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Em uma arquitetura moderna orientada a microsserviços do Tribunal, existe a necessidade de processar pagamentos de honorários periciais que dependem do serviço de orçamento, do serviço de pagamentos e do serviço de contabilidade. Se a transação no serviço de contabilidade falhar, a ação realizada nos dois primeiros serviços precisa ser desfeita para manter a consistência financeira. Para gerenciar essas transações distribuídas assíncronas sem bloquear a rede (já que transações ACID tradicionais em dois estágios são inviáveis na nuvem), o padrão de arquitetura apropriado recomendado é o:",
     "options": {
       "A": "Saga Pattern (Padrão Saga), orquestrando ou coreografando eventos locais e aplicando transações compensatórias em caso de falha.",
       "B": "Padrão de Dupla Autenticação OAuth2 usando persistência em cache Redis.",
@@ -391,17 +375,16 @@
       "E": "Padrão CQRS (Command Query Responsibility Segregation) exclusivo para tabelas transacionais de leitura rápida."
     },
     "answer": "A",
-    "explanation": "- A) Correta. O padrão Saga lida com transações que passam por múltiplos microsserviços. Como não há bloqueio global, cada serviço executa sua transação local no seu banco de dados e publica um evento. Se o serviço lá na frente falhar, o Saga aciona comandos de compensação ('desfazer') nos serviços que já rodaram.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Em uma arquitetura moderna orientada a microsserviços do Tribunal, existe a necessidade de processar pagamentos de honorários periciais que dependem do serviço de orçamento, do serviço de pagamentos e do serviço de contabilidade. Se a transação no serviço de contabilidade falhar, a ação realizada nos dois primeiros serviços precisa ser desfeita para manter a consistência financeira. Para gerenciar essas transações distribuídas assíncronas sem bloquear a rede (já que transações ACID tradicionais em dois estágios são inviáveis na nuvem), o padrão de arquitetura apropriado recomendado é o:"
+    "explanation": "- A) Correta. O padrão Saga lida com transações que passam por múltiplos microsserviços. Como não há bloqueio global, cada serviço executa sua transação local no seu banco de dados e publica um evento. Se o serviço lá na frente falhar, o Saga aciona comandos de compensação ('desfazer') nos serviços que já rodaram."
   },
   {
-    "id": "03_06_t2_q22",
+    "id": 652,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
-    "question": "A comunicação em arquiteturas de microsserviços pode ser dividida em comunicação síncrona e assíncrona. Considere o seguinte cenário: Quando o serviço de 'Autuação' finaliza a geração de um processo, ele precisa notificar os serviços de 'Sorteio Eletrônico', 'Busca Jurisprudencial' e 'Auditoria' sobre o novo processo, mas o serviço de autuação não deve ficar aguardando respostas nem se preocupar se o Sorteio está ativo no momento. O padrão tecnológico adequado para essa comunicação assíncrona baseada em eventos (Event-Driven) é:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "A comunicação em arquiteturas de microsserviços pode ser dividida em comunicação síncrona e assíncrona. Considere o seguinte cenário: Quando o serviço de 'Autuação' finaliza a geração de um processo, ele precisa notificar os serviços de 'Sorteio Eletrônico', 'Busca Jurisprudencial' e 'Auditoria' sobre o novo processo, mas o serviço de autuação não deve ficar aguardando respostas nem se preocupar se o Sorteio está ativo no momento. O padrão tecnológico adequado para essa comunicação assíncrona baseada em eventos (Event-Driven) é:",
     "options": {
       "A": "Chamada Remota de Procedimentos (gRPC ou RESTful API) estrita via requisições HTTP GET sequenciais.",
       "B": "Barramento de Mensagens (Message Broker / Publish-Subscribe) como RabbitMQ ou Apache Kafka.",
@@ -410,17 +393,16 @@
       "E": "Compartilhamento de arquivos CSV em um diretório FTP comum acessado a cada 15 minutos (Cron Job)."
     },
     "answer": "B",
-    "explanation": "- B) Correta. O padrão Publish-Subscribe em Message Brokers (Mensageria) permite comunicação assíncrona e desacoplada. O serviço de autuação apenas 'publica' o evento de que um processo nasceu e segue sua vida. Os outros serviços (subscribers) consomem a mensagem quando puderem, garantindo resiliência.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "A comunicação em arquiteturas de microsserviços pode ser dividida em comunicação síncrona e assíncrona. Considere o seguinte cenário: Quando o serviço de 'Autuação' finaliza a geração de um processo, ele precisa notificar os serviços de 'Sorteio Eletrônico', 'Busca Jurisprudencial' e 'Auditoria' sobre o novo processo, mas o serviço de autuação não deve ficar aguardando respostas nem se preocupar se o Sorteio está ativo no momento. O padrão tecnológico adequado para essa comunicação assíncrona baseada em eventos (Event-Driven) é:"
+    "explanation": "- B) Correta. O padrão Publish-Subscribe em Message Brokers (Mensageria) permite comunicação assíncrona e desacoplada. O serviço de autuação apenas 'publica' o evento de que um processo nasceu e segue sua vida. Os outros serviços (subscribers) consomem a mensagem quando puderem, garantindo resiliência."
   },
   {
-    "id": "03_06_t2_q23",
+    "id": 653,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
-    "question": "Um Desenvolvedor Sênior está modelando as regras de negócio em DDD. Ele se depara com a necessidade de definir um agrupamento de entidades e objetos de valor que são logicamente tratados como uma única unidade de persistência e consistência de dados (por exemplo, uma 'Petição' que possui vários 'Anexos', onde não faz sentido um Anexo existir sem a Petição). A porta de entrada exclusiva para carregar ou salvar dados desse aglomerado no DDD é denominada:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um Desenvolvedor Sênior está modelando as regras de negócio em DDD. Ele se depara com a necessidade de definir um agrupamento de entidades e objetos de valor que são logicamente tratados como uma única unidade de persistência e consistência de dados (por exemplo, uma 'Petição' que possui vários 'Anexos', onde não faz sentido um Anexo existir sem a Petição). A porta de entrada exclusiva para carregar ou salvar dados desse aglomerado no DDD é denominada:",
     "options": {
       "A": "Fábrica Isolada (Isolated Factory).",
       "B": "Mapeador Objeto-Relacional (ORM Hibernate).",
@@ -429,17 +411,16 @@
       "E": "Evento de Domínio Central (Central Domain Event)."
     },
     "answer": "C",
-    "explanation": "- C) Correta. Em DDD, um Agregado é um grupo de objetos relacionados tratados como uma única unidade para alterações de dados. A Raiz de Agregação (Aggregate Root) é a única Entidade desse grupo permitida a ser referenciada pelo mundo exterior, garantindo a consistência das regras internas do agrupamento.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um Desenvolvedor Sênior está modelando as regras de negócio em DDD. Ele se depara com a necessidade de definir um agrupamento de entidades e objetos de valor que são logicamente tratados como uma única unidade de persistência e consistência de dados (por exemplo, uma 'Petição' que possui vários 'Anexos', onde não faz sentido um Anexo existir sem a Petição). A porta de entrada exclusiva para carregar ou salvar dados desse aglomerado no DDD é denominada:"
+    "explanation": "- C) Correta. Em DDD, um Agregado é um grupo de objetos relacionados tratados como uma única unidade para alterações de dados. A Raiz de Agregação (Aggregate Root) é a única Entidade desse grupo permitida a ser referenciada pelo mundo exterior, garantindo a consistência das regras internas do agrupamento."
   },
   {
-    "id": "03_06_t2_q24",
+    "id": 654,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
-    "question": "No padrão de desenvolvimento de aplicações Cloud-Native (Twelve-Factor App), o fator VI, que trata dos Processos (Processes), estipula que o aplicativo deve executar no ambiente na forma de um ou mais processos 'Stateless' (Sem Estado). A principal implicação prática e de design dessa premissa para a arquitetura de software é:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "No padrão de desenvolvimento de aplicações Cloud-Native (Twelve-Factor App), o fator VI, que trata dos Processos (Processes), estipula que o aplicativo deve executar no ambiente na forma de um ou mais processos 'Stateless' (Sem Estado). A principal implicação prática e de design dessa premissa para a arquitetura de software é:",
     "options": {
       "A": "A aplicação não pode armazenar arquivos de mídia estáticos, devendo gerar os layouts front-end inteiramente por JavaScript dinâmico no cliente.",
       "B": "A sessão do usuário e os dados persistentes devem ser armazenados obrigatoriamente na memória RAM local do contêiner Docker onde ele logou.",
@@ -448,17 +429,16 @@
       "E": "Os processos devem executar de forma estática, ou seja, nunca escalarem para além de 1 (uma) instância virtual no Data Center para evitar falhas de sessão."
     },
     "answer": "C",
-    "explanation": "- C) Correta. Ser 'Stateless' significa que qualquer instância web pode atender a qualquer requisição a qualquer momento, pois elas não guardam informações de estado entre requisições na sua própria memória ou disco local. Se a instância reiniciar, nada é perdido, pois o estado (a sessão) vive em um Redis ou banco de dados externo.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "No padrão de desenvolvimento de aplicações Cloud-Native (Twelve-Factor App), o fator VI, que trata dos Processos (Processes), estipula que o aplicativo deve executar no ambiente na forma de um ou mais processos 'Stateless' (Sem Estado). A principal implicação prática e de design dessa premissa para a arquitetura de software é:"
+    "explanation": "- C) Correta. Ser 'Stateless' significa que qualquer instância web pode atender a qualquer requisição a qualquer momento, pois elas não guardam informações de estado entre requisições na sua própria memória ou disco local. Se a instância reiniciar, nada é perdido, pois o estado (a sessão) vive em um Redis ou banco de dados externo."
   },
   {
-    "id": "03_06_t2_q25",
+    "id": 655,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
-    "question": "Para expor os mais de 50 microsserviços internos do Tribunal para o aplicativo mobile cidadão na internet, a equipe de arquitetura percebeu que seria caótico para o celular ter que rastrear os IPs dinâmicos de cada serviço e gerenciar a segurança e limite de requisições de forma descentralizada. Para resolver isso, eles implementaram um componente que atua como porta de entrada (Single Point of Entry) da rede do Tribunal, lidando com autenticação SSL, roteamento dinâmico e agregação de respostas. Esse componente é o padrão:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Para expor os mais de 50 microsserviços internos do Tribunal para o aplicativo mobile cidadão na internet, a equipe de arquitetura percebeu que seria caótico para o celular ter que rastrear os IPs dinâmicos de cada serviço e gerenciar a segurança e limite de requisições de forma descentralizada. Para resolver isso, eles implementaram um componente que atua como porta de entrada (Single Point of Entry) da rede do Tribunal, lidando com autenticação SSL, roteamento dinâmico e agregação de respostas. Esse componente é o padrão:",
     "options": {
       "A": "Back-end for Front-end (BFF).",
       "B": "Service Mesh interno (Istio).",
@@ -467,17 +447,16 @@
       "E": "Load Balancer DNS (Amazon Route 53) exclusivo."
     },
     "answer": "D",
-    "explanation": "- D) Correta. O API Gateway é o padrão por excelência para expor microsserviços ao mundo exterior de forma centralizada. Ele atua como fachada, recebendo todas as chamadas do app cliente, validando tokens de segurança, roteando para os microsserviços internos corretos e, muitas vezes, agregando as respostas.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Para expor os mais de 50 microsserviços internos do Tribunal para o aplicativo mobile cidadão na internet, a equipe de arquitetura percebeu que seria caótico para o celular ter que rastrear os IPs dinâmicos de cada serviço e gerenciar a segurança e limite de requisições de forma descentralizada. Para resolver isso, eles implementaram um componente que atua como porta de entrada (Single Point of Entry) da rede do Tribunal, lidando com autenticação SSL, roteamento dinâmico e agregação de respostas. Esse componente é o padrão:"
+    "explanation": "- D) Correta. O API Gateway é o padrão por excelência para expor microsserviços ao mundo exterior de forma centralizada. Ele atua como fachada, recebendo todas as chamadas do app cliente, validando tokens de segurança, roteando para os microsserviços internos corretos e, muitas vezes, agregando as respostas."
   },
   {
-    "id": "03_06_t2_q26",
+    "id": 656,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
-    "question": "Um arquiteto de software discutindo DDD afirma: 'Nós precisamos criar uma comunicação forte entre os desenvolvedores técnicos de software e os especialistas do negócio do tribunal (Juízes e Servidores), para que os termos usados no código-fonte, nos métodos e no banco de dados sejam exatamente os mesmos termos usados pelos servidores na vida real'. O pilar central do Domain-Driven Design que foca na criação dessa linguagem padronizada, comum a todos os envolvidos do projeto, é a:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um arquiteto de software discutindo DDD afirma: 'Nós precisamos criar uma comunicação forte entre os desenvolvedores técnicos de software e os especialistas do negócio do tribunal (Juízes e Servidores), para que os termos usados no código-fonte, nos métodos e no banco de dados sejam exatamente os mesmos termos usados pelos servidores na vida real'. O pilar central do Domain-Driven Design que foca na criação dessa linguagem padronizada, comum a todos os envolvidos do projeto, é a:",
     "options": {
       "A": "Linguagem Interpretada de Máquina (Interpreted Machine Language).",
       "B": "Linguagem Orientada a Objetos Pura (Pure Object-Oriented Language).",
@@ -486,17 +465,16 @@
       "E": "Linguagem Ubíqua (Ubiquitous Language)."
     },
     "answer": "E",
-    "explanation": "- E) Correta. A Linguagem Ubíqua (ou Onipresente) é a base do DDD. Significa que o vocabulário usado pelo especialista do negócio deve refletir-se exatamente no nome das classes, variáveis e eventos no código. Se o negócio chama de 'Autuar Processo', o código deve ser `processo.autuar()`, e não um genérico `system.insertData()`.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um arquiteto de software discutindo DDD afirma: 'Nós precisamos criar uma comunicação forte entre os desenvolvedores técnicos de software e os especialistas do negócio do tribunal (Juízes e Servidores), para que os termos usados no código-fonte, nos métodos e no banco de dados sejam exatamente os mesmos termos usados pelos servidores na vida real'. O pilar central do Domain-Driven Design que foca na criação dessa linguagem padronizada, comum a todos os envolvidos do projeto, é a:"
+    "explanation": "- E) Correta. A Linguagem Ubíqua (ou Onipresente) é a base do DDD. Significa que o vocabulário usado pelo especialista do negócio deve refletir-se exatamente no nome das classes, variáveis e eventos no código. Se o negócio chama de 'Autuar Processo', o código deve ser `processo.autuar()`, e não um genérico `system.insertData()`."
   },
   {
-    "id": "03_06_t2_q27",
+    "id": 657,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
-    "question": "Um dos problemas arquiteturais quando se utiliza microsserviços é que, ao separar banco de dados por serviço, algumas funcionalidades que antes faziam um `JOIN` simples nas tabelas para obter um relatório agora exigem consultar 5 APIs de serviços distintos, gerando alta latência e carga na rede. O padrão arquitetural avançado frequentemente utilizado junto a sistemas orientados a eventos para resolver esse problema, segregando as operações de gravação (comandos) das operações de leitura de dados consolidados em bancos separados, é conhecido como:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um dos problemas arquiteturais quando se utiliza microsserviços é que, ao separar banco de dados por serviço, algumas funcionalidades que antes faziam um `JOIN` simples nas tabelas para obter um relatório agora exigem consultar 5 APIs de serviços distintos, gerando alta latência e carga na rede. O padrão arquitetural avançado frequentemente utilizado junto a sistemas orientados a eventos para resolver esse problema, segregando as operações de gravação (comandos) das operações de leitura de dados consolidados em bancos separados, é conhecido como:",
     "options": {
       "A": "CQRS (Command Query Responsibility Segregation).",
       "B": "REST (Representational State Transfer).",
@@ -505,17 +483,16 @@
       "E": "Padrão de Injeção de Dependências (Dependency Injection)."
     },
     "answer": "A",
-    "explanation": "- A) Correta. CQRS separa o modelo de Escrita/Alteração do modelo de Leitura. Enquanto a escrita obedece a regras de negócio complexas, a leitura é feita num banco desnormalizado rápido (criado a partir dos eventos da aplicação) construído especificamente para atender buscas e relatórios complexos sem exigir `JOINs` custosos nas bases mestres.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um dos problemas arquiteturais quando se utiliza microsserviços é que, ao separar banco de dados por serviço, algumas funcionalidades que antes faziam um `JOIN` simples nas tabelas para obter um relatório agora exigem consultar 5 APIs de serviços distintos, gerando alta latência e carga na rede. O padrão arquitetural avançado frequentemente utilizado junto a sistemas orientados a eventos para resolver esse problema, segregando as operações de gravação (comandos) das operações de leitura de dados consolidados em bancos separados, é conhecido como:"
+    "explanation": "- A) Correta. CQRS separa o modelo de Escrita/Alteração do modelo de Leitura. Enquanto a escrita obedece a regras de negócio complexas, a leitura é feita num banco desnormalizado rápido (criado a partir dos eventos da aplicação) construído especificamente para atender buscas e relatórios complexos sem exigir `JOINs` custosos nas bases mestres."
   },
   {
-    "id": "03_06_t2_q28",
+    "id": 658,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
-    "question": "Durante a refatoração do sistema legado de Recursos Humanos em DDD, os desenvolvedores identificaram certas operações de negócio que não pertenciam naturalmente a nenhuma 'Entidade' ou 'Objeto de Valor' isolado, pois coordenavam regras que envolviam dezenas de entidades em conjunto. A implementação arquitetural correta no DDD para encapsular essas lógicas de negócio puras que coordenam múltiplas entidades é o uso de:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Durante a refatoração do sistema legado de Recursos Humanos em DDD, os desenvolvedores identificaram certas operações de negócio que não pertenciam naturalmente a nenhuma 'Entidade' ou 'Objeto de Valor' isolado, pois coordenavam regras que envolviam dezenas de entidades em conjunto. A implementação arquitetural correta no DDD para encapsular essas lógicas de negócio puras que coordenam múltiplas entidades é o uso de:",
     "options": {
       "A": "Repositórios Abstratos Genéricos (Abstract Generic Repositories).",
       "B": "Controladores de Interface de Usuário (UI Controllers).",
@@ -524,17 +501,16 @@
       "E": "Funções Estáticas de Helpers Globais do Sistema (Static Global Helpers)."
     },
     "answer": "C",
-    "explanation": "- C) Correta. Quando uma operação de negócio é importante e não se encaixa nas propriedades nativas de uma única Entidade ou Value Object (porque orquestra vários agregados), ela deve ser implementada em um Serviço de Domínio (Domain Service), mantendo o modelo livre de acoplamentos bizarros.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Durante a refatoração do sistema legado de Recursos Humanos em DDD, os desenvolvedores identificaram certas operações de negócio que não pertenciam naturalmente a nenhuma 'Entidade' ou 'Objeto de Valor' isolado, pois coordenavam regras que envolviam dezenas de entidades em conjunto. A implementação arquitetural correta no DDD para encapsular essas lógicas de negócio puras que coordenam múltiplas entidades é o uso de:"
+    "explanation": "- C) Correta. Quando uma operação de negócio é importante e não se encaixa nas propriedades nativas de uma única Entidade ou Value Object (porque orquestra vários agregados), ela deve ser implementada em um Serviço de Domínio (Domain Service), mantendo o modelo livre de acoplamentos bizarros."
   },
   {
-    "id": "03_06_t2_q29",
+    "id": 659,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
-    "question": "Sobre o fator I ('Base de Código' / Codebase) do manifesto Twelve-Factor App para aplicações Cloud-Native, avalie o seguinte cenário de um time de desenvolvimento do Tribunal de Justiça: A equipe possui um único aplicativo, mas decidiu criar um repositório Git diferente para as ramificações de Desenvolvimento, Homologação e Produção, implantando-os como aplicativos isolados. De acordo com o fator I, essa abordagem está:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Sobre o fator I ('Base de Código' / Codebase) do manifesto Twelve-Factor App para aplicações Cloud-Native, avalie o seguinte cenário de um time de desenvolvimento do Tribunal de Justiça: A equipe possui um único aplicativo, mas decidiu criar um repositório Git diferente para as ramificações de Desenvolvimento, Homologação e Produção, implantando-os como aplicativos isolados. De acordo com o fator I, essa abordagem está:",
     "options": {
       "A": "Correta, pois é impossível aplicar integração contínua (CI/CD) num único repositório sem corromper a produção.",
       "B": "Incorreta, pois uma aplicação de doze fatores deve possuir uma, e somente uma, base de código rastreada em controle de versão (um repositório), a partir da qual ocorrem múltiplas implantações (deploys) em ambientes distintos.",
@@ -543,17 +519,16 @@
       "E": "Correta, desde que os desenvolvedores garantam a cópia manual diária (merge copy-paste) do código do repositório de desenvolvimento para o repositório de produção."
     },
     "answer": "B",
-    "explanation": "- B) Correta. A regra fundamental I afirma: 'Uma base de código rastreada no controle de revisão, muitos deploys'. Se existem várias bases de código da mesma aplicação, não é um 12-factor app, é um sistema distribuído de manutenção falha. Um único repositório Git serve a base de código; os ambientes (dev, staging, prod) mudam apenas as variáveis de configuração (deployments).",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Sobre o fator I ('Base de Código' / Codebase) do manifesto Twelve-Factor App para aplicações Cloud-Native, avalie o seguinte cenário de um time de desenvolvimento do Tribunal de Justiça: A equipe possui um único aplicativo, mas decidiu criar um repositório Git diferente para as ramificações de Desenvolvimento, Homologação e Produção, implantando-os como aplicativos isolados. De acordo com o fator I, essa abordagem está:"
+    "explanation": "- B) Correta. A regra fundamental I afirma: 'Uma base de código rastreada no controle de revisão, muitos deploys'. Se existem várias bases de código da mesma aplicação, não é um 12-factor app, é um sistema distribuído de manutenção falha. Um único repositório Git serve a base de código; os ambientes (dev, staging, prod) mudam apenas as variáveis de configuração (deployments)."
   },
   {
-    "id": "03_06_t2_q30",
+    "id": 660,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Arquitetura de Software (Microserviços, DDD e Cloud-native)",
-    "question": "No contexto da infraestrutura para Microsserviços e comunicação Cloud-Native, uma tecnologia emergente muito adotada em clusters Kubernetes, que atua anexando 'sidecars' (proxys como o Envoy) ao lado de cada microsserviço para gerenciar toda a complexidade da comunicação de rede subjacente (como roteamento inteligente, criptografia mTLS nativa entre os pods, retentativas e observabilidade) de forma transparente para o desenvolvedor do código, é a tecnologia de:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "No contexto da infraestrutura para Microsserviços e comunicação Cloud-Native, uma tecnologia emergente muito adotada em clusters Kubernetes, que atua anexando 'sidecars' (proxys como o Envoy) ao lado de cada microsserviço para gerenciar toda a complexidade da comunicação de rede subjacente (como roteamento inteligente, criptografia mTLS nativa entre os pods, retentativas e observabilidade) de forma transparente para o desenvolvedor do código, é a tecnologia de:",
     "options": {
       "A": "Roteamento Baseado em Firewall de Perímetro Clássico (Perimeter Classic Firewalling).",
       "B": "Gerenciador de Banco de Dados Embutido (Embedded SQLite).",
@@ -562,17 +537,16 @@
       "E": "Servidor FTP com autenticação estrita baseada em Chave PGP."
     },
     "answer": "C",
-    "explanation": "- C) Correta. O Service Mesh (como Istio ou Linkerd) cuida de toda a comunicação 'Leste-Oeste' (tráfego interno do cluster) interceptando as chamadas de rede via Sidecar Proxies. Isso retira a obrigação do desenvolvedor de escrever código pesado na aplicação para tratar retentativas de conexão, circuit breakers ou encriptação TLS na rede local.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "No contexto da infraestrutura para Microsserviços e comunicação Cloud-Native, uma tecnologia emergente muito adotada em clusters Kubernetes, que atua anexando 'sidecars' (proxys como o Envoy) ao lado de cada microsserviço para gerenciar toda a complexidade da comunicação de rede subjacente (como roteamento inteligente, criptografia mTLS nativa entre os pods, retentativas e observabilidade) de forma transparente para o desenvolvedor do código, é a tecnologia de:"
+    "explanation": "- C) Correta. O Service Mesh (como Istio ou Linkerd) cuida de toda a comunicação 'Leste-Oeste' (tráfego interno do cluster) interceptando as chamadas de rede via Sidecar Proxies. Isso retira a obrigação do desenvolvedor de escrever código pesado na aplicação para tratar retentativas de conexão, circuit breakers ou encriptação TLS na rede local."
   },
   {
-    "id": "03_06_t3_q31",
+    "id": 661,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
-    "question": "Um desenvolvedor cego de um Tribunal Regional do Trabalho ingressou na sede do órgão acompanhado de seu cão-guia. O segurança terceirizado do tribunal impediu o acesso do servidor ao refeitório durante o horário de almoço, alegando que normas sanitárias internas proibiam a entrada de animais em locais de alimentação, oferecendo que o cão ficasse amarrado na portaria. Conforme os ditames da Lei nº 11.126/2005 (Lei do Cão-Guia) e seu Decreto regulamentador (nº 5.904/2006), a atitude do segurança foi:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um desenvolvedor cego de um Tribunal Regional do Trabalho ingressou na sede do órgão acompanhado de seu cão-guia. O segurança terceirizado do tribunal impediu o acesso do servidor ao refeitório durante o horário de almoço, alegando que normas sanitárias internas proibiam a entrada de animais em locais de alimentação, oferecendo que o cão ficasse amarrado na portaria. Conforme os ditames da Lei nº 11.126/2005 (Lei do Cão-Guia) e seu Decreto regulamentador (nº 5.904/2006), a atitude do segurança foi:",
     "options": {
       "A": "Correta, visto que estabelecimentos públicos e privados de alimentação possuem prerrogativa sanitária absoluta para vedar a entrada de animais de qualquer espécie, sem exceções legais.",
       "B": "Incorreta, pois a legislação garante à pessoa com deficiência visual o direito de ingressar e permanecer com o cão-guia em todos os ambientes de uso coletivo, sendo expressamente vedada qualquer exigência de separação entre o cão-guia e seu usuário.",
@@ -581,17 +555,16 @@
       "E": "Incorreta, mas apenas se o servidor cego possuir autorização judicial prévia, expedida pela presidência do TRT, permitindo excepcionalmente o acesso do animal ao refeitório local."
     },
     "answer": "B",
-    "explanation": "- B) Correta. A Lei nº 11.126/2005 assegura o ingresso e a permanência com cão-guia em qualquer local público ou privado de uso coletivo (inclusive refeitórios e áreas de alimentação). A lei prevê categoricamente que é vedada a exigência de uso de focinheira para cães-guia e qualquer tipo de isolamento ou separação entre o cão e a pessoa.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um desenvolvedor cego de um Tribunal Regional do Trabalho ingressou na sede do órgão acompanhado de seu cão-guia. O segurança terceirizado do tribunal impediu o acesso do servidor ao refeitório durante o horário de almoço, alegando que normas sanitárias internas proibiam a entrada de animais em locais de alimentação, oferecendo que o cão ficasse amarrado na portaria. Conforme os ditames da Lei nº 11.126/2005 (Lei do Cão-Guia) e seu Decreto regulamentador (nº 5.904/2006), a atitude do segurança foi:"
+    "explanation": "- B) Correta. A Lei nº 11.126/2005 assegura o ingresso e a permanência com cão-guia em qualquer local público ou privado de uso coletivo (inclusive refeitórios e áreas de alimentação). A lei prevê categoricamente que é vedada a exigência de uso de focinheira para cães-guia e qualquer tipo de isolamento ou separação entre o cão e a pessoa."
   },
   {
-    "id": "03_06_t3_q32",
+    "id": 662,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
-    "question": "No contexto do desenvolvimento e aquisição de novos sistemas de informação para o Sistema de Processo Judicial Eletrônico (PJe) da Justiça do Trabalho, a Resolução CSJT nº 386/2024 (Estatuto da Pessoa com Deficiência no CSJT e JT) fixou diretrizes rígidas sobre acessibilidade digital tecnológica. De acordo com a referida resolução, se um novo sistema web não puder ser concebido com total conformidade aos padrões de acessibilidade recomendados (eMAG) por inviabilidade técnica devidamente justificada, a administração do tribunal deve:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "No contexto do desenvolvimento e aquisição de novos sistemas de informação para o Sistema de Processo Judicial Eletrônico (PJe) da Justiça do Trabalho, a Resolução CSJT nº 386/2024 (Estatuto da Pessoa com Deficiência no CSJT e JT) fixou diretrizes rígidas sobre acessibilidade digital tecnológica. De acordo com a referida resolução, se um novo sistema web não puder ser concebido com total conformidade aos padrões de acessibilidade recomendados (eMAG) por inviabilidade técnica devidamente justificada, a administração do tribunal deve:",
     "options": {
       "A": "Abortar o projeto do sistema integralmente, pois o CSJT proíbe a aquisição de qualquer sistema não plenamente acessível em qualquer hipótese técnica.",
       "B": "Adquirir o sistema sob termo de ajuste provisório e, num prazo máximo de 5 anos, terceirizar a acessibilidade do software para a iniciativa privada.",
@@ -600,17 +573,16 @@
       "E": "Dispensar a acessibilidade mediante um atestado assinado pelo comitê médico da junta de saúde, eximindo a área de Tecnologia da Informação de realizar qualquer adaptação no software."
     },
     "answer": "C",
-    "explanation": "- C) Correta. A norma estabelece o 'Desenho Universal' como regra para TI. Mas quando a acessibilidade total imediata da plataforma for inviável (software legado ou barreiras arquiteturais de código), a lei exige o fornecimento de 'adaptações razoáveis' e fornecimento de tecnologia assistiva local para que a PCD consiga usar a ferramenta em igualdade de condições.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "No contexto do desenvolvimento e aquisição de novos sistemas de informação para o Sistema de Processo Judicial Eletrônico (PJe) da Justiça do Trabalho, a Resolução CSJT nº 386/2024 (Estatuto da Pessoa com Deficiência no CSJT e JT) fixou diretrizes rígidas sobre acessibilidade digital tecnológica. De acordo com a referida resolução, se um novo sistema web não puder ser concebido com total conformidade aos padrões de acessibilidade recomendados (eMAG) por inviabilidade técnica devidamente justificada, a administração do tribunal deve:"
+    "explanation": "- C) Correta. A norma estabelece o 'Desenho Universal' como regra para TI. Mas quando a acessibilidade total imediata da plataforma for inviável (software legado ou barreiras arquiteturais de código), a lei exige o fornecimento de 'adaptações razoáveis' e fornecimento de tecnologia assistiva local para que a PCD consiga usar a ferramenta em igualdade de condições."
   },
   {
-    "id": "03_06_t3_q33",
+    "id": 663,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
-    "question": "A área de gestão de pessoas de um Tribunal lançou um edital para preenchimento de vagas na modalidade de Teletrabalho. Um servidor efetivo que atua no suporte de TI, usuário de cadeira de rodas, solicitou a concessão de teletrabalho, alegando as dificuldades crônicas de transporte e locomoção urbana diária até o fórum trabalhista, amparado nas disposições do normativo interno que regulamenta a Política de Acessibilidade da Justiça do Trabalho (CSJT 386/2024). Nos termos da Resolução do CSJT sobre os direitos do servidor com deficiência, a solicitação de teletrabalho para este servidor deve ser:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "A área de gestão de pessoas de um Tribunal lançou um edital para preenchimento de vagas na modalidade de Teletrabalho. Um servidor efetivo que atua no suporte de TI, usuário de cadeira de rodas, solicitou a concessão de teletrabalho, alegando as dificuldades crônicas de transporte e locomoção urbana diária até o fórum trabalhista, amparado nas disposições do normativo interno que regulamenta a Política de Acessibilidade da Justiça do Trabalho (CSJT 386/2024). Nos termos da Resolução do CSJT sobre os direitos do servidor com deficiência, a solicitação de teletrabalho para este servidor deve ser:",
     "options": {
       "A": "Tratada com prioridade absoluta de concessão frente aos demais servidores na análise dos pedidos de adesão ao teletrabalho, quando as atividades exercidas e as características da deficiência assim o recomendarem.",
       "B": "Negada de imediato se o servidor ocupar cargo na área de Tecnologia da Informação, cuja natureza do suporte técnico exige presença física compulsória em todos os tribunais federais.",
@@ -619,17 +591,16 @@
       "E": "Aprovada apenas se a deficiência for classificada como de grau severo e com a ressalva de redução proporcional de sua remuneração durante os dias em que não estiver presencialmente na sede."
     },
     "answer": "A",
-    "explanation": "- A) Correta. Conforme a política de gestão de pessoas alinhada ao CSJT, servidores com deficiência ou que possuam dependentes com deficiência têm PRIORIDADE explícita na concessão do regime de teletrabalho.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "A área de gestão de pessoas de um Tribunal lançou um edital para preenchimento de vagas na modalidade de Teletrabalho. Um servidor efetivo que atua no suporte de TI, usuário de cadeira de rodas, solicitou a concessão de teletrabalho, alegando as dificuldades crônicas de transporte e locomoção urbana diária até o fórum trabalhista, amparado nas disposições do normativo interno que regulamenta a Política de Acessibilidade da Justiça do Trabalho (CSJT 386/2024). Nos termos da Resolução do CSJT sobre os direitos do servidor com deficiência, a solicitação de teletrabalho para este servidor deve ser:"
+    "explanation": "- A) Correta. Conforme a política de gestão de pessoas alinhada ao CSJT, servidores com deficiência ou que possuam dependentes com deficiência têm PRIORIDADE explícita na concessão do regime de teletrabalho."
   },
   {
-    "id": "03_06_t3_q34",
+    "id": 664,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
-    "question": "Um candidato cego compareceu a uma etapa presencial do concurso público do TRT, devidamente acompanhado do seu cão-guia em fase final de treinamento, usando o colete de identificação da escola de cães-guia. O fiscal de prova proibiu o ingresso do animal argumentando que a Lei nº 11.126/2005 ampara apenas cães-guias já plenamente formados e diplomados. A decisão do fiscal foi juridicamente:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um candidato cego compareceu a uma etapa presencial do concurso público do TRT, devidamente acompanhado do seu cão-guia em fase final de treinamento, usando o colete de identificação da escola de cães-guia. O fiscal de prova proibiu o ingresso do animal argumentando que a Lei nº 11.126/2005 ampara apenas cães-guias já plenamente formados e diplomados. A decisão do fiscal foi juridicamente:",
     "options": {
       "A": "Correta, pois cães em fase de treinamento são imprevisíveis e a legislação restringe a permanência apenas para animais com certificado definitivo de conclusão da escola internacional de guia.",
       "B": "Incorreta, pois a Lei assegura expressamente os mesmos direitos de ingresso e permanência aos treinadores, instrutores e às famílias socializadoras durante a fase de treinamento de cães-guia.",
@@ -638,17 +609,16 @@
       "E": "Correta, desde que justificada mediante um laudo técnico do fiscal avaliando o comportamento agitado do cão no saguão de entrada da escola."
     },
     "answer": "B",
-    "explanation": "- B) Correta. O Decreto nº 5.904/2006, que regulamenta a Lei do Cão-Guia, garante expressamente que as famílias de acolhimento (socializadoras) e os treinadores em fase de adestramento do cão gozem DE TODOS os mesmos direitos de ingresso e permanência assegurados à pessoa com deficiência. Um cão em treinamento tem o mesmo direito de acessar o local público.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um candidato cego compareceu a uma etapa presencial do concurso público do TRT, devidamente acompanhado do seu cão-guia em fase final de treinamento, usando o colete de identificação da escola de cães-guia. O fiscal de prova proibiu o ingresso do animal argumentando que a Lei nº 11.126/2005 ampara apenas cães-guias já plenamente formados e diplomados. A decisão do fiscal foi juridicamente:"
+    "explanation": "- B) Correta. O Decreto nº 5.904/2006, que regulamenta a Lei do Cão-Guia, garante expressamente que as famílias de acolhimento (socializadoras) e os treinadores em fase de adestramento do cão gozem DE TODOS os mesmos direitos de ingresso e permanência assegurados à pessoa com deficiência. Um cão em treinamento tem o mesmo direito de acessar o local público."
   },
   {
-    "id": "03_06_t3_q35",
+    "id": 665,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
-    "question": "O CSJT publicou a Resolução nº 386/2024 com o escopo de atualizar as políticas de acessibilidade em face de normativas mais modernas, substituindo resoluções obsoletas. Esse marco regulatório adota uma visão social da deficiência. Para caracterizar se um servidor se enquadra legalmente na condição de pessoa com deficiência e tem direito aos recursos de tecnologia assistiva previstos no órgão, a avaliação biopsicossocial (quando necessária) deve considerar, EXETO:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "O CSJT publicou a Resolução nº 386/2024 com o escopo de atualizar as políticas de acessibilidade em face de normativas mais modernas, substituindo resoluções obsoletas. Esse marco regulatório adota uma visão social da deficiência. Para caracterizar se um servidor se enquadra legalmente na condição de pessoa com deficiência e tem direito aos recursos de tecnologia assistiva previstos no órgão, a avaliação biopsicossocial (quando necessária) deve considerar, EXETO:",
     "options": {
       "A": "Os impedimentos nas funções e nas estruturas do corpo de longo prazo.",
       "B": "Os fatores socioambientais, psicológicos e pessoais enfrentados pelo servidor.",
@@ -657,17 +627,16 @@
       "E": "A limitação concreta no desempenho de atividades e participação enfrentada pelo servidor decorrente das barreiras urbanísticas e atitudinais."
     },
     "answer": "D",
-    "explanation": "- D) Correta. A Lei Brasileira de Inclusão (LBI) e a Res. 386 do CSJT superaram o ultrapassado 'Modelo Médico' (onde a deficiência era avaliada apenas pelo laudo médico e laudo físico). Adotaram o 'Modelo Biopsicossocial' (criado pela ONU), que foca na interação dos impedimentos com as BARREIRAS da sociedade.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "O CSJT publicou a Resolução nº 386/2024 com o escopo de atualizar as políticas de acessibilidade em face de normativas mais modernas, substituindo resoluções obsoletas. Esse marco regulatório adota uma visão social da deficiência. Para caracterizar se um servidor se enquadra legalmente na condição de pessoa com deficiência e tem direito aos recursos de tecnologia assistiva previstos no órgão, a avaliação biopsicossocial (quando necessária) deve considerar, EXETO:"
+    "explanation": "- D) Correta. A Lei Brasileira de Inclusão (LBI) e a Res. 386 do CSJT superaram o ultrapassado 'Modelo Médico' (onde a deficiência era avaliada apenas pelo laudo médico e laudo físico). Adotaram o 'Modelo Biopsicossocial' (criado pela ONU), que foca na interação dos impedimentos com as BARREIRAS da sociedade."
   },
   {
-    "id": "03_06_t3_q36",
+    "id": 666,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
-    "question": "Durante a modernização da Intranet do Tribunal, a comissão de acessibilidade constatou que o site estava repleto de barreiras atitudinais, arquitetônicas (código mal estruturado) e barreiras nas comunicações que impediam a fruição dos direitos de servidores surdos, como vídeos institucionais não contendo legendas e Libras. Sob a ótica estrita da legislação dos Direitos das PCD, o termo 'Barreiras nas Comunicações e na Informação' engloba essencialmente:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Durante a modernização da Intranet do Tribunal, a comissão de acessibilidade constatou que o site estava repleto de barreiras atitudinais, arquitetônicas (código mal estruturado) e barreiras nas comunicações que impediam a fruição dos direitos de servidores surdos, como vídeos institucionais não contendo legendas e Libras. Sob a ótica estrita da legislação dos Direitos das PCD, o termo 'Barreiras nas Comunicações e na Informação' engloba essencialmente:",
     "options": {
       "A": "O comportamento de gestores que impedem ou prejudicam a participação social de servidores com deficiência no ambiente de trabalho diário.",
       "B": "A existência de catracas físicas na porta da área de TI do Tribunal estreitas demais para a passagem livre de cadeiras de rodas largas.",
@@ -676,17 +645,16 @@
       "E": "A impossibilidade legal de disponibilizar softwares de uso aberto (Open Source) para instalação remota devido a cláusulas estritas de sigilo cibernético no tribunal federal."
     },
     "answer": "D",
-    "explanation": "- D) Correta. Vídeos sem legenda, sistemas que não suportam leitores de tela e manuais não acessíveis são clássicas 'barreiras nas comunicações e na informação'. Já a alternativa A descreve 'Barreiras Atitudinais' e as C/B descrevem 'Barreiras Arquitetônicas ou Urbanísticas'.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Durante a modernização da Intranet do Tribunal, a comissão de acessibilidade constatou que o site estava repleto de barreiras atitudinais, arquitetônicas (código mal estruturado) e barreiras nas comunicações que impediam a fruição dos direitos de servidores surdos, como vídeos institucionais não contendo legendas e Libras. Sob a ótica estrita da legislação dos Direitos das PCD, o termo 'Barreiras nas Comunicações e na Informação' engloba essencialmente:"
+    "explanation": "- D) Correta. Vídeos sem legenda, sistemas que não suportam leitores de tela e manuais não acessíveis são clássicas 'barreiras nas comunicações e na informação'. Já a alternativa A descreve 'Barreiras Atitudinais' e as C/B descrevem 'Barreiras Arquitetônicas ou Urbanísticas'."
   },
   {
-    "id": "03_06_t3_q37",
+    "id": 667,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
-    "question": "A Resolução CSJT 386/2024 dispõe sobre a estrutura do Sistema Nacional de Acessibilidade e Inclusão da Justiça do Trabalho. Entre as diversas obrigações do órgão, cabe a implantação de um 'Comitê de Acessibilidade e Inclusão' local em cada Tribunal Regional do Trabalho. De acordo com a composição exigida dessa comissão interna essencial, é mandatório que:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "A Resolução CSJT 386/2024 dispõe sobre a estrutura do Sistema Nacional de Acessibilidade e Inclusão da Justiça do Trabalho. Entre as diversas obrigações do órgão, cabe a implantação de um 'Comitê de Acessibilidade e Inclusão' local em cada Tribunal Regional do Trabalho. De acordo com a composição exigida dessa comissão interna essencial, é mandatório que:",
     "options": {
       "A": "O comitê seja composto exclusivamente por desembargadores e juízes, ficando o setor técnico de TI encarregado apenas da consultoria externa esporádica sem poder de voto nas sessões.",
       "B": "Haja a garantia de participação de magistrados e servidores com deficiência, assegurando a representatividade e o conceito de 'Nada sobre nós, sem nós', e incluindo representantes das áreas de tecnologia da informação e gestão de pessoas.",
@@ -695,17 +663,16 @@
       "E": "O comitê opere na mais absoluta confidencialidade secreta de dados, sendo proibida a emissão de relatórios públicos anuais sobre a quantificação de servidores e magistrados com necessidades de acessibilidade na casa."
     },
     "answer": "B",
-    "explanation": "- B) Correta. A resolução do CSJT estabelece que os Comitês de Acessibilidade da JT têm caráter multidisciplinar (Gestão de pessoas, TI, infraestrutura, saúde) e DEVEM incluir em sua composição obrigatória juízes e servidores que sejam Pessoas com Deficiência.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "A Resolução CSJT 386/2024 dispõe sobre a estrutura do Sistema Nacional de Acessibilidade e Inclusão da Justiça do Trabalho. Entre as diversas obrigações do órgão, cabe a implantação de um 'Comitê de Acessibilidade e Inclusão' local em cada Tribunal Regional do Trabalho. De acordo com a composição exigida dessa comissão interna essencial, é mandatório que:"
+    "explanation": "- B) Correta. A resolução do CSJT estabelece que os Comitês de Acessibilidade da JT têm caráter multidisciplinar (Gestão de pessoas, TI, infraestrutura, saúde) e DEVEM incluir em sua composição obrigatória juízes e servidores que sejam Pessoas com Deficiência."
   },
   {
-    "id": "03_06_t3_q38",
+    "id": 668,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
-    "question": "O condutor cego acionou uma empresa de transporte por aplicativo (ex: Uber/99) para ir de sua residência até a sede do Tribunal de Justiça para sua posse no cargo. Ao chegar no local, o motorista do aplicativo recusou o embarque do passageiro ao avistar o cão-guia, argumentando que as regras da plataforma o eximiam de levar animais por receio de sujar o interior do carro. Nos termos da Lei 11.126/2005 (Cão-guia), esse ato do motorista configura legalmente:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "O condutor cego acionou uma empresa de transporte por aplicativo (ex: Uber/99) para ir de sua residência até a sede do Tribunal de Justiça para sua posse no cargo. Ao chegar no local, o motorista do aplicativo recusou o embarque do passageiro ao avistar o cão-guia, argumentando que as regras da plataforma o eximiam de levar animais por receio de sujar o interior do carro. Nos termos da Lei 11.126/2005 (Cão-guia), esse ato do motorista configura legalmente:",
     "options": {
       "A": "Um direito comercial lícito assegurado ao motorista pelo princípio fundamental da livre iniciativa privada nos contratos de transporte intermunicipal.",
       "B": "Uma infração administrativa leve, punível com advertência verbal da plataforma digital de transporte, sem caracterização de ofensa discriminatória criminal autônoma contra a pessoa com deficiência.",
@@ -714,17 +681,16 @@
       "E": "Um ilícito civil comum apenas, cabendo ao usuário cego entrar com ação por perdas e danos materiais equivalentes ao valor financeiro da corrida bloqueada sem ressarcimento prévio integral pelo aplicativo online."
     },
     "answer": "C",
-    "explanation": "- C) Correta. O Decreto nº 5.904/2006 lista as sanções contra quem impede o ingresso de cão-guia (transporte público ou privado é considerado ambiente de uso coletivo obrigatório). As sanções variam de multa mínima, passando por interdição temporária, podendo chegar à sanção administrativa de interdição definitiva do estabelecimento ou do negócio da pessoa se o ato for gravíssimo ou houver reincidência dolosa contumaz, além de configurar crime de discriminação.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "O condutor cego acionou uma empresa de transporte por aplicativo (ex: Uber/99) para ir de sua residência até a sede do Tribunal de Justiça para sua posse no cargo. Ao chegar no local, o motorista do aplicativo recusou o embarque do passageiro ao avistar o cão-guia, argumentando que as regras da plataforma o eximiam de levar animais por receio de sujar o interior do carro. Nos termos da Lei 11.126/2005 (Cão-guia), esse ato do motorista configura legalmente:"
+    "explanation": "- C) Correta. O Decreto nº 5.904/2006 lista as sanções contra quem impede o ingresso de cão-guia (transporte público ou privado é considerado ambiente de uso coletivo obrigatório). As sanções variam de multa mínima, passando por interdição temporária, podendo chegar à sanção administrativa de interdição definitiva do estabelecimento ou do negócio da pessoa se o ato for gravíssimo ou houver reincidência dolosa contumaz, além de configurar crime de discriminação."
   },
   {
-    "id": "03_06_t3_q39",
+    "id": 669,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
-    "question": "A Diretoria de Tecnologia da Informação do TRT decidiu comprar uma nova plataforma de e-learning em nuvem para treinamento dos servidores e emitiu o Termo de Referência (TR). O departamento jurídico impugnou o TR porque o documento não possuía cláusulas obrigatórias exigindo acessibilidade nativa (Leitores de tela, contraste) do software comprado. O analista de TI, na defesa, argumentou que softwares estrangeiros comprados via SaaS estão involves de imunidade à lei brasileira de acessibilidade. A justificativa do analista é:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "A Diretoria de Tecnologia da Informação do TRT decidiu comprar uma nova plataforma de e-learning em nuvem para treinamento dos servidores e emitiu o Termo de Referência (TR). O departamento jurídico impugnou o TR porque o documento não possuía cláusulas obrigatórias exigindo acessibilidade nativa (Leitores de tela, contraste) do software comprado. O analista de TI, na defesa, argumentou que softwares estrangeiros comprados via SaaS estão involves de imunidade à lei brasileira de acessibilidade. A justificativa do analista é:",
     "options": {
       "A": "Correta, pois o CSJT estipula que ferramentas na modalidade Nuvem SaaS são enquadradas como bens intelectuais internacionais fora da jurisdição nacional brasileira e imunes ao eMAG.",
       "B": "Incorreta. A regulamentação da LBI e as determinações do CSJT sobre aquisições determinam que TODO edital de licitação de tecnologia, seja para desenvolvimento próprio, aquisição ou SaaS, deve contemplar requisitos explícitos de acessibilidade sob pena de total nulidade do processo de contratação.",
@@ -733,17 +699,16 @@
       "E": "Incorreta, no entanto o edital pode seguir adiante com as compras sob demanda futura, caso surja algum servidor com deficiência na área fim requisitando as referidas adaptações corretivas do sistema."
     },
     "answer": "B",
-    "explanation": "- B) Correta. A LBI (Art. 63) e a regulamentação dos Tribunais exigem que a acessibilidade esteja nos requisitos iniciais obrigatórios de TODOS os Termos de Referência (TRs) para aquisições de TI. Licitar sem requisitos de acessibilidade (ignorando que futuramente a ferramenta deve servir a PCDs) pode anular a licitação por vício.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "A Diretoria de Tecnologia da Informação do TRT decidiu comprar uma nova plataforma de e-learning em nuvem para treinamento dos servidores e emitiu o Termo de Referência (TR). O departamento jurídico impugnou o TR porque o documento não possuía cláusulas obrigatórias exigindo acessibilidade nativa (Leitores de tela, contraste) do software comprado. O analista de TI, na defesa, argumentou que softwares estrangeiros comprados via SaaS estão involves de imunidade à lei brasileira de acessibilidade. A justificativa do analista é:"
+    "explanation": "- B) Correta. A LBI (Art. 63) e a regulamentação dos Tribunais exigem que a acessibilidade esteja nos requisitos iniciais obrigatórios de TODOS os Termos de Referência (TRs) para aquisições de TI. Licitar sem requisitos de acessibilidade (ignorando que futuramente a ferramenta deve servir a PCDs) pode anular a licitação por vício."
   },
   {
-    "id": "03_06_t3_q40",
+    "id": 670,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
-    "question": "O termo 'Desenho Universal' é uma das bases fundamentais das normas de acessibilidade da Resolução CSJT 386/2024, aplicável arquitetônica e tecnologicamente ao ecossistema do tribunal. A conceituação jurídica clássica do Desenho Universal preconiza que:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "O termo 'Desenho Universal' é uma das bases fundamentais das normas de acessibilidade da Resolução CSJT 386/2024, aplicável arquitetônica e tecnologicamente ao ecossistema do tribunal. A conceituação jurídica clássica do Desenho Universal preconiza que:",
     "options": {
       "A": "O produto ou o ambiente deve ser concebido e projetado desde a sua planta inicial para poder ser utilizado por todas as pessoas, sem a necessidade de nenhuma adaptação excessiva posterior ou projeto específico segregado e especializado.",
       "B": "Todo software do tribunal deve obrigatoriamente possuir um botão físico no hardware capaz de reiniciar os sistemas para uma versão de interface gráfica monocromática básica desenvolvida no padrão internacional exclusivo de matriz de pontos do sistema Braille.",
@@ -752,17 +717,16 @@
       "E": "As ferramentas de trabalho do Poder Judiciário Federal devem incorporar recursos biológicos avançados para a captação universal do pensamento da Pessoa com Deficiência, em atenção à norma internacional biométrica universal fixada nos Tratados do Ceará."
     },
     "answer": "A",
-    "explanation": "- A) Correta. O Desenho Universal (Universal Design) significa planejar e criar (seja uma rampa ou um site) de forma que sirva ao maior número possível de pessoas diferentes na sua origem, evitando que você crie um site normal para 'pessoas comuns' e seja forçado a criar um site feio, paralelo e exclusivo apenas para os cegos (adaptação segregadora). É acessibilidade para todos no projeto principal (by design).",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "O termo 'Desenho Universal' é uma das bases fundamentais das normas de acessibilidade da Resolução CSJT 386/2024, aplicável arquitetônica e tecnologicamente ao ecossistema do tribunal. A conceituação jurídica clássica do Desenho Universal preconiza que:"
+    "explanation": "- A) Correta. O Desenho Universal (Universal Design) significa planejar e criar (seja uma rampa ou um site) de forma que sirva ao maior número possível de pessoas diferentes na sua origem, evitando que você crie um site normal para 'pessoas comuns' e seja forçado a criar um site feio, paralelo e exclusivo apenas para os cegos (adaptação segregadora). É acessibilidade para todos no projeto principal (by design)."
   },
   {
-    "id": "03_06_t3_q41",
+    "id": 671,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
-    "question": "Um servidor cego e portador de cão-guia precisou se deslocar para realizar uma diligência em uma cidade vizinha usando um ônibus interestadual de linha comercial regular (transporte coletivo). O funcionário da viação exigiu a cobrança de uma taxa extra pelo 'excesso de bagagem viva', referente ao assento ou o espaço ocupado pelo cão-guia do servidor de TI dentro do corredor do ônibus comercial. Perante a legislação federal e o decreto aplicável ao cão-guia:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um servidor cego e portador de cão-guia precisou se deslocar para realizar uma diligência em uma cidade vizinha usando um ônibus interestadual de linha comercial regular (transporte coletivo). O funcionário da viação exigiu a cobrança de uma taxa extra pelo 'excesso de bagagem viva', referente ao assento ou o espaço ocupado pelo cão-guia do servidor de TI dentro do corredor do ônibus comercial. Perante a legislação federal e o decreto aplicável ao cão-guia:",
     "options": {
       "A": "A cobrança da taxa extra é integralmente legal e prevista expressamente, já que animais grandes em viagens rodoviárias interestaduais (por mais de 4 horas ininterruptas) configuram uma bagagem atípica e impõem custos financeiros à transportadora privada com higiene sanitária e pedágio animal.",
       "B": "A taxa é vedada. É proibida legalmente a cobrança de qualquer tipo de taxa adicional vinculada, tarifa de embarque extra, ou ingresso com o cão-guia em qualquer modal de transporte coletivo, sob pena de severa penalização cível e comercial da companhia.",
@@ -771,17 +735,16 @@
       "E": "É permitido o embarque gratuito unicamente se o animal vier acomodado permanentemente e transportado dentro de caixas de acrílico sanitárias presas aos suportes rígidos do teto superior fixo do meio de transporte coletivo municipal ou estadual."
     },
     "answer": "B",
-    "explanation": "- B) Correta. O Decreto n° 5.904/2006 assegura (Art 1º §1º) que o ingresso do cão-guia será SEM qualquer exigência de pagamento de taxa ou tarifa de ingresso na infraestrutura de transportes (incluindo ônibus interestadual ou aviões) sob quaisquer justificativas (como suposta taxa de risco de limpeza da cabine comercial).",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um servidor cego e portador de cão-guia precisou se deslocar para realizar uma diligência em uma cidade vizinha usando um ônibus interestadual de linha comercial regular (transporte coletivo). O funcionário da viação exigiu a cobrança de uma taxa extra pelo 'excesso de bagagem viva', referente ao assento ou o espaço ocupado pelo cão-guia do servidor de TI dentro do corredor do ônibus comercial. Perante a legislação federal e o decreto aplicável ao cão-guia:"
+    "explanation": "- B) Correta. O Decreto n° 5.904/2006 assegura (Art 1º §1º) que o ingresso do cão-guia será SEM qualquer exigência de pagamento de taxa ou tarifa de ingresso na infraestrutura de transportes (incluindo ônibus interestadual ou aviões) sob quaisquer justificativas (como suposta taxa de risco de limpeza da cabine comercial)."
   },
   {
-    "id": "03_06_t3_q42",
+    "id": 672,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
-    "question": "Ao projetar uma tela web que processará os pedidos de benefícios das Pessoas com Deficiência nos fóruns do estado do Ceará, o desenvolvedor web usou imagens decorativas ilustrativas de balanças da justiça (que não transmitem informação útil para o texto) nas laterais da interface HTML. O analista de acessibilidade que revisa o código web sob os critérios rígidos (como WCAG / eMAG) apontou a necessidade correta de lidar com a barreira atitudinal/tecnológica das imagens para os cegos (que utilizam leitores de tela como NVDA) de acordo com as determinações da TI acessível:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Ao projetar uma tela web que processará os pedidos de benefícios das Pessoas com Deficiência nos fóruns do estado do Ceará, o desenvolvedor web usou imagens decorativas ilustrativas de balanças da justiça (que não transmitem informação útil para o texto) nas laterais da interface HTML. O analista de acessibilidade que revisa o código web sob os critérios rígidos (como WCAG / eMAG) apontou a necessidade correta de lidar com a barreira atitudinal/tecnológica das imagens para os cegos (que utilizam leitores de tela como NVDA) de acordo com as determinações da TI acessível:",
     "options": {
       "A": "As imagens ilustrativas ou decorativas do sistema (que não possuem peso de conteúdo formal essencial) devem possuir o atributo tecnológico 'alt' rigorosamente vazio em HTML (alt=\"\"), indicando ao leitor da máquina que ele pode e deve silenciá-las e pulá-las na leitura dinâmica falada.",
       "B": "Toda e qualquer imagem no sistema judicial, até mesmo as decorativas (como bordas coloridas ou fundos com texturas e sombras), obrigatoriamente tem de ter uma vasta descrição longa no código-fonte, forçando o leitor de telas do deficiente visual a ouvir as centenas de textos estéticos do site ininterruptamente.",
@@ -790,17 +753,16 @@
       "E": "O desenvolvedor web tem autonomia para gerar um formulário de isenção de código e não realizar qualquer modificação acessível no repositório de versão oficial, bastando colocar um aviso textual genérico em PDF digitalizado de que a página encontra-se em modo dinâmico inatingível pelas leis de audição dos deficientes visuais e auditivos."
     },
     "answer": "A",
-    "explanation": "- A) Correta. É uma prática clássica e universal (eMAG e WCAG). Imagens estritamente ilustrativas e decorativas devem possuir o alt text em branco (alt=\"\"). Se o analista descrever toda imagem inútil (ex: \"Bolinha vermelha no rodapé esquerdo azul com textura de madeira brilhante e degradê diagonal\"), o usuário do NVDA perderá o foco ouvindo bobagens. Quando é conteúdo útil (gráfico, infográfico) exige-se alt text completo.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Ao projetar uma tela web que processará os pedidos de benefícios das Pessoas com Deficiência nos fóruns do estado do Ceará, o desenvolvedor web usou imagens decorativas ilustrativas de balanças da justiça (que não transmitem informação útil para o texto) nas laterais da interface HTML. O analista de acessibilidade que revisa o código web sob os critérios rígidos (como WCAG / eMAG) apontou a necessidade correta de lidar com a barreira atitudinal/tecnológica das imagens para os cegos (que utilizam leitores de tela como NVDA) de acordo com as determinações da TI acessível:"
+    "explanation": "- A) Correta. É uma prática clássica e universal (eMAG e WCAG). Imagens estritamente ilustrativas e decorativas devem possuir o alt text em branco (alt=\"\"). Se o analista descrever toda imagem inútil (ex: \"Bolinha vermelha no rodapé esquerdo azul com textura de madeira brilhante e degradê diagonal\"), o usuário do NVDA perderá o foco ouvindo bobagens. Quando é conteúdo útil (gráfico, infográfico) exige-se alt text completo."
   },
   {
-    "id": "03_06_t3_q43",
+    "id": 673,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
-    "question": "Consoante às determinações do arcabouço normativo de inclusão do CSJT aplicáveis ao Judiciário, no momento da aprovação do plano financeiro orçamentário anual de um TRT regional, a administração direta do Tribunal em relação aos custos inerentes de adaptação e acessibilidade é obrigada legalmente a:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Consoante às determinações do arcabouço normativo de inclusão do CSJT aplicáveis ao Judiciário, no momento da aprovação do plano financeiro orçamentário anual de um TRT regional, a administração direta do Tribunal em relação aos custos inerentes de adaptação e acessibilidade é obrigada legalmente a:",
     "options": {
       "A": "Garantir na proposta e no plano diretor a previsão explícita das rubricas de dotação de recursos e gastos orçamentários específicos reservados vinculados exclusivamente para destinação do financiamento das políticas de acessibilidade e da inclusão física de pessoas com deficiências dos quadros da instituição trabalhista.",
       "B": "Transferir e terceirizar integralmente a execução dos planos financeiros arquitetônicos anuais das obras estruturantes para as autarquias públicas sociais de seguridade, desonerando integralmente as reservas orçamentárias autônomas de custeio base vinculadas ao planejamento central do Tribunal.",
@@ -809,17 +771,16 @@
       "E": "Eximir a diretoria da TI de qualquer responsabilidade ou dever contratual e financeiro acerca de compras das licenças e hardwares adaptados das tecnologias assistivas, repassando o pagamento aos servidores diretos que possuem deficiências no quadro."
     },
     "answer": "A",
-    "explanation": "- A) Correta. A regulamentação da Resolução do CSJT obriga que os tribunais Regionais reservem (insiram explicitamente) no seu orçamento anual recursos monetários financeiros suficientes para custear programas e investimentos materiais atrelados às suas Políticas de Acessibilidade, garantindo que o dinheiro efetivamente exista para bancar as adequações necessárias anuais dos fóruns.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Consoante às determinações do arcabouço normativo de inclusão do CSJT aplicáveis ao Judiciário, no momento da aprovação do plano financeiro orçamentário anual de um TRT regional, a administração direta do Tribunal em relação aos custos inerentes de adaptação e acessibilidade é obrigada legalmente a:"
+    "explanation": "- A) Correta. A regulamentação da Resolução do CSJT obriga que os tribunais Regionais reservem (insiram explicitamente) no seu orçamento anual recursos monetários financeiros suficientes para custear programas e investimentos materiais atrelados às suas Políticas de Acessibilidade, garantindo que o dinheiro efetivamente exista para bancar as adequações necessárias anuais dos fóruns."
   },
   {
-    "id": "03_06_t3_q44",
+    "id": 674,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
-    "question": "Sobre o marco de acesso das PCDs na Justiça, o conceito prático e tecnológico voltado a proporcionar ou ampliar habilidades funcionais das pessoas com deficiência nas repartições governamentais, focando eminentemente na busca por maximizar o seu estado dinâmico natural de autonomia pessoal de vida, comunicação social, e engajamento das relações laborais, a fim de superar limites físicos operacionais restritivos decorrentes de interfaces deficientes na empresa pública federal judiciária é a exata definição clássica legislativa da chamada:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Sobre o marco de acesso das PCDs na Justiça, o conceito prático e tecnológico voltado a proporcionar ou ampliar habilidades funcionais das pessoas com deficiência nas repartições governamentais, focando eminentemente na busca por maximizar o seu estado dinâmico natural de autonomia pessoal de vida, comunicação social, e engajamento das relações laborais, a fim de superar limites físicos operacionais restritivos decorrentes de interfaces deficientes na empresa pública federal judiciária é a exata definição clássica legislativa da chamada:",
     "options": {
       "A": "Injeção de Tecnologias Bioquímicas Recreativas de Trabalho Remoto Assistencial e Psico-Medicamentosa Restrita.",
       "B": "Arquitetura Genética de Modelos Restritivos Táticos.",
@@ -828,17 +789,16 @@
       "E": "Parametrização Robótica Fisiológica Excludente da Junta Médica Trabalhista Local Judicial."
     },
     "answer": "C",
-    "explanation": "- C) Correta. A Tecnologia Assistiva (TA) e as ajudas técnicas de usabilidade não visam a 'curar a deficiência das PCDs', elas constituem um enorme arsenal transversal de produtos, equipamentos de software (Leitores de NVDA), sistemas técnicos fechados, rotinas digitais, metodologias ou serviços (Adaptações) que promovem a eliminação das barreiras impeditivas diárias e trazem independência laboral.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Sobre o marco de acesso das PCDs na Justiça, o conceito prático e tecnológico voltado a proporcionar ou ampliar habilidades funcionais das pessoas com deficiência nas repartições governamentais, focando eminentemente na busca por maximizar o seu estado dinâmico natural de autonomia pessoal de vida, comunicação social, e engajamento das relações laborais, a fim de superar limites físicos operacionais restritivos decorrentes de interfaces deficientes na empresa pública federal judiciária é a exata definição clássica legislativa da chamada:"
+    "explanation": "- C) Correta. A Tecnologia Assistiva (TA) e as ajudas técnicas de usabilidade não visam a 'curar a deficiência das PCDs', elas constituem um enorme arsenal transversal de produtos, equipamentos de software (Leitores de NVDA), sistemas técnicos fechados, rotinas digitais, metodologias ou serviços (Adaptações) que promovem a eliminação das barreiras impeditivas diárias e trazem independência laboral."
   },
   {
-    "id": "03_06_t3_q45",
+    "id": 675,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Direitos das PCD (CSJT 386/2024 e Cão-guia)",
-    "question": "A norma oficial estabelece a responsabilidade técnica e disciplinar nas adequações dos tribunais regionais (Ex: TRT7). Segundo os eixos fixados na Resolução nº 386 do CSJT sobre os recursos físicos e da Tecnologia em sua sede principal, a responsabilidade primordial da disponibilização, monitoramento da atualização e viabilidade de manutenção corretiva dos mecanismos nativos de softwares de 'Tecnologia Assistiva' inseridos na operação da rotina tecnológica da intranet, sistemas judiciais, e estações computacionais operadas pelos servidores do Tribunal (Ex: teclados e mouses adaptados, sintetizadores vocais), constitui encargo administrativo direto da e/do:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "A norma oficial estabelece a responsabilidade técnica e disciplinar nas adequações dos tribunais regionais (Ex: TRT7). Segundo os eixos fixados na Resolução nº 386 do CSJT sobre os recursos físicos e da Tecnologia em sua sede principal, a responsabilidade primordial da disponibilização, monitoramento da atualização e viabilidade de manutenção corretiva dos mecanismos nativos de softwares de 'Tecnologia Assistiva' inseridos na operação da rotina tecnológica da intranet, sistemas judiciais, e estações computacionais operadas pelos servidores do Tribunal (Ex: teclados e mouses adaptados, sintetizadores vocais), constitui encargo administrativo direto da e/do:",
     "options": {
       "A": "Setor restrito governamental da Junta e do Serviço Médico Biopsicossocial Fisiológico (Junta Oficial Médica).",
       "B": "Área da Unidade de Engenharia Estrutural, Construção Civil Judiciária, Arquitetura da sede física patrimonial e Infraestrutura Externa e Manutenção Lógica dos Fóruns Físicos.",
@@ -847,17 +807,16 @@
       "E": "Responsabilidade exclusiva autogerida pessoal e intransferível do servidor concursado ocupante da respectiva cadeira estatal judicial efetiva no cargo e da chefia da Vara."
     },
     "answer": "D",
-    "explanation": "- D) Correta. De acordo com a Res. 386 do CSJT, é o departamento de Tecnologia da Informação (TI) ou Setor de Informática do tribunal (e não o setor de Saúde nem a Engenharia Civil) que tem o dever gerencial de cuidar, manter atualizados os softwares NVDA, testar os leitores de telado, avaliar usabilidade dos sistemas internos, adquirir os mouses esféricos acionados pela cabeça (mouse tracker), etc.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "A norma oficial estabelece a responsabilidade técnica e disciplinar nas adequações dos tribunais regionais (Ex: TRT7). Segundo os eixos fixados na Resolução nº 386 do CSJT sobre os recursos físicos e da Tecnologia em sua sede principal, a responsabilidade primordial da disponibilização, monitoramento da atualização e viabilidade de manutenção corretiva dos mecanismos nativos de softwares de 'Tecnologia Assistiva' inseridos na operação da rotina tecnológica da intranet, sistemas judiciais, e estações computacionais operadas pelos servidores do Tribunal (Ex: teclados e mouses adaptados, sintetizadores vocais), constitui encargo administrativo direto da e/do:"
+    "explanation": "- D) Correta. De acordo com a Res. 386 do CSJT, é o departamento de Tecnologia da Informação (TI) ou Setor de Informática do tribunal (e não o setor de Saúde nem a Engenharia Civil) que tem o dever gerencial de cuidar, manter atualizados os softwares NVDA, testar os leitores de telado, avaliar usabilidade dos sistemas internos, adquirir os mouses esféricos acionados pela cabeça (mouse tracker), etc."
   },
   {
-    "id": "03_06_t4_q46",
+    "id": 676,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
-    "question": "Leia o trecho de um manual técnico de infraestrutura da AWS:\n\n'In order to ensure that our internal services remain available, our firewall rule inherently **throttles** excessive incoming API requests from third-party IP addresses.'\n\nNo contexto de APIs, redes e segurança, o verbo em destaque '**throttles**' significa:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Leia o trecho de um manual técnico de infraestrutura da AWS:\n\n'In order to ensure that our internal services remain available, our firewall rule inherently **throttles** excessive incoming API requests from third-party IP addresses.'\n\nNo contexto de APIs, redes e segurança, o verbo em destaque '**throttles**' significa:",
     "options": {
       "A": "Redirecionar (encaminhar o tráfego para roteadores de borda diferentes em caso de ataque).",
       "B": "Limitador de banda/taxa (restringir artificialmente a velocidade ou a quantidade de requisições de rede para evitar sobrecarga).",
@@ -866,17 +825,16 @@
       "E": "Apagar logs (descartar silenciosamente registros de acessos mal-intencionados)."
     },
     "answer": "B",
-    "explanation": "- B) Correta. 'To throttle' (ou Throttling) em TI significa limitar o fluxo, estrangular ou restringir a taxa (Rate Limiting). Um API Gateway faz o throttling (limitação de conexões) para que o sistema não caia devido a excesso de acessos simultâneos (DDoS) oriundos de fora.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Leia o trecho de um manual técnico de infraestrutura da AWS:\n\n'In order to ensure that our internal services remain available, our firewall rule inherently **throttles** excessive incoming API requests from third-party IP addresses.'\n\nNo contexto de APIs, redes e segurança, o verbo em destaque '**throttles**' significa:"
+    "explanation": "- B) Correta. 'To throttle' (ou Throttling) em TI significa limitar o fluxo, estrangular ou restringir a taxa (Rate Limiting). Um API Gateway faz o throttling (limitação de conexões) para que o sistema não caia devido a excesso de acessos simultâneos (DDoS) oriundos de fora."
   },
   {
-    "id": "03_06_t4_q47",
+    "id": 677,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
-    "question": "Um Desenvolvedor Sênior deixou o seguinte comentário no código-fonte revisado pelo time (Pull Request) no Github corporativo do Tribunal:\n\n'This class logic is highly **deprecated** and its **tight coupling** with the database module prevents us from writing isolated unit tests. We should **refactor** it before the next release.'\n\nCom base na tradução técnica do vocabulário, analise a afirmação a seguir:\n\n'O desenvolvedor afirma que a lógica da classe é moderna, porém seu fraco acoplamento com o banco impede a criação de testes isolados, sugerindo que o código seja compactado antes da próxima versão.'\n\nA afirmação de tradução encontra-se:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um Desenvolvedor Sênior deixou o seguinte comentário no código-fonte revisado pelo time (Pull Request) no Github corporativo do Tribunal:\n\n'This class logic is highly **deprecated** and its **tight coupling** with the database module prevents us from writing isolated unit tests. We should **refactor** it before the next release.'\n\nCom base na tradução técnica do vocabulário, analise a afirmação a seguir:\n\n'O desenvolvedor afirma que a lógica da classe é moderna, porém seu fraco acoplamento com o banco impede a criação de testes isolados, sugerindo que o código seja compactado antes da próxima versão.'\n\nA afirmação de tradução encontra-se:",
     "options": {
       "A": "Incorreta. 'Deprecated' significa obsoleto/descontinuado, 'tight coupling' significa forte acoplamento (alta dependência) e 'refactor' significa reestruturar/refatorar o código, que é exatamente o oposto do que foi afirmado.",
       "B": "Correta. O desenvolvedor sugere a adoção de acoplamento ainda mais restrito (tight coupling) com o banco de dados principal de testes.",
@@ -885,17 +843,16 @@
       "E": "Incorreta apenas no tocante a 'deprecated', que no contexto de desenvolvimento de software em Nuvem significa que a classe está operando isoladamente com instâncias instáveis baseadas no Spot."
     },
     "answer": "A",
-    "explanation": "- A) Correta. 'Deprecated' = descontinuado, obsoleto, algo que não deve mais ser usado. 'Tight coupling' = acoplamento forte (ou seja, o código depende demais do banco, o que é ruim para testes unitários). 'Refactor' = refatorar, reescrever a estrutura interna sem mudar o que ele faz por fora.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um Desenvolvedor Sênior deixou o seguinte comentário no código-fonte revisado pelo time (Pull Request) no Github corporativo do Tribunal:\n\n'This class logic is highly **deprecated** and its **tight coupling** with the database module prevents us from writing isolated unit tests. We should **refactor** it before the next release.'\n\nCom base na tradução técnica do vocabulário, analise a afirmação a seguir:\n\n'O desenvolvedor afirma que a lógica da classe é moderna, porém seu fraco acoplamento com o banco impede a criação de testes isolados, sugerindo que o código seja compactado antes da próxima versão.'\n\nA afirmação de tradução encontra-se:"
+    "explanation": "- A) Correta. 'Deprecated' = descontinuado, obsoleto, algo que não deve mais ser usado. 'Tight coupling' = acoplamento forte (ou seja, o código depende demais do banco, o que é ruim para testes unitários). 'Refactor' = refatorar, reescrever a estrutura interna sem mudar o que ele faz por fora."
   },
   {
-    "id": "03_06_t4_q48",
+    "id": 678,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
-    "question": "Ao ler as notas de atualização (Release Notes) de um pacote de segurança do banco de dados PostgreSQL, o analista do Tribunal se deparou com a seguinte recomendação de segurança cibernética corporativa:\n\n'Users are advised to regularly patch their database engines to mitigate vulnerabilities. Failing to **patch** systems promptly can lead to unauthorized data **breaches** or massive **downtime**.'\n\nNo jargão de TI, os termos em destaque '**patch**', '**breaches**' e '**downtime**' traduzem-se respectivamente como:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Ao ler as notas de atualização (Release Notes) de um pacote de segurança do banco de dados PostgreSQL, o analista do Tribunal se deparou com a seguinte recomendação de segurança cibernética corporativa:\n\n'Users are advised to regularly patch their database engines to mitigate vulnerabilities. Failing to **patch** systems promptly can lead to unauthorized data **breaches** or massive **downtime**.'\n\nNo jargão de TI, os termos em destaque '**patch**', '**breaches**' e '**downtime**' traduzem-se respectivamente como:",
     "options": {
       "A": "Compilar - Backup de dados em nuvem - Horas extras de servidores locais.",
       "B": "Aplicar atualizações/correções - Vazamentos/Violações de dados - Tempo de inatividade/Fora do ar.",
@@ -904,17 +861,16 @@
       "E": "Refatorar metodologias ágeis em código - Vazamentos lentos de memória RAM - Ociosidade voluntária do sistema."
     },
     "answer": "B",
-    "explanation": "- B) Correta. Patch = Atualização de correção (remendo); Breach = Violação, quebra, vazamento de segurança (Data Breach); Downtime = Tempo de inatividade, sistema fora do ar indisponível (oposto de Uptime).",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Ao ler as notas de atualização (Release Notes) de um pacote de segurança do banco de dados PostgreSQL, o analista do Tribunal se deparou com a seguinte recomendação de segurança cibernética corporativa:\n\n'Users are advised to regularly patch their database engines to mitigate vulnerabilities. Failing to **patch** systems promptly can lead to unauthorized data **breaches** or massive **downtime**.'\n\nNo jargão de TI, os termos em destaque '**patch**', '**breaches**' e '**downtime**' traduzem-se respectivamente como:"
+    "explanation": "- B) Correta. Patch = Atualização de correção (remendo); Breach = Violação, quebra, vazamento de segurança (Data Breach); Downtime = Tempo de inatividade, sistema fora do ar indisponível (oposto de Uptime)."
   },
   {
-    "id": "03_06_t4_q49",
+    "id": 679,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
-    "question": "Um edital técnico emitido pela direção de TI solicitou a contratação de uma ferramenta de segurança de redes empresariais que tivesse capacidade inata para mitigar um tipo específico de ameaça online: o *Ransomware* associado ao *Phishing* direcionado. Considere as traduções e significados desses ataques:\n\nI - Ransomware é um malware projetado para sequestrar o acesso aos arquivos da vítima (normalmente via criptografia forte), exigindo o pagamento de resgate (ransom) financeiro em criptomoedas para a liberação da chave privada de restabelecimento.\nII - Phishing é uma técnica de engenharia social que busca instalar hardwares clandestinos físicos nos roteadores das varas da justiça mediante suborno social de estagiários de telecomunicações.\nIII - Ransom é uma métrica de rede que calcula a latência de transferência de dados (ping) até um data center, essencial para o roteamento do Border Gateway Protocol global.\n\nDas afirmações traduzidas acima, estão corretas no jargão técnico:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um edital técnico emitido pela direção de TI solicitou a contratação de uma ferramenta de segurança de redes empresariais que tivesse capacidade inata para mitigar um tipo específico de ameaça online: o *Ransomware* associado ao *Phishing* direcionado. Considere as traduções e significados desses ataques:\n\nI - Ransomware é um malware projetado para sequestrar o acesso aos arquivos da vítima (normalmente via criptografia forte), exigindo o pagamento de resgate (ransom) financeiro em criptomoedas para a liberação da chave privada de restabelecimento.\nII - Phishing é uma técnica de engenharia social que busca instalar hardwares clandestinos físicos nos roteadores das varas da justiça mediante suborno social de estagiários de telecomunicações.\nIII - Ransom é uma métrica de rede que calcula a latência de transferência de dados (ping) até um data center, essencial para o roteamento do Border Gateway Protocol global.\n\nDas afirmações traduzidas acima, estão corretas no jargão técnico:",
     "options": {
       "A": "Apenas I.",
       "B": "Apenas II.",
@@ -923,17 +879,16 @@
       "E": "Apenas II e III."
     },
     "answer": "A",
-    "explanation": "- A) Correta. A I está exata (Ransom = resgate. Ransomware é o malware sequestrador). A II está errada (Phishing é técnica de fraude/pescaria digital para roubar senhas com sites e emails falsos, não hardware físico). A III está errada (não tem nada a ver com latência ou ping).",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um edital técnico emitido pela direção de TI solicitou a contratação de uma ferramenta de segurança de redes empresariais que tivesse capacidade inata para mitigar um tipo específico de ameaça online: o *Ransomware* associado ao *Phishing* direcionado. Considere as traduções e significados desses ataques:\n\nI - Ransomware é um malware projetado para sequestrar o acesso aos arquivos da vítima (normalmente via criptografia forte), exigindo o pagamento de resgate (ransom) financeiro em criptomoedas para a liberação da chave privada de restabelecimento.\nII - Phishing é uma técnica de engenharia social que busca instalar hardwares clandestinos físicos nos roteadores das varas da justiça mediante suborno social de estagiários de telecomunicações.\nIII - Ransom é uma métrica de rede que calcula a latência de transferência de dados (ping) até um data center, essencial para o roteamento do Border Gateway Protocol global.\n\nDas afirmações traduzidas acima, estão corretas no jargão técnico:"
+    "explanation": "- A) Correta. A I está exata (Ransom = resgate. Ransomware é o malware sequestrador). A II está errada (Phishing é técnica de fraude/pescaria digital para roubar senhas com sites e emails falsos, não hardware físico). A III está errada (não tem nada a ver com latência ou ping)."
   },
   {
-    "id": "03_06_t4_q50",
+    "id": 680,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
-    "question": "No log de auditoria gerado pelo Load Balancer (Balanceador de Carga) do TRT, apareceu a seguinte mensagem técnica de diagnóstico a respeito do tráfego interno gerado para os nós servidores:\n\n'The connection to the backend node timed out because the host was **unreachable**. We **forwarded** the payload to the fallback instance to avoid data loss.'\n\nNo contexto do diagnóstico de redes e roteamento, as palavras '**unreachable**' e '**forwarded**' expressam, na ordem:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "No log de auditoria gerado pelo Load Balancer (Balanceador de Carga) do TRT, apareceu a seguinte mensagem técnica de diagnóstico a respeito do tráfego interno gerado para os nós servidores:\n\n'The connection to the backend node timed out because the host was **unreachable**. We **forwarded** the payload to the fallback instance to avoid data loss.'\n\nNo contexto do diagnóstico de redes e roteamento, as palavras '**unreachable**' e '**forwarded**' expressam, na ordem:",
     "options": {
       "A": "Não configurado via DNS / Descartamos definitivamente.",
       "B": "Inalcançável (Sem rota física ou fora de resposta) / Encaminhamos ou Redirecionamos.",
@@ -942,17 +897,16 @@
       "E": "Desconectado via hardware físico do cabo local / Particionamos em fragmentos o pacote UDP principal."
     },
     "answer": "B",
-    "explanation": "- B) Correta. 'Unreachable' = host inalcançável (o roteador não sabe chegar lá ou a máquina morreu). 'Forwarded' = o tráfego foi encaminhado (passado adiante) para a instância secundária (fallback) para que não houvesse perda de dados operacionais (data loss).",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "No log de auditoria gerado pelo Load Balancer (Balanceador de Carga) do TRT, apareceu a seguinte mensagem técnica de diagnóstico a respeito do tráfego interno gerado para os nós servidores:\n\n'The connection to the backend node timed out because the host was **unreachable**. We **forwarded** the payload to the fallback instance to avoid data loss.'\n\nNo contexto do diagnóstico de redes e roteamento, as palavras '**unreachable**' e '**forwarded**' expressam, na ordem:"
+    "explanation": "- B) Correta. 'Unreachable' = host inalcançável (o roteador não sabe chegar lá ou a máquina morreu). 'Forwarded' = o tráfego foi encaminhado (passado adiante) para a instância secundária (fallback) para que não houvesse perda de dados operacionais (data loss)."
   },
   {
-    "id": "03_06_t4_q51",
+    "id": 681,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
-    "question": "O Tribunal vai adotar o modelo de desenvolvimento DevOps e, em uma de suas apresentações técnicas aos engenheiros de banco de dados, o CTO descreveu uma esteira de Continuous Deployment focada em contêineres dizendo:\n\n'To effectively achieve a **seamless deployment**, we must enforce **blue-green** methodologies to guarantee zero downtime during the process of a version **rollback**.'\n\nAssinale a opção que reflete a tradução correta dessa estratégia de tecnologia da informação exposta no trecho:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "O Tribunal vai adotar o modelo de desenvolvimento DevOps e, em uma de suas apresentações técnicas aos engenheiros de banco de dados, o CTO descreveu uma esteira de Continuous Deployment focada em contêineres dizendo:\n\n'To effectively achieve a **seamless deployment**, we must enforce **blue-green** methodologies to guarantee zero downtime during the process of a version **rollback**.'\n\nAssinale a opção que reflete a tradução correta dessa estratégia de tecnologia da informação exposta no trecho:",
     "options": {
       "A": "O CTO busca uma implantação lenta manual baseada no ciclo noturno. 'Rollback' refere-se ao ato de instalar patches do kernel do hipervisor subjacente para prevenir panes severas.",
       "B": "O CTO está exigindo que a equipe adote painéis de controle azulados para monitorar visualmente falhas no banco. 'Seamless' indica que os cabos de rede estão corretamente unificados no rack.",
@@ -961,17 +915,16 @@
       "E": "O CTO descreve que a metodologia Blue-Green baseia-se em implantar metade do código em linguagem C (Blue) e a outra metade em C++ (Green) para maximizar o 'Rollback' de chamadas gRPC locais."
     },
     "answer": "C",
-    "explanation": "- C) Correta. 'Seamless' = sem costuras, transparente, perfeito (implantação que o usuário nem sente que mudou). 'Rollback' = reversão, voltar para o estado estável da versão antiga de segurança em caso de falha. A técnica Blue-Green trabalha subindo uma infraestrutura paralela verde antes de desligar a azul (o que permite zero downtime).",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "O Tribunal vai adotar o modelo de desenvolvimento DevOps e, em uma de suas apresentações técnicas aos engenheiros de banco de dados, o CTO descreveu uma esteira de Continuous Deployment focada em contêineres dizendo:\n\n'To effectively achieve a **seamless deployment**, we must enforce **blue-green** methodologies to guarantee zero downtime during the process of a version **rollback**.'\n\nAssinale a opção que reflete a tradução correta dessa estratégia de tecnologia da informação exposta no trecho:"
+    "explanation": "- C) Correta. 'Seamless' = sem costuras, transparente, perfeito (implantação que o usuário nem sente que mudou). 'Rollback' = reversão, voltar para o estado estável da versão antiga de segurança em caso de falha. A técnica Blue-Green trabalha subindo uma infraestrutura paralela verde antes de desligar a azul (o que permite zero downtime)."
   },
   {
-    "id": "03_06_t4_q52",
+    "id": 682,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
-    "question": "Um documento de arquitetura em inglês do Tribunal de Justiça descreve a comunicação do novo API Gateway com a base de dados central baseada em PostgreSQL e um cluster externo com Redis da seguinte maneira:\n\n'While the PostgreSQL database handles all the persistent transactional state, the Redis instance acts solely as a **cache layer** to improve **throughput** and reduce high **latency** queries.'\n\nNesta frase, os termos sublinhados significam, de forma respectiva no jargão técnico:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um documento de arquitetura em inglês do Tribunal de Justiça descreve a comunicação do novo API Gateway com a base de dados central baseada em PostgreSQL e um cluster externo com Redis da seguinte maneira:\n\n'While the PostgreSQL database handles all the persistent transactional state, the Redis instance acts solely as a **cache layer** to improve **throughput** and reduce high **latency** queries.'\n\nNesta frase, os termos sublinhados significam, de forma respectiva no jargão técnico:",
     "options": {
       "A": "Camada de Cache (armazenamento volátil rápido), Vazão / Taxa de transferência total e Latência (atraso / tempo de resposta de rede).",
       "B": "Camada de Log Transacional Contínuo, Congestionamento Físico e Consistência Global Geográfica e Isolada.",
@@ -980,17 +933,16 @@
       "E": "Camada de Cache Fria Noturna, Acesso Simultâneo Aleatório Exclusivo e Velocidade Simétrica de Download."
     },
     "answer": "A",
-    "explanation": "- A) Correta. 'Cache layer' = camada de dados temporária em RAM super rápida; 'Throughput' = Vazão / O quanto de carga consegue processar por tempo; 'Latency' = Latência (o atraso/demora para ir e voltar os pacotes).",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um documento de arquitetura em inglês do Tribunal de Justiça descreve a comunicação do novo API Gateway com a base de dados central baseada em PostgreSQL e um cluster externo com Redis da seguinte maneira:\n\n'While the PostgreSQL database handles all the persistent transactional state, the Redis instance acts solely as a **cache layer** to improve **throughput** and reduce high **latency** queries.'\n\nNesta frase, os termos sublinhados significam, de forma respectiva no jargão técnico:"
+    "explanation": "- A) Correta. 'Cache layer' = camada de dados temporária em RAM super rápida; 'Throughput' = Vazão / O quanto de carga consegue processar por tempo; 'Latency' = Latência (o atraso/demora para ir e voltar os pacotes)."
   },
   {
-    "id": "03_06_t4_q53",
+    "id": 683,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
-    "question": "Na resolução de um incidente de cibersegurança envolvendo malwares injetados na rede corporativa do Fórum, a equipe de Segurança da Informação (Blue Team) elaborou o laudo oficial em inglês, afirmando no relatório técnico final:\n\n'The malicious actor managed to **bypass** our perimeter security because a legacy web server was highly **vulnerable** to SQL Injection. We have updated our policies to **prevent** this incident from recurring.'\n\nNesta sentença, as palavras em negrito devem ser traduzidas diretamente no contexto focado em segurança defensiva como:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Na resolução de um incidente de cibersegurança envolvendo malwares injetados na rede corporativa do Fórum, a equipe de Segurança da Informação (Blue Team) elaborou o laudo oficial em inglês, afirmando no relatório técnico final:\n\n'The malicious actor managed to **bypass** our perimeter security because a legacy web server was highly **vulnerable** to SQL Injection. We have updated our policies to **prevent** this incident from recurring.'\n\nNesta sentença, as palavras em negrito devem ser traduzidas diretamente no contexto focado em segurança defensiva como:",
     "options": {
       "A": "Enganar fisicamente / Lento / Promover novamente.",
       "B": "Criptografar massivamente / Instável temporariamente / Punir.",
@@ -999,17 +951,16 @@
       "E": "Transmitir / Indisponível temporariamente na Internet Pública / Evitar preventivamente a todo custo processual legal."
     },
     "answer": "C",
-    "explanation": "- C) Correta. 'Bypass' = burlar, passar ao largo da segurança, contornar as proteções; 'Vulnerable' = ter vulnerabilidade ou falha (no caso, Injeção de SQL); 'Prevent' = prevenir, evitar ou impedir de acontecer de novo. Essa é a base de todo jargão de cyber.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Na resolução de um incidente de cibersegurança envolvendo malwares injetados na rede corporativa do Fórum, a equipe de Segurança da Informação (Blue Team) elaborou o laudo oficial em inglês, afirmando no relatório técnico final:\n\n'The malicious actor managed to **bypass** our perimeter security because a legacy web server was highly **vulnerable** to SQL Injection. We have updated our policies to **prevent** this incident from recurring.'\n\nNesta sentença, as palavras em negrito devem ser traduzidas diretamente no contexto focado em segurança defensiva como:"
+    "explanation": "- C) Correta. 'Bypass' = burlar, passar ao largo da segurança, contornar as proteções; 'Vulnerable' = ter vulnerabilidade ou falha (no caso, Injeção de SQL); 'Prevent' = prevenir, evitar ou impedir de acontecer de novo. Essa é a base de todo jargão de cyber."
   },
   {
-    "id": "03_06_t4_q54",
+    "id": 684,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
-    "question": "Leia as instruções presentes no manual oficial do framework de front-end Angular voltado para o desenvolvimento SPA (Single Page Application):\n\n'To ensure UI **responsiveness**, long-running tasks should be executed asynchronously. Avoid blocking the **main thread** to prevent the application from becoming **unresponsive** to user inputs.'\n\nA instrução citada recomenda tecnicamente que o desenvolvedor de TI de nível sênior deva:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Leia as instruções presentes no manual oficial do framework de front-end Angular voltado para o desenvolvimento SPA (Single Page Application):\n\n'To ensure UI **responsiveness**, long-running tasks should be executed asynchronously. Avoid blocking the **main thread** to prevent the application from becoming **unresponsive** to user inputs.'\n\nA instrução citada recomenda tecnicamente que o desenvolvedor de TI de nível sênior deva:",
     "options": {
       "A": "Programar as tarefas complexas de CPU para rodar de modo síncrono e travado no front-end para facilitar os testes manuais.",
       "B": "Evitar bloquear o fluxo principal de execução da interface ('main thread'), utilizando recursos assíncronos em segundo plano para que o aplicativo não trave e continue sendo responsivo ('responsiveness') aos cliques do usuário na página web oficial local.",
@@ -1018,17 +969,16 @@
       "E": "Fechar imediatamente as conexões TCP e impedir ('unresponsive') o usuário de interagir enquanto a aplicação baixa todos os assets da AWS em formato PDF."
     },
     "answer": "B",
-    "explanation": "- B) Correta. 'Responsiveness' no contexto (que não é responsive design de tela) é a responsividade/fluidez do sistema responder aos cliques. 'Main thread' é o processo principal do navegador; bloqueá-lo causa congelamento da tela (o clássico 'site travou'). Logo, use métodos assíncronos.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Leia as instruções presentes no manual oficial do framework de front-end Angular voltado para o desenvolvimento SPA (Single Page Application):\n\n'To ensure UI **responsiveness**, long-running tasks should be executed asynchronously. Avoid blocking the **main thread** to prevent the application from becoming **unresponsive** to user inputs.'\n\nA instrução citada recomenda tecnicamente que o desenvolvedor de TI de nível sênior deva:"
+    "explanation": "- B) Correta. 'Responsiveness' no contexto (que não é responsive design de tela) é a responsividade/fluidez do sistema responder aos cliques. 'Main thread' é o processo principal do navegador; bloqueá-lo causa congelamento da tela (o clássico 'site travou'). Logo, use métodos assíncronos."
   },
   {
-    "id": "03_06_t4_q55",
+    "id": 685,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
-    "question": "Um projeto ágil com a metodologia Scrum no Tribunal adota sprints de duas semanas. O líder técnico declarou o status do código final (backend em Java) para a gerência na Daily Meeting (reunião diária):\n\n'The code has been successfully **merged** into the master branch, but we still need to run our **end-to-end** automated tests to verify if any critical **bugs** were introduced.'\n\nNeste cenário cotidiano de integração contínua (CI/CD), a declaração indica explicitamente que a equipe técnica de software do tribunal:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um projeto ágil com a metodologia Scrum no Tribunal adota sprints de duas semanas. O líder técnico declarou o status do código final (backend em Java) para a gerência na Daily Meeting (reunião diária):\n\n'The code has been successfully **merged** into the master branch, but we still need to run our **end-to-end** automated tests to verify if any critical **bugs** were introduced.'\n\nNeste cenário cotidiano de integração contínua (CI/CD), a declaração indica explicitamente que a equipe técnica de software do tribunal:",
     "options": {
       "A": "Já publicou a versão final com falhas de segurança no portal do cidadão, mas realizará novos testes manuais semanais a partir de agora na sede.",
       "B": "Rejeitou ativamente as alterações locais feitas pelos juniores, enviando-as diretamente para a ramificação isolada de testes destrutivos de regressão diária em banco Oracle.",
@@ -1037,17 +987,16 @@
       "E": "Encontrou muitos vírus (bugs) maliciosos implantados em um ataque direcionado e precisou fundir (merge) o banco de dados antigo isolado para recuperar o backup seguro do dia anterior."
     },
     "answer": "C",
-    "explanation": "- C) Correta. 'Merged' (fazer merge / mesclar no Git) = juntou o código. 'End-to-end tests' = Testes E2E (que testam todo o fluxo de ponta a ponta no sistema, não apenas um módulo). 'Bugs' = problemas/erros no código.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um projeto ágil com a metodologia Scrum no Tribunal adota sprints de duas semanas. O líder técnico declarou o status do código final (backend em Java) para a gerência na Daily Meeting (reunião diária):\n\n'The code has been successfully **merged** into the master branch, but we still need to run our **end-to-end** automated tests to verify if any critical **bugs** were introduced.'\n\nNeste cenário cotidiano de integração contínua (CI/CD), a declaração indica explicitamente que a equipe técnica de software do tribunal:"
+    "explanation": "- C) Correta. 'Merged' (fazer merge / mesclar no Git) = juntou o código. 'End-to-end tests' = Testes E2E (que testam todo o fluxo de ponta a ponta no sistema, não apenas um módulo). 'Bugs' = problemas/erros no código."
   },
   {
-    "id": "03_06_t4_q56",
+    "id": 686,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
-    "question": "No manual da arquitetura do banco de dados relacional oficial utilizado pelo Tribunal (Oracle Database), consta a recomendação explícita de infraestrutura local corporativa:\n\n'Always take frequent database **backups** and strictly store them **off-site**. In the event of a catastrophic hardware failure, restoring from a clean backup is your ultimate **safety net**.'\n\nNesta diretriz estratégica de segurança e prevenção a desastres (Disaster Recovery), a política preconiza a obrigatoriedade estrita de:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "No manual da arquitetura do banco de dados relacional oficial utilizado pelo Tribunal (Oracle Database), consta a recomendação explícita de infraestrutura local corporativa:\n\n'Always take frequent database **backups** and strictly store them **off-site**. In the event of a catastrophic hardware failure, restoring from a clean backup is your ultimate **safety net**.'\n\nNesta diretriz estratégica de segurança e prevenção a desastres (Disaster Recovery), a política preconiza a obrigatoriedade estrita de:",
     "options": {
       "A": "Armazenar os arquivos essenciais de backup localmente nos discos fixos rígidos internos acoplados ao próprio servidor em curto-circuito.",
       "B": "Fazer cópias de segurança locais e armazená-las fisicamente ou logicamente fora do local primário (off-site), pois se o servidor e o prédio (on-site) sofrerem pane destrutiva total, o administrador de banco de dados e o analista terão uma rede ou rede de proteção vital (safety net) garantida pelo backup alocado distante do desastre.",
@@ -1056,17 +1005,16 @@
       "E": "Armazenar dados permanentemente no servidor apenas se o provedor do serviço Oracle for notificado do desastre físico de maneira autônoma com um script atrelado de gatilho SQL imediato de recuperação assíncrona temporária e limitada temporal."
     },
     "answer": "B",
-    "explanation": "- B) Correta. 'Backup' = cópia de segurança. 'Off-site' = fora do local (da sede/do prédio principal), pois se o prédio pegar fogo, o backup salva. 'Safety net' = rede de segurança (salvação).",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "No manual da arquitetura do banco de dados relacional oficial utilizado pelo Tribunal (Oracle Database), consta a recomendação explícita de infraestrutura local corporativa:\n\n'Always take frequent database **backups** and strictly store them **off-site**. In the event of a catastrophic hardware failure, restoring from a clean backup is your ultimate **safety net**.'\n\nNesta diretriz estratégica de segurança e prevenção a desastres (Disaster Recovery), a política preconiza a obrigatoriedade estrita de:"
+    "explanation": "- B) Correta. 'Backup' = cópia de segurança. 'Off-site' = fora do local (da sede/do prédio principal), pois se o prédio pegar fogo, o backup salva. 'Safety net' = rede de segurança (salvação)."
   },
   {
-    "id": "03_06_t4_q57",
+    "id": 687,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
-    "question": "Nas reuniões de gerência do Setor de Projetos de TI (PMO), o líder técnico costuma cobrar a resolução de falhas apontadas pelos usuários corporativos do sistema na web PJe (Processo Eletrônico):\n\n'We must prioritize addressing user **complaints** regarding the app's overall **performance** issues before we implement any brand new **features** this sprint.'\n\nA prioridade imediata cobrada pelo líder técnico ágil consiste centralmente e diretamente em:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Nas reuniões de gerência do Setor de Projetos de TI (PMO), o líder técnico costuma cobrar a resolução de falhas apontadas pelos usuários corporativos do sistema na web PJe (Processo Eletrônico):\n\n'We must prioritize addressing user **complaints** regarding the app's overall **performance** issues before we implement any brand new **features** this sprint.'\n\nA prioridade imediata cobrada pelo líder técnico ágil consiste centralmente e diretamente em:",
     "options": {
       "A": "Criar tutoriais complexos focados nos novos usuários para melhorar as reclamações visuais da tela inicial gráfica e evitar atritos de aprendizagem de TI remota e diária presencial.",
       "B": "Desenvolver recursos avançados de Inteligência Artificial processual em uma nova sprint separada unicamente com os engenheiros de alto escalão arquitetural e de performance isolada em C# puro.",
@@ -1075,17 +1023,16 @@
       "E": "Adotar novas linguagens performáticas modernas em todas as sprints programadas vindouras em detrimento aos antigos servidores baseados em scripts PHP 5 de baixa coesão estrutural relacional em nuvem privada corporativa fechada."
     },
     "answer": "C",
-    "explanation": "- C) Correta. 'Complaints' = reclamações. 'Performance' = desempenho (rapidez, travamentos, eficiência). 'Features' = funcionalidades do sistema. Logo, arrume a casa antes de construir novos cômodos.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Nas reuniões de gerência do Setor de Projetos de TI (PMO), o líder técnico costuma cobrar a resolução de falhas apontadas pelos usuários corporativos do sistema na web PJe (Processo Eletrônico):\n\n'We must prioritize addressing user **complaints** regarding the app's overall **performance** issues before we implement any brand new **features** this sprint.'\n\nA prioridade imediata cobrada pelo líder técnico ágil consiste centralmente e diretamente em:"
+    "explanation": "- C) Correta. 'Complaints' = reclamações. 'Performance' = desempenho (rapidez, travamentos, eficiência). 'Features' = funcionalidades do sistema. Logo, arrume a casa antes de construir novos cômodos."
   },
   {
-    "id": "03_06_t4_q58",
+    "id": 688,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
-    "question": "Um técnico de suporte (Help Desk) do Tribunal Eleitoral preencheu um relatório no sistema (Jira) reportando uma falha bizarra em impressoras instaladas fisicamente na sala dos peritos:\n\n'The printer is physically **jammed** and heavily **out of toner**. Furthermore, the local device **driver** seems corrupted, causing sporadic printing errors on long PDFs.'\n\nNesta mensagem do suporte, os termos técnicos e operacionais descritivos traduzem as ocorrências respectivamente e sequencialmente como defeitos atrelados a:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Um técnico de suporte (Help Desk) do Tribunal Eleitoral preencheu um relatório no sistema (Jira) reportando uma falha bizarra em impressoras instaladas fisicamente na sala dos peritos:\n\n'The printer is physically **jammed** and heavily **out of toner**. Furthermore, the local device **driver** seems corrupted, causing sporadic printing errors on long PDFs.'\n\nNesta mensagem do suporte, os termos técnicos e operacionais descritivos traduzem as ocorrências respectivamente e sequencialmente como defeitos atrelados a:",
     "options": {
       "A": "Atolada (papel preso), Sem tinta (falta de pó/toner) e Driver (controlador lógico) corrompido.",
       "B": "Bloqueada pelo firewall local ativo da porta USB, Desatualizada digitalmente pelo Windows nativo local isolado e Componente físico principal destruído internamente local pela alta voltagem.",
@@ -1094,17 +1041,16 @@
       "E": "Configurada de modo errado e Sem fio integrado disponível no roteador central remoto do Tribunal trabalhista da região nordeste do país operante local isolado e temporariamente distante inativo remoto."
     },
     "answer": "A",
-    "explanation": "- A) Correta. Paper 'jam' (ou jammed) é a expressão clássica em inglês para papel atolado (engasgado na impressora). 'Out of toner' = sem toner/tinta. 'Driver' = o controlador lógico de software (o programinha que liga o Windows à impressora física).",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Um técnico de suporte (Help Desk) do Tribunal Eleitoral preencheu um relatório no sistema (Jira) reportando uma falha bizarra em impressoras instaladas fisicamente na sala dos peritos:\n\n'The printer is physically **jammed** and heavily **out of toner**. Furthermore, the local device **driver** seems corrupted, causing sporadic printing errors on long PDFs.'\n\nNesta mensagem do suporte, os termos técnicos e operacionais descritivos traduzem as ocorrências respectivamente e sequencialmente como defeitos atrelados a:"
+    "explanation": "- A) Correta. Paper 'jam' (ou jammed) é a expressão clássica em inglês para papel atolado (engasgado na impressora). 'Out of toner' = sem toner/tinta. 'Driver' = o controlador lógico de software (o programinha que liga o Windows à impressora física)."
   },
   {
-    "id": "03_06_t4_q59",
+    "id": 689,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
-    "question": "Em uma arquitetura moderna orientada a serviços e APIs públicas do TRT para os tribunais superiores na nuvem oficial corporativa (Data Center local primário), um documento de design (Diagrama Lógico Técnico) apontava o fluxo principal:\n\n'Incoming user traffic is strictly routed to the **backend** only if the authentication **token** is successfully validated against the central Active Directory **directory**.'\n\nQual a compreensão e leitura correta estrutural dessa norma oficial imposta arquitetural do manual do sistema?",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "Em uma arquitetura moderna orientada a serviços e APIs públicas do TRT para os tribunais superiores na nuvem oficial corporativa (Data Center local primário), um documento de design (Diagrama Lógico Técnico) apontava o fluxo principal:\n\n'Incoming user traffic is strictly routed to the **backend** only if the authentication **token** is successfully validated against the central Active Directory **directory**.'\n\nQual a compreensão e leitura correta estrutural dessa norma oficial imposta arquitetural do manual do sistema?",
     "options": {
       "A": "O tráfego recebido de todos os usuários é bloqueado de acessar a internet aberta (www livre e isolado remota sem regras judiciais estritas do Conselho Regional de TI estático).",
       "B": "A comunicação dos sistemas do Tribunal é encaminhada fisicamente para os roteadores internos remotos sempre, desde que utilizem senhas complexas locais temporárias criadas isoladamente.",
@@ -1113,17 +1059,16 @@
       "E": "O fluxo bloqueia (token block) permanentemente e criminalmente IPs estranhos locais regionais internos e repassa os dados criptografados brutos no padrão REST diretamente ao provedor da base relacional Oracle para serem checados estaticamente."
     },
     "answer": "C",
-    "explanation": "- C) Correta. A frase 'Incoming user traffic is strictly routed to the backend only if the authentication token is successfully validated' explica o clássico portão do API Gateway. Se o token (JWT de autorização) for válido/bom no diretório de AD, a chamada desce pro backend da aplicação e resolve o problema do usuário final na web ou celular mobile remoto local ou interno no órgão.",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "Em uma arquitetura moderna orientada a serviços e APIs públicas do TRT para os tribunais superiores na nuvem oficial corporativa (Data Center local primário), um documento de design (Diagrama Lógico Técnico) apontava o fluxo principal:\n\n'Incoming user traffic is strictly routed to the **backend** only if the authentication **token** is successfully validated against the central Active Directory **directory**.'\n\nQual a compreensão e leitura correta estrutural dessa norma oficial imposta arquitetural do manual do sistema?"
+    "explanation": "- C) Correta. A frase 'Incoming user traffic is strictly routed to the backend only if the authentication token is successfully validated' explica o clássico portão do API Gateway. Se o token (JWT de autorização) for válido/bom no diretório de AD, a chamada desce pro backend da aplicação e resolve o problema do usuário final na web ou celular mobile remoto local ou interno no órgão."
   },
   {
-    "id": "03_06_t4_q60",
+    "id": 690,
+    "day_id": "dia_03_06",
+    "day_title": "Quarta-feira 03/06",
     "theme": "Inglês Técnico",
-    "question": "O analista leu as especificações no contrato internacional AWS da solução oficial da plataforma base do Cloud Hosting do tribunal em relação à governança e redundância:\n\n'Data redundancy is achieved by automatically **mirroring** essential database storage blocks across multiple geographically **disperse** regions, thus achieving absolute high **availability** under intense hardware physical failures in our headquarters.'\n\nNesta diretiva descritiva e gerencial internacional, o conceito basilar e final almejado ao redor das palavras destacadas '**mirroring**', '**disperse**' e '**availability**' expressa a necessidade global e contínua e técnica central de manter fundamentalmente a e o:",
+    "context": "",
+    "source": "FCC - Questão Prática / Adaptada",
+    "statement": "O analista leu as especificações no contrato internacional AWS da solução oficial da plataforma base do Cloud Hosting do tribunal em relação à governança e redundância:\n\n'Data redundancy is achieved by automatically **mirroring** essential database storage blocks across multiple geographically **disperse** regions, thus achieving absolute high **availability** under intense hardware physical failures in our headquarters.'\n\nNesta diretiva descritiva e gerencial internacional, o conceito basilar e final almejado ao redor das palavras destacadas '**mirroring**', '**disperse**' e '**availability**' expressa a necessidade global e contínua e técnica central de manter fundamentalmente a e o:",
     "options": {
       "A": "Compilação de código estrito na nuvem global isolada local corporativa federal de tráfego restrito e remoto veloz contínuo seguro interno presencial judicial na matriz regional unificada com firewall central do Tribunal bloqueando e fechando acessos distantes nas filiais distantes em outras jurisdições estaduais e municipais fechadas regionais remotamente sem dados isolados nas vias sem fio (Wi-Fi 6 interno local sede corporativo matriz regional oficial judiciário da federação remota).",
       "B": "Criptografia quântica nativa para impedir a visualização dos dados da base por provedores mal-intencionados internacionais da Dark Web nos tribunais americanos distantes e nos europeus externos, garantindo o segredo sigiloso dos dados do tribunal corporativo na internet aberta estrita no país sede remoto presencial do continente principal das Américas regionais sem falhas nas filiais e nuvens estaduais isoladas nas estradas rodoviárias centrais federais isoladas fechadas nas varas isoladas.",
@@ -1132,11 +1077,6 @@
       "E": "Migração física lenta manual para outras unidades distantes isoladamente quando o tempo ficar instável para garantir 'Vazão' máxima da intranet no momento que os analistas migram o sistema principal para o ambiente externo web na rede mundial fechada estática unificada nacional estrita e sigilosa remota externa presencial interna local regional."
     },
     "answer": "D",
-    "explanation": "- D) Correta. A técnica de Disaster Recovery focada. Mirroring = espelhamento de dados ao vivo em tempo real para cópia idêntica física. Disperse = Geograficamente separadas e distantes (Ex: um datacenter em São Paulo e o cópia em Fortaleza). Availability = Alta Disponibilidade (Garantia de que o sistema não cai caso um prédio falhe).",
-    "source": "FCC - Inédita",
-    "day_id": "03_06",
-    "day_title": "Quarta-feira 03/06",
-    "context": "",
-    "statement": "O analista leu as especificações no contrato internacional AWS da solução oficial da plataforma base do Cloud Hosting do tribunal em relação à governança e redundância:\n\n'Data redundancy is achieved by automatically **mirroring** essential database storage blocks across multiple geographically **disperse** regions, thus achieving absolute high **availability** under intense hardware physical failures in our headquarters.'\n\nNesta diretiva descritiva e gerencial internacional, o conceito basilar e final almejado ao redor das palavras destacadas '**mirroring**', '**disperse**' e '**availability**' expressa a necessidade global e contínua e técnica central de manter fundamentalmente a e o:"
+    "explanation": "- D) Correta. A técnica de Disaster Recovery focada. Mirroring = espelhamento de dados ao vivo em tempo real para cópia idêntica física. Disperse = Geograficamente separadas e distantes (Ex: um datacenter em São Paulo e o cópia em Fortaleza). Availability = Alta Disponibilidade (Garantia de que o sistema não cai caso um prédio falhe)."
   }
 ]
