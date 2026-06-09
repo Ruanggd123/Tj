@@ -1,0 +1,812 @@
+[
+  {
+    "id": 841,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Cloud Computing (Azure)",
+    "context": "Migração Híbrida de Datacenter",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Estado do Ceará (TJ-CE) planeja estender seu datacenter local (on-premises) para a nuvem Microsoft Azure. A infraestrutura exige tráfego de dados sensíveis entre o tribunal e a nuvem de forma privada, com latência mínima e garantia de largura de banda superior a 1 Gbps, evitando absolutamente o trânsito pela internet pública. Diante deste cenário de conectividade híbrida, a solução arquitetural adequada é a implementação do",
+    "options": {
+      "A": "Azure VPN Gateway na camada de transporte.",
+      "B": "Azure ExpressRoute com roteamento dinâmico.",
+      "C": "Azure Virtual WAN com criptografia IPSec.",
+      "D": "Azure Front Door com terminação TLS.",
+      "E": "Azure Traffic Manager com perfil de roteamento de latência."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. O Azure ExpressRoute permite criar conexões totalmente privadas entre datacenters locais e a infraestrutura do Azure, garantindo que o tráfego não transite pela internet pública, o que proporciona alta confiabilidade, latências mínimas e velocidades de até 100 Gbps. As alternativas A e C (VPN Gateway e Virtual WAN com IPSec) implementam segurança criptográfica, mas trafegam seus dados sob a infraestrutura da internet pública. A alternativa D (Front Door) é um balanceador de carga global na camada 7 de aplicação, e a E (Traffic Manager) é um balanceador de carga global L4/DNS, ambos não provendo canais de conexão física privada híbrida."
+  },
+  {
+    "id": 842,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Cloud Computing (Azure)",
+    "context": "Modernização de Monólito para Microsserviços",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está refatorando o sistema Processo Judicial Eletrônico (PJe), um monólito legado, para uma arquitetura de microsserviços conteinerizados. A equipe de arquitetura exige uma plataforma gerenciada que orquestre a implantação, a escalabilidade elástica e o balanceamento de carga automático desses contêineres, abstraindo a gestão do plano de controle (control plane) para reduzir a sobrecarga operacional da infraestrutura. A ferramenta nativa do Azure recomendada para hospedar esta nova arquitetura é o",
+    "options": {
+      "A": "Azure App Service.",
+      "B": "Azure Container Instances.",
+      "C": "Azure Virtual Machine Scale Sets.",
+      "D": "Azure Kubernetes Service.",
+      "E": "Azure Service Fabric."
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D. O Azure Kubernetes Service (AKS) é o serviço gerenciado de orquestração de contêineres padrão de mercado na nuvem da Microsoft. Ele é projetado para arquiteturas de microsserviços, simplificando a operação ao abstrair e gerenciar integralmente o 'control plane' do Kubernetes. A alternativa B (Azure Container Instances) é direcionada à execução de contêineres isolados, sem os recursos robustos de uma malha orquestradora. A alternativa A (App Service) é um PaaS focado primariamente em aplicações web simples. A alternativa C (VM Scale Sets) compõe uma infraestrutura IaaS de máquinas virtuais, exigindo gerenciamento manual do orquestrador. A alternativa E (Service Fabric) é um orquestrador proprietário da Microsoft, tendo seu uso para novos projetos preterido em favor do padrão aberto Kubernetes do AKS."
+  },
+  {
+    "id": 843,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Cloud Computing (Azure)",
+    "context": "Otimização de Banco de Dados em Nuvem",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O banco de dados do sistema de controle de mandados do TJ-CE sofre constantes bloqueios e contenções de leitura durante o horário de pico da manhã. A arquitetura atual utiliza o Azure SQL Database no nível de serviço Premium. Para aliviar a carga no servidor principal e garantir alta escalabilidade de forma nativa, sem realizar alterações estruturais nos padrões da aplicação além da modificação da string de conexão para operações de leitura analíticas, o arquiteto de nuvem deve",
+    "options": {
+      "A": "provisionar instâncias de replicação geográfica em regiões secundárias.",
+      "B": "configurar o recurso Scale Out habilitando réplicas de leitura integradas.",
+      "C": "migrar o banco de dados para um cluster do Azure SQL Managed Instance.",
+      "D": "adicionar um banco de dados de cache em memória com Azure Cache for Redis.",
+      "E": "distribuir as transações através do Azure Cosmos DB com consistência eventual."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Nos níveis de serviço Premium e Business Critical do Azure SQL Database, o recurso 'Read Scale-Out' é habilitado utilizando os nós secundários da arquitetura Always On subjacente. Ao modificar a string de conexão (ApplicationIntent=ReadOnly), as cargas de trabalho de leitura são roteadas automaticamente para as réplicas, preservando o nó primário para transações de gravação. A alternativa A foca em continuidade de negócios (BCDR). A alternativa C implica migração para um modelo de instância gerenciada, sem resolver intrinsecamente a contenção de leitura sem configuração adicional. As alternativas D e E exigem pesadas refatorações de código na aplicação (implementação de lógica de cache e mudança de banco relacional para NoSQL)."
+  },
+  {
+    "id": 844,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Cloud Computing (Azure)",
+    "context": "Governança de Identidades e Acessos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Diretoria de TI do TJ-CE gerencia o acesso aos recursos em nuvem de dezenas de varas e juizados. Um incidente de segurança revelou que servidores transferidos e estagiários mantinham privilégios elevados de exclusão de recursos do Azure meses após a alteração de suas funções. Para mitigar esse risco de forma sistêmica na arquitetura de identidade sem inviabilizar a autonomia do time, a governança deve empregar o Azure Entra ID com foco em",
+    "options": {
+      "A": "atribuição de papéis em nível de recurso e autenticação multifator.",
+      "B": "políticas de acesso condicional e controle de acesso baseado em escopos.",
+      "C": "gestão de identidade privilegiada e revisões de acesso automáticas.",
+      "D": "provisionamento temporário e auditoria de logs no Azure Monitor.",
+      "E": "integração de diretórios locais e sincronização bidirecional de senhas."
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. O Azure AD Privileged Identity Management (PIM) em conjunto com as Revisões de Acesso (Access Reviews) permite conceder privilégios apenas no momento necessário (just-in-time) e auditar o ciclo de vida dessas permissões de maneira sistêmica. As revisões automáticas obrigam atestados de continuidade de acesso, expurgando permissões órfãs ou desnecessárias. A alternativa A mitiga credenciais comprometidas. A alternativa B atua no contexto da conexão (ex: bloqueio de IP externo). A alternativa D apenas monitora reativamente as falhas, sem controlar o ciclo. A alternativa E resolve a topologia de diretório híbrido, mas não o vazamento do princípio do menor privilégio contínuo."
+  },
+  {
+    "id": 845,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Extreme Programming (XP)",
+    "context": "Qualidade e Regressão de Código",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O desenvolvimento do novo módulo de certidões negativas do TJ-CE adotou Extreme Programming (XP). Durante as iterações, a equipe notou que modificações em um componente geravam falhas imprevisíveis em outros módulos do sistema. O tempo de depuração aumentou severamente, travando as entregas. Para garantir a capacidade de diagnosticar falhas no exato instante em que as alterações são introduzidas na base de código compartilhada, a prática central do XP a ser executada é",
+    "options": {
+      "A": "o ritmo sustentável.",
+      "B": "o planejamento do jogo.",
+      "C": "o cliente no local.",
+      "D": "o design simples.",
+      "E": "a integração contínua."
+    },
+    "answer": "E",
+    "explanation": "A alternativa correta é a E. A Integração Contínua (Continuous Integration - CI) é a prática do XP onde a equipe integra seu código múltiplas vezes ao dia no repositório compartilhado, seguido por builds e testes automatizados. O erro de regressão é imediatamente capturado pelo ambiente de integração. A alternativa A foca no combate ao esgotamento físico do time. A B lida com planejamento e estimativas de estórias. A C garante o esclarecimento das regras de negócio e feedback rápido do usuário. A D previne a introdução antecipada de complexidade desnecessária (YAGNI)."
+  },
+  {
+    "id": 846,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Extreme Programming (XP)",
+    "context": "Manutenção de Sistemas Legados",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de engenharia do tribunal assumiu a manutenção de um sistema de custas processuais com alto índice de acoplamento e ausência de documentação técnica. A diretoria determinou a implementação da metodologia Extreme Programming (XP). Para alterar esse código legado, melhorando sua estrutura interna e sua legibilidade sem provocar alterações inesperadas em seu comportamento externo operante, a equipe deve aplicar de forma combinada as práticas de",
+    "options": {
+      "A": "padronização de código e propriedade coletiva.",
+      "B": "programação em par e metáfora do sistema.",
+      "C": "refatoração e desenvolvimento orientado a testes.",
+      "D": "pequenas entregas e planejamento da iteração.",
+      "E": "integração contínua e cliente no local."
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. A Refatoração, por definição, consiste na reestruturação do código interno para melhorar o design sem mudar o seu comportamento observável externamente. Para garantir que essa mudança interna não crie falhas sistêmicas em produção, o Desenvolvimento Orientado a Testes (TDD), que produz uma rede automatizada de testes de regressão, trabalha indissociavelmente acoplado à refatoração na filosofia do XP. As demais opções representam práticas válidas do framework, mas não respondem à técnica específica de alteração segura da estrutura do código existente."
+  },
+  {
+    "id": 847,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Extreme Programming (XP)",
+    "context": "Gargalos de Conhecimento na Equipe",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em uma squad responsável pelo portal de jurisprudência do TJ-CE, a ausência de um desenvolvedor sênior específico paralisa repetidamente o andamento das tarefas críticas de integração. Além disso, a revisão de código assíncrona feita de maneira posterior atrasa as liberações de funcionalidades por dias. De acordo com as práticas do Extreme Programming (XP), a solução de engenharia comportamental para mitigar os gargalos individuais de conhecimento e lentidão nas revisões de pull requests é a adoção de",
+    "options": {
+      "A": "programação em par e propriedade coletiva do código.",
+      "B": "integração contínua e desenvolvimento orientado a comportamento.",
+      "C": "pequenas entregas e documentação de arquitetura unificada.",
+      "D": "projeto simples e delegação hierárquica de submódulos.",
+      "E": "ritmo sustentável e rodízio de papéis de liderança técnica."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A Programação em Par (Pair Programming) fornece uma dinâmica de revisão de código contínua em tempo real e a disseminação de conhecimento e regras de negócio intra-equipe. Associada à Propriedade Coletiva do Código (Collective Code Ownership), cria um ambiente onde qualquer desenvolvedor é encorajado e autorizado a modificar qualquer fragmento de código, mitigando imediatamente o efeito de silos de conhecimento e a dependência de desenvolvedores individuais."
+  },
+  {
+    "id": 848,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Extreme Programming (XP)",
+    "context": "Gestão de Escopo e Conflitos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O fluxo de criação de processos eletrônicos sofre mudanças frequentes decorrentes de resoluções normativas. A equipe técnica do TJ-CE adota o XP, mas o projeto extrapola consistentemente os prazos estipulados. Há um atrito recorrente entre os representantes da corregedoria e os engenheiros de software sobre o que deve ser desenvolvido e viabilizado a cada mês. Na metodologia XP, o alinhamento de negociação entre a prioridade das funcionalidades e as restrições de esforço técnico é balizado pela prática",
+    "options": {
+      "A": "do jogo do planejamento.",
+      "B": "dos testes de aceitação do cliente.",
+      "C": "da entrega em pequenos lotes.",
+      "D": "da definição de pronto técnica.",
+      "E": "do cliente em tempo integral."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O Jogo do Planejamento (Planning Game) é a principal prática do XP para lidar com as tensões entre o escopo solicitado e os prazos técnicos disponíveis. Nele, separam-se claramente os papéis de decisão: o setor de negócios (Cliente) escolhe O QUE fazer baseado no valor, e o setor de engenharia escolhe COMO implementar, determinando o tempo/esforço necessário. As alternativas C e E também auxiliam o processo como um todo, mas o ritual de negociação de funcionalidades por tempo técnico reside primordialmente no Planning Game."
+  },
+  {
+    "id": 849,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "CMMI-DEV v2.0",
+    "context": "Melhoria e Padronização Organizacional",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Diretoria de TI do tribunal almeja elevar seu nível de maturidade e está mapeando as práticas vigentes ao CMMI-DEV v2.0. Durante o diagnóstico, identificou-se que não existe um conjunto de processos padronizados institucionalizados na estrutura; cada projeto de software define seu próprio fluxo de trabalho do absoluto zero, não reaproveitando históricos ou guias práticos do TJ-CE. Para tratar essa deficiência e alcançar padrões reutilizáveis para todo o corpo funcional, a organização deve investir na Área de Prática de",
+    "options": {
+      "A": "Monitoramento e Controle.",
+      "B": "Gerenciamento de Processos.",
+      "C": "Gestão de Requisitos.",
+      "D": "Desenvolvimento de Ativos de Processo.",
+      "E": "Governança de Processos de Negócio."
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D. No modelo CMMI-DEV V2.0, a Área de Prática 'Desenvolvimento de Ativos de Processo' (Process Asset Development - PAD) concentra-se em desenvolver e manter um conjunto de metodologias padronizadas, políticas, modelos de ciclo de vida e repositórios de lições aprendidas em nível organizacional, servindo de fundação unificada para todos os projetos, evitando que novos escopos de trabalho partam do zero. As alternativas A, B e C referem-se a outras áreas de prática específicas e operacionais (MC, PDM, REQ) que não focam na construção da biblioteca corporativa de ativos."
+  },
+  {
+    "id": 850,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "CMMI-DEV v2.0",
+    "context": "Avaliação de Nível de Maturidade",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE submeteu-se a uma avaliação oficial (Appraisal) no modelo CMMI-DEV v2.0. Os avaliadores atestaram rigorosamente que os processos são executados, planejados, medidos e controlados individualmente em todos os projetos em andamento, caracterizando gerência e rastreabilidade local. No entanto, não conseguiram evidenciar a padronização e a integração contínua de processos no nível macro e estratégico de toda a instituição governamental. Diante do rigor conceitual e diagnóstico da avaliação, a Diretoria de TI atingiu, no máximo, o Nível de Maturidade",
+    "options": {
+      "A": "1.",
+      "B": "2.",
+      "C": "3.",
+      "D": "4.",
+      "E": "5."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. O Nível de Maturidade 2 (Gerenciado) no CMMI-DEV V2.0 atesta que o trabalho e os processos estão sendo estruturados, monitorados e geridos com sucesso no âmbito restrito de cada projeto, de forma individualizada. Para que o Nível de Maturidade 3 (Definido) seja atingido, as práticas e diretrizes dos projetos precisam transcender e convergir na criação de ativos padronizados a nível de toda a organização, utilizando políticas e padrões institucionais definidos em conjunto. A falta de padronização organizacional impede que a instituição saia do nível 2."
+  },
+  {
+    "id": 851,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "CMMI-DEV v2.0",
+    "context": "Controle de Qualidade em Códigos e Artefatos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No ciclo de construção do novo sistema de precatórios do TJ-CE, um volume alarmante de defeitos tem sido descoberto tardiamente nas fases de validação de aceitação do usuário, elevando o custo da refatoração. Baseado no framework CMMI-DEV v2.0, a equipe decide adotar avaliações estruturadas e análises metódicas diretamente em artefatos de código, requisitos e designs, executadas rigorosamente antes de testes funcionais sistêmicos para remover bugs na sua fase embrionária. Esta ação atende aos objetivos da Área de Prática de",
+    "options": {
+      "A": "Avaliações por Pares.",
+      "B": "Verificação e Validação.",
+      "C": "Análise de Causa Raiz.",
+      "D": "Garantia da Qualidade.",
+      "E": "Integração Contínua."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A Área de Prática de 'Avaliações por Pares' (Peer Reviews - PR) no CMMI foca na análise metódica e no exame crítico precoce dos artefatos (seja código, modelagem ou documentação) executado por colegas de equipe. Seu objetivo nuclear é identificar e remediar defeitos no início do processo de engenharia para evitar que fluam para os estágios de testes sistêmicos de maior custo. A alternativa B lida com validação de software executável no ciclo final. A alternativa D (SQA - Software Quality Assurance) foca na aderência do processo a padrões de conformidade metodológica, e não na detecção técnica de bugs em artefatos de código."
+  },
+  {
+    "id": 852,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "CMMI-DEV v2.0",
+    "context": "Arquitetura do Modelo",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para otimizar o fluxo interno de trabalho e assegurar o cumprimento dos Acordos de Nível de Serviço (SLA) para com as serventias cíveis, a gerência técnica estabeleceu a implementação imediata das Áreas de Prática 'Estimativa' (EST) e 'Planejamento' (PLAN). Segundo a arquitetura conceitual e estrutural de agrupamento do modelo CMMI-DEV v2.0, essas disciplinas operacionais encontram-se organizadas sistematicamente sob a Área de Capacidade focada em",
+    "options": {
+      "A": "Entregar e Gerenciar Serviços.",
+      "B": "Planejar e Gerenciar o Trabalho.",
+      "C": "Selecionar e Gerenciar Fornecedores.",
+      "D": "Sustentar o Hábito e a Persistência.",
+      "E": "Melhorar o Desempenho da Organização."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. O framework do CMMI V2.0 reorganizou as suas dezenas de Áreas de Prática (PAs) em categorias e Áreas de Capacidade lógicas (Capability Areas). As práticas de Estimativa (EST), Planejamento (PLAN) e Monitoramento e Controle (MC) estão formalmente alocadas na Área de Capacidade fundamental de 'Planejar e Gerenciar o Trabalho' (Planning and Managing Work). As outras alternativas contêm nomenclaturas de outras capacidades reais do framework de V2.0, mas associadas a serviços contínuos, aquisição terceirizada ou evolução contínua (melhoria)."
+  },
+  {
+    "id": 853,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "ISO 12207:2021",
+    "context": "Processos de Engenharia de Software",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o desenvolvimento do módulo de assinatura digital massificada do TJ-CE, a equipe técnica necessita traduzir e materializar os requisitos dos magistrados em um modelo estruturado e viável de componentes de software. A equipe começa a documentar as interfaces de comunicação, a alocação de dados e as tecnologias de persistência. Segundo o padrão normativo ISO/IEC/IEEE 12207:2021, a conversão destas necessidades sistêmicas e restrições funcionais na organização estrutural técnica primária do sistema consiste na execução do Processo de",
+    "options": {
+      "A": "Integração.",
+      "B": "Definição da Arquitetura.",
+      "C": "Implementação.",
+      "D": "Transição de Software.",
+      "E": "Análise de Requisitos."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. No ciclo de vida do padrão ISO 12207:2021, o Processo de Definição da Arquitetura (Architecture Definition Process) é explicitamente encarregado de gerar visões sistêmicas alternativas, avaliar tradeoffs de tecnologia e traduzir/sintetizar os requisitos pré-levantados (saídas do Processo de Análise de Requisitos) no esqueleto mestre e no mapeamento topológico e de interfaces do sistema. A Implementação (C) produz o código tangível dessa definição, enquanto a Integração (A) faz a união dos módulos programados resultantes."
+  },
+  {
+    "id": 854,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "ISO 12207:2021",
+    "context": "Processos de Engenharia de Software",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema processual corporativo foi desenvolvido parcialmente por três fábricas de software distintas ao longo do semestre, cada qual entregando blocos de códigos unitários de forma independente. A coordenadoria de infraestrutura do TJ-CE iniciou a montagem metódica destes elementos isolados em uma base monolítica coesa, com o intuito de atestar se as interfaces fronteiriças entre os módulos se comportam sem incompatibilidades técnicas perante a topologia desenhada. De acordo com o padrão ISO/IEC/IEEE 12207:2021, esta atividade de fusão de módulos é alocada fundamentalmente no Processo de",
+    "options": {
+      "A": "Operação.",
+      "B": "Construção de Software.",
+      "C": "Validação.",
+      "D": "Integração.",
+      "E": "Verificação."
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D. Na estrutura do processo técnico da norma ISO 12207:2021, o Processo de Integração (Integration Process) possui o objetivo claro de agrupar e montar sistematicamente os elementos individuais do sistema de software e verificar se as interfaces de interação operam com harmonia técnica e arquitetural conforme os designs planejados. Os testes para demonstrar que o conjunto cumpre o uso esperado pelo cliente de negócio ocorrem primariamente nos processos de Verificação e Validação."
+  },
+  {
+    "id": 855,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "ISO 12207:2021",
+    "context": "Processos Organizacionais e de Acordo",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A fim de abrigar a expansão do acervo probatório virtual, o TJ-CE formula um edital de licitação pública direcionado à contratação de infraestrutura em nuvem (IaaS) corporativa externa. A equipe de governança de TI confecciona o Estudo Técnico Preliminar (ETP) e os critérios de aceite formais, traçando os mecanismos necessários para acompanhar e auditar o serviço do prestador terceiro vencedor do certame. Sob a classificação sistêmica dos Processos de Acordo (Agreement Processes) da ISO/IEC/IEEE 12207:2021, essas atividades administrativas enquadram-se perfeitamente no Processo de",
+    "options": {
+      "A": "Fornecimento.",
+      "B": "Aquisição.",
+      "C": "Planejamento de Projeto.",
+      "D": "Garantia da Qualidade Organizacional.",
+      "E": "Gestão do Ciclo de Vida do Sistema."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Os Processos de Acordo (Agreement Processes) na norma ISO 12207:2021 organizam-se em duas contrapartes: o Acquirer (Comprador) e o Supplier (Fornecedor). O Processo de Aquisição engloba todas as atividades voltadas a definir um escopo de compra, edital, seleção, elaboração de critérios e formalização de contrato para contratar um ativo de software ou serviço do mercado externo. O processo alternativo reverso é o de Fornecimento, no qual o fornecedor realiza os esforços internos de proposta e preparação para a entrega exigida pelo contratante."
+  },
+  {
+    "id": 856,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Gestão de Riscos (ISO 27005)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o planejamento de modernização tecnológica do Tribunal de Justiça do Ceará (TJ-CE), a equipe de segurança decidiu estruturar o processo de gestão de riscos conforme a ABNT NBR ISO/IEC 27005. O comitê estabeleceu que os critérios para determinar a significância de um risco devem considerar o valor dos ativos de informação, as penalidades legais por violações e a capacidade operacional de tratamento. Na fase inicial de gestão de riscos, a atividade focada em definir essas métricas operacionais, as regras de aceitação e os limites do sistema enquadra-se tecnicamente no:",
+    "options": {
+      "A": "Estabelecimento do contexto.",
+      "B": "Processo de apreciação de riscos.",
+      "C": "Plano de tratamento de riscos.",
+      "D": "Ciclo de comunicação e consulta.",
+      "E": "Relatório de avaliação de consequências."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. Na ISO 27005, o Estabelecimento do Contexto é a etapa preparatória onde as regras do jogo são definidas: critérios de avaliação de risco, impacto, probabilidade, limites organizacionais e apetite de risco. A alternativa B agrupa as atividades de identificação, análise e avaliação, executadas após o contexto. A alternativa C prescreve mitigações e opções estratégicas pós-avaliação. A alternativa D abrange o fluxo transversal de informações. A alternativa E não é o nome correto de uma fase de delimitação inicial."
+  },
+  {
+    "id": 857,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Gestão de Riscos (ISO 27005)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O departamento de engenharia do TJ-CE migrou o repositório de jurisprudência para a nuvem pública, identificando um risco elevado de ataques de negação de serviço (DDoS). O comitê de segurança optou por contratar um serviço de mitigação em nuvem gerenciado por terceiros e subscrever uma apólice de seguro cibernético cobrindo indisponibilidades severas. Segundo as diretrizes da ISO 27005, a decisão arquitetural adotada classifica-se como:",
+    "options": {
+      "A": "Modificação do risco pela aplicação de controles técnicos internos mitigatórios.",
+      "B": "Retenção do risco pela aceitação formal documentada pela alta gestão.",
+      "C": "Prevenção do risco pelo isolamento absoluto dos servidores do tribunal.",
+      "D": "Compartilhamento do risco pela contratação de serviços especializados e apólices.",
+      "E": "Evitação do risco pela interrupção da atividade geradora da ameaça."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D está correta. Compartilhar ou transferir o risco significa distribuir o encargo de tratamento ou o ônus financeiro para outras entidades legais, como terceirizar o monitoramento (MSSP) e contratar seguros cibernéticos. A alternativa A refere-se à modificação técnica pura. A alternativa B caracteriza a retenção do risco de forma deliberada sem outras ações diretas. As alternativas C e E representam a evitação do risco, implicando a não execução do projeto ou paralisação do serviço suscetível."
+  },
+  {
+    "id": 858,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Computação em Nuvem (ISO 27017)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE adota o modelo IaaS (Infrastructure as a Service) para processar os sistemas das varas estaduais. Uma diretriz arquitetural estrita exige a separação do processamento das Varas de Família (dados sob sigilo de justiça) em relação aos sistemas públicos. Em atendimento aos controles da ABNT NBR ISO/IEC 27017 sobre ambientes virtuais compartilhados, o mecanismo apropriado que cliente e provedor devem estabelecer para assegurar esse isolamento lógico é a:",
+    "options": {
+      "A": "Implementação de segregação de redes virtuais e controles de acesso no hypervisor.",
+      "B": "Implantação de firewalls de borda para segmentação restrita de tráfego externo.",
+      "C": "Utilização de criptografia homomórfica no armazenamento em disco físico.",
+      "D": "Configuração de zonas desmilitarizadas físicas exclusivas para as varas de família.",
+      "E": "Aplicação de roteamento estático direto nos switches core do datacenter."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. A norma ISO 27017 destaca a extrema importância do isolamento de tenants e recursos em infraestruturas virtuais (IaaS), empregando redes virtuais (VLANs/SDN) segmentadas e isolamento a nível de hypervisor para garantir o isolamento lógico das cargas de trabalho. A alternativa B atua apenas na fronteira. A alternativa C é inviável e atípica para segregação primária. A alternativa D é descabida, misturando DMZ física com nuvem pública. A alternativa E remete a configurações de hardware do provedor que não resolvem o acesso lógico dos usuários."
+  },
+  {
+    "id": 859,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Computação em Nuvem (ISO 27017)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de inovação do tribunal desenvolveu uma API de consulta processual, hospedando-a em um modelo PaaS (Platform as a Service). Semanas após a implantação, uma vulnerabilidade no código-fonte da API provocou o vazamento de metadados. Durante a sindicância baseada no modelo de responsabilidade compartilhada da ABNT NBR ISO/IEC 27017, a atribuição da responsabilidade pelo incidente indica que:",
+    "options": {
+      "A": "O provedor de nuvem responde pela falha na segurança do código da aplicação hospedada.",
+      "B": "O cliente da nuvem assume a responsabilidade pela segurança das aplicações desenvolvidas sobre a plataforma.",
+      "C": "O provedor de nuvem garante a conformidade contínua dos dados armazenados no banco.",
+      "D": "O cliente da nuvem administra a aplicação de patches no sistema operacional subjacente.",
+      "E": "O provedor de nuvem gerencia o controle de acesso lógico dos usuários finais da aplicação."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. Em um modelo PaaS, o provedor oferece a infraestrutura e o ambiente de execução, sendo de sua alçada o SO e os hardwares. O cliente (TJ-CE) preserva total responsabilidade pelas aplicações que desenha, pelo código que faz deploy e pelos dados administrados nessas camadas. A alternativa A inverte esse papel. A alternativa C delega a posse dos dados ao provedor. A alternativa D é papel do provedor em PaaS (patch do SO subjacente). A alternativa E atribui ao provedor uma tarefa que é estritamente do cliente."
+  },
+  {
+    "id": 860,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Incidentes (ISO 27035)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante uma auditoria na Secretaria de TI do TJ-CE, constatou-se que a equipe de resposta a incidentes corrigiu a intrusão no PJe, mas falhou em documentar as vulnerabilidades exploradas para a atualização dos manuais de defesa preventiva. Segundo as fases processuais definidas na ABNT NBR ISO/IEC 27035, a identificação e a formalização de melhorias sistêmicas a partir de um ataque neutralizado ocorrem estritamente na etapa de:",
+    "options": {
+      "A": "Planejamento e preparação.",
+      "B": "Detecção e relato.",
+      "C": "Avaliação e decisão.",
+      "D": "Respostas.",
+      "E": "Lições aprendidas."
+    },
+    "answer": "E",
+    "explanation": "A alternativa E está correta. O ciclo da ISO 27035 termina na fase de 'Lições aprendidas', a qual contempla a revisão pós-incidente, o aprimoramento dos controles de segurança do processo, o ajuste da análise de riscos e a otimização dos planos de contingência em uso. A alternativa A cuida das políticas iniciais. A alternativa B rastreia sinais do ataque. A alternativa C qualifica se o evento virou incidente. A alternativa D abrange as operações mitigatórias técnicas focais."
+  },
+  {
+    "id": 861,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Resposta a Incidentes (NIST SP 800-61)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um analista do Centro de Operações de Segurança do TJ-CE detecta a propagação lateral de um malware do tipo worm. Imediatamente, ele aciona protocolos para modificar as ACLs dos roteadores internos, isolando as VLANs afetadas e bloqueando o tráfego inter-redes do datacenter, objetivando interromper a infecção. Sob a ótica do ciclo de vida de resposta a incidentes do NIST SP 800-61, essa intervenção tática é executada na fase de:",
+    "options": {
+      "A": "Preparação.",
+      "B": "Detecção e Análise.",
+      "C": "Contenção, Erradicação e Recuperação.",
+      "D": "Atividade Pós-Incidente.",
+      "E": "Comunicação Estratégica."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A fase central do NIST SP 800-61 engloba os esforços imediatos para deter o alastramento de um incidente (Contenção), sua supressão dos ativos infectados (Erradicação) e a restauração à normalidade (Recuperação). A alteração de regras de roteamento (ACLs) para isolar sub-redes materializa puramente a ação de Contenção. As alternativas A, B e D definem as fases restantes do ciclo de vida. A alternativa E não compõe as grandes fases centrais da metodologia."
+  },
+  {
+    "id": 862,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Gestão de Riscos (ISO 27005)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao executar o processo de Gestão de Riscos baseado na ABNT NBR ISO/IEC 27005, o comitê de segurança do TJ-CE avaliou o cenário onde a queda prolongada de energia no datacenter principal provocaria atrasos em audiências online, multas em contratos de SLAs com cartórios e forte impacto negativo na imagem do Judiciário. A atividade voltada a mensurar especificamente esses prejuízos à integridade e disponibilidade institucional enquadra-se na:",
+    "options": {
+      "A": "Identificação de ativos.",
+      "B": "Identificação de ameaças.",
+      "C": "Identificação de vulnerabilidades.",
+      "D": "Identificação de consequências.",
+      "E": "Identificação de controles."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D está correta. A identificação das consequências constitui a identificação do impacto para a organização decorrente da possível perda da confidencialidade, integridade e disponibilidade inerente a um incidente. As alternativas A, B e C tratam respectivamente da identificação daquilo que tem valor, daquilo que pode causar dano e da fraqueza intrínseca que pode ser explorada. A alternativa E lida com salvaguardas já implementadas."
+  },
+  {
+    "id": 863,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Incidentes (ISO 27035)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O painel central de monitoramento (SIEM) do TJ-CE emitiu um alerta sinalizando seis tentativas de autenticação fracassadas no portal VPN originadas pelo login de um magistrado. A equipe de suporte contatou o usuário e constatou que ele digitara a senha antiga por engano, não havendo quebra da política de segurança ou sucesso na invasão. De acordo com o vocabulário normativo da ABNT NBR ISO/IEC 27035, esse tipo de registro constitui um(a):",
+    "options": {
+      "A": "Evento de segurança da informação.",
+      "B": "Incidente de segurança da informação.",
+      "C": "Vulnerabilidade explorada sistêmica.",
+      "D": "Ameaça iminente materializada.",
+      "E": "Risco residual não tratado."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. Um Evento de Segurança da Informação é qualquer ocorrência identificada que indique uma possível violação das políticas ou falha de controle, sem a confirmação de impacto severo. Como foi apenas um engano legítimo e não houve acesso forçado, o caso não escalou para Incidente (alternativa B), que exige a materialização efetiva da quebra de segurança ou disrupção de operações. As alternativas C, D e E representam conceitos técnicos indevidamente forçados no contexto."
+  },
+  {
+    "id": 864,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Resposta a Incidentes (NIST SP 800-61)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Os analistas de segurança do tribunal verificaram, nos logs do portal web, uma varredura de diretórios executada por um IP estrangeiro. Quarenta e oito horas depois, o software EDR instalou um alerta apontando a execução de um utilitário de extração de credenciais de memória no mesmo servidor. Conforme o padrão NIST SP 800-61, o registro da varredura de diretórios e o alerta emitido pelo EDR classificam-se tecnicamente e respectivamente como:",
+    "options": {
+      "A": "Incidente e evento.",
+      "B": "Precursor e indicador.",
+      "C": "Indicador e precursor.",
+      "D": "Ameaça e vulnerabilidade.",
+      "E": "Falso-positivo e evento."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O NIST SP 800-61 distingue explicitamente 'Precursors' (sinais que sugerem que um incidente pode ocorrer no futuro, como port scans e varreduras de vulnerabilidades) e 'Indicators' (sinais evidentes de que um incidente ocorreu ou está em andamento, como alarmes de antivírus e processos maliciosos rodando). A alternativa A confunde fases abrangentes. A alternativa C inverte as classificações. As alternativas D e E mesclam vocabulário incompatível com a taxonomia rigorosa da fase de detecção do NIST."
+  },
+  {
+    "id": 865,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Computação em Nuvem (ISO 27017)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça extinguiu o contrato com uma fornecedora SaaS de transcrição automatizada de áudios de audiências e solicitou a exclusão total da base de gravações armazenada na nuvem multilocatária da empresa. Para observar as diretrizes de descarte seguro da ABNT NBR ISO/IEC 27017, protegendo as informações contra recuperação sem corromper a infraestrutura compartilhada do provedor, a técnica exigida consiste na:",
+    "options": {
+      "A": "Desmagnetização de discos rígidos da infraestrutura física do datacenter.",
+      "B": "Formatação física de baixo nível dos volumes de armazenamento do storage.",
+      "C": "Exclusão segura mediante sobrescrita dos blocos ou destruição das chaves criptográficas.",
+      "D": "Retenção dos dados em estado inativo por tempo indeterminado em área isolada.",
+      "E": "Devolução física dos servidores de armazenamento aos administradores do tribunal."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. Na nuvem, onde múltiplos clientes (tenants) dividem os mesmos discos, destruir ou formatar fisicamente os meios magnéticos inviabilizaria os serviços de terceiros. A ISO 27017 preconiza a exclusão lógica segura com algoritmos de sobrescrita ou o uso de 'Crypto-Shredding' (exclusão permanente das chaves mestras de criptografia vinculadas aos dados do cliente). As alternativas A, B e E causam a destruição e interrupção do ambiente multilocatário. A alternativa D infringe a obrigação contratual de deleção total."
+  },
+  {
+    "id": 866,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Resposta a Incidentes (NIST SP 800-61)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após bloquear um ransomware que comprometera os computadores das varas cíveis, a equipe do CSIRT do TJ-CE desdobrou imagens limpas dos sistemas operacionais e aplicou novos pacotes de políticas de grupo (GPO) forçando senhas complexas em toda a rede afetada. No escopo de atuação preconizado pelo documento NIST SP 800-61, o conjunto dessas ações de limpeza e restauração dos serviços aos níveis operacionais pertence à fase de:",
+    "options": {
+      "A": "Preparação.",
+      "B": "Detecção e Análise.",
+      "C": "Contenção, Erradicação e Recuperação.",
+      "D": "Atividade Pós-Incidente.",
+      "E": "Monitoramento Contínuo."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. No framework NIST SP 800-61, a recomposição dos sistemas, como reinstalação via imagens seguras de SO e o reinício da prestação normal dos serviços, integra as subfases de Erradicação e Recuperação. A alternativa A lida com ferramentas antes do incidente. A alternativa B mapeia e qualifica o ataque inicialmente. A alternativa D lida com o relatório e as lições organizacionais abstraídas pós-crise. A alternativa E trata da manutenção comum de TI."
+  },
+  {
+    "id": 867,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Gestão de Riscos (ISO 27005)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para a elaboração do plano de orçamento, o Diretor de TI cruzou os registros de falhas de no-breaks do Tribunal nos últimos cinco anos, multiplicando a taxa anual de ocorrência (ARO) de interrupções pelo valor financeiro da expectativa de perda única (SLE) de produtividade por servidor afetado. Na perspectiva metodológica da ABNT NBR ISO/IEC 27005, o gestor realizou uma:",
+    "options": {
+      "A": "Análise qualitativa de risco.",
+      "B": "Análise quantitativa de risco.",
+      "C": "Análise descritiva de impacto.",
+      "D": "Avaliação heurística de ativos.",
+      "E": "Apreciação estocástica de ameaça."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O cálculo financeiro expresso com precisão matemática, baseando-se em métricas probabilísticas precisas como ARO e SLE para deduzir o custo ALE (Annualized Loss Expectancy), retrata intrinsecamente a avaliação quantitativa de risco. A alternativa A refere-se a escores interpretativos (Alto, Médio, Baixo). As alternativas C, D e E utilizam terminologias não chanceladas para denominar essas estimativas numéricas objetivas."
+  },
+  {
+    "id": 868,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Incidentes (ISO 27035)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Visando garantir agilidade frente às dimensões continentais da sua jurisdição, o TJ-CE configurou o seu CSIRT estruturando um comando unificado na sede em Fortaleza e qualificando membros locais nas varas do interior para atuarem de imediato na desconexão de cabos e isolamento primário. Essa topologia funcional está formalmente descrita na ABNT NBR ISO/IEC 27035 como o modelo de:",
+    "options": {
+      "A": "Equipe centralizada de resposta a incidentes.",
+      "B": "Equipe terceirizada de gerenciamento de crises.",
+      "C": "Equipe distribuída de resposta a incidentes.",
+      "D": "Equipe virtual de coordenação de eventos.",
+      "E": "Equipe matricial de segurança perimetral."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A ISO 27035 aponta o formato da Equipe Distribuída (ou coordenada) como ideal para corporações geográficas extensas. Ela se aproveita de um núcleo central provendo políticas e coordenação pesada enquanto socorristas locais capacitados assumem a triagem periférica. A alternativa A implica que todas as ações e decisões provêm exclusivamente de uma sede física limitante. A alternativa B descreve um modelo MSSP puro de terceiros. As alternativas D e E descrevem jargões administrativos genéricos."
+  },
+  {
+    "id": 869,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Computação em Nuvem (ISO 27017)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O arquiteto responsável por migrar os portais de intimação eletrônica para uma plataforma IaaS está validando as imagens de máquinas virtuais (templates) que automatizarão a implantação dos clusters do TJ-CE. Para assegurar a conformidade com as diretrizes de configuração segura da ABNT NBR ISO/IEC 27017, o arquiteto deve incluir obrigatoriamente, antes do provisionamento produtivo, a:",
+    "options": {
+      "A": "Aplicação de atualizações de segurança e remoção de serviços padrão não utilizados na imagem base.",
+      "B": "Criptografia de rede em trânsito no momento da execução inicial do sistema operacional hóspede.",
+      "C": "Substituição do modelo IaaS por PaaS para transferir a responsabilidade total do patch ao provedor.",
+      "D": "Configuração de autenticação biométrica no acesso físico aos racks do datacenter gerenciado.",
+      "E": "Execução de escaneamento de portas ativas na interface de administração do provedor de nuvem."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. A ISO 27017 prescreve o estabelecimento de baselines rígidos no preparo de imagens e instâncias de máquina virtual fornecidas para a nuvem. Isso traduz a prática de 'hardening' nos sistemas hospedeiros (retirada de serviços padrão, patches atualizados) antes de comporem o ambiente operacional. A alternativa B é uma medida tardia de transporte. A alternativa C abandona o modelo de negócio proposto. A alternativa D aborda requisitos físicos estritamente dominados pelo fornecedor. A alternativa E não endereça o reforço na arquitetura da imagem em si."
+  },
+  {
+    "id": 870,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Resposta a Incidentes (NIST SP 800-61)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Comitê Diretor de Tecnologia da Informação do TJ-CE iniciou os trabalhos de formalização documental da sua estrutura cibernética, publicando primeiramente a Política de Resposta a Incidentes. Sob a égide das recomendações do NIST SP 800-61, esse documento normativo deve, imprescindivelmente, definir as linhas mestras do processo, incluindo:",
+    "options": {
+      "A": "A matriz de regras de firewall implementadas contra varreduras de portas ativas.",
+      "B": "O código-fonte das ferramentas de coleta de evidências instaladas em memória RAM.",
+      "C": "A declaração de autorização gerencial e o escopo de atuação do time de resposta.",
+      "D": "O cronograma tático de plantão e as escalas das equipes de segurança defensiva.",
+      "E": "O diagrama topológico de endereçamento IP público dos balanceadores de carga."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. O documento 'Policy' de Incident Response (NIST SP 800-61) fundamenta a essência governamental da operação de um CSIRT, explicitando autoridade, papéis, obrigações de reporte e o claro escopo em que a equipe tem aval para agir na organização. As alternativas A, B, D e E abordam elementos voláteis, dados operacionais e segredos técnicos que residem apenas em Procedimentos Operacionais Padrão (POPs) ou em Manuais de Configuração (Playbooks/Runbooks), não no núcleo de uma Política."
+  },
+  {
+    "id": 871,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Estatística Básica - Medidas de Tendência Central",
+    "context": "Métricas de Desempenho e Monitoramento de API",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a primeira semana de operação do novo barramento de serviços (ESB) do Tribunal de Justiça do Estado do Ceará (TJ-CE), a equipe de monitoramento do NOC (Network Operations Center) coletou milhões de registros de tempo de resposta das chamadas de API. A análise preliminar dos logs indicou que a esmagadora maioria das requisições é processada em cerca de 20 milissegundos. No entanto, devido a gargalos intermitentes no banco de dados legado e timeouts de rede, uma pequena fração das requisições leva até 3.000 milissegundos para concluir. O diretor de TI necessita consolidar esses dados em um dashboard executivo e exige a adoção da medida de tendência central que melhor reflita a experiência típica da maior parte dos magistrados, sem sofrer distorções causadas por essas raras latências altíssimas. O diagnóstico estatístico aponta como medida correta a:",
+    "options": {
+      "A": "Mediana, imune a valores atípicos de latência.",
+      "B": "Média, representativa de todas as latências coletadas.",
+      "C": "Moda, reflexo do ponto de maior densidade de requisições.",
+      "D": "Variância, indicadora da dispersão central dos tempos.",
+      "E": "Amplitude, delimitadora dos tempos de resposta máximos."
+    },
+    "answer": "A",
+    "explanation": "A mediana é a medida de tendência central resistente a valores atípicos (outliers), ideal para representar o tempo 'típico' quando a distribuição é altamente assimétrica, como nos tempos de resposta web. A alternativa A está correta. As alternativas B e D são incorretas pois a média e a variância sofrem fortíssima distorção de valores extremos. A alternativa C está incorreta pois a moda foca apenas no valor mais repetido, ignorando a dispersão global. A alternativa E é incorreta pois a amplitude mede apenas a distância entre o máximo e o mínimo."
+  },
+  {
+    "id": 872,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Estatística Básica - Medidas de Tendência Central",
+    "context": "Gerenciamento de Incidentes ITSM",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de ITSM do TJ-CE categoriza os chamados abertos pelos servidores e magistrados. O analista de dados de TI exportou o tempo total de resolução (SLA) de todos os incidentes do último semestre. Ao plotar o histograma desses tempos, notou-se a formação clara de dois picos distintos: um grande volume de chamados resolvidos em cerca de 5 minutos (ex.: reset de senha e desbloqueio de token) e outro agrupamento significativo resolvido em torno de 5 dias (ex.: correção de bugs complexos no sistema de jurisprudência). A tentativa inicial de utilizar a média global resultou em um valor de aproximadamente 2 dias, o qual não representa nem o suporte de primeiro nível nem o de terceiro nível. A falha na representatividade da média aritmética nesse cenário específico deve-se ao diagnóstico de uma:",
+    "options": {
+      "A": "Distribuição bimodal, exigindo análise separada por tipo de incidente.",
+      "B": "Distribuição normal, permitindo o uso da média aritmética simples.",
+      "C": "Distribuição uniforme, indicando constância no tempo de resolução.",
+      "D": "Distribuição assimétrica à direita, concentrando chamados complexos.",
+      "E": "Distribuição leptocúrtica, apontando baixa variância nos atendimentos."
+    },
+    "answer": "A",
+    "explanation": "Quando há dois padrões operacionais muito distintos no mesmo conjunto de dados (tarefas curtas vs longas), a distribuição apresenta dois picos de frequência, configurando uma distribuição bimodal. A alternativa A está correta. A alternativa B falha ao pressupor normalidade onde os dados estão polarizados. A alternativa C erra ao sugerir constância (uniforme), quando há forte variação. A alternativa D é incorreta pois a assimetria à direita indicaria um único pico à esquerda com longa cauda, e não dois picos distintos. A alternativa E erra o conceito de curtose, visto que distribuições bimodais tendem a ser platicúrticas (achatadas) e de alta variância, não leptocúrticas."
+  },
+  {
+    "id": 873,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Estatística Básica - Medidas de Tendência Central",
+    "context": "Monitoramento de Contêineres e CPU",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante uma falha parcial na refrigeração de um dos corredores do data center do TJ-CE, a equipe de infraestrutura precisou avaliar o estresse nos servidores físicos do cluster de virtualização. As métricas de uso de CPU de uma amostra de cinco servidores essenciais para o portal de serviços registraram os seguintes valores simultâneos: 10%, 15%, 20%, 90% e 95%. O administrador de redes deseja enviar um alerta automatizado caso o valor representativo da tendência central da carga do cluster ultrapasse o limite crítico. Sabendo que a equipe optou pela métrica central mais resistente a valores extremos para evitar alarmes falsos causados por máquinas isoladas em pico, o valor calculado da métrica adotada é:",
+    "options": {
+      "A": "20%.",
+      "B": "46%.",
+      "C": "15%.",
+      "D": "90%.",
+      "E": "50%."
+    },
+    "answer": "A",
+    "explanation": "O rol ordenado dos dados de uso de CPU é 10%, 15%, 20%, 90%, 95%. A mediana em um conjunto de cinco elementos (ímpar) é o elemento central da distribuição ordenada. A alternativa A (20%) é o valor exato que ocupa a terceira posição, sendo insensível aos valores distoantes de 90% e 95%. A alternativa B (46%) é a média aritmética simples, que sofreu distorção dos outliers, ativando falsos alertas. A alternativa C e D são valores posicionais aleatórios do conjunto. A alternativa E não representa nenhuma medida extraída matematicamente do conjunto."
+  },
+  {
+    "id": 874,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Estatística Básica - Medidas de Tendência Central",
+    "context": "Análise de Sistemas Operacionais em WAF",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A área de Segurança da Informação do TJ-CE está revisando as políticas de acesso via dispositivos móveis para adequação à LGPD. Para priorizar o desenvolvimento de um novo agente de endpoint (MDM - Mobile Device Management), os analistas extraíram dos logs do WAF (Web Application Firewall) a informação sobre o sistema operacional (iOS, Android, Windows Mobile) utilizado em cada sessão nos últimos trinta dias. O arquiteto de segurança precisa definir para qual plataforma o desenvolvimento do agente deverá ser direcionado primeiro, baseando-se na plataforma que obteve a maior quantidade absoluta de acessos na amostra. Sob o ponto de vista estatístico, a medida que deve ser empregada para consolidar essa variável qualitativa nominal é a:",
+    "options": {
+      "A": "Moda, aplicável a dados categóricos nominais.",
+      "B": "Mediana, ordenadora das frequências absolutas.",
+      "C": "Média, balanceadora das contagens de acessos.",
+      "D": "Variância, dimensionadora dos sistemas operacionais.",
+      "E": "Amplitude, categorizadora dos dispositivos móveis."
+    },
+    "answer": "A",
+    "explanation": "Variáveis como 'Sistema Operacional' (iOS, Android, etc.) são caracterizadas como dados qualitativos nominais. Não é possível ordená-los numericamente ou somá-los. A única medida de tendência central matematicamente aplicável a esse tipo de dado é a moda, identificando a categoria qualitativa com a maior frequência de ocorrência. A alternativa A é correta. As alternativas B e C exigem dados pelo menos ordinais ou quantitativos para o cálculo. As alternativas D e E representam medidas de dispersão, não possuindo aderência à centralidade qualitativa."
+  },
+  {
+    "id": 875,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Estatística Básica - Medidas de Tendência Central",
+    "context": "Métricas de Throughput de Rede",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O firewall de borda do TJ-CE registra o volume de tráfego de entrada em Gigabits por segundo (Gbps) em intervalos de hora em hora. Durante um final de semana destinado à manutenção elétrica, o link principal de internet ficou indisponível, registrando um volume de 0 Gbps por 12 horas consecutivas. Na segunda-feira, um analista júnior de telecomunicações utilizou a totalidade dos dados das últimas 72 horas para calcular o tráfego médio e ajustar a banda contratada junto à operadora. O gestor da área rejeitou o relatório, orientando o descarte das horas de indisponibilidade no cálculo da medida de tendência central. A inclusão indiscriminada dos valores zerados no cálculo da média aritmética causaria no diagnóstico da capacidade de rede a:",
+    "options": {
+      "A": "Subestimação do tráfego médio em períodos operacionais.",
+      "B": "Deslocamento da mediana para o limite superior da amostra.",
+      "C": "Eliminação da moda no conjunto de dados coletados.",
+      "D": "Estabilização da variância nos horários de pico.",
+      "E": "Normalização da distribuição dos volumes de dados."
+    },
+    "answer": "A",
+    "explanation": "A inclusão de dezenas de valores zerados decorrentes de falhas técnicas (e não do perfil real de consumo) puxa a média aritmética drasticamente para baixo, resultando na subestimação do tráfego médio e mascarando o verdadeiro consumo durante os horários operantes. A alternativa A está correta. A alternativa B está incorreta pois a inserção de zeros deslocaria a mediana para o limite inferior, não superior. A alternativa C está incorreta, pois a moda provavelmente se consolidaria exatamente no valor zero. As alternativas D e E usam jargões sem coerência estatística direta com o efeito deletério do valor nulo na média descritiva."
+  },
+  {
+    "id": 876,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Estatística Básica - Medidas de Tendência Central",
+    "context": "Otimização de Consultas SQL",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de Administração de Banco de Dados (DBA) do Tribunal identificou degradação no desempenho do banco de dados Oracle utilizado pelo módulo de precatórios. Uma amostra de 1.000 tempos de execução de consultas SQL revelou que 80% das consultas rodam em menos de 100 milissegundos, caracterizando a moda e grande parte da distribuição inicial. Contudo, devido à ausência de índices em algumas tabelas históricas, as consultas restantes demoram vários segundos, gerando uma longa cauda na distribuição estatística dos tempos de resposta. O diagnóstico do comportamento intrínseco das medidas de tendência central nesta distribuição caracteristicamente assimétrica à direita é a:",
+    "options": {
+      "A": "Média superior à mediana.",
+      "B": "Média inferior à moda.",
+      "C": "Mediana superior à média.",
+      "D": "Moda superior à mediana.",
+      "E": "Média igual à mediana."
+    },
+    "answer": "A",
+    "explanation": "Em distribuições de tempo de resposta em TI, que apresentam um limite inferior estrito (por exemplo, no mínimo 0ms) e sem limite superior (podendo atingir vários segundos), ocorrem as clássicas distribuições assimétricas à direita (ou assimetria positiva). Nesse modelo estatístico, a presença da longa cauda de lentidão traciona a média matemática fortemente para a direita do gráfico, tornando a Média sempre superior à Mediana, que por sua vez fica superior à Moda. A alternativa A está estatisticamente correta e a C inverte o conceito de assimetria. As demais alternativas contrariam as propriedades canônicas das distribuições positivas."
+  },
+  {
+    "id": 877,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Estatística Básica - Medidas de Tendência Central",
+    "context": "Roteamento de Carga (Load Balancer)",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE utiliza um Application Load Balancer (ALB) configurado com um algoritmo de roteamento baseado em peso (Weighted Round Robin) para distribuir o tráfego do portal de transparência entre três datacenters virtuais. O servidor A recebe 50% das requisições e apresenta um tempo de resposta médio de 100 milissegundos. O servidor B recebe 30% do tráfego, com tempo médio de 200 milissegundos. O servidor C atende aos 20% restantes das requisições, ostentando um tempo médio de 300 milissegundos. Para a composição do SLA global do serviço, o engenheiro de confiabilidade (SRE) deve calcular o tempo de resposta esperado de uma requisição genérica enviada ao ALB. Aplicando a medida estatística adequada para consolidar grupos de diferentes pesos, o tempo de resposta global é:",
+    "options": {
+      "A": "170 milissegundos.",
+      "B": "200 milissegundos.",
+      "C": "150 milissegundos.",
+      "D": "250 milissegundos.",
+      "E": "100 milissegundos."
+    },
+    "answer": "A",
+    "explanation": "A média ponderada requer a multiplicação de cada valor métrico pelo seu respectivo peso de relevância, somando-se os resultados. Matematicamente: (100 * 0,5) + (200 * 0,3) + (300 * 0,2) = 50 + 60 + 60 = 170 ms. A alternativa A reflete o cálculo exato. A alternativa B equivale à mera indicação do servidor central ou à média simples errada. A alternativa C representa um valor puramente ilusório e incorreto. O cálculo estatístico validado para essa arquitetura não aceita a atribuição de valores simples ignorando o balanceamento de carga configurado no roteador."
+  },
+  {
+    "id": 878,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Estatística Básica - Medidas de Tendência Central",
+    "context": "Análise de Vulnerabilidades em CI/CD",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O pipeline de CI/CD do TJ-CE integra uma ferramenta de análise estática de segurança (SAST) e escaneamento contínuo de imagens Docker. O relatório diário extraído do painel corporativo apontou o número exato de vulnerabilidades de alta criticidade encontradas em uma frota de 20 contêineres de um microsserviço recém-implantado. Os dados coletados mostram o seguinte agrupamento: 5 contêineres apresentaram 0 vulnerabilidades, 10 contêineres apresentaram 1 vulnerabilidade, 3 contêineres apresentaram 2 vulnerabilidades e 2 contêineres registraram 5 vulnerabilidades de rede. O Coordenador de Segurança da Informação solicitou que os desenvolvedores focassem na quantidade de falhas mais comum em todo o ambiente para dimensionar o esforço de mitigação inicial. O valor que representa o diagnóstico estatístico solicitado é:",
+    "options": {
+      "A": "1 vulnerabilidade.",
+      "B": "10 vulnerabilidades.",
+      "C": "0 vulnerabilidades.",
+      "D": "2 vulnerabilidades.",
+      "E": "5 vulnerabilidades."
+    },
+    "answer": "A",
+    "explanation": "A moda estatística refere-se ao valor numérico (ou categórico) que ocorre com a maior frequência observada em um conjunto de dados. Analisando a distribuição de frequências: o valor '0' correu 5 vezes; o valor '1' ocorreu 10 vezes; o valor '2' ocorreu 3 vezes; o valor '5' ocorreu 2 vezes. A frequência máxima identificada é 10, que diz respeito diretamente ao valor da variável '1 vulnerabilidade'. A alternativa A é a correta. A alternativa B apresenta uma falácia conceitual ao confundir o índice de frequência (10) com o objeto de estudo em si. As demais ignoram a densidade de repetição."
+  },
+  {
+    "id": 879,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Estatística Básica - Medidas de Tendência Central",
+    "context": "Métricas de Produtividade em Desenvolvimento",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A fábrica de software contratada pelo TJ-CE entrega relatórios mensais de produtividade baseados no total de linhas de código (LOC) produzidas por desenvolvedor. Em uma equipe de dez programadores, nove produziram consistentemente cerca de 1.000 linhas manuais de código no mês de competência. O décimo desenvolvedor, atuando em tarefas exclusivas de refatoração, utilizou uma ferramenta de engenharia reversa que gerou automaticamente 20.000 linhas de código estrutural. Ao apresentar o relatório executivo, a contratada alegou uma produtividade média aproximada de 2.900 linhas por desenvolvedor, o que foi imediatamente contestado pelo fiscal do contrato do Tribunal. Para refletir com exatidão o ritmo real de trabalho humano e padronizado da equipe, o fiscal sugeriu a transição do indicador analítico para o uso da:",
+    "options": {
+      "A": "Mediana, insensível a valores extremos.",
+      "B": "Média, inclusiva de toda a produtividade.",
+      "C": "Moda, representativa do limite superior.",
+      "D": "Variância, equilibradora dos perfis.",
+      "E": "Amplitude, dependente da variabilidade."
+    },
+    "answer": "A",
+    "explanation": "No campo do desenvolvimento de software, métricas isoladas que extrapolam a padronização (como as 20.000 linhas autogeradas) agem como anomalias severas na amostra. A inclusão desse único valor massivo distorce a média aritmética, inflando o relatório da terceirizada de 1.000 para 2.900. A adoção da mediana resolve a falha descritiva por ser robusta contra pontos discrepantes nas extremidades do conjunto de dados. A alternativa A é correta. A alternativa B insiste no erro denunciado pelo fiscal. A alternativa C falha ao associar a moda com limites superiores de classe. As alternativas D e E tentam empregar medidas focadas em dispersão, e não na centralização do volume humano típico de código."
+  },
+  {
+    "id": 880,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Estatística Básica - Medidas de Tendência Central",
+    "context": "Backup Offsite e Velocidade Média",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O processo de backup offsite do TJ-CE exige a transferência de volumes maciços de dados para uma nuvem pública. Durante a cópia do último full backup, observou-se que a primeira metade do volume estrutural de dados (exatos 10 Terabytes) foi transferida à velocidade travada de 1 Gbps em horário de pico, enquanto a segunda metade do volume (10 Terabytes) foi transferida durante a madrugada à velocidade otimizada de 10 Gbps, após liberação governamental da banda ociosa. O analista de infraestrutura precisa calcular a velocidade média real do job de backup completo para projetar a janela de manutenção futura com precisão rigorosa. Sabendo que a variável em estudo é uma taxa (velocidade de transferência em relação a volumes idênticos de percurso), a medida estatística conceitualmente adequada para esse diagnóstico descritivo é a:",
+    "options": {
+      "A": "Média harmônica, adequada para taxas e velocidades.",
+      "B": "Média aritmética, indicada para volumes absolutos.",
+      "C": "Mediana, recomendada para séries temporais.",
+      "D": "Média geométrica, apropriada para crescimentos exponenciais.",
+      "E": "Moda, voltada para larguras de banda frequentes."
+    },
+    "answer": "A",
+    "explanation": "Quando calculamos o desempenho médio focado em taxas (velocidade = espaço / tempo) onde os percursos (volumes transferidos) são fixos e constantes, a medida matemática exclusiva para não distorcer o tempo total alocado é a Média Harmônica. A alternativa A está perfeitamente correta. A alternativa B reflete a armadilha analítica comum, que resultaria no índice de 5,5 Gbps, valor que matematicamente mascararia a imensa quantidade de tempo gasta durante a fase a 1 Gbps. A alternativa D é restrita a taxas de variações percentuais em cascata. As alternativas C e E suprimem a exigência do rigor proporcional requerido entre as métricas envolvidas."
+  },
+  {
+    "id": 881,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Estatística Básica - Medidas de Tendência Central",
+    "context": "Projeção de Crescimento de Storage",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O arquiteto de armazenamento corporativo (Storage) do TJ-CE está elaborando o plano plurianual de aquisição de gavetas All-Flash para suportar o gigantesco acervo digitalizado de processos físicos criminais. Os dados históricos extraídos das LUNs revelam que a base de dados cresceu sucessivamente em taxas acumuladas anuais: 10% no primeiro ano, 20% no segundo ano e 30% no terceiro ano. Para prever o crescimento técnico do parque para o próximo triênio com base na taxa média de expansão histórica, não é possível utilizar a média aritmética simples, visto que as taxas de crescimento da TI incidem sempre sobre um saldo já atualizado do ano anterior (princípio contábil dos juros compostos). A ferramenta estatística correta e rigorosa para obter a taxa média real de evolução geométrica do armazenamento do Tribunal é a:",
+    "options": {
+      "A": "Média geométrica, aplicável a taxas de crescimento acumulado.",
+      "B": "Média aritmética, voltada a proporções lineares.",
+      "C": "Média harmônica, indicada para índices de expansão.",
+      "D": "Mediana, representativa do ponto médio percentual.",
+      "E": "Moda, ajustadora de variações anuais."
+    },
+    "answer": "A",
+    "explanation": "As taxas de crescimento de dados de armazenamento operam sob a lógica financeira de 'juros compostos'. Quando um disco de 100TB cresce 10%, ele chega a 110TB. O crescimento seguinte (20%) incide sobre os 110TB, e não mais sobre o montante base inicial. Para extrair um multiplicador médio nivelado (uma taxa constante que gere o exato mesmo volume final no triênio), aplica-se a extração da raiz do produtório, traduzida matematicamente como a Média Geométrica. A alternativa A está técnica e arquiteturalmente adequada. As alternativas B, C e D incorrem em severo subdimensionamento financeiro e de hardware, violando os princípios exponenciais de dados."
+  },
+  {
+    "id": 882,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Estatística Básica - Medidas de Tendência Central",
+    "context": "Sensores IoT no Data Center",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para aprimorar a eficiência energética em consonância com as normas de sustentabilidade, o Tribunal de Justiça instalou sensores de temperatura IoT de alta precisão nos racks do Data Center principal. O gateway de telemetria coleta as aferições de caloria térmica a cada um segundo, gerando no frontend um gráfico de linha altamente ruidoso em virtude das microflutuações contínuas da exaustão do ar-condicionado de precisão, o que dificulta o diagnóstico visual imediato de tendências de superaquecimento pelos operadores. O desenvolvedor pleno do painel de controle corporativo propôs a implementação imperativa de uma técnica estatística descritiva aplicada sobre janelas deslizantes sequenciais de 60 segundos, atualizando o valor exibido continuamente e mitigando o sobressalto do ruído temporal visual. A solução algorítmica para o diagnóstico corretivo da anomalia gráfica denomina-se:",
+    "options": {
+      "A": "Média móvel, suavizadora de flutuações de curto prazo.",
+      "B": "Mediana global, isoladora de picos térmicos.",
+      "C": "Moda temporal, destacadora da temperatura padrão.",
+      "D": "Média harmônica, ajustadora de frequências cíclicas.",
+      "E": "Média cumulativa, somadora do histórico completo."
+    },
+    "answer": "A",
+    "explanation": "A Média Móvel (Simple Moving Average) constitui a ferramenta padrão na arquitetura de data streaming para fins de monitoramento operacional e IoT. Baseia-se no cálculo sistemático da média dentro de um recorte temporal deslizante (window frame), mitigando as pequenas turbulências randômicas dos sensores e delineando o macrocomportamento (smoothing) da variável termal. A alternativa A atende perfeitamente ao case do front-end. A alternativa E falha porque ao somar o histórico completo causaria a imobilização absoluta do gráfico após longas horas. As alternativas restantes não geram janelas de acomodação linear em sistemas de stream processing."
+  },
+  {
+    "id": 883,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Estatística Básica - Medidas de Tendência Central",
+    "context": "Homologação e Testes de Carga (Mediana)",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Antes do lançamento oficial da nova versão do aplicativo 'TJ-CE Mobile', a equipe de Qualidade de Software (QA) realizou seis baterias sequenciais e independentes de testes de carga pesada. O tempo de resposta final estabilizado (em milissegundos) registrado no servidor Nginx para o login massivo de mil usuários simulados em cada bateria foi, em ordem cronológica de execução da pipeline: 30, 50, 10, 40, 15 e 20. O manual oficial de boas práticas de engenharia e homologação do Tribunal exige peremptoriamente que o critério de aceite sistêmico seja fundamentado na mediana bruta dos tempos registrados nas seis passagens, expurgando eventuais anomalias oriundas de switches em testes. Após estruturar o rol de dados adequadamente, o engenheiro de QA endossou o deploy final ao constatar que o valor computado correspondente à mediana legal do normativo cravava exatos:",
+    "options": {
+      "A": "25 milissegundos.",
+      "B": "20 milissegundos.",
+      "C": "30 milissegundos.",
+      "D": "27 milissegundos.",
+      "E": "15 milissegundos."
+    },
+    "answer": "A",
+    "explanation": "A determinação do rol ordenado impera como primeiro passo: 10, 15, 20, 30, 40, 50. Considerando que o limite amostral contém um número par de instâncias de verificação (N = 6), a mediana assume matematicamente o formato da média aritmética dos dois valores alocados no epicentro da distribuição temporal (posições n/2 e (n/2)+1). Posicionando os índices, obtemos 20 e 30. Executando o cálculo: (20 + 30) / 2 = 25 ms. A alternativa A reflete o crivo de QA irrefutável. A alternativa D expõe um engodo numérico fracionário criado ao acaso. As alternativas B e C refletem posições liminares e não mediadas."
+  },
+  {
+    "id": 884,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Estatística Básica - Medidas de Tendência Central",
+    "context": "Propriedades da Média e Criptografia",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O monitoramento base de tráfego de rede das Varas Cíveis do interior para o Datacenter Central do TJ-CE documentava historicamente uma latência média estável na casa dos 120 milissegundos. Devido à implantação forçosa de uma nova política de sigilo emanada pelo Conselho Nacional de Justiça (CNJ), toda a comunicação passou a trafegar engarrafada em túneis IPSec fortificados, administrados por um robusto appliance de segurança perimetral (NGFW). A etapa de validação (PoC) desse equipamento atestou que o overhead algorítmico e os mecanismos de preenchimento adicionam um atraso constante, fixo e inexorável de exatos 50 milissegundos no roteamento de cada pacote isolado da rede, sem depender do seu peso informacional. Valendo-se das propriedades axiomáticas fundamentais do cálculo da média aritmética frente a constantes, o engenheiro de telecomunicações consolidou o adendo, fixando a nova média em:",
+    "options": {
+      "A": "170 milissegundos.",
+      "B": "120 milissegundos.",
+      "C": "50 milissegundos.",
+      "D": "240 milissegundos.",
+      "E": "145 milissegundos."
+    },
+    "answer": "A",
+    "explanation": "A literatura acadêmica que governa as propriedades descritivas estatísticas delimita rigidamente que: diante da soma de uma constante estrutural (k) a todos os elementos heterogêneos de um conjunto amostral de dados, o limite resultante representativo da nova média será espelhado pelo agrupamento da velha média adicionado de forma nua à constante k. O teorema projeta: Média_Atual = Média_Prévia (120) + Constante (50) = 170. A alternativa A expressa a realidade. As alternativas C e B são redutivas ao mascarar o custo somatório de criptografia sobre a totalidade do link dedicado."
+  },
+  {
+    "id": 885,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Estatística Básica - Medidas de Tendência Central",
+    "context": "SLA Baseado em Percentis vs Mediana",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O contrato bilionário de sustentação de infraestrutura em nuvem elástica, firmado pela Diretoria-Geral do TJ-CE, exige terminantemente no seu catálogo (SLA) que 95% do volume bruto de requisições web diárias redirecionadas ao portal do servidor devem ser atendidas, obrigatoriamente, em menos de 2 segundos corridos. Ao fim da fatura, a fornecedora terceirizada despachou o relatório executivo de compliance, demonstrando que a métrica consolidada da mediana diária dos tempos de resposta estacionou em meros 0,5 segundos, justificando-se com isso apta e resguardada de penalidades. No entanto, o auditor sênior de TI do Tribunal glosou o faturamento e deflagramos a incidência de multa por violação, ao evidenciar pericialmente que quase 10% da cauda residual de requisições do mesmo dia experimentaram estrangulamentos superiores a 5 segundos de espera cega. O erro técnico de engenharia de software praticado pela argumentação exculpatória da fornecedora escora-se intrinsecamente na assunção de que:",
+    "options": {
+      "A": "A mediana oculta o comportamento da cauda da distribuição.",
+      "B": "A mediana infla os tempos de resposta dos usuários.",
+      "C": "A mediana reflete as requisições de maior complexidade.",
+      "D": "A mediana ignora os tempos de resposta mais rápidos.",
+      "E": "A mediana superestima a capacidade de processamento."
+    },
+    "answer": "A",
+    "explanation": "A concepção arquitetural da mediana determina apenas o eixo partidor mediano da série de dados; ela isola o limite abaixo do qual se alinham 50% dos casos amostrais. Ao reportar o índice P50 (Mediana = 0,5s), restringe-se brutalmente o monitoramento analítico ao contingente majoritário sadio do banco de dados, sem fornecer a mínima cobertura estatística elucidativa a respeito da flutuação marginal degenerativa. SLAs baseados exclusivamente em mediana acobertam catástrofes nos percentis remotos, justificando a imposição global de limites como o P95 e P99 para caudas log-normais em métricas web. A alternativa A enquadra de forma impecável a deficiência explorada na auditoria. As opções de B a E distorcem inteiramente o papel seccionador da mediana, atribuindo-lhe viés ativista."
+  }
+]

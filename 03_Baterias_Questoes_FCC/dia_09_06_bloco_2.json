@@ -1,0 +1,272 @@
+[
+  {
+    "id": 2001,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Gestão de Riscos (ISO 27005)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o planejamento de modernização tecnológica do Tribunal de Justiça do Ceará (TJ-CE), a equipe de segurança decidiu estruturar o processo de gestão de riscos conforme a ABNT NBR ISO/IEC 27005. O comitê estabeleceu que os critérios para determinar a significância de um risco devem considerar o valor dos ativos de informação, as penalidades legais por violações e a capacidade operacional de tratamento. Na fase inicial de gestão de riscos, a atividade focada em definir essas métricas operacionais, as regras de aceitação e os limites do sistema enquadra-se tecnicamente no:",
+    "options": {
+      "A": "Estabelecimento do contexto.",
+      "B": "Processo de apreciação de riscos.",
+      "C": "Plano de tratamento de riscos.",
+      "D": "Ciclo de comunicação e consulta.",
+      "E": "Relatório de avaliação de consequências."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. Na ISO 27005, o Estabelecimento do Contexto é a etapa preparatória onde as regras do jogo são definidas: critérios de avaliação de risco, impacto, probabilidade, limites organizacionais e apetite de risco. A alternativa B agrupa as atividades de identificação, análise e avaliação, executadas após o contexto. A alternativa C prescreve mitigações e opções estratégicas pós-avaliação. A alternativa D abrange o fluxo transversal de informações. A alternativa E não é o nome correto de uma fase de delimitação inicial."
+  },
+  {
+    "id": 2002,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Gestão de Riscos (ISO 27005)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O departamento de engenharia do TJ-CE migrou o repositório de jurisprudência para a nuvem pública, identificando um risco elevado de ataques de negação de serviço (DDoS). O comitê de segurança optou por contratar um serviço de mitigação em nuvem gerenciado por terceiros e subscrever uma apólice de seguro cibernético cobrindo indisponibilidades severas. Segundo as diretrizes da ISO 27005, a decisão arquitetural adotada classifica-se como:",
+    "options": {
+      "A": "Modificação do risco pela aplicação de controles técnicos internos mitigatórios.",
+      "B": "Retenção do risco pela aceitação formal documentada pela alta gestão.",
+      "C": "Prevenção do risco pelo isolamento absoluto dos servidores do tribunal.",
+      "D": "Compartilhamento do risco pela contratação de serviços especializados e apólices.",
+      "E": "Evitação do risco pela interrupção da atividade geradora da ameaça."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D está correta. Compartilhar ou transferir o risco significa distribuir o encargo de tratamento ou o ônus financeiro para outras entidades legais, como terceirizar o monitoramento (MSSP) e contratar seguros cibernéticos. A alternativa A refere-se à modificação técnica pura. A alternativa B caracteriza a retenção do risco de forma deliberada sem outras ações diretas. As alternativas C e E representam a evitação do risco, implicando a não execução do projeto ou paralisação do serviço suscetível."
+  },
+  {
+    "id": 2003,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Computação em Nuvem (ISO 27017)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE adota o modelo IaaS (Infrastructure as a Service) para processar os sistemas das varas estaduais. Uma diretriz arquitetural estrita exige a separação do processamento das Varas de Família (dados sob sigilo de justiça) em relação aos sistemas públicos. Em atendimento aos controles da ABNT NBR ISO/IEC 27017 sobre ambientes virtuais compartilhados, o mecanismo apropriado que cliente e provedor devem estabelecer para assegurar esse isolamento lógico é a:",
+    "options": {
+      "A": "Implementação de segregação de redes virtuais e controles de acesso no hypervisor.",
+      "B": "Implantação de firewalls de borda para segmentação restrita de tráfego externo.",
+      "C": "Utilização de criptografia homomórfica no armazenamento em disco físico.",
+      "D": "Configuração de zonas desmilitarizadas físicas exclusivas para as varas de família.",
+      "E": "Aplicação de roteamento estático direto nos switches core do datacenter."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. A norma ISO 27017 destaca a extrema importância do isolamento de tenants e recursos em infraestruturas virtuais (IaaS), empregando redes virtuais (VLANs/SDN) segmentadas e isolamento a nível de hypervisor para garantir o isolamento lógico das cargas de trabalho. A alternativa B atua apenas na fronteira. A alternativa C é inviável e atípica para segregação primária. A alternativa D é descabida, misturando DMZ física com nuvem pública. A alternativa E remete a configurações de hardware do provedor que não resolvem o acesso lógico dos usuários."
+  },
+  {
+    "id": 2004,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Computação em Nuvem (ISO 27017)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de inovação do tribunal desenvolveu uma API de consulta processual, hospedando-a em um modelo PaaS (Platform as a Service). Semanas após a implantação, uma vulnerabilidade no código-fonte da API provocou o vazamento de metadados. Durante a sindicância baseada no modelo de responsabilidade compartilhada da ABNT NBR ISO/IEC 27017, a atribuição da responsabilidade pelo incidente indica que:",
+    "options": {
+      "A": "O provedor de nuvem responde pela falha na segurança do código da aplicação hospedada.",
+      "B": "O cliente da nuvem assume a responsabilidade pela segurança das aplicações desenvolvidas sobre a plataforma.",
+      "C": "O provedor de nuvem garante a conformidade contínua dos dados armazenados no banco.",
+      "D": "O cliente da nuvem administra a aplicação de patches no sistema operacional subjacente.",
+      "E": "O provedor de nuvem gerencia o controle de acesso lógico dos usuários finais da aplicação."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. Em um modelo PaaS, o provedor oferece a infraestrutura e o ambiente de execução, sendo de sua alçada o SO e os hardwares. O cliente (TJ-CE) preserva total responsabilidade pelas aplicações que desenha, pelo código que faz deploy e pelos dados administrados nessas camadas. A alternativa A inverte esse papel. A alternativa C delega a posse dos dados ao provedor. A alternativa D é papel do provedor em PaaS (patch do SO subjacente). A alternativa E atribui ao provedor uma tarefa que é estritamente do cliente."
+  },
+  {
+    "id": 2005,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Incidentes (ISO 27035)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante uma auditoria na Secretaria de TI do TJ-CE, constatou-se que a equipe de resposta a incidentes corrigiu a intrusão no PJe, mas falhou em documentar as vulnerabilidades exploradas para a atualização dos manuais de defesa preventiva. Segundo as fases processuais definidas na ABNT NBR ISO/IEC 27035, a identificação e a formalização de melhorias sistêmicas a partir de um ataque neutralizado ocorrem estritamente na etapa de:",
+    "options": {
+      "A": "Planejamento e preparação.",
+      "B": "Detecção e relato.",
+      "C": "Avaliação e decisão.",
+      "D": "Respostas.",
+      "E": "Lições aprendidas."
+    },
+    "answer": "E",
+    "explanation": "A alternativa E está correta. O ciclo da ISO 27035 termina na fase de 'Lições aprendidas', a qual contempla a revisão pós-incidente, o aprimoramento dos controles de segurança do processo, o ajuste da análise de riscos e a otimização dos planos de contingência em uso. A alternativa A cuida das políticas iniciais. A alternativa B rastreia sinais do ataque. A alternativa C qualifica se o evento virou incidente. A alternativa D abrange as operações mitigatórias técnicas focais."
+  },
+  {
+    "id": 2006,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Resposta a Incidentes (NIST SP 800-61)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um analista do Centro de Operações de Segurança do TJ-CE detecta a propagação lateral de um malware do tipo worm. Imediatamente, ele aciona protocolos para modificar as ACLs dos roteadores internos, isolando as VLANs afetadas e bloqueando o tráfego inter-redes do datacenter, objetivando interromper a infecção. Sob a ótica do ciclo de vida de resposta a incidentes do NIST SP 800-61, essa intervenção tática é executada na fase de:",
+    "options": {
+      "A": "Preparação.",
+      "B": "Detecção e Análise.",
+      "C": "Contenção, Erradicação e Recuperação.",
+      "D": "Atividade Pós-Incidente.",
+      "E": "Comunicação Estratégica."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A fase central do NIST SP 800-61 engloba os esforços imediatos para deter o alastramento de um incidente (Contenção), sua supressão dos ativos infectados (Erradicação) e a restauração à normalidade (Recuperação). A alteração de regras de roteamento (ACLs) para isolar sub-redes materializa puramente a ação de Contenção. As alternativas A, B e D definem as fases restantes do ciclo de vida. A alternativa E não compõe as grandes fases centrais da metodologia."
+  },
+  {
+    "id": 2007,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Gestão de Riscos (ISO 27005)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao executar o processo de Gestão de Riscos baseado na ABNT NBR ISO/IEC 27005, o comitê de segurança do TJ-CE avaliou o cenário onde a queda prolongada de energia no datacenter principal provocaria atrasos em audiências online, multas em contratos de SLAs com cartórios e forte impacto negativo na imagem do Judiciário. A atividade voltada a mensurar especificamente esses prejuízos à integridade e disponibilidade institucional enquadra-se na:",
+    "options": {
+      "A": "Identificação de ativos.",
+      "B": "Identificação de ameaças.",
+      "C": "Identificação de vulnerabilidades.",
+      "D": "Identificação de consequências.",
+      "E": "Identificação de controles."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D está correta. A identificação das consequências constitui a identificação do impacto para a organização decorrente da possível perda da confidencialidade, integridade e disponibilidade inerente a um incidente. As alternativas A, B e C tratam respectivamente da identificação daquilo que tem valor, daquilo que pode causar dano e da fraqueza intrínseca que pode ser explorada. A alternativa E lida com salvaguardas já implementadas."
+  },
+  {
+    "id": 2008,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Incidentes (ISO 27035)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O painel central de monitoramento (SIEM) do TJ-CE emitiu um alerta sinalizando seis tentativas de autenticação fracassadas no portal VPN originadas pelo login de um magistrado. A equipe de suporte contatou o usuário e constatou que ele digitara a senha antiga por engano, não havendo quebra da política de segurança ou sucesso na invasão. De acordo com o vocabulário normativo da ABNT NBR ISO/IEC 27035, esse tipo de registro constitui um(a):",
+    "options": {
+      "A": "Evento de segurança da informação.",
+      "B": "Incidente de segurança da informação.",
+      "C": "Vulnerabilidade explorada sistêmica.",
+      "D": "Ameaça iminente materializada.",
+      "E": "Risco residual não tratado."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. Um Evento de Segurança da Informação é qualquer ocorrência identificada que indique uma possível violação das políticas ou falha de controle, sem a confirmação de impacto severo. Como foi apenas um engano legítimo e não houve acesso forçado, o caso não escalou para Incidente (alternativa B), que exige a materialização efetiva da quebra de segurança ou disrupção de operações. As alternativas C, D e E representam conceitos técnicos indevidamente forçados no contexto."
+  },
+  {
+    "id": 2009,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Resposta a Incidentes (NIST SP 800-61)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Os analistas de segurança do tribunal verificaram, nos logs do portal web, uma varredura de diretórios executada por um IP estrangeiro. Quarenta e oito horas depois, o software EDR instalou um alerta apontando a execução de um utilitário de extração de credenciais de memória no mesmo servidor. Conforme o padrão NIST SP 800-61, o registro da varredura de diretórios e o alerta emitido pelo EDR classificam-se tecnicamente e respectivamente como:",
+    "options": {
+      "A": "Incidente e evento.",
+      "B": "Precursor e indicador.",
+      "C": "Indicador e precursor.",
+      "D": "Ameaça e vulnerabilidade.",
+      "E": "Falso-positivo e evento."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O NIST SP 800-61 distingue explicitamente 'Precursors' (sinais que sugerem que um incidente pode ocorrer no futuro, como port scans e varreduras de vulnerabilidades) e 'Indicators' (sinais evidentes de que um incidente ocorreu ou está em andamento, como alarmes de antivírus e processos maliciosos rodando). A alternativa A confunde fases abrangentes. A alternativa C inverte as classificações. As alternativas D e E mesclam vocabulário incompatível com a taxonomia rigorosa da fase de detecção do NIST."
+  },
+  {
+    "id": 2010,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Computação em Nuvem (ISO 27017)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça extinguiu o contrato com uma fornecedora SaaS de transcrição automatizada de áudios de audiências e solicitou a exclusão total da base de gravações armazenada na nuvem multilocatária da empresa. Para observar as diretrizes de descarte seguro da ABNT NBR ISO/IEC 27017, protegendo as informações contra recuperação sem corromper a infraestrutura compartilhada do provedor, a técnica exigida consiste na:",
+    "options": {
+      "A": "Desmagnetização de discos rígidos da infraestrutura física do datacenter.",
+      "B": "Formatação física de baixo nível dos volumes de armazenamento do storage.",
+      "C": "Exclusão segura mediante sobrescrita dos blocos ou destruição das chaves criptográficas.",
+      "D": "Retenção dos dados em estado inativo por tempo indeterminado em área isolada.",
+      "E": "Devolução física dos servidores de armazenamento aos administradores do tribunal."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. Na nuvem, onde múltiplos clientes (tenants) dividem os mesmos discos, destruir ou formatar fisicamente os meios magnéticos inviabilizaria os serviços de terceiros. A ISO 27017 preconiza a exclusão lógica segura com algoritmos de sobrescrita ou o uso de 'Crypto-Shredding' (exclusão permanente das chaves mestras de criptografia vinculadas aos dados do cliente). As alternativas A, B e E causam a destruição e interrupção do ambiente multilocatário. A alternativa D infringe a obrigação contratual de deleção total."
+  },
+  {
+    "id": 2011,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Resposta a Incidentes (NIST SP 800-61)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após bloquear um ransomware que comprometera os computadores das varas cíveis, a equipe do CSIRT do TJ-CE desdobrou imagens limpas dos sistemas operacionais e aplicou novos pacotes de políticas de grupo (GPO) forçando senhas complexas em toda a rede afetada. No escopo de atuação preconizado pelo documento NIST SP 800-61, o conjunto dessas ações de limpeza e restauração dos serviços aos níveis operacionais pertence à fase de:",
+    "options": {
+      "A": "Preparação.",
+      "B": "Detecção e Análise.",
+      "C": "Contenção, Erradicação e Recuperação.",
+      "D": "Atividade Pós-Incidente.",
+      "E": "Monitoramento Contínuo."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. No framework NIST SP 800-61, a recomposição dos sistemas, como reinstalação via imagens seguras de SO e o reinício da prestação normal dos serviços, integra as subfases de Erradicação e Recuperação. A alternativa A lida com ferramentas antes do incidente. A alternativa B mapeia e qualifica o ataque inicialmente. A alternativa D lida com o relatório e as lições organizacionais abstraídas pós-crise. A alternativa E trata da manutenção comum de TI."
+  },
+  {
+    "id": 2012,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Gestão de Riscos (ISO 27005)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para a elaboração do plano de orçamento, o Diretor de TI cruzou os registros de falhas de no-breaks do Tribunal nos últimos cinco anos, multiplicando a taxa anual de ocorrência (ARO) de interrupções pelo valor financeiro da expectativa de perda única (SLE) de produtividade por servidor afetado. Na perspectiva metodológica da ABNT NBR ISO/IEC 27005, o gestor realizou uma:",
+    "options": {
+      "A": "Análise qualitativa de risco.",
+      "B": "Análise quantitativa de risco.",
+      "C": "Análise descritiva de impacto.",
+      "D": "Avaliação heurística de ativos.",
+      "E": "Apreciação estocástica de ameaça."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O cálculo financeiro expresso com precisão matemática, baseando-se em métricas probabilísticas precisas como ARO e SLE para deduzir o custo ALE (Annualized Loss Expectancy), retrata intrinsecamente a avaliação quantitativa de risco. A alternativa A refere-se a escores interpretativos (Alto, Médio, Baixo). As alternativas C, D e E utilizam terminologias não chanceladas para denominar essas estimativas numéricas objetivas."
+  },
+  {
+    "id": 2013,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Incidentes (ISO 27035)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Visando garantir agilidade frente às dimensões continentais da sua jurisdição, o TJ-CE configurou o seu CSIRT estruturando um comando unificado na sede em Fortaleza e qualificando membros locais nas varas do interior para atuarem de imediato na desconexão de cabos e isolamento primário. Essa topologia funcional está formalmente descrita na ABNT NBR ISO/IEC 27035 como o modelo de:",
+    "options": {
+      "A": "Equipe centralizada de resposta a incidentes.",
+      "B": "Equipe terceirizada de gerenciamento de crises.",
+      "C": "Equipe distribuída de resposta a incidentes.",
+      "D": "Equipe virtual de coordenação de eventos.",
+      "E": "Equipe matricial de segurança perimetral."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A ISO 27035 aponta o formato da Equipe Distribuída (ou coordenada) como ideal para corporações geográficas extensas. Ela se aproveita de um núcleo central provendo políticas e coordenação pesada enquanto socorristas locais capacitados assumem a triagem periférica. A alternativa A implica que todas as ações e decisões provêm exclusivamente de uma sede física limitante. A alternativa B descreve um modelo MSSP puro de terceiros. As alternativas D e E descrevem jargões administrativos genéricos."
+  },
+  {
+    "id": 2014,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Computação em Nuvem (ISO 27017)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O arquiteto responsável por migrar os portais de intimação eletrônica para uma plataforma IaaS está validando as imagens de máquinas virtuais (templates) que automatizarão a implantação dos clusters do TJ-CE. Para assegurar a conformidade com as diretrizes de configuração segura da ABNT NBR ISO/IEC 27017, o arquiteto deve incluir obrigatoriamente, antes do provisionamento produtivo, a:",
+    "options": {
+      "A": "Aplicação de atualizações de segurança e remoção de serviços padrão não utilizados na imagem base.",
+      "B": "Criptografia de rede em trânsito no momento da execução inicial do sistema operacional hóspede.",
+      "C": "Substituição do modelo IaaS por PaaS para transferir a responsabilidade total do patch ao provedor.",
+      "D": "Configuração de autenticação biométrica no acesso físico aos racks do datacenter gerenciado.",
+      "E": "Execução de escaneamento de portas ativas na interface de administração do provedor de nuvem."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. A ISO 27017 prescreve o estabelecimento de baselines rígidos no preparo de imagens e instâncias de máquina virtual fornecidas para a nuvem. Isso traduz a prática de 'hardening' nos sistemas hospedeiros (retirada de serviços padrão, patches atualizados) antes de comporem o ambiente operacional. A alternativa B é uma medida tardia de transporte. A alternativa C abandona o modelo de negócio proposto. A alternativa D aborda requisitos físicos estritamente dominados pelo fornecedor. A alternativa E não endereça o reforço na arquitetura da imagem em si."
+  },
+  {
+    "id": 2015,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Segurança da Informação: Resposta a Incidentes (NIST SP 800-61)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Comitê Diretor de Tecnologia da Informação do TJ-CE iniciou os trabalhos de formalização documental da sua estrutura cibernética, publicando primeiramente a Política de Resposta a Incidentes. Sob a égide das recomendações do NIST SP 800-61, esse documento normativo deve, imprescindivelmente, definir as linhas mestras do processo, incluindo:",
+    "options": {
+      "A": "A matriz de regras de firewall implementadas contra varreduras de portas ativas.",
+      "B": "O código-fonte das ferramentas de coleta de evidências instaladas em memória RAM.",
+      "C": "A declaração de autorização gerencial e o escopo de atuação do time de resposta.",
+      "D": "O cronograma tático de plantão e as escalas das equipes de segurança defensiva.",
+      "E": "O diagrama topológico de endereçamento IP público dos balanceadores de carga."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. O documento 'Policy' de Incident Response (NIST SP 800-61) fundamenta a essência governamental da operação de um CSIRT, explicitando autoridade, papéis, obrigações de reporte e o claro escopo em que a equipe tem aval para agir na organização. As alternativas A, B, D e E abordam elementos voláteis, dados operacionais e segredos técnicos que residem apenas em Procedimentos Operacionais Padrão (POPs) ou em Manuais de Configuração (Playbooks/Runbooks), não no núcleo de uma Política."
+  }
+]

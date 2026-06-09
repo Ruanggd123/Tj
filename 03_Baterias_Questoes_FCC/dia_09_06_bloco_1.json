@@ -1,0 +1,272 @@
+[
+  {
+    "id": 90601,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Cloud Computing (Azure)",
+    "context": "Migração Híbrida de Datacenter",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Estado do Ceará (TJ-CE) planeja estender seu datacenter local (on-premises) para a nuvem Microsoft Azure. A infraestrutura exige tráfego de dados sensíveis entre o tribunal e a nuvem de forma privada, com latência mínima e garantia de largura de banda superior a 1 Gbps, evitando absolutamente o trânsito pela internet pública. Diante deste cenário de conectividade híbrida, a solução arquitetural adequada é a implementação do",
+    "options": {
+      "A": "Azure VPN Gateway na camada de transporte.",
+      "B": "Azure ExpressRoute com roteamento dinâmico.",
+      "C": "Azure Virtual WAN com criptografia IPSec.",
+      "D": "Azure Front Door com terminação TLS.",
+      "E": "Azure Traffic Manager com perfil de roteamento de latência."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. O Azure ExpressRoute permite criar conexões totalmente privadas entre datacenters locais e a infraestrutura do Azure, garantindo que o tráfego não transite pela internet pública, o que proporciona alta confiabilidade, latências mínimas e velocidades de até 100 Gbps. As alternativas A e C (VPN Gateway e Virtual WAN com IPSec) implementam segurança criptográfica, mas trafegam seus dados sob a infraestrutura da internet pública. A alternativa D (Front Door) é um balanceador de carga global na camada 7 de aplicação, e a E (Traffic Manager) é um balanceador de carga global L4/DNS, ambos não provendo canais de conexão física privada híbrida."
+  },
+  {
+    "id": 90602,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Cloud Computing (Azure)",
+    "context": "Modernização de Monólito para Microsserviços",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está refatorando o sistema Processo Judicial Eletrônico (PJe), um monólito legado, para uma arquitetura de microsserviços conteinerizados. A equipe de arquitetura exige uma plataforma gerenciada que orquestre a implantação, a escalabilidade elástica e o balanceamento de carga automático desses contêineres, abstraindo a gestão do plano de controle (control plane) para reduzir a sobrecarga operacional da infraestrutura. A ferramenta nativa do Azure recomendada para hospedar esta nova arquitetura é o",
+    "options": {
+      "A": "Azure App Service.",
+      "B": "Azure Container Instances.",
+      "C": "Azure Virtual Machine Scale Sets.",
+      "D": "Azure Kubernetes Service.",
+      "E": "Azure Service Fabric."
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D. O Azure Kubernetes Service (AKS) é o serviço gerenciado de orquestração de contêineres padrão de mercado na nuvem da Microsoft. Ele é projetado para arquiteturas de microsserviços, simplificando a operação ao abstrair e gerenciar integralmente o 'control plane' do Kubernetes. A alternativa B (Azure Container Instances) é direcionada à execução de contêineres isolados, sem os recursos robustos de uma malha orquestradora. A alternativa A (App Service) é um PaaS focado primariamente em aplicações web simples. A alternativa C (VM Scale Sets) compõe uma infraestrutura IaaS de máquinas virtuais, exigindo gerenciamento manual do orquestrador. A alternativa E (Service Fabric) é um orquestrador proprietário da Microsoft, tendo seu uso para novos projetos preterido em favor do padrão aberto Kubernetes do AKS."
+  },
+  {
+    "id": 90603,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Cloud Computing (Azure)",
+    "context": "Otimização de Banco de Dados em Nuvem",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O banco de dados do sistema de controle de mandados do TJ-CE sofre constantes bloqueios e contenções de leitura durante o horário de pico da manhã. A arquitetura atual utiliza o Azure SQL Database no nível de serviço Premium. Para aliviar a carga no servidor principal e garantir alta escalabilidade de forma nativa, sem realizar alterações estruturais nos padrões da aplicação além da modificação da string de conexão para operações de leitura analíticas, o arquiteto de nuvem deve",
+    "options": {
+      "A": "provisionar instâncias de replicação geográfica em regiões secundárias.",
+      "B": "configurar o recurso Scale Out habilitando réplicas de leitura integradas.",
+      "C": "migrar o banco de dados para um cluster do Azure SQL Managed Instance.",
+      "D": "adicionar um banco de dados de cache em memória com Azure Cache for Redis.",
+      "E": "distribuir as transações através do Azure Cosmos DB com consistência eventual."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Nos níveis de serviço Premium e Business Critical do Azure SQL Database, o recurso 'Read Scale-Out' é habilitado utilizando os nós secundários da arquitetura Always On subjacente. Ao modificar a string de conexão (ApplicationIntent=ReadOnly), as cargas de trabalho de leitura são roteadas automaticamente para as réplicas, preservando o nó primário para transações de gravação. A alternativa A foca em continuidade de negócios (BCDR). A alternativa C implica migração para um modelo de instância gerenciada, sem resolver intrinsecamente a contenção de leitura sem configuração adicional. As alternativas D e E exigem pesadas refatorações de código na aplicação (implementação de lógica de cache e mudança de banco relacional para NoSQL)."
+  },
+  {
+    "id": 90604,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Cloud Computing (Azure)",
+    "context": "Governança de Identidades e Acessos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Diretoria de TI do TJ-CE gerencia o acesso aos recursos em nuvem de dezenas de varas e juizados. Um incidente de segurança revelou que servidores transferidos e estagiários mantinham privilégios elevados de exclusão de recursos do Azure meses após a alteração de suas funções. Para mitigar esse risco de forma sistêmica na arquitetura de identidade sem inviabilizar a autonomia do time, a governança deve empregar o Azure Entra ID com foco em",
+    "options": {
+      "A": "atribuição de papéis em nível de recurso e autenticação multifator.",
+      "B": "políticas de acesso condicional e controle de acesso baseado em escopos.",
+      "C": "gestão de identidade privilegiada e revisões de acesso automáticas.",
+      "D": "provisionamento temporário e auditoria de logs no Azure Monitor.",
+      "E": "integração de diretórios locais e sincronização bidirecional de senhas."
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. O Azure AD Privileged Identity Management (PIM) em conjunto com as Revisões de Acesso (Access Reviews) permite conceder privilégios apenas no momento necessário (just-in-time) e auditar o ciclo de vida dessas permissões de maneira sistêmica. As revisões automáticas obrigam atestados de continuidade de acesso, expurgando permissões órfãs ou desnecessárias. A alternativa A mitiga credenciais comprometidas. A alternativa B atua no contexto da conexão (ex: bloqueio de IP externo). A alternativa D apenas monitora reativamente as falhas, sem controlar o ciclo. A alternativa E resolve a topologia de diretório híbrido, mas não o vazamento do princípio do menor privilégio contínuo."
+  },
+  {
+    "id": 90605,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Extreme Programming (XP)",
+    "context": "Qualidade e Regressão de Código",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O desenvolvimento do novo módulo de certidões negativas do TJ-CE adotou Extreme Programming (XP). Durante as iterações, a equipe notou que modificações em um componente geravam falhas imprevisíveis em outros módulos do sistema. O tempo de depuração aumentou severamente, travando as entregas. Para garantir a capacidade de diagnosticar falhas no exato instante em que as alterações são introduzidas na base de código compartilhada, a prática central do XP a ser executada é",
+    "options": {
+      "A": "o ritmo sustentável.",
+      "B": "o planejamento do jogo.",
+      "C": "o cliente no local.",
+      "D": "o design simples.",
+      "E": "a integração contínua."
+    },
+    "answer": "E",
+    "explanation": "A alternativa correta é a E. A Integração Contínua (Continuous Integration - CI) é a prática do XP onde a equipe integra seu código múltiplas vezes ao dia no repositório compartilhado, seguido por builds e testes automatizados. O erro de regressão é imediatamente capturado pelo ambiente de integração. A alternativa A foca no combate ao esgotamento físico do time. A B lida com planejamento e estimativas de estórias. A C garante o esclarecimento das regras de negócio e feedback rápido do usuário. A D previne a introdução antecipada de complexidade desnecessária (YAGNI)."
+  },
+  {
+    "id": 90606,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Extreme Programming (XP)",
+    "context": "Manutenção de Sistemas Legados",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de engenharia do tribunal assumiu a manutenção de um sistema de custas processuais com alto índice de acoplamento e ausência de documentação técnica. A diretoria determinou a implementação da metodologia Extreme Programming (XP). Para alterar esse código legado, melhorando sua estrutura interna e sua legibilidade sem provocar alterações inesperadas em seu comportamento externo operante, a equipe deve aplicar de forma combinada as práticas de",
+    "options": {
+      "A": "padronização de código e propriedade coletiva.",
+      "B": "programação em par e metáfora do sistema.",
+      "C": "refatoração e desenvolvimento orientado a testes.",
+      "D": "pequenas entregas e planejamento da iteração.",
+      "E": "integração contínua e cliente no local."
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. A Refatoração, por definição, consiste na reestruturação do código interno para melhorar o design sem mudar o seu comportamento observável externamente. Para garantir que essa mudança interna não crie falhas sistêmicas em produção, o Desenvolvimento Orientado a Testes (TDD), que produz uma rede automatizada de testes de regressão, trabalha indissociavelmente acoplado à refatoração na filosofia do XP. As demais opções representam práticas válidas do framework, mas não respondem à técnica específica de alteração segura da estrutura do código existente."
+  },
+  {
+    "id": 90607,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Extreme Programming (XP)",
+    "context": "Gargalos de Conhecimento na Equipe",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em uma squad responsável pelo portal de jurisprudência do TJ-CE, a ausência de um desenvolvedor sênior específico paralisa repetidamente o andamento das tarefas críticas de integração. Além disso, a revisão de código assíncrona feita de maneira posterior atrasa as liberações de funcionalidades por dias. De acordo com as práticas do Extreme Programming (XP), a solução de engenharia comportamental para mitigar os gargalos individuais de conhecimento e lentidão nas revisões de pull requests é a adoção de",
+    "options": {
+      "A": "programação em par e propriedade coletiva do código.",
+      "B": "integração contínua e desenvolvimento orientado a comportamento.",
+      "C": "pequenas entregas e documentação de arquitetura unificada.",
+      "D": "projeto simples e delegação hierárquica de submódulos.",
+      "E": "ritmo sustentável e rodízio de papéis de liderança técnica."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A Programação em Par (Pair Programming) fornece uma dinâmica de revisão de código contínua em tempo real e a disseminação de conhecimento e regras de negócio intra-equipe. Associada à Propriedade Coletiva do Código (Collective Code Ownership), cria um ambiente onde qualquer desenvolvedor é encorajado e autorizado a modificar qualquer fragmento de código, mitigando imediatamente o efeito de silos de conhecimento e a dependência de desenvolvedores individuais."
+  },
+  {
+    "id": 90608,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Extreme Programming (XP)",
+    "context": "Gestão de Escopo e Conflitos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O fluxo de criação de processos eletrônicos sofre mudanças frequentes decorrentes de resoluções normativas. A equipe técnica do TJ-CE adota o XP, mas o projeto extrapola consistentemente os prazos estipulados. Há um atrito recorrente entre os representantes da corregedoria e os engenheiros de software sobre o que deve ser desenvolvido e viabilizado a cada mês. Na metodologia XP, o alinhamento de negociação entre a prioridade das funcionalidades e as restrições de esforço técnico é balizado pela prática",
+    "options": {
+      "A": "do jogo do planejamento.",
+      "B": "dos testes de aceitação do cliente.",
+      "C": "da entrega em pequenos lotes.",
+      "D": "da definição de pronto técnica.",
+      "E": "do cliente em tempo integral."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O Jogo do Planejamento (Planning Game) é a principal prática do XP para lidar com as tensões entre o escopo solicitado e os prazos técnicos disponíveis. Nele, separam-se claramente os papéis de decisão: o setor de negócios (Cliente) escolhe O QUE fazer baseado no valor, e o setor de engenharia escolhe COMO implementar, determinando o tempo/esforço necessário. As alternativas C e E também auxiliam o processo como um todo, mas o ritual de negociação de funcionalidades por tempo técnico reside primordialmente no Planning Game."
+  },
+  {
+    "id": 90609,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "CMMI-DEV v2.0",
+    "context": "Melhoria e Padronização Organizacional",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Diretoria de TI do tribunal almeja elevar seu nível de maturidade e está mapeando as práticas vigentes ao CMMI-DEV v2.0. Durante o diagnóstico, identificou-se que não existe um conjunto de processos padronizados institucionalizados na estrutura; cada projeto de software define seu próprio fluxo de trabalho do absoluto zero, não reaproveitando históricos ou guias práticos do TJ-CE. Para tratar essa deficiência e alcançar padrões reutilizáveis para todo o corpo funcional, a organização deve investir na Área de Prática de",
+    "options": {
+      "A": "Monitoramento e Controle.",
+      "B": "Gerenciamento de Processos.",
+      "C": "Gestão de Requisitos.",
+      "D": "Desenvolvimento de Ativos de Processo.",
+      "E": "Governança de Processos de Negócio."
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D. No modelo CMMI-DEV V2.0, a Área de Prática 'Desenvolvimento de Ativos de Processo' (Process Asset Development - PAD) concentra-se em desenvolver e manter um conjunto de metodologias padronizadas, políticas, modelos de ciclo de vida e repositórios de lições aprendidas em nível organizacional, servindo de fundação unificada para todos os projetos, evitando que novos escopos de trabalho partam do zero. As alternativas A, B e C referem-se a outras áreas de prática específicas e operacionais (MC, PDM, REQ) que não focam na construção da biblioteca corporativa de ativos."
+  },
+  {
+    "id": 90610,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "CMMI-DEV v2.0",
+    "context": "Avaliação de Nível de Maturidade",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE submeteu-se a uma avaliação oficial (Appraisal) no modelo CMMI-DEV v2.0. Os avaliadores atestaram rigorosamente que os processos são executados, planejados, medidos e controlados individualmente em todos os projetos em andamento, caracterizando gerência e rastreabilidade local. No entanto, não conseguiram evidenciar a padronização e a integração contínua de processos no nível macro e estratégico de toda a instituição governamental. Diante do rigor conceitual e diagnóstico da avaliação, a Diretoria de TI atingiu, no máximo, o Nível de Maturidade",
+    "options": {
+      "A": "1.",
+      "B": "2.",
+      "C": "3.",
+      "D": "4.",
+      "E": "5."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. O Nível de Maturidade 2 (Gerenciado) no CMMI-DEV V2.0 atesta que o trabalho e os processos estão sendo estruturados, monitorados e geridos com sucesso no âmbito restrito de cada projeto, de forma individualizada. Para que o Nível de Maturidade 3 (Definido) seja atingido, as práticas e diretrizes dos projetos precisam transcender e convergir na criação de ativos padronizados a nível de toda a organização, utilizando políticas e padrões institucionais definidos em conjunto. A falta de padronização organizacional impede que a instituição saia do nível 2."
+  },
+  {
+    "id": 90611,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "CMMI-DEV v2.0",
+    "context": "Controle de Qualidade em Códigos e Artefatos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No ciclo de construção do novo sistema de precatórios do TJ-CE, um volume alarmante de defeitos tem sido descoberto tardiamente nas fases de validação de aceitação do usuário, elevando o custo da refatoração. Baseado no framework CMMI-DEV v2.0, a equipe decide adotar avaliações estruturadas e análises metódicas diretamente em artefatos de código, requisitos e designs, executadas rigorosamente antes de testes funcionais sistêmicos para remover bugs na sua fase embrionária. Esta ação atende aos objetivos da Área de Prática de",
+    "options": {
+      "A": "Avaliações por Pares.",
+      "B": "Verificação e Validação.",
+      "C": "Análise de Causa Raiz.",
+      "D": "Garantia da Qualidade.",
+      "E": "Integração Contínua."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A Área de Prática de 'Avaliações por Pares' (Peer Reviews - PR) no CMMI foca na análise metódica e no exame crítico precoce dos artefatos (seja código, modelagem ou documentação) executado por colegas de equipe. Seu objetivo nuclear é identificar e remediar defeitos no início do processo de engenharia para evitar que fluam para os estágios de testes sistêmicos de maior custo. A alternativa B lida com validação de software executável no ciclo final. A alternativa D (SQA - Software Quality Assurance) foca na aderência do processo a padrões de conformidade metodológica, e não na detecção técnica de bugs em artefatos de código."
+  },
+  {
+    "id": 90612,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "CMMI-DEV v2.0",
+    "context": "Arquitetura do Modelo",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para otimizar o fluxo interno de trabalho e assegurar o cumprimento dos Acordos de Nível de Serviço (SLA) para com as serventias cíveis, a gerência técnica estabeleceu a implementação imediata das Áreas de Prática 'Estimativa' (EST) e 'Planejamento' (PLAN). Segundo a arquitetura conceitual e estrutural de agrupamento do modelo CMMI-DEV v2.0, essas disciplinas operacionais encontram-se organizadas sistematicamente sob a Área de Capacidade focada em",
+    "options": {
+      "A": "Entregar e Gerenciar Serviços.",
+      "B": "Planejar e Gerenciar o Trabalho.",
+      "C": "Selecionar e Gerenciar Fornecedores.",
+      "D": "Sustentar o Hábito e a Persistência.",
+      "E": "Melhorar o Desempenho da Organização."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. O framework do CMMI V2.0 reorganizou as suas dezenas de Áreas de Prática (PAs) em categorias e Áreas de Capacidade lógicas (Capability Areas). As práticas de Estimativa (EST), Planejamento (PLAN) e Monitoramento e Controle (MC) estão formalmente alocadas na Área de Capacidade fundamental de 'Planejar e Gerenciar o Trabalho' (Planning and Managing Work). As outras alternativas contêm nomenclaturas de outras capacidades reais do framework de V2.0, mas associadas a serviços contínuos, aquisição terceirizada ou evolução contínua (melhoria)."
+  },
+  {
+    "id": 90613,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "ISO 12207:2021",
+    "context": "Processos de Engenharia de Software",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o desenvolvimento do módulo de assinatura digital massificada do TJ-CE, a equipe técnica necessita traduzir e materializar os requisitos dos magistrados em um modelo estruturado e viável de componentes de software. A equipe começa a documentar as interfaces de comunicação, a alocação de dados e as tecnologias de persistência. Segundo o padrão normativo ISO/IEC/IEEE 12207:2021, a conversão destas necessidades sistêmicas e restrições funcionais na organização estrutural técnica primária do sistema consiste na execução do Processo de",
+    "options": {
+      "A": "Integração.",
+      "B": "Definição da Arquitetura.",
+      "C": "Implementação.",
+      "D": "Transição de Software.",
+      "E": "Análise de Requisitos."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. No ciclo de vida do padrão ISO 12207:2021, o Processo de Definição da Arquitetura (Architecture Definition Process) é explicitamente encarregado de gerar visões sistêmicas alternativas, avaliar tradeoffs de tecnologia e traduzir/sintetizar os requisitos pré-levantados (saídas do Processo de Análise de Requisitos) no esqueleto mestre e no mapeamento topológico e de interfaces do sistema. A Implementação (C) produz o código tangível dessa definição, enquanto a Integração (A) faz a união dos módulos programados resultantes."
+  },
+  {
+    "id": 90614,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "ISO 12207:2021",
+    "context": "Processos de Engenharia de Software",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema processual corporativo foi desenvolvido parcialmente por três fábricas de software distintas ao longo do semestre, cada qual entregando blocos de códigos unitários de forma independente. A coordenadoria de infraestrutura do TJ-CE iniciou a montagem metódica destes elementos isolados em uma base monolítica coesa, com o intuito de atestar se as interfaces fronteiriças entre os módulos se comportam sem incompatibilidades técnicas perante a topologia desenhada. De acordo com o padrão ISO/IEC/IEEE 12207:2021, esta atividade de fusão de módulos é alocada fundamentalmente no Processo de",
+    "options": {
+      "A": "Operação.",
+      "B": "Construção de Software.",
+      "C": "Validação.",
+      "D": "Integração.",
+      "E": "Verificação."
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D. Na estrutura do processo técnico da norma ISO 12207:2021, o Processo de Integração (Integration Process) possui o objetivo claro de agrupar e montar sistematicamente os elementos individuais do sistema de software e verificar se as interfaces de interação operam com harmonia técnica e arquitetural conforme os designs planejados. Os testes para demonstrar que o conjunto cumpre o uso esperado pelo cliente de negócio ocorrem primariamente nos processos de Verificação e Validação."
+  },
+  {
+    "id": 90615,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "ISO 12207:2021",
+    "context": "Processos Organizacionais e de Acordo",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A fim de abrigar a expansão do acervo probatório virtual, o TJ-CE formula um edital de licitação pública direcionado à contratação de infraestrutura em nuvem (IaaS) corporativa externa. A equipe de governança de TI confecciona o Estudo Técnico Preliminar (ETP) e os critérios de aceite formais, traçando os mecanismos necessários para acompanhar e auditar o serviço do prestador terceiro vencedor do certame. Sob a classificação sistêmica dos Processos de Acordo (Agreement Processes) da ISO/IEC/IEEE 12207:2021, essas atividades administrativas enquadram-se perfeitamente no Processo de",
+    "options": {
+      "A": "Fornecimento.",
+      "B": "Aquisição.",
+      "C": "Planejamento de Projeto.",
+      "D": "Garantia da Qualidade Organizacional.",
+      "E": "Gestão do Ciclo de Vida do Sistema."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Os Processos de Acordo (Agreement Processes) na norma ISO 12207:2021 organizam-se em duas contrapartes: o Acquirer (Comprador) e o Supplier (Fornecedor). O Processo de Aquisição engloba todas as atividades voltadas a definir um escopo de compra, edital, seleção, elaboração de critérios e formalização de contrato para contratar um ativo de software ou serviço do mercado externo. O processo alternativo reverso é o de Fornecimento, no qual o fornecedor realiza os esforços internos de proposta e preparação para a entrega exigida pelo contratante."
+  }
+]

@@ -106,5 +106,11 @@
     "day_title": "Segunda-feira 08/06",
     "filename": "dia_08_06_questoes.json",
     "count": 50
+  },
+  {
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "filename": "dia_09_06_questoes.json",
+    "count": 45
   }
 ]
