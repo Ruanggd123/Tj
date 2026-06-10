@@ -1,0 +1,272 @@
+[
+  {
+    "id": 51294,
+    "day_id": "dia_10_06",
+    "day_title": "Quarta-feira 10/06",
+    "theme": "Banco de Dados — Tuning e Indexação + NoSQL conceitual",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma equipe no TJ-CE lida com um gargalo no banco de dados monolítico do sistema de gestão judicial. A tabela principal de processos possui bilhões de linhas. As consultas que filtram processos por correspondência exata na coluna `NumeroProtocolo` estão lentas, mas as buscas por intervalo na coluna `DataAutuacao` utilizando a cláusula `BETWEEN` estão ainda mais lentas. O administrador de banco de dados necessita criar índices apropriados para otimizar ambos os tipos de acesso, evitando varreduras completas (full table scans). Para a máxima eficiência do plano de execução, os índices a serem aplicados nas colunas `NumeroProtocolo` e `DataAutuacao` são, respectivamente:",
+    "options": {
+      "A": "Índice Hash e Índice B-Tree.",
+      "B": "Índice B-Tree e Índice Hash.",
+      "C": "Índice Bitmap e Índice B-Tree.",
+      "D": "Índice Hash e Índice Bitmap.",
+      "E": "Índice B-Tree e Índice Bitmap."
+    },
+    "answer": "A",
+    "explanation": "A alternativa [A] é a correta. Índices Hash possuem complexidade computacional O(1) e são arquitetados exclusivamente para buscas por igualdade exata, sendo a melhor escolha teórica para a coluna de protocolo. Índices B-Tree mantêm os nós folhas ordenados, sendo a única estrutura capaz de suportar buscas eficientes por intervalos (range queries, como a cláusula BETWEEN) para a data de autuação. A alternativa [B] inverte as finalidades, pois o índice Hash não consegue resolver consultas de intervalo. A alternativa [C] apresenta o índice Bitmap, que é ineficiente em colunas de altíssima cardinalidade como um número de protocolo, sofrendo com problemas graves de bloqueio em atualizações. A alternativa [D] erra ao aplicar Bitmap em colunas de datas que sofrem atualizações e range queries pesadas. A alternativa [E] sugere B-Tree e Bitmap, falhando ao não aproveitar o desempenho O(1) na chave exata e introduzindo Bitmap de forma inadequada em ambiente transacional."
+  },
+  {
+    "id": 92381,
+    "day_id": "dia_10_06",
+    "day_title": "Quarta-feira 10/06",
+    "theme": "Banco de Dados — Tuning e Indexação + NoSQL conceitual",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o monitoramento do sistema de jurisprudência do TJ-CE, o Analista de TI identificou que a consulta de despachos relacionados a uma vara específica apresentava alta latência. Ao analisar o plano de execução, notou-se um \"Index Scan\" seguido de um \"Key Lookup\" massivo na tabela `Jurisprudencia`, mesmo já existindo um índice não clusterizado na coluna `VaraID`. Para otimizar a consulta e alterar o plano de execução para um \"Index Seek\" com alta seletividade, eliminando completamente a etapa de \"Key Lookup\", a solução arquitetural adequada é:",
+    "options": {
+      "A": "A criação de um índice clusterizado na coluna selecionada.",
+      "B": "A inclusão das colunas de retorno no índice não clusterizado.",
+      "C": "A reconstrução do índice com a redução do fator de preenchimento.",
+      "D": "A substituição do índice não clusterizado por um índice Hash.",
+      "E": "A materialização da consulta através de uma visão agregada."
+    },
+    "answer": "B",
+    "explanation": "A alternativa [B] é a correta. A técnica de adicionar colunas (included columns) transforma um índice não clusterizado comum em um índice de cobertura (Covering Index). Ao possuir todas as colunas requisitadas pelo comando SELECT nos nós folhas da B-Tree, o otimizador dispensa o acesso de volta à tabela principal (Key Lookup). A alternativa [A] é incorreta; alterar a chave clusterizada altera a ordem física de toda a tabela, gerando impacto sistêmico desproporcional para otimizar uma única consulta. A alternativa [C] atua na reserva de espaço livre (fill factor) para evitar page splits futuros, não possuindo qualquer relação com a resolução de um Key Lookup. A alternativa [D] apenas alteraria o tipo de busca exata, mas não resolveria a falta de colunas para retorno de dados extras. A alternativa [E] introduz complexidade, sobrecarga de gravação e problemas de sincronismo, sendo desnecessária quando um covering index resolve a latência nativamente."
+  },
+  {
+    "id": 14592,
+    "day_id": "dia_10_06",
+    "day_title": "Quarta-feira 10/06",
+    "theme": "Banco de Dados — Tuning e Indexação + NoSQL conceitual",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema do TJ-CE necessita cruzar uma lista diária em memória de 50 processos sigilosos com a tabela histórica de 10 milhões de movimentações processuais, visando gerar um relatório de auditoria interno. Atualmente, o otimizador de consultas escolhe o operador de junção `Hash Match`, o que tem sobrecarregado a memória do servidor e invadido o armazenamento temporário (TempDB). Considerando a disparidade extrema de volume entre as tabelas e a presença de índice apropriado na tabela histórica, a alteração de plano de execução que favorece a redução drástica do uso de memória e otimiza este cenário específico é:",
+    "options": {
+      "A": "A definição do operador Nested Loops Join.",
+      "B": "A definição do operador Merge Join.",
+      "C": "A alteração do nível de isolamento para Read Uncommitted.",
+      "D": "A criação de um índice Bitmap na tabela menor.",
+      "E": "A fragmentação da tabela histórica via particionamento vertical."
+    },
+    "answer": "A",
+    "explanation": "A alternativa [A] é a correta. O Nested Loops Join é altamente otimizado para cenários onde a tabela de entrada (outer table) é diminuta e a tabela associada (inner table) é vasta mas rigidamente indexada pela chave de junção. Ele itera as 50 linhas e efetua 50 buscas pontuais (seeks) no índice da tabela gigante, consumindo uma fração residual de memória. A alternativa [B] demanda ordenação prévia das duas fontes; invocar uma operação de Sort em 10 milhões de linhas destruiria a performance. A alternativa [C] viabiliza leituras sujas, ferindo o isolamento transacional de uma auditoria sem mitigar o uso de CPU/RAM da junção hash. A alternativa [D] propõe Bitmap em uma tabela minúscula e volátil, inútil para a etapa de cruzamento relacional. A alternativa [E] fragmenta colunas e não impacta positivamente a complexidade algorítmica da junção das chaves estrangeiras."
+  },
+  {
+    "id": 67341,
+    "day_id": "dia_10_06",
+    "day_title": "Quarta-feira 10/06",
+    "theme": "Banco de Dados — Tuning e Indexação + NoSQL conceitual",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No sistema de peticionamento eletrônico do TJ-CE, a tabela transacional recebe milhares de inserções randômicas simultâneas durante os prazos finais. A equipe de monitoramento verificou aumento acentuado no consumo de I/O e degradação de performance atrelados ao fenômeno de fragmentação estrutural e \"page splits\" intensos nos índices B-Tree dessa tabela. Para mitigar o estrangulamento imediato provocado pelas divisões de página durante essas inserções massivas, o ajuste de configuração exigido no nível do índice é:",
+    "options": {
+      "A": "O aumento do tamanho do bloco de armazenamento (block size).",
+      "B": "A diminuição do fator de preenchimento (fill factor).",
+      "C": "A habilitação da compressão de dados em nível de página.",
+      "D": "A conversão da estrutura de armazenamento para um índice Hash.",
+      "E": "A implementação do particionamento horizontal da tabela."
+    },
+    "answer": "B",
+    "explanation": "A alternativa [B] é a correta. O fator de preenchimento (fill factor) determina o espaço vazio deixado intencionalmente em cada página de dados folha no momento da criação ou reconstrução do índice. Em ambientes de alta concorrência com chaves de inserção randômicas (ex: UUID), baixar o fill factor reserva espaço físico nas páginas para acomodar novas linhas localmente, postergando significativamente a operação custosa de page split e a fragmentação consequente. A alternativa [A] refere-se a configurações de filesystem ou storage fora do escopo do índice lógico. A alternativa [C] reduz o footprint dos dados, mas não equaciona o problema da saturação de páginas na ocorrência do preenchimento a 100%. A alternativa [D] invalida buscas por intervalo cruciais para tabelas de petições, inviabilizando a mudança arquitetural. A alternativa [E] aborda retenção e arquivamento, mas as transações simultâneas bateriam na mesma partição atual (hotspot), mantendo os page splits ativos."
+  },
+  {
+    "id": 23810,
+    "day_id": "dia_10_06",
+    "day_title": "Quarta-feira 10/06",
+    "theme": "Banco de Dados — Tuning e Indexação + NoSQL conceitual",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após a migração e inserção massiva (bulk insert) de 2 milhões de processos oriundos do acervo físico digitalizado diretamente no banco central do TJ-CE, as consultas de busca da intranet tornaram-se extremamente lentas na segunda-feira de manhã. Uma inspeção arquitetural confirmou que a árvore do plano de execução regrediu para o operador \"Table Scan\" ao invés de utilizar os caminhos de \"Index Seek\", mesmo com a presença e integridade dos índices previamente estabelecidos. O diagnóstico elementar que justifica a recusa do otimizador em utilizar as rotas de índice é:",
+    "options": {
+      "A": "O esgotamento do buffer cache na memória RAM do servidor.",
+      "B": "A desatualização das estatísticas de distribuição dos índices.",
+      "C": "O aumento excessivo do número de níveis de profundidade na B-Tree.",
+      "D": "A fragmentação lógica dos dados armazenados no nível de disco.",
+      "E": "O bloqueio de leitura desencadeado por transações concorrentes."
+    },
+    "answer": "B",
+    "explanation": "A alternativa [B] é a correta. O otimizador de consultas baseia-se em custo e avalia as estatísticas (histogramas de densidade e distribuição de dados) para decidir se navegar pela B-Tree é mais rápido do que varrer a tabela. Uma inserção massiva (bulk insert) sem a subsequente atualização das estatísticas (Update Statistics) faz o otimizador acreditar que as seletividades dos índices são precárias, levando-o a preferir o Table Scan de forma conservadora. A alternativa [A] acarreta latência sistêmica, mas não altera a escolha lógica dos operadores no plano de execução compilado. A alternativa [C] é incorreta, pois mesmo B-Trees profundas são logaritmicamente mais eficientes que Table Scans para chaves seletivas. A alternativa [D] degrada o desempenho de I/O em leituras sequenciais, mas raramente inibe a escolha do índice se as estatísticas estiverem sadias. A alternativa [E] afeta a concorrência (deadlocks/wait events), não a fase de compilação heurística do plano de execução."
+  },
+  {
+    "id": 48102,
+    "day_id": "dia_10_06",
+    "day_title": "Quarta-feira 10/06",
+    "theme": "Banco de Dados — Tuning e Indexação + NoSQL conceitual",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Diretoria de Informática do TJ-CE planeja reestruturar o subsistema de armazenamento dos logs de auditoria de acessos. O requisito não funcional principal é suportar uma taxa extrema e contínua de gravações simultâneas (write-intensive), descartando a necessidade arquitetural de junções relacionais complexas (joins) ou transações ACID tradicionais com bloqueios pessimismo. Os acessos aos dados serão recuperados através de uma chave composta pelo identificador do magistrado e uma janela temporal. Para este cenário nativo de escalabilidade horizontal e alta disponibilidade (Always On), a modelagem conceitual e o tipo de banco de dados NoSQL devidamente projetados são:",
+    "options": {
+      "A": "A modelagem agregada em um banco de dados de Grafos.",
+      "B": "A modelagem orientada a colunas em um banco de dados Wide Column.",
+      "C": "A modelagem estrutural em um banco de dados de Documentos.",
+      "D": "A modelagem relacional distribuída em um banco de dados Chave-Valor.",
+      "E": "A modelagem orientada a eventos em um banco de dados em Memória."
+    },
+    "answer": "B",
+    "explanation": "A alternativa [B] é a correta. Bancos de dados Wide Column (família de colunas), como Cassandra ou ScyllaDB, são arquitetados sobre tabelas hash distribuídas e tabelas mem-tables baseadas em LSM Trees (Log-Structured Merge-Tree), que favorecem de forma inigualável as operações de escrita contínua. A estruturação de chaves compostas para partições e agrupamentos de tempo é uma prática intrínseca dessa modelagem. A alternativa [A] é falsa, pois Grafos processam conectividade topológica e travessias (traversals), sendo péssimos para ingestão de séries históricas de logs de alto volume. A alternativa [C] é aplicável a esquemas dinâmicos de JSON complexos e hierárquicos, possuindo performance de gravação inferior aos colunares para logs. A alternativa [D] inviabiliza as buscas por janelas temporais de maneira eficiente, servindo primariamente para consultas 1:1 estritas. A alternativa [E] possui volatilidade (mesmo com persistência assíncrona) e custo proibitivo de infraestrutura (RAM) para armazenamento perene e elástico de logs massivos."
+  },
+  {
+    "id": 73299,
+    "day_id": "dia_10_06",
+    "day_title": "Quarta-feira 10/06",
+    "theme": "Banco de Dados — Tuning e Indexação + NoSQL conceitual",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para atuar em investigações de improbidade e identificar potenciais ocultações patrimoniais, o Núcleo de Inteligência do TJ-CE desenhou um sistema responsável por mapear as redes de conexões entre empresas de fachada, sócios e laranjas. As pesquisas na infraestrutura de persistência precisam percorrer até dez níveis de saltos e graus de separação estrutural para descobrir ciclos de ligação em frações de segundo. A categoria de banco de dados NoSQL arquiteturalmente desenhada para dispensar junções recursivas onerosas e aplicar o conceito de index-free adjacency é:",
+    "options": {
+      "A": "O modelo orientado a Documentos.",
+      "B": "O modelo orientado a Grafos.",
+      "C": "O modelo da família de Colunas (Wide Column).",
+      "D": "O modelo de Chave-Valor Dinâmico.",
+      "E": "O modelo de Séries Temporais."
+    },
+    "answer": "B",
+    "explanation": "A alternativa [B] é a correta. Bancos de dados de Grafos (como o Neo4j) utilizam o conceito de 'index-free adjacency', onde cada nó da rede guarda ponteiros de memória diretos para seus nós adjacentes. Isso permite travessias profundas (deep traversals) em milhões de conexões por segundo de maneira hiper-eficiente, ideal para análise de fraudes, recomendações e detecção de padrões de rede. A alternativa [A] precisaria carregar e cruzar agregados inteiros para buscar referências internas, operando de forma assintoticamente lenta. A alternativa [C] destina-se a escalonamento linear com queries pontuais pré-modeladas; varreduras relacionais causam o colapso do cluster pela varredura em rede. A alternativa [D] lida bem com sessões de usuários ou caching simples, mas ignora a representação de elos estruturais. A alternativa [E] é especializada em métricas infraestruturais, financeiras ou IoT temporais contínuas, e não em mapeamento estático e multidirecional de ligações societárias."
+  },
+  {
+    "id": 29841,
+    "day_id": "dia_10_06",
+    "day_title": "Quarta-feira 10/06",
+    "theme": "Banco de Dados — Tuning e Indexação + NoSQL conceitual",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O ambiente de Data Warehouse corporativo do TJ-CE consolida fatos relativos ao ciclo de vida judicial. A tabela de consolidação principal engloba centenas de milhões de registros históricos estáticos e apenas para leitura. As projeções de Business Intelligence rotineiramente agregam registros filtrando os dados por colunas com poucos valores únicos (baixa cardinalidade), como o `Status_Andamento` (Em Curso, Arquivado, Suspenso) e `Rito_Processual` (Ordinário, Sumário). Para impulsionar a velocidade do agrupamento algébrico por meio de operações lógicas em nível de processador e contrair significativamente o footprint de disco, o índice estrutural indicado é:",
+    "options": {
+      "A": "O índice B-Tree.",
+      "B": "O índice Hash.",
+      "C": "O índice Bitmap.",
+      "D": "O índice Espacial (R-Tree).",
+      "E": "O índice de Texto Completo (Full-Text)."
+    },
+    "answer": "C",
+    "explanation": "A alternativa [C] é a correta. Os índices Bitmap convertem os valores distintos de uma coluna em mapas de bits (0 e 1). Em colunas de baixíssima cardinalidade e uso analítico/OLAP (apenas leitura), as consultas que envolvem conectivos lógicos (AND, OR) são resolvidas diretamente pelo processador de forma extremamente ágil aplicando matemática booleana nos vetores binários. Além disso, os blocos de bits são violentamente comprimidos, economizando disco. A alternativa [A] possui alto custo espacial e ramificação (overhead) para cardinalidades nulas, pois cada entrada do índice listaria quase um terço da tabela repetidamente. A alternativa [B] serve unicamente para correspondências randômicas diretas em arquiteturas de memória. A alternativa [D] projeta a indexação dimensional de mapas e coordenadas geográficas (GIS). A alternativa [E] executa tokenização linguística e inverted-index para busca textual flexível em colunas de grande volume textual, oposto de domínios fixos como status."
+  },
+  {
+    "id": 99312,
+    "day_id": "dia_10_06",
+    "day_title": "Quarta-feira 10/06",
+    "theme": "Banco de Dados — Tuning e Indexação + NoSQL conceitual",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No projeto tático de análise topológica de corrupção do TJ-CE, a engine de persistência NoSQL em Grafos determina que a conexão tangível que liga o vértice de origem (Advogado) ao vértice de destino (Magistrado) deve reter atributos internos exclusivos, qualificando de forma explícita a força e o tipo daquele elo, como por exemplo os atributos textuais `contexto_interacao` e numéricos `frequencia_anual`. A especificação técnica e o padrão conceitual do ecossistema de grafos que viabiliza embutir metadados e pares de chave-valor diretamente no corpo dos relacionamentos é denominada:",
+    "options": {
+      "A": "O Grafo Triplo (RDF).",
+      "B": "O Grafo de Propriedades (Property Graph).",
+      "C": "A Tabela de Hash Distribuída (DHT).",
+      "D": "A Família de Colunas (Wide Column Family).",
+      "E": "O Documento Embutido (Embedded Document)."
+    },
+    "answer": "B",
+    "explanation": "A alternativa [B] é a correta. O padrão Property Graph permite a associação direta de chaves e valores (propriedades) não apenas aos nós (vértices), mas também aos relacionamentos (arestas). Isso enriquece os caminhos traversados com pesos cronológicos ou semânticos, permitindo que a própria aresta documente seu contexto histórico. A alternativa [A] refere-se ao padrão RDF (Resource Description Framework), centrado na semântica da web (Web Semântica), que vincula informações de forma estrita usando os triplos Sujeito-Predicado-Objeto, não permitindo nativamente pendurar sub-propriedades na aresta do predicado. A alternativa [C] é o alicerce fundamental de roteamento em redes P2P e bancos NoSQL chave-valor, alienada ao contexto direcional de grafos. A alternativa [D] é o esquema de agrupamento do Cassandra. A alternativa [E] é o modelo intrínseco aos bancos de Documentos (ex: MongoDB) para desnormalizar o relacionamento 1:N no mesmo objeto, mas sem o foco formal na estrutura topológica de redes interconectadas."
+  },
+  {
+    "id": 48192,
+    "day_id": "dia_10_06",
+    "day_title": "Quarta-feira 10/06",
+    "theme": "Banco de Dados — Tuning e Indexação + NoSQL conceitual",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um painel executivo crítico do TJ-CE consome uma consulta diária requisitando o detalhamento de todos os processos de uma dada comarca, forçando a devolução do conjunto estritamente ordenado pela data de autuação para paginação web em tempo real. A averiguação sistêmica pontuou que o estrangulamento da CPU reside integralmente num operador de custo logístico do tipo \"Sort\", que atua forçadamente sobre as linhas no plano de execução após a triagem inicial do predicado. Para extirpar o operador de ordenação dinâmica da carga da CPU e viabilizar o consumo contíguo de dados pré-classificados nativamente pelo armazenamento, a refatoração arquitetural dita a criação de:",
+    "options": {
+      "A": "Um índice Hash na coluna de data do processo.",
+      "B": "Um índice B-Tree nas colunas de comarca e data do processo.",
+      "C": "Um particionamento em nível de hardware por data do processo.",
+      "D": "Uma tabela temporária global indexada pela coluna de comarca.",
+      "E": "Um índice Bitmap nas colunas de comarca e data de autuação."
+    },
+    "answer": "B",
+    "explanation": "A alternativa [B] é a correta. Índices do tipo B-Tree preservam o ordenamento lógico dos valores diretamente em seus nós folha em via de mão dupla. A criação de um índice composto contendo o campo de filtragem exata (Comarca) como prefixo e a coluna de classificação (Data do Processo) assegura que as tuplas retornadas após o filtro já fluam prontas e ordenadas, eliminando o custoso operador de \"Sort\" dinâmico no plano de execução. A alternativa [A] é inválida, visto que algoritmos de espalhamento Hash destroem deliberadamente a ordem cronológica para otimizar apenas as buscas exatas O(1). A alternativa [C] dita a segregação por partições logísticas que dividem massas, mas não inibe a obrigação de ordenar o bloco particionado retornado. A alternativa [D] induz custo brutal de latência na inserção e gravação da staging area sem justificar a deficiência principal da ordenação. A alternativa [E] aplica-se a baixa cardinalidade matemática, inutilizável no escopo granular e sequencial das datas."
+  },
+  {
+    "id": 51902,
+    "day_id": "dia_10_06",
+    "day_title": "Quarta-feira 10/06",
+    "theme": "Banco de Dados — Tuning e Indexação + NoSQL conceitual",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O portal de certidões estaduais interligadas do TJ-CE experimentou panes reincidentes causadas pelo esgotamento completo de processamento (CPU) do nó primário relacional. O rastreio do módulo nativo de telemetria evidenciou o acúmulo severo de execuções concorrentes baseadas em cadeias de texto dinâmicas, que possuíam idêntica modelagem lógica alterando apenas o literal do número do documento de identidade no bloco `WHERE`. Tal anomalia compelia o motor heurístico de otimização a efetuar o dispendioso \"Hard Parse\" para gerar e assinar uma árvore de execução independente para cada usuário da internet. O procedimento de engenharia de software preconizado para unificar o hash do cache SQL e induzir a operação leve de \"Soft Parse\" foca na transição para:",
+    "options": {
+      "A": "O cache de resultados (Result Cache) no nível da aplicação.",
+      "B": "As variáveis de ligação (Bind Variables) nas instruções SQL.",
+      "C": "As visões materializadas particionadas por número de processo.",
+      "D": "Os índices clusterizados na coluna de número de processo.",
+      "E": "O processamento em lote (Batch Processing) assíncrono."
+    },
+    "answer": "B",
+    "explanation": "A alternativa [B] é a correta. O motor de banco de dados compila o comando SQL literal gerando uma assinatura hash para ser reutilizada (o plano de execução em cache). Se os literais das buscas (valores de filtros diretos) mudam constantemente no texto cru da string (ex: WHERE ID = 5, e depois WHERE ID = 9), o hash muda e força uma nova compilação custosa do zero (Hard Parse). O uso de Bind Variables (ex: WHERE ID = @MeuParametro) estabiliza o hash da string SQL. Independentemente do valor passado em execução, o motor acha a assinatura na Library Cache e reusa o plano pré-compilado instantaneamente (Soft Parse), desonerando drasticamente o ciclo de CPU. A alternativa [A] delega o problema para memcacheds da infra, mas as requisições que cruzarem até o banco continuariam pesadas. A alternativa [C] e [D] mudam a estratégia de armazenamento físico dos dados, não endereçando o problema analítico focado estritamente na engrenagem interpretadora do SQL e parsing na memória RAM. A alternativa [E] muda o padrão interativo do portal para background worker, ferindo as regras de negócio de tempo real."
+  },
+  {
+    "id": 33108,
+    "day_id": "dia_10_06",
+    "day_title": "Quarta-feira 10/06",
+    "theme": "Banco de Dados — Tuning e Indexação + NoSQL conceitual",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No desenho do arquitetura descentralizada para custódia de acervos imutáveis do TJ-CE baseada na topologia NoSQL Wide Column (Apache Cassandra), os especialistas de dados confrontaram um paradoxo do modelo físico-espacial. Todas as dezenas de movimentações referentes a um único processo mandatoriamente devem pertencer ao mesmo nó físico na topologia do cluster em anel para evitar tráfego de rede cruzada na recuperação. Oposto a isso, as linhas armazenadas devem ficar dispostas fisicamente em ordem cronológica de inserção no disco para garantir as varreduras sequenciais ágeis de leitura. A morfologia estrutural declarada na definição primária da tabela (CQL) que impõe matematicamente esta diretriz topológica baseia-se em compor:",
+    "options": {
+      "A": "A Chave Estrangeira e a Chave Substituta.",
+      "B": "A Chave de Hash e a Chave de Criptografia.",
+      "C": "A Chave de Partição e a Chave de Agrupamento.",
+      "D": "A Chave de Documento e o Identificador de Aresta.",
+      "E": "A Chave Primária Simples e o Índice Bitmap."
+    },
+    "answer": "C",
+    "explanation": "A alternativa [C] é a correta. Em bancos Wide Column como o Cassandra, o identificador principal (Primary Key) divide-se conceitualmente e fisiologicamente em duas esferas obrigatórias no design. A Partition Key (Chave de Partição) é criptografada em um Hash Ring para ancorar em qual nó ou disco os dados residirão no cluster, unificando todo o histórico do processo naquele servidor. A Clustering Key (Chave de Agrupamento) submete o ordenamento sequencial das linhas de dados relativas àquela Partition Key dentro da memtable e dos arquivos SSTables. A alternativa [A] traz conceitos de data warehousing relacional clássico de integridade referencial. A alternativa [B] mistura criptologia de proteção em repouso ao invés de endereçamento e classificação no LSM Tree. A alternativa [D] compila termos inerentes aos ecossistemas de Grafos e Documentos em um Frankenstein teórico sem validade técnica. A alternativa [E] ignora a regra fundamental de particionamento e insere índices auxiliares para analítica booleana, corrompendo a essência do design."
+  },
+  {
+    "id": 84901,
+    "day_id": "dia_10_06",
+    "day_title": "Quarta-feira 10/06",
+    "theme": "Banco de Dados — Tuning e Indexação + NoSQL conceitual",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No epicentro de um massivo mutirão nacional promovido pelo TJ-CE, serviços em malha e aplicações de terceiros interagem assincronamente com o banco de dados núcleo atualizando andamentos concorrentes em milhares de causas. Os logs transacionais estouraram com erros fatais vinculados a deadlocks cíclicos irremediáveis: o Worker A aplica o bloqueio exclusivo na tupla Custas e pede o bloqueio na tupla Agendamento, ao compasso temporal em que o Worker B cativa de antemão a tupla Agendamento e entra em espera infinita requisitando as Custas. A padronização estrita exigida em nível de revisão de código, engajando banco e microsserviços, que mitiga estruturalmente a possibilidade combinatória deste abraço mortal em recursos interligados determina:",
+    "options": {
+      "A": "O escalonamento da granularidade de bloqueio de linha para tabela.",
+      "B": "A alteração do nível de isolamento transacional para Serializable.",
+      "C": "A padronização da ordem hierárquica de acesso aos recursos.",
+      "D": "A desabilitação do controle de concorrência multiversão (MVCC).",
+      "E": "O aumento do tempo limite (timeout) de espera por bloqueios."
+    },
+    "answer": "C",
+    "explanation": "A alternativa [C] é a correta. A arquitetura clássica e definitiva para evitar de forma profilática as concorrências cíclicas (deadlocks de ordenação estrutural) impõe que todas as aplicações e rotinas do banco obedeçam mandatoriamente à mesma ordem cronológica hierárquica de requisição dos locks. Se os objetos compartilhados sempre forem capturados no sentido alfabético ou lógico universal (e.g. sempre bloqueie Custas antes de Agendamentos, nunca o contrário), o Worker B inevitavelmente enfileirará atrás do Worker A sem gerar a oposição paradoxal das travas. A alternativa [A] destrói a escalabilidade simultânea ao forçar table locks onde múltiplos usuários afetam registros sem colisão no mesmo ciclo, trancando inteiramente o serviço da justiça. A alternativa [B] inflama e catalisa ainda mais o bloqueio excessivo impedindo leituras sujas e até atualizações paralelas simples (phantom reads/ranges). A alternativa [D] desliga a engine otimista que viabiliza leituras simultâneas sem prejudicar as gravações. A alternativa [E] apenas eleva o tempo artificial em que o sistema continuará travado, sem resolver o erro circular intrínseco."
+  },
+  {
+    "id": 11094,
+    "day_id": "dia_10_06",
+    "day_title": "Quarta-feira 10/06",
+    "theme": "Banco de Dados — Tuning e Indexação + NoSQL conceitual",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A tabela macro de cruzamento relacional do núcleo central do banco do TJ-CE detém um grande índice composto fundado sob o modelo lógico B-Tree estruturado sobre as colunas seqüenciais `(Cod_Vara, Classe_Acao, Data_Autuacao)`. O novo sprint de engenharia anexou um painel executivo dinâmico encarregado de buscar os montantes de trâmites restritos à classe de \"Habeas Corpus\" protocolados estritamente na última quinzena, consolidando informações globalmente, descartando inteiramente e propositalmente o escopo da coluna de vara de origem. O trace em ambiente homologatório revelou que o motor de busca solenemente evitou o Index Seek nesse índice composto poderoso. A fundamentação estrita que induziu arquiteturalmente a inutilidade do artefato para esta carga de trabalho se calca:",
+    "options": {
+      "A": "Na ausência da coluna de ordenação no índice composto.",
+      "B": "Na violação da regra de cardinalidade da coluna Cod_Vara.",
+      "C": "Na omissão da coluna inicial do índice na cláusula de filtro.",
+      "D": "Na incompatibilidade estrutural entre a B-Tree e filtros de data.",
+      "E": "Na utilização de um índice colunar na cláusula de busca."
+    },
+    "answer": "C",
+    "explanation": "A alternativa [C] é a correta. Na hierarquia dos índices compostos do modelo B-Tree, os dados são sequenciados e ramificados primariamente com base à coluna mais à esquerda e, consequentemente, subordinados ordenadamente pelas colunas remanescentes (Right-most order prefix). Desprezar a primeira coluna (`Cod_Vara`) em qualquer consulta matemática invalida o percurso dedutivo top-down (Leftmost Prefix Rule) pela árvore relacional, coagindo o servidor a não conseguir achar o ponto inicial de partida do segmento logarítmico, acarretando no abandono do seek em virtude de uma varredura custosa (scan). A alternativa [A] é infundada, dado que os índices B-Tree naturalmente provêm suporte a ordenações hierárquicas implícitas baseadas nas chaves subjacentes. A alternativa [B] aponta termos irrelevantes ao isolamento de leitura transversal; cardinalidade não define o preceito fundamental imposto sobre a esquerda. A alternativa [D] é o revés do contexto teórico, os índices suportam sim range-queries cronológicas muito bem, contanto que obedeçam ao prefixo posicionado inicial. A alternativa [E] alega conceitos falsos de restrição, a consulta descreve um ecossistema clássico transacional focado em B-Tree e não repositório multidimensional em colunas de agregação estatística."
+  },
+  {
+    "id": 92213,
+    "day_id": "dia_10_06",
+    "day_title": "Quarta-feira 10/06",
+    "theme": "Banco de Dados — Tuning e Indexação + NoSQL conceitual",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O portal massivo de editais e publicações unificadas do TJ-CE experimentou uma transformação orgânica rumo à tecnologia de bancos de dados da malha NoSQL com filosofia Wide Column (Apache Cassandra). Foi definido de maneira inexorável nos requisitos funcionais e contratuais que as varas devem injetar novos andamentos mesmo na hipótese apocalíptica da fibra ótica intercontinental dos links cindir o fluxo de pacotes entre o datacenter principal sediado na capital e a sua cópia quente remota na serra do estado. Diante do embasamento fundamental no Teorema CAP ditado por Eric Brewer para topologias em sistemas distribuídos sob partições lógicas agudas de rede, essa flexão sistêmica de persistir e dar prosseguimento ao tribunal favoreceu arquiteturalmente:",
+    "options": {
+      "A": "A Consistência e a Tolerância a Partição.",
+      "B": "A Disponibilidade e a Tolerância a Partição.",
+      "C": "A Consistência e a Disponibilidade.",
+      "D": "A Durabilidade e a Integridade Relacional.",
+      "E": "A Consistência Forte e o Isolamento Transacional."
+    },
+    "answer": "B",
+    "explanation": "A alternativa [B] é a correta. O postulado base do Teorema CAP preceitua que sistemas virtualizados espacialmente e distribuídos devem eleger compulsoriamente apenas duas métricas entre: Consistência (C), Disponibilidade (A - Availability) e Tolerância à Partição (P). Sob falhas críticas em redes e comunicações remotas, a partição (P) é uma realidade não-negociável da física das conexões; portanto o sistema decide abraçar se aceita parar as requisições para manter-se coeso e idêntico nos dados espalhados ou se continuará fluindo em eventuais inconsistências momentâneas (Eventually Consistent) privilegiando atender as submissões das varas judiciais on-line. Essa postura (AP) privilegia aceitar novas leituras e injetar gravações locais isoladas sacrificando o rigoroso preceito da garantia em uníssono dos registros remotos (Consistência) a fim de manter todo o complexo operacional ininterrupto. A alternativa [A] reflete a arquitetura CP, como o HBase, que prefere desativar partes do sistema (sacrificando a Disponibilidade) para bloquear qualquer dado corrompido ou desatualizado. A alternativa [C] retrata ambientes locais tradicionais sem partições distantes, onde CA é teoricamente possível apenas sob links unificados intra-máquina ou na ausência de acidentes. A alternativa [D] expõe as iniciais do modelo histórico ACID dos RDBMS transacionais (Durabilidade), dissociado dos fundamentos das redes de nós distribuídos escalares em massa. A alternativa [E] lista elementos das travas e logs internos das transações pessimistas dos bancos estruturados monolíticos de linhas em disco local, sem nenhuma intersecção com a lei de partições."
+  }
+]
