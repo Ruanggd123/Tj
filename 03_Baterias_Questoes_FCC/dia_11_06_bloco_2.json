@@ -1,0 +1,272 @@
+[
+  {
+    "id": 820101,
+    "day_id": "dia_11_06",
+    "day_title": "Terça-feira 11/06",
+    "theme": "Infra e Redes — Padrões IEEE + SDN, NFV e VXLAN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Estado do Ceará (TJ-CE) possui uma topologia de rede no data center principal composta por dezenas de switches interligados de forma redundante e centenas de VLANs ativas. A equipe de infraestrutura notou que a utilização do protocolo IEEE 802.1D clássico resultava em tempos de convergência inaceitáveis durante falhas e impossibilitava o balanceamento de carga efetivo, mantendo portas totalmente bloqueadas e ociosas. A adoção do IEEE 802.1w melhorou a convergência, mas manteve a ineficiência do balanceamento, exigindo o cálculo de uma instância de árvore isolada para toda a rede. Para otimizar o processamento dos switches e viabilizar o balanceamento de tráfego por grupos de VLANs mapeados em diferentes instâncias lógicas, o arquiteto de redes deve implementar o protocolo definido no padrão:",
+    "options": {
+      "A": "IEEE 802.1Q",
+      "B": "IEEE 802.1X",
+      "C": "IEEE 802.3ad",
+      "D": "IEEE 802.1s",
+      "E": "IEEE 802.1p"
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D (IEEE 802.1s), que especifica o MSTP (Multiple Spanning Tree Protocol). Ele permite mapear múltiplas VLANs em instâncias distintas, balanceando a carga e otimizando os recursos da rede. A alternativa A erra ao citar 802.1Q (que trata de marcação de VLANs genérica, sem gerir árvores múltiplas). A alternativa B erra ao citar 802.1X (controle de acesso por porta/autenticação). A alternativa C erra ao citar 802.3ad (agregação de links/LACP). A alternativa E erra ao citar 802.1p (priorização de tráfego/QoS no nível MAC)."
+  },
+  {
+    "id": 820102,
+    "day_id": "dia_11_06",
+    "day_title": "Terça-feira 11/06",
+    "theme": "Infra e Redes — Padrões IEEE + SDN, NFV e VXLAN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante as sessões virtuais das câmaras de julgamento do TJ-CE, juízes e desembargadores relataram interrupções nos fluxos de áudio e vídeo. A análise de tráfego revelou que os quadros Ethernet dos aplicativos de videoconferência estavam competindo em igualdade com as transferências massivas de backups de processos judiciais nos switches de distribuição. Para mitigar esse problema na camada de enlace, a equipe de TI decidiu implementar Qualidade de Serviço (QoS). A solução arquitetural correta para priorizar os quadros de tempo real exige a inserção de marcadores de Classe de Serviço (CoS) de 3 bits, recurso viabilizado pela adoção conjunta dos padrões:",
+    "options": {
+      "A": "IEEE 802.11ax e IEEE 802.1w",
+      "B": "IEEE 802.3ae e IEEE 802.1D",
+      "C": "IEEE 802.1Q e IEEE 802.1p",
+      "D": "IEEE 802.1s e IEEE 802.1X",
+      "E": "IEEE 802.11ac e IEEE 802.3z"
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. O padrão IEEE 802.1Q adiciona uma tag ao cabeçalho Ethernet original, e dentro dessa tag de 32 bits, 3 bits são reservados para o PCP (Priority Code Point), definido pelo padrão IEEE 802.1p, que estabelece 8 classes de serviço (CoS). As demais alternativas combinam padrões de redes sem fio (802.11ax/ac), protocolos de convergência de enlace (802.1w/D/s), segurança (802.1X) ou padrões de velocidade Ethernet óptica (802.3ae/z), todos sem relação direta com a inserção conjunta de tags de VLAN e marcação de QoS L2."
+  },
+  {
+    "id": 820103,
+    "day_id": "dia_11_06",
+    "day_title": "Terça-feira 11/06",
+    "theme": "Infra e Redes — Padrões IEEE + SDN, NFV e VXLAN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Com a reforma dos fóruns das comarcas do interior, novas salas de audiência do TJ-CE receberam pontos de rede físicos acessíveis ao público geral. O comitê de segurança da informação identificou o risco iminente de que visitantes não autorizados conectem notebooks a essas portas para acessar a intranet corporativa. Para bloquear o tráfego de dados na porta do switch até que a identidade do dispositivo solicitante seja criptograficamente validada por um servidor RADIUS centralizado, a arquitetura de rede deve incorporar obrigatoriamente o padrão:",
+    "options": {
+      "A": "IEEE 802.1D",
+      "B": "IEEE 802.1Q",
+      "C": "IEEE 802.1X",
+      "D": "IEEE 802.1s",
+      "E": "IEEE 802.11n"
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C (IEEE 802.1X). Trata-se do padrão de controle de acesso baseado em porta (PNAC), que atua bloqueando a comunicação até que o suplicante seja autenticado por um servidor de autenticação (como RADIUS/TACACS+). A alternativa A refere-se ao STP (prevenção de loop). A alternativa B trata de VLAN tagging. A alternativa D refere-se ao MSTP (múltiplas árvores geradoras). A alternativa E refere-se ao protocolo de redes sem fio (Wi-Fi 4)."
+  },
+  {
+    "id": 820104,
+    "day_id": "dia_11_06",
+    "day_title": "Terça-feira 11/06",
+    "theme": "Infra e Redes — Padrões IEEE + SDN, NFV e VXLAN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O grande salão do Tribunal do Júri frequentemente recebe mais de 300 pessoas simultaneamente. A rede sem fio existente, operando sob o padrão IEEE 802.11n, apresenta degradação severa de vazão devido ao excesso de contenção no meio físico. O projeto de modernização prevê a instalação de Access Points capazes de subdividir os canais de frequência em unidades de recursos (RUs) menores, permitindo a transmissão simultânea e determinística para múltiplos usuários, além de mitigar a interferência de canais adjacentes através da tecnologia de Coloração BSS. Essa capacidade técnica é recurso intrínseco do padrão:",
+    "options": {
+      "A": "IEEE 802.11b",
+      "B": "IEEE 802.11a",
+      "C": "IEEE 802.11g",
+      "D": "IEEE 802.11ac",
+      "E": "IEEE 802.11ax"
+    },
+    "answer": "E",
+    "explanation": "A alternativa correta é a E (IEEE 802.11ax), comercialmente conhecido como Wi-Fi 6. As funcionalidades chave que resolvem a contenção de meio em altíssima densidade são o OFDMA (que divide o canal em Resource Units - RUs) e o BSS Coloring (que atenua a interferência co-canal). A alternativa D (802.11ac) introduziu o MU-MIMO de downlink, mas não possui OFDMA nem BSS Coloring. As demais (11b, 11a, 11g) são padrões legados obsoletos para este cenário."
+  },
+  {
+    "id": 820105,
+    "day_id": "dia_11_06",
+    "day_title": "Terça-feira 11/06",
+    "theme": "Infra e Redes — Padrões IEEE + SDN, NFV e VXLAN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE mantém uma infraestrutura de rede heterogênea em sua WAN, combinando equipamentos de múltiplos fabricantes. A equipe de engenharia sofre com o tempo excessivo necessário para configurar regras de roteamento distribuídas, exigindo acesso individual às interfaces de cada roteador. O Plano Diretor de TI exigiu a transição para um paradigma onde a inteligência de decisão de tráfego é totalmente abstraída do hardware de encaminhamento e movida para uma entidade de software central, permitindo a gestão agnóstica dos fluxos. Esse modelo arquitetural é formalmente denominado:",
+    "options": {
+      "A": "Network Functions Virtualization",
+      "B": "Software-Defined Networking",
+      "C": "Virtual Extensible LAN",
+      "D": "Multiprotocol Label Switching",
+      "E": "Spanning Tree Protocol"
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. O Software-Defined Networking (SDN) baseia-se na separação estrita do Plano de Controle (inteligência e decisão, centralizados no Controlador) e do Plano de Dados (hardware de encaminhamento). A alternativa A (NFV) trata de substituir appliances físicos por máquinas virtuais (funções de rede em software). As alternativas C (VXLAN), D (MPLS) e E (STP) são tecnologias/protocolos de rede tradicionais focados em encapsulamento e prevenção de loops."
+  },
+  {
+    "id": 820106,
+    "day_id": "dia_11_06",
+    "day_title": "Terça-feira 11/06",
+    "theme": "Infra e Redes — Padrões IEEE + SDN, NFV e VXLAN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para expandir a capacidade de atendimento do PJe (Processo Judicial Eletrônico), a diretoria precisava adquirir novos balanceadores de carga e IDS/IPS para a borda. O modelo tradicional de aquisição de appliances dedicados mostrou-se custoso e inflexível. A arquitetura foi redesenhada para instanciar essas capacidades estritas de rede diretamente em máquinas virtuais rodando sobre servidores de prateleira hiperconvergentes, garantindo elasticidade e independência do hardware subjacente. O conceito implementado nessa reestruturação corresponde a:",
+    "options": {
+      "A": "Storage Area Network",
+      "B": "Software-Defined Networking",
+      "C": "Carrier Sense Multiple Access",
+      "D": "Network Functions Virtualization",
+      "E": "Virtual Extensible LAN"
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D (NFV). O conceito de Network Functions Virtualization visa pegar funções tipicamente realizadas por hardware de rede dedicado (como Firewalls, IDS, IPS, Balanceadores de Carga) e rodá-las como software em servidores genéricos de mercado (x86). A alternativa B (SDN) foca no controle centralizado do tráfego, não necessariamente em virtualizar appliances de camada 4 a 7. A alternativa E (VXLAN) trata de extensão de rede L2."
+  },
+  {
+    "id": 820107,
+    "day_id": "dia_11_06",
+    "day_title": "Terça-feira 11/06",
+    "theme": "Infra e Redes — Padrões IEEE + SDN, NFV e VXLAN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Secretaria de TI implementou uma nuvem privada em seu data center, exigindo o provisionamento contínuo de novas redes isoladas para sistemas de comarcas distintas. O limite arquitetural de 4.094 identificadores imposto pelo padrão original tornou-se um gargalo, inviabilizando o particionamento completo para todos os locatários lógicos. A equipe resolveu adotar uma tecnologia de overlay capaz de encapsular quadros MAC em datagramas UDP, operando sobre a infraestrutura IP e expandindo o teto de segmentos isolados para cerca de 16 milhões. Esta tecnologia é identificada como:",
+    "options": {
+      "A": "Rapid Spanning Tree Protocol",
+      "B": "Software-Defined Networking",
+      "C": "Network Functions Virtualization",
+      "D": "Virtual Extensible LAN",
+      "E": "Carrier Sense Multiple Access"
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D (VXLAN). A tecnologia VXLAN (Virtual Extensible LAN) usa um VNI (VXLAN Network Identifier) de 24 bits, o que eleva o limite de redes L2 isoladas das antigas 4.094 VLANs (12 bits) para mais de 16 milhões, encapsulando MAC in UDP. A alternativa A previne loops de rede L2. As alternativas B e C referem-se a paradigmas arquiteturais superiores (SDN/NFV) e não a encapsulamentos overlay para L2 over L3. A alternativa E é o método de acesso do Ethernet."
+  },
+  {
+    "id": 820108,
+    "day_id": "dia_11_06",
+    "day_title": "Terça-feira 11/06",
+    "theme": "Infra e Redes — Padrões IEEE + SDN, NFV e VXLAN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a implantação de uma malha SDN no ambiente de homologação do TJ-CE, a equipe necessitava garantir a comunicação padronizada entre o Controlador Centralizado e os dispositivos físicos e virtuais de encaminhamento (switches e roteadores de infraestrutura). Essa comunicação garante a inserção e modificação em tempo real das tabelas de fluxo e do comportamento de forwarding. Na topologia lógica de referência para redes definidas por software, o protocolo aberto OpenFlow atua tipicamente na interface estrutural:",
+    "options": {
+      "A": "Eastbound",
+      "B": "Northbound",
+      "C": "Westbound",
+      "D": "In-band",
+      "E": "Southbound"
+    },
+    "answer": "E",
+    "explanation": "A alternativa correta é a E. Na arquitetura SDN, a interface Southbound comunica o Controlador (plano de controle) com os dispositivos de infraestrutura (plano de dados), sendo o OpenFlow o protocolo mais famoso nesta via. A alternativa B descreve a interface Northbound, que liga o Controlador às aplicações de negócios ou orquestradores superiores. As opções East/Westbound referem-se à comunicação entre múltiplos controladores em cenários de alta disponibilidade ou clusterização."
+  },
+  {
+    "id": 820109,
+    "day_id": "dia_11_06",
+    "day_title": "Terça-feira 11/06",
+    "theme": "Infra e Redes — Padrões IEEE + SDN, NFV e VXLAN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A rede de switches do edifício sede sofria instabilidades. A interrupção de cabos ópticos físicos gerava a imediata reeleição da topologia livre de loops utilizando o IEEE 802.1D tradicional, porém bloqueando preventivamente o tráfego de dados por até 50 segundos nos estágios passivos obrigatórios. A modernização exigiu a implementação de um protocolo compatível nativamente, capaz de transitar as portas ativas instantaneamente para o estado de envio de tráfego por meio de mecanismos de negociação e funções de portas alternativas. O padrão que estabelece esse tempo rápido de convergência é o:",
+    "options": {
+      "A": "IEEE 802.1s",
+      "B": "IEEE 802.1w",
+      "C": "IEEE 802.1Q",
+      "D": "IEEE 802.1p",
+      "E": "IEEE 802.3ad"
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. O padrão IEEE 802.1w define o RSTP (Rapid Spanning Tree Protocol), criado para superar os demorados estados de listening e learning do 802.1D (STP original). Ele introduz papéis de porta como alternate e backup para garantir convergência de sub-segundos a poucos segundos. A alternativa A (802.1s) também usa as fundações do RSTP, mas seu foco primordial é suportar múltiplas instâncias (MSTP). As demais tratam de VLAN, QoS e Agregação."
+  },
+  {
+    "id": 820110,
+    "day_id": "dia_11_06",
+    "day_title": "Terça-feira 11/06",
+    "theme": "Infra e Redes — Padrões IEEE + SDN, NFV e VXLAN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O projeto de renovação tecnológica das redes sem fio da Comarca de Fortaleza estabeleceu a necessidade de suportar altíssima densidade e dispositivos IoT críticos legados. O engenheiro responsável atestou que os Access Points existentes, da geração IEEE 802.11ac, operavam exclusivamente na faixa de 5 GHz, inviabilizando o uso por terminais que conectam somente em 2.4 GHz. A exigência do novo edital licitatório é um padrão moderno com alta eficiência espetral e que atue nativamente nas bandas de 2.4 GHz e 5 GHz de forma simultânea. O padrão exigido neste edital deve ser o:",
+    "options": {
+      "A": "IEEE 802.11a",
+      "B": "IEEE 802.11b",
+      "C": "IEEE 802.11g",
+      "D": "IEEE 802.11n",
+      "E": "IEEE 802.11ax"
+    },
+    "answer": "E",
+    "explanation": "A alternativa correta é a E. O padrão IEEE 802.11ax (Wi-Fi 6) foi desenvolvido para operar nativamente nas bandas de 2.4 GHz e 5 GHz (além de ter o 6GHz na variação 6E). A alternativa D (802.11n) também opera nas duas bandas, porém é um padrão antigo e sem as tecnologias de 'alta eficiência espectral' modernas mencionadas no cenário (como OFDMA). O padrão 802.11ac (não presente nas falsas, mas citado no texto base) foca exclusivamente em 5 GHz."
+  },
+  {
+    "id": 820111,
+    "day_id": "dia_11_06",
+    "day_title": "Terça-feira 11/06",
+    "theme": "Infra e Redes — Padrões IEEE + SDN, NFV e VXLAN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um consultor entregou o plano diretor de data center do TJ-CE com dois preceitos basilares. O primeiro defende a extração dos componentes de roteamento e decisão do hardware e sua consolidação central em um plano de controle isolado. O segundo preceito defende o abandono de firewalls de borda dedicados e a sua transformação em funções isoladas através de máquinas virtuais geridas por hipervisores corporativos. Esses conceitos infraestruturais refletem, de maneira restrita e respectivamente, a aplicação das arquiteturas:",
+    "options": {
+      "A": "VXLAN e SDN",
+      "B": "SDN e NFV",
+      "C": "NFV e SDN",
+      "D": "SDN e VXLAN",
+      "E": "NFV e VXLAN"
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. O primeiro conceito (extração do roteamento e sua centralização no plano de controle) é a definição canônica de SDN (Software-Defined Networking). O segundo conceito (transformar appliances de rede em máquinas virtuais) define NFV (Network Functions Virtualization). A alternativa C os inverte fatalmente. As alternativas A, D e E falham ao introduzir VXLAN, que é um protocolo de encapsulamento overlay e não atende às conceitualizações expostas no enunciado."
+  },
+  {
+    "id": 820112,
+    "day_id": "dia_11_06",
+    "day_title": "Terça-feira 11/06",
+    "theme": "Infra e Redes — Padrões IEEE + SDN, NFV e VXLAN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O tráfego de replicação do banco de dados de custódia entre dois data centers do tribunal exigiu a extensão da rede lógica L2 diretamente sobre a malha robusta de roteamento L3 interurbana. Para sustentar esse segmento estendido sem os gargalos de protocolos de spanning tree tradicionais, os analistas configuraram VTEPs (VXLAN Tunnel Endpoints) operantes em ambos os extremos. De acordo com as especificações da tecnologia VXLAN, o quadro Ethernet L2 original gerado pelo cluster de banco de dados atravessará a infraestrutura L3 protegido e encapsulado dentro de um datagrama de controle do protocolo:",
+    "options": {
+      "A": "TCP",
+      "B": "ICMP",
+      "C": "GRE",
+      "D": "UDP",
+      "E": "SCTP"
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D. O encapsulamento primário do VXLAN (Virtual Extensible LAN) ocorre agrupando o frame MAC L2 original dentro de um datagrama UDP de Camada 4, geralmente na porta de destino 4789. As alternativas A (TCP) e E (SCTP) são protocolos orientados a conexão não utilizados para este túnel overlay por questões de latência. A alternativa B é de gerência. A alternativa C (GRE) é um método distinto de encapsulamento e cria túneis L3 em vez de estender L2 na forma VXLAN."
+  },
+  {
+    "id": 820113,
+    "day_id": "dia_11_06",
+    "day_title": "Terça-feira 11/06",
+    "theme": "Infra e Redes — Padrões IEEE + SDN, NFV e VXLAN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Os sistemas de videomonitoramento do Fórum Clóvis Beviláqua dependem de uma malha estruturada de cabeamento UTP conectando centenas de câmeras IP diretamente a switches com capacidade PoE. Um perito necessita investigar os pacotes em nível de hardware, coletando anomalias estruturais nos preâmbulos, cabeçalhos de endereçamento MAC de origem e limites máximos de Payload. Essa inspeção da camada física e de enlace da malha LAN com fio segue intrinsecamente os comportamentos, regras de acesso ao meio e delimitações do padrão:",
+    "options": {
+      "A": "IEEE 802.1Q",
+      "B": "IEEE 802.1X",
+      "C": "IEEE 802.3",
+      "D": "IEEE 802.11",
+      "E": "IEEE 802.15"
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. O padrão IEEE 802.3 abrange e define o formato do quadro Ethernet (CSMA/CD para LANs com fio), preâmbulos, endereçamento MAC e limites de payload, sendo o coração das comunicações de switches de acesso de infraestrutura física. A alternativa A trata de VLANs lógicas. A alternativa B trata de segurança por porta. A alternativa D abrange redes sem fio (WLAN). A alternativa E refere-se a redes pessoais (WPAN, como Bluetooth/ZigBee)."
+  },
+  {
+    "id": 820114,
+    "day_id": "dia_11_06",
+    "day_title": "Terça-feira 11/06",
+    "theme": "Infra e Redes — Padrões IEEE + SDN, NFV e VXLAN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na reestruturação lógica da infraestrutura, os links centrais operam sob o padrão IEEE 802.1Q como troncos de comunicação (trunks), viabilizando a passagem simultânea de tráfego de várias VLANs interligadas entre o núcleo do tribunal e os andares. Após um incidente, detectou-se que hardwares de gerência desatualizados injetavam dados sem qualquer marcação de tag 802.1Q nos quadros em trânsito no link tronco. Conforme o funcionamento obrigatório do protocolo de enlace adotado, qualquer tráfego sem etiqueta (untagged frames) que atinja uma porta de tronco será recebido e direcionado para a:",
+    "options": {
+      "A": "VLAN de Controle",
+      "B": "VLAN Nativa",
+      "C": "VLAN de Roteamento",
+      "D": "VLAN de Agregação",
+      "E": "VLAN Secundária"
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Nas portas do tipo trunk (que operam sob 802.1Q), a configuração de uma Native VLAN (VLAN Nativa) indica para onde os quadros que chegam sem a tag (untagged frames) devem ser direcionados pelo switch. As alternativas A, C, D e E representam nomenclaturas comerciais genéricas ou funções específicas de arquitetura, mas não traduzem a regra canônica do IEEE 802.1Q para tratamento do tráfego não etiquetado."
+  },
+  {
+    "id": 820115,
+    "day_id": "dia_11_06",
+    "day_title": "Terça-feira 11/06",
+    "theme": "Infra e Redes — Padrões IEEE + SDN, NFV e VXLAN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A área de convivência enfrentava um severo gargalo de desempenho na WLAN corporativa mantida com Access Points IEEE 802.11n. Ocorre que quando diversos usuários realizavam o download de processos, o roteador escalonava o atendimento de forma totalmente sequencial com cada dispositivo móvel no domínio de colisão, acarretando filas e alta latência perceptível. A equipe aprovou a troca física pelo padrão IEEE 802.11ac, que mitigou o gargalo através do envio de múltiplos fluxos espaciais simultâneos pelo roteador em 5 GHz para clientes variados. Essa capacidade direcional agregada por este novo padrão é formalmente denominada:",
+    "options": {
+      "A": "CSMA/CA Sequencial",
+      "B": "Modulação QAM de Baixa Ordem",
+      "C": "Beamforming Estático de Enlace",
+      "D": "Coloração BSS Coordenada",
+      "E": "Downlink MU-MIMO"
+    },
+    "answer": "E",
+    "explanation": "A alternativa correta é a E. O MU-MIMO (Multi-User Multiple-Input Multiple-Output) na via de Downlink foi a principal característica transformadora introduzida pelo padrão IEEE 802.11ac (Wi-Fi 5), permitindo que o AP transmita simultaneamente para múltiplos clientes. A alternativa A reflete o problema limitante anterior. A alternativa B remete à degradação de sinal, enquanto novas tecnologias buscam QAM de alta ordem (256/1024). A alternativa D é um recurso intrínseco do padrão posterior IEEE 802.11ax."
+  }
+]
