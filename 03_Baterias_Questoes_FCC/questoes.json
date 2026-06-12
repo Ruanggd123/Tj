@@ -17548,5 +17548,815 @@
     },
     "answer": "D",
     "explanation": "O API Gateway (ou o primeiro nó em que a requisição adentra a infraestrutura de microserviços) é encarregado de criar a raiz do trace (Trace ID e Parent Span ID) e injetá-la como cabeçalho (ex: x-b3-traceid ou os headers da W3C) na requisição de saída (downstream). Isso garante que todos os logs propaguem a mesma identidade, consolidando o rastreio fim a fim no servidor de telemetria."
+  },
+  {
+    "id": 976,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Docker - Otimização de Imagens",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a modernização do sistema de Peticionamento Eletrônico do TJ-CE, a equipe de engenharia identificou que as imagens Docker de produção chegavam a 2 GB de tamanho. A análise de segurança reportou a presença de compiladores e bibliotecas de teste contidas nessas imagens, aumentando substancialmente a superfície de ataque. O arquiteto de TI deve propor uma técnica nativa no processo de construção da imagem para reduzir seu tamanho final e mitigar o risco de segurança, eliminando ferramentas de build no artefato de produção. A técnica arquitetural recomendada é:",
+    "options": {
+      "A": "empregar o Docker Commit para consolidar as camadas intermediárias da imagem em um único arquivo tar.",
+      "B": "adotar o Multi-stage Build no Dockerfile com instruções específicas de separação estrutural de artefatos.",
+      "C": "instanciar o Docker Swarm para particionar os serviços de compilação e execução em nós distintos.",
+      "D": "configurar o Docker Compose com diretivas de exclusão condicional de dependências de ambiente.",
+      "E": "aplicar a tag 'scratch' nas instruções de ENTRYPOINT do container de execução da aplicação."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O Multi-stage build permite usar múltiplas instruções FROM no mesmo Dockerfile, separando o ambiente de compilação (com ferramentas pesadas) do ambiente de runtime (apenas o binário). A alternativa A é incorreta, pois Docker Commit salva o estado de um container rodando, não sendo uma boa prática para builds reprodutíveis. A C aborda orquestração, não construção de imagem. A D inventa uma diretiva inexistente no Compose. A alternativa E aplica 'scratch' (imagem vazia) no FROM, e não na instrução ENTRYPOINT (que define o comando de execução)."
+  },
+  {
+    "id": 977,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Estratégias de Deploy - Blue/Green",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE planeja lançar uma atualização crítica no sistema de Mandados Prisionais (BNMP). A diretriz imposta pela Corregedoria é que o tempo de inatividade seja estritamente nulo e, em caso de falhas na nova versão, a reversão para a versão anterior deve ocorrer de forma imediata, em questão de milissegundos. A equipe de infraestrutura dispõe de recursos computacionais duplicados temporariamente. O padrão de implantação mais aderente a esses requisitos é:",
+    "options": {
+      "A": "o Canary Deployment com roteamento baseado em percentual de tráfego de rede.",
+      "B": "o Rolling Update com substituição gradual de réplicas de contêineres ativos.",
+      "C": "o Blue/Green Deployment com chaveamento de roteador ou balanceador de carga.",
+      "D": "o Recreate Deployment com interrupção programada dos pods operacionais.",
+      "E": "o A/B Testing com segmentação de usuários por perfil de comarca judicial."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. O modelo Blue/Green exige uma infraestrutura idêntica ativa (Green) ao lado da atual (Blue). O rollback e o deploy são instantâneos, feitos via chaveamento no Load Balancer. A alternativa A foca em testes graduais. A B atualiza instâncias gradativamente, o que torna o rollback mais demorado (necessita recriar instâncias antigas). A D envolve inatividade (downtime). A E é voltada para experimentação de métricas de negócio/usuário, não sendo primariamente uma estratégia de disponibilidade instantânea de rollback."
+  },
+  {
+    "id": 978,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Kubernetes - Roteamento",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O projeto 'Balcão Virtual' do TJ-CE consolidou diversas APIs RESTful em um único cluster Kubernetes. A equipe de redes determinou que todos os serviços devem ser expostos externamente através de um único endereço IP público para simplificar o gerenciamento de DNS e de certificados TLS. O tráfego recebido deve ser roteado para os serviços corretos internamente baseando-se no caminho (path) da URL da requisição HTTP. O recurso nativo do Kubernetes projetado primariamente para fornecer essa capacidade de roteamento é:",
+    "options": {
+      "A": "o Service do tipo LoadBalancer configurado com múltiplas portas de destino.",
+      "B": "o Service do tipo NodePort acoplado a um proxy reverso externo de borda.",
+      "C": "o Ingress configurado com regras de roteamento baseadas em host e path.",
+      "D": "o DaemonSet associado a um controlador de tráfego de rede de área local.",
+      "E": "o EndpointSlice mapeando múltiplos serviços para o mesmo segmento de rede."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. O recurso Ingress expõe rotas HTTP e HTTPS de fora do cluster para serviços dentro do cluster, operando na camada 7 e permitindo regras baseadas em caminhos (path-based routing) ou nomes de host com um único IP. A alternativa A criaria múltiplos IPs públicos (um para cada serviço em provedores cloud) ou operaria apenas na camada 4. A alternativa B é uma gambiarra não nativa para o propósito. A alternativa D gerencia pods em todos os nós, não tráfego de borda HTTP. A E lida com escalabilidade do tráfego interno (Camada 4) entre pods, não com roteamento HTTP reverso."
+  },
+  {
+    "id": 979,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Rancher - Gestão Multi-Namespace",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em um cluster Kubernetes gerenciado pelo Rancher no TJ-CE, existem dezenas de Namespaces correspondendo a diferentes microsserviços do sistema E-proc. O administrador de TI precisa aplicar políticas de Controle de Acesso Baseado em Funções (RBAC) e cotas de recursos de forma consolidada para um grupo específico de cinco Namespaces que pertencem à 'Secretaria de Tecnologia (SETIN)'. Gerenciar essas políticas individualmente em cada Namespace tornou-se inviável e propenso a erros. A funcionalidade exclusiva do Rancher que soluciona esse problema de agrupamento lógico é:",
+    "options": {
+      "A": "o Cluster Role Binding aplicado globalmente na camada de infraestrutura.",
+      "B": "o Rancher Project com vinculação de múltiplos Namespaces sob o mesmo escopo.",
+      "C": "o Pod Security Policy configurado no diretório raiz do plano de controle.",
+      "D": "o Global Role associado ao catálogo de aplicativos nativos do cluster.",
+      "E": "o Fleet Workspace dedicado à separação de cargas de trabalho virtuais."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. 'Projects' (Projetos) são um conceito exclusivo do Rancher criado especificamente para agrupar múltiplos Namespaces. Isso permite aplicar RBAC, cotas e políticas em nível de projeto, propagando para todos os namespaces subordinados. A alternativa A aplica permissões em todo o cluster (excessivo e quebra o princípio de menor privilégio). A C gerencia segurança de execução de pods, obsoleta nas versões mais recentes. A D trata de permissões fora do escopo de agrupamento de namespaces. A E refere-se ao mecanismo de Continuous Delivery do Rancher (Fleet), e não à gestão de RBAC intra-cluster."
+  },
+  {
+    "id": 980,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Kubernetes - Workloads",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O setor de Estatística do TJ-CE desenvolveu uma solução de processamento analítico baseada em um banco de dados NoSQL distribuído no Kubernetes. Para garantir a consistência dos dados judiciais em caso de recriação de pods, a arquitetura exige que cada contêiner possua um identificador de rede persistente e estável, além de inicialização e encerramento estritamente ordenados e sequenciais. O recurso do Kubernetes que implementa adequadamente esses requisitos para cargas de trabalho stateful é o:",
+    "options": {
+      "A": "ReplicaSet com configuração de persistência atrelada ao ciclo de vida do nó.",
+      "B": "Deployment acompanhado de um PersistentVolumeClaim compartilhado.",
+      "C": "StatefulSet associado a um Headless Service para controle de identidade.",
+      "D": "Job cronometrado vinculado a um StorageClass de aprovisionamento estático.",
+      "E": "DaemonSet operando com tolerâncias de isolamento de pods individuais."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. StatefulSets gerenciam o deploy e escala de pods garantindo ordenação estrita e unicidade (identidade de rede estável) de cada pod. O Headless Service é necessário para controlar o domínio DNS desses pods (ex: pod-0, pod-1). A alternativa A não garante identidade de rede única persistente. A B substitui os pods com hashes aleatórios, inadequados para clusters de banco de dados. A D executa tarefas finitas e não serviços de execução contínua. A E força a execução de um pod por nó físico, ignorando a ordenação de inicialização sequencial."
+  },
+  {
+    "id": 981,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Estratégias de Deploy - Canary",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma nova funcionalidade de Inteligência Artificial para classificação automática de petições iniciais foi integrada ao sistema do TJ-CE. Devido à natureza experimental do algoritmo, a presidência do tribunal autorizou a implantação em produção, exigindo que apenas 5% dos advogados sejam inicialmente direcionados para a nova versão, mantendo 95% do tráfego na versão estável atual. O monitoramento de métricas definirá a ampliação gradual dessa porcentagem. A técnica de implantação descrita é:",
+    "options": {
+      "A": "o Deployment Blue/Green estrito.",
+      "B": "o Deployment Recreate total.",
+      "C": "o Deployment Rolling Update padrão.",
+      "D": "o Deployment Canary focado.",
+      "E": "o Deployment Shadow passivo."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D está correta. O Canary Deployment introduz a nova versão apenas para um subconjunto restrito do tráfego ou dos usuários (ex: 5%), avaliando a estabilidade antes da substituição completa. A alternativa A mudaria o tráfego 100% de uma vez. A B causaria inatividade. A C substitui pods em lotes progressivos (não baseados em roteamento de 5% de usuários, mas em réplicas prontas). A E duplica o tráfego para a nova versão sem impactar a resposta do usuário real (tráfego espelhado/shadowing)."
+  },
+  {
+    "id": 982,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Docker - Cache de Camadas",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A integração contínua (CI) do portal de jurisprudência do TJ-CE apresenta gargalos de desempenho. O engenheiro DevOps observou que, a cada pequeno ajuste no código-fonte em Node.js, o Dockerfile reconstrói integralmente a camada de download de todas as dependências do gerenciador NPM, consumindo excesso de banda e tempo computacional. Para otimizar o uso do cache de camadas do Docker e evitar downloads desnecessários quando as dependências não sofrerem alterações, a ação corretiva apropriada no Dockerfile é:",
+    "options": {
+      "A": "consolidar os comandos ADD e RUN na mesma instrução sequencial.",
+      "B": "utilizar a flag --no-cache exclusivamente durante o processo de compilação.",
+      "C": "copiar o arquivo de dependências e instalar os pacotes antes de copiar o código-fonte.",
+      "D": "declarar variáveis de ambiente no topo do arquivo com a diretiva ENV.",
+      "E": "executar a descompactação de binários com a instrução ENTRYPOINT fixa."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A ordem das instruções no Dockerfile afeta o cache de camadas. Ao copiar apenas o `package.json` e rodar `npm install`, o Docker fará cache dessa etapa pesada. O código-fonte mutável é copiado em uma camada inferior, invalidando o cache apenas dali para baixo. A alternativa A quebra o propósito de isolar camadas. A B piora o problema, forçando o build do zero sempre. A D e E não afetam a revalidação de arquivos alterados que disparam o download excessivo."
+  },
+  {
+    "id": 983,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Kubernetes - Escalabilidade Autônoma",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante os períodos de Plantão Judiciário e prazos recursais extraordinários, o sistema de emissão de guias de custas judiciais do TJ-CE sofre picos abruptos e imprevisíveis de utilização da CPU. A equipe de operações precisa configurar o Kubernetes para aumentar e diminuir automaticamente a quantidade de réplicas ativas dos pods do sistema, com base exclusivamente em métricas de utilização de processamento observadas em tempo real. O componente do Kubernetes a ser empregado nesta tarefa é:",
+    "options": {
+      "A": "o Cluster Autoscaler.",
+      "B": "o Vertical Pod Autoscaler.",
+      "C": "o Horizontal Pod Autoscaler.",
+      "D": "o ResourceQuota LimitRange.",
+      "E": "o Pod Disruption Budget."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. O Horizontal Pod Autoscaler (HPA) ajusta a quantidade (réplicas) de pods baseando-se no uso de CPU/Memória. A alternativa A dimensiona a infraestrutura física/virtual subjacente (os nós). A B redimensiona os limites de hardware do mesmo pod (não replica). A D define tetos de recursos para o namespace inteiro (estático, não dinâmico). A E protege contra interrupções voluntárias durante atualizações, garantindo disponibilidade mínima, mas não realiza escalonamento ativo."
+  },
+  {
+    "id": 984,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Rancher - Fleet (GitOps)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE mantém múltiplos clusters Kubernetes geograficamente distribuídos pelas comarcas de Fortaleza, Sobral, Juazeiro, Crato e Iguatu. O administrador deseja padronizar a instalação de ferramentas de monitoramento em todos os clusters sem realizar operações manuais ou utilizar scripts ad-hoc. A estratégia escolhida envolve armazenar os manifestos YAML em um repositório Git central e sincronizá-los automaticamente em larga escala. O motor nativo de Continuous Delivery (CD) integrado ao ecossistema Rancher projetado especificamente para gerenciar essa arquitetura GitOps é o:",
+    "options": {
+      "A": "Rancher RKE2.",
+      "B": "Rancher K3s.",
+      "C": "Rancher Fleet.",
+      "D": "Rancher Longhorn.",
+      "E": "Rancher Submariner."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. O Rancher Fleet é a solução GitOps do ecossistema Rancher, focada em gerenciar infraestrutura em escala (até milhões de clusters) puxando configurações de um repositório Git. A alternativa A e B são distribuições Kubernetes (engines de cluster). A D é uma solução de armazenamento em bloco persistente nativo. A E é um projeto para fornecer conectividade de rede L3 inter-cluster, sem atuar em implantações de software ou GitOps."
+  },
+  {
+    "id": 985,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Kubernetes - Segurança de Rede",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Por normas de segurança da informação, a arquitetura de microsserviços de pagamento de precatórios do TJ-CE exige segmentação interna rigorosa de tráfego. O pod responsável pelo 'Processamento Financeiro' deve aceitar conexões na porta 8080 unicamente originadas pelo pod 'Gateway de Pagamento', bloqueando automaticamente qualquer outra comunicação advinda de pods operando no mesmo namespace. O recurso do Kubernetes que implementa essa restrição de comunicação nas camadas 3 e 4 do modelo OSI é:",
+    "options": {
+      "A": "o PodSecurity Admission.",
+      "B": "o Ingress Controller.",
+      "C": "a Network Policy.",
+      "D": "o Service Mesh Gateway.",
+      "E": "o Endpoint Slice Controller."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. As Network Policies atuam como firewalls internos do Kubernetes, determinando como grupos de pods podem se comunicar uns com os outros e com endpoints de rede externa baseados em IPs e Portas (Camadas 3/4). A alternativa A controla a segurança de execução no nível do container host (ex: privilégios root). A B gere o tráfego externo de entrada (Camada 7). A D atua em funcionalidades avançadas de tráfego L7, mas o recurso primário e nativo de L3/L4 pedido no enunciado é a Network Policy. A E trata do balanceamento interno na escala de milissegundos sem implementar regras de bloqueio."
+  },
+  {
+    "id": 986,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Docker - Armazenamento Persistente",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um sistema legado de controle de almoxarifado do TJ-CE foi conteinerizado em um host Linux isolado utilizando o Docker Engine nativo. O banco de dados MySQL exige persistência rigorosa dos registros em disco. Em caso de deleção acidental ou intencional do contêiner do MySQL por um administrador inexperiente, os arquivos de dados não devem ser removidos do sistema operacional hospedeiro. O mecanismo recomendado no Docker para prover esse armazenamento persistente gerenciado pela própria engine, isolado da estrutura de diretórios do usuário host, é:",
+    "options": {
+      "A": "o Bind Mount mapeado a um diretório absoluto do usuário.",
+      "B": "o Tmpfs Mount alocado na memória volátil do sistema.",
+      "C": "o Docker Volume criado com o driver local padrão.",
+      "D": "o Container Overlay armazenando na camada de escrita.",
+      "E": "o Docker Swarm Secret injetado em tempo de execução."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. Os Docker Volumes são a forma preferida de armazenar dados persistentes independentes do ciclo de vida do container. Eles são gerenciados integralmente pela engine do Docker (normalmente em /var/lib/docker/volumes/), impedindo manipulações inseguras de fora do ecossistema. A alternativa A (Bind Mount) mapeia arquivos arbitrários do host de forma insegura, fugindo do gerenciamento da engine. A B perde dados em reboots. A D perde os dados assim que o container é destruído. A E serve para dados sensíveis pequenos em memória."
+  },
+  {
+    "id": 987,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Kubernetes - Gerenciamento de Configuração",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a impluração do sistema e-Social integrado no cluster do TJ-CE, a equipe de TI deve fornecer chaves criptográficas, senhas de acesso ao banco de dados Oracle e tokens de APIs aos contêineres em execução. Essas informações críticas não podem ser inseridas diretamente na imagem Docker e tampouco expostas no código-fonte dos manifestos YAML controlados pelo Git. A abordagem canônica e nativa do Kubernetes para expor esses dados confidenciais aos pods é através da injeção de:",
+    "options": {
+      "A": "ConfigMaps com criptografia habilitada na control plane.",
+      "B": "Environment Variables embutidas de forma textual no Deployment.",
+      "C": "Persistent Volumes formatados com o sistema de arquivos restrito.",
+      "D": "Secrets montados como arquivos de disco ou variáveis de ambiente.",
+      "E": "SecurityContexts associados aos atributos de inicialização de permissão."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D está correta. Secrets são os recursos nativos desenvolvidos no Kubernetes para armazenar senhas, tokens e certificados em base64. Eles são montados no container como arquivos de volumes temporários na RAM (tmpfs) ou repassados como variáveis de ambiente. A alternativa A erra porque ConfigMaps armazenam configurações não confidenciais (texto plano não ofuscado). A B expõe a senha nos manifestos textuais, quebrando o requisito. A C acopla o segredo à persistência lenta em disco. A E restringe privilégios operacionais do contêiner (user, capabilities), sem fornecer dados de variáveis."
+  },
+  {
+    "id": 988,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Estratégias de Deploy - Rolling Update",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao atualizar a interface web do Portal de Serviços Judiciais do TJ-CE no Kubernetes, a estratégia de implantação acionada pelo manifesto atualiza os pods de maneira escalonada. Novas réplicas da versão recém-lançada são inicializadas progressivamente enquanto réplicas da versão antiga são finalizadas em paralelo, garantindo a disponibilidade contínua do serviço web sob carga máxima sem demandar a duplicação total da infraestrutura do cluster. Esta estratégia de atualização nativa por padrão no Kubernetes denomina-se:",
+    "options": {
+      "A": "Blue/Green Deployment.",
+      "B": "Canary Deployment.",
+      "C": "Recreate Deployment.",
+      "D": "Rolling Update Deployment.",
+      "E": "Shadow Deployment."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D está correta. O Rolling Update é a estratégia default de Deployments no Kubernetes. Ele atualiza progressivamente uma fração das réplicas, impedindo quedas totais (downtime). A alternativa A necessita do dobro da infraestrutura para manter as duas versões inteiras isoladas simultaneamente. A alternativa C (Recreate) derruba todos os pods velhos antes de criar os novos, causando indisponibilidade. A B roteia percentuais finos baseados em regras L7. A E simula requisições."
+  },
+  {
+    "id": 989,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Rancher - Arquitetura Multi-cluster",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de emissão de Certidões Negativas do TJ-CE precisa operar em altíssima disponibilidade em uma arquitetura Active-Active estrita. A infraestrutura envolve dois clusters Kubernetes geograficamente separados por centenas de quilômetros, ambos orquestrados pelo Rancher. É mandatório rotear o tráfego do cidadão de forma automática para o cluster que apresentar menor latência e maior disponibilidade funcional, reagindo a falhas no nível da resolução de domínios. A extensão nativa do ecossistema Rancher capacitada para programar provedores externos com intuito de direcionar essas requisições corporativas em ambientes multi-cluster é o:",
+    "options": {
+      "A": "Rancher Backup Operator.",
+      "B": "Rancher Global DNS.",
+      "C": "Rancher Cluster Autoscaler.",
+      "D": "Rancher Ingress Controller.",
+      "E": "Rancher OPA Gatekeeper."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O Rancher Global DNS suporta cenários multi-cluster monitorando aplicações provisionadas em múltiplos Kubernetes clusters e programando dinamicamente provedores de DNS (como Route53 ou Cloudflare) para rotear o usuário final entre os clusters saudáveis. A alternativa A foca em restaurar clusters perdidos (etcd). A C gerencia nós de hardware de um mesmo cluster. A D atua dentro da borda de apenas um cluster. A E define políticas de validação de recursos do manifesto (Admission Controller)."
+  },
+  {
+    "id": 990,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Docker - Segurança Operacional",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma auditoria rigorosa de segurança da informação avaliou os servidores que hospedam a camada middleware do sistema de leilões eletrônicos do TJ-CE. O relatório prescreveu a imediata mitigação de vulnerabilidades de escalonamento de privilégios. A exigência arquitetural central determinou que tanto a Engine do Docker (o daemon) quanto os contêineres orquestrados por ela devessem operar integralmente no espaço de usuário do sistema operacional subjacente, suprimindo exigências de acessos de superusuário no Linux. A modalidade de execução do Docker que atende com aderência a essa política é o:",
+    "options": {
+      "A": "Docker AppArmor restrito.",
+      "B": "Docker Seccomp isolado.",
+      "C": "Docker Rootless.",
+      "D": "Docker Trusted Registry.",
+      "E": "Docker Content Trust."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. O Docker Rootless permite executar o dockerd (daemon) e os containers sem privilégios de root (roda como um usuário não-root comum), mitigando falhas de quebra de jaula (container breakout). A alternativa A (AppArmor) confina acessos no kernel a processos específicos, mas não remove o privilégio primário do daemon. A B filtra chamadas de sistema, sem eliminar a base root. As opções D e E referem-se, respectivamente, ao repositório central de imagens privado e à assinatura criptográfica das imagens, o que não altera o permissionamento de execução na CPU hospedeira."
+  },
+  {
+    "id": 991,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "PMBOK 7ª Edição - Princípios",
+    "context": "Governança e conformidade no TJ-CE",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Estado do Ceará (TJ-CE) iniciou um projeto de reestruturação do Processo Judicial Eletrônico (PJe) visando a incorporação de inteligência artificial para triagem de petições. O gerente do projeto estabeleceu diretrizes rígidas sobre transparência, respeito aos limites orçamentários, conformidade com regulamentos internos e responsabilidade ambiental em relação à infraestrutura adotada. Segundo o Guia PMBOK 7ª Edição, o gerente do projeto está aplicando diretamente qual princípio de gerenciamento de projetos?",
+    "options": {
+      "A": "Demonstrar comportamentos de liderança.",
+      "B": "Ser um guardião diligente, respeitoso e atencioso.",
+      "C": "Reconhecer e avaliar as interações do sistema.",
+      "D": "Criar um ambiente colaborativo para a equipe do projeto.",
+      "E": "Otimizar as respostas aos riscos de forma contínua."
+    },
+    "answer": "B",
+    "explanation": "O princípio de 'Ser um guardião' abrange a responsabilidade pela integridade, conformidade legal, ética e sustentabilidade ambiental da iniciativa. A alternativa A foca em influenciar e motivar a equipe. A alternativa C trata da visão sistêmica das partes do projeto. A alternativa D aborda a estruturação da equipe e processos internos. A alternativa E refere-se ao gerenciamento de ameaças e oportunidades."
+  },
+  {
+    "id": 992,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "PMBOK 7ª Edição - Domínios de Desempenho",
+    "context": "Gerenciamento logístico e processos internos de projetos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a implantação de um novo sistema de controle de ponto biométrico para os magistrados e servidores do TJ-CE, a equipe técnica precisou gerenciar contratos de aquisição de hardware, monitorar a logística de entrega dos equipamentos nas comarcas do interior e garantir a fluidez dos processos internos de desenvolvimento de software. No contexto do PMBOK 7ª Edição, as atividades descritas enquadram-se em qual Domínio de Desempenho?",
+    "options": {
+      "A": "Domínio da Entrega.",
+      "B": "Domínio da Abordagem de Desenvolvimento e Ciclo de Vida.",
+      "C": "Domínio do Trabalho do Projeto.",
+      "D": "Domínio do Planejamento.",
+      "E": "Domínio da Equipe."
+    },
+    "answer": "C",
+    "explanation": "O Domínio de Desempenho do Trabalho do Projeto foca nas atividades associadas ao estabelecimento de processos, gerenciamento de recursos físicos, aquisições e manutenção da eficiência operacional do time. A alternativa A foca no escopo e na qualidade. A alternativa B trata da cadência e fases. A alternativa D lida com organização e estimativas. A alternativa E concentra-se nas relações interpessoais e cultura."
+  },
+  {
+    "id": 993,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "ISO 31000:2018 - Princípios",
+    "context": "Auditoria de gestão de riscos e alinhamento de princípios.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Comitê de Governança de TI do TJ-CE realizou uma auditoria no modelo de gestão de riscos aplicado aos serviços críticos de infraestrutura. A auditoria apontou o foco exclusivo dos controles em evitar perdas, ignorando a contribuição para a melhoria dos processos ou para a inovação tecnológica. Para alinhar o modelo à ABNT NBR ISO 31000:2018, o Comitê deve reestruturar a gestão fundamentando-se no princípio primordial de que a gestão de riscos:",
+    "options": {
+      "A": "Baseia-se na segregação de funções.",
+      "B": "Substitui a gestão estratégica corporativa.",
+      "C": "Cria e protege valor.",
+      "D": "Elimina integralmente a incerteza.",
+      "E": "Opera independentemente do contexto organizacional."
+    },
+    "answer": "C",
+    "explanation": "O propósito central da gestão de riscos segundo a ISO 31000 é a criação e proteção de valor para a organização. A alternativa A apresenta um conceito de auditoria contábil. A alternativa B contradiz o alinhamento estratégico exigido. A alternativa D promete um resultado inatingível, eliminar a incerteza. A alternativa E contraria o princípio de que a gestão deve ser customizada e integrada ao contexto."
+  },
+  {
+    "id": 994,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "PMBOK 7ª Edição - Adaptação",
+    "context": "Seleção de abordagens de gerenciamento de projetos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Secretaria de Tecnologia da Informação do TJ-CE definiu a abstenção de uma metodologia única para os projetos de modernização tecnológica. Um projeto de migração de banco de dados adotará ciclos de vida preditivos, enquanto a criação de um novo portal de serviços seguirá um fluxo ágil e iterativo. Os processos e artefatos de cada projeto são selecionados conforme a complexidade e os requisitos regulatórios envolvidos. Essa prática alinha-se ao Guia PMBOK 7ª Edição por meio da aplicação do conceito de:",
+    "options": {
+      "A": "Governança corporativa contínua.",
+      "B": "Integração de sistemas de entrega.",
+      "C": "Adaptação (Tailoring).",
+      "D": "Gerenciamento de valor agregado.",
+      "E": "Mapeamento de fluxo de valor."
+    },
+    "answer": "C",
+    "explanation": "A Adaptação (Tailoring) é o processo deliberado de ajustar as abordagens de desenvolvimento, a governança e os processos para melhor atender ao ambiente único do projeto. A alternativa A confunde o conceito com rotina administrativa. A alternativa B refere-se à estrutura macro organizacional. A alternativa D é uma técnica de controle de custos e cronograma. A alternativa E foca em práticas lean para identificar desperdícios."
+  },
+  {
+    "id": 995,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "ISO 31000:2018 - Estrutura",
+    "context": "Integração da gestão de riscos nas tomadas de decisão.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE instituiu um novo programa de segurança da informação. Os consultores contratados observaram a condução do mapeamento de vulnerabilidades cibernéticas como uma atividade isolada pelo setor de TI, desconectada das decisões do comitê diretivo do tribunal. Conforme as diretrizes de estrutura da ABNT NBR ISO 31000:2018, para sanar essa deficiência, o tribunal deve assegurar a:",
+    "options": {
+      "A": "Descentralização da responsabilidade técnica.",
+      "B": "Integração da gestão de riscos em todas as atividades.",
+      "C": "Terceirização da avaliação de riscos de segurança.",
+      "D": "Transferência irrestrita dos riscos identificados.",
+      "E": "Manutenção dos silos de governança departamentais."
+    },
+    "answer": "B",
+    "explanation": "A ISO 31000 determina a integração da estrutura de gestão de riscos à governança geral e às atividades corporativas para apoiar a tomada de decisão. A alternativa A dilui o problema sem resolvê-lo. A alternativa C trata de contratação, não de estrutura corporativa. A alternativa D é uma prática irresponsável. A alternativa E fortalece a falha apontada no enunciado."
+  },
+  {
+    "id": 996,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "ISO 31000:2018 - Processo",
+    "context": "Análise técnica de ameaças cibernéticas.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de segurança cibernética do TJ-CE detectou uma série de ameaças relacionadas a ataques de ransomware. A equipe levantou as fontes de risco, compreendeu a natureza técnica dos malwares envolvidos, estimou a probabilidade de comprometimento dos sistemas de armazenamento e comparou os níveis de risco encontrados com os critérios de risco aprovados pela presidência do tribunal. Esse fluxo de atividades, segundo o processo da ABNT NBR ISO 31000:2018, corresponde à etapa de:",
+    "options": {
+      "A": "Tratamento de riscos.",
+      "B": "Monitoramento e análise crítica.",
+      "C": "Comunicação e consulta.",
+      "D": "Registro e relato.",
+      "E": "Avaliação de riscos."
+    },
+    "answer": "E",
+    "explanation": "A etapa de Avaliação de riscos engloba o processo global de identificação de riscos (levantamento de fontes), análise de riscos (compreensão da natureza e estimação de probabilidades) e avaliação propriamente dita (comparação com critérios). A alternativa A envolve a seleção de opções de mitigação. A alternativa B lida com a verificação da eficácia contínua. A alternativa C foca em troca de informações com stakeholders. A alternativa D lida com o registro documental formal."
+  },
+  {
+    "id": 997,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "PMBOK 7ª Edição - Domínios de Desempenho",
+    "context": "Falha na qualidade das entregas de software.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal implementou um sistema de agendamento de audiências de custódia virtuais concluído rigorosamente dentro do prazo e do orçamento. Contudo, os magistrados relataram o congelamento frequente da interface de vídeo, tornando o software inútil para o propósito desejado. O comitê de auditoria determinou a falha da equipe de projeto em realizar o escopo com a qualidade necessária para gerar os benefícios esperados. À luz do PMBOK 7ª Edição, essa falha compromete frontalmente o Domínio de Desempenho:",
+    "options": {
+      "A": "da Incerteza.",
+      "B": "das Partes Interessadas.",
+      "C": "do Planejamento.",
+      "D": "da Entrega.",
+      "E": "do Trabalho do Projeto."
+    },
+    "answer": "D",
+    "explanation": "O Domínio de Desempenho da Entrega concentra-se em atingir o escopo com a qualidade exigida para habilitar o valor e os benefícios pretendidos. A alternativa A lida com riscos e variabilidade. A alternativa B aborda o engajamento de pessoas. A alternativa C envolve a estruturação inicial do cronograma e orçamento. A alternativa E refere-se à operacionalização e aquisições."
+  },
+  {
+    "id": 998,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "ISO 31000:2018 - Processo",
+    "context": "Migração para a nuvem pública e gestão de SLAs.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Diante da iminente obsolescência do data center principal do TJ-CE, a diretoria de TI mapeou um risco crítico de indisponibilidade prolongada. Em resposta, a diretoria decidiu migrar a infraestrutura crítica para um provedor de nuvem pública, firmando um contrato com Acordos de Nível de Serviço (SLA) rigorosos e multas pesadas por tempo de inatividade, repartindo as responsabilidades operacionais com o fornecedor. Com base no processo de gestão de riscos da ABNT NBR ISO 31000:2018, a decisão configura uma estratégia de tratamento de risco caracterizada por:",
+    "options": {
+      "A": "Evitar o risco.",
+      "B": "Compartilhar o risco.",
+      "C": "Reter o risco.",
+      "D": "Eliminar a fonte de risco.",
+      "E": "Assumir o risco."
+    },
+    "answer": "B",
+    "explanation": "O ato de firmar contratos, seguros e SLAs para dividir responsabilidades técnicas e financeiras constitui o compartilhamento do risco. A alternativa A envolveria desistir completamente da prestação do serviço de TI. A alternativa C significa aceitar as consequências internamente sem ação de repasse. A alternativa D seria a substituição radical da infraestrutura sem terceiros. A alternativa E é sinônimo de reter o risco de forma deliberada."
+  },
+  {
+    "id": 999,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "PMBOK 7ª Edição - Princípios",
+    "context": "Análise de interdependências em infraestrutura sistêmica.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O desenvolvimento de uma nova funcionalidade de assinatura digital no TJ-CE apresentou atrasos constantes. O gerente de projeto percebeu o impacto direto das atualizações na camada de segurança no tempo de resposta do banco de dados, afetando a experiência dos usuários no portal externo. Para resolver a questão, a equipe realizou reuniões para entender as dependências e o comportamento holístico da infraestrutura, abandonando a análise isolada de módulos. Segundo o Guia PMBOK 7ª Edição, essa atitude baseia-se no princípio de:",
+    "options": {
+      "A": "Focar no valor.",
+      "B": "Construir qualidade nos processos e nas entregas.",
+      "C": "Reconhecer, avaliar e responder às interações do sistema.",
+      "D": "Navegar na complexidade.",
+      "E": "Otimizar as respostas aos riscos."
+    },
+    "answer": "C",
+    "explanation": "O princípio de pensamento sistêmico (reconhecer, avaliar e responder às interações do sistema) foca na compreensão holística das partes inter-relacionadas de um projeto. A alternativa A foca em benefícios de negócio. A alternativa B trata de conformidade e excelência de código. A alternativa D lida com incertezas estruturais e ambiguidades. A alternativa E aborda tratamento de ameaças formais."
+  },
+  {
+    "id": 1000,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "PMBOK 7ª Edição - Domínios de Desempenho",
+    "context": "Gerenciamento de volatilidade em algoritmos de inteligência artificial.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o ciclo de testes de uma plataforma de jurisprudência baseada em machine learning para o TJ-CE, os analistas constataram volatilidade significativa na precisão dos resultados de busca mediante a variação dos termos jurídicos inseridos. A equipe documentou as variações esperadas e aplicou reservas de contingência no cronograma para permitir o ajuste fino do algoritmo sem comprometer a data de lançamento. No Guia PMBOK 7ª Edição, as ações de mitigação de variabilidade e o uso de margens de segurança integram o Domínio de Desempenho:",
+    "options": {
+      "A": "da Abordagem de Desenvolvimento.",
+      "B": "da Incerteza.",
+      "C": "da Medição.",
+      "D": "da Entrega.",
+      "E": "da Equipe."
+    },
+    "answer": "B",
+    "explanation": "O Domínio de Desempenho da Incerteza trata do gerenciamento da ambiguidade, complexidade, volatilidade e dos riscos associados ao projeto, aplicando estratégias como margens de segurança (buffers). A alternativa A aborda a escolha de metodologias ágeis ou preditivas. A alternativa C foca na coleta de indicadores de prazo e custo. A alternativa D engloba o fornecimento de escopo e qualidade. A alternativa E trata do desenvolvimento de competências interpessoais."
+  },
+  {
+    "id": 1001,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "ISO 31000:2018 - Princípios",
+    "context": "Coleta extensiva de dados e pareceres técnicos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para mapear os riscos de falhas de conectividade nas comarcas do TJ-CE, a comissão de governança exigiu a coleta de dados de links dos últimos cinco anos, cruzando as métricas com projeções meteorológicas de longo prazo e opiniões de especialistas de telecomunicações. O processo incorporou as limitações conhecidas na cobertura técnica das operadoras regionais. A utilização de dados históricos, previsões futuras e percepções de especialistas atende diretamente a qual princípio da ABNT NBR ISO 31000:2018?",
+    "options": {
+      "A": "Comportamento humano e cultural.",
+      "B": "Dinâmica e interativa.",
+      "C": "Melhoria contínua.",
+      "D": "Melhor informação disponível.",
+      "E": "Customização do framework."
+    },
+    "answer": "D",
+    "explanation": "O princípio da 'Melhor informação disponível' estabelece a fundamentação da gestão de riscos em dados históricos, informações atuais, observações e projeções de especialistas, sempre ponderando suas inerentes limitações. A alternativa A foca na psicologia dos envolvidos. A alternativa B refere-se à resposta tempestiva às mudanças. A alternativa C foca em aprendizado a longo prazo. A alternativa E trata do desenho estrutural da gestão aos processos do tribunal."
+  },
+  {
+    "id": 1002,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "PMBOK 7ª Edição - Domínios de Desempenho",
+    "context": "Acompanhamento de métricas financeiras e de satisfação.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A implantação do sistema de processo administrativo eletrônico no TJ-CE encontra-se no terceiro mês. Para evitar o descompasso entre o trabalho planejado e o realizado, o gerente do projeto utiliza gráficos burn-down, monitora a variação do valor agregado em custo e aplica Net Promoter Score (NPS) nas entregas parciais para aferir a satisfação dos servidores. A consolidação dessas métricas quantitativas e qualitativas para apoiar a tomada de decisão enquadra-se no Domínio de Desempenho:",
+    "options": {
+      "A": "das Partes Interessadas.",
+      "B": "do Trabalho do Projeto.",
+      "C": "da Medição.",
+      "D": "do Planejamento.",
+      "E": "da Abordagem de Desenvolvimento e Ciclo de Vida."
+    },
+    "answer": "C",
+    "explanation": "O Domínio de Desempenho da Medição foca na avaliação contínua do desempenho do projeto através da aplicação de indicadores chave, métricas de valor (como NPS) e métricas de andamento do trabalho (como valor agregado e burn-down). A alternativa A trata do engajamento ativo de pessoas. A alternativa B refere-se à execução logística do projeto. A alternativa D lida com o planejamento estático inicial. A alternativa E trata do modelo de ciclo de vida adotado."
+  },
+  {
+    "id": 1003,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "ISO 31000:2018 - Processo",
+    "context": "Comunicação falha na formulação de políticas de segurança.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após a homologação de uma política de restrição de acesso a dispositivos USB no TJ-CE, diversos setores reportaram perdas de eficiência operativa. Uma auditoria revelou a elaboração unilateral da política de segurança baseada em riscos pela área de TI, negligenciando o feedback prévio das unidades judiciárias impactadas. Conforme o processo da ABNT NBR ISO 31000:2018, a elaboração da política omitiu a etapa fundamental de fornecimento de informações e inclusão de diferentes perspectivas das partes interessadas. Trata-se da etapa de:",
+    "options": {
+      "A": "Avaliação de riscos.",
+      "B": "Tratamento de riscos.",
+      "C": "Comunicação e consulta.",
+      "D": "Escopo, contexto e critérios.",
+      "E": "Registro e relato."
+    },
+    "answer": "C",
+    "explanation": "A etapa de Comunicação e consulta exige o envolvimento metódico das partes interessadas para integrar diferentes visões, obter expertise especializada e garantir o entendimento mútuo na gestão de riscos. A alternativa A restringe-se à análise probabilística e de impacto. A alternativa B seleciona mitigações. A alternativa D define fronteiras do ambiente. A alternativa E trata da guarda documental formal da iniciativa."
+  },
+  {
+    "id": 1004,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "PMBOK 7ª Edição - Sistema de Entrega de Valor",
+    "context": "Alinhamento estratégico do portfólio de TI.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Planejamento Estratégico de TI do TJ-CE contempla um portfólio de iniciativas voltadas à virtualização dos serviços cartorários. Um dos programas interliga projetos de automação de cálculos de penas e sistemas de controle patrimonial. A diretoria de TI necessita garantir a tradução dos resultados gerados por esses projetos e programas em impactos positivos contínuos e mensuráveis para a sociedade e para o tribunal. No contexto do PMBOK 7ª Edição, a capacidade sistêmica de alinhar portfólios, programas, projetos e operações para concretizar a estratégia da organização é denominada:",
+    "options": {
+      "A": "Organização orientada a projetos.",
+      "B": "Sistema de entrega de valor.",
+      "C": "Domínio de desempenho estratégico.",
+      "D": "Fluxo contínuo de adaptação.",
+      "E": "Mapa de realização de benefícios."
+    },
+    "answer": "B",
+    "explanation": "O Sistema de Entrega de Valor (Value Delivery System) descreve o conjunto holístico onde projetos, programas, portfólios e operações se integram, influenciam o ambiente interno e executam a estratégia organizacional. A alternativa A descreve um modelo de estrutura corporativa (Projectized). A alternativa C inventa um domínio de desempenho inexistente no guia. A alternativa D é um termo distorcido sobre agilidade. A alternativa E é um artefato pontual, não um sistema amplo."
+  },
+  {
+    "id": 1005,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "ISO 31000:2018 - Estrutura",
+    "context": "Alocação de recursos e definição de políticas pela alta direção.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Presidência do TJ-CE assinou uma portaria instituindo uma declaração formal de política de gestão de riscos e alocou recursos orçamentários específicos para a capacitação dos gestores em análise de riscos cibernéticos. O documento define formalmente os níveis de autoridade para a aceitação de riscos residuais nos sistemas de prestação jurisdicional. Dentro da estrutura (framework) da ABNT NBR ISO 31000:2018, as ações descritas demonstram o componente de:",
+    "options": {
+      "A": "Concepção da gestão de riscos.",
+      "B": "Melhoria contínua.",
+      "C": "Integração operacional.",
+      "D": "Implementação da gestão de riscos.",
+      "E": "Liderança e comprometimento."
+    },
+    "answer": "E",
+    "explanation": "O componente Liderança e Comprometimento materializa-se quando a alta direção emite declarações de política, garante a alocação de recursos e define níveis de responsabilidade e autoridade na organização. A alternativa A trata do desenho contextual e dos critérios. A alternativa B trata da evolução iterativa pós-avaliação. A alternativa C foca em incluir o risco nas rotinas das áreas de negócio. A alternativa D trata da execução prática dos planos desenvolvidos."
+  },
+  {
+    "id": 1006,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Língua Portuguesa - Concordância Verbal e Intertextualidade",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Considere o fragmento de um relatório do departamento de infraestrutura: \"O advento das novas inteligências artificiais e a modernização do parque tecnológico do TJ-CE trouxeram novos desafios aos Analistas de TI no último biênio.\" Assinale a alternativa que propõe uma reescrita do período com plena observância às regras de concordância verbal da norma-padrão.",
+    "options": {
+      "A": "Coube aos Analistas de TI os novos desafios trazidos pelo advento das inteligências artificiais e a modernização do parque tecnológico.",
+      "B": "Atribuiu-se aos Analistas de TI, face ao advento das inteligências artificiais e à modernização do parque tecnológico, novos desafios.",
+      "C": "Recaiu sobre os Analistas de TI novos desafios gerados pelo advento das inteligências artificiais e pela modernização do parque tecnológico.",
+      "D": "Trouxe novos desafios aos Analistas de TI o advento das novas inteligências artificiais e a modernização do parque tecnológico do TJ-CE.",
+      "E": "Esperam-se dos Analistas de TI que enfrentem novos desafios em razão das novas inteligências artificiais e da modernização do parque."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D está correta. Quando o sujeito composto (o advento... e a modernização...) vem posposto ao verbo, a gramática normativa permite a concordância atrativa com o núcleo mais próximo (advento), deixando o verbo no singular (Trouxe). A alternativa A está incorreta, pois o sujeito é 'os novos desafios' e o verbo deveria ser 'Couberam'. A B está incorreta pela voz passiva sintética; 'novos desafios' é sujeito paciente e exige 'Atribuíram-se'. A C está incorreta pois 'novos desafios' exige o plural 'Recaíram'. A E erra porque a oração 'que enfrentem novos desafios' atua como sujeito oracional, obrigando o verbo principal a ficar no singular: 'Espera-se'."
+  },
+  {
+    "id": 1007,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Língua Portuguesa - Concordância Verbal e Intertextualidade",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Tendo em vista as rotinas de sustentação e manutenção de sistemas no âmbito judiciário, assinale a alternativa em que a concordância verbal está inteiramente correta.",
+    "options": {
+      "A": "Já fazem duas semanas que se identificou falhas graves no banco de dados relacional do Tribunal.",
+      "B": "Devem haver soluções de contorno mais eficientes para os gargalos de infraestrutura reportados no chamado.",
+      "C": "Realizou-se, durante a madrugada do último domingo, as atualizações dos servidores de aplicação do sistema.",
+      "D": "Podem existir nos sistemas legados diversas vulnerabilidades críticas não mapeadas pela equipe de segurança.",
+      "E": "Hão de ser elaborados, caso ocorra novos incidentes de indisponibilidade, relatórios de auditoria rigorosos."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D está correta. O verbo 'existir' é pessoal e possui sujeito explícito ('diversas vulnerabilidades críticas'). A locução verbal 'Podem existir' concorda normalmente no plural com seu sujeito. A alternativa A erra duplamente: o verbo 'fazer' indicando tempo decorrido é impessoal (Já faz) e 'falhas graves' é sujeito paciente de 'identificou' (identificaram-se). A B erra porque 'haver' no sentido de existir é impessoal e transmite essa impessoalidade ao auxiliar (Deve haver). A C erra na voz passiva sintética: 'atualizações' exige o plural 'Realizaram-se'. A E erra pois o sujeito de 'ocorrer' é 'novos incidentes', exigindo o plural 'ocorram'."
+  },
+  {
+    "id": 1008,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Língua Portuguesa - Concordância Verbal e Intertextualidade",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Leia o excerto elaborado para um memorando interno de TI: \"Neste Tribunal, a transformação digital é como o navio de Teseu: trocam-se os servidores antigos por novos em nuvem, substituem-se os algoritmos monolíticos por microsserviços, renova-se a linguagem de programação de COBOL para Python e, ao final de uma década, o sistema processual permanece o mesmo na percepção do jurisdicionado.\" No que tange à construção de sentidos do texto, ocorre o fenômeno da intertextualidade na forma de:",
+    "options": {
+      "A": "Paródia literária voltada à desconstrução humorística da eficiência do poder judiciário frente às tecnologias modernas.",
+      "B": "Citação direta de postulados da física quântica aplicados à substituição gradativa de hardware.",
+      "C": "Alusão a um paradoxo filosófico clássico focado na ilustração de um contexto de manutenção da essência estrutural.",
+      "D": "Pastiche da linguagem jurídica tradicional adotado propositalmente para ofuscar as deficiências técnicas.",
+      "E": "Epígrafe conceitual utilizada estritamente para introduzir as especificações arquiteturais da refatoração de código."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. O texto utiliza a alusão (referência indireta e simbólica) ao famoso Paradoxo de Teseu (navio de Teseu), uma reflexão filosófica sobre a identidade e a mudança de componentes, aplicando perfeitamente esse conceito à modernização de sistemas de TI em que todos os componentes mudam, mas a entidade 'sistema' permanece a mesma. Não há humor caricato para configurar paródia (A), não provém da física quântica (B), não imita o vocabulário das petições jurídicas para ser um pastiche (D) e não se estrutura como uma epígrafe no topo de um texto (E)."
+  },
+  {
+    "id": 1009,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Língua Portuguesa - Concordância Verbal e Intertextualidade",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No contexto de um relatório gerencial de capacidade e volumetria do datacenter corporativo, a frase que atende plenamente às exigências de concordância verbal da norma culta é:",
+    "options": {
+      "A": "A maior parte dos incidentes de negação de serviço na rede local foi mitigada pelo novo firewall de próxima geração.",
+      "B": "Cerca de um servidor de aplicação web apresentaram falha de comunicação após a atualização do hypervisor.",
+      "C": "Mais de um script de automação, durante a execução da rotina noturna, falharam silenciosamente sem emitir logs.",
+      "D": "Menos de dois por cento da capacidade total dos discos de estado sólido foram alocados para as tabelas de auditoria.",
+      "E": "Fui eu que aprovou a expansão emergencial do cluster de banco de dados na última madrugada de plantão."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. Expressões partitivas ('A maior parte de', 'A maioria de', 'Grande número de') seguidas de substantivo no plural permitem a concordância lógica com o núcleo partitivo (singular: 'foi mitigada') ou atrativa com o substantivo no plural (plural: 'foram mitigadas'). A B está errada porque 'Cerca de um' exige sempre o verbo no singular ('apresentou'). A C está errada porque a expressão 'Mais de um' exige concordância no singular ('falhou'), salvo se houver ideia de reciprocidade ou repetição da expressão. A D está errada pois nas porcentagens com especificador no singular, a preferência normativa é concordar com o especificador ('foi alocada') ou com o número (foram alocados, embora a concordância com o singular seja a única pacífica para evitar ambiguidade; o termo 'foram alocados' choca-se sintaticamente com 'capacidade', gerando erro estilístico para a banca). A E está errada porque com o pronome relativo 'que', o verbo deve concordar com o antecedente 'eu': 'Fui eu que aprovei'."
+  },
+  {
+    "id": 1010,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Língua Portuguesa - Concordância Verbal e Intertextualidade",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a avaliação de desempenho de aplicações de inteligência artificial no judiciário, um engenheiro de software redigiu as sentenças abaixo. Assinale a alternativa cuja concordância verbal se classifica como correta de acordo com a gramática normativa.",
+    "options": {
+      "A": "Espera-se, com a implantação do novo cluster de servidores de banco de dados, que ocorram reduções de latência.",
+      "B": "Qual de nós assumiremos a responsabilidade pela falha na migração do acervo processual sigiloso para a nuvem pública?",
+      "C": "Devem-se realizar, antes da virada do mês, o backup completo dos discos virtuais das máquinas críticas da Presidência.",
+      "D": "Tratavam-se de vulnerabilidades de dia zero, cujo monitoramento contínuo evitaria os ataques direcionados ao portal.",
+      "E": "Constatou-se, nos logs de auditoria enviados para o Splunk, acessos indevidos na porta de gerenciamento remoto."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. Em 'que ocorram reduções', 'reduções' é o sujeito do verbo 'ocorrer' (que deve ir para o plural). Além disso, a oração inteira 'que ocorram reduções...' funciona como sujeito do verbo 'esperar', justificando a forma 'Espera-se' (voz passiva sintética, em que o sujeito é a oração subordinada substantiva). A B erra porque com os pronomes interrogativos no singular ('Qual', 'Quem', 'Algum') seguidos de 'de nós/vós', o verbo deve obrigatoriamente ficar na terceira pessoa do singular ('assumirá'). A C erra porque o sujeito paciente é 'o backup completo' (singular), exigindo a locução no singular: 'Deve-se realizar'. A D erra porque o verbo 'tratar-se de' rege objeto indireto e é impessoal com o uso do índice de indeterminação do sujeito, devendo permanecer invariavelmente no singular: 'Tratava-se de vulnerabilidades'. A E erra porque 'acessos indevidos' é o sujeito paciente plural de 'Constatou-se', logo deveria ser 'Constataram-se'."
+  },
+  {
+    "id": 1011,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Língua Portuguesa - Concordância Verbal e Intertextualidade",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Considerando as regras de concordância verbal da norma culta, aplicáveis a textos oficiais e técnicos elaborados no ambiente do Tribunal, assinale a redação que NÃO apresenta desvios.",
+    "options": {
+      "A": "Vai fazer três meses que a equipe de suporte e sustentação aguardam a renovação das licenças do antivírus.",
+      "B": "Pode haver sérios impactos na disponibilidade dos serviços judiciais caso o balanceador de carga primário falhe.",
+      "C": "Custa aos jurisdicionados confiarem em processos eletrônicos que tramitam em sistemas com alta taxa de instabilidade.",
+      "D": "Faziam dias que os roteadores de borda do fórum criminal apresentavam perdas de pacote e desconexões constantes.",
+      "E": "Era esperado que ocorresse, durante o pico de acesso simultâneo no encerramento de prazos, quedas no serviço de autenticação."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O verbo 'haver' indicando existência é impessoal e transmite essa característica ao verbo auxiliar ('Pode'), mantendo toda a locução na terceira pessoa do singular, mesmo com o objeto direto no plural ('sérios impactos'). A alternativa A erra ao flexionar 'aguardam', pois o sujeito é o coletivo singular 'a equipe'. A C erra porque o verbo 'custar' no sentido de 'ser difícil' exige que a oração infinitiva seja seu sujeito, logo não permite flexão pessoal do infinitivo neste caso específico de regência atrelada à concordância rigorosa: 'Custa aos jurisdicionados confiar'. A D erra ao usar 'Faziam', pois o verbo 'fazer' indicando tempo decorrido é impessoal e deve ficar no singular ('Fazia dias'). A E erra ao usar 'ocorresse' (singular) para o sujeito posposto plural 'quedas' ('ocorressem')."
+  },
+  {
+    "id": 1012,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Língua Portuguesa - Concordância Verbal e Intertextualidade",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Leia o trecho de um chamado técnico registrado na central de serviços de TI: \"Caro time, o deploy da nova versão subiu aos céus e desceu aos infernos rapidamente. Começou prometendo alta disponibilidade, mas terminou como um Titanic de requisições: afundou na primeira hora de pico e levou consigo a reputação de confiabilidade da nossa API externa.\" No aspecto da textualidade, o autor do chamado lança mão de um recurso específico para classificar a falha ocorrida. Assinale a alternativa que indica esse recurso de maneira precisa.",
+    "options": {
+      "A": "Apropriação de um discurso mitológico para estabelecer um parâmetro técnico de escalabilidade entre nuvem e infraestrutura local.",
+      "B": "Referência histórica e cultural, na forma de metáfora, para ilustrar a magnitude do desastre operacional no ambiente de produção.",
+      "C": "Citação indireta do diário de bordo original do navio Titanic, transpondo sua terminologia naval para a arquitetura de sistemas.",
+      "D": "Paráfrase de um texto literário romântico utilizada para abrandar o impacto da interrupção dos serviços perante os usuários e magistrados.",
+      "E": "Plágio estrutural de narrativas históricas antigas, adaptado ao contexto de TI com a intenção exclusiva de eximir os desenvolvedores."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. A menção ao 'Titanic de requisições' e ao ato de afundar configura uma referência histórico-cultural empregada como uma figura de linguagem (metáfora) para dar dimensão ao fracasso de um deploy em TI que parecia inabalável, mas colapsou miseravelmente. Não há mitologia greco-romana envolvida (A), não se trata de uma paráfrase de romance (D), tampouco se trata do plágio ou transcrição real de um diário de bordo (C e E)."
+  },
+  {
+    "id": 1013,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Língua Portuguesa - Concordância Verbal e Intertextualidade",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Analise as propostas de reescrita do seguinte período: \"O Conselho Nacional de Justiça e os Tribunais Estaduais investiram fortemente na contratação de serviços de Inteligência Artificial no último ano fiscal.\" Qual das alternativas abaixo constitui uma reformulação que mantém a correção gramatical rigorosa e preserva o sentido original da oração?",
+    "options": {
+      "A": "O Conselho Nacional de Justiça, juntamente com os Tribunais Estaduais, investiu fortemente na contratação de serviços de Inteligência Artificial.",
+      "B": "Tanto o Conselho Nacional de Justiça quanto os Tribunais Estaduais investiu fortemente na contratação de serviços de Inteligência Artificial.",
+      "C": "Foi o Conselho Nacional de Justiça, assim como os Tribunais Estaduais, quem investiram fortemente na contratação de serviços de Inteligência Artificial.",
+      "D": "Nem o Conselho Nacional de Justiça nem os Tribunais Estaduais investiu fortemente na contratação de serviços de Inteligência Artificial.",
+      "E": "O Conselho Nacional de Justiça ou os Tribunais Estaduais monopolizaram a contratação de serviços de Inteligência Artificial."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. Quando sujeitos estão ligados por expressões como 'juntamente com', 'com', 'bem como', o verbo pode ir para o plural ou concordar no singular com o primeiro núcleo, enfatizando-o. A forma 'investiu' está plenamente de acordo com a norma. A B está errada pois a expressão correlativa 'Tanto... quanto' tem caráter aditivo e exige o verbo no plural ('investiram'). A C está errada porque, ao se usar o pronome relativo 'quem', o verbo deve ficar na terceira pessoa do singular ('investiu') ou concordar com o termo antecedente (no caso, o núcleo singular da expressão de destaque). A D está errada duplamente, pois o 'Nem... nem' invertendo o sentido viola o enunciado, e a concordância recomendada quando a ação exclui ambos seria o plural. A E erra porque 'ou' e 'monopolizaram' alteram drasticamente o sentido original da conjunção aditiva 'e' da frase base."
+  },
+  {
+    "id": 1014,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Língua Portuguesa - Concordância Verbal e Intertextualidade",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A comunicação formal e a documentação técnica no Tribunal de Justiça demandam rigor gramatical. Assinale a opção que exibe total conformidade com as regras de concordância verbal da Língua Portuguesa no tocante ao uso do pronome \"se\".",
+    "options": {
+      "A": "Esperam-se, com a implantação da infraestrutura como código, que haja reduções significativas nas horas gastas com provisionamento.",
+      "B": "Assiste-se, nas últimas semanas de fechamento das folhas, aos incidentes de instabilidade na topologia de rede interna.",
+      "C": "Devem-se realizar, antes do término da janela de manutenção programada, a conferência detalhada dos backups dos discos virtuais.",
+      "D": "Tratavam-se de anomalias raras no consumo de memória RAM, cujo monitoramento contínuo evitaria novas quedas no portal.",
+      "E": "Constatou-se, nos extensos logs de auditoria do servidor de aplicação, acessos indevidos que originaram o bloqueio da conta."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O verbo 'assistir' (no sentido de presenciar, ver) é transitivo indireto. O pronome 'se' age como Índice de Indeterminação do Sujeito, e o verbo fica obrigatoriamente na 3ª pessoa do singular ('Assiste-se aos incidentes'). A A erra pois a oração 'que haja reduções' é o sujeito oracional do verbo esperar; oração atua como termo singular, exigindo 'Espera-se'. A C erra pois 'a conferência' é o sujeito paciente (singular) da locução, exigindo 'Deve-se realizar'. A D erra por flexionar no plural 'Tratavam-se', já que 'tratar-se de' com preposição exige invariabilidade no singular. A E erra porque 'acessos indevidos' é sujeito paciente (plural) da voz passiva sintética, exigindo o verbo no plural ('Constataram-se')."
+  },
+  {
+    "id": 1015,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Língua Portuguesa - Concordância Verbal e Intertextualidade",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No desenvolvimento de um manual digital interativo para o novo sistema processual do TJ-CE, a equipe inseriu diversos hiperlinks que direcionam o usuário instantaneamente para artigos de leis, tutoriais em vídeo e especificações técnicas. Sob a ótica da teoria da textualidade cibernética, a utilização estrutural desses hiperlinks caracteriza um modelo de intertextualidade marcado pela:",
+    "options": {
+      "A": "Sequencialidade rígida, obrigando a leitura linear exaustiva de todas as referências normativas e técnicas para compreensão da tela.",
+      "B": "Não linearidade, criando uma rede de conexões semânticas explícitas que expandem as fronteiras estruturais do texto principal.",
+      "C": "Paródia documental, em que o texto original zomba deliberadamente da complexidade e da extensão do material técnico de destino.",
+      "D": "Epígrafe interativa, limitando-se a apresentar citações teóricas imutáveis no início de cada seção de ajuda do manual.",
+      "E": "Tradução intersemiótica bidirecional, que obriga a conversão de todos os blocos de código de programação para a linguagem jurídica clássica."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O hipertexto é uma marca fundamental da intertextualidade digital contemporânea e caracteriza-se, sobretudo, pela não linearidade (ausência de um único percurso obrigatório de leitura) e pela interconectividade através de nós e links que levam o leitor a novos domínios ou ramificações da informação. As outras alternativas propõem análises incorretas para o papel de hiperlinks na estruturação da web (sequencialidade rígida é o oposto do hipertexto; paródia não se aplica; epígrafe tem outro lugar e função no texto físico; e hipertexto não se reduz a uma tradução intersemiótica obrigatória de código para texto jurídico)."
+  },
+  {
+    "id": 1016,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Língua Portuguesa - Concordância Verbal e Intertextualidade",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um script automatizado do centro de operações de rede (NOC) envia alertas em formato de texto para o painel de monitoramento do plantão de TI. Qual das notificações geradas pelo sistema abaixo foi redigida respeitando estritamente a norma-padrão de concordância verbal?",
+    "options": {
+      "A": "Bateu dez horas no relógio lógico do sistema de ponto eletrônico, e a carga dos servidores foi imediatamente reduzida.",
+      "B": "Soaram três alertas críticos no dashboard de segurança da informação após a detecção de atividades anômalas na rede.",
+      "C": "Deu duas horas da madrugada quando as rotinas de limpeza de banco de dados e expurgo de arquivos antigos foram interrompidas.",
+      "D": "Já vai dar cinco e meia da tarde na capital, horário comercial crítico em que a rede corporativa costuma oscilar mais.",
+      "E": "Bateram no painel central de serviços um aviso de invasão acompanhado da exportação detalhada do log do firewall."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. Os verbos soar, bater e dar, quando expressam horas ou elementos de sinalização sonoros/visuais computáveis, concordam com o sujeito da oração. Em B, 'três alertas' é o sujeito no plural, determinando 'Soaram'. A A erra pois o sujeito é 'dez horas', logo 'Bateram dez horas'. A C erra pois o sujeito é 'duas horas', logo 'Deram duas horas'. A D erra porque o sujeito 'cinco e meia' exige plural na locução 'vão dar cinco e meia'. A E erra porque o sujeito é 'um aviso', logo o verbo deveria estar no singular 'Bateu'."
+  },
+  {
+    "id": 1017,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Língua Portuguesa - Concordância Verbal e Intertextualidade",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao narrar os eventos técnicos decorrentes de um recente apagão cibernético nos datacenters primários do TJ-CE, um analista escreveu o seguinte memorando. Assinale a alternativa cuja estrutura sintática reflete a correta concordância verbal associada ao uso de apostos resumitivos ou sujeitos em gradação.",
+    "options": {
+      "A": "A falha no disco de armazenamento, o erro de configuração do firewall, o colapso do link secundário, tudo resultaram em severa indisponibilidade sistêmica.",
+      "B": "Switches do núcleo, roteadores de borda periférica, appliances de segurança dedicados, nada resistiram à onda do massivo ataque distribuído (DDoS).",
+      "C": "A lentidão extrema no tráfego, a perda contínua de pacotes de dados, a queda completa do túnel criptografado evidenciou a vulnerabilidade da topologia atual.",
+      "D": "Nem o analista sênior do banco de dados, nem o coordenador de infraestrutura, nem o gerente da fábrica de software negou a necessidade de treinamentos.",
+      "E": "Tanto a CPU quanto a memória RAM do servidor de autenticação principal atingiu rapidamente cem por cento de uso simultâneo durante os incidentes."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. Quando o sujeito composto é formado por palavras em gradação (lentidão -> perda -> queda) que descrevem fases ou itens quase sinônimos do mesmo evento, o verbo pode ir para o plural ou concordar com o núcleo mais próximo (singular, neste caso 'evidenciou'). A A erra por usar o pronome resumitivo 'tudo', que atrai a concordância obrigatoriamente para o singular ('tudo resultou'). A B erra pelo mesmo princípio com o pronome 'nada' ('nada resistiu'). A D usa o 'nem... nem', cuja soma de elementos que executam ou não a ação exige preferencialmente o verbo no plural ('negaram'). A E erra porque o uso de 'Tanto... quanto' para unir núcleos do sujeito exige que o verbo vá para o plural ('atingiram')."
+  },
+  {
+    "id": 1018,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Língua Portuguesa - Concordância Verbal e Intertextualidade",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Avalie as sentenças abaixo, extraídas de um acalorado debate por e-mail sobre a modernização e estruturação de softwares e serviços governamentais. Assinale aquela que atende fielmente às diretrizes de concordância da língua padrão.",
+    "options": {
+      "A": "Fui eu que alertou toda a coordenação sobre os graves riscos envolvidos na migração de dados em pleno horário comercial.",
+      "B": "Os Estados Unidos investe proporções massivas do seu orçamento anual em agências de cibersegurança e perícia computacional.",
+      "C": "As Nações Unidas propôs a elaboração de um novo tratado de intercâmbio de evidências digitais hospedadas em nuvens estrangeiras.",
+      "D": "Somos nós quem elabora as principais métricas de qualidade de software utilizadas pelos auditores do Conselho Nacional de Justiça.",
+      "E": "Minas Gerais atualizaram, a título de vanguarda, todo o seu parque de estações de trabalho de magistrados no último trimestre."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D está correta. Quando o pronome relativo 'quem' atua como sujeito, o verbo pode ficar na 3ª pessoa do singular ('elabora') ou concordar com o antecedente do pronome ('nós elaboramos'). Ambas as formas são plenamente corretas na norma padrão. A alternativa A erra pois, com o pronome 'que', a concordância deve ser com o antecedente ('Fui eu que alertei'). A B erra porque nomes próprios no plural antecedidos por artigo obrigam o plural no verbo ('Os Estados Unidos investem'). A C erra pela mesma regra ('As Nações Unidas propuseram'). A E erra porque 'Minas Gerais' é nome de lugar no plural, mas, por não estar antecedido de artigo explícito no texto ('As Minas Gerais'), exige o verbo no singular ('Minas Gerais atualizou')."
+  },
+  {
+    "id": 1019,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Língua Portuguesa - Concordância Verbal e Intertextualidade",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Princípio do Privilégio Mínimo (Principle of Least Privilege - PoLP) postula teoricamente que \"um usuário, programa ou processo do sistema deve ter apenas os privilégios essenciais e absolutamente imprescindíveis para a realização de suas funções\". Qual das alternativas a seguir constitui uma paráfrase correta e intertextualmente coerente dessa diretriz para constar na Política de Segurança da Informação do TJ-CE?",
+    "options": {
+      "A": "A configuração de infraestrutura padrão deve prever acessos iniciais irrestritos, seguidos de limitação granular de pastas sob demanda e em caso de ameaça.",
+      "B": "Cada credencial fornecida no sistema corporativo será dotada estritamente do nível de permissão mínimo indispensável à execução da respectiva rotina de trabalho.",
+      "C": "O encapsulamento lógico das funções do sistema garantirá que a execução de todos os processos operacionais ocorra sempre sob o modo de superusuário na rede.",
+      "D": "As permissões fundamentais de leitura, gravação de arquivo e execução de rotinas serão revogadas sumariamente nos nós expostos da infraestrutura de TI.",
+      "E": "Os privilégios administrativos para edição de parâmetros serão distribuídos de forma genérica e abundante a todos os usuários ativos validados no Active Directory."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta, pois a paráfrase exige dizer a mesma coisa com outras palavras, e a opção B descreve exata e precisamente o Princípio do Privilégio Mínimo (conceder estritamente o que é indispensável para trabalhar). As demais alternativas propõem procedimentos que contradizem totalmente o sentido do texto original: iniciar com acesso irrestrito (A), fornecer nível de superusuário (root) para as funções (C), revogar sumariamente todas as permissões (D) e fornecer acesso genérico e abundante (E)."
+  },
+  {
+    "id": 1020,
+    "day_id": "dia_12_06",
+    "day_title": "Sexta-feira 12/06",
+    "theme": "Língua Portuguesa - Concordância Verbal e Intertextualidade",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Considere as orações expressas no seguinte excerto da avaliação de atendimento: \"Um e outro servidor reclamaram da instabilidade na intranet corporativa. Mais de um chamado sobre isso foi aberto no sistema de help desk.\" Assinale a alternativa que unifica essas duas informações num único e correto período, preservando a lógica do contexto e a plena submissão à norma-padrão de concordância verbal.",
+    "options": {
+      "A": "Mais de um servidor da comarca e mais de um chamado técnico foi registrado pela equipe de help desk nesta tarde devido à forte instabilidade.",
+      "B": "Tendo em vista o log de instabilidade, houveram mais de um chamado aberto no suporte técnico de segundo nível assim que um e outro servidor reclamou.",
+      "C": "Como um e outro servidor reclamaram ativamente da forte instabilidade, registrou-se no sistema informatizado de help desk mais de um chamado.",
+      "D": "Diante da falha da infraestrutura, abriram-se mais de um chamado no sistema de help desk corporativo assim que um e outro servidor reclamaram.",
+      "E": "Foram abertos prontamente, no sistema digital de help desk, mais de um chamado para apurar a instabilidade da qual um e outro servidor reportou."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A expressão 'um e outro' admite o verbo tanto no plural (reclamaram) quanto no singular (reclamou), sendo o plural a forma preferida por enfatizar a pluralidade de agentes. A expressão 'mais de um', via de regra, exige verbo no singular, a menos que traga reciprocidade ou se repita na frase. 'Registrou-se mais de um chamado' apresenta um sujeito paciente ('mais de um chamado') no qual recai a passiva sintética com o verbo no singular, estando correto. A alternativa A erra porque a repetição da expressão ('Mais de um servidor e mais de um chamado') obriga o uso do plural ('foram registrados'). A B erra no uso do verbo 'haver' existencial flexionado ('houveram'), devendo ser 'houve'. As alternativas D ('abriram-se') e E ('Foram abertos') falham ao colocar o verbo no plural para concordar com o núcleo singular da expressão partitiva restritiva 'mais de um'."
   }
 ]
