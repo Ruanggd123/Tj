@@ -1,0 +1,272 @@
+[
+  {
+    "id": 150601,
+    "day_id": "dia_15_06",
+    "day_title": "Sábado 15/06",
+    "theme": "Engenharia de Software - UML",
+    "context": "Modelagem de classes no sistema judiciário.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está modernizando seu sistema de gestão de varas criminais. A arquitetura modela a relação entre 'Comarca' e 'Vara'. Uma Comarca contém várias Varas. Se a Comarca for extinta, as Varas associadas a ela são obrigatoriamente extintas e deixam de existir no sistema. Além disso, existe a relação entre 'Magistrado' e 'Vara', onde um Magistrado é alocado a uma Vara, mas pode continuar existindo no sistema independentemente se a Vara for desativada. Na modelagem estrutural adequada na UML 2.5, essas relações devem ser representadas, respectivamente, por:",
+    "options": {
+      "A": "Composição com losango preenchido na classe Comarca e Agregação com losango vazado na classe Vara.",
+      "B": "Agregação com losango vazado na classe Vara e Composição com losango preenchido na classe Magistrado.",
+      "C": "Associação estrutural com seta direcional na classe Comarca e Dependência pontilhada na classe Vara.",
+      "D": "Composição com losango preenchido na classe Vara e Agregação com losango vazado na classe Comarca.",
+      "E": "Agregação com losango preenchido na classe Comarca e Associação simples bidirecional na classe Magistrado."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A relação entre Comarca e Vara é de Composição (losango preenchido na classe Comarca, que atua como o 'todo'), representando uma forte dependência de ciclo de vida na qual a exclusão da Comarca acarreta a exclusão da Vara. A relação entre Vara e Magistrado é de Agregação (losango vazado na classe Vara, o 'todo' conceitual), indicando que o Magistrado compõe o ecossistema da Vara, mas seu ciclo de vida é independente. As alternativas falsas invertem os conceitos de losango vazado e preenchido, bem como o lado no qual o símbolo deve ser acoplado (o losango sempre fica no lado do 'todo')."
+  },
+  {
+    "id": 150602,
+    "day_id": "dia_15_06",
+    "day_title": "Sábado 15/06",
+    "theme": "Engenharia de Software - UML",
+    "context": "Modelagem de fluxo de segurança com fragmentos combinados.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de TI do TJ-CE desenha o fluxo de autenticação e autorização do portal de peticionamento eletrônico usando um Diagrama de Sequência. O fluxo prevê que o sistema de login verifique o certificado digital do advogado. Caso o certificado esteja expirado, o sistema exibe uma mensagem de erro; caso seja válido, o sistema consulta os perfis de acesso. Apenas se o advogado tiver pendências financeiras registradas, o sistema exibe um alerta não impeditivo na tela. Na notação de fragmentos combinados da UML, as lógicas de validação do certificado e de exibição do alerta de pendência financeira correspondem aos operadores:",
+    "options": {
+      "A": "Alt para a validação do certificado e Opt para o alerta de pendência financeira.",
+      "B": "Opt para a validação do certificado e Break para o alerta de pendência financeira.",
+      "C": "Break para a validação do certificado e Alt para o alerta de pendência financeira.",
+      "D": "Strict para a validação do certificado e Loop para o alerta de pendência financeira.",
+      "E": "Par para a validação do certificado e Seq para o alerta de pendência financeira."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O fragmento combinado 'Alt' (Alternative) é utilizado para modelar caminhos mutuamente exclusivos baseados em uma condição (if/else), o que se enquadra na validação do certificado (válido ou expirado). O fragmento combinado 'Opt' (Option) é utilizado para modelar um comportamento opcional que ocorre apenas se a condição for verdadeira (um 'if' sem 'else'), o que se enquadra na exibição do alerta de pendência financeira. As demais alternativas misturam operadores com propósitos de laços (Loop), interrupções (Break), concorrência (Par) e ordenação estrita (Strict)."
+  },
+  {
+    "id": 150603,
+    "day_id": "dia_15_06",
+    "day_title": "Sábado 15/06",
+    "theme": "Engenharia de Software - UML",
+    "context": "Diagrama de Máquina de Estados de processos judiciais.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o desenvolvimento do módulo de tramitação processual do PJe no TJ-CE, a analista de sistemas modela o ciclo de vida do objeto 'Processo'. O processo inicia no estado 'Autuado', pode transitar para 'Em Conclusão', 'Em Diligência' e, eventualmente, chegar a 'Arquivado'. A transição do estado 'Em Conclusão' para o estado 'Em Diligência' exige que o juiz assine digitalmente um despacho específico, disparando a mudança de estado. Na notação rigorosa do Diagrama de Máquina de Estados da UML, a assinatura do despacho pelo juiz caracteriza um:",
+    "options": {
+      "A": "Evento de gatilho.",
+      "B": "Estado concorrente.",
+      "C": "Ponto de junção.",
+      "D": "Efeito de guarda.",
+      "E": "Pseudoestado inicial."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. Em uma Máquina de Estados da UML, uma transição é disparada pela ocorrência de um evento, conhecido como evento de gatilho (trigger event). A ação do juiz assinando o despacho é o evento que motiva a mudança de estado. A condição de guarda (não efeito de guarda) seria uma validação booleana para permitir a transição, enquanto estado concorrente, ponto de junção e pseudoestado inicial referem-se a elementos topológicos e de fluxo de execução que não definem a ação deflagradora de uma transição."
+  },
+  {
+    "id": 150604,
+    "day_id": "dia_15_06",
+    "day_title": "Sábado 15/06",
+    "theme": "Engenharia de Software - UML",
+    "context": "Paralelismo em fluxo de atividades de integração.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No mapeamento do processo de emissão de certidões negativas do TJ-CE, um Diagrama de Atividades modela as etapas do sistema. Após a requisição inicial do usuário, o sistema deflagra simultaneamente a consulta de antecedentes na base da Polícia Civil e a consulta de registros na base da Polícia Federal. Somente após receber a resposta bem-sucedida de ambas as consultas, o sistema consolida o relatório final e encerra a atividade. Os elementos de controle utilizados para iniciar o fluxo paralelo e para sincronizar as execuções antes da consolidação final são denominados, respectivamente:",
+    "options": {
+      "A": "Fork Node e Join Node.",
+      "B": "Decision Node e Merge Node.",
+      "C": "Send Signal Node e Accept Event Node.",
+      "D": "Initial Node e Activity Final Node.",
+      "E": "Expansion Region e Interruptible Activity Region."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. No Diagrama de Atividades da UML, o 'Fork Node' é utilizado para dividir um fluxo único em fluxos concorrentes/paralelos, e o 'Join Node' é utilizado para sincronizar e aguardar a conclusão de fluxos paralelos antes de seguir adiante. As alternativas B referem-se a desvios condicionais exclusivos (if/else). As alternativas C, D e E listam elementos reais da UML, porém projetados para troca de mensagens assíncronas, início/término de diagramas e tratamentos de interrupção, não para concorrência de controle."
+  },
+  {
+    "id": 150605,
+    "day_id": "dia_15_06",
+    "day_title": "Sábado 15/06",
+    "theme": "Engenharia de Software - UML",
+    "context": "Arquitetura de microsserviços e infraestrutura física.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A arquitetura do novo sistema de distribuição de mandados do TJ-CE utiliza o padrão de microsserviços. A documentação técnica da arquitetura exige a criação de dois diagramas estruturais distintos da UML: o primeiro focado em mapear as interfaces providas e requeridas por cada microsserviço no nível lógico de software; o segundo focado em detalhar a topologia da infraestrutura física, abrangendo os nós de servidores Kubernetes e as máquinas de banco de dados onde os artefatos executáveis serão fisicamente instalados. Esses diagramas estruturais correspondem, respectivamente, aos diagramas de:",
+    "options": {
+      "A": "Componentes e Implantação.",
+      "B": "Pacotes e Estrutura Composta.",
+      "C": "Objetos e Máquina de Estados.",
+      "D": "Comunicação e Instalação.",
+      "E": "Classes e Perfil."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O Diagrama de Componentes foca no nível lógico de software e empacotamento, documentando as interfaces providas (provided) e requeridas (required) por módulos ou serviços independentes. O Diagrama de Implantação (Deployment) modela a disposição física do sistema, alocando artefatos de software em nós computacionais (hardware ou ambientes de execução físicos/virtuais). Não existe diagrama de 'Instalação' na UML."
+  },
+  {
+    "id": 150606,
+    "day_id": "dia_15_06",
+    "day_title": "Sábado 15/06",
+    "theme": "Engenharia de Software - BPMN",
+    "context": "Gateways para fluxo obrigatório simultâneo e condicional.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE mapeou o fluxo de aprovação de compras de equipamentos de TI. Segundo a regra de negócio modelada em BPMN 2.0, o fluxo recebe a solicitação de compra. A partir de um gateway inicial, o processo segue para a 'Aprovação Financeira' e para a 'Aprovação Técnica' de forma obrigatória e simultânea. Após a conclusão das duas análises, um gateway unifica o fluxo. Em seguida, dependendo do valor da compra, um terceiro gateway direciona o fluxo ou para a 'Licitação Padrão' ou para a 'Compra Direta', sendo impossível seguir pelos dois caminhos ao mesmo tempo. Os três gateways descritos classificam-se, respectivamente, como:",
+    "options": {
+      "A": "Paralelo divergente, Paralelo convergente e Exclusivo divergente.",
+      "B": "Inclusivo divergente, Exclusivo convergente e Paralelo divergente.",
+      "C": "Complexo divergente, Complexo convergente e Inclusivo divergente.",
+      "D": "Baseado em eventos, Paralelo convergente e Inclusivo divergente.",
+      "E": "Exclusivo divergente, Inclusivo convergente e Paralelo divergente."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O gateway que força o fluxo para duas ou mais tarefas simultâneas de forma incondicional é o Gateway Paralelo Divergente (AND-split). O gateway que aguarda a finalização dessas ramificações concorrentes é o Paralelo Convergente (AND-join). Finalmente, o gateway que avalia uma condição (valor da compra) e direciona para rotas mutuamente excludentes é o Gateway Exclusivo Divergente (XOR-split). A alternativa B falha ao usar o Inclusivo, que permite a execução de 1 ou mais caminhos, não garantindo a obrigatoriedade estrita sem condições atreladas."
+  },
+  {
+    "id": 150607,
+    "day_id": "dia_15_06",
+    "day_title": "Sábado 15/06",
+    "theme": "Engenharia de Software - BPMN",
+    "context": "Comportamento de eventos de borda em prazos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um processo de intimação eletrônica do TJ-CE foi modelado com a notação BPMN 2.0. O processo envia a notificação ao advogado e entra na atividade 'Aguardar Leitura'. Existe um evento intermediário anexado à borda inferior dessa atividade. A especificação dita que, caso transcorram 10 dias corridos sem que o advogado acesse o portal, esse evento acoplado cancela imediatamente a atividade de aguardo e direciona o fluxo para a tarefa 'Registrar Intimação Tácita'. Na arquitetura do BPMN 2.0, o elemento anexado à borda deve ser representado por um evento:",
+    "options": {
+      "A": "Intermediário de Tempo do tipo interruptor.",
+      "B": "Intermediário de Mensagem do tipo não-interruptor.",
+      "C": "Final de Erro do tipo escalonado.",
+      "D": "Inicial de Condição do tipo compensação.",
+      "E": "Intermediário de Sinal do tipo lançador."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O BPMN define Eventos de Borda (Boundary Events) que escutam a ocorrência de determinadas condições durante a execução de uma atividade. Como a condição é o esgotamento de um prazo (10 dias corridos), o gatilho é de Tempo (Timer). Como a ocorrência do prazo cancela a execução normal da atividade que estava sendo aguardada, o evento obrigatoriamente é do tipo interruptor (Interrupting Timer Boundary Event). Eventos não-interruptores criariam um fluxo paralelo sem cancelar a atividade original."
+  },
+  {
+    "id": 150608,
+    "day_id": "dia_15_06",
+    "day_title": "Sábado 15/06",
+    "theme": "Engenharia de Software - BPMN",
+    "context": "Mapeamento de colaboração interorganizacional.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de automação de processos do TJ-CE está documentando a interação entre o sistema de Peticionamento Eletrônico da OAB e o sistema de Tramitação Processual do Tribunal. A modelagem precisa representar as requisições e respostas trocadas entre essas duas organizações totalmente distintas, preservando a semântica de que os detalhes internos de como a OAB processa suas etapas são opacos e irrelevantes para o modelo do Tribunal. Na notação oficial BPMN 2.0, as organizações e a comunicação entre elas devem ser representadas utilizando:",
+    "options": {
+      "A": "Piscinas separadas e fluxos de mensagens entre elas.",
+      "B": "Raias dentro de uma mesma piscina e fluxos de sequência contínuos.",
+      "C": "Subprocessos expandidos conectados por eventos de erro.",
+      "D": "Grupos e anotações de texto associados por associações direcionais.",
+      "E": "Tarefas de envio de mensagem em uma única piscina com raias múltiplas."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. Em BPMN, a comunicação entre dois participantes externos e independentes (ex: OAB e Tribunal) caracteriza um Diagrama de Colaboração. Participantes independentes devem possuir Piscinas (Pools) distintas. A comunicação entre Piscinas não pode ser feita por fluxos de sequência normais (seta sólida), mas sim exclusivamente por fluxos de mensagens (Message Flow - setas tracejadas com ponta vazada). Raias (Lanes) são utilizadas para separar papéis ou departamentos dentro de uma mesma organização (mesma Piscina)."
+  },
+  {
+    "id": 150609,
+    "day_id": "dia_15_06",
+    "day_title": "Sábado 15/06",
+    "theme": "Engenharia de Software - BPMN",
+    "context": "Tipologia avançada de tarefas em BPMN.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No desenho do processo de 'Julgamento de Recurso' do TJ-CE usando BPMN 2.0, uma etapa chamada 'Calcular Custas Processuais' é realizada pela avaliação direta e instantânea de um motor de regras de negócio automatizado, garantindo a conformidade sem qualquer código procedural complexo. Imediatamente após essa etapa processada via motor, a etapa 'Assinar Acórdão' deve ser executada de forma proativa por um Magistrado humano operando a interface gráfica da aplicação. Para manter a fidelidade técnica do modelo, essas etapas devem ser tipificadas com marcadores, respectivamente, como:",
+    "options": {
+      "A": "Business Rule Task e User Task.",
+      "B": "Service Task e Manual Task.",
+      "C": "Script Task e Receive Task.",
+      "D": "Send Task e Service Task.",
+      "E": "Abstract Task e Script Task."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A etapa acionada por um motor de regras de negócio utiliza o marcador 'Business Rule Task' (tarefa com ícone de tabela), sendo a opção arquiteturalmente mais precisa no BPMN para motores de regras. A etapa onde um humano executa a ação operando uma aplicação de software recebe o marcador 'User Task' (tarefa com ícone de usuário). A alternativa B erra ao utilizar 'Manual Task', que representa um trabalho humano realizado no mundo real, sem suporte direto do sistema ou software (ex: despachar uma caixa de papel)."
+  },
+  {
+    "id": 150610,
+    "day_id": "dia_15_06",
+    "day_title": "Sábado 15/06",
+    "theme": "Engenharia de Software - BPMN",
+    "context": "Fluxo divergente dependente de fatores externos concorrentes.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O fluxo de execução fiscal no TJ-CE foi desenhado para lidar com a citação do devedor. Após a expedição do mandado judicial, o processo fica em estado de suspensão temporária aguardando e precisa reagir imediatamente ao que acontecer primeiro: o recebimento de uma notificação assíncrona do oficial de justiça confirmando a citação em campo ou o decurso passivo do prazo legal de 30 dias na plataforma. Na notação BPMN 2.0, para modelar com exatidão a divergência de fluxo baseada na ocorrência do primeiro evento mutuamente exclusivo, utiliza-se um:",
+    "options": {
+      "A": "Gateway baseado em eventos.",
+      "B": "Gateway paralelo baseado em dados.",
+      "C": "Gateway inclusivo acoplado a eventos de erro.",
+      "D": "Gateway exclusivo baseado em condições.",
+      "E": "Gateway complexo com eventos múltiplos."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O Event-Based Gateway (Gateway Baseado em Eventos) é utilizado em BPMN especificamente quando as rotas divergentes não dependem de dados do processo que possam ser avaliados de imediato (como num Gateway Exclusivo clássico), mas sim de qual evento externo ocorrer primeiro. No cenário, o gateway apontará para dois eventos intermediários de captura: um de Mensagem e um de Tempo. O que disparar primeiro definirá o caminho único assumido pelo processo."
+  },
+  {
+    "id": 150611,
+    "day_id": "dia_15_06",
+    "day_title": "Sábado 15/06",
+    "theme": "Engenharia de Software - CMMI",
+    "context": "Transição do nível reativo para o padronizado em governança de TI.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O departamento de TI do TJ-CE busca alcançar o Nível de Maturidade 3 do modelo CMMI-DEV v2.0. Durante a avaliação de prontidão contínua, constatou-se que a organização gerencia seus projetos com métricas reativas eficazes, atingindo repetidamente os objetivos específicos em nível de equipe. No entanto, cada equipe utiliza seus próprios métodos e métricas táticas isoladas. Não há um conjunto de processos aprovados e disseminados transversalmente no tribunal. Para superar essa barreira estrutural e consolidar o Nível de Maturidade 3 (Definido) no CMMI-DEV v2.0, a organização deve implementar prioritariamente:",
+    "options": {
+      "A": "A padronização dos processos em nível organizacional a partir da adaptação de processos padrão.",
+      "B": "O controle estatístico de desempenho dos processos em todas as equipes ágeis do tribunal.",
+      "C": "A gestão quantitativa e preditiva dos defeitos de software nos ambientes de produção.",
+      "D": "A eliminação contínua das causas raiz dos problemas por meio de inovações tecnológicas.",
+      "E": "A medição dos processos baseada no retorno sobre investimento exclusivo de cada projeto."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A marca registrada da transição do Nível 2 (Gerenciado) para o Nível 3 (Definido) no CMMI é o salto da perspectiva local/projeto para a perspectiva organizacional. No Nível 3, os processos são bem caracterizados, entendidos e descritos em padrões, procedimentos, ferramentas e métodos para toda a organização (processo padrão), que são então 'tailored' (adaptados) pelos projetos. O controle estatístico quantitativo (B e C) pertence ao Nível 4, e a eliminação de causas raiz inovadoras (D) pertence ao Nível 5."
+  },
+  {
+    "id": 150612,
+    "day_id": "dia_15_06",
+    "day_title": "Sábado 15/06",
+    "theme": "Engenharia de Software - CMMI",
+    "context": "Classificação de práticas técnicas na arquitetura CMMI V2.0.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE adotou o CMMI-DEV v2.0 para orientar as práticas metodológicas de engenharia da Secretaria de Tecnologia da Informação. O auditor interno identificou a necessidade crítica de fortalecer as rotinas técnicas do ciclo de vida, promovendo práticas contínuas de integração de código-fonte, desenvolvimento de testes automatizados de unidade funcional e construção confiável de artefatos empacotados. No framework de arquitetura simplificada do CMMI v2.0, essas práticas inerentes à construção técnica da solução encontram-se estruturadas na Área de Capacidade (Capability Area):",
+    "options": {
+      "A": "Engineering and Developing Products.",
+      "B": "Managing Business Resilience.",
+      "C": "Planning and Managing Work.",
+      "D": "Improving Performance.",
+      "E": "Sustaining Habit and Persistence."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O CMMI V2.0 agrupou suas Áreas de Prática em Capability Areas (Áreas de Capacidade). Atividades de integração técnica, desenvolvimento, testes e empacotamento estão alocadas na Área de Capacidade 'Engineering and Developing Products' (Engenharia e Desenvolvimento de Produtos), que engloba práticas como Technical Solution, Product Integration e Verification & Validation. 'Planning and Managing Work' trata de gestão de projeto, e 'Improving Performance' trata do foco no processo organizacional."
+  },
+  {
+    "id": 150613,
+    "day_id": "dia_15_06",
+    "day_title": "Sábado 15/06",
+    "theme": "Engenharia de Software - MR-MPS-SW",
+    "context": "Progressão mandatória na escada evolutiva de níveis.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE pretende avaliar o progresso do seu ciclo de vida de desenvolvimento de software sob a ótica do modelo MR-MPS-SW. A equipe de qualidade de software já implementou com sucesso os processos de Gerência de Projetos (GPR) e Gerência de Requisitos (GRE), garantindo a certificação no nível básico do framework. Agora, a coordenação de TI estabeleceu a meta de subir exatamente um degrau contíguo no modelo, o que exige a implementação técnica ostensiva dos processos de Aquisição (AQU), Gerência de Configuração (GCO), Garantia da Qualidade (GQA), Medição (MED) e Gerência de Portfólio (GPO). Esse novo patamar alvo de certificação corresponde ao MR-MPS-SW no:",
+    "options": {
+      "A": "Nível F (Gerenciado).",
+      "B": "Nível E (Parcialmente Definido).",
+      "C": "Nível G (Parcialmente Gerenciado).",
+      "D": "Nível D (Largamente Definido).",
+      "E": "Nível C (Definido)."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O modelo MR-MPS-SW inicia-se no nível G (Parcialmente Gerenciado), que abrange apenas GPR e GRE. O degrau imediatamente superior é o Nível F (Gerenciado), que insere os 5 processos descritos no enunciado: AQU, GCO, GQA, MED e GPO. O Nível E avançaria para Parcialmente Definido adicionando processos como RH (HRH) e de foco no processo (APO, EMP). As alternativas C, D e E nomeiam níveis válidos do MPS.BR, mas totalmente desconexos do agrupamento de processos citado no enunciado."
+  },
+  {
+    "id": 150614,
+    "day_id": "dia_15_06",
+    "day_title": "Sábado 15/06",
+    "theme": "Engenharia de Software - MR-MPS-SW",
+    "context": "Avaliação de institucionalização por atributos de processo.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A auditoria técnica de conformidade do modelo MR-MPS-SW no TJ-CE avalia não apenas quais processos finalísticos são executados, mas também a profundidade de sua institucionalização cultural. O processo de Gerência de Requisitos (GRE) foi dissecado com o intuito de confirmar não as tarefas básicas, mas a existência efetiva de políticas organizacionais documentadas, a provisão de recursos operacionais adequados para a equipe técnica e a atribuição formal e clara de responsabilidades. Na taxonomia de avaliação do modelo de referência MR-MPS-SW, essas evidências de institucionalização fundacional pertencem à avaliação do Atributo de Processo (AP):",
+    "options": {
+      "A": "AP 2.1 – O processo é gerenciado.",
+      "B": "AP 1.1 – O processo é executado.",
+      "C": "AP 2.2 – Os produtos de trabalho do processo são gerenciados.",
+      "D": "AP 3.1 – O processo é definido.",
+      "E": "AP 3.2 – O processo está implementado."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. No MR-MPS-SW, o Atributo de Processo 2.1 (AP 2.1) foca na gestão primária do processo, o que engloba o planejamento, a definição de políticas que orientam o processo, a designação formal de responsabilidades, o fornecimento de recursos físicos e humanos adequados e o treinamento. O AP 1.1 concentra-se apenas em garantir que as saídas primárias sejam alcançadas (o processo simplesmente ocorre). O AP 2.2 volta-se exclusivamente para a gestão de configuração das saídas produzidas (produtos de trabalho)."
+  },
+  {
+    "id": 150615,
+    "day_id": "dia_15_06",
+    "day_title": "Sábado 15/06",
+    "theme": "Engenharia de Software - Integração BPMN e UML",
+    "context": "Aplicação fluida de modelos no ciclo de vida de sistemas.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na fase de modernização end-to-end do sistema de varas cíveis do TJ-CE, a equipe de arquitetura corporativa adotou as notações BPMN 2.0 e UML 2.5 como linguagens complementares de modelagem. Inicialmente, os analistas de negócios desenharam o fluxo de valor do trâmite processual com a troca de mensagens organizacionais entre o cartório, o magistrado e os entes externos. Em seguida, os arquitetos de software detalharam a estrutura de tabelas do banco de dados relacional que suporta as entidades desse fluxo, culminando com o mapeamento técnico da troca sequencial de mensagens lógicas entre as rotinas do módulo Java do sistema. A sequência correta dos diagramas canônicos utilizados nesta abordagem metodológica é:",
+    "options": {
+      "A": "Diagrama de Colaboração BPMN, Diagrama de Classes UML e Diagrama de Sequência UML.",
+      "B": "Diagrama de Máquina de Estados UML, Diagrama de Objetos UML e Diagrama de Atividades UML.",
+      "C": "Diagrama de Orquestração BPMN, Diagrama de Componentes UML e Diagrama de Implantação UML.",
+      "D": "Diagrama de Casos de Uso UML, Diagrama de Entidade-Relacionamento UML e Diagrama de Tempo UML.",
+      "E": "Diagrama de Coreografia BPMN, Diagrama de Estrutura Composta UML e Diagrama de Interação UML."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O cenário divide-se em 3 modelagens claras. 1) Troca de mensagens entre entidades organizacionais diferentes (Cartório/Magistrado e Entes Externos): isso é resolvido utilizando Piscinas distintas no Diagrama de Colaboração do BPMN. 2) Estrutura de banco de dados relacional: o Diagrama de Classes da UML é a notação clássica para o modelo estrutural de entidades do banco (mapeamento objeto-relacional). 3) Troca sequencial de mensagens lógicas em rotinas Java: o Diagrama de Sequência da UML mapeia o tempo de vida e as mensagens temporais exatas trocadas entre os módulos."
+  }
+]

@@ -1,0 +1,272 @@
+[
+  {
+    "id": 150601,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Engenharia de Software (Metodologias Ágeis)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a modernização do sistema de Processo Judicial Eletrônico (PJe) do TJ-CE, a equipe de TI adotou o framework Scrum. Ocorreram conflitos recentes porque o líder técnico da equipe assumiu a responsabilidade de priorizar os itens do Backlog do Produto com base na complexidade técnica e dependências de infraestrutura, enquanto a área de negócios (Vara de Família) limitou-se a fornecer requisitos brutos sem ordenação de valor de negócio. No Scrum, a correção dessa disfunção estrutural exige qual realinhamento de responsabilidades?",
+    "options": {
+      "A": "O Product Owner retoma a responsabilidade exclusiva pela priorização do Backlog do Produto com foco no valor de negócio.",
+      "B": "O Scrum Master consolida os requisitos técnicos e de negócio em um único documento de especificação aprovado pelo comitê.",
+      "C": "Os Desenvolvedores delegam a estimativa de esforço ao Product Owner mediante alinhamento de prazos judiciais.",
+      "D": "O líder técnico divide o Backlog do Produto em dois artefatos distintos gerenciados por comitês de governança separados.",
+      "E": "O Product Owner repassa a ordenação técnica dos itens de infraestrutura ao Scrum Master sob o pretexto de liberação das Sprints."
+    },
+    "answer": "A",
+    "explanation": "No Scrum, o Product Owner (PO) é a única pessoa responsável por gerenciar o Product Backlog, o que inclui ordenar os itens para maximizar o valor do produto. A alternativa A reflete essa regra direta, exigindo a retomada do controle pelo PO. A alternativa B atribui a gestão de requisitos ao Scrum Master, que é incorreto. A alternativa C erra ao tirar a estimativa dos Desenvolvedores. A alternativa D cria artefatos e comitês não previstos no framework. A alternativa E fere a responsabilidade de ordenação final, que é exclusiva e intransferível do PO."
+  },
+  {
+    "id": 150602,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Engenharia de Software (Metodologias Ágeis)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O setor de sustentação de sistemas do TJ-CE recebe diariamente uma quantidade variável de chamados de suporte dos magistrados e servidores. Para melhorar o fluxo de trabalho, a equipe adotou o método Kanban. Após algumas semanas, observou-se que a coluna 'Em Análise' acumulava dezenas de tickets, enquanto a coluna 'Em Correção' ficava ociosa por longos períodos. O gestor do setor identificou que a equipe de análise começava novos chamados antes de concluir os anteriores. Qual prática essencial do Kanban deve ser aplicada imediatamente para resolver esse gargalo?",
+    "options": {
+      "A": "A fixação de limites de Trabalho em Progresso (WIP) nas colunas do quadro.",
+      "B": "A estipulação de iterações de tempo fixo de duas semanas para as entregas.",
+      "C": "A criação de gráficos de burndown diários atrelados à monitoração de velocidade.",
+      "D": "A obrigatoriedade de estimar o esforço de cada chamado sob a métrica de story points.",
+      "E": "A reestruturação da equipe em unidades multifuncionais isoladas."
+    },
+    "answer": "A",
+    "explanation": "A restrição do Trabalho em Progresso (WIP) é uma das práticas essenciais do Kanban. Essa limitação cria um 'sistema puxado' e impede que a equipe inicie novas tarefas sem antes terminar as que já estão no fluxo, combatendo o gargalo citado. As alternativas B, C e D descrevem práticas nativas do Scrum (Sprints, Burndown e Story Points), e não do Kanban. A alternativa E não aborda o problema de fluxo e sequer é uma diretriz do Kanban."
+  },
+  {
+    "id": 150603,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Engenharia de Software (Metodologias Ágeis)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No desenvolvimento do novo módulo de plantão judiciário do TJ-CE, a tolerância a falhas deve ser máxima, e o código precisa possuir altíssima qualidade estrutural. A equipe decidiu implementar as práticas da Extreme Programming (XP). Para garantir que a cobertura de testes guie o design das classes de regra de negócio do plantão e para reduzir erros de digitação e lógica simultaneamente durante a codificação em tempo real, o time deve adotar a combinação de quais práticas técnicas?",
+    "options": {
+      "A": "Desenvolvimento Orientado a Testes (TDD) e Programação em Par.",
+      "B": "Integração Contínua e Refatoração Semanal de Código.",
+      "C": "Cliente Presente na Equipe e Padronização de Nomenclaturas.",
+      "D": "Planejamento do Jogo (Planning Game) e Metáfora do Sistema.",
+      "E": "Propriedade Coletiva do Código e Ritmo Sustentável de Trabalho."
+    },
+    "answer": "A",
+    "explanation": "A prática que garante a cobertura de testes orientando a arquitetura desde o início é o TDD (Test-Driven Development), onde os testes são escritos antes do código de produção. A prática que permite reduzir erros de digitação e lógica em tempo real, com duas pessoas no mesmo terminal, é a Programação em Par (Pair Programming). Ambas são práticas nucleares da XP indicadas nas alternativas. As demais alternativas apresentam práticas reais da XP, mas que não respondem à situação-problema de 'guiar o design por testes e redução de erros de codificação em tempo real'."
+  },
+  {
+    "id": 150604,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Engenharia de Software (Engenharia de Requisitos)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um analista do TJ-CE precisa levantar os requisitos para um novo portal de emissão de certidões negativas de antecedentes criminais. O portal será utilizado por milhares de cidadãos cearenses, com diferentes perfis de letramento digital, que não podem ser consultados individualmente e estão distribuídos em todo o estado. O tribunal dispõe de poucos recursos para essa fase inicial, tornando necessário atingir um grande volume de respostas em um curto prazo para embasar a priorização do escopo. Qual técnica de elicitação de requisitos é adequada para esse cenário de coleta massiva, assíncrona e distribuída?",
+    "options": {
+      "A": "Aplicação de questionários estruturados online com perguntas objetivas e escalas de avaliação.",
+      "B": "Condução de oficinas JAD (Joint Application Design) com representantes de cada comarca.",
+      "C": "Execução de entrevistas semiestruturadas com os usuários frequentes do fórum físico.",
+      "D": "Sessões de observação passiva etnográfica do acesso dos cidadãos em laboratórios de informática.",
+      "E": "Realização de dinâmicas de brainstorming com os analistas de negócio internos do tribunal."
+    },
+    "answer": "A",
+    "explanation": "Questionários são a técnica de elicitação de menor custo para atingir um público vasto, geograficamente distribuído e de maneira rápida, ideal para validar hipóteses em larga escala. A alternativa B é logisticamente inviável (cara e lenta). A alternativa C é restrita a uma amostragem localizada. A alternativa D exigiria muito tempo e não abrangeria milhares de usuários. A alternativa E falha por não envolver diretamente o usuário final alvo (cidadãos), concentrando-se apenas na equipe interna."
+  },
+  {
+    "id": 150605,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Engenharia de Software (Metodologias Ágeis)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de modernização do sistema de custas processuais do TJ-CE utiliza Histórias de Usuário (User Stories) para documentar os requisitos ágeis. Um membro da equipe propôs a seguinte história: 'Como sistema de banco de dados, eu quero executar rotinas de indexação nas tabelas de guias de recolhimento para otimizar as consultas SQL em 40%'. Considerando as diretrizes consolidadas para a escrita de boas histórias de usuário, essa especificação apresenta uma falha arquitetural. Qual é a principal inadequação técnica dessa história de usuário?",
+    "options": {
+      "A": "A redação foca em um componente técnico de infraestrutura em vez do valor entregue a um papel de negócio ou usuário humano.",
+      "B": "O percentual de otimização de 40% consubstancia um critério subjetivo de aceitação inexecutável em ambiente produtivo.",
+      "C": "O tamanho da atividade de indexação de tabelas ultrapassa o limite temporal de uma Sprint padrão de desenvolvimento.",
+      "D": "A descrição omite a explicitação do esquema relacional das tabelas de guias de recolhimento afetadas pela referida indexação.",
+      "E": "O nível de dependência técnica impede a divisão do trabalho entre as equipes de infraestrutura e engenharia de software."
+    },
+    "answer": "A",
+    "explanation": "Histórias de Usuário devem refletir a perspectiva de quem utilizará o sistema ('Como [Ator/Usuário], eu quero [Ação] para [Valor de Negócio]'). Uma história centrada em componentes tecnológicos ('Como banco de dados') foge do princípio ágil de foco na entrega de valor de negócio e na comunicação com o cliente. A alternativa A expõe diretamente esse problema conceitual. As alternativas B, C, D e E trazem alegações que não invalidam a estrutura formal de uma história de usuário (detalhes técnicos que deveriam estar nos critérios de aceitação ou tarefas, não na narrativa principal)."
+  },
+  {
+    "id": 150606,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Engenharia de Software (Engenharia de Requisitos)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O edital de contratação de uma nova solução de inteligência artificial para categorização de petições iniciais no TJ-CE apresenta uma lista extensa de requisitos. Dentre eles, o item R-14 estabelece: 'O tempo máximo de latência entre a submissão do documento PDF da petição e a exibição da classe processual sugerida não poderá exceder 3 segundos em 99% das requisições realizadas durante o horário de expediente forense'. Com base na classificação clássica da engenharia de requisitos, esse item R-14 configura-se especificamente como qual tipo de requisito?",
+    "options": {
+      "A": "Requisito não funcional de desempenho.",
+      "B": "Requisito não funcional de segurança.",
+      "C": "Requisito funcional de comportamento.",
+      "D": "Requisito funcional de processamento.",
+      "E": "Requisito não funcional de confiabilidade."
+    },
+    "answer": "A",
+    "explanation": "Requisitos Não Funcionais especificam propriedades emergentes do sistema, restrições e qualidades (o 'como' o sistema faz). A determinação de um limite de tempo máximo (3 segundos de latência) trata das métricas de performance e rapidez do sistema, enquadrando-se em um Requisito Não Funcional de Desempenho (ou Eficiência). As demais opções confundem a natureza da restrição (segurança, confiabilidade) ou classificam erroneamente a restrição de qualidade como uma função do sistema."
+  },
+  {
+    "id": 150607,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Engenharia de Software (Metodologias Ágeis)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No encerramento da Sprint 12 do projeto de emissão de mandados eletrônicos no TJ-CE, a equipe entregou todos os itens planejados com sucesso. Contudo, durante os últimos dias da iteração, o estresse gerou atritos interpessoais profundos entre os programadores back-end e os especialistas em infraestrutura de rede, comprometendo o clima de trabalho futuro. De acordo com o framework Scrum Guide, a inspeção dessas relações interpessoais e a elaboração de um plano prático para mitigar esses atritos na próxima iteração devem ocorrer obrigatoriamente em qual evento?",
+    "options": {
+      "A": "Retrospectiva da Sprint.",
+      "B": "Revisão da Sprint.",
+      "C": "Reunião Diária.",
+      "D": "Planejamento da Sprint.",
+      "E": "Refinamento do Backlog."
+    },
+    "answer": "A",
+    "explanation": "A Retrospectiva da Sprint (Sprint Retrospective) é a cerimônia do Scrum dedicada especificamente a avaliar o fluxo de trabalho concluído com foco em indivíduos, interações, processos e ferramentas, visando identificar melhorias. A Revisão da Sprint (B) foca no produto gerado. A Reunião Diária (C) foca no andamento diário frente à meta. O Planejamento e o Refinamento olham para o escopo e o futuro (D e E)."
+  },
+  {
+    "id": 150608,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Engenharia de Software (Metodologias Ágeis)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma aplicação legada do TJ-CE, desenvolvida para controle de jurisprudências, vem sofrendo manutenções constantes. Ao adotar princípios e práticas da Extreme Programming (XP), um programador sênior identificou que um módulo vital possuía funções com centenas de linhas e alta duplicação de lógica, o que dificultava a implementação de uma nova regra de pesquisa baseada em inteligência artificial. Ele decidiu alterar radicalmente a estrutura interna desse código para melhorar sua legibilidade e organização arquitetural, garantindo expressamente a não modificação do comportamento externo observável pelos usuários do tribunal. Essa técnica estrutural contínua empregada pelo programador denomina-se:",
+    "options": {
+      "A": "Refatoração.",
+      "B": "Engenharia Reversa.",
+      "C": "Prototipação.",
+      "D": "Integração Contínua.",
+      "E": "Teste de Regressão."
+    },
+    "answer": "A",
+    "explanation": "A Refatoração (Refactoring) é a reestruturação sistemática de um código existente para melhorar seu design (legibilidade, complexidade) sem alterar o seu comportamento externo de negócio. É uma prática clássica da XP. A alternativa B trata de extrair design a partir de código ou binários. A C cria versões parciais preliminares. A D foca na mesclagem de código de múltiplos desenvolvedores. A E busca encontrar bugs que reapareceram."
+  },
+  {
+    "id": 150609,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Engenharia de Software (Engenharia de Requisitos)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após uma auditoria de qualidade no desenvolvimento do sistema do Diário da Justiça Eletrônico (DJe), verificou-se que várias funções críticas implementadas no repositório de código não possuíam correspondência nos documentos de escopo originais, e diversos requisitos legais oriundos do Conselho Nacional de Justiça (CNJ) foram ignorados na fase de codificação. Para sanar essa falha grave de alinhamento em ciclos futuros, o arquiteto chefe sugeriu a adoção de uma matriz bidirecional que mapeia o fluxo de origem de cada regra de negócio até os testes executados e os módulos de código entregues em produção. Essa técnica aplicada visa garantir diretamente o atingimento de qual atributo de qualidade dos requisitos?",
+    "options": {
+      "A": "Rastreabilidade.",
+      "B": "Completude.",
+      "C": "Consistência.",
+      "D": "Modularidade.",
+      "E": "Abstração."
+    },
+    "answer": "A",
+    "explanation": "O elo contínuo e mapeado entre as origens de um requisito, seus artefatos de especificação, implementação em código e casos de teste refere-se à Rastreabilidade. A Rastreabilidade atesta de onde o requisito surgiu e onde ele terminou. A completude atesta apenas se algo falta no documento. Consistência aponta ausência de contradições lógicas inter-requisitos. Modularidade e Abstração referem-se a conceitos de arquitetura e design de código."
+  },
+  {
+    "id": 150610,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Engenharia de Software (Metodologias Ágeis)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A diretoria de tecnologia do TJ-CE decidiu implantar Scrum na equipe de engenharia encarregada da integração de dados criminais. Durante a segunda Sprint, a equipe técnica foi interrompida repetidamente por auditores de controle interno exigindo explicações estruturais imediatas sobre os modelos de dados, o que desestabilizou o foco e inviabilizou o cumprimento da Meta da Sprint. O Scrum Guide estabelece que há um papel central com o dever precípuo de proteger a equipe de interferências externas e facilitar a compreensão correta das interações do framework pela organização ao redor. Essa função protetiva cabe a qual participante do framework?",
+    "options": {
+      "A": "Scrum Master.",
+      "B": "Product Owner.",
+      "C": "Gerente de Projetos.",
+      "D": "Analista de Requisitos.",
+      "E": "Líder Técnico."
+    },
+    "answer": "A",
+    "explanation": "No Scrum, o Scrum Master atua como líder servidor para o Scrum Team. Entre as suas responsabilidades está causar a remoção de impedimentos, facilitar eventos e auxiliar as pessoas fora do Scrum Team a entenderem quais das suas interações com a equipe são úteis e quais não são (isolando as interrupções do dia a dia). O Product Owner foca no valor e no backlog. Gerente de Projetos, Analista de Requisitos e Líder Técnico são papéis tradicionais não prescritos nas responsabilidades do framework Scrum original."
+  },
+  {
+    "id": 150611,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Engenharia de Software (Metodologias Ágeis)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em um projeto complexo de migração para nuvem dos sistemas correcionais do TJ-CE, a gestão de TI precisou escolher entre assinar um contrato engessado de escopo fechado, que especificava detalhadamente todas as entregas técnicas dos próximos dois anos, ou adotar uma abordagem empírica com entregas contínuas baseadas no feedback frequente dos magistrados inspetores. Baseando-se exclusivamente nos valores fundamentais declarados no Manifesto Ágil de 2001, qual postura a gestão de TI deve adotar ao estabelecer as prioridades contratuais e metodológicas do projeto?",
+    "options": {
+      "A": "Colaboração com o cliente acima da negociação de contratos e resposta a mudanças acima de seguir um plano.",
+      "B": "Documentação abrangente acima de software em funcionamento e ferramentas acima de interações individuais.",
+      "C": "Negociação rigorosa de contratos acima de escopo variável e processos formais acima de relações de equipe.",
+      "D": "Seguir um plano inicial acima da colaboração contínua e foco em processos definidos acima de adaptabilidade técnica.",
+      "E": "Software abrangente acima de documentação pontual e restrição orçamentária estrita acima de evolução do produto."
+    },
+    "answer": "A",
+    "explanation": "O Manifesto Ágil apresenta 4 valores centrais: 1) Indivíduos e interações mais que processos e ferramentas; 2) Software em funcionamento mais que documentação abrangente; 3) Colaboração com o cliente mais que negociação de contratos; 4) Responder a mudanças mais que seguir um plano inicial. A alternativa A cita perfeitamente o terceiro e quarto valores. Todas as outras alternativas invertem as proposições (priorizando o lado direito, mais rígido, sobre o lado esquerdo do manifesto ágil)."
+  },
+  {
+    "id": 150612,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Engenharia de Software (Metodologias Ágeis)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de sustentação tecnológica do tribunal cearense utiliza o método Kanban para gerenciar demandas evolutivas dos sistemas de folha de pagamento corporativa. Para fornecer uma visão analítica abrangente sobre a estabilidade do fluxo ao longo do último semestre, o gestor gerou um gráfico que apresenta áreas empilhadas coloridas representando as quantidades de itens de trabalho alocados em cada estágio do processo ao longo da linha do tempo. O alargamento excessivo de uma das faixas horizontais no gráfico indicou o ponto exato de acúmulo de tarefas aguardando a etapa de homologação. Essa ferramenta analítica clássica do método Kanban denomina-se:",
+    "options": {
+      "A": "Diagrama de Fluxo Cumulativo (CFD).",
+      "B": "Gráfico de Burndown da iteração.",
+      "C": "Diagrama de Causa e Efeito (Ishikawa).",
+      "D": "Gráfico de Controle de Qualidade (Shewhart).",
+      "E": "Matriz de Rastreabilidade de Requisitos."
+    },
+    "answer": "A",
+    "explanation": "O Diagrama de Fluxo Cumulativo (Cumulative Flow Diagram - CFD) mostra as diferentes etapas de um processo em faixas coloridas sobrepostas. Ele rastreia o total de itens ao longo do tempo. Um achatamento ou alargamento vertical em uma faixa específica evidencia gargalos (WIP alto) no fluxo, que é exatamente o cenário descrito. O Gráfico de Burndown monitora as atividades restantes ao longo do tempo (tipicamente no Scrum), mas não as faixas do processo contínuo."
+  },
+  {
+    "id": 150613,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Engenharia de Software (Engenharia de Requisitos)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a homologação do novo módulo de plantão criminal digital, a equipe de testes do TJ-CE rodou rotinas automatizadas e garantiu que o sistema cumpria exatamente tudo o que foi modelado nos diagramas de caso de uso e nos requisitos funcionais especificados nos documentos iniciais de arquitetura. Contudo, ao disponibilizar o sistema em ambiente de produção, os juízes plantonistas rejeitaram a ferramenta sob a justificativa de que o fluxo procedimental aprovado não refletia a necessidade processual urgente e a dinâmica de urgência nas madrugadas no fórum. No contexto da engenharia de requisitos, esse cenário demonstra que houve sucesso em uma etapa de controle sistêmico, mas falha catastrófica em outra. Qual foi a configuração técnica dessa falha?",
+    "options": {
+      "A": "Sucesso na verificação técnica do software e falha na validação do produto em face das necessidades reais dos usuários.",
+      "B": "Sucesso na validação comercial do escopo e falha na verificação de integridade dos bancos de dados relacionais.",
+      "C": "Sucesso na elicitação dos requisitos não funcionais e falha no gerenciamento das baselines de arquitetura em nuvem.",
+      "D": "Sucesso na prototipação de alta fidelidade e falha na extração de regras de negócio em ambientes legados integrados.",
+      "E": "Sucesso na auditoria de conformidade de código e falha na elicitação automatizada de modelos de dados estruturados."
+    },
+    "answer": "A",
+    "explanation": "Na engenharia de requisitos, a 'Verificação' atesta que o software está sendo construído corretamente de acordo com as especificações documentadas (O produto foi feito conforme o documento?). A 'Validação' atesta se o software correto está sendo construído para atender à necessidade real do cliente (O produto resolve o problema real do usuário?). No cenário relatado, a equipe garantiu que o documento foi seguido fielmente (Verificação OK), mas o produto não resolvia o problema operacional dos juízes (Validação Falha)."
+  },
+  {
+    "id": 150614,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Engenharia de Software (Metodologias Ágeis)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE pretende lançar uma plataforma integrada de agendamento de audiências virtuais utilizando as diretrizes rigorosas da Extreme Programming (XP). Antes de iniciar a primeira iteração tática, as partes interessadas de negócio se reúnem em conjunto com a equipe técnica de desenvolvimento para definir quais funcionalidades (histórias) farão parte do primeiro lote de produção e a data provável de disponibilização para as varas cíveis. O cliente seleciona ativamente o escopo baseado no valor percebido, enquanto os desenvolvedores definem o custo e o ritmo de entrega viável de cada item. Na nomenclatura estrita da Extreme Programming, essa dinâmica colaborativa inicial é classificada como:",
+    "options": {
+      "A": "Jogo do Planejamento (Planning Game).",
+      "B": "Reunião Diária em Pé (Stand-up Meeting).",
+      "C": "Revisão de Arquitetura de Software.",
+      "D": "Sessão de Integração Contínua.",
+      "E": "Definição da Metáfora do Sistema."
+    },
+    "answer": "A",
+    "explanation": "O Planning Game (Jogo do Planejamento) é a principal prática de planejamento dentro da XP. O negócio define 'o que' tem valor (Histórias de usuário selecionadas), e a equipe técnica estabelece 'o quanto' custa (Estimativas e restrições de tempo), equilibrando escopo e tempo disponível em um formato interativo semelhante a um jogo com papéis definidos."
+  },
+  {
+    "id": 150615,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Engenharia de Software (Metodologias Ágeis)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na primeira Sprint de um projeto crítico de modernização do motor de cálculo processual no TJ-CE, a equipe de Desenvolvedores apresentou um pacote consolidado de melhorias de interface ao Product Owner durante a cerimônia de Revisão da Sprint. O PO perguntou imediatamente se os novos métodos haviam sido rigorosamente testados para segurança cibernética e devidamente documentados no repositório oficial da organização. A equipe admitiu que não conduziu os testes tampouco redigiu a documentação pela escassez de tempo. Para evitar que incrementos incompletos ou arriscados sejam apresentados e considerados concluídos nas próximas iterações do tribunal, o framework Scrum exige a aplicação rigorosa e auditável de qual artefato de transparência?",
+    "options": {
+      "A": "Definição de Pronto (Definition of Done).",
+      "B": "Critérios de Aceitação (Acceptance Criteria).",
+      "C": "Meta da Sprint (Sprint Goal).",
+      "D": "Definição de Preparado (Definition of Ready).",
+      "E": "Gráfico de Burndown da Sprint (Sprint Burndown)."
+    },
+    "answer": "A",
+    "explanation": "A Definição de Pronto (Definition of Done - DoD) é a descrição formal do estado do Incremento quando ele atende às medidas de qualidade exigidas para o produto no Scrum. Ela atua como um checklist global (como testes feitos, documentação aprovada, segurança garantida) para que o trabalho seja considerado oficialmente finalizado. Cuidado com 'Critérios de Aceitação', que são métricas específicas de uma história de usuário individual, enquanto o DoD é o padrão generalista de qualidade aplicável a todo incremento gerado."
+  }
+]

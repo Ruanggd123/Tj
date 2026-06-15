@@ -1,0 +1,272 @@
+[
+  {
+    "id": 8192381,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Lei Estadual nº 16.397/2017 (Órgãos e Competências)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de desenvolvimento do TJ-CE está modelando o novo banco de dados relacional para refletir a divisão territorial e jurisdicional do Estado do Ceará. O Arquiteto de Software estabeleceu que a entidade 'Comarcas' deve possuir uma restrição de domínio limitando as categorias hierárquicas conforme disposto na Lei de Organização Judiciária. Na definição dos parâmetros de negócio da aplicação, as Comarcas cearenses classificam-se hierarquicamente em:",
+    "options": {
+      "A": "Primeira entrância, segunda entrância e terceira entrância.",
+      "B": "Entrância básica, entrância intermediária e entrância avançada.",
+      "C": "Entrância inicial, entrância intermediária e entrância final.",
+      "D": "Entrância de capital, entrância de região metropolitana e entrância de interior.",
+      "E": "Juízo de origem, entrância comum e entrância especial."
+    },
+    "answer": "C",
+    "explanation": "A Lei Estadual nº 16.397/2017 classifica as comarcas do Estado do Ceará em três entrâncias: inicial, intermediária e final. A alternativa (A) usa a nomenclatura de primeira/segunda/terceira, que pertence à legislação de outros estados ou ordenamentos antigos. A alternativa (B) inventa termos não jurídicos ('básica' e 'avançada'). A alternativa (D) cria divisões de infraestrutura metropolitana e capital inexistentes na LOJ do Ceará. A alternativa (E) mescla termos genéricos processuais com invenções ('juízo de origem')."
+  },
+  {
+    "id": 8192382,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Lei Estadual nº 16.397/2017 (Órgãos e Competências)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um módulo de workflow do Processo Judicial Eletrônico (PJe) está sendo customizado no TJ-CE para gerenciar pautas de sessões virtuais assíncronas. O diagrama de atividades BPMN determina a segregação estrita de fluxos processuais, roteando automaticamente as Ações Diretas de Inconstitucionalidade (ADIs) de leis estaduais em face da Constituição Estadual. Para garantir a conformidade com a arquitetura de competências do Tribunal, o roteador de mensagens corporativo deve direcionar essa classe processual ao:",
+    "options": {
+      "A": "Conselho da Magistratura.",
+      "B": "Tribunal Pleno.",
+      "C": "Órgão Especial.",
+      "D": "Câmara de Direito Público.",
+      "E": "Comitê de Governança Jurisdicional."
+    },
+    "answer": "C",
+    "explanation": "O Órgão Especial do TJ-CE exerce, por delegação e competência regimental/legal, a maior parte das funções jurisdicionais de cúpula que antes pertenciam ao Tribunal Pleno, incluindo o processamento e julgamento de Ações Diretas de Inconstitucionalidade (ADIs) de leis estaduais ou municipais contestadas em face da Constituição do Estado. A alternativa (A) aborda um órgão de caráter correcional. A alternativa (B) é uma pegadinha, pois o Pleno hoje se atém a questões mais administrativas e institucionais. A alternativa (D) trata de competência recursal restrita cível, e a (E) não possui amparo legal."
+  },
+  {
+    "id": 8192383,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Lei Estadual nº 16.397/2017 (Órgãos e Competências)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O setor de infraestrutura do TJ-CE está provisionando o ambiente virtual de videoconferência para as sessões do órgão fracionário encarregado das ações disciplinares contra magistrados. O sistema precisa registrar as conexões simultâneas e prever instâncias de votação para todos os membros efetivos do colegiado máximo de representação jurisdicional. Para dimensionar corretamente a capacidade da infraestrutura do painel eletrônico, o Analista de TI deve parametrizar o limite de membros componentes do Órgão Especial, que totaliza:",
+    "options": {
+      "A": "15 membros.",
+      "B": "19 membros.",
+      "C": "21 membros.",
+      "D": "27 membros.",
+      "E": "43 membros."
+    },
+    "answer": "B",
+    "explanation": "O Órgão Especial do TJCE é composto por 19 Desembargadores, incluindo o Presidente, o Vice-Presidente e o Corregedor-Geral da Justiça. A alternativa (E) traz o número antigo da totalidade do Tribunal (que hoje é 53, não 43). As alternativas (A), (C) e (D) apresentam números aleatórios de colegiados, tentando induzir o candidato ao erro sobre o tamanho da cúpula julgadora que substitui o Tribunal Pleno em atividades jurisdicionais ordinárias."
+  },
+  {
+    "id": 8192384,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Lei Estadual nº 16.397/2017 (Órgãos e Competências)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma falha de integração no barramento de serviços (ESB) do tribunal tem gerado erros de roteamento na distribuição de processos provenientes de unidades de menor complexidade. O monitoramento apontou que recursos interpostos contra sentenças proferidas nos Juizados Especiais Cíveis estão caindo na fila das Câmaras Isoladas do TJ-CE. Para alinhar a topologia da rede às diretrizes de organização judiciária, o engenheiro de software deve redirecionar os recursos do microssistema dos Juizados Especiais para as:",
+    "options": {
+      "A": "Turmas Recursais.",
+      "B": "Câmaras de Direito Privado.",
+      "C": "Varas Cíveis de Entrância Final.",
+      "D": "Seções Cíveis de Cúpula.",
+      "E": "Varas Únicas de Competência Geral."
+    },
+    "answer": "A",
+    "explanation": "No microssistema dos Juizados Especiais, os recursos contra as decisões de primeira instância não sobem para as Câmaras Cíveis (alternativa B e D), que compõem o segundo grau clássico. Eles são julgados pelas Turmas Recursais (alternativa A), que são formadas por próprios juízes de primeiro grau atuando em colegiado. As alternativas (C) e (E) são invenções de competências de juízos singulares, não colegiados recursais."
+  },
+  {
+    "id": 8192385,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Lei Estadual nº 16.397/2017 (Órgãos e Competências)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está treinando um modelo de Inteligência Artificial para classificação massiva de petições iniciais eletrônicas. A pipeline de processamento de linguagem natural (NLP) deve identificar padrões em ações de indenização por danos morais ajuizadas por cidadãos contra o Governo do Estado do Ceará. Na estrutura de metadados do sistema judiciário, as predições de classificação geradas pela IA para processos cujo réu seja a Fazenda Estadual na comarca da Capital devem apontar para as:",
+    "options": {
+      "A": "Varas de Execuções Fiscais.",
+      "B": "Varas de Competência Privativa.",
+      "C": "Varas de Delitos contra a Ordem Tributária.",
+      "D": "Varas Cíveis de Demandas Repetitivas.",
+      "E": "Varas da Fazenda Pública."
+    },
+    "answer": "E",
+    "explanation": "As ações em que o Estado do Ceará for parte interessada (como réu, autor ou assistente), incluindo demandas indenizatórias propostas por cidadãos, tramitam nas Varas da Fazenda Pública. A alternativa (A) é a grande pegadinha, pois Varas de Execuções Fiscais julgam a cobrança de tributos pelo Estado contra os devedores, e não indenizações contra o Estado. As alternativas (B), (C) e (D) descrevem nomenclaturas errôneas para o objeto da lide descrita no enunciado."
+  },
+  {
+    "id": 8192386,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Lei Estadual nº 16.397/2017 (Órgãos e Competências)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Diretoria de TI do TJ-CE recebeu a demanda de estruturar um Data Lakehouse para consolidar indicadores de correição, produtividade de juízes de primeiro grau e fiscalização de cartórios extrajudiciais. O controle de acesso granular baseado em funções (RBAC) deve garantir permissão de administração global deste ambiente apenas ao órgão com competência correicional ordinária. Na arquitetura de acessos do sistema, o perfil de superusuário para fiscalização dos serviços de primeira instância é atribuído à:",
+    "options": {
+      "A": "Presidência do Tribunal de Justiça.",
+      "B": "Ouvidoria do Poder Judiciário.",
+      "C": "Corregedoria-Geral da Justiça.",
+      "D": "Diretoria do Fórum Clóvis Beviláqua.",
+      "E": "Controladoria do Conselho da Magistratura."
+    },
+    "answer": "C",
+    "explanation": "A Corregedoria-Geral da Justiça (CGJ) tem por finalidade orientar, fiscalizar e disciplinar os serviços judiciários e extrajudiciais da primeira instância, detendo a prerrogativa das correições. A alternativa (A) possui competência máxima de administração, mas não faz correição direta. A alternativa (B) apenas recebe demandas e denúncias. A alternativa (D) gerencia a administração predial de um fórum específico. A alternativa (E) é inexistente nesse formato."
+  },
+  {
+    "id": 8192387,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Lei Estadual nº 16.397/2017 (Órgãos e Competências)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O desenvolvimento do aplicativo mobile para magistrados do TJ-CE requer a integração com a API de Gestão de Pessoas para processamento automático de férias e escalas de plantão. A arquitetura de microsserviços determina que as solicitações originadas por servidores lotados nos juízos de primeira instância de Fortaleza sejam encaminhadas para aprovação da autoridade administrativa local competente. O endpoint de roteamento dessas requisições deve apontar para o gestor administrativo da respectiva unidade predial e judicial local, definido como:",
+    "options": {
+      "A": "Juiz Diretor do Fórum.",
+      "B": "Desembargador Corregedor.",
+      "C": "Secretário de Administração do Tribunal.",
+      "D": "Chefe da Seção Judiciária Estadual.",
+      "E": "Presidente das Câmaras Isoladas."
+    },
+    "answer": "A",
+    "explanation": "A administração direta de um fórum (escala de servidores, férias da secretaria, gestão predial) é competência do Juiz Diretor do Fórum da referida comarca, o qual exerce função delegada de chefia administrativa local. A alternativa (B) possui competência correicional macro, não gerência diária local. A alternativa (C) é o gestor das secretarias do Tribunal, e não dos fóruns de 1º grau. As alternativas (D) e (E) tentam confundir com divisões territoriais da Justiça Federal e órgãos de segundo grau."
+  },
+  {
+    "id": 8192388,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Lei Estadual nº 16.397/2017 (Órgãos e Competências)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de segurança da informação elaborou um fluxo de criptografia assimétrica (ICP-Brasil) para validar a autenticidade das resoluções de alteração do Regimento Interno do Tribunal de Justiça. O motor de regras (BRMS) bloqueia a emissão da assinatura final caso o documento não tenha recebido a deliberação colegiada correspondente. O Analista de TI encarregado da parametrização do software de gestão documental deve associar a aprovação definitiva do Regimento Interno ao órgão máximo de deliberação institucional, denominado:",
+    "options": {
+      "A": "Conselho Superior da Magistratura.",
+      "B": "Câmara Cível Reunida.",
+      "C": "Órgão Especial do Tribunal.",
+      "D": "Tribunal Pleno.",
+      "E": "Comitê Executivo Estadual."
+    },
+    "answer": "D",
+    "explanation": "O Tribunal Pleno é composto pela totalidade dos desembargadores (53 membros) e sua atribuição restringe-se primariamente a matérias de grande impacto institucional e administrativo, como eleições dos dirigentes e elaboração/alteração do próprio Regimento Interno. A alternativa (C) Órgão Especial é pegadinha, pois ele exerce a maioria das atribuições jurisdicionais, mas a alteração do regimento ainda é exclusiva do Pleno. As alternativas (A), (B) e (E) são órgãos de competência estrita ou inexistentes na LOJ do Ceará."
+  },
+  {
+    "id": 8192389,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Lei Estadual nº 16.397/2017 (Órgãos e Competências)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O arquiteto de nuvem do TJ-CE está revisando as políticas de auto-scaling dos clusters de Kubernetes para otimização de custos operacionais. O planejamento financeiro exige a diminuição temporária de recursos computacionais durante determinados períodos anuais, mantendo o provisionamento em alta disponibilidade exclusivamente para o plantão judiciário de medidas de urgência. Ao documentar a continuidade de negócios jurisdicionais, o analista destacou a vedação de férias coletivas nos juízos cearenses, refletindo a garantia constitucional de que a atividade do tribunal ocorre de forma:",
+    "options": {
+      "A": "Sazonal.",
+      "B": "Ininterrupta.",
+      "C": "Escalável.",
+      "D": "Fragmentada.",
+      "E": "Suspensa."
+    },
+    "answer": "B",
+    "explanation": "A Constituição Federal e a LOJ/CE determinam que a atividade jurisdicional é ininterrupta, sendo expressamente vedadas as férias coletivas nos juízos e tribunais de segundo grau (exigência da EC 45/2004). O atendimento durante finais de semana, feriados e recesso ocorre mediante plantão judiciário. As alternativas (A), (C) e (E) contrariam diretamente esse princípio constitucional ao afirmarem suspensão ou paralisação sazonal de serviços judiciais."
+  },
+  {
+    "id": 8192390,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Lei Estadual nº 16.397/2017 (Órgãos e Competências)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma falha de concorrência e race condition no módulo de distribuição eletrônica causou um conflito de competência entre órgãos julgadores de segunda instância. Os logs do sistema indicam que duas Câmaras Cíveis Isoladas do TJ-CE rejeitaram a competência para análise de um mesmo agravo de instrumento. A solução de software exige a codificação de um fallback que encaminhe eletronicamente os autos para pacificação da disputa pelo colegiado imediatamente superior especializado na matéria cível. O direcionamento do barramento deve ser parametrizado para a:",
+    "options": {
+      "A": "Seção Cível.",
+      "B": "Turma de Uniformização Cível.",
+      "C": "Presidência das Câmaras Cíveis.",
+      "D": "Auditoria Geral Cível.",
+      "E": "Vice-Presidência do Tribunal."
+    },
+    "answer": "A",
+    "explanation": "Conflitos de competência surgidos entre órgãos fracionários de uma mesma especialidade (neste caso, entre duas Câmaras Isoladas Cíveis) devem ser dirimidos por um órgão colegiado superior da mesma área. No TJCE, esta função cabe à Seção Cível. A alternativa (B) trata de uniformização de jurisprudência (outro instituto focado em teses repetitivas). A alternativa (C) e (D) atribuem competências a órgãos diretivos ou inexistentes na estrutura jurisdicional cearense."
+  },
+  {
+    "id": 8192391,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Lei Estadual nº 16.397/2017 (Órgãos e Competências)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está reestruturando seu banco de dados distribuído para abrigar sistemas de interceptação telefônica e telemática sigilosa com criptografia ponta a ponta. A modelagem do schema reserva espaços (tablespaces) específicos para varas estaduais criadas com competência exclusiva para processar e julgar crimes de lavagem de dinheiro em estruturas complexas. O analista de segurança de dados deve vincular a chave de desencriptação ao magistrado titular da unidade especializada correspondente, denominada:",
+    "options": {
+      "A": "Vara Única de Crimes contra a Administração.",
+      "B": "Vara de Execução Penal em Meio Fechado.",
+      "C": "Vara de Delitos de Organizações Criminosas.",
+      "D": "Vara Especializada em Cibercrimes e Fraudes.",
+      "E": "Vara de Prevenção à Corrupção Sistêmica."
+    },
+    "answer": "C",
+    "explanation": "O combate sistemático ao crime organizado e à lavagem de dinheiro com repercussão estadual motivou a criação das Varas de Delitos de Organizações Criminosas no judiciário cearense, dotadas de competência estadual e forte isolamento em infraestrutura de segurança. A alternativa (B) cuida apenas do cumprimento de penas criminais. As alternativas (A), (D) e (E) trazem nomes fictícios ou competências que não refletem a nomenclatura exata da LOJ/CE."
+  },
+  {
+    "id": 8192392,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Lei Estadual nº 16.397/2017 (Órgãos e Competências)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um gargalo de leitura de disco (I/O) no servidor de banco de dados do sistema de processos criminais foi associado ao módulo de registros de prisões em flagrante na Comarca de Fortaleza. A latência excessiva ameaça o cumprimento dos prazos legais relativos à apresentação física de custodiados. O administrador do banco de dados (DBA) planeja particionar (sharding) as tabelas direcionando o fluxo de dados dos flagrantes criminais na capital unicamente para a competência jurisdicional exclusiva da:",
+    "options": {
+      "A": "Vara de Execução de Penas Alternativas.",
+      "B": "Vara do Tribunal do Júri.",
+      "C": "Vara de Audiência de Custódia.",
+      "D": "Vara de Delitos de Trânsito.",
+      "E": "Vara Especializada de Execuções Criminais."
+    },
+    "answer": "C",
+    "explanation": "A legalidade da prisão em flagrante e a integridade física do custodiado são analisadas, prioritariamente e presencialmente, nas Varas de Audiência de Custódia, devidamente estruturadas na Comarca de Fortaleza. A alternativa (A) e (E) tratam de execuções de penas após o trânsito em julgado de processos. A alternativa (B) lida exclusivamente com crimes dolosos contra a vida."
+  },
+  {
+    "id": 8192393,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Lei Estadual nº 16.397/2017 (Órgãos e Competências)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema corporativo do tribunal recebeu uma atualização para gerenciar o acervo de desembargadores e otimizar as chaves estrangeiras que mapeiam os gabinetes. A política de diretórios do Active Directory (AD) exige que a quantidade de licenças de software e caixas de correio eletrônico corporativo esteja perfeitamente alinhada com a composição legal do órgão de cúpula cearense. Considerando a legislação estadual em vigor que ampliou a estrutura jurisdicional, o Analista de TI deve parametrizar o número de membros do Tribunal de Justiça em:",
+    "options": {
+      "A": "27 Desembargadores.",
+      "B": "33 Desembargadores.",
+      "C": "43 Desembargadores.",
+      "D": "53 Desembargadores.",
+      "E": "60 Desembargadores."
+    },
+    "answer": "D",
+    "explanation": "Com o advento da Lei Estadual nº 17.653/2021, que atualizou as disposições da Lei de Organização Judiciária, o Tribunal de Justiça do Estado do Ceará teve sua composição de cúpula ampliada de 43 para a formação de 53 membros efetivos. As alternativas (A), (B), (C) e (E) apresentam números de composições passadas ou tribunais de outros estados. O dimensionamento de TI requer o parâmetro atual de 53 gabinetes."
+  },
+  {
+    "id": 8192394,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Lei Estadual nº 16.397/2017 (Órgãos e Competências)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O módulo de inteligência de negócios (BI) do TJ-CE gerencia o fluxo de processos que não superam a alçada estabelecida na Lei nº 9.099/95. O Product Owner identificou que o sistema de gerenciamento de identidades e acessos (IAM) deve prover permissões diferenciadas para colaboradores não togados que conduzem audiências e propõem minutas de sentenças nos Juizados Especiais. Para espelhar corretamente os papéis e responsabilidades na aplicação, o grupo de acesso no LDAP deve ser nomeado de acordo com as figuras dos:",
+    "options": {
+      "A": "Assessores de Entrância Especial.",
+      "B": "Juízes Leigos e Conciliadores.",
+      "C": "Mediadores Judiciais Plenos.",
+      "D": "Defensores Dativos e Árbitros.",
+      "E": "Escrivães de Câmaras de Conciliação."
+    },
+    "answer": "B",
+    "explanation": "O microssistema dos Juizados Especiais é estruturado pela presença de juízes de direito com auxílio indispensável de Juízes Leigos (advogados que conduzem instrução e elaboram minutas de sentença a serem homologadas) e Conciliadores (que tentam a autocomposição processual). As alternativas (A), (C) e (D) utilizam nomenclaturas de funções assessoriais genéricas ou de justiça arbitral privada, descoladas da arquitetura formal da LOJ."
+  },
+  {
+    "id": 8192395,
+    "day_id": "dia_15_06",
+    "day_title": "Segunda-feira 15/06",
+    "theme": "Lei Estadual nº 16.397/2017 (Órgãos e Competências)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O planejamento de recuperação de desastres (Disaster Recovery) do data center do TJ-CE mapeia cenários de inoperabilidade de sistemas em fóruns do interior. A topologia de replicação de dados considera que existem municípios que não são sede de comarca própria, mas estão territorialmente submetidos à jurisdição de uma comarca próxima. A ontologia do sistema de gestão patrimonial deve classificar essas localidades sem autonomia judiciária conforme a nomenclatura estabelecida na Lei de Organização Judiciária, sendo denominadas:",
+    "options": {
+      "A": "Comarcas Interligadas.",
+      "B": "Zonas Judiciárias Especiais.",
+      "C": "Termos Judiciários.",
+      "D": "Comarcas Vinculadas.",
+      "E": "Distritos Descentralizados."
+    },
+    "answer": "D",
+    "explanation": "A LOJ/CE consolidou de forma incisiva o modelo das Comarcas Vinculadas, que correspondem àquelas comarcas do interior que perderam a figura do juiz titular ou autonomia funcional plena e tiveram sua jurisdição territorial anexada operacionalmente à Comarca Sede mais próxima e estruturada. A alternativa (C) representa um mero município que compõe a área geográfica de uma mesma comarca maior. As demais opções usam terminologias inexistentes."
+  }
+]
