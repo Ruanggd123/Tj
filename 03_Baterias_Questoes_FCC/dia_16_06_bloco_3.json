@@ -1,0 +1,272 @@
+[
+  {
+    "id": 160301,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A modernização do parque tecnológico do tribunal é um projeto de que o diretor de TI não abre mão, visto que o sucesso da virtualização de servidores implica em drástica redução de gastos operacionais.\n\nA alternativa que reescreve a frase acima corrigindo os desvios de regência de acordo com a norma-padrão é:",
+    "options": {
+      "A": "A modernização do parque tecnológico do tribunal é um projeto a que o diretor de TI não abdica, porque o sucesso da virtualização implica à drástica redução de gastos operacionais.",
+      "B": "A modernização do parque tecnológico do tribunal é um projeto ao qual o diretor de TI não abre mão, visto que o sucesso da virtualização de servidores implica drástica redução de gastos operacionais.",
+      "C": "A modernização do parque tecnológico do tribunal é um projeto de que o diretor de TI não abre mão, visto que o sucesso da virtualização de servidores implica drástica redução de gastos operacionais.",
+      "D": "A modernização do parque tecnológico do tribunal é um projeto no qual o diretor de TI não prescinde, uma vez que o sucesso da virtualização de servidores implica na drástica redução de gastos operacionais.",
+      "E": "A modernização do parque tecnológico do tribunal é um projeto cuja a execução o diretor de TI não abre mão, pois o sucesso da virtualização de servidores implica a drástica redução de gastos operacionais."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C corrige o erro original, pois o verbo 'implicar' no sentido de 'acarretar/resultar em' é transitivo direto, não exigindo a preposição 'em' ('implica drástica redução'). Além disso, preserva-se o termo correto 'de que não abre mão', pois a locução exige preposição 'de'. Erros das demais: A) abdicar pode ser VTI com 'de', nunca com 'a'; B) 'abrir mão' rege 'de', não 'ao'; D) 'prescindir' rege 'de', não 'em'; E) é proibido o uso de artigo após o pronome relativo 'cuja'."
+  },
+  {
+    "id": 160302,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Considere as formas verbais empregadas no seguinte despacho fictício: \"O conselheiro do CNJ determina que se restabeleçam os acessos aos sistemas judiciais para que os advogados possam protocolar as petições sem atrasos.\"\n\nA transposição do trecho para o pretérito, mantendo a correta correlação de tempos e modos verbais prescrita pela norma culta, exigirá a seguinte reescrita:",
+    "options": {
+      "A": "O conselheiro do CNJ determinou que se restabeleciam os acessos aos sistemas judiciais para que os advogados poderão protocolar as petições sem atrasos.",
+      "B": "O conselheiro do CNJ determinara que se restabeleceriam os acessos aos sistemas judiciais para que os advogados pudessem protocolar as petições sem atrasos.",
+      "C": "O conselheiro do CNJ determinou que se restabeleceriam os acessos aos sistemas judiciais para que os advogados podiam protocolar as petições sem atrasos.",
+      "D": "O conselheiro do CNJ determinava que se restabeleçam os acessos aos sistemas judiciais para que os advogados pudessem protocolar as petições sem atrasos.",
+      "E": "O conselheiro do CNJ determinou que se restabelecessem os acessos aos sistemas judiciais para que os advogados pudessem protocolar as petições sem atrasos."
+    },
+    "answer": "E",
+    "explanation": "A correlação verbal original se estabelece entre o Presente do Indicativo ('determina') e o Presente do Subjuntivo ('restabeleçam', 'possam'). Ao transportar o verbo principal para o Pretérito Perfeito do Indicativo ('determinou'), a regra de correlação temporal exige que as orações subordinadas passem para o Pretérito Imperfeito do Subjuntivo ('restabelecessem', 'pudessem')."
+  },
+  {
+    "id": 160303,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O cargo de Analista de Infraestrutura, ...... atribuições a direção de Tecnologia da Informação sempre faz alusão nas portarias internas, demanda sólidos conhecimentos ...... os quais os novos servidores deverão se habituar, de modo a mitigar incidentes de segurança cibernética ...... ninguém está imune na atualidade.\n\nAs lacunas do período acima são corretamente preenchidas, respectivamente, por:",
+    "options": {
+      "A": "de cujas - a - dos quais",
+      "B": "a cujas - aos - a que",
+      "C": "para cujas - com - de que",
+      "D": "a cujas - com os - aos quais",
+      "E": "sobre cujas - por - para que"
+    },
+    "answer": "B",
+    "explanation": "O substantivo 'alusão' exige o complemento regido pela preposição 'a' ('faz alusão a cujas atribuições' -> 'a cujas'). O verbo pronominal 'habituar-se' rege a preposição 'a' ('habituar-se aos conhecimentos' -> 'aos quais'). O adjetivo 'imune' exige a preposição 'a' ('imune aos incidentes' -> 'a que'). Assim, a sequência correta é 'a cujas - aos - a que'."
+  },
+  {
+    "id": 160304,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Assinale a reescrita que mantém o sentido original da frase e obedece estritamente às normas de regência e de correlação verbal.\nFrase original: \"Dado que o relatório técnico previu a vulnerabilidade da aplicação, o coordenador de segurança preferiu isolar o servidor a desligar o datacenter inteiro.\"",
+    "options": {
+      "A": "Como o relatório técnico previu a vulnerabilidade da aplicação, o coordenador de segurança preferiu mais isolar o servidor do que desligar o datacenter inteiro.",
+      "B": "Caso o relatório técnico previsse a vulnerabilidade da aplicação, o coordenador de segurança preferira isolar o servidor do que desligar o datacenter inteiro.",
+      "C": "Visto que o relatório técnico previra a vulnerabilidade da aplicação, o coordenador de segurança tinha preferido isolar o servidor que desligar o datacenter inteiro.",
+      "D": "Porquanto o relatório técnico previu a vulnerabilidade da aplicação, o coordenador de segurança preferiu isolar o servidor a desligar o datacenter inteiro.",
+      "E": "Conquanto o relatório técnico prevesse a vulnerabilidade da aplicação, o coordenador de segurança preferia isolar o servidor à desligar o datacenter inteiro."
+    },
+    "answer": "D",
+    "explanation": "O verbo 'preferir' exige um objeto direto e um objeto indireto introduzido pela preposição 'a' ('preferir algo a outra coisa'). O uso de expressões como 'preferir mais', 'do que' ou 'que' é considerado inadequado pela norma-padrão. A alternativa D mantém a regência perfeita ('preferiu isolar o servidor a desligar'), e também conserva o sentido causal da frase ('Porquanto'). Na E, há erro de crase antes de verbo ('à desligar') e erro de conjugação ('prevesse' em vez de 'previsse')."
+  },
+  {
+    "id": 160305,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A fim de que o Tribunal de Justiça ...... os rígidos prazos de virtualização estipulados no edital, seria fundamental que o comitê de governança de TI ...... a proposta de reestruturação dos datacenters, o que indubitavelmente ...... o engajamento contínuo de todas as varas de competência cível.\n\nAs lacunas da frase devem ser preenchidas, de acordo com as normas de correlação verbal, respectivamente, por:",
+    "options": {
+      "A": "cumpra - validasse - demandará",
+      "B": "cumpriria - tenha validado - demanda",
+      "C": "cumpra - valide - demandaria",
+      "D": "cumprisse - validasse - demandaria",
+      "E": "cumpra - validasse - demandasse"
+    },
+    "answer": "D",
+    "explanation": "A expressão matriz da correlação é 'seria fundamental' (Futuro do Pretérito do Indicativo). O uso desse tempo para expressar uma condição irreal ou um desejo condicionado atrai os demais verbos nas orações subordinadas para o Pretérito Imperfeito do Subjuntivo ('cumprisse', 'validasse') e consolida sua consequência principal no próprio Futuro do Pretérito ('demandaria')."
+  },
+  {
+    "id": 160306,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O edital para aquisição de novos ativos de rede assevera que a solução de firewall deve ser inerente ...... estratégias de escalabilidade, devendo o tribunal ser intransigente ...... cláusulas contratuais de disponibilidade contínua e, paralelamente, estar apto ...... gerir eventuais crises de indisponibilidade com autonomia.\n\nPreenchem as lacunas de forma compatível com a norma-padrão de regência nominal:",
+    "options": {
+      "A": "às - quanto às - a",
+      "B": "as - com as - para",
+      "C": "às - nas - em",
+      "D": "das - em - a",
+      "E": "às - com as - por"
+    },
+    "answer": "A",
+    "explanation": "O adjetivo 'inerente' exige a preposição 'a', havendo crase antes do substantivo feminino plural ('às estratégias'). O adjetivo 'intransigente' rege a locução 'quanto a' ou a preposição 'com' ('quanto às cláusulas'). O adjetivo 'apto' exige a preposição 'a' ou 'para' antes de verbo no infinitivo ('apto a gerir'). A alternativa A atende plenamente a essas exigências."
+  },
+  {
+    "id": 160307,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "\"Acredita-se que, se o departamento técnico adequar o sistema de peticionamento eletrônico às diretrizes mais recentes do CNJ, o fluxo processual das câmaras criminais otimizar-se-á substancialmente nos próximos meses.\"\n\nCaso a oração condicional destacada fosse transposta para expressar uma hipótese irreal no passado, o verbo da oração principal assumiria corretamente a seguinte forma:",
+    "options": {
+      "A": "otimizou-se.",
+      "B": "otimizar-se-ia.",
+      "C": "otimizaria-se.",
+      "D": "se otimizará.",
+      "E": "otimiza-se."
+    },
+    "answer": "B",
+    "explanation": "Ao mudar a condição de 'adequar' (Futuro do Subjuntivo) para 'adequasse' (Pretérito Imperfeito do Subjuntivo) - gerando uma hipótese -, o verbo da oração principal 'otimizar-se-á' (Futuro do Indicativo) deve transitar para o Futuro do Pretérito do Indicativo. A colocação pronominal correta exige mesóclise ('otimizar-se-ia'), uma vez que não há palavra atrativa prévia para forçar a próclise ('se otimizaria' não possui elemento atrativo nesse corte da oração principal) e não se usa ênclise em verbos no futuro ('otimizaria-se' é um erro grosseiro de colocação)."
+  },
+  {
+    "id": 160308,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "As expressões em destaque no excerto \"A equipe de analistas judiciários estava acostumada a lidar com volumes massivos de processos e já possuía ferramentas sistêmicas aptas a classificar as peças automaticamente\" podem ser substituídas, sem que haja prejuízo à norma-padrão de regência, respectivamente, por:",
+    "options": {
+      "A": "habituada em – inclinadas a",
+      "B": "ciente de – propícias em",
+      "C": "familiarizada com – capazes de",
+      "D": "propensa por – competentes a",
+      "E": "afim a – suficientes para"
+    },
+    "answer": "C",
+    "explanation": "O adjetivo 'acostumada' é sinônimo de 'familiarizada', que rege legitimamente a preposição 'com' ('familiarizada com'). O adjetivo 'aptas' corresponde semanticamente a 'capazes', termo cuja regência exige a preposição 'de' ('capazes de classificar'). As demais alternativas apresentam desvios de regência nas substituições ('habituada a', 'propensa a', 'propícias a')."
+  },
+  {
+    "id": 160309,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "\"Sempre que há falha crítica no link principal de comunicação do fórum, o suporte técnico é acionado imediatamente pelo magistrado e procede à restauração emergencial da conectividade via rede móvel.\"\n\nAo reescrever o período com o verbo destacado (\"há\") no pretérito imperfeito do subjuntivo, para indicar uma eventualidade condicional passada, a correta correlação temporal exigirá as seguintes adaptações nas demais formas verbais:",
+    "options": {
+      "A": "seria acionado e procedia.",
+      "B": "era acionado e procedia.",
+      "C": "era acionado e procederia.",
+      "D": "seria acionado e procederia.",
+      "E": "será acionado e procederá."
+    },
+    "answer": "D",
+    "explanation": "O verbo 'haver' flexionado no Pretérito Imperfeito do Subjuntivo resulta em 'houvesse'. A subordinação de uma hipótese no passado exige que a consequência e as ações subsequentes na oração principal se construam no Futuro do Pretérito do Indicativo ('seria acionado' e 'procederia')."
+  },
+  {
+    "id": 160310,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O novo software de gestão processual, ...... arquitetura orientada a microsserviços os desenvolvedores terceirizados se basearam, e ...... os técnicos aludem no relatório de auditoria, abriga as bibliotecas criptográficas ...... o tribunal mais necessita para garantir a tramitação em sigilo.\n\nAssinale a opção que preenche as lacunas respeitando rigorosamente a norma culta de regência:",
+    "options": {
+      "A": "em cuja - a que - de que",
+      "B": "na qual - a cujo - de que",
+      "C": "de cuja - que - em que",
+      "D": "cuja a - à que - às quais",
+      "E": "em cuja - o qual - que"
+    },
+    "answer": "A",
+    "explanation": "O verbo pronominal 'basear-se' exige preposição 'em' ('basearam-se EM cuja arquitetura'). O verbo 'aludir' exige a preposição 'a' ('aludem A que o software', com o relativo 'que' retomando software). O verbo 'necessitar' rege a preposição 'de' ('necessita DE que bibliotecas'). Portanto, a cadeia estruturada correta é 'em cuja', 'a que' e 'de que'."
+  },
+  {
+    "id": 160311,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Assinale a alternativa que obedece rigorosamente às regras de regência verbal da norma-padrão da Língua Portuguesa, sobretudo no que concerne ao emprego de pronomes oblíquos e à estruturação de objetos.",
+    "options": {
+      "A": "O magistrado referiu-se ao novo código de processo, mas os analistas de negócios não o obedeceram durante a fase de especificação do sistema.",
+      "B": "Ciente da extrema lentidão da rede corporativa da comarca, o presidente do tribunal assistiu-a presencialmente durante toda a madrugada.",
+      "C": "O acesso ininterrupto aos autos digitais era requisito essencial; por isso, o diretor de TI exigiu que os juízes lhes acessassem diariamente para testes.",
+      "D": "A súbita falha no array de discos implicou-lhes a perda irrecuperável de petições iniciais, atrasando o andamento das varas especializadas.",
+      "E": "Como os logs de segurança indicavam a presença de invasores, a equipe de infraestrutura bloqueou os servidores a fim de inspecioná-los com cautela."
+    },
+    "answer": "E",
+    "explanation": "O verbo 'inspecionar' é transitivo direto, exigindo o pronome oblíquo correspondente ('inspecionar os servidores' -> 'inspecioná-los'), de forma correta na alternativa E. Erros das demais: A) 'obedecer' é transitivo indireto (não LHE obedeceram); B) 'assistir', no sentido de ver/presenciar, é transitivo indireto e rejeita o pronome átono (assistiu a ela); C) 'acessar' é transitivo direto (os acessassem); D) 'implicar', no sentido de acarretar, é transitivo direto na coisa acarretada e não costuma receber objeto indireto em forma de pronome oblíquo 'lhes' neste contexto de prejuízo patrimonial."
+  },
+  {
+    "id": 160312,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "As novas diretrizes técnicas estipuladas pela Secretaria de TI do tribunal exigem que os sistemas processuais baseados em nuvem ______ regras rigorosas de criptografia assimétrica e que os clusters virtuais ______ demandas de milhares de acessos simultâneos sem que o pico de processamento ______ prejuízo aos prazos preclusivos legais.\n\nAs lacunas da frase acima são corretamente preenchidas, na ordem dada, por:",
+    "options": {
+      "A": "obedeçam as - suportem as - implique o",
+      "B": "obedeçam a - suportem - implique",
+      "C": "obedeçam às - suportem a - implique em",
+      "D": "obedeça às - suporte - implique no",
+      "E": "obedeçam a - suportem - implique a"
+    },
+    "answer": "B",
+    "explanation": "O verbo 'obedecer' é transitivo indireto e exige preposição 'a'. Como a palavra 'regras' está no plural de modo genérico (sem artigo 'as'), a construção correta é 'obedeçam a'. O verbo 'suportar' (no sentido de aguentar a carga) é transitivo direto ('suportem demandas'). O verbo 'implicar' (no sentido de resultar/acarretar) também é transitivo direto, unindo-se sem preposição ao complemento ('implique prejuízo')."
+  },
+  {
+    "id": 160313,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Considere as seguintes sentenças redigidas por um servidor na documentação do projeto de TI:\n\nI. Caso o fornecedor de nuvem não mantiver os índices de nível de serviço (SLA) acordados, o contrato de hospedagem sofrerá rescisão imediata.\nII. O juiz corregedor ordenou expressamente que o diretor técnico intervisse na disputa entre os engenheiros de software e a equipe de usabilidade.\nIII. Se a consultoria externa propuser uma arquitetura baseada em eventos, a migração dos bancos de dados relacionais transcorrerá sem sobressaltos.\n\nDe acordo com o rigor formal da norma-padrão para flexão e correlação verbal, está plenamente correto o que se afirma em:",
+    "options": {
+      "A": "I e II, apenas.",
+      "B": "III, apenas.",
+      "C": "II e III, apenas.",
+      "D": "I e III, apenas.",
+      "E": "I, II e III."
+    },
+    "answer": "B",
+    "explanation": "Apenas o item III está correto: o verbo 'propor' deriva de 'pôr', gerando o Futuro do Subjuntivo 'propuser' (correlacionado perfeitamente com 'transcorrerá'). O item I está errado porque a conjunção condicional 'Caso' exige o Presente do Subjuntivo ('Caso não mantenha'); a forma 'mantiver' só estaria correta com a conjunção 'Se'. O item II está errado porque o verbo 'intervir', derivado de 'vir', gera a forma 'interviesse' no Pretérito Imperfeito do Subjuntivo, não 'intervisse'."
+  },
+  {
+    "id": 160314,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No relatório de encerramento da ocorrência técnica, o administrador de sistemas relatou que \"ao verificar a volumetria de dados no servidor de arquivos, assistiu a falhas catastróficas de redundância e visou mitigá-las com urgência, muito embora essa ação intempestiva implicasse horas extras não planejadas para o seu setor.\"\n\nSe o servidor optasse por substituir os verbos destacados por \"presenciar\", \"esforçar-se por\" e \"acarretar\", respectivamente, a reescrita que preservaria a estrita obediência à regência ditada pela norma culta seria:",
+    "options": {
+      "A": "presenciou a falhas catastróficas / esforçou-se por mitigá-las / acarretasse a horas extras.",
+      "B": "presenciou às falhas catastróficas / esforçou-se em mitigá-las / acarretasse em horas extras.",
+      "C": "presenciou de falhas catastróficas / esforçou-se na mitigação delas / acarretasse às horas extras.",
+      "D": "presenciou falhas catastróficas / esforçou-se para mitigá-las / acarretasse em horas extras.",
+      "E": "presenciou falhas catastróficas / esforçou-se por mitigá-las / acarretasse horas extras."
+    },
+    "answer": "E",
+    "explanation": "O verbo 'presenciar' é transitivo direto ('presenciou falhas'). O verbo pronominal 'esforçar-se' é transitivo indireto acompanhado das preposições 'por', 'para' ou 'em' ('esforçou-se por mitigá-las' é válido). O verbo 'acarretar' é estritamente transitivo direto ('acarretasse horas extras'). A opção E obedece plenamente a todas essas exigências, retirando as preposições incorretas antes de objetos diretos em outras opções."
+  },
+  {
+    "id": 160315,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O arquiteto de software, durante a apresentação do comitê executivo, referiu-se ______ normas rigorosas da Lei Geral de Proteção de Dados (LGPD) e demonstrou ser amplamente favorável ______ implantação de um protocolo descentralizado que se mostrasse plenamente compatível ______ exigências de interoperabilidade europeias.\n\nAs lacunas são preenchidas com correção gramatical e observância das normas de regência nominal e verbal, respectivamente, por:",
+    "options": {
+      "A": "as - a - com as",
+      "B": "as - à - às",
+      "C": "às - à - com as",
+      "D": "às - a - a",
+      "E": "às - a - com às"
+    },
+    "answer": "C",
+    "explanation": "O verbo pronominal 'referir-se' exige a preposição 'a', fundindo-se com o artigo definido plural que antecede o substantivo para formar a crase ('às normas'). O adjetivo 'favorável' também rege a preposição 'a', exigindo crase diante de 'implantação' ('à implantação'). O adjetivo 'compatível' exige a preposição 'com' ('compatível com as exigências'). A sequência correta é a apresentada na alternativa C."
+  }
+]

@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1606001,
+    "day_id": "dia_16_06",
+    "day_title": "16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Ceará (TJ-CE) iniciou o projeto de implementação de um Sistema de Gestão da Segurança da Informação (SGSI). A diretoria de TI propôs excluir os mainframes legados do escopo de certificação para acelerar a aprovação, não obstante esses equipamentos processem grandes volumes de dados processuais sensíveis e interajam constantemente com a nuvem. À luz das exigências estabelecidas pela norma ISO 27001:2022 sobre a determinação do escopo do SGSI, a decisão técnica correta diante desse cenário exige que:",
+    "options": {
+      "A": "A definição do escopo restringe-se aos sistemas em nuvem sob gestão direta do comitê de segurança cibernética.",
+      "B": "O escopo do SGSI abrange todas as interfaces e dependências lógicas ou físicas com sistemas externos excluídos.",
+      "C": "A exclusão de ativos críticos exige a elaboração de uma Declaração de Aplicabilidade independente.",
+      "D": "O contexto da organização determina a obrigatoriedade de inclusão de sistemas legados no primeiro ciclo de auditoria.",
+      "E": "A alta direção possui autoridade discricionária para mitigar riscos de sistemas excluídos através de apólices de seguro."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. De acordo com a ISO 27001, ao definir o escopo do SGSI, a organização deve considerar as interfaces e dependências entre as atividades realizadas pela organização, e as atividades realizadas por terceiros ou sistemas excluídos. Se o mainframe processa dados vitais e interage com o escopo, as interfaces de risco devem ser tratadas. A (Falsa) O escopo não se restringe à gestão direta na nuvem. C (Falsa) A Declaração de Aplicabilidade lista controles aplicáveis, não atua como salvaguarda isolada para exclusão arbitrária de ativos vitais. D (Falsa) Não existe obrigatoriedade normativa de incluir sistemas legados imediatamente, desde que o escopo seja bem definido e justificado. E (Falsa) Transferir risco (seguro) é opção de tratamento, não uma carta branca da alta direção para ignorar dependências do escopo."
+  },
+  {
+    "id": 1606002,
+    "day_id": "dia_16_06",
+    "day_title": "16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após realizar a avaliação rigorosa de riscos na infraestrutura do Processo Judicial Eletrônico (PJe), a equipe de segurança da informação do TJ-CE selecionou os controles necessários do Anexo A da ISO 27001 para mitigar ameaças identificadas. O auditor interno do tribunal, na fase preparatória para a certificação, solicitou o documento formal que correlaciona os riscos aos controles implementados e justifica expressamente qualquer omissão de controles normativos. O documento normativo exigido para esta finalidade é:",
+    "options": {
+      "A": "O Plano de Tratamento de Riscos.",
+      "B": "A Matriz de Avaliação de Impacto.",
+      "C": "A Declaração de Aplicabilidade.",
+      "D": "O Relatório de Auditoria Interna.",
+      "E": "O Registro de Ativos de Informação."
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. A Declaração de Aplicabilidade (Statement of Applicability - SoA) é o documento formal exigido pela ISO 27001 que lista todos os controles do Anexo A, justificando tanto a sua inclusão (com o status de implementação) quanto a exclusão de qualquer controle que a organização julgue não ser pertinente. A (Falsa) O Plano de Tratamento de Riscos detalha as ações, prazos e responsáveis para aplicar os controles, mas não justifica exclusões do Anexo A em formato de checklist normativo. B (Falsa) Matriz de impacto foca na análise de riscos. D e E (Falsas) São documentos de apoio, não cumprem o papel do SoA de mapear e justificar a aderência estrita aos controles da norma."
+  },
+  {
+    "id": 1606003,
+    "day_id": "dia_16_06",
+    "day_title": "16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE identificou um risco elevado de ataques cibernéticos de negação de serviço (DDoS) direcionados aos seus portais públicos de consulta jurisprudencial. A análise financeira demonstrou que o custo para aquisição e manutenção de appliances de segurança físicos e links redundantes on-premise excederia significativamente o possível prejuízo da indisponibilidade. O tribunal, seguindo as diretrizes da ISO 27001, decidiu contratar um serviço terceirizado de limpeza de tráfego (scrubbing center) em nuvem para lidar exclusivamente com essa ameaça. Esta ação representa estrategicamente:",
+    "options": {
+      "A": "A aceitação do risco residual.",
+      "B": "A eliminação da fonte de risco.",
+      "C": "O compartilhamento do risco.",
+      "D": "A mitigação baseada em redundância.",
+      "E": "A retenção informada do risco."
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. Na gestão de riscos, o compartilhamento (ou transferência) de risco envolve delegar parcial ou totalmente o tratamento financeiro ou operacional da ameaça para um terceiro, como a contratação de um serviço especializado de scrubbing ou uma apólice de seguro cibernético. A e E (Falsas) Aceitação ou retenção implicaria em não tomar nenhuma ação adicional e assumir as consequências. B (Falsa) A ameaça de DDoS na internet não é eliminável pelo tribunal. D (Falsa) Redundância seria replicar infraestrutura própria (o que o enunciado diz ser caro), não caracteriza a decisão de transferir o tratamento do ataque para terceiros."
+  },
+  {
+    "id": 1606004,
+    "day_id": "dia_16_06",
+    "day_title": "16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Com a adesão permanente ao modelo de trabalho remoto pelos magistrados do TJ-CE, observou-se um aumento expressivo em tentativas de acesso não autorizado à rede administrativa interna via conexões VPN. A equipe de engenharia de segurança, pautada nos controles de acesso da ISO 27002:2022, implementou uma nova política exigindo Múltiplos Fatores de Autenticação (MFA) para todas as sessões originadas fora da rede lógica do tribunal. Sobre a configuração arquitetural deste controle, é tecnicamente correto afirmar que:",
+    "options": {
+      "A": "A autenticação multifator baseia-se na segregação de ambientes virtuais e físicos.",
+      "B": "A implementação exige a combinação de fatores de conhecimento, posse e inerência.",
+      "C": "Os controles criptográficos dispensam o uso de fatores de posse em redes fechadas.",
+      "D": "A política de senhas fortes substitui o fator biológico em acessos via túneis VPN.",
+      "E": "O controle de acesso lógico fundamenta-se na classificação da informação em níveis."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. O MFA (Multi-Factor Authentication) exige a combinação de pelo menos duas categorias distintas entre: Conhecimento (algo que você sabe, como senhas), Posse (algo que você tem, como um token ou celular) e Inerência/Biológico (algo que você é, como biometria). A (Falsa) A MFA lida com credenciais, não segregação de rede. C (Falsa) Criptografia não substitui a autenticação do usuário, sendo controles complementares. D (Falsa) Senhas, mesmo fortes, continuam sendo um único fator (conhecimento) e não substituem fatores biológicos no contexto de uma política MFA exigente. E (Falsa) O acesso baseia-se em identidade e privilégios (RBAC/ABAC), não apenas na classificação isolada do dado."
+  },
+  {
+    "id": 1606005,
+    "day_id": "dia_16_06",
+    "day_title": "16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante um incidente crítico de ransomware no datacenter principal do TJ-CE, a equipe de resposta a incidentes isolou os servidores afetados e restaurou os dados de backups imutáveis com sucesso, restabelecendo as operações em menos de quatro horas. No entanto, o comitê auditor apontou uma inconformidade crítica baseada na ISO 27002, relatando que o ciclo de gestão do incidente foi abortado prematuramente, ignorando etapas mandatórias após a restauração. A etapa negligenciada exigida pelas melhores práticas normativas é:",
+    "options": {
+      "A": "A preservação de evidências digitais antecedendo a fase de triagem inicial.",
+      "B": "A análise pós-incidente visando identificar vulnerabilidades e atualizar políticas.",
+      "C": "A comunicação aos órgãos reguladores ocorrendo após o plano de continuidade.",
+      "D": "O registro do evento prescindindo de detalhamento técnico em casos de restauração.",
+      "E": "A responsabilização disciplinar constituindo a etapa final do ciclo de resposta."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. A gestão de incidentes de segurança da informação (ISO 27002) possui uma fase crucial de 'Lições Aprendidas' ou avaliação pós-incidente. Nela, deve-se investigar a causa raiz, descobrir como o ransomware entrou, e atualizar as políticas para evitar reincidências. Restaurar o backup resolve o sintoma, não a causa. A (Falsa) A preservação de evidências ocorre durante a contenção/investigação, não sendo o foco principal negligenciado após o restabelecimento citado no texto. C (Falsa) Notificações devem ser tempestivas, não aguardar a finalização total. D (Falsa) Registros são obrigatórios sempre, independentemente de haver backup. E (Falsa) O ciclo encerra com a melhoria contínua, não estritamente com punições."
+  },
+  {
+    "id": 1606006,
+    "day_id": "dia_16_06",
+    "day_title": "16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está submetendo seu Sistema de Gestão da Segurança da Informação (SGSI) a uma rigorosa avaliação cíclica. Os auditores observaram que, embora o controle de acesso lógico dos sistemas processuais atenda tecnicamente aos requisitos do Anexo A da ISO 27001, a diretoria de TI não implantou métricas sistêmicas nem revisões gerenciais para acompanhar se a eficácia deste controle se mantém ao longo do tempo. O não cumprimento desta etapa acarreta uma quebra estrutural do princípio normativo focado em:",
+    "options": {
+      "A": "O planejamento e controle de mudanças arquiteturais sistêmicas.",
+      "B": "A avaliação de desempenho e eficácia do sistema de gestão.",
+      "C": "A conscientização técnica e educação contínua dos colaboradores.",
+      "D": "O rigor técnico na implementação inicial de controle de acesso lógico.",
+      "E": "O tratamento corretivo focado em anomalias operacionais pontuais."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. De acordo com a seção 9 da ISO 27001 (Avaliação de Desempenho), a organização deve monitorar, medir, analisar e avaliar o desempenho da segurança da informação e a eficácia do SGSI. Ter o controle técnico sem medir se ele funciona é uma falha clara de avaliação de desempenho (fase Check do ciclo PDCA). A (Falsa) Refere-se à gestão de mudanças (fase Do). C (Falsa) Refere-se a competência e conscientização (fase Do). D (Falsa) O enunciado diz que a implementação técnica atende aos requisitos iniciais, a falha é no monitoramento. E (Falsa) Tratamento foca na correção, o que falta no texto é o monitoramento prévio contínuo."
+  },
+  {
+    "id": 1606007,
+    "day_id": "dia_16_06",
+    "day_title": "16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para resguardar as transferências massivas de dados contendo depoimentos em vídeo entre as instâncias e as varas descentralizadas do TJ-CE, a arquitetura técnica precisa adotar uma solução criptográfica. Os arquivos de vídeo são volumosos e demandam alta velocidade de cifragem para não inviabilizar o link de comunicação. A equipe opta por uma arquitetura de envelopamento digital (criptografia híbrida). O papel desempenhado pelos algoritmos nesta arquitetura caracteriza-se tecnicamente por:",
+    "options": {
+      "A": "A criptografia simétrica realiza a cifragem dos dados em lote com alta velocidade de processamento.",
+      "B": "A chave pública assegura diretamente a confidencialidade estrutural do conteúdo dos vídeos.",
+      "C": "O algoritmo assimétrico processa o fluxo de mídia diretamente através de operações de permutação.",
+      "D": "A função de dispersão assegura a distribuição confidencial das chaves simétricas na rede.",
+      "E": "A cifragem em blocos assimétricos elimina o overhead computacional na fase de troca de chaves."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. Em sistemas híbridos, a criptografia simétrica (como AES) é utilizada para encriptar o volume principal de dados (os vídeos) devido à sua altíssima eficiência e velocidade. A criptografia assimétrica entra apenas para criptografar e transportar a chave simétrica, garantindo a troca segura. B e C (Falsas) A chave pública/assimétrica é lenta e ineficiente computacionalmente para cifrar dados grandes como vídeos, não sendo usada diretamente no arquivo. D (Falsa) Funções de hash garantem integridade, não a distribuição confidencial de chaves. E (Falsa) Criptografia assimétrica gera um grande overhead computacional, que é exatamente o motivo de não ser usada nos dados em lote."
+  },
+  {
+    "id": 1606008,
+    "day_id": "dia_16_06",
+    "day_title": "16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O repositório de custódia digital de provas do TJ-CE exige que as imagens de discos periciais permaneçam inalteradas ao longo dos anos. O sistema arquiva um sumário criptográfico associado a cada submissão. Após uma recente conferência técnica, pesquisadores demonstraram ser possível alterar o arquivo pericial sem modificar o valor retornado pela função de resumo escolhida pelo tribunal, comprometendo a cadeia de custódia. O evento criptográfico que viabiliza essa falha estrutural de integridade é denominado:",
+    "options": {
+      "A": "O ataque de força bruta revertendo o valor do digest para o arquivo original.",
+      "B": "A colisão de hash ocorrendo na geração de resumos idênticos para dados distintos.",
+      "C": "A interceptação do tráfego invalidando o sumário armazenado em bancos relacionais.",
+      "D": "O ataque de dicionário explorando senhas fracas no armazenamento do disco.",
+      "E": "A quebra do princípio de difusão ocultando as relações matemáticas da assinatura."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Quando duas entradas de dados diferentes produzem o mesmo valor de hash (digest), ocorre uma 'colisão'. Um bom algoritmo de hash deve ter forte resistência a colisões para garantir que alterações maliciosas em um arquivo mudem obrigatoriamente o hash resultante. A (Falsa) Hashes são funções unidirecionais; reverter o hash para o arquivo original é inviável, o que ocorre é colisão. C e D (Falsas) São métodos de ataque a redes ou credenciais, não relacionados à falha matemática do algoritmo de hash em si. E (Falsa) Difusão refere-se a cifras de bloco (simétricas), significando que alterar um bit no plaintext deve mudar múltiplos bits no ciphertext."
+  },
+  {
+    "id": 1606009,
+    "day_id": "dia_16_06",
+    "day_title": "16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um magistrado em plantão no TJ-CE expede um alvará de soltura eletrônico, firmando-o mediante assinatura digital baseada em infraestrutura de chaves públicas. Horas após o cumprimento da ordem, uma entidade externa contesta a validade jurídica, alegando adulteração no corpo do texto e refutando a autoria do magistrado. A equipe de auditoria técnica do tribunal submete o documento ao verificador oficial. Do ponto de vista técnico e legal da criptografia assimétrica, as propriedades conferidas ao documento por este mecanismo garantem:",
+    "options": {
+      "A": "A assinatura digital provê confidencialidade estrutural contra inspeções de tráfego de rede.",
+      "B": "O uso da chave privada do emissor garante a autenticidade, integridade e o não repúdio.",
+      "C": "A verificação da assinatura exige o compartilhamento de um segredo simétrico pré-estabelecido.",
+      "D": "A cifragem com a chave pública do destinatário assegura a validade probatória do documento.",
+      "E": "O protocolo criptográfico invalida a dependência de autoridades certificadoras externas."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. A assinatura digital utiliza a chave privada do emissor para criptografar o hash do documento. Isso garante: Autenticidade (só o detentor da chave privada gerou), Integridade (qualquer alteração no documento invalida a assinatura) e Não Repúdio (o emissor não pode negar a autoria). A (Falsa) Assinatura digital não garante confidencialidade; o documento pode trafegar em texto claro. C (Falsa) Utiliza criptografia assimétrica, eliminando a necessidade de segredo simétrico pré-estabelecido. D (Falsa) Para assinar, cifra-se com a chave PRIVADA do emissor, não com a pública do destinatário. E (Falsa) A dependência de Autoridades Certificadoras (PKI/ICP) é justamente o que vincula a chave pública à identidade do magistrado."
+  },
+  {
+    "id": 1606010,
+    "day_id": "dia_16_06",
+    "day_title": "16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE projeta o lançamento de um aplicativo mobile para facilitar o peticionamento por advogados externos. A comunicação exige troca segura de chaves usando criptografia fim a fim. Como os dispositivos móveis possuem limitação de processamento e restrições severas de bateria, os arquitetos de software precisam adotar um padrão criptográfico assimétrico que ofereça alto nível de segurança matemática utilizando chaves consideravelmente menores em comparação a algoritmos clássicos como o RSA. O padrão técnico que atende perfeitamente a esse requisito restritivo é:",
+    "options": {
+      "A": "O padrão de criptografia em bloco AES no modo Galois/Counter Mode.",
+      "B": "O algoritmo de criptografia embasado no problema das Curvas Elípticas.",
+      "C": "O protocolo Diffie-Hellman executado em grupos de exponenciação de inteiros.",
+      "D": "O sistema criptográfico simétrico tradicional Data Encryption Standard.",
+      "E": "O esquema algorítmico de preenchimento ótimo de criptografia assimétrica."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. A Criptografia de Curva Elíptica (Elliptic Curve Cryptography - ECC) é notória por oferecer o mesmo nível de segurança que algoritmos clássicos baseados em fatoração (como o RSA) utilizando um tamanho de chave infinitamente menor, o que a torna ideal para dispositivos com restrições de CPU, memória e energia (mobile e IoT). A e D (Falsas) AES e DES são simétricos, o enunciado pede assimétrico para troca de chaves. C (Falsa) O Diffie-Hellman original exige números primos gigantes e chaves extensas, sem a eficiência das curvas elípticas (ECDH). E (Falsa) Trata-se do OAEP, um esquema de padding para RSA, e não de um algoritmo otimizado de chaves menores."
+  },
+  {
+    "id": 1606011,
+    "day_id": "dia_16_06",
+    "day_title": "16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um servidor de alto escalão do TJ-CE teve seu notebook e token criptográfico subtraídos. O token possuía armazenada a sua chave privada vinculada a um certificado digital emitido no padrão ICP-Brasil, utilizado diariamente para chancelar atos correcionais com presunção legal de veracidade. Para neutralizar o vetor de ameaça decorrente de um possível uso por criminosos antes do vencimento natural do certificado digital, a ação técnica compulsória da autoridade de registro deve ser:",
+    "options": {
+      "A": "A emissão emergencial de um novo certificado autoassinado pelo departamento de TI.",
+      "B": "A inclusão do número de série correspondente na Lista de Certificados Revogados.",
+      "C": "A suspensão temporária do servidor oficial de carimbo de tempo do tribunal.",
+      "D": "A alteração imediata da chave pública nas tabelas da infraestrutura de diretório.",
+      "E": "O bloqueio do endereço físico do equipamento no firewall de perímetro corporativo."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Em PKI (Infraestrutura de Chaves Públicas), o mecanismo de invalidação de um certificado válido, que teve sua chave privada comprometida, é a sua Revogação. O número de série é publicado em uma LCR (Lista de Certificados Revogados - CRL) ou consultado via protocolo OCSP. A (Falsa) Emitir novo certificado não anula automaticamente o roubado perante o sistema ICP-Brasil. C (Falsa) Suspender o carimbo de tempo afeta a infraestrutura inteira e não resolve o comprometimento do certificado. D (Falsa) A chave pública já foi assinada pela AC; não basta alterá-la no diretório interno, precisa revogar a assinatura da AC. E (Falsa) O criminoso pode usar o token a partir de qualquer local do mundo via internet, bloquear o MAC Address não surte efeito."
+  },
+  {
+    "id": 1606012,
+    "day_id": "dia_16_06",
+    "day_title": "16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A recém-projetada arquitetura de microsserviços do sistema judicial interno do TJ-CE trafega milhares de requisições por segundo contendo atualizações de trâmites de processos em formato JSON. O arquiteto de segurança exige que o payload dessas requisições seja verificado em relação à integridade e à autenticidade da origem, mas proíbe terminantemente o emprego de assinaturas baseadas em criptografia assimétrica devido à alta latência de CPU associada. A solução nativa recomendada, que combina funções de dispersão e um segredo compartilhado previamente entre os microsserviços, corresponde à técnica de:",
+    "options": {
+      "A": "Código de autenticação de mensagem baseado em hash (HMAC).",
+      "B": "Infraestrutura de chave pública de baixa latência (PKI-LL).",
+      "C": "Protocolo de encapsulamento de segurança de carga útil (ESP).",
+      "D": "Esquema de assinatura digital de curva elíptica (ECDSA).",
+      "E": "Função de derivação de chaves baseada em senhas (PBKDF2)."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O HMAC (Hash-based Message Authentication Code) é especificamente projetado para garantir simultaneamente integridade e autenticidade da origem sem o custo computacional da criptografia assimétrica, combinando um algoritmo de hash criptográfico rápido (como SHA-256) com uma chave secreta compartilhada simétrica. B e D (Falsas) Envolvem criptografia assimétrica (PKI, ECDSA), expressamente vetada no enunciado pela latência. C (Falsa) ESP é o cabeçalho do IPsec utilizado para criptografar a camada de rede IP, não um mecanismo atrelado unicamente a um payload de API JSON. E (Falsa) PBKDF2 atua no processo de hashing iterativo para dificultar a quebra de senhas salvas, e não para assinar requisições em trânsito."
+  },
+  {
+    "id": 1606013,
+    "day_id": "dia_16_06",
+    "day_title": "16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A nova presidência do TJ-CE ordenou uma revisão holística de toda a documentação que suporta as diretrizes do tribunal sobre proteção de dados. Durante a auditoria, constatou-se que a Política Geral de Segurança da Informação (PSI) possuía oitocentas páginas, contendo desde regras genéricas de conduta até scripts detalhados de firewall. De acordo com os fundamentos normativos de governança expressos na norma ISO 27001, a estruturação macro de uma política de segurança organizacional de alto nível pressupõe que:",
+    "options": {
+      "A": "A política detalhe rigorosamente os parâmetros técnicos de configuração de ativos de rede.",
+      "B": "O documento formalize o comprometimento estratégico da alta direção com as metas do SGSI.",
+      "C": "As diretrizes políticas incluam o código-fonte dos algoritmos criptográficos utilizados.",
+      "D": "A elaboração da política restrinja-se aos membros do comitê técnico de infraestrutura.",
+      "E": "O escopo do documento limite-se à gestão operacional pontual de incidentes isolados."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. A Política de Segurança da Informação, na visão da ISO 27001 e 27002, é o documento guarda-chuva máximo. Ele deve ser conciso, focado nos princípios, aprovado pela alta direção e deve expressar formalmente o suporte e comprometimento dos líderes executivos. Procedimentos técnicos vão em normas e POPs de níveis mais baixos. A e C (Falsas) Inserir scripts e configurações em uma Política de alto nível gera engessamento documental inaceitável; essas especificações residem em manuais operacionais (guidelines e procedures). D (Falsa) A política não se restringe à infraestrutura ou à área de TI, abrange o comportamento organizacional e requer aprovação executiva. E (Falsa) O escopo é abrangente para todos os domínios do SGSI, e não apenas uma faceta isolada de incidentes."
+  },
+  {
+    "id": 1606014,
+    "day_id": "dia_16_06",
+    "day_title": "16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE mantém uma solução de telefonia VoIP nativa para comunicação sigilosa em audiências de custódia virtuais, gerando um tráfego de dados de streaming contínuo. Devido à suscetibilidade da voz à perda de pacotes e jitter (variação de atraso), a equipe de infraestrutura requisitou um método criptográfico simétrico capaz de cifrar os bits de áudio sequencialmente no exato momento em que são gerados, prescindindo de espera para completar matrizes fixas de dados. O conceito criptográfico que resolve esse gargalo arquitetural é caracterizado por:",
+    "options": {
+      "A": "A cifra de bloco processa segmentos estáticos de tamanho fixo em matrizes de substituição.",
+      "B": "A cifra de fluxo realiza a operação exclusiva-OU entre os dados puros e uma sequência de chaves.",
+      "C": "A criptografia assimétrica segmenta o tráfego de voz bruto em pacotes fragmentados sequencialmente.",
+      "D": "A função de dispersão unidirecional encapsula o áudio sigiloso dentro de vetores de inicialização.",
+      "E": "O algoritmo RSA garante a confidencialidade ininterrupta do fluxo por meio da fatoração em primos."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Cifras de Fluxo (Stream Ciphers), como o RC4 e a família ChaCha, são métodos de criptografia simétrica que processam e encriptam os dados de forma contínua, bit a bit ou byte a byte, aplicando operações rápidas (tipicamente XOR) em conjunto com uma sequência pseudoaleatória de chaves. Essa propriedade as torna ideais para transmissões em tempo real (como vídeo e VoIP) que não toleram buffers e latência. A (Falsa) Refere-se à cifra de bloco, que aguarda segmentos (ex: 128 bits) serem preenchidos, gerando latência inadequada ao requisito do texto. C e E (Falsas) São métodos assimétricos, inviáveis para fluxos de dados de streaming pesados em tempo real. D (Falsa) Função de hash serve para integridade, não garante confidencialidade, nem 'encapsula' o áudio cifrado no sentido exposto."
+  },
+  {
+    "id": 1606015,
+    "day_id": "dia_16_06",
+    "day_title": "16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Buscando modernizar o ciclo de entrega de softwares para o sistema central do tribunal, o setor de desenvolvimento do TJ-CE adotou práticas maduras de DevSecOps. Observou-se, entretanto, que os programadores possuíam privilégios sistêmicos para publicar e executar rotinas de teste e depuração diretamente nos clusters operacionais do datacenter. Conforme os rigorosos controles propostos pela norma ISO 27002:2022 sobre o desenvolvimento e manutenção de sistemas, o tratamento dessa deficiência pressupõe a premissa de que:",
+    "options": {
+      "A": "A transferência de dados reais de produção para o ambiente de testes ocorre livremente sem restrições em metodologias ágeis.",
+      "B": "A segregação robusta de ambientes de desenvolvimento, teste e produção previne modificações não autorizadas ou acidentais.",
+      "C": "A revisão de código-fonte enfoca exclusivamente a otimização de ciclos de relógio e o ganho de desempenho computacional.",
+      "D": "O controle centralizado de versão de software dispensa as trilhas de auditoria contínua em arquiteturas monolíticas.",
+      "E": "A compilação definitiva de bibliotecas de terceiros executa-se diretamente nas máquinas dos servidores de produção."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. A separação dos ambientes de desenvolvimento, teste e produção é um controle vital exposto na ISO 27002 (Segurança no Ciclo de Vida do Sistema / Separação de Ambientes). O acesso direto de desenvolvedores ao ambiente de produção eleva exponencialmente o risco de indisponibilidades, fraudes ou vazamento. A (Falsa) Os dados reais de produção são estritamente controlados, não devendo ser transportados livremente para dev/teste, devendo ser pseudoanonimizados ou fictícios. C (Falsa) Revisões em DevSecOps visam majoritariamente a identificação de falhas de segurança (OWASP), não apenas melhoria de CPU. D (Falsa) A utilização de versionamento não afasta a necessidade de trilhas de auditoria, são ações complementares. E (Falsa) O artefato deve ser compilado e aprovado integralmente no ambiente de integração/teste e promovido já congelado à produção, jamais compilado em tempo de execução no próprio servidor produtivo."
+  }
+]

@@ -19708,5 +19708,1355 @@
     },
     "answer": "D",
     "explanation": "A LOJ/CE consolidou de forma incisiva o modelo das Comarcas Vinculadas, que correspondem àquelas comarcas do interior que perderam a figura do juiz titular ou autonomia funcional plena e tiveram sua jurisdição territorial anexada operacionalmente à Comarca Sede mais próxima e estruturada. A alternativa (C) representa um mero município que compõe a área geográfica de uma mesma comarca maior. As demais opções usam terminologias inexistentes."
+  },
+  {
+    "id": 1096,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Redes de Computadores / OSI / TCP-IP",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o diagnóstico de lentidão intermitente em serviços do TJ-CE, a equipe de infraestrutura isolou o problema na camada responsável pela determinação de rotas e endereçamento lógico. Para configurar adequadamente o analisador de protocolos e interpretar os cabeçalhos inspecionados, o analista deve relacionar os modelos OSI e TCP/IP. Sobre o encapsulamento e a correspondência entre esses modelos, a abordagem arquitetural correta para a análise de tráfego é considerar que:",
+    "options": {
+      "A": "a camada de Internet do modelo TCP/IP equivale à camada de Rede do modelo OSI e encapsula os datagramas em quadros.",
+      "B": "a camada de Acesso à Rede do modelo TCP/IP agrupa as camadas Física e de Enlace do modelo OSI e manipula quadros e bits.",
+      "C": "a camada de Transporte do modelo TCP/IP engloba as camadas de Sessão e Apresentação do modelo OSI e utiliza segmentos.",
+      "D": "a camada de Aplicação do modelo TCP/IP corresponde exclusivamente à camada de Aplicação do modelo OSI e encapsula as mensagens.",
+      "E": "a camada de Enlace do modelo OSI equivale à camada de Host/Rede do modelo TCP/IP e realiza o roteamento de pacotes."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. No modelo TCP/IP, a camada de Acesso à Rede (ou Interface de Rede) é a camada mais inferior e corresponde à união das camadas Física (bits) e de Enlace (quadros) do modelo OSI. A alternativa A está incorreta porque a camada de Internet encapsula dados em pacotes/datagramas, não em quadros (isso é função da camada de Enlace). A alternativa C está incorreta porque a camada de Transporte do TCP/IP corresponde unicamente à camada de Transporte do OSI, sem englobar Sessão e Apresentação (que são agrupadas na camada de Aplicação do TCP/IP). A alternativa D está incorreta porque a camada de Aplicação do TCP/IP equivale a três camadas do modelo OSI (Aplicação, Apresentação e Sessão). A alternativa E está incorreta porque o roteamento de pacotes é responsabilidade da camada de Rede do OSI (Internet no TCP/IP), não da camada de Enlace."
+  },
+  {
+    "id": 1097,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Roteamento OSPF",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A expansão do datacenter principal do TJ-CE para prédios anexos gerou instabilidade nas tabelas de roteamento do protocolo OSPFv2. Flutuações frequentes nos links de acesso provocaram recálculos contínuos do algoritmo SPF em todos os roteadores do domínio, elevando o consumo de CPU e atrasando a convergência da rede. Para isolar o impacto das falhas de conectividade física e estabilizar a topologia central, a solução arquitetural recomendada consiste em:",
+    "options": {
+      "A": "a configuração dos roteadores de borda como Autonomous System Boundary Routers com injeção de rotas estáticas.",
+      "B": "o particionamento do domínio de roteamento em múltiplas áreas com sumarização nos Area Border Routers.",
+      "C": "a redistribuição mútua entre os processos OSPF e o protocolo BGP interno nos roteadores das filiais.",
+      "D": "a substituição do protocolo OSPF pelo protocolo distance-vector RIPv2 nos enlaces instáveis.",
+      "E": "a aplicação de filtros Link State Request nas interfaces adjacentes para bloqueio de atualizações."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. A arquitetura hierárquica do OSPF baseia-se na divisão do AS em múltiplas áreas em torno de uma área de backbone (Área 0). Sumarizar rotas nos Area Border Routers (ABRs) restringe o impacto de links instáveis, isolando anúncios LSA de mudanças topológicas apenas dentro da área afetada e estabilizando a tabela de roteamento no backbone. A alternativa A está incorreta, pois injetar rotas estáticas via ASBRs não impede que flutuações físicas em rotas dinâmicas acionem recálculos. A alternativa C é contraproducente, pois a redistribuição aumenta o consumo de CPU e eleva a complexidade e risco de loops, sem mitigar flaps. A alternativa D está errada ao sugerir retrocesso tecnológico para RIPv2, que não é viável para datacenters devido à lenta convergência (timer-based). A alternativa E propõe aplicação de filtros que corromperia a sincronização do banco de dados (LSDB), quebrando o OSPF por completo."
+  },
+  {
+    "id": 1098,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Protocolo TCP - QoS e LFN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "As rotinas de replicação de dados entre o site principal do TJ-CE e o ambiente de contingência apresentam baixa utilização da banda contratada de 1 Gbps. O tráfego, transmitido por um link de longa distância com latência de 80 ms, estabiliza em taxas inferiores a 50 Mbps. A análise profunda de rede descartou descartes por erro de CRC e confirmou a ausência de gargalos de processamento nos firewalls. Para maximizar o throughput da sessão TCP neste cenário de rede de alto produto banda-atraso (LFN), a medida de engenharia adequada requer:",
+    "options": {
+      "A": "a desativação do algoritmo de Nagle nos servidores de origem da replicação.",
+      "B": "a ativação da opção TCP Window Scaling nos hosts de extremidade.",
+      "C": "o ajuste do temporizador de retransmissão (RTO) para valores estáticos fixos.",
+      "D": "a transição do transporte da aplicação do protocolo TCP para UDP puro.",
+      "E": "a configuração do Maximum Segment Size (MSS) em 1500 bytes estritamente."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. Em redes de alta banda e alta latência (Long Fat Networks - LFN), a janela padrão de recepção do TCP (máximo de 64 KB) atua como um gargalo mecânico, restringindo o volume de dados em voo (in-flight) antes do reconhecimento (ACK). A extensão TCP Window Scaling (RFC 7323) permite janelas de recepção de até 1 GB, essencial para preencher o pipeline do circuito. A alternativa A erra porque o Algoritmo de Nagle agrupa pacotes pequenos para eficiência, e desativá-lo não aumentaria a vazão de backups que já geram payloads cheios. A alternativa C está errada, pois forçar RTO estático inferior ao RTT causa retransmissões espúrias contínuas e colapso do throughput. A alternativa D está incorreta porque aplicações de backup requerem entrega confiável garantida e reconstruir tais mecanismos nativamente sobre UDP é ineficiente e viola o design da aplicação. A alternativa E erra ao associar o aumento artificial de throughput com a simples definição de MSS para 1500 bytes; isoladamente, isso não corrige o estrangulamento pela janela não escalada em um LFN."
+  },
+  {
+    "id": 1099,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Camada de Aplicação / HTTP",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O novo portal de serviços digitais do TJ-CE sofre degradação de desempenho quando acessado por cidadãos em redes móveis com alta taxa de perda de pacotes. O diagnóstico revelou que o protocolo HTTP/2 atual experimenta o fenômeno de head-of-line blocking na camada de transporte, interrompendo o fluxo de múltiplos arquivos simultâneos diante da perda de um único segmento TCP. Para eliminar este gargalo e suportar conexões resilientes com criptografia nativa no transporte, a evolução arquitetural indicada é a adoção de:",
+    "options": {
+      "A": "a implementação do HTTP/1.1 com pipelining sobre túneis IPsec.",
+      "B": "a adoção de WebSockets multiplexados sobre o protocolo SCTP.",
+      "C": "a configuração do HTTP/2 com extensões de roteamento BGP.",
+      "D": "a utilização do HTTP/3 baseado no protocolo QUIC sobre UDP.",
+      "E": "a integração de gRPC operando sobre conexões TLS com compressão HPACK."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D está correta. O HTTP/3 utiliza o protocolo QUIC operando sobre UDP. O QUIC estabelece múltiplos streams independentes na mesma conexão; caso um pacote seja perdido, apenas o stream correspondente aguarda a retransmissão, eliminando o head-of-line blocking imposto pelo TCP clássico. A alternativa A está errada porque o HTTP/1.1 sofre severamente com latência de conexão, e o pipelining é obsoleto e notoriamente falho em lidar com head-of-line blocking no nível de aplicação. A alternativa B descreve uma tecnologia real (SCTP tem características multipath/multistreaming), porém WebSockets não eliminam o gargalo inerente se implementados de forma tradicional, e SCTP quase sempre é bloqueado por firewalls em redes móveis (NATs só compreendem TCP/UDP). A alternativa C apresenta um absurdo técnico: BGP é um protocolo de roteamento inter-domínio na camada de Rede/Transporte e não possui 'extensões de multiplexação' para HTTP. A alternativa E falha porque gRPC sobre TLS (geralmente sob HTTP/2) herdará exatamente o mesmo head-of-line blocking do transporte TCP que já aflige o portal atual."
+  },
+  {
+    "id": 1100,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "IPv6",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O projeto de modernização do TJ-CE prevê a transição nativa para o protocolo IPv6. A instituição recebeu o prefixo global 2001:0DB8::/32 do registro regional da internet. O plano de endereçamento exige a atribuição de um prefixo padronizado para cada Fórum do estado, permitindo que cada localidade possua até 65.536 sub-redes internas distintas para segmentação de VLANs. Considerando as recomendações de design hierárquico do IPv6, o comprimento do prefixo a ser delegado individualmente para cada Fórum e a quantidade máxima de Fóruns suportados pela alocação principal são, respectivamente:",
+    "options": {
+      "A": "/48 e 65.536 Fóruns.",
+      "B": "/56 e 16.777.216 Fóruns.",
+      "C": "/64 e 4.294.967.296 Fóruns.",
+      "D": "/48 e 16.777.216 Fóruns.",
+      "E": "/56 e 65.536 Fóruns."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. Partindo do prefixo raiz /32, para atender até 65.536 localidades distintas, são consumidos 16 bits (32 + 16 = 48). Assim, a delegação /48 por localidade é adequada. Para obter até 65.536 VLANs (sub-redes) internamente a partir do /48, consomem-se mais 16 bits para atingir o comprimento padrão /64 utilizado em segmentos LAN IPv6. A alternativa B está incorreta ao inverter os valores lógicos e limitar os Fóruns por um prefixo /56. A alternativa C está incorreta porque alocar /64 para um Fórum impossibilitaria a subdivisão padronizada de múltiplas VLANs com SLAAC. As alternativas D e E apresentam combinações matemáticas inválidas para os blocos e limites exigidos pelo cenário de arquitetura IPv6."
+  },
+  {
+    "id": 1101,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Roteamento BGP",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A infraestrutura do TJ-CE estabeleceu conectividade com dois provedores de internet distintos para prover alta disponibilidade (multihoming). A política de engenharia de tráfego determina que a comunicação com redes de parceiros governamentais utilize preferencialmente o Provedor A, enquanto o tráfego geral de internet deve fluir pelo Provedor B, mantendo a tolerância a falhas entre ambos. Para aplicar esta decisão de roteamento no tráfego de saída (outbound) do tribunal via BGP, o administrador deve manipular o atributo:",
+    "options": {
+      "A": "AS-Path, aplicando prepend nas rotas recebidas do Provedor B.",
+      "B": "Multi-Exit Discriminator (MED), definindo valores mais baixos aos parceiros.",
+      "C": "Local Preference, configurando valores superiores nas rotas via Provedor A.",
+      "D": "Weight, reduzindo a prioridade dos prefixos no roteador do Provedor A.",
+      "E": "Origin, alterando o código de incompleto para IGP nas atualizações enviadas."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. O atributo Local Preference é a ferramenta técnica de BGP padronizada para influenciar e determinar a rota de saída (outbound) de um Autonomous System (AS). Configurando um valor superior de Local Preference nas rotas oriundas do Provedor A para os prefixos dos parceiros, todo o tráfego gerado pelo TJ-CE escolherá ativamente esse caminho. A alternativa A está incorreta porque a inserção de prepends no AS-Path é utilizada para influenciar o tráfego de entrada (inbound) e não o de saída. A alternativa B está incorreta pela mesma razão: MED (Multi-Exit Discriminator) sugere ao AS vizinho o caminho preferencial para enviar tráfego em direção à rede local (inbound). A alternativa D está incorreta porque, em roteadores Cisco, o atributo Weight é proprietário e puramente local ao roteador, além de que reduzi-lo não priorizaria o Provedor A. A alternativa E apresenta um absurdo conceitual, pois manipular o Origin code não tem primazia sobre Local Preference e impacta o roteamento global."
+  },
+  {
+    "id": 1102,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Comutação Layer 2 e STP",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A integração de dois novos switches de acesso na topologia em anel do datacenter secundário do TJ-CE gerou interrupções sistêmicas devido a tempestades de broadcast. O protocolo Spanning Tree (802.1D) clássico encontra-se habilitado, mas as alterações topológicas causam perdas de conectividade que duram até 50 segundos durante a transição dos estados de bloqueio para encaminhamento. Para reduzir o tempo de convergência para a ordem de milissegundos, mantendo a detecção ativa de loops físicos em toda a camada 2, o arquiteto de redes deve:",
+    "options": {
+      "A": "habilitar a tecnologia de agregação de links LACP nas conexões redundantes.",
+      "B": "migrar para o protocolo Rapid Spanning Tree 802.1w com portas edge configuradas.",
+      "C": "configurar o recurso PortFast nas interfaces trunk de uplink entre os switches.",
+      "D": "aplicar a funcionalidade BPDU Guard nas portas de interligação do core.",
+      "E": "substituir a comutação L2 por roteamento inter-VLAN baseado no protocolo HSRP."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. A transição para o protocolo Rapid Spanning Tree (RSTP - 802.1w) provê convergência proativa e rápida (frequentemente inferior a 1 segundo) ao introduzir papéis de portas e mecanismos de sincronização explícita (proposals/agreements) entre vizinhos. Configurar portas de servidores como 'edge' permite que as interfaces subam para forwarding instantaneamente. A alternativa A está errada porque o LACP não substitui o STP para evitar loops na topologia geral da rede; ele apenas agrupa links paralelos. A alternativa C apresenta risco crítico: habilitar PortFast (edge) em links trunk entre switches de infraestrutura anularia a detecção de loop transiente, podendo causar colapso imediato. A alternativa D está incorreta porque o BPDU Guard desligaria permanentemente as portas inter-switches (core) ao receber BPDUs legítimos de manutenção da topologia ativa. A alternativa E sugere reengenharia completa usando HSRP (protocolo de redundância de gateway, não de topologia L2) para sanar loops, o que não resolve problemas na comutação base de camada 2."
+  },
+  {
+    "id": 1103,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança e Protocolo DNS",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um ataque cibernético direcionado aos servidores de resolução do TJ-CE provocou o envenenamento do cache (cache poisoning), redirecionando magistrados para páginas fraudulentas idênticas ao sistema de gestão de processos. O vetor explorou a ausência de mecanismos criptográficos na validação das consultas de nomes de domínio. Para garantir a autenticidade e a integridade sistêmica das resoluções de nomes recursivas, prevenindo a injeção de registros forjados, a equipe de segurança cibernética deve implementar:",
+    "options": {
+      "A": "o protocolo DNSSEC para assinatura digital e validação por cadeia de confiança.",
+      "B": "o padrão DNS over HTTPS (DoH) nos resolvedores internos da infraestrutura.",
+      "C": "listas de controle de acesso nos firewalls para bloqueio da porta UDP 53.",
+      "D": "o protocolo TLS obrigatório em consultas iterativas exclusivas aos root servers.",
+      "E": "a funcionalidade Split DNS em servidores autoritativos isolados logicamente."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. O protocolo DNSSEC (DNS Security Extensions) introduz assinaturas criptográficas utilizando chaves assimétricas aos registros DNS, originadas de uma cadeia de confiança baseada nos root servers. Isso assegura que as respostas recebidas de zonas externas não sejam adulteradas (cache poisoning). A alternativa B está errada porque o DoH (DNS over HTTPS) cifra a comunicação de 'last mile' entre o cliente e o resolvedor para privacidade, mas não autêntica a origem dos dados da zona DNS; se o resolvedor for envenenado na comunicação recursiva não cifrada, repassará as informações falsas via HTTPS. A alternativa C está incorreta porque fechar portas 53 paralisaria inteiramente a resolução convencional de nomes no ambiente corporativo. A alternativa D erra ao focar em TLS para consultas iterativas aos root servers, pois a vasta maioria dos TLDs não exige/suporta essa arquitetura universal, e a técnica formal contra forjação de registros é o DNSSEC. A alternativa E não aborda o problema real: o Split DNS particiona as visões de nome internamente, mas não adiciona validação criptográfica na resposta dos recursivos, não prevenindo o cache poisoning provocado por consultas externas."
+  },
+  {
+    "id": 1104,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "VPN e IPsec",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A conexão de trânsito entre o datacenter primário e o site de backup do TJ-CE é estabelecida através de túneis GRE, permitindo o roteamento dinâmico de protocolos multicast pela rede não confiável de uma operadora. Por exigências normativas, todo o tráfego cursado nesses túneis necessita de criptografia e garantia de integridade ponto a ponto. Para aplicar a suíte IPsec na proteção desse tráfego sem adicionar cabeçalhos IP externos desnecessários, reduzindo o overhead geral do pacote, o projeto deve especificar:",
+    "options": {
+      "A": "o encapsulamento ESP operando estritamente em modo Transporte.",
+      "B": "o cabeçalho de autenticação AH configurado em modo Túnel.",
+      "C": "o protocolo IKEv2 com troca de chaves Diffie-Hellman em modo transparente.",
+      "D": "o payload de segurança ESP em modo Túnel associado ao NAT Traversal.",
+      "E": "o cabeçalho de integridade AH em modo Transporte com encriptação AES."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. O IPsec em modo Transporte preserva o cabeçalho IP original, aplicando o cabeçalho ESP diretamente antes da carga útil de camada 4, cifrando e autenticando os dados subjacentes. Quando utilizado sobre um túnel GRE que já roteia o pacote através de suas próprias fronteiras, esse modo encripta perfeitamente as comunicações (GRE payload) sem impor a duplicação desnecessária de endereços IP vista no modo Túnel, minimizando o overhead global. A alternativa B está incorreta porque o protocolo AH (Authentication Header) provê apenas integridade e autenticação de origem, não possuindo capacidade nativa de criptografia exigida no cenário. A alternativa C está incorreta porque IKEv2 é o protocolo de estabelecimento de associação de segurança no control plane, e não a suíte de encapsulamento que protegerá as transmissões na via de dados. A alternativa D erra porque prescreve o modo Túnel (aumentando o MTU e overhead indesejadamente). A alternativa E falha tecnicamente pois não existe criptografia baseada em AES provida pelo protocolo AH."
+  },
+  {
+    "id": 1105,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Engenharia de Tráfego / QoS",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A implementação do novo sistema de telefonia IP e videoconferência do TJ-CE evidenciou degradações de áudio, como jitter elevado e atrasos perceptíveis nos enlaces de agregação durante o horário de pico. O dimensionamento restrito das filiais impossibilita a reserva de banda orientada a conexão (per-flow) em cada dispositivo da topologia. A solução de Qualidade de Serviço (QoS) mais escalável para este cenário consiste em classificar o tráfego nos switches de acesso e aplicar políticas de encaminhamento independentes no núcleo, utilizando:",
+    "options": {
+      "A": "a arquitetura IntServ com protocolo RSVP nas rotas de voz.",
+      "B": "o modelo DiffServ com marcação DSCP e comportamentos PHB.",
+      "C": "a técnica WRED configurada com Strict Priority para tráfego multimídia.",
+      "D": "o padrão 802.1Q definindo prioridade CoS máxima em portas não gerenciáveis.",
+      "E": "o protocolo de controle RTP com transporte garantido via TCP."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O Differentiated Services (DiffServ) atua mapeando pacotes em bordas (marcando campos DSCP no cabeçalho IP). Roteadores centrais não mantêm estado da sessão nem da banda e aplicam puramente um 'Per-Hop Behavior' (PHB) com base no valor DSCP (ex. Expedited Forwarding para voz), garantindo escalabilidade extrema em redes densas. A alternativa A está incorreta porque IntServ com RSVP exige manutenção constante dos estados de recursos e fluxos em cada salto (soft-state), resultando num estrangulamento de recursos operacionais em topologias com centenas de dispositivos de rede, não escalando no núcleo. A alternativa C está incorreta porque WRED (Weighted Random Early Detection) é um mecanismo de prevenção de congestionamento baseado no descarte probabilístico antecipado, não oferecendo garantia Strict Priority e, ademais, causa degradação abrupta em tráfegos UDP/RTP inerentes à multimídia. A alternativa D erra por focar em marcações Layer 2 (802.1Q CoS) em portas não gerenciáveis, que seriam eliminadas assim que os datagramas entrassem na malha roteada (Layer 3). A alternativa E é uma aberração técnica: RTP é fundamentalmente concebido para rodar sobre transporte UDP e a associação forçada sobre conexões TCP introduz retransmissões inoportunas que descaracterizam o tempo real necessário para conferências."
+  },
+  {
+    "id": 1106,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Troubleshooting e MTU",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Magistrados do TJ-CE relatam falhas sistemáticas ao tentar realizar o download de petições longas em formato PDF hospedadas em um ambiente de nuvem privada acessado via túnel IPsec. O acesso ao sistema, a autenticação e a navegação por menus em texto ocorrem normalmente. Testes de conectividade com pacotes ICMP de 64 bytes obtêm sucesso, porém pacotes maiores enviados com o bit de não-fragmentação (DF) ativo são descartados sem notificação. O diagnóstico técnico indica que a falha é causada por:",
+    "options": {
+      "A": "o bloqueio estrito do tráfego UDP na porta 500 da fase 1 do IKE.",
+      "B": "a corrupção sistêmica das somas de verificação do cabeçalho TCP em processamentos de NAT.",
+      "C": "a assimetria de roteamento atrelada à flutuação de métricas no BGP.",
+      "D": "a ocorrência de blackhole de Path MTU Discovery atrelada ao bloqueio de mensagens ICMP.",
+      "E": "a falha estrutural na negociação da janela de congestionamento do TCP Slow Start."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D está correta. O descarte sistemático de pacotes longos num túnel IPsec, em oposição a acessos leves, reflete uma inconsistência de Maximum Transmission Unit (MTU). Ao anexar overhead criptográfico, pacotes originalmente de 1500 bytes ultrapassam o MTU da via física (ex: internet banda larga). Ao estarem com a flag Don't Fragment (DF) ativa, o roteador os descarta e responde com uma mensagem ICMP Type 3 Code 4 (Fragmentation Needed). Se os firewalls bloqueiam este tráfego ICMP reverso, o remetente não reduz o MSS dinamicamente, ocasionando um blackhole seletivo. A alternativa A está errada porque o tráfego na porta UDP 500 (ISAKMP) governa o estabelecimento inicial; se a conexão de texto transita livremente, o túnel da Fase 1 está perfeitamente viabilizado. A alternativa B é falsa, não havendo relação de alteração de checksums de transporte com o tamanho de pacotes sob regras estáticas de túneis normais de VPN. A alternativa C ignora a natureza técnica do tamanho do payload: roteamento assimétrico BGP impactaria todas as conexões TCP uniformemente. A alternativa E faz referência inverídica ao TCP Slow Start, pois esta janela gerencia fluxos com base em ACK rate, mas não em MTU nem causa descarte imediato apenas de buffers completos de aplicação."
+  },
+  {
+    "id": 1107,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Protocolo DHCP e Segurança em Camada 2",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante uma manutenção predial no TJ-CE, um equipamento de rede não homologado foi inadvertidamente conectado a uma das tomadas de acesso da rede local. Imediatamente, diversos computadores da mesma sub-rede perderam a conectividade corporativa. A análise dos logs indicou que o equipamento introduzido estava respondendo a requisições de configuração IP com o seu próprio endereço como gateway padrão, executando um sequestro de tráfego (man-in-the-middle). Para mitigar definitivamente este vetor na camada de acesso, o administrador deve aplicar a técnica de:",
+    "options": {
+      "A": "a configuração de Port Security com limitação de endereços MAC dinâmicos.",
+      "B": "a habilitação de DHCP Snooping com definição explícita de portas confiáveis.",
+      "C": "a validação através do Dynamic ARP Inspection ancorado em rotas estáticas.",
+      "D": "a restrição de acesso com autenticação baseada em porta via 802.1X.",
+      "E": "o monitoramento preventivo de tráfego multicast com a função BPDU Guard."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O ataque descrito (DHCP spoofing) é mitigado nas arquiteturas de acesso de L2 pelo recurso de DHCP Snooping. Ele opera definindo explicitamente as portas autorizadas para tráfego do servidor como 'trusted'. Qualquer mensagem DHCPOFFER ou DHCPACK recebida em interfaces designadas como 'untrusted' (como a tomada invadida do cenário) é descartada pelo switch, isolando o falso servidor. A alternativa A é ineficaz para o vetor, visto que o invasor pode não exceder o limite de MACs, injetando uma simples requisição válida de spoofing a partir de um único MAC host. A alternativa C está incorreta de forma sutil; embora o Dynamic ARP Inspection seja essencial contra ataques na tabela ARP, sua operação exige primariamente e nativamente a construção de um binding database construído previamente a partir do próprio DHCP Snooping, focando unicamente na manipulação de camada 2. A alternativa D erra em focar no 802.1X; este valida credenciais pré-conexão L3, mas a resolução por spoofing não requer interações autenticadas de alto nível e as estações tentam autoconfiguração imediatamente ao enlace. A alternativa E não se aplica, BPDU Guard neutraliza loops L2 causados por switches não autorizados e forja de STP, sendo cego a requisições DHCP unicast ou broadcast originadas por host."
+  },
+  {
+    "id": 1108,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Transição IPv6",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma nova vara especializada do TJ-CE foi estruturada com uma arquitetura de rede de acesso e núcleo inteiramente baseada em IPv6 (IPv6-only). Constatou-se, no entanto, a necessidade estrita de comunicação com servidores de banco de dados legados no datacenter principal que operam exclusivamente com a pilha IPv4. Para permitir que os clientes IPv6 iniciem sessões com esses recursos legados de forma transparente, provendo a síntese de endereços DNS e a tradução do tráfego entre os protocolos, a solução recomendada é a implantação de:",
+    "options": {
+      "A": "os túneis automáticos ISATAP entre os roteadores de borda.",
+      "B": "a pilha dupla nativa distribuída em todas as estações locais.",
+      "C": "o mecanismo de tradução NAT64 em conjunto com o serviço DNS64.",
+      "D": "os roteadores Teredo para o roteamento de tráfego unicast global.",
+      "E": "os proxies reversos sob o mecanismo de encapsulamento 6to4."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A estratégia mais madura para viabilizar comunicações iniciadas por hosts IPv6 em direção a ambientes IPv4 consiste no NAT64 combinado com DNS64. O resolvedor DNS64 intercepta consultas ao domínio IPv4 e sintetiza respostas AAAA baseadas num prefixo de tradução específico. O cliente IPv6 direciona seu tráfego a este endereço, que é interceptado e traduzido transparentemente para IPv4 no gateway do NAT64. A alternativa A está incorreta, pois o ISATAP propicia roteamento intra-site de tráfego IPv6 sobre malhas legadas de IPv4 e não efetua conversão nativa de protocolos essenciais para servidores sem pilha dupla. A alternativa B não atende aos requisitos arquiteturais do enunciado, que demanda a manutenção exclusiva de uma infraestrutura e acessos estritos como IPv6-only no novo braço do tribunal. A alternativa D está errada pois o protocolo Teredo atua de forma similar em provisão de IPv6 sobre acessos de rede sob restrições NAT limitadoras IPv4 domésticos, não transladando chamadas unicast ativas da nova arquitetura. A alternativa E detalha o uso incorreto de encapsulamentos estáticos (6to4) em procuradores HTTP/S reversos; 6to4 demanda reconfigurações globais de ASNs e apenas cria túneis não viáveis para conectividade nativa heterogênea."
+  },
+  {
+    "id": 1109,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Gerenciamento de Redes / SNMP",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma auditoria de segurança cibernética nas instalações do TJ-CE apontou riscos críticos na gerência da infraestrutura de rede, atualmente baseada no protocolo SNMPv2c. O relatório destacou a exposição de strings de comunidade em texto claro e o risco iminente de alterações de configuração não autorizadas nos roteadores via operações de SET. A remediação dessa vulnerabilidade exige a migração para o SNMPv3, cuja adoção introduz na arquitetura de gerência:",
+    "options": {
+      "A": "as comunidades estendidas baseadas em certificados digitais X.509.",
+      "B": "o User-based Security Model provendo autenticação e privacidade.",
+      "C": "a criptografia de hardware AES-GCM aplicada sobre a camada TCP.",
+      "D": "os domínios de acesso atrelados ao Active Directory por meio do VACM.",
+      "E": "o encapsulamento nativo do gerenciamento em túneis criptografados IPsec."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. A arquitetura principal do SNMPv3 gira em torno da implantação do User-based Security Model (USM) (RFC 3414). Este modelo elimina strings de comunidade transitadas em texto plano e provê, de forma criptográfica nativa, recursos de autenticação rigorosa dos gerenciadores (baseada em algoritmos como HMAC-SHA) e privacidade garantida por encriptação (baseada tipicamente em esquemas como AES ou DES). A alternativa A está incorreta pois a especificação base do SNMPv3 USM não requer e não se ancora por padrão na estrutura de autoridades certificadoras PKI X.509, operando sob gestão de chaves simétricas. A alternativa C falha ao classificar a comunicação como baseada em TCP rígido e exigir hardware físico para os arranjos algorítmicos; em geral o SNMP ainda é conduzido primariamente através do protocolo UDP. A alternativa D descreve o View-based Access Control Model (VACM), responsável pelo modelo interno de autorizações a visualizações MIBs do equipamento; contudo, a sua implementação padrão e mandatória no protocolo independe de integrações com domínios de Active Directory/LDAP e foca na camada local do agente. A alternativa E erra ao conceituar o trânsito do SNMP sob túneis IPsec, o que constituiria uma abordagem ad-hoc superposta, quando o protocolo SNMPv3 foi especificamente arquitetado com encriptação interna aos próprios payloads em nível de camada de Aplicação."
+  },
+  {
+    "id": 1110,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Redes Sem Fio e WPA3",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A rede sem fio corporativa do TJ-CE, baseada no padrão WPA2-Enterprise, sofreu recorrentes ataques de desautenticação. Dispositivos intrusos forjavam quadros de gerência da camada de enlace para desconectar os clientes legítimos dos Access Points, forçando novos handshakes que eram capturados para ataques de dicionário offline. Para eliminar ambas as vulnerabilidades, tornando obrigatório o uso de Protected Management Frames (PMF) e substituindo o Pre-Shared Key por um processo de autenticação baseado no protocolo Simultaneous Authentication of Equals (SAE), a rede deve ser atualizada para:",
+    "options": {
+      "A": "o padrão WPA3 com protocolo Simultaneous Authentication of Equals.",
+      "B": "a arquitetura EAP-TLS de implantação baseada em certificados mútuos.",
+      "C": "o protocolo IEEE 802.1X integrado ao gerenciamento por chaves AES-CCMP.",
+      "D": "a norma IEEE 802.11ax operando com funcionalidades MU-MIMO plenas.",
+      "E": "o esquema WPA2-Personal dotado de chaves dinâmicas rotativas de acesso."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. O padrão IEEE 802.11 e as certificações da Wi-Fi Alliance determinam que o WPA3 estabeleça obrigatoriamente a funcionalidade nativa de Protected Management Frames (PMF, ou 802.11w), suprimindo vetores baseados em desconexão artificial não encriptada. Além do mais, a autenticação base de compartilhamento de senhas migrou do vulnerável esquema Pre-Shared Key 4-way handshake para o robusto Dragonfly protocol com a Simultaneous Authentication of Equals (SAE), neutralizando permanentemente ataques offline de dicionário baseados em escuta L2. A alternativa B descreve um excelente método em vigor desde o legado WPA/WPA2-Enterprise mas que não obriga o emprego estrutural de PMF, fator indispensável exigido pela questão. A alternativa C está errada porque enuncia componentes essenciais presentes desde o advento do WPA2 clássico e não modernizam de maneira suficiente a resistência aos ataques citados. A alternativa D cita a extensão PHY 802.11ax (conhecida no mercado como Wi-Fi 6), que otimiza multiplexação e agendamentos pelo MU-MIMO mas não garante melhorias explícitas no módulo criptográfico caso retrocompatibilidade inferior seja utilizada, devendo focar na adoção real do modelo superior da Alliance (WPA3). A alternativa E apresenta termos técnicos imprecisos inexistentes nas documentações formais L2 sem fio: o WPA2 Personal tradicional nunca portou arquitetura escalável fundamentada em chaves mutáveis temporais."
+  },
+  {
+    "id": 1111,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Linux - Comandos",
+    "context": "Auditoria de segurança e localização de artefatos maliciosos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a auditoria de segurança dos servidores de aplicação do Tribunal de Justiça do Ceará (TJ-CE), a equipe de infraestrutura identificou um ataque que modificou diversos scripts bash utilizados na automação do PJe. O analista precisa localizar todos os arquivos com extensão '.sh' dentro do diretório '/opt/tjce/scripts' que foram modificados nas últimas 24 horas e que contenham a string maliciosa 'nc -e'. Qual comando executa essa operação de forma precisa?",
+    "options": {
+      "A": "find /opt/tjce/scripts -name \"*.sh\" -mtime -1 -exec grep -l \"nc -e\" {} \\+",
+      "B": "grep -rn \"nc -e\" /opt/tjce/scripts | find -name \"*.sh\" -mmin -24",
+      "C": "find /opt/tjce/scripts -type f -mtime +1 | grep -E \"nc -e *.sh\"",
+      "D": "locate -r \"\\.sh$\" /opt/tjce/scripts -mtime 24 | xargs grep \"nc -e\"",
+      "E": "find /opt/tjce/scripts -name \"*.sh\" -ctime 1 | awk '/nc -e/'"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O comando 'find' inicia a busca no diretório alvo. O parâmetro '-name \"*.sh\"' filtra pela extensão; '-mtime -1' filtra arquivos modificados nas últimas 24 horas (1 dia). O parâmetro '-exec grep -l' executa o grep nos arquivos encontrados, onde o '-l' garante que apenas o nome do arquivo seja listado caso a string seja encontrada. O '{} \\+' otimiza a execução passando múltiplos arquivos para o grep. A alternativa B tenta fazer um pipe inválido de grep para find de forma reversa. A alternativa C usa '+1' (modificado há MAIS de um dia) e usa o grep erroneamente na saída padrão do find. A D mistura sintaxe do locate, que usa banco de dados desatualizado e não suporta '-mtime'. A E utiliza '-ctime' (mudança de metadados, não de modificação de conteúdo) com exatidão de 1 dia, ignorando o grep no conteúdo dos arquivos da forma correta."
+  },
+  {
+    "id": 1112,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Linux - Comandos",
+    "context": "Troubleshooting de microsserviços via systemd e extração de logs.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE modernizou a infraestrutura de microsserviços rodando em instâncias Linux CentOS, gerenciadas pelo systemd. Um serviço crítico chamado 'tjce-pje-sync.service' falha intermitentemente durante a madrugada, impactando a sincronização processual. A equipe precisa extrair os logs exclusivamente deste serviço, filtrando apenas as mensagens classificadas com nível de severidade de erro ocorridas no dia anterior, para enviar ao time de desenvolvimento. Qual o comando adequado?",
+    "options": {
+      "A": "journalctl -u tjce-pje-sync.service -p err --since yesterday --until today",
+      "B": "systemctl status tjce-pje-sync.service --logs --level error --date yesterday",
+      "C": "tail -f /var/log/messages | grep \"tjce-pje-sync\" | awk '{print $error}'",
+      "D": "dmesg --service tjce-pje-sync.service --level err --time yesterday",
+      "E": "journalctl --unit tjce-pje-sync.service -p err --time yesterday-only"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O 'journalctl' é o comando nativo para consultar logs de serviços gerenciados pelo systemd. O parâmetro '-u' (unit) especifica o serviço. O parâmetro '-p err' restringe os resultados às mensagens de severidade de erro. Os parâmetros temporais '--since yesterday --until today' isolam o log de forma precisa ao dia anterior. A alternativa B usa parâmetros inexistentes no systemctl ('--logs', '--level'). A alternativa C acessaria logs brutos do sistema passivamente de forma não determinística e usa uma variável awk inexistente. A D utiliza 'dmesg', que serve para buffer de mensagens do kernel, não de serviços user-space. A E usa um parâmetro de tempo inválido '--time yesterday-only'."
+  },
+  {
+    "id": 1113,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Linux - Comandos",
+    "context": "Gestão e manipulação de processos do sistema.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em resposta a uma degradação de performance no cluster de banco de dados do TJ-CE, o administrador de sistemas percebeu que um script antigo de backup está gerando processos zumbis que esgotam o limite de PIDs. Para solucionar o incidente emergencialmente, é necessário listar todos os PIDs dos processos em estado 'Z' (zombie) para posterior eliminação de seus processos pai. Assinale a instrução em shell que realiza esta listagem de forma correta.",
+    "options": {
+      "A": "ps aux | awk '$8==\"Z\" {print $2}'",
+      "B": "top -b -n 1 | grep \"zombie\" | awk '{print $1}'",
+      "C": "ps -ef | sed -n 's/Z/print $2/p'",
+      "D": "pidstat -T ZOMBIE | cut -d \" \" -f 2",
+      "E": "ps aux | grep -v Z | cut -f 2"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O comando 'ps aux' lista os processos, e a saída padrão tem o status (STAT) na coluna 8 e o PID na coluna 2. O comando 'awk '$8==\"Z\" {print $2}'' verifica exatamente o valor da coluna 8 e, se for Z, imprime a coluna do PID. A alternativa B lista sumários com o top, mas a filtragem por grep não atinge as linhas individuais da forma correta sem quebras. A alternativa C usa sintaxe inválida no sed ('print $2' não é do sed, e sim do awk). A alternativa D tenta utilizar parâmetros inventados do sysstat ('-T ZOMBIE'). A alternativa E exclui os processos Z com o '-v' no grep, fazendo o oposto do solicitado."
+  },
+  {
+    "id": 1114,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Linux - Comandos",
+    "context": "Transferência de arquivos remotos segura e incremental.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A diretoria de TI do TJ-CE estabeleceu uma política de arquivamento para os laudos periciais digitalizados. Um grande volume de arquivos PDF, localizado em '/mnt/storage/laudos', precisa ser transferido de forma segura e incremental para o servidor de backup '10.1.5.50'. A transferência deve comprimir os dados em trânsito, preservar os atributos originais dos arquivos, os links simbólicos e permitir retomada em caso de falha de rede. Qual solução atende aos requisitos?",
+    "options": {
+      "A": "rsync -avzP /mnt/storage/laudos/ root@10.1.5.50:/backup/laudos/",
+      "B": "tar -czvf /mnt/storage/laudos | ssh root@10.1.5.50 \"cat > /backup/laudos.tar.gz\"",
+      "C": "scp -rpC /mnt/storage/laudos/*.pdf root@10.1.5.50:/backup/laudos/",
+      "D": "ftp -i 10.1.5.50 -c \"mput /mnt/storage/laudos/* -compress tar.gz\"",
+      "E": "rsync -rltD /mnt/storage/laudos/ root@10.1.5.50:/backup/laudos/ --tar=gz"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O comando rsync atende todos os requisitos do enunciado: '-a' (archive) preserva atributos e links simbólicos; '-v' fornece modo verboso; '-z' comprime em trânsito; '-P' preserva arquivos parciais e exibe progresso (permitindo retomada). A alternativa B gera um pacote inteiro do zero via SSH e perde a capacidade incremental ou de retomada de falhas de onde parou. A alternativa C utiliza scp, que possui compressão (-C) e preserva dados (-p, -r), mas não suporta retomada eficiente pós-falha (reinicia tudo) e não é puramente incremental de blocos como o rsync. A D utiliza FTP, protocolo inseguro e comando inválido. A E utiliza um argumento fictício do rsync ('--tar=gz')."
+  },
+  {
+    "id": 1115,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Linux - Permissões Octais",
+    "context": "Atribuição de bits especiais para elevação de privilégios temporários em aplicativos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O portal da transparência do TJ-CE utiliza um aplicativo compilado em C chamado 'update_relatorio', localizado em '/opt/tjce/bin'. Esse aplicativo precisa ser executado por usuários do grupo 'auditores', mas deve operar com os privilégios efetivos do usuário 'root' (dono do arquivo) para ler dados protegidos no banco. Adicionalmente, nenhum outro usuário externo ao grupo pode ter acesso de execução. Considerando que o arquivo tem como dono 'root' e grupo 'auditores', qual o valor octal correto aplicado via chmod?",
+    "options": {
+      "A": "4750",
+      "B": "2750",
+      "C": "4755",
+      "D": "0750",
+      "E": "6710"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A exigência de executar o aplicativo com os privilégios do dono (root) requer a ativação do bit SUID, representado pelo valor 4 na primeira posição octal. As permissões do dono (root) devem ser completas (7 = leitura, gravação e execução). O grupo 'auditores' precisa de leitura e execução (5 = 4 leitura + 1 execução). Outros usuários não podem ter acesso (0). Assim, o valor final fica 4750. A alternativa B (2750) ativaria o bit SGID (permissão do grupo), não do dono. A alternativa C (4755) violaria a restrição ao conceder acesso de execução para todos (others = 5). A D (0750) não ativaria a elevação de privilégios SUID. A E (6710) habilitaria SUID e SGID com permissões básicas incorretas."
+  },
+  {
+    "id": 1116,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Linux - Permissões Octais",
+    "context": "Configuração da umask em diretórios de rede compartilhados.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para atender aos normativos do CNJ sobre segurança da informação, o Tribunal implementou uma nova política de segurança nos servidores de arquivos departamentais. Exige-se que todos os novos arquivos criados nativamente pelos serviços do diretório compartilhado possuam permissão efetiva 644 e que diretórios novos sigam o padrão 755. Qual valor deve ser configurado no parâmetro 'umask' no perfil dos usuários do sistema para atingir esse objetivo de segurança automática?",
+    "options": {
+      "A": "0022",
+      "B": "0027",
+      "C": "0133",
+      "D": "0644",
+      "E": "0755"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A 'umask' age subtraindo (mascarando) permissões das bases padrão do sistema operacional, que são 666 para arquivos e 777 para diretórios. Para arquivos terem permissão final 644, a umask deve retirar 022 (666 - 022 = 644 em cálculo bit a bit ou subtração direta para leitura sem carry). Para diretórios ficarem com 755, a máscara de 022 se aplica retirando write de group e others (777 - 022 = 755). A alternativa B (0027) deixaria arquivos em 640. A C (0133) deixaria diretórios em 644. As alternativas D e E representam o estado final que se deseja alcançar (as permissões em si), e não as máscaras necessárias para a subtração inicial."
+  },
+  {
+    "id": 1117,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Linux - Permissões Octais",
+    "context": "Proteção de arquivos temporários em diretórios compartilhados.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE disponibilizou um servidor de processamento de malotes digitais. Existe um diretório temporário '/var/spool/malote_temp' onde múltiplos serviços e usuários salvam arquivos. Ocorreram incidentes onde usuários apagaram arquivos gerados por outras sessões. Para corrigir essa vulnerabilidade, o analista deve garantir que apenas o criador de um arquivo, o dono do diretório ou o usuário root possam renomear ou excluir arquivos nesse diretório. Qual permissão octal deve ser atribuída ao diretório, assumindo que todos precisam de leitura, escrita e execução?",
+    "options": {
+      "A": "1777",
+      "B": "2777",
+      "C": "4777",
+      "D": "0777",
+      "E": "7777"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O comportamento exigido de proteger a exclusão de arquivos num diretório com permissão pública de gravação (777) é ativado pelo bit 'Sticky bit' (valor octal 1 na primeira posição de atributos especiais). A permissão 1777 mantém o diretório aberto para leitura, escrita e execução, mas restringe a exclusão ou renomeação dos arquivos exclusivamente a quem os criou. A alternativa B (2777) habilitaria o SGID (permissão para herdar o grupo). A C (4777) ativaria o SUID (irrelevante para proteção de exclusão de diretórios). A D (0777) deixaria o diretório exposto sem nenhuma proteção especial. A E (7777) habilitaria SUID, SGID e Sticky simultaneamente sem necessidade."
+  },
+  {
+    "id": 1118,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Linux - Permissões Octais",
+    "context": "Concessão pontual de acesso complexo em arquivos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um script automatizado do PJe cria diários eletrônicos no diretório '/var/pje/diarios'. O proprietário do arquivo é 'pje_user' e o grupo é 'pje_group'. O comando 'ls -l' exibe as permissões como '-rw-r--r--'. Uma alteração de arquitetura demanda que o grupo 'audit_group' também tenha permissões de leitura nestes arquivos específicos, sem modificar a titularidade (dono/grupo) original da estrutura legada e sem conceder acesso global e generalizado aos arquivos. Qual é a abordagem adequada na infraestrutura Linux?",
+    "options": {
+      "A": "Configuração de uma Access Control List (ACL) com o comando setfacl -m g:audit_group:r.",
+      "B": "Modificação do permissionamento do arquivo para o valor octal 664.",
+      "C": "Ativação do bit SGID no diretório pai com o comando chmod 2750.",
+      "D": "Alteração do grupo primário do usuário pje_user para audit_group.",
+      "E": "Execução do comando chmod g+s nos arquivos de diários já existentes."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. Quando se necessita aplicar permissões para múltiplos usuários ou múltiplos grupos simultaneamente, indo além do modelo padrão UGO (User, Group, Others), utiliza-se o recurso ACL (Access Control Lists). O comando 'setfacl -m g:audit_group:r' concede a permissão de leitura ao grupo extra sem alterar o dono ou grupo primário originais. A alternativa B apenas daria direito de escrita para o 'pje_group', ignorando o novo grupo de auditoria. A C usaria SGID que afetaria a posse grupal de novos arquivos, e não o acesso lateral. A D quebraria o isolamento dos usuários e a titularidade legada. A E não faz sentido em arquivos regulares para fins de restrição lateral de leitura."
+  },
+  {
+    "id": 1119,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Windows Server - Active Directory",
+    "context": "Desastre, recuperação e apropriação (seize) de funções FSMO.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o processo de unificação das comarcas do interior do Ceará, o ambiente Active Directory do TJ-CE sofreu uma falha catastrófica no controlador de domínio principal da floresta, que detinha todas as funções FSMO. A restauração a partir do backup falhou. O analista de infraestrutura precisa transferir forçadamente (seize) as funções para um DC secundário (DC02). Qual função FSMO, ao ser assumida pelo DC02 de forma forçada, proíbe categoricamente que o DC original seja reconectado à rede sem ser formatado, sob pena de corrupção massiva por IDs de segurança duplicados?",
+    "options": {
+      "A": "RID Master.",
+      "B": "PDC Emulator.",
+      "C": "Infrastructure Master.",
+      "D": "Schema Master.",
+      "E": "Domain Naming Master."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A função RID Master (Relative ID Master) aloca blocos de identificadores (RIDs) para criação de SIDs únicos no domínio. Caso ocorra um 'seize' (captura forçada) e o antigo DC retornar à rede com sua base de dados original, ele achará que ainda é o mestre e alocará os mesmos RIDs que o novo DC, causando objetos com SIDs duplicados no domínio. É uma premissa clássica da Microsoft formatar e reinstalar um DC antigo após o seize do RID Master. As funções PDC Emulator e Infrastructure Master são as únicas que suportam o retorno e realocação amigável pós-falha ou 'seize'."
+  },
+  {
+    "id": 1120,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Windows Server - Active Directory",
+    "context": "Topologia, latência e replicação intersite no AD DS.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Active Directory do TJ-CE abrange duas localidades principais: o site 'Fortaleza' (sede) e o site 'Sobral' (comarca). Foi relatado que novos usuários criados em Fortaleza demoram até três horas para conseguir autenticação inicial nas estações de trabalho de Sobral. A equipe constatou que não há falhas nos links WAN, operando via VPN IPsec estável. A topologia do AD Sites and Services exibe apenas o link padrão 'DEFAULTIPSITELINK'. Qual componente arquitetural deve ser ajustado para resolver essa latência de replicação intersite?",
+    "options": {
+      "A": "O intervalo de replicação e a agenda nas propriedades do objeto Site Link.",
+      "B": "O atributo de peso do servidor Bridgehead no site de Sobral.",
+      "C": "A configuração de replicação intrasite gerada pelo Knowledge Consistency Checker.",
+      "D": "O protocolo de transporte utilizado no Site Link, migrando de IP para SMTP.",
+      "E": "A função de Global Catalog no servidor principal do site de Fortaleza."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O intervalo padrão no 'DEFAULTIPSITELINK' para replicação intersite no Active Directory é tipicamente de 180 minutos (3 horas), o que causa a latência referida ao invés da replicação instantânea. Alterar as propriedades do Site Link diminuindo o tempo entre as replicações agilizará a sincronização entre Fortaleza e Sobral. A alternativa B (custo) apenas definiria a rota preferencial de roteamento, não a frequência. A C lida com replicação intrasite, onde não há Site Links e é baseada em notificação, sendo irrelevante intersite. A D migra para SMTP, que é suportado apenas em cenários isolados, obsoletos, restritos para replicação de esquema. A E trata de consultas ao GC, sem alterar os intervalos temporais do Site Link."
+  },
+  {
+    "id": 1121,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Windows Server - Active Directory",
+    "context": "Arquitetura e políticas de segurança envolvendo Read-Only Domain Controllers.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma pequena comarca no interior do estado possui um link de internet de baixa confiabilidade e ausência de sala cofre física adequada para os servidores. Para mitigar riscos de roubo de credenciais em caso de furto do servidor local e manter a autenticação dos usuários quando o link com Fortaleza cair, a engenharia de TI do TJ-CE decidiu implantar um RODC (Read-Only Domain Controller). Qual configuração é mandatória para garantir que apenas os usuários dessa comarca tenham suas credenciais armazenadas em cache no RODC local?",
+    "options": {
+      "A": "Configuração da Password Replication Policy (PRP) permitindo o grupo local e negando grupos administrativos.",
+      "B": "Delegação do controle do serviço NTDS para a conta do administrador local da comarca.",
+      "C": "Bloqueio do tráfego LDAP de entrada nas regras do firewall do Windows do RODC.",
+      "D": "Remoção da flag de Global Catalog (GC) das propriedades do servidor RODC recém promovido.",
+      "E": "Implementação de criptografia IPSec no link de replicação com o servidor PDC Emulator."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A função que define quais contas podem ter suas senhas armazenadas localmente em um RODC é a PRP (Password Replication Policy). Adicionar o grupo de segurança que contém os usuários locais na lista 'Allowed' e proteger os administradores de domínio listando na 'Denied' é o recurso nativo de um RODC para a problemática. A alternativa B apenas delega a capacidade administrativa do servidor ao administrador local, mas não gerencia as credenciais do AD. A alternativa C inutilizaria a autenticação e as buscas no AD. A D pioraria a resiliência e as consultas offline. A E lida com a criptografia de transporte, não com o comportamento interno e restritivo do cache local do diretório."
+  },
+  {
+    "id": 1122,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Windows Server - Active Directory",
+    "context": "Integração institucional entre organizações com configurações de relações de confiança (Trust).",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE e o Ministério Público do Ceará (MPCE) estabeleceram um convênio de integração de sistemas. Ambas as instituições possuem florestas Active Directory independentes no Windows Server 2022. Os usuários do TJ-CE precisam acessar pastas compartilhadas nos servidores do MPCE, porém os usuários do MPCE não podem ter nenhum acesso aos recursos do TJ-CE. Do ponto de vista técnico da floresta do MPCE, qual tipo e direção de relação de confiança (Trust) deve ser configurada para suportar essa estrutura?",
+    "options": {
+      "A": "Confiança de Floresta (Forest Trust), de Saída (Outgoing).",
+      "B": "Confiança de Floresta (Forest Trust), de Entrada (Incoming).",
+      "C": "Confiança de Floresta (Forest Trust), Bidirecional (Two-way).",
+      "D": "Confiança Externa (External Trust), de Entrada (Incoming).",
+      "E": "Confiança de Atalho (Shortcut Trust), Bidirecional (Two-way)."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A direção de uma relação de confiança (Trust) na terminologia do Windows aponta no sentido da confiança (Trusting domain -> Trusted domain), e é o oposto do sentido do acesso aos recursos. O MPCE precisa CONFIAR nos usuários do TJ-CE (pois dará acesso a eles). Logo, do ponto de vista do MPCE, a relação aponta para fora, caracterizando uma confiança de SAÍDA (Outgoing). Utiliza-se 'Forest Trust' devido às florestas independentes baseadas em Windows moderno e o suporte total ao Kerberos. A B concederia o acesso aos recursos do TJ-CE pelo MPCE (inverso da necessidade). A C abriria o acesso para ambas as pontas. A D usa External Trust (limitação NTLM) no sentido errado. A E cria atalhos de rotas intra-floresta."
+  },
+  {
+    "id": 1123,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Windows Server - GPO",
+    "context": "Arquitetura e escopo de precedência no processamento de Políticas de Grupo.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O setor de arquitetura do TJ-CE precisa diagnosticar um conflito na aplicação de Políticas de Grupo (GPOs). A mesma configuração de papel de parede corporativo está definida em quatro níveis diferentes com valores conflitantes. Nenhuma das GPOs possui as opções 'Enforced' (Imposto) ou 'Block Inheritance' (Bloquear Herança) ativadas. A estação de trabalho está na OU 'Recepcao', subordinada à OU 'Fóruns', que pertence ao domínio 'tjce.jus.br' e ao site 'Sede'. Seguindo o fluxo padrão do Active Directory, qual é a ordem cronológica de processamento destas GPOs e qual nível prevalece?",
+    "options": {
+      "A": "Local, Site, Domínio, OU Fóruns, OU Recepcao; a GPO da OU Recepcao prevalece.",
+      "B": "Site, Domínio, OU Fóruns, OU Recepcao, Local; a GPO Local prevalece.",
+      "C": "OU Recepcao, OU Fóruns, Domínio, Site, Local; a GPO da OU Recepcao prevalece.",
+      "D": "Local, OU Recepcao, OU Fóruns, Domínio, Site; a GPO do Site prevalece.",
+      "E": "Domínio, Site, OU Fóruns, OU Recepcao, Local; a GPO Local prevalece."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O Active Directory processa as Políticas de Grupo na ordem predefinida 'LSDOU': Local, Site, Domain, e, finalmente, as Organizational Units de forma descendente (hierarquia de OU). No Active Directory, quando há conflitos, a última diretiva processada é a que entra em vigor (conflito de estado sobrescreve as anteriores). Como a OU mais específica é processada por último, as GPOs vinculadas diretamente à OU 'Recepcao' sobrepõem-se à GPO da OU 'Fóruns', ao Domínio, ao Site e às políticas Locais."
+  },
+  {
+    "id": 1124,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Windows Server - GPO",
+    "context": "Segmentação cirúrgica de Políticas de Grupo via consultas dinâmicas de atributos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Devido à migração do parque tecnológico das Varas de Família do TJ-CE, a gerência de suporte necessita implantar uma GPO de instalação de software de certificação digital, restrita exclusivamente aos computadores que executam o sistema operacional Windows 11. As máquinas estão misturadas em diversas OUs que contêm também estações com Windows 10 e Windows 8.1. A estrutura de Unidades Organizacionais não deve ser alterada. Qual é o recurso técnico da Política de Grupo que atinge esse objetivo?",
+    "options": {
+      "A": "Filtro WMI (Windows Management Instrumentation) vinculado à GPO.",
+      "B": "Item-Level Targeting na seção de configuração do computador.",
+      "C": "Filtro de Segurança por Grupos do Active Directory vinculado à GPO.",
+      "D": "Delegação de leitura da GPO para contas de computadores específicas.",
+      "E": "Configuração de Preferências de Política de Grupo operando em modo Replace."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A aplicação dinâmica de uma GPO baseada em atributos do sistema operacional sem rearranjar os contêineres lógicos (OUs) é feita via WMI Filters. Ao vincular uma consulta WMI testando a versão do SO, a GPO só se aplica nos computadores onde o teste retorna verdadeiro. A alternativa B (Item-Level Targeting) opera em escopo de extensões dentro do Group Policy Preferences, mas o enunciado demanda uma GPO completa e ampla, sendo os Filtros WMI no objeto de GPO a resposta direta e apropriada ao contexto raiz de aplicação. A C baseia-se em associações explícitas de grupos, gerando overhead manual. A D bloqueia a GPO na base mas exige manuseio exaustivo manual por máquina. A E se refere à ação da preferência e não à filtragem cirúrgica de contexto global da GPO."
+  },
+  {
+    "id": 1125,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Windows Server - GPO",
+    "context": "Controle rígido de GPOs independentemente da origem contextual do usuário.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Nas salas de audiência de custódia do TJ-CE, existem computadores de uso compartilhado (quiosques). Independentemente de qual magistrado ou servidor realizar o logon, essas máquinas específicas devem aplicar restrições severas de interface de usuário, configuradas na seção 'User Configuration' de uma GPO. Normalmente, as políticas de usuário baseiam-se na OU onde a conta do usuário reside. Para forçar que as políticas de usuário sejam aplicadas de acordo com a localização do computador, qual funcionalidade deve ser habilitada?",
+    "options": {
+      "A": "Loopback Processing mode.",
+      "B": "Enforce Group Policy link.",
+      "C": "Block Inheritance.",
+      "D": "Cross-Forest Policy Processing.",
+      "E": "Slow Link Detection."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O GPO 'User Group Policy Loopback Processing mode' força a aplicação das configurações de usuário provenientes de uma política ligada à Unidade Organizacional do COMPUTADOR, e não à do usuário. Isso permite o engessamento de estações quiosque em detrimento das políticas globais originais do funcionário no AD, independentemente de quem logar. A alternativa B ('Enforce') forçaria a descendência da GPO sem poder de sobrescrita, e não sua alteração contextual. A C corta as heranças vindas de cima, mas também não subverte o processamento User vs Computer. A D autoriza a leitura através de florestas externas. A E lida unicamente com detecções de velocidade de banda e latência de rede na aplicação."
+  },
+  {
+    "id": 1126,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Ceará (TJ-CE) iniciou o projeto de implementação de um Sistema de Gestão da Segurança da Informação (SGSI). A diretoria de TI propôs excluir os mainframes legados do escopo de certificação para acelerar a aprovação, não obstante esses equipamentos processem grandes volumes de dados processuais sensíveis e interajam constantemente com a nuvem. À luz das exigências estabelecidas pela norma ISO 27001:2022 sobre a determinação do escopo do SGSI, a decisão técnica correta diante desse cenário exige que:",
+    "options": {
+      "A": "A definição do escopo restringe-se aos sistemas em nuvem sob gestão direta do comitê de segurança cibernética.",
+      "B": "O escopo do SGSI abrange todas as interfaces e dependências lógicas ou físicas com sistemas externos excluídos.",
+      "C": "A exclusão de ativos críticos exige a elaboração de uma Declaração de Aplicabilidade independente.",
+      "D": "O contexto da organização determina a obrigatoriedade de inclusão de sistemas legados no primeiro ciclo de auditoria.",
+      "E": "A alta direção possui autoridade discricionária para mitigar riscos de sistemas excluídos através de apólices de seguro."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. De acordo com a ISO 27001, ao definir o escopo do SGSI, a organização deve considerar as interfaces e dependências entre as atividades realizadas pela organização, e as atividades realizadas por terceiros ou sistemas excluídos. Se o mainframe processa dados vitais e interage com o escopo, as interfaces de risco devem ser tratadas. A (Falsa) O escopo não se restringe à gestão direta na nuvem. C (Falsa) A Declaração de Aplicabilidade lista controles aplicáveis, não atua como salvaguarda isolada para exclusão arbitrária de ativos vitais. D (Falsa) Não existe obrigatoriedade normativa de incluir sistemas legados imediatamente, desde que o escopo seja bem definido e justificado. E (Falsa) Transferir risco (seguro) é opção de tratamento, não uma carta branca da alta direção para ignorar dependências do escopo."
+  },
+  {
+    "id": 1127,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após realizar a avaliação rigorosa de riscos na infraestrutura do Processo Judicial Eletrônico (PJe), a equipe de segurança da informação do TJ-CE selecionou os controles necessários do Anexo A da ISO 27001 para mitigar ameaças identificadas. O auditor interno do tribunal, na fase preparatória para a certificação, solicitou o documento formal que correlaciona os riscos aos controles implementados e justifica expressamente qualquer omissão de controles normativos. O documento normativo exigido para esta finalidade é:",
+    "options": {
+      "A": "O Plano de Tratamento de Riscos.",
+      "B": "A Matriz de Avaliação de Impacto.",
+      "C": "A Declaração de Aplicabilidade.",
+      "D": "O Relatório de Auditoria Interna.",
+      "E": "O Registro de Ativos de Informação."
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. A Declaração de Aplicabilidade (Statement of Applicability - SoA) é o documento formal exigido pela ISO 27001 que lista todos os controles do Anexo A, justificando tanto a sua inclusão (com o status de implementação) quanto a exclusão de qualquer controle que a organização julgue não ser pertinente. A (Falsa) O Plano de Tratamento de Riscos detalha as ações, prazos e responsáveis para aplicar os controles, mas não justifica exclusões do Anexo A em formato de checklist normativo. B (Falsa) Matriz de impacto foca na análise de riscos. D e E (Falsas) São documentos de apoio, não cumprem o papel do SoA de mapear e justificar a aderência estrita aos controles da norma."
+  },
+  {
+    "id": 1128,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE identificou um risco elevado de ataques cibernéticos de negação de serviço (DDoS) direcionados aos seus portais públicos de consulta jurisprudencial. A análise financeira demonstrou que o custo para aquisição e manutenção de appliances de segurança físicos e links redundantes on-premise excederia significativamente o possível prejuízo da indisponibilidade. O tribunal, seguindo as diretrizes da ISO 27001, decidiu contratar um serviço terceirizado de limpeza de tráfego (scrubbing center) em nuvem para lidar exclusivamente com essa ameaça. Esta ação representa estrategicamente:",
+    "options": {
+      "A": "A aceitação do risco residual.",
+      "B": "A eliminação da fonte de risco.",
+      "C": "O compartilhamento do risco.",
+      "D": "A mitigação baseada em redundância.",
+      "E": "A retenção informada do risco."
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. Na gestão de riscos, o compartilhamento (ou transferência) de risco envolve delegar parcial ou totalmente o tratamento financeiro ou operacional da ameaça para um terceiro, como a contratação de um serviço especializado de scrubbing ou uma apólice de seguro cibernético. A e E (Falsas) Aceitação ou retenção implicaria em não tomar nenhuma ação adicional e assumir as consequências. B (Falsa) A ameaça de DDoS na internet não é eliminável pelo tribunal. D (Falsa) Redundância seria replicar infraestrutura própria (o que o enunciado diz ser caro), não caracteriza a decisão de transferir o tratamento do ataque para terceiros."
+  },
+  {
+    "id": 1129,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Com a adesão permanente ao modelo de trabalho remoto pelos magistrados do TJ-CE, observou-se um aumento expressivo em tentativas de acesso não autorizado à rede administrativa interna via conexões VPN. A equipe de engenharia de segurança, pautada nos controles de acesso da ISO 27002:2022, implementou uma nova política exigindo Múltiplos Fatores de Autenticação (MFA) para todas as sessões originadas fora da rede lógica do tribunal. Sobre a configuração arquitetural deste controle, é tecnicamente correto afirmar que:",
+    "options": {
+      "A": "A autenticação multifator baseia-se na segregação de ambientes virtuais e físicos.",
+      "B": "A implementação exige a combinação de fatores de conhecimento, posse e inerência.",
+      "C": "Os controles criptográficos dispensam o uso de fatores de posse em redes fechadas.",
+      "D": "A política de senhas fortes substitui o fator biológico em acessos via túneis VPN.",
+      "E": "O controle de acesso lógico fundamenta-se na classificação da informação em níveis."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. O MFA (Multi-Factor Authentication) exige a combinação de pelo menos duas categorias distintas entre: Conhecimento (algo que você sabe, como senhas), Posse (algo que você tem, como um token ou celular) e Inerência/Biológico (algo que você é, como biometria). A (Falsa) A MFA lida com credenciais, não segregação de rede. C (Falsa) Criptografia não substitui a autenticação do usuário, sendo controles complementares. D (Falsa) Senhas, mesmo fortes, continuam sendo um único fator (conhecimento) e não substituem fatores biológicos no contexto de uma política MFA exigente. E (Falsa) O acesso baseia-se em identidade e privilégios (RBAC/ABAC), não apenas na classificação isolada do dado."
+  },
+  {
+    "id": 1130,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante um incidente crítico de ransomware no datacenter principal do TJ-CE, a equipe de resposta a incidentes isolou os servidores afetados e restaurou os dados de backups imutáveis com sucesso, restabelecendo as operações em menos de quatro horas. No entanto, o comitê auditor apontou uma inconformidade crítica baseada na ISO 27002, relatando que o ciclo de gestão do incidente foi abortado prematuramente, ignorando etapas mandatórias após a restauração. A etapa negligenciada exigida pelas melhores práticas normativas é:",
+    "options": {
+      "A": "A preservação de evidências digitais antecedendo a fase de triagem inicial.",
+      "B": "A análise pós-incidente visando identificar vulnerabilidades e atualizar políticas.",
+      "C": "A comunicação aos órgãos reguladores ocorrendo após o plano de continuidade.",
+      "D": "O registro do evento prescindindo de detalhamento técnico em casos de restauração.",
+      "E": "A responsabilização disciplinar constituindo a etapa final do ciclo de resposta."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. A gestão de incidentes de segurança da informação (ISO 27002) possui uma fase crucial de 'Lições Aprendidas' ou avaliação pós-incidente. Nela, deve-se investigar a causa raiz, descobrir como o ransomware entrou, e atualizar as políticas para evitar reincidências. Restaurar o backup resolve o sintoma, não a causa. A (Falsa) A preservação de evidências ocorre durante a contenção/investigação, não sendo o foco principal negligenciado após o restabelecimento citado no texto. C (Falsa) Notificações devem ser tempestivas, não aguardar a finalização total. D (Falsa) Registros são obrigatórios sempre, independentemente de haver backup. E (Falsa) O ciclo encerra com a melhoria contínua, não estritamente com punições."
+  },
+  {
+    "id": 1131,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está submetendo seu Sistema de Gestão da Segurança da Informação (SGSI) a uma rigorosa avaliação cíclica. Os auditores observaram que, embora o controle de acesso lógico dos sistemas processuais atenda tecnicamente aos requisitos do Anexo A da ISO 27001, a diretoria de TI não implantou métricas sistêmicas nem revisões gerenciais para acompanhar se a eficácia deste controle se mantém ao longo do tempo. O não cumprimento desta etapa acarreta uma quebra estrutural do princípio normativo focado em:",
+    "options": {
+      "A": "O planejamento e controle de mudanças arquiteturais sistêmicas.",
+      "B": "A avaliação de desempenho e eficácia do sistema de gestão.",
+      "C": "A conscientização técnica e educação contínua dos colaboradores.",
+      "D": "O rigor técnico na implementação inicial de controle de acesso lógico.",
+      "E": "O tratamento corretivo focado em anomalias operacionais pontuais."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. De acordo com a seção 9 da ISO 27001 (Avaliação de Desempenho), a organização deve monitorar, medir, analisar e avaliar o desempenho da segurança da informação e a eficácia do SGSI. Ter o controle técnico sem medir se ele funciona é uma falha clara de avaliação de desempenho (fase Check do ciclo PDCA). A (Falsa) Refere-se à gestão de mudanças (fase Do). C (Falsa) Refere-se a competência e conscientização (fase Do). D (Falsa) O enunciado diz que a implementação técnica atende aos requisitos iniciais, a falha é no monitoramento. E (Falsa) Tratamento foca na correção, o que falta no texto é o monitoramento prévio contínuo."
+  },
+  {
+    "id": 1132,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para resguardar as transferências massivas de dados contendo depoimentos em vídeo entre as instâncias e as varas descentralizadas do TJ-CE, a arquitetura técnica precisa adotar uma solução criptográfica. Os arquivos de vídeo são volumosos e demandam alta velocidade de cifragem para não inviabilizar o link de comunicação. A equipe opta por uma arquitetura de envelopamento digital (criptografia híbrida). O papel desempenhado pelos algoritmos nesta arquitetura caracteriza-se tecnicamente por:",
+    "options": {
+      "A": "A criptografia simétrica realiza a cifragem dos dados em lote com alta velocidade de processamento.",
+      "B": "A chave pública assegura diretamente a confidencialidade estrutural do conteúdo dos vídeos.",
+      "C": "O algoritmo assimétrico processa o fluxo de mídia diretamente através de operações de permutação.",
+      "D": "A função de dispersão assegura a distribuição confidencial das chaves simétricas na rede.",
+      "E": "A cifragem em blocos assimétricos elimina o overhead computacional na fase de troca de chaves."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. Em sistemas híbridos, a criptografia simétrica (como AES) é utilizada para encriptar o volume principal de dados (os vídeos) devido à sua altíssima eficiência e velocidade. A criptografia assimétrica entra apenas para criptografar e transportar a chave simétrica, garantindo a troca segura. B e C (Falsas) A chave pública/assimétrica é lenta e ineficiente computacionalmente para cifrar dados grandes como vídeos, não sendo usada diretamente no arquivo. D (Falsa) Funções de hash garantem integridade, não a distribuição confidencial de chaves. E (Falsa) Criptografia assimétrica gera um grande overhead computacional, que é exatamente o motivo de não ser usada nos dados em lote."
+  },
+  {
+    "id": 1133,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O repositório de custódia digital de provas do TJ-CE exige que as imagens de discos periciais permaneçam inalteradas ao longo dos anos. O sistema arquiva um sumário criptográfico associado a cada submissão. Após uma recente conferência técnica, pesquisadores demonstraram ser possível alterar o arquivo pericial sem modificar o valor retornado pela função de resumo escolhida pelo tribunal, comprometendo a cadeia de custódia. O evento criptográfico que viabiliza essa falha estrutural de integridade é denominado:",
+    "options": {
+      "A": "O ataque de força bruta revertendo o valor do digest para o arquivo original.",
+      "B": "A colisão de hash ocorrendo na geração de resumos idênticos para dados distintos.",
+      "C": "A interceptação do tráfego invalidando o sumário armazenado em bancos relacionais.",
+      "D": "O ataque de dicionário explorando senhas fracas no armazenamento do disco.",
+      "E": "A quebra do princípio de difusão ocultando as relações matemáticas da assinatura."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Quando duas entradas de dados diferentes produzem o mesmo valor de hash (digest), ocorre uma 'colisão'. Um bom algoritmo de hash deve ter forte resistência a colisões para garantir que alterações maliciosas em um arquivo mudem obrigatoriamente o hash resultante. A (Falsa) Hashes são funções unidirecionais; reverter o hash para o arquivo original é inviável, o que ocorre é colisão. C e D (Falsas) São métodos de ataque a redes ou credenciais, não relacionados à falha matemática do algoritmo de hash em si. E (Falsa) Difusão refere-se a cifras de bloco (simétricas), significando que alterar um bit no plaintext deve mudar múltiplos bits no ciphertext."
+  },
+  {
+    "id": 1134,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um magistrado em plantão no TJ-CE expede um alvará de soltura eletrônico, firmando-o mediante assinatura digital baseada em infraestrutura de chaves públicas. Horas após o cumprimento da ordem, uma entidade externa contesta a validade jurídica, alegando adulteração no corpo do texto e refutando a autoria do magistrado. A equipe de auditoria técnica do tribunal submete o documento ao verificador oficial. Do ponto de vista técnico e legal da criptografia assimétrica, as propriedades conferidas ao documento por este mecanismo garantem:",
+    "options": {
+      "A": "A assinatura digital provê confidencialidade estrutural contra inspeções de tráfego de rede.",
+      "B": "O uso da chave privada do emissor garante a autenticidade, integridade e o não repúdio.",
+      "C": "A verificação da assinatura exige o compartilhamento de um segredo simétrico pré-estabelecido.",
+      "D": "A cifragem com a chave pública do destinatário assegura a validade probatória do documento.",
+      "E": "O protocolo criptográfico invalida a dependência de autoridades certificadoras externas."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. A assinatura digital utiliza a chave privada do emissor para criptografar o hash do documento. Isso garante: Autenticidade (só o detentor da chave privada gerou), Integridade (qualquer alteração no documento invalida a assinatura) e Não Repúdio (o emissor não pode negar a autoria). A (Falsa) Assinatura digital não garante confidencialidade; o documento pode trafegar em texto claro. C (Falsa) Utiliza criptografia assimétrica, eliminando a necessidade de segredo simétrico pré-estabelecido. D (Falsa) Para assinar, cifra-se com a chave PRIVADA do emissor, não com a pública do destinatário. E (Falsa) A dependência de Autoridades Certificadoras (PKI/ICP) é justamente o que vincula a chave pública à identidade do magistrado."
+  },
+  {
+    "id": 1135,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE projeta o lançamento de um aplicativo mobile para facilitar o peticionamento por advogados externos. A comunicação exige troca segura de chaves usando criptografia fim a fim. Como os dispositivos móveis possuem limitação de processamento e restrições severas de bateria, os arquitetos de software precisam adotar um padrão criptográfico assimétrico que ofereça alto nível de segurança matemática utilizando chaves consideravelmente menores em comparação a algoritmos clássicos como o RSA. O padrão técnico que atende perfeitamente a esse requisito restritivo é:",
+    "options": {
+      "A": "O padrão de criptografia em bloco AES no modo Galois/Counter Mode.",
+      "B": "O algoritmo de criptografia embasado no problema das Curvas Elípticas.",
+      "C": "O protocolo Diffie-Hellman executado em grupos de exponenciação de inteiros.",
+      "D": "O sistema criptográfico simétrico tradicional Data Encryption Standard.",
+      "E": "O esquema algorítmico de preenchimento ótimo de criptografia assimétrica."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. A Criptografia de Curva Elíptica (Elliptic Curve Cryptography - ECC) é notória por oferecer o mesmo nível de segurança que algoritmos clássicos baseados em fatoração (como o RSA) utilizando um tamanho de chave infinitamente menor, o que a torna ideal para dispositivos com restrições de CPU, memória e energia (mobile e IoT). A e D (Falsas) AES e DES são simétricos, o enunciado pede assimétrico para troca de chaves. C (Falsa) O Diffie-Hellman original exige números primos gigantes e chaves extensas, sem a eficiência das curvas elípticas (ECDH). E (Falsa) Trata-se do OAEP, um esquema de padding para RSA, e não de um algoritmo otimizado de chaves menores."
+  },
+  {
+    "id": 1136,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um servidor de alto escalão do TJ-CE teve seu notebook e token criptográfico subtraídos. O token possuía armazenada a sua chave privada vinculada a um certificado digital emitido no padrão ICP-Brasil, utilizado diariamente para chancelar atos correcionais com presunção legal de veracidade. Para neutralizar o vetor de ameaça decorrente de um possível uso por criminosos antes do vencimento natural do certificado digital, a ação técnica compulsória da autoridade de registro deve ser:",
+    "options": {
+      "A": "A emissão emergencial de um novo certificado autoassinado pelo departamento de TI.",
+      "B": "A inclusão do número de série correspondente na Lista de Certificados Revogados.",
+      "C": "A suspensão temporária do servidor oficial de carimbo de tempo do tribunal.",
+      "D": "A alteração imediata da chave pública nas tabelas da infraestrutura de diretório.",
+      "E": "O bloqueio do endereço físico do equipamento no firewall de perímetro corporativo."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Em PKI (Infraestrutura de Chaves Públicas), o mecanismo de invalidação de um certificado válido, que teve sua chave privada comprometida, é a sua Revogação. O número de série é publicado em uma LCR (Lista de Certificados Revogados - CRL) ou consultado via protocolo OCSP. A (Falsa) Emitir novo certificado não anula automaticamente o roubado perante o sistema ICP-Brasil. C (Falsa) Suspender o carimbo de tempo afeta a infraestrutura inteira e não resolve o comprometimento do certificado. D (Falsa) A chave pública já foi assinada pela AC; não basta alterá-la no diretório interno, precisa revogar a assinatura da AC. E (Falsa) O criminoso pode usar o token a partir de qualquer local do mundo via internet, bloquear o MAC Address não surte efeito."
+  },
+  {
+    "id": 1137,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A recém-projetada arquitetura de microsserviços do sistema judicial interno do TJ-CE trafega milhares de requisições por segundo contendo atualizações de trâmites de processos em formato JSON. O arquiteto de segurança exige que o payload dessas requisições seja verificado em relação à integridade e à autenticidade da origem, mas proíbe terminantemente o emprego de assinaturas baseadas em criptografia assimétrica devido à alta latência de CPU associada. A solução nativa recomendada, que combina funções de dispersão e um segredo compartilhado previamente entre os microsserviços, corresponde à técnica de:",
+    "options": {
+      "A": "Código de autenticação de mensagem baseado em hash (HMAC).",
+      "B": "Infraestrutura de chave pública de baixa latência (PKI-LL).",
+      "C": "Protocolo de encapsulamento de segurança de carga útil (ESP).",
+      "D": "Esquema de assinatura digital de curva elíptica (ECDSA).",
+      "E": "Função de derivação de chaves baseada em senhas (PBKDF2)."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O HMAC (Hash-based Message Authentication Code) é especificamente projetado para garantir simultaneamente integridade e autenticidade da origem sem o custo computacional da criptografia assimétrica, combinando um algoritmo de hash criptográfico rápido (como SHA-256) com uma chave secreta compartilhada simétrica. B e D (Falsas) Envolvem criptografia assimétrica (PKI, ECDSA), expressamente vetada no enunciado pela latência. C (Falsa) ESP é o cabeçalho do IPsec utilizado para criptografar a camada de rede IP, não um mecanismo atrelado unicamente a um payload de API JSON. E (Falsa) PBKDF2 atua no processo de hashing iterativo para dificultar a quebra de senhas salvas, e não para assinar requisições em trânsito."
+  },
+  {
+    "id": 1138,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A nova presidência do TJ-CE ordenou uma revisão holística de toda a documentação que suporta as diretrizes do tribunal sobre proteção de dados. Durante a auditoria, constatou-se que a Política Geral de Segurança da Informação (PSI) possuía oitocentas páginas, contendo desde regras genéricas de conduta até scripts detalhados de firewall. De acordo com os fundamentos normativos de governança expressos na norma ISO 27001, a estruturação macro de uma política de segurança organizacional de alto nível pressupõe que:",
+    "options": {
+      "A": "A política detalhe rigorosamente os parâmetros técnicos de configuração de ativos de rede.",
+      "B": "O documento formalize o comprometimento estratégico da alta direção com as metas do SGSI.",
+      "C": "As diretrizes políticas incluam o código-fonte dos algoritmos criptográficos utilizados.",
+      "D": "A elaboração da política restrinja-se aos membros do comitê técnico de infraestrutura.",
+      "E": "O escopo do documento limite-se à gestão operacional pontual de incidentes isolados."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. A Política de Segurança da Informação, na visão da ISO 27001 e 27002, é o documento guarda-chuva máximo. Ele deve ser conciso, focado nos princípios, aprovado pela alta direção e deve expressar formalmente o suporte e comprometimento dos líderes executivos. Procedimentos técnicos vão em normas e POPs de níveis mais baixos. A e C (Falsas) Inserir scripts e configurações em uma Política de alto nível gera engessamento documental inaceitável; essas especificações residem em manuais operacionais (guidelines e procedures). D (Falsa) A política não se restringe à infraestrutura ou à área de TI, abrange o comportamento organizacional e requer aprovação executiva. E (Falsa) O escopo é abrangente para todos os domínios do SGSI, e não apenas uma faceta isolada de incidentes."
+  },
+  {
+    "id": 1139,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE mantém uma solução de telefonia VoIP nativa para comunicação sigilosa em audiências de custódia virtuais, gerando um tráfego de dados de streaming contínuo. Devido à suscetibilidade da voz à perda de pacotes e jitter (variação de atraso), a equipe de infraestrutura requisitou um método criptográfico simétrico capaz de cifrar os bits de áudio sequencialmente no exato momento em que são gerados, prescindindo de espera para completar matrizes fixas de dados. O conceito criptográfico que resolve esse gargalo arquitetural é caracterizado por:",
+    "options": {
+      "A": "A cifra de bloco processa segmentos estáticos de tamanho fixo em matrizes de substituição.",
+      "B": "A cifra de fluxo realiza a operação exclusiva-OU entre os dados puros e uma sequência de chaves.",
+      "C": "A criptografia assimétrica segmenta o tráfego de voz bruto em pacotes fragmentados sequencialmente.",
+      "D": "A função de dispersão unidirecional encapsula o áudio sigiloso dentro de vetores de inicialização.",
+      "E": "O algoritmo RSA garante a confidencialidade ininterrupta do fluxo por meio da fatoração em primos."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Cifras de Fluxo (Stream Ciphers), como o RC4 e a família ChaCha, são métodos de criptografia simétrica que processam e encriptam os dados de forma contínua, bit a bit ou byte a byte, aplicando operações rápidas (tipicamente XOR) em conjunto com uma sequência pseudoaleatória de chaves. Essa propriedade as torna ideais para transmissões em tempo real (como vídeo e VoIP) que não toleram buffers e latência. A (Falsa) Refere-se à cifra de bloco, que aguarda segmentos (ex: 128 bits) serem preenchidos, gerando latência inadequada ao requisito do texto. C e E (Falsas) São métodos assimétricos, inviáveis para fluxos de dados de streaming pesados em tempo real. D (Falsa) Função de hash serve para integridade, não garante confidencialidade, nem 'encapsula' o áudio cifrado no sentido exposto."
+  },
+  {
+    "id": 1140,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Normas e Criptografia",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Buscando modernizar o ciclo de entrega de softwares para o sistema central do tribunal, o setor de desenvolvimento do TJ-CE adotou práticas maduras de DevSecOps. Observou-se, entretanto, que os programadores possuíam privilégios sistêmicos para publicar e executar rotinas de teste e depuração diretamente nos clusters operacionais do datacenter. Conforme os rigorosos controles propostos pela norma ISO 27002:2022 sobre o desenvolvimento e manutenção de sistemas, o tratamento dessa deficiência pressupõe a premissa de que:",
+    "options": {
+      "A": "A transferência de dados reais de produção para o ambiente de testes ocorre livremente sem restrições em metodologias ágeis.",
+      "B": "A segregação robusta de ambientes de desenvolvimento, teste e produção previne modificações não autorizadas ou acidentais.",
+      "C": "A revisão de código-fonte enfoca exclusivamente a otimização de ciclos de relógio e o ganho de desempenho computacional.",
+      "D": "O controle centralizado de versão de software dispensa as trilhas de auditoria contínua em arquiteturas monolíticas.",
+      "E": "A compilação definitiva de bibliotecas de terceiros executa-se diretamente nas máquinas dos servidores de produção."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. A separação dos ambientes de desenvolvimento, teste e produção é um controle vital exposto na ISO 27002 (Segurança no Ciclo de Vida do Sistema / Separação de Ambientes). O acesso direto de desenvolvedores ao ambiente de produção eleva exponencialmente o risco de indisponibilidades, fraudes ou vazamento. A (Falsa) Os dados reais de produção são estritamente controlados, não devendo ser transportados livremente para dev/teste, devendo ser pseudoanonimizados ou fictícios. C (Falsa) Revisões em DevSecOps visam majoritariamente a identificação de falhas de segurança (OWASP), não apenas melhoria de CPU. D (Falsa) A utilização de versionamento não afasta a necessidade de trilhas de auditoria, são ações complementares. E (Falsa) O artefato deve ser compilado e aprovado integralmente no ambiente de integração/teste e promovido já congelado à produção, jamais compilado em tempo de execução no próprio servidor produtivo."
+  },
+  {
+    "id": 1141,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Estado do Ceará (TJ-CE) iniciou um projeto de modernização de seu perímetro de rede após uma auditoria revelar falhas na filtragem de tráfego entre a zona de servidores de banco de dados e a zona de aplicação. A equipe de segurança da informação decidiu substituir os antigos equipamentos de filtragem de pacotes estáticos por uma arquitetura mais inteligente. O novo requisito determina que o equipamento deve ter a capacidade de rastrear o contexto das conexões ativas, permitindo dinamicamente o tráfego de retorno correspondente a conexões iniciadas internamente, sem a necessidade de criar regras bidirecionais explícitas para cada serviço. Com base neste cenário de modernização da arquitetura de segurança do TJ-CE, a funcionalidade tecnológica adequada para atender a este requisito operacional é a",
+    "options": {
+      "A": "manutenção de uma tabela dinâmica de estados para validar conexões ativas.",
+      "B": "configuração de regras baseadas exclusivamente em endereços MAC e VLANs.",
+      "C": "inspeção profunda dos dados na camada de aplicação utilizando expressões regulares.",
+      "D": "reestruturação da rede em uma topologia do tipo malha completa.",
+      "E": "implantação de listas de controle de acesso estáticas no roteador de borda."
+    },
+    "answer": "A",
+    "explanation": "A: Correta. O Stateful Firewall rastreia o estado das conexões em andamento mantendo uma tabela dinâmica na memória (state table), o que permite o tráfego de retorno sem a criação manual de regras espelhadas.\nB: Errada. Endereços MAC e VLANs operam na camada de enlace (Camada 2), enquanto o rastreamento do estado das conexões se dá nas camadas de rede e de transporte, além de não envolver o contexto bidirecional de sessão.\nC: Errada. A inspeção profunda na camada de aplicação é característica de Firewalls de Próxima Geração (NGFW) ou de Aplicação (WAF). O modelo puramente stateful foca no controle de transações no nível TCP/IP.\nD: Errada. A adoção de malha completa (full mesh) é uma decisão de infraestrutura focada na redundância e resiliência de caminhos físicos, sem qualquer interface com o tipo de filtro de segurança lógico na inspeção do tráfego.\nE: Errada. ACLs estáticas operam analisando datagramas individualmente (stateless inspection), configurando o exato sistema defasado que a instituição busca desativar pela incapacidade de rastrear as sessões."
+  },
+  {
+    "id": 1142,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o planejamento da segurança cibernética para o processo eletrônico judicial do TJ-CE, a diretoria de TI identificou a necessidade de monitorar continuamente o tráfego de rede em busca de anomalias e padrões de ataques conhecidos, como tentativas de exploração de vulnerabilidades no protocolo HTTP. A diretriz exige uma ferramenta configurada de forma totalmente passiva, recebendo uma cópia do tráfego através de uma porta de espelhamento (SPAN/Mirror port) no switch core. O equipamento deve analisar os pacotes, gerar alertas detalhados em um console centralizado de gerência e registrar as evidências para posterior auditoria, sem introduzir latência no fluxo normal de comunicação entre as varas judiciais e os datacenters. O tipo de solução de segurança exigida neste projeto do TJ-CE é classificada como",
+    "options": {
+      "A": "firewall de próxima geração operando no modo de prevenção ativa.",
+      "B": "sistema de detecção de intrusões baseado em rede.",
+      "C": "proxy reverso com filtro de conteúdo integrado.",
+      "D": "sistema de prevenção de intrusões baseado em host.",
+      "E": "balanceador de carga global com mitigação de negação de serviço."
+    },
+    "answer": "B",
+    "explanation": "A: Errada. O NGFW opera no caminho do tráfego (in-line) e realiza prevenção ativa, em oposição ao monitoramento passivo exigido no enunciado.\nB: Correta. Um NIDS (Network Intrusion Detection System) conecta-se a uma porta SPAN, atua de forma passiva, monitora anomalias e gera alertas sem causar latência ou modificar ativamente o tráfego da rede.\nC: Errada. O proxy reverso atua como intermediário em conexões web recebendo o tráfego e repassando-o aos servidores internos, configurando um modelo in-line ativo que introduz latência de processamento.\nD: Errada. O HIDS opera localmente analisando os logs do sistema operacional de servidores (host), enquanto o enunciado descreve a coleta de pacotes via espelhamento de porta no switch core (rede).\nE: Errada. O balanceador de carga gerencia ativamente a distribuição de tráfego entre diferentes nós da rede, não atuando nativamente como uma ferramenta de análise passiva conectada a uma porta espelhada para geração de alertas de segurança."
+  },
+  {
+    "id": 1143,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A infraestrutura do Portal do TJ-CE vem sofrendo frequentes ataques de negação de serviço distribuído (DDoS) na camada de aplicação e tentativas de injeção de SQL contra os sistemas de consulta processual. Para mitigar esses riscos, os arquitetos de segurança desenharam uma nova topologia de rede inserindo um equipamento de segurança em linha (in-line) diretamente no caminho do tráfego web, posicionado entre o roteador de borda e o balanceador de carga. A principal exigência operacional é que este dispositivo possua capacidade proativa não apenas de detectar assinaturas de tráfego malicioso em tempo real, mas também de descartar ativamente os pacotes ofensores, redefinir conexões TCP anômalas e bloquear automaticamente o endereço IP de origem do atacante antes que o tráfego alcance os servidores web. O equipamento adequado a ser implantado nesta arquitetura é o",
+    "options": {
+      "A": "sistema de prevenção de intrusões baseado em rede.",
+      "B": "sistema de detecção de intrusões operando em modo promíscuo.",
+      "C": "firewall de inspeção de estado operando na camada de rede.",
+      "D": "concentrador de rede virtual privada com autenticação multifator.",
+      "E": "scanner de vulnerabilidades automatizado em tempo real."
+    },
+    "answer": "A",
+    "explanation": "A: Correta. O IPS (Intrusion Prevention System) atua posicionado in-line, analisando o tráfego e possuindo a capacidade tecnológica de bloquear ativamente (drop, reset) pacotes maliciosos ou conexões intrusivas na rede.\nB: Errada. Um IDS operando em modo promíscuo (passivo) detecta ameaças e gera logs informativos, mas carece da capacidade proativa e estrutural de redefinir conexões ou bloquear ativamente pacotes passantes.\nC: Errada. Firewalls de estado tradicionais (camadas 3 e 4) não possuem o mecanismo de decodificação profunda para analisar injeção de SQL ou ataques DDoS sutis na camada de aplicação, pois limitam-se à leitura do cabeçalho de transporte TCP/IP.\nD: Errada. O concentrador VPN fornece acesso remoto seguro com tráfego criptografado para colaboradores, não sendo a ferramenta primária destinada a analisar o tráfego público do portal web para detectar ameaças transacionais em tempo real.\nE: Errada. Scanners de vulnerabilidade operam realizando varreduras esporádicas e ativas nos servidores para mapear falhas na configuração ou código, não inspecionando de forma contínua o tráfego de pacotes in-line na infraestrutura."
+  },
+  {
+    "id": 1144,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE, no exercício de sua competência jurisdicional, realiza o tratamento de um grande volume de dados pessoais de magistrados, servidores, partes processuais e testemunhas. Um novo sistema de inteligência artificial está sendo desenvolvido para classificar petições iniciais e automatizar a distribuição processual. A equipe de governança de dados foi acionada para garantir a conformidade deste projeto com a Lei Geral de Proteção de Dados Pessoais (LGPD). Durante a modelagem do fluxo de dados, questionou-se a fundamentação legal para o tratamento dessas informações pelo órgão público no cumprimento de sua missão constitucional, sem a necessidade de solicitar o consentimento explícito dos titulares dos dados em cada etapa processual. À luz das disposições da LGPD aplicáveis ao poder público, o tratamento de dados pessoais no âmbito deste novo sistema do TJ-CE está legalmente amparado na",
+    "options": {
+      "A": "celebração de contratos bilaterais com cada titular de dado registrado.",
+      "B": "execução de políticas públicas previstas em leis e regulamentos.",
+      "C": "proteção do crédito das instituições financeiras parceiras.",
+      "D": "garantia do legítimo interesse exclusivo de empresas privadas conveniadas.",
+      "E": "tutela da saúde em procedimentos médicos de emergência processual."
+    },
+    "answer": "B",
+    "explanation": "A: Errada. A exigência da assinatura de contratos bilaterais inviabilizaria os serviços de justiça do Estado e não corresponde ao princípio da finalidade pública de tratamento contido na LGPD para o poder judiciário.\nB: Correta. Segundo o Art. 7º, III, combinado com o Art. 23 da LGPD, o poder público pode realizar o tratamento de dados pessoais sem o consentimento do titular para o cumprimento de suas competências legais e na execução de políticas públicas consubstanciadas em lei ou regulamentos, englobando atividades precípuas jurisdicionais do TJ-CE.\nC: Errada. A proteção do crédito é uma base legal de tratamento aplicável estritamente a instituições financeiras e birôs comerciais, não justificando o tratamento de dados no exercício da função pública jurisdicional do tribunal.\nD: Errada. A base do legítimo interesse destina-se, regra geral, ao setor privado. O setor público no exercício de suas competências e atribuições estatais não se baseia na hipótese de legítimo interesse privado para coletar e utilizar os dados do cidadão.\nE: Errada. A tutela da saúde é aplicável apenas aos procedimentos e emergências executadas por profissionais médicos e serviços de assistência à saúde, destoando do processamento cível e eletrônico de uma ação judicial no Tribunal."
+  },
+  {
+    "id": 1145,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Departamento de Redes do TJ-CE constatou que, apesar da existência de um filtro de rede que analisa o estado das conexões nas camadas 3 e 4 do modelo OSI, ataques direcionados à lógica de negócio da aplicação de e-SAJ ainda estão obtendo sucesso. O diretor de TI questionou a equipe técnica sobre a capacidade do atual firewall stateful de barrar ameaças que vêm embutidas no conteúdo do protocolo HTTP, como scripts maliciosos. O engenheiro de segurança sênior explicou os limites de atuação da atual solução instalada na borda da rede e justificou a necessidade de uma tecnologia complementar. Do ponto de vista da arquitetura de segurança, a limitação intrínseca de um firewall puramente stateful que embasa o argumento do engenheiro é a",
+    "options": {
+      "A": "atuação restrita à inspeção dos cabeçalhos das camadas de rede e de transporte.",
+      "B": "incapacidade de aplicar regras de bloqueio baseadas no endereço IP de origem.",
+      "C": "impossibilidade técnica de gerenciar protocolos orientados à conexão como o TCP.",
+      "D": "ausência de suporte nativo a protocolos de roteamento dinâmico no núcleo da rede.",
+      "E": "dependência exclusiva da leitura de chaves criptográficas assimétricas."
+    },
+    "answer": "A",
+    "explanation": "A: Correta. O firewall stateful atua avaliando até a camada de transporte (TCP/UDP) e não possui a capacidade inata de abrir e reconstruir o payload (dados) na camada de aplicação. Isso impossibilita a leitura e o bloqueio de códigos maliciosos inseridos no interior do protocolo web (HTTP).\nB: Errada. O bloqueio granular através de endereçamento IP de origem e de destino é uma função básica contida em todo e qualquer firewall, seja ele estático ou stateful.\nC: Errada. O acompanhamento do handshake e a manutenção de protocolos orientados a conexão, como o TCP, é precisamente a razão de ser e o diferencial do modelo de firewall baseado em estado (stateful).\nD: Errada. O trânsito com protocolos de roteamento dinâmico no ambiente de núcleo rege os encaminhamentos da infraestrutura de telecomunicações, não mantendo relação analítica com a incapacidade de detectar ataques baseados em aplicações web.\nE: Errada. A arquitetura de segurança baseada em estados avalia o preâmbulo lógico dos pacotes, não possuindo uma dependência direta e técnica da análise de chaves assimétricas para autorizar o fluxo nas portas sistêmicas."
+  },
+  {
+    "id": 1146,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após um incidente de segurança onde o servidor de arquivos do setor financeiro do TJ-CE teve permissões de pastas críticas alteradas de forma indevida, a equipe de Resposta a Incidentes determinou a instalação de uma nova camada de defesa. A especificação técnica requer a implantação de agentes de software distribuídos diretamente nos sistemas operacionais dos servidores críticos de banco de dados e arquivos. Esses agentes devem analisar os logs locais do sistema, monitorar a integridade de arquivos de configuração essenciais e alertar sobre modificações não autorizadas no registro do sistema, operando de forma complementar à análise de tráfego de rede já existente no perímetro. A tecnologia de segurança da informação descrita nesta especificação do TJ-CE é classificada como",
+    "options": {
+      "A": "sistema de detecção de intrusões baseado em host.",
+      "B": "sistema de prevenção de intrusões baseado em rede.",
+      "C": "appliance de segurança de correio eletrônico corporativo.",
+      "D": "concentrador de logs syslog nativo de rede.",
+      "E": "sistema de gerenciamento de identidades e acessos."
+    },
+    "answer": "A",
+    "explanation": "A: Correta. O HIDS (Host-based Intrusion Detection System) é instalado como um agente no nível do sistema operacional (host), analisando logs locais de autenticação, controlando o registro do sistema e disparando alarmes para violação de integridade nos arquivos e pastas essenciais.\nB: Errada. O NIPS (Network-based IPS) monitora ativamente as assinaturas contidas no tráfego físico dos fios ou VLANs, não tendo acesso privilegiado para ler as alterações internas de arquivos nas estruturas de diretório do Windows ou Linux.\nC: Errada. Gateway de segurança de e-mail (SEG) tem foco estrito e exclusivo na análise de anexos, SPAM e remetentes no fluxo SMTP, não auditando arquivos vitais do sistema operacional do banco de dados.\nD: Errada. Embora o concentrador receba as mensagens brutas da rede, ele é classificado como uma ferramenta secundária de recebimento e não representa a arquitetura local do software agente que analisa a integridade das pastas no host descrito na questão.\nE: Errada. Plataformas IAM controlam a orquestração do acesso por credenciais dos usuários corporativos, mas não possuem a capacidade analítica de monitorar anomalias profundas nos binários e registros mantidos nas partições do sistema."
+  },
+  {
+    "id": 1147,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após a ativação do novo sistema de prevenção de intrusões (IPS) em modo de bloqueio agressivo no datacenter primário do TJ-CE, diversos usuários de varas do interior reportaram instabilidade e quedas de conexão ao tentar acessar o sistema de controle de ponto eletrônico. A equipe do Centro de Operações de Segurança (SOC) analisou os logs e verificou que o IPS estava interpretando erroneamente os pacotes de sincronização de relógio da aplicação legada como uma tentativa de ataque de inundação UDP (UDP Flood), descartando ativamente o tráfego legítimo e impactando a disponibilidade do serviço corporativo. No contexto de gestão e métricas de sistemas de detecção e prevenção de intrusões, o problema operacional relatado no cenário do TJ-CE caracteriza-se tecnicamente como um",
+    "options": {
+      "A": "evento de falso negativo.",
+      "B": "evento de verdadeiro negativo.",
+      "C": "evento de falso positivo.",
+      "D": "evento de verdadeiro positivo.",
+      "E": "evento de negação distribuída."
+    },
+    "answer": "C",
+    "explanation": "A: Errada. O falso negativo acontece quando a ferramenta de segurança falha completamente e deixa uma ameaça real passar sem gerar alertas.\nB: Errada. O verdadeiro negativo designa o cenário ideal onde o fluxo de dados seguro navega normalmente pela infraestrutura sem sofrer ações de alarme ou interrupções pela plataforma de rede.\nC: Correta. Falso positivo ocorre quando uma solução analítica marca indevidamente uma comunicação legítima do ambiente - como um pacote inofensivo de tempo e sincronização - como se fosse uma anomalia maliciosa ativa.\nD: Errada. O verdadeiro positivo ocorre quando um perigo efetivo e iminente é contido de forma correta e cirúrgica pelas barreiras de mitigação do datacenter.\nE: Errada. A terminologia não condiz com as matrizes estatísticas de classificação de confusão adotadas oficialmente na gestão de incidentes da segurança da informação para catalogar a assertividade."
+  },
+  {
+    "id": 1148,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Presidência do TJ-CE, visando fortalecer a governança corporativa e atender integralmente aos ditames da Lei Geral de Proteção de Dados Pessoais (LGPD), determinou a publicação de uma portaria de nomeação para um novo papel estratégico na estrutura administrativa do Tribunal. Este profissional terá como responsabilidades aceitar reclamações e comunicações dos titulares de dados, prestar esclarecimentos, receber comunicações da Autoridade Nacional de Proteção de Dados (ANPD) e orientar os servidores e os terceirizados do Tribunal a respeito das práticas de tratamento de dados pessoais exigidas por lei. Segundo os preceitos da LGPD direcionados aos órgãos do poder público, a função descrita a ser provida por meio desta portaria é a do",
+    "options": {
+      "A": "controlador adjunto de dados.",
+      "B": "operador autônomo de informações.",
+      "C": "encarregado pelo tratamento de dados pessoais.",
+      "D": "custodiante de segurança cibernética.",
+      "E": "auditor sênior de privacidade."
+    },
+    "answer": "C",
+    "explanation": "A: Errada. A legislação específica de proteção de dados brasileira não cria a figura técnica de controlador adjunto para diluição de responsabilidades do controlador formal.\nB: Errada. O papel de operador concentra-se em realizar a custódia ou manuseio dos dados em nome da autarquia controladora, mas a comunicação oficial regulatória externa não é sua função legal primária.\nC: Correta. Nos termos rigorosos do Art. 41 e Art. 23, III da LGPD, o Encarregado de Proteção de Dados (DPO) é a pessoa ou ente nomeado pelo controlador responsável por atuar como canal de intermediação primária e comunicação entre o titular dos dados processados, o controlador (Estado) e a agência federal da ANPD.\nD: Errada. A designação de custodiante é um jargão genérico da literatura acadêmica que denota perfis operacionais de retenção de ativos, sem validade para suprir o cargo normatizado contido no arcabouço da referida lei.\nE: Errada. Embora a auditoria contínua de controles faça parte das atividades de conformidade do tribunal, o auditor fiscaliza, porém a interlocução legal para demandas da ANPD é atribuição mandatória e inalienável do encarregado."
+  },
+  {
+    "id": 1149,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante uma migração de infraestrutura de rede no TJ-CE, um pico anômalo de tráfego foi direcionado ao firewall de borda. O equipamento, configurado em modo stateful, começou a descartar novos pedidos de conexão TCP legítimos direcionados ao portal de serviços, apresentando lentidão severa. A investigação conduzida pela equipe de infraestrutura revelou que o recurso de memória alocado para registrar as sessões ativas atingiu sua capacidade máxima, sofrendo um esgotamento de recursos (resource exhaustion). O relatório técnico indicou que conexões meias-abertas (half-open) permaneceram registradas no sistema por tempo excessivo, impedindo a admissão de novos tráfegos. O componente arquitetural específico do firewall stateful que sofreu a saturação relatada neste incidente do TJ-CE é a",
+    "options": {
+      "A": "tabela de roteamento estático do equipamento.",
+      "B": "matriz de controle de acesso de aplicação.",
+      "C": "tabela de estados de conexão.",
+      "D": "cache de resolução de nomes de domínio.",
+      "E": "tabela de endereços de controle de acesso ao meio físico."
+    },
+    "answer": "C",
+    "explanation": "A: Errada. O sistema de roteamento encarrega-se do despacho direcional dos pacotes de camada 3, o que não reflete a estrutura RAM suscetível à exaustão por tráfegos orientados e incompletos de rede.\nB: Errada. A matriz abstrata estática onde as regras de origem e destino ficam salvas no armazenamento não volante não cresce ou esgota por força e reflexo do volume de conexões passantes dos clientes.\nC: Correta. Como base funcional de seu projeto técnico, o firewall stateful retém temporariamente todos os handshakes ativados ou pendentes (half-open) dentro de sua State Table. Quando mal configurado em períodos de timeout curtos, um pico malicioso no SYN compromete todo o espaço de memória voltado à tabela de estados.\nD: Errada. A funcionalidade transiente do DNS que mapeia endereços humanizados em decimais de IP carece de correlação técnica na causa do travamento sistêmico pela não completude de comunicação e handshake das sessões TCP na borda.\nE: Errada. A tabela de associações estritas de hardware da camada 2 (Tabela MAC ou CAM Table) sofre esgotamento devido aos pacotes na sub-rede direta interna (MAC flooding) e não engloba falhas em acompanhamento de sessões lógicas de transporte do portal web."
+  },
+  {
+    "id": 1150,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de detecção de intrusões (IDS) do TJ-CE foi inicialmente configurado para analisar o tráfego com base em um banco de dados de regras fornecido pelo fabricante. Contudo, essa abordagem demonstrou ineficácia perante uma nova variante de malware zero-day que atacou as estações de trabalho de uma comarca do interior, uma vez que a ameaça não possuía perfil pré-cadastrado. O comitê de segurança da informação decidiu alterar o modelo de funcionamento da ferramenta, instruindo o equipamento a criar um perfil de comportamento normal de tráfego da rede ao longo de trinta dias. Após esse período de aprendizado, qualquer desvio estatístico significativo em relação ao perfil estabelecido passará a acionar alertas imediatos ao SOC. O novo método de análise implementado no IDS do TJ-CE é denominado detecção baseada em",
+    "options": {
+      "A": "análise comportamental de anomalias.",
+      "B": "reconhecimento de assinaturas estáticas.",
+      "C": "inspeção heurística de arquivos binários.",
+      "D": "verificação formal de código-fonte.",
+      "E": "filtragem de pacotes sem estado."
+    },
+    "answer": "A",
+    "explanation": "A: Correta. Na técnica por anomalia estatística ou comportamental, a ferramenta rastreia dados massivos e compila uma curva normal operacional (baseline) ao longo do tempo. Quando vetores estranhos afetam essa regularidade sistêmica, a discrepância provoca os alarmes, sem a dependência do cadastro da ameaça.\nB: Errada. Este é precisamente o modelo restrito que a autarquia substituiu em seu projeto, pois ele fracassou diante de ameaças ainda não cadastradas nos registros centrais (Zero-Day).\nC: Errada. Avaliações heurísticas examinam o comportamento lógico e os comandos operacionais dispostos no binário ou programa instalado fisicamente no computador e não a coleta passiva de volume e destino transacional dos pacotes estatísticos transitando no núcleo dos switches da intranet.\nD: Errada. O crivo formal para auditoria atrela-se na gestão e concepção do ciclo contínuo de desenvolvimento do software (DevSecOps) dos sistemas institucionais pela equipe de engenharia e não do controle de bloqueios in-line contra acessos ilegais à infraestrutura.\nE: Errada. Caracteriza somente um modelo primitivo de proteção em fronteiras da camada IP onde não existe acompanhamento nem do tráfego longitudinal, nem mesmo do tráfego de sessões abertas no perímetro de borda."
+  },
+  {
+    "id": 1151,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O projeto arquitetural para a inserção de um Sistema de Prevenção de Intrusões (IPS) no backbone de alta velocidade do TJ-CE levantou debates sobre resiliência e disponibilidade. A gerência de redes expressou preocupação com o fato de que a inserção de um equipamento em linha no caminho crítico dos dados criaria um ponto único de falha (Single Point of Failure). Em caso de travamento do hardware ou falha de software do módulo IPS, todo o tráfego do datacenter seria bloqueado, isolando os serviços do Tribunal. Para mitigar esse risco arquitetural sem remover a capacidade proativa de bloqueio, a equipe de projeto exigiu a aquisição de um IPS que possua a capacidade embutida de desviar eletricamente o tráfego em caso de inoperância sistêmica, garantindo a continuidade do encaminhamento de pacotes, ainda que sem inspeção. A característica técnica exigida neste projeto do TJ-CE é conhecida como",
+    "options": {
+      "A": "configuração de redundância em modo ativo-ativo.",
+      "B": "implantação de rotas dinâmicas de borda.",
+      "C": "operação em modo de falha aberta ou bypass de hardware.",
+      "D": "arquitetura de proxy transparente estrito.",
+      "E": "execução em ambiente de virtualização isolada."
+    },
+    "answer": "C",
+    "explanation": "A: Errada. Envolve a alocação de mais de um hardware em operação concomitante via switch, enquanto o conceito requerido busca a resposta elétrica segura intrínseca e autônoma do IPS quando defrontado com a pane total do seu software interno de processamento de regras.\nB: Errada. O estabelecimento em roteadores lógicos via BGP busca reencaminhar o tráfego após decaimentos e rompimentos de circuito do provedor ISP e não consegue contornar a caixa de IPS transparente que parou de transitar informações sem reportar queda franca de sinal à placa de rede.\nC: Correta. O hardware bypass ou fail-open (falha aberta) atua fechando circuitos eletromagnéticos nas interfaces passantes físicas em nanossegundos caso o sistema operacional IPS congele (panic system), transformando temporariamente a ponte em um cabo contínuo imune a quebras para o enlace inferior corporativo.\nD: Errada. Arquiteturas de proxy forçam a interceptação e terminação de TCP integralmente. Assim, qualquer indisponibilidade nos recursos centrais desta tecnologia acarretaria a exata interrupção de acesso indesejada sem nenhuma forma de trânsito paralelo em fail-open elétrico.\nE: Errada. A isolação sistêmica propicia facilidades de restauração em clusters conteinerizados, mas uma parada absoluta no servidor host nativo ainda se consolidará no engarrafamento obstrutivo da porta da rede virtual ou física acoplada à plataforma central."
+  },
+  {
+    "id": 1152,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE firmou um termo de cooperação técnica com a Secretaria de Segurança Pública e Defesa Social do Estado (SSPDS) visando aprimorar o combate ao crime organizado. O acordo prevê o cruzamento em larga escala de dados pessoais de indivíduos condenados judicialmente, atualmente armazenados nos bancos de dados do Tribunal, com os sistemas de inteligência da Secretaria. O Departamento Jurídico do TJ-CE, ao analisar a legalidade da operação, ressaltou as exigências específicas da LGPD para órgãos públicos e emitiu um parecer orientando sobre a forma legal para o repasse dessas informações a outros entes públicos. Em conformidade com a LGPD, o uso compartilhado de dados pessoais pelo TJ-CE neste contexto exige a",
+    "options": {
+      "A": "obtenção prévia de consentimento assinado por todos os indivíduos registrados.",
+      "B": "finalidade de atender a políticas públicas respaldadas em contratos ou instrumentos congêneres.",
+      "C": "delegação da atividade de controle para empresas de inteligência comercial privada.",
+      "D": "anonimização irreversível e imediata de todos os metadados envolvidos na transação.",
+      "E": "notificação comercial prévia ao titular sobre a comercialização de seus registros judiciais."
+    },
+    "answer": "B",
+    "explanation": "A: Errada. O Estado está desobrigado a buscar o consenso para atuar e dispor dos dados do réu quando estiver prestando funções típicas do Estado atreladas à administração judiciária ou perseguição do ilícito.\nB: Correta. O Art. 26 da Lei Geral orienta que o uso compartilhado pela esfera administrativa pressupõe finalidades imperiosas e estritas orientadas ao amparo social ou à execução profícua de políticas de interesse público constantes de convênios legais ou disposições constitucionais adequadas às suas atribuições originais.\nC: Errada. Repassar atividades jurisdicionais inerentes para o meio particular esvazia e extrapola os limites restritíssimos fixados para este tipo de atuação sob as garantias do sigilo governamental das comarcas de direito perante os seus sistemas operacionais e bases de retaguarda em SQL.\nD: Errada. Processos desta classe de pesquisa ou penal fariam total sentido apenas na medida do rastreio e acompanhamento analítico cruzado de identidade nominal, pelo que a imediata desvinculação absoluta destruiria a funcionalidade finalística perseguida na parceria policial e forense.\nE: Errada. Qualquer hipótese de rentabilização, alienação em mercado e uso desviado que importe lucro para os erários sob bases de registros cadastrais constitui falta gravíssima de princípio fundamental estipulado nas seções primárias do regime da LGPD."
+  },
+  {
+    "id": 1153,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Analistas de segurança do TJ-CE detectaram, através da correlação de logs de servidores web, uma série de intrusões bem-sucedidas que não geraram nenhum alerta no Network Intrusion Detection System (NIDS) de borda. Uma análise de pacotes (pcap) revelou que o atacante dividiu o payload malicioso em múltiplos datagramas IP extremamente pequenos e enviou-os fora de ordem, sobrepondo os offsets. O NIDS, por limitação de processamento e configuração inadequada de remontagem de pacotes, analisou os fragmentos isoladamente e não identificou a assinatura do ataque, permitindo a passagem do tráfego para os servidores internos, que por sua vez remontaram a carga útil e executaram o código malicioso. A técnica de ataque empregada para contornar o monitoramento do NIDS no TJ-CE é conhecida como evasão por",
+    "options": {
+      "A": "sobrecarga do buffer de recepção com inundação SYN.",
+      "B": "fragmentação de pacotes na camada de rede.",
+      "C": "envenenamento de cache do protocolo de resolução de endereços.",
+      "D": "falsificação do endereço IP de origem e destino na mesma sub-rede.",
+      "E": "sequestro de sessão TCP no protocolo de transporte."
+    },
+    "answer": "B",
+    "explanation": "A: Errada. Destinada precipuamente a criar a indisponibilidade total do ativo alvo via esgotamento massivo dos handshakes semi-abertos alocados em tabelas de roteamento das sessões e não atrelada à subversão e manipulação oculta das fatias de injeção injetadas paralelamente sob uma malha transparente do NIDS perimetral.\nB: Correta. Quando os pacotes que compõem uma regra inteira são separados em partições diminutas e fora de linha nos números de rastreamento do cabeçalho de rede e compensação (offset), dispositivos passivos mal parametrizados em seu subsistema de remontagem não constatam o conjunto do vírus inteiro no buffer analítico, configurando a invasão oculta pela quebra de pacotes em fragmentos disjuntos do formato IP.\nC: Errada. Foca-se em manipular e subverter pontes de rede das camadas de enlace inferiores do OSI para causar uma ramificação redirecional ou um MITM (Homem-No-Meio) e furtar conversações cifradas, cenário distante do contexto da burla descrita perante as inspeções dos cabos analíticos passantes em varredura espelhada do datacenter.\nD: Errada. Refere-se à manipulação descarada de remetentes nos contornos diretos baseados em regras rígidas e primitivas de roteador estático ou spoofing para burlar autenticações limitantes, mas a falsificação de IP em si não desmonta ou obscurece a sintaxe injetável da carga útil presente no fundo do envelope protocolar das aplicações afetadas.\nE: Errada. Foco operacional voltado integralmente para as etapas transacionais posteriores a autenticações nas aplicações, furtando dados autorizativos (cookies/tokens) em curso da via navegadora a fim de invadir a gestão das interfaces, não se limitando aos estratagemas infraestruturais de quebra analítica de NIDS expostos."
+  },
+  {
+    "id": 1154,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Seguindo os princípios da publicidade administrativa, o TJ-CE mantém um portal de transparência publicando a remuneração de todos os seus servidores e magistrados. Um grupo de servidores ingressou com um pedido administrativo solicitando a remoção de seus nomes e remunerações do portal público, alegando violação de sua privacidade conforme a Lei Geral de Proteção de Dados Pessoais (LGPD). O setor de conformidade jurídica do Tribunal emitiu uma decisão negando o pedido, argumentando que a publicização desses dados atende a requisitos legais e constitucionais específicos de prestação de contas do setor público, que não são revogados pelas normas gerais de proteção de dados. No contexto do poder público perante a LGPD, a manutenção da divulgação destes dados justifica-se perante a lei pela incidência da base legal referente à",
+    "options": {
+      "A": "adoção do princípio de legítimo interesse do controlador na esfera privada.",
+      "B": "obrigação legal ou regulatória imposta de forma mandatória ao controlador.",
+      "C": "garantia da incolumidade física e da saúde coletiva do titular dos dados.",
+      "D": "aplicação de contrato ou de procedimentos preliminares de esfera comercial.",
+      "E": "preservação do consentimento livre, informado e inequívoco de cada titular."
+    },
+    "answer": "B",
+    "explanation": "A: Errada. O Estado ou as autarquias federais e locais não se amparam nos ditames mercadológicos de interesses subjetivos frente à privacidade do indivíduo (legítimo interesse privado). Os regramentos públicos submetem-se inteiramente à finalidade formal emanada de portarias e decretos estatais.\nB: Correta. Ao disponibilizar e consolidar a transparência imposta pela LAI ou pelo STF e TCU, a gestão dos salários de todos os servidores judiciais adequa-se perfeitamente e sem contraposição ao enquadramento jurídico descrito no art. 7º, inciso II da LGPD, o qual legitima as transferências e processamentos essenciais para cumprimento imperativo de obrigação de cunho legal e da própria Carta Magna.\nC: Errada. Hipótese excludente focada em mitigações agudas visando tratamentos de risco à integridade da vida, usualmente balizada no vazamento sigiloso mas benéfico dos laudos paramédicos em socorros ambulatoriais urgentes, e não aplicável a rotinas operacionais sistêmicas corriqueiras do Portal da Transparência corporativo.\nD: Errada. A correlação de emprego público ou as comissões fixadas em cargo do tipo administrativo se processam fora do viés negocial mercantil, e a imposição de dados remuneratórios a toda a coletividade popular ultrapassa qualquer acordo privado trabalhista restrito firmado internamente com os concursados nos balcões do RH interno.\nE: Errada. Exatamente o revés da tese exposta: a Administração denegou o bloqueio desejado pelos reclamantes e mantém de modo coercitivo a exposição remuneratória amparada em lei própria, invalidando o uso de base baseada em aprovação livre dos referidos trabalhadores estatais."
+  },
+  {
+    "id": 1155,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Diretoria de Infraestrutura de TI do TJ-CE consolidou um projeto para substituição de múltiplos appliances de segurança, que operavam de forma isolada como filtros de estado de conexões (stateful inspection) e detectores de intrusão independentes. A licitação exige a aquisição de uma plataforma unificada capaz de inspecionar o tráfego não apenas nos cabeçalhos de rede e transporte, mas também de realizar a decriptação SSL/TLS, a análise profunda de pacotes (Deep Packet Inspection), a identificação granular de aplicativos (Application Control) e a integração com bases de inteligência de ameaças em nuvem, tudo em um único fluxo de processamento (single-pass architecture). A arquitetura de rede proposta pelo TJ-CE determina a implantação de uma solução da categoria de",
+    "options": {
+      "A": "roteador de agregação de banda larga de provedores.",
+      "B": "filtro de tráfego de pacotes não orientados a estado.",
+      "C": "firewall de próxima geração.",
+      "D": "balanceador de carga em nível de enlace.",
+      "E": "concentrador de acesso remoto dial-up virtual."
+    },
+    "answer": "C",
+    "explanation": "A: Errada. O hardware concentrador em borda destina-se a segregação estática de links dos ISP ou para gerenciamento das tabelas de roteamento global, apresentando gargalos gigantescos ao ser submetido de forma contínua a decodificações rigorosas em tráfegos analíticos profundos de HTTPS e heurísticas anti-malware.\nB: Errada. Modelos primitivos de ACL desconsideram e carecem dos preceitos mínimos atuais de inteligência perimetral por não armazenar o estado basal em memória dos serviços e menos ainda conseguem aplicar integrações unificadas de aplicações modernas ou decriptar ativamente conexões do usuário que se autentica na página remota criptografada institucional.\nC: Correta. Todas as prerrogativas de unificação paralela do processamento das assinaturas que agregam inspeção de estado fundamental combinada de forma inseparável ao controle de aplicação web avançada (camada 7), IPS nativo embutido e sandboxing por nuvens em um só hardware determinam as virtudes singulares de um NGFW (Next-Generation Firewall).\nD: Errada. Embora consiga gerir e processar distribuições parciais baseadas em camada avançada ou URL, sua natureza nativa destina-se a desafogar a ociosidade ou sobrecarga entre múltiplos caminhos do pool de nós, não fornecendo arcabouço defensivo central que neutralize assinaturas polimórficas nem substitua as filtragens sistêmicas restritivas das intranets internas do tribunal em relação à DMZ periférica exposta do datacenter.\nE: Errada. Equipamentos que funcionam e ofertam a rede privada perimetral e encapsulada visam somente providenciar portais tunelados para os colaboradores acessarem serviços, sem atuarem sob o conceito mandatório de inspeção analítica abrangente contra ataques transacionais injetados vindos da internet global em portais acessíveis sem VPN."
+  },
+  {
+    "id": 1156,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A modernização do parque tecnológico do tribunal é um projeto de que o diretor de TI não abre mão, visto que o sucesso da virtualização de servidores implica em drástica redução de gastos operacionais.\n\nA alternativa que reescreve a frase acima corrigindo os desvios de regência de acordo com a norma-padrão é:",
+    "options": {
+      "A": "A modernização do parque tecnológico do tribunal é um projeto a que o diretor de TI não abdica, porque o sucesso da virtualização implica à drástica redução de gastos operacionais.",
+      "B": "A modernização do parque tecnológico do tribunal é um projeto ao qual o diretor de TI não abre mão, visto que o sucesso da virtualização de servidores implica drástica redução de gastos operacionais.",
+      "C": "A modernização do parque tecnológico do tribunal é um projeto de que o diretor de TI não abre mão, visto que o sucesso da virtualização de servidores implica drástica redução de gastos operacionais.",
+      "D": "A modernização do parque tecnológico do tribunal é um projeto no qual o diretor de TI não prescinde, uma vez que o sucesso da virtualização de servidores implica na drástica redução de gastos operacionais.",
+      "E": "A modernização do parque tecnológico do tribunal é um projeto cuja a execução o diretor de TI não abre mão, pois o sucesso da virtualização de servidores implica a drástica redução de gastos operacionais."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C corrige o erro original, pois o verbo 'implicar' no sentido de 'acarretar/resultar em' é transitivo direto, não exigindo a preposição 'em' ('implica drástica redução'). Além disso, preserva-se o termo correto 'de que não abre mão', pois a locução exige preposição 'de'. Erros das demais: A) abdicar pode ser VTI com 'de', nunca com 'a'; B) 'abrir mão' rege 'de', não 'ao'; D) 'prescindir' rege 'de', não 'em'; E) é proibido o uso de artigo após o pronome relativo 'cuja'."
+  },
+  {
+    "id": 1157,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Considere as formas verbais empregadas no seguinte despacho fictício: \"O conselheiro do CNJ determina que se restabeleçam os acessos aos sistemas judiciais para que os advogados possam protocolar as petições sem atrasos.\"\n\nA transposição do trecho para o pretérito, mantendo a correta correlação de tempos e modos verbais prescrita pela norma culta, exigirá a seguinte reescrita:",
+    "options": {
+      "A": "O conselheiro do CNJ determinou que se restabeleciam os acessos aos sistemas judiciais para que os advogados poderão protocolar as petições sem atrasos.",
+      "B": "O conselheiro do CNJ determinara que se restabeleceriam os acessos aos sistemas judiciais para que os advogados pudessem protocolar as petições sem atrasos.",
+      "C": "O conselheiro do CNJ determinou que se restabeleceriam os acessos aos sistemas judiciais para que os advogados podiam protocolar as petições sem atrasos.",
+      "D": "O conselheiro do CNJ determinava que se restabeleçam os acessos aos sistemas judiciais para que os advogados pudessem protocolar as petições sem atrasos.",
+      "E": "O conselheiro do CNJ determinou que se restabelecessem os acessos aos sistemas judiciais para que os advogados pudessem protocolar as petições sem atrasos."
+    },
+    "answer": "E",
+    "explanation": "A correlação verbal original se estabelece entre o Presente do Indicativo ('determina') e o Presente do Subjuntivo ('restabeleçam', 'possam'). Ao transportar o verbo principal para o Pretérito Perfeito do Indicativo ('determinou'), a regra de correlação temporal exige que as orações subordinadas passem para o Pretérito Imperfeito do Subjuntivo ('restabelecessem', 'pudessem')."
+  },
+  {
+    "id": 1158,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O cargo de Analista de Infraestrutura, ...... atribuições a direção de Tecnologia da Informação sempre faz alusão nas portarias internas, demanda sólidos conhecimentos ...... os quais os novos servidores deverão se habituar, de modo a mitigar incidentes de segurança cibernética ...... ninguém está imune na atualidade.\n\nAs lacunas do período acima são corretamente preenchidas, respectivamente, por:",
+    "options": {
+      "A": "de cujas - a - dos quais",
+      "B": "a cujas - aos - a que",
+      "C": "para cujas - com - de que",
+      "D": "a cujas - com os - aos quais",
+      "E": "sobre cujas - por - para que"
+    },
+    "answer": "B",
+    "explanation": "O substantivo 'alusão' exige o complemento regido pela preposição 'a' ('faz alusão a cujas atribuições' -> 'a cujas'). O verbo pronominal 'habituar-se' rege a preposição 'a' ('habituar-se aos conhecimentos' -> 'aos quais'). O adjetivo 'imune' exige a preposição 'a' ('imune aos incidentes' -> 'a que'). Assim, a sequência correta é 'a cujas - aos - a que'."
+  },
+  {
+    "id": 1159,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Assinale a reescrita que mantém o sentido original da frase e obedece estritamente às normas de regência e de correlação verbal.\nFrase original: \"Dado que o relatório técnico previu a vulnerabilidade da aplicação, o coordenador de segurança preferiu isolar o servidor a desligar o datacenter inteiro.\"",
+    "options": {
+      "A": "Como o relatório técnico previu a vulnerabilidade da aplicação, o coordenador de segurança preferiu mais isolar o servidor do que desligar o datacenter inteiro.",
+      "B": "Caso o relatório técnico previsse a vulnerabilidade da aplicação, o coordenador de segurança preferira isolar o servidor do que desligar o datacenter inteiro.",
+      "C": "Visto que o relatório técnico previra a vulnerabilidade da aplicação, o coordenador de segurança tinha preferido isolar o servidor que desligar o datacenter inteiro.",
+      "D": "Porquanto o relatório técnico previu a vulnerabilidade da aplicação, o coordenador de segurança preferiu isolar o servidor a desligar o datacenter inteiro.",
+      "E": "Conquanto o relatório técnico prevesse a vulnerabilidade da aplicação, o coordenador de segurança preferia isolar o servidor à desligar o datacenter inteiro."
+    },
+    "answer": "D",
+    "explanation": "O verbo 'preferir' exige um objeto direto e um objeto indireto introduzido pela preposição 'a' ('preferir algo a outra coisa'). O uso de expressões como 'preferir mais', 'do que' ou 'que' é considerado inadequado pela norma-padrão. A alternativa D mantém a regência perfeita ('preferiu isolar o servidor a desligar'), e também conserva o sentido causal da frase ('Porquanto'). Na E, há erro de crase antes de verbo ('à desligar') e erro de conjugação ('prevesse' em vez de 'previsse')."
+  },
+  {
+    "id": 1160,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A fim de que o Tribunal de Justiça ...... os rígidos prazos de virtualização estipulados no edital, seria fundamental que o comitê de governança de TI ...... a proposta de reestruturação dos datacenters, o que indubitavelmente ...... o engajamento contínuo de todas as varas de competência cível.\n\nAs lacunas da frase devem ser preenchidas, de acordo com as normas de correlação verbal, respectivamente, por:",
+    "options": {
+      "A": "cumpra - validasse - demandará",
+      "B": "cumpriria - tenha validado - demanda",
+      "C": "cumpra - valide - demandaria",
+      "D": "cumprisse - validasse - demandaria",
+      "E": "cumpra - validasse - demandasse"
+    },
+    "answer": "D",
+    "explanation": "A expressão matriz da correlação é 'seria fundamental' (Futuro do Pretérito do Indicativo). O uso desse tempo para expressar uma condição irreal ou um desejo condicionado atrai os demais verbos nas orações subordinadas para o Pretérito Imperfeito do Subjuntivo ('cumprisse', 'validasse') e consolida sua consequência principal no próprio Futuro do Pretérito ('demandaria')."
+  },
+  {
+    "id": 1161,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O edital para aquisição de novos ativos de rede assevera que a solução de firewall deve ser inerente ...... estratégias de escalabilidade, devendo o tribunal ser intransigente ...... cláusulas contratuais de disponibilidade contínua e, paralelamente, estar apto ...... gerir eventuais crises de indisponibilidade com autonomia.\n\nPreenchem as lacunas de forma compatível com a norma-padrão de regência nominal:",
+    "options": {
+      "A": "às - quanto às - a",
+      "B": "as - com as - para",
+      "C": "às - nas - em",
+      "D": "das - em - a",
+      "E": "às - com as - por"
+    },
+    "answer": "A",
+    "explanation": "O adjetivo 'inerente' exige a preposição 'a', havendo crase antes do substantivo feminino plural ('às estratégias'). O adjetivo 'intransigente' rege a locução 'quanto a' ou a preposição 'com' ('quanto às cláusulas'). O adjetivo 'apto' exige a preposição 'a' ou 'para' antes de verbo no infinitivo ('apto a gerir'). A alternativa A atende plenamente a essas exigências."
+  },
+  {
+    "id": 1162,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "\"Acredita-se que, se o departamento técnico adequar o sistema de peticionamento eletrônico às diretrizes mais recentes do CNJ, o fluxo processual das câmaras criminais otimizar-se-á substancialmente nos próximos meses.\"\n\nCaso a oração condicional destacada fosse transposta para expressar uma hipótese irreal no passado, o verbo da oração principal assumiria corretamente a seguinte forma:",
+    "options": {
+      "A": "otimizou-se.",
+      "B": "otimizar-se-ia.",
+      "C": "otimizaria-se.",
+      "D": "se otimizará.",
+      "E": "otimiza-se."
+    },
+    "answer": "B",
+    "explanation": "Ao mudar a condição de 'adequar' (Futuro do Subjuntivo) para 'adequasse' (Pretérito Imperfeito do Subjuntivo) - gerando uma hipótese -, o verbo da oração principal 'otimizar-se-á' (Futuro do Indicativo) deve transitar para o Futuro do Pretérito do Indicativo. A colocação pronominal correta exige mesóclise ('otimizar-se-ia'), uma vez que não há palavra atrativa prévia para forçar a próclise ('se otimizaria' não possui elemento atrativo nesse corte da oração principal) e não se usa ênclise em verbos no futuro ('otimizaria-se' é um erro grosseiro de colocação)."
+  },
+  {
+    "id": 1163,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "As expressões em destaque no excerto \"A equipe de analistas judiciários estava acostumada a lidar com volumes massivos de processos e já possuía ferramentas sistêmicas aptas a classificar as peças automaticamente\" podem ser substituídas, sem que haja prejuízo à norma-padrão de regência, respectivamente, por:",
+    "options": {
+      "A": "habituada em – inclinadas a",
+      "B": "ciente de – propícias em",
+      "C": "familiarizada com – capazes de",
+      "D": "propensa por – competentes a",
+      "E": "afim a – suficientes para"
+    },
+    "answer": "C",
+    "explanation": "O adjetivo 'acostumada' é sinônimo de 'familiarizada', que rege legitimamente a preposição 'com' ('familiarizada com'). O adjetivo 'aptas' corresponde semanticamente a 'capazes', termo cuja regência exige a preposição 'de' ('capazes de classificar'). As demais alternativas apresentam desvios de regência nas substituições ('habituada a', 'propensa a', 'propícias a')."
+  },
+  {
+    "id": 1164,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "\"Sempre que há falha crítica no link principal de comunicação do fórum, o suporte técnico é acionado imediatamente pelo magistrado e procede à restauração emergencial da conectividade via rede móvel.\"\n\nAo reescrever o período com o verbo destacado (\"há\") no pretérito imperfeito do subjuntivo, para indicar uma eventualidade condicional passada, a correta correlação temporal exigirá as seguintes adaptações nas demais formas verbais:",
+    "options": {
+      "A": "seria acionado e procedia.",
+      "B": "era acionado e procedia.",
+      "C": "era acionado e procederia.",
+      "D": "seria acionado e procederia.",
+      "E": "será acionado e procederá."
+    },
+    "answer": "D",
+    "explanation": "O verbo 'haver' flexionado no Pretérito Imperfeito do Subjuntivo resulta em 'houvesse'. A subordinação de uma hipótese no passado exige que a consequência e as ações subsequentes na oração principal se construam no Futuro do Pretérito do Indicativo ('seria acionado' e 'procederia')."
+  },
+  {
+    "id": 1165,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O novo software de gestão processual, ...... arquitetura orientada a microsserviços os desenvolvedores terceirizados se basearam, e ...... os técnicos aludem no relatório de auditoria, abriga as bibliotecas criptográficas ...... o tribunal mais necessita para garantir a tramitação em sigilo.\n\nAssinale a opção que preenche as lacunas respeitando rigorosamente a norma culta de regência:",
+    "options": {
+      "A": "em cuja - a que - de que",
+      "B": "na qual - a cujo - de que",
+      "C": "de cuja - que - em que",
+      "D": "cuja a - à que - às quais",
+      "E": "em cuja - o qual - que"
+    },
+    "answer": "A",
+    "explanation": "O verbo pronominal 'basear-se' exige preposição 'em' ('basearam-se EM cuja arquitetura'). O verbo 'aludir' exige a preposição 'a' ('aludem A que o software', com o relativo 'que' retomando software). O verbo 'necessitar' rege a preposição 'de' ('necessita DE que bibliotecas'). Portanto, a cadeia estruturada correta é 'em cuja', 'a que' e 'de que'."
+  },
+  {
+    "id": 1166,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Assinale a alternativa que obedece rigorosamente às regras de regência verbal da norma-padrão da Língua Portuguesa, sobretudo no que concerne ao emprego de pronomes oblíquos e à estruturação de objetos.",
+    "options": {
+      "A": "O magistrado referiu-se ao novo código de processo, mas os analistas de negócios não o obedeceram durante a fase de especificação do sistema.",
+      "B": "Ciente da extrema lentidão da rede corporativa da comarca, o presidente do tribunal assistiu-a presencialmente durante toda a madrugada.",
+      "C": "O acesso ininterrupto aos autos digitais era requisito essencial; por isso, o diretor de TI exigiu que os juízes lhes acessassem diariamente para testes.",
+      "D": "A súbita falha no array de discos implicou-lhes a perda irrecuperável de petições iniciais, atrasando o andamento das varas especializadas.",
+      "E": "Como os logs de segurança indicavam a presença de invasores, a equipe de infraestrutura bloqueou os servidores a fim de inspecioná-los com cautela."
+    },
+    "answer": "E",
+    "explanation": "O verbo 'inspecionar' é transitivo direto, exigindo o pronome oblíquo correspondente ('inspecionar os servidores' -> 'inspecioná-los'), de forma correta na alternativa E. Erros das demais: A) 'obedecer' é transitivo indireto (não LHE obedeceram); B) 'assistir', no sentido de ver/presenciar, é transitivo indireto e rejeita o pronome átono (assistiu a ela); C) 'acessar' é transitivo direto (os acessassem); D) 'implicar', no sentido de acarretar, é transitivo direto na coisa acarretada e não costuma receber objeto indireto em forma de pronome oblíquo 'lhes' neste contexto de prejuízo patrimonial."
+  },
+  {
+    "id": 1167,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "As novas diretrizes técnicas estipuladas pela Secretaria de TI do tribunal exigem que os sistemas processuais baseados em nuvem ______ regras rigorosas de criptografia assimétrica e que os clusters virtuais ______ demandas de milhares de acessos simultâneos sem que o pico de processamento ______ prejuízo aos prazos preclusivos legais.\n\nAs lacunas da frase acima são corretamente preenchidas, na ordem dada, por:",
+    "options": {
+      "A": "obedeçam as - suportem as - implique o",
+      "B": "obedeçam a - suportem - implique",
+      "C": "obedeçam às - suportem a - implique em",
+      "D": "obedeça às - suporte - implique no",
+      "E": "obedeçam a - suportem - implique a"
+    },
+    "answer": "B",
+    "explanation": "O verbo 'obedecer' é transitivo indireto e exige preposição 'a'. Como a palavra 'regras' está no plural de modo genérico (sem artigo 'as'), a construção correta é 'obedeçam a'. O verbo 'suportar' (no sentido de aguentar a carga) é transitivo direto ('suportem demandas'). O verbo 'implicar' (no sentido de resultar/acarretar) também é transitivo direto, unindo-se sem preposição ao complemento ('implique prejuízo')."
+  },
+  {
+    "id": 1168,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Considere as seguintes sentenças redigidas por um servidor na documentação do projeto de TI:\n\nI. Caso o fornecedor de nuvem não mantiver os índices de nível de serviço (SLA) acordados, o contrato de hospedagem sofrerá rescisão imediata.\nII. O juiz corregedor ordenou expressamente que o diretor técnico intervisse na disputa entre os engenheiros de software e a equipe de usabilidade.\nIII. Se a consultoria externa propuser uma arquitetura baseada em eventos, a migração dos bancos de dados relacionais transcorrerá sem sobressaltos.\n\nDe acordo com o rigor formal da norma-padrão para flexão e correlação verbal, está plenamente correto o que se afirma em:",
+    "options": {
+      "A": "I e II, apenas.",
+      "B": "III, apenas.",
+      "C": "II e III, apenas.",
+      "D": "I e III, apenas.",
+      "E": "I, II e III."
+    },
+    "answer": "B",
+    "explanation": "Apenas o item III está correto: o verbo 'propor' deriva de 'pôr', gerando o Futuro do Subjuntivo 'propuser' (correlacionado perfeitamente com 'transcorrerá'). O item I está errado porque a conjunção condicional 'Caso' exige o Presente do Subjuntivo ('Caso não mantenha'); a forma 'mantiver' só estaria correta com a conjunção 'Se'. O item II está errado porque o verbo 'intervir', derivado de 'vir', gera a forma 'interviesse' no Pretérito Imperfeito do Subjuntivo, não 'intervisse'."
+  },
+  {
+    "id": 1169,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No relatório de encerramento da ocorrência técnica, o administrador de sistemas relatou que \"ao verificar a volumetria de dados no servidor de arquivos, assistiu a falhas catastróficas de redundância e visou mitigá-las com urgência, muito embora essa ação intempestiva implicasse horas extras não planejadas para o seu setor.\"\n\nSe o servidor optasse por substituir os verbos destacados por \"presenciar\", \"esforçar-se por\" e \"acarretar\", respectivamente, a reescrita que preservaria a estrita obediência à regência ditada pela norma culta seria:",
+    "options": {
+      "A": "presenciou a falhas catastróficas / esforçou-se por mitigá-las / acarretasse a horas extras.",
+      "B": "presenciou às falhas catastróficas / esforçou-se em mitigá-las / acarretasse em horas extras.",
+      "C": "presenciou de falhas catastróficas / esforçou-se na mitigação delas / acarretasse às horas extras.",
+      "D": "presenciou falhas catastróficas / esforçou-se para mitigá-las / acarretasse em horas extras.",
+      "E": "presenciou falhas catastróficas / esforçou-se por mitigá-las / acarretasse horas extras."
+    },
+    "answer": "E",
+    "explanation": "O verbo 'presenciar' é transitivo direto ('presenciou falhas'). O verbo pronominal 'esforçar-se' é transitivo indireto acompanhado das preposições 'por', 'para' ou 'em' ('esforçou-se por mitigá-las' é válido). O verbo 'acarretar' é estritamente transitivo direto ('acarretasse horas extras'). A opção E obedece plenamente a todas essas exigências, retirando as preposições incorretas antes de objetos diretos em outras opções."
+  },
+  {
+    "id": 1170,
+    "day_id": "dia_16_06",
+    "day_title": "Terça-feira 16/06",
+    "theme": "Língua Portuguesa - Regência e Correlação Verbal",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O arquiteto de software, durante a apresentação do comitê executivo, referiu-se ______ normas rigorosas da Lei Geral de Proteção de Dados (LGPD) e demonstrou ser amplamente favorável ______ implantação de um protocolo descentralizado que se mostrasse plenamente compatível ______ exigências de interoperabilidade europeias.\n\nAs lacunas são preenchidas com correção gramatical e observância das normas de regência nominal e verbal, respectivamente, por:",
+    "options": {
+      "A": "as - a - com as",
+      "B": "as - à - às",
+      "C": "às - à - com as",
+      "D": "às - a - a",
+      "E": "às - a - com às"
+    },
+    "answer": "C",
+    "explanation": "O verbo pronominal 'referir-se' exige a preposição 'a', fundindo-se com o artigo definido plural que antecede o substantivo para formar a crase ('às normas'). O adjetivo 'favorável' também rege a preposição 'a', exigindo crase diante de 'implantação' ('à implantação'). O adjetivo 'compatível' exige a preposição 'com' ('compatível com as exigências'). A sequência correta é a apresentada na alternativa C."
   }
 ]

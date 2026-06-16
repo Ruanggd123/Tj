@@ -1,0 +1,272 @@
+[
+  {
+    "id": 16062001,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Estado do Ceará (TJ-CE) iniciou um projeto de modernização de seu perímetro de rede após uma auditoria revelar falhas na filtragem de tráfego entre a zona de servidores de banco de dados e a zona de aplicação. A equipe de segurança da informação decidiu substituir os antigos equipamentos de filtragem de pacotes estáticos por uma arquitetura mais inteligente. O novo requisito determina que o equipamento deve ter a capacidade de rastrear o contexto das conexões ativas, permitindo dinamicamente o tráfego de retorno correspondente a conexões iniciadas internamente, sem a necessidade de criar regras bidirecionais explícitas para cada serviço. Com base neste cenário de modernização da arquitetura de segurança do TJ-CE, a funcionalidade tecnológica adequada para atender a este requisito operacional é a",
+    "options": {
+      "A": "manutenção de uma tabela dinâmica de estados para validar conexões ativas.",
+      "B": "configuração de regras baseadas exclusivamente em endereços MAC e VLANs.",
+      "C": "inspeção profunda dos dados na camada de aplicação utilizando expressões regulares.",
+      "D": "reestruturação da rede em uma topologia do tipo malha completa.",
+      "E": "implantação de listas de controle de acesso estáticas no roteador de borda."
+    },
+    "answer": "A",
+    "explanation": "A: Correta. O Stateful Firewall rastreia o estado das conexões em andamento mantendo uma tabela dinâmica na memória (state table), o que permite o tráfego de retorno sem a criação manual de regras espelhadas.\nB: Errada. Endereços MAC e VLANs operam na camada de enlace (Camada 2), enquanto o rastreamento do estado das conexões se dá nas camadas de rede e de transporte, além de não envolver o contexto bidirecional de sessão.\nC: Errada. A inspeção profunda na camada de aplicação é característica de Firewalls de Próxima Geração (NGFW) ou de Aplicação (WAF). O modelo puramente stateful foca no controle de transações no nível TCP/IP.\nD: Errada. A adoção de malha completa (full mesh) é uma decisão de infraestrutura focada na redundância e resiliência de caminhos físicos, sem qualquer interface com o tipo de filtro de segurança lógico na inspeção do tráfego.\nE: Errada. ACLs estáticas operam analisando datagramas individualmente (stateless inspection), configurando o exato sistema defasado que a instituição busca desativar pela incapacidade de rastrear as sessões."
+  },
+  {
+    "id": 16062002,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o planejamento da segurança cibernética para o processo eletrônico judicial do TJ-CE, a diretoria de TI identificou a necessidade de monitorar continuamente o tráfego de rede em busca de anomalias e padrões de ataques conhecidos, como tentativas de exploração de vulnerabilidades no protocolo HTTP. A diretriz exige uma ferramenta configurada de forma totalmente passiva, recebendo uma cópia do tráfego através de uma porta de espelhamento (SPAN/Mirror port) no switch core. O equipamento deve analisar os pacotes, gerar alertas detalhados em um console centralizado de gerência e registrar as evidências para posterior auditoria, sem introduzir latência no fluxo normal de comunicação entre as varas judiciais e os datacenters. O tipo de solução de segurança exigida neste projeto do TJ-CE é classificada como",
+    "options": {
+      "A": "firewall de próxima geração operando no modo de prevenção ativa.",
+      "B": "sistema de detecção de intrusões baseado em rede.",
+      "C": "proxy reverso com filtro de conteúdo integrado.",
+      "D": "sistema de prevenção de intrusões baseado em host.",
+      "E": "balanceador de carga global com mitigação de negação de serviço."
+    },
+    "answer": "B",
+    "explanation": "A: Errada. O NGFW opera no caminho do tráfego (in-line) e realiza prevenção ativa, em oposição ao monitoramento passivo exigido no enunciado.\nB: Correta. Um NIDS (Network Intrusion Detection System) conecta-se a uma porta SPAN, atua de forma passiva, monitora anomalias e gera alertas sem causar latência ou modificar ativamente o tráfego da rede.\nC: Errada. O proxy reverso atua como intermediário em conexões web recebendo o tráfego e repassando-o aos servidores internos, configurando um modelo in-line ativo que introduz latência de processamento.\nD: Errada. O HIDS opera localmente analisando os logs do sistema operacional de servidores (host), enquanto o enunciado descreve a coleta de pacotes via espelhamento de porta no switch core (rede).\nE: Errada. O balanceador de carga gerencia ativamente a distribuição de tráfego entre diferentes nós da rede, não atuando nativamente como uma ferramenta de análise passiva conectada a uma porta espelhada para geração de alertas de segurança."
+  },
+  {
+    "id": 16062003,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A infraestrutura do Portal do TJ-CE vem sofrendo frequentes ataques de negação de serviço distribuído (DDoS) na camada de aplicação e tentativas de injeção de SQL contra os sistemas de consulta processual. Para mitigar esses riscos, os arquitetos de segurança desenharam uma nova topologia de rede inserindo um equipamento de segurança em linha (in-line) diretamente no caminho do tráfego web, posicionado entre o roteador de borda e o balanceador de carga. A principal exigência operacional é que este dispositivo possua capacidade proativa não apenas de detectar assinaturas de tráfego malicioso em tempo real, mas também de descartar ativamente os pacotes ofensores, redefinir conexões TCP anômalas e bloquear automaticamente o endereço IP de origem do atacante antes que o tráfego alcance os servidores web. O equipamento adequado a ser implantado nesta arquitetura é o",
+    "options": {
+      "A": "sistema de prevenção de intrusões baseado em rede.",
+      "B": "sistema de detecção de intrusões operando em modo promíscuo.",
+      "C": "firewall de inspeção de estado operando na camada de rede.",
+      "D": "concentrador de rede virtual privada com autenticação multifator.",
+      "E": "scanner de vulnerabilidades automatizado em tempo real."
+    },
+    "answer": "A",
+    "explanation": "A: Correta. O IPS (Intrusion Prevention System) atua posicionado in-line, analisando o tráfego e possuindo a capacidade tecnológica de bloquear ativamente (drop, reset) pacotes maliciosos ou conexões intrusivas na rede.\nB: Errada. Um IDS operando em modo promíscuo (passivo) detecta ameaças e gera logs informativos, mas carece da capacidade proativa e estrutural de redefinir conexões ou bloquear ativamente pacotes passantes.\nC: Errada. Firewalls de estado tradicionais (camadas 3 e 4) não possuem o mecanismo de decodificação profunda para analisar injeção de SQL ou ataques DDoS sutis na camada de aplicação, pois limitam-se à leitura do cabeçalho de transporte TCP/IP.\nD: Errada. O concentrador VPN fornece acesso remoto seguro com tráfego criptografado para colaboradores, não sendo a ferramenta primária destinada a analisar o tráfego público do portal web para detectar ameaças transacionais em tempo real.\nE: Errada. Scanners de vulnerabilidade operam realizando varreduras esporádicas e ativas nos servidores para mapear falhas na configuração ou código, não inspecionando de forma contínua o tráfego de pacotes in-line na infraestrutura."
+  },
+  {
+    "id": 16062004,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE, no exercício de sua competência jurisdicional, realiza o tratamento de um grande volume de dados pessoais de magistrados, servidores, partes processuais e testemunhas. Um novo sistema de inteligência artificial está sendo desenvolvido para classificar petições iniciais e automatizar a distribuição processual. A equipe de governança de dados foi acionada para garantir a conformidade deste projeto com a Lei Geral de Proteção de Dados Pessoais (LGPD). Durante a modelagem do fluxo de dados, questionou-se a fundamentação legal para o tratamento dessas informações pelo órgão público no cumprimento de sua missão constitucional, sem a necessidade de solicitar o consentimento explícito dos titulares dos dados em cada etapa processual. À luz das disposições da LGPD aplicáveis ao poder público, o tratamento de dados pessoais no âmbito deste novo sistema do TJ-CE está legalmente amparado na",
+    "options": {
+      "A": "celebração de contratos bilaterais com cada titular de dado registrado.",
+      "B": "execução de políticas públicas previstas em leis e regulamentos.",
+      "C": "proteção do crédito das instituições financeiras parceiras.",
+      "D": "garantia do legítimo interesse exclusivo de empresas privadas conveniadas.",
+      "E": "tutela da saúde em procedimentos médicos de emergência processual."
+    },
+    "answer": "B",
+    "explanation": "A: Errada. A exigência da assinatura de contratos bilaterais inviabilizaria os serviços de justiça do Estado e não corresponde ao princípio da finalidade pública de tratamento contido na LGPD para o poder judiciário.\nB: Correta. Segundo o Art. 7º, III, combinado com o Art. 23 da LGPD, o poder público pode realizar o tratamento de dados pessoais sem o consentimento do titular para o cumprimento de suas competências legais e na execução de políticas públicas consubstanciadas em lei ou regulamentos, englobando atividades precípuas jurisdicionais do TJ-CE.\nC: Errada. A proteção do crédito é uma base legal de tratamento aplicável estritamente a instituições financeiras e birôs comerciais, não justificando o tratamento de dados no exercício da função pública jurisdicional do tribunal.\nD: Errada. A base do legítimo interesse destina-se, regra geral, ao setor privado. O setor público no exercício de suas competências e atribuições estatais não se baseia na hipótese de legítimo interesse privado para coletar e utilizar os dados do cidadão.\nE: Errada. A tutela da saúde é aplicável apenas aos procedimentos e emergências executadas por profissionais médicos e serviços de assistência à saúde, destoando do processamento cível e eletrônico de uma ação judicial no Tribunal."
+  },
+  {
+    "id": 16062005,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Departamento de Redes do TJ-CE constatou que, apesar da existência de um filtro de rede que analisa o estado das conexões nas camadas 3 e 4 do modelo OSI, ataques direcionados à lógica de negócio da aplicação de e-SAJ ainda estão obtendo sucesso. O diretor de TI questionou a equipe técnica sobre a capacidade do atual firewall stateful de barrar ameaças que vêm embutidas no conteúdo do protocolo HTTP, como scripts maliciosos. O engenheiro de segurança sênior explicou os limites de atuação da atual solução instalada na borda da rede e justificou a necessidade de uma tecnologia complementar. Do ponto de vista da arquitetura de segurança, a limitação intrínseca de um firewall puramente stateful que embasa o argumento do engenheiro é a",
+    "options": {
+      "A": "atuação restrita à inspeção dos cabeçalhos das camadas de rede e de transporte.",
+      "B": "incapacidade de aplicar regras de bloqueio baseadas no endereço IP de origem.",
+      "C": "impossibilidade técnica de gerenciar protocolos orientados à conexão como o TCP.",
+      "D": "ausência de suporte nativo a protocolos de roteamento dinâmico no núcleo da rede.",
+      "E": "dependência exclusiva da leitura de chaves criptográficas assimétricas."
+    },
+    "answer": "A",
+    "explanation": "A: Correta. O firewall stateful atua avaliando até a camada de transporte (TCP/UDP) e não possui a capacidade inata de abrir e reconstruir o payload (dados) na camada de aplicação. Isso impossibilita a leitura e o bloqueio de códigos maliciosos inseridos no interior do protocolo web (HTTP).\nB: Errada. O bloqueio granular através de endereçamento IP de origem e de destino é uma função básica contida em todo e qualquer firewall, seja ele estático ou stateful.\nC: Errada. O acompanhamento do handshake e a manutenção de protocolos orientados a conexão, como o TCP, é precisamente a razão de ser e o diferencial do modelo de firewall baseado em estado (stateful).\nD: Errada. O trânsito com protocolos de roteamento dinâmico no ambiente de núcleo rege os encaminhamentos da infraestrutura de telecomunicações, não mantendo relação analítica com a incapacidade de detectar ataques baseados em aplicações web.\nE: Errada. A arquitetura de segurança baseada em estados avalia o preâmbulo lógico dos pacotes, não possuindo uma dependência direta e técnica da análise de chaves assimétricas para autorizar o fluxo nas portas sistêmicas."
+  },
+  {
+    "id": 16062006,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após um incidente de segurança onde o servidor de arquivos do setor financeiro do TJ-CE teve permissões de pastas críticas alteradas de forma indevida, a equipe de Resposta a Incidentes determinou a instalação de uma nova camada de defesa. A especificação técnica requer a implantação de agentes de software distribuídos diretamente nos sistemas operacionais dos servidores críticos de banco de dados e arquivos. Esses agentes devem analisar os logs locais do sistema, monitorar a integridade de arquivos de configuração essenciais e alertar sobre modificações não autorizadas no registro do sistema, operando de forma complementar à análise de tráfego de rede já existente no perímetro. A tecnologia de segurança da informação descrita nesta especificação do TJ-CE é classificada como",
+    "options": {
+      "A": "sistema de detecção de intrusões baseado em host.",
+      "B": "sistema de prevenção de intrusões baseado em rede.",
+      "C": "appliance de segurança de correio eletrônico corporativo.",
+      "D": "concentrador de logs syslog nativo de rede.",
+      "E": "sistema de gerenciamento de identidades e acessos."
+    },
+    "answer": "A",
+    "explanation": "A: Correta. O HIDS (Host-based Intrusion Detection System) é instalado como um agente no nível do sistema operacional (host), analisando logs locais de autenticação, controlando o registro do sistema e disparando alarmes para violação de integridade nos arquivos e pastas essenciais.\nB: Errada. O NIPS (Network-based IPS) monitora ativamente as assinaturas contidas no tráfego físico dos fios ou VLANs, não tendo acesso privilegiado para ler as alterações internas de arquivos nas estruturas de diretório do Windows ou Linux.\nC: Errada. Gateway de segurança de e-mail (SEG) tem foco estrito e exclusivo na análise de anexos, SPAM e remetentes no fluxo SMTP, não auditando arquivos vitais do sistema operacional do banco de dados.\nD: Errada. Embora o concentrador receba as mensagens brutas da rede, ele é classificado como uma ferramenta secundária de recebimento e não representa a arquitetura local do software agente que analisa a integridade das pastas no host descrito na questão.\nE: Errada. Plataformas IAM controlam a orquestração do acesso por credenciais dos usuários corporativos, mas não possuem a capacidade analítica de monitorar anomalias profundas nos binários e registros mantidos nas partições do sistema."
+  },
+  {
+    "id": 16062007,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após a ativação do novo sistema de prevenção de intrusões (IPS) em modo de bloqueio agressivo no datacenter primário do TJ-CE, diversos usuários de varas do interior reportaram instabilidade e quedas de conexão ao tentar acessar o sistema de controle de ponto eletrônico. A equipe do Centro de Operações de Segurança (SOC) analisou os logs e verificou que o IPS estava interpretando erroneamente os pacotes de sincronização de relógio da aplicação legada como uma tentativa de ataque de inundação UDP (UDP Flood), descartando ativamente o tráfego legítimo e impactando a disponibilidade do serviço corporativo. No contexto de gestão e métricas de sistemas de detecção e prevenção de intrusões, o problema operacional relatado no cenário do TJ-CE caracteriza-se tecnicamente como um",
+    "options": {
+      "A": "evento de falso negativo.",
+      "B": "evento de verdadeiro negativo.",
+      "C": "evento de falso positivo.",
+      "D": "evento de verdadeiro positivo.",
+      "E": "evento de negação distribuída."
+    },
+    "answer": "C",
+    "explanation": "A: Errada. O falso negativo acontece quando a ferramenta de segurança falha completamente e deixa uma ameaça real passar sem gerar alertas.\nB: Errada. O verdadeiro negativo designa o cenário ideal onde o fluxo de dados seguro navega normalmente pela infraestrutura sem sofrer ações de alarme ou interrupções pela plataforma de rede.\nC: Correta. Falso positivo ocorre quando uma solução analítica marca indevidamente uma comunicação legítima do ambiente - como um pacote inofensivo de tempo e sincronização - como se fosse uma anomalia maliciosa ativa.\nD: Errada. O verdadeiro positivo ocorre quando um perigo efetivo e iminente é contido de forma correta e cirúrgica pelas barreiras de mitigação do datacenter.\nE: Errada. A terminologia não condiz com as matrizes estatísticas de classificação de confusão adotadas oficialmente na gestão de incidentes da segurança da informação para catalogar a assertividade."
+  },
+  {
+    "id": 16062008,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Presidência do TJ-CE, visando fortalecer a governança corporativa e atender integralmente aos ditames da Lei Geral de Proteção de Dados Pessoais (LGPD), determinou a publicação de uma portaria de nomeação para um novo papel estratégico na estrutura administrativa do Tribunal. Este profissional terá como responsabilidades aceitar reclamações e comunicações dos titulares de dados, prestar esclarecimentos, receber comunicações da Autoridade Nacional de Proteção de Dados (ANPD) e orientar os servidores e os terceirizados do Tribunal a respeito das práticas de tratamento de dados pessoais exigidas por lei. Segundo os preceitos da LGPD direcionados aos órgãos do poder público, a função descrita a ser provida por meio desta portaria é a do",
+    "options": {
+      "A": "controlador adjunto de dados.",
+      "B": "operador autônomo de informações.",
+      "C": "encarregado pelo tratamento de dados pessoais.",
+      "D": "custodiante de segurança cibernética.",
+      "E": "auditor sênior de privacidade."
+    },
+    "answer": "C",
+    "explanation": "A: Errada. A legislação específica de proteção de dados brasileira não cria a figura técnica de controlador adjunto para diluição de responsabilidades do controlador formal.\nB: Errada. O papel de operador concentra-se em realizar a custódia ou manuseio dos dados em nome da autarquia controladora, mas a comunicação oficial regulatória externa não é sua função legal primária.\nC: Correta. Nos termos rigorosos do Art. 41 e Art. 23, III da LGPD, o Encarregado de Proteção de Dados (DPO) é a pessoa ou ente nomeado pelo controlador responsável por atuar como canal de intermediação primária e comunicação entre o titular dos dados processados, o controlador (Estado) e a agência federal da ANPD.\nD: Errada. A designação de custodiante é um jargão genérico da literatura acadêmica que denota perfis operacionais de retenção de ativos, sem validade para suprir o cargo normatizado contido no arcabouço da referida lei.\nE: Errada. Embora a auditoria contínua de controles faça parte das atividades de conformidade do tribunal, o auditor fiscaliza, porém a interlocução legal para demandas da ANPD é atribuição mandatória e inalienável do encarregado."
+  },
+  {
+    "id": 16062009,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante uma migração de infraestrutura de rede no TJ-CE, um pico anômalo de tráfego foi direcionado ao firewall de borda. O equipamento, configurado em modo stateful, começou a descartar novos pedidos de conexão TCP legítimos direcionados ao portal de serviços, apresentando lentidão severa. A investigação conduzida pela equipe de infraestrutura revelou que o recurso de memória alocado para registrar as sessões ativas atingiu sua capacidade máxima, sofrendo um esgotamento de recursos (resource exhaustion). O relatório técnico indicou que conexões meias-abertas (half-open) permaneceram registradas no sistema por tempo excessivo, impedindo a admissão de novos tráfegos. O componente arquitetural específico do firewall stateful que sofreu a saturação relatada neste incidente do TJ-CE é a",
+    "options": {
+      "A": "tabela de roteamento estático do equipamento.",
+      "B": "matriz de controle de acesso de aplicação.",
+      "C": "tabela de estados de conexão.",
+      "D": "cache de resolução de nomes de domínio.",
+      "E": "tabela de endereços de controle de acesso ao meio físico."
+    },
+    "answer": "C",
+    "explanation": "A: Errada. O sistema de roteamento encarrega-se do despacho direcional dos pacotes de camada 3, o que não reflete a estrutura RAM suscetível à exaustão por tráfegos orientados e incompletos de rede.\nB: Errada. A matriz abstrata estática onde as regras de origem e destino ficam salvas no armazenamento não volante não cresce ou esgota por força e reflexo do volume de conexões passantes dos clientes.\nC: Correta. Como base funcional de seu projeto técnico, o firewall stateful retém temporariamente todos os handshakes ativados ou pendentes (half-open) dentro de sua State Table. Quando mal configurado em períodos de timeout curtos, um pico malicioso no SYN compromete todo o espaço de memória voltado à tabela de estados.\nD: Errada. A funcionalidade transiente do DNS que mapeia endereços humanizados em decimais de IP carece de correlação técnica na causa do travamento sistêmico pela não completude de comunicação e handshake das sessões TCP na borda.\nE: Errada. A tabela de associações estritas de hardware da camada 2 (Tabela MAC ou CAM Table) sofre esgotamento devido aos pacotes na sub-rede direta interna (MAC flooding) e não engloba falhas em acompanhamento de sessões lógicas de transporte do portal web."
+  },
+  {
+    "id": 16062010,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de detecção de intrusões (IDS) do TJ-CE foi inicialmente configurado para analisar o tráfego com base em um banco de dados de regras fornecido pelo fabricante. Contudo, essa abordagem demonstrou ineficácia perante uma nova variante de malware zero-day que atacou as estações de trabalho de uma comarca do interior, uma vez que a ameaça não possuía perfil pré-cadastrado. O comitê de segurança da informação decidiu alterar o modelo de funcionamento da ferramenta, instruindo o equipamento a criar um perfil de comportamento normal de tráfego da rede ao longo de trinta dias. Após esse período de aprendizado, qualquer desvio estatístico significativo em relação ao perfil estabelecido passará a acionar alertas imediatos ao SOC. O novo método de análise implementado no IDS do TJ-CE é denominado detecção baseada em",
+    "options": {
+      "A": "análise comportamental de anomalias.",
+      "B": "reconhecimento de assinaturas estáticas.",
+      "C": "inspeção heurística de arquivos binários.",
+      "D": "verificação formal de código-fonte.",
+      "E": "filtragem de pacotes sem estado."
+    },
+    "answer": "A",
+    "explanation": "A: Correta. Na técnica por anomalia estatística ou comportamental, a ferramenta rastreia dados massivos e compila uma curva normal operacional (baseline) ao longo do tempo. Quando vetores estranhos afetam essa regularidade sistêmica, a discrepância provoca os alarmes, sem a dependência do cadastro da ameaça.\nB: Errada. Este é precisamente o modelo restrito que a autarquia substituiu em seu projeto, pois ele fracassou diante de ameaças ainda não cadastradas nos registros centrais (Zero-Day).\nC: Errada. Avaliações heurísticas examinam o comportamento lógico e os comandos operacionais dispostos no binário ou programa instalado fisicamente no computador e não a coleta passiva de volume e destino transacional dos pacotes estatísticos transitando no núcleo dos switches da intranet.\nD: Errada. O crivo formal para auditoria atrela-se na gestão e concepção do ciclo contínuo de desenvolvimento do software (DevSecOps) dos sistemas institucionais pela equipe de engenharia e não do controle de bloqueios in-line contra acessos ilegais à infraestrutura.\nE: Errada. Caracteriza somente um modelo primitivo de proteção em fronteiras da camada IP onde não existe acompanhamento nem do tráfego longitudinal, nem mesmo do tráfego de sessões abertas no perímetro de borda."
+  },
+  {
+    "id": 16062011,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O projeto arquitetural para a inserção de um Sistema de Prevenção de Intrusões (IPS) no backbone de alta velocidade do TJ-CE levantou debates sobre resiliência e disponibilidade. A gerência de redes expressou preocupação com o fato de que a inserção de um equipamento em linha no caminho crítico dos dados criaria um ponto único de falha (Single Point of Failure). Em caso de travamento do hardware ou falha de software do módulo IPS, todo o tráfego do datacenter seria bloqueado, isolando os serviços do Tribunal. Para mitigar esse risco arquitetural sem remover a capacidade proativa de bloqueio, a equipe de projeto exigiu a aquisição de um IPS que possua a capacidade embutida de desviar eletricamente o tráfego em caso de inoperância sistêmica, garantindo a continuidade do encaminhamento de pacotes, ainda que sem inspeção. A característica técnica exigida neste projeto do TJ-CE é conhecida como",
+    "options": {
+      "A": "configuração de redundância em modo ativo-ativo.",
+      "B": "implantação de rotas dinâmicas de borda.",
+      "C": "operação em modo de falha aberta ou bypass de hardware.",
+      "D": "arquitetura de proxy transparente estrito.",
+      "E": "execução em ambiente de virtualização isolada."
+    },
+    "answer": "C",
+    "explanation": "A: Errada. Envolve a alocação de mais de um hardware em operação concomitante via switch, enquanto o conceito requerido busca a resposta elétrica segura intrínseca e autônoma do IPS quando defrontado com a pane total do seu software interno de processamento de regras.\nB: Errada. O estabelecimento em roteadores lógicos via BGP busca reencaminhar o tráfego após decaimentos e rompimentos de circuito do provedor ISP e não consegue contornar a caixa de IPS transparente que parou de transitar informações sem reportar queda franca de sinal à placa de rede.\nC: Correta. O hardware bypass ou fail-open (falha aberta) atua fechando circuitos eletromagnéticos nas interfaces passantes físicas em nanossegundos caso o sistema operacional IPS congele (panic system), transformando temporariamente a ponte em um cabo contínuo imune a quebras para o enlace inferior corporativo.\nD: Errada. Arquiteturas de proxy forçam a interceptação e terminação de TCP integralmente. Assim, qualquer indisponibilidade nos recursos centrais desta tecnologia acarretaria a exata interrupção de acesso indesejada sem nenhuma forma de trânsito paralelo em fail-open elétrico.\nE: Errada. A isolação sistêmica propicia facilidades de restauração em clusters conteinerizados, mas uma parada absoluta no servidor host nativo ainda se consolidará no engarrafamento obstrutivo da porta da rede virtual ou física acoplada à plataforma central."
+  },
+  {
+    "id": 16062012,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE firmou um termo de cooperação técnica com a Secretaria de Segurança Pública e Defesa Social do Estado (SSPDS) visando aprimorar o combate ao crime organizado. O acordo prevê o cruzamento em larga escala de dados pessoais de indivíduos condenados judicialmente, atualmente armazenados nos bancos de dados do Tribunal, com os sistemas de inteligência da Secretaria. O Departamento Jurídico do TJ-CE, ao analisar a legalidade da operação, ressaltou as exigências específicas da LGPD para órgãos públicos e emitiu um parecer orientando sobre a forma legal para o repasse dessas informações a outros entes públicos. Em conformidade com a LGPD, o uso compartilhado de dados pessoais pelo TJ-CE neste contexto exige a",
+    "options": {
+      "A": "obtenção prévia de consentimento assinado por todos os indivíduos registrados.",
+      "B": "finalidade de atender a políticas públicas respaldadas em contratos ou instrumentos congêneres.",
+      "C": "delegação da atividade de controle para empresas de inteligência comercial privada.",
+      "D": "anonimização irreversível e imediata de todos os metadados envolvidos na transação.",
+      "E": "notificação comercial prévia ao titular sobre a comercialização de seus registros judiciais."
+    },
+    "answer": "B",
+    "explanation": "A: Errada. O Estado está desobrigado a buscar o consenso para atuar e dispor dos dados do réu quando estiver prestando funções típicas do Estado atreladas à administração judiciária ou perseguição do ilícito.\nB: Correta. O Art. 26 da Lei Geral orienta que o uso compartilhado pela esfera administrativa pressupõe finalidades imperiosas e estritas orientadas ao amparo social ou à execução profícua de políticas de interesse público constantes de convênios legais ou disposições constitucionais adequadas às suas atribuições originais.\nC: Errada. Repassar atividades jurisdicionais inerentes para o meio particular esvazia e extrapola os limites restritíssimos fixados para este tipo de atuação sob as garantias do sigilo governamental das comarcas de direito perante os seus sistemas operacionais e bases de retaguarda em SQL.\nD: Errada. Processos desta classe de pesquisa ou penal fariam total sentido apenas na medida do rastreio e acompanhamento analítico cruzado de identidade nominal, pelo que a imediata desvinculação absoluta destruiria a funcionalidade finalística perseguida na parceria policial e forense.\nE: Errada. Qualquer hipótese de rentabilização, alienação em mercado e uso desviado que importe lucro para os erários sob bases de registros cadastrais constitui falta gravíssima de princípio fundamental estipulado nas seções primárias do regime da LGPD."
+  },
+  {
+    "id": 16062013,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Analistas de segurança do TJ-CE detectaram, através da correlação de logs de servidores web, uma série de intrusões bem-sucedidas que não geraram nenhum alerta no Network Intrusion Detection System (NIDS) de borda. Uma análise de pacotes (pcap) revelou que o atacante dividiu o payload malicioso em múltiplos datagramas IP extremamente pequenos e enviou-os fora de ordem, sobrepondo os offsets. O NIDS, por limitação de processamento e configuração inadequada de remontagem de pacotes, analisou os fragmentos isoladamente e não identificou a assinatura do ataque, permitindo a passagem do tráfego para os servidores internos, que por sua vez remontaram a carga útil e executaram o código malicioso. A técnica de ataque empregada para contornar o monitoramento do NIDS no TJ-CE é conhecida como evasão por",
+    "options": {
+      "A": "sobrecarga do buffer de recepção com inundação SYN.",
+      "B": "fragmentação de pacotes na camada de rede.",
+      "C": "envenenamento de cache do protocolo de resolução de endereços.",
+      "D": "falsificação do endereço IP de origem e destino na mesma sub-rede.",
+      "E": "sequestro de sessão TCP no protocolo de transporte."
+    },
+    "answer": "B",
+    "explanation": "A: Errada. Destinada precipuamente a criar a indisponibilidade total do ativo alvo via esgotamento massivo dos handshakes semi-abertos alocados em tabelas de roteamento das sessões e não atrelada à subversão e manipulação oculta das fatias de injeção injetadas paralelamente sob uma malha transparente do NIDS perimetral.\nB: Correta. Quando os pacotes que compõem uma regra inteira são separados em partições diminutas e fora de linha nos números de rastreamento do cabeçalho de rede e compensação (offset), dispositivos passivos mal parametrizados em seu subsistema de remontagem não constatam o conjunto do vírus inteiro no buffer analítico, configurando a invasão oculta pela quebra de pacotes em fragmentos disjuntos do formato IP.\nC: Errada. Foca-se em manipular e subverter pontes de rede das camadas de enlace inferiores do OSI para causar uma ramificação redirecional ou um MITM (Homem-No-Meio) e furtar conversações cifradas, cenário distante do contexto da burla descrita perante as inspeções dos cabos analíticos passantes em varredura espelhada do datacenter.\nD: Errada. Refere-se à manipulação descarada de remetentes nos contornos diretos baseados em regras rígidas e primitivas de roteador estático ou spoofing para burlar autenticações limitantes, mas a falsificação de IP em si não desmonta ou obscurece a sintaxe injetável da carga útil presente no fundo do envelope protocolar das aplicações afetadas.\nE: Errada. Foco operacional voltado integralmente para as etapas transacionais posteriores a autenticações nas aplicações, furtando dados autorizativos (cookies/tokens) em curso da via navegadora a fim de invadir a gestão das interfaces, não se limitando aos estratagemas infraestruturais de quebra analítica de NIDS expostos."
+  },
+  {
+    "id": 16062014,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Seguindo os princípios da publicidade administrativa, o TJ-CE mantém um portal de transparência publicando a remuneração de todos os seus servidores e magistrados. Um grupo de servidores ingressou com um pedido administrativo solicitando a remoção de seus nomes e remunerações do portal público, alegando violação de sua privacidade conforme a Lei Geral de Proteção de Dados Pessoais (LGPD). O setor de conformidade jurídica do Tribunal emitiu uma decisão negando o pedido, argumentando que a publicização desses dados atende a requisitos legais e constitucionais específicos de prestação de contas do setor público, que não são revogados pelas normas gerais de proteção de dados. No contexto do poder público perante a LGPD, a manutenção da divulgação destes dados justifica-se perante a lei pela incidência da base legal referente à",
+    "options": {
+      "A": "adoção do princípio de legítimo interesse do controlador na esfera privada.",
+      "B": "obrigação legal ou regulatória imposta de forma mandatória ao controlador.",
+      "C": "garantia da incolumidade física e da saúde coletiva do titular dos dados.",
+      "D": "aplicação de contrato ou de procedimentos preliminares de esfera comercial.",
+      "E": "preservação do consentimento livre, informado e inequívoco de cada titular."
+    },
+    "answer": "B",
+    "explanation": "A: Errada. O Estado ou as autarquias federais e locais não se amparam nos ditames mercadológicos de interesses subjetivos frente à privacidade do indivíduo (legítimo interesse privado). Os regramentos públicos submetem-se inteiramente à finalidade formal emanada de portarias e decretos estatais.\nB: Correta. Ao disponibilizar e consolidar a transparência imposta pela LAI ou pelo STF e TCU, a gestão dos salários de todos os servidores judiciais adequa-se perfeitamente e sem contraposição ao enquadramento jurídico descrito no art. 7º, inciso II da LGPD, o qual legitima as transferências e processamentos essenciais para cumprimento imperativo de obrigação de cunho legal e da própria Carta Magna.\nC: Errada. Hipótese excludente focada em mitigações agudas visando tratamentos de risco à integridade da vida, usualmente balizada no vazamento sigiloso mas benéfico dos laudos paramédicos em socorros ambulatoriais urgentes, e não aplicável a rotinas operacionais sistêmicas corriqueiras do Portal da Transparência corporativo.\nD: Errada. A correlação de emprego público ou as comissões fixadas em cargo do tipo administrativo se processam fora do viés negocial mercantil, e a imposição de dados remuneratórios a toda a coletividade popular ultrapassa qualquer acordo privado trabalhista restrito firmado internamente com os concursados nos balcões do RH interno.\nE: Errada. Exatamente o revés da tese exposta: a Administração denegou o bloqueio desejado pelos reclamantes e mantém de modo coercitivo a exposição remuneratória amparada em lei própria, invalidando o uso de base baseada em aprovação livre dos referidos trabalhadores estatais."
+  },
+  {
+    "id": 16062015,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Segurança da Informação - Firewalls, IDS, IPS, LGPD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Diretoria de Infraestrutura de TI do TJ-CE consolidou um projeto para substituição de múltiplos appliances de segurança, que operavam de forma isolada como filtros de estado de conexões (stateful inspection) e detectores de intrusão independentes. A licitação exige a aquisição de uma plataforma unificada capaz de inspecionar o tráfego não apenas nos cabeçalhos de rede e transporte, mas também de realizar a decriptação SSL/TLS, a análise profunda de pacotes (Deep Packet Inspection), a identificação granular de aplicativos (Application Control) e a integração com bases de inteligência de ameaças em nuvem, tudo em um único fluxo de processamento (single-pass architecture). A arquitetura de rede proposta pelo TJ-CE determina a implantação de uma solução da categoria de",
+    "options": {
+      "A": "roteador de agregação de banda larga de provedores.",
+      "B": "filtro de tráfego de pacotes não orientados a estado.",
+      "C": "firewall de próxima geração.",
+      "D": "balanceador de carga em nível de enlace.",
+      "E": "concentrador de acesso remoto dial-up virtual."
+    },
+    "answer": "C",
+    "explanation": "A: Errada. O hardware concentrador em borda destina-se a segregação estática de links dos ISP ou para gerenciamento das tabelas de roteamento global, apresentando gargalos gigantescos ao ser submetido de forma contínua a decodificações rigorosas em tráfegos analíticos profundos de HTTPS e heurísticas anti-malware.\nB: Errada. Modelos primitivos de ACL desconsideram e carecem dos preceitos mínimos atuais de inteligência perimetral por não armazenar o estado basal em memória dos serviços e menos ainda conseguem aplicar integrações unificadas de aplicações modernas ou decriptar ativamente conexões do usuário que se autentica na página remota criptografada institucional.\nC: Correta. Todas as prerrogativas de unificação paralela do processamento das assinaturas que agregam inspeção de estado fundamental combinada de forma inseparável ao controle de aplicação web avançada (camada 7), IPS nativo embutido e sandboxing por nuvens em um só hardware determinam as virtudes singulares de um NGFW (Next-Generation Firewall).\nD: Errada. Embora consiga gerir e processar distribuições parciais baseadas em camada avançada ou URL, sua natureza nativa destina-se a desafogar a ociosidade ou sobrecarga entre múltiplos caminhos do pool de nós, não fornecendo arcabouço defensivo central que neutralize assinaturas polimórficas nem substitua as filtragens sistêmicas restritivas das intranets internas do tribunal em relação à DMZ periférica exposta do datacenter.\nE: Errada. Equipamentos que funcionam e ofertam a rede privada perimetral e encapsulada visam somente providenciar portais tunelados para os colaboradores acessarem serviços, sem atuarem sob o conceito mandatório de inspeção analítica abrangente contra ataques transacionais injetados vindos da internet global em portais acessíveis sem VPN."
+  }
+]

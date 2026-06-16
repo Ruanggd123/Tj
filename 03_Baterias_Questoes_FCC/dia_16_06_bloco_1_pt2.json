@@ -1,0 +1,272 @@
+[
+  {
+    "id": 847291,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Linux - Comandos",
+    "context": "Auditoria de segurança e localização de artefatos maliciosos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a auditoria de segurança dos servidores de aplicação do Tribunal de Justiça do Ceará (TJ-CE), a equipe de infraestrutura identificou um ataque que modificou diversos scripts bash utilizados na automação do PJe. O analista precisa localizar todos os arquivos com extensão '.sh' dentro do diretório '/opt/tjce/scripts' que foram modificados nas últimas 24 horas e que contenham a string maliciosa 'nc -e'. Qual comando executa essa operação de forma precisa?",
+    "options": {
+      "A": "find /opt/tjce/scripts -name \"*.sh\" -mtime -1 -exec grep -l \"nc -e\" {} \\+",
+      "B": "grep -rn \"nc -e\" /opt/tjce/scripts | find -name \"*.sh\" -mmin -24",
+      "C": "find /opt/tjce/scripts -type f -mtime +1 | grep -E \"nc -e *.sh\"",
+      "D": "locate -r \"\\.sh$\" /opt/tjce/scripts -mtime 24 | xargs grep \"nc -e\"",
+      "E": "find /opt/tjce/scripts -name \"*.sh\" -ctime 1 | awk '/nc -e/'"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O comando 'find' inicia a busca no diretório alvo. O parâmetro '-name \"*.sh\"' filtra pela extensão; '-mtime -1' filtra arquivos modificados nas últimas 24 horas (1 dia). O parâmetro '-exec grep -l' executa o grep nos arquivos encontrados, onde o '-l' garante que apenas o nome do arquivo seja listado caso a string seja encontrada. O '{} \\+' otimiza a execução passando múltiplos arquivos para o grep. A alternativa B tenta fazer um pipe inválido de grep para find de forma reversa. A alternativa C usa '+1' (modificado há MAIS de um dia) e usa o grep erroneamente na saída padrão do find. A D mistura sintaxe do locate, que usa banco de dados desatualizado e não suporta '-mtime'. A E utiliza '-ctime' (mudança de metadados, não de modificação de conteúdo) com exatidão de 1 dia, ignorando o grep no conteúdo dos arquivos da forma correta."
+  },
+  {
+    "id": 847292,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Linux - Comandos",
+    "context": "Troubleshooting de microsserviços via systemd e extração de logs.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE modernizou a infraestrutura de microsserviços rodando em instâncias Linux CentOS, gerenciadas pelo systemd. Um serviço crítico chamado 'tjce-pje-sync.service' falha intermitentemente durante a madrugada, impactando a sincronização processual. A equipe precisa extrair os logs exclusivamente deste serviço, filtrando apenas as mensagens classificadas com nível de severidade de erro ocorridas no dia anterior, para enviar ao time de desenvolvimento. Qual o comando adequado?",
+    "options": {
+      "A": "journalctl -u tjce-pje-sync.service -p err --since yesterday --until today",
+      "B": "systemctl status tjce-pje-sync.service --logs --level error --date yesterday",
+      "C": "tail -f /var/log/messages | grep \"tjce-pje-sync\" | awk '{print $error}'",
+      "D": "dmesg --service tjce-pje-sync.service --level err --time yesterday",
+      "E": "journalctl --unit tjce-pje-sync.service -p err --time yesterday-only"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O 'journalctl' é o comando nativo para consultar logs de serviços gerenciados pelo systemd. O parâmetro '-u' (unit) especifica o serviço. O parâmetro '-p err' restringe os resultados às mensagens de severidade de erro. Os parâmetros temporais '--since yesterday --until today' isolam o log de forma precisa ao dia anterior. A alternativa B usa parâmetros inexistentes no systemctl ('--logs', '--level'). A alternativa C acessaria logs brutos do sistema passivamente de forma não determinística e usa uma variável awk inexistente. A D utiliza 'dmesg', que serve para buffer de mensagens do kernel, não de serviços user-space. A E usa um parâmetro de tempo inválido '--time yesterday-only'."
+  },
+  {
+    "id": 847293,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Linux - Comandos",
+    "context": "Gestão e manipulação de processos do sistema.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em resposta a uma degradação de performance no cluster de banco de dados do TJ-CE, o administrador de sistemas percebeu que um script antigo de backup está gerando processos zumbis que esgotam o limite de PIDs. Para solucionar o incidente emergencialmente, é necessário listar todos os PIDs dos processos em estado 'Z' (zombie) para posterior eliminação de seus processos pai. Assinale a instrução em shell que realiza esta listagem de forma correta.",
+    "options": {
+      "A": "ps aux | awk '$8==\"Z\" {print $2}'",
+      "B": "top -b -n 1 | grep \"zombie\" | awk '{print $1}'",
+      "C": "ps -ef | sed -n 's/Z/print $2/p'",
+      "D": "pidstat -T ZOMBIE | cut -d \" \" -f 2",
+      "E": "ps aux | grep -v Z | cut -f 2"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O comando 'ps aux' lista os processos, e a saída padrão tem o status (STAT) na coluna 8 e o PID na coluna 2. O comando 'awk '$8==\"Z\" {print $2}'' verifica exatamente o valor da coluna 8 e, se for Z, imprime a coluna do PID. A alternativa B lista sumários com o top, mas a filtragem por grep não atinge as linhas individuais da forma correta sem quebras. A alternativa C usa sintaxe inválida no sed ('print $2' não é do sed, e sim do awk). A alternativa D tenta utilizar parâmetros inventados do sysstat ('-T ZOMBIE'). A alternativa E exclui os processos Z com o '-v' no grep, fazendo o oposto do solicitado."
+  },
+  {
+    "id": 847294,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Linux - Comandos",
+    "context": "Transferência de arquivos remotos segura e incremental.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A diretoria de TI do TJ-CE estabeleceu uma política de arquivamento para os laudos periciais digitalizados. Um grande volume de arquivos PDF, localizado em '/mnt/storage/laudos', precisa ser transferido de forma segura e incremental para o servidor de backup '10.1.5.50'. A transferência deve comprimir os dados em trânsito, preservar os atributos originais dos arquivos, os links simbólicos e permitir retomada em caso de falha de rede. Qual solução atende aos requisitos?",
+    "options": {
+      "A": "rsync -avzP /mnt/storage/laudos/ root@10.1.5.50:/backup/laudos/",
+      "B": "tar -czvf /mnt/storage/laudos | ssh root@10.1.5.50 \"cat > /backup/laudos.tar.gz\"",
+      "C": "scp -rpC /mnt/storage/laudos/*.pdf root@10.1.5.50:/backup/laudos/",
+      "D": "ftp -i 10.1.5.50 -c \"mput /mnt/storage/laudos/* -compress tar.gz\"",
+      "E": "rsync -rltD /mnt/storage/laudos/ root@10.1.5.50:/backup/laudos/ --tar=gz"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O comando rsync atende todos os requisitos do enunciado: '-a' (archive) preserva atributos e links simbólicos; '-v' fornece modo verboso; '-z' comprime em trânsito; '-P' preserva arquivos parciais e exibe progresso (permitindo retomada). A alternativa B gera um pacote inteiro do zero via SSH e perde a capacidade incremental ou de retomada de falhas de onde parou. A alternativa C utiliza scp, que possui compressão (-C) e preserva dados (-p, -r), mas não suporta retomada eficiente pós-falha (reinicia tudo) e não é puramente incremental de blocos como o rsync. A D utiliza FTP, protocolo inseguro e comando inválido. A E utiliza um argumento fictício do rsync ('--tar=gz')."
+  },
+  {
+    "id": 847295,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Linux - Permissões Octais",
+    "context": "Atribuição de bits especiais para elevação de privilégios temporários em aplicativos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O portal da transparência do TJ-CE utiliza um aplicativo compilado em C chamado 'update_relatorio', localizado em '/opt/tjce/bin'. Esse aplicativo precisa ser executado por usuários do grupo 'auditores', mas deve operar com os privilégios efetivos do usuário 'root' (dono do arquivo) para ler dados protegidos no banco. Adicionalmente, nenhum outro usuário externo ao grupo pode ter acesso de execução. Considerando que o arquivo tem como dono 'root' e grupo 'auditores', qual o valor octal correto aplicado via chmod?",
+    "options": {
+      "A": "4750",
+      "B": "2750",
+      "C": "4755",
+      "D": "0750",
+      "E": "6710"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A exigência de executar o aplicativo com os privilégios do dono (root) requer a ativação do bit SUID, representado pelo valor 4 na primeira posição octal. As permissões do dono (root) devem ser completas (7 = leitura, gravação e execução). O grupo 'auditores' precisa de leitura e execução (5 = 4 leitura + 1 execução). Outros usuários não podem ter acesso (0). Assim, o valor final fica 4750. A alternativa B (2750) ativaria o bit SGID (permissão do grupo), não do dono. A alternativa C (4755) violaria a restrição ao conceder acesso de execução para todos (others = 5). A D (0750) não ativaria a elevação de privilégios SUID. A E (6710) habilitaria SUID e SGID com permissões básicas incorretas."
+  },
+  {
+    "id": 847296,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Linux - Permissões Octais",
+    "context": "Configuração da umask em diretórios de rede compartilhados.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para atender aos normativos do CNJ sobre segurança da informação, o Tribunal implementou uma nova política de segurança nos servidores de arquivos departamentais. Exige-se que todos os novos arquivos criados nativamente pelos serviços do diretório compartilhado possuam permissão efetiva 644 e que diretórios novos sigam o padrão 755. Qual valor deve ser configurado no parâmetro 'umask' no perfil dos usuários do sistema para atingir esse objetivo de segurança automática?",
+    "options": {
+      "A": "0022",
+      "B": "0027",
+      "C": "0133",
+      "D": "0644",
+      "E": "0755"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A 'umask' age subtraindo (mascarando) permissões das bases padrão do sistema operacional, que são 666 para arquivos e 777 para diretórios. Para arquivos terem permissão final 644, a umask deve retirar 022 (666 - 022 = 644 em cálculo bit a bit ou subtração direta para leitura sem carry). Para diretórios ficarem com 755, a máscara de 022 se aplica retirando write de group e others (777 - 022 = 755). A alternativa B (0027) deixaria arquivos em 640. A C (0133) deixaria diretórios em 644. As alternativas D e E representam o estado final que se deseja alcançar (as permissões em si), e não as máscaras necessárias para a subtração inicial."
+  },
+  {
+    "id": 847297,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Linux - Permissões Octais",
+    "context": "Proteção de arquivos temporários em diretórios compartilhados.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE disponibilizou um servidor de processamento de malotes digitais. Existe um diretório temporário '/var/spool/malote_temp' onde múltiplos serviços e usuários salvam arquivos. Ocorreram incidentes onde usuários apagaram arquivos gerados por outras sessões. Para corrigir essa vulnerabilidade, o analista deve garantir que apenas o criador de um arquivo, o dono do diretório ou o usuário root possam renomear ou excluir arquivos nesse diretório. Qual permissão octal deve ser atribuída ao diretório, assumindo que todos precisam de leitura, escrita e execução?",
+    "options": {
+      "A": "1777",
+      "B": "2777",
+      "C": "4777",
+      "D": "0777",
+      "E": "7777"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O comportamento exigido de proteger a exclusão de arquivos num diretório com permissão pública de gravação (777) é ativado pelo bit 'Sticky bit' (valor octal 1 na primeira posição de atributos especiais). A permissão 1777 mantém o diretório aberto para leitura, escrita e execução, mas restringe a exclusão ou renomeação dos arquivos exclusivamente a quem os criou. A alternativa B (2777) habilitaria o SGID (permissão para herdar o grupo). A C (4777) ativaria o SUID (irrelevante para proteção de exclusão de diretórios). A D (0777) deixaria o diretório exposto sem nenhuma proteção especial. A E (7777) habilitaria SUID, SGID e Sticky simultaneamente sem necessidade."
+  },
+  {
+    "id": 847298,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Linux - Permissões Octais",
+    "context": "Concessão pontual de acesso complexo em arquivos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um script automatizado do PJe cria diários eletrônicos no diretório '/var/pje/diarios'. O proprietário do arquivo é 'pje_user' e o grupo é 'pje_group'. O comando 'ls -l' exibe as permissões como '-rw-r--r--'. Uma alteração de arquitetura demanda que o grupo 'audit_group' também tenha permissões de leitura nestes arquivos específicos, sem modificar a titularidade (dono/grupo) original da estrutura legada e sem conceder acesso global e generalizado aos arquivos. Qual é a abordagem adequada na infraestrutura Linux?",
+    "options": {
+      "A": "Configuração de uma Access Control List (ACL) com o comando setfacl -m g:audit_group:r.",
+      "B": "Modificação do permissionamento do arquivo para o valor octal 664.",
+      "C": "Ativação do bit SGID no diretório pai com o comando chmod 2750.",
+      "D": "Alteração do grupo primário do usuário pje_user para audit_group.",
+      "E": "Execução do comando chmod g+s nos arquivos de diários já existentes."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. Quando se necessita aplicar permissões para múltiplos usuários ou múltiplos grupos simultaneamente, indo além do modelo padrão UGO (User, Group, Others), utiliza-se o recurso ACL (Access Control Lists). O comando 'setfacl -m g:audit_group:r' concede a permissão de leitura ao grupo extra sem alterar o dono ou grupo primário originais. A alternativa B apenas daria direito de escrita para o 'pje_group', ignorando o novo grupo de auditoria. A C usaria SGID que afetaria a posse grupal de novos arquivos, e não o acesso lateral. A D quebraria o isolamento dos usuários e a titularidade legada. A E não faz sentido em arquivos regulares para fins de restrição lateral de leitura."
+  },
+  {
+    "id": 847299,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Windows Server - Active Directory",
+    "context": "Desastre, recuperação e apropriação (seize) de funções FSMO.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o processo de unificação das comarcas do interior do Ceará, o ambiente Active Directory do TJ-CE sofreu uma falha catastrófica no controlador de domínio principal da floresta, que detinha todas as funções FSMO. A restauração a partir do backup falhou. O analista de infraestrutura precisa transferir forçadamente (seize) as funções para um DC secundário (DC02). Qual função FSMO, ao ser assumida pelo DC02 de forma forçada, proíbe categoricamente que o DC original seja reconectado à rede sem ser formatado, sob pena de corrupção massiva por IDs de segurança duplicados?",
+    "options": {
+      "A": "RID Master.",
+      "B": "PDC Emulator.",
+      "C": "Infrastructure Master.",
+      "D": "Schema Master.",
+      "E": "Domain Naming Master."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A função RID Master (Relative ID Master) aloca blocos de identificadores (RIDs) para criação de SIDs únicos no domínio. Caso ocorra um 'seize' (captura forçada) e o antigo DC retornar à rede com sua base de dados original, ele achará que ainda é o mestre e alocará os mesmos RIDs que o novo DC, causando objetos com SIDs duplicados no domínio. É uma premissa clássica da Microsoft formatar e reinstalar um DC antigo após o seize do RID Master. As funções PDC Emulator e Infrastructure Master são as únicas que suportam o retorno e realocação amigável pós-falha ou 'seize'."
+  },
+  {
+    "id": 847300,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Windows Server - Active Directory",
+    "context": "Topologia, latência e replicação intersite no AD DS.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Active Directory do TJ-CE abrange duas localidades principais: o site 'Fortaleza' (sede) e o site 'Sobral' (comarca). Foi relatado que novos usuários criados em Fortaleza demoram até três horas para conseguir autenticação inicial nas estações de trabalho de Sobral. A equipe constatou que não há falhas nos links WAN, operando via VPN IPsec estável. A topologia do AD Sites and Services exibe apenas o link padrão 'DEFAULTIPSITELINK'. Qual componente arquitetural deve ser ajustado para resolver essa latência de replicação intersite?",
+    "options": {
+      "A": "O intervalo de replicação e a agenda nas propriedades do objeto Site Link.",
+      "B": "O atributo de peso do servidor Bridgehead no site de Sobral.",
+      "C": "A configuração de replicação intrasite gerada pelo Knowledge Consistency Checker.",
+      "D": "O protocolo de transporte utilizado no Site Link, migrando de IP para SMTP.",
+      "E": "A função de Global Catalog no servidor principal do site de Fortaleza."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O intervalo padrão no 'DEFAULTIPSITELINK' para replicação intersite no Active Directory é tipicamente de 180 minutos (3 horas), o que causa a latência referida ao invés da replicação instantânea. Alterar as propriedades do Site Link diminuindo o tempo entre as replicações agilizará a sincronização entre Fortaleza e Sobral. A alternativa B (custo) apenas definiria a rota preferencial de roteamento, não a frequência. A C lida com replicação intrasite, onde não há Site Links e é baseada em notificação, sendo irrelevante intersite. A D migra para SMTP, que é suportado apenas em cenários isolados, obsoletos, restritos para replicação de esquema. A E trata de consultas ao GC, sem alterar os intervalos temporais do Site Link."
+  },
+  {
+    "id": 847301,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Windows Server - Active Directory",
+    "context": "Arquitetura e políticas de segurança envolvendo Read-Only Domain Controllers.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma pequena comarca no interior do estado possui um link de internet de baixa confiabilidade e ausência de sala cofre física adequada para os servidores. Para mitigar riscos de roubo de credenciais em caso de furto do servidor local e manter a autenticação dos usuários quando o link com Fortaleza cair, a engenharia de TI do TJ-CE decidiu implantar um RODC (Read-Only Domain Controller). Qual configuração é mandatória para garantir que apenas os usuários dessa comarca tenham suas credenciais armazenadas em cache no RODC local?",
+    "options": {
+      "A": "Configuração da Password Replication Policy (PRP) permitindo o grupo local e negando grupos administrativos.",
+      "B": "Delegação do controle do serviço NTDS para a conta do administrador local da comarca.",
+      "C": "Bloqueio do tráfego LDAP de entrada nas regras do firewall do Windows do RODC.",
+      "D": "Remoção da flag de Global Catalog (GC) das propriedades do servidor RODC recém promovido.",
+      "E": "Implementação de criptografia IPSec no link de replicação com o servidor PDC Emulator."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A função que define quais contas podem ter suas senhas armazenadas localmente em um RODC é a PRP (Password Replication Policy). Adicionar o grupo de segurança que contém os usuários locais na lista 'Allowed' e proteger os administradores de domínio listando na 'Denied' é o recurso nativo de um RODC para a problemática. A alternativa B apenas delega a capacidade administrativa do servidor ao administrador local, mas não gerencia as credenciais do AD. A alternativa C inutilizaria a autenticação e as buscas no AD. A D pioraria a resiliência e as consultas offline. A E lida com a criptografia de transporte, não com o comportamento interno e restritivo do cache local do diretório."
+  },
+  {
+    "id": 847302,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Windows Server - Active Directory",
+    "context": "Integração institucional entre organizações com configurações de relações de confiança (Trust).",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE e o Ministério Público do Ceará (MPCE) estabeleceram um convênio de integração de sistemas. Ambas as instituições possuem florestas Active Directory independentes no Windows Server 2022. Os usuários do TJ-CE precisam acessar pastas compartilhadas nos servidores do MPCE, porém os usuários do MPCE não podem ter nenhum acesso aos recursos do TJ-CE. Do ponto de vista técnico da floresta do MPCE, qual tipo e direção de relação de confiança (Trust) deve ser configurada para suportar essa estrutura?",
+    "options": {
+      "A": "Confiança de Floresta (Forest Trust), de Saída (Outgoing).",
+      "B": "Confiança de Floresta (Forest Trust), de Entrada (Incoming).",
+      "C": "Confiança de Floresta (Forest Trust), Bidirecional (Two-way).",
+      "D": "Confiança Externa (External Trust), de Entrada (Incoming).",
+      "E": "Confiança de Atalho (Shortcut Trust), Bidirecional (Two-way)."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A direção de uma relação de confiança (Trust) na terminologia do Windows aponta no sentido da confiança (Trusting domain -> Trusted domain), e é o oposto do sentido do acesso aos recursos. O MPCE precisa CONFIAR nos usuários do TJ-CE (pois dará acesso a eles). Logo, do ponto de vista do MPCE, a relação aponta para fora, caracterizando uma confiança de SAÍDA (Outgoing). Utiliza-se 'Forest Trust' devido às florestas independentes baseadas em Windows moderno e o suporte total ao Kerberos. A B concederia o acesso aos recursos do TJ-CE pelo MPCE (inverso da necessidade). A C abriria o acesso para ambas as pontas. A D usa External Trust (limitação NTLM) no sentido errado. A E cria atalhos de rotas intra-floresta."
+  },
+  {
+    "id": 847303,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Windows Server - GPO",
+    "context": "Arquitetura e escopo de precedência no processamento de Políticas de Grupo.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O setor de arquitetura do TJ-CE precisa diagnosticar um conflito na aplicação de Políticas de Grupo (GPOs). A mesma configuração de papel de parede corporativo está definida em quatro níveis diferentes com valores conflitantes. Nenhuma das GPOs possui as opções 'Enforced' (Imposto) ou 'Block Inheritance' (Bloquear Herança) ativadas. A estação de trabalho está na OU 'Recepcao', subordinada à OU 'Fóruns', que pertence ao domínio 'tjce.jus.br' e ao site 'Sede'. Seguindo o fluxo padrão do Active Directory, qual é a ordem cronológica de processamento destas GPOs e qual nível prevalece?",
+    "options": {
+      "A": "Local, Site, Domínio, OU Fóruns, OU Recepcao; a GPO da OU Recepcao prevalece.",
+      "B": "Site, Domínio, OU Fóruns, OU Recepcao, Local; a GPO Local prevalece.",
+      "C": "OU Recepcao, OU Fóruns, Domínio, Site, Local; a GPO da OU Recepcao prevalece.",
+      "D": "Local, OU Recepcao, OU Fóruns, Domínio, Site; a GPO do Site prevalece.",
+      "E": "Domínio, Site, OU Fóruns, OU Recepcao, Local; a GPO Local prevalece."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O Active Directory processa as Políticas de Grupo na ordem predefinida 'LSDOU': Local, Site, Domain, e, finalmente, as Organizational Units de forma descendente (hierarquia de OU). No Active Directory, quando há conflitos, a última diretiva processada é a que entra em vigor (conflito de estado sobrescreve as anteriores). Como a OU mais específica é processada por último, as GPOs vinculadas diretamente à OU 'Recepcao' sobrepõem-se à GPO da OU 'Fóruns', ao Domínio, ao Site e às políticas Locais."
+  },
+  {
+    "id": 847304,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Windows Server - GPO",
+    "context": "Segmentação cirúrgica de Políticas de Grupo via consultas dinâmicas de atributos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Devido à migração do parque tecnológico das Varas de Família do TJ-CE, a gerência de suporte necessita implantar uma GPO de instalação de software de certificação digital, restrita exclusivamente aos computadores que executam o sistema operacional Windows 11. As máquinas estão misturadas em diversas OUs que contêm também estações com Windows 10 e Windows 8.1. A estrutura de Unidades Organizacionais não deve ser alterada. Qual é o recurso técnico da Política de Grupo que atinge esse objetivo?",
+    "options": {
+      "A": "Filtro WMI (Windows Management Instrumentation) vinculado à GPO.",
+      "B": "Item-Level Targeting na seção de configuração do computador.",
+      "C": "Filtro de Segurança por Grupos do Active Directory vinculado à GPO.",
+      "D": "Delegação de leitura da GPO para contas de computadores específicas.",
+      "E": "Configuração de Preferências de Política de Grupo operando em modo Replace."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. A aplicação dinâmica de uma GPO baseada em atributos do sistema operacional sem rearranjar os contêineres lógicos (OUs) é feita via WMI Filters. Ao vincular uma consulta WMI testando a versão do SO, a GPO só se aplica nos computadores onde o teste retorna verdadeiro. A alternativa B (Item-Level Targeting) opera em escopo de extensões dentro do Group Policy Preferences, mas o enunciado demanda uma GPO completa e ampla, sendo os Filtros WMI no objeto de GPO a resposta direta e apropriada ao contexto raiz de aplicação. A C baseia-se em associações explícitas de grupos, gerando overhead manual. A D bloqueia a GPO na base mas exige manuseio exaustivo manual por máquina. A E se refere à ação da preferência e não à filtragem cirúrgica de contexto global da GPO."
+  },
+  {
+    "id": 847305,
+    "day_id": "dia_16_06",
+    "day_title": "Domingo 16/06",
+    "theme": "Windows Server - GPO",
+    "context": "Controle rígido de GPOs independentemente da origem contextual do usuário.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Nas salas de audiência de custódia do TJ-CE, existem computadores de uso compartilhado (quiosques). Independentemente de qual magistrado ou servidor realizar o logon, essas máquinas específicas devem aplicar restrições severas de interface de usuário, configuradas na seção 'User Configuration' de uma GPO. Normalmente, as políticas de usuário baseiam-se na OU onde a conta do usuário reside. Para forçar que as políticas de usuário sejam aplicadas de acordo com a localização do computador, qual funcionalidade deve ser habilitada?",
+    "options": {
+      "A": "Loopback Processing mode.",
+      "B": "Enforce Group Policy link.",
+      "C": "Block Inheritance.",
+      "D": "Cross-Forest Policy Processing.",
+      "E": "Slow Link Detection."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O GPO 'User Group Policy Loopback Processing mode' força a aplicação das configurações de usuário provenientes de uma política ligada à Unidade Organizacional do COMPUTADOR, e não à do usuário. Isso permite o engessamento de estações quiosque em detrimento das políticas globais originais do funcionário no AD, independentemente de quem logar. A alternativa B ('Enforce') forçaria a descendência da GPO sem poder de sobrescrita, e não sua alteração contextual. A C corta as heranças vindas de cima, mas também não subverte o processamento User vs Computer. A D autoriza a leitura através de florestas externas. A E lida unicamente com detecções de velocidade de banda e latência de rede na aplicação."
+  }
+]
