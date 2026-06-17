@@ -142,5 +142,11 @@
     "day_title": "Terça-feira 16/06",
     "filename": "dia_16_06_questoes.json",
     "count": 75
+  },
+  {
+    "day_id": "dia_17_06",
+    "day_title": "Quarta-feira 17/06",
+    "filename": "dia_17_06_questoes.json",
+    "count": 75
   }
 ]

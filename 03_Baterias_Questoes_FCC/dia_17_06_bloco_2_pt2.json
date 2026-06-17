@@ -1,0 +1,272 @@
+[
+  {
+    "id": 170601,
+    "day_id": "dia_17_06",
+    "day_title": "17/06",
+    "theme": "WCAG 2.1 - Princípio Perceptível",
+    "context": "Migração de portais de jurisprudência e adequação de conteúdo gráfico estatístico para públicos com deficiências sensoriais.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Ceará (TJ-CE) iniciou um projeto de modernização do portal de jurisprudência. Durante a auditoria de acessibilidade, identificou-se que gráficos estatísticos complexos sobre o volume de processos não possuíam alternativas textuais adequadas e a diferenciação visual das fatias de pizza dependia exclusivamente de uma paleta monocromática azul. Usuários com deficiência visual e daltonismo relataram incapacidade de interpretar os dados. Com base nas diretrizes WCAG 2.1 e no princípio \"Perceptível\", a solução arquitetural aplicável para adequação do portal consiste em:",
+    "options": {
+      "A": "Aplicar o atributo aria-hidden=\"true\" aos gráficos para ocultá-los de leitores de tela e fornecer os dados estatísticos em uma tabela HTML estruturada adjacente.",
+      "B": "Inserir atributos alt com descrições curtas de até 150 caracteres para detalhar todos os pontos de dados e alterar a opacidade das cores no gráfico.",
+      "C": "Disponibilizar uma alternativa em texto descrevendo os dados em formato de tabela e adicionar padrões visuais de preenchimento às fatias do gráfico além das cores.",
+      "D": "Converter os gráficos estatísticos para o formato SVG interativo com tags title e remover a paleta monocromática em favor de cores em alto contraste dinâmico.",
+      "E": "Fornecer um link de download de um arquivo PDF acessível contendo o laudo estatístico completo e manter o gráfico original sem modificações na interface web."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta em conformidade com as diretrizes 1.1.1 (Conteúdo Não-Textual) e 1.4.1 (Uso da Cor). Gráficos complexos exigem apresentação de dados estruturados e a cor não pode ser a única forma visual de distinção. A alternativa A erra ao instruir a ocultação sumária da imagem visual com 'aria-hidden', limitando o acesso a usuários com baixa visão. A alternativa B erra porque o atributo 'alt' não suporta a estrutura semântica requerida para planilhas extensas de dados. A alternativa D peca ao presumir que SVG e alto contraste dinâmico resolvem automaticamente o uso da cor como único indicador. A alternativa E quebra a acessibilidade em contexto web, isolando a experiência em arquivos avulsos."
+  },
+  {
+    "id": 170602,
+    "day_id": "dia_17_06",
+    "day_title": "17/06",
+    "theme": "WCAG 2.1 - Princípio Operável",
+    "context": "Desenvolvimento de portais interativos utilizando interfaces assíncronas baseadas em janelas modais.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de TI do TJ-CE desenvolveu um novo módulo de agendamento de audiências de conciliação virtual. Durante os testes de usabilidade com usuários de tecnologias assistivas, constatou-se que, ao abrir a janela modal de seleção de datas, o foco do teclado ficava retido infinitamente entre os elementos internos do calendário, impossibilitando o retorno à página principal sem o uso do mouse. Para solucionar esse incidente sob a ótica do princípio \"Operável\" da WCAG 2.1, o desenvolvedor deve:",
+    "options": {
+      "A": "Implementar um script JavaScript para interceptar a tecla ESC e programar a transferência explícita do foco de volta ao botão acionador original da modal.",
+      "B": "Configurar o atributo tabindex=\"0\" no contêiner da janela modal e remover atributos de foco dos elementos interativos filhos do calendário.",
+      "C": "Aplicar o atributo aria-modal=\"false\" na estrutura do calendário e mapear a tecla TAB para ignorar os elementos da janela modal durante a navegação.",
+      "D": "Adicionar um botão de fechamento com atributo disabled na janela modal e definir tabindex=\"-1\" no botão acionador da página principal.",
+      "E": "Inserir a propriedade CSS pointer-events: none nos elementos fora da modal e aplicar aria-hidden=\"true\" na região principal do documento."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A é a correta. O princípio \"Operável\" possui a diretriz 2.1.2 (Sem Armadilha de Teclado). O usuário precisa de um método explícito e acessível pelo teclado (como o botão ESC) para sair do modal. A alternativa B introduz um bloqueio profundo, retirando indevidamente o foco dos elementos de data necessários no calendário. A alternativa C utiliza o atributo inexistente 'aria-modal=\"false\"' (que na documentação W3C deve ser true ou omitido) e inutiliza a ferramenta. A alternativa D falha ao sugerir a inserção de um botão desabilitado e inoperante. A alternativa E propõe alterações de exclusividade que operam apenas visualmente e para o mouse, não garantindo a mitigação da armadilha do teclado."
+  },
+  {
+    "id": 170603,
+    "day_id": "dia_17_06",
+    "day_title": "17/06",
+    "theme": "WCAG 2.1 - Princípio Compreensível",
+    "context": "Construção de formulários online resilientes a erros de usuários leigos em portais estaduais.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No sistema de Peticionamento Eletrônico do TJ-CE, advogados relataram um aumento significativo de recusas automáticas de petições. A análise de causa raiz apontou que, ao submeter o formulário com o campo \"Número da OAB\" formatado incorretamente, o sistema recarregava a página inteira exibindo apenas uma borda vermelha ao redor do campo inválido, sem mensagens de texto e apagando os dados já preenchidos. Para alinhar o sistema ao princípio \"Compreensível\" da WCAG 2.1, a ação corretiva requer:",
+    "options": {
+      "A": "Restaurar os dados preenchidos no formulário após a recusa e aplicar um contorno de 3 pixels na cor amarela de alto contraste para indicar o estado de erro.",
+      "B": "Modificar o atributo type do campo para \"number\" e utilizar scripts de validação no lado do servidor para bloquear a submissão de caracteres alfanuméricos.",
+      "C": "Inserir uma âncora de navegação direcionando o foco diretamente ao botão de submissão do formulário e adicionar o atributo aria-invalid=\"false\".",
+      "D": "Preservar os dados submetidos, fornecer uma mensagem textual descrevendo o erro próxima ao campo e sugerir o formato correto de preenchimento esperado.",
+      "E": "Implementar uma janela de alerta JavaScript bloqueante contendo a listagem completa dos campos com erro de preenchimento no formulário."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D está correta, obedecendo às diretrizes 3.3.1 (Identificação de Erro) e 3.3.3 (Sugestão de Erro). Além disso, não apagar dados já submetidos é uma premissa básica de UX/Acessibilidade em preenchimentos complexos. A alternativa A erra por usar exclusivamente as bordas coloridas para transmitir as informações (infração da regra de uso da cor 1.4.1). A alternativa B inviabiliza a inserção de letras exigidas no padrão de registros da OAB (ex: 123456/CE). A alternativa C é contraproducente ao marcar invalid=\"false\" num campo que, na verdade, possui erros. A alternativa E introduz um bloqueio de thread agressivo (alert) que quebra e confunde a árvore de acessibilidade reportada em leitores de tela."
+  },
+  {
+    "id": 170604,
+    "day_id": "dia_17_06",
+    "day_title": "17/06",
+    "theme": "WCAG 2.1 - Princípio Robusto",
+    "context": "Modernização de legados monolíticos em arquiteturas front-end reativas focando compatibilidade em agentes de usuários.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está migrando o sistema de controle de mandados para uma arquitetura Single Page Application (SPA) utilizando componentes de interface altamente customizados, como checkboxes estilizados com div e span. Os oficiais de justiça que utilizam leitores de tela como NVDA e JAWS relatam que o estado de seleção desses checkboxes não é anunciado durante a navegação. Para adequar os componentes ao princípio \"Robusto\" da WCAG 2.1, garantindo compatibilidade com agentes de usuário, a equipe de desenvolvimento deve:",
+    "options": {
+      "A": "Adicionar a tag <label> ao redor das divs customizadas e utilizar pseudo-classes CSS :checked e :focus para sinalizar o estado visual.",
+      "B": "Aplicar as funções role=\"checkbox\" aos contêineres customizados e gerenciar dinamicamente o estado por meio do atributo aria-checked=\"true\" ou \"false\".",
+      "C": "Substituir o framework de SPA por marcação HTML5 renderizada no servidor com componentes nativos acionados por requisições HTTP síncronas.",
+      "D": "Inserir o atributo title com o texto \"marcado\" ou \"desmarcado\" dinamicamente nos elementos span internos através de eventos de clique.",
+      "E": "Configurar aria-live=\"assertive\" nas divs para forçar o leitor de tela a anunciar imediatamente qualquer alteração estrutural no componente customizado."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B descreve com precisão a exigência técnica do critério 4.1.2 (Nome, Função e Valor). Componentes customizados desenvolvidos fora das tags nativas requerem a atribuição das marcações WAI-ARIA (Roles, States and Properties). A alternativa A propõe pseudo-classes de CSS que não funcionam para informar leitores de tela sobre elementos div/span. A alternativa C propõe regressar arquiteturalmente o software, o que não é requisitado pelo preceito de acessibilidade robusta. A alternativa D insere atributo 'title', configurando uma péssima prática pois omite a função do componente. A alternativa E aplica 'aria-live', o qual deve ser reservado unicamente para áreas assíncronas e nunca injetado de forma avulsa em controles interativos."
+  },
+  {
+    "id": 170605,
+    "day_id": "dia_17_06",
+    "day_title": "17/06",
+    "theme": "Níveis de Conformidade WCAG 2.1 (A, AA, AAA)",
+    "context": "Classificação de auditorias, escopos legais em órgãos judiciários e diferença nos parâmetros de conformidade.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um comitê multidisciplinar do TJ-CE estabeleceu a meta de adequar o Portal da Transparência ao Nível AA das diretrizes WCAG 2.1. O coordenador de TI exigiu a implementação de interpretação em Língua Brasileira de Sinais (Libras) em todos os vídeos de sessões plenárias pré-gravadas publicados no portal, argumentando tratar-se de um requisito essencial desse nível de conformidade. Do ponto de vista técnico e normativo das diretrizes WCAG 2.1, a exigência do coordenador:",
+    "options": {
+      "A": "É tecnicamente correta para o Nível AA e exige a inclusão simultânea de audiodescrição para todos os conteúdos de vídeo pré-gravados.",
+      "B": "Representa um critério de sucesso do Nível A, sendo obrigatório como premissa básica para alcançar qualquer nível de conformidade superior.",
+      "C": "Corresponde a um critério de sucesso específico do Nível AAA, não sendo uma exigência obrigatória para a certificação do Nível AA do portal.",
+      "D": "É inválida no contexto da WCAG 2.1 e constitui uma diretriz exclusiva da legislação nacional de acessibilidade não mapeada no W3C.",
+      "E": "Caracteriza um critério de sucesso do Nível AA exclusivo para transmissões ao vivo, sendo facultativo para mídias pré-gravadas."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C responde corretamente ao posicionamento das diretrizes. A interpretação em Linguagem de Sinais (Sign Language) para mídias pré-gravadas pertence ao critério de sucesso 1.2.6 e reside no Nível AAA de conformidade na WCAG 2.1. A alternativa A erra a classificação, mesmo que a audiodescrição seja, de fato, Nível AA. A alternativa B equivoca-se pois os requisitos básicos do Nível A envolvem fornecer meramente texto ou legendas. A alternativa D falha pois a regra é mapeada e padronizada globalmente pelo W3C. A alternativa E comete equívoco técnico crasso ao inventar regras de isenção que não existem no manual para transmissões ao vivo."
+  },
+  {
+    "id": 170606,
+    "day_id": "dia_17_06",
+    "day_title": "17/06",
+    "theme": "WCAG 2.1 - Orientação (1.3.4)",
+    "context": "Adaptação de softwares corporativos interativos desenhados para dispositivos móveis de tela de toque (tablets e celulares).",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O novo aplicativo móvel do TJ-CE, destinado à consulta de processos por cidadãos, foi projetado com um layout travado na orientação retrato (portrait) para preservar a integridade visual da interface gráfica. Usuários de cadeiras de rodas que possuem tablets fixados horizontalmente em seus equipamentos registraram reclamações pela impossibilidade de rotacionar o aplicativo. Considerando o critério \"Orientação\" adicionado na WCAG 2.1, a adequação técnica requerida consiste em:",
+    "options": {
+      "A": "Desenvolver duas versões distintas do aplicativo nas lojas digitais, uma compilada exclusivamente para retrato e outra para paisagem.",
+      "B": "Permitir a visualização e operação do conteúdo em ambas as orientações de tela, salvo quando uma orientação específica for essencial para o funcionamento.",
+      "C": "Adicionar um botão flutuante na interface gráfica que force a rotação da tela via software, contornando a trava de orientação do sistema operacional.",
+      "D": "Fornecer um aviso de texto visível na tela inicial informando sobre a trava de orientação e sugerindo o uso de dispositivos móveis adequados.",
+      "E": "Implementar o atributo CSS transform: rotate(90deg) no elemento raiz da aplicação quando detectada a orientação em paisagem pelo dispositivo."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B traduz literalmente o critério 1.3.4 (Orientation - Level AA). As aplicações nativas ou Web não devem bloquear restritivamente as mudanças de orientação dos aparelhos por questões estéticas. A alternativa A quebra os princípios do universal design ao impor a cisão dos softwares. A alternativa C propõe uma arquitetura redundante (via botões de software) inútil em cenários nativos de sistemas operacionais blindados (iOS/Android). A alternativa D desrespeita a norma de forma ostensiva, tentando imputar o problema ao equipamento do usuário de baixa mobilidade. A alternativa E fornece uma gambiarra disfuncional e irresponsável baseada em CSS que destrói alvos e proporções da tela sensível ao toque."
+  },
+  {
+    "id": 170607,
+    "day_id": "dia_17_06",
+    "day_title": "17/06",
+    "theme": "WCAG 2.1 - Contraste de Não-Texto (1.4.11)",
+    "context": "Atualizações em manuais de marcas digitais para interfaces UI com problemas de luminescência e limites operacionais.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na repaginação visual da intranet do TJ-CE, a equipe de design adotou um estilo minimalista, utilizando ícones cinza-claro para representar as funções de download e impressão, além de campos de formulário com bordas suaves sem preenchimento. Usuários com baixa visão enfrentam extremas dificuldades em identificar os limites interativos desses elementos. Conforme o critério \"Contraste Não-Textual\" da WCAG 2.1 (Nível AA), o ajuste correto dos elementos da interface gráfica demanda:",
+    "options": {
+      "A": "Assegurar uma relação de contraste de pelo menos 4.5:1 entre os ícones interativos, as bordas dos campos de entrada e as cores adjacentes.",
+      "B": "Aumentar a espessura das bordas dos componentes para no mínimo 3 pixels e aplicar efeitos de sombreamento dinâmico no estado de foco.",
+      "C": "Garantir que as partes visuais dos componentes de interface e gráficos apresentem uma relação de contraste mínima de 3:1 em relação às cores adjacentes.",
+      "D": "Modificar as cores dos ícones para escala de cinza absoluta e adicionar descrições em texto com fonte de tamanho mínimo equivalente a 18 pontos.",
+      "E": "Aplicar propriedades de alto contraste através de folhas de estilo alternativas acionadas por um atalho de teclado global na página."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C cita expressamente a exigência técnica do critério 1.4.11 inserido na WCAG 2.1 para controles gráficos. A exigência para partes visíveis de UI (Non-Text Contrast) é a taxa mínima de 3:1 em comparação ao fundo de tela. A alternativa A introduz uma confusão conceitual pegadinha, atribuindo o índice 4.5:1 de limite voltado aos blocos de texto normais e não às representações iconográficas. A alternativa B descreve meros elementos visuais supérfluos, sem interferir positivamente na luminescência do CSS. A alternativa D propõe formatações excessivamente arbitrárias para o tamanho das fontes e cores impositivas restritivas. A alternativa E não endereça adequadamente a resolução de design exigida no padrão oficial, delegando a correção às customizações avançadas."
+  },
+  {
+    "id": 170608,
+    "day_id": "dia_17_06",
+    "day_title": "17/06",
+    "theme": "ABNT NBR 17225:2025 - Setor Público",
+    "context": "Alinhamento das exigências técnicas com modelos e licitações para adequação das normas públicas federais e estaduais.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está publicando um novo edital de licitação para contratação de fábrica de software, exigindo que todos os artefatos web entregues cumpram os parâmetros rigorosos da nova ABNT NBR 17225:2025 voltada à acessibilidade no setor público. O documento técnico anexo especifica a obrigatoriedade de estruturação hierárquica e navegação previsível nos portais governamentais. Com base nos preceitos de estruturação semântica dessa norma e na correlação com tecnologias W3C, a solução exigida para a marcação de menus principais de navegação global é:",
+    "options": {
+      "A": "Englobar os links de navegação em tags <div> com o id=\"menu-principal\" e aplicar estilização CSS para exibição em forma de lista não ordenada.",
+      "B": "Empregar o elemento semântico <nav> contendo uma lista estruturada <ul> ou <ol> e mapear a propriedade aria-label=\"Menu Principal\" ou similar.",
+      "C": "Utilizar elementos genéricos <section> com a classe CSS de navegação e implementar rotinas em JavaScript para interceptar as teclas direcionais.",
+      "D": "Inserir a propriedade role=\"menubar\" em um contêiner <span> e configurar cada link filho com a função role=\"menuitem\" e tabindex=\"-1\".",
+      "E": "Estruturar a navegação utilizando elementos de tabela <table> para garantir o alinhamento responsivo e a leitura fluida linearizada."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B destaca a exigência padrão para os eixos de navegação nos preceitos do eMAG e ABNT de semântica HTML5 estrita: a integração da tag <nav>, do aninhamento coerente via <ul> / <ol> e da identificação descritiva WAI-ARIA com aria-label. A alternativa A erra utilizando div (ausência de semântica de interface global). A alternativa C comete grave erro recomendando a captura via JavaScript nativo com as tags genéricas de seção do HTML. A alternativa D introduz propriedades que são aplicáveis exclusivamente para padrões de aplicativos de Desktop/Sistemas, que demandam um menu denso, sendo mal-adaptadas e desproporcionais aos portais online judiciários. A alternativa E aplica uso obsoleto e defasado de tableless design."
+  },
+  {
+    "id": 170609,
+    "day_id": "dia_17_06",
+    "day_title": "17/06",
+    "theme": "WCAG 2.1 - Refluxo de Texto (Reflow - 1.4.10)",
+    "context": "Otimizações de acessibilidade front-end utilizando zoom em cenários de alta leitura judicial e adaptações fluidas de tela.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Magistrados com deficiência visual parcial utilizam o sistema de emissão de alvarás eletrônicos do TJ-CE utilizando ferramentas de ampliação de tela do navegador. Ao aplicar um zoom de 400%, a tabela principal de dados do processo quebra a formatação, exigindo que o usuário role a tela verticalmente e horizontalmente para conseguir ler uma única frase. Para satisfazer o critério de \"Refluxo\" da WCAG 2.1, o projeto de interface deve ser refatorado para:",
+    "options": {
+      "A": "Redimensionar dinamicamente as fontes para um tamanho fixo absoluto através da unidade \"px\", impedindo a ampliação do texto além de 200%.",
+      "B": "Implementar um layout fluido que rearranje o conteúdo em uma única coluna sem perda de informação e sem exigir rolagem bidimensional, para resoluções equivalentes a 320 pixels de largura CSS.",
+      "C": "Inserir barras de rolagem nativas estilizadas nos contêineres de tabela e truncar o texto longo com reticências para preservar a arquitetura da grade.",
+      "D": "Adicionar um controle de interface nativo que permita alternar para uma versão simplificada do portal desenvolvida puramente em texto.",
+      "E": "Travar a meta tag viewport com \"user-scalable=no\" e oferecer atalhos de teclado para navegação espacial entre as colunas visíveis da tabela."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B materializa especificamente o critério de Refluxo (1.4.10 - Nível AA). Interfaces devem permitir a ampliação até 400% (o correspondente a uma resolução CSS típica de 320px) permitindo que o texto e os dados fluam verticalmente, removendo a pesada penalidade da rolagem bidimensional. A alternativa A erra feio propondo o travamento do uso e as medições em 'px', proibidas nesses contextos para dimensionamento dinâmico de texto. A alternativa C encoraja explicitamente a perda da informação truncada, descumprindo o critério abertamente. A alternativa D invoca a segregação universal não incentivada nas interfaces responsivas. A alternativa E comete um atentado contra a usabilidade móvel introduzindo o travamento da meta tag viewport."
+  },
+  {
+    "id": 170610,
+    "day_id": "dia_17_06",
+    "day_title": "17/06",
+    "theme": "WCAG 2.1 - WAI-ARIA (Live Regions)",
+    "context": "Gestão de comportamentos e reações de screen readers diante de eventos de painéis eletrônicos dinâmicos via AJAX / WebSocket.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema do Plenário Virtual do TJ-CE possui um placar eletrônico que atualiza assincronamente os votos dos desembargadores via WebSocket, sem recarregamento da página. Cidadãos cegos que acompanham as sessões relataram que seus leitores de tela permanecem silenciosos e não anunciam os novos votos à medida que são computados na interface. O mecanismo técnico correto, pautado pelas especificações WAI-ARIA, para resolver esse incidente de comunicação sem interromper bruscamente a leitura atual do usuário é:",
+    "options": {
+      "A": "Envolver o contêiner do placar dinâmico com o atributo aria-live=\"polite\", orientando o leitor de tela a anunciar a atualização no próximo momento de inatividade.",
+      "B": "Executar a função nativa document.title por JavaScript a cada atualização de voto, acionando a leitura obrigatória da aba do navegador.",
+      "C": "Atribuir a propriedade aria-atomic=\"false\" e aria-relevant=\"all\" ao contêiner raiz do placar de votação para forçar a reconstrução da árvore de acessibilidade.",
+      "D": "Implementar o atributo role=\"alert\" no elemento do placar de votos para garantir que a atualização sobreponha imediatamente qualquer leitura em andamento.",
+      "E": "Criar um botão invisível focado dinamicamente via script e utilizar aria-describedby apontando para o conteúdo da nova atualização do voto."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A é a correta. Live Regions (regiões ativas dinâmicas) necessitam da injeção do atributo aria-live=\"polite\" para fornecer alertas orgânicos de atualizações visuais, esperando gentilmente as falas em andamento serem concluídas. A alternativa B causa desorientação espacial do conteúdo para o usuário focando-se no document e nas abas. A alternativa C configura propriedades auxiliares que, de maneira autônoma, são incapazes de acionar nativamente os eventos do leitor. A alternativa D apresenta atributo destrutivo (role=\"alert\" infere comportamento assertive), interrompendo o raciocínio auditivo do leitor em eventos não-emergenciais. A alternativa E configura grave violação da navegação por script maliciosa."
+  },
+  {
+    "id": 170611,
+    "day_id": "dia_17_06",
+    "day_title": "17/06",
+    "theme": "WCAG 2.1 - Atalhos de Caractere Único (2.1.4)",
+    "context": "Adaptação de atalhos operacionais diretos para prevenir incompatibilidades diretas com sistemas de ditação (assistência vocal).",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em um esforço de modernização, o painel administrativo da infraestrutura de TI do TJ-CE foi equipado com atalhos de teclado globais. Pressionar a tecla \"D\" isoladamente abre o painel de \"Diagnóstico de Rede\". No entanto, usuários que utilizam tecnologias de entrada por voz acabam disparando esse painel acidentalmente ao ditarem textos em outros contextos da máquina. Com base no critério \"Atalhos de Tecla de Caractere Único\" adicionado na WCAG 2.1, o sistema deve fornecer aos usuários a capacidade de:",
+    "options": {
+      "A": "Redefinir a tecla de atalho para utilizar teclas combinadas padrão do sistema operacional, como CTRL, ALT ou SHIFT, exclusivamente em formulários de entrada.",
+      "B": "Desligar o atalho de caractere único, remapeá-lo para incluir no mínimo um caractere modificador ou ativá-lo apenas quando o componente respectivo receber o foco.",
+      "C": "Desativar temporariamente o microfone do usuário via API do navegador enquanto a página estiver em primeiro plano para mitigar comandos falsos.",
+      "D": "Atribuir o atributo aria-keyshortcuts=\"D\" à raiz do documento HTML para sinalizar nativamente à ferramenta de voz que a tecla possui uso exclusivo.",
+      "E": "Configurar um temporizador de atraso (delay) de 3 segundos no script de escuta do teclado para confirmar se a tecla \"D\" foi pressionada intencionalmente."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a exata implementação para a exigência de Nível A da diretriz 2.1.4 de atalhos em interfaces robustas: atalhos formados por caracteres puros e isolados exigem mecanismos de limitação de escopo e desativação plena por parte do usuário de voz. A alternativa A erra restringindo sua aplicabilidade às caixas e controles de input ao invés do escopo de teclado macro da navegação. A alternativa C é catastrófica sob a ótica dos direitos dos usuários com deficiência motora pois o software lhes nega acesso à principal ferramenta (o microfone). A alternativa D infere um comportamento imperativo inválido no ecossistema WAI-ARIA de leitura. A alternativa E não aborda o aspecto comportamental de atalhos isolados e falha nas premissas de remapeamento."
+  },
+  {
+    "id": 170612,
+    "day_id": "dia_17_06",
+    "day_title": "17/06",
+    "theme": "WCAG 2.1 - Princípio Perceptível (Uso da Cor 1.4.1)",
+    "context": "Sinalização sistêmica dependente de convenções visuais e cromáticas baseadas em arquétipos como faróis de aprovação.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma equipe de auditores do TJ-CE identificou que, na nova plataforma de emissão de certidões negativas, o sistema comunica o status do processamento (Aprovado, Pendente, Recusado) de uma solicitação aplicando estritamente as cores verde, amarelo e vermelho na borda do cartão do processo. Usuários daltônicos reclamaram junto à Ouvidoria por não conseguirem diferenciar processos pendentes de recusados. Para solucionar a violação do princípio \"Perceptível\" de maneira elegante e em conformidade com as diretrizes:",
+    "options": {
+      "A": "Aumentar o brilho e a saturação da cor vermelha em 30% e adicionar um som de alerta reproduzido automaticamente caso o status do processo seja recusado.",
+      "B": "Preservar as cores atuais de borda e inserir a propriedade CSS filter: grayscale(100%) associada a um botão alternador de contraste.",
+      "C": "Adicionar um texto visível ou um ícone gráfico descritivo com alternativa textual adjacente ao status da cor, transmitindo a mesma informação estrutural.",
+      "D": "Substituir a codificação de cores por padrões de preenchimento CSS em tons de cinza claro, escuro e médio para todos os elementos da interface.",
+      "E": "Inserir a propriedade aria-roledescription com o nome exato da cor no elemento raiz do cartão para forçar a pronúncia cromática pelos leitores de tela."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C soluciona perfeitamente o problema apontado na diretriz 1.4.1 (Uso da cor). Nenhuma cor deve agir de maneira solitária para denotar estado; ícones visuais distintos ou etiquetas informativas adjacentes devem ser incluídos de imediato na interface. A alternativa A erra implementando áudios surpresa (ferindo o controle sonoro e assustando indivíduos neurodivergentes). A alternativa B camufla as informações vitais de daltônicos que ainda dependem do gradiente tonal nativo, punindo a interface original em virtude de falhas de base. A alternativa D troca as cores por meros tons de cinza não-significativos sem sanar o problema textual estrutural. A alternativa E força injetar metadados inadequados utilizando uma técnica ARIA reservada restritivamente para redefinição de roles dos objetos nativos."
+  },
+  {
+    "id": 170613,
+    "day_id": "dia_17_06",
+    "day_title": "17/06",
+    "theme": "WCAG 2.1 - Cancelamento de Apontador (2.5.2)",
+    "context": "Adaptações em quiosques presenciais da rede forense e manipulação dos eventos lógicos de sensores físicos resistivos ou capacitivos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Totens de autoatendimento touch-screen do TJ-CE foram instalados no Fórum Clóvis Beviláqua. Verificou-se que idosos e pessoas com tremores motores encostavam os dedos acidentalmente nos botões de \"Cancelar Solicitação\" e a ação era disparada imediatamente no evento de toque (down-event), perdendo todo o progresso do preenchimento sem chance de recuperação. Pelo critério \"Cancelamento de Apontador\" da WCAG 2.1, o projeto das interfaces de toque nesses totens necessita:",
+    "options": {
+      "A": "Exigir o uso de gestos baseados em caminho, como deslizar na tela (swipe) para confirmar ações destrutivas, bloqueando toques simples.",
+      "B": "Configurar o gatilho da ação apenas no momento de liberação do toque (up-event), permitindo que o usuário deslize o dedo para fora do botão para cancelar o acionamento.",
+      "C": "Implementar janelas de diálogo modais recursivas acionadas no down-event contendo temporizadores contínuos de 10 segundos antes do descarte.",
+      "D": "Calibrar a sensibilidade capacitiva da tela do totem para exigir uma pressão contínua mínima de 500 milissegundos para considerar o evento válido.",
+      "E": "Desabilitar as áreas interativas no raio de 10 pixels das bordas da tela física e adicionar alvos de toque estendidos com o atributo CSS padding."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B consolida o critério 2.5.2, essencial nas arquiteturas digitais das guias WCAG. Para interações multiponto em telas interativas, as execuções de ações primárias em controles virtuais devem aguardar e operar na fase ascendente do toque ou soltura (up-event), concedendo oportunidade mecânica de cancelamento via arrasto visual para longe do eixo ativo do botão. A alternativa A fere outras prerrogativas por impor de forma sumária os complexos path-based gestures aos idosos. A alternativa C adiciona entropia comportamental exagerada e complexificação indesejada às ações primitivas do núcleo de interface. A alternativa D e a alternativa E lidam com propriedades limítrofes do mundo da interface de hardware/CSS as quais escapam da padronização e da escopo central das diretrizes do consórcio W3C."
+  },
+  {
+    "id": 170614,
+    "day_id": "dia_17_06",
+    "day_title": "17/06",
+    "theme": "ABNT NBR 17225:2025 / WCAG - Foco Visível (2.4.7)",
+    "context": "Conflitos entre os manuais restritivos de marca e design institucional (branding) contra a aplicabilidade das guias de foco nativo.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na construção do novo portal de serviços judiciais do TJ-CE, o desenvolvedor front-end utilizou regras CSS (outline: none;) para remover o contorno padrão azul dos navegadores nos links e botões, justificando que o visual conflitava com o manual de marca da instituição. Após a remoção, usuários que operam o site com teclado não conseguem identificar qual elemento possui o foco ativo. Para atender ao requisito de Foco Visível exigido pela ABNT NBR 17225:2025 e pela WCAG 2.1, a ação corretiva imediata é:",
+    "options": {
+      "A": "Inserir a pseudoclasse CSS :hover com alteração na cor de fundo dos elementos para restaurar o estado visual de interação ausente.",
+      "B": "Restituir o contorno nativo dos navegadores ou implementar indicadores de foco customizados através da pseudoclasse CSS :focus com contraste apropriado.",
+      "C": "Aplicar animações de pulsação na opacidade dos componentes interativos por meio da pseudoclasse :active para evidenciar a área da tela em utilização.",
+      "D": "Configurar o atributo HTML autofocus iterativamente por meio de JavaScript em cada link presente na página seguindo a ordem do DOM (Document Object Model).",
+      "E": "Adicionar o atributo visual aria-current=\"location\" no elemento ativo momentaneamente e estilizar o cursor do mouse com a propriedade pointer."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B aborda com precisão estrita a diretriz 2.4.7 (Foco Visível). Os programadores que retiram intencionalmente o design intrínseco natural providenciado pelo framework do cliente do browser são obrigados contratualmente a substituí-lo via CSS :focus ou focus-visible visando não prejudicar o navegado por teclado. A alternativa A erra feio na pseudo-classe porque `:hover` não interage sob nenhuma hipótese com a navegação tabulada por teclados mecânicos. A alternativa C propõe `:active`, estado limitado ativado somente milissegundos a partir da ocorrência explícita do Enter em botões. A alternativa D viola toda o sequenciamento orgânico de navegação do browser forçando atualizações ativas contínuas imperdoáveis. A alternativa E não confere visualidade em sua formatação base, apenas atua em representações exclusivas do leitor de tela do aria-current e propriedades exclusivas do mouse."
+  },
+  {
+    "id": 170615,
+    "day_id": "dia_17_06",
+    "day_title": "17/06",
+    "theme": "WCAG 2.1 - Tempo Ajustável (2.2.1)",
+    "context": "Formulários de petições eletrônicas governamentais, restrições cronológicas e bloqueios transacionais sistêmicos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de envio de petições iniciais do TJ-CE possui um limite de tempo por sessão de segurança estabelecido em 10 minutos. Caso o advogado não finalize a submissão, a sessão expira abruptamente, descartando os arquivos e os formulários preenchidos. Para adequar o sistema ao critério \"Tempo Ajustável\" da WCAG 2.1, visando a inclusão de usuários com necessidades específicas de leitura ou mobilidade reduzida, a arquitetura do sistema deve ser modificada para:",
+    "options": {
+      "A": "Ampliar unilateralmente o tempo de expiração da sessão no servidor de autenticação para 24 horas ininterruptas e remover as restrições inativas.",
+      "B": "Adicionar scripts executados no cliente que efetuem solicitações HTTP silenciosas (keep-alive) em segundo plano a cada 5 minutos para impedir a expiração.",
+      "C": "Alertar o usuário antes da expiração, fornecendo no mínimo 20 segundos de margem, e oferecer uma opção acessível para estender o tempo da sessão.",
+      "D": "Inserir um cronômetro visual de contagem regressiva animado no topo da página e bloquear o uso de ferramentas de automação de preenchimento.",
+      "E": "Desativar a desconexão baseada em inatividade temporária do usuário e forçar a reautenticação com biometria facial ao momento exato da submissão."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C sintetiza fielmente a recomendação de usabilidade governamental e as delimitações da diretriz 2.2.1 (Timing Adjustable). O sistema requer uma provisão tolerante que aborde um tempo base que notifique de maneira explícita, conferindo o aviso limite de segurança em torno de 20 segundos para que um input adicional ressuscite e expanda o temporizador da sessão administrativa. A alternativa A erra devido a infrações irresponsáveis do setor governamental ao escancarar a janela temporal indiscriminadamente contra legislações de conformidade de acessos. A alternativa B apresenta uma burla ativa, camuflando inatividade e induzindo vazamentos de segurança silenciosos. A alternativa D fere a lógica de acessibilidade introduzindo bloqueios para a comunidade com necessidades de auto-preenchimento, e E propõe barreiras imensas baseadas em restrições de Hardware com a biometria facial."
+  }
+]

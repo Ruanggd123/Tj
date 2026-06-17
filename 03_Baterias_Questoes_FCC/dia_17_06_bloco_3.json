@@ -1,0 +1,272 @@
+[
+  {
+    "id": 385712,
+    "day_id": "dia_17_06",
+    "day_title": "Quarta-feira 17/06",
+    "theme": "Segurança de APIs, SSO, OAuth 2.0, OIDC e Keycloak",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE desenvolveu um novo portal do servidor (SPA em React) que necessita consumir dados sensíveis de uma API de recursos humanos hospedada internamente. A equipe de arquitetura determinou que o fluxo de autorização deve garantir que os tokens de acesso não sejam expostos ao navegador do usuário durante a etapa de redirecionamento, mitigando ataques de interceptação. O portal atua como um cliente público, sem capacidade de armazenar segredos com segurança. Para atender a essa exigência de segurança no protocolo OAuth 2.0, a abordagem arquitetural correta é implementar o fluxo",
+    "options": {
+      "A": "Authorization Code com PKCE (Proof Key for Code Exchange).",
+      "B": "Implicit Grant com validação rigorosa da URI de redirecionamento.",
+      "C": "Client Credentials com autenticação mútua TLS (mTLS).",
+      "D": "Resource Owner Password Credentials associado a um nonce criptográfico.",
+      "E": "Authorization Code tradicional com passagem de Client Secret via cabeçalho."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A é a correta. O fluxo Authorization Code com PKCE é a recomendação padrão (BCP - Best Current Practice) para Single Page Applications (clientes públicos) no OAuth 2.0/2.1, substituindo o Implicit Grant. O PKCE evita ataques de interceptação do código de autorização através de um gerador de chaves dinâmico (code_verifier e code_challenge), mitigando a necessidade de um Client Secret, que o SPA não conseguiria armazenar com segurança. A alternativa B é incorreta; o Implicit Grant expõe o token na URL e é desencorajado. A alternativa C é incorreta; Client Credentials não possui contexto de usuário (M2M). A alternativa D é incorreta; ROPC expõe credenciais do usuário. A alternativa E é incorreta; SPAs não podem utilizar Client Secret de forma segura."
+  },
+  {
+    "id": 592813,
+    "day_id": "dia_17_06",
+    "day_title": "Quarta-feira 17/06",
+    "theme": "Segurança de APIs, SSO, OAuth 2.0, OIDC e Keycloak",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o projeto de modernização do processo eletrônico, o TJ-CE adotou o OpenID Connect (OIDC) sob o protocolo OAuth 2.0. Um microsserviço de auditoria recebe requisições de um portal front-end e precisa verificar a identidade do usuário autenticado, bem como garantir que o cliente possui permissão para invocar a API. A equipe de desenvolvimento tentou utilizar o ID Token para autorizar as requisições na API de auditoria, mas a arquitetura de segurança reprovou a solução. A justificativa técnica para a reprovação e a prática correta de uso dos tokens estabelecem que",
+    "options": {
+      "A": "o ID Token atua como credencial de autorização para APIs de terceiros, enquanto o Access Token restringe-se ao consumo do endpoint UserInfo.",
+      "B": "o ID Token destina-se à verificação de identidade pelo cliente, devendo-se utilizar o Access Token para a autorização no Resource Server.",
+      "C": "o Access Token contém exclusivamente informações de autenticação do usuário final, cabendo ao ID Token a função de concessão de escopos.",
+      "D": "o ID Token possui validade perpétua por padrão, exigindo a substituição pelo Refresh Token para garantir a segurança no Resource Server.",
+      "E": "o Access Token e o ID Token são intercambiáveis em ambientes internos, sendo o uso de tokens opacos obrigatório para redes externas."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a correta. No OpenID Connect, o ID Token é um artefato assinado digitalmente que o Cliente utiliza para validar a identidade do usuário. Ele não foi concebido para ser enviado a APIs. O Access Token, por outro lado, é a credencial que o Cliente envia para o Resource Server para provar que tem autorização (escopos) para acessar os recursos. A alternativa A inverte os conceitos. A alternativa C erra ao afirmar que o ID Token concede escopos. A alternativa D é absurda, ID Tokens não têm validade perpétua e não substituem Refresh Tokens. A alternativa E erra ao propor a intercambialidade entre os tokens."
+  },
+  {
+    "id": 918374,
+    "day_id": "dia_17_06",
+    "day_title": "Quarta-feira 17/06",
+    "theme": "Segurança de APIs, SSO, OAuth 2.0, OIDC e Keycloak",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Ceará firmou um convênio com diversos órgãos do Governo do Estado. Os servidores desses órgãos precisam acessar um sistema de processos administrativos hospedado no TJ-CE. Para evitar a replicação do cadastro de usuários, a diretriz arquitetural exige que a autenticação ocorra nos provedores de identidade (IdPs) originais de cada órgão, com o sistema do TJ-CE confiando nessas autenticações de forma centralizada e transparente. Utilizando o Keycloak como solução de IAM (Identity and Access Management), o recurso nativo capaz de satisfazer essa demanda é",
+    "options": {
+      "A": "User Federation com sincronização LDAP assíncrona.",
+      "B": "Identity Brokering configurado com provedores externos SAML v2.0 ou OIDC.",
+      "C": "Client Scopes dinâmicos com mapeamento de atributos de sessão.",
+      "D": "Authorization Services baseado em políticas de acesso condicional (ABAC).",
+      "E": "Token Exchange para conversão de credenciais opacas em JWT."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a correta. Identity Brokering (Intermediação de Identidades) é a capacidade do Keycloak de atuar como intermediário para delegar a autenticação a provedores de identidade externos (como SAML, OIDC, ou redes sociais). A alternativa A é incorreta; User Federation sincroniza com repositórios de usuários (LDAP/AD), não lida com federação de provedores em protocolos de autenticação baseados em navegador. As alternativas C, D e E citam conceitos reais, mas que não servem para a finalidade de delegar a autenticação de forma centralizada."
+  },
+  {
+    "id": 472819,
+    "day_id": "dia_17_06",
+    "day_title": "Quarta-feira 17/06",
+    "theme": "Segurança de APIs, SSO, OAuth 2.0, OIDC e Keycloak",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um job de processamento noturno executado no backend do TJ-CE tem a responsabilidade de consolidar relatórios estatísticos de processos julgados e enviá-los para uma API do Conselho Nacional de Justiça (CNJ). Esse script opera de forma autônoma, sem intervenção ou contexto de um usuário humano, necessitando de um token de acesso para interagir de forma segura com o serviço de destino. De acordo com a RFC 6749 do OAuth 2.0, o tipo de concessão (grant type) adequado para essa integração de comunicação máquina a máquina (M2M) é o",
+    "options": {
+      "A": "Authorization Code.",
+      "B": "Implicit.",
+      "C": "Refresh Token.",
+      "D": "Resource Owner Password Credentials.",
+      "E": "Client Credentials."
+    },
+    "answer": "E",
+    "explanation": "A alternativa E é a correta. O Client Credentials Grant é o fluxo OAuth 2.0 adequado para comunicação máquina-máquina (M2M) sem interferência humana. O cliente autentica-se diretamente com o Authorization Server usando suas próprias credenciais (ex.: Client ID e Client Secret) e solicita um token. A alternativa A exige navegador e usuário. A alternativa B também. A alternativa C renova tokens antigos. A alternativa D expõe senha de usuários e é inadequada para scripts autônomos."
+  },
+  {
+    "id": 658392,
+    "day_id": "dia_17_06",
+    "day_title": "Quarta-feira 17/06",
+    "theme": "Segurança de APIs, SSO, OAuth 2.0, OIDC e Keycloak",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um sistema departamental do TJ-CE atua como um Relying Party (RP) em um fluxo OpenID Connect (OIDC). Após o sucesso na troca do código de autorização, o sistema adquire um Access Token e um ID Token. Devido a limitações de tamanho de cabeçalho HTTP estabelecidas pelo WAF, o ID Token emitido pelo Authorization Server contém apenas claims básicas de identificação, omitindo o departamento e a matrícula do servidor. Para recuperar os atributos de perfil complementares do usuário autenticado de maneira padronizada pelo OIDC, o Relying Party deve realizar uma requisição",
+    "options": {
+      "A": "HTTP POST no endpoint de Token, fornecendo o ID Token e o parâmetro grant_type.",
+      "B": "HTTP GET no endpoint de Introspection, enviando o Access Token como parâmetro de query.",
+      "C": "HTTP GET no endpoint de UserInfo, utilizando o Access Token no cabeçalho de autorização.",
+      "D": "HTTP POST no endpoint de Authorization, solicitando a emissão de um JWT com escopos estendidos.",
+      "E": "HTTP GET no endpoint de Discovery, extraindo as claims do documento de metadados da federação."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C é a correta. O endpoint de UserInfo é o recurso padronizado pelo OpenID Connect onde o Relying Party envia o Access Token via requisição HTTP GET para obter as claims (atributos do perfil) detalhadas do usuário, sem sobrecarregar o tamanho do ID Token inicial. A alternativa A cita endpoint de Token, usado para trocas de códigos. A alternativa B cita Introspection, que verifica a validade de tokens no lado do Resource Server. A alternativa D cita o endpoint de Authorization. A alternativa E cita o endpoint de Discovery, que expõe metadados da configuração do provedor, não dados do usuário logado."
+  },
+  {
+    "id": 192837,
+    "day_id": "dia_17_06",
+    "day_title": "Quarta-feira 17/06",
+    "theme": "Segurança de APIs, SSO, OAuth 2.0, OIDC e Keycloak",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O ambiente de TI do TJ-CE atende a dois públicos distintos: magistrados/servidores (público interno) e advogados/cidadãos (público externo). A política de segurança determina que esses grupos não compartilhem a mesma base de usuários, políticas de senha, clientes configurados e provedores de identidade. A separação lógica deve ser total, sem visibilidade cruzada de sessões. Administrando a plataforma Keycloak para fornecer esse isolamento, o administrador de segurança deve projetar a arquitetura provisionando",
+    "options": {
+      "A": "um único Realm com separação baseada em Roles e Groups de nível raiz.",
+      "B": "múltiplos Realms, destinando um domínio lógico exclusivo para cada público.",
+      "C": "um único Realm com segregação de Client Scopes e mapeamento de claims customizadas.",
+      "D": "múltiplos Identity Providers integrados ao Realm master em modo de isolamento restrito.",
+      "E": "um único Realm operando com instâncias distintas de User Federation em prioridades diferentes."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a correta. Em Keycloak, Realms gerenciam um conjunto isolado de usuários, credenciais, roles e grupos. Para uma separação lógica total e sem visibilidade cruzada (políticas de senha distintas, bases separadas, clientes e IdPs independentes), a melhor prática arquitetural é provisionar múltiplos Realms. A alternativa A falha na separação total. A alternativa C falha na separação de usuários. A alternativa D é restrita e inadequada. A alternativa E tenta criar prioridades em federações, mas não resolve o isolamento."
+  },
+  {
+    "id": 847291,
+    "day_id": "dia_17_06",
+    "day_title": "Quarta-feira 17/06",
+    "theme": "Segurança de APIs, SSO, OAuth 2.0, OIDC e Keycloak",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em uma auditoria de segurança no sistema de peticionamento eletrônico do TJ-CE, foi identificado um risco de vulnerabilidade Cross-Site Request Forgery (CSRF) durante a fase de autorização do protocolo OAuth 2.0. Um atacante poderia iniciar um fluxo de autorização, obter um código legítimo atrelado à sua própria conta e injetá-lo na sessão de uma vítima, forçando a aplicação a associar o acesso da vítima à conta do atacante. Para prevenir esse tipo de ataque de injeção de sessão e garantir que o fluxo originado pela aplicação seja o mesmo que recebe o callback, a RFC 6749 recomenda a utilização do",
+    "options": {
+      "A": "parâmetro state, contendo um valor aleatório e opaco gerado no início do fluxo pelo cliente.",
+      "B": "parâmetro nonce, assinado digitalmente no corpo do Access Token pelo servidor de autorização.",
+      "C": "fluxo PKCE (Proof Key for Code Exchange), validando o code_verifier na etapa de callback.",
+      "D": "cabeçalho HTTP Referer, com verificação estrita de origem (Strict-Origin-When-Cross-Origin).",
+      "E": "cabeçalho CORS (Cross-Origin Resource Sharing), restringindo a URI de redirecionamento."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A é a correta. O parâmetro 'state' é enviado no início do fluxo e validado no retorno (callback) para assegurar que a requisição de autorização inicial e o redirect final pertencem à mesma sessão do navegador, evitando ataques de Cross-Site Request Forgery (CSRF). A alternativa B erra ao aplicar o 'nonce', que no OIDC previne ataques de repetição contra o ID Token, não CSRF. A alternativa C (PKCE) mitiga interceptação de código (code injection/theft), não primariamente CSRF da mesma maneira que o state. As alternativas D e E listam controles de navegador que são inadequados e facilmente contornáveis para fluxos de redirecionamento."
+  },
+  {
+    "id": 239481,
+    "day_id": "dia_17_06",
+    "day_title": "Quarta-feira 17/06",
+    "theme": "Segurança de APIs, SSO, OAuth 2.0, OIDC e Keycloak",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "As APIs de microsserviços do TJ-CE, desenvolvidas em Spring Boot e atuando como Resource Servers, recebem tokens de acesso no formato JWT. Para otimizar o desempenho, a arquitetura eliminou a comunicação síncrona com o Keycloak (Token Introspection) para validação de cada requisição. Em vez disso, a validação ocorre localmente (offline) em cada API. Para garantir a integridade, autenticidade e a não alteração do JWT por partes maliciosas nesta abordagem stateless, o Resource Server deve",
+    "options": {
+      "A": "decodificar o payload em Base64Url e confrontar o campo subject com o banco de dados de usuários.",
+      "B": "solicitar a chave privada do Keycloak no momento da inicialização (startup) do microsserviço.",
+      "C": "verificar a assinatura digital do token utilizando a chave pública correspondente do servidor de autorização.",
+      "D": "validar o campo de escopo do cabeçalho do token em relação às permissões configuradas na aplicação.",
+      "E": "executar uma função de hash SHA-256 no token inteiro e verificar a correspondência com a chave de API."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C é a correta. A validação offline de um JWT por um Resource Server envolve o uso da chave pública do Authorization Server (geralmente obtida via endpoint JWKS e cacheada localmente) para verificar a assinatura digital do token, garantindo integridade e autenticidade. A alternativa A é insegura, decodificar base64 não envolve validação de assinatura. A alternativa B é incorreta; a chave privada nunca sai do Authorization Server. A alternativa D verifica autorização, mas não atesta quem emitiu o token e se não foi adulterado. A alternativa E tenta aplicar hash sem criptografia assimétrica padrão de JWTs."
+  },
+  {
+    "id": 748293,
+    "day_id": "dia_17_06",
+    "day_title": "Quarta-feira 17/06",
+    "theme": "Segurança de APIs, SSO, OAuth 2.0, OIDC e Keycloak",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE possui um diretório Microsoft Active Directory (AD) legatário que armazena as credenciais de rede de milhares de servidores e magistrados. Com a implantação do Keycloak para atuar como Authorization Server central de SSO em sistemas web, a diretoria de TI determinou que as senhas não devem ser migradas ou copiadas para a base de dados relacional interna do Keycloak, garantindo que o AD permaneça como a única fonte da verdade (SSOT) de credenciais de rede. A solução nativa no Keycloak para implementar este requisito operacional é a configuração de",
+    "options": {
+      "A": "Identity Brokering em modo de delegação (Delegated Authentication) com protocolo OIDC.",
+      "B": "User Federation com o modo de edição (Edit Mode) ajustado para READ_ONLY ou UNSYNCED.",
+      "C": "Token Exchange com mapeadores LDAP integrados aos Client Scopes.",
+      "D": "Realm Roles vinculadas dinamicamente ao atributo de memberOf do banco de dados relacional.",
+      "E": "Authenticator Execution Scripts interceptando e reencaminhando as requisições de login via SAML."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a correta. User Federation (Federação de Usuários) permite que o Keycloak integre-se a repositórios externos via LDAP ou Kerberos. Ao ajustar o Edit Mode para READ_ONLY ou UNSYNCED, o Keycloak valida as credenciais verificando diretamente no Active Directory sem gravar ou alterar as senhas localmente. A alternativa A foca em protocolos federados como OIDC/SAML, incompatíveis com conexões base em LDAP. As demais alternativas misturam recursos que não se aplicam à integração de diretório LDAP legada."
+  },
+  {
+    "id": 583921,
+    "day_id": "dia_17_06",
+    "day_title": "Quarta-feira 17/06",
+    "theme": "Segurança de APIs, SSO, OAuth 2.0, OIDC e Keycloak",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um aplicativo móvel de produtividade do magistrado (TJ-CE Mobile) utiliza tokens de acesso com tempo de vida curto (15 minutos) para consultar a pauta de audiências em uma API segura. A experiência do usuário requer que os magistrados não precisem redigitar suas credenciais de login sempre que o token de acesso expirar, permitindo a manutenção de sessões de longa duração de forma transparente. No escopo do OAuth 2.0, a manutenção de sessões prolongadas para a aplicação cliente contornar a expiração do Access Token é arquitetada utilizando o",
+    "options": {
+      "A": "Identity Token em substituição ao Access Token durante as requisições subsequentes.",
+      "B": "grant type Refresh Token para solicitar novos Access Tokens ao servidor de autorização.",
+      "C": "fluxo Client Credentials acompanhado de uma chave de API persistente armazenada no dispositivo móvel.",
+      "D": "parâmetro de escopo estendido offline_access inserido no cabeçalho das chamadas da API.",
+      "E": "grant type Implicit que garante a renovação automática dos tokens através de redirecionamentos ocultos no navegador."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a correta. O Refresh Token é um tipo de concessão (grant type) especificamente projetado para permitir que clientes obtenham um novo Access Token antes ou logo após a expiração do atual, garantindo a continuidade de sessões longas sem reprompt de credenciais. A alternativa A tenta forçar o uso do ID Token na API, o que é proibido. A alternativa C é para máquina-máquina. A alternativa D permite gerar tokens que resistem ao logout do usuário no navegador, mas a funcionalidade base de renovação continua sendo o Refresh Token. A alternativa E tenta aplicar Implicit, que não emite Refresh Tokens."
+  },
+  {
+    "id": 374829,
+    "day_id": "dia_17_06",
+    "day_title": "Quarta-feira 17/06",
+    "theme": "Segurança de APIs, SSO, OAuth 2.0, OIDC e Keycloak",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de segurança da informação do TJ-CE está analisando o fluxo de autenticação de um novo sistema web baseado no padrão OpenID Connect (OIDC). No relatório técnico, é descrito o fluxo em que o cliente web redireciona o agente de usuário (navegador) para o provedor de identidade, que autentica o usuário e retorna um código temporário de uso único ao cliente web através da URI de redirecionamento. O cliente web, em seguida, autentica-se diretamente no provedor em back-channel e troca esse código por um ID Token e um Access Token. O fluxo OpenID Connect descrito, considerado o mais robusto e seguro para aplicações tradicionais (Server-Side), é denominado",
+    "options": {
+      "A": "Implicit Flow.",
+      "B": "Hybrid Flow.",
+      "C": "Authorization Code Flow.",
+      "D": "Device Authorization Flow.",
+      "E": "Resource Owner Password Flow."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C é a correta. O Authorization Code Flow separa as etapas: o navegador obtém o código (via canal de frontend), e o servidor backend troca o código pelo Access/ID Token enviando também suas credenciais confidenciais (canal de backend). Isso isola os tokens do navegador. A alternativa A expõe os tokens no navegador. A alternativa B é híbrida. A alternativa D é para dispositivos restritos. A alternativa E não usa navegador para direcionamento."
+  },
+  {
+    "id": 683920,
+    "day_id": "dia_17_06",
+    "day_title": "Quarta-feira 17/06",
+    "theme": "Segurança de APIs, SSO, OAuth 2.0, OIDC e Keycloak",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Algumas APIs corporativas do TJ-CE operam com requisitos altíssimos de segurança e trabalham com Reference Tokens (tokens opacos), que não possuem informações inteligíveis embutidas em sua própria estrutura, ao contrário dos JWTs. Quando a API recebe uma requisição contendo esse token opaco no cabeçalho, ela necessita descobrir o estado de validação, os escopos associados e a identidade atrelada a ele. A abordagem padronizada pelo OAuth 2.0 para a API (Resource Server) verificar em tempo real o estado e os metadados de um token opaco junto ao Authorization Server é o uso do",
+    "options": {
+      "A": "Endpoint de Token Introspection.",
+      "B": "Endpoint de UserInfo.",
+      "C": "Mecanismo de Token Revocation.",
+      "D": "Mapeamento de JWKS (JSON Web Key Set).",
+      "E": "Intercâmbio de chaves via protocolo PKI (Public Key Infrastructure)."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A é a correta. O endpoint de Token Introspection (RFC 7662) recebe um token opaco via POST (normalmente) por um Resource Server e responde em formato JSON informando se está ativo, a quem pertence e quais escopos possui. A alternativa B (UserInfo) é para o Relying Party obter dados de perfil. A alternativa C (Revocation) anula tokens. A alternativa D (JWKS) é para chaves públicas em tokens JWT auto-contidos. A alternativa E fala de infraestrutura de chaves públicas, desconectado do padrão OAuth 2.0."
+  },
+  {
+    "id": 293847,
+    "day_id": "dia_17_06",
+    "day_title": "Quarta-feira 17/06",
+    "theme": "Segurança de APIs, SSO, OAuth 2.0, OIDC e Keycloak",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Devido ao aumento substancial de acessos simultâneos de advogados durante os períodos de encerramento de prazos processuais, o TJ-CE decidiu escalar horizontalmente a infraestrutura do Keycloak, implantando múltiplas instâncias em contêineres gerenciados pelo Kubernetes. Para que as sessões de usuários não sejam perdidas e o cache de dados distribuídos opere em cluster, permitindo que as instâncias compartilhem e invalidem estados entre si, o Keycloak apoia-se em um subsistema de cache corporativo na sua arquitetura subjacente. A tecnologia padrão fornecida e configurada nativamente pelo Keycloak para o clustering distribuído de cache e sessões é o",
+    "options": {
+      "A": "Redis Enterprise Sentinel.",
+      "B": "Apache Kafka Streams.",
+      "C": "Infinispan (suportado pelo JGroups).",
+      "D": "Memcached integrado via protocolo de gossip.",
+      "E": "Hazelcast IMDG."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C é a correta. Sob o capô, o Keycloak emprega o Infinispan como solução de in-memory data grid para fazer o clustering de cache, estado de autenticação e sessões de usuários, suportado pela camada de comunicação de rede do JGroups. As alternativas A, B, D e E listam tecnologias de mercado (Redis, Kafka, Memcached, Hazelcast) que não vêm embarcadas nativamente e não formam o cluster padrão do Keycloak."
+  },
+  {
+    "id": 839201,
+    "day_id": "dia_17_06",
+    "day_title": "Quarta-feira 17/06",
+    "theme": "Segurança de APIs, SSO, OAuth 2.0, OIDC e Keycloak",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em uma auditoria de migração legada do TJ-CE, foi identificado um sistema de controle de frotas que implementa a autenticação OAuth 2.0 através da coleta direta de usuário e senha do servidor em um formulário da própria aplicação cliente. A aplicação então repassa essas credenciais em texto puro por meio de uma requisição POST diretamente para o endpoint de token do Authorization Server para obter o Access Token. O comitê de segurança recomendou a extinção desse modelo com urgência. Sob a ótica do OAuth 2.0 e do OAuth 2.1 BCP (Best Current Practice), o fluxo identificado que é altamente desencorajado por compartilhar as credenciais diretamente com o cliente é o",
+    "options": {
+      "A": "Implicit Grant.",
+      "B": "Client Credentials Grant.",
+      "C": "Device Code Grant.",
+      "D": "Resource Owner Password Credentials Grant.",
+      "E": "Authorization Code Grant sem PKCE."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D é a correta. O Resource Owner Password Credentials (ROPC) grant exige que o usuário digite sua senha diretamente no aplicativo cliente, desrespeitando o princípio fundamental de delegação do OAuth 2.0. É categoricamente desencorajado pela BCP do OAuth 2.1 e descontinuado por motivos de segurança óbvios. As demais alternativas abordam fluxos diferentes e que não envolvem coleta de senhas diretamente no cliente."
+  },
+  {
+    "id": 492837,
+    "day_id": "dia_17_06",
+    "day_title": "Quarta-feira 17/06",
+    "theme": "Segurança de APIs, SSO, OAuth 2.0, OIDC e Keycloak",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após um incidente de violação de políticas de senhas em uma comarca do interior, o administrador de segurança do TJ-CE configurou o Keycloak para forçar que um lote específico de usuários modifique suas senhas e configure a autenticação em duas etapas (MFA) no próximo login efetuado na intranet. Ao tentarem acessar qualquer aplicação integrada na rede do tribunal, os usuários identificados são barrados no fluxo normal e direcionados para formulários de atualização obrigatória antes de receberem seus tokens de acesso. A funcionalidade nativa do Keycloak acionada para garantir essa exigência sequencial e bloqueante após a autenticação inicial é denominada",
+    "options": {
+      "A": "Required Actions.",
+      "B": "Authentication Flows estáticos.",
+      "C": "Identity Brokering condicional.",
+      "D": "Conditional OTP Scopes.",
+      "E": "Client Policies de validação forçada."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A é a correta. 'Required Actions' (Ações Obrigatórias) são fluxos que o usuário precisa completar impreterivelmente após a validação inicial das credenciais (login bem-sucedido) antes de a sessão ser totalmente estabelecida e os tokens emitidos. Usos comuns incluem: Update Password, Verify Email e Configure OTP. A alternativa B lista um conceito geral (Authentication Flows), mas não a funcionalidade exata de enforcement pós-login. As outras alternativas trazem termos irreais ou contextualmente falhos para essa definição."
+  }
+]
