@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1001,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Modalidades de Licitação em Projetos de Inovação",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Secretaria de Tecnologia da Informação do TJ-CE depara-se com um grande desafio estrutural: a implementação de uma plataforma preditiva baseada em Inteligência Artificial para mineração de dados em milhões de processos judiciais não estruturados. A equipe de arquitetura concluiu que a Administração Pública não consegue definir as especificações técnicas precisas da solução, tampouco identificar as melhores alternativas de mercado sem um engajamento profundo com a iniciativa privada. O projeto envolve adaptação contínua de tecnologias disruptivas e modelagem complexa de redes neurais. Diante desse cenário e com base na Lei nº 14.133/2021, o gestor de TI deve indicar o instrumento legal adequado para a condução do certame.",
+    "options": {
+      "A": "Concorrência sob o critério de julgamento de melhor técnica.",
+      "B": "Pregão eletrônico com exigência de prova de conceito prévia.",
+      "C": "Diálogo competitivo com avaliação paralela de inovações tecnológicas.",
+      "D": "Inexigibilidade de licitação amparada na inviabilidade de padronização.",
+      "E": "Credenciamento vinculado ao sistema de registro de preços corporativo."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A Lei 14.133/2021 introduziu o Diálogo Competitivo (Art. 28, V e Art. 32) exatamente para cenários de inovação tecnológica e alta complexidade, onde a Administração não consegue definir as especificações técnicas da solução ou precisa da iniciativa privada para identificar as melhores alternativas. A alternativa A erra ao sugerir concorrência, que pressupõe objeto bem definido. A alternativa B erra ao sugerir pregão para inovação sem padronização. A alternativa D erra ao forçar inexigibilidade, ignorando que há pluralidade de players de IA no mercado. A alternativa E erra ao usar credenciamento, voltado para contratações paralelas sem competição direta."
+  },
+  {
+    "id": 1002,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Contratação Direta: Inexigibilidade para Soluções Proprietárias",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Estado do Ceará opera seus sistemas de missão crítica em clusters de alta disponibilidade utilizando um Sistema Gerenciador de Banco de Dados (SGBD) de arquitetura proprietária. Após análise de capacidade, identificou-se a necessidade de aquisição de novas licenças corporativas do referido SGBD. O Estudo Técnico Preliminar demonstrou que a migração para outra plataforma causaria paralisação dos serviços jurisdicionais por meses. A fabricante do software atestou, por meio de documentação oficial, a existência de apenas um representante legal autorizado para comercialização dessas licenças na região Nordeste. Para efetuar a contratação em conformidade com a Lei nº 14.133/2021, a providência técnica e jurídica correta é a",
+    "options": {
+      "A": "dispensa de licitação condicionada ao valor da contratação contínua.",
+      "B": "inexigibilidade de licitação mediante comprovação de exclusividade.",
+      "C": "realização de pregão eletrônico restrito a representantes oficiais cadastrados.",
+      "D": "abertura de concorrência com critério de menor preço por lote de licenciamento.",
+      "E": "formalização de credenciamento de empresas integradoras de soluções corporativas."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a correta. O Art. 74, I da Lei 14.133/2021 determina que a licitação é inexigível em caso de inviabilidade de competição, em especial para aquisição de materiais, equipamentos ou gêneros fornecidos por produtor, empresa ou representante comercial exclusivos. Como o SGBD é proprietário e há atestado de exclusividade, a competição é faticamente inviável. As alternativas A, C e D erram ao ignorar a inviabilidade de competição. A alternativa E erra pois credenciamento exige viabilidade de contratação de todos os interessados que preencham os requisitos."
+  },
+  {
+    "id": 1003,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Contratação Direta: Dispensa Emergencial em Incidentes Cibernéticos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o fim de semana, a infraestrutura central do TJ-CE sofreu um ataque massivo de ransomware, comprometendo o principal datacenter e inativando a replicação síncrona para o site de disaster recovery. O comitê de crise deliberou pela necessidade premente de contratação de uma consultoria especializada em resposta a incidentes cibernéticos (Incident Response) para contenção de danos, análise forense e restauração dos serviços essenciais, sob risco de perda irreversível do acervo digital. Considerando as regras de contratação direta previstas na Lei nº 14.133/2021, o enquadramento adequado para solucionar o incidente é a",
+    "options": {
+      "A": "inexigibilidade de licitação para serviços de notória especialização por tempo indeterminado.",
+      "B": "dispensa de licitação com limitação de prazo contratual emergencial a um ano.",
+      "C": "dispensa de licitação atrelada à posterior deflagração obrigatória de pregão eletrônico.",
+      "D": "condução de diálogo competitivo em caráter de urgência máxima de seis meses.",
+      "E": "realização de pregão presencial emergencial com prazos recursais reduzidos pela metade."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. A Lei 14.133/2021, em seu Art. 75, VIII, prevê a dispensa de licitação em casos de emergência ou calamidade pública que possam comprometer a segurança de pessoas, obras, serviços ou equipamentos, limitando a contratação ao prazo máximo de 1 (um) ano, vedada a prorrogação do contrato. A alternativa A erra na fundamentação e na falta de limite de tempo. A alternativa C traz uma condição inexistente na nova lei. As alternativas D e E inventam procedimentos anômalos não amparados na Lei 14.133."
+  },
+  {
+    "id": 1004,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Modalidades: Pregão para Bens e Serviços Comuns de TI",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Com o aumento do quadro de servidores e a implementação integral do teletrabalho híbrido, o TJ-CE identificou a necessidade de renovar o parque computacional, prevendo a aquisição de 5.000 monitores de vídeo LED de 24 polegadas e 3.000 notebooks corporativos. A equipe de infraestrutura redigiu as especificações no Termo de Referência com base em padrões de mercado amplamente conhecidos, sem exigência de inovações disruptivas ou arquiteturas singulares. Os equipamentos possuem níveis de desempenho e qualidade objetivamente definidos. De acordo com a Lei nº 14.133/2021, a contratação exige a aplicação da modalidade",
+    "options": {
+      "A": "concorrência amparada no critério de técnica e preço.",
+      "B": "pregão conduzido pelo critério de menor preço ou maior desconto.",
+      "C": "diálogo competitivo fundamentado no critério de menor dispêndio.",
+      "D": "credenciamento orientado pelo critério de maior retorno econômico.",
+      "E": "dispensa de licitação motivada pelo parcelamento do objeto técnico."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a correta. O Art. 29 da Lei 14.133/2021 determina que o pregão é obrigatório para a aquisição de bens e serviços comuns, cujo critério de julgamento poderá ser o de menor preço ou de maior desconto. Como os equipamentos de TI descritos têm padrões de mercado amplamente conhecidos e especificações objetivas, classificam-se como bens comuns. A alternativa A erra pois a concorrência não é a regra para bens comuns. A alternativa C erra na modalidade e critério. A D e E aplicam institutos incompatíveis com o cenário de aquisição em massa de bens padronizados."
+  },
+  {
+    "id": 1005,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Fases da Licitação: Ordem e Rito Processual",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para a modernização do sistema de controle de acesso lógico do Tribunal, a comissão de contratação está desenhando o rito procedimental de um pregão eletrônico destinado à aquisição de certificados digitais e tokens criptográficos padronizados. Durante a modelagem do edital, surgiu uma controvérsia sobre a ordenação correta das etapas do certame. Segundo as diretrizes da Lei nº 14.133/2021, que consolida o rito processual das licitações, a sequência correta e regular das fases a serem seguidas após a apresentação de propostas é",
+    "options": {
+      "A": "julgamento das propostas, habilitação, recursos e homologação.",
+      "B": "habilitação documental, julgamento das propostas, recursos e homologação.",
+      "C": "homologação, julgamento das propostas, habilitação e recursos preliminares.",
+      "D": "análise de recursos, habilitação técnica, avaliação de propostas e homologação.",
+      "E": "habilitação técnica, recursos, julgamento econômico e homologação final."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. A Lei 14.133/2021 consolidou no seu Art. 17 a inversão de fases como regra geral para todas as modalidades (exceto quando houver justificativa expressa para o rito tradicional). A ordem correta é: fase preparatória, divulgação do edital, apresentação de propostas e lances, julgamento, habilitação, fase recursal e homologação. A alternativa B descreve o rito ultrapassado da Lei 8.666/93. As demais alternativas apresentam ordens ilógicas e desconexas com a legislação vigente."
+  },
+  {
+    "id": 1006,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Estudo Técnico Preliminar em TI",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O planejamento estratégico de TI do TJ-CE determinou a migração integral dos sistemas legados on-premise para um modelo de Nuvem Pública (IaaS/PaaS). A equipe responsável pela fase preparatória da contratação deve elaborar um documento que evidencie o problema a ser resolvido, demonstre a viabilidade técnica e econômica do projeto em comparação a outras alternativas de mercado e justifique a adequação do escopo. No contexto das exigências instituídas pela Lei nº 14.133/2021 para o planejamento de contratações complexas de TI, este artefato é o",
+    "options": {
+      "A": "Projeto Básico de preenchimento facultativo para soluções de nuvem.",
+      "B": "Termo de Referência simplificado orientado a métricas de desempenho.",
+      "C": "Estudo Técnico Preliminar de elaboração obrigatória na fase preparatória.",
+      "D": "Matriz de Riscos padronizada aplicável a inexigibilidades sistêmicas.",
+      "E": "Plano de Diretrizes de Tecnologia da Informação com força executiva."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C é a correta. O Estudo Técnico Preliminar (ETP) é o documento da fase preparatória que evidencia a viabilidade técnica e econômica da contratação, base para a elaboração do Termo de Referência ou Projeto Básico, sendo sua elaboração obrigatória como regra na Lei 14.133/2021 (Art. 18, I e § 1º). A alternativa A erra ao chamar de Projeto Básico (que é posterior) e tratá-lo como facultativo. As alternativas B, D e E misturam conceitos (TR, Matriz de Riscos, PDTI) que não atendem à descrição exata do documento que compara alternativas de viabilidade."
+  },
+  {
+    "id": 1007,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Prova de Conceito (PoC) nas Aquisições de Software",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na aquisição de um software corporativo de orquestração de contêineres, o edital do TJ-CE previu a realização de uma Prova de Conceito (PoC) técnica para garantir que a solução ofertada atenda estritamente aos complexos requisitos de integração com a infraestrutura atual. Um dos fornecedores impugnou o edital questionando o momento de exigência da referida demonstração técnica, argumentando atrasos no certame. De acordo com os preceitos da Lei nº 14.133/2021 relativos às avaliações e amostras, o procedimento correto na condução dessa PoC consiste na",
+    "options": {
+      "A": "solicitação prévia ao credenciamento para todos os licitantes interessados no certame.",
+      "B": "exigência na fase de julgamento das propostas exclusivamente ao licitante provisoriamente vencedor.",
+      "C": "avaliação vinculada à abertura das propostas financeiras de todos os competidores simultaneamente.",
+      "D": "realização conjunta e colaborativa durante a fase preparatória do termo de referência.",
+      "E": "substituição da documentação comprobatória de qualificação técnica pela demonstração sistêmica."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é correta. O Art. 41 da Lei 14.133/2021 estabelece que no caso de exigência de amostra ou prova de conceito, esta deve ser solicitada na fase de julgamento das propostas, ou de lances, e somente do licitante provisoriamente vencedor (salvo justificativa técnica em sentido contrário, o que torna a regra aplicável). Exigir PoC de todos antecipadamente (opção A e C) fere a celeridade e onera os licitantes. A alternativa D distorce o momento licitatório, e a E erra ao propor a substituição irrestrita de documentos de habilitação técnica."
+  },
+  {
+    "id": 1008,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Sistema de Registro de Preços (SRP)",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para sustentar a modernização das comarcas do interior ao longo dos próximos dois anos, o TJ-CE mapeou a necessidade de substituição paulatina de roteadores e switches corporativos. Contudo, o Tribunal não possui infraestrutura de armazenamento logístico para receber todo o maquinário de uma só vez, tampouco cronograma rígido de instalação em cada localidade. A diretoria técnica manifestou interesse em um mecanismo que permita formalizar os preços hoje, mas encomendar os equipamentos gradativamente, à medida da necessidade real. Sob a ótica da Lei nº 14.133/2021, o instrumento adequado à situação descrita é a",
+    "options": {
+      "A": "licitação fracionada conduzida por múltiplas dispensas de pequeno valor.",
+      "B": "adoção do sistema de registro de preços atrelado a pregão ou concorrência.",
+      "C": "contratação emergencial recorrente com base na continuidade dos serviços vitais.",
+      "D": "condução de diálogo competitivo focado na infraestrutura de rede contínua.",
+      "E": "formalização de credenciamento limitado a fornecedores com estoque local imediato."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O Sistema de Registro de Preços (SRP) é o procedimento auxiliar aplicável quando houver conveniência de contratações frequentes ou entregas parceladas, em que a Administração não precisa adquirir/estocar tudo de uma vez. Na Lei 14.133/2021 (Art. 82, § 5º), o SRP pode ser utilizado nas modalidades pregão e concorrência (e excepcionalmente em contratação direta). A alternativa A configura fracionamento ilegal de despesa. As demais opções são institutos incorretos para a dinâmica de compra parcelada sem obrigatoriedade de consumo imediato."
+  },
+  {
+    "id": 1009,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Concorrência e Serviços Especiais de TI",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um projeto crítico do TJ-CE demanda a construção de um Sistema de Gestão de Precatórios extremamente customizado, integrado aos bancos de dados estaduais, federais e ao sistema bancário. O desenvolvimento adotará metodologias ágeis com métricas de esforço baseadas em pontos de função e exigirá arquitetura de microsserviços inédita no órgão. O Estudo Técnico Preliminar atestou que a solução não pode ser classificada como bem ou serviço comum, dada a alta heterogeneidade e a impossibilidade de aferição estrita por critérios puramente objetivos de padronização de mercado. Para este tipo de objeto, a Lei nº 14.133/2021 aponta como rito aplicável a",
+    "options": {
+      "A": "modalidade pregão sob o critério rigoroso de melhor técnica.",
+      "B": "modalidade concorrência pautada no critério de técnica e preço.",
+      "C": "contratação por inexigibilidade pautada na inviabilidade técnica de padronização.",
+      "D": "dispensa de licitação fundamentada na necessidade de inovação tecnológica direta.",
+      "E": "modalidade concurso focada na avaliação cega do código-fonte do escopo."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a correta. Bens e serviços especiais (não comuns) não podem ser licitados via pregão. A concorrência é a modalidade adequada para a contratação de bens e serviços especiais e de obras e serviços comuns e especiais de engenharia (Art. 29). Para serviços de TI complexos e de natureza predominantemente intelectual, utiliza-se frequentemente a Concorrência com critério de técnica e preço (Art. 36). A alternativa A é absurda, pois pregão não admite critério de melhor técnica. As alternativas C e D tentam forçar contratação direta onde existe ampla competição de fábricas de software."
+  },
+  {
+    "id": 1010,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Diálogo Competitivo: Sigilo e Compartilhamento de Soluções",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No decurso da fase de diálogos de uma licitação para implementação de smart building na sede do TJ-CE, a comissão de contratação deparou-se com uma solução altamente inovadora proposta por um dos licitantes, que envolvia protocolos de rede IoT patenteados. A fim de otimizar a fase competitiva e elaborar um edital definitivo mais robusto, um membro da comissão sugeriu incorporar aspectos técnicos dessa solução específica para nivelar as propostas das demais empresas. Considerando os ditames da Lei nº 14.133/2021 aplicáveis ao Diálogo Competitivo, a referida ação encontra barreira na",
+    "options": {
+      "A": "exigência de compartilhamento obrigatório voltado à isonomia absoluta entre os participantes.",
+      "B": "vedação à revelação de soluções propostas sem o consentimento prévio e expresso do licitante.",
+      "C": "permissão restrita a arquiteturas classificadas como domínio público em registros internacionais.",
+      "D": "condição de assinatura de um termo de confidencialidade cruzada imposto aos demais fornecedores.",
+      "E": "restrição de transferência irrestrita de dados técnicos exclusivamente à equipe de controle interno."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. A Lei 14.133/2021 trata do sigilo no diálogo competitivo de forma rigorosa. O Art. 32, § 1º, inciso IV, estabelece que a Administração não poderá revelar a outros licitantes as soluções propostas ou as informações confidenciais comunicadas por um candidato, sem o seu consentimento. A alternativa A inverte a lei. As demais alternativas (C, D, E) criam invenções normativas inexistentes no texto legal para justificar a violação de propriedade intelectual e sigilo da proposta."
+  },
+  {
+    "id": 1011,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Inexigibilidade por Notória Especialização",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal requer a elaboração de um parecer técnico complexo, englobando a reestruturação profunda do plano diretor de segurança da informação institucional, em face das novas regulamentações globais. Para tanto, indicou-se a contratação de um renomado doutor em criptografia pós-quântica, profissional que detém métodos de análise únicos e incontestável reconhecimento no campo científico e profissional. O trabalho não pode ser delegado de maneira padronizada, dada a natureza eminentemente intelectual e singular do escopo delineado. A via de contratação prescrita pelo ordenamento jurídico, segundo a Lei nº 14.133/2021, é a",
+    "options": {
+      "A": "dispensa de licitação fundamentada na alta complexidade técnica do projeto institucional.",
+      "B": "inexigibilidade de licitação amparada na singularidade do serviço e notória especialização.",
+      "C": "concorrência de rito especial com peso exclusivo direcionado à pontuação da proposta técnica.",
+      "D": "condução de concurso de projetos voltado a acadêmicos de institutos de pesquisa tecnológica.",
+      "E": "abertura de pregão eletrônico de escopo fechado condicionado a rigorosa qualificação teórica."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a correta. Conforme a Lei 14.133/2021 (Art. 74, III), é inexigível a licitação para a contratação de serviços técnicos especializados de natureza predominantemente intelectual, com profissionais ou empresas de notória especialização. A singularidade do objeto e a notória especialização impedem a viabilidade de competição por preços ou propostas idênticas. A alternativa A erra a classificação legal (dispensa vs. inexigibilidade). As demais modalidades listadas são incompatíveis com objetos onde a competição se demonstra técnica e juridicamente inviável devido à singularidade pessoal."
+  },
+  {
+    "id": 1012,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Licitação Deserta em TI e Contratação Direta",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em busca de ampliar a segurança ergonômica de seu data center, o TJ-CE deflagrou licitação para aquisição de racks estabilizados e bancadas especializadas. Realizada a sessão pública eletrônica, não acudiram fornecedores interessados no certame, configurando licitação deserta. Uma nova abertura do certame causaria severos prejuízos ao cronograma de migração de servidores vitais ao Poder Judiciário. Considerando as regras de exceção e preservação do interesse público contidas na Lei nº 14.133/2021, a Administração tem permissão para realizar a",
+    "options": {
+      "A": "contratação direta por inexigibilidade sustentada na ausência absoluta do mercado fornecedor.",
+      "B": "alteração unilateral técnica do projeto básico para estímulo artificial e atração de novas propostas.",
+      "C": "dispensa de licitação vinculada à estrita manutenção de todas as condições do edital fracassado.",
+      "D": "adjudicação impositiva à empresa detentora dos maiores índices no estudo técnico preliminar.",
+      "E": "majoração automática do valor de referência estimado em proporção de até vinte e cinco por cento."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A Lei 14.133/2021 autoriza a dispensa de licitação quando não acudirem interessados à licitação anterior (licitação deserta) e esta, justificadamente, não puder ser repetida sem prejuízo para a Administração, desde que mantidas todas as condições preestabelecidas no edital (Art. 75, III, 'a'). A alternativa A erra pois o caso é de dispensa, não inexigibilidade. A alternativa B erra pois alterar condições obriga a nova licitação. D e E são atos inexistentes/ilegais no direito administrativo brasileiro."
+  },
+  {
+    "id": 1013,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Sigilo do Orçamento na Licitação",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na publicação do edital destinado ao licenciamento de uma suíte corporativa de antivírus (Endpoint Detection and Response - EDR), o responsável pelo certame decidiu por não divulgar publicamente o valor estimado da contratação no corpo do edital. O objetivo dessa manobra é incentivar propostas baseadas nos reais custos da iniciativa privada, evitando o balizamento de preços no teto estipulado pela Administração. No tocante a essa prática de orçamento sigiloso, a nova sistemática de licitações estabelecida pela Lei nº 14.133/2021 apresenta a",
+    "options": {
+      "A": "vedação expressa atrelada aos princípios corolários da transparência plena e probidade pública.",
+      "B": "permissão integral válida exclusivamente para as modelagens de concorrência por melhor técnica.",
+      "C": "possibilidade admitida mediante justificativa, preservado o acesso imediato aos órgãos de controle.",
+      "D": "obrigatoriedade absoluta em toda e qualquer contratação de tecnologia de informação de vulto.",
+      "E": "condição restritiva atrelada à autorização antecipada da corregedoria do Tribunal respectivo."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A Lei 14.133/2021 expressamente prevê no Art. 24 a possibilidade do orçamento sigiloso. O valor estimado da contratação poderá ter caráter sigiloso, sem prejuízo da divulgação do detalhamento dos quantitativos e das demais informações necessárias, desde que justificado e sendo estritamente obrigatório o acesso aos órgãos de controle interno e externo a qualquer tempo. A alternativa A erra pois não há vedação. B, D e E impõem regras ou restrições não previstas, como limitar a certas modalidades ou impor obrigatoriedade generalizada."
+  },
+  {
+    "id": 1014,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Margem de Preferência em Bens e Serviços de TI",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O departamento de infraestrutura de TI avalia o uso de componentes de hardware manufaturados em território nacional, visando ao fomento da indústria de componentes eletrônicos pátria. Em um processo de concorrência regular, a Administração discute a validade jurídica de sobrepor a oferta de um fornecedor nacional em relação a equipamentos idênticos de origem importada, ainda que com uma ligeira variação superior de custo. Sobre a inserção de privilégios de cunho econômico local no certame, a Lei nº 14.133/2021 estabelece a",
+    "options": {
+      "A": "aplicação compulsória de margem de preferência ilimitada voltada a empresas de origem local.",
+      "B": "concessão de margem de preferência direcionada a bens e serviços calcados em tecnologia nacional.",
+      "C": "proibição de estabelecimento de critérios desiguais no escopo de bens de base tecnológica.",
+      "D": "equiparação financeira automática de propostas estrangeiras e nacionais no teto referencial do edital.",
+      "E": "atribuição de bônus econômico fixo calculado sobre o valor global da proposta internacional."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a correta. O Art. 26 da Lei 14.133/2021 autoriza a concessão de margem de preferência para bens manufaturados e serviços nacionais que atendam a normas técnicas brasileiras, bem como para bens, serviços e obras resultantes de desenvolvimento de tecnologia nacional, com o limite de até 10% ou até 20% (casos de inovação/sustentabilidade). A alternativa A erra ao afirmar que é ilimitada. C erra por negar a possibilidade explícita da lei. D e E inventam regras de equiparação automática e bônus não previstas em lei."
+  },
+  {
+    "id": 1015,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Catálogo Eletrônico de Padronização para TI",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para agilizar e garantir consistência técnica nas aquisições rotineiras de mouses, cabos de rede e webcams para as unidades de atendimento, o TJ-CE optou por referenciar as especificações a partir de uma base centralizada de descrições e requisitos, evitando a formulação isolada de Termos de Referência redundantes em cada setor. A Lei nº 14.133/2021 modernizou o arcabouço tecnológico de compras governamentais, tornando imperativa, nas aquisições de bens comuns pela Administração, a adoção de sistemas informatizados representados pelo",
+    "options": {
+      "A": "banco unificado de inovações disruptivas de infraestrutura.",
+      "B": "sistema de registro imobiliário de ativos corporativos fechados.",
+      "C": "catálogo eletrônico de padronização de compras, serviços e obras.",
+      "D": "registro consultivo de preços mínimos para materiais de baixo valor.",
+      "E": "portal da transparência de credenciamento técnico de serviços pontuais."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A Lei 14.133/2021 em seu Art. 19, inciso II, exige que os órgãos da Administração, quando da aquisição de bens ou serviços comuns, utilizem preferencialmente o catálogo eletrônico de padronização de compras, serviços e obras. Este catálogo centraliza a especificação técnica padronizada, eliminando redundâncias e falhas nas descrições de bens de prateleira (como periféricos de TI). As alternativas A, B, D e E trazem nomes fictícios que não correspondem à estrutura desenhada pela Nova Lei de Licitações."
+  }
+]

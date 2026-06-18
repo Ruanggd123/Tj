@@ -1,0 +1,272 @@
+[
+  {
+    "id": 81034,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "O Tribunal de Justiça do Ceará (TJ-CE) enfrenta um aumento exponencial no volume de processos físicos a serem digitalizados e indexados por inteligência artificial. A área de modernização processual identificou a necessidade de uma nova solução tecnológica para automatizar a triagem de petições iniciais. Um Analista de TI foi designado para orientar a área demandante na elaboração do Documento de Oficialização da Demanda (DOD), o artefato que inaugura a fase de planejamento da contratação de TIC.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Considerando as diretrizes da IN SGD/ME nº 94/2022 para a fase de planejamento da contratação, o Documento de Oficialização da Demanda (DOD) elaborado pela área requisitante deve conter, obrigatoriamente, a:",
+    "options": {
+      "A": "indicação do alinhamento da contratação aos instrumentos de planejamento estratégico do tribunal.",
+      "B": "definição detalhada da arquitetura de software e dos protocolos de integração de rede.",
+      "C": "avaliação completa dos riscos de execução e das respectivas ações de mitigação do projeto.",
+      "D": "especificação dos critérios técnicos de aceite e do modelo de remuneração atrelado a resultados.",
+      "E": "estimativa do Custo Total de Propriedade da solução contemplando o ciclo de vida útil."
+    },
+    "answer": "A",
+    "explanation": "A correta é a [A]. O art. 10 da IN 94/2022 define que o DOD deve conter o alinhamento entre a contratação, o Plano de Contratações Anual e os instrumentos de planejamento estratégico (como o PDTIC). Erro da [B]: Arquitetura e protocolos técnicos são detalhados no TR ou ETP, não no DOD. Erro da [C]: A avaliação de riscos e suas mitigações compõem o Mapa de Gerenciamento de Riscos (MGR). Erro da [D]: Critérios de aceite e modelo de remuneração atrelado a resultados são escopo estrito do Termo de Referência (TR). Erro da [E]: O cálculo do Custo Total de Propriedade (TCO) é elemento de análise financeira do Estudo Técnico Preliminar (ETP)."
+  },
+  {
+    "id": 49211,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "Após a aprovação do DOD para a aquisição de uma solução de segurança cibernética para o datacenter secundário do TJ-CE, a autoridade competente deve instituir a Equipe de Planejamento da Contratação (EPC). A portaria de nomeação gera dúvidas no setor de governança de TI quanto aos papéis exigidos pela norma vigente para garantir a segregação de funções e a completude do planejamento.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Nos termos da IN SGD/ME nº 94/2022, a Equipe de Planejamento da Contratação (EPC) é essencial para a condução dos estudos preparatórios e deve ser composta, no mínimo, por servidores representantes das seguintes áreas ou perfis:",
+    "options": {
+      "A": "Fiscal de Contrato, Gestor de Contrato e Auditor de Controle Interno.",
+      "B": "Integrante Requisitante, Integrante Técnico e Integrante Administrativo.",
+      "C": "Autoridade Competente, Pregoeiro Oficial e Especialista de Segurança da Informação.",
+      "D": "Patrocinador do Projeto, Gerente de Projeto e Integrante de Negócio.",
+      "E": "Diretor de Tecnologia, Analista de Licitação e Representante Legal do Fornecedor."
+    },
+    "answer": "B",
+    "explanation": "A correta é a [B]. O art. 11 da IN 94/2022 exige expressamente na composição da Equipe de Planejamento da Contratação (EPC) os papéis de Integrante Requisitante, Integrante Técnico e Integrante Administrativo. Erro da [A]: Os papéis de fiscal e gestor são definidos para a fase de execução contratual, não para a comissão de planejamento primária. Erro da [C]: Pregoeiro atua na fase de seleção do fornecedor e a autoridade competente apenas designa a equipe e aprova os artefatos. Erro da [D]: Estes são papéis típicos de metodologias de gestão de projetos (PMBOK/Scrum), sem aderência à nomenclatura legal da IN 94. Erro da [E]: É terminantemente vedada a participação do fornecedor na estruturação do planejamento competitivo de sua própria licitação (conflito de interesses)."
+  },
+  {
+    "id": 73842,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "O TJ-CE planeja migrar seu sistema principal de gestão de precatórios para uma infraestrutura em nuvem híbrida. Durante as reuniões da Equipe de Planejamento da Contratação (EPC), o Integrante Técnico aponta a necessidade de formalizar o Estudo Técnico Preliminar (ETP) para demonstrar a viabilidade da contratação. Um debate surge sobre os elementos constitutivos obrigatórios desse documento estratégico.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "De acordo com a IN SGD/ME nº 94/2022, na elaboração do Estudo Técnico Preliminar (ETP) para contratações de soluções de TIC, constitui um elemento de presença obrigatória a:",
+    "options": {
+      "A": "minuta do contrato administrativo contendo as cláusulas exorbitantes e as penalidades pecuniárias.",
+      "B": "definição nominal dos servidores responsáveis pela fiscalização técnica, administrativa e setorial.",
+      "C": "estimativa das quantidades a serem contratadas acompanhada das respectivas memórias de cálculo.",
+      "D": "elaboração de uma matriz de rastreabilidade de requisitos técnicos de software.",
+      "E": "aprovação do empenho orçamentário prévio à etapa de seleção de fornecedores."
+    },
+    "answer": "C",
+    "explanation": "A correta é a [C]. O art. 14 da IN 94/2022 (e a Lei 14.133/21) elenca a estimativa das quantidades, devidamente fundamentada pelas memórias de cálculo, como elemento obrigatório do ETP para balizar o mercado. Erro da [A]: A minuta do contrato é um anexo do Edital/TR, e não um conteúdo interno do Estudo Técnico Preliminar. Erro da [B]: A nomeação dos fiscais (técnico, administrativo, requisitante) ocorre preferencialmente no encerramento do planejamento ou perto da assinatura do contrato. Erro da [D]: A rastreabilidade de requisitos é uma técnica da engenharia de requisitos, mas não constitui exigência legal obrigatória do ETP. Erro da [E]: O empenho orçamentário ocorre muito após a fase de planejamento, figurando na reta final do processo, imediatamente antes da assinatura do contrato."
+  },
+  {
+    "id": 29547,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "A implementação do novo Portal do Magistrado do TJ-CE requer a integração com bases de dados federais. A Equipe de Planejamento da Contratação trabalha na composição do Mapa de Gerenciamento de Riscos (MGR) para antever possíveis interrupções na comunicação de dados durante a execução contratual. O artefato está sendo formatado para atender estritamente aos ditames legais de contratação de TI.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Sob a égide da IN SGD/ME nº 94/2022, a elaboração do Mapa de Gerenciamento de Riscos (MGR) na fase de planejamento tem como diretriz técnica fundamental a:",
+    "options": {
+      "A": "exclusão sumária de alternativas tecnológicas inovadoras portadoras de riscos inerentes de alta severidade operacional.",
+      "B": "transferência compulsória de todo o risco de integração tecnológica para a empresa vencedora do certame licitatório.",
+      "C": "definição das sanções administrativas aplicáveis a cada risco mapeado para inserção direta no instrumento convocatório.",
+      "D": "avaliação de eventos que possam comprometer o sucesso da contratação mediante a análise de suas probabilidades e impactos.",
+      "E": "delegação da identificação dos riscos operacionais à área jurídica encarregada da análise prévia do edital."
+    },
+    "answer": "D",
+    "explanation": "A correta é a [D]. O art. 16 da IN 94/2022 estabelece que o MGR deve basear-se na identificação, análise, avaliação e tratamento dos eventos que possam comprometer a contratação, medindo probabilidade e impacto. Erro da [A]: A gestão de riscos propõe mitigação e contingência, não a exclusão sumária de inovações tecnológicas. Erro da [B]: A transferência total de riscos (como integração) ao particular é economicamente e juridicamente inviável nas contratações públicas, devendo haver alocação matriz de riscos equilibrada. Erro da [C]: A definição de sanções e glosas pecuniárias é matéria central do Termo de Referência (TR). Erro da [E]: A identificação dos riscos é competência indelegável da Equipe de Planejamento da Contratação (EPC), e não da assessoria jurídica."
+  },
+  {
+    "id": 61284,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "A Diretoria de Informática do TJ-CE concluiu os estudos técnicos para a contratação de uma Fábrica de Software especializada em metodologias ágeis. O processo encontra-se na fase de redação do Termo de Referência (TR). O Integrante Técnico busca definir de forma inequívoca o método de verificação das entregas em sprints, para evitar conflitos na atestação das faturas e garantir a qualidade do código entregue.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Consoante a IN SGD/ME nº 94/2022, a definição dos critérios de aceitação no Termo de Referência (TR) de soluções de TIC caracteriza-se pela:",
+    "options": {
+      "A": "exigência de certificações internacionais de maturidade em substituição aos testes práticos de aderência aos requisitos.",
+      "B": "imposição de validação subjetiva do esforço produtivo baseada na carga horária declarada pelo gerente da contratada.",
+      "C": "transferência da responsabilidade de atestação técnica para o próprio fornecedor mediante emissão de termo circunstanciado.",
+      "D": "adoção de métricas exclusivamente financeiras atreladas ao percentual de execução do cronograma físico de desembolso.",
+      "E": "especificação de métricas objetivas de qualidade, níveis de serviço e checklists estruturados de testes operacionais."
+    },
+    "answer": "E",
+    "explanation": "A correta é a [E]. O TR deve estabelecer métricas objetivas de aceitação com vinculação estrita à qualidade, utilidade da entrega e níveis de serviço mínimos acordados. Erro da [A]: Certificações da empresa (como CMMI) não eximem a Administração de validar o código entregue na prática. Erro da [B]: O modelo de contratação de TI do governo foca em resultados e serviços efetivos, repelindo o pagamento por mera aferição de carga horária trabalhada (vedação à subordinação jurídica). Erro da [C]: O ateste é função indelegável do Fiscal Técnico e do Fiscal Requisitante; permitir que o fornecedor ateste a própria entrega anula a segregação de funções. Erro da [D]: O aceite deve pautar-se pela qualidade técnica funcional do produto entregue, e não meramente pelo volume financeiro repassado."
+  },
+  {
+    "id": 18459,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "Para renovar o parque de microcomputadores das Varas de Família do TJ-CE, a Equipe de Planejamento da Contratação diverge entre a compra de equipamentos novos e a contratação de Hardware as a Service (HaaS). O Integrante Administrativo exige que a decisão conste expressamente no Estudo Técnico Preliminar (ETP), fundamentada em critérios financeiros e de ciclo de vida.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A IN SGD/ME nº 94/2022 estabelece que a análise econômica das alternativas de soluções de TIC no Estudo Técnico Preliminar (ETP) exige o cálculo do Custo Total de Propriedade (TCO), o qual consiste na:",
+    "options": {
+      "A": "consolidação dos custos diretos e indiretos associados à aquisição, operação, manutenção e descarte da solução tecnológica.",
+      "B": "aferição exclusiva do valor da proposta vencedora no pregão eletrônico acrescido dos tributos federais, estaduais e municipais.",
+      "C": "projeção das despesas de depreciação contábil do hardware limitada ao período de vigência original da garantia do fabricante.",
+      "D": "apuração do valor presente líquido das horas trabalhadas pelos servidores da equipe de suporte técnico do próprio tribunal.",
+      "E": "quantificação dos custos de licenciamento de software proprietário expurgando as taxas de atualização tecnológica continuada."
+    },
+    "answer": "A",
+    "explanation": "A correta é a [A]. O Custo Total de Propriedade (TCO) na esfera governamental reflete o somatório abrangente de todos os custos diretos e indiretos ao longo do ciclo de vida completo: projeto, aquisição, licenciamento, migração, operação, suporte e descarte final. Erro da [B]: Reduzir o TCO ao valor da compra ignora gastos latentes severos de sustentação ao longo dos anos. Erro da [C]: O período de garantia do fabricante é apenas uma fração do tempo útil esperado em que o órgão arcará com a operação. Erro da [D]: O esforço da força de trabalho própria não baliza de forma isolada e prioritária o Custo Total de Propriedade da nova solução. Erro da [E]: Expurgar as taxas de atualização e suporte (Software Assurance) desnatura a lógica preditiva e holística do TCO."
+  },
+  {
+    "id": 93275,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "A Corregedoria do TJ-CE identificou lentidão na extração de relatórios correcionais e demandou à Secretaria de TI a contratação de uma nova solução de Business Intelligence (BI). O setor demandante elaborou o Documento de Oficialização da Demanda (DOD) contendo apenas o nome do software desejado e o valor estimado da licença, remetendo o artefato para a Diretoria Geral aprovar a despesa inicial.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "À luz da IN SGD/ME nº 94/2022, o procedimento adotado pela Corregedoria encontra-se irregular. A estruturação legal e técnica exigida para o Documento de Oficialização da Demanda (DOD) requer a:",
+    "options": {
+      "A": "indicação da marca comercial do produto baseada em pesquisa preliminar de mercado conduzida pela área técnica.",
+      "B": "descrição da necessidade de negócio a ser resolvida e dos resultados esperados com a futura contratação da solução.",
+      "C": "anexação do projeto básico contemplando as plantas de arquitetura de dados e o modelo entidade-relacionamento.",
+      "D": "homologação da ferramenta por meio de Prova de Conceito prévia ao registro formal do documento de planejamento.",
+      "E": "submissão do documento ao controle externo para emissão de parecer prévio de conformidade técnica governamental."
+    },
+    "answer": "B",
+    "explanation": "A correta é a [B]. O DOD possui caráter declaratório de negócio. Seu propósito central é explicitar a dor (a necessidade) da área requisitante e as expectativas de resultados, sem impor tecnologias predefinidas. Erro da [A]: Especificar marca antes mesmo do Estudo Técnico Preliminar (ETP) é direcionamento indevido, pois o mercado não foi estudado legalmente. Erro da [C]: Modelagem de dados e arquitetura técnica são artefatos posteriores, gerados pelo Integrante Técnico em fases maduras do planejamento (ETP/TR). Erro da [D]: Prova de Conceito (PoC) ocorre na fase de Seleção de Fornecedor (licitação), testando a proposta mais vantajosa antes da homologação, não antes do DOD. Erro da [E]: O Tribunal de Contas (Controle Externo) não atua na chancela prévia obrigatória de documentos iniciais de viabilidade."
+  },
+  {
+    "id": 55102,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "Na terceirização do Service Desk nível 1 do TJ-CE, a Equipe de Planejamento finalizou o Termo de Referência (TR). O documento inclui uma tabela de Acordo de Nível de Serviço (SLA) que penaliza a empresa em R$ 100,00 por cada minuto de inatividade do sistema de chamados, independentemente da criticidade do incidente ou do volume de usuários afetados no momento da falha.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Considerando as diretrizes da IN SGD/ME nº 94/2022 para o estabelecimento de Acordos de Nível de Serviço e métricas de pagamento no Termo de Referência, a modelagem de sanções e glosas exige a:",
+    "options": {
+      "A": "delegação do cálculo do prejuízo causado pela falha sistêmica aos auditores da própria empresa provedora da solução.",
+      "B": "aplicação de multas pecuniárias fixas com valor predeterminado sem vinculação ao impacto operacional no negócio.",
+      "C": "definição de indicadores mensuráveis e de glosas proporcionais à gravidade dos desvios e à essencialidade do serviço.",
+      "D": "rescisão unilateral automática do contrato administrativo na ocorrência da primeira infração ao limite temporal de atendimento.",
+      "E": "vinculação do pagamento mensal ao cumprimento da carga horária física das equipes de suporte alocadas nas dependências do tribunal."
+    },
+    "answer": "C",
+    "explanation": "A correta é a [C]. O TR deve espelhar o Acordo de Nível de Serviço com glosas proporcionais. Penalidades desconectadas do impacto real geram distorções financeiras e sobrepreço defensivo pelos fornecedores. Erro da [A]: Delegar a medição de falhas ao infrator suprime o poder fiscalizatório inerente à Administração Pública. Erro da [B]: O caso apresentado no enunciado é ilegal exatamente por usar valor fixo sem proporcionalidade (R$100,00 por minuto não distingue falhas leves das catastróficas). Erro da [D]: Rescisões sumárias contrariam os princípios da razoabilidade e do contraditório. Erro da [E]: Contratos de TI vedam a vinculação de pagamentos puramente à presença física ou posto de trabalho, exigindo remuneração orientada a resultados."
+  },
+  {
+    "id": 38719,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "O Setor de Licitações do TJ-CE designou um pregoeiro experiente para compor a Equipe de Planejamento da Contratação (EPC) de um complexo sistema de gravação de audiências. O servidor foi nomeado na condição de Integrante Administrativo da equipe e recebeu a incumbência de iniciar imediatamente a redação das especificações técnicas dos microfones omnidirecionais.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Conforme as responsabilidades definidas na IN SGD/ME nº 94/2022, a atuação exigida do servidor encarregado de exercer o papel de Integrante Administrativo na EPC restringe-se à:",
+    "options": {
+      "A": "atestação mensal das faturas de serviços prestados e fiscalização do recolhimento dos encargos trabalhistas dos terceirizados.",
+      "B": "modelagem técnica da infraestrutura de captação de áudio e validação dos padrões de compressão de mídia digital.",
+      "C": "homologação funcional da interface de gravação por meio da execução de roteiros de testes sistêmicos em ambiente de homologação.",
+      "D": "orientação quanto à conformidade dos artefatos à legislação licitatória e estruturação dos requisitos de qualificação econômico-financeira.",
+      "E": "subscrição do Documento de Oficialização da Demanda em substituição ao gestor da unidade judiciária requerente da tecnologia."
+    },
+    "answer": "D",
+    "explanation": "A correta é a [D]. O Integrante Administrativo tem perfil burocrático e legal. Sua responsabilidade central na fase de planejamento é balizar os procedimentos da licitação, os requisitos de qualificação da empresa e a aderência processual à lei de licitações. Erro da [A]: Aferição de guias trabalhistas e faturas é atribuição do Fiscal Administrativo durante a fase de Execução. Erro da [B] e [C]: Modelagem arquitetural e validação sistêmica são competências inafastáveis do Integrante Técnico da EPC. Erro da [E]: O DOD nasce na Área Requisitante, o Integrante Administrativo atua nas balizas legais de contratação, sem autonomia para representar o negócio da justiça na emissão do DOD."
+  },
+  {
+    "id": 90456,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "Um novo datacenter modular está sendo planejado para o TJ-CE. Durante o Estudo Técnico Preliminar (ETP), o Integrante Técnico insere restrições relacionadas à eficiência energética dos condicionadores de ar de precisão e exige certificados de descarte ecológico para os hardwares obsoletos a serem substituídos, o que eleva a estimativa preliminar de custos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em conformidade com a IN SGD/ME nº 94/2022, a inclusão de critérios de eficiência energética e logística reversa no Estudo Técnico Preliminar (ETP) de soluções de TIC constitui:",
+    "options": {
+      "A": "violação ao princípio da economicidade caracterizada pela imposição de custos marginais dissociados da finalidade pública.",
+      "B": "restrição abusiva à competitividade do certame decorrente do direcionamento técnico para marcas de alto padrão de mercado.",
+      "C": "faculdade exclusiva do fiscal de contrato a ser exercida apenas durante a fase de recebimento provisório dos equipamentos.",
+      "D": "exigência inaplicável ao escopo de contratações de tecnologia da informação e adstrita aos editais de obras de engenharia civil.",
+      "E": "prática obrigatória consubstanciada na definição de requisitos de sustentabilidade ambiental inerentes à contratação pública."
+    },
+    "answer": "E",
+    "explanation": "A correta é a [E]. O art. 14 da IN 94/2022 consagra expressamente a avaliação dos requisitos de sustentabilidade (ambiental, social e econômica) na feitura do Estudo Técnico Preliminar. A TI Verde engloba eficiência energética e descarte ecologicamente adequado. Erro da [A] e [B]: A sustentabilidade é imperativo constitucional das licitações (desenvolvimento nacional sustentável) e afasta alegações superficiais de sobrepreço ou direcionamento, desde que balizadas pelo mercado. Erro da [C]: A premissa nasce na fase de planejamento da EPC, não podendo ser exigida de inopino pelo fiscal de contrato após a assinatura. Erro da [D]: Aplica-se compulsoriamente a todos os nichos públicos, e na TI encontra terreno fértil no descarte de ativos."
+  },
+  {
+    "id": 21873,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "O TJ-CE pretende adquirir subscrições anuais de licenças de um software de edição de texto para os gabinetes dos desembargadores, com suporte técnico por telefone. Ao elaborar o Termo de Referência (TR), a equipe define a forma de entrega das chaves de ativação e a rotina de faturamento.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Nos termos da IN SGD/ME nº 94/2022, o componente do Termo de Referência (TR) responsável por detalhar a dinâmica de prestação do serviço, os prazos de disponibilização tecnológica e a mecânica de faturamento é denominado:",
+    "options": {
+      "A": "Modelo de Execução do Objeto.",
+      "B": "Estudo de Viabilidade Econômica.",
+      "C": "Matriz de Rastreabilidade de Requisitos.",
+      "D": "Relatório de Gestão de Incidentes.",
+      "E": "Plano Diretor de Tecnologia da Informação."
+    },
+    "answer": "A",
+    "explanation": "A correta é a [A]. O Modelo de Execução do Objeto compõe o Termo de Referência especificando como a tecnologia será efetivamente transferida, qual o cronograma de implantação, os locais físicos e lógicos, e as rotinas diárias e marcos de pagamento. Erro da [B]: Análise econômica localiza-se estritamente no Estudo Técnico Preliminar (ETP). Erro da [C]: Matriz de rastreabilidade baliza dependências de software na documentação de sistemas, sem lastro direto com rituais de faturamento da licitação. Erro da [D]: Relatório de incidentes é evidência operacional gerada durante a execução para medir o SLA do prestador de suporte. Erro da [E]: O PDTIC é documento de nível estratégico organizacional para balizar todas as metas do biênio/triênio, sem função de microgerenciamento de rotinas de contrato."
+  },
+  {
+    "id": 67399,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "O projeto de desenvolvimento de um sistema de gestão de estagiários do TJ-CE enfrentou seguidos atrasos. O Mapa de Gerenciamento de Riscos (MGR) elaborado na fase de planejamento indicava o baixo engajamento dos usuários como risco moderado. Com a iminência da entrada em produção, esse risco materializou-se, gerando forte resistência das secretarias. O gestor questiona o congelamento do documento desde a sua assinatura inicial.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A respeito do ciclo de vida do Mapa de Gerenciamento de Riscos (MGR) nas contratações de soluções de TIC sob a ótica da IN SGD/ME nº 94/2022, a sua gestão exige a:",
+    "options": {
+      "A": "delegação do monitoramento sistêmico dos riscos operacionais e estratégicos ao Tribunal de Contas do Estado competente.",
+      "B": "atualização contínua do documento ao longo de todas as fases da contratação para monitoramento e controle dos riscos mapeados.",
+      "C": "revisão do documento permitida apenas mediante autorização judicial expressa justificada por fatos supervenientes de força maior.",
+      "D": "consolidação inalterável do artefato logo após a aprovação do Termo de Referência pela autoridade administrativa competente.",
+      "E": "republicação imediata do edital de licitação a cada alteração da probabilidade de ocorrência de eventos de risco moderado."
+    },
+    "answer": "B",
+    "explanation": "A correta é a [B]. A IN 94/2022 pontua que o MGR não é estático. Ele nasce no planejamento e sofre reavaliação contínua durante as fases de Seleção do Fornecedor e de Execução do Contrato, para refletir o cenário real das ameaças. Erro da [A]: O Tribunal de Contas atua via fiscalização externa; a gestão ativa do risco diário do contrato é encargo primário dos fiscais e gestores de contrato do TJ. Erro da [C] e [D]: Documento rígido e inalterável nega a ciência de gestão de riscos; a alteração das probabilidades ocorre via governança interna fluida, sem necessidade de alvará judicial. Erro da [E]: Mudanças em riscos operacionais rotineiros não alteram o escopo global a ponto de exigir retrocesso à publicação de editais já findados ou em curso."
+  },
+  {
+    "id": 14280,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "Um analista sênior do TJ-CE pesquisa alternativas para o sistema de controle de acesso físico às sedes dos fóruns. Ele encontra três opções: catracas com biometria facial de um fabricante alemão, crachás RFID de empresas locais e um aplicativo de QR Code no celular desenvolvido por uma startup. Ele precisa consolidar esses dados no Estudo Técnico Preliminar (ETP).",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "De acordo com a IN SGD/ME nº 94/2022, o levantamento de mercado materializado no Estudo Técnico Preliminar (ETP) deve promover a:",
+    "options": {
+      "A": "qualificação técnica prévia dos fabricantes catalogados no estudo por meio da emissão obrigatória de atestados de capacidade produtiva.",
+      "B": "escolha da solução de menor preço unitário com base em pesquisa restrita ao painel de compras governamentais do governo federal.",
+      "C": "análise comparativa das diferentes opções tecnológicas sob a perspectiva da viabilidade técnica, econômica e dos ganhos de eficiência.",
+      "D": "adoção compulsória da solução em código aberto em detrimento das tecnologias comerciais independentemente do esforço de integração.",
+      "E": "exclusão sumária de empresas estrangeiras não domiciliadas no país para assegurar a soberania do tratamento de dados biométricos."
+    },
+    "answer": "C",
+    "explanation": "A correta é a [C]. O principal intento do levantamento de mercado no ETP é justamente traçar um quadro comparativo plural: confrontar tecnologia 'A', 'B' ou 'C' e justificar qual formato mitiga a dor de negócio com melhor Custo Total de Propriedade e funcionalidade real. Erro da [A]: Documentos habilitatórios (atestados) são requeridos no certame (Seleção), e não emitidos contra potenciais atores mapeados livremente no ETP. Erro da [B]: A busca do menor preço antes de comparar as qualidades anula a avaliação qualitativa; uma solução barata de RFID pode se mostrar defasada e gerar TCO altíssimo. Erro da [D]: Software livre deve ser priorizado normativamente, mas não adotado cegamente se demonstrar esforço absurdo ou inviabilidade técnica contrapondo opções comerciais. Erro da [E]: A discriminação pura por matriz estrangeira fere a isonomia licitatória se não amparada em lei ou veto explícito de segurança nacional justificado na arquitetura."
+  },
+  {
+    "id": 56912,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "Em meados de outubro, o Presidente do TJ-CE autorizou a modernização emergencial do sistema de PJe para suportar sessões virtuais com inteligência artificial. O diretor de TI orientou sua equipe a formular imediatamente o Documento de Oficialização da Demanda (DOD). Ao analisar o Plano de Contratações Anual (PCA) do exercício, constatou-se que essa demanda não estava previamente mapeada.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Conforme as normativas de governança e a IN SGD/ME nº 94/2022, ao tratar do alinhamento do Documento de Oficialização da Demanda (DOD) em relação a demandas não previstas no Plano de Contratações Anual (PCA), o procedimento técnico-administrativo adequado demanda a:",
+    "options": {
+      "A": "substituição do DOD por memorando interno simples visando garantir a celeridade exigida por ordens diretas da alta administração.",
+      "B": "suspensão imediata de todos os processos licitatórios em curso até a elaboração de um novo plano diretor de tecnologia da informação.",
+      "C": "execução da contratação à margem do planejamento formal por tratar-se de inovação tecnológica caracterizada como compra de pequeno valor.",
+      "D": "promoção da atualização excepcional do Plano de Contratações Anual com as devidas justificativas aprovadas pelo comitê de governança.",
+      "E": "divisão do objeto em parcelas financeiras inferiores ao limite de dispensa de licitação para mitigar a obrigatoriedade de alinhamento ao plano."
+    },
+    "answer": "D",
+    "explanation": "A correta é a [D]. Uma contratação de TIC extemporânea (fora do PCA) carece de ajuste formal. A legislação faculta à autoridade (Comitê de TI) deferir o prosseguimento da demanda justificando-a via atualização extraordinária do Plano de Contratações Anual para incluir o DOD nascente. Erro da [A]: Pular a fase de planejamento baseada apenas na pressa de cúpula fere de morte a regularidade fiscal. Erro da [B]: Congelar as demais compras regulares geraria paralisação dos serviços da justiça, postura extrema e ilegal. Erro da [C]: A contratação de IA pressupõe alta relevância estrutural, descabendo sua aprovação genérica via caixinha de pequeno valor sem rito. Erro da [E]: O fracionamento de despesas para burlar rito licitatório e de planejamento constitui falta grave e responsabilização perante a lei e os órgãos de controle."
+  },
+  {
+    "id": 84190,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "A contratação de um serviço de monitoramento contínuo de rede (SOC) para o TJ-CE gerou um amplo processo administrativo. O Analista de TI, nomeado como Integrante Técnico, entregou o Termo de Referência (TR). A assessoria jurídica, no entanto, devolveu o processo solicitando a apensação dos artefatos produzidos nas etapas preliminares para consubstanciar a motivação da contratação.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "À luz das disposições da IN SGD/ME nº 94/2022 sobre a fase de planejamento da contratação de TI, o Termo de Referência (TR) submetido à aprovação deve estar inexoravelmente fundamentado e acompanhado do respectivo:",
+    "options": {
+      "A": "Parecer Técnico de Auditoria Externa e da Matriz de Desenho Arquitetural de Rede.",
+      "B": "Contrato Social da empresa vencedora e do Cadastro Nacional da Pessoa Jurídica.",
+      "C": "Plano de Sustentação de Software e da Declaração de Inexigibilidade de Licitação.",
+      "D": "Termo de Sigilo Profissional e da Ata de Registro de Preços do ano corrente.",
+      "E": "Estudo Técnico Preliminar e do Mapa de Gerenciamento de Riscos."
+    },
+    "answer": "E",
+    "explanation": "A correta é a [E]. O encerramento da fase de planejamento consolida-se com o Termo de Referência (TR). Contudo, a base principiológica legal de todo o TR é extraída diretamente dos diagnósticos realizados no Estudo Técnico Preliminar (ETP) e consubstanciada nas contingências expostas no Mapa de Gerenciamento de Riscos (MGR). Erro da [A]: Pareceres de auditoria externa independem do rito basal de contratação e não condicionam a vida do TR. Erro da [B]: O planejamento acontece antes da licitação; é impossível ter os dados da 'empresa vencedora' antes mesmo do edital ir à praça. Erro da [C]: A inexigibilidade é uma exceção da competição, não um artefato de anexação compulsória global ao lado de planos de sustentação. Erro da [D]: Sigilo e Atas anteriores podem estar presentes perifericamente, mas o alicerce fundamental de justificativa do TR em contratação TIC recai sobre o ETP e o MGR."
+  }
+]

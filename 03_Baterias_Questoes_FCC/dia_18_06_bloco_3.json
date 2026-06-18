@@ -1,0 +1,272 @@
+[
+  {
+    "id": 18060301,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Falsos Cognatos no contexto de Migração de Sistemas",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o planejamento de migração do sistema judicial do TJ-CE para uma nova infraestrutura em nuvem, o líder técnico enviou o seguinte comunicado à equipe: 'The actual system performance is quite different from what we anticipated. The team intends to deploy the new patch to address the current issues.' Com base no reconhecimento de falsos cognatos em inglês técnico, a tradução correta para os termos 'actual', 'intends' e 'current' no contexto da mensagem é:",
+    "options": {
+      "A": "O desempenho atual do sistema, a equipe finge implantar o novo patch e os problemas correntes.",
+      "B": "O desempenho verdadeiro do sistema, a equipe pretende implantar o novo patch e os problemas atuais.",
+      "C": "O desempenho moderno do sistema, a equipe tenta implantar o novo patch e os problemas atualizados.",
+      "D": "O desempenho atualizado do sistema, a equipe entende implantar o novo patch e os defeitos atuais.",
+      "E": "O desempenho obsoleto do sistema, a equipe planeja implantar o novo patch e os problemas correntes."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta traduz precisamente os falsos cognatos. 'Actual' significa real/verdadeiro, não atual ('current'). 'Intend' significa pretender/ter a intenção de, não entender ou fingir ('pretend'). 'Current' significa atual. As demais alternativas caem em armadilhas clássicas de tradução direta errônea."
+  },
+  {
+    "id": 18060302,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Falsos Cognatos em Troubleshooting de Redes",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um analista de infraestrutura do TJ-CE tentava diagnosticar uma falha de comunicação entre os nós de um cluster Kubernetes. O ticket de suporte aberto junto ao fabricante retornou o seguinte apontamento: 'The network administrator did not realize the firewall rules were blocking the API traffic. He noticed the problem only after reviewing the logs. The vendor will support the configuration changes.' A compreensão exata da resposta do fabricante indica que:",
+    "options": {
+      "A": "O administrador não realizou as regras, notificou o problema nos logs e o fornecedor suportará fisicamente as mudanças.",
+      "B": "O administrador não implementou as regras, anotou o problema nos logs e o fornecedor aguentará as mudanças de configuração.",
+      "C": "O administrador não percebeu as regras, notou o problema nos logs e o fornecedor apoiará as mudanças de configuração.",
+      "D": "O administrador não efetuou as regras, percebeu o problema nos logs e o fornecedor testará as mudanças de configuração.",
+      "E": "O administrador não compreendeu as regras, ignorou o problema nos logs e o fornecedor financiará as mudanças de configuração."
+    },
+    "answer": "C",
+    "explanation": "No contexto, 'realize' significa perceber ou dar-se conta de algo, não 'realizar/fazer'. 'Notice' significa notar ou observar. 'Support' no sentido de TI significa apoiar, dar suporte técnico, e não suportar no sentido de aguentar um peso físico. A alternativa C traz a semântica correta das três palavras."
+  },
+  {
+    "id": 18060303,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Técnicas de Leitura: Scanning em Documentação de API",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um desenvolvedor do TJ-CE precisa construir uma integração para obter a lista de processos judiciais ativos. Ao acessar a documentação da API, ele se depara com o texto: 'To retrieve a list of all active judicial processes, make a GET request to the `/processes/active` endpoint. The response payload will include pagination metadata in the header. To filter by court branch, append the `?branch=ID` query parameter. Ensure the Bearer token is provided.' O profissional necessita descobrir rapidamente o método HTTP exigido e como filtrar os resultados por vara. A técnica de leitura adequada e as informações corretas extraídas são:",
+    "options": {
+      "A": "O uso de Scanning para buscar o método POST e o parâmetro de corpo branch=ID.",
+      "B": "O uso de Skimming para identificar a ideia geral e extrair o método PUT.",
+      "C": "O uso de Scanning para localizar o método GET e o parâmetro de consulta ?branch=ID.",
+      "D": "O uso de Skimming para ler detalhadamente a documentação de paginação de processos.",
+      "E": "O uso de Scanning para extrair a chave de criptografia Bearer do cabeçalho de resposta."
+    },
+    "answer": "C",
+    "explanation": "A técnica de 'Scanning' é utilizada para buscar informações específicas e pontuais em um texto (como métodos HTTP e parâmetros). Na documentação, o método explícito é GET e a filtragem se dá pelo query parameter '?branch=ID'. 'Skimming' serve para capturar a ideia geral, não dados exatos."
+  },
+  {
+    "id": 18060304,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Tradução de Man Pages: Comando Tar",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O administrador de sistemas do TJ-CE está revisando os scripts de backup de servidores Linux baseados na leitura da Man Page do comando tar: 'tar -c: Create a new archive. -v: Verbosely list files processed. -z: Filter the archive through gzip. -f: Use archive file or device ARCHIVE. To extract, use -x instead of -c.' Baseado no texto técnico, o propósito funcional da execução de 'tar -xvf backup.tar' resulta em:",
+    "options": {
+      "A": "A criação de um novo arquivo compactado com saída detalhada na tela do terminal.",
+      "B": "A extração de arquivos de um pacote existente listando os detalhes do processamento.",
+      "C": "A filtragem do pacote através de compressão gzip exibindo os erros no terminal.",
+      "D": "A exclusão dos arquivos especificados do dispositivo de backup listado no comando.",
+      "E": "A compressão do diretório atual usando o dispositivo de arquivamento padrão do sistema."
+    },
+    "answer": "B",
+    "explanation": "O texto diz 'To extract, use -x instead of -c'. Logo, a flag '-x' realiza extração. A flag '-v' lista de forma verbosa (detalhada) e '-f' especifica o arquivo. Nenhuma compressão nova (-c) ou exclusão é feita. A alternativa correta resume a extração com detalhamento do log na tela."
+  },
+  {
+    "id": 18060305,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Falsos Cognatos em Auditoria de Segurança",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante uma auditoria nos acessos ao banco de dados do Tribunal, o relatório apontou a seguinte orientação: 'The new security policy mandates that every access to the sensitive database must create an audit record. System administrators should remember to configure the logging rotation.' A tradução e interpretação das palavras destacadas geram a seguinte ação técnica exigida no TJ-CE:",
+    "options": {
+      "A": "A exigência da nova polícia de segurança para criar uma gravação, obrigando os administradores a relembrar.",
+      "B": "A exigência da nova política de segurança para criar um registro, obrigando os administradores a lembrar.",
+      "C": "A exigência do novo policiamento de segurança para criar um disco, obrigando os administradores a gravar.",
+      "D": "A exigência da nova regra de segurança para criar uma recordação, obrigando os administradores a armazenar.",
+      "E": "A exigência da nova apólice de segurança para criar um arquivo, obrigando os administradores a registrar."
+    },
+    "answer": "B",
+    "explanation": "'Policy' traduz-se como 'política' (diretrizes), não polícia (police) ou apólice. 'Record' no contexto de auditoria de TI é 'registro' (log/audit record), não recordação. 'Remember' é 'lembrar'. Apenas a alternativa B reflete os termos técnicos sem cair nos falsos cognatos."
+  },
+  {
+    "id": 18060306,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Interpretação de API Docs: Ciclo de Vida de Software",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No processo de modernização do PJe, a equipe de desenvolvimento recebeu o seguinte aviso de depreciação do barramento de serviços: 'Endpoint v1/users is deprecated and will be removed in the next major release. Please migrate to v2/users. The legacy authentication method is no longer supported.' O impacto dessas instruções para o código do Tribunal consiste em:",
+    "options": {
+      "A": "A desativação do endpoint v1 por falhas de segurança e a manutenção permanente do método legado.",
+      "B": "A obsolescência do endpoint v1 e o fim do suporte oficial para o método de autenticação antigo.",
+      "C": "A quebra de compatibilidade do endpoint v1 e o recebimento de atualizações de estabilidade no método original.",
+      "D": "A desaprovação do endpoint v1 pelo comitê técnico e o início dos testes no método de autenticação.",
+      "E": "A atualização programada do endpoint v1 na próxima versão e o estado operante do método herdado."
+    },
+    "answer": "B",
+    "explanation": "'Deprecated' no desenvolvimento de software significa obsoleto, descontinuado, algo que não deve mais ser usado. 'Legacy' refere-se ao código antigo, legado. 'No longer supported' indica ausência de suporte. Logo, a API está obsoleta e a autenticação legada sem suporte."
+  },
+  {
+    "id": 18060307,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Compreensão de Mensagens de Erro em Servidores de Aplicação",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após o deploy de uma atualização crítica, o servidor de aplicação do sistema Processo Judicial Eletrônico emitiu a seguinte falha nos logs: 'FATAL: Connection pool exhausted. The application server failed to acquire a connection to the database within the timeout period. Increase the `max-pool-size` parameter or check for connection leaks in the application code.' A ação recomendada para solucionar o incidente envolve:",
+    "options": {
+      "A": "A reinicialização do servidor de aplicação para liberar a memória excedente na conexão.",
+      "B": "A substituição do banco de dados por um servidor com maior capacidade de processamento.",
+      "C": "A ampliação do tempo limite da conexão e a redução do parâmetro de esgotamento de rede.",
+      "D": "A elevação do limite de conexões simultâneas ou a investigação de vazamentos de conexão no código.",
+      "E": "A atualização do código da aplicação para forçar conexões persistentes ignorando o tempo limite."
+    },
+    "answer": "D",
+    "explanation": "O texto sugere claramente 'Increase the max-pool-size' (elevar o tamanho máximo do pool de conexões) ou 'check for connection leaks' (investigar vazamentos de conexões, situações em que o código abre e não fecha a conexão). Nenhuma alternativa menciona reinicialização, troca de hardware ou ignorar timeouts."
+  },
+  {
+    "id": 18060308,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Falsos Cognatos em Gestão de Projetos de TI",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o comitê estratégico do TJ-CE, um documento de arquitetura incluiu as seguintes anotações em inglês: 'The architect presented a comprehensive report on the cloud migration. We need a brief summary of the costs before we can resume the project.' A correta transposição de significado dessas sentenças para o português resulta em:",
+    "options": {
+      "A": "Um relatório compreensivo e a exigência de um currículo antes do resumo do projeto.",
+      "B": "Um relatório compreensível e a exigência de um sumário antes da retomada do projeto.",
+      "C": "Um relatório abrangente e a exigência de um resumo conciso antes da retomada do projeto.",
+      "D": "Um relatório resumido e a exigência de uma soma financeira antes da continuação do projeto.",
+      "E": "Um relatório analítico e a exigência de um currículo antes do início formal do projeto."
+    },
+    "answer": "C",
+    "explanation": "'Comprehensive' é um falso cognato e significa abrangente, completo. 'Summary' significa resumo. 'Resume' significa retomar ou reiniciar, não fazer um resumo ou apresentar currículo (neste contexto, não é résumé). A alternativa C é a única que converte fielmente os falsos cognatos."
+  },
+  {
+    "id": 18060309,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Tradução de Man Pages: Comando chmod",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um analista de suporte do TJ-CE necessita modificar permissões de um shell script baseado na Man Page do comando chmod: 'chmod - change file mode bits. The format of a symbolic mode is [ugoa...][[-+=][perms...]...]. `u` stands for user, `g` for group, `o` for others, `a` for all. `x` executes (or search for directories).' Para conceder permissão de execução exclusivamente ao usuário proprietário do arquivo `script.sh`, o comando exato e sua respectiva tradução baseada no manual consistem em:",
+    "options": {
+      "A": "A execução do comando chmod +x script.sh e a adição da permissão global de extração.",
+      "B": "A execução do comando chmod u+x script.sh e a adição ao usuário dono da permissão de execução.",
+      "C": "A execução do comando chmod g+x script.sh e a adição ao grupo da permissão de exclusão.",
+      "D": "A execução do comando chmod o+x script.sh e a adição ao proprietário da permissão de extração.",
+      "E": "A execução do comando chmod a+x script.sh e a adição a todos da permissão de execução."
+    },
+    "answer": "B",
+    "explanation": "De acordo com o manual, 'u' refere-se a user (usuário proprietário) e 'x' a execute. A sintaxe u+x concede a execução apenas ao usuário dono do arquivo. 'a' seria para todos, 'g' grupo e 'o' outros. A alternativa B descreve com rigor a instrução do man page."
+  },
+  {
+    "id": 18060310,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Falsos Cognatos no Desenvolvimento Python",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Cientista de Dados alocado no TJ-CE analisa o código-fonte de um algoritmo de jurimetria que contém o comentário: 'Import the necessary library to manipulate the historical data. Ensure the date formats align with the ISO 8601 standard.' A instrução exige do programador a seguinte providência:",
+    "options": {
+      "A": "A importação da livraria para a manipulação da data histórica e a garantia do formato de dados.",
+      "B": "A importação da biblioteca para a manipulação dos dados históricos e a garantia dos formatos de data.",
+      "C": "A importação da livraria para a manipulação dos dados históricos e a garantia das datas do sistema.",
+      "D": "A importação da biblioteca para o agendamento da data histórica e a formatação das datas do processo.",
+      "E": "A importação da coleção para a manipulação dos dados históricos e a exclusão dos formatos de data."
+    },
+    "answer": "B",
+    "explanation": "'Library' traduz-se como biblioteca de software, não livraria. 'Data' significa dados (plural), não datas. E 'date' significa data cronológica. A alternativa B reflete de forma seca e direta as traduções exatas exigidas no escopo da ciência de dados."
+  },
+  {
+    "id": 18060311,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Técnicas de Leitura: Skimming em Release Notes de Hipervisores",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de Data Center do TJ-CE avalia a atualização do sistema de virtualização lendo o Release Notes: 'Version 7.5 Release Notes: This update introduces memory tiering capabilities, patches three critical CVEs in the virtual switch module, and deprecates the old REST API v1. Known issues: Live migration might fail if CPU flags do not match exactly across hosts.' Ao utilizar a técnica de skimming para captar o benefício de segurança primário dessa atualização, o resultado obtido é:",
+    "options": {
+      "A": "A identificação da introdução de funcionalidades de hierarquização de memória.",
+      "B": "A identificação da correção de três vulnerabilidades críticas no módulo de switch virtual.",
+      "C": "A identificação da depreciação da API REST v1 para redução do consumo de recursos.",
+      "D": "A identificação de falhas conhecidas na migração ao vivo motivadas por incompatibilidade de CPU.",
+      "E": "A identificação da obrigatoriedade de execução dos patches de segurança em hipervisores legados."
+    },
+    "answer": "B",
+    "explanation": "Ao aplicar o skimming, busca-se a ideia principal e blocos conceituais. A questão pede o benefício de 'segurança' (security benefit). A única menção à segurança no texto são as correções (patches) de três CVEs (vulnerabilidades) críticas. As demais citam novas funcionalidades (memory tiering) ou bugs."
+  },
+  {
+    "id": 18060312,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Tradução de API: Mecanismo de Webhooks",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na concepção de integrações entre o PJe e sistemas externos, o analista leu o seguinte trecho sobre Webhooks: 'Webhooks allow you to build or set up integrations which subscribe to certain events on the PJe platform. When one of those events is triggered, we'll send a HTTP POST payload to the webhook's configured URL.' O funcionamento dessa arquitetura descrita em inglês determina:",
+    "options": {
+      "A": "A configuração de formulários web para envio de atualizações manuais via requisições HTTP POST para o PJe.",
+      "B": "A construção de integrações para a assinatura de eventos e recebimento de cargas de dados automáticas via HTTP POST.",
+      "C": "O monitoramento do tráfego de rede da plataforma PJe com o bloqueio de requisições HTTP POST não autorizadas.",
+      "D": "A assinatura digital de eventos do sistema PJe por meio de criptografia avançada transmitida via requisições HTTP POST.",
+      "E": "O envio de requisições HTTP GET periódicas para a verificação de alterações de estado na plataforma PJe."
+    },
+    "answer": "B",
+    "explanation": "O texto descreve o padrão publish-subscribe de webhooks. 'Subscribe' no contexto técnico significa assinar/inscrever-se para escutar eventos. Quando disparado ('triggered'), um 'payload' (carga útil de dados) é enviado via HTTP POST para a URL configurada. Não envolve GETs periódicos ou assinaturas com criptografia avançada."
+  },
+  {
+    "id": 18060313,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Falsos Cognatos em Segurança da Informação e DLP",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para proteger os dados de segredo de justiça, o gerente de SI enviou as diretrizes: 'We must deploy DLP solutions to prevent data exfiltration. The judicial records contain highly sensitive information. It is a sensible approach to encrypt the database.' Avaliando os falsos cognatos, a interpretação da frase define:",
+    "options": {
+      "A": "A prevenção da exfiltração de dados, a classificação de informações como sensíveis e a adoção de uma abordagem sensata.",
+      "B": "A antecipação da exfiltração de dados, a classificação de informações como sensatas e a adoção de uma abordagem sensitiva.",
+      "C": "A preparação para a exfiltração de dados, a classificação de informações como confidenciais e a adoção de uma abordagem sensível.",
+      "D": "A prevenção da infiltração de dados, a classificação de informações como compreensíveis e a adoção de uma abordagem lógica.",
+      "E": "A evitação da exportação de dados, a classificação de informações como sensitivas e a adoção de uma abordagem sentimental."
+    },
+    "answer": "A",
+    "explanation": "'Prevent' é prevenir ou evitar. 'Sensitive' no contexto de SI refere-se a dados sensíveis, que exigem proteção rigorosa. 'Sensible' é sensato, razoável. Portanto, os dados são sensíveis e a abordagem de encriptar o banco de dados é sensata. A opção A preserva a tradução exata."
+  },
+  {
+    "id": 18060314,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Tradução de Man Pages: Comando grep",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O SOC do TJ-CE busca indícios de invasões lendo logs volumosos do sistema. A documentação do grep diz: 'grep - search a file for a pattern. -i, --ignore-case: Ignore case distinctions in patterns and input data. -v, --invert-match: Invert the sense of matching, to select non-matching lines. -r, --recursive: Read all files under each directory.' O analista precisa buscar de forma recursiva a string 'error', ignorando letras maiúsculas ou minúsculas, e ao mesmo tempo remover linhas que contenham a string 'timeout'. A sintaxe adequada extraída do manual exige:",
+    "options": {
+      "A": "O uso do comando grep -r -i 'error' /var/log | grep -v 'timeout'.",
+      "B": "O uso do comando grep -r -v 'error' /var/log | grep -i 'timeout'.",
+      "C": "O uso do comando grep -i -v 'error timeout' /var/log.",
+      "D": "O uso do comando grep -r -i 'timeout' /var/log | grep -v 'error'.",
+      "E": "O uso do comando grep -r 'error' /var/log | grep -i -v 'timeout error'."
+    },
+    "answer": "A",
+    "explanation": "De acordo com o manual, '-r' pesquisa recursivamente, '-i' ignora o case sensitiveness e '-v' inverte o match (exclui a palavra da busca). O pipe (|) direciona o output do primeiro grep para o segundo. O primeiro grep acha 'error' ignorando a caixa (-i) nos diretórios (-r), e o segundo exclui os que contém 'timeout' (-v). A alternativa A cumpre as premissas."
+  },
+  {
+    "id": 18060315,
+    "day_id": "dia_18_06",
+    "day_title": "Terça-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Falsos Cognatos em Arquitetura de Software",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No documento descritivo de topologia da infraestrutura, consta a afirmação: 'The software design must consider high availability. If a server fails, the traffic will eventually be routed to the backup site.' Considerando a terminologia correta de TI em inglês, a instrução exige:",
+    "options": {
+      "A": "O projeto do software focado em alta disponibilidade e o roteamento de tráfego eventualmente realizado ao site de backup.",
+      "B": "O desenho gráfico do software focado em alta disponibilidade e o roteamento de tráfego ocasionalmente realizado ao site de backup.",
+      "C": "A arquitetura do software focada em alta disponibilidade e o roteamento de tráfego finalmente realizado ao site de backup em caso de falha.",
+      "D": "O design visual do portal focado em alta disponibilidade e o roteamento de tráfego sempre realizado ao site de backup.",
+      "E": "O planejamento ágil do software focado em alta disponibilidade e o roteamento de tráfego imediatamente realizado ao site de backup."
+    },
+    "answer": "C",
+    "explanation": "'Design' em engenharia de software refere-se a projeto, concepção arquitetural, não 'desenho gráfico' ou visual. 'Eventually' é um falso cognato e não significa 'eventualmente' (ocasionalmente), mas sim 'finalmente', 'com o tempo' ou 'mais cedo ou mais tarde'. A alternativa C traz a tradução precisa da intenção de arquitetura."
+  }
+]

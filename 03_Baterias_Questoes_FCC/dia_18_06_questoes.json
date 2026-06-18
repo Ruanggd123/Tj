@@ -1,0 +1,1352 @@
+[
+  {
+    "id": 1246,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "BPM CBOK - Ciclo de Vida",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE enfrenta um passivo processual massivo nos fluxos de Execução Fiscal. A equipe de TI é acionada para avaliar a execução operacional vigente em conjunto com as áreas de negócio. Os analistas coletam métricas de tempo de ciclo, identificam os gargalos sistêmicos exatos no sistema PJe e documentam as causas raiz dos atrasos na transição de documentos físicos para digitais. De acordo com o ciclo de vida preconizado pelo BPM CBOK, este conjunto específico de atividades pertence à fase de:",
+    "options": {
+      "A": "Planejamento estratégico de processos.",
+      "B": "Desenho do estado futuro da operação.",
+      "C": "Análise de processos de negócio.",
+      "D": "Monitoramento de desempenho sistêmico.",
+      "E": "Modelagem de arquitetura corporativa."
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. A coleta de métricas, identificação de gargalos e documentação das causas raiz de um cenário existente são atividades intrínsecas à fase de Análise de Processos. A alternativa A erra ao sugerir Planejamento, focado no alinhamento estratégico macro da organização. A alternativa B erra ao sugerir Desenho, voltado à criação de um fluxo otimizado inédito. A alternativa D erra ao sugerir Monitoramento, aplicável apenas ao acompanhamento contínuo de processos já implantados. A alternativa E erra ao apontar Modelagem de Arquitetura, um conceito de estruturação de alto nível das capacidades organizacionais."
+  },
+  {
+    "id": 1247,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "BPM CBOK - Mapeamento AS-IS",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para modernizar o macroprocesso de Expedição de Alvarás, os analistas do TJ-CE conduzem observações diretas nas Varas, entrevistas com magistrados e análise de logs dos sistemas de protocolo. O objetivo central é capturar a exata realidade operacional vigente, abarcando os desvios informais de fluxo e a utilização de sistemas não homologados (Shadow IT). O artefato gerado ao final dessa etapa e a respectiva técnica aplicada correspondem, respectivamente, a:",
+    "options": {
+      "A": "Modelo TO-BE e simulação de cenários estocásticos.",
+      "B": "Modelo AS-IS e descoberta de processos de negócio.",
+      "C": "Arquitetura corporativa e análise de valor agregado.",
+      "D": "Matriz RACI e desenho de estado futuro da operação.",
+      "E": "Diagrama de Ishikawa e orquestração de serviços de TI."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. O levantamento da realidade atual resulta na criação do modelo AS-IS, e o conjunto de técnicas utilizadas para extrair esse conhecimento (entrevistas, observação) denomina-se descoberta de processos (Process Discovery). A alternativa A inverte a lógica ao sugerir o modelo TO-BE (estado futuro). A alternativa C erra ao citar análise de valor agregado, uma técnica de diagnóstico, não de levantamento primário. A alternativa D mistura gestão de responsabilidades (RACI) com estado futuro. A alternativa E menciona orquestração de TI, fase relacionada à implementação sistêmica, e Ishikawa, ferramenta focada estritamente em causa raiz."
+  },
+  {
+    "id": 1248,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "BPM CBOK - Análise de Gap",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O comitê de modernização do TJ-CE possui o mapeamento validado do funcionamento atual da Distribuição de Recursos e já aprovou o diagrama do estado futuro otimizado, o qual incorpora a classificação automatizada de peças via aprendizado de máquina. Os analistas necessitam agora detalhar as diferenças estruturais, sistêmicas e de recursos humanos entre esses dois estados para fundamentar a formulação do plano de transição tecnológico. Essa avaliação comparativa caracteriza a atividade de:",
+    "options": {
+      "A": "Simulação de processos de negócio.",
+      "B": "Avaliação de desempenho organizacional.",
+      "C": "Análise de gap de processos.",
+      "D": "Modelagem executável de serviços.",
+      "E": "Controle de capacidade sistêmica."
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. A análise de gap (lacuna) consiste exatamente no confronto entre a realidade atual (AS-IS) e o estado desejado (TO-BE) para identificar as ações e requisitos necessários para a transição. A alternativa A erra ao citar Simulação, técnica de teste virtual de cenários. A alternativa B refere-se à auditoria de resultados correntes. A alternativa D indica a codificação do processo em um motor BPM, não o planejamento da mudança. A alternativa E diz respeito ao monitoramento infraestrutural de limites operacionais."
+  },
+  {
+    "id": 1249,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "BPM CBOK - Desenho de Processos",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após a constatação de ineficiências severas na Citação Eletrônica, a equipe de arquitetura de TI do TJ-CE inicia a projeção de um novo fluxo operacional sistêmico. Este novo fluxo elimina três etapas de validação manual da secretaria ao incorporar integrações automatizadas nativas com APIs dos Correios e gateways de assinatura digital padronizados. No ciclo de vida do BPM CBOK, a criação e formalização desta estrutura otimizada são executadas na fase de:",
+    "options": {
+      "A": "Análise de processos de negócio.",
+      "B": "Transformação estratégica de negócios.",
+      "C": "Desenho de processos de negócio.",
+      "D": "Implementação de sistemas legados.",
+      "E": "Planejamento de arquitetura corporativa."
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. A projeção, concepção e modelagem de um novo fluxo (TO-BE) com a incorporação de melhorias (eliminação de passos e adição de automações) caracterizam a fase de Desenho de Processos (Process Design). A alternativa A foca no entendimento do problema, etapa anterior. A alternativa B é um termo genérico, sem correspondência exata com uma fase central do CBOK para este escopo. A alternativa D refere-se à construção em código do processo, posterior ao seu desenho. A alternativa E aborda o alinhamento de portfólio macro, não a modelagem de um fluxo específico."
+  },
+  {
+    "id": 1250,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "BPM CBOK - Mineração de Processos",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A auditoria interna do TJ-CE suspeita que o fluxo AS-IS documentado para a Baixa Definitiva de Processos difere radicalmente da realidade fática dos servidores. Em vez de recorrer a entrevistas suscetíveis a vieses, a equipe de TI extrai os logs de eventos, timestamps e IDs de usuário diretamente do banco de dados do sistema PJe. Utilizando software especializado, os analistas reconstroem automaticamente os grafos reais de execução para diagnosticar desvios. A tecnologia aplicada para automatizar essa descoberta do AS-IS denomina-se:",
+    "options": {
+      "A": "Monitoramento de Atividades de Negócio (BAM).",
+      "B": "Mineração de Processos (Process Mining).",
+      "C": "Processamento de Eventos Complexos (CEP).",
+      "D": "Mapeamento do Fluxo de Valor (VSM).",
+      "E": "Automação Robótica de Processos (RPA)."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. A Mineração de Processos utiliza logs de eventos sistêmicos para descobrir, monitorar e melhorar processos reais, gerando modelos baseados em dados empíricos de execução. A alternativa A erra ao citar BAM, focado em dashboards de tempo real de processos já mapeados. A alternativa C trata de correlação de dados em stream para detecção de anomalias instantâneas, não mapeamento retrospectivo. A alternativa D é uma técnica manual do Lean para identificar desperdícios. A alternativa E refere-se à automação de interface de usuário (robôs de software)."
+  },
+  {
+    "id": 1251,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "BPM CBOK - Análise de Valor",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o diagnóstico AS-IS do macroprocesso de Plantão Judiciário, um analista categoriza individualmente cada atividade sistêmica e manual em três grupos distintos: atividades essenciais para a entrega da decisão liminar ao cidadão, atividades exigidas exclusivamente por regulações internas de compliance do TJ-CE, e atividades caracterizadas por retrabalho ou redundância de dados. No contexto da engenharia de processos, esta técnica analítica recebe o nome de:",
+    "options": {
+      "A": "Análise de causa raiz estruturada.",
+      "B": "Simulação de eventos discretos.",
+      "C": "Análise de valor agregado.",
+      "D": "Modelagem de regras de negócio.",
+      "E": "Mapeamento de alinhamento estratégico."
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. A Análise de Valor Agregado examina as atividades dividindo-as em Valor Agregado ao Cliente (Customer Value-Adding), Valor Agregado ao Negócio (Business Value-Adding) e Sem Valor Agregado (Non-Value-Adding). A alternativa A erra ao sugerir Ishikawa/5 Porquês, focado na origem de um problema pontual. A alternativa B envolve testes matemáticos temporais de gargalo. A alternativa D isola lógicas de decisão em motores DMN. A alternativa E mapeia objetivos macro a portfólios, não passos individuais de fluxo."
+  },
+  {
+    "id": 1252,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "BPM CBOK - Handoffs",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao mapear o cenário atual dos Agravos de Instrumento, a equipe do TJ-CE observa que o pico máximo de latência na tramitação ocorre exatamente no momento em que o dossiê digital é transferido eletronicamente da Secretaria da Câmara para a responsabilidade do Gabinete do Desembargador, envolvendo uma mudança simultânea de ator, contexto de trabalho e permissões sistêmicas. Em terminologia técnica de gerenciamento de processos, este ponto de transferência é designado como:",
+    "options": {
+      "A": "Handoff operacional.",
+      "B": "Deadlock sistêmico.",
+      "C": "Gatekeeper processual.",
+      "D": "Milestone de controle.",
+      "E": "Checkpoint de auditoria."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. Handoff é a transferência de responsabilidade ou informação de um executor ou sistema para outro, sendo classicamente um ponto comum de atrasos, erros ou falhas de comunicação. A alternativa B erra ao usar Deadlock, termo de sistemas operacionais para bloqueio mútuo impeditivo de recursos. A alternativa C refere-se a um papel humano de controle de acesso à informação. A alternativa D indica um marco temporal de projeto. A alternativa E remete a um passo de verificação de qualidade do artefato."
+  },
+  {
+    "id": 1253,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "BPM CBOK - Implementação",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Com o modelo TO-BE para Homologação de Acordos validado pela presidência do TJ-CE, o departamento de desenvolvimento de TI inicia a tradução dos diagramas BPMN em componentes executáveis. A equipe configura os formulários dinâmicos de interface, estabelece a amarração (binding) dos web services legados do tribunal às tarefas de sistema e realiza o deploy do motor de orquestração (BPMS) no ambiente de produção. Sob a ótica das fases do ciclo de vida BPM, estas atividades compõem a:",
+    "options": {
+      "A": "Fase de Desenho de Processos.",
+      "B": "Fase de Análise de Requisitos.",
+      "C": "Fase de Implementação de Processos.",
+      "D": "Fase de Monitoramento e Controle.",
+      "E": "Fase de Transformação Tecnológica."
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. A transformação do modelo desenhado em componentes de software reais (criação de telas, integração de serviços, configurações no BPMS e deploy) integra a fase de Implementação (Process Implementation). A alternativa A diz respeito à criação teórica do diagrama TO-BE. A alternativa B ocorre muito antes, durante o mapeamento de necessidades da Análise e Desenho. A alternativa D sucede a implementação, focando na medição da operação corrente. A alternativa E carece de correspondência direta com uma fase clássica do ciclo CBOK."
+  },
+  {
+    "id": 1254,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "BPM CBOK - Tipos de Modelos",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para a gestão dos Juizados Especiais, a arquitetura do TJ-CE padronizou três níveis de modelagem. O nível superior apresenta visão executiva macro para a presidência. O intermediário detalha caminhos alternativos e exceções de negócio para auditores internos. O terceiro nível contém configurações exatas em XML, mapeamento de variáveis locais e bindings técnicos necessários para a interpretação direta por um motor de automação BPM. Este terceiro nível representa especificamente um modelo de tipo:",
+    "options": {
+      "A": "Descritivo de negócio.",
+      "B": "Estratégico institucional.",
+      "C": "Executável de sistemas.",
+      "D": "Analítico de operações.",
+      "E": "Conceitual de infraestrutura."
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. Modelos executáveis possuem sintaxe rígida e detalhamento técnico aprofundado o suficiente para serem orquestrados por motores de processos (BPMS), não sendo direcionados a leitores humanos casuais. A alternativa A erra ao citar modelos descritivos, que são genéricos e focados apenas em comunicação humana. A alternativa D aponta para modelos analíticos, desenhados para exibir desvios e exceções detalhadas para análise de analistas de negócios. As alternativas B e E aplicam nomenclaturas inexistentes nesta classificação restrita do CBOK para granularidade de modelos."
+  },
+  {
+    "id": 1255,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "BPM CBOK - Monitoramento",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Seis meses após a implantação sistêmica do novo fluxo de Mandados de Prisão, a Corregedoria do TJ-CE utiliza painéis de visualização (dashboards) em tempo real para monitorar a quantidade de instâncias processuais ativas, o tempo médio de tramitação por comarca e os alertas automáticos de quebra de Acordo de Nível de Serviço (SLA). Este acompanhamento contínuo se enquadra na fase de Monitoramento do ciclo BPM, apoiada tecnologicamente pela capacidade de:",
+    "options": {
+      "A": "Monitoramento de Atividades de Negócios (BAM).",
+      "B": "Barramento de Serviço Corporativo (ESB).",
+      "C": "Gerenciamento de Dados Mestres (MDM).",
+      "D": "Sistema de Gestão de Regras (BRMS).",
+      "E": "Descoberta de Processos Operacionais (Discovery)."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. O Business Activity Monitoring (BAM) fornece monitoramento em tempo real do estado técnico e de negócio dos processos corporativos em execução, viabilizando dashboards e alertas de SLA. A alternativa B refere-se a um middleware de integração de sistemas, focado em mensageria. A alternativa C trata da governança da qualidade das entidades de banco de dados fundamentais da empresa. A alternativa D gerencia tabelas de decisão lógicas complexas isoladas. A alternativa E mapeia a estrutura inicial do fluxo a partir do zero."
+  },
+  {
+    "id": 1256,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "BPM CBOK - Regras de Negócio",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao desenhar o modelo TO-BE do cálculo de Custas Processuais, o arquiteto do TJ-CE adota a diretriz de remover toda a complexa lógica matemática, frequentemente alterada por emendas parlamentares, do fluxo visual de tarefas BPMN. No novo desenho, o diagrama exibe apenas uma tarefa de serviço isolada que repassa os parâmetros para um motor de decisão externo especializado em tabelas DMN. Esta decisão arquitetural fundamenta-se na prática recomendada de:",
+    "options": {
+      "A": "Eliminação de handoffs operacionais manuais.",
+      "B": "Separação de regras de negócio e lógica de processo.",
+      "C": "Automação de tarefas sistêmicas isoladas via RPA.",
+      "D": "Mapeamento estruturado de valor agregado ao cidadão.",
+      "E": "Consolidação tecnológica de sistemas legados isolados."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Isolar decisões complexas em motores de regras (BRMS/DMN) garante agilidade de alteração paramétrica (agilidade de negócio) sem a necessidade de desenhar infinitas portas lógicas (gateways) ou alterar a versão do processo no BPMS (lógica de processo). A alternativa A erra, pois o uso de motores de regras adiciona chamadas sistêmicas, sem focar na mitigação direta de handoffs humanos. As alternativas C e E citam tecnologias (RPA, Modernização de Legado) com escopos técnicos divergentes ao de gestão de decisões complexas."
+  },
+  {
+    "id": 1257,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "BPM CBOK - Planejamento",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Antes de autorizar o mapeamento de processos operacionais isolados, a governança de TI do TJ-CE estabelece um repositório centralizado que organiza todas as capacidades do tribunal em grandes categorias hierárquicas: processos primários (prestação jurisdicional), de suporte (administrativos) e de gerenciamento (estratégicos), conectando estas categorias ao Plano Plurianual do órgão. No ciclo de vida de BPM, essa atividade fundacional ocorre estritamente na fase de:",
+    "options": {
+      "A": "Desenho orientado a processos operacionais.",
+      "B": "Análise técnica de capacidade instalada.",
+      "C": "Monitoramento de desempenho contínuo.",
+      "D": "Planejamento e alinhamento estratégico.",
+      "E": "Refinamento e melhoria contínua tecnológica."
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D. O Planejamento (Alinhamento Estratégico) inclui a definição da Arquitetura de Processos, identificando a cadeia de valor macro, dividindo-a em processos primários, de suporte e de gerenciamento, e vinculando a TI ao negócio. As alternativas A e B envolvem imersão técnica em fluxos operacionais específicos, descendo a granularidade que deve ser evitada na fase fundacional. As alternativas C e E gerenciam os resultados pós-implementação, na extremidade final do ciclo de vida."
+  },
+  {
+    "id": 1258,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "BPM CBOK - Técnicas de Mapeamento",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No início do projeto de padronização da Gestão de Precatórios, a equipe do TJ-CE optou por realizar inicialmente entrevistas de alto nível com o Presidente do Tribunal e o Diretor Financeiro para compreender os objetivos macro. Somente após consolidar as metas gerais, os analistas desceram o nível hierárquico, entrevistando chefes de seção e, na etapa final, mapeando as transações sistêmicas exatas executadas diariamente pelos escriturários. Esta abordagem de descoberta de processos enquadra-se formalmente no conceito de:",
+    "options": {
+      "A": "Abordagem exploratória bottom-up.",
+      "B": "Abordagem diretiva top-down.",
+      "C": "Abordagem mediadora middle-out.",
+      "D": "Abordagem heurística baseada em evidências.",
+      "E": "Abordagem de extração empírica de eventos."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Na abordagem Top-Down (de cima para baixo), a modelagem e descoberta partem da camada estratégica direcional (presidência/objetivos) e progridem detalhadamente rumo às atividades operacionais executadas na base. A alternativa A erra por descrever a direção contrária (início na operação e progressão para a abstração estratégica). A alternativa C é iniciada pela gerência média. A alternativa E refere-se indiretamente à mineração de dados sistêmicos (Process Mining), descartando a estrutura hierárquica das entrevistas."
+  },
+  {
+    "id": 1259,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "BPM CBOK - Indicadores",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao auditar a eficiência do fluxo AS-IS de Habeas Corpus, um analista do TJ-CE calcula o intervalo temporal absoluto transcorrido desde o exato instante em que o advogado protocola a petição inicial no sistema até a publicação final do acórdão. Este intervalo computa não apenas o período de processamento ativo nos gabinetes, mas inclui todos os períodos de fila de espera em malotes digitais e fins de semana em repouso. A métrica abrangente calculada pelo analista denomina-se:",
+    "options": {
+      "A": "Tempo total de processamento sistêmico.",
+      "B": "Tempo médio de retenção de filas.",
+      "C": "Tempo operacional de setup ou preparo.",
+      "D": "Tempo de ciclo ponta a ponta.",
+      "E": "Tempo relativo de vazão de instâncias."
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D. O Tempo de Ciclo (Cycle Time) mede o tempo total necessário para completar um processo do início ao fim, somando os tempos de valor agregado (processamento ativo) e os tempos sem valor agregado (filas, ociosidade, fins de semana). A alternativa A isola de forma incorreta apenas o período onde existe trabalho humano ou de CPU, ignorando gargalos de espera. A alternativa B afere especificamente e isoladamente o tempo de gargalo. A alternativa C trata de calibração de maquinário (Lean). A alternativa E refere-se ao volume de saídas em dado período (Throughput)."
+  },
+  {
+    "id": 1260,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "BPM CBOK - Simulação",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Antes de promover a implantação do crítico fluxo TO-BE arquitetado para o Sorteio Automatizado de Desembargadores, a equipe de TI do TJ-CE utiliza um software avançado de modelagem para injetar volumes hipotéticos de processos distribuídos e estressar taxas de chegada variáveis nos gateways paralelos. O intuito é prever gargalos de utilização de recursos sistêmicos de forma probabilística, sem qualquer impacto no ambiente de produção. Esta técnica quantitativa utilizada ativamente na fase de Desenho de Processos é a:",
+    "options": {
+      "A": "Análise técnica de causa raiz.",
+      "B": "Simulação de eventos de processos.",
+      "C": "Monitoramento transacional de atividades.",
+      "D": "Mineração prospectiva de dados operacionais.",
+      "E": "Execução de testes de regressão de software."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. A Simulação de Processos avalia como um processo irá se comportar frente a variadas cargas de trabalho ao aplicar simulações probabilísticas sobre o diagrama, sendo fundamental para testar o modelo TO-BE antes da implantação real. A alternativa A erra, pois atua na detecção de falhas do passado. A alternativa C exige um cenário já implantado e rodando (BAM). A alternativa D analisa logs passados (Mineração de Processos). A alternativa E é focada em validar componentes de código-fonte de sistemas de TI em caso de atualizações de versão, não na gestão de processo em si."
+  },
+  {
+    "id": 1261,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Ferramentas da Qualidade e Gestão Estratégica",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Estado do Ceará (TJ-CE) iniciou o processo de elaboração do Plano Diretor de Tecnologia da Informação (PDTI) para o próximo quadriênio. Durante as oficinas de planejamento, a equipe de arquitetura mapeou a aprovação de uma nova legislação federal que regulamenta e incentiva financeiramente a adoção de Inteligência Artificial em trâmites processuais. Simultaneamente, constatou-se que o parque de servidores locais atingiu 90% da capacidade de processamento, impedindo a implantação imediata de modelos de aprendizado de máquina no ambiente on-premise. Sob a ótica da Matriz SWOT, a nova legislação federal e a limitação do parque de servidores representam, respectivamente:",
+    "options": {
+      "A": "Oportunidade e Fraqueza.",
+      "B": "Força e Ameaça.",
+      "C": "Oportunidade e Ameaça.",
+      "D": "Força e Fraqueza.",
+      "E": "Meta e Restrição."
+    },
+    "answer": "A",
+    "explanation": "A aprovação de uma legislação federal com incentivos é um fator externo favorável ao tribunal (Oportunidade). A limitação da capacidade de processamento dos servidores locais é uma deficiência interna da organização (Fraqueza). As alternativas incorretas invertem a análise de ambiente interno (Forças e Fraquezas) com o externo (Oportunidades e Ameaças) ou utilizam nomenclaturas alheias à Matriz SWOT clássica."
+  },
+  {
+    "id": 1262,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Ferramentas da Qualidade e Gestão Estratégica",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Secretaria de Tecnologia da Informação do TJ-CE recebe, mensalmente, cerca de 15 mil chamados no service desk referentes a incidentes no Processo Judicial Eletrônico (PJe). Diante da escassez de técnicos para o atendimento, o coordenador de suporte solicitou ao analista de TI um relatório analítico para identificar as poucas categorias de falhas que correspondem à vasta maioria das interrupções do sistema, permitindo direcionar o esforço da equipe de desenvolvimento para a correção dos módulos críticos. A ferramenta da qualidade apropriada para essa priorização é o:",
+    "options": {
+      "A": "Gráfico de Pareto.",
+      "B": "Diagrama de Dispersão.",
+      "C": "Histograma de Frequências.",
+      "D": "Diagrama de Ishikawa.",
+      "E": "Gráfico de Controle."
+    },
+    "answer": "A",
+    "explanation": "O Gráfico de Pareto baseia-se na regra 80/20, focando na identificação dos 'poucos vitais' (categorias de falhas) que representam a maior parte dos efeitos (interrupções), permitindo a priorização de ações corretivas. O Diagrama de Ishikawa analisa causas, o Gráfico de Controle foca na estabilidade do processo e o Diagrama de Dispersão analisa correlação entre variáveis."
+  },
+  {
+    "id": 1263,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Ferramentas da Qualidade e Gestão Estratégica",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após a migração do banco de dados central do TJ-CE para um novo provedor de nuvem, o sistema de emissão de certidões criminais passou a apresentar indisponibilidade intermitente nos horários de pico. Uma comissão técnica foi formada para investigar o incidente. O analista de infraestrutura liderou uma reunião de brainstorming e organizou as hipóteses levantadas em categorias estruturadas: falhas de configuração de rede, limitações de hardware dos roteadores corporativos, erros na documentação dos procedimentos de deploy e falta de treinamento da equipe de operação. A ferramenta utilizada para mapear visualmente a relação entre o problema central e essas potenciais origens é o:",
+    "options": {
+      "A": "Diagrama de Espinha de Peixe.",
+      "B": "Gráfico de Dispersão.",
+      "C": "Quadro Kanban.",
+      "D": "Mapa de Fluxo de Valor.",
+      "E": "Gráfico de Pareto."
+    },
+    "answer": "A",
+    "explanation": "O Diagrama de Espinha de Peixe (Ishikawa ou Causa e Efeito) é a ferramenta projetada para categorizar e mapear de forma estruturada as causas potenciais (configuração, hardware, documentação, treinamento) que levam a um efeito específico (indisponibilidade intermitente). As demais opções referem-se a fluxo de trabalho, controle estatístico e priorização quantitativa."
+  },
+  {
+    "id": 1264,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Ferramentas da Qualidade e Gestão Estratégica",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para adequar-se à Lei Geral de Proteção de Dados (LGPD), o comitê de segurança da informação do TJ-CE aprovou um projeto de criptografia das bases de dados legadas. A fim de garantir a execução disciplinada das atividades, o gerente do projeto elaborou um documento especificando a justificativa da adoção da cifra AES-256, o prazo limite para a conclusão do procedimento, o responsável pela execução nos servidores de produção, o custo estimado com o licenciamento de software e a localidade física dos datacenters envolvidos. O método de gestão empregado para estruturar esse plano de ação corresponde à:",
+    "options": {
+      "A": "Matriz 5W2H.",
+      "B": "Matriz RACI.",
+      "C": "Matriz GUT.",
+      "D": "Análise SWOT.",
+      "E": "Metodologia PDCA."
+    },
+    "answer": "A",
+    "explanation": "A descrição abrange os elementos do 5W2H: Why (justificativa), When (prazo), Who (responsável), How much (custo), Where (localidade física dos datacenters), o que caracteriza a elaboração de um plano de ação completo. A Matriz RACI define apenas papéis e responsabilidades de comunicação, sem abranger prazos ou custos orçamentários."
+  },
+  {
+    "id": 1265,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Ferramentas da Qualidade e Gestão Estratégica",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na formulação do Planejamento Estratégico, o Diretor de TI do TJ-CE utilizou a Matriz SWOT para avaliar o cenário institucional. Identificou-se que a existência de uma fábrica de software interna altamente madura e ágil cruza-se perfeitamente com a recente disponibilização, pelo Conselho Nacional de Justiça (CNJ), de APIs padronizadas para integração de bases de jurisprudência nacional. O cruzamento desse fator interno com esse fator externo gera um plano de ação classificado como:",
+    "options": {
+      "A": "Estratégia de Desenvolvimento.",
+      "B": "Estratégia de Manutenção.",
+      "C": "Estratégia de Sobrevivência.",
+      "D": "Estratégia de Contingência.",
+      "E": "Estratégia de Retenção."
+    },
+    "answer": "A",
+    "explanation": "O cruzamento de uma Força interna (fábrica de software madura) com uma Oportunidade externa (APIs disponibilizadas pelo CNJ) resulta em uma Estratégia de Desenvolvimento (ou Alavancagem). A estratégia de Manutenção decorre de Força cruzada com Ameaça, enquanto a de Sobrevivência surge do cruzamento entre Fraqueza e Ameaça."
+  },
+  {
+    "id": 1266,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Ferramentas da Qualidade e Gestão Estratégica",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a auditoria de qualidade no desenvolvimento do novo portal de serviços do TJ-CE, a equipe de testes reportou falhas sistemáticas no módulo de autenticação. Ao aplicar o Diagrama de Ishikawa para investigar as causas raízes, o auditor incluiu as ocorrências de 'Bibliotecas de criptografia desatualizadas no repositório' e 'Especificações de requisitos ambíguas fornecidas pela área de negócio'. Na estrutura tradicional dos 6Ms do Diagrama de Causa e Efeito, esses dois elementos são classificados, respectivamente, nas categorias:",
+    "options": {
+      "A": "Material e Método.",
+      "B": "Máquina e Mão de obra.",
+      "C": "Método e Medida.",
+      "D": "Material e Meio Ambiente.",
+      "E": "Máquina e Medida."
+    },
+    "answer": "A",
+    "explanation": "Bibliotecas de software agem como insumos consumidos na construção do sistema, enquadrando-se como 'Material'. Especificações de requisitos determinam a forma ou o processo como o trabalho deve ser guiado e executado, enquadrando-se como 'Método'. As demais classificações referem-se a hardware (Máquina) e condições externas (Meio Ambiente)."
+  },
+  {
+    "id": 1267,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Ferramentas da Qualidade e Gestão Estratégica",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O orçamento anual de TI do TJ-CE sofreu um contingenciamento de 20%, exigindo a priorização rigorosa dos contratos de manutenção. A equipe de gestão de TI elaborou um gráfico para visualizar o custo anual de cada contrato ativo, ordenando-os de forma decrescente e adicionando uma linha com o percentual cumulativo das despesas financeiras. O objetivo é identificar os contratos que, juntos, compõem a maior fatia do orçamento para eventuais renegociações. O gráfico gerado e a regra estatística associada são, respectivamente:",
+    "options": {
+      "A": "Gráfico de Pareto e Princípio 80/20.",
+      "B": "Histograma e Distribuição Normal.",
+      "C": "Diagrama de Ishikawa e Regra dos 6Ms.",
+      "D": "Gráfico de Controle e Regra de Seis Sigma.",
+      "E": "Diagrama de Dispersão e Correlação Linear."
+    },
+    "answer": "A",
+    "explanation": "O Gráfico de Pareto é visualmente constituído por barras em ordem decrescente acompanhadas de uma linha de frequência acumulada, servindo para identificar os poucos elementos que representam o maior impacto (Princípio 80/20). Histograma foca em dispersão de dados contínuos, Ishikawa foca em causas qualitativas."
+  },
+  {
+    "id": 1268,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Ferramentas da Qualidade e Gestão Estratégica",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao apresentar o plano de modernização tecnológica das comarcas do interior do Estado, o Analista de TI submeteu um relatório estruturado no padrão 5W2H aos desembargadores. O comitê aprovou os detalhes técnicos de implementação, os cronogramas estipulados e a designação das equipes responsáveis, porém rejeitou a proposta alegando a ausência de justificativa clara para o projeto e a falta de previsibilidade financeira das licitações. As dimensões omitidas ou mal formuladas no documento correspondem a:",
+    "options": {
+      "A": "Why e How much.",
+      "B": "What e Where.",
+      "C": "How e When.",
+      "D": "Who e Why.",
+      "E": "What e How much."
+    },
+    "answer": "A",
+    "explanation": "A ausência de justificativa clara indica falha na dimensão 'Why' (Por que a ação será feita). A falta de previsibilidade financeira indica falha na dimensão 'How much' (Quanto custará). Detalhes técnicos (How), cronogramas (When) e designação de equipes (Who) já estavam presentes no plano."
+  },
+  {
+    "id": 1269,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Ferramentas da Qualidade e Gestão Estratégica",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na revisão semestral do portfólio de sistemas do TJ-CE, constatou-se que a dependência excessiva de uma linguagem de programação obsoleta para a manutenção do sistema de folha de pagamento cruza-se negativamente com a recente e acelerada escassez de profissionais qualificados nessa tecnologia no mercado de trabalho estadual. No contexto da Matriz SWOT cruzada, essa interação exige do Tribunal a formulação de uma:",
+    "options": {
+      "A": "Estratégia de Sobrevivência.",
+      "B": "Estratégia Ofensiva.",
+      "C": "Estratégia de Desenvolvimento.",
+      "D": "Estratégia de Manutenção.",
+      "E": "Estratégia de Alavancagem."
+    },
+    "answer": "A",
+    "explanation": "A dependência excessiva de uma linguagem obsoleta é uma deficiência da corporação (Fraqueza). A escassez de profissionais no mercado de trabalho é um fator externo restritivo (Ameaça). A combinação do cenário de Fraqueza com Ameaça gera a Estratégia de Sobrevivência, focada em redução de danos e contenção de crises."
+  },
+  {
+    "id": 1270,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Ferramentas da Qualidade e Gestão Estratégica",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Núcleo de Engenharia de Software do TJ-CE enfrenta altos índices de retrabalho na homologação de sistemas. A equipe possui um registro contendo 40 diferentes tipos de defeitos reportados pelos usuários finais nas últimas versões entregues. O arquiteto de soluções estruturou uma representação visual exibindo a frequência absoluta de cada defeito em colunas verticais ordenadas de forma decrescente, sobreposta por uma linha contínua que demonstra o impacto percentual acumulado. Essa representação gráfica, voltada para a identificação rigorosa dos defeitos prioritários, denomina-se:",
+    "options": {
+      "A": "Gráfico de Pareto.",
+      "B": "Diagrama de Dispersão.",
+      "C": "Gráfico de Controle.",
+      "D": "Histograma.",
+      "E": "Diagrama de Ishikawa."
+    },
+    "answer": "A",
+    "explanation": "O modelo visual de colunas ordenadas decrescentemente por frequência somado à linha de percentual acumulado caracteriza o Gráfico de Pareto. O Histograma organiza distribuições de classes de amplitude, não utilizando a regra mandatória de ordenação decrescente e acumulativa focada em priorização."
+  },
+  {
+    "id": 1271,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Ferramentas da Qualidade e Gestão Estratégica",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A diretoria do TJ-CE aprovou a implantação de uma ferramenta de monitoramento de infraestrutura de TI corporativa. O documento de formalização do projeto especifica a arquitetura da solução no datacenter primário, detalha os manuais de instalação dos agentes nos servidores virtuais, estabelece o mês de dezembro para a conclusão da implantação geral e nomeia nominalmente os analistas de redes encarregados das configurações. De acordo com a estrutura do método 5W2H, o documento demonstra deficiência direta por omitir:",
+    "options": {
+      "A": "A justificativa estratégica e a previsão orçamentária estipulada.",
+      "B": "A definição de escopo do negócio e a metodologia de qualidade de implantação.",
+      "C": "A localização espacial geográfica do projeto e os limites de prazos de entrega.",
+      "D": "A indicação executiva dos responsáveis e a arquitetura lógica detalhada.",
+      "E": "A técnica construtiva estruturada e a análise mitigatória de riscos cibernéticos."
+    },
+    "answer": "A",
+    "explanation": "A documentação já contém What (arquitetura no datacenter), Where (datacenter primário), How (manuais de instalação), When (mês de dezembro) e Who (analistas de redes nomeados). Faltam exatamente as dimensões Why (justificativa estratégica para a aprovação) e How much (previsão orçamentária do projeto)."
+  },
+  {
+    "id": 1272,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Ferramentas da Qualidade e Gestão Estratégica",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Planejamento Estratégico de TI do TJ-CE para o próximo quinquênio utilizou a Análise SWOT como base de diagnóstico. Ao avaliar o ambiente macro, a equipe classificou a iminente sanção de uma nova norma regulatória que exigirá a integração tecnológica obrigatória de todos os tribunais estaduais a um barramento nacional em um prazo inflexível de seis meses. Considerando a alta complexidade do ecossistema de sistemas legados internos do TJ-CE, a diretoria de TI interpretou tecnicamente esse cenário imposto pela nova diretriz regulatória como:",
+    "options": {
+      "A": "Uma ameaça oriunda do ambiente externo.",
+      "B": "Uma fraqueza estrutural do ambiente interno.",
+      "C": "Um desafio operacional controlável do ambiente de tarefa.",
+      "D": "Uma ameaça originada intrinsecamente do ambiente interno.",
+      "E": "Um ponto de inflexão de melhoria do ambiente competitivo."
+    },
+    "answer": "A",
+    "explanation": "A exigência normativa proveniente de um órgão superior (barramento nacional) é imposta de fora para dentro, configurando-se como uma força do ambiente externo. Dado que ela demanda um esforço extremo em prazo inflexível e ameaça a estabilidade operacional, é interpretada na matriz SWOT como uma Ameaça (fator externo e incontrolável)."
+  },
+  {
+    "id": 1273,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Ferramentas da Qualidade e Gestão Estratégica",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de suporte audiovisual do TJ-CE utiliza o Diagrama de Ishikawa para solucionar as instabilidades técnicas nas transmissões de audiências virtuais das comarcas de entrância inicial. Durante o preenchimento do modelo de causas sistêmicas, o excesso de ruído acústico não isolado nas salas das varas criminais e a instabilidade da tensão elétrica nas fiações dos prédios tombados foram inseridos de imediato como potenciais motivadores da falha de áudio. Na ramificação metodológica clássica dos 6Ms, esses elementos físicos pertencem estritamente à categoria:",
+    "options": {
+      "A": "Meio Ambiente.",
+      "B": "Máquina.",
+      "C": "Material.",
+      "D": "Método.",
+      "E": "Medida."
+    },
+    "answer": "A",
+    "explanation": "O ruído acústico e as condições elétricas da infraestrutura predial dizem respeito às condições físicas do ambiente de trabalho onde o processo ocorre, sendo formalmente alocados na dimensão de Meio Ambiente no Diagrama de Ishikawa. Máquina estaria relacionado ao equipamento físico em si."
+  },
+  {
+    "id": 1274,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Ferramentas da Qualidade e Gestão Estratégica",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Analista de Segurança do TJ-CE aplicou o princípio de Pareto para analisar os 3 mil incidentes cibernéticos registrados nos últimos doze meses. O gráfico estatístico resultante indicou que ataques pontuais de phishing e vazamentos acidentais promovidos por e-mail representam, no universo total, apenas 15% das categorias de ameaças tipificadas, mas simultaneamente acumulam a responsabilidade por 85% do total consolidado de horas ininterruptas de indisponibilidade da rede corporativa. A interpretação técnica diretiva e correta da ferramenta exige que a gestão do Tribunal:",
+    "options": {
+      "A": "Concentre os investimentos financeiros e de processos na mitigação das duas categorias principais visando ao maior impacto prático.",
+      "B": "Distribua os recursos orçamentários previstos igualitariamente entre todas as variadas categorias de ameaças mapeadas.",
+      "C": "Ignore os impactos das ameaças de phishing e direcione esforços ostensivos para as ameaças classificadas na cauda longa do gráfico.",
+      "D": "Aplique imediatamente o diagrama de dispersão nas categorias minoritárias para justificar a inversão estatística da curva acumulada.",
+      "E": "Inicie uma reestruturação do ambiente interno em decorrência do cruzamento lógico evidenciado das fraquezas e ameaças identificadas."
+    },
+    "answer": "A",
+    "explanation": "A interpretação correta de um diagrama de Pareto baseia-se em identificar a minoria dos problemas que causa a maioria dos efeitos, focando os recursos na resolução dessas anomalias críticas (neste caso, phishing e vazamento) para maximizar a mitigação de danos em menor tempo e custo."
+  },
+  {
+    "id": 1275,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Ferramentas da Qualidade e Gestão Estratégica",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para elevar a produtividade da emissão de sentenças nos gabinetes do TJ-CE, o comitê de inovação propôs a automação progressiva de fluxos internos com RPA. O projeto iniciou com o levantamento volumétrico dos gargalos de tempo de tramitação, revelando quantitativamente que a morosidade sistêmica no módulo de assinatura digital correspondia sozinha a quase 80% de todas as paralisações acumuladas. Em seguida, mapearam-se qualitativamente os motivos causadores dessa lentidão específica, organizando-os sob ramificações de hardware, software e deficiências de capacitação da mão de obra. Por fim, publicou-se a tabela formal de execução do piloto, documentando explicitamente quem executaria os passos, até quando, onde e a qual orçamento estimado. A sequência metodológica estrutural aplicada de ponta a ponta na condução das três etapas descritas equivale, estritamente, à utilização do:",
+    "options": {
+      "A": "Gráfico de Pareto, Diagrama de Ishikawa e 5W2H.",
+      "B": "Diagrama de Ishikawa, Análise SWOT e Metodologia PDCA.",
+      "C": "Matriz GUT, Fluxograma Lógico e Gráfico de Gantt.",
+      "D": "Gráfico de Pareto, Matriz de Responsabilidade RACI e Diagrama de Ishikawa.",
+      "E": "Análise Estratégica SWOT, Matriz GUT e Metodologia 5W2H."
+    },
+    "answer": "A",
+    "explanation": "O passo de descobrir que 80% das paralisações vinham de uma única fonte requer priorização pelo Gráfico de Pareto. O mapeamento ramificado das causas sistêmicas dessa fonte requer Ishikawa (causa e efeito com categorias, como hardware e mão de obra). A definição tática do plano contemplando quem, quando, onde e custo caracteriza diretamente o 5W2H."
+  },
+  {
+    "id": 1276,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Modalidades de Licitação em Projetos de Inovação",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Secretaria de Tecnologia da Informação do TJ-CE depara-se com um grande desafio estrutural: a implementação de uma plataforma preditiva baseada em Inteligência Artificial para mineração de dados em milhões de processos judiciais não estruturados. A equipe de arquitetura concluiu que a Administração Pública não consegue definir as especificações técnicas precisas da solução, tampouco identificar as melhores alternativas de mercado sem um engajamento profundo com a iniciativa privada. O projeto envolve adaptação contínua de tecnologias disruptivas e modelagem complexa de redes neurais. Diante desse cenário e com base na Lei nº 14.133/2021, o gestor de TI deve indicar o instrumento legal adequado para a condução do certame.",
+    "options": {
+      "A": "Concorrência sob o critério de julgamento de melhor técnica.",
+      "B": "Pregão eletrônico com exigência de prova de conceito prévia.",
+      "C": "Diálogo competitivo com avaliação paralela de inovações tecnológicas.",
+      "D": "Inexigibilidade de licitação amparada na inviabilidade de padronização.",
+      "E": "Credenciamento vinculado ao sistema de registro de preços corporativo."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A Lei 14.133/2021 introduziu o Diálogo Competitivo (Art. 28, V e Art. 32) exatamente para cenários de inovação tecnológica e alta complexidade, onde a Administração não consegue definir as especificações técnicas da solução ou precisa da iniciativa privada para identificar as melhores alternativas. A alternativa A erra ao sugerir concorrência, que pressupõe objeto bem definido. A alternativa B erra ao sugerir pregão para inovação sem padronização. A alternativa D erra ao forçar inexigibilidade, ignorando que há pluralidade de players de IA no mercado. A alternativa E erra ao usar credenciamento, voltado para contratações paralelas sem competição direta."
+  },
+  {
+    "id": 1277,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Contratação Direta: Inexigibilidade para Soluções Proprietárias",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Estado do Ceará opera seus sistemas de missão crítica em clusters de alta disponibilidade utilizando um Sistema Gerenciador de Banco de Dados (SGBD) de arquitetura proprietária. Após análise de capacidade, identificou-se a necessidade de aquisição de novas licenças corporativas do referido SGBD. O Estudo Técnico Preliminar demonstrou que a migração para outra plataforma causaria paralisação dos serviços jurisdicionais por meses. A fabricante do software atestou, por meio de documentação oficial, a existência de apenas um representante legal autorizado para comercialização dessas licenças na região Nordeste. Para efetuar a contratação em conformidade com a Lei nº 14.133/2021, a providência técnica e jurídica correta é a",
+    "options": {
+      "A": "dispensa de licitação condicionada ao valor da contratação contínua.",
+      "B": "inexigibilidade de licitação mediante comprovação de exclusividade.",
+      "C": "realização de pregão eletrônico restrito a representantes oficiais cadastrados.",
+      "D": "abertura de concorrência com critério de menor preço por lote de licenciamento.",
+      "E": "formalização de credenciamento de empresas integradoras de soluções corporativas."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a correta. O Art. 74, I da Lei 14.133/2021 determina que a licitação é inexigível em caso de inviabilidade de competição, em especial para aquisição de materiais, equipamentos ou gêneros fornecidos por produtor, empresa ou representante comercial exclusivos. Como o SGBD é proprietário e há atestado de exclusividade, a competição é faticamente inviável. As alternativas A, C e D erram ao ignorar a inviabilidade de competição. A alternativa E erra pois credenciamento exige viabilidade de contratação de todos os interessados que preencham os requisitos."
+  },
+  {
+    "id": 1278,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Contratação Direta: Dispensa Emergencial em Incidentes Cibernéticos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o fim de semana, a infraestrutura central do TJ-CE sofreu um ataque massivo de ransomware, comprometendo o principal datacenter e inativando a replicação síncrona para o site de disaster recovery. O comitê de crise deliberou pela necessidade premente de contratação de uma consultoria especializada em resposta a incidentes cibernéticos (Incident Response) para contenção de danos, análise forense e restauração dos serviços essenciais, sob risco de perda irreversível do acervo digital. Considerando as regras de contratação direta previstas na Lei nº 14.133/2021, o enquadramento adequado para solucionar o incidente é a",
+    "options": {
+      "A": "inexigibilidade de licitação para serviços de notória especialização por tempo indeterminado.",
+      "B": "dispensa de licitação com limitação de prazo contratual emergencial a um ano.",
+      "C": "dispensa de licitação atrelada à posterior deflagração obrigatória de pregão eletrônico.",
+      "D": "condução de diálogo competitivo em caráter de urgência máxima de seis meses.",
+      "E": "realização de pregão presencial emergencial com prazos recursais reduzidos pela metade."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. A Lei 14.133/2021, em seu Art. 75, VIII, prevê a dispensa de licitação em casos de emergência ou calamidade pública que possam comprometer a segurança de pessoas, obras, serviços ou equipamentos, limitando a contratação ao prazo máximo de 1 (um) ano, vedada a prorrogação do contrato. A alternativa A erra na fundamentação e na falta de limite de tempo. A alternativa C traz uma condição inexistente na nova lei. As alternativas D e E inventam procedimentos anômalos não amparados na Lei 14.133."
+  },
+  {
+    "id": 1279,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Modalidades: Pregão para Bens e Serviços Comuns de TI",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Com o aumento do quadro de servidores e a implementação integral do teletrabalho híbrido, o TJ-CE identificou a necessidade de renovar o parque computacional, prevendo a aquisição de 5.000 monitores de vídeo LED de 24 polegadas e 3.000 notebooks corporativos. A equipe de infraestrutura redigiu as especificações no Termo de Referência com base em padrões de mercado amplamente conhecidos, sem exigência de inovações disruptivas ou arquiteturas singulares. Os equipamentos possuem níveis de desempenho e qualidade objetivamente definidos. De acordo com a Lei nº 14.133/2021, a contratação exige a aplicação da modalidade",
+    "options": {
+      "A": "concorrência amparada no critério de técnica e preço.",
+      "B": "pregão conduzido pelo critério de menor preço ou maior desconto.",
+      "C": "diálogo competitivo fundamentado no critério de menor dispêndio.",
+      "D": "credenciamento orientado pelo critério de maior retorno econômico.",
+      "E": "dispensa de licitação motivada pelo parcelamento do objeto técnico."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a correta. O Art. 29 da Lei 14.133/2021 determina que o pregão é obrigatório para a aquisição de bens e serviços comuns, cujo critério de julgamento poderá ser o de menor preço ou de maior desconto. Como os equipamentos de TI descritos têm padrões de mercado amplamente conhecidos e especificações objetivas, classificam-se como bens comuns. A alternativa A erra pois a concorrência não é a regra para bens comuns. A alternativa C erra na modalidade e critério. A D e E aplicam institutos incompatíveis com o cenário de aquisição em massa de bens padronizados."
+  },
+  {
+    "id": 1280,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Fases da Licitação: Ordem e Rito Processual",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para a modernização do sistema de controle de acesso lógico do Tribunal, a comissão de contratação está desenhando o rito procedimental de um pregão eletrônico destinado à aquisição de certificados digitais e tokens criptográficos padronizados. Durante a modelagem do edital, surgiu uma controvérsia sobre a ordenação correta das etapas do certame. Segundo as diretrizes da Lei nº 14.133/2021, que consolida o rito processual das licitações, a sequência correta e regular das fases a serem seguidas após a apresentação de propostas é",
+    "options": {
+      "A": "julgamento das propostas, habilitação, recursos e homologação.",
+      "B": "habilitação documental, julgamento das propostas, recursos e homologação.",
+      "C": "homologação, julgamento das propostas, habilitação e recursos preliminares.",
+      "D": "análise de recursos, habilitação técnica, avaliação de propostas e homologação.",
+      "E": "habilitação técnica, recursos, julgamento econômico e homologação final."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. A Lei 14.133/2021 consolidou no seu Art. 17 a inversão de fases como regra geral para todas as modalidades (exceto quando houver justificativa expressa para o rito tradicional). A ordem correta é: fase preparatória, divulgação do edital, apresentação de propostas e lances, julgamento, habilitação, fase recursal e homologação. A alternativa B descreve o rito ultrapassado da Lei 8.666/93. As demais alternativas apresentam ordens ilógicas e desconexas com a legislação vigente."
+  },
+  {
+    "id": 1281,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Estudo Técnico Preliminar em TI",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O planejamento estratégico de TI do TJ-CE determinou a migração integral dos sistemas legados on-premise para um modelo de Nuvem Pública (IaaS/PaaS). A equipe responsável pela fase preparatória da contratação deve elaborar um documento que evidencie o problema a ser resolvido, demonstre a viabilidade técnica e econômica do projeto em comparação a outras alternativas de mercado e justifique a adequação do escopo. No contexto das exigências instituídas pela Lei nº 14.133/2021 para o planejamento de contratações complexas de TI, este artefato é o",
+    "options": {
+      "A": "Projeto Básico de preenchimento facultativo para soluções de nuvem.",
+      "B": "Termo de Referência simplificado orientado a métricas de desempenho.",
+      "C": "Estudo Técnico Preliminar de elaboração obrigatória na fase preparatória.",
+      "D": "Matriz de Riscos padronizada aplicável a inexigibilidades sistêmicas.",
+      "E": "Plano de Diretrizes de Tecnologia da Informação com força executiva."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C é a correta. O Estudo Técnico Preliminar (ETP) é o documento da fase preparatória que evidencia a viabilidade técnica e econômica da contratação, base para a elaboração do Termo de Referência ou Projeto Básico, sendo sua elaboração obrigatória como regra na Lei 14.133/2021 (Art. 18, I e § 1º). A alternativa A erra ao chamar de Projeto Básico (que é posterior) e tratá-lo como facultativo. As alternativas B, D e E misturam conceitos (TR, Matriz de Riscos, PDTI) que não atendem à descrição exata do documento que compara alternativas de viabilidade."
+  },
+  {
+    "id": 1282,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Prova de Conceito (PoC) nas Aquisições de Software",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na aquisição de um software corporativo de orquestração de contêineres, o edital do TJ-CE previu a realização de uma Prova de Conceito (PoC) técnica para garantir que a solução ofertada atenda estritamente aos complexos requisitos de integração com a infraestrutura atual. Um dos fornecedores impugnou o edital questionando o momento de exigência da referida demonstração técnica, argumentando atrasos no certame. De acordo com os preceitos da Lei nº 14.133/2021 relativos às avaliações e amostras, o procedimento correto na condução dessa PoC consiste na",
+    "options": {
+      "A": "solicitação prévia ao credenciamento para todos os licitantes interessados no certame.",
+      "B": "exigência na fase de julgamento das propostas exclusivamente ao licitante provisoriamente vencedor.",
+      "C": "avaliação vinculada à abertura das propostas financeiras de todos os competidores simultaneamente.",
+      "D": "realização conjunta e colaborativa durante a fase preparatória do termo de referência.",
+      "E": "substituição da documentação comprobatória de qualificação técnica pela demonstração sistêmica."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é correta. O Art. 41 da Lei 14.133/2021 estabelece que no caso de exigência de amostra ou prova de conceito, esta deve ser solicitada na fase de julgamento das propostas, ou de lances, e somente do licitante provisoriamente vencedor (salvo justificativa técnica em sentido contrário, o que torna a regra aplicável). Exigir PoC de todos antecipadamente (opção A e C) fere a celeridade e onera os licitantes. A alternativa D distorce o momento licitatório, e a E erra ao propor a substituição irrestrita de documentos de habilitação técnica."
+  },
+  {
+    "id": 1283,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Sistema de Registro de Preços (SRP)",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para sustentar a modernização das comarcas do interior ao longo dos próximos dois anos, o TJ-CE mapeou a necessidade de substituição paulatina de roteadores e switches corporativos. Contudo, o Tribunal não possui infraestrutura de armazenamento logístico para receber todo o maquinário de uma só vez, tampouco cronograma rígido de instalação em cada localidade. A diretoria técnica manifestou interesse em um mecanismo que permita formalizar os preços hoje, mas encomendar os equipamentos gradativamente, à medida da necessidade real. Sob a ótica da Lei nº 14.133/2021, o instrumento adequado à situação descrita é a",
+    "options": {
+      "A": "licitação fracionada conduzida por múltiplas dispensas de pequeno valor.",
+      "B": "adoção do sistema de registro de preços atrelado a pregão ou concorrência.",
+      "C": "contratação emergencial recorrente com base na continuidade dos serviços vitais.",
+      "D": "condução de diálogo competitivo focado na infraestrutura de rede contínua.",
+      "E": "formalização de credenciamento limitado a fornecedores com estoque local imediato."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O Sistema de Registro de Preços (SRP) é o procedimento auxiliar aplicável quando houver conveniência de contratações frequentes ou entregas parceladas, em que a Administração não precisa adquirir/estocar tudo de uma vez. Na Lei 14.133/2021 (Art. 82, § 5º), o SRP pode ser utilizado nas modalidades pregão e concorrência (e excepcionalmente em contratação direta). A alternativa A configura fracionamento ilegal de despesa. As demais opções são institutos incorretos para a dinâmica de compra parcelada sem obrigatoriedade de consumo imediato."
+  },
+  {
+    "id": 1284,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Concorrência e Serviços Especiais de TI",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um projeto crítico do TJ-CE demanda a construção de um Sistema de Gestão de Precatórios extremamente customizado, integrado aos bancos de dados estaduais, federais e ao sistema bancário. O desenvolvimento adotará metodologias ágeis com métricas de esforço baseadas em pontos de função e exigirá arquitetura de microsserviços inédita no órgão. O Estudo Técnico Preliminar atestou que a solução não pode ser classificada como bem ou serviço comum, dada a alta heterogeneidade e a impossibilidade de aferição estrita por critérios puramente objetivos de padronização de mercado. Para este tipo de objeto, a Lei nº 14.133/2021 aponta como rito aplicável a",
+    "options": {
+      "A": "modalidade pregão sob o critério rigoroso de melhor técnica.",
+      "B": "modalidade concorrência pautada no critério de técnica e preço.",
+      "C": "contratação por inexigibilidade pautada na inviabilidade técnica de padronização.",
+      "D": "dispensa de licitação fundamentada na necessidade de inovação tecnológica direta.",
+      "E": "modalidade concurso focada na avaliação cega do código-fonte do escopo."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a correta. Bens e serviços especiais (não comuns) não podem ser licitados via pregão. A concorrência é a modalidade adequada para a contratação de bens e serviços especiais e de obras e serviços comuns e especiais de engenharia (Art. 29). Para serviços de TI complexos e de natureza predominantemente intelectual, utiliza-se frequentemente a Concorrência com critério de técnica e preço (Art. 36). A alternativa A é absurda, pois pregão não admite critério de melhor técnica. As alternativas C e D tentam forçar contratação direta onde existe ampla competição de fábricas de software."
+  },
+  {
+    "id": 1285,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Diálogo Competitivo: Sigilo e Compartilhamento de Soluções",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No decurso da fase de diálogos de uma licitação para implementação de smart building na sede do TJ-CE, a comissão de contratação deparou-se com uma solução altamente inovadora proposta por um dos licitantes, que envolvia protocolos de rede IoT patenteados. A fim de otimizar a fase competitiva e elaborar um edital definitivo mais robusto, um membro da comissão sugeriu incorporar aspectos técnicos dessa solução específica para nivelar as propostas das demais empresas. Considerando os ditames da Lei nº 14.133/2021 aplicáveis ao Diálogo Competitivo, a referida ação encontra barreira na",
+    "options": {
+      "A": "exigência de compartilhamento obrigatório voltado à isonomia absoluta entre os participantes.",
+      "B": "vedação à revelação de soluções propostas sem o consentimento prévio e expresso do licitante.",
+      "C": "permissão restrita a arquiteturas classificadas como domínio público em registros internacionais.",
+      "D": "condição de assinatura de um termo de confidencialidade cruzada imposto aos demais fornecedores.",
+      "E": "restrição de transferência irrestrita de dados técnicos exclusivamente à equipe de controle interno."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. A Lei 14.133/2021 trata do sigilo no diálogo competitivo de forma rigorosa. O Art. 32, § 1º, inciso IV, estabelece que a Administração não poderá revelar a outros licitantes as soluções propostas ou as informações confidenciais comunicadas por um candidato, sem o seu consentimento. A alternativa A inverte a lei. As demais alternativas (C, D, E) criam invenções normativas inexistentes no texto legal para justificar a violação de propriedade intelectual e sigilo da proposta."
+  },
+  {
+    "id": 1286,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Inexigibilidade por Notória Especialização",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal requer a elaboração de um parecer técnico complexo, englobando a reestruturação profunda do plano diretor de segurança da informação institucional, em face das novas regulamentações globais. Para tanto, indicou-se a contratação de um renomado doutor em criptografia pós-quântica, profissional que detém métodos de análise únicos e incontestável reconhecimento no campo científico e profissional. O trabalho não pode ser delegado de maneira padronizada, dada a natureza eminentemente intelectual e singular do escopo delineado. A via de contratação prescrita pelo ordenamento jurídico, segundo a Lei nº 14.133/2021, é a",
+    "options": {
+      "A": "dispensa de licitação fundamentada na alta complexidade técnica do projeto institucional.",
+      "B": "inexigibilidade de licitação amparada na singularidade do serviço e notória especialização.",
+      "C": "concorrência de rito especial com peso exclusivo direcionado à pontuação da proposta técnica.",
+      "D": "condução de concurso de projetos voltado a acadêmicos de institutos de pesquisa tecnológica.",
+      "E": "abertura de pregão eletrônico de escopo fechado condicionado a rigorosa qualificação teórica."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a correta. Conforme a Lei 14.133/2021 (Art. 74, III), é inexigível a licitação para a contratação de serviços técnicos especializados de natureza predominantemente intelectual, com profissionais ou empresas de notória especialização. A singularidade do objeto e a notória especialização impedem a viabilidade de competição por preços ou propostas idênticas. A alternativa A erra a classificação legal (dispensa vs. inexigibilidade). As demais modalidades listadas são incompatíveis com objetos onde a competição se demonstra técnica e juridicamente inviável devido à singularidade pessoal."
+  },
+  {
+    "id": 1287,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Licitação Deserta em TI e Contratação Direta",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em busca de ampliar a segurança ergonômica de seu data center, o TJ-CE deflagrou licitação para aquisição de racks estabilizados e bancadas especializadas. Realizada a sessão pública eletrônica, não acudiram fornecedores interessados no certame, configurando licitação deserta. Uma nova abertura do certame causaria severos prejuízos ao cronograma de migração de servidores vitais ao Poder Judiciário. Considerando as regras de exceção e preservação do interesse público contidas na Lei nº 14.133/2021, a Administração tem permissão para realizar a",
+    "options": {
+      "A": "contratação direta por inexigibilidade sustentada na ausência absoluta do mercado fornecedor.",
+      "B": "alteração unilateral técnica do projeto básico para estímulo artificial e atração de novas propostas.",
+      "C": "dispensa de licitação vinculada à estrita manutenção de todas as condições do edital fracassado.",
+      "D": "adjudicação impositiva à empresa detentora dos maiores índices no estudo técnico preliminar.",
+      "E": "majoração automática do valor de referência estimado em proporção de até vinte e cinco por cento."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A Lei 14.133/2021 autoriza a dispensa de licitação quando não acudirem interessados à licitação anterior (licitação deserta) e esta, justificadamente, não puder ser repetida sem prejuízo para a Administração, desde que mantidas todas as condições preestabelecidas no edital (Art. 75, III, 'a'). A alternativa A erra pois o caso é de dispensa, não inexigibilidade. A alternativa B erra pois alterar condições obriga a nova licitação. D e E são atos inexistentes/ilegais no direito administrativo brasileiro."
+  },
+  {
+    "id": 1288,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Sigilo do Orçamento na Licitação",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na publicação do edital destinado ao licenciamento de uma suíte corporativa de antivírus (Endpoint Detection and Response - EDR), o responsável pelo certame decidiu por não divulgar publicamente o valor estimado da contratação no corpo do edital. O objetivo dessa manobra é incentivar propostas baseadas nos reais custos da iniciativa privada, evitando o balizamento de preços no teto estipulado pela Administração. No tocante a essa prática de orçamento sigiloso, a nova sistemática de licitações estabelecida pela Lei nº 14.133/2021 apresenta a",
+    "options": {
+      "A": "vedação expressa atrelada aos princípios corolários da transparência plena e probidade pública.",
+      "B": "permissão integral válida exclusivamente para as modelagens de concorrência por melhor técnica.",
+      "C": "possibilidade admitida mediante justificativa, preservado o acesso imediato aos órgãos de controle.",
+      "D": "obrigatoriedade absoluta em toda e qualquer contratação de tecnologia de informação de vulto.",
+      "E": "condição restritiva atrelada à autorização antecipada da corregedoria do Tribunal respectivo."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A Lei 14.133/2021 expressamente prevê no Art. 24 a possibilidade do orçamento sigiloso. O valor estimado da contratação poderá ter caráter sigiloso, sem prejuízo da divulgação do detalhamento dos quantitativos e das demais informações necessárias, desde que justificado e sendo estritamente obrigatório o acesso aos órgãos de controle interno e externo a qualquer tempo. A alternativa A erra pois não há vedação. B, D e E impõem regras ou restrições não previstas, como limitar a certas modalidades ou impor obrigatoriedade generalizada."
+  },
+  {
+    "id": 1289,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Margem de Preferência em Bens e Serviços de TI",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O departamento de infraestrutura de TI avalia o uso de componentes de hardware manufaturados em território nacional, visando ao fomento da indústria de componentes eletrônicos pátria. Em um processo de concorrência regular, a Administração discute a validade jurídica de sobrepor a oferta de um fornecedor nacional em relação a equipamentos idênticos de origem importada, ainda que com uma ligeira variação superior de custo. Sobre a inserção de privilégios de cunho econômico local no certame, a Lei nº 14.133/2021 estabelece a",
+    "options": {
+      "A": "aplicação compulsória de margem de preferência ilimitada voltada a empresas de origem local.",
+      "B": "concessão de margem de preferência direcionada a bens e serviços calcados em tecnologia nacional.",
+      "C": "proibição de estabelecimento de critérios desiguais no escopo de bens de base tecnológica.",
+      "D": "equiparação financeira automática de propostas estrangeiras e nacionais no teto referencial do edital.",
+      "E": "atribuição de bônus econômico fixo calculado sobre o valor global da proposta internacional."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a correta. O Art. 26 da Lei 14.133/2021 autoriza a concessão de margem de preferência para bens manufaturados e serviços nacionais que atendam a normas técnicas brasileiras, bem como para bens, serviços e obras resultantes de desenvolvimento de tecnologia nacional, com o limite de até 10% ou até 20% (casos de inovação/sustentabilidade). A alternativa A erra ao afirmar que é ilimitada. C erra por negar a possibilidade explícita da lei. D e E inventam regras de equiparação automática e bônus não previstas em lei."
+  },
+  {
+    "id": 1290,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Contratações de TI - Lei 14.133/2021",
+    "context": "Catálogo Eletrônico de Padronização para TI",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para agilizar e garantir consistência técnica nas aquisições rotineiras de mouses, cabos de rede e webcams para as unidades de atendimento, o TJ-CE optou por referenciar as especificações a partir de uma base centralizada de descrições e requisitos, evitando a formulação isolada de Termos de Referência redundantes em cada setor. A Lei nº 14.133/2021 modernizou o arcabouço tecnológico de compras governamentais, tornando imperativa, nas aquisições de bens comuns pela Administração, a adoção de sistemas informatizados representados pelo",
+    "options": {
+      "A": "banco unificado de inovações disruptivas de infraestrutura.",
+      "B": "sistema de registro imobiliário de ativos corporativos fechados.",
+      "C": "catálogo eletrônico de padronização de compras, serviços e obras.",
+      "D": "registro consultivo de preços mínimos para materiais de baixo valor.",
+      "E": "portal da transparência de credenciamento técnico de serviços pontuais."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A Lei 14.133/2021 em seu Art. 19, inciso II, exige que os órgãos da Administração, quando da aquisição de bens ou serviços comuns, utilizem preferencialmente o catálogo eletrônico de padronização de compras, serviços e obras. Este catálogo centraliza a especificação técnica padronizada, eliminando redundâncias e falhas nas descrições de bens de prateleira (como periféricos de TI). As alternativas A, B, D e E trazem nomes fictícios que não correspondem à estrutura desenhada pela Nova Lei de Licitações."
+  },
+  {
+    "id": 1291,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "O Tribunal de Justiça do Ceará (TJ-CE) enfrenta um aumento exponencial no volume de processos físicos a serem digitalizados e indexados por inteligência artificial. A área de modernização processual identificou a necessidade de uma nova solução tecnológica para automatizar a triagem de petições iniciais. Um Analista de TI foi designado para orientar a área demandante na elaboração do Documento de Oficialização da Demanda (DOD), o artefato que inaugura a fase de planejamento da contratação de TIC.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Considerando as diretrizes da IN SGD/ME nº 94/2022 para a fase de planejamento da contratação, o Documento de Oficialização da Demanda (DOD) elaborado pela área requisitante deve conter, obrigatoriamente, a:",
+    "options": {
+      "A": "indicação do alinhamento da contratação aos instrumentos de planejamento estratégico do tribunal.",
+      "B": "definição detalhada da arquitetura de software e dos protocolos de integração de rede.",
+      "C": "avaliação completa dos riscos de execução e das respectivas ações de mitigação do projeto.",
+      "D": "especificação dos critérios técnicos de aceite e do modelo de remuneração atrelado a resultados.",
+      "E": "estimativa do Custo Total de Propriedade da solução contemplando o ciclo de vida útil."
+    },
+    "answer": "A",
+    "explanation": "A correta é a [A]. O art. 10 da IN 94/2022 define que o DOD deve conter o alinhamento entre a contratação, o Plano de Contratações Anual e os instrumentos de planejamento estratégico (como o PDTIC). Erro da [B]: Arquitetura e protocolos técnicos são detalhados no TR ou ETP, não no DOD. Erro da [C]: A avaliação de riscos e suas mitigações compõem o Mapa de Gerenciamento de Riscos (MGR). Erro da [D]: Critérios de aceite e modelo de remuneração atrelado a resultados são escopo estrito do Termo de Referência (TR). Erro da [E]: O cálculo do Custo Total de Propriedade (TCO) é elemento de análise financeira do Estudo Técnico Preliminar (ETP)."
+  },
+  {
+    "id": 1292,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "Após a aprovação do DOD para a aquisição de uma solução de segurança cibernética para o datacenter secundário do TJ-CE, a autoridade competente deve instituir a Equipe de Planejamento da Contratação (EPC). A portaria de nomeação gera dúvidas no setor de governança de TI quanto aos papéis exigidos pela norma vigente para garantir a segregação de funções e a completude do planejamento.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Nos termos da IN SGD/ME nº 94/2022, a Equipe de Planejamento da Contratação (EPC) é essencial para a condução dos estudos preparatórios e deve ser composta, no mínimo, por servidores representantes das seguintes áreas ou perfis:",
+    "options": {
+      "A": "Fiscal de Contrato, Gestor de Contrato e Auditor de Controle Interno.",
+      "B": "Integrante Requisitante, Integrante Técnico e Integrante Administrativo.",
+      "C": "Autoridade Competente, Pregoeiro Oficial e Especialista de Segurança da Informação.",
+      "D": "Patrocinador do Projeto, Gerente de Projeto e Integrante de Negócio.",
+      "E": "Diretor de Tecnologia, Analista de Licitação e Representante Legal do Fornecedor."
+    },
+    "answer": "B",
+    "explanation": "A correta é a [B]. O art. 11 da IN 94/2022 exige expressamente na composição da Equipe de Planejamento da Contratação (EPC) os papéis de Integrante Requisitante, Integrante Técnico e Integrante Administrativo. Erro da [A]: Os papéis de fiscal e gestor são definidos para a fase de execução contratual, não para a comissão de planejamento primária. Erro da [C]: Pregoeiro atua na fase de seleção do fornecedor e a autoridade competente apenas designa a equipe e aprova os artefatos. Erro da [D]: Estes são papéis típicos de metodologias de gestão de projetos (PMBOK/Scrum), sem aderência à nomenclatura legal da IN 94. Erro da [E]: É terminantemente vedada a participação do fornecedor na estruturação do planejamento competitivo de sua própria licitação (conflito de interesses)."
+  },
+  {
+    "id": 1293,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "O TJ-CE planeja migrar seu sistema principal de gestão de precatórios para uma infraestrutura em nuvem híbrida. Durante as reuniões da Equipe de Planejamento da Contratação (EPC), o Integrante Técnico aponta a necessidade de formalizar o Estudo Técnico Preliminar (ETP) para demonstrar a viabilidade da contratação. Um debate surge sobre os elementos constitutivos obrigatórios desse documento estratégico.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "De acordo com a IN SGD/ME nº 94/2022, na elaboração do Estudo Técnico Preliminar (ETP) para contratações de soluções de TIC, constitui um elemento de presença obrigatória a:",
+    "options": {
+      "A": "minuta do contrato administrativo contendo as cláusulas exorbitantes e as penalidades pecuniárias.",
+      "B": "definição nominal dos servidores responsáveis pela fiscalização técnica, administrativa e setorial.",
+      "C": "estimativa das quantidades a serem contratadas acompanhada das respectivas memórias de cálculo.",
+      "D": "elaboração de uma matriz de rastreabilidade de requisitos técnicos de software.",
+      "E": "aprovação do empenho orçamentário prévio à etapa de seleção de fornecedores."
+    },
+    "answer": "C",
+    "explanation": "A correta é a [C]. O art. 14 da IN 94/2022 (e a Lei 14.133/21) elenca a estimativa das quantidades, devidamente fundamentada pelas memórias de cálculo, como elemento obrigatório do ETP para balizar o mercado. Erro da [A]: A minuta do contrato é um anexo do Edital/TR, e não um conteúdo interno do Estudo Técnico Preliminar. Erro da [B]: A nomeação dos fiscais (técnico, administrativo, requisitante) ocorre preferencialmente no encerramento do planejamento ou perto da assinatura do contrato. Erro da [D]: A rastreabilidade de requisitos é uma técnica da engenharia de requisitos, mas não constitui exigência legal obrigatória do ETP. Erro da [E]: O empenho orçamentário ocorre muito após a fase de planejamento, figurando na reta final do processo, imediatamente antes da assinatura do contrato."
+  },
+  {
+    "id": 1294,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "A implementação do novo Portal do Magistrado do TJ-CE requer a integração com bases de dados federais. A Equipe de Planejamento da Contratação trabalha na composição do Mapa de Gerenciamento de Riscos (MGR) para antever possíveis interrupções na comunicação de dados durante a execução contratual. O artefato está sendo formatado para atender estritamente aos ditames legais de contratação de TI.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Sob a égide da IN SGD/ME nº 94/2022, a elaboração do Mapa de Gerenciamento de Riscos (MGR) na fase de planejamento tem como diretriz técnica fundamental a:",
+    "options": {
+      "A": "exclusão sumária de alternativas tecnológicas inovadoras portadoras de riscos inerentes de alta severidade operacional.",
+      "B": "transferência compulsória de todo o risco de integração tecnológica para a empresa vencedora do certame licitatório.",
+      "C": "definição das sanções administrativas aplicáveis a cada risco mapeado para inserção direta no instrumento convocatório.",
+      "D": "avaliação de eventos que possam comprometer o sucesso da contratação mediante a análise de suas probabilidades e impactos.",
+      "E": "delegação da identificação dos riscos operacionais à área jurídica encarregada da análise prévia do edital."
+    },
+    "answer": "D",
+    "explanation": "A correta é a [D]. O art. 16 da IN 94/2022 estabelece que o MGR deve basear-se na identificação, análise, avaliação e tratamento dos eventos que possam comprometer a contratação, medindo probabilidade e impacto. Erro da [A]: A gestão de riscos propõe mitigação e contingência, não a exclusão sumária de inovações tecnológicas. Erro da [B]: A transferência total de riscos (como integração) ao particular é economicamente e juridicamente inviável nas contratações públicas, devendo haver alocação matriz de riscos equilibrada. Erro da [C]: A definição de sanções e glosas pecuniárias é matéria central do Termo de Referência (TR). Erro da [E]: A identificação dos riscos é competência indelegável da Equipe de Planejamento da Contratação (EPC), e não da assessoria jurídica."
+  },
+  {
+    "id": 1295,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "A Diretoria de Informática do TJ-CE concluiu os estudos técnicos para a contratação de uma Fábrica de Software especializada em metodologias ágeis. O processo encontra-se na fase de redação do Termo de Referência (TR). O Integrante Técnico busca definir de forma inequívoca o método de verificação das entregas em sprints, para evitar conflitos na atestação das faturas e garantir a qualidade do código entregue.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Consoante a IN SGD/ME nº 94/2022, a definição dos critérios de aceitação no Termo de Referência (TR) de soluções de TIC caracteriza-se pela:",
+    "options": {
+      "A": "exigência de certificações internacionais de maturidade em substituição aos testes práticos de aderência aos requisitos.",
+      "B": "imposição de validação subjetiva do esforço produtivo baseada na carga horária declarada pelo gerente da contratada.",
+      "C": "transferência da responsabilidade de atestação técnica para o próprio fornecedor mediante emissão de termo circunstanciado.",
+      "D": "adoção de métricas exclusivamente financeiras atreladas ao percentual de execução do cronograma físico de desembolso.",
+      "E": "especificação de métricas objetivas de qualidade, níveis de serviço e checklists estruturados de testes operacionais."
+    },
+    "answer": "E",
+    "explanation": "A correta é a [E]. O TR deve estabelecer métricas objetivas de aceitação com vinculação estrita à qualidade, utilidade da entrega e níveis de serviço mínimos acordados. Erro da [A]: Certificações da empresa (como CMMI) não eximem a Administração de validar o código entregue na prática. Erro da [B]: O modelo de contratação de TI do governo foca em resultados e serviços efetivos, repelindo o pagamento por mera aferição de carga horária trabalhada (vedação à subordinação jurídica). Erro da [C]: O ateste é função indelegável do Fiscal Técnico e do Fiscal Requisitante; permitir que o fornecedor ateste a própria entrega anula a segregação de funções. Erro da [D]: O aceite deve pautar-se pela qualidade técnica funcional do produto entregue, e não meramente pelo volume financeiro repassado."
+  },
+  {
+    "id": 1296,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "Para renovar o parque de microcomputadores das Varas de Família do TJ-CE, a Equipe de Planejamento da Contratação diverge entre a compra de equipamentos novos e a contratação de Hardware as a Service (HaaS). O Integrante Administrativo exige que a decisão conste expressamente no Estudo Técnico Preliminar (ETP), fundamentada em critérios financeiros e de ciclo de vida.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A IN SGD/ME nº 94/2022 estabelece que a análise econômica das alternativas de soluções de TIC no Estudo Técnico Preliminar (ETP) exige o cálculo do Custo Total de Propriedade (TCO), o qual consiste na:",
+    "options": {
+      "A": "consolidação dos custos diretos e indiretos associados à aquisição, operação, manutenção e descarte da solução tecnológica.",
+      "B": "aferição exclusiva do valor da proposta vencedora no pregão eletrônico acrescido dos tributos federais, estaduais e municipais.",
+      "C": "projeção das despesas de depreciação contábil do hardware limitada ao período de vigência original da garantia do fabricante.",
+      "D": "apuração do valor presente líquido das horas trabalhadas pelos servidores da equipe de suporte técnico do próprio tribunal.",
+      "E": "quantificação dos custos de licenciamento de software proprietário expurgando as taxas de atualização tecnológica continuada."
+    },
+    "answer": "A",
+    "explanation": "A correta é a [A]. O Custo Total de Propriedade (TCO) na esfera governamental reflete o somatório abrangente de todos os custos diretos e indiretos ao longo do ciclo de vida completo: projeto, aquisição, licenciamento, migração, operação, suporte e descarte final. Erro da [B]: Reduzir o TCO ao valor da compra ignora gastos latentes severos de sustentação ao longo dos anos. Erro da [C]: O período de garantia do fabricante é apenas uma fração do tempo útil esperado em que o órgão arcará com a operação. Erro da [D]: O esforço da força de trabalho própria não baliza de forma isolada e prioritária o Custo Total de Propriedade da nova solução. Erro da [E]: Expurgar as taxas de atualização e suporte (Software Assurance) desnatura a lógica preditiva e holística do TCO."
+  },
+  {
+    "id": 1297,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "A Corregedoria do TJ-CE identificou lentidão na extração de relatórios correcionais e demandou à Secretaria de TI a contratação de uma nova solução de Business Intelligence (BI). O setor demandante elaborou o Documento de Oficialização da Demanda (DOD) contendo apenas o nome do software desejado e o valor estimado da licença, remetendo o artefato para a Diretoria Geral aprovar a despesa inicial.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "À luz da IN SGD/ME nº 94/2022, o procedimento adotado pela Corregedoria encontra-se irregular. A estruturação legal e técnica exigida para o Documento de Oficialização da Demanda (DOD) requer a:",
+    "options": {
+      "A": "indicação da marca comercial do produto baseada em pesquisa preliminar de mercado conduzida pela área técnica.",
+      "B": "descrição da necessidade de negócio a ser resolvida e dos resultados esperados com a futura contratação da solução.",
+      "C": "anexação do projeto básico contemplando as plantas de arquitetura de dados e o modelo entidade-relacionamento.",
+      "D": "homologação da ferramenta por meio de Prova de Conceito prévia ao registro formal do documento de planejamento.",
+      "E": "submissão do documento ao controle externo para emissão de parecer prévio de conformidade técnica governamental."
+    },
+    "answer": "B",
+    "explanation": "A correta é a [B]. O DOD possui caráter declaratório de negócio. Seu propósito central é explicitar a dor (a necessidade) da área requisitante e as expectativas de resultados, sem impor tecnologias predefinidas. Erro da [A]: Especificar marca antes mesmo do Estudo Técnico Preliminar (ETP) é direcionamento indevido, pois o mercado não foi estudado legalmente. Erro da [C]: Modelagem de dados e arquitetura técnica são artefatos posteriores, gerados pelo Integrante Técnico em fases maduras do planejamento (ETP/TR). Erro da [D]: Prova de Conceito (PoC) ocorre na fase de Seleção de Fornecedor (licitação), testando a proposta mais vantajosa antes da homologação, não antes do DOD. Erro da [E]: O Tribunal de Contas (Controle Externo) não atua na chancela prévia obrigatória de documentos iniciais de viabilidade."
+  },
+  {
+    "id": 1298,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "Na terceirização do Service Desk nível 1 do TJ-CE, a Equipe de Planejamento finalizou o Termo de Referência (TR). O documento inclui uma tabela de Acordo de Nível de Serviço (SLA) que penaliza a empresa em R$ 100,00 por cada minuto de inatividade do sistema de chamados, independentemente da criticidade do incidente ou do volume de usuários afetados no momento da falha.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Considerando as diretrizes da IN SGD/ME nº 94/2022 para o estabelecimento de Acordos de Nível de Serviço e métricas de pagamento no Termo de Referência, a modelagem de sanções e glosas exige a:",
+    "options": {
+      "A": "delegação do cálculo do prejuízo causado pela falha sistêmica aos auditores da própria empresa provedora da solução.",
+      "B": "aplicação de multas pecuniárias fixas com valor predeterminado sem vinculação ao impacto operacional no negócio.",
+      "C": "definição de indicadores mensuráveis e de glosas proporcionais à gravidade dos desvios e à essencialidade do serviço.",
+      "D": "rescisão unilateral automática do contrato administrativo na ocorrência da primeira infração ao limite temporal de atendimento.",
+      "E": "vinculação do pagamento mensal ao cumprimento da carga horária física das equipes de suporte alocadas nas dependências do tribunal."
+    },
+    "answer": "C",
+    "explanation": "A correta é a [C]. O TR deve espelhar o Acordo de Nível de Serviço com glosas proporcionais. Penalidades desconectadas do impacto real geram distorções financeiras e sobrepreço defensivo pelos fornecedores. Erro da [A]: Delegar a medição de falhas ao infrator suprime o poder fiscalizatório inerente à Administração Pública. Erro da [B]: O caso apresentado no enunciado é ilegal exatamente por usar valor fixo sem proporcionalidade (R$100,00 por minuto não distingue falhas leves das catastróficas). Erro da [D]: Rescisões sumárias contrariam os princípios da razoabilidade e do contraditório. Erro da [E]: Contratos de TI vedam a vinculação de pagamentos puramente à presença física ou posto de trabalho, exigindo remuneração orientada a resultados."
+  },
+  {
+    "id": 1299,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "O Setor de Licitações do TJ-CE designou um pregoeiro experiente para compor a Equipe de Planejamento da Contratação (EPC) de um complexo sistema de gravação de audiências. O servidor foi nomeado na condição de Integrante Administrativo da equipe e recebeu a incumbência de iniciar imediatamente a redação das especificações técnicas dos microfones omnidirecionais.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Conforme as responsabilidades definidas na IN SGD/ME nº 94/2022, a atuação exigida do servidor encarregado de exercer o papel de Integrante Administrativo na EPC restringe-se à:",
+    "options": {
+      "A": "atestação mensal das faturas de serviços prestados e fiscalização do recolhimento dos encargos trabalhistas dos terceirizados.",
+      "B": "modelagem técnica da infraestrutura de captação de áudio e validação dos padrões de compressão de mídia digital.",
+      "C": "homologação funcional da interface de gravação por meio da execução de roteiros de testes sistêmicos em ambiente de homologação.",
+      "D": "orientação quanto à conformidade dos artefatos à legislação licitatória e estruturação dos requisitos de qualificação econômico-financeira.",
+      "E": "subscrição do Documento de Oficialização da Demanda em substituição ao gestor da unidade judiciária requerente da tecnologia."
+    },
+    "answer": "D",
+    "explanation": "A correta é a [D]. O Integrante Administrativo tem perfil burocrático e legal. Sua responsabilidade central na fase de planejamento é balizar os procedimentos da licitação, os requisitos de qualificação da empresa e a aderência processual à lei de licitações. Erro da [A]: Aferição de guias trabalhistas e faturas é atribuição do Fiscal Administrativo durante a fase de Execução. Erro da [B] e [C]: Modelagem arquitetural e validação sistêmica são competências inafastáveis do Integrante Técnico da EPC. Erro da [E]: O DOD nasce na Área Requisitante, o Integrante Administrativo atua nas balizas legais de contratação, sem autonomia para representar o negócio da justiça na emissão do DOD."
+  },
+  {
+    "id": 1300,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "Um novo datacenter modular está sendo planejado para o TJ-CE. Durante o Estudo Técnico Preliminar (ETP), o Integrante Técnico insere restrições relacionadas à eficiência energética dos condicionadores de ar de precisão e exige certificados de descarte ecológico para os hardwares obsoletos a serem substituídos, o que eleva a estimativa preliminar de custos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em conformidade com a IN SGD/ME nº 94/2022, a inclusão de critérios de eficiência energética e logística reversa no Estudo Técnico Preliminar (ETP) de soluções de TIC constitui:",
+    "options": {
+      "A": "violação ao princípio da economicidade caracterizada pela imposição de custos marginais dissociados da finalidade pública.",
+      "B": "restrição abusiva à competitividade do certame decorrente do direcionamento técnico para marcas de alto padrão de mercado.",
+      "C": "faculdade exclusiva do fiscal de contrato a ser exercida apenas durante a fase de recebimento provisório dos equipamentos.",
+      "D": "exigência inaplicável ao escopo de contratações de tecnologia da informação e adstrita aos editais de obras de engenharia civil.",
+      "E": "prática obrigatória consubstanciada na definição de requisitos de sustentabilidade ambiental inerentes à contratação pública."
+    },
+    "answer": "E",
+    "explanation": "A correta é a [E]. O art. 14 da IN 94/2022 consagra expressamente a avaliação dos requisitos de sustentabilidade (ambiental, social e econômica) na feitura do Estudo Técnico Preliminar. A TI Verde engloba eficiência energética e descarte ecologicamente adequado. Erro da [A] e [B]: A sustentabilidade é imperativo constitucional das licitações (desenvolvimento nacional sustentável) e afasta alegações superficiais de sobrepreço ou direcionamento, desde que balizadas pelo mercado. Erro da [C]: A premissa nasce na fase de planejamento da EPC, não podendo ser exigida de inopino pelo fiscal de contrato após a assinatura. Erro da [D]: Aplica-se compulsoriamente a todos os nichos públicos, e na TI encontra terreno fértil no descarte de ativos."
+  },
+  {
+    "id": 1301,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "O TJ-CE pretende adquirir subscrições anuais de licenças de um software de edição de texto para os gabinetes dos desembargadores, com suporte técnico por telefone. Ao elaborar o Termo de Referência (TR), a equipe define a forma de entrega das chaves de ativação e a rotina de faturamento.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Nos termos da IN SGD/ME nº 94/2022, o componente do Termo de Referência (TR) responsável por detalhar a dinâmica de prestação do serviço, os prazos de disponibilização tecnológica e a mecânica de faturamento é denominado:",
+    "options": {
+      "A": "Modelo de Execução do Objeto.",
+      "B": "Estudo de Viabilidade Econômica.",
+      "C": "Matriz de Rastreabilidade de Requisitos.",
+      "D": "Relatório de Gestão de Incidentes.",
+      "E": "Plano Diretor de Tecnologia da Informação."
+    },
+    "answer": "A",
+    "explanation": "A correta é a [A]. O Modelo de Execução do Objeto compõe o Termo de Referência especificando como a tecnologia será efetivamente transferida, qual o cronograma de implantação, os locais físicos e lógicos, e as rotinas diárias e marcos de pagamento. Erro da [B]: Análise econômica localiza-se estritamente no Estudo Técnico Preliminar (ETP). Erro da [C]: Matriz de rastreabilidade baliza dependências de software na documentação de sistemas, sem lastro direto com rituais de faturamento da licitação. Erro da [D]: Relatório de incidentes é evidência operacional gerada durante a execução para medir o SLA do prestador de suporte. Erro da [E]: O PDTIC é documento de nível estratégico organizacional para balizar todas as metas do biênio/triênio, sem função de microgerenciamento de rotinas de contrato."
+  },
+  {
+    "id": 1302,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "O projeto de desenvolvimento de um sistema de gestão de estagiários do TJ-CE enfrentou seguidos atrasos. O Mapa de Gerenciamento de Riscos (MGR) elaborado na fase de planejamento indicava o baixo engajamento dos usuários como risco moderado. Com a iminência da entrada em produção, esse risco materializou-se, gerando forte resistência das secretarias. O gestor questiona o congelamento do documento desde a sua assinatura inicial.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A respeito do ciclo de vida do Mapa de Gerenciamento de Riscos (MGR) nas contratações de soluções de TIC sob a ótica da IN SGD/ME nº 94/2022, a sua gestão exige a:",
+    "options": {
+      "A": "delegação do monitoramento sistêmico dos riscos operacionais e estratégicos ao Tribunal de Contas do Estado competente.",
+      "B": "atualização contínua do documento ao longo de todas as fases da contratação para monitoramento e controle dos riscos mapeados.",
+      "C": "revisão do documento permitida apenas mediante autorização judicial expressa justificada por fatos supervenientes de força maior.",
+      "D": "consolidação inalterável do artefato logo após a aprovação do Termo de Referência pela autoridade administrativa competente.",
+      "E": "republicação imediata do edital de licitação a cada alteração da probabilidade de ocorrência de eventos de risco moderado."
+    },
+    "answer": "B",
+    "explanation": "A correta é a [B]. A IN 94/2022 pontua que o MGR não é estático. Ele nasce no planejamento e sofre reavaliação contínua durante as fases de Seleção do Fornecedor e de Execução do Contrato, para refletir o cenário real das ameaças. Erro da [A]: O Tribunal de Contas atua via fiscalização externa; a gestão ativa do risco diário do contrato é encargo primário dos fiscais e gestores de contrato do TJ. Erro da [C] e [D]: Documento rígido e inalterável nega a ciência de gestão de riscos; a alteração das probabilidades ocorre via governança interna fluida, sem necessidade de alvará judicial. Erro da [E]: Mudanças em riscos operacionais rotineiros não alteram o escopo global a ponto de exigir retrocesso à publicação de editais já findados ou em curso."
+  },
+  {
+    "id": 1303,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "Um analista sênior do TJ-CE pesquisa alternativas para o sistema de controle de acesso físico às sedes dos fóruns. Ele encontra três opções: catracas com biometria facial de um fabricante alemão, crachás RFID de empresas locais e um aplicativo de QR Code no celular desenvolvido por uma startup. Ele precisa consolidar esses dados no Estudo Técnico Preliminar (ETP).",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "De acordo com a IN SGD/ME nº 94/2022, o levantamento de mercado materializado no Estudo Técnico Preliminar (ETP) deve promover a:",
+    "options": {
+      "A": "qualificação técnica prévia dos fabricantes catalogados no estudo por meio da emissão obrigatória de atestados de capacidade produtiva.",
+      "B": "escolha da solução de menor preço unitário com base em pesquisa restrita ao painel de compras governamentais do governo federal.",
+      "C": "análise comparativa das diferentes opções tecnológicas sob a perspectiva da viabilidade técnica, econômica e dos ganhos de eficiência.",
+      "D": "adoção compulsória da solução em código aberto em detrimento das tecnologias comerciais independentemente do esforço de integração.",
+      "E": "exclusão sumária de empresas estrangeiras não domiciliadas no país para assegurar a soberania do tratamento de dados biométricos."
+    },
+    "answer": "C",
+    "explanation": "A correta é a [C]. O principal intento do levantamento de mercado no ETP é justamente traçar um quadro comparativo plural: confrontar tecnologia 'A', 'B' ou 'C' e justificar qual formato mitiga a dor de negócio com melhor Custo Total de Propriedade e funcionalidade real. Erro da [A]: Documentos habilitatórios (atestados) são requeridos no certame (Seleção), e não emitidos contra potenciais atores mapeados livremente no ETP. Erro da [B]: A busca do menor preço antes de comparar as qualidades anula a avaliação qualitativa; uma solução barata de RFID pode se mostrar defasada e gerar TCO altíssimo. Erro da [D]: Software livre deve ser priorizado normativamente, mas não adotado cegamente se demonstrar esforço absurdo ou inviabilidade técnica contrapondo opções comerciais. Erro da [E]: A discriminação pura por matriz estrangeira fere a isonomia licitatória se não amparada em lei ou veto explícito de segurança nacional justificado na arquitetura."
+  },
+  {
+    "id": 1304,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "Em meados de outubro, o Presidente do TJ-CE autorizou a modernização emergencial do sistema de PJe para suportar sessões virtuais com inteligência artificial. O diretor de TI orientou sua equipe a formular imediatamente o Documento de Oficialização da Demanda (DOD). Ao analisar o Plano de Contratações Anual (PCA) do exercício, constatou-se que essa demanda não estava previamente mapeada.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Conforme as normativas de governança e a IN SGD/ME nº 94/2022, ao tratar do alinhamento do Documento de Oficialização da Demanda (DOD) em relação a demandas não previstas no Plano de Contratações Anual (PCA), o procedimento técnico-administrativo adequado demanda a:",
+    "options": {
+      "A": "substituição do DOD por memorando interno simples visando garantir a celeridade exigida por ordens diretas da alta administração.",
+      "B": "suspensão imediata de todos os processos licitatórios em curso até a elaboração de um novo plano diretor de tecnologia da informação.",
+      "C": "execução da contratação à margem do planejamento formal por tratar-se de inovação tecnológica caracterizada como compra de pequeno valor.",
+      "D": "promoção da atualização excepcional do Plano de Contratações Anual com as devidas justificativas aprovadas pelo comitê de governança.",
+      "E": "divisão do objeto em parcelas financeiras inferiores ao limite de dispensa de licitação para mitigar a obrigatoriedade de alinhamento ao plano."
+    },
+    "answer": "D",
+    "explanation": "A correta é a [D]. Uma contratação de TIC extemporânea (fora do PCA) carece de ajuste formal. A legislação faculta à autoridade (Comitê de TI) deferir o prosseguimento da demanda justificando-a via atualização extraordinária do Plano de Contratações Anual para incluir o DOD nascente. Erro da [A]: Pular a fase de planejamento baseada apenas na pressa de cúpula fere de morte a regularidade fiscal. Erro da [B]: Congelar as demais compras regulares geraria paralisação dos serviços da justiça, postura extrema e ilegal. Erro da [C]: A contratação de IA pressupõe alta relevância estrutural, descabendo sua aprovação genérica via caixinha de pequeno valor sem rito. Erro da [E]: O fracionamento de despesas para burlar rito licitatório e de planejamento constitui falta grave e responsabilização perante a lei e os órgãos de controle."
+  },
+  {
+    "id": 1305,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "IN SGD/ME nº 94/2022 - Fase de Planejamento",
+    "context": "A contratação de um serviço de monitoramento contínuo de rede (SOC) para o TJ-CE gerou um amplo processo administrativo. O Analista de TI, nomeado como Integrante Técnico, entregou o Termo de Referência (TR). A assessoria jurídica, no entanto, devolveu o processo solicitando a apensação dos artefatos produzidos nas etapas preliminares para consubstanciar a motivação da contratação.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "À luz das disposições da IN SGD/ME nº 94/2022 sobre a fase de planejamento da contratação de TI, o Termo de Referência (TR) submetido à aprovação deve estar inexoravelmente fundamentado e acompanhado do respectivo:",
+    "options": {
+      "A": "Parecer Técnico de Auditoria Externa e da Matriz de Desenho Arquitetural de Rede.",
+      "B": "Contrato Social da empresa vencedora e do Cadastro Nacional da Pessoa Jurídica.",
+      "C": "Plano de Sustentação de Software e da Declaração de Inexigibilidade de Licitação.",
+      "D": "Termo de Sigilo Profissional e da Ata de Registro de Preços do ano corrente.",
+      "E": "Estudo Técnico Preliminar e do Mapa de Gerenciamento de Riscos."
+    },
+    "answer": "E",
+    "explanation": "A correta é a [E]. O encerramento da fase de planejamento consolida-se com o Termo de Referência (TR). Contudo, a base principiológica legal de todo o TR é extraída diretamente dos diagnósticos realizados no Estudo Técnico Preliminar (ETP) e consubstanciada nas contingências expostas no Mapa de Gerenciamento de Riscos (MGR). Erro da [A]: Pareceres de auditoria externa independem do rito basal de contratação e não condicionam a vida do TR. Erro da [B]: O planejamento acontece antes da licitação; é impossível ter os dados da 'empresa vencedora' antes mesmo do edital ir à praça. Erro da [C]: A inexigibilidade é uma exceção da competição, não um artefato de anexação compulsória global ao lado de planos de sustentação. Erro da [D]: Sigilo e Atas anteriores podem estar presentes perifericamente, mas o alicerce fundamental de justificativa do TR em contratação TIC recai sobre o ETP e o MGR."
+  },
+  {
+    "id": 1306,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Falsos Cognatos no contexto de Migração de Sistemas",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o planejamento de migração do sistema judicial do TJ-CE para uma nova infraestrutura em nuvem, o líder técnico enviou o seguinte comunicado à equipe: 'The actual system performance is quite different from what we anticipated. The team intends to deploy the new patch to address the current issues.' Com base no reconhecimento de falsos cognatos em inglês técnico, a tradução correta para os termos 'actual', 'intends' e 'current' no contexto da mensagem é:",
+    "options": {
+      "A": "O desempenho atual do sistema, a equipe finge implantar o novo patch e os problemas correntes.",
+      "B": "O desempenho verdadeiro do sistema, a equipe pretende implantar o novo patch e os problemas atuais.",
+      "C": "O desempenho moderno do sistema, a equipe tenta implantar o novo patch e os problemas atualizados.",
+      "D": "O desempenho atualizado do sistema, a equipe entende implantar o novo patch e os defeitos atuais.",
+      "E": "O desempenho obsoleto do sistema, a equipe planeja implantar o novo patch e os problemas correntes."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta traduz precisamente os falsos cognatos. 'Actual' significa real/verdadeiro, não atual ('current'). 'Intend' significa pretender/ter a intenção de, não entender ou fingir ('pretend'). 'Current' significa atual. As demais alternativas caem em armadilhas clássicas de tradução direta errônea."
+  },
+  {
+    "id": 1307,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Falsos Cognatos em Troubleshooting de Redes",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um analista de infraestrutura do TJ-CE tentava diagnosticar uma falha de comunicação entre os nós de um cluster Kubernetes. O ticket de suporte aberto junto ao fabricante retornou o seguinte apontamento: 'The network administrator did not realize the firewall rules were blocking the API traffic. He noticed the problem only after reviewing the logs. The vendor will support the configuration changes.' A compreensão exata da resposta do fabricante indica que:",
+    "options": {
+      "A": "O administrador não realizou as regras, notificou o problema nos logs e o fornecedor suportará fisicamente as mudanças.",
+      "B": "O administrador não implementou as regras, anotou o problema nos logs e o fornecedor aguentará as mudanças de configuração.",
+      "C": "O administrador não percebeu as regras, notou o problema nos logs e o fornecedor apoiará as mudanças de configuração.",
+      "D": "O administrador não efetuou as regras, percebeu o problema nos logs e o fornecedor testará as mudanças de configuração.",
+      "E": "O administrador não compreendeu as regras, ignorou o problema nos logs e o fornecedor financiará as mudanças de configuração."
+    },
+    "answer": "C",
+    "explanation": "No contexto, 'realize' significa perceber ou dar-se conta de algo, não 'realizar/fazer'. 'Notice' significa notar ou observar. 'Support' no sentido de TI significa apoiar, dar suporte técnico, e não suportar no sentido de aguentar um peso físico. A alternativa C traz a semântica correta das três palavras."
+  },
+  {
+    "id": 1308,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Técnicas de Leitura: Scanning em Documentação de API",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um desenvolvedor do TJ-CE precisa construir uma integração para obter a lista de processos judiciais ativos. Ao acessar a documentação da API, ele se depara com o texto: 'To retrieve a list of all active judicial processes, make a GET request to the `/processes/active` endpoint. The response payload will include pagination metadata in the header. To filter by court branch, append the `?branch=ID` query parameter. Ensure the Bearer token is provided.' O profissional necessita descobrir rapidamente o método HTTP exigido e como filtrar os resultados por vara. A técnica de leitura adequada e as informações corretas extraídas são:",
+    "options": {
+      "A": "O uso de Scanning para buscar o método POST e o parâmetro de corpo branch=ID.",
+      "B": "O uso de Skimming para identificar a ideia geral e extrair o método PUT.",
+      "C": "O uso de Scanning para localizar o método GET e o parâmetro de consulta ?branch=ID.",
+      "D": "O uso de Skimming para ler detalhadamente a documentação de paginação de processos.",
+      "E": "O uso de Scanning para extrair a chave de criptografia Bearer do cabeçalho de resposta."
+    },
+    "answer": "C",
+    "explanation": "A técnica de 'Scanning' é utilizada para buscar informações específicas e pontuais em um texto (como métodos HTTP e parâmetros). Na documentação, o método explícito é GET e a filtragem se dá pelo query parameter '?branch=ID'. 'Skimming' serve para capturar a ideia geral, não dados exatos."
+  },
+  {
+    "id": 1309,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Tradução de Man Pages: Comando Tar",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O administrador de sistemas do TJ-CE está revisando os scripts de backup de servidores Linux baseados na leitura da Man Page do comando tar: 'tar -c: Create a new archive. -v: Verbosely list files processed. -z: Filter the archive through gzip. -f: Use archive file or device ARCHIVE. To extract, use -x instead of -c.' Baseado no texto técnico, o propósito funcional da execução de 'tar -xvf backup.tar' resulta em:",
+    "options": {
+      "A": "A criação de um novo arquivo compactado com saída detalhada na tela do terminal.",
+      "B": "A extração de arquivos de um pacote existente listando os detalhes do processamento.",
+      "C": "A filtragem do pacote através de compressão gzip exibindo os erros no terminal.",
+      "D": "A exclusão dos arquivos especificados do dispositivo de backup listado no comando.",
+      "E": "A compressão do diretório atual usando o dispositivo de arquivamento padrão do sistema."
+    },
+    "answer": "B",
+    "explanation": "O texto diz 'To extract, use -x instead of -c'. Logo, a flag '-x' realiza extração. A flag '-v' lista de forma verbosa (detalhada) e '-f' especifica o arquivo. Nenhuma compressão nova (-c) ou exclusão é feita. A alternativa correta resume a extração com detalhamento do log na tela."
+  },
+  {
+    "id": 1310,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Falsos Cognatos em Auditoria de Segurança",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante uma auditoria nos acessos ao banco de dados do Tribunal, o relatório apontou a seguinte orientação: 'The new security policy mandates that every access to the sensitive database must create an audit record. System administrators should remember to configure the logging rotation.' A tradução e interpretação das palavras destacadas geram a seguinte ação técnica exigida no TJ-CE:",
+    "options": {
+      "A": "A exigência da nova polícia de segurança para criar uma gravação, obrigando os administradores a relembrar.",
+      "B": "A exigência da nova política de segurança para criar um registro, obrigando os administradores a lembrar.",
+      "C": "A exigência do novo policiamento de segurança para criar um disco, obrigando os administradores a gravar.",
+      "D": "A exigência da nova regra de segurança para criar uma recordação, obrigando os administradores a armazenar.",
+      "E": "A exigência da nova apólice de segurança para criar um arquivo, obrigando os administradores a registrar."
+    },
+    "answer": "B",
+    "explanation": "'Policy' traduz-se como 'política' (diretrizes), não polícia (police) ou apólice. 'Record' no contexto de auditoria de TI é 'registro' (log/audit record), não recordação. 'Remember' é 'lembrar'. Apenas a alternativa B reflete os termos técnicos sem cair nos falsos cognatos."
+  },
+  {
+    "id": 1311,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Interpretação de API Docs: Ciclo de Vida de Software",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No processo de modernização do PJe, a equipe de desenvolvimento recebeu o seguinte aviso de depreciação do barramento de serviços: 'Endpoint v1/users is deprecated and will be removed in the next major release. Please migrate to v2/users. The legacy authentication method is no longer supported.' O impacto dessas instruções para o código do Tribunal consiste em:",
+    "options": {
+      "A": "A desativação do endpoint v1 por falhas de segurança e a manutenção permanente do método legado.",
+      "B": "A obsolescência do endpoint v1 e o fim do suporte oficial para o método de autenticação antigo.",
+      "C": "A quebra de compatibilidade do endpoint v1 e o recebimento de atualizações de estabilidade no método original.",
+      "D": "A desaprovação do endpoint v1 pelo comitê técnico e o início dos testes no método de autenticação.",
+      "E": "A atualização programada do endpoint v1 na próxima versão e o estado operante do método herdado."
+    },
+    "answer": "B",
+    "explanation": "'Deprecated' no desenvolvimento de software significa obsoleto, descontinuado, algo que não deve mais ser usado. 'Legacy' refere-se ao código antigo, legado. 'No longer supported' indica ausência de suporte. Logo, a API está obsoleta e a autenticação legada sem suporte."
+  },
+  {
+    "id": 1312,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Compreensão de Mensagens de Erro em Servidores de Aplicação",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após o deploy de uma atualização crítica, o servidor de aplicação do sistema Processo Judicial Eletrônico emitiu a seguinte falha nos logs: 'FATAL: Connection pool exhausted. The application server failed to acquire a connection to the database within the timeout period. Increase the `max-pool-size` parameter or check for connection leaks in the application code.' A ação recomendada para solucionar o incidente envolve:",
+    "options": {
+      "A": "A reinicialização do servidor de aplicação para liberar a memória excedente na conexão.",
+      "B": "A substituição do banco de dados por um servidor com maior capacidade de processamento.",
+      "C": "A ampliação do tempo limite da conexão e a redução do parâmetro de esgotamento de rede.",
+      "D": "A elevação do limite de conexões simultâneas ou a investigação de vazamentos de conexão no código.",
+      "E": "A atualização do código da aplicação para forçar conexões persistentes ignorando o tempo limite."
+    },
+    "answer": "D",
+    "explanation": "O texto sugere claramente 'Increase the max-pool-size' (elevar o tamanho máximo do pool de conexões) ou 'check for connection leaks' (investigar vazamentos de conexões, situações em que o código abre e não fecha a conexão). Nenhuma alternativa menciona reinicialização, troca de hardware ou ignorar timeouts."
+  },
+  {
+    "id": 1313,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Falsos Cognatos em Gestão de Projetos de TI",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o comitê estratégico do TJ-CE, um documento de arquitetura incluiu as seguintes anotações em inglês: 'The architect presented a comprehensive report on the cloud migration. We need a brief summary of the costs before we can resume the project.' A correta transposição de significado dessas sentenças para o português resulta em:",
+    "options": {
+      "A": "Um relatório compreensivo e a exigência de um currículo antes do resumo do projeto.",
+      "B": "Um relatório compreensível e a exigência de um sumário antes da retomada do projeto.",
+      "C": "Um relatório abrangente e a exigência de um resumo conciso antes da retomada do projeto.",
+      "D": "Um relatório resumido e a exigência de uma soma financeira antes da continuação do projeto.",
+      "E": "Um relatório analítico e a exigência de um currículo antes do início formal do projeto."
+    },
+    "answer": "C",
+    "explanation": "'Comprehensive' é um falso cognato e significa abrangente, completo. 'Summary' significa resumo. 'Resume' significa retomar ou reiniciar, não fazer um resumo ou apresentar currículo (neste contexto, não é résumé). A alternativa C é a única que converte fielmente os falsos cognatos."
+  },
+  {
+    "id": 1314,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Tradução de Man Pages: Comando chmod",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um analista de suporte do TJ-CE necessita modificar permissões de um shell script baseado na Man Page do comando chmod: 'chmod - change file mode bits. The format of a symbolic mode is [ugoa...][[-+=][perms...]...]. `u` stands for user, `g` for group, `o` for others, `a` for all. `x` executes (or search for directories).' Para conceder permissão de execução exclusivamente ao usuário proprietário do arquivo `script.sh`, o comando exato e sua respectiva tradução baseada no manual consistem em:",
+    "options": {
+      "A": "A execução do comando chmod +x script.sh e a adição da permissão global de extração.",
+      "B": "A execução do comando chmod u+x script.sh e a adição ao usuário dono da permissão de execução.",
+      "C": "A execução do comando chmod g+x script.sh e a adição ao grupo da permissão de exclusão.",
+      "D": "A execução do comando chmod o+x script.sh e a adição ao proprietário da permissão de extração.",
+      "E": "A execução do comando chmod a+x script.sh e a adição a todos da permissão de execução."
+    },
+    "answer": "B",
+    "explanation": "De acordo com o manual, 'u' refere-se a user (usuário proprietário) e 'x' a execute. A sintaxe u+x concede a execução apenas ao usuário dono do arquivo. 'a' seria para todos, 'g' grupo e 'o' outros. A alternativa B descreve com rigor a instrução do man page."
+  },
+  {
+    "id": 1315,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Falsos Cognatos no Desenvolvimento Python",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Cientista de Dados alocado no TJ-CE analisa o código-fonte de um algoritmo de jurimetria que contém o comentário: 'Import the necessary library to manipulate the historical data. Ensure the date formats align with the ISO 8601 standard.' A instrução exige do programador a seguinte providência:",
+    "options": {
+      "A": "A importação da livraria para a manipulação da data histórica e a garantia do formato de dados.",
+      "B": "A importação da biblioteca para a manipulação dos dados históricos e a garantia dos formatos de data.",
+      "C": "A importação da livraria para a manipulação dos dados históricos e a garantia das datas do sistema.",
+      "D": "A importação da biblioteca para o agendamento da data histórica e a formatação das datas do processo.",
+      "E": "A importação da coleção para a manipulação dos dados históricos e a exclusão dos formatos de data."
+    },
+    "answer": "B",
+    "explanation": "'Library' traduz-se como biblioteca de software, não livraria. 'Data' significa dados (plural), não datas. E 'date' significa data cronológica. A alternativa B reflete de forma seca e direta as traduções exatas exigidas no escopo da ciência de dados."
+  },
+  {
+    "id": 1316,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Técnicas de Leitura: Skimming em Release Notes de Hipervisores",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de Data Center do TJ-CE avalia a atualização do sistema de virtualização lendo o Release Notes: 'Version 7.5 Release Notes: This update introduces memory tiering capabilities, patches three critical CVEs in the virtual switch module, and deprecates the old REST API v1. Known issues: Live migration might fail if CPU flags do not match exactly across hosts.' Ao utilizar a técnica de skimming para captar o benefício de segurança primário dessa atualização, o resultado obtido é:",
+    "options": {
+      "A": "A identificação da introdução de funcionalidades de hierarquização de memória.",
+      "B": "A identificação da correção de três vulnerabilidades críticas no módulo de switch virtual.",
+      "C": "A identificação da depreciação da API REST v1 para redução do consumo de recursos.",
+      "D": "A identificação de falhas conhecidas na migração ao vivo motivadas por incompatibilidade de CPU.",
+      "E": "A identificação da obrigatoriedade de execução dos patches de segurança em hipervisores legados."
+    },
+    "answer": "B",
+    "explanation": "Ao aplicar o skimming, busca-se a ideia principal e blocos conceituais. A questão pede o benefício de 'segurança' (security benefit). A única menção à segurança no texto são as correções (patches) de três CVEs (vulnerabilidades) críticas. As demais citam novas funcionalidades (memory tiering) ou bugs."
+  },
+  {
+    "id": 1317,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Tradução de API: Mecanismo de Webhooks",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na concepção de integrações entre o PJe e sistemas externos, o analista leu o seguinte trecho sobre Webhooks: 'Webhooks allow you to build or set up integrations which subscribe to certain events on the PJe platform. When one of those events is triggered, we'll send a HTTP POST payload to the webhook's configured URL.' O funcionamento dessa arquitetura descrita em inglês determina:",
+    "options": {
+      "A": "A configuração de formulários web para envio de atualizações manuais via requisições HTTP POST para o PJe.",
+      "B": "A construção de integrações para a assinatura de eventos e recebimento de cargas de dados automáticas via HTTP POST.",
+      "C": "O monitoramento do tráfego de rede da plataforma PJe com o bloqueio de requisições HTTP POST não autorizadas.",
+      "D": "A assinatura digital de eventos do sistema PJe por meio de criptografia avançada transmitida via requisições HTTP POST.",
+      "E": "O envio de requisições HTTP GET periódicas para a verificação de alterações de estado na plataforma PJe."
+    },
+    "answer": "B",
+    "explanation": "O texto descreve o padrão publish-subscribe de webhooks. 'Subscribe' no contexto técnico significa assinar/inscrever-se para escutar eventos. Quando disparado ('triggered'), um 'payload' (carga útil de dados) é enviado via HTTP POST para a URL configurada. Não envolve GETs periódicos ou assinaturas com criptografia avançada."
+  },
+  {
+    "id": 1318,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Falsos Cognatos em Segurança da Informação e DLP",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para proteger os dados de segredo de justiça, o gerente de SI enviou as diretrizes: 'We must deploy DLP solutions to prevent data exfiltration. The judicial records contain highly sensitive information. It is a sensible approach to encrypt the database.' Avaliando os falsos cognatos, a interpretação da frase define:",
+    "options": {
+      "A": "A prevenção da exfiltração de dados, a classificação de informações como sensíveis e a adoção de uma abordagem sensata.",
+      "B": "A antecipação da exfiltração de dados, a classificação de informações como sensatas e a adoção de uma abordagem sensitiva.",
+      "C": "A preparação para a exfiltração de dados, a classificação de informações como confidenciais e a adoção de uma abordagem sensível.",
+      "D": "A prevenção da infiltração de dados, a classificação de informações como compreensíveis e a adoção de uma abordagem lógica.",
+      "E": "A evitação da exportação de dados, a classificação de informações como sensitivas e a adoção de uma abordagem sentimental."
+    },
+    "answer": "A",
+    "explanation": "'Prevent' é prevenir ou evitar. 'Sensitive' no contexto de SI refere-se a dados sensíveis, que exigem proteção rigorosa. 'Sensible' é sensato, razoável. Portanto, os dados são sensíveis e a abordagem de encriptar o banco de dados é sensata. A opção A preserva a tradução exata."
+  },
+  {
+    "id": 1319,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Tradução de Man Pages: Comando grep",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O SOC do TJ-CE busca indícios de invasões lendo logs volumosos do sistema. A documentação do grep diz: 'grep - search a file for a pattern. -i, --ignore-case: Ignore case distinctions in patterns and input data. -v, --invert-match: Invert the sense of matching, to select non-matching lines. -r, --recursive: Read all files under each directory.' O analista precisa buscar de forma recursiva a string 'error', ignorando letras maiúsculas ou minúsculas, e ao mesmo tempo remover linhas que contenham a string 'timeout'. A sintaxe adequada extraída do manual exige:",
+    "options": {
+      "A": "O uso do comando grep -r -i 'error' /var/log | grep -v 'timeout'.",
+      "B": "O uso do comando grep -r -v 'error' /var/log | grep -i 'timeout'.",
+      "C": "O uso do comando grep -i -v 'error timeout' /var/log.",
+      "D": "O uso do comando grep -r -i 'timeout' /var/log | grep -v 'error'.",
+      "E": "O uso do comando grep -r 'error' /var/log | grep -i -v 'timeout error'."
+    },
+    "answer": "A",
+    "explanation": "De acordo com o manual, '-r' pesquisa recursivamente, '-i' ignora o case sensitiveness e '-v' inverte o match (exclui a palavra da busca). O pipe (|) direciona o output do primeiro grep para o segundo. O primeiro grep acha 'error' ignorando a caixa (-i) nos diretórios (-r), e o segundo exclui os que contém 'timeout' (-v). A alternativa A cumpre as premissas."
+  },
+  {
+    "id": 1320,
+    "day_id": "dia_18_06",
+    "day_title": "Quinta-feira 18/06",
+    "theme": "Inglês Técnico",
+    "context": "Falsos Cognatos em Arquitetura de Software",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No documento descritivo de topologia da infraestrutura, consta a afirmação: 'The software design must consider high availability. If a server fails, the traffic will eventually be routed to the backup site.' Considerando a terminologia correta de TI em inglês, a instrução exige:",
+    "options": {
+      "A": "O projeto do software focado em alta disponibilidade e o roteamento de tráfego eventualmente realizado ao site de backup.",
+      "B": "O desenho gráfico do software focado em alta disponibilidade e o roteamento de tráfego ocasionalmente realizado ao site de backup.",
+      "C": "A arquitetura do software focada em alta disponibilidade e o roteamento de tráfego finalmente realizado ao site de backup em caso de falha.",
+      "D": "O design visual do portal focado em alta disponibilidade e o roteamento de tráfego sempre realizado ao site de backup.",
+      "E": "O planejamento ágil do software focado em alta disponibilidade e o roteamento de tráfego imediatamente realizado ao site de backup."
+    },
+    "answer": "C",
+    "explanation": "'Design' em engenharia de software refere-se a projeto, concepção arquitetural, não 'desenho gráfico' ou visual. 'Eventually' é um falso cognato e não significa 'eventualmente' (ocasionalmente), mas sim 'finalmente', 'com o tempo' ou 'mais cedo ou mais tarde'. A alternativa C traz a tradução precisa da intenção de arquitetura."
+  }
+]
