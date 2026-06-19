@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1906001,
+    "day_id": "dia_19_06",
+    "day_title": "19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o projeto de modernização tecnológica do Tribunal de Justiça do Estado do Ceará (TJ-CE), a equipe de arquitetura identificou a necessidade de integrar o novo sistema de Peticionamento Eletrônico, desenvolvido com interfaces RESTful, ao antigo sistema corporativo de custas judiciais, que expõe estritamente serviços SOAP legados não passíveis de alteração. O sistema de peticionamento espera receber e enviar dados em formato JSON por meio de uma interface padronizada, enquanto o legado opera com envelopes XML complexos. Para solucionar essa incompatibilidade de interfaces sem modificar o código-fonte de nenhum dos sistemas originais, o arquiteto deve aplicar o padrão de projeto:",
+    "options": {
+      "A": "Utilização de um Mediator para centralizar a comunicação entre os componentes REST e os serviços SOAP independentes.",
+      "B": "Criação de uma classe Adapter para traduzir as requisições REST/JSON em chamadas SOAP/XML esperadas pelo legado.",
+      "C": "Implementação de uma Facade para simplificar as múltiplas chamadas do sistema de custas judiciais ao Peticionamento.",
+      "D": "Definição de uma Strategy encapsulando a lógica de integração SOAP em classes intercambiáveis em tempo de execução.",
+      "E": "Aplicação de um Proxy para interceptar as chamadas REST e aplicar regras de segurança antes da comunicação com o legado."
+    },
+    "answer": "B",
+    "explanation": "O padrão Adapter atua como um invólucro para converter a interface de uma classe na interface esperada pelos clientes (compatibilização JSON/REST para XML/SOAP). A alternativa A foca em centralizar comunicação entre componentes que não devem se acoplar, mas não adapta dados. A alternativa C simplifica múltiplos acessos a um subsistema, sem necessariamente traduzir contratos estritos. A alternativa D troca regras de negócio dinamicamente, e a E controla acesso ou adiciona segurança, não adaptando interfaces preexistentes."
+  },
+  {
+    "id": 1906002,
+    "day_id": "dia_19_06",
+    "day_title": "19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está implantando um módulo de emissão de certidões negativas que sofre com esgotamento de conexões com o banco de dados principal. A análise revelou que cada requisição ao módulo instancia um novo gerenciador de pool de conexões, ultrapassando o limite do SGBD durante picos de acesso. A equipe de arquitetura determinou que a aplicação deve compartilhar uma única e mesma instância do gerenciador de pool de conexões em todo o ciclo de vida do servidor de aplicação, fornecendo um ponto global de acesso a ela. O padrão de projeto adequado para garantir essa restrição instancial é o:",
+    "options": {
+      "A": "Padrão Flyweight para compartilhar múltiplas conexões de banco de dados por meio de uma estrutura de árvore.",
+      "B": "Padrão Factory Method para centralizar a criação das instâncias de conexão de acordo com a demanda do módulo.",
+      "C": "Padrão Prototype para clonar uma instância inicial pré-configurada do gerenciador a cada nova requisição.",
+      "D": "Padrão Singleton para garantir a existência de apenas uma instância do gerenciador de pool e fornecer acesso global.",
+      "E": "Padrão Builder para construir o objeto complexo do gerenciador de pool passo a passo durante a inicialização."
+    },
+    "answer": "D",
+    "explanation": "O padrão Singleton assegura que uma classe tenha exatamente uma instância e fornece um ponto de acesso global a ela, resolvendo o problema de múltiplas instanciações do pool. A alternativa A serve para grandes volumes de objetos granulares pequenos em memória. A alternativa B encapsula a criação em subclasses. A alternativa C baseia-se em clonagem, o que resultaria em ainda mais instâncias. A alternativa E trata da criação passoo a passo de objetos complexos, sem restringir a unicidade."
+  },
+  {
+    "id": 1906003,
+    "day_id": "dia_19_06",
+    "day_title": "19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A nova Plataforma Digital do Poder Judiciário (PDPJ) no TJ-CE exige a integração de sistemas de controle processual, recursos humanos, segurança e auditoria para a funcionalidade de 'Baixa Definitiva de Processo'. Atualmente, o módulo cliente precisa interagir com seis APIs distintas, compreendendo regras de negócio dispersas, o que resulta em alto acoplamento e complexidade no código cliente. Para ocultar a complexidade desse subsistema e fornecer uma interface única, de nível mais alto, que agrupe essas operações de baixa definitiva e facilite o uso pelo cliente, a solução arquitetural apropriada baseia-se no padrão:",
+    "options": {
+      "A": "Chain of Responsibility para passar a requisição de baixa definitiva sequencialmente entre os seis serviços.",
+      "B": "Mediator para promover o acoplamento fraco ao evitar que os seis serviços referenciem uns aos outros explicitamente.",
+      "C": "Observer para notificar automaticamente os seis serviços quando o módulo cliente solicitar a baixa definitiva.",
+      "D": "Adapter para compatibilizar as interfaces das seis APIs distintas com a interface esperada pelo cliente.",
+      "E": "Facade para prover uma interface simplificada unificando as chamadas aos múltiplos serviços do subsistema."
+    },
+    "answer": "E",
+    "explanation": "O padrão Facade fornece uma interface de nível mais alto que engloba um conjunto de interfaces complexas de um subsistema, tornando-o mais fácil de usar pelo cliente. A alternativa A encadeia chamadas onde qualquer objeto da cadeia pode tratá-las. A alternativa B lida com comunicação transversal entre os componentes. A alternativa C propõe eventos assinados. A alternativa D adequa uma interface incompatível, mas a simplificação de múltiplas APIs em uma macro-operação é o escopo clássico de Facade."
+  },
+  {
+    "id": 1906004,
+    "day_id": "dia_19_06",
+    "day_title": "19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de cálculo de custas judiciais do TJ-CE necessita lidar com diversas regras de tributação variáveis de acordo com a natureza da ação (Cível, Criminal, Fazenda Pública, Juizados Especiais). Inicialmente implementado com estruturas de controle condicionais (if/else ou switch/case) extensas, o código tornou-se de difícil manutenção. Os arquitetos de software decidiram encapsular cada regra de cálculo de custas em sua própria classe e torná-las intercambiáveis, permitindo que o algoritmo de cálculo varie independentemente dos clientes que o utilizam em tempo de execução. O padrão estrutural ou comportamental correto a ser aplicado é:",
+    "options": {
+      "A": "Padrão Template Method para definir o esqueleto do algoritmo de cálculo na superclasse e delegar os passos às subclasses.",
+      "B": "Padrão Strategy para encapsular os algoritmos de cálculo de custas em classes distintas e intercambiáveis.",
+      "C": "Padrão State para alterar o comportamento do sistema de cálculo quando o estado interno do processo mudar.",
+      "D": "Padrão Decorator para adicionar dinamicamente novas regras de tributação ao objeto de cálculo original.",
+      "E": "Padrão Command para encapsular a solicitação de cálculo como um objeto parametrizável por diferentes regras."
+    },
+    "answer": "B",
+    "explanation": "Strategy é o padrão comportamental que permite extrair algoritmos (regras de cálculo) para objetos distintos, substituindo as condicionais lógicas. A alternativa A usa herança para fixar o esqueleto e delegar pedaços da lógica, não o algoritmo inteiro. A alternativa C é aplicável quando o objeto transita por múltiplos estados internos, mudando seu comportamento global. A alternativa D sobrepõe camadas adicionais em tempo de execução. A alternativa E encapsula uma chamada em um objeto para criar filas ou histórico de requisições."
+  },
+  {
+    "id": 1906005,
+    "day_id": "dia_19_06",
+    "day_title": "19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No Processo Judicial Eletrônico (PJe) do TJ-CE, a assinatura de uma sentença por um magistrado é um evento crítico. Após a assinatura, o sistema precisa acionar o envio de intimações, atualizar o painel estatístico do tribunal, inserir um registro no log de auditoria do CNJ e notificar as partes do processo. O acoplamento direto entre a classe de Sentença e essas diversas ações está gerando falhas em cascata e dificultando a evolução do software. Para definir uma dependência um-para-muitos, de modo que quando a Sentença mudar de estado todos os seus dependentes sejam notificados e atualizados automaticamente sem forte acoplamento, adota-se o padrão:",
+    "options": {
+      "A": "Mediator para gerenciar e coordenar as interações entre a classe de Sentença e os componentes de notificação.",
+      "B": "Event-Driven Architecture (EDA) aplicada como um padrão criacional para o gerenciamento de instâncias da sentença.",
+      "C": "Observer para estruturar a assinatura da sentença como um sujeito publicador de eventos para assinantes independentes.",
+      "D": "Visitor para separar o algoritmo de notificação da estrutura de objetos da classe de Sentença.",
+      "E": "Chain of Responsibility para encaminhar o evento de assinatura através de uma corrente de processadores de notificações."
+    },
+    "answer": "C",
+    "explanation": "O padrão Observer (Publish-Subscribe) desacopla a classe principal dos seus múltiplos interessados, disparando atualizações assim que o estado muda. A alternativa A descreve o Mediator, que cria uma classe orquestradora centralizada em vez de delegar as reações independentemente via subscrição. A alternativa B é errada porque EDA é estilo arquitetural e não padrão GoF criacional. A alternativa D serve para adicionar novas operações à estrutura de classes existente sem modificá-la. A alternativa E sugere um fluxo sequencial e não um broadcast de notificação unificada."
+  },
+  {
+    "id": 1906006,
+    "day_id": "dia_19_06",
+    "day_title": "19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Secretaria de Tecnologia da Informação do TJ-CE iniciou a integração do sistema de Recursos Humanos com três plataformas externas de convênios médicos, folha de pagamento e margem consignável. Cada plataforma externa possui protocolos e contratos de dados muito distintos. Para isolar o sistema de RH dessas complexidades, a equipe criou uma camada intermediária que oferece métodos simples, delegando internamente as traduções e invocações sequenciais para as três plataformas. No entanto, um analista sugeriu que esse intermediário também transforme as respostas JSON das plataformas em objetos Java específicos da classe legada 'Beneficiario', adequando-se a uma interface existente. Essa arquitetura combina primariamente dois padrões GoF:",
+    "options": {
+      "A": "Singleton para centralizar as requisições externas e Bridge para separar a interface da implementação.",
+      "B": "Decorator para adicionar a conversão de formatos e Proxy para intermediar o acesso às plataformas externas.",
+      "C": "Strategy para alternar entre as três plataformas e Composite para estruturar a árvore de respostas.",
+      "D": "Facade para simplificar as chamadas múltiplas e Adapter para converter os tipos de retorno.",
+      "E": "Adapter para expor os métodos simples ao RH e Observer para receber os dados JSON externos de forma reativa."
+    },
+    "answer": "D",
+    "explanation": "A criação de métodos simples de front-end para um conjunto de integrações pesadas é a essência do Facade. A transformação das respostas JSON em classes legadas incompatíveis ('Beneficiario') remete ao Adapter. As demais opções trazem padrões isolados que não atendem às duas características principais expostas no texto (simplificação de subsistemas + adaptação de assinaturas e retornos legados)."
+  },
+  {
+    "id": 1906007,
+    "day_id": "dia_19_06",
+    "day_title": "19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma auditoria de segurança no sistema de distribuição de processos do TJ-CE apontou que a leitura das chaves criptográficas do cofre de senhas estava degradando a performance do sistema. O log indicou que a cada assinatura de documento, a aplicação instanciava uma nova classe CryptoKeyManager, realizando um dispendioso carregamento do sistema de arquivos. Para otimizar a performance garantindo que a configuração criptográfica seja lida apenas uma vez na memória, com acesso concorrente thread-safe para toda a aplicação, deve-se adotar o padrão Singleton. O mecanismo técnico correto para implementação desse padrão de forma estritamente segura em ambientes multithread (em linguagens como Java) é:",
+    "options": {
+      "A": "Instanciar a classe estaticamente de modo eager ou utilizar o escopo de enumeração.",
+      "B": "Implementar um construtor público e um método estático de inicialização lazy sem sincronização.",
+      "C": "Utilizar variáveis de instância públicas estáticas e o padrão Factory Method para geração do pool.",
+      "D": "Aplicar herança múltipla na classe CryptoKeyManager para sobrescrever os métodos de clone e serialização.",
+      "E": "Instanciar o gerenciador via Injeção de Dependência no escopo Prototype para garantir o isolamento das threads."
+    },
+    "answer": "A",
+    "explanation": "Para evitar problemas de condição de corrida (race conditions) em Singletons, a inicialização ansiosa (eager) ao carregar a classe estática ou a adoção de tipos Enum nativos são os modos mais robustos e automáticos de obter thread-safety na JVM. A alternativa B omite a sincronização, falhando o objetivo multithread. A alternativa C propõe pool, ferindo a instância única do Singleton. A alternativa D é um cenário inválido no Java. A alternativa E quebra totalmente a premissa de Singleton, pois Prototype gera múltiplas instâncias novas."
+  },
+  {
+    "id": 1906008,
+    "day_id": "dia_19_06",
+    "day_title": "19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está desenvolvendo um módulo de anonimização de decisões judiciais para cumprimento da Lei Geral de Proteção de Dados (LGPD). O processo requer a aplicação de diferentes algoritmos de mascaramento de dados sensíveis baseados na classificação de risco do processo (Sigilo Nível 1, Nível 2 e Segredo de Justiça absoluto). O arquiteto propôs que a classe PublicadorDecisao não implemente diretamente os mascaramentos, mas sim possua uma referência para a interface EstrategiaMascaramento, delegando a essa referência a execução do algoritmo apropriado durante o fluxo de publicação. A implementação desse requisito reflete a utilização do padrão:",
+    "options": {
+      "A": "Decorator.",
+      "B": "Template Method.",
+      "C": "Visitor.",
+      "D": "Strategy.",
+      "E": "Command."
+    },
+    "answer": "D",
+    "explanation": "O padrão Strategy encapsula o conjunto de algoritmos de mascaramento atrás de uma interface (EstrategiaMascaramento), repassando para o objeto cliente (PublicadorDecisao) apenas a interface base que delegará ao algoritmo correto (composição sobre herança). O Decorator adorna objetos com funcionalidade adicional. Template Method utiliza herança e sobrescrita de passos do algoritmo. Visitor lida com atravessar árvores de objetos. Command converte a chamada em um objeto independente."
+  },
+  {
+    "id": 1906009,
+    "day_id": "dia_19_06",
+    "day_title": "19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o monitoramento do Data Center do TJ-CE, é vital que o sistema de monitoramento informe diversos componentes (painel do NOC, módulo de envio de SMS aos gestores e banco de dados de registro histórico) quando a CPU de um servidor atingir 95% de uso. Cada componente reage de forma autônoma e independente à notificação do pico de uso. A equipe de desenvolvimento precisa projetar a classe do Servidor para que ele notifique todos os interessados sem conhecê-los diretamente, mantendo a escalabilidade para adicionar novos componentes interessados no futuro sem alterar o código do Servidor. O padrão comportamental indicado para esse modelo arquitetural é o:",
+    "options": {
+      "A": "Chain of Responsibility para encadear os alertas e transmiti-los aos interessados de maneira hierárquica.",
+      "B": "State para modificar o comportamento em tempo de execução do servidor quando a métrica de CPU se alterar.",
+      "C": "Mediator para encapsular o roteamento da notificação e promover o acoplamento fraco entre os servidores.",
+      "D": "Memento para capturar e armazenar o estado interno do servidor permitindo sua posterior restauração.",
+      "E": "Observer para desacoplar o publicador da notificação de mudança de estado dos seus respectivos assinantes."
+    },
+    "answer": "E",
+    "explanation": "A descrição delineia com precisão o padrão Observer, onde os componentes independentes (assinantes) assinam os alertas provenientes do nó central de monitoramento (o sujeito publicador). O Servidor (Subject) não os conhece concretamente. Chain passa requisições numa cadeia de tratamento e encerramento. State atua na transição de comportamentos internos. Mediator concentra a relação de várias classes colegas em um hub coordenador, em vez de assinar para receber broadcasts livres."
+  },
+  {
+    "id": 1906010,
+    "day_id": "dia_19_06",
+    "day_title": "19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE adquiriu um novo sistema de leitura biométrica para controle de acesso às sessões do Tribunal do Júri. A biblioteca fornecida pelo fabricante do leitor expõe os dados em um formato proprietário através da classe FingerprintReaderSDK. No entanto, o sistema de segurança do Tribunal já possui uma interface padronizada chamada IAutenticadorBiometrico, que espera matrizes de bytes em um formato normalizado. O arquiteto decidiu criar uma nova classe LeitorBiometricoAdapter que implementa IAutenticadorBiometrico e utiliza internamente uma instância de FingerprintReaderSDK para coletar e traduzir os dados. Essa abordagem de design está alinhada ao conceito do padrão:",
+    "options": {
+      "A": "Adapter em nível de classe exigindo a herança múltipla da interface e do sistema proprietário.",
+      "B": "Facade em nível de subsistema para ocultar a complexidade do algoritmo biométrico interno.",
+      "C": "Adapter em nível de objeto envolvendo a composição da classe incompatível.",
+      "D": "Proxy Remoto para representar a comunicação via rede com o hardware de leitura biométrica.",
+      "E": "Bridge para dissociar a abstração da leitura biométrica de sua implementação via SDK do fabricante."
+    },
+    "answer": "C",
+    "explanation": "Ao encapsular uma instância privada do objeto legado incompatível para traduzir a interface (composição), o arquiteto aplica o padrão Adapter do tipo Objeto. A alternativa A define Adapter de Classe, que faria uso de herança múltipla da classe proprietária, algo muitas vezes impraticável em plataformas como Java e não correspondente à descrição 'utiliza internamente uma instância'. Proxy, Facade e Bridge atuam, respectivamente, em controle de acesso, simplificação de subsistema e abstração ortogonal, nenhum traduz interfaces incompatíveis."
+  },
+  {
+    "id": 1906011,
+    "day_id": "dia_19_06",
+    "day_title": "19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No módulo de expedição de mandados do TJ-CE, a escolha da empresa de correios ou do oficial de justiça é determinada por regras geográficas dinâmicas. O algoritmo de seleção muda conforme a região de destino, caracterizando a aplicação do padrão Strategy. O arquiteto observou que cada estratégia instanciada consome bastante memória local, mas não possui nenhum estado mutável próprio, sendo perfeitamente reutilizável por múltiplas execuções simultâneas. Visando otimizar a infraestrutura e evitar a sobrecarga do Garbage Collector, a união ideal com o padrão Strategy para garantir a reutilização global dessas instâncias de estratégias é a aplicação do padrão:",
+    "options": {
+      "A": "Flyweight para armazenar fatias dos estados internos intrínsecos e extrínsecos dos oficiais de justiça.",
+      "B": "Singleton para assegurar a existência de apenas uma instância compartilhada de cada estratégia algorítmica.",
+      "C": "Factory Method para encapsular as lógicas de criação de múltiplas estratégias dedicadas a cada requisição.",
+      "D": "Prototype para gerar instâncias limpas das estratégias rapidamente através da clonagem da memória original.",
+      "E": "Decorator para cachear dinamicamente os resultados pré-computados das estratégias de roteamento."
+    },
+    "answer": "B",
+    "explanation": "Objetos do padrão Strategy que encapsulam apenas algoritmos sem conter estado conversível interno (stateless) são excelentes candidatos para serem integrados ao padrão Singleton. Assim, economiza-se na alocação de memória. Flyweight guarda estados intrínsecos de alta granularidade (letras de editor, por exemplo). Factory Method abstrai a criação mas não impõe limite de instâncias. Prototype clonaria novos objetos, derrotando o propósito de economia. Decorator engloba novas funções sobre objetos e não gerencia reaproveitamento instancial."
+  },
+  {
+    "id": 1906012,
+    "day_id": "dia_19_06",
+    "day_title": "19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema 'e-TJCE' foi arquitetado sobre uma rede de 15 microserviços de infraestrutura. Desenvolvedores de aplicações clientes (Front-end SPA e Aplicativo Mobile) reclamavam da necessidade de coordenar chamadas autenticadas individuais para os serviços de Arquivos, Assinatura, Filas e Notificações apenas para concluir o envio de uma simples petição. O time de arquitetura implementou um serviço Edge (API Gateway) atuando como ponto único de entrada. Esse serviço fornece um endpoint agregador simplificado de 'SubmeterPetição', o qual internamente orquestra e gerencia as chamadas aos microserviços requeridos. O padrão de projeto GoF que conceitualmente embasa essa simplificação e orquestração em uma interface unificada superior é o:",
+    "options": {
+      "A": "Composite.",
+      "B": "Mediator.",
+      "C": "Builder.",
+      "D": "Proxy.",
+      "E": "Facade."
+    },
+    "answer": "E",
+    "explanation": "A criação de um endpoint superior mais legível (como o API Gateway que agrega vários microserviços em uma única chamada de alto nível) é a materialização do padrão Facade aplicado em sistemas distribuídos. O Composite estrutura partes em formato de árvore. O Mediator interliga objetos subjacentes e centraliza fluxo entre eles internamente. Builder monta passos estruturados de um objeto interno. Proxy representa outro objeto como espelho idêntico, preservando a interface exata, sem simplificações ou aglutinações macro."
+  },
+  {
+    "id": 1906013,
+    "day_id": "dia_19_06",
+    "day_title": "19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma vulnerabilidade foi detectada na plataforma de relatórios do TJ-CE: a implementação do gerenciador global de sessões estava instanciando cópias extras devido ao acesso simultâneo durante o carregamento inicial da aplicação sob altíssima carga, violando a intenção original do padrão Singleton. O desenvolvedor tentou utilizar o bloqueio de sincronização estrita (synchronized) na assinatura do método de acesso global, o que resolveu o problema das instâncias múltiplas, mas resultou em um gargalo extremo de performance em cada chamada subsequente ao método. Para resolver o gargalo de concorrência garantindo o padrão Singleton com inicialização lazy na plataforma Java, a técnica recomendada é o:",
+    "options": {
+      "A": "Escopo de Request do framework Spring Boot para gerenciar o ciclo de vida dos singletons em tempo de execução.",
+      "B": "Double-Checked Locking para sincronizar apenas o primeiro bloco de criação e ignorar o bloqueio em leituras posteriores.",
+      "C": "Pool de Objetos que pré-aloque as múltiplas instâncias na inicialização assíncrona do servidor de aplicação.",
+      "D": "Pattern Command acoplado com concorrência paralela nativa para desviar as chamadas e evitar o estrangulamento da thread principal.",
+      "E": "Method Injection onde a classe cliente injeta dinamicamente o gerenciador por meio de proxies transacionais do banco de dados."
+    },
+    "answer": "B",
+    "explanation": "O Double-Checked Locking em um modelo lazy evaluation de Singleton realiza o travamento de thread apenas quando detecta a instância como nula no primeiro acesso. Depois de instanciado, os acessos seguintes transpassam a trava sem pagar pedágio de bloqueio sincronizado. A alternativa A foge do conceito nativo e propõe gerenciar ciclos de requisição (request scope), destruindo a premissa de um escopo Singleton (application scope). As alternativas C, D e E misturam injeções externas e pools, desvirtuando completamente o conceito do padrão isolado GoF."
+  },
+  {
+    "id": 1906014,
+    "day_id": "dia_19_06",
+    "day_title": "19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de armazenamento do TJ-CE arquiva milhões de documentos em diferentes repositórios (AWS S3, NAS Local, Storage Blob Azure). A lógica que determina qual provedor de armazenamento em nuvem utilizar e como transferir o binário está emaranhada em dezenas de classes do sistema de peticionamento através de condicionalismos aninhados (hard-coded). O arquiteto sênior elaborou uma refatoração estruturando uma interface IArmazenamentoNuvem, com implementações concretas ArmazenamentoAWS, ArmazenamentoNAS e ArmazenamentoAzure. O contexto de upload da petição recebe a implementação correspondente injetada durante o processo de arquivamento. Essa refatoração erradicou os condicionalismos utilizando o padrão de projeto:",
+    "options": {
+      "A": "Observer que notifica o sistema de nuvem apropriado para o envio do documento através do acionamento de eventos globais.",
+      "B": "Factory Method que inicializa o repositório de nuvem com base na delegação da construção às subclasses especializadas.",
+      "C": "Strategy que abstrai a família de algoritmos de armazenamento em implementações independentes e injetáveis no contexto.",
+      "D": "Decorator que adiciona funcionalidades de conexão em nuvem aos documentos em tempo de execução de forma recursiva.",
+      "E": "Bridge que separa o armazenamento da petição em uma arquitetura de múltiplos níveis de persistência não relacionada."
+    },
+    "answer": "C",
+    "explanation": "A remoção de fluxos IF/ELSE complexos ligados às rotinas comportamentais, transpondo-os para uma interface injetável dinamicamente, é a aplicação pura do padrão Strategy (também comumente referenciado na técnica de refatoração 'Replace Conditional with Strategy'). Observer não atua em delegação condicional. Factory foca na criação instancial primária. Decorator embrulha classes de forma aditiva. Bridge elabora pontes entre hierarquias independentes, e não seleciona comportamentos lógicos permutáveis do mesmo peso estrutural no contexto."
+  },
+  {
+    "id": 1906015,
+    "day_id": "dia_19_06",
+    "day_title": "19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No sistema eletrônico de execução penal (SEEU) operado pelo TJ-CE, a mudança de regime de um apenado (de fechado para semiaberto, por exemplo) afeta a visualização em diversos módulos: o cálculo da data-base para progressão, o agendamento do controle de monitoramento eletrônico e o registro no setor de serviço social. Para assegurar que as equipes de arquitetura respeitem os princípios Open-Closed e de Responsabilidade Única (SOLID), evitou-se modificar a classe central de 'Apenado' sempre que um novo módulo interessado na mudança de regime fosse criado no sistema. O padrão comportamental adotado para estabelecer essa arquitetura de atualização reativa sem acoplamento forte entre o estado do apenado e os referidos módulos foi o:",
+    "options": {
+      "A": "Mediator para atuar como controlador de fluxo centralizado determinando quem e quando será atualizado no regime do apenado.",
+      "B": "Template Method para prover os fluxos lógicos fixos e pré-estabelecidos das consequências do fechamento de regime penal.",
+      "C": "Strategy para comutar de forma transparente entre o cálculo penal, monitoramento eletrônico e as anotações do serviço social.",
+      "D": "Observer para manter uma lista de referências abstratas dos módulos e notificá-los genericamente na alteração do regime.",
+      "E": "Memento para encapsular o histórico das alterações do apenado permitindo estornos do estado para os módulos dependentes."
+    },
+    "answer": "D",
+    "explanation": "A classe central de 'Apenado' atua como Subject (Publicador) perante uma coleção abstrata de componentes que observam o seu estado (Observer). Quando o regime muda, ocorre uma notificação genérica, sem quebrar o Open-Closed ao incluir ou remover inscritos. A alternativa A criaria um controlador restrito do fluxo em vez de reatividade baseada em eventos. A alternativa B preestabelece um caminho em subclasses. A alternativa C escolhe entre lógicas alternadas, e não efetua notificações globais concorrentes. A alternativa E cuida de desfazimento/snapshot de estados anteriores."
+  }
+]

@@ -23758,5 +23758,1355 @@
     },
     "answer": "C",
     "explanation": "'Design' em engenharia de software refere-se a projeto, concepção arquitetural, não 'desenho gráfico' ou visual. 'Eventually' é um falso cognato e não significa 'eventualmente' (ocasionalmente), mas sim 'finalmente', 'com o tempo' ou 'mais cedo ou mais tarde'. A alternativa C traz a tradução precisa da intenção de arquitetura."
+  },
+  {
+    "id": 1321,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Analista de TI do TJ-CE foi designado para criar uma rotina no PostgreSQL que itera sobre milhões de processos inativos na tabela de arquivamento. Ele precisa de uma estrutura de repetição que execute um bloco de código iterando automaticamente sobre o resultado de uma consulta SELECT, onde cada iteração carrega uma linha do resultado diretamente em uma variável do tipo RECORD. O comando PL/pgSQL adequado para essa finalidade é o:",
+    "options": {
+      "A": "FOR ... IN EXECUTE ... LOOP",
+      "B": "FOREACH ... IN ARRAY ... LOOP",
+      "C": "FOR ... IN SELECT ... LOOP",
+      "D": "WHILE ... IN CURSOR ... LOOP",
+      "E": "ITERATE ... OVER QUERY ... LOOP"
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. Em PL/pgSQL, a estrutura `FOR registro IN consulta LOOP` (frequentemente expressa iterando sobre um SELECT) é utilizada para varrer os resultados de uma query linha a linha. A alternativa A (`EXECUTE`) é para queries dinâmicas construídas como texto. A alternativa B (`FOREACH`) é específica para iteração sobre arrays. As alternativas D e E apresentam sintaxes inexistentes na linguagem PL/pgSQL."
+  },
+  {
+    "id": 1322,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No TJ-CE, uma nova função em PL/pgSQL foi desenvolvida para calcular as custas processuais com base em uma fórmula matemática complexa que utiliza exclusivamente os parâmetros de entrada. A função não realiza consultas a tabelas e não altera o estado do banco de dados. Para garantir o melhor desempenho e permitir que o otimizador do PostgreSQL avalie a função em cache apenas uma vez por consulta, o Analista de TI deve declará-la com o comportamento de volatilidade:",
+    "options": {
+      "A": "STRICT",
+      "B": "VOLATILE",
+      "C": "STABLE",
+      "D": "IMMUTABLE",
+      "E": "CACHEABLE"
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D. Funções `IMMUTABLE` garantem que sempre retornarão o mesmo resultado para os mesmos parâmetros, permitindo que o otimizador pré-calcule e armazene o resultado em cache. A alternativa A (`STRICT`) diz respeito ao comportamento com valores nulos. A alternativa B (`VOLATILE`) indica que o resultado pode mudar a cada chamada e não deve ser otimizado. A alternativa C (`STABLE`) indica que o resultado não muda dentro de um único comando (statement), mas pode mudar entre comandos distintos. A alternativa E não é uma palavra-chave válida."
+  },
+  {
+    "id": 1323,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de pautas de audiências do TJ-CE exige a construção de uma função PL/pgSQL que retorne uma lista de audiências, contendo múltiplas colunas (ID, Data, Magistrado). O Analista precisa definir a função de forma que a estrutura de retorno seja explicitamente nomeada e mapeada na própria declaração da função, evitando a criação de tipos compostos externos (CREATE TYPE). A sintaxe correta para a cláusula de retorno é:",
+    "options": {
+      "A": "RETURNS SETOF (id int, data date, magistrado text)",
+      "B": "RETURNS RECORD (id int, data date, magistrado text)",
+      "C": "RETURNS TABLE (id int, data date, magistrado text)",
+      "D": "RETURNS MULTIPLE (id int, data date, magistrado text)",
+      "E": "RETURNS TYPE (id int, data date, magistrado text)"
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. A cláusula `RETURNS TABLE (...)` permite definir explicitamente as colunas de saída diretamente na assinatura da função. A alternativa A (`SETOF`) exige o nome de um tipo de dado existente ou tabela. A alternativa B (`RECORD`) não permite especificar as colunas na declaração, forçando o chamador da função a definir o alias das colunas na query. As alternativas D e E contêm sintaxes inválidas no PostgreSQL."
+  },
+  {
+    "id": 1324,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma arquitetura legada no TJ-CE expõe dados aos sistemas clientes exclusivamente por meio de visões (VIEWS) complexas que realizam junções entre as tabelas de processos e partes. Recentemente, surgiu o requisito de permitir que operações de UPDATE sejam executadas diretamente sobre uma dessas visões. No PostgreSQL, para interceptar a operação de atualização na visão e aplicar a lógica de modificação manual nas tabelas base, o Analista de TI deve criar um:",
+    "options": {
+      "A": "TRIGGER BEFORE UPDATE na visão.",
+      "B": "RULE UPDATE DO INSTEAD na tabela base.",
+      "C": "TRIGGER INSTEAD OF UPDATE na visão.",
+      "D": "TRIGGER AFTER UPDATE na visão.",
+      "E": "PROCEDURE de substituição de UPDATE na visão."
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. Triggers do tipo `INSTEAD OF` são exclusivamente projetados para interceptar operações DML sobre visões (Views), substituindo a ação padrão pela lógica definida na função do trigger. A alternativa A e D estão erradas porque triggers `BEFORE` e `AFTER` operam em tabelas, não sendo o mecanismo nativo de atualização de visões complexas. A alternativa B define a regra no lugar errado (tabela base em vez de view) e o padrão moderno é usar trigger. A alternativa E inventa uma funcionalidade."
+  },
+  {
+    "id": 1325,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para reforçar a integridade referencial no módulo de custódia do TJ-CE, um Analista de TI precisa implementar uma validação em nível de banco de dados que verifique a compatibilidade de datas de entrada e saída de documentos. Caso as regras de negócio sejam violadas, a operação de inserção deve ser bloqueada imediatamente com uma mensagem de erro explícita abortando a transação. O mecanismo adequado e eficiente em PostgreSQL para realizar essa validação é um:",
+    "options": {
+      "A": "TRIGGER AFTER INSERT com função retornando FALSE.",
+      "B": "TRIGGER BEFORE INSERT com função levantando uma EXCEPTION.",
+      "C": "TRIGGER INSTEAD OF INSERT com função retornando NULL.",
+      "D": "TRIGGER BEFORE INSERT com função retornando OLD.",
+      "E": "TRIGGER AFTER INSERT executando a função pg_cancel_query()."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Um trigger `BEFORE INSERT` que executa o comando `RAISE EXCEPTION` interrompe o fluxo imediatamente, descarta a operação e envia o erro ao cliente. A alternativa A não aborta transações (retornar FALSE em AFTER trigger não tem efeito de aborto). A alternativa C é aplicável a views, não a tabelas convencionais. A alternativa D retornando NULL em um BEFORE INSERT apenas cancela a inserção silenciosamente, sem mensagem de erro explícita. A alternativa E não é um método válido de tratamento transacional intra-trigger."
+  },
+  {
+    "id": 1326,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em uma rotina de sincronização de varas criminais no TJ-CE, um bloco PL/pgSQL executa a inserção de registros provenientes de uma API externa. Ocasionalmente, chaves primárias duplicadas podem ocorrer. O Analista de TI deve tratar essas violações de unicidade dentro da função para capturar o erro e realizar um UPDATE alternativo, garantindo que a transação principal não seja abortada. O bloco de tratamento de erro interno no PL/pgSQL é definido pela cláusula:",
+    "options": {
+      "A": "CATCH WHEN unique_violation THEN",
+      "B": "EXCEPTION WHEN unique_violation THEN",
+      "C": "ON ERROR unique_violation DO",
+      "D": "HANDLE unique_violation WITH",
+      "E": "TRY ... CATCH unique_violation DO"
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. O PL/pgSQL implementa o tratamento de erros em blocos de execução usando a palavra-chave `EXCEPTION` seguida de `WHEN nome_do_erro THEN`. As alternativas A e E misturam a sintaxe do T-SQL (SQL Server) ou de outras linguagens (`TRY...CATCH`). As alternativas C e D são comandos inexistentes na sintaxe estrutural do PL/pgSQL."
+  },
+  {
+    "id": 1327,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O departamento de Recursos Humanos do TJ-CE solicitou a criação de uma tabela de auditoria para registrar as alterações na tabela de lotação dos servidores. A função do trigger de auditoria em PL/pgSQL, disparada em eventos de UPDATE com escopo FOR EACH ROW, precisa gravar o valor do departamento anterior à modificação e o valor do novo departamento. As variáveis predefinidas do sistema que contêm o estado anterior e o novo estado da linha são, respectivamente:",
+    "options": {
+      "A": "PRIOR e LATER",
+      "B": "OLD_ROW e NEW_ROW",
+      "C": "PREVIOUS e CURRENT",
+      "D": "OLD e NEW",
+      "E": "BEFORE e AFTER"
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D. No PostgreSQL, dentro de uma função chamada por um trigger a nível de linha (row-level), as variáveis especiais `OLD` e `NEW` contêm os dados da linha original (antes da operação) e da nova linha (após a operação), respectivamente. As demais alternativas apresentam terminologias incorretas que não fazem parte do escopo de variáveis predefinidas do PL/pgSQL."
+  },
+  {
+    "id": 1328,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma função PL/pgSQL no banco de dados central do TJ-CE recebe o número de um processo como entrada e deve processar informações para retornar três valores distintos em colunas separadas: o status, a vara de origem e a data de autuação. O Analista optou por não criar um tipo composto nem usar a cláusula RETURNS TABLE explicita. A assinatura da função pode definir os retornos diretamente nos argumentos utilizando parâmetros de saída declarados com a palavra-chave:",
+    "options": {
+      "A": "RETURNS",
+      "B": "YIELD",
+      "C": "EXPORT",
+      "D": "OUTPUT",
+      "E": "OUT"
+    },
+    "answer": "E",
+    "explanation": "A alternativa correta é a E. No PostgreSQL, você pode declarar parâmetros de saída diretamente na assinatura da função usando o prefixo `OUT`. Isso converte a função implicitamente para retornar um tipo composto (record) ou as colunas diretamente. A alternativa A é a cláusula principal de tipo de retorno, não de parâmetros. A alternativa D é utilizada no T-SQL. As alternativas B e C não se aplicam a esse conceito no PostgreSQL."
+  },
+  {
+    "id": 1329,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE estabeleceu uma política de segurança onde toda operação de deleção em lote na tabela de minutas deve gerar exatamente um único registro em uma tabela de log sumarizado. Esse registro deve conter a data, a hora e o usuário da operação, independentemente de quantas linhas foram efetivamente removidas pelo comando. Para atender a essa exigência de forma nativa no PostgreSQL, o trigger associado à operação de DELETE deve ser criado especificando a opção de granularidade:",
+    "options": {
+      "A": "FOR EACH ROW",
+      "B": "FOR ALL ROWS",
+      "C": "FOR EACH STATEMENT",
+      "D": "FOR EACH BATCH",
+      "E": "FOR ALL TRANSACTIONS"
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. Um trigger criado com `FOR EACH STATEMENT` é disparado apenas uma vez por comando SQL, independentemente de quantas linhas foram afetadas (mesmo que nenhuma linha seja afetada). A alternativa A dispara a função para cada linha deletada, quebrando o requisito de 'único registro'. As alternativas B, D e E utilizam sintaxes inválidas no PostgreSQL."
+  },
+  {
+    "id": 1330,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um processamento noturno no TJ-CE realiza a reindexação semântica de sentenças históricas. Devido ao volume massivo de dados de texto, a função PL/pgSQL não pode carregar o resultado completo da consulta na memória do servidor sob risco de estouro (Out of Memory), exigindo a navegação gradativa sobre os registros. O mecanismo estrutural do PL/pgSQL que permite declarar uma variável para encapsular a query e efetuar buscas fracionadas (FETCH) é o:",
+    "options": {
+      "A": "CURSOR",
+      "B": "ITERATOR",
+      "C": "GENERATOR",
+      "D": "BATCH FETCH",
+      "E": "DATA STREAM"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. Em PL/pgSQL, um `CURSOR` é utilizado para encapsular a execução de uma consulta, permitindo recuperar (FETCH) poucas linhas por vez, evitando o carregamento de todo o result set na memória de uma só vez. As alternativas B, C, D e E representam conceitos ou terminologias que não correspondem à estrutura nativa de controle de conjuntos massivos no PL/pgSQL."
+  },
+  {
+    "id": 1331,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No ambiente de banco de dados do TJ-CE, servidores de plantão possuem privilégios restritos e não podem executar comandos de DELETE diretamente nas tabelas de controle de acesso. No entanto, por requisito operacional, eles necessitam executar uma função PL/pgSQL que remove registros antigos dessa mesma tabela. Para que a função execute com os privilégios do administrador que a criou, e não com as limitações do usuário que a invoca, a função deve ser declarada com o modificador:",
+    "options": {
+      "A": "SECURITY INVOKER",
+      "B": "SECURITY DEFINER",
+      "C": "AUTHORIZATION OWNER",
+      "D": "EXECUTE AS CREATOR",
+      "E": "PRIVILEGES ELEVATED"
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. O modificador `SECURITY DEFINER` instrui o PostgreSQL a executar a função com os privilégios do usuário que a criou (o definidor), permitindo escalonamento temporário de privilégios. A alternativa A (`SECURITY INVOKER`) é o comportamento padrão e executa a função com os privilégios de quem a chama. As alternativas C, D e E não são sintaxes suportadas nativamente pelo PostgreSQL."
+  },
+  {
+    "id": 1332,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Analista de TI do TJ-CE está desenvolvendo uma função genérica em PL/pgSQL para realizar a limpeza (TRUNCATE) de diferentes tabelas de arquivos temporários ao final do mês. Como o nome da tabela alvo é passado como parâmetro de texto para a função, não é possível utilizar os comandos DDL de forma estática no corpo do código. A execução de strings SQL construídas dinamicamente em PL/pgSQL exige o uso do comando:",
+    "options": {
+      "A": "RUN",
+      "B": "EVALUATE",
+      "C": "PERFORM",
+      "D": "EXECUTE",
+      "E": "PREPARE"
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D. No PL/pgSQL, o comando `EXECUTE` é obrigatório para executar instruções SQL dinâmicas (strings construídas em tempo de execução). A alternativa C (`PERFORM`) é usada para executar queries estáticas que não retornam resultados ou cujos resultados devem ser descartados. A alternativa E (`PREPARE`) cria um statement preparado na sessão, mas não é a construção de disparo dinâmico interna do PL/pgSQL. As alternativas A e B não existem."
+  },
+  {
+    "id": 1333,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma regra de negócio no sistema de acompanhamento processual do TJ-CE determina que um trigger de notificação deve ser disparado durante a atualização de um processo, mas exclusivamente se a coluna de 'status' for modificada para o valor 'ARQUIVADO'. Para evitar a execução do corpo da função do trigger em todas as outras atualizações da tabela, otimizando o processamento, o Analista de TI deve utilizar a cláusula de restrição diretamente na declaração CREATE TRIGGER denominada:",
+    "options": {
+      "A": "IF NEW.status = 'ARQUIVADO'",
+      "B": "WHERE NEW.status = 'ARQUIVADO'",
+      "C": "WHEN (NEW.status = 'ARQUIVADO')",
+      "D": "CONDITION (NEW.status = 'ARQUIVADO')",
+      "E": "CHECK (NEW.status = 'ARQUIVADO')"
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. No PostgreSQL, a cláusula `WHEN (condição)` pode ser adicionada no comando `CREATE TRIGGER` para estipular que a função do trigger só será chamada se a condição booleana for avaliada como verdadeira. A alternativa A reflete uma instrução do corpo do PL/pgSQL, e não da definição estrutural do trigger. A alternativa B é a cláusula de junção de SQL, inválida na declaração de triggers. As alternativas D e E são modificadores inválidos no contexto de CREATE TRIGGER."
+  },
+  {
+    "id": 1334,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No módulo de protocolo eletrônico do TJ-CE, um trigger BEFORE INSERT em PL/pgSQL intercepta o registro de uma nova petição para transformar o texto do assunto em letras maiúsculas, alterando o valor do campo na variável NEW. Para que o fluxo de inserção continue normalmente e o registro efetivamente modificado seja gravado na tabela, a função do trigger a nível de linha deve ser encerrada obrigatoriamente com o comando:",
+    "options": {
+      "A": "RETURN OLD;",
+      "B": "RETURN NEW;",
+      "C": "RETURN NULL;",
+      "D": "RETURN TRUE;",
+      "E": "RETURN VALID;"
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Em um trigger `BEFORE` a nível de linha (row-level), a linha a ser inserida ou atualizada é definida pelo valor retornado pela função. Ao usar `RETURN NEW;`, o banco recebe a instrução para processar e persistir as alterações realizadas na variável NEW. A alternativa A (`RETURN OLD;`) inseriria o registro anterior, que em um INSERT é nulo. A alternativa C (`RETURN NULL;`) instrui o PostgreSQL a abortar silenciosamente a operação na linha corrente. As alternativas D e E fornecem tipos de retorno incompatíveis com triggers."
+  },
+  {
+    "id": 1335,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma rotina de manutenção noturna na base de dados do TJ-CE altera em massa a prioridade de processos cujo prazo de tramitação expirou. Após a execução do comando UPDATE dentro da função PL/pgSQL, o Analista de TI precisa capturar a quantidade exata de linhas que foram modificadas no banco para gravar em uma tabela estatística. O comando interno no PL/pgSQL utilizado para recuperar o número de linhas afetadas pelo comando DML imediatamente anterior é:",
+    "options": {
+      "A": "GET ROW_COUNT",
+      "B": "FETCH AFFECTED_ROWS",
+      "C": "GET DIAGNOSTICS",
+      "D": "OBTAIN SQL%ROWCOUNT",
+      "E": "RETRIEVE ROW_AFFECTED"
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. O comando `GET DIAGNOSTICS variavel = ROW_COUNT` é a forma padronizada do PL/pgSQL para capturar metadados do último comando SQL executado, como o número de linhas afetadas. A alternativa D remete ao modelo do Oracle PL/SQL (`SQL%ROWCOUNT`), incorreto no PostgreSQL. As alternativas A, B e E contêm sintaxes e palavras-chave inexistentes na linguagem PL/pgSQL."
+  },
+  {
+    "id": 1336,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL: Views Atualizáveis",
+    "context": "Migração de sistema, Views e permissões",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No Tribunal de Justiça do Ceará (TJ-CE), a equipe de banco de dados decidiu criar uma camada de abstração sobre a tabela central de tramitação processual utilizando o PostgreSQL. O objetivo é permitir que aplicações de parceiros externos realizem operações de inserção e atualização diretamente nesta abstração, sem conceder acesso à tabela base. Para que essa estrutura seja automaticamente atualizável (automatically updatable) no PostgreSQL, sem a necessidade de criação de triggers INSTEAD OF, o arquiteto de dados deve garantir que a definição da estrutura cumpra requisitos estritos. Considerando os critérios de atualização automática de views no PostgreSQL, o requisito obrigatório é:",
+    "options": {
+      "A": "conter cláusulas DISTINCT, GROUP BY ou HAVING na consulta de origem.",
+      "B": "possuir exatamente uma entrada na cláusula FROM referenciando uma tabela ou view atualizável.",
+      "C": "incluir funções de agregação, operações de conjunto (UNION, INTERSECT) ou LIMIT.",
+      "D": "referenciar múltiplas tabelas baseadas em junções do tipo LEFT OUTER JOIN ou RIGHT OUTER JOIN.",
+      "E": "possuir consultas aninhadas ou subqueries na lista de seleção referenciando a tabela principal."
+    },
+    "answer": "B",
+    "explanation": "No PostgreSQL, para que uma view seja automaticamente atualizável, ela deve satisfazer condições rigorosas. A principal é possuir exatamente uma entrada na cláusula FROM (Alternativa B correta). A view não pode conter funções de agregação, DISTINCT, GROUP BY, HAVING, LIMIT ou operações de conjunto, o que invalida A e C. Tampouco pode conter junções múltiplas ou subqueries na lista de seleção (D e E), sob pena de exigir triggers INSTEAD OF."
+  },
+  {
+    "id": 1337,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL: Views Materializadas",
+    "context": "Atualização de Painel Analítico",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de infraestrutura do TJ-CE desenvolveu um painel analítico de produtividade de magistrados baseado no PostgreSQL. Como o volume de dados ultrapassa dezenas de milhões de registros, optou-se pela utilização de visões materializadas para consolidar o relatório. Durante o expediente, o comando de renovação dos dados começou a bloquear as consultas de leitura realizadas pelo painel, ocasionando lentidão. O engenheiro de dados foi acionado para implementar uma estratégia de renovação que permita a atualização da estrutura física enquanto os dados antigos continuam disponíveis para consultas simultâneas. A solução arquitetural correta para resolver esse incidente de bloqueio no PostgreSQL consiste na execução do comando:",
+    "options": {
+      "A": "REFRESH MATERIALIZED VIEW com a cláusula CONCURRENTLY, exigindo um índice UNIQUE na visão.",
+      "B": "REFRESH MATERIALIZED VIEW com a opção NONBLOCKING, dispensando a criação de índices adicionais.",
+      "C": "ALTER MATERIALIZED VIEW incluindo a diretiva REFRESH ONLINE, suportada apenas para visões particionadas.",
+      "D": "UPDATE MATERIALIZED VIEW utilizando o modificador ASYNC, operando sob o nível de isolamento READ UNCOMMITTED.",
+      "E": "REBUILD MATERIALIZED VIEW especificando a flag WITHOUT LOCKS, exigindo o pré-aquecimento do cache."
+    },
+    "answer": "A",
+    "explanation": "O comando padrão REFRESH MATERIALIZED VIEW bloqueia leituras com AccessExclusiveLock, inviabilizando consultas durante a recriação. Para permitir acessos simultâneos enquanto a atualização ocorre, utiliza-se a cláusula CONCURRENTLY (Alternativa A correta). Para que o PostgreSQL aplique o refresh concorrente (que calcula a diferença dos dados e aplica as alterações), é um pré-requisito obrigatório que a visão materializada possua pelo menos um índice UNIQUE. As alternativas B, C, D e E inventam sintaxes inexistentes no PostgreSQL."
+  },
+  {
+    "id": 1338,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL: JSONB Operadores",
+    "context": "Extração de Metadados de Documentos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No sistema de peticionamento eletrônico do TJ-CE, os metadados dos documentos anexados variam amplamente em estrutura e atributos. Para acomodar essa flexibilidade, o banco de dados PostgreSQL foi configurado para armazenar essas informações em uma coluna do tipo JSONB. A equipe de IA requer a extração frequente de um valor textual específico correspondente à chave 'cpf_advogado', aninhada dentro do objeto 'assinatura' no documento JSON. Para extrair esse valor diretamente como texto (tipo text) e não como um objeto JSON, o operador adequado a ser utilizado na consulta SQL é:",
+    "options": {
+      "A": "-> aplicado à chave 'assinatura' e -> aplicado à chave 'cpf_advogado'.",
+      "B": "-> aplicado à chave 'assinatura' seguido de ->> aplicado à chave 'cpf_advogado'.",
+      "C": "#> aplicado ao caminho textual contendo as chaves aninhadas separadas por vírgula.",
+      "D": "@> aplicado à chave 'assinatura' seguido de -> aplicado à chave 'cpf_advogado'.",
+      "E": "? aplicado à chave 'assinatura' seguido de #>> aplicado à chave 'cpf_advogado'."
+    },
+    "answer": "B",
+    "explanation": "No PostgreSQL, o operador `->` extrai um elemento mantendo-o como tipo JSON/JSONB. O operador `->>` extrai o elemento convertendo-o diretamente para o tipo text nativo. Portanto, para navegar em 'assinatura' mantendo o formato objeto para em seguida extrair 'cpf_advogado' como texto, encadeia-se `coluna -> 'assinatura' ->> 'cpf_advogado'` (Alternativa B). A alternativa A retornaria JSON. A C utiliza `#>` que retorna JSON, não texto (o correto seria `#>>`). D e E misturam operadores de contenção e existência de chave incorretamente."
+  },
+  {
+    "id": 1339,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL: Tipos JSON e JSONB",
+    "context": "Armazenamento de Logs de Auditoria",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Ceará está migrando o armazenamento de logs de auditoria para o PostgreSQL. Os desenvolvedores debatem a adoção do tipo de dados JSON ou JSONB para a coluna de registro de eventos. O analista de banco de dados foi encarregado de definir o padrão arquitetural, considerando que o sistema precisará realizar buscas complexas pelo conteúdo das chaves e indexar os campos de forma eficiente para relatórios de conformidade. No contexto das diferenças estruturais entre JSON e JSONB no PostgreSQL, a adoção do tipo JSONB é a recomendação correta, caracterizada por:",
+    "options": {
+      "A": "armazenar uma cópia exata do texto de entrada preservando espaços em branco e a ordem das chaves.",
+      "B": "converter os dados para um formato binário de decomposição, permitindo suporte nativo a índices GIN.",
+      "C": "validar a estrutura do documento apenas no momento da consulta, reduzindo o custo de inserção.",
+      "D": "manter chaves duplicadas no documento original, fornecendo redundância de segurança na recuperação.",
+      "E": "exigir o uso de funções externas em linguagem C para manipulação de nós aninhados do documento."
+    },
+    "answer": "B",
+    "explanation": "O tipo JSON armazena exatamente o texto de entrada (preservando espaços e ordem), mas sem suporte avançado à indexação e operadores. Já o tipo JSONB armazena o dado em um formato binário decomposto, o que remove espaços em branco extras, desconsidera a ordem das chaves e armazena apenas o último valor de chaves duplicadas. Sua grande vantagem, que justifica seu uso generalizado (Alternativa B correta), é o processamento rápido, a inexistência de parsing textual na leitura e o forte suporte nativo a indexação GIN para buscas performáticas."
+  },
+  {
+    "id": 1340,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL: Views com restrições",
+    "context": "Integridade em Inserções via Views",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de recursos humanos do TJ-CE dispõe de uma tabela central que cadastra todos os servidores. Para isolar o acesso do departamento de tecnologia da informação, foi criada uma view denominada 'vw_servidores_ti' que filtra exclusivamente os registros pertencentes ao departamento de TI. Concedeu-se permissão de inserção aos gestores na view. Durante auditoria, constatou-se que um gestor inseriu acidentalmente através da view um registro com departamento igual a 'Recursos Humanos', a inserção ocorreu com sucesso, mas o registro sumiu da visibilidade da view. Para mitigar esse comportamento e garantir que os INSERTs e UPDATEs realizados por meio da view sejam consistentes com a sua cláusula WHERE, a diretriz arquitetural requer o uso da cláusula:",
+    "options": {
+      "A": "WITH LOCAL SECURITY OPTION.",
+      "B": "WITH CASCADED PERMISSION.",
+      "C": "WITH ENFORCED INTEGRITY.",
+      "D": "WITH CHECK OPTION.",
+      "E": "WITH VIEW UPDATE RULE."
+    },
+    "answer": "D",
+    "explanation": "Por padrão, o PostgreSQL permite inserir dados através de uma view que não satisfazem as condições do WHERE da própria view, resultando em dados que 'desaparecem' imediatamente após a inserção (são inseridos na tabela, mas a view não os exibe). Para forçar que qualquer DML via view respeite as condições da view, o padrão SQL e o PostgreSQL adotam a cláusula WITH CHECK OPTION (Alternativa D correta). As outras opções listam comandos não existentes ou incorretos na arquitetura relacional do PostgreSQL."
+  },
+  {
+    "id": 1341,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL: Indexação de JSONB",
+    "context": "Performance em Buscas Textuais de Jurisprudência",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um novo módulo de jurisprudência do TJ-CE baseia-se em buscas sobre ementas estruturadas salvas em uma coluna JSONB de uma tabela com mais de 50 milhões de acórdãos. Os desenvolvedores relataram que consultas utilizando o operador @> para verificar a contenção de chaves e valores específicos estão executando uma varredura sequencial (Sequential Scan) na tabela inteira, esgotando o limite de timeout da aplicação. Para otimizar massivamente a busca de contenção de elementos no tipo JSONB, o administrador do banco de dados deve criar um índice do tipo:",
+    "options": {
+      "A": "B-Tree sobre a coluna JSONB utilizando a classe de operador padrão para otimizar pesquisas de equivalência e intervalo.",
+      "B": "Hash sobre o campo JSONB especificando a classe de operador jsonb_hash_ops para buscas de texto pleno aninhado.",
+      "C": "GIN sobre a coluna JSONB utilizando a classe de operador padrão jsonb_ops ou jsonb_path_ops.",
+      "D": "BRIN sobre a coluna JSONB explorando a ordenação natural dos blocos de dados inseridos cronologicamente.",
+      "E": "SP-GiST na coluna JSONB parametrizada com restrições multidimensionais para agrupamento semântico."
+    },
+    "answer": "C",
+    "explanation": "O operador de contenção '@>' do JSONB foi arquitetado para funcionar de forma extremamente otimizada com índices GIN (Generalized Inverted Index). Ao criar um índice GIN sobre o campo JSONB usando jsonb_ops (padrão) ou jsonb_path_ops, as consultas de contenção passam de varreduras sequenciais lentas para buscas em árvore invertida ultrarrápidas (Alternativa C correta). B-Tree e Hash não suportam operadores de contenção de maneira eficiente para arrays ou documentos aninhados."
+  },
+  {
+    "id": 1342,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL: Materialized Views",
+    "context": "Armazenamento em Data Warehouse",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No contexto do Data Warehouse do Tribunal de Justiça do Ceará, as visões materializadas são amplamente adotadas para pré-calcular agregações de processos arquivados mensalmente. Durante o fechamento do exercício, o volume de visões materializadas criadas consumiu grande parte do armazenamento em disco do cluster. O comitê de arquitetura questiona o comportamento de armazenamento desse objeto no PostgreSQL para justificar o upgrade da infraestrutura. Sobre a natureza física das visões materializadas no PostgreSQL, a característica técnica fundamental é:",
+    "options": {
+      "A": "o armazenamento dos dados de forma puramente em memória (RAM), liberando espaço em disco após o reinício da instância.",
+      "B": "o salvamento temporário do resultado em uma tabela de escopo de sessão, apagada automaticamente ao encerrar a conexão.",
+      "C": "a persistência física do conjunto de resultados no disco de forma idêntica a uma tabela regular, ocupando armazenamento permanente.",
+      "D": "a vinculação dinâmica aos logs de transação (WAL), recriando o conteúdo automaticamente na leitura sem uso de disco adicional.",
+      "E": "a manutenção do esquema da consulta sem ocupação de dados, executando a instrução de base transparentemente."
+    },
+    "answer": "C",
+    "explanation": "No PostgreSQL, uma view simples (VIEW) não guarda dados e é apenas uma reescrita de consulta. Por outro lado, uma MATERIALIZED VIEW persiste fisicamente os dados derivados da consulta no disco permanentemente, comportando-se estruturalmente como uma tabela regular (Alternativa C correta). Elas ocupam espaço em disco até que sejam excluídas ou recriadas. Isso explica o consumo severo de armazenamento da infraestrutura relatado no enunciado."
+  },
+  {
+    "id": 1343,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL: JSONB Funções",
+    "context": "Desestruturação de Arrays",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No sistema de distribuição de processos eletrônicos do TJ-CE, a integração com varas especializadas recebe um pacote JSONB contendo um array de objetos complexos representando as partes do processo (autores e réus). Para gerar um relatório relacional compatível com um sistema legado, o analista precisa extrair e expandir cada objeto do array JSONB em uma linha separada, transformando o array original em múltiplas tuplas (rows). A função nativa do PostgreSQL indicada para promover a expansão de um array JSONB em um conjunto de linhas é:",
+    "options": {
+      "A": "jsonb_populate_recordset.",
+      "B": "jsonb_array_elements.",
+      "C": "jsonb_object_keys.",
+      "D": "jsonb_each_text.",
+      "E": "jsonb_strip_nulls."
+    },
+    "answer": "B",
+    "explanation": "A função correta para transformar um array JSON/JSONB em um conjunto (set) de valores, em que cada elemento do array passa a ocupar uma linha no resultado, é a `jsonb_array_elements` (Alternativa B). `jsonb_populate_recordset` mapeia os dados para uma estrutura de composite type existente. `jsonb_object_keys` retorna as chaves do nível mais alto de um objeto. `jsonb_each_text` expande pares de chave/valor de um objeto."
+  },
+  {
+    "id": 1344,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL: Arquitetura de Views",
+    "context": "Diagnóstico de Performance",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao realizar um diagnóstico de performance no banco de dados do sistema de plantão judicial do TJ-CE, um consultor identificou que uma consulta utilizando múltiplas views aninhadas gerava planos de execução sub-otimizados. A equipe de desenvolvimento alegou que as views foram criadas com o intuito de armazenar em cache os dados das consultas e evitar reprocessamentos em disco. Para alinhar o entendimento técnico sobre o funcionamento nativo de Views simples no PostgreSQL, o consultor deve esclarecer que a view:",
+    "options": {
+      "A": "compila o plano de execução permanentemente no momento de sua criação, exigindo recriação manual em caso de alteração estatística.",
+      "B": "atua exclusivamente como uma macro de reescrita de consulta, expandindo a sua definição no corpo da instrução principal em tempo de planejamento.",
+      "C": "materializa silenciosamente o resultado em uma tabela oculta (pg_temp) durante o primeiro acesso para acelerar acessos subsequentes.",
+      "D": "processa os dados de forma isolada, criando um contexto de execução independente do nível de isolamento de transação do chamador.",
+      "E": "exige a declaração prévia das chaves primárias das tabelas de origem para sustentar a integridade referencial da instrução."
+    },
+    "answer": "B",
+    "explanation": "No PostgreSQL, uma View clássica não armazena dados, cache ou plano de execução pré-compilado de forma independente. O sistema de regras do PostgreSQL trata a View como um mecanismo de reescrita (Rule System). Durante a fase de planejamento, a chamada da View é transparente e dinamicamente reescrita (expandida) integrando-se à consulta original (Alternativa B correta). A alegação da equipe de que serviam para 'armazenar em cache' denota um conceito equivocado, pois esse seria o papel das Materialized Views."
+  },
+  {
+    "id": 1345,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL: Materialized Views",
+    "context": "Requisitos para REFRESH CONCURRENTLY",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em um cenário de alta disponibilidade no TJ-CE, uma view materializada que sumariza métricas de segurança precisa ser atualizada a cada 5 minutos. A equipe decidiu implementar o comando 'REFRESH MATERIALIZED VIEW CONCURRENTLY' para evitar o bloqueio de leituras do painel do SOC. Contudo, a execução do comando falhou e o banco de dados retornou um erro informando a ausência de um requisito de esquema obrigatório. O requisito ausente que impede o uso da cláusula CONCURRENTLY nesse comando é:",
+    "options": {
+      "A": "a presença de pelo menos uma chave estrangeira referenciando uma tabela ativa no momento da atualização.",
+      "B": "a existência de um índice do tipo UNIQUE contendo uma ou mais colunas de identificação da view materializada.",
+      "C": "a configuração do parâmetro de sistema autovacuum_work_mem com capacidade suficiente para a transação.",
+      "D": "a criação prévia de uma tabela temporária espelhada para acomodar o delta de registros do último snapshot.",
+      "E": "a aplicação de privilégios de superusuário para contornar o bloqueio de acesso exclusivo (AccessExclusiveLock)."
+    },
+    "answer": "B",
+    "explanation": "Para que o PostgreSQL realize um REFRESH MATERIALIZED VIEW CONCURRENTLY, o motor precisa de uma forma confiável de identificar quais linhas foram modificadas, deletadas ou inseridas para atualizar o conjunto existente sem travar tudo. O requisito técnico mandatório para isso é que a visão materializada tenha pelo menos um índice UNIQUE definido sobre ela (Alternativa B correta). A ausência desse índice gera um erro imediato ao tentar utilizar a flag CONCURRENTLY."
+  },
+  {
+    "id": 1346,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL: JSONB Edição",
+    "context": "Atualização de Configurações Complexas",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de custas processuais do Tribunal de Justiça do Ceará mantém configurações de isenção de taxas codificadas em uma coluna JSONB chamada 'parametros'. Em decorrência de uma alteração legislativa, é necessário atualizar especificamente o valor associado à chave 'taxa_recurso', passando de 100.00 para 150.00, sem alterar as demais dezenas de propriedades presentes no documento JSONB. Para atualizar apenas esse valor específico de forma nativa e atômica no PostgreSQL, o engenheiro de software deve utilizar a função:",
+    "options": {
+      "A": "jsonb_update_key.",
+      "B": "jsonb_replace_text.",
+      "C": "jsonb_set.",
+      "D": "jsonb_insert.",
+      "E": "jsonb_modify."
+    },
+    "answer": "C",
+    "explanation": "No PostgreSQL, as edições pontuais dentro de um documento JSONB podem ser realizadas através da função `jsonb_set` (Alternativa C correta). Ela recebe o alvo JSONB, o caminho da chave (path array), o novo valor a ser aplicado e uma flag booleana que indica se o valor deve ser criado caso não exista. Todas as outras opções (jsonb_update_key, jsonb_replace_text, jsonb_modify) não são funções nativas do PostgreSQL."
+  },
+  {
+    "id": 1347,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL: Criação de Materialized Views",
+    "context": "Criação Tardia de Dados",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O time de IA do TJ-CE projetou uma view materializada extremamente complexa no PostgreSQL que processa vetores textuais da base de processos. Como a criação envolve processamento intensivo de NLP sobre milhões de registros, estimou-se que o comando demoraria horas para concluir. O analista deseja definir o objeto no banco de dados apenas para compor a arquitetura e estruturar as permissões, postergando o preenchimento de dados para uma janela noturna. Para instanciar a estrutura da view materializada no PostgreSQL sem populá-la com dados imediatamente, a sintaxe correta do comando de criação deve incluir a cláusula:",
+    "options": {
+      "A": "WITH DEFERRED DATA.",
+      "B": "WITH NO DATA.",
+      "C": "DELAY MATERIALIZATION.",
+      "D": "LAZY INITIALIZATION.",
+      "E": "POSTPONE POPULATION."
+    },
+    "answer": "B",
+    "explanation": "Por padrão, o comando CREATE MATERIALIZED VIEW executa a consulta e preenche a estrutura imediatamente. Para que a visão seja registrada no catálogo apenas estruturalmente (criando a tabela em estado vazio e inativável para leitura) permitindo a geração posterior dos dados através de um REFRESH, utiliza-se o sufixo `WITH NO DATA` (Alternativa B correta). As demais flags não existem na especificação SQL do PostgreSQL."
+  },
+  {
+    "id": 1348,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL: Views Recursivas",
+    "context": "Mapeamento Hierárquico do TJ-CE",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A corregedoria do TJ-CE necessita mapear a hierarquia organizacional dos cartórios e setores administrativos, que possuem múltiplos níveis de subordinação representados em uma tabela de autorelacionamento. Para facilitar a consulta estruturada dessa hierarquia em um relatório gerencial via PostgreSQL, optou-se pela criação de uma visão capaz de iterar sobre as relações pai-filho até a base da árvore estrutural. A definição arquitetural adequada no PostgreSQL para resolver o problema de travessia hierárquica por meio de uma visão baseia-se na declaração de uma:",
+    "options": {
+      "A": "RECURSIVE VIEW ancorada por um termo base e unida à própria definição via UNION ALL.",
+      "B": "MATERIALIZED VIEW ancorada por CTE (Common Table Expression) em laços FOR LOOP encapsulados.",
+      "C": "ITERATIVE VIEW ancorada em cursores bidirecionais de navegação sequencial persistente.",
+      "D": "HIERARCHICAL VIEW ancorada por conectivos de precedência START WITH e CONNECT BY PRIOR.",
+      "E": "NESTED VIEW ancorada por subconsultas correlacionadas acopladas ao operador LATERAL."
+    },
+    "answer": "A",
+    "explanation": "No PostgreSQL, travessias em estruturas hierárquicas são classicamente realizadas por CTEs Recursivas (`WITH RECURSIVE`). Para abstrair isso dentro de uma visão, usa-se a construção `CREATE RECURSIVE VIEW`. Essa arquitetura exige um termo não-recursivo (âncora) operando em conjunto com um termo recursivo acoplado através de um `UNION` ou `UNION ALL` referenciando o próprio nome da view (Alternativa A correta). A sintaxe CONNECT BY (D) é nativa do Oracle, não do PostgreSQL."
+  },
+  {
+    "id": 1349,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL: Comparação JSON vs JSONB",
+    "context": "Resolução de Falsos Negativos em Equivalência",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma falha de integração no sistema de folha de pagamento do TJ-CE gerou reclamações: consultas de equivalência exata de documentos JSON armazenados nativamente estavam retornando falso mesmo quando os valores estruturais eram idênticos. O DBA identificou que a coluna alvo utilizava o tipo de dados JSON, que realiza comparações estritas como texto plano, falhando devido à reordenação de chaves pelo sistema emissor e espaços em branco desnecessários. A alteração para o tipo JSONB resolveu imediatamente o problema. Isso ocorreu devido ao comportamento inerente do JSONB que:",
+    "options": {
+      "A": "aplica hashes criptográficos aos valores primitivos preservando integralmente o formato da string de origem.",
+      "B": "suporta o operador = que analisa a equivalência semântica das chaves e valores independentemente de ordem e espaços em branco.",
+      "C": "invoca funções de cast automático para o tipo XML, viabilizando a normalização de estruturas em formato de árvore binária.",
+      "D": "restringe a inserção de objetos com mais de um nível de profundidade, facilitando a inferência lógica de ordenação das chaves.",
+      "E": "executa operações de merge automático nas chaves similares, desconsiderando caracteres de escape durante a indexação secundária."
+    },
+    "answer": "B",
+    "explanation": "O formato JSON avalia a string byte a byte na comparação textual, logo `{\"a\":1, \"b\":2}` seria diferente de `{\"b\": 2, \"a\": 1}`. Como o tipo JSONB armazena o dado já parseado e estruturado, o operador `=` para JSONB foi implementado para verificar a equivalência semântica. Ele sabe que a ordem das chaves ou espaços em branco não importam para a igualdade de documentos JSON, solucionando a restrição estrutural relatada (Alternativa B correta)."
+  },
+  {
+    "id": 1350,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "PostgreSQL: Segurança em Views",
+    "context": "Vazamento de Dados e Barreira de Segurança",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No PostgreSQL do TJ-CE, informações sigilosas sobre inquéritos policiais compartilham a mesma tabela `tb_inquerito` com registros de inquéritos públicos. O administrador criou a view `vw_inquerito_publico` filtrando as linhas onde `sigiloso = falso`, concedendo permissões de SELECT na view aos estagiários e revogando acesso à tabela original. Semanas depois, identificou-se que um estagiário executou uma consulta sofisticada utilizando funções do usuário (UDFs) que geravam divisão por zero intencional baseada no conteúdo de registros ocultos, induzindo vazamento pelo rastreio de erro. A solução nativa recomendada pelo PostgreSQL para proteger a view contra vazamentos causados pela avaliação antecipada de funções é:",
+    "options": {
+      "A": "habilitar a extensão pg_crypto na tabela primária para mascarar chaves primárias.",
+      "B": "configurar o parâmetro de sistema row_security igual a force no arquivo postgresql.conf.",
+      "C": "aplicar a opção security_barrier = true na definição da view.",
+      "D": "criar uma regra (RULE) de interceptação condicional no plano de execução de selects da view.",
+      "E": "definir a função do estagiário com as propriedades LEAKPROOF no catálogo do PostgreSQL."
+    },
+    "answer": "C",
+    "explanation": "No PostgreSQL, as Views comuns podem sofrer de otimizações de plano de execução onde filtros de usuários mal-intencionados (que contêm funções para extrair dados por erro ou side-channels) são executados ANTES dos filtros da cláusula WHERE da própria View. Para mitigar esse vetor de ataque, o administrador deve declarar a view com a propriedade `security_barrier = true` (Alternativa C correta). Isso assegura ao otimizador que os dados devem ser estritamente filtrados pela View antes que qualquer função do usuário chamador seja avaliada sobre eles, impedindo o vazamento (leakproof violation)."
+  },
+  {
+    "id": 1351,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Níveis de Teste",
+    "context": "Teste Unitário e Isolamento",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de Engenharia de Software do TJ-CE está implementando um novo módulo de cálculo automático de custas processuais. Durante a esteira de desenvolvimento, o Analista de TI recebe a tarefa de validar o comportamento exato de uma classe específica de cálculo, isolando-a de qualquer acesso a banco de dados ou chamadas de rede. O objetivo é assegurar o funcionamento da lógica de negócio em sua menor parte testável. Essa prática descreve o nível de teste denominado:",
+    "options": {
+      "A": "Teste de Integração, responsável por avaliar a comunicação entre a classe de negócio e o banco de dados corporativo.",
+      "B": "Teste de Aceitação, focado na homologação do comportamento do sistema pelos usuários finais do tribunal.",
+      "C": "Teste Unitário, caracterizado pela validação isolada do componente de software em nível de código-fonte.",
+      "D": "Teste de Sistema, direcionado à verificação integral do fluxo da aplicação no ambiente produtivo.",
+      "E": "Teste de Regressão, aplicado na identificação de gargalos de desempenho na arquitetura orientada a serviços."
+    },
+    "answer": "C",
+    "explanation": "No padrão FCC, exige-se a identificação do nível de teste baseado no seu escopo de execução. O teste focado na 'menor parte testável' e no isolamento de dependências externas (rede, banco de dados) corresponde conceitualmente ao Teste Unitário (Alternativa C). A alternativa A aborda Integração, que valida interações entre componentes. A alternativa B descreve o nível de Aceitação (visão do usuário). A alternativa D descreve o Teste de Sistema (visão global). A alternativa E inverte com o conceito de testes de carga/performance."
+  },
+  {
+    "id": 1352,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Metodologias Ágeis",
+    "context": "TDD e Ciclo Red-Green-Refactor",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Ceará adota metodologias ágeis em sua fábrica de software. Na criação do microsserviço de intimações eletrônicas, o desenvolvedor escreve uma automação que falha inicialmente. Em seguida, elabora um código simples capaz de fazer essa automação ser aprovada e, por fim, reorganiza o código fonte para melhorar a arquitetura sem alterar seu comportamento original. O ciclo metodológico aplicado corresponde à abordagem:",
+    "options": {
+      "A": "Behavior-Driven Development no padrão Setup-Execute-Teardown.",
+      "B": "Test-Driven Development no ciclo Red-Green-Refactor.",
+      "C": "Domain-Driven Design no fluxo Define-Code-Test.",
+      "D": "Test-Driven Development no ciclo Refactor-Green-Red.",
+      "E": "Behavior-Driven Development no fluxo Arrange-Act-Assert."
+    },
+    "answer": "B",
+    "explanation": "A descrição do enunciado apresenta exatamente as três etapas do Desenvolvimento Orientado a Testes (TDD): escrever um teste que falha (Red), implementar o código mínimo necessário para o teste passar (Green) e melhorar o design do código (Refactor). A alternativa B está estritamente alinhada a esse fluxo. Padrões como Arrange-Act-Assert são aplicados na montagem do caso de teste, mas não nomeiam o fluxo metodológico macro do TDD."
+  },
+  {
+    "id": 1353,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Metodologias Ágeis",
+    "context": "BDD e Estrutura Gherkin",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para estreitar o alinhamento entre a área técnica e os magistrados demandantes do TJ-CE, um Analista propõe o uso do BDD (Behavior-Driven Development). Ele estrutura a especificação dos cenários de teste através de uma linguagem natural e padronizada, de fácil assimilação pelo negócio e processamento por ferramentas. A estruturação sintática adotada nessa metodologia baseia-se primordialmente nas palavras-chave:",
+    "options": {
+      "A": "Arrange, Act, Assert.",
+      "B": "Setup, Run, Teardown.",
+      "C": "Try, Catch, Finally.",
+      "D": "If, Then, Else.",
+      "E": "Given, When, Then."
+    },
+    "answer": "E",
+    "explanation": "O framework BDD utiliza a linguagem estruturada Gherkin para aproximar TI e negócios. As palavras-chave centrais do Gherkin na escrita de cenários são Given (Dado), When (Quando) e Then (Então). Alternativa A é o padrão lógico de testes unitários em código (AAA). As alternativas C e D são estruturas condicionais e de tratamento de exceções em programação tradicional. Alternativa B refere-se a blocos de configuração de frameworks de automação base (JUnit, NUnit)."
+  },
+  {
+    "id": 1354,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Níveis de Teste",
+    "context": "Teste de Integração de Serviços",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Analista de TI do TJ-CE atua na modernização do sistema de controle patrimonial. Após a codificação individual dos serviços de inventário e de depreciação, surge a necessidade de validar a troca de mensagens HTTP entre eles, além da correta comunicação conjunta com o serviço de autenticação corporativo do Tribunal. Essa validação entre os referidos módulos é objeto exclusivo do:",
+    "options": {
+      "A": "Teste de Unidade Estrutural.",
+      "B": "Teste de Aceitação Operacional.",
+      "C": "Teste de Integração.",
+      "D": "Teste de Estresse.",
+      "E": "Teste de Usabilidade."
+    },
+    "answer": "C",
+    "explanation": "O objetivo de verificar a interação, o fluxo de dados e a comunicação (troca de mensagens HTTP) entre dois ou mais componentes ou sistemas é o cerne do Teste de Integração (Alternativa C). Unidade (A) lidaria com a lógica interna dos serviços; Aceitação (B) seria na perspectiva do usuário de negócios; Estresse (D) submeteria as chamadas a um pico extremo de carga."
+  },
+  {
+    "id": 1355,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Níveis de Teste",
+    "context": "Teste de Sistema Completo",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Antes de promover a versão final do sistema Processo Eletrônico para o ambiente de produção do TJ-CE, a equipe de garantia da qualidade realiza uma avaliação abrangente. O escopo engloba o software completo, o comportamento do banco de dados em cluster, a latência de rede e as regras de segurança aplicadas no firewall da instituição simultaneamente. O cenário descrito configura a aplicação de nível do teste de:",
+    "options": {
+      "A": "Mutações.",
+      "B": "Sistema.",
+      "C": "Componente.",
+      "D": "Integração Top-down.",
+      "E": "Caixa Branca."
+    },
+    "answer": "B",
+    "explanation": "O teste que valida o sistema inteiro de ponta a ponta, considerando hardware, banco de dados, interfaces e as condições do ambiente o mais próximo possível da realidade, é classificado como Teste de Sistema (Alternativa B). Ele difere da Integração por enxergar a aplicação no seu todo sistêmico, não apenas as junções isoladas."
+  },
+  {
+    "id": 1356,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Níveis de Teste",
+    "context": "Teste de Aceitação pelo Usuário",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O projeto de um novo portal de emissão de certidões negativas atingiu sua reta final no TJ-CE. Para validar as regras de negócio sob a ótica real de operação, um grupo de servidores da área de protocolo é convidado a executar roteiros práticos na aplicação em um ambiente idêntico ao de produção. Eles emitem relatórios para confirmar o atendimento pleno das necessidades operacionais da instituição. Esse processo caracteriza o teste de:",
+    "options": {
+      "A": "Sistema.",
+      "B": "Aceitação.",
+      "C": "Integração.",
+      "D": "Regressão.",
+      "E": "Carga."
+    },
+    "answer": "B",
+    "explanation": "A validação focada na aprovação do produto sob o ponto de vista das regras de negócio, conduzida por usuários finais (os servidores do protocolo) antes do go-live, tipifica o Teste de Aceitação (User Acceptance Testing - UAT). A alternativa A estaria errada por focar no teste global técnico feito pela própria TI."
+  },
+  {
+    "id": 1357,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Metodologias Ágeis",
+    "context": "Diferenças Práticas entre TDD e BDD",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante um comitê de arquitetura no TJ-CE, debate-se a introdução das práticas de TDD (Test-Driven Development) e BDD (Behavior-Driven Development). O Analista de TI responsável pela apresentação deve distinguir o propósito principal das duas metodologias perante os gestores. A afirmativa correta sobre essa diferenciação de escopo é:",
+    "options": {
+      "A": "O TDD prioriza a escrita da documentação do usuário final; o BDD foca no design estrutural do banco de dados relacional.",
+      "B": "O BDD utiliza testes de integração orientados a dados estruturados em XML; o TDD emprega linguagem de máquina para otimizar desempenho.",
+      "C": "O TDD orienta o design do software pelo comportamento do usuário em telas de interface; o BDD elimina a necessidade de validações unitárias no backend.",
+      "D": "O TDD foca na validação do comportamento interno e técnico do código através de testes unitários; o BDD prioriza a compreensão do comportamento funcional na perspectiva do negócio.",
+      "E": "O BDD substitui a elaboração de casos de uso na engenharia de requisitos de sistemas de legado; o TDD baseia-se na criação de protótipos visuais de alta fidelidade."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D apresenta o contraponto clássico adotado pelas bancas: TDD é uma ferramenta de design focado no nível do código técnico orientado ao programador (testes unitários), enquanto BDD sobe o nível de abstração para o negócio, focando na especificação do comportamento sistêmico aguardado pelos stakeholders."
+  },
+  {
+    "id": 1358,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Metodologias Ágeis",
+    "context": "TDD e a Fase Refactor",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em um treinamento sobre qualidade de código na Secretaria de TI do TJ-CE, o instrutor explica a terceira etapa do ciclo fundamental do TDD, conhecida como 'Refatoração' (Refactor). Ação tecnicamente exigida e permitida de forma exclusiva nesta fase metodológica:",
+    "options": {
+      "A": "Criação de novas funcionalidades no código de negócio atreladas a bibliotecas externas não homologadas.",
+      "B": "Melhoria do design estrutural do código existente sem a modificação do comportamento funcional previamente validado.",
+      "C": "Escrita inicial do caso de teste automatizado focado em cobrir um requisito de negócio recém-descoberto.",
+      "D": "Simulação de dependências externas através da injeção de componentes de rede falsos no ambiente de execução.",
+      "E": "Remoção permanente de testes unitários redundantes da suite para diminuir o tempo total de compilação contínua."
+    },
+    "answer": "B",
+    "explanation": "Na fase Refactor (Refatoração), o programador altera a estrutura do código já aprovado no teste (Green) com o intuito de melhorar manutenibilidade, remover duplicações e adequar padrões de design. É fundamental que, durante a refatoração, o comportamento funcional seja estritamente preservado. A inserção de novas regras (Alternativa A) ou de testes novos (Alternativa C) quebram o conceito da técnica."
+  },
+  {
+    "id": 1359,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Níveis de Teste",
+    "context": "Teste de Integração Bottom-up",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na arquitetura orientada a serviços adotada no TJ-CE, um Analista inicia o processo de teste de integração pelos componentes de mais baixo nível, como o módulo bruto de acesso a dados. Somente após a validação dessa camada-base, ele avança progressivamente para a camada de negócios e, finalmente, para a interface gráfica. Para acionar as funções inferiores antecipadamente, o Analista cria programas de controle temporários. Essa estratégia corresponde à integração:",
+    "options": {
+      "A": "Top-down, suportada pela utilização estrutural de Stubs de simulação.",
+      "B": "Bottom-up, suportada pela utilização técnica de Drivers de controle.",
+      "C": "Big-bang, caracterizada pela utilização simultânea de Mocks temporários.",
+      "D": "Incremental Sanduíche, pautada na utilização simultânea de Spies de rede.",
+      "E": "Contínua, suportada pela utilização maciça de Dummies no repositório."
+    },
+    "answer": "B",
+    "explanation": "Testar dos módulos de nível inferior para os de nível superior define a abordagem Bottom-up. Para que os módulos inferiores sejam executados e testados antes que os módulos superiores estejam prontos, a engenharia de software exige a criação de módulos chamadores fictícios conhecidos como Drivers (Alternativa B). Top-down (A) caminha no sentido inverso e usa Stubs (substitutos das partes de baixo)."
+  },
+  {
+    "id": 1360,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Níveis de Teste",
+    "context": "Testes de Aceitação Alfa e Beta",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um novo aplicativo móvel do TJ-CE, destinado à consulta online de jurisprudência unificada, será liberado de forma controlada. Antes do lançamento público em larga escala, o aplicativo é disponibilizado para um grupo diversificado de advogados testar livremente em seus próprios smartphones e contextos de rede reais, enviando relatórios de falhas operacionais sem a supervisão direta da equipe de desenvolvimento da TI. Esse cenário prático de avaliação é classificado como:",
+    "options": {
+      "A": "Teste de Aceitação Beta.",
+      "B": "Teste de Aceitação Alfa.",
+      "C": "Teste de Regressão Operacional.",
+      "D": "Teste de Desempenho Isolado.",
+      "E": "Teste Unitário Caixa Preta."
+    },
+    "answer": "A",
+    "explanation": "O teste realizado no ambiente dos usuários reais (advogados), fora da supervisão direta do ambiente de desenvolvimento e aberto a perfis externos, tipifica o Teste Beta (Alternativa A). O Teste Alfa ocorreria com usuários controlados, dentro das instalações do desenvolvedor ou com forte monitoramento simulado (Alternativa B)."
+  },
+  {
+    "id": 1361,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Metodologias Ágeis",
+    "context": "Ferramentas BDD",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A adoção sistêmica do BDD (Behavior-Driven Development) nos projetos estratégicos do TJ-CE exige a integração de plataformas capazes de traduzir a linguagem humana estruturada em código automatizado validável. Ao redigir as regras de negócio na sintaxe Gherkin, o Analista de TI opta por uma ferramenta de mercado referencial especializada em interpretar esses arquivos de texto narrativos e atrelá-los a blocos de código fonte de teste. A ferramenta correta associada à finalidade descrita é:",
+    "options": {
+      "A": "Jenkins.",
+      "B": "Docker.",
+      "C": "Cucumber.",
+      "D": "Ansible.",
+      "E": "Grafana."
+    },
+    "answer": "C",
+    "explanation": "No ecossistema do BDD, o Cucumber (Alternativa C) atua como a engine clássica capaz de analisar arquivos `.feature` escritos em sintaxe Gherkin e mapear os steps (Given/When/Then) para as funções da linguagem de automação (Java, Ruby, JS). As demais opções tratam de Integração Contínua (Jenkins), Containers (Docker), Configuração de Infra (Ansible) e Monitoramento (Grafana)."
+  },
+  {
+    "id": 1362,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Metodologias Ágeis",
+    "context": "TDD, Testes Unitários e Mocking",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para aplicar o TDD de forma proficiente na construção do módulo central de validação de CPF do tribunal, o Analista identifica um gargalo estrutural: a lentidão severa dos testes unitários causada pelas consultas diárias realizadas ao serviço web externo da Receita Federal. A abordagem técnica consagrada, compatível com os princípios do TDD, exigida para assegurar a velocidade dos testes da unidade perante essa adversidade externa é:",
+    "options": {
+      "A": "Configurar um banco de dados relacional espelhado e armazenado inteiramente em disco rígido paralelo.",
+      "B": "Substituir a chamada de rede real por objetos Mock ou Stub e simular as respostas do serviço na memória local.",
+      "C": "Migrar a camada de persistência global para um banco de dados não-relacional assíncrono mantido em nuvem.",
+      "D": "Ampliar a diretriz de timeout das rotinas automatizadas no framework de teste para aguardar o tráfego HTTP real.",
+      "E": "Elevar o teste unitário ao nível de teste de estresse de fronteira com o objetivo de checar resiliência criptográfica."
+    },
+    "answer": "B",
+    "explanation": "No TDD, os testes unitários devem ser independentes e rodar em frações de segundos. Depender de requisições de rede lentas (Web Services externos) fere o princípio de velocidade de feedback contínuo. A solução é técnica, englobando a criação de objetos falsos (Mocks/Stubs) para injetar o comportamento pré-definido da API diretamente em memória e isolar o componente em desenvolvimento da oscilação da internet."
+  },
+  {
+    "id": 1363,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Níveis de Teste",
+    "context": "Teste de Regressão Transversal",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após detectar e solucionar uma falha de lógica no cálculo automatizado de juros compostos no portal do TJ-CE, a equipe técnica promove uma nova versão do artefato. Logo em seguida, o Analista de Qualidade dispara um conjunto roteirizado de testes abrangendo as rotinas limítrofes já estabilizadas de emissão de boletos, estorno e renegociação. O intuito restrito dessa rodada laboratorial é verificar se a correção no trecho falho não injetou bugs secundários nas áreas operacionais corretas. A prática executada qualifica o Teste de:",
+    "options": {
+      "A": "Transição de Estados.",
+      "B": "Aceitação do Usuário Final.",
+      "C": "Regressão.",
+      "D": "Integração Componentizada.",
+      "E": "Carga Sistêmica Distribuída."
+    },
+    "answer": "C",
+    "explanation": "Teste de Regressão (Alternativa C) é a prática essencial na Engenharia de Software focada em certificar que alterações, implementações de novas funcionalidades ou correções de defeitos não corromperam comportamentos preexistentes validados, garantindo que o que funcionava outrora continue funcionando incólume."
+  },
+  {
+    "id": 1364,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Metodologias Ágeis",
+    "context": "Vantagem Estratégica do BDD",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A diretoria colegiada de modernização do TJ-CE determinou o uso compulsório de diretrizes de software capazes de suprimir a frequente ambiguidade técnica no mapeamento de requisitos com as varas criminais. A área de governança propôs a internalização do modelo de Behavior-Driven Development (BDD). O pilar metodológico fundamental caracterizado pelo BDD como benefício e justificativa direta a essa recomendação é:",
+    "options": {
+      "A": "A imposição da elaboração de dicionários de dados normalizados de forma rigorosa em linguagem SQL.",
+      "B": "O ganho de performance na velocidade bruta de compilação dos microsserviços integrados no repositório matriz.",
+      "C": "A criação de um vocabulário ubíquo capaz de integrar desenvolvedores, testadores e especialistas do negócio na definição de cenários.",
+      "D": "A exclusão incondicional das fases custosas de análise e de design sistêmico do fluxo de desenvolvimento ágil.",
+      "E": "A automação integral na geração do código fonte produtivo interpretado diretamente de fluxogramas em notação UML."
+    },
+    "answer": "C",
+    "explanation": "A maior finalidade do BDD (com base nos conceitos do Domain-Driven Design) é viabilizar o vocabulário ubíquo (Ubiquitous Language), que reduz os abismos de comunicação entre a equipe de TI (devs/QAs) e as áreas usuárias (stakeholders/negócio) por meio da documentação viva em linguagem natural baseada no comportamento esperado. As demais alternativas misturam o tema com infraestrutura ou geradores milagrosos de código."
+  },
+  {
+    "id": 1365,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Metodologias Ágeis",
+    "context": "Compreensão do TDD Focado na Fase Red",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No processo central de modernização em linguagem orientada a objetos do Sistema de Gestão de Pessoas do TJ-CE, a liderança técnica monitora o rigoroso cumprimento do fluxo do Test-Driven Development (TDD). Um Analista, ao iniciar o refinamento de uma história de usuário atrelada a gratificações judiciais, imerge inicialmente e obrigatoriamente na etapa conhecida como 'Red'. A principal ação técnica elementar e indissociável dessa etapa exata da metodologia ágil consiste na:",
+    "options": {
+      "A": "Delegação da modelagem dos casos de uso críticos para a equipe de testes independentes terceirizada.",
+      "B": "Elaboração de um teste automatizado representativo do novo requisito antes da escrita de qualquer código de produção válido.",
+      "C": "Restrição rigorosa de submissões de código no repositório mestre motivada pela queda abrupta de conectividade.",
+      "D": "Inspeção automática de vulnerabilidades no código-fonte legado amparada por ferramentas de análise cibernética estática.",
+      "E": "Compilação manual impulsionada com o propósito sistêmico de desvendar falhas ocultas nos artefatos de infraestrutura distribuída."
+    },
+    "answer": "B",
+    "explanation": "A fase 'Red' (Vermelho) do TDD obriga o desenvolvedor a escrever primeiramente um teste unitário direcionado ao comportamento não implementado ainda. Como o código produtivo inexistente não satisfaz as assertivas, a execução resulta deliberadamente em uma falha controlada do teste (por isso, estado vermelho). A implementação do código de negócio só é permitida na etapa seguinte (Green)."
+  },
+  {
+    "id": 1366,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Testes",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está refatorando o módulo de cálculo de custas judiciais. A classe CalculadoraCustas possui um método calcularTotal que chama o método interno consultarTaxaBase. A equipe de qualidade de software necessita testar o comportamento de calcularTotal isoladamente, fixando o retorno de consultarTaxaBase para um valor constante de R$ 150,00, mantendo integralmente a implementação real e a lógica dos demais métodos da CalculadoraCustas. A abordagem correta utilizando o framework Mockito requer a configuração de um objeto de teste por meio da:",
+    "options": {
+      "A": "Criação de um Fake Object implementando a interface da calculadora.",
+      "B": "Instanciação de um Mock puro através do método mock().",
+      "C": "Inicialização de um Spy sobre a instância real da calculadora.",
+      "D": "Configuração de um Stub estático com @MockBean.",
+      "E": "Aplicação de um Dummy Object injetado no construtor."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. O Spy (espionagem) no Mockito permite o 'partial mocking', preservando o comportamento real da classe e possibilitando a interceptação e sobrescrita (stubbing) de apenas métodos específicos. A alternativa A erra ao sugerir Fake, que é uma implementação de trabalho leve (como um banco em memória). A alternativa B erra porque o Mock puro substitui todos os métodos da classe por retornos nulos ou vazios. A alternativa D erra ao citar @MockBean, que é específico do contexto Spring Boot. A alternativa E erra, pois um Dummy é apenas um objeto passado para preencher parâmetros sem uso interno."
+  },
+  {
+    "id": 1367,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Testes",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No desenvolvimento de um microsserviço de autenticação de magistrados do TJ-CE, a suíte de testes de integração com o banco de dados em memória necessita carregar um volume massivo de dados de referência (varas, comarcas e instâncias). Essa carga deve ocorrer uma única vez antes da execução de toda a suíte de testes contida na classe AutenticacaoServiceTest. Para garantir a correta configuração do ambiente no ciclo de vida do framework JUnit 5, o analista deve utilizar a anotação e o modificador de linguagem Java descritos como:",
+    "options": {
+      "A": "@BeforeEach aplicado a um método estático.",
+      "B": "@BeforeAll aplicado a um método estático.",
+      "C": "@BeforeClass aplicado a um método de instância.",
+      "D": "@SetUpAll aplicado a um método de instância.",
+      "E": "@BeforeSuite aplicado a um método estático."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. No JUnit 5, a anotação @BeforeAll indica que o método deve ser executado uma única vez antes de todos os testes da classe. Por padrão de ciclo de vida (PER_METHOD), o JUnit 5 exige que métodos anotados com @BeforeAll sejam estáticos. A alternativa A erra, pois @BeforeEach roda antes de CADA teste. A alternativa C cita @BeforeClass, que pertence ao JUnit 4, e incorretamente vincula a um método de instância. As alternativas D e E inventam anotações não nativas do JUnit 5 ou misturam com TestNG (@BeforeSuite)."
+  },
+  {
+    "id": 1368,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Testes",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema e-SAJ do Tribunal de Justiça do Ceará passará por uma atualização no componente de validação de números de processos judiciais (NPU). O método validarNPU(String npu) deve ser testado contra uma base de 50 formatos inválidos conhecidos e 50 formatos válidos. O engenheiro deseja evitar a repetição estrutural através da injeção de valores diretamente na assinatura de um único método de teste, utilizando geradores nativos do JUnit 5. A implementação estrutural correta dessa estratégia demanda o uso das anotações:",
+    "options": {
+      "A": "@TestData e @MethodSource.",
+      "B": "@RepeatedTest e @ValueSource.",
+      "C": "@TestFactory e @CsvSource.",
+      "D": "@DataDrivenTest e @EnumSource.",
+      "E": "@ParameterizedTest e @MethodSource."
+    },
+    "answer": "E",
+    "explanation": "A alternativa E está correta. O JUnit 5 suporta testes parametrizados por meio da anotação @ParameterizedTest. Para fornecer os argumentos aos parâmetros do método, utiliza-se uma fonte, como @MethodSource (que invoca um método que retorna um Stream de argumentos), @ValueSource, @CsvSource, entre outras. A alternativa A inventa @TestData. A alternativa B erra porque @RepeatedTest apenas repete o mesmo teste N vezes sem injeção de parâmetros dinâmicos de uma fonte. A alternativa C confunde testes parametrizados com testes dinâmicos (@TestFactory). A alternativa D inventa @DataDrivenTest."
+  },
+  {
+    "id": 1369,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Testes",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma rotina de sincronização de processos físicos para o acervo digital no TJ-CE envia um objeto da classe MetadadosProcesso para uma fila de mensageria assíncrona. Durante os testes unitários da classe SincronizadorService, o analista não possui acesso ao barramento de fila real. A equipe de testes precisa recuperar o objeto exato que foi submetido ao método enviarParaFila(MetadadosProcesso m) do mock da interface MensageriaClient, com a finalidade de realizar asserções precisas nos atributos internos após o término da invocação. No ecossistema do Mockito, a estrutura adequada para interceptar instâncias passadas a métodos mockados é definida por:",
+    "options": {
+      "A": "ArgumentMatcher.",
+      "B": "ArgumentCaptor.",
+      "C": "InOrder.",
+      "D": "MockedConstruction.",
+      "E": "VerificationMode."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O ArgumentCaptor permite capturar o argumento passado para o mock no momento da chamada (durante o block de verify), permitindo extrair o objeto e realizar asserções avançadas em seus atributos internos (ex: captor.getValue().getProtocolo()). A alternativa A erra, pois ArgumentMatcher serve para definir regras condicionais de match durante o stubbing (when). A alternativa C é usada para verificar a ordem de chamadas de métodos. A alternativa D é utilizada para mockar construtores. A alternativa E lida com a quantidade de vezes que o método foi chamado (ex: times, never)."
+  },
+  {
+    "id": 1370,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Testes",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O módulo de intimação eletrônica do TJ-CE lança uma exceção customizada denominada IntimacaoNaoPermitidaException quando um oficial de justiça tenta registrar um mandado fora do horário forense legal. A arquitetura de validação requer que os testes com JUnit 5 atestem o disparo da exceção pelo método registrarCumprimento() e avaliem adicionalmente a string contida na propriedade message do objeto da exceção gerada. A construção correta no framework JUnit 5 para interceptar e analisar os detalhes intrínsecos de uma exceção é:",
+    "options": {
+      "A": "@Test(expected = IntimacaoNaoPermitidaException.class).",
+      "B": "assertThatThrownBy(executavel).",
+      "C": "expectedException.expect(IntimacaoNaoPermitidaException.class).",
+      "D": "assertException(executavel, IntimacaoNaoPermitidaException.class).",
+      "E": "assertThrows(IntimacaoNaoPermitidaException.class, executavel)."
+    },
+    "answer": "E",
+    "explanation": "A alternativa E está correta. No JUnit 5, o assertThrows é a API oficial para lidar com testes de exceção. Ele retorna o objeto de exceção capturado, permitindo que o desenvolvedor realize asserts adicionais na mensagem ou em propriedades da exceção (ex: Exception e = assertThrows(Classe.class, () -> metodo()); assertEquals(\"Erro\", e.getMessage());). A alternativa A refere-se à abordagem obsoleta do JUnit 4, que não permite inspecionar a mensagem facilmente. A alternativa B pertence ao framework AssertJ. A alternativa C refere-se ao mecanismo depreciado Rule do JUnit 4. A alternativa D cita um método inexistente na API nativa."
+  },
+  {
+    "id": 1371,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Testes",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A classe DistribuicaoProcessosService da arquitetura core do TJ-CE depende diretamente de três repositórios e dois clientes REST para a consolidação de regras de negócio em seu fluxo principal. Na modelagem de testes unitários com o suporte da MockitoExtension, o engenheiro declarou todas as cinco dependências estruturais com a anotação @Mock no escopo da classe de teste. Para delegar ao Mockito a responsabilidade de instanciar o DistribuicaoProcessosService e acomodar as dependências mockadas de forma automática nos atributos correspondentes da classe testada, aplica-se a anotação:",
+    "options": {
+      "A": "@AutowiredMocks.",
+      "B": "@Inject.",
+      "C": "@SpyMocks.",
+      "D": "@MockBean.",
+      "E": "@InjectMocks."
+    },
+    "answer": "E",
+    "explanation": "A alternativa E está correta. A anotação @InjectMocks do Mockito marca o objeto da classe que está sendo testada. O Mockito, durante a inicialização do teste, tenta instanciar essa classe e injeta nela os mocks criados com @Mock ou @Spy, resolvendo a injeção via construtor, métodos setters ou injeção de campo. A alternativa A não existe no framework. A alternativa B (@Inject) é do Java EE/CDI, não do Mockito. A alternativa D (@MockBean) é do Spring Boot para adicionar mocks no contexto da aplicação. A alternativa C é fictícia."
+  },
+  {
+    "id": 1372,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Testes",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um novo sistema de audiências virtuais do TJ-CE está na primeira fase de codificação. A equipe desenvolveu as regras da camada de domínio, mas o cluster de banco de dados Oracle destinado a armazenar os logs das sessões ainda não foi estabelecido. Para validar o comportamento contínuo do GerenciadorAudiencia, o arquiteto de software construiu a classe LogRepositoryEmMemoria. Esta classe atende aos contratos da interface do repositório, empregando estruturalmente coleções da linguagem Java (HashMap) para emular o salvamento e consulta dos registros. Conforme o vocabulário formal de Test Doubles, esta substituição é definida tecnicamente como:",
+    "options": {
+      "A": "Dummy.",
+      "B": "Stub.",
+      "C": "Fake.",
+      "D": "Spy.",
+      "E": "Mock."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. Um Fake é um objeto que possui uma implementação funcional e de trabalho real, mas toma atalhos que o tornam inviável para produção (como um banco de dados em memória criado com listas e mapas). A alternativa A erra, pois Dummy apenas ocupa espaço para passar no compilador. A alternativa B erra, pois Stub responde com dados pré-gravados sem lógica funcional complexa. A alternativa D erra, pois Spy é um invólucro para espionar comportamento. A alternativa E erra, pois Mock foca na verificação de interação de comportamento, não em prover lógica operacional atalho."
+  },
+  {
+    "id": 1373,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Testes",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No fluxo financeiro de pagamento de precatórios do TJ-CE, a classe PagamentoService invoca imperativamente o método notificarBeneficiario() pertencente à dependência EmailService. Esta chamada ocorre no interior de um laço de repetição (loop) iterativo que percorre os herdeiros do precatório em questão. Dado um precatório com exatamente 3 herdeiros processados no caso de teste, o auditor necessita garantir, por meio da sintaxe oficial do Mockito, que o método notificarBeneficiario() do mock foi efetivamente executado três vezes com o mesmo parâmetro de número de processo. O assert comportamental válido para essa verificação utiliza o formato:",
+    "options": {
+      "A": "verify(emailService).times(3).notificarBeneficiario(processoId).",
+      "B": "verify(emailService, exactly(3)).notificarBeneficiario(processoId).",
+      "C": "verify(emailService, times(3)).notificarBeneficiario(processoId).",
+      "D": "assertCalled(emailService.notificarBeneficiario(processoId), 3).",
+      "E": "expect(emailService.notificarBeneficiario(processoId)).times(3)."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. No Mockito, a verificação da quantidade de chamadas utiliza a API genérica verify(mock, modoDeVerificacao).metodo(). O modo de verificação times(n) assegura a invocação exata do método n vezes. As alternativas A e B contêm erros de sintaxe e nomes de construtos incorretos. As alternativas D e E utilizam convenções associadas a outros frameworks de mock de outras linguagens (como Jest ou EasyMock) e métodos não pertinentes à API do Mockito."
+  },
+  {
+    "id": 1374,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Testes",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O componente ValidadorPrazosProcessuais da plataforma processual do TJ-CE abarca ramificações lógicas profundas, apresentando variações severas caso o processo seja enquadrado nas naturezas cível, criminal ou tributária. Para manter a coesão estrutural e documental na classe ValidadorPrazosProcessuaisTest, o engenheiro de QA decidiu mapear as premissas em classes internas (inner classes) distintas para cada natureza processual, gerando hierarquia e facilitando o escopo de leitura no relatório gerado. O JUnit 5 possibilita a execução integrada e a detecção dessas classes internas hierárquicas aplicando-se a anotação:",
+    "options": {
+      "A": "@Suite.",
+      "B": "@Grouped.",
+      "C": "@InnerTest.",
+      "D": "@Categorized.",
+      "E": "@Nested."
+    },
+    "answer": "E",
+    "explanation": "A alternativa E está correta. A anotação @Nested do JUnit 5 é utilizada em classes internas não estáticas (inner classes) para expressar o relacionamento conceitual com a classe de teste externa. Ela cria um agrupamento hierárquico nos testes executados, permitindo compartilhamento de ciclo de vida e melhor documentação do comportamento comportamental com @DisplayName. A alternativa A (@Suite) é usada para agrupar múltiplas classes de teste independentes. As alternativas B, C e D representam anotações inexistentes no JUnit 5."
+  },
+  {
+    "id": 1375,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Testes",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um módulo de controle de acesso de fóruns do TJ-CE depende fortemente de uma classe utilitária de legado identificada como TokenGeneratorUtils, a qual expõe sua funcionalidade unicamente através de métodos do tipo public static String gerarToken(). O desenvolvedor sênior necessita simular os retornos pontuais deste método em cenários de teste implementados sob o Java 17, rejeitando bibliotecas adicionais como o PowerMock e limitando-se aos recursos inseridos a partir da versão 3.4 do framework Mockito. A interface do Mockito que provê isolamento de escopo via try-with-resources para a criação de mock de métodos estáticos é a:",
+    "options": {
+      "A": "MockedStatic.",
+      "B": "StaticMock.",
+      "C": "ClassRule.",
+      "D": "MockSettings.",
+      "E": "InvocationOnMock."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. A partir do Mockito 3.4.0, introduziu-se a interface MockedStatic, que permite o stubbing estático e thread-local de métodos em blocos try-with-resources. A alternativa B é um termo genérico, não associado ao tipo do Mockito. A alternativa C pertence à arquitetura JUnit 4. A alternativa D configura opções detalhadas de mocks em instâncias dinâmicas, mas não rege os métodos estáticos utilitários. A alternativa E lida com manipulação avançada de retornos em Answers."
+  },
+  {
+    "id": 1376,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Testes",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A classe CriadorProcessoJudicial do TJ-CE exige obrigatoriamente cinco dependências no construtor para sua instanciação, constando entre elas a interface AuditoriaService. Durante a construção de um caso de teste parametrizado focado exaustivamente na checagem do dígito verificador do registro OAB, o fluxo do método não trafega pela chamada da auditoria. O engenheiro injeta um objeto vazio de auditoria ou uma referência null unicamente para preencher o parâmetro de contrato e estabilizar a compilação do teste sem NullPointerException. Nos padrões de projeto de testes, este artefato emulador desempenha a função de:",
+    "options": {
+      "A": "Spy.",
+      "B": "Mock.",
+      "C": "Stub.",
+      "D": "Fake.",
+      "E": "Dummy."
+    },
+    "answer": "E",
+    "explanation": "A alternativa E está correta. Na definição clássica de Test Doubles de Gerard Meszaros, Dummy objects são transmitidos e instanciados mas nunca concretamente utilizados no fluxo de execução do teste. Seu único propósito é preencher assinaturas de métodos ou listas de dependências de construtores para não quebrar regras de compilação ou checagem null. As alternativas A, B, C e D representam doubles com responsabilidades variadas, desde comportamento de verificação até armazenamento de estados de consulta, diferindo do escopo estático inerte do Dummy."
+  },
+  {
+    "id": 1377,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Testes",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o teste contínuo do TJ-CE, a equipe encontrou obstáculos ao projetar simulações comportamentais em um objeto Spy criado a partir da classe real CalculadoraPenal. Ao instruir o Mockito via sintaxe clássica when(calculadoraSpy.calcularPena(processo)).thenReturn(5), a aplicação encerrou com exceção devido à execução acidental da lógica de negócio contida no método real calcularPena. Para configurar e interceptar a execução com stubs de objetos espiões no Mockito de maneira a transpor o acionamento do código encapsulado, o desenvolvedor deve adotar a composição sintática:",
+    "options": {
+      "A": "given(calculadoraSpy.calcularPena(processo)).willReturn(5).",
+      "B": "stub(calculadoraSpy).method(\"calcularPena\").returns(5).",
+      "C": "when(calculadoraSpy).thenReturn(5).on(calcularPena(processo)).",
+      "D": "doReturn(5).when(calculadoraSpy).calcularPena(processo).",
+      "E": "bypass(calculadoraSpy.calcularPena(processo)).thenReturn(5)."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D está correta. Ao realizar stubbing em um objeto criado com @Spy no Mockito, o uso de when(spy.metodo()) ocasiona a avaliação e execução real do método antes da mockagem entrar em ação. Para evitar os efeitos colaterais dessa execução (como Exceptions), a documentação do Mockito determina o uso obrigatório das diretivas doReturn(), doThrow(), ou doNothing() antes do block when(spy). As demais alternativas apresentam variações sintáticas que falham (a alternativa A do BDDMockito ainda causaria a chamada ao método) ou não integram a biblioteca válida."
+  },
+  {
+    "id": 1378,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Testes",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na modelagem do relatório gerencial de correições do TJ-CE, um analista observou que o comportamento basilar do JUnit 5 determina a alocação de uma instância inteiramente nova da classe de teste para cada método anotado com @Test, resguardando o isolamento do estado entre as asserções. Em função da alta criticidade e do alto processamento na alocação de fixtures pesadas, solicitou-se a alteração de comportamento para que a instância do objeto seja reaproveitada do início ao término de todo o ciclo de vida. Esta injeção da mudança no padrão arquitetural do framework é alcançada anexando na declaração da classe a anotação:",
+    "options": {
+      "A": "@SingletonTest.",
+      "B": "@Execution(ExecutionMode.SAME_THREAD).",
+      "C": "@TestInstance(Lifecycle.PER_CLASS).",
+      "D": "@TestMethodOrder(OrderAnnotation.class).",
+      "E": "@SharedContext."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A anotação @TestInstance(TestInstance.Lifecycle.PER_CLASS) altera a política de ciclo de vida do JUnit 5. Em vez do default PER_METHOD, a classe de teste é instanciada apenas uma vez. Isso possibilita, por exemplo, manter atributos de estado entre métodos e executar anotações @BeforeAll em métodos que não sejam estáticos. A alternativa B controla apenas se os testes vão rodar em threads separadas ou mesma thread, não altera reaproveitamento de instância da classe de teste. As opções A e E inexistem. A alternativa D ordena métodos, mas recria instâncias."
+  },
+  {
+    "id": 1379,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Testes",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O barramento sistêmico do TJ-CE processa o despacho de ofícios eletrônicos direcionados a instituições financeiras, utilizando um componente cujo contrato prevê o método enviarOficio(Long bancoId, String conteudo). O analista pretende codificar um teste unitário impondo uma regra genérica de sucesso para o mock de serviço: requisições englobando qualquer valor numérico de identificador, mas sempre acompanhadas da string fixa \"BLOQUEIO\", devem retornar verdadeiro. A parametrização direta com when(servico.enviarOficio(anyLong(), \"BLOQUEIO\")).thenReturn(true) provoca uma exceção fatal de matchers. Para adequar rigorosamente a construção às diretrizes do Mockito e evitar o erro, deve-se adotar:",
+    "options": {
+      "A": "A conversão de anyLong() para a função regexMatcher(\".*\").",
+      "B": "A anotação prévia do parâmetro bancoId com @MockedArgument.",
+      "C": "O embrulho da string literal \"BLOQUEIO\" na função matcher eq(\"BLOQUEIO\").",
+      "D": "A implementação de um ArgumentCaptor para o parâmetro string.",
+      "E": "A substituição de anyLong() pelo literal null no primeiro parâmetro."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A biblioteca Mockito possui uma regra estrita: caso um matcher genérico (como any(), anyLong()) seja usado em qualquer argumento de uma chamada a um método mock, então TODOS os outros argumentos devem ser providos e embrulhados por meio de matchers equivalentes. Para passar valores brutos e exatos como \"BLOQUEIO\" ao lado de matchers, é imprescindível envolvê-los na instrução de igualdade eq(\"BLOQUEIO\"). As demais opções apresentam mecanismos irrelevantes à exceção InvalidUseOfMatchersException que é disparada nesses casos."
+  },
+  {
+    "id": 1380,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Engenharia de Software - Testes",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A auditoria da infraestrutura de sorteio eletrônico de desembargadores do Tribunal de Justiça demandou uma esteira de avaliação baseada em parâmetros indeterminados em tempo de compilação. Os cenários concretos, com seus dados de entrada e saídas mapeadas, são gerados apenas em tempo de execução via leitura automatizada de diretórios dinâmicos e parsing de arquivos JSON. Para que o motor de teste do JUnit 5 intercepte essa lista flexível em tempo de roteamento e defina nós de testes unitários isolados, reportados individualmente na árvore visual da suíte, o método gerador arquitetado no código precisa ser decorado com a anotação e retornar, preferencialmente, o fluxo mapeado de coleção de elementos da classe:",
+    "options": {
+      "A": "@TestFactory e DynamicTest.",
+      "B": "@DynamicTest e TestNode.",
+      "C": "@RuntimeTest e TestExecutable.",
+      "D": "@ParameterizedTest e ArgumentsProvider.",
+      "E": "@TestTemplate e InvocationContext."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. A mecânica de Dynamic Tests no JUnit 5 é construída anotando um método não privado com @TestFactory, em vez de @Test. Este método atua como uma fábrica, encarregado de processar lógica computacional e retornar uma coleção estruturada, iterador ou fluxo (Stream) contendo instâncias do tipo DynamicTest, que consistem individualmente do nome da checagem e da função (Executable) com os asserts a serem resolvidos. A alternativa D abrange paramétricos, focados em assinaturas repetidas sem a liberdade extrema de variação estrutural dos dinâmicos."
+  },
+  {
+    "id": 1381,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o projeto de modernização tecnológica do Tribunal de Justiça do Estado do Ceará (TJ-CE), a equipe de arquitetura identificou a necessidade de integrar o novo sistema de Peticionamento Eletrônico, desenvolvido com interfaces RESTful, ao antigo sistema corporativo de custas judiciais, que expõe estritamente serviços SOAP legados não passíveis de alteração. O sistema de peticionamento espera receber e enviar dados em formato JSON por meio de uma interface padronizada, enquanto o legado opera com envelopes XML complexos. Para solucionar essa incompatibilidade de interfaces sem modificar o código-fonte de nenhum dos sistemas originais, o arquiteto deve aplicar o padrão de projeto:",
+    "options": {
+      "A": "Utilização de um Mediator para centralizar a comunicação entre os componentes REST e os serviços SOAP independentes.",
+      "B": "Criação de uma classe Adapter para traduzir as requisições REST/JSON em chamadas SOAP/XML esperadas pelo legado.",
+      "C": "Implementação de uma Facade para simplificar as múltiplas chamadas do sistema de custas judiciais ao Peticionamento.",
+      "D": "Definição de uma Strategy encapsulando a lógica de integração SOAP em classes intercambiáveis em tempo de execução.",
+      "E": "Aplicação de um Proxy para interceptar as chamadas REST e aplicar regras de segurança antes da comunicação com o legado."
+    },
+    "answer": "B",
+    "explanation": "O padrão Adapter atua como um invólucro para converter a interface de uma classe na interface esperada pelos clientes (compatibilização JSON/REST para XML/SOAP). A alternativa A foca em centralizar comunicação entre componentes que não devem se acoplar, mas não adapta dados. A alternativa C simplifica múltiplos acessos a um subsistema, sem necessariamente traduzir contratos estritos. A alternativa D troca regras de negócio dinamicamente, e a E controla acesso ou adiciona segurança, não adaptando interfaces preexistentes."
+  },
+  {
+    "id": 1382,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está implantando um módulo de emissão de certidões negativas que sofre com esgotamento de conexões com o banco de dados principal. A análise revelou que cada requisição ao módulo instancia um novo gerenciador de pool de conexões, ultrapassando o limite do SGBD durante picos de acesso. A equipe de arquitetura determinou que a aplicação deve compartilhar uma única e mesma instância do gerenciador de pool de conexões em todo o ciclo de vida do servidor de aplicação, fornecendo um ponto global de acesso a ela. O padrão de projeto adequado para garantir essa restrição instancial é o:",
+    "options": {
+      "A": "Padrão Flyweight para compartilhar múltiplas conexões de banco de dados por meio de uma estrutura de árvore.",
+      "B": "Padrão Factory Method para centralizar a criação das instâncias de conexão de acordo com a demanda do módulo.",
+      "C": "Padrão Prototype para clonar uma instância inicial pré-configurada do gerenciador a cada nova requisição.",
+      "D": "Padrão Singleton para garantir a existência de apenas uma instância do gerenciador de pool e fornecer acesso global.",
+      "E": "Padrão Builder para construir o objeto complexo do gerenciador de pool passo a passo durante a inicialização."
+    },
+    "answer": "D",
+    "explanation": "O padrão Singleton assegura que uma classe tenha exatamente uma instância e fornece um ponto de acesso global a ela, resolvendo o problema de múltiplas instanciações do pool. A alternativa A serve para grandes volumes de objetos granulares pequenos em memória. A alternativa B encapsula a criação em subclasses. A alternativa C baseia-se em clonagem, o que resultaria em ainda mais instâncias. A alternativa E trata da criação passoo a passo de objetos complexos, sem restringir a unicidade."
+  },
+  {
+    "id": 1383,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A nova Plataforma Digital do Poder Judiciário (PDPJ) no TJ-CE exige a integração de sistemas de controle processual, recursos humanos, segurança e auditoria para a funcionalidade de 'Baixa Definitiva de Processo'. Atualmente, o módulo cliente precisa interagir com seis APIs distintas, compreendendo regras de negócio dispersas, o que resulta em alto acoplamento e complexidade no código cliente. Para ocultar a complexidade desse subsistema e fornecer uma interface única, de nível mais alto, que agrupe essas operações de baixa definitiva e facilite o uso pelo cliente, a solução arquitetural apropriada baseia-se no padrão:",
+    "options": {
+      "A": "Chain of Responsibility para passar a requisição de baixa definitiva sequencialmente entre os seis serviços.",
+      "B": "Mediator para promover o acoplamento fraco ao evitar que os seis serviços referenciem uns aos outros explicitamente.",
+      "C": "Observer para notificar automaticamente os seis serviços quando o módulo cliente solicitar a baixa definitiva.",
+      "D": "Adapter para compatibilizar as interfaces das seis APIs distintas com a interface esperada pelo cliente.",
+      "E": "Facade para prover uma interface simplificada unificando as chamadas aos múltiplos serviços do subsistema."
+    },
+    "answer": "E",
+    "explanation": "O padrão Facade fornece uma interface de nível mais alto que engloba um conjunto de interfaces complexas de um subsistema, tornando-o mais fácil de usar pelo cliente. A alternativa A encadeia chamadas onde qualquer objeto da cadeia pode tratá-las. A alternativa B lida com comunicação transversal entre os componentes. A alternativa C propõe eventos assinados. A alternativa D adequa uma interface incompatível, mas a simplificação de múltiplas APIs em uma macro-operação é o escopo clássico de Facade."
+  },
+  {
+    "id": 1384,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de cálculo de custas judiciais do TJ-CE necessita lidar com diversas regras de tributação variáveis de acordo com a natureza da ação (Cível, Criminal, Fazenda Pública, Juizados Especiais). Inicialmente implementado com estruturas de controle condicionais (if/else ou switch/case) extensas, o código tornou-se de difícil manutenção. Os arquitetos de software decidiram encapsular cada regra de cálculo de custas em sua própria classe e torná-las intercambiáveis, permitindo que o algoritmo de cálculo varie independentemente dos clientes que o utilizam em tempo de execução. O padrão estrutural ou comportamental correto a ser aplicado é:",
+    "options": {
+      "A": "Padrão Template Method para definir o esqueleto do algoritmo de cálculo na superclasse e delegar os passos às subclasses.",
+      "B": "Padrão Strategy para encapsular os algoritmos de cálculo de custas em classes distintas e intercambiáveis.",
+      "C": "Padrão State para alterar o comportamento do sistema de cálculo quando o estado interno do processo mudar.",
+      "D": "Padrão Decorator para adicionar dinamicamente novas regras de tributação ao objeto de cálculo original.",
+      "E": "Padrão Command para encapsular a solicitação de cálculo como um objeto parametrizável por diferentes regras."
+    },
+    "answer": "B",
+    "explanation": "Strategy é o padrão comportamental que permite extrair algoritmos (regras de cálculo) para objetos distintos, substituindo as condicionais lógicas. A alternativa A usa herança para fixar o esqueleto e delegar pedaços da lógica, não o algoritmo inteiro. A alternativa C é aplicável quando o objeto transita por múltiplos estados internos, mudando seu comportamento global. A alternativa D sobrepõe camadas adicionais em tempo de execução. A alternativa E encapsula uma chamada em um objeto para criar filas ou histórico de requisições."
+  },
+  {
+    "id": 1385,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No Processo Judicial Eletrônico (PJe) do TJ-CE, a assinatura de uma sentença por um magistrado é um evento crítico. Após a assinatura, o sistema precisa acionar o envio de intimações, atualizar o painel estatístico do tribunal, inserir um registro no log de auditoria do CNJ e notificar as partes do processo. O acoplamento direto entre a classe de Sentença e essas diversas ações está gerando falhas em cascata e dificultando a evolução do software. Para definir uma dependência um-para-muitos, de modo que quando a Sentença mudar de estado todos os seus dependentes sejam notificados e atualizados automaticamente sem forte acoplamento, adota-se o padrão:",
+    "options": {
+      "A": "Mediator para gerenciar e coordenar as interações entre a classe de Sentença e os componentes de notificação.",
+      "B": "Event-Driven Architecture (EDA) aplicada como um padrão criacional para o gerenciamento de instâncias da sentença.",
+      "C": "Observer para estruturar a assinatura da sentença como um sujeito publicador de eventos para assinantes independentes.",
+      "D": "Visitor para separar o algoritmo de notificação da estrutura de objetos da classe de Sentença.",
+      "E": "Chain of Responsibility para encaminhar o evento de assinatura através de uma corrente de processadores de notificações."
+    },
+    "answer": "C",
+    "explanation": "O padrão Observer (Publish-Subscribe) desacopla a classe principal dos seus múltiplos interessados, disparando atualizações assim que o estado muda. A alternativa A descreve o Mediator, que cria uma classe orquestradora centralizada em vez de delegar as reações independentemente via subscrição. A alternativa B é errada porque EDA é estilo arquitetural e não padrão GoF criacional. A alternativa D serve para adicionar novas operações à estrutura de classes existente sem modificá-la. A alternativa E sugere um fluxo sequencial e não um broadcast de notificação unificada."
+  },
+  {
+    "id": 1386,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Secretaria de Tecnologia da Informação do TJ-CE iniciou a integração do sistema de Recursos Humanos com três plataformas externas de convênios médicos, folha de pagamento e margem consignável. Cada plataforma externa possui protocolos e contratos de dados muito distintos. Para isolar o sistema de RH dessas complexidades, a equipe criou uma camada intermediária que oferece métodos simples, delegando internamente as traduções e invocações sequenciais para as três plataformas. No entanto, um analista sugeriu que esse intermediário também transforme as respostas JSON das plataformas em objetos Java específicos da classe legada 'Beneficiario', adequando-se a uma interface existente. Essa arquitetura combina primariamente dois padrões GoF:",
+    "options": {
+      "A": "Singleton para centralizar as requisições externas e Bridge para separar a interface da implementação.",
+      "B": "Decorator para adicionar a conversão de formatos e Proxy para intermediar o acesso às plataformas externas.",
+      "C": "Strategy para alternar entre as três plataformas e Composite para estruturar a árvore de respostas.",
+      "D": "Facade para simplificar as chamadas múltiplas e Adapter para converter os tipos de retorno.",
+      "E": "Adapter para expor os métodos simples ao RH e Observer para receber os dados JSON externos de forma reativa."
+    },
+    "answer": "D",
+    "explanation": "A criação de métodos simples de front-end para um conjunto de integrações pesadas é a essência do Facade. A transformação das respostas JSON em classes legadas incompatíveis ('Beneficiario') remete ao Adapter. As demais opções trazem padrões isolados que não atendem às duas características principais expostas no texto (simplificação de subsistemas + adaptação de assinaturas e retornos legados)."
+  },
+  {
+    "id": 1387,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma auditoria de segurança no sistema de distribuição de processos do TJ-CE apontou que a leitura das chaves criptográficas do cofre de senhas estava degradando a performance do sistema. O log indicou que a cada assinatura de documento, a aplicação instanciava uma nova classe CryptoKeyManager, realizando um dispendioso carregamento do sistema de arquivos. Para otimizar a performance garantindo que a configuração criptográfica seja lida apenas uma vez na memória, com acesso concorrente thread-safe para toda a aplicação, deve-se adotar o padrão Singleton. O mecanismo técnico correto para implementação desse padrão de forma estritamente segura em ambientes multithread (em linguagens como Java) é:",
+    "options": {
+      "A": "Instanciar a classe estaticamente de modo eager ou utilizar o escopo de enumeração.",
+      "B": "Implementar um construtor público e um método estático de inicialização lazy sem sincronização.",
+      "C": "Utilizar variáveis de instância públicas estáticas e o padrão Factory Method para geração do pool.",
+      "D": "Aplicar herança múltipla na classe CryptoKeyManager para sobrescrever os métodos de clone e serialização.",
+      "E": "Instanciar o gerenciador via Injeção de Dependência no escopo Prototype para garantir o isolamento das threads."
+    },
+    "answer": "A",
+    "explanation": "Para evitar problemas de condição de corrida (race conditions) em Singletons, a inicialização ansiosa (eager) ao carregar a classe estática ou a adoção de tipos Enum nativos são os modos mais robustos e automáticos de obter thread-safety na JVM. A alternativa B omite a sincronização, falhando o objetivo multithread. A alternativa C propõe pool, ferindo a instância única do Singleton. A alternativa D é um cenário inválido no Java. A alternativa E quebra totalmente a premissa de Singleton, pois Prototype gera múltiplas instâncias novas."
+  },
+  {
+    "id": 1388,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está desenvolvendo um módulo de anonimização de decisões judiciais para cumprimento da Lei Geral de Proteção de Dados (LGPD). O processo requer a aplicação de diferentes algoritmos de mascaramento de dados sensíveis baseados na classificação de risco do processo (Sigilo Nível 1, Nível 2 e Segredo de Justiça absoluto). O arquiteto propôs que a classe PublicadorDecisao não implemente diretamente os mascaramentos, mas sim possua uma referência para a interface EstrategiaMascaramento, delegando a essa referência a execução do algoritmo apropriado durante o fluxo de publicação. A implementação desse requisito reflete a utilização do padrão:",
+    "options": {
+      "A": "Decorator.",
+      "B": "Template Method.",
+      "C": "Visitor.",
+      "D": "Strategy.",
+      "E": "Command."
+    },
+    "answer": "D",
+    "explanation": "O padrão Strategy encapsula o conjunto de algoritmos de mascaramento atrás de uma interface (EstrategiaMascaramento), repassando para o objeto cliente (PublicadorDecisao) apenas a interface base que delegará ao algoritmo correto (composição sobre herança). O Decorator adorna objetos com funcionalidade adicional. Template Method utiliza herança e sobrescrita de passos do algoritmo. Visitor lida com atravessar árvores de objetos. Command converte a chamada em um objeto independente."
+  },
+  {
+    "id": 1389,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o monitoramento do Data Center do TJ-CE, é vital que o sistema de monitoramento informe diversos componentes (painel do NOC, módulo de envio de SMS aos gestores e banco de dados de registro histórico) quando a CPU de um servidor atingir 95% de uso. Cada componente reage de forma autônoma e independente à notificação do pico de uso. A equipe de desenvolvimento precisa projetar a classe do Servidor para que ele notifique todos os interessados sem conhecê-los diretamente, mantendo a escalabilidade para adicionar novos componentes interessados no futuro sem alterar o código do Servidor. O padrão comportamental indicado para esse modelo arquitetural é o:",
+    "options": {
+      "A": "Chain of Responsibility para encadear os alertas e transmiti-los aos interessados de maneira hierárquica.",
+      "B": "State para modificar o comportamento em tempo de execução do servidor quando a métrica de CPU se alterar.",
+      "C": "Mediator para encapsular o roteamento da notificação e promover o acoplamento fraco entre os servidores.",
+      "D": "Memento para capturar e armazenar o estado interno do servidor permitindo sua posterior restauração.",
+      "E": "Observer para desacoplar o publicador da notificação de mudança de estado dos seus respectivos assinantes."
+    },
+    "answer": "E",
+    "explanation": "A descrição delineia com precisão o padrão Observer, onde os componentes independentes (assinantes) assinam os alertas provenientes do nó central de monitoramento (o sujeito publicador). O Servidor (Subject) não os conhece concretamente. Chain passa requisições numa cadeia de tratamento e encerramento. State atua na transição de comportamentos internos. Mediator concentra a relação de várias classes colegas em um hub coordenador, em vez de assinar para receber broadcasts livres."
+  },
+  {
+    "id": 1390,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE adquiriu um novo sistema de leitura biométrica para controle de acesso às sessões do Tribunal do Júri. A biblioteca fornecida pelo fabricante do leitor expõe os dados em um formato proprietário através da classe FingerprintReaderSDK. No entanto, o sistema de segurança do Tribunal já possui uma interface padronizada chamada IAutenticadorBiometrico, que espera matrizes de bytes em um formato normalizado. O arquiteto decidiu criar uma nova classe LeitorBiometricoAdapter que implementa IAutenticadorBiometrico e utiliza internamente uma instância de FingerprintReaderSDK para coletar e traduzir os dados. Essa abordagem de design está alinhada ao conceito do padrão:",
+    "options": {
+      "A": "Adapter em nível de classe exigindo a herança múltipla da interface e do sistema proprietário.",
+      "B": "Facade em nível de subsistema para ocultar a complexidade do algoritmo biométrico interno.",
+      "C": "Adapter em nível de objeto envolvendo a composição da classe incompatível.",
+      "D": "Proxy Remoto para representar a comunicação via rede com o hardware de leitura biométrica.",
+      "E": "Bridge para dissociar a abstração da leitura biométrica de sua implementação via SDK do fabricante."
+    },
+    "answer": "C",
+    "explanation": "Ao encapsular uma instância privada do objeto legado incompatível para traduzir a interface (composição), o arquiteto aplica o padrão Adapter do tipo Objeto. A alternativa A define Adapter de Classe, que faria uso de herança múltipla da classe proprietária, algo muitas vezes impraticável em plataformas como Java e não correspondente à descrição 'utiliza internamente uma instância'. Proxy, Facade e Bridge atuam, respectivamente, em controle de acesso, simplificação de subsistema e abstração ortogonal, nenhum traduz interfaces incompatíveis."
+  },
+  {
+    "id": 1391,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No módulo de expedição de mandados do TJ-CE, a escolha da empresa de correios ou do oficial de justiça é determinada por regras geográficas dinâmicas. O algoritmo de seleção muda conforme a região de destino, caracterizando a aplicação do padrão Strategy. O arquiteto observou que cada estratégia instanciada consome bastante memória local, mas não possui nenhum estado mutável próprio, sendo perfeitamente reutilizável por múltiplas execuções simultâneas. Visando otimizar a infraestrutura e evitar a sobrecarga do Garbage Collector, a união ideal com o padrão Strategy para garantir a reutilização global dessas instâncias de estratégias é a aplicação do padrão:",
+    "options": {
+      "A": "Flyweight para armazenar fatias dos estados internos intrínsecos e extrínsecos dos oficiais de justiça.",
+      "B": "Singleton para assegurar a existência de apenas uma instância compartilhada de cada estratégia algorítmica.",
+      "C": "Factory Method para encapsular as lógicas de criação de múltiplas estratégias dedicadas a cada requisição.",
+      "D": "Prototype para gerar instâncias limpas das estratégias rapidamente através da clonagem da memória original.",
+      "E": "Decorator para cachear dinamicamente os resultados pré-computados das estratégias de roteamento."
+    },
+    "answer": "B",
+    "explanation": "Objetos do padrão Strategy que encapsulam apenas algoritmos sem conter estado conversível interno (stateless) são excelentes candidatos para serem integrados ao padrão Singleton. Assim, economiza-se na alocação de memória. Flyweight guarda estados intrínsecos de alta granularidade (letras de editor, por exemplo). Factory Method abstrai a criação mas não impõe limite de instâncias. Prototype clonaria novos objetos, derrotando o propósito de economia. Decorator engloba novas funções sobre objetos e não gerencia reaproveitamento instancial."
+  },
+  {
+    "id": 1392,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema 'e-TJCE' foi arquitetado sobre uma rede de 15 microserviços de infraestrutura. Desenvolvedores de aplicações clientes (Front-end SPA e Aplicativo Mobile) reclamavam da necessidade de coordenar chamadas autenticadas individuais para os serviços de Arquivos, Assinatura, Filas e Notificações apenas para concluir o envio de uma simples petição. O time de arquitetura implementou um serviço Edge (API Gateway) atuando como ponto único de entrada. Esse serviço fornece um endpoint agregador simplificado de 'SubmeterPetição', o qual internamente orquestra e gerencia as chamadas aos microserviços requeridos. O padrão de projeto GoF que conceitualmente embasa essa simplificação e orquestração em uma interface unificada superior é o:",
+    "options": {
+      "A": "Composite.",
+      "B": "Mediator.",
+      "C": "Builder.",
+      "D": "Proxy.",
+      "E": "Facade."
+    },
+    "answer": "E",
+    "explanation": "A criação de um endpoint superior mais legível (como o API Gateway que agrega vários microserviços em uma única chamada de alto nível) é a materialização do padrão Facade aplicado em sistemas distribuídos. O Composite estrutura partes em formato de árvore. O Mediator interliga objetos subjacentes e centraliza fluxo entre eles internamente. Builder monta passos estruturados de um objeto interno. Proxy representa outro objeto como espelho idêntico, preservando a interface exata, sem simplificações ou aglutinações macro."
+  },
+  {
+    "id": 1393,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma vulnerabilidade foi detectada na plataforma de relatórios do TJ-CE: a implementação do gerenciador global de sessões estava instanciando cópias extras devido ao acesso simultâneo durante o carregamento inicial da aplicação sob altíssima carga, violando a intenção original do padrão Singleton. O desenvolvedor tentou utilizar o bloqueio de sincronização estrita (synchronized) na assinatura do método de acesso global, o que resolveu o problema das instâncias múltiplas, mas resultou em um gargalo extremo de performance em cada chamada subsequente ao método. Para resolver o gargalo de concorrência garantindo o padrão Singleton com inicialização lazy na plataforma Java, a técnica recomendada é o:",
+    "options": {
+      "A": "Escopo de Request do framework Spring Boot para gerenciar o ciclo de vida dos singletons em tempo de execução.",
+      "B": "Double-Checked Locking para sincronizar apenas o primeiro bloco de criação e ignorar o bloqueio em leituras posteriores.",
+      "C": "Pool de Objetos que pré-aloque as múltiplas instâncias na inicialização assíncrona do servidor de aplicação.",
+      "D": "Pattern Command acoplado com concorrência paralela nativa para desviar as chamadas e evitar o estrangulamento da thread principal.",
+      "E": "Method Injection onde a classe cliente injeta dinamicamente o gerenciador por meio de proxies transacionais do banco de dados."
+    },
+    "answer": "B",
+    "explanation": "O Double-Checked Locking em um modelo lazy evaluation de Singleton realiza o travamento de thread apenas quando detecta a instância como nula no primeiro acesso. Depois de instanciado, os acessos seguintes transpassam a trava sem pagar pedágio de bloqueio sincronizado. A alternativa A foge do conceito nativo e propõe gerenciar ciclos de requisição (request scope), destruindo a premissa de um escopo Singleton (application scope). As alternativas C, D e E misturam injeções externas e pools, desvirtuando completamente o conceito do padrão isolado GoF."
+  },
+  {
+    "id": 1394,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de armazenamento do TJ-CE arquiva milhões de documentos em diferentes repositórios (AWS S3, NAS Local, Storage Blob Azure). A lógica que determina qual provedor de armazenamento em nuvem utilizar e como transferir o binário está emaranhada em dezenas de classes do sistema de peticionamento através de condicionalismos aninhados (hard-coded). O arquiteto sênior elaborou uma refatoração estruturando uma interface IArmazenamentoNuvem, com implementações concretas ArmazenamentoAWS, ArmazenamentoNAS e ArmazenamentoAzure. O contexto de upload da petição recebe a implementação correspondente injetada durante o processo de arquivamento. Essa refatoração erradicou os condicionalismos utilizando o padrão de projeto:",
+    "options": {
+      "A": "Observer que notifica o sistema de nuvem apropriado para o envio do documento através do acionamento de eventos globais.",
+      "B": "Factory Method que inicializa o repositório de nuvem com base na delegação da construção às subclasses especializadas.",
+      "C": "Strategy que abstrai a família de algoritmos de armazenamento em implementações independentes e injetáveis no contexto.",
+      "D": "Decorator que adiciona funcionalidades de conexão em nuvem aos documentos em tempo de execução de forma recursiva.",
+      "E": "Bridge que separa o armazenamento da petição em uma arquitetura de múltiplos níveis de persistência não relacionada."
+    },
+    "answer": "C",
+    "explanation": "A remoção de fluxos IF/ELSE complexos ligados às rotinas comportamentais, transpondo-os para uma interface injetável dinamicamente, é a aplicação pura do padrão Strategy (também comumente referenciado na técnica de refatoração 'Replace Conditional with Strategy'). Observer não atua em delegação condicional. Factory foca na criação instancial primária. Decorator embrulha classes de forma aditiva. Bridge elabora pontes entre hierarquias independentes, e não seleciona comportamentos lógicos permutáveis do mesmo peso estrutural no contexto."
+  },
+  {
+    "id": 1395,
+    "day_id": "dia_19_06",
+    "day_title": "Sexta-feira 19/06",
+    "theme": "Arquitetura e Padrões de Projeto",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No sistema eletrônico de execução penal (SEEU) operado pelo TJ-CE, a mudança de regime de um apenado (de fechado para semiaberto, por exemplo) afeta a visualização em diversos módulos: o cálculo da data-base para progressão, o agendamento do controle de monitoramento eletrônico e o registro no setor de serviço social. Para assegurar que as equipes de arquitetura respeitem os princípios Open-Closed e de Responsabilidade Única (SOLID), evitou-se modificar a classe central de 'Apenado' sempre que um novo módulo interessado na mudança de regime fosse criado no sistema. O padrão comportamental adotado para estabelecer essa arquitetura de atualização reativa sem acoplamento forte entre o estado do apenado e os referidos módulos foi o:",
+    "options": {
+      "A": "Mediator para atuar como controlador de fluxo centralizado determinando quem e quando será atualizado no regime do apenado.",
+      "B": "Template Method para prover os fluxos lógicos fixos e pré-estabelecidos das consequências do fechamento de regime penal.",
+      "C": "Strategy para comutar de forma transparente entre o cálculo penal, monitoramento eletrônico e as anotações do serviço social.",
+      "D": "Observer para manter uma lista de referências abstratas dos módulos e notificá-los genericamente na alteração do regime.",
+      "E": "Memento para encapsular o histórico das alterações do apenado permitindo estornos do estado para os módulos dependentes."
+    },
+    "answer": "D",
+    "explanation": "A classe central de 'Apenado' atua como Subject (Publicador) perante uma coleção abstrata de componentes que observam o seu estado (Observer). Quando o regime muda, ocorre uma notificação genérica, sem quebrar o Open-Closed ao incluir ou remover inscritos. A alternativa A criaria um controlador restrito do fluxo em vez de reatividade baseada em eventos. A alternativa B preestabelece um caminho em subclasses. A alternativa C escolhe entre lógicas alternadas, e não efetua notificações globais concorrentes. A alternativa E cuida de desfazimento/snapshot de estados anteriores."
   }
 ]

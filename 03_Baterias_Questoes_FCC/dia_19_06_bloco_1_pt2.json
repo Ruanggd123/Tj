@@ -1,0 +1,272 @@
+[
+  {
+    "id": 190601,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL: Views Atualizáveis",
+    "context": "Migração de sistema, Views e permissões",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No Tribunal de Justiça do Ceará (TJ-CE), a equipe de banco de dados decidiu criar uma camada de abstração sobre a tabela central de tramitação processual utilizando o PostgreSQL. O objetivo é permitir que aplicações de parceiros externos realizem operações de inserção e atualização diretamente nesta abstração, sem conceder acesso à tabela base. Para que essa estrutura seja automaticamente atualizável (automatically updatable) no PostgreSQL, sem a necessidade de criação de triggers INSTEAD OF, o arquiteto de dados deve garantir que a definição da estrutura cumpra requisitos estritos. Considerando os critérios de atualização automática de views no PostgreSQL, o requisito obrigatório é:",
+    "options": {
+      "A": "conter cláusulas DISTINCT, GROUP BY ou HAVING na consulta de origem.",
+      "B": "possuir exatamente uma entrada na cláusula FROM referenciando uma tabela ou view atualizável.",
+      "C": "incluir funções de agregação, operações de conjunto (UNION, INTERSECT) ou LIMIT.",
+      "D": "referenciar múltiplas tabelas baseadas em junções do tipo LEFT OUTER JOIN ou RIGHT OUTER JOIN.",
+      "E": "possuir consultas aninhadas ou subqueries na lista de seleção referenciando a tabela principal."
+    },
+    "answer": "B",
+    "explanation": "No PostgreSQL, para que uma view seja automaticamente atualizável, ela deve satisfazer condições rigorosas. A principal é possuir exatamente uma entrada na cláusula FROM (Alternativa B correta). A view não pode conter funções de agregação, DISTINCT, GROUP BY, HAVING, LIMIT ou operações de conjunto, o que invalida A e C. Tampouco pode conter junções múltiplas ou subqueries na lista de seleção (D e E), sob pena de exigir triggers INSTEAD OF."
+  },
+  {
+    "id": 190602,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL: Views Materializadas",
+    "context": "Atualização de Painel Analítico",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de infraestrutura do TJ-CE desenvolveu um painel analítico de produtividade de magistrados baseado no PostgreSQL. Como o volume de dados ultrapassa dezenas de milhões de registros, optou-se pela utilização de visões materializadas para consolidar o relatório. Durante o expediente, o comando de renovação dos dados começou a bloquear as consultas de leitura realizadas pelo painel, ocasionando lentidão. O engenheiro de dados foi acionado para implementar uma estratégia de renovação que permita a atualização da estrutura física enquanto os dados antigos continuam disponíveis para consultas simultâneas. A solução arquitetural correta para resolver esse incidente de bloqueio no PostgreSQL consiste na execução do comando:",
+    "options": {
+      "A": "REFRESH MATERIALIZED VIEW com a cláusula CONCURRENTLY, exigindo um índice UNIQUE na visão.",
+      "B": "REFRESH MATERIALIZED VIEW com a opção NONBLOCKING, dispensando a criação de índices adicionais.",
+      "C": "ALTER MATERIALIZED VIEW incluindo a diretiva REFRESH ONLINE, suportada apenas para visões particionadas.",
+      "D": "UPDATE MATERIALIZED VIEW utilizando o modificador ASYNC, operando sob o nível de isolamento READ UNCOMMITTED.",
+      "E": "REBUILD MATERIALIZED VIEW especificando a flag WITHOUT LOCKS, exigindo o pré-aquecimento do cache."
+    },
+    "answer": "A",
+    "explanation": "O comando padrão REFRESH MATERIALIZED VIEW bloqueia leituras com AccessExclusiveLock, inviabilizando consultas durante a recriação. Para permitir acessos simultâneos enquanto a atualização ocorre, utiliza-se a cláusula CONCURRENTLY (Alternativa A correta). Para que o PostgreSQL aplique o refresh concorrente (que calcula a diferença dos dados e aplica as alterações), é um pré-requisito obrigatório que a visão materializada possua pelo menos um índice UNIQUE. As alternativas B, C, D e E inventam sintaxes inexistentes no PostgreSQL."
+  },
+  {
+    "id": 190603,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL: JSONB Operadores",
+    "context": "Extração de Metadados de Documentos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No sistema de peticionamento eletrônico do TJ-CE, os metadados dos documentos anexados variam amplamente em estrutura e atributos. Para acomodar essa flexibilidade, o banco de dados PostgreSQL foi configurado para armazenar essas informações em uma coluna do tipo JSONB. A equipe de IA requer a extração frequente de um valor textual específico correspondente à chave 'cpf_advogado', aninhada dentro do objeto 'assinatura' no documento JSON. Para extrair esse valor diretamente como texto (tipo text) e não como um objeto JSON, o operador adequado a ser utilizado na consulta SQL é:",
+    "options": {
+      "A": "-> aplicado à chave 'assinatura' e -> aplicado à chave 'cpf_advogado'.",
+      "B": "-> aplicado à chave 'assinatura' seguido de ->> aplicado à chave 'cpf_advogado'.",
+      "C": "#> aplicado ao caminho textual contendo as chaves aninhadas separadas por vírgula.",
+      "D": "@> aplicado à chave 'assinatura' seguido de -> aplicado à chave 'cpf_advogado'.",
+      "E": "? aplicado à chave 'assinatura' seguido de #>> aplicado à chave 'cpf_advogado'."
+    },
+    "answer": "B",
+    "explanation": "No PostgreSQL, o operador `->` extrai um elemento mantendo-o como tipo JSON/JSONB. O operador `->>` extrai o elemento convertendo-o diretamente para o tipo text nativo. Portanto, para navegar em 'assinatura' mantendo o formato objeto para em seguida extrair 'cpf_advogado' como texto, encadeia-se `coluna -> 'assinatura' ->> 'cpf_advogado'` (Alternativa B). A alternativa A retornaria JSON. A C utiliza `#>` que retorna JSON, não texto (o correto seria `#>>`). D e E misturam operadores de contenção e existência de chave incorretamente."
+  },
+  {
+    "id": 190604,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL: Tipos JSON e JSONB",
+    "context": "Armazenamento de Logs de Auditoria",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Ceará está migrando o armazenamento de logs de auditoria para o PostgreSQL. Os desenvolvedores debatem a adoção do tipo de dados JSON ou JSONB para a coluna de registro de eventos. O analista de banco de dados foi encarregado de definir o padrão arquitetural, considerando que o sistema precisará realizar buscas complexas pelo conteúdo das chaves e indexar os campos de forma eficiente para relatórios de conformidade. No contexto das diferenças estruturais entre JSON e JSONB no PostgreSQL, a adoção do tipo JSONB é a recomendação correta, caracterizada por:",
+    "options": {
+      "A": "armazenar uma cópia exata do texto de entrada preservando espaços em branco e a ordem das chaves.",
+      "B": "converter os dados para um formato binário de decomposição, permitindo suporte nativo a índices GIN.",
+      "C": "validar a estrutura do documento apenas no momento da consulta, reduzindo o custo de inserção.",
+      "D": "manter chaves duplicadas no documento original, fornecendo redundância de segurança na recuperação.",
+      "E": "exigir o uso de funções externas em linguagem C para manipulação de nós aninhados do documento."
+    },
+    "answer": "B",
+    "explanation": "O tipo JSON armazena exatamente o texto de entrada (preservando espaços e ordem), mas sem suporte avançado à indexação e operadores. Já o tipo JSONB armazena o dado em um formato binário decomposto, o que remove espaços em branco extras, desconsidera a ordem das chaves e armazena apenas o último valor de chaves duplicadas. Sua grande vantagem, que justifica seu uso generalizado (Alternativa B correta), é o processamento rápido, a inexistência de parsing textual na leitura e o forte suporte nativo a indexação GIN para buscas performáticas."
+  },
+  {
+    "id": 190605,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL: Views com restrições",
+    "context": "Integridade em Inserções via Views",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de recursos humanos do TJ-CE dispõe de uma tabela central que cadastra todos os servidores. Para isolar o acesso do departamento de tecnologia da informação, foi criada uma view denominada 'vw_servidores_ti' que filtra exclusivamente os registros pertencentes ao departamento de TI. Concedeu-se permissão de inserção aos gestores na view. Durante auditoria, constatou-se que um gestor inseriu acidentalmente através da view um registro com departamento igual a 'Recursos Humanos', a inserção ocorreu com sucesso, mas o registro sumiu da visibilidade da view. Para mitigar esse comportamento e garantir que os INSERTs e UPDATEs realizados por meio da view sejam consistentes com a sua cláusula WHERE, a diretriz arquitetural requer o uso da cláusula:",
+    "options": {
+      "A": "WITH LOCAL SECURITY OPTION.",
+      "B": "WITH CASCADED PERMISSION.",
+      "C": "WITH ENFORCED INTEGRITY.",
+      "D": "WITH CHECK OPTION.",
+      "E": "WITH VIEW UPDATE RULE."
+    },
+    "answer": "D",
+    "explanation": "Por padrão, o PostgreSQL permite inserir dados através de uma view que não satisfazem as condições do WHERE da própria view, resultando em dados que 'desaparecem' imediatamente após a inserção (são inseridos na tabela, mas a view não os exibe). Para forçar que qualquer DML via view respeite as condições da view, o padrão SQL e o PostgreSQL adotam a cláusula WITH CHECK OPTION (Alternativa D correta). As outras opções listam comandos não existentes ou incorretos na arquitetura relacional do PostgreSQL."
+  },
+  {
+    "id": 190606,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL: Indexação de JSONB",
+    "context": "Performance em Buscas Textuais de Jurisprudência",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um novo módulo de jurisprudência do TJ-CE baseia-se em buscas sobre ementas estruturadas salvas em uma coluna JSONB de uma tabela com mais de 50 milhões de acórdãos. Os desenvolvedores relataram que consultas utilizando o operador @> para verificar a contenção de chaves e valores específicos estão executando uma varredura sequencial (Sequential Scan) na tabela inteira, esgotando o limite de timeout da aplicação. Para otimizar massivamente a busca de contenção de elementos no tipo JSONB, o administrador do banco de dados deve criar um índice do tipo:",
+    "options": {
+      "A": "B-Tree sobre a coluna JSONB utilizando a classe de operador padrão para otimizar pesquisas de equivalência e intervalo.",
+      "B": "Hash sobre o campo JSONB especificando a classe de operador jsonb_hash_ops para buscas de texto pleno aninhado.",
+      "C": "GIN sobre a coluna JSONB utilizando a classe de operador padrão jsonb_ops ou jsonb_path_ops.",
+      "D": "BRIN sobre a coluna JSONB explorando a ordenação natural dos blocos de dados inseridos cronologicamente.",
+      "E": "SP-GiST na coluna JSONB parametrizada com restrições multidimensionais para agrupamento semântico."
+    },
+    "answer": "C",
+    "explanation": "O operador de contenção '@>' do JSONB foi arquitetado para funcionar de forma extremamente otimizada com índices GIN (Generalized Inverted Index). Ao criar um índice GIN sobre o campo JSONB usando jsonb_ops (padrão) ou jsonb_path_ops, as consultas de contenção passam de varreduras sequenciais lentas para buscas em árvore invertida ultrarrápidas (Alternativa C correta). B-Tree e Hash não suportam operadores de contenção de maneira eficiente para arrays ou documentos aninhados."
+  },
+  {
+    "id": 190607,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL: Materialized Views",
+    "context": "Armazenamento em Data Warehouse",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No contexto do Data Warehouse do Tribunal de Justiça do Ceará, as visões materializadas são amplamente adotadas para pré-calcular agregações de processos arquivados mensalmente. Durante o fechamento do exercício, o volume de visões materializadas criadas consumiu grande parte do armazenamento em disco do cluster. O comitê de arquitetura questiona o comportamento de armazenamento desse objeto no PostgreSQL para justificar o upgrade da infraestrutura. Sobre a natureza física das visões materializadas no PostgreSQL, a característica técnica fundamental é:",
+    "options": {
+      "A": "o armazenamento dos dados de forma puramente em memória (RAM), liberando espaço em disco após o reinício da instância.",
+      "B": "o salvamento temporário do resultado em uma tabela de escopo de sessão, apagada automaticamente ao encerrar a conexão.",
+      "C": "a persistência física do conjunto de resultados no disco de forma idêntica a uma tabela regular, ocupando armazenamento permanente.",
+      "D": "a vinculação dinâmica aos logs de transação (WAL), recriando o conteúdo automaticamente na leitura sem uso de disco adicional.",
+      "E": "a manutenção do esquema da consulta sem ocupação de dados, executando a instrução de base transparentemente."
+    },
+    "answer": "C",
+    "explanation": "No PostgreSQL, uma view simples (VIEW) não guarda dados e é apenas uma reescrita de consulta. Por outro lado, uma MATERIALIZED VIEW persiste fisicamente os dados derivados da consulta no disco permanentemente, comportando-se estruturalmente como uma tabela regular (Alternativa C correta). Elas ocupam espaço em disco até que sejam excluídas ou recriadas. Isso explica o consumo severo de armazenamento da infraestrutura relatado no enunciado."
+  },
+  {
+    "id": 190608,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL: JSONB Funções",
+    "context": "Desestruturação de Arrays",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No sistema de distribuição de processos eletrônicos do TJ-CE, a integração com varas especializadas recebe um pacote JSONB contendo um array de objetos complexos representando as partes do processo (autores e réus). Para gerar um relatório relacional compatível com um sistema legado, o analista precisa extrair e expandir cada objeto do array JSONB em uma linha separada, transformando o array original em múltiplas tuplas (rows). A função nativa do PostgreSQL indicada para promover a expansão de um array JSONB em um conjunto de linhas é:",
+    "options": {
+      "A": "jsonb_populate_recordset.",
+      "B": "jsonb_array_elements.",
+      "C": "jsonb_object_keys.",
+      "D": "jsonb_each_text.",
+      "E": "jsonb_strip_nulls."
+    },
+    "answer": "B",
+    "explanation": "A função correta para transformar um array JSON/JSONB em um conjunto (set) de valores, em que cada elemento do array passa a ocupar uma linha no resultado, é a `jsonb_array_elements` (Alternativa B). `jsonb_populate_recordset` mapeia os dados para uma estrutura de composite type existente. `jsonb_object_keys` retorna as chaves do nível mais alto de um objeto. `jsonb_each_text` expande pares de chave/valor de um objeto."
+  },
+  {
+    "id": 190609,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL: Arquitetura de Views",
+    "context": "Diagnóstico de Performance",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao realizar um diagnóstico de performance no banco de dados do sistema de plantão judicial do TJ-CE, um consultor identificou que uma consulta utilizando múltiplas views aninhadas gerava planos de execução sub-otimizados. A equipe de desenvolvimento alegou que as views foram criadas com o intuito de armazenar em cache os dados das consultas e evitar reprocessamentos em disco. Para alinhar o entendimento técnico sobre o funcionamento nativo de Views simples no PostgreSQL, o consultor deve esclarecer que a view:",
+    "options": {
+      "A": "compila o plano de execução permanentemente no momento de sua criação, exigindo recriação manual em caso de alteração estatística.",
+      "B": "atua exclusivamente como uma macro de reescrita de consulta, expandindo a sua definição no corpo da instrução principal em tempo de planejamento.",
+      "C": "materializa silenciosamente o resultado em uma tabela oculta (pg_temp) durante o primeiro acesso para acelerar acessos subsequentes.",
+      "D": "processa os dados de forma isolada, criando um contexto de execução independente do nível de isolamento de transação do chamador.",
+      "E": "exige a declaração prévia das chaves primárias das tabelas de origem para sustentar a integridade referencial da instrução."
+    },
+    "answer": "B",
+    "explanation": "No PostgreSQL, uma View clássica não armazena dados, cache ou plano de execução pré-compilado de forma independente. O sistema de regras do PostgreSQL trata a View como um mecanismo de reescrita (Rule System). Durante a fase de planejamento, a chamada da View é transparente e dinamicamente reescrita (expandida) integrando-se à consulta original (Alternativa B correta). A alegação da equipe de que serviam para 'armazenar em cache' denota um conceito equivocado, pois esse seria o papel das Materialized Views."
+  },
+  {
+    "id": 190610,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL: Materialized Views",
+    "context": "Requisitos para REFRESH CONCURRENTLY",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em um cenário de alta disponibilidade no TJ-CE, uma view materializada que sumariza métricas de segurança precisa ser atualizada a cada 5 minutos. A equipe decidiu implementar o comando 'REFRESH MATERIALIZED VIEW CONCURRENTLY' para evitar o bloqueio de leituras do painel do SOC. Contudo, a execução do comando falhou e o banco de dados retornou um erro informando a ausência de um requisito de esquema obrigatório. O requisito ausente que impede o uso da cláusula CONCURRENTLY nesse comando é:",
+    "options": {
+      "A": "a presença de pelo menos uma chave estrangeira referenciando uma tabela ativa no momento da atualização.",
+      "B": "a existência de um índice do tipo UNIQUE contendo uma ou mais colunas de identificação da view materializada.",
+      "C": "a configuração do parâmetro de sistema autovacuum_work_mem com capacidade suficiente para a transação.",
+      "D": "a criação prévia de uma tabela temporária espelhada para acomodar o delta de registros do último snapshot.",
+      "E": "a aplicação de privilégios de superusuário para contornar o bloqueio de acesso exclusivo (AccessExclusiveLock)."
+    },
+    "answer": "B",
+    "explanation": "Para que o PostgreSQL realize um REFRESH MATERIALIZED VIEW CONCURRENTLY, o motor precisa de uma forma confiável de identificar quais linhas foram modificadas, deletadas ou inseridas para atualizar o conjunto existente sem travar tudo. O requisito técnico mandatório para isso é que a visão materializada tenha pelo menos um índice UNIQUE definido sobre ela (Alternativa B correta). A ausência desse índice gera um erro imediato ao tentar utilizar a flag CONCURRENTLY."
+  },
+  {
+    "id": 190611,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL: JSONB Edição",
+    "context": "Atualização de Configurações Complexas",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de custas processuais do Tribunal de Justiça do Ceará mantém configurações de isenção de taxas codificadas em uma coluna JSONB chamada 'parametros'. Em decorrência de uma alteração legislativa, é necessário atualizar especificamente o valor associado à chave 'taxa_recurso', passando de 100.00 para 150.00, sem alterar as demais dezenas de propriedades presentes no documento JSONB. Para atualizar apenas esse valor específico de forma nativa e atômica no PostgreSQL, o engenheiro de software deve utilizar a função:",
+    "options": {
+      "A": "jsonb_update_key.",
+      "B": "jsonb_replace_text.",
+      "C": "jsonb_set.",
+      "D": "jsonb_insert.",
+      "E": "jsonb_modify."
+    },
+    "answer": "C",
+    "explanation": "No PostgreSQL, as edições pontuais dentro de um documento JSONB podem ser realizadas através da função `jsonb_set` (Alternativa C correta). Ela recebe o alvo JSONB, o caminho da chave (path array), o novo valor a ser aplicado e uma flag booleana que indica se o valor deve ser criado caso não exista. Todas as outras opções (jsonb_update_key, jsonb_replace_text, jsonb_modify) não são funções nativas do PostgreSQL."
+  },
+  {
+    "id": 190612,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL: Criação de Materialized Views",
+    "context": "Criação Tardia de Dados",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O time de IA do TJ-CE projetou uma view materializada extremamente complexa no PostgreSQL que processa vetores textuais da base de processos. Como a criação envolve processamento intensivo de NLP sobre milhões de registros, estimou-se que o comando demoraria horas para concluir. O analista deseja definir o objeto no banco de dados apenas para compor a arquitetura e estruturar as permissões, postergando o preenchimento de dados para uma janela noturna. Para instanciar a estrutura da view materializada no PostgreSQL sem populá-la com dados imediatamente, a sintaxe correta do comando de criação deve incluir a cláusula:",
+    "options": {
+      "A": "WITH DEFERRED DATA.",
+      "B": "WITH NO DATA.",
+      "C": "DELAY MATERIALIZATION.",
+      "D": "LAZY INITIALIZATION.",
+      "E": "POSTPONE POPULATION."
+    },
+    "answer": "B",
+    "explanation": "Por padrão, o comando CREATE MATERIALIZED VIEW executa a consulta e preenche a estrutura imediatamente. Para que a visão seja registrada no catálogo apenas estruturalmente (criando a tabela em estado vazio e inativável para leitura) permitindo a geração posterior dos dados através de um REFRESH, utiliza-se o sufixo `WITH NO DATA` (Alternativa B correta). As demais flags não existem na especificação SQL do PostgreSQL."
+  },
+  {
+    "id": 190613,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL: Views Recursivas",
+    "context": "Mapeamento Hierárquico do TJ-CE",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A corregedoria do TJ-CE necessita mapear a hierarquia organizacional dos cartórios e setores administrativos, que possuem múltiplos níveis de subordinação representados em uma tabela de autorelacionamento. Para facilitar a consulta estruturada dessa hierarquia em um relatório gerencial via PostgreSQL, optou-se pela criação de uma visão capaz de iterar sobre as relações pai-filho até a base da árvore estrutural. A definição arquitetural adequada no PostgreSQL para resolver o problema de travessia hierárquica por meio de uma visão baseia-se na declaração de uma:",
+    "options": {
+      "A": "RECURSIVE VIEW ancorada por um termo base e unida à própria definição via UNION ALL.",
+      "B": "MATERIALIZED VIEW ancorada por CTE (Common Table Expression) em laços FOR LOOP encapsulados.",
+      "C": "ITERATIVE VIEW ancorada em cursores bidirecionais de navegação sequencial persistente.",
+      "D": "HIERARCHICAL VIEW ancorada por conectivos de precedência START WITH e CONNECT BY PRIOR.",
+      "E": "NESTED VIEW ancorada por subconsultas correlacionadas acopladas ao operador LATERAL."
+    },
+    "answer": "A",
+    "explanation": "No PostgreSQL, travessias em estruturas hierárquicas são classicamente realizadas por CTEs Recursivas (`WITH RECURSIVE`). Para abstrair isso dentro de uma visão, usa-se a construção `CREATE RECURSIVE VIEW`. Essa arquitetura exige um termo não-recursivo (âncora) operando em conjunto com um termo recursivo acoplado através de um `UNION` ou `UNION ALL` referenciando o próprio nome da view (Alternativa A correta). A sintaxe CONNECT BY (D) é nativa do Oracle, não do PostgreSQL."
+  },
+  {
+    "id": 190614,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL: Comparação JSON vs JSONB",
+    "context": "Resolução de Falsos Negativos em Equivalência",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma falha de integração no sistema de folha de pagamento do TJ-CE gerou reclamações: consultas de equivalência exata de documentos JSON armazenados nativamente estavam retornando falso mesmo quando os valores estruturais eram idênticos. O DBA identificou que a coluna alvo utilizava o tipo de dados JSON, que realiza comparações estritas como texto plano, falhando devido à reordenação de chaves pelo sistema emissor e espaços em branco desnecessários. A alteração para o tipo JSONB resolveu imediatamente o problema. Isso ocorreu devido ao comportamento inerente do JSONB que:",
+    "options": {
+      "A": "aplica hashes criptográficos aos valores primitivos preservando integralmente o formato da string de origem.",
+      "B": "suporta o operador = que analisa a equivalência semântica das chaves e valores independentemente de ordem e espaços em branco.",
+      "C": "invoca funções de cast automático para o tipo XML, viabilizando a normalização de estruturas em formato de árvore binária.",
+      "D": "restringe a inserção de objetos com mais de um nível de profundidade, facilitando a inferência lógica de ordenação das chaves.",
+      "E": "executa operações de merge automático nas chaves similares, desconsiderando caracteres de escape durante a indexação secundária."
+    },
+    "answer": "B",
+    "explanation": "O formato JSON avalia a string byte a byte na comparação textual, logo `{\"a\":1, \"b\":2}` seria diferente de `{\"b\": 2, \"a\": 1}`. Como o tipo JSONB armazena o dado já parseado e estruturado, o operador `=` para JSONB foi implementado para verificar a equivalência semântica. Ele sabe que a ordem das chaves ou espaços em branco não importam para a igualdade de documentos JSON, solucionando a restrição estrutural relatada (Alternativa B correta)."
+  },
+  {
+    "id": 190615,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL: Segurança em Views",
+    "context": "Vazamento de Dados e Barreira de Segurança",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No PostgreSQL do TJ-CE, informações sigilosas sobre inquéritos policiais compartilham a mesma tabela `tb_inquerito` com registros de inquéritos públicos. O administrador criou a view `vw_inquerito_publico` filtrando as linhas onde `sigiloso = falso`, concedendo permissões de SELECT na view aos estagiários e revogando acesso à tabela original. Semanas depois, identificou-se que um estagiário executou uma consulta sofisticada utilizando funções do usuário (UDFs) que geravam divisão por zero intencional baseada no conteúdo de registros ocultos, induzindo vazamento pelo rastreio de erro. A solução nativa recomendada pelo PostgreSQL para proteger a view contra vazamentos causados pela avaliação antecipada de funções é:",
+    "options": {
+      "A": "habilitar a extensão pg_crypto na tabela primária para mascarar chaves primárias.",
+      "B": "configurar o parâmetro de sistema row_security igual a force no arquivo postgresql.conf.",
+      "C": "aplicar a opção security_barrier = true na definição da view.",
+      "D": "criar uma regra (RULE) de interceptação condicional no plano de execução de selects da view.",
+      "E": "definir a função do estagiário com as propriedades LEAKPROOF no catálogo do PostgreSQL."
+    },
+    "answer": "C",
+    "explanation": "No PostgreSQL, as Views comuns podem sofrer de otimizações de plano de execução onde filtros de usuários mal-intencionados (que contêm funções para extrair dados por erro ou side-channels) são executados ANTES dos filtros da cláusula WHERE da própria View. Para mitigar esse vetor de ataque, o administrador deve declarar a view com a propriedade `security_barrier = true` (Alternativa C correta). Isso assegura ao otimizador que os dados devem ser estritamente filtrados pela View antes que qualquer função do usuário chamador seja avaliada sobre eles, impedindo o vazamento (leakproof violation)."
+  }
+]

@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1906001,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Analista de TI do TJ-CE foi designado para criar uma rotina no PostgreSQL que itera sobre milhões de processos inativos na tabela de arquivamento. Ele precisa de uma estrutura de repetição que execute um bloco de código iterando automaticamente sobre o resultado de uma consulta SELECT, onde cada iteração carrega uma linha do resultado diretamente em uma variável do tipo RECORD. O comando PL/pgSQL adequado para essa finalidade é o:",
+    "options": {
+      "A": "FOR ... IN EXECUTE ... LOOP",
+      "B": "FOREACH ... IN ARRAY ... LOOP",
+      "C": "FOR ... IN SELECT ... LOOP",
+      "D": "WHILE ... IN CURSOR ... LOOP",
+      "E": "ITERATE ... OVER QUERY ... LOOP"
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. Em PL/pgSQL, a estrutura `FOR registro IN consulta LOOP` (frequentemente expressa iterando sobre um SELECT) é utilizada para varrer os resultados de uma query linha a linha. A alternativa A (`EXECUTE`) é para queries dinâmicas construídas como texto. A alternativa B (`FOREACH`) é específica para iteração sobre arrays. As alternativas D e E apresentam sintaxes inexistentes na linguagem PL/pgSQL."
+  },
+  {
+    "id": 1906002,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No TJ-CE, uma nova função em PL/pgSQL foi desenvolvida para calcular as custas processuais com base em uma fórmula matemática complexa que utiliza exclusivamente os parâmetros de entrada. A função não realiza consultas a tabelas e não altera o estado do banco de dados. Para garantir o melhor desempenho e permitir que o otimizador do PostgreSQL avalie a função em cache apenas uma vez por consulta, o Analista de TI deve declará-la com o comportamento de volatilidade:",
+    "options": {
+      "A": "STRICT",
+      "B": "VOLATILE",
+      "C": "STABLE",
+      "D": "IMMUTABLE",
+      "E": "CACHEABLE"
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D. Funções `IMMUTABLE` garantem que sempre retornarão o mesmo resultado para os mesmos parâmetros, permitindo que o otimizador pré-calcule e armazene o resultado em cache. A alternativa A (`STRICT`) diz respeito ao comportamento com valores nulos. A alternativa B (`VOLATILE`) indica que o resultado pode mudar a cada chamada e não deve ser otimizado. A alternativa C (`STABLE`) indica que o resultado não muda dentro de um único comando (statement), mas pode mudar entre comandos distintos. A alternativa E não é uma palavra-chave válida."
+  },
+  {
+    "id": 1906003,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de pautas de audiências do TJ-CE exige a construção de uma função PL/pgSQL que retorne uma lista de audiências, contendo múltiplas colunas (ID, Data, Magistrado). O Analista precisa definir a função de forma que a estrutura de retorno seja explicitamente nomeada e mapeada na própria declaração da função, evitando a criação de tipos compostos externos (CREATE TYPE). A sintaxe correta para a cláusula de retorno é:",
+    "options": {
+      "A": "RETURNS SETOF (id int, data date, magistrado text)",
+      "B": "RETURNS RECORD (id int, data date, magistrado text)",
+      "C": "RETURNS TABLE (id int, data date, magistrado text)",
+      "D": "RETURNS MULTIPLE (id int, data date, magistrado text)",
+      "E": "RETURNS TYPE (id int, data date, magistrado text)"
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. A cláusula `RETURNS TABLE (...)` permite definir explicitamente as colunas de saída diretamente na assinatura da função. A alternativa A (`SETOF`) exige o nome de um tipo de dado existente ou tabela. A alternativa B (`RECORD`) não permite especificar as colunas na declaração, forçando o chamador da função a definir o alias das colunas na query. As alternativas D e E contêm sintaxes inválidas no PostgreSQL."
+  },
+  {
+    "id": 1906004,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma arquitetura legada no TJ-CE expõe dados aos sistemas clientes exclusivamente por meio de visões (VIEWS) complexas que realizam junções entre as tabelas de processos e partes. Recentemente, surgiu o requisito de permitir que operações de UPDATE sejam executadas diretamente sobre uma dessas visões. No PostgreSQL, para interceptar a operação de atualização na visão e aplicar a lógica de modificação manual nas tabelas base, o Analista de TI deve criar um:",
+    "options": {
+      "A": "TRIGGER BEFORE UPDATE na visão.",
+      "B": "RULE UPDATE DO INSTEAD na tabela base.",
+      "C": "TRIGGER INSTEAD OF UPDATE na visão.",
+      "D": "TRIGGER AFTER UPDATE na visão.",
+      "E": "PROCEDURE de substituição de UPDATE na visão."
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. Triggers do tipo `INSTEAD OF` são exclusivamente projetados para interceptar operações DML sobre visões (Views), substituindo a ação padrão pela lógica definida na função do trigger. A alternativa A e D estão erradas porque triggers `BEFORE` e `AFTER` operam em tabelas, não sendo o mecanismo nativo de atualização de visões complexas. A alternativa B define a regra no lugar errado (tabela base em vez de view) e o padrão moderno é usar trigger. A alternativa E inventa uma funcionalidade."
+  },
+  {
+    "id": 1906005,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para reforçar a integridade referencial no módulo de custódia do TJ-CE, um Analista de TI precisa implementar uma validação em nível de banco de dados que verifique a compatibilidade de datas de entrada e saída de documentos. Caso as regras de negócio sejam violadas, a operação de inserção deve ser bloqueada imediatamente com uma mensagem de erro explícita abortando a transação. O mecanismo adequado e eficiente em PostgreSQL para realizar essa validação é um:",
+    "options": {
+      "A": "TRIGGER AFTER INSERT com função retornando FALSE.",
+      "B": "TRIGGER BEFORE INSERT com função levantando uma EXCEPTION.",
+      "C": "TRIGGER INSTEAD OF INSERT com função retornando NULL.",
+      "D": "TRIGGER BEFORE INSERT com função retornando OLD.",
+      "E": "TRIGGER AFTER INSERT executando a função pg_cancel_query()."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Um trigger `BEFORE INSERT` que executa o comando `RAISE EXCEPTION` interrompe o fluxo imediatamente, descarta a operação e envia o erro ao cliente. A alternativa A não aborta transações (retornar FALSE em AFTER trigger não tem efeito de aborto). A alternativa C é aplicável a views, não a tabelas convencionais. A alternativa D retornando NULL em um BEFORE INSERT apenas cancela a inserção silenciosamente, sem mensagem de erro explícita. A alternativa E não é um método válido de tratamento transacional intra-trigger."
+  },
+  {
+    "id": 1906006,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em uma rotina de sincronização de varas criminais no TJ-CE, um bloco PL/pgSQL executa a inserção de registros provenientes de uma API externa. Ocasionalmente, chaves primárias duplicadas podem ocorrer. O Analista de TI deve tratar essas violações de unicidade dentro da função para capturar o erro e realizar um UPDATE alternativo, garantindo que a transação principal não seja abortada. O bloco de tratamento de erro interno no PL/pgSQL é definido pela cláusula:",
+    "options": {
+      "A": "CATCH WHEN unique_violation THEN",
+      "B": "EXCEPTION WHEN unique_violation THEN",
+      "C": "ON ERROR unique_violation DO",
+      "D": "HANDLE unique_violation WITH",
+      "E": "TRY ... CATCH unique_violation DO"
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. O PL/pgSQL implementa o tratamento de erros em blocos de execução usando a palavra-chave `EXCEPTION` seguida de `WHEN nome_do_erro THEN`. As alternativas A e E misturam a sintaxe do T-SQL (SQL Server) ou de outras linguagens (`TRY...CATCH`). As alternativas C e D são comandos inexistentes na sintaxe estrutural do PL/pgSQL."
+  },
+  {
+    "id": 1906007,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O departamento de Recursos Humanos do TJ-CE solicitou a criação de uma tabela de auditoria para registrar as alterações na tabela de lotação dos servidores. A função do trigger de auditoria em PL/pgSQL, disparada em eventos de UPDATE com escopo FOR EACH ROW, precisa gravar o valor do departamento anterior à modificação e o valor do novo departamento. As variáveis predefinidas do sistema que contêm o estado anterior e o novo estado da linha são, respectivamente:",
+    "options": {
+      "A": "PRIOR e LATER",
+      "B": "OLD_ROW e NEW_ROW",
+      "C": "PREVIOUS e CURRENT",
+      "D": "OLD e NEW",
+      "E": "BEFORE e AFTER"
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D. No PostgreSQL, dentro de uma função chamada por um trigger a nível de linha (row-level), as variáveis especiais `OLD` e `NEW` contêm os dados da linha original (antes da operação) e da nova linha (após a operação), respectivamente. As demais alternativas apresentam terminologias incorretas que não fazem parte do escopo de variáveis predefinidas do PL/pgSQL."
+  },
+  {
+    "id": 1906008,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma função PL/pgSQL no banco de dados central do TJ-CE recebe o número de um processo como entrada e deve processar informações para retornar três valores distintos em colunas separadas: o status, a vara de origem e a data de autuação. O Analista optou por não criar um tipo composto nem usar a cláusula RETURNS TABLE explicita. A assinatura da função pode definir os retornos diretamente nos argumentos utilizando parâmetros de saída declarados com a palavra-chave:",
+    "options": {
+      "A": "RETURNS",
+      "B": "YIELD",
+      "C": "EXPORT",
+      "D": "OUTPUT",
+      "E": "OUT"
+    },
+    "answer": "E",
+    "explanation": "A alternativa correta é a E. No PostgreSQL, você pode declarar parâmetros de saída diretamente na assinatura da função usando o prefixo `OUT`. Isso converte a função implicitamente para retornar um tipo composto (record) ou as colunas diretamente. A alternativa A é a cláusula principal de tipo de retorno, não de parâmetros. A alternativa D é utilizada no T-SQL. As alternativas B e C não se aplicam a esse conceito no PostgreSQL."
+  },
+  {
+    "id": 1906009,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE estabeleceu uma política de segurança onde toda operação de deleção em lote na tabela de minutas deve gerar exatamente um único registro em uma tabela de log sumarizado. Esse registro deve conter a data, a hora e o usuário da operação, independentemente de quantas linhas foram efetivamente removidas pelo comando. Para atender a essa exigência de forma nativa no PostgreSQL, o trigger associado à operação de DELETE deve ser criado especificando a opção de granularidade:",
+    "options": {
+      "A": "FOR EACH ROW",
+      "B": "FOR ALL ROWS",
+      "C": "FOR EACH STATEMENT",
+      "D": "FOR EACH BATCH",
+      "E": "FOR ALL TRANSACTIONS"
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. Um trigger criado com `FOR EACH STATEMENT` é disparado apenas uma vez por comando SQL, independentemente de quantas linhas foram afetadas (mesmo que nenhuma linha seja afetada). A alternativa A dispara a função para cada linha deletada, quebrando o requisito de 'único registro'. As alternativas B, D e E utilizam sintaxes inválidas no PostgreSQL."
+  },
+  {
+    "id": 1906010,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um processamento noturno no TJ-CE realiza a reindexação semântica de sentenças históricas. Devido ao volume massivo de dados de texto, a função PL/pgSQL não pode carregar o resultado completo da consulta na memória do servidor sob risco de estouro (Out of Memory), exigindo a navegação gradativa sobre os registros. O mecanismo estrutural do PL/pgSQL que permite declarar uma variável para encapsular a query e efetuar buscas fracionadas (FETCH) é o:",
+    "options": {
+      "A": "CURSOR",
+      "B": "ITERATOR",
+      "C": "GENERATOR",
+      "D": "BATCH FETCH",
+      "E": "DATA STREAM"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a A. Em PL/pgSQL, um `CURSOR` é utilizado para encapsular a execução de uma consulta, permitindo recuperar (FETCH) poucas linhas por vez, evitando o carregamento de todo o result set na memória de uma só vez. As alternativas B, C, D e E representam conceitos ou terminologias que não correspondem à estrutura nativa de controle de conjuntos massivos no PL/pgSQL."
+  },
+  {
+    "id": 1906011,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No ambiente de banco de dados do TJ-CE, servidores de plantão possuem privilégios restritos e não podem executar comandos de DELETE diretamente nas tabelas de controle de acesso. No entanto, por requisito operacional, eles necessitam executar uma função PL/pgSQL que remove registros antigos dessa mesma tabela. Para que a função execute com os privilégios do administrador que a criou, e não com as limitações do usuário que a invoca, a função deve ser declarada com o modificador:",
+    "options": {
+      "A": "SECURITY INVOKER",
+      "B": "SECURITY DEFINER",
+      "C": "AUTHORIZATION OWNER",
+      "D": "EXECUTE AS CREATOR",
+      "E": "PRIVILEGES ELEVATED"
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. O modificador `SECURITY DEFINER` instrui o PostgreSQL a executar a função com os privilégios do usuário que a criou (o definidor), permitindo escalonamento temporário de privilégios. A alternativa A (`SECURITY INVOKER`) é o comportamento padrão e executa a função com os privilégios de quem a chama. As alternativas C, D e E não são sintaxes suportadas nativamente pelo PostgreSQL."
+  },
+  {
+    "id": 1906012,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Analista de TI do TJ-CE está desenvolvendo uma função genérica em PL/pgSQL para realizar a limpeza (TRUNCATE) de diferentes tabelas de arquivos temporários ao final do mês. Como o nome da tabela alvo é passado como parâmetro de texto para a função, não é possível utilizar os comandos DDL de forma estática no corpo do código. A execução de strings SQL construídas dinamicamente em PL/pgSQL exige o uso do comando:",
+    "options": {
+      "A": "RUN",
+      "B": "EVALUATE",
+      "C": "PERFORM",
+      "D": "EXECUTE",
+      "E": "PREPARE"
+    },
+    "answer": "D",
+    "explanation": "A alternativa correta é a D. No PL/pgSQL, o comando `EXECUTE` é obrigatório para executar instruções SQL dinâmicas (strings construídas em tempo de execução). A alternativa C (`PERFORM`) é usada para executar queries estáticas que não retornam resultados ou cujos resultados devem ser descartados. A alternativa E (`PREPARE`) cria um statement preparado na sessão, mas não é a construção de disparo dinâmico interna do PL/pgSQL. As alternativas A e B não existem."
+  },
+  {
+    "id": 1906013,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma regra de negócio no sistema de acompanhamento processual do TJ-CE determina que um trigger de notificação deve ser disparado durante a atualização de um processo, mas exclusivamente se a coluna de 'status' for modificada para o valor 'ARQUIVADO'. Para evitar a execução do corpo da função do trigger em todas as outras atualizações da tabela, otimizando o processamento, o Analista de TI deve utilizar a cláusula de restrição diretamente na declaração CREATE TRIGGER denominada:",
+    "options": {
+      "A": "IF NEW.status = 'ARQUIVADO'",
+      "B": "WHERE NEW.status = 'ARQUIVADO'",
+      "C": "WHEN (NEW.status = 'ARQUIVADO')",
+      "D": "CONDITION (NEW.status = 'ARQUIVADO')",
+      "E": "CHECK (NEW.status = 'ARQUIVADO')"
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. No PostgreSQL, a cláusula `WHEN (condição)` pode ser adicionada no comando `CREATE TRIGGER` para estipular que a função do trigger só será chamada se a condição booleana for avaliada como verdadeira. A alternativa A reflete uma instrução do corpo do PL/pgSQL, e não da definição estrutural do trigger. A alternativa B é a cláusula de junção de SQL, inválida na declaração de triggers. As alternativas D e E são modificadores inválidos no contexto de CREATE TRIGGER."
+  },
+  {
+    "id": 1906014,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No módulo de protocolo eletrônico do TJ-CE, um trigger BEFORE INSERT em PL/pgSQL intercepta o registro de uma nova petição para transformar o texto do assunto em letras maiúsculas, alterando o valor do campo na variável NEW. Para que o fluxo de inserção continue normalmente e o registro efetivamente modificado seja gravado na tabela, a função do trigger a nível de linha deve ser encerrada obrigatoriamente com o comando:",
+    "options": {
+      "A": "RETURN OLD;",
+      "B": "RETURN NEW;",
+      "C": "RETURN NULL;",
+      "D": "RETURN TRUE;",
+      "E": "RETURN VALID;"
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a B. Em um trigger `BEFORE` a nível de linha (row-level), a linha a ser inserida ou atualizada é definida pelo valor retornado pela função. Ao usar `RETURN NEW;`, o banco recebe a instrução para processar e persistir as alterações realizadas na variável NEW. A alternativa A (`RETURN OLD;`) inseriria o registro anterior, que em um INSERT é nulo. A alternativa C (`RETURN NULL;`) instrui o PostgreSQL a abortar silenciosamente a operação na linha corrente. As alternativas D e E fornecem tipos de retorno incompatíveis com triggers."
+  },
+  {
+    "id": 1906015,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "PostgreSQL (PL/pgSQL, Triggers e Functions)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma rotina de manutenção noturna na base de dados do TJ-CE altera em massa a prioridade de processos cujo prazo de tramitação expirou. Após a execução do comando UPDATE dentro da função PL/pgSQL, o Analista de TI precisa capturar a quantidade exata de linhas que foram modificadas no banco para gravar em uma tabela estatística. O comando interno no PL/pgSQL utilizado para recuperar o número de linhas afetadas pelo comando DML imediatamente anterior é:",
+    "options": {
+      "A": "GET ROW_COUNT",
+      "B": "FETCH AFFECTED_ROWS",
+      "C": "GET DIAGNOSTICS",
+      "D": "OBTAIN SQL%ROWCOUNT",
+      "E": "RETRIEVE ROW_AFFECTED"
+    },
+    "answer": "C",
+    "explanation": "A alternativa correta é a C. O comando `GET DIAGNOSTICS variavel = ROW_COUNT` é a forma padronizada do PL/pgSQL para capturar metadados do último comando SQL executado, como o número de linhas afetadas. A alternativa D remete ao modelo do Oracle PL/SQL (`SQL%ROWCOUNT`), incorreto no PostgreSQL. As alternativas A, B e E contêm sintaxes e palavras-chave inexistentes na linguagem PL/pgSQL."
+  }
+]

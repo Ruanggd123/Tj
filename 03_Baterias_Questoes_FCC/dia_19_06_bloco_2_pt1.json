@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1906001,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "Engenharia de Software - Níveis de Teste",
+    "context": "Teste Unitário e Isolamento",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de Engenharia de Software do TJ-CE está implementando um novo módulo de cálculo automático de custas processuais. Durante a esteira de desenvolvimento, o Analista de TI recebe a tarefa de validar o comportamento exato de uma classe específica de cálculo, isolando-a de qualquer acesso a banco de dados ou chamadas de rede. O objetivo é assegurar o funcionamento da lógica de negócio em sua menor parte testável. Essa prática descreve o nível de teste denominado:",
+    "options": {
+      "A": "Teste de Integração, responsável por avaliar a comunicação entre a classe de negócio e o banco de dados corporativo.",
+      "B": "Teste de Aceitação, focado na homologação do comportamento do sistema pelos usuários finais do tribunal.",
+      "C": "Teste Unitário, caracterizado pela validação isolada do componente de software em nível de código-fonte.",
+      "D": "Teste de Sistema, direcionado à verificação integral do fluxo da aplicação no ambiente produtivo.",
+      "E": "Teste de Regressão, aplicado na identificação de gargalos de desempenho na arquitetura orientada a serviços."
+    },
+    "answer": "C",
+    "explanation": "No padrão FCC, exige-se a identificação do nível de teste baseado no seu escopo de execução. O teste focado na 'menor parte testável' e no isolamento de dependências externas (rede, banco de dados) corresponde conceitualmente ao Teste Unitário (Alternativa C). A alternativa A aborda Integração, que valida interações entre componentes. A alternativa B descreve o nível de Aceitação (visão do usuário). A alternativa D descreve o Teste de Sistema (visão global). A alternativa E inverte com o conceito de testes de carga/performance."
+  },
+  {
+    "id": 1906002,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "Engenharia de Software - Metodologias Ágeis",
+    "context": "TDD e Ciclo Red-Green-Refactor",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Ceará adota metodologias ágeis em sua fábrica de software. Na criação do microsserviço de intimações eletrônicas, o desenvolvedor escreve uma automação que falha inicialmente. Em seguida, elabora um código simples capaz de fazer essa automação ser aprovada e, por fim, reorganiza o código fonte para melhorar a arquitetura sem alterar seu comportamento original. O ciclo metodológico aplicado corresponde à abordagem:",
+    "options": {
+      "A": "Behavior-Driven Development no padrão Setup-Execute-Teardown.",
+      "B": "Test-Driven Development no ciclo Red-Green-Refactor.",
+      "C": "Domain-Driven Design no fluxo Define-Code-Test.",
+      "D": "Test-Driven Development no ciclo Refactor-Green-Red.",
+      "E": "Behavior-Driven Development no fluxo Arrange-Act-Assert."
+    },
+    "answer": "B",
+    "explanation": "A descrição do enunciado apresenta exatamente as três etapas do Desenvolvimento Orientado a Testes (TDD): escrever um teste que falha (Red), implementar o código mínimo necessário para o teste passar (Green) e melhorar o design do código (Refactor). A alternativa B está estritamente alinhada a esse fluxo. Padrões como Arrange-Act-Assert são aplicados na montagem do caso de teste, mas não nomeiam o fluxo metodológico macro do TDD."
+  },
+  {
+    "id": 1906003,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "Engenharia de Software - Metodologias Ágeis",
+    "context": "BDD e Estrutura Gherkin",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para estreitar o alinhamento entre a área técnica e os magistrados demandantes do TJ-CE, um Analista propõe o uso do BDD (Behavior-Driven Development). Ele estrutura a especificação dos cenários de teste através de uma linguagem natural e padronizada, de fácil assimilação pelo negócio e processamento por ferramentas. A estruturação sintática adotada nessa metodologia baseia-se primordialmente nas palavras-chave:",
+    "options": {
+      "A": "Arrange, Act, Assert.",
+      "B": "Setup, Run, Teardown.",
+      "C": "Try, Catch, Finally.",
+      "D": "If, Then, Else.",
+      "E": "Given, When, Then."
+    },
+    "answer": "E",
+    "explanation": "O framework BDD utiliza a linguagem estruturada Gherkin para aproximar TI e negócios. As palavras-chave centrais do Gherkin na escrita de cenários são Given (Dado), When (Quando) e Then (Então). Alternativa A é o padrão lógico de testes unitários em código (AAA). As alternativas C e D são estruturas condicionais e de tratamento de exceções em programação tradicional. Alternativa B refere-se a blocos de configuração de frameworks de automação base (JUnit, NUnit)."
+  },
+  {
+    "id": 1906004,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "Engenharia de Software - Níveis de Teste",
+    "context": "Teste de Integração de Serviços",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Analista de TI do TJ-CE atua na modernização do sistema de controle patrimonial. Após a codificação individual dos serviços de inventário e de depreciação, surge a necessidade de validar a troca de mensagens HTTP entre eles, além da correta comunicação conjunta com o serviço de autenticação corporativo do Tribunal. Essa validação entre os referidos módulos é objeto exclusivo do:",
+    "options": {
+      "A": "Teste de Unidade Estrutural.",
+      "B": "Teste de Aceitação Operacional.",
+      "C": "Teste de Integração.",
+      "D": "Teste de Estresse.",
+      "E": "Teste de Usabilidade."
+    },
+    "answer": "C",
+    "explanation": "O objetivo de verificar a interação, o fluxo de dados e a comunicação (troca de mensagens HTTP) entre dois ou mais componentes ou sistemas é o cerne do Teste de Integração (Alternativa C). Unidade (A) lidaria com a lógica interna dos serviços; Aceitação (B) seria na perspectiva do usuário de negócios; Estresse (D) submeteria as chamadas a um pico extremo de carga."
+  },
+  {
+    "id": 1906005,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "Engenharia de Software - Níveis de Teste",
+    "context": "Teste de Sistema Completo",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Antes de promover a versão final do sistema Processo Eletrônico para o ambiente de produção do TJ-CE, a equipe de garantia da qualidade realiza uma avaliação abrangente. O escopo engloba o software completo, o comportamento do banco de dados em cluster, a latência de rede e as regras de segurança aplicadas no firewall da instituição simultaneamente. O cenário descrito configura a aplicação de nível do teste de:",
+    "options": {
+      "A": "Mutações.",
+      "B": "Sistema.",
+      "C": "Componente.",
+      "D": "Integração Top-down.",
+      "E": "Caixa Branca."
+    },
+    "answer": "B",
+    "explanation": "O teste que valida o sistema inteiro de ponta a ponta, considerando hardware, banco de dados, interfaces e as condições do ambiente o mais próximo possível da realidade, é classificado como Teste de Sistema (Alternativa B). Ele difere da Integração por enxergar a aplicação no seu todo sistêmico, não apenas as junções isoladas."
+  },
+  {
+    "id": 1906006,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "Engenharia de Software - Níveis de Teste",
+    "context": "Teste de Aceitação pelo Usuário",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O projeto de um novo portal de emissão de certidões negativas atingiu sua reta final no TJ-CE. Para validar as regras de negócio sob a ótica real de operação, um grupo de servidores da área de protocolo é convidado a executar roteiros práticos na aplicação em um ambiente idêntico ao de produção. Eles emitem relatórios para confirmar o atendimento pleno das necessidades operacionais da instituição. Esse processo caracteriza o teste de:",
+    "options": {
+      "A": "Sistema.",
+      "B": "Aceitação.",
+      "C": "Integração.",
+      "D": "Regressão.",
+      "E": "Carga."
+    },
+    "answer": "B",
+    "explanation": "A validação focada na aprovação do produto sob o ponto de vista das regras de negócio, conduzida por usuários finais (os servidores do protocolo) antes do go-live, tipifica o Teste de Aceitação (User Acceptance Testing - UAT). A alternativa A estaria errada por focar no teste global técnico feito pela própria TI."
+  },
+  {
+    "id": 1906007,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "Engenharia de Software - Metodologias Ágeis",
+    "context": "Diferenças Práticas entre TDD e BDD",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante um comitê de arquitetura no TJ-CE, debate-se a introdução das práticas de TDD (Test-Driven Development) e BDD (Behavior-Driven Development). O Analista de TI responsável pela apresentação deve distinguir o propósito principal das duas metodologias perante os gestores. A afirmativa correta sobre essa diferenciação de escopo é:",
+    "options": {
+      "A": "O TDD prioriza a escrita da documentação do usuário final; o BDD foca no design estrutural do banco de dados relacional.",
+      "B": "O BDD utiliza testes de integração orientados a dados estruturados em XML; o TDD emprega linguagem de máquina para otimizar desempenho.",
+      "C": "O TDD orienta o design do software pelo comportamento do usuário em telas de interface; o BDD elimina a necessidade de validações unitárias no backend.",
+      "D": "O TDD foca na validação do comportamento interno e técnico do código através de testes unitários; o BDD prioriza a compreensão do comportamento funcional na perspectiva do negócio.",
+      "E": "O BDD substitui a elaboração de casos de uso na engenharia de requisitos de sistemas de legado; o TDD baseia-se na criação de protótipos visuais de alta fidelidade."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D apresenta o contraponto clássico adotado pelas bancas: TDD é uma ferramenta de design focado no nível do código técnico orientado ao programador (testes unitários), enquanto BDD sobe o nível de abstração para o negócio, focando na especificação do comportamento sistêmico aguardado pelos stakeholders."
+  },
+  {
+    "id": 1906008,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "Engenharia de Software - Metodologias Ágeis",
+    "context": "TDD e a Fase Refactor",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em um treinamento sobre qualidade de código na Secretaria de TI do TJ-CE, o instrutor explica a terceira etapa do ciclo fundamental do TDD, conhecida como 'Refatoração' (Refactor). Ação tecnicamente exigida e permitida de forma exclusiva nesta fase metodológica:",
+    "options": {
+      "A": "Criação de novas funcionalidades no código de negócio atreladas a bibliotecas externas não homologadas.",
+      "B": "Melhoria do design estrutural do código existente sem a modificação do comportamento funcional previamente validado.",
+      "C": "Escrita inicial do caso de teste automatizado focado em cobrir um requisito de negócio recém-descoberto.",
+      "D": "Simulação de dependências externas através da injeção de componentes de rede falsos no ambiente de execução.",
+      "E": "Remoção permanente de testes unitários redundantes da suite para diminuir o tempo total de compilação contínua."
+    },
+    "answer": "B",
+    "explanation": "Na fase Refactor (Refatoração), o programador altera a estrutura do código já aprovado no teste (Green) com o intuito de melhorar manutenibilidade, remover duplicações e adequar padrões de design. É fundamental que, durante a refatoração, o comportamento funcional seja estritamente preservado. A inserção de novas regras (Alternativa A) ou de testes novos (Alternativa C) quebram o conceito da técnica."
+  },
+  {
+    "id": 1906009,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "Engenharia de Software - Níveis de Teste",
+    "context": "Teste de Integração Bottom-up",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na arquitetura orientada a serviços adotada no TJ-CE, um Analista inicia o processo de teste de integração pelos componentes de mais baixo nível, como o módulo bruto de acesso a dados. Somente após a validação dessa camada-base, ele avança progressivamente para a camada de negócios e, finalmente, para a interface gráfica. Para acionar as funções inferiores antecipadamente, o Analista cria programas de controle temporários. Essa estratégia corresponde à integração:",
+    "options": {
+      "A": "Top-down, suportada pela utilização estrutural de Stubs de simulação.",
+      "B": "Bottom-up, suportada pela utilização técnica de Drivers de controle.",
+      "C": "Big-bang, caracterizada pela utilização simultânea de Mocks temporários.",
+      "D": "Incremental Sanduíche, pautada na utilização simultânea de Spies de rede.",
+      "E": "Contínua, suportada pela utilização maciça de Dummies no repositório."
+    },
+    "answer": "B",
+    "explanation": "Testar dos módulos de nível inferior para os de nível superior define a abordagem Bottom-up. Para que os módulos inferiores sejam executados e testados antes que os módulos superiores estejam prontos, a engenharia de software exige a criação de módulos chamadores fictícios conhecidos como Drivers (Alternativa B). Top-down (A) caminha no sentido inverso e usa Stubs (substitutos das partes de baixo)."
+  },
+  {
+    "id": 1906010,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "Engenharia de Software - Níveis de Teste",
+    "context": "Testes de Aceitação Alfa e Beta",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um novo aplicativo móvel do TJ-CE, destinado à consulta online de jurisprudência unificada, será liberado de forma controlada. Antes do lançamento público em larga escala, o aplicativo é disponibilizado para um grupo diversificado de advogados testar livremente em seus próprios smartphones e contextos de rede reais, enviando relatórios de falhas operacionais sem a supervisão direta da equipe de desenvolvimento da TI. Esse cenário prático de avaliação é classificado como:",
+    "options": {
+      "A": "Teste de Aceitação Beta.",
+      "B": "Teste de Aceitação Alfa.",
+      "C": "Teste de Regressão Operacional.",
+      "D": "Teste de Desempenho Isolado.",
+      "E": "Teste Unitário Caixa Preta."
+    },
+    "answer": "A",
+    "explanation": "O teste realizado no ambiente dos usuários reais (advogados), fora da supervisão direta do ambiente de desenvolvimento e aberto a perfis externos, tipifica o Teste Beta (Alternativa A). O Teste Alfa ocorreria com usuários controlados, dentro das instalações do desenvolvedor ou com forte monitoramento simulado (Alternativa B)."
+  },
+  {
+    "id": 1906011,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "Engenharia de Software - Metodologias Ágeis",
+    "context": "Ferramentas BDD",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A adoção sistêmica do BDD (Behavior-Driven Development) nos projetos estratégicos do TJ-CE exige a integração de plataformas capazes de traduzir a linguagem humana estruturada em código automatizado validável. Ao redigir as regras de negócio na sintaxe Gherkin, o Analista de TI opta por uma ferramenta de mercado referencial especializada em interpretar esses arquivos de texto narrativos e atrelá-los a blocos de código fonte de teste. A ferramenta correta associada à finalidade descrita é:",
+    "options": {
+      "A": "Jenkins.",
+      "B": "Docker.",
+      "C": "Cucumber.",
+      "D": "Ansible.",
+      "E": "Grafana."
+    },
+    "answer": "C",
+    "explanation": "No ecossistema do BDD, o Cucumber (Alternativa C) atua como a engine clássica capaz de analisar arquivos `.feature` escritos em sintaxe Gherkin e mapear os steps (Given/When/Then) para as funções da linguagem de automação (Java, Ruby, JS). As demais opções tratam de Integração Contínua (Jenkins), Containers (Docker), Configuração de Infra (Ansible) e Monitoramento (Grafana)."
+  },
+  {
+    "id": 1906012,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "Engenharia de Software - Metodologias Ágeis",
+    "context": "TDD, Testes Unitários e Mocking",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para aplicar o TDD de forma proficiente na construção do módulo central de validação de CPF do tribunal, o Analista identifica um gargalo estrutural: a lentidão severa dos testes unitários causada pelas consultas diárias realizadas ao serviço web externo da Receita Federal. A abordagem técnica consagrada, compatível com os princípios do TDD, exigida para assegurar a velocidade dos testes da unidade perante essa adversidade externa é:",
+    "options": {
+      "A": "Configurar um banco de dados relacional espelhado e armazenado inteiramente em disco rígido paralelo.",
+      "B": "Substituir a chamada de rede real por objetos Mock ou Stub e simular as respostas do serviço na memória local.",
+      "C": "Migrar a camada de persistência global para um banco de dados não-relacional assíncrono mantido em nuvem.",
+      "D": "Ampliar a diretriz de timeout das rotinas automatizadas no framework de teste para aguardar o tráfego HTTP real.",
+      "E": "Elevar o teste unitário ao nível de teste de estresse de fronteira com o objetivo de checar resiliência criptográfica."
+    },
+    "answer": "B",
+    "explanation": "No TDD, os testes unitários devem ser independentes e rodar em frações de segundos. Depender de requisições de rede lentas (Web Services externos) fere o princípio de velocidade de feedback contínuo. A solução é técnica, englobando a criação de objetos falsos (Mocks/Stubs) para injetar o comportamento pré-definido da API diretamente em memória e isolar o componente em desenvolvimento da oscilação da internet."
+  },
+  {
+    "id": 1906013,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "Engenharia de Software - Níveis de Teste",
+    "context": "Teste de Regressão Transversal",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após detectar e solucionar uma falha de lógica no cálculo automatizado de juros compostos no portal do TJ-CE, a equipe técnica promove uma nova versão do artefato. Logo em seguida, o Analista de Qualidade dispara um conjunto roteirizado de testes abrangendo as rotinas limítrofes já estabilizadas de emissão de boletos, estorno e renegociação. O intuito restrito dessa rodada laboratorial é verificar se a correção no trecho falho não injetou bugs secundários nas áreas operacionais corretas. A prática executada qualifica o Teste de:",
+    "options": {
+      "A": "Transição de Estados.",
+      "B": "Aceitação do Usuário Final.",
+      "C": "Regressão.",
+      "D": "Integração Componentizada.",
+      "E": "Carga Sistêmica Distribuída."
+    },
+    "answer": "C",
+    "explanation": "Teste de Regressão (Alternativa C) é a prática essencial na Engenharia de Software focada em certificar que alterações, implementações de novas funcionalidades ou correções de defeitos não corromperam comportamentos preexistentes validados, garantindo que o que funcionava outrora continue funcionando incólume."
+  },
+  {
+    "id": 1906014,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "Engenharia de Software - Metodologias Ágeis",
+    "context": "Vantagem Estratégica do BDD",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A diretoria colegiada de modernização do TJ-CE determinou o uso compulsório de diretrizes de software capazes de suprimir a frequente ambiguidade técnica no mapeamento de requisitos com as varas criminais. A área de governança propôs a internalização do modelo de Behavior-Driven Development (BDD). O pilar metodológico fundamental caracterizado pelo BDD como benefício e justificativa direta a essa recomendação é:",
+    "options": {
+      "A": "A imposição da elaboração de dicionários de dados normalizados de forma rigorosa em linguagem SQL.",
+      "B": "O ganho de performance na velocidade bruta de compilação dos microsserviços integrados no repositório matriz.",
+      "C": "A criação de um vocabulário ubíquo capaz de integrar desenvolvedores, testadores e especialistas do negócio na definição de cenários.",
+      "D": "A exclusão incondicional das fases custosas de análise e de design sistêmico do fluxo de desenvolvimento ágil.",
+      "E": "A automação integral na geração do código fonte produtivo interpretado diretamente de fluxogramas em notação UML."
+    },
+    "answer": "C",
+    "explanation": "A maior finalidade do BDD (com base nos conceitos do Domain-Driven Design) é viabilizar o vocabulário ubíquo (Ubiquitous Language), que reduz os abismos de comunicação entre a equipe de TI (devs/QAs) e as áreas usuárias (stakeholders/negócio) por meio da documentação viva em linguagem natural baseada no comportamento esperado. As demais alternativas misturam o tema com infraestrutura ou geradores milagrosos de código."
+  },
+  {
+    "id": 1906015,
+    "day_id": "dia_19_06",
+    "day_title": "Quarta-feira 19/06",
+    "theme": "Engenharia de Software - Metodologias Ágeis",
+    "context": "Compreensão do TDD Focado na Fase Red",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No processo central de modernização em linguagem orientada a objetos do Sistema de Gestão de Pessoas do TJ-CE, a liderança técnica monitora o rigoroso cumprimento do fluxo do Test-Driven Development (TDD). Um Analista, ao iniciar o refinamento de uma história de usuário atrelada a gratificações judiciais, imerge inicialmente e obrigatoriamente na etapa conhecida como 'Red'. A principal ação técnica elementar e indissociável dessa etapa exata da metodologia ágil consiste na:",
+    "options": {
+      "A": "Delegação da modelagem dos casos de uso críticos para a equipe de testes independentes terceirizada.",
+      "B": "Elaboração de um teste automatizado representativo do novo requisito antes da escrita de qualquer código de produção válido.",
+      "C": "Restrição rigorosa de submissões de código no repositório mestre motivada pela queda abrupta de conectividade.",
+      "D": "Inspeção automática de vulnerabilidades no código-fonte legado amparada por ferramentas de análise cibernética estática.",
+      "E": "Compilação manual impulsionada com o propósito sistêmico de desvendar falhas ocultas nos artefatos de infraestrutura distribuída."
+    },
+    "answer": "B",
+    "explanation": "A fase 'Red' (Vermelho) do TDD obriga o desenvolvedor a escrever primeiramente um teste unitário direcionado ao comportamento não implementado ainda. Como o código produtivo inexistente não satisfaz as assertivas, a execução resulta deliberadamente em uma falha controlada do teste (por isso, estado vermelho). A implementação do código de negócio só é permitida na etapa seguinte (Green)."
+  }
+]
