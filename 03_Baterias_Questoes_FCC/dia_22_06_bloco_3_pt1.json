@@ -1,0 +1,272 @@
+[
+  {
+    "id": 145901,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Estrutura e Organização das Comarcas",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Analista de TI está mapeando a arquitetura do sistema de cadastro geral de fóruns e comarcas do TJ-CE. Para alinhar o banco de dados à estrutura da Lei Estadual nº 16.397/2017 (LOJ Ceará), ele precisa configurar os domínios de classificação das comarcas de acordo com o nível da unidade jurisdicional. A modelagem do campo correspondente deve contemplar as categorias de entrância:",
+    "options": {
+      "A": "Inicial, intermediária e final.",
+      "B": "Primeira, segunda e terceira instâncias.",
+      "C": "Singular, colegiada e especial.",
+      "D": "Ordinária, extraordinária e sumaríssima.",
+      "E": "Básica, avançada e especializada."
+    },
+    "answer": "A",
+    "explanation": "A estrutura arquitetural da justiça no Ceará divide as comarcas em entrâncias. Segundo a LOJ (Lei nº 16.397/2017), as comarcas se classificam em entrância inicial, intermediária e final. As demais alternativas misturam conceitos de grau de jurisdição e instâncias processuais que não correspondem à taxonomia de entrâncias."
+  },
+  {
+    "id": 145902,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Composição do Órgão Especial",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o desenvolvimento do módulo de controle de sessões e votações do TJ-CE, um Analista de TI depara-se com o requisito de criar perfis de acesso exclusivos para os membros do Órgão Especial. A documentação técnica exige a definição do quantitativo de licenças e nós do cluster para processar os votos simultâneos em tempo real dessa comissão específica. Segundo a LOJ cearense, a configuração da matriz de acesso simultâneo para o Órgão Especial deve comportar o limite de:",
+    "options": {
+      "A": "Dezenove Desembargadores.",
+      "B": "Quinze Desembargadores.",
+      "C": "Vinte e um Desembargadores.",
+      "D": "Vinte e cinco Desembargadores.",
+      "E": "Vinte e sete Desembargadores."
+    },
+    "answer": "A",
+    "explanation": "O Órgão Especial do Tribunal de Justiça do Estado do Ceará, conforme estabelece sua organização judiciária, é composto por dezenove desembargadores. A alternativa joga com números plausíveis de outros tribunais para testar o conhecimento do dimensionamento estrito local."
+  },
+  {
+    "id": 145903,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Atribuições dos Órgãos de Administração",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A modernização do sistema de correição e auditoria do TJ-CE demanda a implementação de um portal web destinado a receber relatórios disciplinares e estatísticas de produtividade de magistrados de primeiro grau. O arquiteto da solução precisa rotear os processos de fiscalização e orientação correcional para a fila de trabalho eletrônica do órgão encarregado por essas funções administrativas em todo o estado. O sistema deve destinar os fluxos correcionais para a caixa corporativa de gestão:",
+    "options": {
+      "A": "Da Corregedoria-Geral da Justiça.",
+      "B": "Do Conselho Nacional de Justiça.",
+      "C": "Do Tribunal Pleno do Estado.",
+      "D": "Da Presidência do Tribunal.",
+      "E": "Da Ouvidoria-Geral do Estado."
+    },
+    "answer": "A",
+    "explanation": "A Corregedoria-Geral da Justiça é o órgão central de fiscalização, orientação e correição da Justiça de primeiro grau no Ceará. As outras opções citam órgãos com papéis administrativos, governamentais ou de ouvidoria, que não gerem o fluxo de correição e auditoria local rotineira dos magistrados."
+  },
+  {
+    "id": 145904,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Organização do Segundo Grau",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Analista de TI está parametrizando o sistema eletrônico PJe para realizar a distribuição automática de recursos judiciais no 2º Grau do TJ-CE. O algoritmo precisa segregar os processos e direcioná-los às câmaras julgadoras com base na natureza da matéria. O mapeamento arquitetural das divisões fracionárias, segundo a organização judiciária vigente, deve prever o envio para:",
+    "options": {
+      "A": "Câmaras de Direito Privado, Câmaras de Direito Público e Câmaras Criminais.",
+      "B": "Câmaras Cíveis, Câmaras Trabalhistas e Câmaras Eleitorais.",
+      "C": "Câmaras Comuns, Câmaras Especiais e Câmaras de Uniformização.",
+      "D": "Câmaras de Primeira Instância, Câmaras de Segunda Instância e Câmaras Recursais.",
+      "E": "Câmaras Ordinárias, Câmaras Sumárias e Câmaras Extraordinárias."
+    },
+    "answer": "A",
+    "explanation": "O Tribunal de Justiça do Ceará divide-se internamente em Câmaras de Direito Privado, Câmaras de Direito Público e Câmaras Criminais. A banca utiliza terminologias genéricas de direito (como cível, trabalhista, eleitoral) nas alternativas falsas para confundir o candidato quanto à divisão orgânica do TJ-CE."
+  },
+  {
+    "id": 145905,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Plantão Judiciário",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O plano de continuidade de negócios e suporte de TI do TJ-CE exige a manutenção de equipes em escala para apoiar o Plantão Judiciário, que processa pedidos de natureza urgente fora do expediente forense ordinário. O Analista responsável precisa configurar o portal do plantão para refletir a restrição legal de competência desse serviço. O motor de regras do sistema de peticionamento eletrônico plantonista deve admitir exclusivamente a entrada de:",
+    "options": {
+      "A": "Medidas urgentes destinadas a evitar o perecimento do direito.",
+      "B": "Ações penais em fase de instrução ordinária.",
+      "C": "Cumprimentos de sentença com trânsito em julgado.",
+      "D": "Processos administrativos de progressão funcional.",
+      "E": "Recursos extraordinários sem pedido cautelar associado."
+    },
+    "answer": "A",
+    "explanation": "O Plantão Judiciário destina-se estritamente à apreciação de matérias urgentes, cujo descumprimento ou protelação possa acarretar o perecimento do direito da parte. Todas as demais alternativas são matérias que devem tramitar no expediente normal, carecendo do requisito de urgência."
+  },
+  {
+    "id": 145906,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Fundos Especiais",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na implementação de um novo dashboard de Business Intelligence (BI) para a alta gestão do TJ-CE, o Analista de TI foi encarregado de criar um painel com métricas de arrecadação de custas, taxas judiciárias e repasses destinados ao aparelhamento das unidades do Poder Judiciário. A fonte de dados principal a ser conectada a esse dashboard de BI deve extrair informações do banco de dados do:",
+    "options": {
+      "A": "Fundo Especial de Reaparelhamento e Modernização do Poder Judiciário (FERMOJU).",
+      "B": "Fundo Nacional de Desenvolvimento da Justiça Estadual (FUNDEJE).",
+      "C": "Fundo Estadual de Segurança e Administração Judiciária (FESAJ).",
+      "D": "Sistema Integrado de Administração Financeira (SIAFI).",
+      "E": "Sistema de Controle de Arrecadação de Custas do Estado (SCACE)."
+    },
+    "answer": "A",
+    "explanation": "O FERMOJU é o fundo estadual gerido pelo TJ-CE para prover recursos voltados à modernização, aparelhamento e infraestrutura do judiciário estadual. As alternativas erradas contêm siglas fictícias ou federais que não representam a fonte orçamentária autônoma prevista na LOJ."
+  },
+  {
+    "id": 145907,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Administração do Tribunal",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O desenvolvimento de um sistema de lotação e gestão de recursos humanos para magistrados exige o mapeamento das regras de substituição legal. Em caso de afastamento temporário do Presidente do Tribunal de Justiça do Ceará por motivo de licença, o perfil de administrador master do sistema de gestão executiva da corte deve ser assumido automaticamente pela autoridade substituta imediata. O fluxo de sucessão sistêmica no cadastro de permissões deve repassar os privilégios para:",
+    "options": {
+      "A": "O Vice-Presidente do Tribunal de Justiça.",
+      "B": "O Desembargador mais antigo do Tribunal Pleno.",
+      "C": "O Corregedor-Geral da Justiça.",
+      "D": "O Diretor do Fórum da Capital.",
+      "E": "O Presidente do Órgão Especial."
+    },
+    "answer": "A",
+    "explanation": "A ordem hierárquica e administrativa de substituição do Presidente do TJ recai, em primeiro lugar, sobre o Vice-Presidente da Corte. As alternativas tentam confundir com o critério de antiguidade e outras figuras de gestão, que entram apenas em casos de vacância ou ausência de ambos."
+  },
+  {
+    "id": 145908,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Órgãos de Gestão e Planejamento",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Analista de TI está desenhando o fluxo de integração de dados entre o Tribunal de Justiça do Ceará e o sistema nacional do Conselho Nacional de Justiça (CNJ). Uma das entidades requeridas na API estadual é o órgão com competência para atuar como instância disciplinar e administrativa de segundo nível no controle dos serviços forenses, incluindo atividades correicionais não solucionadas pela Corregedoria. No mapeamento do endpoint, a tabela de competência deve apontar para as atribuições:",
+    "options": {
+      "A": "Do Conselho da Magistratura.",
+      "B": "Do Tribunal do Júri do Estado.",
+      "C": "Das Turmas Recursais Mistas.",
+      "D": "Da Secretaria de Gestão de Pessoas.",
+      "E": "Dos Juizados Especiais da Fazenda Pública."
+    },
+    "answer": "A",
+    "explanation": "O Conselho da Magistratura funciona como órgão de deliberação administrativa e disciplinar superior, fiscalizando a primeira instância e funcionando como instância de recurso em relação a decisões administrativas. As demais alternativas apresentam órgãos de natureza unicamente judicial processual."
+  },
+  {
+    "id": 145909,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Sessões e Publicidade dos Atos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao parametrizar o módulo de segurança da informação das sessões de julgamento virtuais do TJ-CE, o arquiteto de software precisa estabelecer a regra padrão de visibilidade do link de transmissão. Salvo disposição legal em contrário referente a segredo de justiça, a LOJ cearense estipula um princípio fundamental para as sessões do Tribunal, o qual determina que o sistema de streaming de vídeo deverá adotar o modelo de:",
+    "options": {
+      "A": "Acesso público livre aos atos de julgamento.",
+      "B": "Acesso restrito aos advogados cadastrados.",
+      "C": "Acesso exclusivo aos magistrados integrantes da câmara.",
+      "D": "Acesso bloqueado mediante autenticação em duas etapas por token.",
+      "E": "Acesso reservado aos membros do Ministério Público estadual."
+    },
+    "answer": "A",
+    "explanation": "No Poder Judiciário, impera o princípio constitucional da publicidade dos atos, reafirmado na LOJ do Ceará, pelo qual as sessões são, em regra, públicas, excetuando-se as que tramitam em segredo de justiça. Autenticações em massa ou restrições sistemáticas configurariam barreira ilícita à publicidade."
+  },
+  {
+    "id": 145910,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Administração do Fórum Local",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na configuração do organograma digital do sistema de recursos humanos do TJ-CE, o Analista precisa estruturar a hierarquia administrativa do Fórum Clóvis Beviláqua (Comarca de Fortaleza). A modelagem do banco de dados exige a definição de uma chefia administrativa local responsável pela direção do Fórum e pela coordenação dos serviços auxiliares. A chave estrangeira de subordinação hierárquica das secretarias do fórum deve apontar para:",
+    "options": {
+      "A": "O Juiz Diretor do Fórum.",
+      "B": "O Desembargador Plantonista Permanente.",
+      "C": "O Secretário de Administração e Infraestrutura.",
+      "D": "O Oficial de Justiça Chefe da Comarca.",
+      "E": "O Presidente da Câmara Cível Local."
+    },
+    "answer": "A",
+    "explanation": "A Direção do Fórum de cada comarca é exercida por um juiz de direito ali titularizado, responsável pela esfera de administração predial, disciplinar e de pessoal de apoio à unidade. A subordinação administrativa local aponta impreterivelmente para a Diretoria do Fórum."
+  },
+  {
+    "id": 145911,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Divisão Judiciária Territorial",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a auditoria de um sistema legado de controle de produtividade do TJ-CE, a equipe de TI identificou a necessidade de atualizar as regras de negócio referentes à divisão judiciária territorial. A reestruturação da base geográfica do sistema exige o cadastramento correto das circunscrições que agrupam uma ou mais comarcas contíguas para facilitar a administração da Justiça. A entidade geográfica intermediária a ser modelada no esquema relacional é denominada:",
+    "options": {
+      "A": "Zona Judiciária.",
+      "B": "Região Administrativa Estadual.",
+      "C": "Polo Jurisdicional Integrado.",
+      "D": "Distrito Forense Regional.",
+      "E": "Subseção Judiciária Mista."
+    },
+    "answer": "A",
+    "explanation": "Na LOJ Ceará, o Estado se divide territorialmente, para fins de administração da Justiça, em zonas judiciárias, comarcas e termos judiciários. 'Zona judiciária' é o termo técnico para agrupamento macro. 'Subseção' e 'Região Administrativa' são termos comuns na Justiça Federal."
+  },
+  {
+    "id": 145912,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Distribuição de Processos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O módulo de sorteio eletrônico do sistema e-SAJ do TJ-CE está passando por uma revisão de código. O Analista de TI verificou que o algoritmo de distribuição de processos em comarcas com mais de uma vara da mesma competência deve observar rigorosamente regras de equidade. De acordo com os preceitos da organização judiciária, o balanceador de carga processual deve implementar a distribuição seguindo o critério de:",
+    "options": {
+      "A": "Alternância e aleatoriedade rigorosa.",
+      "B": "Direcionamento preferencial aos juízes mais antigos.",
+      "C": "Alocação baseada na proximidade residencial das partes.",
+      "D": "Atribuição manual sob supervisão da secretaria local.",
+      "E": "Delegação exclusiva ao juiz diretor do foro em exercício."
+    },
+    "answer": "A",
+    "explanation": "A distribuição de processos é o ato legal que estabelece a competência do juiz, e os princípios balizadores constitucionais e regimentalmente descritos na LOJ estipulam a alternância contínua e a rigorosa distribuição aleatória (sorteio), assegurando a imparcialidade do juízo."
+  },
+  {
+    "id": 145913,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Atendimento ao Cidadão e Ouvidoria",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para a implantação de um novo chatbot de atendimento ao cidadão no portal do TJ-CE, o arquiteto de TI deve programar o fluxo de processamento de linguagem natural. Quando o usuário reportar denúncias, críticas, sugestões ou elogios sobre a prestação do serviço jurisdicional, o sistema deve registrar a manifestação e abrir um chamado integrado com o órgão estadual competente. A API de destino desse módulo de triagem conversacional deve conectar-se ao sistema gerido:",
+    "options": {
+      "A": "Pela Ouvidoria do Poder Judiciário.",
+      "B": "Pela Defensoria Pública do Estado.",
+      "C": "Pelo Conselho Superior do Ministério Público.",
+      "D": "Pelo Sindicato dos Servidores do Judiciário.",
+      "E": "Pela Procuradoria-Geral do Estado do Ceará."
+    },
+    "answer": "A",
+    "explanation": "A Ouvidoria é o órgão interno do Poder Judiciário cearense estruturado para receber, processar e dar tratativa às manifestações (reclamações, elogios, críticas) dos cidadãos e jurisdicionados, consolidando as políticas de transparência."
+  },
+  {
+    "id": 145914,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Estrutura dos Juizados e Varas Especializadas",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de infraestrutura está mapeando os requisitos de rede para interligar os Juizados de Violência Doméstica e Familiar contra a Mulher ao datacenter principal do TJ-CE. O Analista de TI deve alocar essas varas na árvore de competências do sistema judicial para que as métricas de latência e priorização de tráfego sejam configuradas adequadamente. Conforme a LOJ do Ceará, essas unidades jurisdicionais especializadas operam estruturalmente no nível da:",
+    "options": {
+      "A": "Justiça de primeira instância.",
+      "B": "Justiça de segunda instância fracionada.",
+      "C": "Justiça militar estadual autônoma.",
+      "D": "Justiça de paz comunitária regional.",
+      "E": "Justiça arbitral de resolução voluntária."
+    },
+    "answer": "A",
+    "explanation": "Os Juizados de Violência Doméstica constituem varas especializadas de primeiro grau, integrando assim a primeira instância da prestação jurisdicional do Tribunal de Justiça do Ceará."
+  },
+  {
+    "id": 145915,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Servidores da Justiça e Cumprimento de Mandados",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No projeto de arquitetura orientada a serviços (SOA) do TJ-CE, um Analista de TI precisa desenvolver o microserviço de expedição de mandados. O sistema deverá rotear os pacotes de ordens judiciais emitidos pelos juízes de direito para a equipe de campo encarregada da execução material dos atos, como citações e penhoras. O barramento de serviços deve enfileirar as tarefas geradas automaticamente na caixa postal do cargo de:",
+    "options": {
+      "A": "Oficial de Justiça Avaliador.",
+      "B": "Analista Judiciário de Execução de Mandados.",
+      "C": "Técnico Judiciário de Nível Externo.",
+      "D": "Escrivão Diretor de Secretaria.",
+      "E": "Auxiliar de Serviços Judiciários de Diligência."
+    },
+    "answer": "A",
+    "explanation": "No TJ-CE e na tradição jurídica nacional consolidada em lei de organização judiciária, o servidor público competente para o cumprimento de ordens externas, citações, intimações, penhoras e avaliações é o Oficial de Justiça Avaliador. A banca usa as demais opções com nomenclaturas modificadas e distorcidas para causar dúvidas."
+  }
+]

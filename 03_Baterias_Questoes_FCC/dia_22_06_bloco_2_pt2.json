@@ -1,0 +1,272 @@
+[
+  {
+    "id": 847291,
+    "day_id": "dia_22_06",
+    "day_title": "Sábado 22/06",
+    "theme": "Engenharia de Requisitos",
+    "context": "Migração de Sistemas e Gargalos de Elicitação",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o projeto de migração do sistema legado de custas processuais do Tribunal de Justiça do Ceará (TJ-CE), a equipe de análise de TI encontrou severas dificuldades na fase de elicitação de requisitos. Os servidores cartorários mais antigos, usuários principais do sistema, executavam tarefas complexas de forma mecânica e não conseguiam articular com precisão o fluxo de trabalho durante as entrevistas estruturadas. A documentação existente estava defasada. Para mapear fidedignamente o processo e capturar as regras de negócio implícitas na rotina desses usuários, o analista deve aplicar a técnica de elicitação denominada:",
+    "options": {
+      "A": "Observação direta do ambiente operacional.",
+      "B": "Prototipação evolutiva de interfaces gráficas.",
+      "C": "Aplicação de questionários padronizados.",
+      "D": "Condução de sessões de brainstorming interativas.",
+      "E": "Construção de cenários de caso de uso."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. A técnica de observação (ou etnografia) é a mais indicada para elicitar requisitos quando os usuários executam tarefas complexas de maneira automática ou subconsciente e possuem dificuldade em explicar verbalmente ou por escrito como realizam seu trabalho. A alternativa (B) foca na interface, mas não captura fluxos de trabalho obscuros sem uma base. A alternativa (C) agravaria o problema, já que os usuários não conseguem articular o processo. A alternativa (D) gera novas ideias, mas não documenta fluxos rotineiros engessados. A alternativa (E) é uma técnica de modelagem e especificação, que depende de uma elicitação prévia bem-sucedida."
+  },
+  {
+    "id": 204918,
+    "day_id": "dia_22_06",
+    "day_title": "Sábado 22/06",
+    "theme": "Engenharia de Requisitos",
+    "context": "Modernização de Arquitetura Judiciária",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Comitê de Arquitetura de TI do TJ-CE deliberou sobre a modernização do portal de e-Procurement. No documento de visão do projeto, ficou estabelecido que o novo sistema deve obrigatoriamente autenticar os magistrados via autenticação multifator (MFA) baseada em tokens de hardware e deve ser capaz de processar o upload de peças processuais de até 50MB em um tempo máximo de 3 segundos, sob carga de mil usuários concorrentes. No âmbito da Engenharia de Requisitos, essas propriedades sistêmicas são classificadas, respectivamente, como:",
+    "options": {
+      "A": "Requisitos não funcionais de segurança e de desempenho.",
+      "B": "Requisitos funcionais de controle de acesso e de armazenamento.",
+      "C": "Regras de negócio de governança e de volumetria.",
+      "D": "Restrições arquiteturais de infraestrutura e de rede.",
+      "E": "Requisitos de domínio de criptografia e de latência."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. Requisitos não funcionais descrevem 'como' o sistema deve se comportar, focando em atributos de qualidade. A obrigatoriedade de MFA é um requisito não funcional de segurança, enquanto o tempo máximo de 3 segundos sob carga específica é um requisito não funcional de desempenho (ou performance). A alternativa (B) erra ao classificá-los como funcionais. A alternativa (C) confunde requisitos do sistema com regras de negócio puras. A alternativa (D) erra ao reduzir os requisitos a meras restrições de rede. A alternativa (E) inventa a taxonomia 'requisitos de domínio' para enquadrar latência e criptografia de forma incorreta."
+  },
+  {
+    "id": 561284,
+    "day_id": "dia_22_06",
+    "day_title": "Sábado 22/06",
+    "theme": "Engenharia de Requisitos",
+    "context": "Impacto de Mudanças Legais no Software",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma alteração no Código de Processo Penal exigiu uma modificação estrutural no módulo de peticionamento eletrônico do TJ-CE. A equipe de Engenharia de Software precisa diagnosticar rapidamente quais componentes de código, casos de teste automatizados e tabelas do banco de dados serão impactados por essa alteração na legislação (requisito de negócio). Para garantir a integridade do sistema e realizar essa análise de impacto de maneira precisa, o processo de gerência de requisitos do tribunal deve utilizar a:",
+    "options": {
+      "A": "Matriz de rastreabilidade de requisitos.",
+      "B": "Documentação de especificação de requisitos de software.",
+      "C": "Diagramação de componentes arquiteturais corporativos.",
+      "D": "Tabela de atributos de qualidade sistêmica.",
+      "E": "Refinação contínua do backlog do produto."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. A matriz de rastreabilidade é a ferramenta que vincula requisitos a suas origens, componentes de design, módulos de código e casos de teste, permitindo realizar análises de impacto rápidas e seguras quando um requisito muda. A alternativa (B) é o documento formal, mas não necessariamente provê a amarração direta de ponta a ponta. A alternativa (C) modela o software, mas não rastreia a origem do requisito legal. A alternativa (D) foca apenas em qualidades não funcionais. A alternativa (E) é uma prática ágil de priorização e detalhamento, mas não garante o mapeamento de artefatos afetados no código e banco de dados."
+  },
+  {
+    "id": 738192,
+    "day_id": "dia_22_06",
+    "day_title": "Sábado 22/06",
+    "theme": "Engenharia de Requisitos",
+    "context": "Priorização de Requisitos e Restrição Orçamentária",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O projeto do novo módulo de Execução Penal do TJ-CE sofreu um corte orçamentário imprevisto, reduzindo a capacidade da equipe de desenvolvimento em 30%. O Dono do Produto (Product Owner), em conjunto com os analistas de TI, decidiu categorizar a lista de requisitos pendentes em quatro grupos distintos: funcionalidades essenciais para o lançamento, funcionalidades importantes mas contornáveis, funcionalidades desejáveis para o futuro e funcionalidades descartadas no momento. A técnica de priorização de requisitos aplicada neste cenário é a:",
+    "options": {
+      "A": "Técnica MoSCoW.",
+      "B": "Classificação de Kano.",
+      "C": "Matriz de Esforço e Impacto.",
+      "D": "Pontuação de Valor de Negócio.",
+      "E": "Votação de Pontos Cumulativos."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. A técnica MoSCoW divide os requisitos em quatro categorias: Must have (essenciais), Should have (importantes/contornáveis), Could have (desejáveis) e Won't have (descartados/não agora). A alternativa (B) classifica baseada na satisfação do cliente (básico, performance, encantamento). A alternativa (C) plota em um gráfico de dois eixos, sem as 4 divisões fixas supracitadas. A alternativa (D) foca na atribuição de pesos numéricos de valor. A alternativa (E) é uma dinâmica de time para votar itens mais importantes."
+  },
+  {
+    "id": 194837,
+    "day_id": "dia_22_06",
+    "day_title": "Sábado 22/06",
+    "theme": "Engenharia de Requisitos",
+    "context": "Especificação Ágil de Requisitos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe ágil do TJ-CE, responsável pelo portal de audiências virtuais, adota o Desenvolvimento Orientado a Comportamento (BDD) e preza por uma documentação concisa. Ao invés de redigir longos documentos de visão, a equipe adota um formato de requisito que captura explicitamente o papel do ator, o objetivo da ação e o benefício gerado para a justiça, sempre acompanhado de regras claras e testáveis que determinam a conclusão da funcionalidade. Essa abordagem de modelagem de requisitos utiliza:",
+    "options": {
+      "A": "História de usuário com critérios de aceite.",
+      "B": "Caso de uso com fluxo alternativo documentado.",
+      "C": "Requisito funcional com restrição de design e arquitetura.",
+      "D": "Cenário de teste com roteiro de execução de regressão.",
+      "E": "Especificação formal com prova matemática de estados."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. A estrutura 'Como [ator], eu quero [objetivo], para que [benefício]' define uma História de Usuário (User Story). As regras claras e testáveis que acompanham a história e definem sua conclusão são os Critérios de Aceite (Acceptance Criteria). A alternativa (B) refere-se a uma abordagem tradicional baseada em atores e fluxos sistêmicos, e não o formato papel/objetivo/benefício. A alternativa (C) mistura requisitos funcionais com regras arquiteturais rígidas. A alternativa (D) refere-se ao teste em si, e não à especificação inicial do requisito de negócio. A alternativa (E) é o extremo oposto do ágil, usada em sistemas críticos vitais (como aviônicos)."
+  },
+  {
+    "id": 612039,
+    "day_id": "dia_22_06",
+    "day_title": "Sábado 22/06",
+    "theme": "Engenharia de Requisitos",
+    "context": "Homologação e Conformidade de Requisitos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Antes de autorizar o início da dispendiosa fase de codificação de um novo classificador automatizado de jurisprudências, a equipe do TJ-CE submete a modelagem conceitual e protótipos navegáveis de alta fidelidade à apreciação de um comitê de magistrados. O objetivo da reunião é garantir que os modelos comportamentais especificados correspondem perfeitamente às reais necessidades processuais dos usuários finais, detectando erros de interpretação antes do desenvolvimento. Esta etapa crítica da Engenharia de Requisitos é denominada:",
+    "options": {
+      "A": "Validação de requisitos.",
+      "B": "Elicitação de requisitos.",
+      "C": "Negociação de requisitos.",
+      "D": "Especificação de requisitos.",
+      "E": "Gerenciamento de configuração de requisitos."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. A validação de requisitos é o processo de confirmar com os stakeholders (magistrados, no caso) se o sistema especificado é exatamente o sistema que eles precisam, respondendo à pergunta: 'Estamos construindo o sistema certo?'. A alternativa (B) é a fase de coleta/descoberta. A alternativa (C) trata da resolução de conflitos entre stakeholders. A alternativa (D) é o ato de documentar e modelar técnica e formalmente o sistema. A alternativa (E) trata do controle de versões e rastreabilidade após os requisitos estarem aprovados."
+  },
+  {
+    "id": 384710,
+    "day_id": "dia_22_06",
+    "day_title": "Sábado 22/06",
+    "theme": "Engenharia de Requisitos",
+    "context": "Contratação de Fábrica de Software",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE contratou uma fábrica de software terceirizada para o desenvolvimento de um módulo de integração entre o PJe e sistemas de segurança pública. O contrato estipula que, antes do início de qualquer sprint, deve haver um acordo formal, inequívoco e padronizado detalhando o comportamento do sistema, suas interfaces externas, dados manipulados e restrições operacionais. O artefato primário da Engenharia de Requisitos que cristaliza esse acordo e serve de baseline (linha de base) técnica para a fábrica é o:",
+    "options": {
+      "A": "Documento de Especificação de Requisitos de Software.",
+      "B": "Termo de Abertura do Projeto de Software.",
+      "C": "Relatório de Viabilidade Técnica e Econômica.",
+      "D": "Plano de Gerenciamento de Configuração de Software.",
+      "E": "Manifesto de Arquitetura de Integração de Software."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. O Documento de Especificação de Requisitos de Software (SRS - Software Requirements Specification) é o artefato formal que contém os requisitos funcionais, não funcionais, interfaces e regras, servindo como linha de base técnica para o desenvolvimento e contratações. A alternativa (B) é o Project Charter, que autoriza o projeto, mas não detalha requisitos sistêmicos. A alternativa (C) é um estudo pré-projeto. A alternativa (D) foca no controle de versão de artefatos. A alternativa (E) é um termo inventado ou focado puramente na arquitetura, não na especificação de negócio."
+  },
+  {
+    "id": 925184,
+    "day_id": "dia_22_06",
+    "day_title": "Sábado 22/06",
+    "theme": "Modelos de Maturidade (CMMI-DEV v2.0)",
+    "context": "Arquitetura e Componentes do CMMI v2.0",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Diretor de TI do TJ-CE propôs a adoção do framework CMMI-DEV v2.0 para estruturar o núcleo de desenvolvimento interno, abandonando a antiga versão 1.3. Durante o treinamento da equipe técnica, destacou-se que o modelo sofreu mudanças arquiteturais significativas visando maior foco no valor de negócio e na performance organizacional. No CMMI v2.0, o conjunto fundamental de agrupamentos que define atividades essenciais para atingir intenções específicas e demonstrar capacidade processual é denominado:",
+    "options": {
+      "A": "Áreas de Prática.",
+      "B": "Áreas de Processo.",
+      "C": "Metas Genéricas.",
+      "D": "Práticas Específicas.",
+      "E": "Categorias de Maturidade Estruturada."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. A grande mudança estrutural do CMMI V2.0 foi a substituição do conceito de 'Áreas de Processo' (Process Areas) da versão 1.3 por 'Áreas de Prática' (Practice Areas - PAs). Estas áreas são agrupadas em Áreas de Capacidade e fornecem o foco para alcançar intenções específicas. A alternativa (B) é a terminologia legada (v1.3). As alternativas (C) e (D) também refletem elementos estruturais da arquitetura do CMMI v1.3. A alternativa (E) é um termo incorreto que não representa os blocos de construção de atividades no CMMI v2.0."
+  },
+  {
+    "id": 418293,
+    "day_id": "dia_22_06",
+    "day_title": "Sábado 22/06",
+    "theme": "Modelos de Maturidade (CMMI-DEV v2.0)",
+    "context": "Avaliação de Níveis de Maturidade CMMI v2.0",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após dois anos de rigorosa adequação, a fábrica de software do TJ-CE passou por uma avaliação oficial baseada no CMMI-DEV v2.0. O relatório final do auditor atestou que não apenas os processos são proativos, padronizados e derivam de um conjunto padrão da organização, mas também são continuamente melhorados visando otimizar o desempenho de negócio, utilizando-se, para isso, de dados quantitativos e ferramentas estatísticas avançadas. Com base neste diagnóstico, o nível de maturidade alcançado pela instituição é o:",
+    "options": {
+      "A": "Nível 5 - Otimizador.",
+      "B": "Nível 4 - Gerenciado Quantitativamente.",
+      "C": "Nível 3 - Definido.",
+      "D": "Nível 2 - Gerenciado.",
+      "E": "Nível 1 - Inicial."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. O Nível 5 (Otimizador/Optimizing) no CMMI v2.0 foca na melhoria contínua da performance organizacional baseada em entendimento quantitativo e estatístico. O Nível 4 (B) utiliza métodos quantitativos para previsibilidade e controle (processos gerenciados quantitativamente), mas a contínua inovação e otimização visando o desempenho global do negócio é a marca do Nível 5. O Nível 3 (C) tem processos definidos e proativos, mas não exige gerenciamento estatístico. O Nível 2 (D) foca no gerenciamento de processos no nível de projetos. O Nível 1 (E) é caótico e reativo."
+  },
+  {
+    "id": 759382,
+    "day_id": "dia_22_06",
+    "day_title": "Sábado 22/06",
+    "theme": "Modelos de Maturidade (CMMI-DEV v2.0)",
+    "context": "Áreas de Prática do CMMI v2.0",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para conter as constantes alterações de escopo não documentadas nos projetos judiciários do TJ-CE, a equipe de qualidade de software implementou práticas obrigatórias segundo o CMMI-DEV v2.0. As ações implementadas visam garantir a elicitação precisa das necessidades dos usuários, a sua tradução sistemática para requisitos técnicos de produto e a manutenção da rastreabilidade bidirecional durante todo o ciclo de vida da solução. O grupo de práticas do CMMI v2.0 que engloba diretamente estas atividades pertence à Área de Prática de:",
+    "options": {
+      "A": "Desenvolvimento e Gerenciamento de Requisitos.",
+      "B": "Planejamento de Requisitos de Produto e Solução.",
+      "C": "Validação e Verificação de Sistemas de TI.",
+      "D": "Definição de Escopo de Arquitetura Técnica.",
+      "E": "Gerenciamento de Configuração de Base de Requisitos."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. No CMMI V2.0, 'Desenvolvimento e Gerenciamento de Requisitos' (Requirements Development and Management - RDM) é a Área de Prática (Practice Area) responsável por elicitar necessidades, transformá-las em requisitos de cliente/produto, e gerenciar esses requisitos mantendo a rastreabilidade bidirecional e o alinhamento com os planos de projeto. A alternativa (B) contém um nome inventado. A alternativa (C) trata de testes e confirmação do produto, não do desenvolvimento do requisito. As alternativas (D) e (E) são nomenclaturas inexistentes no framework estruturado do CMMI v2.0."
+  },
+  {
+    "id": 820391,
+    "day_id": "dia_22_06",
+    "day_title": "Sábado 22/06",
+    "theme": "Modelos de Maturidade (CMMI-DEV v2.0)",
+    "context": "Métodos de Avaliação do CMMI",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O edital de licitação publicado pelo TJ-CE para contratação de uma nova prestadora de serviços em Nuvem exige a apresentação de comprovação formal de maturidade em processos de software e serviços. De acordo com as diretrizes do CMMI v2.0, o método oficial de avaliação que resulta na emissão de classificações válidas de Nível de Maturidade (Maturity Level Ratings) e que serve como referência auditável para contratações é denominado:",
+    "options": {
+      "A": "Benchmark Appraisal.",
+      "B": "Evaluation Appraisal.",
+      "C": "Action Plan Appraisal.",
+      "D": "Continuous Appraisal.",
+      "E": "Staged Representation Appraisal."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. No CMMI V2.0, o 'Benchmark Appraisal' é o método de avaliação formal e rigoroso que gera ratings oficiais de níveis de maturidade e capacidade, válidos para fins corporativos e licitatórios (válidos no PARS - Published Appraisal Results System). O 'Evaluation Appraisal' (B) é usado para identificar gaps e auxiliar a melhoria de processos de forma informal, sem gerar ratings oficiais de maturidade. 'Action Plan Appraisal' (C) serve para validar planos de ação em avaliações de acompanhamento. As alternativas (D) e (E) misturam conceitos antigos (representação por estágios) com terminologias não oficiais de avaliações."
+  },
+  {
+    "id": 501293,
+    "day_id": "dia_22_06",
+    "day_title": "Sábado 22/06",
+    "theme": "Modelos de Maturidade (MPS-SW)",
+    "context": "Adoção do MPS-SW em Novos Fornecedores",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma startup cearense de tecnologia jurídica (LawTech) deseja fornecer uma solução analítica para o TJ-CE. Para qualificar-se nas licitações e estruturar seus processos iniciais, a empresa decide implementar o Modelo de Referência MPS para Software (MR-MPS-SW). O planejamento estratégico estabelece como meta atingir imediatamente o primeiro degrau formal de maturidade do modelo, cujo escopo exige exclusivamente a implementação dos processos de Gerência de Requisitos e Gerência de Projetos. Este degrau de entrada corresponde ao:",
+    "options": {
+      "A": "Nível G - Parcialmente Gerenciado.",
+      "B": "Nível F - Gerenciado.",
+      "C": "Nível E - Parcialmente Definido.",
+      "D": "Nível A - Em Otimização.",
+      "E": "Nível C - Definido."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. No MPS-SW, o Nível G (Parcialmente Gerenciado) é o nível inicial e abrange apenas dois processos estruturais básicos para organizar o desenvolvimento: Gerência de Projetos (GPR) e Gerência de Requisitos (GRE). A alternativa (B) é o Nível F, que adiciona processos mais complexos (Medição, Qualidade, CM, etc). A alternativa (C) é o Nível E (Parcialmente Definido). A alternativa (D) é o Nível A, o topo máximo do modelo. A alternativa (E) é o Nível C (Definido)."
+  },
+  {
+    "id": 293847,
+    "day_id": "dia_22_06",
+    "day_title": "Sábado 22/06",
+    "theme": "Modelos de Maturidade (MPS-SW)",
+    "context": "Evolução de Processos no MPS-SW",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após estabilizar suas operações e assegurar o domínio sobre o planejamento de seus projetos e gerenciamento básico de requisitos, uma fornecedora do TJ-CE busca evoluir para o próximo estágio do MPS-SW. O novo objetivo organizacional impõe a adoção estruturada e a institucionalização de novos processos organizacionais obrigatórios, notadamente: Medição, Garantia da Qualidade, Gerência de Configuração, Gerência de Portfólio de Projetos e Aquisição. O nível de maturidade do MPS-SW que exige a introdução deste exato conjunto de processos adicionais é o:",
+    "options": {
+      "A": "Nível F - Gerenciado.",
+      "B": "Nível E - Parcialmente Definido.",
+      "C": "Nível D - Largamente Definido.",
+      "D": "Nível C - Definido.",
+      "E": "Nível B - Gerenciado Quantitativamente."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. A evolução natural a partir do Nível G (onde operam apenas GPR e GRE) leva ao Nível F (Gerenciado), que inclui os processos de Aquisição (AQU), Gerência de Configuração (GCO), Garantia da Qualidade (GQA), Gerência de Portfólio de Projetos (GPP) e Medição (MED). A alternativa (B) (Nível E) introduziria processos relacionados a Recursos Humanos, Adaptação de Processos e Avaliação. As alternativas (C), (D) e (E) são níveis ainda mais altos na hierarquia alfabética (A é o mais maduro, G o menos maduro)."
+  },
+  {
+    "id": 657182,
+    "day_id": "dia_22_06",
+    "day_title": "Sábado 22/06",
+    "theme": "Modelos de Maturidade (MPS-SW)",
+    "context": "Componentes Estruturais do Programa MPS.BR",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O grupo de Governança de TI do TJ-CE iniciou um mapeamento completo do ecossistema de maturidade estabelecido pelo programa MPS.BR, com o intuito de treinar avaliadores internos. A documentação normativa e arquitetural do programa é desenhada em torno de três guias e componentes estruturais oficiais que definem, respectivamente: o escopo das boas práticas e níveis; as diretrizes para auditar e atestar a conformidade; e os mecanismos econômicos e institucionais que regem o programa. Os três componentes formais que constituem a base do modelo MPS são:",
+    "options": {
+      "A": "Modelo de Referência, Método de Avaliação e Modelo de Negócio.",
+      "B": "Guia de Implementação, Processo de Auditoria e Selo de Qualidade.",
+      "C": "Framework de Maturidade, Ciclo de Certificação e Base de Conhecimento.",
+      "D": "Estrutura de Processos, Avaliação de Desempenho e Melhoria Contínua.",
+      "E": "Guia de Referência, Matriz de Avaliação e Padrão de Negócio."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. O Programa MPS.BR é fundamentado em três componentes: o MR-MPS (Modelo de Referência, que dita os níveis e resultados esperados), o MA-MPS (Método de Avaliação, que estipula as regras para avaliações oficiais) e o MN-MPS (Modelo de Negócio, que rege as Instituições Implementadoras, Avaliadoras, direitos, regras comerciais e manutenção do selo). As alternativas (B), (C), (D) e (E) apresentam nomenclaturas não aderentes à especificação oficial do modelo nacional MPS."
+  },
+  {
+    "id": 918273,
+    "day_id": "dia_22_06",
+    "day_title": "Sábado 22/06",
+    "theme": "Modelos de Maturidade (MPS-SW)",
+    "context": "Atributos de Processo e Institucionalização",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante uma avaliação oficial (MA-MPS) na área de desenvolvimento do TJ-CE, o avaliador líder não verifica apenas se as saídas técnicas e os propósitos de um processo foram gerados. Para atestar a conformidade, o auditor verifica o rigor com que a organização planeja o processo, monitora seu controle, define a política organizacional, provê recursos adequados e fornece treinamento para a equipe. No framework do MPS-SW, esses indicadores operacionais e gerenciais usados para atestar o grau de institucionalização dos processos são formalmente denominados:",
+    "options": {
+      "A": "Atributos de Processo.",
+      "B": "Resultados Esperados.",
+      "C": "Propósitos de Processo.",
+      "D": "Níveis de Capacidade Organizacional.",
+      "E": "Práticas de Gerência Base."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. No MPS-SW, a evolução da capacidade e a institucionalização dos processos são medidas por meio dos Atributos de Processo (AP). Por exemplo, AP 1.1 verifica se o processo é executado, enquanto os APs 2.1 e 2.2 verificam se ele é gerenciado (planejado, monitorado, com recursos). A alternativa (B) (Resultados Esperados) serve para medir a implementação técnica do processo específico, e não a institucionalização global da gerência do processo. A alternativa (C) é o objetivo macro do processo. A alternativa (D) determina a capacidade isolada e não é o nome dos indicadores em si. A alternativa (E) é uma nomenclatura genérica."
+  }
+]

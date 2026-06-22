@@ -1,0 +1,1352 @@
+[
+  {
+    "id": 1396,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "DevOps Avançado - GitOps e ArgoCD",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a migração dos serviços judiciais do TJ-CE para o Kubernetes, a equipe adotou a abordagem GitOps. Constatou-se que os desenvolvedores frequentemente mesclavam códigos na branch principal, fazendo com que o ambiente de produção refletisse as mudanças automaticamente, o que resultou em incidentes durante o horário de expediente. A equipe de DevOps precisa manter a detecção contínua de desvios (drift detection) ativa no ArgoCD, assegurando a visibilidade das diferenças entre o Git e o cluster, mas bloqueando a aplicação automática dos manifestos no ambiente produtivo.",
+    "options": {
+      "A": "Configurar o Auto-Sync com a flag prune ativada e desabilitar o webhook do provedor Git.",
+      "B": "Habilitar a política de Sync manual e configurar o Auto-Healing para reverter as mudanças.",
+      "C": "Desativar o Auto-Sync na configuração da Application e manter a monitoração de out-of-sync.",
+      "D": "Modificar o RBAC do ArgoCD atribuindo a permissão de admin estritamente ao pipeline de CI/CD.",
+      "E": "Criar um Sync Wave com valor negativo configurado na anotação do Deployment de produção."
+    },
+    "answer": "C",
+    "explanation": "A letra C está correta. No ArgoCD, a desativação da diretiva de Auto-Sync impede a aplicação imediata das mudanças originadas no Git. O ArgoCD continuará reconciliando o estado (detectando os desvios) e marcando a Application como OutOfSync, o que atende à necessidade de visibilidade exigida pela equipe sem causar indisponibilidade em horários indevidos. A letra A é errada porque o webhook apenas otimiza o refresh rate, e o prune ativado agravaria a exclusão de recursos. A letra B inverte o conceito: o Auto-Healing reverte desvios manuais no cluster para o estado do Git, não o contrário. A letra D não impede o sync automático se a Application já estiver configurada para tal. A letra E afeta apenas a ordem de criação de recursos durante uma operação de sync."
+  },
+  {
+    "id": 1397,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "DevOps Avançado - Helm Hooks",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de engenharia de software do TJ-CE utiliza o Helm para o empacotamento do sistema PJe. Em cada ciclo de liberação de versão, o banco de dados relacional requer a execução de um script de migração de esquema (DDL) antes do provisionamento dos novos pods do backend. É uma exigência arquitetural que qualquer falha na execução desse script aborte o processo de atualização do release Helm de forma imediata, prevenindo a entrada de contêineres incompatíveis no cluster.",
+    "options": {
+      "A": "Adicionar a anotação helm.sh/hook: pre-upgrade no manifesto de Job contendo a migração.",
+      "B": "Inserir um InitContainer no manifesto de Deployment do backend contendo o script DDL.",
+      "C": "Configurar a diretiva wait-for-jobs: true no arquivo values.yaml do subchart do banco.",
+      "D": "Modificar o script DDL como um ConfigMap e mapeá-lo com a anotação helm.sh/hook: post-install.",
+      "E": "Criar um CronJob agendado para execução imediata antes do comando helm upgrade principal."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. Os Helm Hooks permitem a intervenção no ciclo de vida de um release. O hook 'pre-upgrade' executa e aguarda a conclusão (no caso de um Job) antes de os manifestos principais do chart serem atualizados; se falhar, o upgrade falha. A alternativa B descreve um mecanismo padrão do Kubernetes: InitContainers executam a cada reinício do Pod, não atrelados estritamente ao evento de upgrade do release Helm. A alternativa C apresenta uma diretiva inexistente. A alternativa D utiliza 'post-install', que ocorreria após o deploy, não prevenindo o erro prévio exigido. A alternativa E não fornece controle síncrono da execução do comando helm upgrade."
+  },
+  {
+    "id": 1398,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "DevOps Avançado - Rancher Fleet",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça gerencia dezenas de clusters Kubernetes geograficamente distribuídos pelas comarcas do interior do estado, todos orquestrados centralmente via Rancher. A administração central definiu a necessidade de aplicar um conjunto padronizado de políticas de rede (NetworkPolicies) em todos os clusters simultaneamente. A distribuição dessas políticas deve utilizar critérios de seleção baseados em rótulos (labels) de ambiente, empregando uma abordagem nativa e baseada em repositório Git integrada ao Rancher.",
+    "options": {
+      "A": "Implementar o Rancher Multi-Cluster App importando os arquivos locais de configuração.",
+      "B": "Configurar o Continuous Delivery do Rancher Fleet apontando para o repositório Git dos manifestos.",
+      "C": "Instalar o ArgoCD individualmente em cada cluster das comarcas apontando para branches distintos.",
+      "D": "Criar um Global Role no Rancher com permissões de cluster-owner para um usuário de serviço.",
+      "E": "Executar um script Ansible com o módulo k8s iterando sobre a lista de kubeconfig das comarcas."
+    },
+    "answer": "B",
+    "explanation": "A correta é a B. O Fleet é a solução de Continuous Delivery (GitOps) nativa do Rancher, projetada especificamente para gerenciar deployments em larga escala através de múltiplos clusters a partir de um repositório Git, permitindo a seleção de clusters via labels. A alternativa A refere-se a um recurso legado do Rancher v2.4 (Multi-Cluster App), preterido em favor do Fleet. A alternativa C descentraliza a solução, perdendo a visão global pedida, além de não ser nativa da stack de gerência atual. A alternativa D trata de controle de acesso (RBAC), não de deployment de manifestos. A alternativa E é uma abordagem imperativa e push-based, violando os princípios GitOps solicitados no cenário."
+  },
+  {
+    "id": 1399,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "DevOps Avançado - Estratégias de Deploy e Argo Rollouts",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O laboratório de inovação do TJ-CE desenvolveu um novo módulo de Inteligência Artificial para a triagem automatizada de processos judiciais. Devido ao alto risco associado à nova versão, a arquitetura exige o roteamento inicial de apenas 5% do tráfego de usuários reais para os novos contêineres. O tráfego deve ser aumentado gradualmente através de degraus monitorados, dispensando a duplicação total e imediata dos recursos de hardware do cluster. A estratégia de deploy descrita e a extensão nativa do Kubernetes adequada para gerenciar esse tráfego são:",
+    "options": {
+      "A": "Deploy Blue/Green e Ingress Controller NGINX padrão.",
+      "B": "Rolling Update e Horizontal Pod Autoscaler.",
+      "C": "Deploy Canary e Argo Rollouts.",
+      "D": "Recreate e Service Mesh Istio.",
+      "E": "A/B Testing e Helm Chart."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C é a correta. O particionamento gradual de tráfego por porcentagens sem a necessidade de instanciar 100% da nova versão em paralelo caracteriza o deploy Canary. A ferramenta Argo Rollouts fornece o Custom Resource (CRD) Rollout, que possibilita este particionamento de rede complexo no Kubernetes de forma declarativa. A letra A (Blue/Green) demanda o spin-up completo do ambiente novo antes de qualquer chaveamento, consumindo o dobro dos recursos. A letra B (Rolling Update) substitui gradualmente os pods, mas o tráfego é puramente balanceado pelo kube-proxy de acordo com a proporção de pods prontos, sem roteamento de peso inteligente exato de entrada. As alternativas D e E mesclam estratégias e ferramentas incompatíveis para o objetivo direto citado."
+  },
+  {
+    "id": 1400,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "DevOps Avançado - ArgoCD App of Apps",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para uniformizar a criação de novos ambientes de homologação do sistema e-SAJ, o time de plataforma do TJ-CE adotou um padrão no ArgoCD. A regra de negócio exige que o provisionamento de um novo ambiente completo (frontend, backend, banco de dados e filas) seja iniciado pela adição de um único manifesto no repositório de infraestrutura, que declarará os metadados do ambiente e fará o bootstrap hierárquico de todos os outros componentes da aplicação. Este modelo arquitetural declarativo de gerenciamento é conhecido como:",
+    "options": {
+      "A": "Padrão App of Apps criando um objeto Application pai que aponta para um diretório de Applications filhos.",
+      "B": "Configuração de ApplicationSet com o gerador do tipo Cluster iterando sobre as definições de ambiente.",
+      "C": "Implementação de um Helm Chart monolítico contendo todos os Deployments no mesmo arquivo template.",
+      "D": "Cadastro de múltiplos repositórios no projeto do ArgoCD e ativação de webhooks de pull request.",
+      "E": "Criação de um Sync Wave sequencial enumerando cada serviço no manifesto da aplicação principal."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. O padrão App of Apps (Aplicação de Aplicações) no ArgoCD consiste na criação de um recurso Application ('pai') que aponta para um repositório contendo outros manifestos do tipo Application ('filhos'). Essa abordagem resolve o problema de bootstrap (chicken-and-egg problem) de sistemas complexos compostos por vários subcomponentes. A letra B descreve o ApplicationSet, que é útil para múltiplos clusters, mas não é a definição estrita do padrão de um único manifesto cascateando outros serviços num cenário de Application única. A letra C quebra a modularidade exigida na orquestração de múltiplos sistemas. Letras D e E referem-se, respectivamente, a integração de eventos e ordens de sincronização, sem abordar o padrão hierárquico de bootstrap."
+  },
+  {
+    "id": 1401,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "DevOps Avançado - Helm Values Precedence",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o deploy do portal de jurisprudência empacotado como um Helm Chart no cluster de produção do TJ-CE, o engenheiro executou o comando 'helm upgrade --install jur-app ./chart -f values-prod.yaml --set database.password=senha123'. Identificou-se a definição simultânea de senhas diferentes no arquivo interno 'values.yaml' do chart, no arquivo externo 'values-prod.yaml' e na flag '--set' da linha de comando. A ordem de precedência aplicada pelo motor do Helm, do nível mais alto (vencedor do conflito) para o nível mais baixo, é:",
+    "options": {
+      "A": "Arquivo values.yaml, arquivo values-prod.yaml, flag --set.",
+      "B": "Flag --set, arquivo values-prod.yaml, arquivo values.yaml.",
+      "C": "Arquivo values-prod.yaml, flag --set, arquivo values.yaml.",
+      "D": "Flag --set, arquivo values.yaml, arquivo values-prod.yaml.",
+      "E": "Arquivo values-prod.yaml, arquivo values.yaml, flag --set."
+    },
+    "answer": "B",
+    "explanation": "A correta é a B. No Helm, as passagens na linha de comando usando a flag --set possuem a mais alta prioridade e sobrescrevem todos os outros valores. A flag -f (ou --values) permitindo passar um arquivo customizado de valores possui a segunda maior prioridade. O arquivo values.yaml contido dentro do diretório padrão do chart possui a menor prioridade, servindo como baseline de valores default do pacote. As demais alternativas apresentam ordens equivocadas dessa hierarquia de parse do Helm."
+  },
+  {
+    "id": 1402,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "DevOps Avançado - Arquitetura RKE2 vs RKE1",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Visando o alinhamento com padrões federais de segurança (FIPS), o Tribunal migrou sua infraestrutura de conteinerização orquestrada de RKE1 para RKE2 (Rancher Kubernetes Engine 2). A auditoria estipulou que os componentes de infraestrutura do control plane não podem operar sob a dependência de daemons root isolados e tradicionais do Docker. A principal mudança de arquitetura do RKE2 que garante a aderência a essa norma de auditoria baseia-se em:",
+    "options": {
+      "A": "Dependência nativa e exclusiva do Docker Engine para o gerenciamento de permissões dos nós.",
+      "B": "Execução dos componentes do cluster como pods estáticos gerenciados pelo Kubelet em formato containerd.",
+      "C": "Utilização do Istio como Container Network Interface (CNI) obrigatório para todo o tráfego do control plane.",
+      "D": "Integração do Active Directory nativamente na API do etcd para a emissão de certificados temporários.",
+      "E": "Armazenamento do estado do cluster em bancos de dados relacionais externos no lugar do armazenamento etcd."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. Diferentemente do RKE1 (que dependia fortemente da instalação prévia do Docker e de scripts para criar os contêineres do cluster), o RKE2 adota o containerd como runtime padrão e roda os componentes da camada de gerenciamento (como kube-apiserver, scheduler) na forma de pods estáticos controlados pelo kubelet de um serviço em background, dispensando o uso do Docker e proporcionando conformidade FIPS. A alternativa A é o inverso da proposta. A alternativa C confunde a CNI padrão, que no RKE2 costuma ser Canal ou Cilium. A alternativa D é irreal. A alternativa E confunde o RKE2 com o K3s, que tem suporte nativo para bancos relacionais no lugar do etcd, embora o RKE2 use o etcd."
+  },
+  {
+    "id": 1403,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "DevOps Avançado - ArgoCD Sync Waves",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No processo de implantação do sistema de Processo Administrativo Digital (PAD), a ferramenta ArgoCD precisa aplicar múltiplos recursos Kubernetes declarados num mesmo repositório. O design da aplicação exige estritamente a criação sequencial: primeiramente o Namespace, na sequência os ConfigMaps e Secrets, e, de forma conclusiva, o Deployment do backend. Para orquestrar essa sequência de criação sem a divisão forçada em múltiplos repositórios ou diretórios desvinculados, a configuração adotada é:",
+    "options": {
+      "A": "Anotar os manifestos com argocd.argoproj.io/sync-wave definindo valores numéricos crescentes para a dependência.",
+      "B": "Modificar os arquivos YAML inserindo um prefixo numérico sequencial diretamente no nome físico do arquivo.",
+      "C": "Habilitar a propriedade ApplyOutOfSyncOnly=true nas opções avançadas de sincronização do projeto.",
+      "D": "Declarar múltiplos objetos do tipo Application e estabelecer a ligação lógica na propriedade dependsOn.",
+      "E": "Utilizar blocos do tipo initContainers nos pods do backend para atrasar a consulta dos recursos de infraestrutura."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A é a correta. O ArgoCD usa Sync Waves (ondas de sincronização) para ordenar a aplicação dos manifestos baseados na anotação customizada argocd.argoproj.io/sync-wave. Os recursos com menor número na onda (incluindo números negativos) são aplicados primeiro. Quando estes estão saudáveis, o ArgoCD avança para a próxima onda. A alternativa B é falsa porque o ArgoCD, assim como o Kubernetes nativo, desconsidera o nome do arquivo, importando apenas a declaração lógica. A alternativa C permite o sync parcial, não sequencial. A alternativa D inventa uma propriedade (dependsOn) inexistente no CRD padrão Application. A alternativa E introduz complexidade no código dos microsserviços, transferindo um problema de pipeline/orquestração para a aplicação."
+  },
+  {
+    "id": 1404,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "DevOps Avançado - GitOps e Auto-Healing",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um analista de infraestrutura do TJ-CE observou um pico atípico de consumo no serviço de emissão de certidões. Na tentativa de mitigar o problema com rapidez, utilizou o comando manual kubectl edit deployment certidoes-api para alterar o limite de réplicas de 3 para 10 diretamente no cluster Kubernetes. Exatos três minutos após a alteração manual, a contagem de réplicas retornou agressivamente para o número 3, anulando a ação do operador. Esse comportamento arquitetural ocorre em função da:",
+    "options": {
+      "A": "Configuração da cota de recursos no namespace limitando artificialmente o crescimento das réplicas ativas.",
+      "B": "Ativação da funcionalidade de Auto-Sync associada à política Self-Heal presente no Application do ArgoCD.",
+      "C": "Intervenção automática do Admission Controller interno bloqueando as edições originadas por terminais kubectl.",
+      "D": "Perda intermitente de comunicação do painel de controle do cluster Kubernetes com a base de dados etcd.",
+      "E": "Execução forçada da rotina de rollback no painel de monitoramento do Prometheus Alertmanager."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é correta. A arquitetura GitOps estabelece o repositório Git como a única fonte de verdade. No ArgoCD, habilitar o Auto-Sync junto da flag Self-Heal orienta o controlador a monitorar agressivamente o cluster: qualquer desvio manual (configuration drift) gerado via CLI no cluster é imediatamente detectado e reescrito para corresponder ao estado do Git (que possui a declaração original de 3 réplicas). A letra A limitaria a criação de pods por falta de CPU/RAM, não reescreveria a definição do spec.replicas do deployment. A letra C impediria a edição original, portanto as réplicas não chegariam a subir para 10. A letra E propõe uma ação ativa irreal em um Alertmanager, que serve para notificação, não orquestração de rollbacks."
+  },
+  {
+    "id": 1405,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "DevOps Avançado - Argo Rollouts e Análises Progressivas",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o deploy automatizado (estilo canary) do novo portal institucional utilizando o Argo Rollouts, a arquitetura de lançamento exige que a promoção para as próximas etapas de roteamento de tráfego (ex: passagem de 10% para 25% de carga) não demande aprovação manual humana. O incremento deve ocorrer de forma autônoma apenas após a aferição contínua da métrica de erros HTTP 500 originados da aplicação, garantindo que o índice permaneça inferior a 1% na base temporal de 5 minutos coletada do Prometheus. O artefato do Argo Rollouts utilizado para estabelecer e processar essa regra declarativa de telemetria é o:",
+    "options": {
+      "A": "AnalysisTemplate vinculado à especificação do Rollout da aplicação.",
+      "B": "Rollout Webhook Triggered mapeado nas configurações do Ingress Controller.",
+      "C": "PodMonitor instanciado no pipeline do Prometheus Operator.",
+      "D": "MetricTemplate gerenciado internamente pelo Kubernetes Metrics Server.",
+      "E": "Experiment Resource estruturado com injeção paralela de falhas."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. No Argo Rollouts, a automação baseada em métricas para promoção ou degradação de tráfego é obtida mediante o uso de AnalysisTemplates (e AnalysisRuns). Estes Custom Resources consultam métricas em provedores externos como o Prometheus, Datadog ou New Relic e baseiam as transições automáticas de degraus de release em aprovação dessas medições. As alternativas C e D descrevem componentes de telemetria geral do K8s, mas nenhum destes controla as etapas (steps) de roteamento de tráfego canário ou blue/green atrelado ao Argo Rollouts."
+  },
+  {
+    "id": 1406,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "DevOps Avançado - Helm Rollback",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O time de infraestrutura realizou a atualização do pacote da aplicação de processos digitais utilizando o comando 'helm upgrade portal-tjce ./chart'. Imediatamente após a aplicação, o sistema relatou falhas críticas de indisponibilidade de rede. A mitigação arquitetural orienta que o administrador deve realizar a reversão instantânea do estado completo do Kubernetes para a versão antecedente do release Helm, garantindo a atomicidade das configurações originais sem a necessidade de clonar o repositório novamente.",
+    "options": {
+      "A": "Executar o comando helm rollback portal-tjce referenciando o número da revisão anterior.",
+      "B": "Executar o comando helm revert portal-tjce com a marcação da flag --version estática.",
+      "C": "Executar o comando helm downgrade portal-tjce definindo o parâmetro principal --previous.",
+      "D": "Executar o comando helm history portal-tjce combinando a extensão de pipeline --restore.",
+      "E": "Executar o comando helm update portal-tjce aplicando o qualificador final --rollback."
+    },
+    "answer": "A",
+    "explanation": "A correta é a letra A. A ferramenta Helm suporta a reversão de lançamentos falhos nativamente através do comando 'helm rollback <nome-do-release> [numero-da-revisao]'. Quando emitido, o Helm busca a revisão salva como Secret (por padrão no Helm 3) no cluster e reaplica exatamente os manifestos validados na respectiva versão estável. Todas as outras alternativas (B, C, D e E) apresentam comandos ou sub-comandos imaginários que não existem na CLI do Helm."
+  },
+  {
+    "id": 1407,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "DevOps Avançado - Gerenciamento de Permissões no Rancher",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O comitê de Segurança da Informação do TJ-CE estabeleceu uma política rigorosa de segregação de funções em ambientes conteinerizados. É imperativo que a equipe de desenvolvedores possua visibilidade em leitura (View) de todos os clusters Kubernetes integrados na interface do Rancher, mas a permissão de modificação de recursos (Edit/Manage) deve ser estritamente circunscrita aos projetos departamentais lógicos que abrigam seus respectivos namespaces. A configuração que soluciona essa demanda diretamente pelos controles de acesso granulares (RBAC) oferecidos pela estrutura centralizada do Rancher exige:",
+    "options": {
+      "A": "Atribuir uma Global Role de User ao desenvolvedor e associá-lo individualmente como Member em um Project Role.",
+      "B": "Conceder a atribuição ampla de Cluster Owner e restringir o tráfego via NetworkPolicies aplicadas nos namespaces.",
+      "C": "Criar contas nativas no Active Directory integradas em um kubeconfig central portando escalonamento root.",
+      "D": "Adicionar permissões granulares de gravação através de comandos puramente imperativos no controlador de ingresso.",
+      "E": "Habilitar o formato de autorização restrito Node do Kube-apiserver gerenciado iterativamente em cada cluster."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A é correta. O Rancher gerencia a delegação de controle utilizando uma hierarquia de permissões que envolve Global Roles (permissões a nível de Rancher e acesso básico a clusters associados), Cluster Roles e Project Roles (um conceito nativo do Rancher que agrupa múltiplos namespaces e permite delegação refinada a usuários específicos). Portanto, para limitar as alterações em partes isoladas do cluster sem perder a visualização mínima, utiliza-se a alocação específica nos Project Roles desejados. A letra B é equivocada pois a permissão Cluster Owner subverte qualquer NetworkPolicy (que trata de rede, e não da API do Kubernetes). As letras D e E fogem completamente da gerência de RBAC de usuários do Rancher."
+  },
+  {
+    "id": 1408,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "DevOps Avançado - GitOps e Gerenciamento de Secrets",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o processo de homologação do modelo GitOps no ambiente do TJ-CE, a equipe de desenvolvimento esbarrou no bloqueio de auditoria que impede categoricamente o armazenamento de senhas de bancos de dados e chaves privadas de API em texto puro no repositório versionado (Git). O ArgoCD necessita de acesso prático para a implantação automatizada dos recursos do tipo Secret no Kubernetes. Para manter o alinhamento completo e declarativo da metodologia GitOps sem violar os princípios estritos de segurança da informação da instituição, a técnica apropriada adotada deve ser:",
+    "options": {
+      "A": "Compilar as senhas sigilosas em artefatos binários opacos e anexá-los junto às definições de manifesto em YAML.",
+      "B": "Aplicar ferramentas criptográficas assimétricas nativas como Sealed Secrets ou SOPS para assegurar o versionamento seguro.",
+      "C": "Suspender a sincronização contínua unicamente para o tipo Secret no ArgoCD injetando-os via painel interativo no Rancher.",
+      "D": "Injetar os segredos do ambiente produtivo de forma crua dentro das variáveis estruturais do ArgoCD Server Runtime.",
+      "E": "Isolar permissões no módulo do repositório Git blindando o acesso e a visibilidade exclusiva à alta gerência de infraestrutura."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B é a correta. Em ecossistemas GitOps puros, o desafio do armazenamento e versionamento do Secret (que por padrão no K8s é apenas codificado em base64 e não encriptado) é sanado com controladores que descriptografam os dados sensíveis assimetricamente apenas dentro do cluster, como o Bitnami Sealed Secrets ou o Mozilla SOPS. Essas ferramentas mantêm o manifesto salvo no Git criptografado de forma segura, permitindo que qualquer um o leia sem comprometer o dado, enquanto o ArgoCD implanta a entidade encriptada, que será interceptada e revertida em um Kubernetes Secret tradicional em tempo de execução no cluster. As outras alternativas quebram o padrão GitOps (C) ou comprometem falhas drásticas de arquitetura/segurança (A, D e E)."
+  },
+  {
+    "id": 1409,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "DevOps Avançado - ArgoCD Image Updater",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para conferir extrema agilidade ao ciclo de integração dos desenvolvedores do Tribunal, formulou-se um requisito em que, sempre que um novo build gerar e subir uma imagem Docker para o repositório central Harbor com a tag atrelada a uma expressão regular controlada (exemplo: v1.5.*), os manifestos em uso no ambiente de homologação deverão ser atualizados com essa nova imagem automaticamente. Essa integração requer dispensar completamente o trabalho de commits manuais nos repositórios YAML de configuração. A extensão do ecossistema Argo desenvolvida nativamente para inspecionar registries e resolver esse cenário dinâmico atende por:",
+    "options": {
+      "A": "Argo CD Image Updater detectando a nova tag de build e automatizando o re-deploy via gravação no Git ou sobrescrita na API.",
+      "B": "Argo Events efetuando a captura de requisições disparadas por webhooks do GitLab acopladas aos pipelines do Jenkins.",
+      "C": "Argo Workflows embutindo um motor cíclico programado para a extração do pull image com subsequente reboot dos contêineres.",
+      "D": "Kubernetes CronJob orquestrando scripts imperativos da shell efetuando docker pull local em cascata em todos os nós físicos.",
+      "E": "Helm Chart configurado rigidamente com a diretiva interna de rede de implantação constante imagePullPolicy: Always no Deployment."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A é correta. O Argo CD Image Updater examina automaticamente registries de contêineres e atualiza as aplicações do ArgoCD para refletir imagens recém-lançadas, alterando de forma imperativa o parâmetro na API do ArgoCD ou realizando um commit reverso (write-back) no próprio repositório Git para garantir a compatibilidade com a filosofia GitOps. A letra E (imagePullPolicy: Always) força o K8s a baixar a imagem caso ela não exista em cache, mas não dispara um reinício no deployment nem altera a tag da imagem a menos que o nome da imagem original use a tag genérica 'latest', o que é uma antiprática proibitiva em produção."
+  },
+  {
+    "id": 1410,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "DevOps Avançado - Helm OCI Registries",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O arquiteto de TI do TJ-CE coordenou a reestruturação unificada do repositório de distribuição de todos os artefatos departamentais. Historicamente, a instituição alocava seus pacotes do Helm em servidores web HTTP estáticos primitivos suportados por um simples arquivo descritor index.yaml. O novo escopo tecnológico exige que todos os novos empacotamentos do Helm sejam indexados e armazenados intrinsecamente no interior do mesmo container registry (Harbor) reservado para o versionamento das imagens Docker. O formato aberto padrão estabelecido na indústria que habilita o push direto e seguro de charts usando o mesmo canal e protocolo nativo de distribuição de contêineres é o:",
+    "options": {
+      "A": "OCI (Open Container Initiative), facilitando o envio autônomo dos templates helmáticos através do comando push regular de registro.",
+      "B": "Tarball fragmentado (.tgz) integrado obrigatoriamente e exclusivamente à sintaxe descritiva em um XML enviado por FTP dinâmico.",
+      "C": "Docker Image elaborada compulsoriamente pelo utilitário Dockerfile mantendo o comando nativo local de cópia no file system raiz.",
+      "D": "YAML manifest renderizado antecipadamente para compilação estrita e depositado linearmente nos volumes provisionados na Amazon S3.",
+      "E": "Sistema de gestão centralizado gRPC interligando requisições transacionais distribuídas internamente no servidor ChartMuseum."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. Desde as versões mais recentes do Helm 3, o suporte a OCI (Open Container Initiative) permite que os charts do Helm sejam empacotados, distribuídos, assinados e controlados usando exatamente a mesma arquitetura e protocolo da API registry utilizados por imagens de contêiner, dispensando servidores auxiliares como ChartMuseum ou Apache estático e unificando o versionamento em sistemas como Harbor, ACR, ECR, etc. As outras alternativas misturam conceitos ou descrevem metodologias antigas/inadequadas para o cenário abordado."
+  },
+  {
+    "id": 1411,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Scrum - Papéis e Responsabilidades",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o desenvolvimento de um novo módulo de expedição de mandados para o sistema Processo Judicial Eletrônico (PJe) do TJ-CE, a equipe técnica foi informada pela alta gestão sobre uma mudança abrupta na legislação processual vigente. Essa alteração legal tornou as funcionalidades previstas para a iteração atual completamente obsoletas e sem valor para os magistrados e servidores. A equipe utiliza o framework Scrum para gerenciar o ciclo de vida do produto e encontra-se no meio de uma Sprint de três semanas. Diante do cenário de perda de sentido do objetivo original estabelecido, o procedimento metodológico correto, conforme o guia oficial do Scrum, é:",
+    "options": {
+      "A": "O Scrum Master determina o encerramento da Sprint e o início imediato de uma Sprint Planning.",
+      "B": "O Product Owner realiza o cancelamento da Sprint antes do seu término regular.",
+      "C": "Os Developers adaptam o Sprint Goal e inserem novos itens no Sprint Backlog.",
+      "D": "O Comitê de Gestão de TI altera o escopo da Sprint e notifica a equipe técnica.",
+      "E": "A equipe de desenvolvimento aguarda a Sprint Review para descartar as entregas."
+    },
+    "answer": "B",
+    "explanation": "No Scrum, apenas o Product Owner possui autoridade para cancelar uma Sprint. O cancelamento ocorre exclusivamente quando o Sprint Goal se torna obsoleto, como no caso de mudanças legais abruptas. As alternativas A, C e D atribuem responsabilidades a papéis incorretos. A alternativa E propõe desperdício de tempo até o final do ciclo."
+  },
+  {
+    "id": 1412,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Kanban - Práticas e Gargalos",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O setor de infraestrutura do TJ-CE lida com a sustentação de diversos serviços críticos. Recentemente, a equipe implementou o método Kanban, mas tem enfrentado um cenário onde múltiplos chamados de instabilidade são iniciados simultaneamente, e a taxa de conclusão das demandas caiu drasticamente, gerando congestionamento agudo na etapa de homologação. Para solucionar o gargalo e restaurar o fluxo contínuo de valor no quadro Kanban, a principal prática a ser adotada é:",
+    "options": {
+      "A": "Ampliar o número de colunas do quadro e segmentar as tarefas complexas.",
+      "B": "Estabelecer limites de trabalho em progresso (WIP) nas etapas do fluxo.",
+      "C": "Adicionar marcadores de prioridade máxima em todos os itens da coluna de entrada.",
+      "D": "Designar um gerente de projetos para supervisionar as movimentações de cartões.",
+      "E": "Medir o Cycle Time de todas as demandas e ignorar as validações de qualidade."
+    },
+    "answer": "B",
+    "explanation": "A limitação do Work In Progress (WIP) é uma prática central do Kanban para evitar gargalos, reduzir a troca de contexto e garantir o fluxo puxado (pull system). As demais alternativas não atacam o problema central do acúmulo de tarefas ou ferem princípios de qualidade da agilidade."
+  },
+  {
+    "id": 1413,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "eXtreme Programming (XP) - Práticas",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na criação de um novo microsserviço responsável pelo cálculo automático de custas processuais do TJ-CE, a equipe de engenharia de software decidiu aplicar as práticas do eXtreme Programming (XP) para garantir alta confiabilidade do código. O arquiteto de software orientou que nenhuma linha de código de produção deve ser escrita antes da criação de um critério de aceitação automatizado. Essa abordagem metodológica segue um ciclo restrito e iterativo focado na qualidade interna do software. A prática descrita refere-se ao:",
+    "options": {
+      "A": "Desenvolvimento Orientado a Testes (TDD).",
+      "B": "Design Orientado a Domínio (DDD).",
+      "C": "Refatoração Contínua de Arquitetura.",
+      "D": "Integração Contínua e Entrega Contínua.",
+      "E": "Programação em Pares baseada em casos de uso."
+    },
+    "answer": "A",
+    "explanation": "O TDD (Test-Driven Development) é uma prática essencial do XP que consiste em escrever um teste automatizado falho antes de implementar a funcionalidade, seguido da escrita do código para o teste passar e, por fim, da refatoração. As outras alternativas são práticas distintas (DDD nem faz parte do XP original)."
+  },
+  {
+    "id": 1414,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Scrum - Eventos",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma equipe Scrum alocada no Tribunal de Justiça do Estado do Ceará finalizou uma iteração marcada por graves falhas de comunicação interna e atrasos na integração do código. O incremento de produto foi entregue com qualidade aceitável, mas o esforço técnico desgastou os integrantes da equipe. Para mitigar esses problemas e planejar ações corretivas focadas nos processos e nas interações humanas, a equipe deve utilizar de forma prioritária o evento denominado:",
+    "options": {
+      "A": "Sprint Planning, para reestimar o esforço das tarefas futuras.",
+      "B": "Sprint Review, para apresentar as deficiências ao cliente.",
+      "C": "Daily Scrum, para atualizar o status das falhas do dia anterior.",
+      "D": "Sprint Retrospective, para inspecionar o fluxo e criar um plano de melhoria.",
+      "E": "Backlog Refinement, para dividir as histórias de usuário problemáticas."
+    },
+    "answer": "D",
+    "explanation": "A Sprint Retrospective é o evento do Scrum dedicado à inspeção das interações, processos e ferramentas da Sprint concluída, com o objetivo de adaptar e criar planos de melhoria contínua para a próxima Sprint. A Review foca no produto; a Planning no planejamento do trabalho; a Daily na tática diária."
+  },
+  {
+    "id": 1415,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Kanban - Métricas e Diagnóstico",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O coordenador de TI de uma das varas do TJ-CE deseja analisar o desempenho do fluxo de desenvolvimento de software da sua equipe Kanban. Ele precisa visualizar graficamente a quantidade de itens presentes em cada coluna do quadro ao longo das últimas semanas para identificar os períodos de estrangulamento (gargalos) e prever a estabilidade do sistema. A ferramenta gráfica do Kanban adequada para esse diagnóstico é o:",
+    "options": {
+      "A": "Gráfico de Burndown da iteração.",
+      "B": "Diagrama de Fluxo Cumulativo (CFD).",
+      "C": "Gráfico de Velocidade de Entrega.",
+      "D": "Histograma de Cycle Time.",
+      "E": "Mapa de Fluxo de Valor de Processos."
+    },
+    "answer": "B",
+    "explanation": "O Cumulative Flow Diagram (CFD) é a ferramenta visual padrão do Kanban que ilustra a quantidade de trabalho em cada etapa do fluxo ao longo do tempo. Ele permite identificar facilmente os gargalos através do alargamento das faixas horizontais. Burndown é comum no Scrum, não nativo do Kanban."
+  },
+  {
+    "id": 1416,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "eXtreme Programming (XP) - Práticas",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No desenvolvimento do painel de Business Intelligence para a Presidência do TJ-CE, a diretoria de sistemas optou por alocar o trabalho da equipe técnica no formato do eXtreme Programming (XP). Em um determinado módulo de cálculos atuariais complexos, dois programadores trabalham fisicamente juntos em um único computador. Um desenvolvedor digita o código enquanto o outro revisa cada linha em tempo real, prestando atenção à lógica e ao design estratégico. Essa prática específica do XP é conhecida como:",
+    "options": {
+      "A": "Revisão de Código por Pares.",
+      "B": "Design Simples em Conjunto.",
+      "C": "Propriedade Coletiva de Código.",
+      "D": "Programação em Pares (Pair Programming).",
+      "E": "Cliente Presente (On-site Customer)."
+    },
+    "answer": "D",
+    "explanation": "A Programação em Pares (Pair Programming) envolve dois desenvolvedores trabalhando em uma mesma estação de trabalho (um atua como piloto/driver e o outro como navegador/navigator). As demais alternativas representam conceitos ou práticas diferentes."
+  },
+  {
+    "id": 1417,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Scrum - Papéis e Responsabilidades",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para maximizar o valor dos produtos entregues ao Tribunal, o setor de Engenharia de Software adota as diretrizes de gerenciamento de backlog do Scrum. Existem demandas divergentes provenientes da Corregedoria, das varas criminais e dos gabinetes dos desembargadores. A responsabilidade por ordenar os itens de trabalho, expressar claramente as necessidades de negócio e garantir a transparência do que será desenvolvido em seguida cabe exclusivamente ao papel de:",
+    "options": {
+      "A": "Scrum Master.",
+      "B": "Líder Técnico de Desenvolvimento.",
+      "C": "Product Owner.",
+      "D": "Gerente de Projetos de TI.",
+      "E": "Comitê Diretor de Sistemas."
+    },
+    "answer": "C",
+    "explanation": "Segundo o Scrum Guide, o Product Owner (Dono do Produto) é o único responsável pelo gerenciamento do Product Backlog, incluindo a ordenação (priorização) dos itens e a garantia de visibilidade e clareza. Os outros papéis não possuem essa autoridade dentro do framework."
+  },
+  {
+    "id": 1418,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "eXtreme Programming (XP) - Práticas",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de analistas do TJ-CE que adota práticas de eXtreme Programming (XP) sofreu repetidos problemas na fase final do ciclo de liberação de software. Muitas vezes, códigos desenvolvidos em ramos isolados por semanas geravam conflitos irreversíveis ao serem agrupados no repositório principal, causando instabilidade no ambiente do tribunal. Para prevenir o problema do 'inferno de integração', o XP preceitua a adoção da prática de:",
+    "options": {
+      "A": "Integração Contínua com submissão de código múltiplas vezes ao dia.",
+      "B": "Congelamento de Código com ramificações exclusivas por funcionalidade.",
+      "C": "Refatoração de Sistema em ciclos mensais de estabilização.",
+      "D": "Desenvolvimento Orientado a Testes com validação manual posterior.",
+      "E": "Padronização de Código com foco no arquivamento de versões antigas."
+    },
+    "answer": "A",
+    "explanation": "A Integração Contínua (Continuous Integration) no XP exige que o código seja integrado ao repositório principal frequentemente, várias vezes ao dia, com a execução de testes automatizados para evitar conflitos catastróficos no fim do ciclo."
+  },
+  {
+    "id": 1419,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Scrum - Artefatos e Compromissos",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao final de uma Sprint dedicada à atualização dos módulos de assinatura digital do TJ-CE, a equipe de desenvolvimento declarou que cinco dos seis itens selecionados foram concluídos. Durante a inspeção técnica, observou-se que o código não possuía cobertura de testes unitários e a documentação da API estava defasada, desrespeitando o padrão de qualidade organizacional pré-estabelecido. No framework Scrum, a verificação da conclusão real de um item do Product Backlog ocorre por meio da aderência estrita à:",
+    "options": {
+      "A": "Métrica de Velocidade de Equipe.",
+      "B": "Estimativa do Sprint Planning.",
+      "C": "Definição de Pronto (Definition of Done).",
+      "D": "Definição de Preparado (Definition of Ready).",
+      "E": "Meta da Sprint (Sprint Goal)."
+    },
+    "answer": "C",
+    "explanation": "A Definição de Pronto (Definition of Done - DoD) é o compromisso do artefato Incremento. Ela cria transparência ao fornecer um entendimento compartilhado sobre os critérios de qualidade necessários para que um item seja considerado finalizado. Sem atender à DoD, o item retorna ao Product Backlog."
+  },
+  {
+    "id": 1420,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Kanban - Métricas de Fluxo",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O tempo de resposta da área de tecnologia do TJ-CE às solicitações dos magistrados tornou-se uma métrica cobrada pela presidência. O gestor de TI decidiu utilizar as métricas primárias do método Kanban para relatar o desempenho da equipe. Ele iniciou a aferição do tempo total decorrido desde o momento em que a demanda entra na fila de requisições da equipe até o exato momento em que ela é entregue em ambiente de produção para o usuário final. Essa métrica de fluxo recebe o nome técnico de:",
+    "options": {
+      "A": "Throughput Geral.",
+      "B": "Lead Time.",
+      "C": "Cycle Time.",
+      "D": "Takt Time.",
+      "E": "WIP Time."
+    },
+    "answer": "B",
+    "explanation": "O Lead Time mede o tempo total desde o momento em que a requisição é feita pelo cliente até a entrega do item pronto em produção. O Cycle Time mede apenas o tempo de processamento ativo (quando o trabalho efetivamente começou). O contexto da requisição até a produção aponta inequivocamente para o Lead Time."
+  },
+  {
+    "id": 1421,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "eXtreme Programming (XP) - Práticas",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após sucessivas iterações de entregas rápidas no sistema de controle de audiências do TJ-CE, o código-fonte apresentou alto grau de deterioração estrutural, com classes duplicadas e acoplamento desnecessário, embora os requisitos de negócio continuassem funcionando. Para garantir a sustentabilidade do software a longo prazo e facilitar alterações futuras, os engenheiros decidiram aplicar uma prática recomendada pelo eXtreme Programming (XP) voltada à alteração da estrutura interna do sistema sem modificar o seu comportamento externo. A prática aplicada é a:",
+    "options": {
+      "A": "Reengenharia de Software.",
+      "B": "Design Simples.",
+      "C": "Metáfora de Sistema.",
+      "D": "Refatoração.",
+      "E": "Integração Contínua."
+    },
+    "answer": "D",
+    "explanation": "A Refatoração (Refactoring) é a prática do XP que envolve alterar e melhorar a estrutura interna do código e o design do sistema para eliminar dívidas técnicas (como duplicação), sem alterar seu comportamento externo (garantido pela manutenção dos testes)."
+  },
+  {
+    "id": 1422,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Scrum - Eventos",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de Developers do TJ-CE adotou uma postura de transformar a Daily Scrum em uma reunião de relatório de status direcionada ao Product Owner e ao gerente setorial. Durante o evento, o tempo frequentemente ultrapassa trinta minutos, focando em longas explicações arquiteturais e prestação de contas. Conforme o Scrum Guide oficial, essa abordagem contraria a essência do evento. O propósito exclusivo e correto da Daily Scrum é inspecionar o progresso em direção ao:",
+    "options": {
+      "A": "Product Backlog e planejar as liberações de versão.",
+      "B": "Sprint Goal e adaptar o Sprint Backlog conforme necessário.",
+      "C": "Definition of Done e avaliar o desempenho individual.",
+      "D": "Sprint Review e preparar as demonstrações de produto.",
+      "E": "Product Goal e atualizar as métricas de acompanhamento de equipe."
+    },
+    "answer": "B",
+    "explanation": "A Daily Scrum é um evento focado nos Developers, com duração máxima de 15 minutos. Seu objetivo principal é inspecionar o progresso em direção à Meta da Sprint (Sprint Goal) e adaptar o plano tático contido no Sprint Backlog para o próximo dia de trabalho."
+  },
+  {
+    "id": 1423,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Kanban - Políticas Explícitas",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o fluxo operacional da secretaria de tecnologia do TJ-CE, ocorrem atritos constantes entre os analistas de negócios e os desenvolvedores sobre quando uma tarefa realmente possui todos os artefatos necessários para iniciar a fase de programação. Alguns analistas encaminham tickets vagos para a fila de desenvolvimento. Para sanar esse desentendimento, a adoção de Kanban sugere a criação de regras claras, documentadas e visíveis sobre os critérios de transição entre colunas. Essa prática do Kanban corresponde a:",
+    "options": {
+      "A": "Visualizar o fluxo de valor.",
+      "B": "Limitar o trabalho em progresso.",
+      "C": "Gerenciar o fluxo sistêmico.",
+      "D": "Tornar as políticas explícitas.",
+      "E": "Implementar ciclos de feedback de métricas."
+    },
+    "answer": "D",
+    "explanation": "Tornar as políticas explícitas (Make policies explicit) é uma das práticas principais do Kanban. Consiste em definir e exibir regras objetivas (como Definition of Ready e Definition of Done de cada coluna) sobre como o trabalho deve transitar, alinhando a equipe e evitando ambiguidades na movimentação de cartões."
+  },
+  {
+    "id": 1424,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "eXtreme Programming (XP) - Valores e Práticas",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No desenvolvimento do aplicativo móvel de conciliação do TJ-CE, os requisitos evoluem de forma extremamente volátil com base no feedback direto do núcleo de mediação. A equipe de XP determinou que o coordenador do núcleo de mediação passará a compor integralmente o ambiente de desenvolvimento diário da equipe técnica, respondendo a perguntas instantâneas, escrevendo testes de aceitação funcionais e guiando as prioridades das histórias. A prática central do eXtreme Programming exemplificada neste cenário é:",
+    "options": {
+      "A": "Jogo de Planejamento (Planning Game).",
+      "B": "Metáfora de Sistema (System Metaphor).",
+      "C": "Ritmo Sustentável (Sustainable Pace).",
+      "D": "Cliente Presente (On-site Customer).",
+      "E": "Propriedade Coletiva (Collective Ownership)."
+    },
+    "answer": "D",
+    "explanation": "A prática do Cliente Presente (On-site Customer) do XP dita que um representante do negócio (cliente) deve estar disponível em tempo integral junto à equipe de desenvolvimento para tirar dúvidas imediatas, definir prioridades e escrever ou validar os testes de aceitação funcionais."
+  },
+  {
+    "id": 1425,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Scrum - Eventos e Adaptação",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O time Scrum responsável pela plataforma de Diário de Justiça Eletrônico do TJ-CE chegou ao fim da sua iteração com a maior parte do escopo técnico implementado com sucesso. Durante o evento de fechamento da iteração focado no produto, o tribunal identificou mudanças no orçamento e nos cronogramas institucionais, resultando em uma profunda alteração na direção estratégica do projeto para as próximas entregas. Com base nas diretrizes oficiais do Scrum, o evento de inspeção e adaptação voltado para essa avaliação com os stakeholders é a:",
+    "options": {
+      "A": "Sprint Planning.",
+      "B": "Sprint Retrospective.",
+      "C": "Sprint Review.",
+      "D": "Reunião de Refinamento de Backlog.",
+      "E": "Daily Scrum de finalização."
+    },
+    "answer": "C",
+    "explanation": "A Sprint Review é o evento formal realizado ao final da Sprint focado na inspeção do Incremento do produto com a colaboração dos stakeholders. Nesse evento, o grupo discute o que foi feito e avalia o progresso do orçamento e do cronograma, adaptando o Product Backlog para as próximas etapas."
+  },
+  {
+    "id": 1426,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Engenharia de Requisitos",
+    "context": "Migração de Sistemas e Gargalos de Elicitação",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o projeto de migração do sistema legado de custas processuais do Tribunal de Justiça do Ceará (TJ-CE), a equipe de análise de TI encontrou severas dificuldades na fase de elicitação de requisitos. Os servidores cartorários mais antigos, usuários principais do sistema, executavam tarefas complexas de forma mecânica e não conseguiam articular com precisão o fluxo de trabalho durante as entrevistas estruturadas. A documentação existente estava defasada. Para mapear fidedignamente o processo e capturar as regras de negócio implícitas na rotina desses usuários, o analista deve aplicar a técnica de elicitação denominada:",
+    "options": {
+      "A": "Observação direta do ambiente operacional.",
+      "B": "Prototipação evolutiva de interfaces gráficas.",
+      "C": "Aplicação de questionários padronizados.",
+      "D": "Condução de sessões de brainstorming interativas.",
+      "E": "Construção de cenários de caso de uso."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. A técnica de observação (ou etnografia) é a mais indicada para elicitar requisitos quando os usuários executam tarefas complexas de maneira automática ou subconsciente e possuem dificuldade em explicar verbalmente ou por escrito como realizam seu trabalho. A alternativa (B) foca na interface, mas não captura fluxos de trabalho obscuros sem uma base. A alternativa (C) agravaria o problema, já que os usuários não conseguem articular o processo. A alternativa (D) gera novas ideias, mas não documenta fluxos rotineiros engessados. A alternativa (E) é uma técnica de modelagem e especificação, que depende de uma elicitação prévia bem-sucedida."
+  },
+  {
+    "id": 1427,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Engenharia de Requisitos",
+    "context": "Modernização de Arquitetura Judiciária",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Comitê de Arquitetura de TI do TJ-CE deliberou sobre a modernização do portal de e-Procurement. No documento de visão do projeto, ficou estabelecido que o novo sistema deve obrigatoriamente autenticar os magistrados via autenticação multifator (MFA) baseada em tokens de hardware e deve ser capaz de processar o upload de peças processuais de até 50MB em um tempo máximo de 3 segundos, sob carga de mil usuários concorrentes. No âmbito da Engenharia de Requisitos, essas propriedades sistêmicas são classificadas, respectivamente, como:",
+    "options": {
+      "A": "Requisitos não funcionais de segurança e de desempenho.",
+      "B": "Requisitos funcionais de controle de acesso e de armazenamento.",
+      "C": "Regras de negócio de governança e de volumetria.",
+      "D": "Restrições arquiteturais de infraestrutura e de rede.",
+      "E": "Requisitos de domínio de criptografia e de latência."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. Requisitos não funcionais descrevem 'como' o sistema deve se comportar, focando em atributos de qualidade. A obrigatoriedade de MFA é um requisito não funcional de segurança, enquanto o tempo máximo de 3 segundos sob carga específica é um requisito não funcional de desempenho (ou performance). A alternativa (B) erra ao classificá-los como funcionais. A alternativa (C) confunde requisitos do sistema com regras de negócio puras. A alternativa (D) erra ao reduzir os requisitos a meras restrições de rede. A alternativa (E) inventa a taxonomia 'requisitos de domínio' para enquadrar latência e criptografia de forma incorreta."
+  },
+  {
+    "id": 1428,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Engenharia de Requisitos",
+    "context": "Impacto de Mudanças Legais no Software",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma alteração no Código de Processo Penal exigiu uma modificação estrutural no módulo de peticionamento eletrônico do TJ-CE. A equipe de Engenharia de Software precisa diagnosticar rapidamente quais componentes de código, casos de teste automatizados e tabelas do banco de dados serão impactados por essa alteração na legislação (requisito de negócio). Para garantir a integridade do sistema e realizar essa análise de impacto de maneira precisa, o processo de gerência de requisitos do tribunal deve utilizar a:",
+    "options": {
+      "A": "Matriz de rastreabilidade de requisitos.",
+      "B": "Documentação de especificação de requisitos de software.",
+      "C": "Diagramação de componentes arquiteturais corporativos.",
+      "D": "Tabela de atributos de qualidade sistêmica.",
+      "E": "Refinação contínua do backlog do produto."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. A matriz de rastreabilidade é a ferramenta que vincula requisitos a suas origens, componentes de design, módulos de código e casos de teste, permitindo realizar análises de impacto rápidas e seguras quando um requisito muda. A alternativa (B) é o documento formal, mas não necessariamente provê a amarração direta de ponta a ponta. A alternativa (C) modela o software, mas não rastreia a origem do requisito legal. A alternativa (D) foca apenas em qualidades não funcionais. A alternativa (E) é uma prática ágil de priorização e detalhamento, mas não garante o mapeamento de artefatos afetados no código e banco de dados."
+  },
+  {
+    "id": 1429,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Engenharia de Requisitos",
+    "context": "Priorização de Requisitos e Restrição Orçamentária",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O projeto do novo módulo de Execução Penal do TJ-CE sofreu um corte orçamentário imprevisto, reduzindo a capacidade da equipe de desenvolvimento em 30%. O Dono do Produto (Product Owner), em conjunto com os analistas de TI, decidiu categorizar a lista de requisitos pendentes em quatro grupos distintos: funcionalidades essenciais para o lançamento, funcionalidades importantes mas contornáveis, funcionalidades desejáveis para o futuro e funcionalidades descartadas no momento. A técnica de priorização de requisitos aplicada neste cenário é a:",
+    "options": {
+      "A": "Técnica MoSCoW.",
+      "B": "Classificação de Kano.",
+      "C": "Matriz de Esforço e Impacto.",
+      "D": "Pontuação de Valor de Negócio.",
+      "E": "Votação de Pontos Cumulativos."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. A técnica MoSCoW divide os requisitos em quatro categorias: Must have (essenciais), Should have (importantes/contornáveis), Could have (desejáveis) e Won't have (descartados/não agora). A alternativa (B) classifica baseada na satisfação do cliente (básico, performance, encantamento). A alternativa (C) plota em um gráfico de dois eixos, sem as 4 divisões fixas supracitadas. A alternativa (D) foca na atribuição de pesos numéricos de valor. A alternativa (E) é uma dinâmica de time para votar itens mais importantes."
+  },
+  {
+    "id": 1430,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Engenharia de Requisitos",
+    "context": "Especificação Ágil de Requisitos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe ágil do TJ-CE, responsável pelo portal de audiências virtuais, adota o Desenvolvimento Orientado a Comportamento (BDD) e preza por uma documentação concisa. Ao invés de redigir longos documentos de visão, a equipe adota um formato de requisito que captura explicitamente o papel do ator, o objetivo da ação e o benefício gerado para a justiça, sempre acompanhado de regras claras e testáveis que determinam a conclusão da funcionalidade. Essa abordagem de modelagem de requisitos utiliza:",
+    "options": {
+      "A": "História de usuário com critérios de aceite.",
+      "B": "Caso de uso com fluxo alternativo documentado.",
+      "C": "Requisito funcional com restrição de design e arquitetura.",
+      "D": "Cenário de teste com roteiro de execução de regressão.",
+      "E": "Especificação formal com prova matemática de estados."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. A estrutura 'Como [ator], eu quero [objetivo], para que [benefício]' define uma História de Usuário (User Story). As regras claras e testáveis que acompanham a história e definem sua conclusão são os Critérios de Aceite (Acceptance Criteria). A alternativa (B) refere-se a uma abordagem tradicional baseada em atores e fluxos sistêmicos, e não o formato papel/objetivo/benefício. A alternativa (C) mistura requisitos funcionais com regras arquiteturais rígidas. A alternativa (D) refere-se ao teste em si, e não à especificação inicial do requisito de negócio. A alternativa (E) é o extremo oposto do ágil, usada em sistemas críticos vitais (como aviônicos)."
+  },
+  {
+    "id": 1431,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Engenharia de Requisitos",
+    "context": "Homologação e Conformidade de Requisitos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Antes de autorizar o início da dispendiosa fase de codificação de um novo classificador automatizado de jurisprudências, a equipe do TJ-CE submete a modelagem conceitual e protótipos navegáveis de alta fidelidade à apreciação de um comitê de magistrados. O objetivo da reunião é garantir que os modelos comportamentais especificados correspondem perfeitamente às reais necessidades processuais dos usuários finais, detectando erros de interpretação antes do desenvolvimento. Esta etapa crítica da Engenharia de Requisitos é denominada:",
+    "options": {
+      "A": "Validação de requisitos.",
+      "B": "Elicitação de requisitos.",
+      "C": "Negociação de requisitos.",
+      "D": "Especificação de requisitos.",
+      "E": "Gerenciamento de configuração de requisitos."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. A validação de requisitos é o processo de confirmar com os stakeholders (magistrados, no caso) se o sistema especificado é exatamente o sistema que eles precisam, respondendo à pergunta: 'Estamos construindo o sistema certo?'. A alternativa (B) é a fase de coleta/descoberta. A alternativa (C) trata da resolução de conflitos entre stakeholders. A alternativa (D) é o ato de documentar e modelar técnica e formalmente o sistema. A alternativa (E) trata do controle de versões e rastreabilidade após os requisitos estarem aprovados."
+  },
+  {
+    "id": 1432,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Engenharia de Requisitos",
+    "context": "Contratação de Fábrica de Software",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE contratou uma fábrica de software terceirizada para o desenvolvimento de um módulo de integração entre o PJe e sistemas de segurança pública. O contrato estipula que, antes do início de qualquer sprint, deve haver um acordo formal, inequívoco e padronizado detalhando o comportamento do sistema, suas interfaces externas, dados manipulados e restrições operacionais. O artefato primário da Engenharia de Requisitos que cristaliza esse acordo e serve de baseline (linha de base) técnica para a fábrica é o:",
+    "options": {
+      "A": "Documento de Especificação de Requisitos de Software.",
+      "B": "Termo de Abertura do Projeto de Software.",
+      "C": "Relatório de Viabilidade Técnica e Econômica.",
+      "D": "Plano de Gerenciamento de Configuração de Software.",
+      "E": "Manifesto de Arquitetura de Integração de Software."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. O Documento de Especificação de Requisitos de Software (SRS - Software Requirements Specification) é o artefato formal que contém os requisitos funcionais, não funcionais, interfaces e regras, servindo como linha de base técnica para o desenvolvimento e contratações. A alternativa (B) é o Project Charter, que autoriza o projeto, mas não detalha requisitos sistêmicos. A alternativa (C) é um estudo pré-projeto. A alternativa (D) foca no controle de versão de artefatos. A alternativa (E) é um termo inventado ou focado puramente na arquitetura, não na especificação de negócio."
+  },
+  {
+    "id": 1433,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Modelos de Maturidade (CMMI-DEV v2.0)",
+    "context": "Arquitetura e Componentes do CMMI v2.0",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Diretor de TI do TJ-CE propôs a adoção do framework CMMI-DEV v2.0 para estruturar o núcleo de desenvolvimento interno, abandonando a antiga versão 1.3. Durante o treinamento da equipe técnica, destacou-se que o modelo sofreu mudanças arquiteturais significativas visando maior foco no valor de negócio e na performance organizacional. No CMMI v2.0, o conjunto fundamental de agrupamentos que define atividades essenciais para atingir intenções específicas e demonstrar capacidade processual é denominado:",
+    "options": {
+      "A": "Áreas de Prática.",
+      "B": "Áreas de Processo.",
+      "C": "Metas Genéricas.",
+      "D": "Práticas Específicas.",
+      "E": "Categorias de Maturidade Estruturada."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. A grande mudança estrutural do CMMI V2.0 foi a substituição do conceito de 'Áreas de Processo' (Process Areas) da versão 1.3 por 'Áreas de Prática' (Practice Areas - PAs). Estas áreas são agrupadas em Áreas de Capacidade e fornecem o foco para alcançar intenções específicas. A alternativa (B) é a terminologia legada (v1.3). As alternativas (C) e (D) também refletem elementos estruturais da arquitetura do CMMI v1.3. A alternativa (E) é um termo incorreto que não representa os blocos de construção de atividades no CMMI v2.0."
+  },
+  {
+    "id": 1434,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Modelos de Maturidade (CMMI-DEV v2.0)",
+    "context": "Avaliação de Níveis de Maturidade CMMI v2.0",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após dois anos de rigorosa adequação, a fábrica de software do TJ-CE passou por uma avaliação oficial baseada no CMMI-DEV v2.0. O relatório final do auditor atestou que não apenas os processos são proativos, padronizados e derivam de um conjunto padrão da organização, mas também são continuamente melhorados visando otimizar o desempenho de negócio, utilizando-se, para isso, de dados quantitativos e ferramentas estatísticas avançadas. Com base neste diagnóstico, o nível de maturidade alcançado pela instituição é o:",
+    "options": {
+      "A": "Nível 5 - Otimizador.",
+      "B": "Nível 4 - Gerenciado Quantitativamente.",
+      "C": "Nível 3 - Definido.",
+      "D": "Nível 2 - Gerenciado.",
+      "E": "Nível 1 - Inicial."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. O Nível 5 (Otimizador/Optimizing) no CMMI v2.0 foca na melhoria contínua da performance organizacional baseada em entendimento quantitativo e estatístico. O Nível 4 (B) utiliza métodos quantitativos para previsibilidade e controle (processos gerenciados quantitativamente), mas a contínua inovação e otimização visando o desempenho global do negócio é a marca do Nível 5. O Nível 3 (C) tem processos definidos e proativos, mas não exige gerenciamento estatístico. O Nível 2 (D) foca no gerenciamento de processos no nível de projetos. O Nível 1 (E) é caótico e reativo."
+  },
+  {
+    "id": 1435,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Modelos de Maturidade (CMMI-DEV v2.0)",
+    "context": "Áreas de Prática do CMMI v2.0",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para conter as constantes alterações de escopo não documentadas nos projetos judiciários do TJ-CE, a equipe de qualidade de software implementou práticas obrigatórias segundo o CMMI-DEV v2.0. As ações implementadas visam garantir a elicitação precisa das necessidades dos usuários, a sua tradução sistemática para requisitos técnicos de produto e a manutenção da rastreabilidade bidirecional durante todo o ciclo de vida da solução. O grupo de práticas do CMMI v2.0 que engloba diretamente estas atividades pertence à Área de Prática de:",
+    "options": {
+      "A": "Desenvolvimento e Gerenciamento de Requisitos.",
+      "B": "Planejamento de Requisitos de Produto e Solução.",
+      "C": "Validação e Verificação de Sistemas de TI.",
+      "D": "Definição de Escopo de Arquitetura Técnica.",
+      "E": "Gerenciamento de Configuração de Base de Requisitos."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. No CMMI V2.0, 'Desenvolvimento e Gerenciamento de Requisitos' (Requirements Development and Management - RDM) é a Área de Prática (Practice Area) responsável por elicitar necessidades, transformá-las em requisitos de cliente/produto, e gerenciar esses requisitos mantendo a rastreabilidade bidirecional e o alinhamento com os planos de projeto. A alternativa (B) contém um nome inventado. A alternativa (C) trata de testes e confirmação do produto, não do desenvolvimento do requisito. As alternativas (D) e (E) são nomenclaturas inexistentes no framework estruturado do CMMI v2.0."
+  },
+  {
+    "id": 1436,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Modelos de Maturidade (CMMI-DEV v2.0)",
+    "context": "Métodos de Avaliação do CMMI",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O edital de licitação publicado pelo TJ-CE para contratação de uma nova prestadora de serviços em Nuvem exige a apresentação de comprovação formal de maturidade em processos de software e serviços. De acordo com as diretrizes do CMMI v2.0, o método oficial de avaliação que resulta na emissão de classificações válidas de Nível de Maturidade (Maturity Level Ratings) e que serve como referência auditável para contratações é denominado:",
+    "options": {
+      "A": "Benchmark Appraisal.",
+      "B": "Evaluation Appraisal.",
+      "C": "Action Plan Appraisal.",
+      "D": "Continuous Appraisal.",
+      "E": "Staged Representation Appraisal."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. No CMMI V2.0, o 'Benchmark Appraisal' é o método de avaliação formal e rigoroso que gera ratings oficiais de níveis de maturidade e capacidade, válidos para fins corporativos e licitatórios (válidos no PARS - Published Appraisal Results System). O 'Evaluation Appraisal' (B) é usado para identificar gaps e auxiliar a melhoria de processos de forma informal, sem gerar ratings oficiais de maturidade. 'Action Plan Appraisal' (C) serve para validar planos de ação em avaliações de acompanhamento. As alternativas (D) e (E) misturam conceitos antigos (representação por estágios) com terminologias não oficiais de avaliações."
+  },
+  {
+    "id": 1437,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Modelos de Maturidade (MPS-SW)",
+    "context": "Adoção do MPS-SW em Novos Fornecedores",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma startup cearense de tecnologia jurídica (LawTech) deseja fornecer uma solução analítica para o TJ-CE. Para qualificar-se nas licitações e estruturar seus processos iniciais, a empresa decide implementar o Modelo de Referência MPS para Software (MR-MPS-SW). O planejamento estratégico estabelece como meta atingir imediatamente o primeiro degrau formal de maturidade do modelo, cujo escopo exige exclusivamente a implementação dos processos de Gerência de Requisitos e Gerência de Projetos. Este degrau de entrada corresponde ao:",
+    "options": {
+      "A": "Nível G - Parcialmente Gerenciado.",
+      "B": "Nível F - Gerenciado.",
+      "C": "Nível E - Parcialmente Definido.",
+      "D": "Nível A - Em Otimização.",
+      "E": "Nível C - Definido."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. No MPS-SW, o Nível G (Parcialmente Gerenciado) é o nível inicial e abrange apenas dois processos estruturais básicos para organizar o desenvolvimento: Gerência de Projetos (GPR) e Gerência de Requisitos (GRE). A alternativa (B) é o Nível F, que adiciona processos mais complexos (Medição, Qualidade, CM, etc). A alternativa (C) é o Nível E (Parcialmente Definido). A alternativa (D) é o Nível A, o topo máximo do modelo. A alternativa (E) é o Nível C (Definido)."
+  },
+  {
+    "id": 1438,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Modelos de Maturidade (MPS-SW)",
+    "context": "Evolução de Processos no MPS-SW",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após estabilizar suas operações e assegurar o domínio sobre o planejamento de seus projetos e gerenciamento básico de requisitos, uma fornecedora do TJ-CE busca evoluir para o próximo estágio do MPS-SW. O novo objetivo organizacional impõe a adoção estruturada e a institucionalização de novos processos organizacionais obrigatórios, notadamente: Medição, Garantia da Qualidade, Gerência de Configuração, Gerência de Portfólio de Projetos e Aquisição. O nível de maturidade do MPS-SW que exige a introdução deste exato conjunto de processos adicionais é o:",
+    "options": {
+      "A": "Nível F - Gerenciado.",
+      "B": "Nível E - Parcialmente Definido.",
+      "C": "Nível D - Largamente Definido.",
+      "D": "Nível C - Definido.",
+      "E": "Nível B - Gerenciado Quantitativamente."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. A evolução natural a partir do Nível G (onde operam apenas GPR e GRE) leva ao Nível F (Gerenciado), que inclui os processos de Aquisição (AQU), Gerência de Configuração (GCO), Garantia da Qualidade (GQA), Gerência de Portfólio de Projetos (GPP) e Medição (MED). A alternativa (B) (Nível E) introduziria processos relacionados a Recursos Humanos, Adaptação de Processos e Avaliação. As alternativas (C), (D) e (E) são níveis ainda mais altos na hierarquia alfabética (A é o mais maduro, G o menos maduro)."
+  },
+  {
+    "id": 1439,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Modelos de Maturidade (MPS-SW)",
+    "context": "Componentes Estruturais do Programa MPS.BR",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O grupo de Governança de TI do TJ-CE iniciou um mapeamento completo do ecossistema de maturidade estabelecido pelo programa MPS.BR, com o intuito de treinar avaliadores internos. A documentação normativa e arquitetural do programa é desenhada em torno de três guias e componentes estruturais oficiais que definem, respectivamente: o escopo das boas práticas e níveis; as diretrizes para auditar e atestar a conformidade; e os mecanismos econômicos e institucionais que regem o programa. Os três componentes formais que constituem a base do modelo MPS são:",
+    "options": {
+      "A": "Modelo de Referência, Método de Avaliação e Modelo de Negócio.",
+      "B": "Guia de Implementação, Processo de Auditoria e Selo de Qualidade.",
+      "C": "Framework de Maturidade, Ciclo de Certificação e Base de Conhecimento.",
+      "D": "Estrutura de Processos, Avaliação de Desempenho e Melhoria Contínua.",
+      "E": "Guia de Referência, Matriz de Avaliação e Padrão de Negócio."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. O Programa MPS.BR é fundamentado em três componentes: o MR-MPS (Modelo de Referência, que dita os níveis e resultados esperados), o MA-MPS (Método de Avaliação, que estipula as regras para avaliações oficiais) e o MN-MPS (Modelo de Negócio, que rege as Instituições Implementadoras, Avaliadoras, direitos, regras comerciais e manutenção do selo). As alternativas (B), (C), (D) e (E) apresentam nomenclaturas não aderentes à especificação oficial do modelo nacional MPS."
+  },
+  {
+    "id": 1440,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Modelos de Maturidade (MPS-SW)",
+    "context": "Atributos de Processo e Institucionalização",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante uma avaliação oficial (MA-MPS) na área de desenvolvimento do TJ-CE, o avaliador líder não verifica apenas se as saídas técnicas e os propósitos de um processo foram gerados. Para atestar a conformidade, o auditor verifica o rigor com que a organização planeja o processo, monitora seu controle, define a política organizacional, provê recursos adequados e fornece treinamento para a equipe. No framework do MPS-SW, esses indicadores operacionais e gerenciais usados para atestar o grau de institucionalização dos processos são formalmente denominados:",
+    "options": {
+      "A": "Atributos de Processo.",
+      "B": "Resultados Esperados.",
+      "C": "Propósitos de Processo.",
+      "D": "Níveis de Capacidade Organizacional.",
+      "E": "Práticas de Gerência Base."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) está correta. No MPS-SW, a evolução da capacidade e a institucionalização dos processos são medidas por meio dos Atributos de Processo (AP). Por exemplo, AP 1.1 verifica se o processo é executado, enquanto os APs 2.1 e 2.2 verificam se ele é gerenciado (planejado, monitorado, com recursos). A alternativa (B) (Resultados Esperados) serve para medir a implementação técnica do processo específico, e não a institucionalização global da gerência do processo. A alternativa (C) é o objetivo macro do processo. A alternativa (D) determina a capacidade isolada e não é o nome dos indicadores em si. A alternativa (E) é uma nomenclatura genérica."
+  },
+  {
+    "id": 1441,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Estrutura e Organização das Comarcas",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Analista de TI está mapeando a arquitetura do sistema de cadastro geral de fóruns e comarcas do TJ-CE. Para alinhar o banco de dados à estrutura da Lei Estadual nº 16.397/2017 (LOJ Ceará), ele precisa configurar os domínios de classificação das comarcas de acordo com o nível da unidade jurisdicional. A modelagem do campo correspondente deve contemplar as categorias de entrância:",
+    "options": {
+      "A": "Inicial, intermediária e final.",
+      "B": "Primeira, segunda e terceira instâncias.",
+      "C": "Singular, colegiada e especial.",
+      "D": "Ordinária, extraordinária e sumaríssima.",
+      "E": "Básica, avançada e especializada."
+    },
+    "answer": "A",
+    "explanation": "A estrutura arquitetural da justiça no Ceará divide as comarcas em entrâncias. Segundo a LOJ (Lei nº 16.397/2017), as comarcas se classificam em entrância inicial, intermediária e final. As demais alternativas misturam conceitos de grau de jurisdição e instâncias processuais que não correspondem à taxonomia de entrâncias."
+  },
+  {
+    "id": 1442,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Composição do Órgão Especial",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o desenvolvimento do módulo de controle de sessões e votações do TJ-CE, um Analista de TI depara-se com o requisito de criar perfis de acesso exclusivos para os membros do Órgão Especial. A documentação técnica exige a definição do quantitativo de licenças e nós do cluster para processar os votos simultâneos em tempo real dessa comissão específica. Segundo a LOJ cearense, a configuração da matriz de acesso simultâneo para o Órgão Especial deve comportar o limite de:",
+    "options": {
+      "A": "Dezenove Desembargadores.",
+      "B": "Quinze Desembargadores.",
+      "C": "Vinte e um Desembargadores.",
+      "D": "Vinte e cinco Desembargadores.",
+      "E": "Vinte e sete Desembargadores."
+    },
+    "answer": "A",
+    "explanation": "O Órgão Especial do Tribunal de Justiça do Estado do Ceará, conforme estabelece sua organização judiciária, é composto por dezenove desembargadores. A alternativa joga com números plausíveis de outros tribunais para testar o conhecimento do dimensionamento estrito local."
+  },
+  {
+    "id": 1443,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Atribuições dos Órgãos de Administração",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A modernização do sistema de correição e auditoria do TJ-CE demanda a implementação de um portal web destinado a receber relatórios disciplinares e estatísticas de produtividade de magistrados de primeiro grau. O arquiteto da solução precisa rotear os processos de fiscalização e orientação correcional para a fila de trabalho eletrônica do órgão encarregado por essas funções administrativas em todo o estado. O sistema deve destinar os fluxos correcionais para a caixa corporativa de gestão:",
+    "options": {
+      "A": "Da Corregedoria-Geral da Justiça.",
+      "B": "Do Conselho Nacional de Justiça.",
+      "C": "Do Tribunal Pleno do Estado.",
+      "D": "Da Presidência do Tribunal.",
+      "E": "Da Ouvidoria-Geral do Estado."
+    },
+    "answer": "A",
+    "explanation": "A Corregedoria-Geral da Justiça é o órgão central de fiscalização, orientação e correição da Justiça de primeiro grau no Ceará. As outras opções citam órgãos com papéis administrativos, governamentais ou de ouvidoria, que não gerem o fluxo de correição e auditoria local rotineira dos magistrados."
+  },
+  {
+    "id": 1444,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Organização do Segundo Grau",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Analista de TI está parametrizando o sistema eletrônico PJe para realizar a distribuição automática de recursos judiciais no 2º Grau do TJ-CE. O algoritmo precisa segregar os processos e direcioná-los às câmaras julgadoras com base na natureza da matéria. O mapeamento arquitetural das divisões fracionárias, segundo a organização judiciária vigente, deve prever o envio para:",
+    "options": {
+      "A": "Câmaras de Direito Privado, Câmaras de Direito Público e Câmaras Criminais.",
+      "B": "Câmaras Cíveis, Câmaras Trabalhistas e Câmaras Eleitorais.",
+      "C": "Câmaras Comuns, Câmaras Especiais e Câmaras de Uniformização.",
+      "D": "Câmaras de Primeira Instância, Câmaras de Segunda Instância e Câmaras Recursais.",
+      "E": "Câmaras Ordinárias, Câmaras Sumárias e Câmaras Extraordinárias."
+    },
+    "answer": "A",
+    "explanation": "O Tribunal de Justiça do Ceará divide-se internamente em Câmaras de Direito Privado, Câmaras de Direito Público e Câmaras Criminais. A banca utiliza terminologias genéricas de direito (como cível, trabalhista, eleitoral) nas alternativas falsas para confundir o candidato quanto à divisão orgânica do TJ-CE."
+  },
+  {
+    "id": 1445,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Plantão Judiciário",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O plano de continuidade de negócios e suporte de TI do TJ-CE exige a manutenção de equipes em escala para apoiar o Plantão Judiciário, que processa pedidos de natureza urgente fora do expediente forense ordinário. O Analista responsável precisa configurar o portal do plantão para refletir a restrição legal de competência desse serviço. O motor de regras do sistema de peticionamento eletrônico plantonista deve admitir exclusivamente a entrada de:",
+    "options": {
+      "A": "Medidas urgentes destinadas a evitar o perecimento do direito.",
+      "B": "Ações penais em fase de instrução ordinária.",
+      "C": "Cumprimentos de sentença com trânsito em julgado.",
+      "D": "Processos administrativos de progressão funcional.",
+      "E": "Recursos extraordinários sem pedido cautelar associado."
+    },
+    "answer": "A",
+    "explanation": "O Plantão Judiciário destina-se estritamente à apreciação de matérias urgentes, cujo descumprimento ou protelação possa acarretar o perecimento do direito da parte. Todas as demais alternativas são matérias que devem tramitar no expediente normal, carecendo do requisito de urgência."
+  },
+  {
+    "id": 1446,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Fundos Especiais",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na implementação de um novo dashboard de Business Intelligence (BI) para a alta gestão do TJ-CE, o Analista de TI foi encarregado de criar um painel com métricas de arrecadação de custas, taxas judiciárias e repasses destinados ao aparelhamento das unidades do Poder Judiciário. A fonte de dados principal a ser conectada a esse dashboard de BI deve extrair informações do banco de dados do:",
+    "options": {
+      "A": "Fundo Especial de Reaparelhamento e Modernização do Poder Judiciário (FERMOJU).",
+      "B": "Fundo Nacional de Desenvolvimento da Justiça Estadual (FUNDEJE).",
+      "C": "Fundo Estadual de Segurança e Administração Judiciária (FESAJ).",
+      "D": "Sistema Integrado de Administração Financeira (SIAFI).",
+      "E": "Sistema de Controle de Arrecadação de Custas do Estado (SCACE)."
+    },
+    "answer": "A",
+    "explanation": "O FERMOJU é o fundo estadual gerido pelo TJ-CE para prover recursos voltados à modernização, aparelhamento e infraestrutura do judiciário estadual. As alternativas erradas contêm siglas fictícias ou federais que não representam a fonte orçamentária autônoma prevista na LOJ."
+  },
+  {
+    "id": 1447,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Administração do Tribunal",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O desenvolvimento de um sistema de lotação e gestão de recursos humanos para magistrados exige o mapeamento das regras de substituição legal. Em caso de afastamento temporário do Presidente do Tribunal de Justiça do Ceará por motivo de licença, o perfil de administrador master do sistema de gestão executiva da corte deve ser assumido automaticamente pela autoridade substituta imediata. O fluxo de sucessão sistêmica no cadastro de permissões deve repassar os privilégios para:",
+    "options": {
+      "A": "O Vice-Presidente do Tribunal de Justiça.",
+      "B": "O Desembargador mais antigo do Tribunal Pleno.",
+      "C": "O Corregedor-Geral da Justiça.",
+      "D": "O Diretor do Fórum da Capital.",
+      "E": "O Presidente do Órgão Especial."
+    },
+    "answer": "A",
+    "explanation": "A ordem hierárquica e administrativa de substituição do Presidente do TJ recai, em primeiro lugar, sobre o Vice-Presidente da Corte. As alternativas tentam confundir com o critério de antiguidade e outras figuras de gestão, que entram apenas em casos de vacância ou ausência de ambos."
+  },
+  {
+    "id": 1448,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Órgãos de Gestão e Planejamento",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Analista de TI está desenhando o fluxo de integração de dados entre o Tribunal de Justiça do Ceará e o sistema nacional do Conselho Nacional de Justiça (CNJ). Uma das entidades requeridas na API estadual é o órgão com competência para atuar como instância disciplinar e administrativa de segundo nível no controle dos serviços forenses, incluindo atividades correicionais não solucionadas pela Corregedoria. No mapeamento do endpoint, a tabela de competência deve apontar para as atribuições:",
+    "options": {
+      "A": "Do Conselho da Magistratura.",
+      "B": "Do Tribunal do Júri do Estado.",
+      "C": "Das Turmas Recursais Mistas.",
+      "D": "Da Secretaria de Gestão de Pessoas.",
+      "E": "Dos Juizados Especiais da Fazenda Pública."
+    },
+    "answer": "A",
+    "explanation": "O Conselho da Magistratura funciona como órgão de deliberação administrativa e disciplinar superior, fiscalizando a primeira instância e funcionando como instância de recurso em relação a decisões administrativas. As demais alternativas apresentam órgãos de natureza unicamente judicial processual."
+  },
+  {
+    "id": 1449,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Sessões e Publicidade dos Atos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao parametrizar o módulo de segurança da informação das sessões de julgamento virtuais do TJ-CE, o arquiteto de software precisa estabelecer a regra padrão de visibilidade do link de transmissão. Salvo disposição legal em contrário referente a segredo de justiça, a LOJ cearense estipula um princípio fundamental para as sessões do Tribunal, o qual determina que o sistema de streaming de vídeo deverá adotar o modelo de:",
+    "options": {
+      "A": "Acesso público livre aos atos de julgamento.",
+      "B": "Acesso restrito aos advogados cadastrados.",
+      "C": "Acesso exclusivo aos magistrados integrantes da câmara.",
+      "D": "Acesso bloqueado mediante autenticação em duas etapas por token.",
+      "E": "Acesso reservado aos membros do Ministério Público estadual."
+    },
+    "answer": "A",
+    "explanation": "No Poder Judiciário, impera o princípio constitucional da publicidade dos atos, reafirmado na LOJ do Ceará, pelo qual as sessões são, em regra, públicas, excetuando-se as que tramitam em segredo de justiça. Autenticações em massa ou restrições sistemáticas configurariam barreira ilícita à publicidade."
+  },
+  {
+    "id": 1450,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Administração do Fórum Local",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na configuração do organograma digital do sistema de recursos humanos do TJ-CE, o Analista precisa estruturar a hierarquia administrativa do Fórum Clóvis Beviláqua (Comarca de Fortaleza). A modelagem do banco de dados exige a definição de uma chefia administrativa local responsável pela direção do Fórum e pela coordenação dos serviços auxiliares. A chave estrangeira de subordinação hierárquica das secretarias do fórum deve apontar para:",
+    "options": {
+      "A": "O Juiz Diretor do Fórum.",
+      "B": "O Desembargador Plantonista Permanente.",
+      "C": "O Secretário de Administração e Infraestrutura.",
+      "D": "O Oficial de Justiça Chefe da Comarca.",
+      "E": "O Presidente da Câmara Cível Local."
+    },
+    "answer": "A",
+    "explanation": "A Direção do Fórum de cada comarca é exercida por um juiz de direito ali titularizado, responsável pela esfera de administração predial, disciplinar e de pessoal de apoio à unidade. A subordinação administrativa local aponta impreterivelmente para a Diretoria do Fórum."
+  },
+  {
+    "id": 1451,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Divisão Judiciária Territorial",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a auditoria de um sistema legado de controle de produtividade do TJ-CE, a equipe de TI identificou a necessidade de atualizar as regras de negócio referentes à divisão judiciária territorial. A reestruturação da base geográfica do sistema exige o cadastramento correto das circunscrições que agrupam uma ou mais comarcas contíguas para facilitar a administração da Justiça. A entidade geográfica intermediária a ser modelada no esquema relacional é denominada:",
+    "options": {
+      "A": "Zona Judiciária.",
+      "B": "Região Administrativa Estadual.",
+      "C": "Polo Jurisdicional Integrado.",
+      "D": "Distrito Forense Regional.",
+      "E": "Subseção Judiciária Mista."
+    },
+    "answer": "A",
+    "explanation": "Na LOJ Ceará, o Estado se divide territorialmente, para fins de administração da Justiça, em zonas judiciárias, comarcas e termos judiciários. 'Zona judiciária' é o termo técnico para agrupamento macro. 'Subseção' e 'Região Administrativa' são termos comuns na Justiça Federal."
+  },
+  {
+    "id": 1452,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Distribuição de Processos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O módulo de sorteio eletrônico do sistema e-SAJ do TJ-CE está passando por uma revisão de código. O Analista de TI verificou que o algoritmo de distribuição de processos em comarcas com mais de uma vara da mesma competência deve observar rigorosamente regras de equidade. De acordo com os preceitos da organização judiciária, o balanceador de carga processual deve implementar a distribuição seguindo o critério de:",
+    "options": {
+      "A": "Alternância e aleatoriedade rigorosa.",
+      "B": "Direcionamento preferencial aos juízes mais antigos.",
+      "C": "Alocação baseada na proximidade residencial das partes.",
+      "D": "Atribuição manual sob supervisão da secretaria local.",
+      "E": "Delegação exclusiva ao juiz diretor do foro em exercício."
+    },
+    "answer": "A",
+    "explanation": "A distribuição de processos é o ato legal que estabelece a competência do juiz, e os princípios balizadores constitucionais e regimentalmente descritos na LOJ estipulam a alternância contínua e a rigorosa distribuição aleatória (sorteio), assegurando a imparcialidade do juízo."
+  },
+  {
+    "id": 1453,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Atendimento ao Cidadão e Ouvidoria",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para a implantação de um novo chatbot de atendimento ao cidadão no portal do TJ-CE, o arquiteto de TI deve programar o fluxo de processamento de linguagem natural. Quando o usuário reportar denúncias, críticas, sugestões ou elogios sobre a prestação do serviço jurisdicional, o sistema deve registrar a manifestação e abrir um chamado integrado com o órgão estadual competente. A API de destino desse módulo de triagem conversacional deve conectar-se ao sistema gerido:",
+    "options": {
+      "A": "Pela Ouvidoria do Poder Judiciário.",
+      "B": "Pela Defensoria Pública do Estado.",
+      "C": "Pelo Conselho Superior do Ministério Público.",
+      "D": "Pelo Sindicato dos Servidores do Judiciário.",
+      "E": "Pela Procuradoria-Geral do Estado do Ceará."
+    },
+    "answer": "A",
+    "explanation": "A Ouvidoria é o órgão interno do Poder Judiciário cearense estruturado para receber, processar e dar tratativa às manifestações (reclamações, elogios, críticas) dos cidadãos e jurisdicionados, consolidando as políticas de transparência."
+  },
+  {
+    "id": 1454,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Estrutura dos Juizados e Varas Especializadas",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de infraestrutura está mapeando os requisitos de rede para interligar os Juizados de Violência Doméstica e Familiar contra a Mulher ao datacenter principal do TJ-CE. O Analista de TI deve alocar essas varas na árvore de competências do sistema judicial para que as métricas de latência e priorização de tráfego sejam configuradas adequadamente. Conforme a LOJ do Ceará, essas unidades jurisdicionais especializadas operam estruturalmente no nível da:",
+    "options": {
+      "A": "Justiça de primeira instância.",
+      "B": "Justiça de segunda instância fracionada.",
+      "C": "Justiça militar estadual autônoma.",
+      "D": "Justiça de paz comunitária regional.",
+      "E": "Justiça arbitral de resolução voluntária."
+    },
+    "answer": "A",
+    "explanation": "Os Juizados de Violência Doméstica constituem varas especializadas de primeiro grau, integrando assim a primeira instância da prestação jurisdicional do Tribunal de Justiça do Ceará."
+  },
+  {
+    "id": 1455,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - LOJ Ceará (Lei nº 16.397/2017)",
+    "context": "Servidores da Justiça e Cumprimento de Mandados",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No projeto de arquitetura orientada a serviços (SOA) do TJ-CE, um Analista de TI precisa desenvolver o microserviço de expedição de mandados. O sistema deverá rotear os pacotes de ordens judiciais emitidos pelos juízes de direito para a equipe de campo encarregada da execução material dos atos, como citações e penhoras. O barramento de serviços deve enfileirar as tarefas geradas automaticamente na caixa postal do cargo de:",
+    "options": {
+      "A": "Oficial de Justiça Avaliador.",
+      "B": "Analista Judiciário de Execução de Mandados.",
+      "C": "Técnico Judiciário de Nível Externo.",
+      "D": "Escrivão Diretor de Secretaria.",
+      "E": "Auxiliar de Serviços Judiciários de Diligência."
+    },
+    "answer": "A",
+    "explanation": "No TJ-CE e na tradição jurídica nacional consolidada em lei de organização judiciária, o servidor público competente para o cumprimento de ordens externas, citações, intimações, penhoras e avaliações é o Oficial de Justiça Avaliador. A banca usa as demais opções com nomenclaturas modificadas e distorcidas para causar dúvidas."
+  },
+  {
+    "id": 1456,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - Direitos da Pessoa com Deficiência",
+    "context": "Sistema de Controle de Acesso e Cão-Guia",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a modernização do sistema de controle de acesso biométrico do TJ-CE, a equipe de arquitetura definiu as regras para o módulo de visitantes. Um incidente ocorreu quando o sistema bloqueou o pré-cadastro de um instrutor acompanhado de um cão-guia em fase de treinamento, disparando um alerta de \"Animal Não Certificado\". A regra de negócio do software exigia o upload do certificado definitivo do cão. Para alinhar o sistema à Lei nº 11.126/2005 e ao Decreto nº 5.904/2006, o diagnóstico do problema aponta para a necessidade de refatoração do módulo. Qual o diagnóstico e a correção adequada da lógica do sistema?",
+    "options": {
+      "A": "O bloqueio sistêmico é legalmente válido para animais na fase de treinamento e adaptação.",
+      "B": "A validação restrita de certificados definitivos aplica-se exclusivamente aos servidores do tribunal.",
+      "C": "O sistema deve atrelar o cadastro do animal temporário à apresentação isolada da carteira de vacinação.",
+      "D": "A regra de negócio deve autorizar o ingresso do cão-guia em treinamento acompanhado por treinador ou instrutor.",
+      "E": "O módulo deve reclassificar o cão-guia em treinamento como animal de suporte emocional genérico."
+    },
+    "answer": "D",
+    "explanation": "A alternativa (D) está correta e corrige o erro da arquitetura. A Lei 11.126/2005 e o Decreto 5.904/2006 garantem o ingresso e permanência de cão-guia em treinamento quando acompanhado por treinador, instrutor ou família hospedeira. A alternativa (A) é falsa ao afirmar que o bloqueio é válido. A alternativa (B) é errada ao restringir o acesso a servidores, violando o direito do público. A alternativa (C) é falha, a carteira de vacinação é exigida, mas o animal em treinamento possui crachá de identificação específico, não dependendo de forma 'isolada' da carteira. A alternativa (E) erra conceitualmente: cão-guia (mesmo em treinamento) tem respaldo legal federal de acessibilidade, diferente de cães de suporte emocional, que possuem regramentos distintos."
+  },
+  {
+    "id": 1457,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - Direitos da Pessoa com Deficiência",
+    "context": "Algoritmo de Fila e Orquestração de Prioridades",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE implementou um barramento de serviços (ESB) para orquestrar as filas de atendimento presencial e virtual. O algoritmo atual agrupa pessoas com deficiência, idosos (60+), gestantes e pessoas com crianças de colo em uma única fila FIFO de prioridade. Analistas identificaram gargalos no tempo de espera de usuários idosos muito longevos e com deficiência severa. Segundo as regras de prioridade da LBI (Lei nº 13.146/2015) e Estatuto do Idoso, o diagnóstico do algoritmo revela uma falha no escalonamento. Qual o desenho legalmente adequado para a nova arquitetura de filas?",
+    "options": {
+      "A": "A implementação deve processar os atendimentos em uma única fila prioritária de forma randômica.",
+      "B": "O roteamento deve garantir prioridade especial às pessoas maiores de oitenta anos sobre os demais.",
+      "C": "O algoritmo deve priorizar as pessoas com deficiência física em detrimento das deficiências intelectuais.",
+      "D": "A orquestração deve alocar pessoas com crianças de colo no topo absoluto da fila prioritária.",
+      "E": "A regra de negócio deve suspender a prioridade legal em casos de sobrecarga dos nós do servidor."
+    },
+    "answer": "B",
+    "explanation": "A alternativa (B) é a correta. Dentre as prioridades garantidas por lei (idosos, gestantes, PCDs), a Lei nº 10.048/2000, o Estatuto do Idoso e a jurisprudência administrativa determinam a 'superprioridade' (prioridade especial) aos idosos maiores de 80 (oitenta) anos, que devem figurar acima de outras prioridades gerais na orquestração da fila. A alternativa (A) fere as normativas de atendimento. A alternativa (C) estabelece discriminação ilegal entre tipos de deficiência, vedada pela LBI. A alternativa (D) cria uma falsa superprioridade para lactantes. A alternativa (E) é absurda: a sobrecarga do sistema não extingue o direito legal da fila prioritária."
+  },
+  {
+    "id": 1458,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - Direitos da Pessoa com Deficiência",
+    "context": "Microsserviços de Faturamento e Cão-Guia",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma aplicação do TJ-CE de emissão de ingressos para seminários jurídicos foi migrada para a nuvem. A arquitetura possui um microsserviço de 'Taxas e Adicionais' que, ao detectar a flag 'Pessoa com Cão-Guia', insere no carrinho uma taxa de 10% do valor do ingresso, classificada como 'Taxa de Manutenção e Limpeza'. Com base nos direitos das pessoas com deficiência, o diagnóstico dessa implementação no checkout aponta para uma ilegalidade de negócio. Qual deve ser o comportamento legal do microsserviço?",
+    "options": {
+      "A": "O sistema deve aplicar a taxa exclusivamente em eventos sediados em auditórios patrocinados pela iniciativa privada.",
+      "B": "A arquitetura deve abster-se de cobrar tarifas, taxas adicionais ou acréscimos pelo ingresso do cão-guia.",
+      "C": "O módulo deve converter a cobrança adicional em mecanismo de doação compulsória para fundos de assistência social.",
+      "D": "A regra de faturamento deve cobrar a taxa de manutenção diretamente do órgão empregador do servidor visitante.",
+      "E": "O microsserviço deve aplicar um desconto automático de cinquenta por cento sobre o valor original da taxa de limpeza."
+    },
+    "answer": "B",
+    "explanation": "A alternativa (B) é a correta. O Decreto nº 5.904/2006, em seu art. 3º, é taxativo ao determinar: 'É vedada a exigência do pagamento de taxa ou tarifa, ou de qualquer acréscimo, pelo ingresso ou pela presença de cão-guia'. A alternativa (A) falha ao admitir a cobrança na iniciativa privada (a lei vale para público e privado de uso público). As alternativas (C), (D) e (E) tentam modular a cobrança (doação, órgão de origem, desconto), mas qualquer forma de encargo imposta ao usuário pela presença do animal configura ato ilícito e discriminação."
+  },
+  {
+    "id": 1459,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - Direitos da Pessoa com Deficiência",
+    "context": "API de Agendamento Presencial",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O módulo de agendamento presencial do PJe do TJ-CE foi reescrito. A funcionalidade recém-lançada permite o cadastro do advogado com deficiência na fila de prioridade, mas a API REST omite a inclusão do seu assistente ou acompanhante na mesma janela de atendimento. O arquiteto defende que o payload JSON limita a prioridade a um CPF por sessão. Para adequar a API ao artigo 9º da Lei nº 13.146/2015 (LBI), qual a solução arquitetural necessária?",
+    "options": {
+      "A": "A API deve emitir senhas separadas com horários de atendimento distintos e independentes para o acompanhante.",
+      "B": "O endpoint deve restringir a prioridade do acompanhante aos casos de agendamento em perícias médicas do tribunal.",
+      "C": "A estrutura de dados deve estender a flag de prioridade ao acompanhante ou atendente pessoal cadastrado na sessão.",
+      "D": "O sistema deve redirecionar o acompanhante para a fila de atendimento convencional de forma automática pelo backend.",
+      "E": "O banco de dados deve registrar o acompanhante como procurador legal registrado em cartório para herdar a sessão."
+    },
+    "answer": "C",
+    "explanation": "A alternativa (C) reflete corretamente a LBI. Segundo o art. 9º, § 1º: 'Os direitos previstos neste artigo (prioridade de atendimento) são extensivos ao acompanhante da pessoa com deficiência ou ao seu atendente pessoal'. A alternativa (A) viola a essência do acompanhamento ao gerar horários distintos. A alternativa (B) cria uma limitação inexistente na lei. A alternativa (D) anula o direito de prioridade do acompanhante garantido em lei. A alternativa (E) burocratiza ilegalmente o direito, exigindo figura de 'procurador legal' quando a lei fala em acompanhante ou atendente pessoal."
+  },
+  {
+    "id": 1460,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - Direitos da Pessoa com Deficiência",
+    "context": "Segurança Lógica e Física de Datacenters",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante uma falha crítica em um dos datacenters do TJ-CE, um perito externo cego, acompanhado de seu cão-guia, foi acionado. O sistema de controle de acesso ao ambiente restrito negou a entrada do animal por estar configurado com uma política 'Zero Animais', alegando normas gerais de biossegurança de equipamentos de TI. Considerando os normativos de acessibilidade e o Decreto nº 5.904/2006, qual o diagnóstico da restrição imposta pelo sistema?",
+    "options": {
+      "A": "O bloqueio é amparado juridicamente pela classificação de risco ambiental do datacenter de alta disponibilidade e restrição.",
+      "B": "O sistema deve liberar o acesso do cão-guia, visto que datacenters não constituem ambientes com restrições sanitárias e de saúde do tipo infectocontagioso.",
+      "C": "A política de controle deve enquadrar os servidores físicos do tribunal como zonas de isolamento hospitalar sob vigilância médica estrita.",
+      "D": "O acesso do animal ao ambiente sensível fica condicionado à assinatura de um termo de responsabilidade de cobertura de danos materiais.",
+      "E": "O software deve autorizar a entrada do usuário mediante a retenção prévia do animal na portaria do tribunal de justiça."
+    },
+    "answer": "B",
+    "explanation": "A alternativa (B) diagnostica o cenário legal corretamente. O Decreto 5.904/2006 garante o acesso a locais públicos e privados. As exceções restritivas previstas no art. 4º, § 7º aplicam-se a 'setores sujeitos a normas de controle de infecção' sob vigilância do Ministério da Saúde (como UTIs, alas de queimados, locais de manipulação de alimentos). Datacenters, apesar da segurança lógica/física e restrição técnica, não possuem normas de isolamento clínico/sanitário que impeçam a entrada do cão-guia. As alternativas (A), (C), (D) e (E) são restrições ilegais inventadas."
+  },
+  {
+    "id": 1461,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - Direitos da Pessoa com Deficiência",
+    "context": "Algoritmo de Geolocalização de Estacionamento",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE lançou um aplicativo mobile de geolocalização indoor para o gerenciamento do estacionamento oficial. O algoritmo de alocação reserva 2% das vagas para pessoas com deficiência. Contudo, em horários de pico, a matriz de roteamento aloca essas vagas nos subsolos mais profundos e distantes dos elevadores, priorizando a fluidez dos veículos na entrada principal. O diagnóstico lógico aponta para uma violação arquitetural da Lei Brasileira de Inclusão. Qual o requisito corretivo direto para o serviço de alocação?",
+    "options": {
+      "A": "O sistema deve alocar as vagas reservadas em locais devidamente sinalizados e situados próximos aos acessos de circulação de pedestres.",
+      "B": "O algoritmo deve reconfigurar o percentual de vagas reservadas para o mínimo legal correspondente a dez por cento da capacidade total.",
+      "C": "O aplicativo de mobilidade deve cobrar tarifa adicional pela reserva sistêmica de vagas localizadas nas proximidades dos elevadores principais.",
+      "D": "O banco de dados deve limitar estritamente o uso das vagas de subsolo para magistrados, desembargadores e membros do ministério público.",
+      "E": "A lógica do aplicativo deve destinar as vagas de difícil acesso aos servidores e garantir as vagas térreas aos cidadãos sem deficiência."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) aplica o art. 47 da LBI. A legislação estabelece a reserva de 2% das vagas de estacionamento, mas estipula expressamente que elas devem ser 'devidamente sinalizadas e em locais de maior comodidade, próximos aos acessos de circulação de pedestres'. O algoritmo comete erro ao jogar essas vagas para o subsolo distante. A alternativa (B) erra o percentual (o correto é 2%, garantida no mínimo 1 vaga). A alternativa (C) configura cobrança ilegal discriminatória. As alternativas (D) e (E) desviam a finalidade da vaga acessível imposta por lei."
+  },
+  {
+    "id": 1462,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - Direitos da Pessoa com Deficiência",
+    "context": "Script de Banco de Dados e Prioridade Processual",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema eletrônico de processos judiciais executa um job noturno para classificar filas de conclusão. Uma atualização no script SQL acidentalmente removeu a tag de prioridade de processos nos quais a pessoa com deficiência atua como litisconsorte ou mera interessada, mantendo a tag apenas quando a parte figura como autora primária. De acordo com o Art. 9º da Lei nº 13.146/2015, qual o diagnóstico e o ajuste compulsório no script de filas?",
+    "options": {
+      "A": "A prioridade processual legal é garantida exclusivamente aos processos de natureza criminal, familiar e medidas cautelares.",
+      "B": "O sistema deve garantir a prioridade procedimental em todas as instâncias judiciais onde a pessoa figure como parte ou interessada.",
+      "C": "A marcação de tramitação prioritária no banco de dados deve ser restrita ao titular originário ou requerente principal da ação.",
+      "D": "O script de atualização deve desabilitar a flag de prioridade para tramitação de recursos em instâncias superiores e tribunais de cúpula.",
+      "E": "O job assíncrono deve suprimir a prioridade procedimental em processos de execução fiscal cujos valores excedam a alçada da vara."
+    },
+    "answer": "B",
+    "explanation": "A alternativa (B) está rigorosamente correta. O art. 9º, inciso VII, da LBI assegura prioridade na 'tramitação processual e procedimentos judiciais e administrativos em que for parte ou interessada, em todos os atos e diligências'. As alternativas (A), (C), (D) e (E) inventam restrições arbitrárias inexistentes na legislação sobre a tramitação prioritária da pessoa com deficiência, como limitar por tipo de ação, por titularidade principal, instância ou valor da causa."
+  },
+  {
+    "id": 1463,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - Direitos da Pessoa com Deficiência",
+    "context": "Sistema de Transporte Corporativo e Bilhetagem",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema logístico de transporte do TJ-CE gerencia rotas dos micro-ônibus fretados para o expediente dos servidores. Uma analista com deficiência visual reserva assentos diários via aplicativo. O backend do sistema está parametrizado para exigir a marcação de 'Assento Duplo' nesses casos, deduzindo duas cotas do vale-transporte eletrônico: uma para o servidor e outra integral para seu cão-guia. O diagnóstico da regra de dedução revela infração normativa de TI. Qual o comportamento adequado a ser desenvolvido?",
+    "options": {
+      "A": "A dedução da cota sistêmica para o cão-guia deve ser migrada e custeada pela folha de pagamento do sindicato da categoria associada.",
+      "B": "O sistema deve garantir o transporte do cão-guia sem a exigência de reserva de assento adicional ou cobrança de qualquer tarifa extra.",
+      "C": "O aplicativo mobile deve restringir a presença de cães-guias exclusivamente aos veículos tipo ônibus com capacidade para quarenta lugares.",
+      "D": "A regra de bilhetagem do backend deve aplicar um subsídio governamental equivalente a cinquenta por cento sobre a tarifa do animal.",
+      "E": "A arquitetura de serviço deve condicionar a gratuidade do translado do animal ao uso documentado de mordaças metálicas no micro-ônibus."
+    },
+    "answer": "B",
+    "explanation": "A alternativa (B) é a resposta exata. O art. 4º, § 1º, do Decreto 5.904/2006 dita que 'o cão-guia ou em treinamento será transportado entre as pernas do usuário', não necessitando de assento e reforça a proibição taxativa de cobrança de tarifa, passagem ou taxa pelo animal. A alternativa (A) e (D) continuam lidando com cobranças/subsídios. A alternativa (C) limita o porte do veículo contrariando o direito pleno de mobilidade. A alternativa (E) exige mordaça (focinheira), o que é expressamente dispensado pela regulamentação do cão-guia, que apenas necessita de coleira, guia e arreio."
+  },
+  {
+    "id": 1464,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - Direitos da Pessoa com Deficiência",
+    "context": "Arquitetura Front-end e Acessibilidade Digital",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de governança auditou o novo portal web de transparência do TJ-CE. Testes de integração mostraram ausência de textos alternativos nas imagens dos editais judiciais, carência de contraste adequado e bloqueios sistêmicos para o uso de leitores de tela. O documento final de arquitetura deve propor adequações obrigatórias regidas pelo art. 63 da Lei nº 13.146/2015, pertinente à acessibilidade em sítios da internet. Qual a providência técnica prescrita na legislação?",
+    "options": {
+      "A": "A modernização tecnológica do portal é compulsória apenas nas páginas estáticas de acesso superior a dez mil requisições por segundo.",
+      "B": "O portal institucional deve disponibilizar uma versão apartada e paralela hospedando apenas código plain text livre de formatação em cascata.",
+      "C": "O sistema web do governo deve garantir e manter as melhores práticas e diretrizes de acessibilidade e o uso do símbolo internacional representativo.",
+      "D": "A implementação arquitetural de leitura de tela fica condicionada à solicitação técnica submetida pelo usuário via formulário de ouvidoria.",
+      "E": "A engenharia front-end deve concentrar a acessibilidade digital nas áreas de licitações públicas, dispensando o painel de jurisprudências."
+    },
+    "answer": "C",
+    "explanation": "A alternativa (C) reproduz a exigência da LBI. O art. 63 da Lei 13.146/2015 dispõe que é obrigatória a acessibilidade nos sítios da internet mantidos por empresas com sede ou representação comercial no País ou por órgãos de governo, observadas as melhores diretrizes (e-MAG/WCAG) e o uso do símbolo internacional de acessibilidade web. A alternativa (A) e (E) trazem restrições escopo inventadas. A alternativa (B) sugere criação de site simplificado separado, o que fere o desenho universal e as boas práticas de WCAG e e-MAG. A alternativa (D) transforma a acessibilidade em um processo reativo (sob demanda) quando a lei exige que seja nativo."
+  },
+  {
+    "id": 1465,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - Direitos da Pessoa com Deficiência",
+    "context": "Totens de Triagem e Documentação",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na engenharia de requisitos de um novo totem com inteligência artificial para as portarias das Varas, o módulo de visão computacional identifica animais. Ao detectar um cão com arreio, o software trava a tela e bloqueia a impressão da senha até que o usuário faça o scan digital do crachá do cão, da carteira de vacinação e de um laudo médico atestando sua deficiência visual ou motora aguda. Segundo o Decreto nº 5.904/2006, qual a irregularidade no fluxo arquitetural de triagem do totem?",
+    "options": {
+      "A": "O totem acerta no fluxo de controle sanitário ao exigir digitalização de prontuários médicos para barrar animais não treinados adequadamente.",
+      "B": "A rotina do software deve substituir o envio da carteira de vacinação anual por uma marcação de checklist em forma de declaração verbal do requerente.",
+      "C": "O sistema comete infração normativa e legal ao condicionar o ingresso do cão à apresentação de laudo médico atestando a deficiência do cidadão.",
+      "D": "A análise visual de inteligência artificial deve aprovar preventivamente cães restritos ao padrão de raças documentadas em portarias federais de triagem.",
+      "E": "O módulo de cadastro de visitantes necessita reter as credenciais digitais de identificação do cão no servidor proxy até o usuário realizar o checkout do prédio."
+    },
+    "answer": "C",
+    "explanation": "A alternativa (C) identifica o erro exato do sistema. O art. 4º, § 2º do Decreto 5.904/06 proíbe terminantemente a exigência de laudo médico: 'É vedada a exigência de documento comprobatório da deficiência do usuário para o ingresso de cão-guia'. O sistema tem o direito de exigir a documentação do cão (carteira de vacinação, registro e crachá), mas não pode auditar/exigir laudo da deficiência do humano. Alternativa (B) falha ao dizer que a carteira de vacina pode ser substituída por declaração verbal, pois a legislação exige a carteira válida. Alternativas (A), (D) e (E) prescrevem ações discriminatórias ou ilegais."
+  },
+  {
+    "id": 1466,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - Direitos da Pessoa com Deficiência",
+    "context": "ERP e Especificação de Frotas de Locadoras",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de gestão de contratos e compras governamentais do TJ-CE emitiu o termo de renovação do contrato de locadoras de veículos para os magistrados. A inteligência de negócio do ERP exigiu contratualmente que a locadora vencedora fornecesse o piso de um único veículo adaptado, de forma fixa e independente do tamanho total da frota mobilizada na execução do contrato. O setor de auditoria diagnosticou erro de cálculo proporcional em face da LBI (Lei nº 13.146/2015). Qual a regra de cálculo correta que o ERP deve aplicar ao contrato?",
+    "options": {
+      "A": "O módulo contratual deve exigir obrigatoriamente a disponibilização de um veículo adaptado a cada conjunto de vinte veículos da frota locada.",
+      "B": "A arquitetura de compras do tribunal deve definir a adaptação integral de cem por cento da frota comercial utilizada em serviço oficial judiciário.",
+      "C": "O sistema de dimensionamento deve fixar um percentual cravado de dez por cento sob a totalidade de automóveis com tração nas quatro rodas.",
+      "D": "A regra de negócio do ERP deve prever a isenção normativa de acessibilidade para locadoras fornecedoras que operam frotas estaduais inferiores a cinquenta carros.",
+      "E": "O software licitatório necessita arbitrar uma taxa de conversão acessível correspondente à média flutuante de cinco por cento dos contratos celebrados."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) aplica a métrica explícita do art. 52 da LBI: 'As locadoras de veículos são obrigadas a oferecer 1 (um) veículo adaptado para uso de pessoa com deficiência, a cada conjunto de 20 (vinte) veículos de sua frota'. O ERP do tribunal errou ao fixar 'um veículo' de forma estática sem obedecer à proporção em blocos de vinte estabelecida em lei. As demais alternativas (B, C, D e E) apresentam cálculos, exceções e métricas (10%, 100%, 5%, isenção) completamente estranhas ao dispositivo normativo sobre locadoras de veículos."
+  },
+  {
+    "id": 1467,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - Direitos da Pessoa com Deficiência",
+    "context": "Sistema Integrado Tributário e de Folha",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O módulo de mensageria da folha de pagamentos do TJ-CE gera arquivos XML com as declarações na fonte dos servidores. A equipe de arquitetura debate a inclusão de uma tag semântica de 'Pessoa com Deficiência' no payload de transmissão à Receita Federal e aos fundos estaduais. Com base nos escopos de direitos garantidos pelo artigo 9º da Lei Brasileira de Inclusão, o diagnóstico técnico atesta que a inserção desse metadado atende a um benefício financeiro direto. Qual a finalidade jurídica dessa flag arquitetural?",
+    "options": {
+      "A": "A tag garante o cálculo de dedução de cem por cento do imposto retido sobre todas as gratificações judiciárias recebidas.",
+      "B": "O identificador lógico serve estritamente para balizar o direito à prioridade no recebimento da restituição de imposto de renda.",
+      "C": "O metadado possui o objetivo técnico de extinguir a obrigatoriedade de apresentação do ajuste anual do imposto de renda.",
+      "D": "A flag orienta o roteamento percentual dos valores tributados a fundos não governamentais focados em acessibilidade arquitetônica de praças.",
+      "E": "A arquitetura de dados sinaliza às instâncias de auditoria fiscal a execução prioritária de investigações na declaração do servidor."
+    },
+    "answer": "B",
+    "explanation": "A alternativa (B) está correta. De acordo com o artigo 9º, inciso VI, da Lei nº 13.146/2015, a pessoa com deficiência tem direito a 'recebimento de restituição de imposto de renda' de forma prioritária. Portanto, do ponto de vista do sistema que integra dados com o Fisco, a flag de deficiência atua diretamente como marcador para garantir essa fila processual de restituição antecipada. As alternativas (A), (C), (D) e (E) descrevem isenções tributárias, desvios de recursos e anulações de obrigações acessórias que não têm guarida na LBI para esse contexto."
+  },
+  {
+    "id": 1468,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - Direitos da Pessoa com Deficiência",
+    "context": "Sistema IA de Correição e Denúncias",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um sistema de inteligência artificial da corregedoria categoriza denúncias do público. Uma ouvidoria relatou que o motorista da van terceirizada a serviço do tribunal impediu o embarque de um cidadão com cão-guia. O modelo de classificação NLP rotulou o chamado como 'Descumprimento Contratual Tolerável' sugerindo notificação simples sem sanção financeira. Diante do que preconiza o Decreto nº 5.904/2006 em matéria de restrição de acesso a cão-guia em transporte, qual o diagnóstico e correção da taxonomia do motor de regras?",
+    "options": {
+      "A": "A taxonomia inicial de descumprimento leve possui sustentação legal em transporte fretado sem controle de rota de tarifas abertas.",
+      "B": "O sistema deve rotular a recusa como ato de discriminação passível de multa administrativa e sanções severas como interdição.",
+      "C": "A árvore de decisão sistêmica deve processar a apreensão liminar e irrevogável do veículo a serviço da prestadora terceirizada.",
+      "D": "O motor de inteligência artificial carece ser ajustado para conduzir o evento a uma mesa de conciliação extrajudicial obrigatória preliminar.",
+      "E": "A plataforma de atendimento acionará a suspensão temporária do cadastro de embarque da pessoa com deficiência em prol da segurança predial."
+    },
+    "answer": "B",
+    "explanation": "A alternativa (B) corrige a IA. O art. 7º do Decreto 5.904/06 prescreve claramente que 'constitui ato de discriminação (...) qualquer tentativa voltada a impedir ou dificultar o gozo do direito previsto no art. 1º' (acesso e permanência com cão-guia em transportes). Como punição, aplicam-se desde advertência até multa (que é pecuniária) e interdição do serviço/empresa. A alternativa (A) ignora a discriminação. A alternativa (C) cria pena criminal/administrativa inexistente no texto. As alternativas (D) e (E) atrasam a sanção devida ou culpabilizam a vítima suspendendo seu acesso."
+  },
+  {
+    "id": 1469,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - Direitos da Pessoa com Deficiência",
+    "context": "Hardware de Autoatendimento Processual",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O edital de licitação de infraestrutura publicou a compra de cem terminais de autoatendimento touch-screen, encapsulados em tótens fixos a 1,60 metro do solo, isentos de teclados mecânicos ou conectores de saída de áudio de uso individual. O módulo de avaliação do plano diretor de TI contestou esse layout arquitetônico baseando-se nas normas de acessibilidade aplicáveis aos equipamentos de autoatendimento público contidas na LBI. Qual o ajuste arquitetural e de hardware compulsório no edital?",
+    "options": {
+      "A": "A configuração da máquina exigirá a incorporação técnica de sintetizadores de voz e dimensões adequadas aos perfis de usuários em cadeiras de rodas.",
+      "B": "O equipamento físico necessita adotar metodologias de validação unicamente visuais e faciais descartando elementos táteis por motivos de padronização.",
+      "C": "O painel sensível ao toque principal deve ser transmutado para telas de matriz passiva com iluminação vermelha estática de emergência.",
+      "D": "O processamento central do terminal aplicará algoritmos de supressão no retorno de áudio a fim de resguardar o sigilo inerente às documentações periciais.",
+      "E": "A distribuição espacial deve posicionar essas interfaces inacessíveis somente nas capitais operando modelos híbridos nas comarcas do interior agrário."
+    },
+    "answer": "A",
+    "explanation": "A alternativa (A) obedece à Lei 13.146/2015. Em dispositivos e terminais de autoatendimento, a legislação e as diretrizes da ABNT sobre acessibilidade exigem acesso universal: altura condizente para cadeirantes, recursos de saída de áudio (fones/sintetizadores de voz para pessoas cegas) e botões/teclados em braille e com relevo, não dependendo puramente do visual touch. A alternativa (B) impõe restrição aos cegos ao forçar biometria facial exclusiva de tela sem guia por voz. A alternativa (D) tenta vetar a voz em prol de sigilo, onde os fones de ouvido devidos supririam essa segurança privada. A alternativa (E) é absurda ao restringir a acessibilidade por região geográfica."
+  },
+  {
+    "id": 1470,
+    "day_id": "dia_22_06",
+    "day_title": "Segunda-feira 22/06",
+    "theme": "Legislação - Direitos da Pessoa com Deficiência",
+    "context": "URA de Emergência e Protocolos IP",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE atualizou a topologia de seu sistema de telefonia VoIP utilizado na Unidade de Resposta Audível (URA) da brigada de incêndio interna. O fluxo atual coloca todas as chamadas telefônicas em fila padronizada, emitindo diretrizes acústicas contínuas. Durante simulações, auditores constataram que servidores com deficiência auditiva severa ficaram impossibilitados de acionar o socorro no portal devido à ausência de mecanismos alternativos na central de voz. Considerando os mandamentos da LBI sobre emergências, qual o requisito a ser desenvolvido?",
+    "options": {
+      "A": "O roteador VoIP repassará conexões silenciosas imprecisas diretamente aos ramais fixos da secretaria de segurança pública local de plantão.",
+      "B": "A infraestrutura de suporte central instalará tecnologias de comunicação que suportem o envio bidirecional de mensagens curtas de texto ou vídeo-chat.",
+      "C": "A unidade de resposta exigirá da central de portaria a interpretação simultânea por um perito judiciário credenciado via circuito de televisão.",
+      "D": "O barramento lógico bloqueará em nível de operadora as sessões ociosas carentes de pulso vocal dinâmico combatendo ataques automatizados de denegação.",
+      "E": "A arquitetura de contingência demandará o cadastro sistêmico rígido do número MAC dos equipamentos particulares do funcionário portador da deficiência."
+    },
+    "answer": "B",
+    "explanation": "A alternativa (B) é a exigência exata do art. 73 da LBI (Lei 13.146/15): 'Os serviços de telecomunicações e os serviços de emergência (como polícia, bombeiros, resgate) de órgãos públicos e concessionárias devem dispor de mecanismos e recursos tecnológicos que viabilizem a comunicação por pessoas com deficiência'. No caso das pessoas surdas ou com deficiência de fala, esse mecanismo pressupõe envio de mensagens curtas (SMS/WhatsApp), vídeos e chat em texto para registrar e gerir o chamado. Alternativa (A) terceiriza e ignora o problema de usabilidade da ferramenta. Alternativa (C) burocratiza, exigindo perito simultâneo para uma URA. Alternativa (D) pune o deficiente auditivo que tenta contato derrubando a ligação silenciosa. Alternativa (E) cria barreira restritiva de hardware indevida."
+  }
+]
