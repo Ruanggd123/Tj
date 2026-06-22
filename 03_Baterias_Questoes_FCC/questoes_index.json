@@ -166,5 +166,11 @@
     "day_title": "Segunda-feira 22/06",
     "filename": "dia_22_06_questoes.json",
     "count": 75
+  },
+  {
+    "day_id": "provao_recuperacao",
+    "day_title": "Provão Especial de Recuperação (10/06 a 22/06)",
+    "filename": "provao_recuperacao_questoes.json",
+    "count": 100
   }
 ]
