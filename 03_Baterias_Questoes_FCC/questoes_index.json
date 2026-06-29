@@ -114,63 +114,9 @@
     "count": 45
   },
   {
-    "day_id": "dia_10_06",
-    "day_title": "Quarta-feira 10/06",
-    "filename": "dia_10_06_questoes.json",
-    "count": 45
-  },
-  {
-    "day_id": "dia_11_06",
-    "day_title": "Quinta-feira 11/06",
-    "filename": "dia_11_06_questoes.json",
-    "count": 45
-  },
-  {
-    "day_id": "dia_12_06",
-    "day_title": "Sexta-feira 12/06",
-    "filename": "dia_12_06_questoes.json",
-    "count": 45
-  },
-  {
-    "day_id": "dia_15_06",
-    "day_title": "Segunda-feira 15/06",
-    "filename": "dia_15_06_questoes.json",
-    "count": 75
-  },
-  {
-    "day_id": "dia_16_06",
-    "day_title": "Terça-feira 16/06",
-    "filename": "dia_16_06_questoes.json",
-    "count": 75
-  },
-  {
-    "day_id": "dia_17_06",
-    "day_title": "Quarta-feira 17/06",
-    "filename": "dia_17_06_questoes.json",
-    "count": 75
-  },
-  {
-    "day_id": "dia_18_06",
-    "day_title": "Quinta-feira 18/06",
-    "filename": "dia_18_06_questoes.json",
-    "count": 75
-  },
-  {
-    "day_id": "dia_19_06",
-    "day_title": "Sexta-feira 19/06",
-    "filename": "dia_19_06_questoes.json",
-    "count": 75
-  },
-  {
-    "day_id": "dia_22_06",
-    "day_title": "Segunda-feira 22/06",
-    "filename": "dia_22_06_questoes.json",
-    "count": 75
-  },
-  {
-    "day_id": "provao_recuperacao",
-    "day_title": "Provão Especial de Recuperação (10/06 a 22/06)",
-    "filename": "provao_recuperacao_questoes.json",
-    "count": 100
+    "day_id": "dia_29_06",
+    "day_title": "Super Recuperação (10/06 a 29/06)",
+    "filename": "dia_29_06_super_recuperacao.json",
+    "count": 44
   }
 ]
