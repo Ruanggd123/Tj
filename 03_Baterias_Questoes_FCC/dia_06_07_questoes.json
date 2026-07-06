@@ -1,0 +1,812 @@
+[
+  {
+    "id": 1,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Microserviços e Spring Cloud",
+    "context": "Migração de Monolito para Microserviços no TJ-CE",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Estado do Ceará (TJ-CE) iniciou o processo de modernização do seu sistema legado de Controle de Custas, particionando-o em diversos microserviços. Durante os testes de carga, a equipe de arquitetura observou que falhas de lentidão em um serviço de consulta a tabelas externas causavam o esgotamento de threads no serviço de faturamento, gerando indisponibilidade em cascata em toda a plataforma judicial. Para mitigar esse cenário, estabeleceu-se a necessidade de isolar as falhas preventivamente. A abordagem arquitetural adequada para proteger o serviço de faturamento é:",
+    "options": {
+      "A": "Adotar o padrão Circuit Breaker limitando as chamadas ao serviço degradado.",
+      "B": "Implementar um Service Mesh configurando retentativas infinitas no proxy reverso.",
+      "C": "Utilizar o padrão API Composition agrupando as respostas em um cache local.",
+      "D": "Aumentar o tempo de timeout nas configurações globais do Spring Cloud Gateway.",
+      "E": "Isolar a carga de rede habilitando o particionamento estático no Eureka Server."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. O Circuit Breaker (ex: Resilience4j) previne o colapso em cascata interrompendo ativamente as requisições para serviços degradados, retornando falha imediata ou fallback. A alternativa B é incorreta; retentativas infinitas exacerbam o congestionamento e o esgotamento de threads. A alternativa C lida com agregação de consultas, não controle de falhas. A alternativa D agrava a ocupação das threads ao mantê-las em espera prolongada. A alternativa E utiliza Service Discovery para um propósito estruturalmente inválido."
+  },
+  {
+    "id": 2,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Mensageria e Kafka",
+    "context": "Ordenação de Eventos no Peticionamento Eletrônico",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No ecossistema de tramitação processual do TJ-CE, o serviço de peticionamento inicial envia eventos de andamento judicial para um cluster Apache Kafka. É um requisito funcional estrito que todos os andamentos pertencentes a um mesmo número de processo sejam processados exatamente na ordem cronológica em que foram gerados. Contudo, eventos de processos distintos devem ser processados de forma estritamente paralela para maximizar o throughput da plataforma. O arquiteto de software deve atender a este requisito através da seguinte configuração no produtor Kafka:",
+    "options": {
+      "A": "Definir a semântica exactly-once nas propriedades globais do cluster principal.",
+      "B": "Utilizar o número do processo como partition key na emissão da mensagem.",
+      "C": "Criar um tópico individual para cada processo judicial instanciado no servidor.",
+      "D": "Habilitar a política de retenção compact no tópico unificado de andamentos.",
+      "E": "Configurar um consumer group global com algoritmo de rebalanceamento assíncrono."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. No Kafka, mensagens produzidas com a mesma chave (partition key) são enviadas para a mesma partição, garantindo assim a ordenação na leitura. Processos com chaves diferentes caem em partições diversas, permitindo paralelismo. A alternativa A foca em duplicação, não ordenação. A alternativa C gera overhead de metadados insustentável no cluster. A alternativa D altera a regra de exclusão de logs históricos, mantendo apenas o estado mais recente. A alternativa E não afeta a forma de distribuição das mensagens nas partições."
+  },
+  {
+    "id": 3,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Front-end e React",
+    "context": "Otimização de Renderização em Interfaces de Cadastro",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de desenvolvimento do TJ-CE construiu uma interface de cadastro processual em React. A tela exige a renderização de uma tabela complexa contendo milhares de linhas com jurisprudências associadas, geradas a partir de cálculos pesados de transformação de dados. Durante a homologação, notou-se uma grave queda de performance: a cada caractere pressionado em um campo isolado de filtro rápido, todo o cálculo da tabela era reprocessado na thread principal, congelando a interface. Para otimizar essa tela, a solução técnica adequada no nível estrutural do componente é:",
+    "options": {
+      "A": "Transferir o estado do campo de filtro para o framework Redux persistente.",
+      "B": "Desabilitar a propriedade StrictMode no arquivo de bootstrap da aplicação.",
+      "C": "Encapsular o cálculo das linhas da tabela no hook React nativo useMemo.",
+      "D": "Substituir os componentes funcionais por classes herdadas com forceUpdate.",
+      "E": "Delegar a renderização visual para a função estática getDerivedStateFromProps."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. O hook useMemo memoíza (cacheia) o resultado de operações custosas, recalculando os valores apenas quando suas dependências declaradas sofrem alterações, evitando cálculos redundantes a cada re-render. A alternativa A adiciona complexidade arquitetural externa sem evitar os recálculos do renderizador local. A alternativa B mascara apenas comportamentos em ambiente de desenvolvimento. A alternativa D introduz más práticas legadas forçando renderizações desnecessárias. A alternativa E lida com ciclo de vida focado em sincronização de props com estado, sem propósito de otimização de CPU."
+  },
+  {
+    "id": 4,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Mensageria e RabbitMQ",
+    "context": "Isolamento de Falhas e Estratégia DLX no Sistema de Mandados",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema central de emissão de mandados do TJ-CE utiliza RabbitMQ para distribuir ordens judiciais a serviços policiais externos. A equipe de monitoramento identificou que mensagens com erro de formatação (payload JSON corrompido) causam o bloqueio contínuo do processamento. Os consumidores lançam exceções de desserialização não tratadas e recusam a mensagem (NACK) sem requeue falso, fazendo o broker inserir o evento novamente no topo da fila principal de forma infinita. A estratégia nativa de mensageria indicada para isolar essas mensagens em falha, sem perda de evidências processuais, é:",
+    "options": {
+      "A": "Alterar a configuração da exchange principal para o padrão de roteamento topic.",
+      "B": "Configurar uma Dead Letter Exchange acoplada estruturalmente à fila de origem.",
+      "C": "Habilitar o modo de confirmação manual de entrega nas propriedades do produtor.",
+      "D": "Reduzir o parâmetro prefetch count dos clusters consumidores para zero absoluto.",
+      "E": "Adicionar uma política de expiração de dados genérica no nó físico do RabbitMQ."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. A Dead Letter Exchange (DLX) é o mecanismo nativo do RabbitMQ para redirecionar mensagens rejeitadas, expiradas ou excedentes de limite máximo, retirando-as da fila principal e preservando os dados para análise em uma Dead Letter Queue. A alternativa A altera rotas de publicadores, sem relação com consumo corrompido. A alternativa C afeta o enfileiramento inicial de quem publica. A alternativa D paralisa completamente a entrega de mensagens (consumo travado). A alternativa E elimina mensagens validas em espera ao invés de atuar estritamente sobre as rejeitadas."
+  },
+  {
+    "id": 5,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Arquitetura CNJ (PDPJ-Br)",
+    "context": "Integração de Segurança no Ecossistema PDPJ-Br",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o projeto de implantação do módulo de Gabinete Integrado, o TJ-CE precisou consumir diversos microserviços providos pelo Conselho Nacional de Justiça (CNJ) dentro das diretrizes da Plataforma Digital do Poder Judiciário (PDPJ-Br). Para garantir o fluxo rastreável de informações e o controle rigoroso de acesso por perfil de magistrado, o sistema local submetido ao barramento nacional deve seguir a arquitetura padrão do CNJ focada em identidade unificada. A diretriz arquitetural correta estipulada para esta integração de autenticação é:",
+    "options": {
+      "A": "Estabelecer conexões em rede local com o datacenter fechado do CNJ.",
+      "B": "Utilizar o fluxo OAuth 2.0 validando os tokens emitidos pelo Keycloak do CNJ.",
+      "C": "Transmitir as credenciais criptografadas de banco em cabeçalhos HTTP fixos.",
+      "D": "Sincronizar as árvores do banco LDAP do TJ-CE via processo batch noturno.",
+      "E": "Implementar assinaturas locais de chaves PGP geradas por certificados autoassinados."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. A arquitetura da PDPJ-Br padroniza o Keycloak (SSO) como provedor de identidade centralizado, utilizando o protocolo OAuth 2.0 e OpenID Connect para emissão e validação de tokens JWT entre os sistemas dos tribunais locais e a nuvem do CNJ. A alternativa A desconsidera o modelo de plataforma em nuvem estabelecido. A alternativa C quebra o princípio basilar de segurança de não transmitir senhas contínuas em chamadas de API. A alternativa D propõe uma replicação arcaica e dessincronizada de bases, incompatível com Federação de Identidade. A alternativa E não garante confiança mútua exigida pela raiz certificadora do CNJ."
+  },
+  {
+    "id": 6,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Microserviços e Spring Cloud",
+    "context": "Gestão Centralizada de Segredos no Ambiente Cloud",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na arquitetura de microserviços adotada para o portal administrativo do TJ-CE, as chaves de conexão aos bancos de dados de custódia encontravam-se hardcoded nos arquivos application.yml. Após uma auditoria de conformidade, determinou-se a necessidade imediata de centralização e criptografia dessas credenciais corporativas. Além disso, as aplicações devem possuir capacidade de recarregar novos valores rotacionados em tempo de execução sem derrubar os containers. A implementação indicada na stack Spring Cloud para este requisito é:",
+    "options": {
+      "A": "Integrar o Spring Cloud Config ao HashiCorp Vault e utilizar a anotação @RefreshScope.",
+      "B": "Persistir as senhas no pacote Spring Cloud Sleuth configurado em modo dinâmico.",
+      "C": "Hospedar os binários no Eureka Server e aplicar a anotação padrão @LoadBalanced.",
+      "D": "Registrar variáveis no Spring Boot Admin através da injeção de dependência via @Value.",
+      "E": "Consolidar o gerenciamento no Spring Cloud Stream acoplado a uma direct exchange."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. O Spring Cloud Config Server possui integração nativa com o HashiCorp Vault para fornecimento seguro de segredos dinâmicos. A anotação @RefreshScope permite a recarga de propriedades em feijões (beans) injetados sem a necessidade de reiniciar a aplicação JVM. A alternativa B refere-se a trace distribuído (substituído pelo Micrometer), não gestão de configuração. A alternativa C confunde descoberta de serviços com configuração de segredos. A alternativa D cita o Spring Boot Admin, focado em monitoramento visual/actuators. A alternativa E é voltada a processamento assíncrono e pipes de mensagens."
+  },
+  {
+    "id": 7,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Front-end e Angular",
+    "context": "Injeção Dinâmica de Tokens e Interceptação de Rede",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No ciclo de refatoração do front-end do Processo Judicial Eletrônico (PJe) do TJ-CE, escrito em Angular, surgiu o requisito transversal de anexar um token de autorização Bearer no cabeçalho de todas as chamadas HTTP direcionadas aos servidores da PDPJ-Br. Concomitantemente, falhas genéricas de rede e timeouts devem ser capturadas e enviadas a um serviço global de log. Para centralizar essa lógica imperativa e impedir a duplicação de implementações nos serviços do componente, o desenvolvedor deve:",
+    "options": {
+      "A": "Herdar os artefatos base da classe genérica HttpClient em todos os construtores de serviço.",
+      "B": "Criar uma diretiva estrutural vinculada ao elemento raiz do template de navegação inicial.",
+      "C": "Implementar a interface HttpInterceptor provendo-a no módulo raiz de injeção da aplicação.",
+      "D": "Importar o pacote nativo FormsModule isoladamente em todos os componentes de listagem.",
+      "E": "Configurar modificadores impuros de Pipes para mutar o fluxo de objetos nas requisições."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. O HttpInterceptor no Angular é o mecanismo nativo designado exatamente para modificar, anexar cabeçalhos (como tokens de autenticação) e interceptar fluxos de erro nas requisições e respostas HTTP globais de forma centralizada. A alternativa A quebra o princípio de composição, forçando herança excessiva e acoplamento desnecessário. A alternativa B atua exclusivamente no DOM, sem controle sobre chamadas de rede. A alternativa D lida apenas com formulários reativos/template-driven. A alternativa E usa Pipes (voltados para transformação visual em templates) em um escopo arquiteturalmente inadequado."
+  },
+  {
+    "id": 8,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Arquitetura e Microserviços",
+    "context": "Transações Distribuídas e Consistência Eventual",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O back-end do sistema de Execução Fiscal do TJ-CE executa um fluxo de negócios interdependente composto por três microserviços: 'Protocolo', 'Cálculo Atuarial' e 'Notificação de Partes'. Em um ambiente de produção, identificou-se que um erro crítico no serviço de 'Notificação' não reverte as transações consolidadas de banco de dados nos serviços de 'Protocolo' e 'Cálculo', corrompendo a consistência dos dados do trâmite judicial. A abordagem arquitetural recomendada para orquestrar e garantir o alinhamento de dados em transações distribuídas independentes é:",
+    "options": {
+      "A": "Bloquear os registros de múltiplos domínios adotando o padrão Two-Phase Commit em rede.",
+      "B": "Implementar o padrão Saga coordenando passos encadeados e acionando ações de compensação.",
+      "C": "Aplicar o padrão API Gateway centralizando os fluxos paralelos em um banco único relacional.",
+      "D": "Unificar estruturalmente os artefatos de dados adotando o anti-pattern Shared Database.",
+      "E": "Sincronizar a latência dos contêineres ativando o circuit breaker focado em Service Mesh."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O padrão Saga propõe uma sequência de transações locais para resolver problemas de transação distribuída. Caso uma etapa falhe, transações de compensação são acionadas em sequência reversa para desfazer as ações bem-sucedidas anteriores. A alternativa A acarreta problemas graves de bloqueio síncrono e baixa escalabilidade em sistemas de rede instáveis. A alternativa C desvirtua a finalidade de roteamento do API Gateway. A alternativa D fere o princípio de bases descentralizadas dos microserviços (database-per-service). A alternativa E cita um conceito de controle de tráfego sem nenhuma correlação com controle transacional ACID ou BASE."
+  },
+  {
+    "id": 9,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Mensageria e Kafka",
+    "context": "Paralelização e Grupos de Consumidores",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um tópico Apache Kafka denominado 'arquivamento-processos' no TJ-CE possui 24 partições e recebe um volume intenso de sentenças em horário de pico diurno. A área de infraestrutura provisionou 8 instâncias kubernetes de um microserviço em Java para processar a fila concorrentemente. Entretanto, as métricas do Grafana revelaram que a vazão de leitura continuava limitada, pois apenas uma das oitos instâncias estava consumindo as 24 partições, deixando as demais completamente ociosas. Para destravar a paralelização horizontal de leitura nativa no broker, a equipe deve certificar que:",
+    "options": {
+      "A": "Cada instância da aplicação seja executada associando-se a um consumer group estritamente diferente.",
+      "B": "As instâncias modifiquem suas chaves criptográficas para acessar o mesmo offset paralelamente.",
+      "C": "Todas as instâncias sejam parametrizadas exatamente com o mesmo valor de group.id nas propriedades.",
+      "D": "O tópico seja reestruturado habilitando regras de compactação agressiva de logs na leitura pontual.",
+      "E": "A estratégia de eleição de partições do cluster zookeeper seja alterada para desbalanceamento de rede."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. No Kafka, para que o paralelismo de leitura ocorra distribuindo as partições entre múltiplas instâncias de uma mesma aplicação, os consumidores precisam compartilhar o mesmo Group ID (`group.id`). A alternativa A resultaria no efeito oposto de replicação: cada instância leria todas as partições gerando processamentos duplicados das sentenças judiciais. As alternativas B, D e E misturam conceitos de segurança, limpeza de disco e quorum do cluster, que em nada influenciam o algoritmo central de assinalamento de partições para consumidores."
+  },
+  {
+    "id": 10,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Mensageria e RabbitMQ",
+    "context": "Roteamento Multi-Destino em Sistemas de Notificação",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O serviço de intimações criminais do TJ-CE, projetado com RabbitMQ, requer o envio de uma única notificação de 'Certidão Positiva' para três setores distintos e desacoplados: a Central de Mandados, a Auditoria Disciplinar e o Arquivo Central. Os três sistemas de destino operam de forma isolada, gerindo suas próprias filas físicas amarradas ao broker central. A estratégia de roteamento mais assertiva e resiliente para replicar o evento judicial recebido, sem intervenção do produtor original, é:",
+    "options": {
+      "A": "Direcionar as mensagens para uma Direct Exchange aplicando chaves fixas em hardcode de roteamento.",
+      "B": "Publicar os eventos restritos em uma Fanout Exchange acoplada as três filas receptoras.",
+      "C": "Substituir as três filas independentes por um tópico volátil com diretiva padrão de exclusividade.",
+      "D": "Roteá-las estritamente através de uma Topic Exchange efetuando validação baseada em wildcards.",
+      "E": "Utilizar a Default Exchange disparando eventos idênticos encapsulados em um laço de repetição cego."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O Fanout Exchange no RabbitMQ envia de forma cega uma cópia da mensagem recebida para absolutamente todas as filas atreladas (binding) a ele, independentemente de qualquer chave de roteamento (routing key), resolvendo nativamente o padrão publish-subscribe para múltiplos consumidores. A alternativa A requer configuração rígida e individual de chaves. A alternativa C quebra a persistência em canais independentes exigidos na arquitetura. A alternativa D é um exagero arquitetural que necessita controle de expressões regulares, resolvido mais facilmente com fanout. A alternativa E sobrecarrega indevidamente o produtor do evento."
+  },
+  {
+    "id": 11,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Front-end e Angular",
+    "context": "Reatividade Fina e Atualização de Estado",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No escopo de modernização do portal de inteligência do TJ-CE para a versão 17+ do framework Angular, a liderança técnica solicitou a otimização dos pesados ciclos de detecção de mudanças em matrizes do dashboard analítico. O objetivo estrito da refatoração visa garantir atualizações reativas localizadas estritamente nos painéis onde o estado sofreu alteração granular, minimizando dependências históricas indesejadas da árvore do Zone.js. O recurso nativo adotado diretamente pelas APIs modernas do framework para este propósito é:",
+    "options": {
+      "A": "Substituir bibliotecas observáveis por estruturas assíncronas Promises imutáveis no controlador.",
+      "B": "Implementar a diretiva estrutural ngModel assegurando acoplamento de fluxo bidirecional de dados.",
+      "C": "Utilizar Signals para encapsular e notificar o framework das alterações exatas de valores em estado.",
+      "D": "Adotar o ecosistema NgRx acionando despachos sincrônicos na store global ligada ao ciclo raiz.",
+      "E": "Invocar o descolamento de árvore do ChangeDetectorRef em eventos massivos disparados pelos usuários."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. Os Signals, introduzidos formalmente nas versões mais recentes do Angular, fornecem um modelo nativo de reatividade granular e eficiente. O framework sabe exatamente quais componentes da interface precisam ser atualizados e de forma autônoma, dispensando escaneamentos globais custosos provocados pelo Zone.js. A alternativa A traz latência estrutural inadequada. A alternativa B lida com vínculos de formulários. A alternativa D implementa o fluxo complexo do Redux, que agrava overhead para estados puramente visuais e locais. A alternativa E resolve congelamento mas transfere toda a responsabilidade de repintura da tela para invocações manuais."
+  },
+  {
+    "id": 12,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Mensageria e Kafka",
+    "context": "Gerenciamento de Disco e Retenção de Estado",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma aplicação crítica do TJ-CE armazena internamente em cache o estágio de tramitação atualizado de milhares de processos ativos vinculados às varas de família. Para reconstruir imediatamente esse cache massivo a partir do zero na subida de um novo pod no cluster, a aplicação conecta-se ao tópico Apache Kafka de nome 'tramitacao-snapshots'. O objetivo da leitura abrange absorver estritamente o último status pertinente a cada chave de processo, tornando dispensável todo o log histórico de passagens pelas varas em anos anteriores. O mecanismo nativo aplicável no tópico Kafka é:",
+    "options": {
+      "A": "Elevar o fator primário de replicação do cluster buscando maior proteção de durabilidade das métricas.",
+      "B": "Alterar a regra física de particionamento estático para atribuição contínua com esquema round-robin.",
+      "C": "Habilitar a política de limpeza Log Compaction ancorada na unicidade da chave semântica processual.",
+      "D": "Diminuir drasticamente a barreira de intervalo de commit em disco mantendo dados em fila in-memory.",
+      "E": "Configurar o tempo limite global de exclusão sistêmica fixando um horizonte linear inferior a uma hora."
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A política de Log Compaction do Kafka garante que a plataforma retenha pelo menos o último valor (mensagem) conhecido para cada chave específica gravada no log da partição, eliminando ativamente os eventos obsoletos de atualizações intermediárias de estado do processo. A alternativa A aumenta segurança mas mantém consumo infinito de disco com lixo obsoleto. A alternativa B modifica distribuição sem tocar na persistência. A alternativa D apenas muda a velocidade física da escrita. A alternativa E expurga dados vitais em processos estáticos que sofreram atualizações há mais de uma hora."
+  },
+  {
+    "id": 13,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Front-end e React",
+    "context": "Gestão de Estado Global em Aplicações Hierárquicas",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O departamento de sistemas de pessoal do TJ-CE concebeu um portal em React para escalas de juízes auxiliares. A árvore de componentes da SPA possui doze subníveis de profundidade arquitetural. As credenciais seguras e permissões de lotação do magistrado logado devem ser conferidas constantemente em componentes irmãos situados no topo de navegação e nas folhas hierárquicas da visualização de comarcas. Em respeito às diretrizes focadas na redução de dependências externas monolíticas, o desenvolvedor precisa compartilhar estas permissões transpondo as camadas estruturais. A solução aplicável é:",
+    "options": {
+      "A": "Criar um provedor de dados de estado superior encapsulado com a Context API nativa do framework.",
+      "B": "Injetar os identificadores sigilosos de acesso fixados diretamente no root da variável window local.",
+      "C": "Consolidar a captura transacional no gatilho síncrono obsoleto do método componentWillMount em tela.",
+      "D": "Centralizar dinamicamente todas as referências cruzadas nos bundlers orquestrados através do Webpack.",
+      "E": "Emitir sinais assíncronos acoplados no documento HTML referenciados por identificadores do tipo refs."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. A Context API soluciona eficientemente o problema de prop drilling (passagem excessiva de props em múltiplos níveis), permitindo o compartilhamento de valores em toda a sub-árvore de componentes sem o peso de adicionar pacotes de terceiros pesados (como Redux ou Mobx). A alternativa B viola frontalmente regras basilares de segurança cibernética e vazamento em estado global do navegador. A alternativa C se apoia em funções obsoletas do ciclo de vida baseadas em classes. As alternativas D e E tentam injetar abstrações fora do universo declarativo padrão do React, falhando na manipulação estruturada do DOM Virtual."
+  },
+  {
+    "id": 14,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Arquitetura CNJ (PDPJ-Br)",
+    "context": "Compartilhamento de Módulos e Interoperabilidade",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em resposta às metas nacionais, o polo tecnológico do TJ-CE criou um componente avançado de Inteligência Artificial para identificar movimentações judiciais que caracterizam demandas artificiais de massa (litigância predatória). Visando padronizar o consumo e estender o projeto a varas de instâncias judiciais de outros estados, a administração local decidiu aderir à governança da Plataforma Digital do Poder Judiciário Brasileiro (PDPJ-Br). Para ingressar no ecossistema federado unificado, atendendo à interoperabilidade técnica e portabilidade orientada pelo CNJ, o passo arquitetural obrigatório é:",
+    "options": {
+      "A": "Mapear dependências proprietárias licenciadas para compilação on-premise estática nas capitais.",
+      "B": "Publicar a API do serviço no Marketplace provido pela PDPJ-Br enquadrado às regras de conteinerização.",
+      "C": "Aprovar acessos privilegiados abrindo conexões massivas com o banco unificado de Brasília no Supremo.",
+      "D": "Engenheirar as rotinas de compilação produzindo módulos DLL voltados para aplicações desktop monolíticas.",
+      "E": "Permitir requisições em porta crua exposta diretamente através de infraestrutura física por túneis SSH."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O CNJ definiu o Marketplace da PDPJ-Br como a vitrine nacional do modelo SaaS, estipulando que os serviços devem operar em microsserviços via contêineres Docker/Kubernetes expostos por APIs REST autenticadas, permitindo reaproveitamento modular rápido entre tribunais. A alternativa A fere a premissa de distribuição agnóstica a infraestruturas monolíticas regionais. A alternativa C propõe compartilhamento indiscriminado de banco, violando as camadas SOA estabelecidas pela PDPJ. As alternativas D e E expõem designs antigos (client-server amarrado a DLLs e insegurança de infraestrutura bare-metal)."
+  },
+  {
+    "id": 15,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Microserviços e Spring Cloud",
+    "context": "Descoberta Dinâmica e Volatilidade de Redes Kubernetes",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O algoritmo judiciário de parametrização de penas no TJ-CE, escrito em Spring Boot, suporta picos diários de acessos por meio de autoscaling horizontal dentro do cluster Kubernetes. Consequentemente, o número de réplicas e os endereços IP alocados variam intensamente a cada minuto. Um serviço correlato de emissão de alvarás de soltura precisa realizar requisições REST vitais a este módulo de cálculos. Para invocar o serviço parceiro sem manter um mapa físico engessado e quebrar a resiliência projetada da malha de rede, a estrutura consolidada na stack Spring Cloud atua garantindo:",
+    "options": {
+      "A": "Service Discovery dinâmico pelo Eureka Server vinculando aliases conceituais às instâncias online.",
+      "B": "Load Balancing de conexão apoiado exclusivamente nas tabelas fixadas em servidores DNS legados.",
+      "C": "Distributed Tracing capturando gargalos sistêmicos acoplado a interceptações de tráfego do Zipkin.",
+      "D": "Messaging Configuration orientando requisições REST síncronas com conversões ao broker do Kafka.",
+      "E": "API Gateway expondo obrigatoriamente rotas públicas atreladas às portas estáticas dos nós do host."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. O padrão de Descoberta de Serviços (Service Discovery), comumente implementado pelo Netflix Eureka no ambiente Spring Cloud, possibilita que os microserviços se registrem dinamicamente. Os chamadores utilizam os identificadores nominais virtuais para obterem a lista dos IPs atualizados, abstraindo toda a volatilidade promovida por orquestradores de contêineres. A alternativa B ignora a latência e cash dos protocolos DNS, ineficiente para infraestrutura efêmera em nuvem. A alternativa C resolve rastreabilidade (observabilidade) mas é omisso na rotação IP. A alternativa D mistura abordagens RESTful síncronas com mensageria assíncrona baseada em eventos. A alternativa E limita as conexões a configurações preexistentes e imutáveis das máquinas hospedeiras."
+  },
+  {
+    "id": 16,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Portas TCP/UDP e Bancos de Dados",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça migrou seu portal de jurisprudência. A arquitetura envolve um banco relacional principal em PostgreSQL, um banco legado Oracle para histórico, um cluster MongoDB para logs não estruturados e Redis para cache de sessão. O firewall precisa liberar exclusivamente o tráfego do servidor de aplicação para o cache e para o banco legado. As portas TCP que devem ser liberadas no firewall são, respectivamente:",
+    "options": {
+      "A": "6379 e 1521.",
+      "B": "27017 e 5432.",
+      "C": "11211 e 3306.",
+      "D": "6379 e 5432.",
+      "E": "27017 e 1521."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a [A]. O banco em memória Redis utiliza a porta padrão 6379, enquanto o SGBD Oracle legado opera na porta 1521. A alternativa [B] aponta para o MongoDB (27017) e PostgreSQL (5432). A alternativa [C] refere-se ao Memcached (11211) e MySQL (3306). A alternativa [D] mistura Redis com PostgreSQL. A alternativa [E] associa o MongoDB com o Oracle."
+  },
+  {
+    "id": 17,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Camadas do Modelo OSI",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Analista de TI do TJ-CE está implementando regras de QoS em roteadores corporativos para priorizar tráfego VoIP e videoconferências, além de segregar o tráfego de transferências de arquivos e acesso a páginas web seguras. As regras de classificação de pacotes devem inspecionar os cabeçalhos de protocolos de transporte e de aplicação. Com base no modelo OSI, constituem exclusivamente protocolos da Camada de Transporte e da Camada de Aplicação, respectivamente:",
+    "options": {
+      "A": "UDP e HTTPS.",
+      "B": "IP e SSH.",
+      "C": "TCP e ICMP.",
+      "D": "ARP e FTP.",
+      "E": "OSPF e SMTP."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a [A]. O protocolo UDP opera na Camada de Transporte, oferecendo entrega sem conexão, enquanto o HTTPS opera na Camada de Aplicação fornecendo serviço web seguro. A alternativa [B] é incorreta porque o IP é da Camada de Rede. A alternativa [C] falha ao posicionar o ICMP, que é da Camada de Rede. A alternativa [D] contém o ARP, que atua na resolução de endereço Físico (Enlace/Rede). A alternativa [E] lista o OSPF, que atua no roteamento na Camada de Rede."
+  },
+  {
+    "id": 18,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Padrões IEEE - Redes Locais",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O projeto de reestruturação do datacenter do Tribunal prevê a criação de múltiplos domínios de broadcast isolados utilizando os mesmos switches físicos. Para permitir o tráfego inter-switches de forma segmentada, o arquiteto de rede exigiu que as interfaces de interligação suportem a inserção de uma tag de 4 bytes no cabeçalho dos quadros Ethernet, identificando a rede virtual correspondente. O padrão IEEE que padroniza essa técnica de encapsulamento lógico é o:",
+    "options": {
+      "A": "802.1D.",
+      "B": "802.1Q.",
+      "C": "802.1X.",
+      "D": "802.1w.",
+      "E": "802.3ad."
+    },
+    "answer": "B",
+    "explanation": "A alternativa correta é a [B]. O padrão IEEE 802.1Q padroniza o encapsulamento de VLANs em redes Ethernet, inserindo uma tag de 4 bytes nos quadros L2. A alternativa [A] refere-se ao protocolo Spanning Tree (STP) clássico. A alternativa [C] trata de controle de acesso baseado em porta (NAC). A alternativa [D] diz respeito ao Rapid Spanning Tree Protocol (RSTP). A alternativa [E] padroniza o Link Aggregation Protocol (LACP)."
+  },
+  {
+    "id": 19,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Padrões IEEE - Segurança",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Com o retorno ao trabalho presencial, magistrados e servidores frequentemente conectam notebooks particulares às portas Ethernet espalhadas pelas salas de audiência do TJ-CE. Para evitar o acesso de equipamentos não homologados à rede corporativa, a equipe de segurança da informação implementou um mecanismo de controle de acesso baseado em portas, exigindo autenticação do dispositivo antes da liberação de tráfego de dados através do switch. O padrão IEEE implementado para fornecer essa autenticação física é o:",
+    "options": {
+      "A": "802.1X.",
+      "B": "802.1s.",
+      "C": "802.11i.",
+      "D": "802.3af.",
+      "E": "802.1Q."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a [A]. O padrão IEEE 802.1X atua como mecanismo de controle de acesso à rede baseado em portas (Port-Based Network Access Control), encapsulando protocolos como EAP. A alternativa [B] refere-se ao Multiple Spanning Tree Protocol (MSTP). A alternativa [C] define especificações de segurança robusta para WLANs (WPA2/802.11). A alternativa [D] define o Power over Ethernet (PoE). A alternativa [E] trata de Virtual LANs (VLAN Tagging)."
+  },
+  {
+    "id": 20,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Comandos Linux Essenciais - Permissões",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um script de automação de backup do sistema de Processo Eletrônico foi implementado no servidor Linux principal do Tribunal. O Analista de TI precisa garantir que o arquivo 'backup_script.sh' seja lido, gravado e executado pelo dono, lido e executado pelo grupo proprietário, e totalmente inacessível para os demais usuários do sistema. O comando absoluto a ser utilizado para aplicar exatamente essas permissões é:",
+    "options": {
+      "A": "chmod 750 backup_script.sh",
+      "B": "chmod 755 backup_script.sh",
+      "C": "chmod 640 backup_script.sh",
+      "D": "chmod 760 backup_script.sh",
+      "E": "chmod 650 backup_script.sh"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a [A]. A permissão numérica 7 (4+2+1) garante read/write/execute ao owner. A permissão 5 (4+1) garante read/execute ao group. O dígito 0 zera qualquer permissão para others. A alternativa [B] concede leitura e execução a terceiros (755). A alternativa [C] remove o direito de execução do dono e do grupo (640). A alternativa [D] retira execução e concede gravação ao grupo (760). A alternativa [E] falha ao remover a execução do dono do script."
+  },
+  {
+    "id": 21,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Comandos Linux Essenciais - Propriedade",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a reestruturação da infraestrutura de arquivos do TJ-CE, um diretório contendo jurisprudências confidenciais (/var/dados/jur) foi migrado. O sistema detectou que os arquivos pertencem ao usuário root. O Analista de TI deve alterar o proprietário desses arquivos para o usuário 'tjadmin' e o grupo para 'tjgroup', aplicando a mudança a todos os arquivos e subdiretórios internos de forma recursiva. O comando Linux adequado para essa operação é:",
+    "options": {
+      "A": "chown -R tjadmin:tjgroup /var/dados/jur",
+      "B": "chown -r tjadmin.tjgroup /var/dados/jur",
+      "C": "chmod -R tjadmin:tjgroup /var/dados/jur",
+      "D": "chown -R tjgroup:tjadmin /var/dados/jur",
+      "E": "chgrp -R tjadmin:tjgroup /var/dados/jur"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a [A]. O comando 'chown' altera a propriedade e o grupo associado. A flag '-R' (maiúscula) garante que todos os diretórios e arquivos subjacentes sejam modificados. O formato padrão é 'usuario:grupo'. A alternativa [B] utiliza indevidamente a flag minúscula '-r'. A alternativa [C] aplica o comando 'chmod', que é destinado à alteração de permissões rwx. A alternativa [D] inverte a ordem entre grupo e dono. A alternativa [E] emprega 'chgrp', que altera apenas o grupo e não a posse (dono)."
+  },
+  {
+    "id": 22,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Padrões IEEE - Spanning Tree",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A rede de acesso do fórum central possui topologia em anel interligando dezenas de switches departamentais para garantir redundância física. No entanto, tempestades de broadcast causaram indisponibilidade intermitente na última semana. Para manter a redundância e eliminar os loops lógicos na camada de enlace de forma mais rápida que o protocolo original, o arquiteto recomendou a adoção do Rapid Spanning Tree Protocol (RSTP). O padrão IEEE que define o protocolo exigido pelo arquiteto é o:",
+    "options": {
+      "A": "802.1w.",
+      "B": "802.1D.",
+      "C": "802.1s.",
+      "D": "802.1Q.",
+      "E": "802.3ad."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a [A]. O padrão 802.1w especifica o RSTP (Rapid Spanning Tree Protocol), criado para corrigir o longo tempo de convergência da sua versão anterior. A alternativa [B] refere-se ao STP original, que sofre com convergência lenta. A alternativa [C] identifica o MSTP (Multiple Spanning Tree), mapeamento de múltiplas VLANs para instâncias STP. A alternativa [D] estabelece o padrão de marcação de VLANs. A alternativa [E] diz respeito à agregação de links (LACP)."
+  },
+  {
+    "id": 23,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Portas TCP/UDP - Serviços Essenciais",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um firewall de borda do Tribunal sofreu um reset para as configurações de fábrica após um surto elétrico. Para restabelecer o funcionamento imediato do servidor web seguro institucional, do tráfego do servidor de resolução de nomes e do protocolo de submissão não autenticada de e-mails entre MTAs, o administrador deve criar regras liberando, respectivamente, as seguintes portas:",
+    "options": {
+      "A": "443, 53 e 25.",
+      "B": "80, 22 e 143.",
+      "C": "443, 67 e 110.",
+      "D": "8080, 53 e 587.",
+      "E": "443, 21 e 25."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a [A]. O tráfego HTTPS seguro utiliza a porta TCP 443; a resolução de nomes (DNS) opera majoritariamente na UDP/TCP 53; a troca de e-mails em um MTA na modalidade não autenticada e para roteamento ocorre pela porta TCP 25. A alternativa [B] enumera portas HTTP (80), SSH (22) e IMAP (143). A alternativa [C] apresenta portas HTTPS, DHCP (67) e POP3 (110). A alternativa [D] traz uma porta HTTP alternativa, DNS e a submissão de mensagens autenticadas de e-mail (587). A alternativa [E] inclui erroneamente a porta do serviço de transferência de arquivos FTP (21)."
+  },
+  {
+    "id": 24,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Comandos Linux Essenciais - Filtragem e Expressões",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Analista de Segurança do TJ-CE está investigando um incidente cibernético em um servidor web Linux. Ele precisa extrair do arquivo de log /var/log/auth.log todas as linhas que contenham o termo \"Failed password\", ignorando a diferença entre letras maiúsculas e minúsculas, e exibindo adicionalmente o número exato da linha correspondente no arquivo original. O comando que atende estritamente a esses requisitos é:",
+    "options": {
+      "A": "grep -in \"Failed password\" /var/log/auth.log",
+      "B": "grep -vc \"Failed password\" /var/log/auth.log",
+      "C": "grep -Rl \"Failed password\" /var/log/auth.log",
+      "D": "grep -en \"Failed password\" /var/log/auth.log",
+      "E": "grep -ix \"Failed password\" /var/log/auth.log"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a [A]. O utilitário 'grep' filtra padrões em arquivos. A flag '-i' ativa o modo case-insensitive (ignora maiúsculas e minúsculas) e a flag '-n' imprime o número de cada linha correspondente. A alternativa [B] usa '-v' para inverter a correspondência e '-c' para apenas contar as linhas. A alternativa [C] usa '-R' para recursividade e '-l' para imprimir somente nomes de arquivos. A alternativa [D] aplica '-e', que permite múltiplos padrões, mas falha em ignorar case. A alternativa [E] usa '-x', que restringe o 'match' apenas para linhas inteiras correspondentes, ocultando o número da linha."
+  },
+  {
+    "id": 25,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Portas TCP/UDP - Acesso Administrativo",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Devido às novas diretrizes de teletrabalho, os analistas de infraestrutura do tribunal acessam remotamente os clusters de servidores virtuais e os appliances de rede. O acesso em linha de comando encriptado aos servidores Linux e a administração em ambiente gráfico remoto para hosts Microsoft Windows são realizados, de forma padrão, sobre protocolos que utilizam na camada de transporte, respectivamente, as portas TCP:",
+    "options": {
+      "A": "22 e 3389.",
+      "B": "23 e 5900.",
+      "C": "22 e 1433.",
+      "D": "21 e 3389.",
+      "E": "22 e 445."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a [A]. O serviço SSH fornece acesso remoto seguro em linha de comando escutando nativamente na porta TCP 22. O Remote Desktop Protocol (RDP), comum para sessões gráficas Windows, opera de forma padrão na TCP 3389. A alternativa [B] aponta as portas de Telnet (23, inseguro) e VNC (5900). A alternativa [C] mistura SSH com o SQL Server (1433). A alternativa [D] indica a porta do protocolo FTP (21) no lugar do acesso shell criptografado. A alternativa [E] associa o SSH com o compartilhamento de arquivos SMB/CIFS (445)."
+  },
+  {
+    "id": 26,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Comandos Linux Essenciais - Atributos Especiais",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Foi criado um diretório compartilhado /var/tj_documentos no servidor Linux departamental, onde vários juízes e assessores (todos do mesmo grupo tj_users) possuem permissão de leitura e escrita. O Analista de TI identificou que usuários estão apagando inadvertidamente arquivos criados por colegas dentro desse diretório. Para garantir que apenas o criador do arquivo ou o superusuário possa excluí-lo, preservando as permissões de gravação contidas no diretório, o administrador deve aplicar o comando:",
+    "options": {
+      "A": "chmod +t /var/tj_documentos",
+      "B": "chmod g+s /var/tj_documentos",
+      "C": "chmod u+s /var/tj_documentos",
+      "D": "chmod 777 /var/tj_documentos",
+      "E": "chmod o-w /var/tj_documentos"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a [A]. O parâmetro '+t' adiciona o Sticky Bit ao diretório. Quando aplicado a um diretório onde múltiplos usuários possuem permissão de escrita, o Sticky Bit impõe que um arquivo só pode ser deletado ou renomeado pelo seu próprio criador (dono) ou pelo root. A alternativa [B] ativa o SGID, que faria com que novos arquivos herdassem o grupo proprietário do diretório. A alternativa [C] configura o SUID, comumente usado em executáveis. A alternativa [D] atribui acesso total indiscriminado a todos. A alternativa [E] retira a permissão de escrita dos 'outros' usuários, ineficaz para controlar a deleção cruzada dentro do mesmo grupo 'tj_users'."
+  },
+  {
+    "id": 27,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Padrões IEEE - Redes Sem Fio (Wi-Fi)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está substituindo seus access points antigos por equipamentos de alta densidade visando melhorar o tráfego nas sessões plenárias. A nova especificação exige equipamentos que operem simultaneamente nas faixas de 2,4 GHz e 5 GHz, utilizando modulação OFDMA para gerenciar múltiplos usuários eficientemente, sendo retrocompatíveis com os protocolos antigos. O padrão IEEE que engloba essas inovações, comumente referido como Wi-Fi 6, é o:",
+    "options": {
+      "A": "802.11ax.",
+      "B": "802.11ac.",
+      "C": "802.11n.",
+      "D": "802.11g.",
+      "E": "802.11ad."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a [A]. A designação 802.11ax corresponde ao padrão batizado comercialmente de Wi-Fi 6, que introduz tecnologias como OFDMA e TWT para melhorar a eficiência espectral e opera tanto nas faixas de 2.4 quanto de 5GHz. A alternativa [B] refere-se ao 802.11ac (Wi-Fi 5), que não introduziu o OFDMA bidirecional e opera essencialmente em 5GHz. A alternativa [C] é o padrão 802.11n (Wi-Fi 4). A alternativa [D] é o antigo 802.11g, focado unicamente na faixa de 2.4 GHz e sem MIMO/OFDMA. A alternativa [E] trata do WiGig, padrão de comunicação na frequência direcional de 60 GHz."
+  },
+  {
+    "id": 28,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Portas TCP/UDP e Protocolos de Transporte",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um sistema de monitoramento de disponibilidade enviou alertas de inatividade de um servidor de banco de dados e de um servidor de resolução de nomes internos do Tribunal. A equipe de redes confirmou que não há bloqueio nos protocolos de rede, porém o firewall de transporte foi reconfigurado incorretamente. O banco de dados MySQL e as consultas de pesquisa padrão do serviço DNS utilizam nativamente, no nível de transporte, os protocolos e portas:",
+    "options": {
+      "A": "TCP na porta 3306 e UDP na porta 53.",
+      "B": "UDP na porta 1521 e TCP na porta 53.",
+      "C": "TCP na porta 5432 e UDP na porta 67.",
+      "D": "UDP na porta 3306 e TCP na porta 53.",
+      "E": "TCP na porta 3306 e TCP na porta 69."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a [A]. O gerenciador de banco de dados MySQL utiliza o protocolo TCP e é mapeado por padrão para a porta 3306. O sistema DNS, em suas requisições/consultas transacionais mais comuns, utiliza o transporte não orientado à conexão UDP na porta 53. A alternativa [B] correlaciona erroneamente o UDP e as portas do Oracle. A alternativa [C] traz as credenciais de transporte do PostgreSQL e do protocolo DHCP. A alternativa [D] inverte as garantias de conectividade, atrelando UDP ao MySQL e falhando em reconhecer o UDP como transporte predominante para consultas DNS. A alternativa [E] aponta a porta 69 TCP, que é na verdade porta UDP utilizada pelo TFTP."
+  },
+  {
+    "id": 29,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Comandos Linux Essenciais - Redirecionamento e Pipeline",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O portal de intimações do Tribunal gera um arquivo de texto maciço diário contendo os registros de auditoria (auditoria.log). O administrador precisa localizar estritamente as linhas que indicam o padrão do usuário \"advogado\", filtrar dessas linhas apenas as que contenham o termo \"falha\" e, em seguida, direcionar o resultado exclusivamente para o final de um novo arquivo de texto. O encadeamento correto de comandos e operadores em sistemas Linux para realizar a tarefa sem sobrescrever dados anteriores do arquivo de destino é:",
+    "options": {
+      "A": "grep \"advogado\" auditoria.log | grep \"falha\" >> falhas.txt",
+      "B": "grep \"advogado\" auditoria.log > grep \"falha\" > falhas.txt",
+      "C": "grep \"advogado\" auditoria.log | grep \"falha\" > falhas.txt",
+      "D": "grep -c \"advogado\" auditoria.log >> falhas.txt",
+      "E": "grep \"falha\" auditoria.log < grep \"advogado\" >> falhas.txt"
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a [A]. O operador de pipeline '|' canaliza o output do primeiro grep para o segundo comando grep. O operador '>>' garante que o output final seja anexado (append) ao final do arquivo falhas.txt sem sobrescrever os dados previamente gravados. A alternativa [B] usa erroneamente o redirecionador angular no lugar do pipe, gravando um arquivo chamado 'grep'. A alternativa [C] falha no requisito porque o operador de redirecionamento simples '>' sobrescreve ou trunca todo o conteúdo anterior do arquivo de texto de saída. A alternativa [D] utiliza '-c', contando as ocorrências em vez de extrair e concatenar os logs filtrados por duas vezes. A alternativa [E] apresenta erro de sintaxe e lógica no uso do redirecionador de entrada '<'."
+  },
+  {
+    "id": 30,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Padrões IEEE - Redes Cabeadas",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um projeto de cabeamento estruturado foi licitado pelo TJ-CE para interligar os edifícios do fórum através de um backbone de fibra óptica, utilizando switches core que suportam velocidades de 10 Gigabits por segundo. Essa família de tecnologias e especificações físicas de cabos e sinais para redes locais cabeadas é padronizada e mantida globalmente pelo grupo de trabalho IEEE:",
+    "options": {
+      "A": "802.3.",
+      "B": "802.11.",
+      "C": "802.1.",
+      "D": "802.15.",
+      "E": "802.16."
+    },
+    "answer": "A",
+    "explanation": "A alternativa correta é a [A]. O IEEE 802.3 é a coleção de especificações que padroniza mundialmente a rede Ethernet (CSMA/CD em sua origem e topologias cabeadas de alta velocidade). A alternativa [B] padroniza as comunicações de Redes Locais Sem Fio (Wi-Fi). A alternativa [C] define padrões voltados para a arquitetura superior de LAN, VLANs e protocolos de Bridging. A alternativa [D] especifica as Wireless Personal Area Networks (WPAN, ex: Bluetooth). A alternativa [E] padroniza comunicações de banda larga sem fio de longo alcance metropolitano (WMAN/WiMAX)."
+  },
+  {
+    "id": 31,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Infraestrutura Microsoft - Active Directory",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o projeto de reestruturação do ambiente de diretório do Tribunal de Justiça, a equipe de infraestrutura identificou um incidente no qual novos objetos criados em um controlador de domínio remoto não estavam recebendo os Identificadores de Segurança (SIDs) corretos, ocasionando falhas de autenticação e delegação nas comarcas do interior. O log de eventos apontou a exaustão do pool de RIDs alocados ao DC afetado. Para solucionar definitivamente o problema de alocação de novos blocos no domínio, o analista deve intervir no controlador de domínio que detém a função FSMO de:",
+    "options": {
+      "A": "PDC Emulator.",
+      "B": "Schema Master.",
+      "C": "Infrastructure Master.",
+      "D": "RID Master.",
+      "E": "Domain Naming Master."
+    },
+    "answer": "D",
+    "explanation": "O RID Master (Mestre de RID) é a função FSMO responsável por alocar blocos de Identificadores Relativos (RIDs) a cada controlador de domínio, compondo os SIDs dos novos objetos. Quando um DC esgota seu pool local, ele solicita um novo bloco ao RID Master. A alternativa 'A' gerencia sincronismo de tempo e senhas. A alternativa 'B' gerencia o esquema florestal. A alternativa 'C' lida com referências cruzadas de domínio. A alternativa 'E' gerencia a adição e remoção de domínios na floresta."
+  },
+  {
+    "id": 32,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Infraestrutura Microsoft - Active Directory",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE possui uma topologia de Active Directory com sede em Fortaleza e diversas filiais conectadas via links de WAN de alta latência. A replicação intra-site ocorre instantaneamente, mas a replicação inter-site gerou gargalos na rede durante o horário de expediente. A arquitetura exige a compressão automática desse tráfego e o agendamento rigoroso para transferências fora do horário comercial. A configuração adequada que o analista de infraestrutura deve implementar no console Active Directory Sites and Services para otimizar esse fluxo é a criação e parametrização de:",
+    "options": {
+      "A": "Subnets associadas aos Bridgehead Servers.",
+      "B": "Site Links com intervalos de replicação customizados e custos definidos.",
+      "C": "Connection Objects com protocolo RPC sobre IP para replicação síncrona.",
+      "D": "KCC (Knowledge Consistency Checker) manual para roteamento estático.",
+      "E": "Site Link Bridges habilitados para replicação transitiva imediata."
+    },
+    "answer": "B",
+    "explanation": "A replicação inter-site é estruturalmente controlada pelos Site Links, onde é possível definir o custo de roteamento, o intervalo mínimo de replicação e o agendamento (schedule) de horários permitidos, ativando também, por padrão, a compressão de dados RPC. 'Connection Objects' gerenciam apenas conexões de entrada ponto-a-ponto, mas o agendamento global entre sites depende do Site Link. 'Bridgehead Servers' apenas consolidam a transmissão/recebimento no site. 'KCC' gera automaticamente a topologia."
+  },
+  {
+    "id": 33,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Infraestrutura Microsoft - GPO",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No contexto do teletrabalho e das sessões de Remote Desktop Services (RDS) utilizadas por servidores públicos do TJ-CE, a equipe de TI precisou aplicar políticas de restrição severas de ambiente visual e bloqueio de unidades USB apenas quando os usuários realizam logon nesses servidores específicos. Contudo, as políticas de usuário convencionais, aplicadas nas Unidades Organizacionais (OUs) onde as contas residem, estão prevalecendo sobre as restrições dos servidores RDS. Para garantir a aplicação forçada das políticas de usuário vinculadas estritamente à OU dos servidores RDS, o analista deve configurar:",
+    "options": {
+      "A": "O bloqueio de herança (Block Inheritance) na OU raiz dos usuários.",
+      "B": "A filtragem de segurança (Security Filtering) com grupos universais de máquinas.",
+      "C": "O processamento de GPO em modo de Loopback Substituir (Replace).",
+      "D": "A imposição (Enforced) da GPO na configuração base do domínio.",
+      "E": "O filtro WMI validando o identificador do sistema operacional Windows Server."
+    },
+    "answer": "C",
+    "explanation": "O Processamento de Loopback (Loopback Processing) altera a mesclagem padrão das GPOs, permitindo que configurações de 'Usuário' aplicadas à OU de 'Computadores' (como os servidores RDS) tenham precedência ou substituam totalmente as GPOs da conta do usuário. O modo 'Substituir' (Replace) ignora as políticas do local original do usuário. As outras opções como Block Inheritance e Enforced não alteram a dinâmica usuário vs máquina. Security Filtering e WMI limitam o escopo de leitura da GPO, não seu comportamento cruzado."
+  },
+  {
+    "id": 34,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Infraestrutura Microsoft - PowerShell",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O parque computacional de retaguarda do Tribunal é composto por cinquenta servidores Windows Server Core, sem interface gráfica. Um analista precisa executar um script PowerShell de manutenção preditiva nos discos desses servidores simultaneamente, partindo de sua estação de gerenciamento seguro (PAW). A política de segurança exige a execução descentralizada no contexto da sessão de cada servidor alvo, retornando os objetos estruturados para o console central. O cmdlet do PowerShell apropriado para iniciar essa execução distribuída e capturar os resultados locais é:",
+    "options": {
+      "A": "Enter-PSSession.",
+      "B": "Invoke-Command.",
+      "C": "Start-Job.",
+      "D": "New-PSSession.",
+      "E": "Connect-PSSession."
+    },
+    "answer": "B",
+    "explanation": "O cmdlet 'Invoke-Command' aceita uma lista de computadores e permite a execução de blocos de scripts remotamente em paralelo através do WinRM (PowerShell Remoting), serializando e retornando os resultados na sessão de origem. 'Enter-PSSession' estabelece uma conexão interativa com apenas uma máquina por vez. 'Start-Job' executa jobs assíncronos locais. 'New-PSSession' cria sessões contínuas em memória, não disparando comandos instantâneos nativamente na mesma chamada isolada. 'Connect-PSSession' reconecta a sessões desconectadas."
+  },
+  {
+    "id": 35,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Infraestrutura Microsoft - WSUS",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal possui um servidor WSUS principal no Datacenter de Fortaleza e servidores WSUS secundários em comarcas estratégicas do interior. A normatização de segurança da informação exige que a homologação e a aprovação de atualizações cumulativas do Windows Server sejam orquestradas unicamente na matriz. Os servidores das comarcas devem baixar os binários localmente, mas não devem dispor de autonomia administrativa sobre aprovações ou relatórios independentes. Para respeitar essa arquitetura subordinada, os servidores WSUS das comarcas devem ser configurados no modo:",
+    "options": {
+      "A": "Autônomo com sincronização diferencial de metadados.",
+      "B": "Desconectado com exportação via ferramenta wsusutil.",
+      "C": "BranchCache com armazenamento e indexação distribuída.",
+      "D": "Ponto de distribuição local de Software Update Point (SUP).",
+      "E": "Réplica sob o controle de um servidor upstream central."
+    },
+    "answer": "E",
+    "explanation": "No modo Réplica (Replica mode), um servidor WSUS torna-se dependente, clonando as aprovações, grupos de computadores e relatórios do servidor Upstream. Administradores do servidor réplica perdem a capacidade de aprovar atualizações de forma independente. O modo Autônomo (Autonomous) garante gestão isolada de aprovações. BranchCache é um mecanismo de entrega em rede de arquivos. Ponto de SUP reflete um componente de integração SCCM, não um modo do console WSUS independente."
+  },
+  {
+    "id": 36,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Infraestrutura Microsoft - Active Directory",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Devido a um projeto de cruzamento de processos com o Ministério Público, o domínio da floresta do TJ-CE (tjce.jus.br) necessita autenticar usuários no domínio da floresta do MP-CE (mpce.mp.br) para o consumo de uma API legada baseada em Kerberos. A integração não permite a exposição mútua de todas as estruturas entre os órgãos e requer o provisionamento rigoroso de permissões apenas nos servidores envolvidos na transação. A equipe de infraestrutura deve implementar na camada de domínio uma relação unidirecional do tipo:",
+    "options": {
+      "A": "Confiança de Floresta (Forest Trust) com Autenticação Ampla.",
+      "B": "Confiança de Atalho (Shortcut Trust) com validação rígida de SID.",
+      "C": "Confiança de Realm (Realm Trust) parametrizada sob NTLMv2.",
+      "D": "Confiança Externa (External Trust) submetida à Autenticação Seletiva.",
+      "E": "Confiança Pai-Filho (Parent-Child Trust) com escopo transitivo."
+    },
+    "answer": "D",
+    "explanation": "A Confiança Externa (External Trust) é projetada para conectar dois domínios específicos situados em florestas diferentes, não sendo transitiva. A configuração de 'Autenticação Seletiva' (Selective Authentication) reforça a segurança, bloqueando a autenticação genérica e exigindo a delegação manual da permissão 'Allowed to Authenticate' no objeto do computador de destino. Forest Trust conectaria ambas as florestas integralmente. Shortcut Trust encurta caminhos entre domínios da mesma floresta."
+  },
+  {
+    "id": 37,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Infraestrutura Microsoft - GPO",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Diretoria de Informática publicou uma GPO crítica contendo edições do Registro do Windows para aumentar a vazão de rede no sistema de peticionamento eletrônico. Contudo, detectou-se que a configuração gera falhas graves de TCP Chimney no Windows Server 2016, devendo atingir estritamente os servidores modernizados com a versão Windows Server 2022 presentes na mesma OU. Para aplicar a GPO unicamente ao parque atualizado de forma dinâmica, sem necessidade de isolar os servidores legados em outra estrutura organizacional, utiliza-se a técnica de:",
+    "options": {
+      "A": "Filtro WMI baseado em propriedades da classe Win32_OperatingSystem.",
+      "B": "Bloqueio de herança acompanhado de associação a grupos de segurança nativos.",
+      "C": "Itens de Preferência de GPO (GPP) ativados por direcionamento em nível de usuário.",
+      "D": "Script de inicialização programado através de objetos COM WScript.Network.",
+      "E": "Associação exclusiva em nível de Site Active Directory com sub-redes demarcadas."
+    },
+    "answer": "A",
+    "explanation": "Os Filtros WMI (WMI Filters) avaliam consultas SQL (WQL) diretamente nos computadores que processarão a GPO. Ao utilizar a classe Win32_OperatingSystem (filtrando a versão, por exemplo, 10.0.20348 para Windows Server 2022), a GPO só será efetivada se a query retornar verdadeiro, ignorando o Windows Server 2016. Segurança baseia-se em grupos, GPP Item-level targeting funciona apenas no interior de Preferências (e o enunciado fala sobre edições diretas da diretiva), e link no site aplicaria fisicamente a todos."
+  },
+  {
+    "id": 38,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Infraestrutura Microsoft - PowerShell",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A arquitetura de escalabilidade do Diário da Justiça Eletrônico foi projetada com fundamentos de Infraestrutura como Código (IaC). O arquiteto responsável determinou que a configuração base do Internet Information Services (IIS) seja declarativa e que qualquer modificação pontual e não autorizada realizada nos servidores de destino seja revertida proativamente e de forma autônoma. O recurso nativo do Windows Server que permite o cumprimento desse paradigma, mantendo as configurações ancoradas a um estado desejado imutável, atua através do:",
+    "options": {
+      "A": "Windows Admin Center com extensões modulares de automação remota.",
+      "B": "PowerShell Desired State Configuration (DSC) no modo Push tradicional.",
+      "C": "System Center Configuration Manager (SCCM) acionado por Task Sequences.",
+      "D": "PowerShell Desired State Configuration (DSC) com LCM configurado em ApplyAndAutoCorrect.",
+      "E": "Group Policy Preferences (GPP) com ciclo de atualização assíncrona forçada em foreground."
+    },
+    "answer": "D",
+    "explanation": "O PowerShell DSC é a plataforma de gerenciamento de configurações do Windows focada no conceito declarativo. Seu componente cliente, o Local Configuration Manager (LCM), pode operar em três modos. O modo 'ApplyAndAutoCorrect' verifica periodicamente se as configurações locais desviaram (Configuration Drift) do estado desejado original e reinstala/corrige o recurso automaticamente. O modo 'Push' isolado apenas entrega o arquivo MOF, necessitando dessa configuração do LCM para a autorremediação contínua."
+  },
+  {
+    "id": 39,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Infraestrutura Microsoft - WSUS",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de segurança cibernética mitigou um ataque de ransomware homologando pacotes de atualização que devem ser instalados obrigatoriamente. Um grupo de trabalho foi encarregado de vincular todas as estações de trabalho do TJ-CE a um servidor WSUS na nuvem privada institucional, exigindo o download autônomo em background e a instalação compulsória diária às 18:00h. Esse comportamento do cliente do Windows Update é injetado via Group Policy Object (GPO) através das configurações nativas alocadas em:",
+    "options": {
+      "A": "Componentes do Windows > Windows Update > Especificar o local do serviço de atualização na intranet da Microsoft.",
+      "B": "Configurações do Windows > Configurações de Segurança > Diretivas Locais > Atualizações Automáticas.",
+      "C": "Modelos Administrativos > Sistema > Instalação de Dispositivos > Servidor WSUS Padrão.",
+      "D": "Preferências > Configurações do Painel de Controle > Tarefas Agendadas > Windows Update Client.",
+      "E": "Políticas de Resolução de Nomes (NRPT) > Atualizações Microsoft > Redirecionamento de Tráfego HTTP."
+    },
+    "answer": "A",
+    "explanation": "A configuração padrão oficial e nativa via GPO para apontar clientes de rede para o WSUS, bem como moldar o horário da atualização, encontra-se na árvore 'Configuração do Computador > Políticas > Modelos Administrativos > Componentes do Windows > Windows Update'. A política 'Especificar o local do serviço de atualização...' realiza o mapeamento do registro WUServer e WUStatusServer. Outras ramificações tratam de segurança clássica ou agendamento de scripts locais que não são o motor oficial do Windows Update GPO."
+  },
+  {
+    "id": 40,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Infraestrutura Microsoft - Windows Server",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Buscando máxima economia no licenciamento do novo Datacenter secundário do TJ-CE, a diretoria adquiriu dezesseis novos nós de processamento equipados com unidades SSD e NVMe internos de altíssima velocidade, descartando a compra de storages corporativos Fibre Channel (SAN). Para assegurar tolerância a falhas para o repositório de máquinas virtuais do Hyper-V sem armazenamento de bloco externo tradicional, o analista deve implantar uma arquitetura de cluster agrupando logicamente os discos locais através da tecnologia de:",
+    "options": {
+      "A": "Distributed File System Replication (DFS-R) operando como backend.",
+      "B": "Storage Replica provisionada em modo síncrono contínuo.",
+      "C": "Storage Spaces Direct (S2D) formando um pool de infraestrutura hiperconvergente.",
+      "D": "iSCSI Target Server estruturado sob caminhos duplos com Multipath I/O (MPIO).",
+      "E": "Cluster Shared Volumes (CSV) sustentados nativamente pelo SMB Direct passivo."
+    },
+    "answer": "C",
+    "explanation": "O Storage Spaces Direct (S2D) é a solução da Microsoft (disponível no Windows Server Datacenter) para Infraestrutura Hiperconvergente (HCI). Ele transforma discos fisicamente locais (DAS) agregando-os em pools de armazenamento resiliente através da rede, que são entregues aos Cluster Shared Volumes (CSV) para hospedar as VMs do Hyper-V, dispensando hardware SAN tradicional. DFS-R atua apenas na replicação de arquivos comuns. iSCSI requereria um nó de armazenamento em rede clássico."
+  },
+  {
+    "id": 41,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Legislação do TJ-CE (Lei nº 16.397/2017)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No âmbito das atribuições judiciais dos órgãos colegiados superiores estabelecidas pela Lei Estadual nº 16.397/2017 (Lei de Organização Judiciária do Estado do Ceará), uma sessão extraordinária precisou ser convocada com urgência para deliberar sobre uma arguição direta de inconstitucionalidade de lei estadual frente à Constituição do Estado do Ceará. Nos termos da legislação vigente, o julgamento de controle abstrato desta inconstitucionalidade detém competência originária deferida à alçada:",
+    "options": {
+      "A": "Das Câmaras Cíveis Reunidas em composição plenária extraordinária.",
+      "B": "Do Conselho da Magistratura presidido pelo Corregedor-Geral.",
+      "C": "Do Tribunal Pleno, cuja decisão exige deliberação por maioria absoluta de seus membros.",
+      "D": "Do Órgão Especial mediante o acionamento direto do Ministério Público.",
+      "E": "Das Câmaras Criminais Isoladas nas hipóteses de violação de matriz constitucional difusa."
+    },
+    "answer": "C",
+    "explanation": "A competência para processar e julgar, originariamente, a ação direta de inconstitucionalidade de lei ou ato normativo estadual ou municipal em face da Constituição do Estado do Ceará cabe precipuamente ao Tribunal Pleno. Além disso, pelo princípio constitucional e sistemático, a declaração de inconstitucionalidade, acolhida no Pleno, demanda o voto da maioria absoluta (Cláusula de Reserva de Plenário). Câmaras isoladas, reunidas e Conselho da Magistratura detêm atribuições recursais comuns, penais ou disciplinares, mas não de controle normativo abstrato estadual."
+  },
+  {
+    "id": 42,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Legislação do TJ-CE (Lei nº 16.397/2017)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O processamento eletrônico do Tribunal de Justiça do Ceará realiza a distribuição randômica automática de agravos de instrumento a partir dos polos recursais competentes. Um erro de parametrização no sistema enviou um recurso ordinário civil que tratava exclusivamente da cobrança de danos morais por acidente de trânsito envolvendo condutores particulares para uma câmara incorreta. Com base na taxonomia estipulada na Lei de Organização Judiciária (Lei nº 16.397/2017), tal recurso de caráter processual civil ordinário deve ser direcionado prioritariamente às:",
+    "options": {
+      "A": "Câmaras Cíveis Isoladas.",
+      "B": "Câmaras Criminais Reunidas.",
+      "C": "Turmas Recursais dos Juizados Especiais da Fazenda Pública.",
+      "D": "Seções Especializadas de Direito Público do Tribunal Pleno.",
+      "E": "Varas Únicas de Entrância Especial localizadas na Região Metropolitana."
+    },
+    "answer": "A",
+    "explanation": "No TJ-CE, as Câmaras Cíveis Isoladas compõem o principal órgão fracionário encarregado de julgar apelações e agravos em questões estritamente cíveis e de família provindas das Varas da Justiça Comum. Câmaras Cíveis Reunidas tratam de matérias de competência originária especial ou conflitos internos. Varas Únicas funcionam em primeira instância e não recebem grau de recurso. Ações entre particulares descaracterizam as Turmas Fazendárias."
+  },
+  {
+    "id": 43,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Legislação do TJ-CE (Lei nº 16.397/2017)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Lei Estadual nº 16.397/2017 reorganizou territorial e funcionalmente as circunscrições judiciais do Estado do Ceará, impactando diretamente o dimensionamento da infraestrutura dos fóruns para adequação da tecnologia às demandas de lotação e densidade processual. Um auditor de TI verificou o mapa da arquitetura que destina links de banda larga de acordo com o status evolutivo da carreira dos juízes em cada localidade. Conforme a organização ditada pela norma, as comarcas da Justiça do Estado do Ceará são rigorosamente classificadas de forma hierárquica em:",
+    "options": {
+      "A": "Primeira Instância, Segunda Instância e Instância Extraordinária.",
+      "B": "Entrância Inicial, Entrância Intermediária e Entrância Final.",
+      "C": "Juizados Especiais, Varas Comuns e Tribunais do Júri Independentes.",
+      "D": "Entrância Básica, Entrância Especializada e Tribunal de Justiça Central.",
+      "E": "Polos Regionais Físicos, Comarcas Vinculadas e Comarcas Sedes Administrativas."
+    },
+    "answer": "B",
+    "explanation": "A organização em 'Entrâncias' reflete a complexidade, importância e densidade processual, pautando o crescimento na carreira do magistrado. De acordo com a Lei de Organização Judiciária, as comarcas se subdividem em Entrância Inicial, Entrância Intermediária e Entrância Final (este último caso abarca a Comarca de Fortaleza, por exemplo). Termos como instâncias e polos representam características ou agrupamentos operacionais alheios à nomenclatura da hierarquia das comarcas."
+  },
+  {
+    "id": 44,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Legislação do TJ-CE (Lei nº 16.397/2017)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Conselho da Magistratura do TJ-CE exerce o papel disciplinar, normativo e correicional em relação ao funcionamento da Justiça de Primeira Instância. Durante a implementação do painel de Business Intelligence (BI) de gestão judicial corporativa, um desenvolvedor precisou restringir o acesso antecipado às métricas secretas de correição estritamente à composição nata do órgão para não ferir a Lei de Organização Judiciária (Lei nº 16.397/2017). Integram obrigatoriamente e de ofício (como membros natos) o Conselho da Magistratura os magistrados ocupantes dos seguintes cargos:",
+    "options": {
+      "A": "Presidente, o Vice-Presidente e o Corregedor-Geral da Justiça.",
+      "B": "Ouvidor-Geral, o Diretor do Fórum Clóvis Beviláqua e o Presidente da Corte.",
+      "C": "Presidente, o Procurador-Geral de Justiça e o Defensor Público Geral.",
+      "D": "Corregedor-Geral da Justiça, o Presidente das Câmaras Reunidas e o Desembargador Decano.",
+      "E": "Presidente do Tribunal de Justiça, o Secretário de Finanças e o Secretário de TI do TJ."
+    },
+    "answer": "A",
+    "explanation": "Segundo o Código de Organização Judiciária, o Conselho da Magistratura tem composição mista, sendo integrado pelos dirigentes máximos do Tribunal de Justiça, que assumem a condição de membros natos. Estes são o Presidente do Tribunal, o Vice-Presidente e o Corregedor-Geral da Justiça. Outros Desembargadores compõem o órgão, porém por via eletiva realizada pelo Tribunal Pleno, e não por força isolada do cargo. Cargos administrativos, defensores e promotores não integram o órgão diretivo judicial."
+  },
+  {
+    "id": 45,
+    "day_id": "dia_06_07",
+    "day_title": "Semana 8 - Retomada e Decorebas (06/07)",
+    "theme": "Legislação do TJ-CE (Lei nº 16.397/2017)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o desenvolvimento de um painel de automação dentro do processo judicial eletrônico para a gestão célere de demandas de menor complexidade, a equipe de TI verificou a necessidade de registrar corretamente a árvore dos órgãos julgadores recursais específicos do macrossistema dos Juizados Especiais. Pela estrutura de segunda instância desenhada pela legislação estadual (Lei nº 16.397/2017) e alinhada à lei federal de regência dos juizados, a revisão das decisões definitivas de primeiro grau do JEC e JECRIM compete ordinariamente:",
+    "options": {
+      "A": "Às Câmaras Cíveis e Criminais componentes do Tribunal de Justiça.",
+      "B": "Ao Tribunal Pleno mediante procedimento unificado de avocatória de competência.",
+      "C": "Às Turmas Recursais compostas exclusivamente por juízes de primeiro grau em exercício.",
+      "D": "Ao Conselho da Magistratura reunido em fase correicional administrativa.",
+      "E": "Aos Desembargadores membros do Órgão Especial escolhidos mediante sorteio eletrônico."
+    },
+    "answer": "C",
+    "explanation": "Uma premissa do Sistema dos Juizados Especiais (Lei 9.099/95 e absorvida pelo COJE) é a autonomia das instâncias recursais. As apelações oriundas do Juizado Especial não são remetidas aos desembargadores (Câmaras), mas sim julgadas pelas Turmas Recursais, formadas por um colegiado de juízes de Direito de primeiro grau. Desembargadores, Tribunal Pleno e Conselho da Magistratura não participam do rito de controle recursal do Juizado Especial."
+  }
+]
