@@ -555,7 +555,7 @@
       "E": "Authorization Code Flow combinado com Proof Key for Code Exchange (PKCE)."
     },
     "answer": "E",
-    "explanation": "A correta é a letra A. O Authorization Code Flow + PKCE é a recomendação atual de segurança para aplicativos nativos e SPAs, prevenindo ataques de interceptação do código de autorização sem armazenar um client_secret no front-end. A letra B é exclusiva para comunicação máquina-a-máquina. A letra C é depreciada por exigir a inserção de credenciais do usuário na aplicação cliente. A letra D expõe o token de acesso no histórico de navegação. A letra E destina-se a dispositivos limitados de interface."
+    "explanation": "A correta é a letra E. O Authorization Code Flow + PKCE é a recomendação atual de segurança para aplicativos nativos e SPAs, prevenindo ataques de interceptação do código de autorização sem armazenar um client_secret no front-end. A letra B é exclusiva para comunicação máquina-a-máquina. A letra C é depreciada por exigir a inserção de credenciais do usuário na aplicação cliente. A letra D expõe o token de acesso no histórico de navegação. A letra E destina-se a dispositivos limitados de interface."
   },
   {
     "id": 32,
@@ -573,7 +573,7 @@
       "E": "Token de Autorização SAML embutido no parâmetro de estado da requisição."
     },
     "answer": "C",
-    "explanation": "A correta é a letra B. No OpenID Connect (OIDC), a credencial principal projetada para fornecer informações sobre a autenticação ao aplicativo cliente é o ID Token, que sempre assume o formato de JWT (JSON Web Token). O Access Token é concebido para autorizar o acesso aos Resource Servers. A letra A inverte o uso: o UserInfo Endpoint é acessado fornecendo o Access Token, e não o ID Token. A letra C confunde a renovação com a identificação. A letra D cita o endpoint de revogação erroneamente."
+    "explanation": "A correta é a letra C. No OpenID Connect (OIDC), a credencial principal projetada para fornecer informações sobre a autenticação ao aplicativo cliente é o ID Token, que sempre assume o formato de JWT (JSON Web Token). O Access Token é concebido para autorizar o acesso aos Resource Servers. A letra A inverte o uso: o UserInfo Endpoint é acessado fornecendo o Access Token, e não o ID Token. A letra C confunde a renovação com a identificação. A letra D cita o endpoint de revogação erroneamente."
   },
   {
     "id": 33,
@@ -591,7 +591,7 @@
       "E": "Execution Flows para o Gov.br e Token Exchange para o Active Directory."
     },
     "answer": "B",
-    "explanation": "A correta é a letra A. O Keycloak utiliza a funcionalidade de Identity Brokering para delegar a autenticação a provedores de identidade externos (como o OIDC do Gov.br, redes sociais, etc). Para conectar bases de usuários existentes, como LDAP ou Active Directory, utiliza-se a funcionalidade de User Federation (Federação de Usuários). A letra B inverte os conceitos exatos. As demais misturam funcionalidades não relacionadas à conexão de identidades."
+    "explanation": "A correta é a letra B. O Keycloak utiliza a funcionalidade de Identity Brokering para delegar a autenticação a provedores de identidade externos (como o OIDC do Gov.br, redes sociais, etc). Para conectar bases de usuários existentes, como LDAP ou Active Directory, utiliza-se a funcionalidade de User Federation (Federação de Usuários). A letra B inverte os conceitos exatos. As demais misturam funcionalidades não relacionadas à conexão de identidades."
   },
   {
     "id": 34,
@@ -609,7 +609,7 @@
       "E": "Implicit Grant."
     },
     "answer": "D",
-    "explanation": "A correta é a letra C. O fluxo Client Credentials (Concessão de Credenciais do Cliente) é especificado pela RFC 6749 para situações em que a aplicação cliente interage com a API atuando em seu próprio nome (comunicação M2M, serviços de backend), sem envolver um usuário final. A letra A e E exigem redirecionamento de navegador e interação do usuário. A letra B é para aplicações altamente confiáveis legadas capturando senhas de usuários. A letra D destina-se a dispositivos como TVs."
+    "explanation": "A correta é a letra D. O fluxo Client Credentials (Concessão de Credenciais do Cliente) é especificado pela RFC 6749 para situações em que a aplicação cliente interage com a API atuando em seu próprio nome (comunicação M2M, serviços de backend), sem envolver um usuário final. A letra A e E exigem redirecionamento de navegador e interação do usuário. A letra B é para aplicações altamente confiáveis legadas capturando senhas de usuários. A letra D destina-se a dispositivos como TVs."
   },
   {
     "id": 35,
@@ -645,7 +645,7 @@
       "E": "userinfo e offline_access."
     },
     "answer": "C",
-    "explanation": "A correta é a letra A. De acordo com a especificação OIDC, os escopos padrão para solicitar claims específicas do usuário incluem 'profile' (nome, sobrenome, foto, gênero, etc.) e 'email' (endereço de email e status de verificação). As letras B, C e D apresentam escopos não definidos pelo padrão OIDC (frequentemente usados incorretamente por analogia a outras APIs proprietárias). A letra E inclui offline_access que serve para obter refresh tokens, não claims de perfil."
+    "explanation": "A correta é a letra C. De acordo com a especificação OIDC, os escopos padrão para solicitar claims específicas do usuário incluem 'profile' (nome, sobrenome, foto, gênero, etc.) e 'email' (endereço de email e status de verificação). As letras B, C e D apresentam escopos não definidos pelo padrão OIDC (frequentemente usados incorretamente por analogia a outras APIs proprietárias). A letra E inclui offline_access que serve para obter refresh tokens, não claims de perfil."
   },
   {
     "id": 37,
@@ -663,7 +663,7 @@
       "E": "a emissão de um ID Token de longa duração utilizado como fallback para autenticação na API."
     },
     "answer": "C",
-    "explanation": "A correta é a letra A. O Refresh Token é o mecanismo oficial do OAuth 2.0 que permite obter um novo Access Token sem interação direta com o usuário, permitindo conciliar usabilidade com segurança (Access Tokens curtos). A letra B confunde o Authorization Code (um artefato temporário descartável). A letra C usa iframes ocultos (silent authentication via iframe) que vêm sendo bloqueados por políticas de SameSite Cookies em navegadores modernos. A letra D viola totalmente as diretrizes. A letra E subverte o uso do ID Token, que não é para APIs."
+    "explanation": "A correta é a letra C. O Refresh Token é o mecanismo oficial do OAuth 2.0 que permite obter um novo Access Token sem interação direta com o usuário, permitindo conciliar usabilidade com segurança (Access Tokens curtos). A letra B confunde o Authorization Code (um artefato temporário descartável). A letra C usa iframes ocultos (silent authentication via iframe) que vêm sendo bloqueados por políticas de SameSite Cookies em navegadores modernos. A letra D viola totalmente as diretrizes. A letra E subverte o uso do ID Token, que não é para APIs."
   },
   {
     "id": 38,
@@ -681,7 +681,7 @@
       "E": "Authorization Resource associado a uma política de acesso baseada em claims."
     },
     "answer": "D",
-    "explanation": "A correta é a letra C. Protocol Mappers no Keycloak são as configurações responsáveis por injetar dados (atributos, roles, group memberships) dentro do token (ID ou Access Token) emitido, mapeando informações internas do banco de identidades para claims (afirmações) no protocolo OIDC ou SAML. As letras A e B tratam de importação de usuários, não manipulação de tokens. A letra D controla etapas de login. A letra E pertence ao Keycloak Authorization Services."
+    "explanation": "A correta é a letra D. Protocol Mappers no Keycloak são as configurações responsáveis por injetar dados (atributos, roles, group memberships) dentro do token (ID ou Access Token) emitido, mapeando informações internas do banco de identidades para claims (afirmações) no protocolo OIDC ou SAML. As letras A e B tratam de importação de usuários, não manipulação de tokens. A letra D controla etapas de login. A letra E pertence ao Keycloak Authorization Services."
   },
   {
     "id": 39,
@@ -699,7 +699,7 @@
       "E": "redirect_uri e prompt."
     },
     "answer": "C",
-    "explanation": "A correta é a letra D. No OAuth2/OIDC, o parâmetro 'state' impede ataques CSRF, pois transporta um valor opaco que a aplicação utiliza para manter o estado entre a solicitação inicial e o callback. O parâmetro 'nonce' impede ataques de repetição em tokens, associando indissociavelmente o ID Token retornado a uma sessão específica do cliente. A letra B (PKCE) mitiga a interceptação do código, não CSRF primário de sessão. A letra E e C são parâmetros estruturais básicos do fluxo."
+    "explanation": "A correta é a letra C. No OAuth2/OIDC, o parâmetro 'state' impede ataques CSRF, pois transporta um valor opaco que a aplicação utiliza para manter o estado entre a solicitação inicial e o callback. O parâmetro 'nonce' impede ataques de repetição em tokens, associando indissociavelmente o ID Token retornado a uma sessão específica do cliente. A letra B (PKCE) mitiga a interceptação do código, não CSRF primário de sessão. A letra E e C são parâmetros estruturais básicos do fluxo."
   },
   {
     "id": 40,
@@ -717,7 +717,7 @@
       "E": "volume persistente compartilhado via NFS para armazenamento dos tokens emitidos."
     },
     "answer": "B",
-    "explanation": "A correta é a letra A. O Keycloak gerencia sessões de usuários ativas primariamente em memória. Em modo cluster, ele depende do Infinispan integrado para replicar o cache dessas sessões entre os nós. Se um nó cair, os dados da sessão não se perdem. A letra C está incorreta porque o banco de dados relacional armazena dados persistentes (usuários, configurações), mas o processamento massivo e volátil de sessões ocorre no Infinispan. A letra B distribui o tráfego, mas não preserva dados de sessão. As letras D e E não fazem sentido técnico para esse propósito."
+    "explanation": "A correta é a letra B. O Keycloak gerencia sessões de usuários ativas primariamente em memória. Em modo cluster, ele depende do Infinispan integrado para replicar o cache dessas sessões entre os nós. Se um nó cair, os dados da sessão não se perdem. A letra C está incorreta porque o banco de dados relacional armazena dados persistentes (usuários, configurações), mas o processamento massivo e volátil de sessões ocorre no Infinispan. A letra B distribui o tráfego, mas não preserva dados de sessão. As letras D e E não fazem sentido técnico para esse propósito."
   },
   {
     "id": 41,
@@ -735,7 +735,7 @@
       "E": "canais de comunicação com estado estrito para verificação contínua da sessão."
     },
     "answer": "A",
-    "explanation": "A correta é a letra C. O OIDC é uma camada de identidade sobre o OAuth 2.0 projetada para o ecossistema moderno REST, devolvendo tokens no formato JSON Web Token (JWT) e consumindo endpoints JSON. O SAML 2.0, por sua vez, é fundamentado no formato XML pesado e estruturado (citado de forma genérica na letra A). A letra B e E são incorretas, pois o OIDC não usa SOAP e é stateless. A letra D não pertence ao escopo intrínseco de nenhum dos protocolos, que são agnósticos quanto a autoridades locais específicas."
+    "explanation": "A correta é a letra A. O OIDC é uma camada de identidade sobre o OAuth 2.0 projetada para o ecossistema moderno REST, devolvendo tokens no formato JSON Web Token (JWT) e consumindo endpoints JSON. O SAML 2.0, por sua vez, é fundamentado no formato XML pesado e estruturado (citado de forma genérica na letra A). A letra B e E são incorretas, pois o OIDC não usa SOAP e é stateless. A letra D não pertence ao escopo intrínseco de nenhum dos protocolos, que são agnósticos quanto a autoridades locais específicas."
   },
   {
     "id": 42,
@@ -753,7 +753,7 @@
       "E": "Device Authorization Grant."
     },
     "answer": "C",
-    "explanation": "A correta é a letra D. O Resource Owner Password Credentials Grant (ROPC) é o fluxo onde o cliente (aplicativo) lida diretamente com a senha do usuário final (dono do recurso) para pedir um token. Ele fere a delegação segura fundamental do OAuth (onde o usuário autentica-se em janela externa e fornece um código ao app) e foi oficialmente descontinuado e classificado como inseguro nas diretrizes modernas do OAuth 2.1. As demais alternativas garantem essa separação ou dispensam a intervenção humana (Client Credentials)."
+    "explanation": "A correta é a letra C. O Resource Owner Password Credentials Grant (ROPC) é o fluxo onde o cliente (aplicativo) lida diretamente com a senha do usuário final (dono do recurso) para pedir um token. Ele fere a delegação segura fundamental do OAuth (onde o usuário autentica-se em janela externa e fornece um código ao app) e foi oficialmente descontinuado e classificado como inseguro nas diretrizes modernas do OAuth 2.1. As demais alternativas garantem essa separação ou dispensam a intervenção humana (Client Credentials)."
   },
   {
     "id": 43,
@@ -771,7 +771,7 @@
       "E": "Identity Brokering."
     },
     "answer": "B",
-    "explanation": "A correta é a letra C. Token Exchange (RFC 8693) é o recurso projetado para permitir que uma entidade de software troque um token existente por um novo, ajustando o escopo ou a audiência, mantendo ou substituindo o sujeito emissor original. Isso resolve o problema de 'Audience Mismatch' em comunicação entre microsserviços sem precisar reutilizar o mesmo token excessivamente largo. A letra A (Introspection) serve apenas para validar o token na API, não gera um novo."
+    "explanation": "A correta é a letra B. Token Exchange (RFC 8693) é o recurso projetado para permitir que uma entidade de software troque um token existente por um novo, ajustando o escopo ou a audiência, mantendo ou substituindo o sujeito emissor original. Isso resolve o problema de 'Audience Mismatch' em comunicação entre microsserviços sem precisar reutilizar o mesmo token excessivamente largo. A letra A (Introspection) serve apenas para validar o token na API, não gera um novo."
   },
   {
     "id": 44,
@@ -789,7 +789,7 @@
       "E": "endpoint de revogação para forçar a reemissão do fluxo interativo."
     },
     "answer": "A",
-    "explanation": "A correta é a letra C. O UserInfo Endpoint é um serviço RESTful nativo da arquitetura OpenID Connect que retorna as claims adicionais sobre o usuário final. Para acessar o UserInfo, a aplicação cliente (Client App) deve usar um Access Token válido emitido por aquele Authorization Server, entregando-o como um HTTP Authorization Bearer token. A letra A mistura endpoints. A letra B refere-se ao OpenID Provider Configuration Endpoint, que traz configurações do servidor e não do usuário."
+    "explanation": "A correta é a letra A. O UserInfo Endpoint é um serviço RESTful nativo da arquitetura OpenID Connect que retorna as claims adicionais sobre o usuário final. Para acessar o UserInfo, a aplicação cliente (Client App) deve usar um Access Token válido emitido por aquele Authorization Server, entregando-o como um HTTP Authorization Bearer token. A letra A mistura endpoints. A letra B refere-se ao OpenID Provider Configuration Endpoint, que traz configurações do servidor e não do usuário."
   },
   {
     "id": 45,
@@ -807,6 +807,6 @@
       "E": "endpoints."
     },
     "answer": "D",
-    "explanation": "A correta é a letra B. No OAuth 2.0, Scopes (Escopos) constituem o mecanismo por meio do qual uma aplicação cliente solicita um conjunto limitado e predefinido de permissões, os quais o Authorization Server pode conceder e incluir no Access Token retornado. A letra A (Claims) reflete os dados ou declarações empacotados num JWT, geralmente dados identitários, sendo mais relacionados ao OIDC. As letras C e D são artefatos para controle de segurança de sessão no fluxo (estado e repetição)."
+    "explanation": "A correta é a letra D. No OAuth 2.0, Scopes (Escopos) constituem o mecanismo por meio do qual uma aplicação cliente solicita um conjunto limitado e predefinido de permissões, os quais o Authorization Server pode conceder e incluir no Access Token retornado. A letra A (Claims) reflete os dados ou declarações empacotados num JWT, geralmente dados identitários, sendo mais relacionados ao OIDC. As letras C e D são artefatos para controle de segurança de sessão no fluxo (estado e repetição)."
   }
 ]
