@@ -1,0 +1,812 @@
+[
+  {
+    "id": 1,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Banco de Dados - Formas Normais",
+    "context": "Migração do sistema de PJe do TJ-CE.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Estado do Ceará (TJ-CE) está refatorando uma tabela legada do Sistema de Custas Judiciais. A tabela original, denominada `tb_custas_processo`, possui a seguinte estrutura: `numero_processo` (Chave Primária), `data_autuacao`, `cpf_advogado_principal`, `nome_advogado_principal`, e `lista_comarcas_tramitacao` (contendo valores múltiplos separados por vírgula). Um analista propôs decompor a tabela para adequá-la rigorosamente às formas normais. Para atingir a Terceira Forma Normal (3FN), a solução arquitetural exige a:",
+    "options": {
+      "A": "reestruturação da coluna de comarcas em nova tabela e a manutenção irrestrita do atributo descritivo do advogado na relação original.",
+      "B": "extração dos atributos multivalorados em nova relação e a eliminação da dependência parcial do nome do advogado sobre o processo.",
+      "C": "deleção dos grupos repetitivos atrelados à autuação e a supressão de atributos determinantes que não sejam chaves candidatas absolutas.",
+      "D": "remoção dos atributos multivalorados na coluna e a eliminação da dependência transitiva do nome do advogado em relação ao CPF.",
+      "E": "conversão da lista de comarcas em um domínio escalar unificado e a garantia da ausência de dependências multivaloradas triviais cruzadas."
+    },
+    "answer": "D",
+    "explanation": "A alternativa A é correta. A passagem para 1FN requer a eliminação do atributo multivalorado 'lista_comarcas_tramitacao'. Como a chave é simples, a tabela atinge a 2FN automaticamente. Para a 3FN, é necessário eliminar a dependência transitiva: o nome do advogado depende do CPF do advogado, que não é a chave primária da tabela de processos."
+  },
+  {
+    "id": 2,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Banco de Dados - Tipos de JOIN",
+    "context": "Cruzamento de dados de Magistrados e Comarcas no TJ-CE.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de engenharia de dados do TJ-CE necessita gerar um relatório contendo todos os magistrados ativos, incluindo aqueles que não estão vinculados a nenhuma vara temporariamente (em licença), além das varas que não possuem magistrados titulares no momento. As tabelas disponíveis são `tb_magistrado` e `tb_vara_judicial`. Para obter os registros correspondentes a magistrados sem vara, varas sem magistrados e suas correspondências diretas, a sintaxe SQL deve utilizar o operador de junção:",
+    "options": {
+      "A": "RIGHT OUTER JOIN.",
+      "B": "CROSS JOIN.",
+      "C": "LEFT OUTER JOIN.",
+      "D": "FULL OUTER JOIN.",
+      "E": "INNER JOIN."
+    },
+    "answer": "D",
+    "explanation": "A alternativa A é correta. O FULL OUTER JOIN retorna todas as linhas de ambas as tabelas (magistrados e varas), preenchendo com valores nulos quando não houver correspondência, satisfazendo os requisitos simultâneos da consulta."
+  },
+  {
+    "id": 3,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Banco de Dados - SQL Avançado (PostgreSQL vs Oracle)",
+    "context": "Consulta no banco de dados de precatórios do TJ-CE.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o processo de modernização tecnológica do TJ-CE, um script de extração de dados da folha de pagamento de precatórios, originalmente escrito para o SGBD Oracle, deve ser migrado para PostgreSQL. O script original utiliza a função `NVL(valor_principal, 0)` para tratar valores nulos de repasses. Na adaptação para o PostgreSQL em sua versão nativa padrão, a sintaxe SQL requer a substituição imperativa da função `NVL` por:",
+    "options": {
+      "A": "ISNULL(valor_principal, 0).",
+      "B": "IFNULL(valor_principal, 0).",
+      "C": "COALESCE(valor_principal, 0).",
+      "D": "NULLIF(valor_principal, 0).",
+      "E": "NVL2(valor_principal, 0, 1)."
+    },
+    "answer": "C",
+    "explanation": "A alternativa A é correta. No PostgreSQL (e no padrão ANSI SQL), a função equivalente ao NVL do Oracle, utilizada para retornar o primeiro argumento não nulo da lista, é o COALESCE."
+  },
+  {
+    "id": 4,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Banco de Dados - FNBC",
+    "context": "Tabela de alocação de servidores nas varas do TJ-CE.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O banco de dados do sistema de mandados do TJ-CE possui a relação `Alocacao_Oficial (matricula_oficial, codigo_zona, placa_veiculo)`. Sabe-se que um oficial de justiça é alocado em múltiplas zonas e uma zona possui múltiplos oficiais. No entanto, cada oficial utiliza um único veículo registrado e cada veículo é de uso exclusivo de um oficial. As chaves candidatas são `(matricula_oficial, codigo_zona)` e `(placa_veiculo, codigo_zona)`. Para adequar a relação estritamente à Forma Normal de Boyce-Codd (FNBC), o modelo exige a:",
+    "options": {
+      "A": "aplicação de dependências multivaloradas em tabela auxiliar vinculada estritamente aos identificadores de zona.",
+      "B": "segregação em duas estruturas com as chaves `(matricula_oficial, placa_veiculo)` e `(placa_veiculo, codigo_zona)`.",
+      "C": "desnormalização controlada que adicione a coluna identificadora primária `id_alocacao` de modo autônomo.",
+      "D": "manutenção da estrutura existente com a criação de uma restrição de integridade cruzada na coluna automotiva.",
+      "E": "separação em duas tabelas contendo as colunas `(matricula_oficial, codigo_zona)` e `(matricula_oficial, placa_veiculo)`."
+    },
+    "answer": "E",
+    "explanation": "A alternativa A é correta. Na relação original, há violação da FNBC porque 'placa_veiculo' e 'matricula_oficial' determinam um ao outro, e sendo parte de chaves compostas diferentes, representam determinantes que não são superchaves absolutas. A decomposição sem perda requer a separação da dependência mútua em uma tabela e as demais informações em outra."
+  },
+  {
+    "id": 5,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Banco de Dados - Tipos de JOIN",
+    "context": "Geração de matriz de combinações de inspeções no TJ-CE.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal Pleno do TJ-CE demandou a criação de uma matriz de planejamento que cruze todos os desembargadores da Corregedoria com todas as comarcas de entrância final, independentemente de haver agendamento. As tabelas são `tb_desembargador` (5 registros ativos) e `tb_comarca_final` (20 registros ativos). Para gerar um conjunto de resultados (result set) com exatamente 100 linhas contendo todas as combinações matemáticas possíveis, a consulta SQL deve empregar a cláusula:",
+    "options": {
+      "A": "RIGHT OUTER JOIN.",
+      "B": "FULL OUTER JOIN.",
+      "C": "INNER JOIN.",
+      "D": "LEFT OUTER JOIN.",
+      "E": "CROSS JOIN."
+    },
+    "answer": "E",
+    "explanation": "A alternativa A é correta. O CROSS JOIN produz o produto cartesiano entre duas tabelas, combinando cada registro da primeira com todos os registros da segunda, resultando em 5 * 20 = 100 linhas."
+  },
+  {
+    "id": 6,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Banco de Dados - SQL Avançado",
+    "context": "Otimização de consultas para o portal da transparência.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Diretoria de TI do TJ-CE identificou um gargalo de performance no Portal da Transparência ao listar processos com movimentações recentes. A consulta SQL utiliza a cláusula `WHERE numero_processo IN (SELECT numero_processo FROM tb_movimentacao WHERE data_mov > '2026-06-01')`. Para mitigar o processamento exaustivo e avaliar os registros sob demanda, mantendo a equivalência lógica estrita, a reescrita do filtro deve aplicar o operador:",
+    "options": {
+      "A": "ANY condicionado à subconsulta desvinculada.",
+      "B": "EXISTS correlacionado com a tabela principal.",
+      "C": "ALL vinculado à projeção da tabela primária.",
+      "D": "SOME atrelado aos resultados estáticos em memória.",
+      "E": "CONTAINS aplicado diretamente no predicado escalar."
+    },
+    "answer": "B",
+    "explanation": "A alternativa A é correta. O operador EXISTS atrelado a uma subconsulta correlacionada detém a execução da verificação interna assim que a primeira ocorrência correspondente é localizada, eliminando a materialização total de grandes volumes e melhorando a performance geral em relação à cláusula IN."
+  },
+  {
+    "id": 7,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Banco de Dados - SQL Avançado",
+    "context": "Migração de chaves numéricas autoincrementais.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um novo módulo de protocolo do TJ-CE está sendo desenhado. O arquiteto definiu a necessidade de geração de chaves primárias numéricas não sobrepostas. O banco atual é Oracle, mas o novo sistema adotará PostgreSQL 15. No Oracle, a implementação utiliza um objeto `SEQUENCE` invocado em um gatilho. Para implementar esse comportamento no PostgreSQL de forma moderna, sem o uso de rotinas procedimentais, a criação da tabela deve utilizar:",
+    "options": {
+      "A": "o modificador físico `SEQUENCE_NEXT()` aplicado ao final da declaração da tabela.",
+      "B": "a propriedade `AUTO_INCREMENT` declarada no fechamento do bloco DDL.",
+      "C": "a função intrínseca `GENERATE_UUID()` vinculada ao valor padrão do atributo.",
+      "D": "a cláusula `GENERATED ALWAYS AS IDENTITY` na definição da coluna primária.",
+      "E": "a cláusula `DEFAULT NEXTVAL` ancorada obrigatoriamente a uma função de restrição."
+    },
+    "answer": "D",
+    "explanation": "A alternativa A é correta. No PostgreSQL (a partir da versão 10, com forte suporte em versões posteriores), o padrão SQL:2003 'GENERATED ALWAYS AS IDENTITY' substitui a necessidade de sequências manuais atreladas a triggers ou o uso de tipos de dados legados (SERIAL) de forma padronizada e segura."
+  },
+  {
+    "id": 8,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Banco de Dados - Formas Normais",
+    "context": "Sistema de Patrimônio e Almoxarifado do Tribunal.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No sistema de gestão patrimonial do TJ-CE, a tabela `Alocacao_Equipamento` foi desenhada com os atributos: `id_equipamento`, `id_setor`, `data_alocacao` e `descricao_equipamento`. A chave primária é composta por `(id_equipamento, id_setor)`. Um engenheiro notou redundância, evidenciando que `descricao_equipamento` depende exclusivamente de `id_equipamento`. Para elevar a relação estritamente à Segunda Forma Normal (2FN), a intervenção técnica exige a:",
+    "options": {
+      "A": "eliminação da dependência funcional parcial e a criação de nova relação contendo as descrições dos equipamentos.",
+      "B": "supressão imediata dos atributos compostos e a conversão das descrições textuais em domínios alfanuméricos isolados.",
+      "C": "extinção das dependências transitivas e a separação dos dados temporais associativos em registros lineares simples.",
+      "D": "remoção estrutural de anomalias multivaloradas baseadas nas chaves primárias alocadas na hierarquia patrimonial.",
+      "E": "deleção sumária dos determinantes de sistema e a reconstrução das regras relacionais unificadas no bloco operacional."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A é correta. A Segunda Forma Normal (2FN) lida estritamente com a eliminação de dependências parciais de atributos não-chave em relação à chave primária composta. O atributo 'descricao_equipamento' depende de apenas parte da chave, violando a regra."
+  },
+  {
+    "id": 9,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Banco de Dados - SQL Avançado",
+    "context": "Relatório de produtividade de Varas com Window Functions.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Departamento de Estatística do TJ-CE solicitou a extração de um relatório consolidado com o total de sentenças proferidas, exigindo a inclusão de uma coluna analítica contendo a média móvel de sentenças das três varas com numeração imediatamente anterior à linha avaliada. Para implementar essa agregação posicional dinâmica no PostgreSQL, sem subconsultas correlacionadas exaustivas, o código deve adotar a cláusula:",
+    "options": {
+      "A": "OVER combinada com a delimitação estrutural ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING.",
+      "B": "GROUP BY ROLLUP vinculada à restrição hierárquica RANGE UNBOUNDED PRECEDING.",
+      "C": "PARTITION BY CUBE restrita pela diretiva de janelamento escalar ROWS 3 PRECEDING.",
+      "D": "WINDOW FRAME acoplada ao operador consolidado GROUPING SETS das chaves primárias.",
+      "E": "OVER encadeada com a configuração direcional RANGE BETWEEN CURRENT ROW E 3 FOLLOWING."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A é correta. As Window Functions no SQL permitem definir um frame explícito para os cálculos. 'ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING' limita o contexto da função analítica (como AVG) especificamente às 3 linhas anteriores à atual, excluindo a própria linha corrente."
+  },
+  {
+    "id": 10,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Banco de Dados - Tipos de JOIN",
+    "context": "Estrutura hierárquica de seções e subseções no Tribunal.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A modelagem física do organograma do TJ-CE conta com uma única tabela `tb_departamento` contendo as colunas `id_departamento`, `nome_departamento` e `id_departamento_pai`. A área de negócios requisitou uma listagem sequencial que apresente, em uma mesma projeção de registro, o nome de um setor subordinado e o nome explícito de seu departamento superior controlador imediato. A técnica sintática de construção da query exige o emprego de um:",
+    "options": {
+      "A": "INNER JOIN vinculando partições horizontais predefinidas.",
+      "B": "CROSS JOIN associado às tabelas temporárias voláteis.",
+      "C": "LEFT JOIN relacionando a estrutura a uma visão de metadados.",
+      "D": "FULL JOIN cruzando os esquemas organizacionais distintos.",
+      "E": "SELF JOIN referenciando a própria tabela primária."
+    },
+    "answer": "E",
+    "explanation": "A alternativa A é correta. Para relacionar linhas de uma tabela com outras linhas dentro da mesma tabela (estrutura de árvore em adjacency list), utiliza-se a técnica de SELF JOIN, atribuindo aliases distintos à mesma tabela na cláusula FROM."
+  },
+  {
+    "id": 11,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Banco de Dados - SQL Avançado",
+    "context": "Travessia hierárquica em tabela de recursos judiciais.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Coordenadoria de Recursos do TJ-CE gerencia a tabela `tb_recurso`, onde um recurso pode derivar de um documento originário anterior registrado na coluna `id_recurso_origem`. O sistema necessita rastrear e renderizar a cadeia genealógica completa de um recurso até seu processo matriz gerador. No SGBD PostgreSQL 14, a implementação técnica eficiente dessa travessia em profundidade, sem múltiplos acessos procedimentais assíncronos, ocorre pela adoção da:",
+    "options": {
+      "A": "operação estrutural PIVOT aplicada sobre os cursores de rolagem autônoma.",
+      "B": "diretiva escalar START WITH CONNECT BY PRIOR suportada nativamente no motor.",
+      "C": "cláusula WITH RECURSIVE na estruturação de expressões de tabela comuns.",
+      "D": "função de sistema HIERARCHY extraída diretamente dos catálogos lógicos.",
+      "E": "restrição matricial FOREIGN KEY DEFERRABLE concatenada aos blocos aninhados."
+    },
+    "answer": "C",
+    "explanation": "A alternativa A é correta. No PostgreSQL, hierarquias ou cadeias de dependência de profundidade desconhecida (como árvores e grafos) são percorridas com uso das Common Table Expressions recursivas (WITH RECURSIVE). START WITH é específico de bancos Oracle."
+  },
+  {
+    "id": 12,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Banco de Dados - Formas Normais",
+    "context": "Tabela de dados financeiros de credores e pagamentos do TJ-CE.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O núcleo de pagamentos do TJ-CE gerencia a tabela `Pagamento_Credor (id_pagamento, cpf_credor, nome_credor, cod_banco, nome_banco)`. A chave primária é `id_pagamento`. As dependências funcionais revelam que: `id_pagamento -> cpf_credor, cod_banco`; `cpf_credor -> nome_credor`; e `cod_banco -> nome_banco`. A relação atende formalmente às diretrizes da Segunda Forma Normal (2FN). Para adequar o modelo rigorosamente à Terceira Forma Normal (3FN), o engenheiro deve aplicar a:",
+    "options": {
+      "A": "eliminação das dependências transitivas e a transferência dos atributos derivados para tabelas de credores e bancos independentes.",
+      "B": "exclusão das dependências funcionais parciais e a fragmentação mandatória das informações de registro bancário cruzado.",
+      "C": "remoção das dependências multivaloradas triviais e a exportação direta do nome das instituições para o modelo dimensional.",
+      "D": "decomposição sumária dos atributos não-chave determinantes do bloco original em uma rede semântica estruturada.",
+      "E": "unificação irrestrita das relações em uma tabela plana universal dedicada ao monitoramento de anomalias operacionais."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A é correta. A Terceira Forma Normal (3FN) postula que todos os atributos não-chave dependam exclusivamente da chave primária (ausência de dependência transitiva). As colunas 'nome_credor' e 'nome_banco' dependem de outras colunas não-chave, violando a regra da 3FN e exigindo tabelas separadas."
+  },
+  {
+    "id": 13,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Banco de Dados - SQL Avançado",
+    "context": "Sincronização de dados (Upsert) entre Oracle e PostgreSQL.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de pautas de audiência do TJ-CE realiza sincronizações contínuas de pacotes de dados. Se a pauta remetida já existir no nó de destino, os metadados sofrem atualização; do contrário, o registro é integralmente incluído. No banco Oracle, o analista utilizava o comando analítico `MERGE`. Na conversão dos scripts para a arquitetura PostgreSQL, o cumprimento do mesmo comportamento atômico de inserção e atualização concomitante exige o emprego do comando sintático:",
+    "options": {
+      "A": "UPDATE antecedido pela cláusula associada OR INSERT INTO nas partições locais.",
+      "B": "INSERT seguido estritamente pela diretriz resolutiva ON CONFLICT DO UPDATE.",
+      "C": "UPSERT INTO vinculado diretamente ao bloco condicional VALUES de inserção.",
+      "D": "REPLACE INTO estruturado com o argumento UPDATE CONFLICT em nível de registro.",
+      "E": "ALTER TABLE atrelado ao comando MERGE PARTITION originado no log de transações."
+    },
+    "answer": "B",
+    "explanation": "A alternativa A é correta. No PostgreSQL, a funcionalidade de 'upsert' (inserir se não existir, atualizar se existir) é implementada nativamente através do comando INSERT combinado com a cláusula de resolução de conflito ON CONFLICT DO UPDATE."
+  },
+  {
+    "id": 14,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Banco de Dados - Tipos de JOIN",
+    "context": "Relatório consolidado de processos ativos nas Comarcas.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Diretoria de Planejamento do TJ-CE projeta uma consulta analítica envolvendo as tabelas `tb_comarca` e `tb_processo`. O escopo exige apresentar absolutamente todas as comarcas cadastradas, acompanhadas da contagem estatística de processos vinculados a cada uma delas. Algumas comarcas recém-criadas possuem matriz zerada. Ao aplicar a junção do tipo `LEFT JOIN` partindo da tabela de comarcas, o desenvolvedor garante a precisão do valor numérico zero para comarcas vazias mediante o uso da função de agregação:",
+    "options": {
+      "A": "COUNT atrelada rigorosamente ao índice referencial secundário exclusivo da tabela de comarcas.",
+      "B": "COUNT direcionada implicitamente ao asterisco correspondente a todas as colunas do plano cartesiano.",
+      "C": "COUNT orientada especificamente à chave primária de identificação do processo da tabela de processos.",
+      "D": "SUM aplicada sobre a projeção do atributo não nulo do registro contábil geral das tabelas vinculadas.",
+      "E": "MAX ancorada na contagem exata da cardinalidade de relacionamentos dispostos nos resultados nulos."
+    },
+    "answer": "C",
+    "explanation": "A alternativa A é correta. Quando se usa o LEFT JOIN, a tabela da direita retorna valores nulos caso não exista correspondência. Se for feito um COUNT(*) ou COUNT numa coluna da tabela da esquerda (comarcas), as comarcas sem processos resultarão em 1. O correto é usar COUNT na chave da tabela da direita (processos), pois COUNT(coluna) ignora nulos, retornando o número 0 corretamente."
+  },
+  {
+    "id": 15,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Banco de Dados - Formas Normais",
+    "context": "Auditoria do sistema de selos de autenticidade extrajudicial do TJ-CE.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma força-tarefa de banco de dados do TJ-CE auditou as matrizes do sistema de selos digitais extrajudiciais. O laudo aponta que a tabela `tb_lote_selo` possui dependências funcionais parciais cruzadas, dependências transitivas sistêmicas e atributos que guardam arranjos concatenados por sinais delimitadores. O modelo exige adequação progressiva rigorosa. A tabela alcançará integralmente a Terceira Forma Normal (3FN) unicamente quando a infraestrutura apresentar a:",
+    "options": {
+      "A": "quebra controlada dos agrupamentos de repetição em cascata, a tipificação dos determinantes como chaves secundárias e a reconstrução vetorial de fatos operacionais.",
+      "B": "isolação estrutural das relações multivaloradas dinâmicas, a predeterminação das chaves candidatas absolutas e a conversão das instâncias parciais em visões analíticas.",
+      "C": "manutenção funcional de domínios lineares, a subordinação irrestrita de campos identificadores às superchaves genéricas e a anulação de ciclos transacionais abertos.",
+      "D": "formação de relações atômicas absolutas, a dependência integral dos atributos em face da chave e a supressão das dependências estabelecidas entre campos não-chave.",
+      "E": "definição sistêmica de instâncias escalares, a neutralização impositiva das regras relacionais multivaloradas triviais e a transformação dos desvios transitivos indiretos."
+    },
+    "answer": "D",
+    "explanation": "A alternativa A é correta. Ela sintetiza sequencialmente os requisitos das 3 primeiras formas normais sem justificar o conteúdo nas opções: 1FN (relações atômicas), 2FN (dependência integral de toda a chave / sem dependências parciais) e 3FN (supressão das dependências entre campos não-chave / sem dependências transitivas)."
+  },
+  {
+    "id": 16,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Norma ISO 27001",
+    "context": "Implementação do SGSI no Tribunal",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Ceará (TJ-CE) decidiu implementar um Sistema de Gestão da Segurança da Informação (SGSI) aderente à norma ABNT NBR ISO/IEC 27001. A área de TI constatou que, no contexto de planejamento de implementação do SGSI, é exigida a elaboração de um documento mandatório e vital que formalize a aceitação de riscos residuais e detalhe a seleção de controles a partir do Anexo A da referida norma. De acordo com a ISO 27001, a alta direção do TJ-CE deve aprovar o seguinte artefato central na definição do escopo de segurança:",
+    "options": {
+      "A": "Termo de Consentimento de Monitoramento.",
+      "B": "Plano de Tratamento de Riscos.",
+      "C": "Relatório de Auditoria Interna.",
+      "D": "Inventário de Ativos de Informação.",
+      "E": "Declaração de Aplicabilidade."
+    },
+    "answer": "E",
+    "explanation": "A Declaração de Aplicabilidade (Statement of Applicability - SoA) é o documento formal que relaciona os controles do Anexo A da ISO 27001, justificando sua inclusão ou exclusão, além de documentar a aprovação da direção sobre os riscos residuais. O Plano de Tratamento de Riscos (B) orienta as ações, mas o documento formal exigido para consolidação dos controles e justificativas é a Declaração de Aplicabilidade. As demais alternativas referem-se a práticas vitais, mas não correspondem ao artefato exigido para a aprovação dos controles."
+  },
+  {
+    "id": 17,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Norma ISO 27002",
+    "context": "Controles de Acesso e Teletrabalho",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE expandiu as atividades em regime de teletrabalho, tornando necessário adequar os controles de segurança em conformidade com as diretrizes da ABNT NBR ISO/IEC 27002. Para garantir que os dados sigilosos dos processos judiciais acessados remotamente não sejam comprometidos por dispositivos não corporativos, a equipe de segurança deve implementar um controle técnico focado no gerenciamento e restrição de acesso a redes externas. Segundo as melhores práticas de controle de acesso à rede propostas pela norma, a medida apropriada consiste em:",
+    "options": {
+      "A": "Exigir o cadastramento físico dos endereços MAC dos dispositivos pessoais nos roteadores de borda do tribunal.",
+      "B": "Implementar a separação lógica de redes mediante a utilização de sub-redes virtuais dedicadas a conexões externas.",
+      "C": "Substituir a autenticação multifator por certificados digitais atrelados exclusivamente ao Active Directory local.",
+      "D": "Restringir o tráfego da rede privada virtual ao encapsulamento em nível de camada de enlace com criptografia simétrica estática.",
+      "E": "Consolidar o roteamento dinâmico em switches de agregação configurados com listas de controle de acesso baseadas em host."
+    },
+    "answer": "B",
+    "explanation": "A ISO 27002 recomenda a segregação de redes para isolar serviços de informação e grupos de usuários, o que pode ser alcançado através de VLANs (sub-redes virtuais) para conexões externas, garantindo que o acesso remoto a dados sensíveis seja isolado do tráfego corporativo interno. O registro de MAC em borda (B) é inviável e inseguro para dispositivos não controlados. A alternativa (C) reverte controles fortes. As alternativas (D) e (E) empregam terminologia técnica avançada, mas não atendem ao princípio normativo focado na separação de tráfego de redes."
+  },
+  {
+    "id": 18,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Norma ISO 27005",
+    "context": "Gestão de Riscos e Continuidade",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o planejamento da modernização do datacenter primário do TJ-CE, a equipe de gestão de riscos realizou uma análise embasada na norma ABNT NBR ISO/IEC 27005. Foi identificado um risco de indisponibilidade prolongada devido a falhas críticas no fornecimento de energia elétrica da concessionária local. Diante do alto impacto nas sessões de julgamento virtuais, a alta direção decidiu firmar um contrato com uma seguradora cibernética e de infraestrutura para cobrir eventuais perdas financeiras decorrentes dessa indisponibilidade. Essa decisão estratégica caracteriza-se como a opção de tratamento de risco denominada:",
+    "options": {
+      "A": "Modificação do Risco.",
+      "B": "Retenção do Risco.",
+      "C": "Compartilhamento do Risco.",
+      "D": "Evitação do Risco.",
+      "E": "Aceitação do Risco."
+    },
+    "answer": "C",
+    "explanation": "Na ISO 27005, o tratamento de riscos envolve opções como modificação (mitigação via controles), retenção (aceitação dos impactos), evitação (não realizar a atividade) e compartilhamento (transferência de impacto). A contratação de um seguro para cobrir os impactos financeiros transfere e compartilha as consequências do risco com terceiros (a seguradora). As outras opções referem-se a atitudes incompatíveis com o instrumento do seguro."
+  },
+  {
+    "id": 19,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Norma ISO 27017",
+    "context": "Computação em Nuvem (IaaS)",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A presidência do TJ-CE deliberou pela migração de parte do acervo de processos eletrônicos para um ambiente de nuvem pública do tipo Infraestrutura como Serviço (IaaS), visando garantir escalabilidade elástica aos sistemas. De acordo com a norma ABNT NBR ISO/IEC 27017, que fornece diretrizes de segurança da informação aplicáveis em computação em nuvem, a relação de responsabilidade pela configuração e gestão dos controles de isolamento em redes virtuais nesse modelo de serviço exige a seguinte definição arquitetural:",
+    "options": {
+      "A": "A alocação exclusiva da configuração de instâncias virtuais aos administradores do provedor de nuvem.",
+      "B": "A implementação de políticas de segurança estáticas ditadas estritamente pelos normativos internos da infraestrutura fornecedora.",
+      "C": "A isenção total do cliente quanto à aplicação de políticas de firewalls virtuais no perímetro provisionado.",
+      "D": "O repasse integral dos controles de criptografia em repouso e trânsito para os engenheiros do datacenter contratado.",
+      "E": "A divisão de responsabilidades, alocando a gestão do acesso lógico ao cliente e o isolamento do hipervisor ao provedor."
+    },
+    "answer": "E",
+    "explanation": "A ISO 27017 destaca o modelo de responsabilidade compartilhada na nuvem. Em IaaS, o cliente é responsável por configurar o sistema operacional, os firewalls virtuais, controles de acesso lógico e segurança de dados (criptografia). Em contrapartida, o provedor é estritamente responsável pela segurança física, rede subjacente e o isolamento eficaz no nível do hipervisor. As alternativas A, C, D e E transferem equivocadamente responsabilidades operacionais e lógicas do cliente para o provedor."
+  },
+  {
+    "id": 20,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Norma ISO 27035",
+    "context": "Gestão de Incidentes de Segurança",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Centro de Operações de Segurança (SOC) do TJ-CE registrou múltiplas tentativas anômalas de login em contas de magistrados, seguidas por exfiltração de pequenos blocos de dados por um servidor desconhecido. Acionada, a equipe de resposta a incidentes aplicou as fases da norma ABNT NBR ISO/IEC 27035. Após conter os danos imediatos e erradicar o vetor do ataque, a equipe iniciou a documentação de métricas do incidente para atualizar os procedimentos de controle de acesso vigentes. Essa ação específica de melhoria dos controles organizacionais ocorre formalmente na fase de:",
+    "options": {
+      "A": "Lições Aprendidas.",
+      "B": "Planejamento e Preparação.",
+      "C": "Detecção e Relato.",
+      "D": "Respostas a Incidentes.",
+      "E": "Avaliação e Decisão."
+    },
+    "answer": "A",
+    "explanation": "O modelo da ISO 27035 para tratamento de incidentes estabelece cinco fases: (1) Planejamento e Preparação, (2) Detecção e Relato, (3) Avaliação e Decisão, (4) Respostas e (5) Lições Aprendidas. A documentação pós-incidente, análise de métricas, revisão de fraquezas e atualização de políticas para evitar recorrências pertencem de maneira formal e estrutural à fase de Lições Aprendidas."
+  },
+  {
+    "id": 21,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "NIST SP 800-61",
+    "context": "Resposta a Ataque de Ransomware",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um surto de ransomware atingiu o segmento da rede de secretarias do TJ-CE, criptografando dezenas de estações de trabalho e bloqueando temporariamente o acesso aos diretórios de jurisprudência mapeados. Seguindo estritamente as orientações do guia NIST SP 800-61 Revisão 2 para o tratamento do incidente, a equipe de TI precisou isolar imediatamente as sub-redes afetadas e desabilitar os links de roteamento internos para evitar a propagação lateral do código malicioso para os datacenters de núcleo. Essa intervenção direta de isolamento tático classifica-se na fase do ciclo de vida de resposta a incidentes denominada:",
+    "options": {
+      "A": "Detecção e Análise.",
+      "B": "Contenção, Erradicação e Recuperação.",
+      "C": "Preparação Contínua.",
+      "D": "Mitigação e Aceitação de Riscos.",
+      "E": "Atividade Pós-Incidente."
+    },
+    "answer": "B",
+    "explanation": "O ciclo de resposta a incidentes de acordo com o NIST SP 800-61 Rev 2 compreende as fases: Preparação; Detecção e Análise; Contenção, Erradicação e Recuperação; e Atividade Pós-Incidente. O isolamento lógico de sub-redes e o bloqueio de rotas são estratégias ativas de contenção (Containment) que visam impedir o espalhamento imediato do malware. Portanto, ocorrem estritamente dentro da fase de 'Contenção, Erradicação e Recuperação'."
+  },
+  {
+    "id": 22,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Portas Seguras",
+    "context": "Administração de Redes e Roteadores",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Ceará promoveu um recuo de vulnerabilidades em seu backbone de rede corporativa, identificando que switches core e roteadores legados ainda permitiam acesso administrativo através de tráfego de gerenciamento de terminal em texto claro, o que contraria normas básicas de endurecimento de infraestrutura. Para adequar-se aos padrões de segurança e evitar interceptações passivas das credenciais dos administradores de redes, a diretoria técnica determinou o bloqueio da porta TCP 23 e a habilitação exclusiva do protocolo seguro de shell equivalente, que por padrão opera associado à porta:",
+    "options": {
+      "A": "TCP 3389.",
+      "B": "TCP 443.",
+      "C": "UDP 69.",
+      "D": "TCP 161.",
+      "E": "TCP 22."
+    },
+    "answer": "E",
+    "explanation": "O protocolo administrativo vulnerável em texto claro vinculado à porta TCP 23 é o Telnet. A alternativa segura amplamente padronizada para acesso remoto seguro por linha de comando a dispositivos de rede e servidores é o protocolo SSH (Secure Shell), que opera por padrão na porta TCP 22. As outras alternativas representam portas de outros serviços (HTTPS em 443, TFTP em 69, SNMP em 161, e RDP em 3389)."
+  },
+  {
+    "id": 23,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Portas Seguras",
+    "context": "Comunicações Móveis Oficiais",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para viabilizar a comunicação institucional com mobilidade, os desenvolvedores do aplicativo oficial do TJ-CE precisam integrar as funcionalidades de leitura e de envio de e-mails corporativos dos juízes diretamente na interface mobile. Com a obrigatoriedade da adoção de criptografia TLS desde o momento do estabelecimento inicial da conexão entre cliente e servidor, a equipe de infraestrutura solicitou que o aplicativo fosse configurado para utilizar os protocolos seguros implícitos para o envio autenticado e o acesso sincronizado às caixas postais, operando, respectivamente, nas portas TCP padrão:",
+    "options": {
+      "A": "25 e 110.",
+      "B": "587 e 143.",
+      "C": "443 e 995.",
+      "D": "465 e 993.",
+      "E": "22 e 25."
+    },
+    "answer": "D",
+    "explanation": "A submissão e o envio seguro utilizando criptografia TLS implícita (onde a conexão é negociada de forma segura antes da troca de comandos do protocolo) ocorrem via SMTPS, associado tradicionalmente à porta TCP 465. O acesso sincronizado às mensagens no servidor com os mesmos moldes criptográficos é realizado via IMAPS, na porta TCP 993. As alternativas (A) e (B) citam as portas padrão sem SSL implícito; a opção (D) lista HTTPS e POP3S (que não sincroniza pastas, apenas baixa). Assim, 465 e 993 refletem perfeitamente os requisitos."
+  },
+  {
+    "id": 24,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Certificados SSL/TLS",
+    "context": "Criptografia e Multi-Domínios",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O projeto de modernização do TJ-CE agregou dezenas de novos microsserviços expostos na internet em diferentes subdomínios de primeiro e segundo níveis, tais como 'pje.tjce.jus.br', 'pje.homologacao.tjce.jus.br' e o subdomínio apartado 'intranet.tjce.jus.br'. Para otimizar os custos de aquisição e simplificar sensivelmente a administração criptográfica em balanceadores de carga integrados, o arquiteto de segurança técnica recomendou a instalação de um único certificado digital capaz de proteger múltiplos domínios e subdomínios que não compartilham necessariamente o mesmo nível estrutural. A especificação técnica de certificado aderente a esse requisito é do tipo:",
+    "options": {
+      "A": "Self-Signed Server Certificate.",
+      "B": "Extended Validation (EV) com chave assimétrica estática.",
+      "C": "Wildcard Certificate associado à raiz primária do DNS.",
+      "D": "Domain Validated (DV) sem extensão de revogação.",
+      "E": "Subject Alternative Name (SAN) ou Multi-Domain."
+    },
+    "answer": "E",
+    "explanation": "O certificado do tipo Subject Alternative Name (SAN), também chamado de Multi-Domain, foi arquitetado justamente para abrigar múltiplos FQDNs distintos sob um único documento criptográfico, utilizando as extensões X.509 v3. Um certificado Wildcard (C) serve para múltiplos subdomínios de um mesmo nível e mesma raiz (por exemplo, '*.tjce.jus.br'), o que não atenderia nativamente domínios em múltiplos subníveis sem gerar alertas dependendo do software, e não atende domínios disjuntos. Logo, o uso da extensão SAN atende perfeitamente ao cenário multidomínio heterogêneo."
+  },
+  {
+    "id": 25,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Certificados SSL/TLS",
+    "context": "Processo de Handshake",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante uma análise de gargalos de desempenho e latência na abertura das sessões do portal PJe do TJ-CE, a equipe de redes observou que o tempo de estabelecimento inicial da camada de segurança HTTPS estava impactando as consultas realizadas por advogados em regiões de alta latência de banda. Para diagnosticar a negociação SSL/TLS de forma técnica, o analista utilizou um sniffer de rede para dissecar o processo de Handshake. De acordo com a arquitetura padrão do protocolo TLS 1.2, o passo em que o servidor web envia seu certificado digital para o cliente ocorre sequencialmente e de modo imediato após:",
+    "options": {
+      "A": "A transmissão final da chave de sessão simétrica pelo aplicativo cliente.",
+      "B": "O recebimento da mensagem inicial ClientHello contendo as suítes de criptografia suportadas.",
+      "C": "A validação do pacote ServerKeyExchange perante a autoridade certificadora de raiz confiável.",
+      "D": "A troca de pacotes Finished criptografados que confirmam a integridade e encerram a negociação.",
+      "E": "A emissão da mensagem CertificateVerify devidamente assinada com a chave privada simétrica do cliente."
+    },
+    "answer": "B",
+    "explanation": "No fluxo típico de Handshake do protocolo TLS 1.2, a primeira comunicação provém do cliente sob a forma de uma mensagem ClientHello, onde ele declara os ciphers suportados e as versões do protocolo. O servidor em resposta envia o ServerHello seguido imediatamente pela mensagem contendo o seu próprio Certificado digital para atestar sua identidade. A geração das chaves de sessão e a troca de pacotes Finished ocorrem mais adiante no fluxo de negociação."
+  },
+  {
+    "id": 26,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Norma ISO 27005",
+    "context": "Processo de Avaliação de Riscos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em obediência à resolução do Conselho Nacional de Justiça que exige a institucionalização da gestão de riscos de TI, o TJ-CE adotou o framework alinhado com a norma ABNT NBR ISO/IEC 27005. Ao iniciar a elaboração do planejamento anual, um analista recebeu a atribuição explícita de estimar a magnitude das consequências de um possível vazamento de sentenças embargadas, assim como determinar a verossimilhança de ocorrência dessa falha nos barramentos de serviços do tribunal. A etapa específica do processo de gestão de riscos onde ocorrem esse mapeamento estruturado de consequências e o cálculo da probabilidade é tecnicamente definida como:",
+    "options": {
+      "A": "Aceitação do risco.",
+      "B": "Avaliação do risco.",
+      "C": "Monitoramento e análise crítica.",
+      "D": "Análise do risco.",
+      "E": "Comunicação do risco."
+    },
+    "answer": "D",
+    "explanation": "O macroprocesso de Avaliação de Riscos detalhado pela ISO 27005 consiste em três etapas sequenciais: Identificação de Riscos, Análise de Riscos e Avaliação de Riscos (Avaliação final). A etapa na qual se definem e estimam o impacto (consequências) e a probabilidade (verossimilhança) a fim de calcular o nível ou a magnitude do risco é estritamente a 'Análise do risco'. A 'Avaliação do risco' (D) corresponde à próxima fase, na qual o nível calculado é confrontado com os critérios de tolerância da organização para suporte a decisões de tratamento."
+  },
+  {
+    "id": 27,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "NIST SP 800-61",
+    "context": "Identificação e Investigação",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema de detecção de intrusões de rede (NIDS) do datacenter corporativo do TJ-CE emitiu um alerta severo indicando a presença de anomalias no tráfego de saída (outbound) originado da rede de servidores Windows. O analista de segurança de plantão foi acionado, processou os artefatos de tráfego, cruzou os logs com registros de firewalls internos e determinou conclusivamente que as conexões em portas não padrão correspondiam à comunicação com servidores externos de comando e controle (C2), confirmando a materialização de um incidente verdadeiro. Segundo as diretrizes do guia NIST SP 800-61, as ações de investigar alertas e determinar a validade de um incidente configuram o núcleo de atividades da fase de:",
+    "options": {
+      "A": "Monitoramento de Alertas Contínuos.",
+      "B": "Contenção, Erradicação e Recuperação.",
+      "C": "Preparação para Resposta a Incidentes.",
+      "D": "Atividade Pós-Incidente.",
+      "E": "Detecção e Análise."
+    },
+    "answer": "E",
+    "explanation": "No modelo delineado no NIST SP 800-61, a atividade de investigar múltiplos perfis de alertas (precursores e indicadores), correlacionar logs de sistemas variados, discernir entre falsos positivos e ameaças reais e avaliar a gravidade do evento, se enquadra centralmente na fase de 'Detecção e Análise' (Detection and Analysis). As atividades de eliminação ou redução da agressão ocorreriam na fase subsequente de Contenção, enquanto que a Preparação se ocupa do estabelecimento prévio de ferramentas e rotinas."
+  },
+  {
+    "id": 28,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Portas Seguras",
+    "context": "Vulnerabilidades e Cabeçalhos",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após realizar a implementação ampla de certificados digitais válidos em todos os portais públicos do TJ-CE, a área de infraestrutura de segurança verificou, através de varreduras ativas, que usuários externos ainda conseguiam acessar as instâncias web de homologação utilizando requisições desprotegidas em texto claro pela porta TCP 80, sujeitando-se a ataques de interceptação man-in-the-middle em redes abertas. Para sanar essa vulnerabilidade em definitivo e forçar as engenharias de navegadores a se conectarem de forma automática e exclusiva por meio da porta segura 443 para os domínios do tribunal, o administrador deve habilitar nos balanceadores de carga o cabeçalho de resposta HTTPS:",
+    "options": {
+      "A": "HTTP Strict Transport Security (HSTS).",
+      "B": "X-Frame-Options (XFO).",
+      "C": "Cross-Origin Resource Sharing (CORS).",
+      "D": "Content Security Policy (CSP).",
+      "E": "X-XSS-Protection."
+    },
+    "answer": "A",
+    "explanation": "O mecanismo de HSTS (HTTP Strict Transport Security) instrui ativamente os navegadores, através de um cabeçalho de resposta seguro, a realizarem todas as futuras comunicações com aquele domínio exclusivamente de modo criptografado via HTTPS, recusando qualquer tentativa de downgrade de protocolo para o HTTP não seguro na porta 80. As outras opções cuidam de vertentes distintas de segurança: proteção contra Clickjacking (B), XSS e controle de injeção de conteúdos (D e E) e relaxamento de restrições de mesma origem (A)."
+  },
+  {
+    "id": 29,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Norma ISO 27002",
+    "context": "Uso de Criptografia e Backup",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao revisar e aprimorar as políticas de segurança de dados em repouso do TJ-CE de forma transversal para adequação a regulamentações mais rígidas de proteção de dados, o comitê deliberativo notou a carência de procedimentos padronizados para a proteção de backups confidenciais remetidos em fitas magnéticas para cofres externos. Tendo a norma ABNT NBR ISO/IEC 27002 como vetor norteador, definiu-se a elaboração de um controle abrangente para a aplicação de medidas criptográficas fortes na mídia. Em compasso com as exigências desse controle normativo sobre a correta e segura gestão criptográfica em ambientes corporativos, a organização deve obrigatoriamente prever:",
+    "options": {
+      "A": "A proteção estrita e controlada de todo o material das chaves criptográficas secretas contra eventos de modificação, divulgação e perda.",
+      "B": "A padronização das políticas institucionais de uso de algoritmos sem a alocação de esforço técnico na gestão do ciclo de vida das chaves.",
+      "C": "O armazenamento local em texto claro das chaves criptográficas na mesma locação física das fitas magnéticas de backup.",
+      "D": "A utilização indiscriminada de algoritmos de hash unilaterais destituídos de salt para viabilizar a reversibilidade rápida do conteúdo gravado.",
+      "E": "O emprego majoritário de chaves assimétricas estáticas desvinculadas das garantias de módulos de hardware de segurança (HSM)."
+    },
+    "answer": "A",
+    "explanation": "O controle associado ao uso de criptografia na ISO 27002 determina imperativamente que a implantação de cifragem deve ser sempre acompanhada de um gerenciamento rigoroso do ciclo de vida de suas chaves (Key Management). O material das chaves deve ser guardado com extrema cautela, providenciando proteção vital contra divulgação e extravio, para evitar que os dados fiquem irrecuperáveis ou expostos. A alternativa (A) destrói o isolamento; (B) exclui o ciclo de chaves; (D) e (E) são absurdos criptográficos e contrariam as boas práticas básicas."
+  },
+  {
+    "id": 30,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Norma ISO 27001",
+    "context": "Auditoria de Conformidade e SGSI",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após intensos esforços em múltiplas diretorias técnicas, o TJ-CE completou o primeiro ano de consolidação do seu Sistema de Gestão da Segurança da Informação (SGSI). Para ratificar os níveis de conformidade e certificar que todos os rigorosos requisitos e controles estipulados pela ABNT NBR ISO/IEC 27001 estão sendo rotineiramente cumpridos e nutridos pelas secretarias do tribunal, a norma comanda a execução de um processo sistemático, independente e solidamente documentado. A alta direção procedeu à nomeação de servidores desvinculados de forma integral da operação diária de TI para examinar os registros técnicos e avaliar os operadores. Essa avaliação exigida normativamente denota a atividade de:",
+    "options": {
+      "A": "Auditoria Interna.",
+      "B": "Revisão da Declaração de Aplicabilidade.",
+      "C": "Tratamento de Riscos Residuais.",
+      "D": "Análise de Impacto nos Negócios.",
+      "E": "Teste de Penetração em Redes."
+    },
+    "answer": "A",
+    "explanation": "A cláusula 9.2 (Auditoria Interna) da ISO 27001 impõe que a organização deva conduzir auditorias internas a intervalos estrategicamente planejados. O objetivo central deste processo é prover informações fidedignas e imparciais sobre a conformidade do SGSI com os requisitos normativos e de negócio, e verificar sua contínua eficácia. O requisito fundamental da atividade de auditoria é a independência dos auditores em relação à gestão de processos rotineiros auditados, perfil perfeitamente enquadrado na definição do estudo de caso proposto."
+  },
+  {
+    "id": 31,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Arquitetura e Integração - SSO, Keycloak, OAuth 2.0 e OIDC",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Ceará (TJ-CE) iniciou o desenvolvimento de um aplicativo móvel nativo destinado a advogados para consulta de processos em segredo de justiça. O aplicativo precisa obter autorização do usuário para acessar as APIs do tribunal, garantindo que credenciais não sejam expostas. A equipe de segurança vetou o uso do fluxo implícito devido a vulnerabilidades conhecidas em dispositivos móveis. Para atender à RFC 6749 e às melhores práticas atuais para aplicativos nativos, o fluxo arquitetural adequado a ser implementado é o",
+    "options": {
+      "A": "Device Authorization Flow com autenticação biométrica em duas etapas.",
+      "B": "Client Credentials Flow com armazenamento seguro do client_secret no keystore nativo.",
+      "C": "Resource Owner Password Credentials Flow com validação de certificado do lado do cliente.",
+      "D": "Implicit Flow com ofuscação do token de acesso no redirecionamento de URI.",
+      "E": "Authorization Code Flow combinado com Proof Key for Code Exchange (PKCE)."
+    },
+    "answer": "E",
+    "explanation": "A correta é a letra A. O Authorization Code Flow + PKCE é a recomendação atual de segurança para aplicativos nativos e SPAs, prevenindo ataques de interceptação do código de autorização sem armazenar um client_secret no front-end. A letra B é exclusiva para comunicação máquina-a-máquina. A letra C é depreciada por exigir a inserção de credenciais do usuário na aplicação cliente. A letra D expõe o token de acesso no histórico de navegação. A letra E destina-se a dispositivos limitados de interface."
+  },
+  {
+    "id": 32,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Arquitetura e Integração - SSO, Keycloak, OAuth 2.0 e OIDC",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um novo portal de serviços do TJ-CE adota o protocolo OpenID Connect (OIDC) para autenticação unificada dos servidores. Durante os testes de integração, a aplicação cliente consegue logar o usuário, mas apresenta falha ao tentar extrair informações de autenticação estruturadas (como o identificador unívoco do sujeito) a partir do Access Token opaco retornado pelo Authorization Server. O arquiteto de TI determinou a correção da falha lógica apontando que a aplicação cliente deve obter essas afirmações sobre o usuário autenticado por meio da leitura do",
+    "options": {
+      "A": "UserInfo Endpoint utilizando o ID Token como credencial de autorização no cabeçalho.",
+      "B": "Refresh Token, responsável por armazenar as credenciais criptografadas de sessão.",
+      "C": "ID Token, que é um JSON Web Token (JWT) contendo as declarações de identidade.",
+      "D": "Access Token introspectado no endpoint de revogação para expor o payload.",
+      "E": "Token de Autorização SAML embutido no parâmetro de estado da requisição."
+    },
+    "answer": "C",
+    "explanation": "A correta é a letra B. No OpenID Connect (OIDC), a credencial principal projetada para fornecer informações sobre a autenticação ao aplicativo cliente é o ID Token, que sempre assume o formato de JWT (JSON Web Token). O Access Token é concebido para autorizar o acesso aos Resource Servers. A letra A inverte o uso: o UserInfo Endpoint é acessado fornecendo o Access Token, e não o ID Token. A letra C confunde a renovação com a identificação. A letra D cita o endpoint de revogação erroneamente."
+  },
+  {
+    "id": 33,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Arquitetura e Integração - SSO, Keycloak, OAuth 2.0 e OIDC",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O setor de infraestrutura do TJ-CE implementou o Keycloak como solução de Gerenciamento de Identidade e Acesso. Atualmente, existem dois requisitos críticos de integração: permitir que os usuários façam login no portal do tribunal usando suas contas do sistema federal Gov.br e sincronizar os atributos dos servidores internos armazenados no Microsoft Active Directory local. Para atender a esses dois requisitos simultaneamente e de forma nativa no Keycloak, a equipe deve configurar, respectivamente,",
+    "options": {
+      "A": "User Federation para o Gov.br e Identity Brokering para o Active Directory.",
+      "B": "Identity Brokering para o Gov.br e User Federation para o Active Directory.",
+      "C": "Identity Providers para o Gov.br e Client Scopes para o Active Directory.",
+      "D": "Client Mappers para o Gov.br e Identity Providers para o Active Directory.",
+      "E": "Execution Flows para o Gov.br e Token Exchange para o Active Directory."
+    },
+    "answer": "B",
+    "explanation": "A correta é a letra A. O Keycloak utiliza a funcionalidade de Identity Brokering para delegar a autenticação a provedores de identidade externos (como o OIDC do Gov.br, redes sociais, etc). Para conectar bases de usuários existentes, como LDAP ou Active Directory, utiliza-se a funcionalidade de User Federation (Federação de Usuários). A letra B inverte os conceitos exatos. As demais misturam funcionalidades não relacionadas à conexão de identidades."
+  },
+  {
+    "id": 34,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Arquitetura e Integração - SSO, Keycloak, OAuth 2.0 e OIDC",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma rotina de background operada por um serviço de mensageria no datacenter do TJ-CE necessita consumir diariamente a API de estatísticas processuais do Conselho Nacional de Justiça (CNJ). Esta rotina não envolve interação humana e opera de forma autônoma (machine-to-machine). Para garantir a conformidade com o padrão OAuth 2.0 e proteger os endpoints do CNJ contra acessos não autorizados, o fluxo de concessão a ser implementado para essa integração sistêmica é o",
+    "options": {
+      "A": "Authorization Code Grant com passagem de estado estático.",
+      "B": "Resource Owner Password Credentials Grant.",
+      "C": "Device Authorization Grant.",
+      "D": "Client Credentials Grant.",
+      "E": "Implicit Grant."
+    },
+    "answer": "D",
+    "explanation": "A correta é a letra C. O fluxo Client Credentials (Concessão de Credenciais do Cliente) é especificado pela RFC 6749 para situações em que a aplicação cliente interage com a API atuando em seu próprio nome (comunicação M2M, serviços de backend), sem envolver um usuário final. A letra A e E exigem redirecionamento de navegador e interação do usuário. A letra B é para aplicações altamente confiáveis legadas capturando senhas de usuários. A letra D destina-se a dispositivos como TVs."
+  },
+  {
+    "id": 35,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Arquitetura e Integração - SSO, Keycloak, OAuth 2.0 e OIDC",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Comitê de Governança de TI do TJ-CE determinou que o novo sistema de Single Sign-On baseado em Keycloak deve isolar completamente três grupos distintos: Magistrados, Servidores Administrativos e Cidadãos. Cada grupo deve possuir suas próprias políticas de senha, clientes registrados e provedores de identidade externos, garantindo que um administrador de um grupo não tenha visibilidade sobre os usuários de outro. A estratégia arquitetural correta no Keycloak para garantir esse nível de isolamento lógico é a criação de",
+    "options": {
+      "A": "Clients independentes dentro de um único domínio organizacional.",
+      "B": "Realms distintos para cada um dos três grupos de usuários.",
+      "C": "Groups e Roles globais mapeados por expressões regulares.",
+      "D": "Authentication Flows personalizados aplicados no nível de Identity Provider.",
+      "E": "Tenants isolados no mesmo Client Scope com políticas baseadas em atributos."
+    },
+    "answer": "B",
+    "explanation": "A correta é a letra B. No Keycloak, um Realm (Reino) atua como um espaço isolado de gestão de identidades, permitindo total separação de usuários, credenciais, roles, grupos e clientes. A letra A falha porque Clients num mesmo Realm compartilham os usuários. A letra C cria segregação de autorização, mas não isola a base ou as políticas globais do Realm. A letra E inventa uma hierarquia de Tenants inexistente nativamente desta forma no conceito de isolamento primário do Keycloak."
+  },
+  {
+    "id": 36,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Arquitetura e Integração - SSO, Keycloak, OAuth 2.0 e OIDC",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao implementar o OpenID Connect em um sistema de controle de ponto do tribunal, o desenvolvedor configurou a requisição de autorização para solicitar o escopo `openid`. No entanto, a aplicação exige que o nome completo e o endereço de e-mail do servidor sejam retornados no ID Token para compor o painel de boas-vindas. Atualmente, o ID Token retorna apenas o identificador opaco do sujeito (claim `sub`). Para que o Authorization Server inclua as informações solicitadas no ID Token, a requisição original deve ser ajustada para incluir os escopos padrão",
+    "options": {
+      "A": "read:user e read:email.",
+      "B": "identity e contact.",
+      "C": "profile e email.",
+      "D": "names e addresses.",
+      "E": "userinfo e offline_access."
+    },
+    "answer": "C",
+    "explanation": "A correta é a letra A. De acordo com a especificação OIDC, os escopos padrão para solicitar claims específicas do usuário incluem 'profile' (nome, sobrenome, foto, gênero, etc.) e 'email' (endereço de email e status de verificação). As letras B, C e D apresentam escopos não definidos pelo padrão OIDC (frequentemente usados incorretamente por analogia a outras APIs proprietárias). A letra E inclui offline_access que serve para obter refresh tokens, não claims de perfil."
+  },
+  {
+    "id": 37,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Arquitetura e Integração - SSO, Keycloak, OAuth 2.0 e OIDC",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O sistema processual eletrônico do TJ-CE comunica-se com uma API REST. A política de segurança determina que os tokens de acesso tenham vida útil máxima de 10 minutos para reduzir a janela de exposição em caso de vazamento. No entanto, os magistrados reportam que a sessão expira abruptamente durante a redação de sentenças complexas, forçando uma nova autenticação interativa. Para resolver o problema de usabilidade mantendo rigorosamente a diretriz de tokens de curta duração, a arquitetura deve implementar",
+    "options": {
+      "A": "o armazenamento do Access Token em Local Storage com renovação via iframe oculto.",
+      "B": "a configuração do Authorization Code para não expirar enquanto a aba do navegador estiver aberta.",
+      "C": "o uso de Refresh Tokens para renovação de tokens de acesso em background pela aplicação.",
+      "D": "a alteração do tipo de concessão para Implicit Grant com escopo de acesso vitalício.",
+      "E": "a emissão de um ID Token de longa duração utilizado como fallback para autenticação na API."
+    },
+    "answer": "C",
+    "explanation": "A correta é a letra A. O Refresh Token é o mecanismo oficial do OAuth 2.0 que permite obter um novo Access Token sem interação direta com o usuário, permitindo conciliar usabilidade com segurança (Access Tokens curtos). A letra B confunde o Authorization Code (um artefato temporário descartável). A letra C usa iframes ocultos (silent authentication via iframe) que vêm sendo bloqueados por políticas de SameSite Cookies em navegadores modernos. A letra D viola totalmente as diretrizes. A letra E subverte o uso do ID Token, que não é para APIs."
+  },
+  {
+    "id": 38,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Arquitetura e Integração - SSO, Keycloak, OAuth 2.0 e OIDC",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Diversas aplicações clientes autenticadas via Keycloak precisam verificar o número de matrícula dos servidores logados. Atualmente, esse dado está armazenado em um atributo customizado chamado `matricula_tj` no perfil do usuário no servidor Keycloak, mas ele não aparece no Access Token em formato JWT retornado após a autenticação. Para que a matrícula seja incluída automaticamente no payload do JWT emitido para as aplicações, o administrador do Keycloak deve configurar um",
+    "options": {
+      "A": "User Federation Provider apontando para a base relacional do sistema de RH.",
+      "B": "Identity Provider Link associando o perfil externo à credencial interna.",
+      "C": "Authentication Execution obrigatório no fluxo de login via navegador.",
+      "D": "Protocol Mapper do tipo User Attribute no Client ou Client Scope correspondente.",
+      "E": "Authorization Resource associado a uma política de acesso baseada em claims."
+    },
+    "answer": "D",
+    "explanation": "A correta é a letra C. Protocol Mappers no Keycloak são as configurações responsáveis por injetar dados (atributos, roles, group memberships) dentro do token (ID ou Access Token) emitido, mapeando informações internas do banco de identidades para claims (afirmações) no protocolo OIDC ou SAML. As letras A e B tratam de importação de usuários, não manipulação de tokens. A letra D controla etapas de login. A letra E pertence ao Keycloak Authorization Services."
+  },
+  {
+    "id": 39,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Arquitetura e Integração - SSO, Keycloak, OAuth 2.0 e OIDC",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma auditoria de segurança em um portal externo do TJ-CE identificou que o fluxo de autenticação OpenID Connect estava vulnerável a ataques de Cross-Site Request Forgery (CSRF) e ataques de repetição (Replay Attacks). O relatório apontou que o portal envia a requisição de autorização sem garantias de que a resposta do Authorization Server corresponde à requisição iniciada pelo usuário naquela mesma sessão de navegação. Para mitigar ambas as vulnerabilidades, a aplicação cliente deve incluir e validar no retorno os parâmetros",
+    "options": {
+      "A": "client_id e client_secret.",
+      "B": "code_challenge e code_method.",
+      "C": "state e nonce.",
+      "D": "scope e response_type.",
+      "E": "redirect_uri e prompt."
+    },
+    "answer": "C",
+    "explanation": "A correta é a letra D. No OAuth2/OIDC, o parâmetro 'state' impede ataques CSRF, pois transporta um valor opaco que a aplicação utiliza para manter o estado entre a solicitação inicial e o callback. O parâmetro 'nonce' impede ataques de repetição em tokens, associando indissociavelmente o ID Token retornado a uma sessão específica do cliente. A letra B (PKCE) mitiga a interceptação do código, não CSRF primário de sessão. A letra E e C são parâmetros estruturais básicos do fluxo."
+  },
+  {
+    "id": 40,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Arquitetura e Integração - SSO, Keycloak, OAuth 2.0 e OIDC",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A implantação do Keycloak no ambiente de produção do TJ-CE exige Alta Disponibilidade (High Availability). O arquiteto optou por um deploy distribuído em múltiplos nós de contêineres e precisa garantir que o estado das sessões dos usuários seja preservado em caso de falha abrupta de um dos nós, evitando interrupções em massa e necessidade de reautenticação imediata. Para atender a essa premissa de distribuição de estado, é estritamente necessário configurar adequadamente o",
+    "options": {
+      "A": "balanceador de carga NGINX com terminação SSL e política de round-robin.",
+      "B": "cache distribuído baseado em Infinispan para replicação das sessões ativas.",
+      "C": "banco de dados relacional isolado com réplicas de leitura síncronas.",
+      "D": "protocolo LDAP com sincronização periódica agressiva de atributos.",
+      "E": "volume persistente compartilhado via NFS para armazenamento dos tokens emitidos."
+    },
+    "answer": "B",
+    "explanation": "A correta é a letra A. O Keycloak gerencia sessões de usuários ativas primariamente em memória. Em modo cluster, ele depende do Infinispan integrado para replicar o cache dessas sessões entre os nós. Se um nó cair, os dados da sessão não se perdem. A letra C está incorreta porque o banco de dados relacional armazena dados persistentes (usuários, configurações), mas o processamento massivo e volátil de sessões ocorre no Infinispan. A letra B distribui o tráfego, mas não preserva dados de sessão. As letras D e E não fazem sentido técnico para esse propósito."
+  },
+  {
+    "id": 41,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Arquitetura e Integração - SSO, Keycloak, OAuth 2.0 e OIDC",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um comitê de integração interinstitucional discute a padronização do protocolo de SSO na comunicação entre o TJ-CE e sistemas legados de órgãos externos. O debate se concentra em escolher o Security Assertion Markup Language (SAML) 2.0 ou o OpenID Connect (OIDC). Na tomada de decisão técnica comparativa, o arquiteto argumenta corretamente que uma característica distintiva fundamental do OIDC em relação ao SAML 2.0 é o uso de",
+    "options": {
+      "A": "tokens codificados no formato JSON Web Token (JWT) adaptados para arquiteturas RESTful.",
+      "B": "arquitetura baseada em SOAP para o transporte seguro de asserções de identidade.",
+      "C": "trocas de mensagens baseadas exclusivamente em XML com assinaturas digitais envelopadas.",
+      "D": "mecanismo de Trust Base nativo ancorado em infraestrutura de chaves públicas da ICP-Brasil.",
+      "E": "canais de comunicação com estado estrito para verificação contínua da sessão."
+    },
+    "answer": "A",
+    "explanation": "A correta é a letra C. O OIDC é uma camada de identidade sobre o OAuth 2.0 projetada para o ecossistema moderno REST, devolvendo tokens no formato JSON Web Token (JWT) e consumindo endpoints JSON. O SAML 2.0, por sua vez, é fundamentado no formato XML pesado e estruturado (citado de forma genérica na letra A). A letra B e E são incorretas, pois o OIDC não usa SOAP e é stateless. A letra D não pertence ao escopo intrínseco de nenhum dos protocolos, que são agnósticos quanto a autoridades locais específicas."
+  },
+  {
+    "id": 42,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Arquitetura e Integração - SSO, Keycloak, OAuth 2.0 e OIDC",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma aplicação legada baseada em desktop no ecossistema do tribunal consome uma API protegida via OAuth 2.0. Por decisão de projeto anterior, a interface gráfica do desktop captura diretamente o usuário e a senha do magistrado e envia esses dados ao Authorization Server para efetuar a troca por um Access Token. O comitê de segurança recomendou a substituição desse fluxo para evitar que aplicativos manipulem as credenciais diretamente. O fluxo atual utilizado pela aplicação legada, alvo da ressalva de segurança, é denominado",
+    "options": {
+      "A": "Authorization Code Grant.",
+      "B": "Client Credentials Grant.",
+      "C": "Resource Owner Password Credentials Grant.",
+      "D": "Implicit Grant.",
+      "E": "Device Authorization Grant."
+    },
+    "answer": "C",
+    "explanation": "A correta é a letra D. O Resource Owner Password Credentials Grant (ROPC) é o fluxo onde o cliente (aplicativo) lida diretamente com a senha do usuário final (dono do recurso) para pedir um token. Ele fere a delegação segura fundamental do OAuth (onde o usuário autentica-se em janela externa e fornece um código ao app) e foi oficialmente descontinuado e classificado como inseguro nas diretrizes modernas do OAuth 2.1. As demais alternativas garantem essa separação ou dispensam a intervenção humana (Client Credentials)."
+  },
+  {
+    "id": 43,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Arquitetura e Integração - SSO, Keycloak, OAuth 2.0 e OIDC",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A arquitetura de microsserviços do processo eletrônico do TJ-CE possui um serviço A (Gestão de Documentos) que recebe um Access Token originado pelo navegador do usuário. O serviço A precisa realizar uma chamada em cascata para o serviço B (Assinatura Digital). O serviço B aceita apenas tokens emitidos especificamente com a sua identificação de audiência, rejeitando o token original emitido para o serviço A. Para propagar o contexto do usuário preservando o princípio do menor privilégio entre domínios, o serviço A deve solicitar ao Keycloak a emissão de um novo token utilizando o recurso de",
+    "options": {
+      "A": "Token Introspection.",
+      "B": "Token Exchange.",
+      "C": "Token Revocation.",
+      "D": "User Federation.",
+      "E": "Identity Brokering."
+    },
+    "answer": "B",
+    "explanation": "A correta é a letra C. Token Exchange (RFC 8693) é o recurso projetado para permitir que uma entidade de software troque um token existente por um novo, ajustando o escopo ou a audiência, mantendo ou substituindo o sujeito emissor original. Isso resolve o problema de 'Audience Mismatch' em comunicação entre microsserviços sem precisar reutilizar o mesmo token excessivamente largo. A letra A (Introspection) serve apenas para validar o token na API, não gera um novo."
+  },
+  {
+    "id": 44,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Arquitetura e Integração - SSO, Keycloak, OAuth 2.0 e OIDC",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a construção de um portal institucional, a equipe limitou severamente a quantidade de informações embutidas no ID Token gerado pelo OIDC, mantendo apenas os dados mínimos para não sobrecarregar os cookies de sessão da aplicação front-end. Quando o front-end precisar sob demanda de informações detalhadas sobre o perfil corporativo, endereço e estrutura organizacional atrelada à identidade do usuário autenticado, a aplicação deverá consultar o Authorization Server consumindo o",
+    "options": {
+      "A": "endpoint UserInfo fornecendo o Access Token no cabeçalho HTTP.",
+      "B": "endpoint de descoberta para extrair o conjunto de metadados públicos.",
+      "C": "endpoint de autorização passando o ID Token no parâmetro de redirecionamento.",
+      "D": "endpoint de token passando o Refresh Token em troca de um JWT expandido.",
+      "E": "endpoint de revogação para forçar a reemissão do fluxo interativo."
+    },
+    "answer": "A",
+    "explanation": "A correta é a letra C. O UserInfo Endpoint é um serviço RESTful nativo da arquitetura OpenID Connect que retorna as claims adicionais sobre o usuário final. Para acessar o UserInfo, a aplicação cliente (Client App) deve usar um Access Token válido emitido por aquele Authorization Server, entregando-o como um HTTP Authorization Bearer token. A letra A mistura endpoints. A letra B refere-se ao OpenID Provider Configuration Endpoint, que traz configurações do servidor e não do usuário."
+  },
+  {
+    "id": 45,
+    "day_id": "dia_07_07",
+    "day_title": "Semana 8 - BD, Segurança e Arquitetura (07/07)",
+    "theme": "Arquitetura e Integração - SSO, Keycloak, OAuth 2.0 e OIDC",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma API REST de consulta processual exposta pelo TJ-CE processa tanto dados de domínio público quanto informações sigilosas. Um sistema desenvolvido por terceiros necessita de acesso unicamente às informações públicas em nome de um servidor do tribunal. O servidor de autorização baseado em OAuth 2.0 precisa dispor de um mecanismo nativo e explícito para garantir a limitação estrita e granular do nível de acesso concedido a esse aplicativo cliente. No contexto do OAuth 2.0, essa limitação de direitos de acesso a recursos operada diretamente na emissão do token é configurada pelos",
+    "options": {
+      "A": "claims.",
+      "B": "state parameters.",
+      "C": "nonces.",
+      "D": "scopes.",
+      "E": "endpoints."
+    },
+    "answer": "D",
+    "explanation": "A correta é a letra B. No OAuth 2.0, Scopes (Escopos) constituem o mecanismo por meio do qual uma aplicação cliente solicita um conjunto limitado e predefinido de permissões, os quais o Authorization Server pode conceder e incluir no Access Token retornado. A letra A (Claims) reflete os dados ou declarações empacotados num JWT, geralmente dados identitários, sendo mais relacionados ao OIDC. As letras C e D são artefatos para controle de segurança de sessão no fluxo (estado e repetição)."
+  }
+]
