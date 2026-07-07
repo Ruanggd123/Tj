@@ -15,7 +15,7 @@
       "E": "conversão da lista de comarcas em um domínio escalar unificado e a garantia da ausência de dependências multivaloradas triviais cruzadas."
     },
     "answer": "D",
-    "explanation": "A alternativa A é correta. A passagem para 1FN requer a eliminação do atributo multivalorado 'lista_comarcas_tramitacao'. Como a chave é simples, a tabela atinge a 2FN automaticamente. Para a 3FN, é necessário eliminar a dependência transitiva: o nome do advogado depende do CPF do advogado, que não é a chave primária da tabela de processos."
+    "explanation": "A alternativa D é correta. A passagem para 1FN requer a eliminação do atributo multivalorado 'lista_comarcas_tramitacao'. Como a chave é simples, a tabela atinge a 2FN automaticamente. Para a 3FN, é necessário eliminar a dependência transitiva: o nome do advogado depende do CPF do advogado, que não é a chave primária da tabela de processos."
   },
   {
     "id": 2,
@@ -33,7 +33,7 @@
       "E": "INNER JOIN."
     },
     "answer": "D",
-    "explanation": "A alternativa A é correta. O FULL OUTER JOIN retorna todas as linhas de ambas as tabelas (magistrados e varas), preenchendo com valores nulos quando não houver correspondência, satisfazendo os requisitos simultâneos da consulta."
+    "explanation": "A alternativa D é correta. O FULL OUTER JOIN retorna todas as linhas de ambas as tabelas (magistrados e varas), preenchendo com valores nulos quando não houver correspondência, satisfazendo os requisitos simultâneos da consulta."
   },
   {
     "id": 3,
@@ -51,7 +51,7 @@
       "E": "NVL2(valor_principal, 0, 1)."
     },
     "answer": "C",
-    "explanation": "A alternativa A é correta. No PostgreSQL (e no padrão ANSI SQL), a função equivalente ao NVL do Oracle, utilizada para retornar o primeiro argumento não nulo da lista, é o COALESCE."
+    "explanation": "A alternativa C é correta. No PostgreSQL (e no padrão ANSI SQL), a função equivalente ao NVL do Oracle, utilizada para retornar o primeiro argumento não nulo da lista, é o COALESCE."
   },
   {
     "id": 4,
@@ -69,7 +69,7 @@
       "E": "separação em duas tabelas contendo as colunas `(matricula_oficial, codigo_zona)` e `(matricula_oficial, placa_veiculo)`."
     },
     "answer": "E",
-    "explanation": "A alternativa A é correta. Na relação original, há violação da FNBC porque 'placa_veiculo' e 'matricula_oficial' determinam um ao outro, e sendo parte de chaves compostas diferentes, representam determinantes que não são superchaves absolutas. A decomposição sem perda requer a separação da dependência mútua em uma tabela e as demais informações em outra."
+    "explanation": "A alternativa E é correta. Na relação original, há violação da FNBC porque 'placa_veiculo' e 'matricula_oficial' determinam um ao outro, e sendo parte de chaves compostas diferentes, representam determinantes que não são superchaves absolutas. A decomposição sem perda requer a separação da dependência mútua em uma tabela e as demais informações em outra."
   },
   {
     "id": 5,
@@ -87,7 +87,7 @@
       "E": "CROSS JOIN."
     },
     "answer": "E",
-    "explanation": "A alternativa A é correta. O CROSS JOIN produz o produto cartesiano entre duas tabelas, combinando cada registro da primeira com todos os registros da segunda, resultando em 5 * 20 = 100 linhas."
+    "explanation": "A alternativa E é correta. O CROSS JOIN produz o produto cartesiano entre duas tabelas, combinando cada registro da primeira com todos os registros da segunda, resultando em 5 * 20 = 100 linhas."
   },
   {
     "id": 6,
@@ -105,7 +105,7 @@
       "E": "CONTAINS aplicado diretamente no predicado escalar."
     },
     "answer": "B",
-    "explanation": "A alternativa A é correta. O operador EXISTS atrelado a uma subconsulta correlacionada detém a execução da verificação interna assim que a primeira ocorrência correspondente é localizada, eliminando a materialização total de grandes volumes e melhorando a performance geral em relação à cláusula IN."
+    "explanation": "A alternativa B é correta. O operador EXISTS atrelado a uma subconsulta correlacionada detém a execução da verificação interna assim que a primeira ocorrência correspondente é localizada, eliminando a materialização total de grandes volumes e melhorando a performance geral em relação à cláusula IN."
   },
   {
     "id": 7,
@@ -123,7 +123,7 @@
       "E": "a cláusula `DEFAULT NEXTVAL` ancorada obrigatoriamente a uma função de restrição."
     },
     "answer": "D",
-    "explanation": "A alternativa A é correta. No PostgreSQL (a partir da versão 10, com forte suporte em versões posteriores), o padrão SQL:2003 'GENERATED ALWAYS AS IDENTITY' substitui a necessidade de sequências manuais atreladas a triggers ou o uso de tipos de dados legados (SERIAL) de forma padronizada e segura."
+    "explanation": "A alternativa D é correta. No PostgreSQL (a partir da versão 10, com forte suporte em versões posteriores), o padrão SQL:2003 'GENERATED ALWAYS AS IDENTITY' substitui a necessidade de sequências manuais atreladas a triggers ou o uso de tipos de dados legados (SERIAL) de forma padronizada e segura."
   },
   {
     "id": 8,
@@ -177,7 +177,7 @@
       "E": "SELF JOIN referenciando a própria tabela primária."
     },
     "answer": "E",
-    "explanation": "A alternativa A é correta. Para relacionar linhas de uma tabela com outras linhas dentro da mesma tabela (estrutura de árvore em adjacency list), utiliza-se a técnica de SELF JOIN, atribuindo aliases distintos à mesma tabela na cláusula FROM."
+    "explanation": "A alternativa E é correta. Para relacionar linhas de uma tabela com outras linhas dentro da mesma tabela (estrutura de árvore em adjacency list), utiliza-se a técnica de SELF JOIN, atribuindo aliases distintos à mesma tabela na cláusula FROM."
   },
   {
     "id": 11,
@@ -195,7 +195,7 @@
       "E": "restrição matricial FOREIGN KEY DEFERRABLE concatenada aos blocos aninhados."
     },
     "answer": "C",
-    "explanation": "A alternativa A é correta. No PostgreSQL, hierarquias ou cadeias de dependência de profundidade desconhecida (como árvores e grafos) são percorridas com uso das Common Table Expressions recursivas (WITH RECURSIVE). START WITH é específico de bancos Oracle."
+    "explanation": "A alternativa C é correta. No PostgreSQL, hierarquias ou cadeias de dependência de profundidade desconhecida (como árvores e grafos) são percorridas com uso das Common Table Expressions recursivas (WITH RECURSIVE). START WITH é específico de bancos Oracle."
   },
   {
     "id": 12,
@@ -231,7 +231,7 @@
       "E": "ALTER TABLE atrelado ao comando MERGE PARTITION originado no log de transações."
     },
     "answer": "B",
-    "explanation": "A alternativa A é correta. No PostgreSQL, a funcionalidade de 'upsert' (inserir se não existir, atualizar se existir) é implementada nativamente através do comando INSERT combinado com a cláusula de resolução de conflito ON CONFLICT DO UPDATE."
+    "explanation": "A alternativa B é correta. No PostgreSQL, a funcionalidade de 'upsert' (inserir se não existir, atualizar se existir) é implementada nativamente através do comando INSERT combinado com a cláusula de resolução de conflito ON CONFLICT DO UPDATE."
   },
   {
     "id": 14,
@@ -249,7 +249,7 @@
       "E": "MAX ancorada na contagem exata da cardinalidade de relacionamentos dispostos nos resultados nulos."
     },
     "answer": "C",
-    "explanation": "A alternativa A é correta. Quando se usa o LEFT JOIN, a tabela da direita retorna valores nulos caso não exista correspondência. Se for feito um COUNT(*) ou COUNT numa coluna da tabela da esquerda (comarcas), as comarcas sem processos resultarão em 1. O correto é usar COUNT na chave da tabela da direita (processos), pois COUNT(coluna) ignora nulos, retornando o número 0 corretamente."
+    "explanation": "A alternativa C é correta. Quando se usa o LEFT JOIN, a tabela da direita retorna valores nulos caso não exista correspondência. Se for feito um COUNT(*) ou COUNT numa coluna da tabela da esquerda (comarcas), as comarcas sem processos resultarão em 1. O correto é usar COUNT na chave da tabela da direita (processos), pois COUNT(coluna) ignora nulos, retornando o número 0 corretamente."
   },
   {
     "id": 15,
@@ -267,7 +267,7 @@
       "E": "definição sistêmica de instâncias escalares, a neutralização impositiva das regras relacionais multivaloradas triviais e a transformação dos desvios transitivos indiretos."
     },
     "answer": "D",
-    "explanation": "A alternativa A é correta. Ela sintetiza sequencialmente os requisitos das 3 primeiras formas normais sem justificar o conteúdo nas opções: 1FN (relações atômicas), 2FN (dependência integral de toda a chave / sem dependências parciais) e 3FN (supressão das dependências entre campos não-chave / sem dependências transitivas)."
+    "explanation": "A alternativa D é correta. Ela sintetiza sequencialmente os requisitos das 3 primeiras formas normais sem justificar o conteúdo nas opções: 1FN (relações atômicas), 2FN (dependência integral de toda a chave / sem dependências parciais) e 3FN (supressão das dependências entre campos não-chave / sem dependências transitivas)."
   },
   {
     "id": 16,
