@@ -124,5 +124,11 @@
     "day_title": "Semana 8 - BD, Segurança e Arq (07/07)",
     "filename": "dia_07_07_questoes.json",
     "count": 45
+  },
+  {
+    "day_id": "dia_10_07",
+    "day_title": "Super Revisão de Fechamento (10/07)",
+    "filename": "dia_10_07_questoes.json",
+    "count": 45
   }
 ]
