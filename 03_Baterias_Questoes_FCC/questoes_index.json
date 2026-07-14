@@ -16,5 +16,11 @@
     "day_title": "MEGA BATERIA DE RECUPERAÇÃO - Filtrada ALECE",
     "filename": "mega_recuperacao.json",
     "count": 37
+  },
+  {
+    "day_id": "dia_15_07",
+    "day_title": "[ALECE] Bateria 01 - IDECAN (Ciência de Dados)",
+    "filename": "dia_15_07_questoes.json",
+    "count": 20
   }
 ]
