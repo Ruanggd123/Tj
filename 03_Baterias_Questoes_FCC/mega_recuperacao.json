@@ -1,0 +1,1892 @@
+[
+  {
+    "id": 1,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Java - Upcasting e Dynamic Dispatch",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No subsistema analítico desenhado para provisionamento orçamentário do tribunal em Java, um objeto instanciado explicitamente no padrão de fábrica a partir da classe derivada 'Desembargador' encontra-se atrelado momentaneamente a uma variável de abstração de tipo referenciada unicamente por sua classe de escopo global 'MembroPoderJudiciario'. Quando o processador principal exige a execução da assinatura de método abstrato 'retornarSubsídioLiquido()', a Máquina Virtual executa instantaneamente o bloco estrito da classe do subnível. O processo descritivo atrelado à promoção formal dessa amarração é propiciado intrinsecamente pelos fenômenos de:",
+    "options": {
+      "A": "Downcasting restritivo contendo encapsulamento polimórfico de inicialização.",
+      "B": "Upcasting hierárquico atrelado ao despacho dinâmico por método assinado.",
+      "C": "Coerção escalar de tipos com vinculação e amarração estática em tempo analítico.",
+      "D": "Invocação por herança reflexiva em ambiente auto-boxing.",
+      "E": "Definição de modificadores tardios sob classes nativas e seladas em blocos."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito: B) A correta é B. Associar a variável do supertipo superior (MembroPoderJudiciario) a uma instância da classe inferior mais completa (Desembargador) concretiza a figura do Upcasting. O processamento virtual do polimorfismo escolhendo em período de run-time o bloco redefinido subscrito sob o objeto da extremidade material da classe traduz a operação do Despacho Dinâmico de Métodos. Downcasting, Coerção escalar e Auto-boxing desalinham completamente com as funcionalidades atreladas nos conceitos em questão."
+  },
+  {
+    "id": 2,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Português - Concordância Nominal e Verbal",
+    "context": "Edital de Licitação de Storage.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na especificação técnica para a aquisição de novos ativos de armazenamento para o TJ-CE, o setor de infraestrutura redigiu cláusulas sobre desempenho e latência. Em relação às regras de concordância estabelecidas pela norma-padrão da Língua Portuguesa, qual alternativa apresenta o diagnóstico arquitetural gramaticalmente correto?",
+    "options": {
+      "A": "É necessário a alocação de discos de estado sólido para os bancos de dados transacionais.",
+      "B": "Anexo ao documento de arquitetura, seguem as métricas de IOPS necessárias ao tribunal.",
+      "C": "Considerou-se inadequadas as taxas de latência apresentadas pela solução legada de armazenamento.",
+      "D": "As controladoras da matriz de discos, elas mesmas, realizarão a deduplicação dos blocos de dados.",
+      "E": "Haviam bastantes indícios de que o gargalo de performance estava concentrado nos discos magnéticos."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito real: D) A: Errada. Como o substantivo 'alocação' está determinado pelo artigo 'a', o adjetivo deve concordar no feminino: 'É necessária a alocação'. B: Errada. O adjetivo 'anexo' concorda com o substantivo a que se refere. O correto seria 'Anexas ao documento... seguem as métricas'. C: Errada. O verbo concorda com o sujeito paciente 'as taxas'. O correto seria 'Consideraram-se inadequadas as taxas'. D: Correta. O pronome de reforço 'elas mesmas' concorda em gênero e número com o núcleo do sujeito 'As controladoras'. O verbo 'realizarão' concorda no plural corretamente. E: Errada. O verbo 'haver' no sentido existencial é impessoal, devendo ficar no singular ('Havia bastantes indícios')."
+  },
+  {
+    "id": 3,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Engenharia de Software - Requisitos",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Estado do Ceará (TJ-CE) está desenvolvendo o novo portal do Processo Judicial Eletrônico (PJe). Durante a fase de engenharia de requisitos, a equipe técnica identificou a necessidade de que o sistema seja capaz de suportar até 10.000 acessos simultâneos durante o período de peticionamento de urgência, garantindo um tempo de resposta inferior a 2 segundos para o carregamento inicial da página. Além disso, o sistema deve registrar todas as tentativas de acesso falhas em uma trilha de auditoria inalterável. Sob a ótica da classificação de requisitos, essas duas especificações configuram, respectivamente:",
+    "options": {
+      "A": "requisitos organizacionais e requisitos de produto.",
+      "B": "requisitos de domínio e requisitos não funcionais de segurança.",
+      "C": "requisitos não funcionais de confiabilidade e requisitos funcionais.",
+      "D": "requisitos funcionais de eficiência e requisitos não funcionais de auditoria.",
+      "E": "requisitos não funcionais de desempenho e requisitos funcionais."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito: E) A alternativa A é a correta. Suportar volume de acessos e garantir tempo de resposta são atributos de qualidade ligados à restrição do sistema, enquadrando-se como requisitos não funcionais de desempenho. Registrar logs ou trilhas de auditoria descreve uma ação/serviço que o sistema deve executar, caracterizando-se como requisito funcional. A alternativa B erra ao chamar de domínio. A alternativa C cita confiabilidade, que foca em tolerância a falhas. A D e E invertem conceitos básicos."
+  },
+  {
+    "id": 4,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Resoluções CNJ (PDPJ-Br)",
+    "context": "Centralização de dados analíticos na Justiça brasileira.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para alinhar-se à política nacional de governança orientada a dados do ecossistema PDPJ-Br, o TJ-CE foi convocado a adaptar a rotina de exportação dos bancos de dados relacionais do PJe (Processo Judicial Eletrônico). As normativas do CNJ estabelecem que todos os tribunais, embora detentores dos dados transacionais locais em suas nuvens ou infraestruturas on-premise, são obrigados a transmitir periodicamente as cargas estruturadas de informações e andamentos processuais para um repositório central unificado. Essa base consolida a massa probatória e as métricas para painéis estatísticos e treinamento de IA corporativa. Qual é a denominação dessa estrutura de centralização de dados criada pelo CNJ?",
+    "options": {
+      "A": "Sistema de Busca de Ativos do Poder Judiciário (Sisbajud).",
+      "B": "Base Nacional de Dados do Poder Judiciário (Datajud).",
+      "C": "Banco Nacional de Monitoramento de Prisões (BNMP).",
+      "D": "Sistema de Informações ao Judiciário (Infojud).",
+      "E": "Plataforma de Comunicação Interinstitucional (PCI)."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito real: B) A correta é a [A]. Instituído pela Resolução CNJ nº 331/2020, o Datajud (Base Nacional de Dados do Poder Judiciário) é o repositório central projetado para receber as cargas padronizadas de dados de todos os sistemas de movimentação processual do país. Trata-se da fundação estratégica para que a PDPJ-Br possa alimentar algoritmos de inteligência artificial, aplicar auditorias unificadas e prover estatísticas precisas sem a necessidade de varredura isolada nos tribunais. A alternativa B (Sisbajud) refere-se ao envio de ordens judiciais de constrição e penhora eletrônica no sistema financeiro. A alternativa C (BNMP) foca na gestão exclusiva de mandados de prisão e alvarás de soltura. A alternativa D (Infojud) é a via de interligação judicial com os sistemas da Receita Federal. A alternativa E não representa um sistema de concentração massiva de dados analíticos do CNJ."
+  },
+  {
+    "id": 5,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Segurança - Gestão de Riscos (ISO 27005)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Comitê Diretor de Tecnologia validou uma matriz de risco abordando a topologia de switches de acesso instalada em varas do interior cearense. Observou-se a existência material de falhas e paradas ocasionais de pacotes na camada de enlace motivadas por pico de voltagem local, no entanto, o valor pecuniário envolvido para a instalação de no-breaks de alta voltagem atrelados a rotinas em todos os fóruns é significativamente superior ao dano eventual da indisponibilidade sistêmica. Diante disso, o comitê deliberou documentar o evento na base de conhecimento aprovando a convivência institucional com o impacto reportado sem novas ações de investimento. A deliberação citada classifica-se conceitualmente como opção de:",
+    "options": {
+      "A": "Retenção deliberada e aceitação do nível de risco.",
+      "B": "Transferência subsidiária e externa do risco.",
+      "C": "Remoção operacional definitiva do vetor e do risco.",
+      "D": "Mitigação reativa dos eventos limitadores do risco.",
+      "E": "Prevenção sistemática focada no controle residual."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito: A) A correta é D. Dentro do gerenciamento formal de riscos e da ISO 27005, quando o gasto atrelado ao tratamento da vulnerabilidade inviabiliza o ganho para a empresa de acordo com o apetite da diretoria, há o rito protocolar de aceitação e retenção (Risk Acceptance). Mitigação baseia-se na diminuição mediante adoção pontual do controle compensatório; Remoção/Prevenção atua evitando o evento e a Transferência subloca a penalização atrelada na vulnerabilidade usualmente em apólices e contratações em SLA."
+  },
+  {
+    "id": 6,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Segurança - Funções Hash",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Peritos cibernéticos do TJ-CE investigam a adulteração de provas multimídia em um inquérito policial. Eles notaram que o arquivo original do vídeo do circuito de segurança e o arquivo corrompido, apesar de possuírem bytes radicalmente distintos nos cabeçalhos e fluxos, geraram rigorosamente o mesmo valor de resumo matemático no algoritmo MD5 utilizado na cadeia de custódia. O evento de anomalia de segurança evidenciado nesse quadro analítico é denominado como:",
+    "options": {
+      "A": "Colisão.",
+      "B": "Ataque de texto plano escolhido.",
+      "C": "Ataque do aniversário indireto.",
+      "D": "Força bruta exaustiva em blocos.",
+      "E": "Injeção cega temporal."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito: A) A correta é A. O fenômeno algorítmico em que duas strings de tamanho variável distintas geram um hash de tamanho fixo de saída perfeitamente idêntico em funções de dispersão (MD5, SHA-1) constitui uma colisão. Por esse motivo, algoritmos defasados como o MD5 deixaram de ser confiáveis para verificação de integridade formal. O ataque do aniversário (C) seria o modelo estatístico explorado pelos agentes para deliberadamente atingir tal falha e não o nome da referida anomalia que consome a confiança em si."
+  },
+  {
+    "id": 7,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Engenharia de Software - Requisitos",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de analistas de negócios designada para redesenhar o ecossistema do TJ-CE documentou inicialmente os requisitos funcionais do novo portal da transparência adotando um padrão sintático conversacional predefinido: 'Como um [papel do ator], eu preciso/quero [ação pretendida] para que [valor ou benefício de negócio esperado]'. Essa estrutura frasal compacta desloca o foco restrito da documentação técnica extensa em favor de evidenciar rapidamente a perspectiva legítima de valor gerado para o usuário final, servindo tipicamente como ponto de partida engajador para debates de refinamento (grooming). Essa técnica de especificação fluida e focada em valor contínuo é globalmente conhecida no viés ágil como:",
+    "options": {
+      "A": "Diagrama de Casos de Uso.",
+      "B": "Épico de Arquitetura Transacional.",
+      "C": "Documento de Especificação Suplementar.",
+      "D": "Critérios de Aceite Gherkin.",
+      "E": "História de Usuário (User Story)."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito: E) Histórias de Usuário ou User Stories (Alternativa B) constituem o formato padrão adotado pelos métodos ágeis (XP, Scrum) para elicitar e documentar requisitos negociais de maneira ágil, concisa e orientada à perspectiva do usuário focado no valor de negócio entregue. O formato clássico (As a... I want to... So that...) traduz diretamente essa filosofia empírica."
+  },
+  {
+    "id": 8,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Inglês Técnico - Falso Cognato",
+    "context": "Especificação de Software.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de arquitetura do TJ-CE está analisando os requisitos de um software de prateleira (COTS) estrangeiro. O manual indica: \"The system provides a robust library to parse the records and will automatically procure missing sensible data from the legacy environment.\" Para definir o diagnóstico de viabilidade da ferramenta, o analista deve traduzir \"library\", \"parse\", \"records\", \"procure\" e \"sensible\", correta e respectivamente, como:",
+    "options": {
+      "A": "Biblioteca; analisar sintaticamente; registros; obter; sensato.",
+      "B": "Livraria; passar; recordes; procurar; sensível.",
+      "C": "Biblioteca; dividir; gravações; processar; sensível.",
+      "D": "Arquivo; converter; currículos; garantir; perceptível.",
+      "E": "Livraria; compilar; relatórios; procurar; sensato."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito real: A) 'Library' é biblioteca (de código), não livraria (bookstore). 'Parse' significa analisar sintaticamente. 'Records' são registros do banco de dados, não recordes. 'Procure' é obter, adquirir, não 'procurar' (search). 'Sensible' traduz-se como sensato ou útil/lógico, sendo um falso cognato para sensível (sensitive). A alternativa B destrincha perfeitamente as pegadinhas semânticas."
+  },
+  {
+    "id": 9,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Inglês Técnico - Falso Cognato",
+    "context": "Comunicação de Indisponibilidade na Nuvem.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O provedor de nuvem do TJ-CE enviou um aviso sobre um incidente de infraestrutura: \"We apologize for the delay. The primary node experienced a severe hazard. A seasoned engineer is attending the issue to resume operations shortly.\" Qual é o diagnóstico do problema relatado, considerando a tradução correta dos falsos cognatos \"delay\", \"hazard\", \"seasoned\", \"attending\" e \"resume\"?",
+    "options": {
+      "A": "Demora; acaso; sazonal; assistindo ao; resumir.",
+      "B": "Atraso; risco; experiente; lidando com o; retomar.",
+      "C": "Atraso; azar; temperado; esperando o; resumir.",
+      "D": "Cancelamento; perigo; experiente; participando do; presumir.",
+      "E": "Adiamento; incidente; temporário; analisando o; consumir."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito real: B) 'Delay' é atraso ou demora. 'Hazard' significa risco ou perigo, não 'azar' (bad luck). 'Seasoned' significa experiente, veterano, e não 'sazonal' ou 'temperado'. 'Attending', no contexto de um problema (attending an issue), significa cuidar, lidar com, não 'assistir' visualmente. 'Resume' significa retomar (operações), não 'resumir' (summarize). A alternativa A reflete a tradução corretíssima do incidente."
+  },
+  {
+    "id": 10,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Segurança - ISO 27002 (Gestão de Ativos)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Os processos normativos consolidados pelas deliberações de segurança cibernética do CNJ em relação ao modelo do tribunal fixaram um cronograma para registrar com rigor, através do mapeamento integral das bases hospedadas ativas e inativas, as atribuições de titularidades e responsabilidades corporativas sobre os artefatos virtuais e bases armazenadas. As diretrizes ainda exigiram que tabelas sigilosas do conselho magistral portassem marcadores estáticos para encriptação impositiva com vedação ao reenvio por correspondências livres. No regramento pautado e delineado pelo compêndio da norma de código de práticas ISO/IEC 27002, tal controle analítico de classificação repousa preponderantemente sob os requisitos fixados para o domínio de:",
+    "options": {
+      "A": "Engenharia sistêmica predial de bloqueio aos dispositivos portáteis limítrofes.",
+      "B": "Procedimentos baseados na higienização contígua de dados na eliminação massiva.",
+      "C": "Alinhamento das diretrizes de controle unicamente em repositórios periciais de criptografia isolada.",
+      "D": "Gestão tática e acompanhamento continuado do ecossistema de gestão de ativos e classificação.",
+      "E": "Análise forense e perícia estática pós-invasão e exfiltração contida em incidentes restritos."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito: D) A correta é C. A norma centraliza toda elaboração e formalização da relação dos portadores proprietários associada à responsabilidade no preenchimento dos ritos de Classificação da Informação mediante o núcleo analítico de Gestão de Ativos. Controles complementares em esferas operacionais como gestão pontual de incidentes ou higienização pontual atrelada ao descarte material tangenciam unicamente instâncias e ações limitadas a estágios diferentes dos processos que exigem primariamente uma taxonomia prévia e catalogação obrigatória do inventário base organizacional reportado no cerne do problema gerencial em voga."
+  },
+  {
+    "id": 11,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Banco de Dados - NoSQL",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE iniciou um projeto de jurimetria para armazenar os grafos de conexões entre suspeitos, empresas de fachada e contas bancárias em investigações criminais de alta complexidade. O sistema precisa realizar consultas estruturais de travessia (hopping) para descobrir relacionamentos indiretos até o 5º nível de profundidade em tempo real. Considerando as famílias de bancos de dados NoSQL, a tecnologia mais adequada para modelar e consultar esta topologia de dados é:",
+    "options": {
+      "A": "Orientado a Documentos, utilizando coleções aninhadas de subdocumentos JSON.",
+      "B": "Orientado a Grafos, mapeando entidades como vértices e conexões como arestas.",
+      "C": "Família de Colunas, projetando chaves de partição e agrupamento temporais.",
+      "D": "Chave-Valor, empregando tabelas hash em memória distribuída.",
+      "E": "Orientado a Séries Temporais, rastreando eventos sequenciais ininterruptos."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito: B) A alternativa D (Orientado a Grafos) é a tecnologia certa. Bancos em grafos (como o Neo4j) são otimizados especificamente para conectar nós (vértices) via relacionamentos (arestas), tornando travessias profundas (como encontrar contatos em comum no 5º grau) extremamente rápidas. Em bases relacionais ou outros NoSQL, essas travessias exigem JOINs ou buscas em aplicação complexas e lentas."
+  },
+  {
+    "id": 12,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Cálculo de Sub-redes IPv4 (CIDR)",
+    "context": "Migração de telefonia IP em comarca do interior.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma comarca remota do TJ-CE está reestruturando sua infraestrutura para suportar a nova solução de telefonia IP. O roteador de borda do fórum recebeu a alocação do bloco 192.168.100.0/26. A equipe de engenharia foi instruída a realizar o subnetting dividindo esse bloco em exatamente quatro sub-redes de mesmo tamanho, destinadas à administração, público, telefonia e IoT, nesta exata ordem. Após a segmentação, o administrador precisa configurar as políticas de firewall de roteamento. Qual é o endereço de broadcast da sub-rede de telefonia?",
+    "options": {
+      "A": "192.168.100.31.",
+      "B": "192.168.100.47.",
+      "C": "192.168.100.48.",
+      "D": "192.168.100.63.",
+      "E": "192.168.100.127."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito real: B) A correta é a [B]. O bloco inicial é um /26, que comporta 64 IPs (0 a 63). Para dividir em 4 sub-redes idênticas, tomam-se emprestados mais 2 bits para a rede (2^2 = 4), alterando a máscara para /28. Cada segmento /28 possui 16 IPs (14 úteis). As redes formadas são: Administração (rede .0 a broadcast .15), Público (rede .16 a broadcast .31), Telefonia (rede .32 a broadcast .47) e IoT (rede .48 a broadcast .63). O broadcast da terceira rede é 192.168.100.47. A alternativa A traz o broadcast da 2ª sub-rede. A alternativa C traz o ID de rede da 4ª sub-rede. A alternativa D é o broadcast da 4ª sub-rede (e do bloco original /26). A alternativa E reflete o broadcast de um prefixo /25 distinto."
+  },
+  {
+    "id": 13,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Cabeamento NBR 14565",
+    "context": "Certificação e auditoria de enlaces ópticos e de cobre.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao auditar a certificação dos novos enlaces de par trançado instalados na Secretaria do TJ-CE, o laudo reprovou um segmento de cabeamento U/UTP em razão de interferência eletromagnética cruzada. O relatório técnico atesta falha no teste que mensura o ruído gerado por um par transmissor e indesejavelmente captado por um par receptor adjacente contido dentro do mesmo cabo. Essa captação, que culminou na falha da certificação, foi medida e detectada exatamente na mesma extremidade do cabo na qual o sinal de teste foi injetado pelo equipamento certificador. Qual parâmetro normativo de certificação reflete diretamente esta aferição?",
+    "options": {
+      "A": "Atraso de Propagação (Propagation Delay).",
+      "B": "FEXT (Far-End Crosstalk).",
+      "C": "Perda de Retorno (Return Loss).",
+      "D": "NEXT (Near-End Crosstalk).",
+      "E": "Atenuação (Insertion Loss)."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito real: D) A correta é a [A]. O termo NEXT (Near-End Crosstalk) significa diafonia na extremidade próxima. É o teste que mensura a quantidade de sinal de um par transmissor que vaza eletromagneticamente para os pares vizinhos no mesmo cabo, sendo a intensidade do vazamento lida na mesma extremidade onde o sinal fonte é originado (junto ao conector local). A alternativa B (FEXT) mede a diafonia lida na extremidade remota (oposta à injeção do sinal). A alternativa C mede o sinal que reflete de volta ao transmissor devido a descasamentos de impedância ao longo do cabo. A D afere o tempo que o sinal leva para atravessar a mídia física. A E (Perda de inserção/Atenuação) afere a perda bruta de energia do sinal ao longo de todo o percurso devido à resistência térmica e características dielétricas."
+  },
+  {
+    "id": 14,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Segurança - Controle de Acessos ABAC x RBAC",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Buscando sanar lacunas perigosas da herança monolítica do Tribunal alavancada pela virtualização forçada decorrente do teletrabalho maciço, o setor de engenharia cibernética efetuou o descarte pragmático das autorizações condicionadas singularmente e verticalmente sob papéis genéricos do banco atrelados às funções civis do operador na corte. O novo filtro dinâmico orquestrado nos repositórios valida em uníssono, para cada disparo assíncrono de manipulação de metadados dos autos por um usuário logado, o seu local exato atrelado em rede paralela via telemetria, seu grupo laboral, e o estágio do horário de atendimento judicial da referida comarca, impedindo sessões ativas noturnas externas na nuvem. Tal paradigma restritivo de concessões baseada em múltiplas dimensões implementa conceitualmente o controle de acesso do tipo:",
+    "options": {
+      "A": "Baseado na centralidade de atribuições de Papéis (RBAC).",
+      "B": "Direcionado com checagem fluida focado nativamente na identificação de Atributos (ABAC).",
+      "C": "Discricionário restritivo derivado dos criadores originais do arquivo e nódulo (DAC).",
+      "D": "Mandatório com filtragem vertical em blocos fixos e hierarquias em arcos (MAC).",
+      "E": "Mútuo atrelado unicamente e restritamente a concessões via protocolos de autenticação remota e rede aberta (TACACS/VPN)."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito: B) A correta é D. Modelos baseados puramente no somatório complexo ou composição fluida de parâmetros (atributos estáticos e dinâmicos do recurso solicitado, do operador solicitante, bem como restrições climáticas, temporais ou de geolocalização exata da requisição efetuada e da sua latência atrelada) descrevem pontualmente as soluções de ABAC. Soluções focadas puramente no cargo gerencial engessam-se ao RBAC clássico que o próprio enunciado diz que o tribunal preteriu; Controles fixos baseados apenas no produtor original de criação limitam-se ao descopo DAC tradicional."
+  },
+  {
+    "id": 15,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Banco de Dados - BI",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A implantação bem-sucedida do Data Warehouse do TJ-CE exigiu que os dados brutos extraídos do PJe (banco transacional PostgreSQL) e do sistema de RH (tabelas e planilhas desconexas) fossem higienizados rigorosamente, padronizados para garantir uniformidade em formatos de data e caracteres, e sumarizados tecnicamente antes de serem persistidos no repositório analítico definitivo. O conjunto de ferramentas corporativas responsável por orquestrar essas três etapas indissociáveis do fluxo de dados é representado pela sigla técnica:",
+    "options": {
+      "A": "OLTP (Online Transaction Processing).",
+      "B": "ETL (Extract, Transform, Load).",
+      "C": "ERP (Enterprise Resource Planning).",
+      "D": "CRM (Customer Relationship Management).",
+      "E": "MDM (Master Data Management)."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito: B) ETL (Extração, Transformação e Carga) é o processo estrutural na arquitetura de Business Intelligence que viabiliza a coleta de dados de diversas fontes (Extração), sua limpeza, harmonização e cálculos (Transformação) e sua inserção final no Data Warehouse ou Data Mart (Carga), garantindo que os dados analíticos sejam consistentes e integrados (Alternativa B)."
+  },
+  {
+    "id": 16,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "SOLID - Liskov Substitution Principle",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No sistema de gestão de depósitos de bens apreendidos do TJ-CE, a classe 'VeiculoSucateado' foi codificada como subclasse da classe base 'BemMovel'. A superclasse exige a implementação do método obrigatório 'movimentarParaPatio()'. No entanto, a classe derivada não possui capacidade de tração, forçando os desenvolvedores a implementar o método lançando permanentemente a exceção 'OperacaoNaoSuportadaException'. Essa anomalia estrutural, que quebra as expectativas dos clientes polimórficos, infringe frontalmente o preceito do:",
+    "options": {
+      "A": "Princípio da Substituição de Liskov.",
+      "B": "Princípio da Responsabilidade Única.",
+      "C": "Princípio Aberto/Fechado.",
+      "D": "Princípio da Segregação de Interfaces.",
+      "E": "Princípio da Inversão de Dependência."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito: A) A correta é D. O Liskov Substitution Principle (LSP) dita que uma classe derivada deve ser substituível pela sua classe base em todos os fluxos de operação sem corromper a corretude do software. Retirar lógicas essenciais ou lançar exceções não contratadas ao sobrescrever os métodos violam as pré e pós-condições matemáticas que justificam a presença da herança na topologia de classes. As demais opções do SOLID abordam outras esferas de separação de código que não a compatibilidade estrita em hierarquias polimórficas."
+  },
+  {
+    "id": 17,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Python - Decorators",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE desenvolveu uma API RESTful em Python para consultas processuais públicas. Foi requisitada a inclusão de uma funcionalidade de auditoria em todos os endpoints de consulta, para registrar o tempo de execução e o IP do usuário, sem alterar o código de negócio interno de cada função. O mecanismo da linguagem Python mais adequado para envolver as funções alvo, injetando o comportamento de log de forma limpa e modular antes e depois da execução original, é o uso de:",
+    "options": {
+      "A": "Decoradores (Decorators).",
+      "B": "Gerenciadores de contexto nativos.",
+      "C": "Compreensões de lista compostas.",
+      "D": "Metaclasses de auditoria.",
+      "E": "Funções geradoras com yield."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito: A) A correta é D. Decorators em Python recebem outra função e modificam ou estendem seu comportamento, injetando códigos antes, depois ou em substituição à chamada. São a estrutura sintática canônica para Cross-cutting Concerns (como logs e autenticação) em Python. Gerenciadores de contexto (with) alocam escopo de blocos e recursos. Metaclasses modificam o comportamento da criação da classe inteira, não agindo pontualmente como envoltórios simples de funções."
+  },
+  {
+    "id": 18,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Resoluções CNJ (PDPJ-Br)",
+    "context": "Migração do ecossistema processual estadual.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está reformulando seus sistemas internos para a completa adequação técnica à Plataforma Digital do Poder Judiciário (PDPJ-Br), instituída formalmente pela Resolução CNJ nº 335/2020. A diretriz primordial da normatização impõe o abandono progressivo de silos tecnológicos locais isolados em favor de um ambiente integrado nacionalmente. Segundo as exigências da Resolução para novos sistemas desenvolvidos pelo judiciário brasileiro, qual padrão arquitetural e de distribuição de software deve ser compulsoriamente adotado?",
+    "options": {
+      "A": "Arquitetura de cliente-servidor espessa e distribuição via pacotes binários offline para tribunais.",
+      "B": "Arquitetura monolítica em camadas e hospedagem centralizada em infraestrutura on-premise do CNJ.",
+      "C": "Arquitetura baseada em microsserviços e disponibilização em um marketplace colaborativo em nuvem.",
+      "D": "Arquitetura orientada a eventos isolada e integração exclusiva por barramentos de serviços estaduais.",
+      "E": "Arquitetura peer-to-peer descentralizada e execução autônoma nos dispositivos locais dos magistrados."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito real: C) A correta é a [A]. O núcleo tecnológico da Resolução CNJ nº 335/2020 estabelece a consolidação do sistema processual em nuvem, baseando-se explicitamente em uma arquitetura de microsserviços. O objetivo é que cada solução ou módulo desenhado por um tribunal seja acoplado e exposto através de um ambiente em nuvem unificado da PDPJ-Br, estruturado como um verdadeiro 'marketplace' colaborativo, permitindo que outros tribunais reutilizem funcionalidades sem duplicar código. A alternativa B descreve o paradigma legado (sistemas monolíticos e on-premise centralizado, que a PDPJ visa substituir). A alternativa D limita a integração a esferas estaduais (ESB local), ferindo a vocação nacional em nuvem do marketplace. As alternativas C e E trazem cenários incompatíveis com as diretrizes e padrões web modernos requeridos pela plataforma governamental."
+  },
+  {
+    "id": 19,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Engenharia de Software - BPMN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O diagrama BPMN de compra de novos equipamentos de TI do TJ-CE apresenta um grande contêiner retangular principal rotulado como 'Tribunal de Justiça', subdividido internamente em faixas horizontais menores nomeadas 'Secretaria de TI', 'Diretoria de Compras' e 'Gabinete da Presidência'. As tarefas processuais são graficamente posicionadas dentro dessas faixas indicando claramente o departamento responsável pela execução. Na nomenclatura formal e técnica do BPMN, o retângulo contêiner e as faixas internas são denominados, respectivamente:",
+    "options": {
+      "A": "Grupo Estrutural e Anotações.",
+      "B": "Lane e Pools.",
+      "C": "Subprocesso e Atividades.",
+      "D": "Data Store e Data Objects.",
+      "E": "Pool e Lanes."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito: E) No BPMN 2.0, um Participante é representado graficamente por um Pool (Piscina). Para representar os papéis ou setores internos responsáveis pelas atividades dentro desse Participante, o Pool pode ser fatiado horizontalmente ou verticalmente em subdivisões chamadas Lanes (Raias). Portanto, o retângulo maior é a Pool e as divisões são as Lanes (Alternativa A)."
+  },
+  {
+    "id": 20,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Segurança - Criptografia Assimétrica e Assinatura",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao peticionar eletronicamente através do e-SAJ, o advogado utiliza um token USB criptográfico para garantir a autenticidade e o não-repúdio da peça processual enviada aos juízes. O certificado digital ICP-Brasil embarcado realiza a operação sobre o resumo criptográfico do arquivo usando um modelo de chaves não compartilhadas. Nesse cenário exato de geração da assinatura digital em documentos, o ateste tecnológico de que a informação foi efetivamente autorizada pela parte remetente é efetuado através do uso da:",
+    "options": {
+      "A": "Chave pública da infraestrutura emissora do certificado.",
+      "B": "Chave privada do usuário emissor da petição.",
+      "C": "Chave pública do destinatário de destino do fórum.",
+      "D": "Chave simétrica de sessão trocada previamente.",
+      "E": "Chave privada do servidor receptor do tribunal."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito: B) A correta é D. Na assinatura digital que objetiva não repúdio e autenticação irrevogável do autor, o emissor aplica sua chave privada exclusiva sobre o hash do arquivo. Qualquer receptor utilizando a chave pública correspondente do autor assegura a origem exata. O uso da chave pública do destinatário (C) é empregado em algoritmos assimétricos apenas quando o objetivo for prover confidencialidade para o tráfego restrito a tal destinatário e não a capacidade de assinatura atestando a emissão."
+  },
+  {
+    "id": 21,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "COBIT 2019 - Domínios de Gerenciamento",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para atender a uma recomendação estratégica, o TJ-CE decidiu implementar o framework COBIT 2019 visando aprimorar o gerenciamento de suas soluções de TI. O foco inicial do projeto será estruturar o gerenciamento da inovação corporativa, a definição formal do orçamento anual de TI e a identificação de riscos associados à adoção de novos sistemas de biometria. Na estrutura central do modelo COBIT 2019, esses objetivos específicos de gerenciamento (inovação, finanças/orçamento e risco corporativo) estão concentrados no domínio:",
+    "options": {
+      "A": "Avaliar, Dirigir e Monitorar (EDM).",
+      "B": "Construir, Adquirir e Implementar (BAI).",
+      "C": "Alinhar, Planejar e Organizar (APO).",
+      "D": "Entregar, Servir e Suportar (DSS).",
+      "E": "Monitorar, Avaliar e Analisar (MEA)."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito real: C) O domínio APO (Alinhar, Planejar e Organizar) foca no direcionamento estratégico e na preparação da infraestrutura corporativa de TI, contendo objetivos relacionados a inovação, portfólio, orçamento/custos, riscos e recursos humanos. A alternativa 'A' refere-se à governança, exercida pelo conselho (Alta Direção). As alternativas C e D focam na entrega técnica e na operação contínua, respectivamente."
+  },
+  {
+    "id": 22,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Engenharia de Software - Métodos Ágeis",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No desenvolvimento de um microserviço crítico para a emissão de mandados de prisão, a equipe do TJ-CE adotou uma prática ágil onde dois programadores compartilham a mesma estação de trabalho. Um atua como 'piloto', focado na digitação e tática do código, enquanto o outro atua como 'navegador', revisando cada linha inserida em tempo real e avaliando o design estratégico. Essa técnica estruturada, fortemente difundida pelo Extreme Programming (XP), é denominada:",
+    "options": {
+      "A": "Programação em Par (Pair Programming).",
+      "B": "Desenvolvimento Orientado a Testes (TDD).",
+      "C": "Refatoração Contínua (Continuous Refactoring).",
+      "D": "Propriedade Coletiva de Código (Collective Code Ownership).",
+      "E": "Integração Contínua (Continuous Integration)."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito: A) A alternativa E define perfeitamente o Pair Programming (Programação em Par). Essa prática do XP melhora drasticamente a qualidade do código com revisão imediata, difusão de conhecimento e diminuição da dependência de um único indivíduo. TDD, Refatoração e CI são outras práticas ágeis/XP, mas com escopos técnicos totalmente distintos."
+  },
+  {
+    "id": 23,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Resoluções CNJ (PDPJ-Br)",
+    "context": "Governança e reaproveitamento de sistemas.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O comitê de Tecnologia da Informação do TJ-CE delibera sobre a estratégia de licenciamento a ser aplicada a um inovador módulo de inteligência artificial gerado por seus quadros técnicos, o qual será acoplado à PDPJ-Br para automação de triagem. A Resolução CNJ nº 335/2020 define princípios estritos sobre o modelo de compartilhamento e governança do código-fonte concebido com recursos do Poder Judiciário. De acordo com o regramento da plataforma, qual diretriz deve fundamentar o licenciamento desta solução?",
+    "options": {
+      "A": "As soluções integram um repositório nacional sob o modelo de software livre ou código aberto voltado à colaboração intragovernamental.",
+      "B": "As soluções permanecem sob propriedade intelectual exclusiva do tribunal criador com licenciamento oneroso aos demais entes.",
+      "C": "As soluções são compulsoriamente submetidas ao registro de sigilo industrial pelo CNJ para evitar exposição de vulnerabilidades perimetrais.",
+      "D": "As soluções tornam-se propriedade privada de empresas de nuvem homologadas que assumem a responsabilidade da manutenção técnica.",
+      "E": "As soluções exigem o pagamento indireto de royalties ou repasses orçamentários mútuos para subsidiar custos locais de desenvolvimento."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito real: A) A correta é a [A]. O art. 13 da Resolução CNJ nº 335/2020 é incisivo ao dispor que os sistemas da PDPJ-Br e os módulos desenvolvidos pelos tribunais serão criados preferencialmente com tecnologias de código aberto (Open Source). As soluções comporão um repositório nacional compartilhado, consolidando a colaboração e assegurando que um desenvolvimento feito por um tribunal passe a integrar o patrimônio tecnológico de todo o judiciário brasileiro, evitando retrabalhos. As alternativas B e E desvirtuam essa colaboração ao sugerirem venda, licenciamento oneroso ou pagamento de royalties entre órgãos públicos federais e estaduais. A alternativa C (sigilo) opõe-se ao princípio da transparência e do modelo de desenvolvimento aberto da plataforma. A alternativa D propõe a transferência ilegal de patrimônio público em forma de código-fonte para corporações privadas."
+  },
+  {
+    "id": 24,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "PMBOK 7ª Edição - Princípios de Gerenciamento",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Escritório de Governança de Projetos (EGP) do TJ-CE é responsável por orientar desde a aquisição rotineira de licenças comerciais até o desenvolvimento complexo de plataformas em contêineres e infraestrutura como código. Devido a essa alta disparidade, a presidência do EGP emitiu uma resolução proibindo o uso de metodologias padronizadas e conjuntos engessados de documentos para todas as iniciativas do portfólio. Os gerentes agora devem dimensionar e ajustar os processos operacionais, métodos e modelos às características exclusivas de governança e complexidade técnica de cada frente. No Guia PMBOK 7, essa flexibilização metodológica baseada no ambiente reflete o princípio de:",
+    "options": {
+      "A": "Otimizar as respostas aos riscos.",
+      "B": "Criar um ambiente colaborativo da equipe de projeto.",
+      "C": "Adaptar com base no contexto.",
+      "D": "Navegar na complexidade.",
+      "E": "Abraçar a adaptabilidade e a resiliência."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito real: C) O princípio 'Adaptar com base no contexto' (Tailoring) postula que projetos são exclusivos e não existe abordagem única ideal. Os processos, estruturas de governança e ferramentas devem ser ajustados às demandas e ao ambiente de cada iniciativa para maximizar os resultados. A alternativa 'E' foca na capacidade da equipe de absorver impactos e recuperar-se de falhas sistêmicas."
+  },
+  {
+    "id": 25,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Português - Transposição de Voz Verbal",
+    "context": "Manual de Resposta a Incidentes de Segurança.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Comitê de Segurança da Informação do TJ-CE publicou uma diretriz sobre a mitigação de incidentes. O texto informa: \"Os analistas de segurança aplicariam os patches de correção nos servidores de banco de dados imediatamente após a detecção da vulnerabilidade.\" Qual alternativa apresenta o diagnóstico correto da transposição desta frase para a voz passiva analítica, mantendo a correlação de tempos e modos verbais?",
+    "options": {
+      "A": "Tinha sido aplicados os patches de correção nos servidores de banco de dados pelos analistas de segurança imediatamente após a detecção da vulnerabilidade.",
+      "B": "Os patches de correção nos servidores de banco de dados foram aplicados pelos analistas de segurança imediatamente após a detecção da vulnerabilidade.",
+      "C": "Aplicar-se-iam os patches de correção nos servidores de banco de dados imediatamente após a detecção da vulnerabilidade.",
+      "D": "Os patches de correção nos servidores de banco de dados serão aplicados pelos analistas de segurança imediatamente após a detecção da vulnerabilidade.",
+      "E": "Os patches de correção nos servidores de banco de dados seriam aplicados pelos analistas de segurança imediatamente após a detecção da vulnerabilidade."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito real: E) A: Correta. O verbo ativo 'aplicariam' (futuro do pretérito do indicativo) é transposto para a locução verbal passiva 'seriam aplicados', mantendo o mesmo tempo e modo, e concordando em gênero e número com o novo sujeito paciente 'Os patches'. B: Errada. O verbo 'foram' está no pretérito perfeito, quebrando a correlação temporal. C: Errada. Esta é a voz passiva sintética ou pronominal, e o enunciado exige expressamente a voz passiva analítica. D: Errada. 'Serão' está no futuro do presente, alterando o tempo verbal original. E: Errada. Uso incorreto da locução ('tinha sido aplicados'). O correto seria 'tinham sido aplicados', que representaria o pretérito mais-que-perfeito, tempo não correspondente ao original."
+  },
+  {
+    "id": 26,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Java - Exceções",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em um microsserviço Java responsável por integrar os sistemas do TJ-CE com bancos de dados de órgãos externos, uma falha de conexão de rede intermitente gera uma exceção de I/O. A diretriz de arquitetura estipula que falhas de infraestrutura não devem forçar os métodos de domínio a declarar cláusulas 'throws' de forma generalizada, e sim encapsular essas ocorrências para interrupção imediata de fluxo, com resposta genérica via Global Exception Handler. Para implementar essa arquitetura, a exceção de rede deve ser convertida e lançada como:",
+    "options": {
+      "A": "Exceção verificada (Checked Exception).",
+      "B": "Exceção não verificada (Unchecked Exception).",
+      "C": "Erro de Máquina Virtual (VirtualMachineError).",
+      "D": "Exceção de Fluxo Estático (Static Flow Exception).",
+      "E": "Alerta de tempo de compilação (Compile-time Warning)."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito: B) A correta é C. O padrão contemporâneo em Java é encapsular exceções de infraestrutura dentro de RuntimeExceptions (Unchecked Exceptions). Isso libera as camadas superiores da obrigatoriedade do 'throws' ou blocos try/catch, deixando o tratamento para o controlador central. A opção A (Checked) exigiria cláusulas throws ao longo de toda a cadeia de chamadas. Opções B, D e E utilizam termos inadequados à arquitetura solicitada."
+  },
+  {
+    "id": 27,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Cálculo de Sub-redes IPv4 (CIDR)",
+    "context": "Configuração de regras de firewall de segmento local.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um analista de rede configurou o IP 10.50.75.130/28 na interface principal do firewall que protege o parque computacional do Fórum Clóvis Beviláqua. As regras de inspeção perimetral exigem a definição exata do endereço de rede e do endereço de broadcast deste segmento para bloqueio de movimentação lateral. Quais são, respectivamente, os endereços de rede e de broadcast da sub-rede à qual a interface pertence?",
+    "options": {
+      "A": "Rede 10.50.75.128 e Broadcast 10.50.75.159.",
+      "B": "Rede 10.50.75.128 e Broadcast 10.50.75.143.",
+      "C": "Rede 10.50.75.0 e Broadcast 10.50.75.255.",
+      "D": "Rede 10.50.75.130 e Broadcast 10.50.75.144.",
+      "E": "Rede 10.50.75.120 e Broadcast 10.50.75.135."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito real: B) A correta é a [A]. O prefixo /28 designa 4 bits para hosts, criando blocos de 16 IPs (2^4 = 16). Para encontrar a rede do IP 10.50.75.130, divide-se 130 por 16 (resultando no bloco que começa em 128, pois 16 x 8 = 128). Assim, a rede inicia no 10.50.75.128. Somando-se os 15 endereços subsequentes, atinge-se o limite do bloco no 10.50.75.143, que figura como o broadcast. A falsa B apresenta o broadcast da próxima sub-rede (bloco seguinte, que termina em .159). A falsa C representa os parâmetros de uma sub-rede inteira /24. A D adota o próprio IP do host como rede e a E calcula os blocos de forma incorreta."
+  },
+  {
+    "id": 28,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Banco de Dados - NoSQL",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O tribunal adotou o banco de dados MongoDB para modernizar o armazenamento dos despachos eletrônicos. Diferente dos bancos relacionais tradicionais que demandam esquemas rígidos e tabelas normalizadas, os novos despachos podem conter metadados flexíveis, estruturas aninhadas e quantidades variadas de atributos incorporados no mesmo registro sem a necessidade de comandos de migração estrutural (ALTER TABLE) prévios. O paradigma arquitetural adotado pelo MongoDB que permite essa maleabilidade na persistência de dados é o modelo Orientado a:",
+    "options": {
+      "A": "Família de Colunas.",
+      "B": "Documentos JSON/BSON.",
+      "C": "Chave-Valor.",
+      "D": "Grafos de Propriedades.",
+      "E": "Séries Temporais Hierárquicas."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito: B) O MongoDB é o mais célebre representante da categoria NoSQL Orientado a Documentos (Alternativa B). Ele armazena dados em estruturas de tipo JSON (internamente BSON), permitindo esquemas maleáveis onde cada documento na mesma coleção pode ter campos e estruturas hierárquicas completamente diferentes."
+  },
+  {
+    "id": 29,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Java - Streams API",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na emissão de relatórios gerenciais do TJ-CE, a aplicação Java precisa processar uma lista contendo milhões de instâncias da classe 'ProcessoJulgado'. O objetivo é filtrar apenas os processos oriundos da comarca de 'Fortaleza', extrair o valor das indenizações concedidas e calcular o somatório total desses valores. Para realizar essa operação de forma declarativa e com processamento em paralelo, mitigando gargalos de performance, o desenvolvedor Java deve utilizar a seguinte sequência de métodos da Streams API:",
+    "options": {
+      "A": "parallelStream(), map(), filter() e reduce().",
+      "B": "stream().parallel(), filter(), map() e reduce().",
+      "C": "stream(), filter(), parallelMap() e sum().",
+      "D": "parallel(), filter(), mapToDouble() e count().",
+      "E": "forkJoinStream(), filter(), extract() e aggregate()."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito: B) A correta é B. Na Streams API do Java, chama-se stream().parallel() na coleção, aplica-se filter() para manter apenas a comarca desejada, map() para extrair os valores, e reduce() para agregar o somatório. A alternativa A inverte a ordem natural e otimizada das operações operando o map antes do filter de maneira custosa; C cria métodos inexistentes como parallelMap(); D utiliza count() que conta a quantidade de itens ao invés de somar os valores; E inventa funções que não pertencem à API."
+  },
+  {
+    "id": 30,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "PMBOK 7ª Edição - Domínios de Desempenho",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Diretoria de Projetos do TJ-CE adotou os preceitos do Guia PMBOK 7ª Edição para conduzir o desenvolvimento de um novo aplicativo de autosserviço para advogados. Contrariando os normativos anteriores do tribunal, o gerente do projeto abriu mão do mapeamento exaustivo de escopo na fase inicial. Em vez disso, estabeleceu cadências iterativas curtas e aplicou um modelo adaptativo focado na reavaliação constante do produto mediante o feedback contínuo da Ordem dos Advogados (OAB). Sob a ótica do PMBOK 7, essa reestruturação na forma de conduzir a evolução do produto evidencia foco prático no Domínio de Desempenho do(a):",
+    "options": {
+      "A": "Planejamento.",
+      "B": "Partes Interessadas.",
+      "C": "Entrega.",
+      "D": "Trabalho do Projeto.",
+      "E": "Abordagem de Desenvolvimento e Ciclo de Vida."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito real: E) O Domínio de 'Abordagem de Desenvolvimento e Ciclo de Vida' aborda diretamente a escolha entre abordagens preditivas, adaptativas (ágeis) ou híbridas, além de definir a cadência das entregas e as iterações do ciclo de vida. A alternativa 'A' trata da organização das atividades de esforço e custo. O cenário foca explicitamente na mudança do modelo de ciclo de vida do projeto."
+  },
+  {
+    "id": 31,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Banco de Dados - SQL",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um analista de banco de dados do TJ-CE precisa extrair um relatório consolidado envolvendo as tabelas `Magistrado` e `Vara`. A exigência da Corregedoria é listar o nome de todos os magistrados cadastrados, independentemente de estarem ou não lotados em uma vara no momento da consulta, acompanhados do nome da respectiva vara, caso possuam lotação. Magistrados sem vara associada devem exibir valor nulo nessa coluna. O comando SQL com o operador de junção adequado para essa extração é:",
+    "options": {
+      "A": "SELECT M.nome, V.nome FROM Magistrado M INNER JOIN Vara V ON M.id_vara = V.id;",
+      "B": "SELECT M.nome, V.nome FROM Magistrado M CROSS JOIN Vara V;",
+      "C": "SELECT M.nome, V.nome FROM Magistrado M RIGHT OUTER JOIN Vara V ON M.id_vara = V.id;",
+      "D": "SELECT M.nome, V.nome FROM Magistrado M FULL OUTER JOIN Vara V ON M.id_vara = V.id;",
+      "E": "SELECT M.nome, V.nome FROM Magistrado M LEFT OUTER JOIN Vara V ON M.id_vara = V.id;"
+    },
+    "answer": "E",
+    "explanation": "(Gabarito: E) A junção que preserva todos os registros da tabela da esquerda (Magistrado), preenchendo com nulos a correspondência inexistente da tabela da direita (Vara), é o LEFT OUTER JOIN (Alternativa B). O INNER JOIN (A) traria apenas os que possuem vara. O RIGHT JOIN (C) traria todas as varas e apenas magistrados vinculados. O FULL JOIN (D) traria tudo de ambas. O CROSS JOIN (E) gera um produto cartesiano."
+  },
+  {
+    "id": 32,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Acessibilidade Digital - Multimídia",
+    "context": "Plataforma de Audiências Virtuais.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Estado do Ceará implantou um novo sistema de gravação e transmissão de audiências virtuais ao vivo para aumentar a transparência processual. Contudo, entidades representativas apontaram que a plataforma não está aderente à NBR 17225:2025 no que diz respeito ao acesso por pessoas com deficiência auditiva profunda e surdos sinalizados. Qual o diagnóstico e a ferramenta adequada para adequação imediata à referida norma técnica?",
+    "options": {
+      "A": "Disponibilização de transcrição textual automática e estática, publicada na íntegra em até vinte e quatro horas após o término da transmissão de vídeo bidirecional.",
+      "B": "Ampliação da taxa de quadros (framerate) do reprodutor de mídia para sessenta quadros por segundo, garantindo melhor fluidez da leitura labial automatizada.",
+      "C": "Substituição de todos os vídeos de audiências por documentos PDF assinados digitalmente e otimizados para sintetizadores de voz de alto desempenho.",
+      "D": "Inserção de alertas em código Morse através de vibrações em dispositivos móveis homologados, notificando as decisões proferidas pelo magistrado em tempo real.",
+      "E": "Fornecimento de legendas ocultas (closed captions) sincronizadas e janelas de intérprete de Língua Brasileira de Sinais (Libras) integradas ao reprodutor de vídeo ao vivo."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito real: E) O acesso para surdos sinalizados e pessoas com deficiência auditiva profunda em transmissões síncronas (vídeo ao vivo) exige, invariavelmente, o fornecimento de legendas ocultas (closed captions) geradas em tempo real e uma janela com intérprete de Libras. Transcrições pós-evento (alternativa A) não atendem à simultaneidade de audiências ao vivo. A alternativa B expõe o padrão normativo correto para mídias bidirecionais."
+  },
+  {
+    "id": 33,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Engenharia de Software - UML",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para auditar a complexa troca assíncrona de mensagens que ocorre entre a camada de apresentação do novo sistema e o webservice de validação biométrica do tribunal, um desenvolvedor analisou a documentação de arquitetura técnica buscando um diagrama da UML estritamente focado na ordenação cronológica temporal das interações sistêmicas. O artefato encontrado exibe linhas de vida verticais rastreando a duração da existência dos objetos em memória e setas bidirecionais horizontais ilustrando a exata sequência de invocações de métodos no tempo. O artefato descrito neste contexto de modelagem dinâmica de comunicação é o Diagrama de:",
+    "options": {
+      "A": "Classes Dinâmicas.",
+      "B": "Componentes Orquestrados.",
+      "C": "Sequência.",
+      "D": "Casos de Uso Executáveis.",
+      "E": "Implantação Integrada."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito: C) O Diagrama de Sequência é o diagrama comportamental da UML mais amplamente adotado para evidenciar as trocas de mensagens e invocações de métodos entre objetos ao longo do eixo do tempo, lido linearmente de cima para baixo. Suas marcações de Linhas de Vida (lifelines) e foco irrestrito na ordem cronológica de eventos casam perfeitamente com a descrição do enunciado (Alternativa D)."
+  },
+  {
+    "id": 34,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "SOLID - Single Responsibility Principle",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No código legado de gestão de subsídios de magistrados, a classe 'RelatorioPagamento' continha a lógica de cálculo tributário, o código de comunicação com o banco de dados e os métodos de renderização visual do formato PDF. A manutenção exigia que até pequenas mudanças no cabeçalho visual do PDF quebrassem os testes unitários da lógica matemática. A equipe de arquitetura fragmentou essa estrutura em três classes especializadas ('CalculadoraTributaria', 'RepositorioPagamento' e 'GeradorPdf'). Essa intervenção visou atender diretamente ao Princípio:",
+    "options": {
+      "A": "Da Substituição de Liskov.",
+      "B": "Da Inversão de Dependência.",
+      "C": "Da Responsabilidade Única.",
+      "D": "Da Segregação de Interfaces.",
+      "E": "Do Aberto/Fechado."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito: C) A correta é E. O Single Responsibility Principle (SRP) exige que um módulo tenha apenas uma razão (motivo) para ser modificado. Ao manter a lógica fiscal, a UI e os repositórios em um só local, havia três motivos para alterar a classe. A refatoração distribui responsabilidades limitando os focos de manutenção, eliminando o antipadrão da 'God Class'. As demais opções citam outros preceitos do SOLID, desassociados do problema exclusivo do acúmulo de funções tangenciais no mesmo componente."
+  },
+  {
+    "id": 35,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Fibras ópticas (Monomodo vs Multimodo)",
+    "context": "Degradação de sinal óptico metropolitano.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O monitoramento da rede óptica intermunicipal do TJ-CE detectou degradação acentuada do sinal em um enlace de fibra monomodo (OS2) de 60 km. O relatório técnico indica que pulsos de luz emitidos pelo laser estão se alargando temporalmente ao longo do trajeto por conta de diferentes comprimentos de onda viajarem em velocidades ligeiramente distintas, gerando interferência intersimbólica no receptor. Qual fenômeno óptico é estritamente responsável por essa degradação específica descrita no laudo?",
+    "options": {
+      "A": "Atenuação por macrocurvatura.",
+      "B": "Dispersão modal.",
+      "C": "Dispersão cromática.",
+      "D": "Espalhamento de Rayleigh.",
+      "E": "Absorção no núcleo dielétrico."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito real: C) A correta é a [A]. A dispersão cromática ocorre porque os feixes de luz provenientes do emissor (laser) nunca são perfeitamente puros em um único comprimento de onda. Como as diferentes frequências (cores/espectros) propagam-se a velocidades discretamente diferentes pelo vidro da fibra monomodo, o pulso sofre alargamento, causando interferência no receptor. Esse é o principal limitador de banda e distância na fibra monomodo. A falsa B descreve a dispersão modal, que só ocorre em fibras multimodo (onde a luz toma diferentes caminhos espaciais ou 'modos'). As opções C, D e E descrevem formas de perda de potência (atenuação), as quais reduzem a intensidade do sinal óptico (dB/km), mas não causam intrinsecamente o alargamento temporal do pulso descrito no enunciado."
+  },
+  {
+    "id": 36,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "ITIL v4 - Cadeia de Valor de Serviço",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Estado do Ceará (TJ-CE) iniciou um projeto de reestruturação de sua central de serviços de TI. O comitê diretor identificou que os atrasos na resolução de incidentes decorrem da falta de componentes de infraestrutura pré-aprovados e de gargalos na comunicação técnica com fornecedores externos. Para mitigar esse problema sob a ótica do framework ITIL v4, a equipe foi encarregada de otimizar a atividade específica da Cadeia de Valor de Serviço (SVC) responsável por garantir que os componentes de serviço estejam disponíveis no momento e na especificação adequados. A atividade da SVC que deve ser o alvo direto dessa otimização é:",
+    "options": {
+      "A": "Obter/Construir.",
+      "B": "Desenhar e Fazer Transição.",
+      "C": "Entregar e Suportar.",
+      "D": "Engajar.",
+      "E": "Melhorar."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito real: A) No ITIL v4, a atividade 'Obter/Construir' da Cadeia de Valor tem o propósito explícito de garantir que os componentes de serviço estejam disponíveis quando e onde forem necessários, atendendo às especificações acordadas. A alternativa 'B' (Desenhar e Fazer Transição) lida com a expectativa de custo e qualidade de serviços novos ou modificados. A 'C' trata do suporte e entrega no dia a dia. A 'D' gerencia o relacionamento com stakeholders."
+  },
+  {
+    "id": 37,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Português - Reescrita de Frases",
+    "context": "Documento de Arquitetura de Migração.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao planejar a migração do sistema legado para uma arquitetura de microsserviços no TJ-CE, o Arquiteto de Software escreveu: \"Os microsserviços, que serão implantados na nuvem pública, embora ofereçam maior escalabilidade, eles demandam um monitoramento mais rigoroso, posto que os gargalos de rede podem comprometer a disponibilidade.\" Para eliminar os vícios sintáticos e manter a correção gramatical e o sentido original, qual seria a reescrita adequada desse diagnóstico arquitetural?",
+    "options": {
+      "A": "Implantados na nuvem pública, os microsserviços oferecem maior escalabilidade, demandando, de outra parte, monitoramento mais rigoroso pelo risco de comprometimento da disponibilidade pelos gargalos de rede.",
+      "B": "Conquanto ofereçam maior escalabilidade, os microsserviços a serem implantados na nuvem pública demandam monitoramento mais rigoroso ante a possibilidade de os gargalos de rede comprometerem a disponibilidade.",
+      "C": "A despeito de oferecerem maior escalabilidade, a implantação dos microsserviços na nuvem pública demandam monitoramento mais rigoroso em face do comprometimento da disponibilidade por gargalos de rede.",
+      "D": "Os microsserviços a ser implantados na nuvem pública demandam, conquanto a maior escalabilidade, monitoramento mais rigoroso contra gargalos de rede que pode comprometer a disponibilidade.",
+      "E": "Implantados na nuvem pública, os microsserviços demandarão monitoramento mais rigoroso contra gargalos de rede com o intuito de não comprometer a disponibilidade, malgrado oferecem maior escalabilidade."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito real: B) A: Errada. O gerúndio 'demandando' enfraquece a relação adversativa primária e a expressão 'pelo risco' altera sutilmente a carga de certeza da oração adverbial original. B: Errada. Erro de concordância verbal. 'A implantação' é o núcleo do sujeito, exigindo o verbo no singular: 'demanda'. C: Correta. 'Conquanto' mantém o valor concessivo de 'embora'. O sujeito 'os microsserviços' concorda com 'demandam'. A oração causal 'posto que' foi elegantemente reduzida à locução prepositiva 'ante a possibilidade de', preservando a coesão sem vícios gramaticais. D: Errada. 'A ser implantados' está incorreto, o particípio/infinitivo com pronome/preposição pede plural 'a serem'. O verbo 'pode' está no singular, divergindo do antecedente 'gargalos' (plural). E: Errada. 'Malgrado' exige verbo no modo subjuntivo ('malgrado ofereçam', e não 'oferecem')."
+  },
+  {
+    "id": 38,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Python - Method Resolution Order (MRO)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O diagrama de blocos das dependências e hierarquias processuais criados em linguagem Python especifica que a nova classe 'DecisaoInterlocutoria' carrega as propriedades por múltipla ascendência estrutural tanto do ramo 'AtosDecisorios' quanto simultaneamente de 'PublicacoesDiario', sendo que os respectivos construtores derivam integralmente da base ancestral 'EventoProcessual'. Ao operar invocações em camadas de métodos com redundância ou sobreposição nessas arquiteturas do tipo 'Problema do Diamante', a interpretação sintática em tempo limpo determina e impõe a precedência funcional pautada em um sistema baseado no:",
+    "options": {
+      "A": "Mapeamento em grafo de dependências isoladas.",
+      "B": "Aninhamento sequencial forçado de importação dos módulos e métodos em uso léxico.",
+      "C": "Cálculo vetorial por proximidade dos construtores herdados do bloco primário.",
+      "D": "Mecanismo C3 de linearização rastreável associado ao atributo MRO.",
+      "E": "Esquema matricial focado na compilação antecipada da função de base superior."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito: D) A correta é B. Na semântica da linguagem em abordagens modernas de classes múltiplas e intercaladas, as execuções redundantes e a resolução dos chamamentos por árvore de instâncias seguem algoritmicamente as estipulações predeterminadas pela padronização C3 para mapeamento relacional determinístico de resolução de métodos e são lidos a qualquer momento no tuplo da função mro() ou dunder __mro__. As opções que tangenciam mapas vetoriais, proximidades temporais construtivas e aninhamento léxico estritamente temporal violam a mecânica unificada nativa na base compiladora CPython."
+  },
+  {
+    "id": 39,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Inglês Técnico - Falso Cognato",
+    "context": "Auditoria de Contratos de TI.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça precisa validar os termos de serviço (ToS) de uma nova ferramenta de monitoramento. Uma das cláusulas estabelece: \"The vendor requires a comprehensive notice before terminating the service, to avoid compromising the ultimate performance of the data fabric.\" Ao repassar essa diretriz arquitetural aos gestores, o Analista de TI deve interpretar \"comprehensive\", \"notice\", \"ultimate\" e \"fabric\" como:",
+    "options": {
+      "A": "Compreensível; notícia; último; fábrica.",
+      "B": "Restrita; nota; definitivo; estrutura.",
+      "C": "Abrangente; aviso prévio; final; malha.",
+      "D": "Compreensiva; notificação; recente; tecido.",
+      "E": "Completa; anotação; derradeiro; instalação."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito real: C) 'Comprehensive' significa abrangente e completo. 'Notice', no contexto contratual, é o aviso prévio ou notificação, não 'notícia' (news). 'Ultimate' significa final ou definitivo, nunca 'último' temporalmente (last). 'Fabric' traduz-se como malha, infraestrutura ou estrutura de rede/dados, não fábrica. A alternativa B captura a precisão jurídica e técnica da cláusula."
+  },
+  {
+    "id": 40,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Banco de Dados - BI",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de Business Intelligence do tribunal projeta um Data Warehouse para monitorar a produtividade das varas. O modelo dimensional centraliza os dados na tabela de fatos `Fato_Julgamento`, que se liga a tabelas de dimensões como `Dim_Magistrado`, `Dim_Tempo` e `Dim_Comarca`. Para reduzir o espaço de armazenamento e evitar anomalias de atualização, as tabelas de dimensões foram normalizadas, gerando subdimensões como `Dim_Municipio` e `Dim_Estado` ligadas hierarquicamente à `Dim_Comarca`. Esta topologia de modelagem multidimensional é conhecida como:",
+    "options": {
+      "A": "Esquema Estrela (Star Schema).",
+      "B": "Cubo OLAP Híbrido (HOLAP).",
+      "C": "Constelação de Fatos (Fact Constellation).",
+      "D": "Esquema Floco de Neve (Snowflake Schema).",
+      "E": "Tabela de Dimensão Degenerada."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito: D) A alternativa B (Floco de Neve) está correta. Diferente do Star Schema (A), onde as dimensões são desnormalizadas e ligadas diretamente à tabela Fato, o Snowflake Schema normaliza as tabelas de dimensões separando suas hierarquias em múltiplas tabelas secundárias, lembrando o formato de um floco de neve. A Constelação de Fatos (C) se refere à presença de múltiplas tabelas fato compartilhando dimensões."
+  },
+  {
+    "id": 41,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Engenharia de Software - Métodos Ágeis",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o desenvolvimento do módulo de jurisprudência do TJ-CE utilizando o framework Scrum, a equipe de desenvolvimento percebeu que o incremento planejado para a Sprint atual não poderá ser concluído devido a uma dependência técnica imprevista com o sistema do CNJ. O Product Owner foi informado de que apenas 60% das funcionalidades previstas estarão prontas ao final do timebox. Neste cenário arquitetural e metodológico, a ação correta a ser adotada é:",
+    "options": {
+      "A": "Ajustar o escopo do Sprint Backlog em negociação entre o Product Owner e os Developers.",
+      "B": "Estender a duração da Sprint em uma semana para garantir a entrega completa da meta estabelecida.",
+      "C": "Cancelar a Sprint imediatamente para reavaliar as prioridades do Product Backlog no próximo ciclo.",
+      "D": "Substituir a Sprint Goal original por uma meta técnica voltada à resolução da dependência externa.",
+      "E": "Suspender as Daily Scrums até que a dependência técnica com o CNJ seja completamente mitigada."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito: A) No Scrum, o Sprint Backlog é flexível na medida em que mais se aprende. Quando há impedimentos ou se percebe que o trabalho difere do previsto, o escopo deve ser renegociado entre os Developers e o Product Owner sem afetar a Sprint Goal (Alternativa C). A alternativa A é incorreta pois Sprints só são canceladas se a Meta se tornar obsoleta. A alternativa B é incorreta pois timeboxes são invioláveis no Scrum. A D e E propõem subversões graves dos artefatos e eventos do framework."
+  },
+  {
+    "id": 42,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "ITIL v4 - Cadeia de Valor de Serviço",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Após a implantação de um novo portal de emissão de certidões no TJ-CE, o volume de chamados relatando lentidão sistêmica aumentou drasticamente na primeira semana. A equipe de suporte de Nível 1 está atuando intensamente na triagem, no diagnóstico rápido e no restabelecimento temporário do acesso aos jurisdicionados para evitar a paralisação do serviço. Considerando as diretrizes da Cadeia de Valor de Serviço (SVC) do ITIL v4, a atuação direta dessa equipe técnica no restabelecimento diário da operação normal do portal enquadra-se de forma primordial na atividade:",
+    "options": {
+      "A": "Melhorar.",
+      "B": "Desenhar e Fazer Transição.",
+      "C": "Engajar.",
+      "D": "Planejar.",
+      "E": "Entregar e Suportar."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito real: E) A atividade 'Entregar e Suportar' (Deliver and Support) garante que os serviços sejam prestados de acordo com as especificações acordadas e engloba o tratamento de incidentes e solicitações do dia a dia. A alternativa 'C' trata do primeiro contato e relacionamento, mas o restabelecimento e suporte técnico das operações residem em Entregar e Suportar. 'A' lida com melhoria contínua a longo prazo."
+  },
+  {
+    "id": 43,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Lei Estadual nº 9.826/1974 - Provimento",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Analista de Tecnologia da Informação do TJ-CE, ocupante de cargo de provimento efetivo, sofreu um acidente grave que resultou em sequelas motoras permanentes nos membros superiores. Após rigorosa avaliação da junta médica oficial do Estado do Ceará, constatou-se que o servidor não possui mais a capacidade física indispensável para operar os equipamentos físicos do datacenter, sua principal atribuição, porém, detém plenas faculdades mentais para assumir rotinas de gestão de contratos administrativos. Nos exatos termos da Lei Estadual nº 9.826/1974, a modalidade de provimento aplicável a este caso para garantir o exercício funcional do servidor em função compatível com sua nova limitação física é a:",
+    "options": {
+      "A": "Reversão.",
+      "B": "Reintegração.",
+      "C": "Readaptação.",
+      "D": "Recondução.",
+      "E": "Aproveitamento."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito real: C) Conforme o Estatuto dos Servidores Civis do Ceará, a Readaptação é a forma de provimento em que o funcionário passa a exercer função mais compatível com a sua capacidade física ou intelectual, após inspeção médica, e não acarreta elevação de vencimento. As opções 'A' (retorno do aposentado) e 'B' (retorno do demitido por decisão judicial/administrativa) aplicam-se a contextos totalmente diversos."
+  },
+  {
+    "id": 44,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Segurança - TLS/SSL",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "As diretrizes normativas de TI exigem que toda comunicação dos microserviços externos com os balanceadores de carga do Tribunal opere nativamente sobre as suítes de criptografia do protocolo HTTPS. Durante o estabelecimento do túnel, o aperto de mãos do TLS (TLS handshake) invoca uma transição de algoritmos. Na modelagem arquitetural padrão dessa negociação mista, a criptografia assimétrica e a criptografia simétrica são convocadas pelas entidades respectivamente para viabilizar as ações de:",
+    "options": {
+      "A": "Criptografar todo o fluxo contínuo de vídeo da audiência; e validar a assinatura da raiz do servidor web.",
+      "B": "Assinar os cabeçalhos de rede da camada TCP; e despachar chaves de roteamento com o firewall interno.",
+      "C": "Autenticar a identidade do servidor de destino; e encriptar os blocos de dados transmitidos volumosamente na sessão.",
+      "D": "Garantir a disponibilidade do endpoint de rede; e realizar controle de paridade do handshake.",
+      "E": "Prover roteamento dinâmico entre datacenters; e ofuscar o tráfego da camada primária de enlace."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito: C) A correta é D. A essência do funcionamento híbrido do Transport Layer Security consiste em usar as custosas chaves públicas (assimétrica) na fase de abertura única para verificar a confiabilidade do certificado do servidor que se está acessando e trocar um segredo base, para após derivar chaves simétricas ultraleves de sessão (como AES) para empacotar o volume denso do tráfego. As outras respostas mesclam e extrapolam a função de camadas inferiores (rede, enlace) para um protocolo que opera na camada superior/aplicação."
+  },
+  {
+    "id": 45,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Segurança - Infraestrutura de Chaves Públicas",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No arcabouço hierárquico e normativo da ICP-Brasil, a segurança jurídica de documentos eletrônicos do Judiciário repousa na hierarquia das entidades mantenedoras do sistema. Dentre as figuras listadas no regulamento para compor o ciclo de confiança criptográfico, as entidades primariamente dotadas da capacidade técnica e delegada de materialmente emitir, assinar, sustar ou revogar os certificados digitais dos cidadãos finais associando as chaves ao proprietário são identificadas como:",
+    "options": {
+      "A": "Autoridades de Registro Físicas (AR).",
+      "B": "Autoridades Certificadoras (AC).",
+      "C": "Entidades Autônomas Homologadoras (EAH).",
+      "D": "Cadeias de Custódia Simétricas (CCS).",
+      "E": "Repositórios Raiz Descentralizados (RRD)."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito: B) A correta é B. As Autoridades Certificadoras (ACs) representam os pilares da PKI sendo responsáveis pela geração do certificado, revogação na CRL e guarda do ciclo de vida sob assinatura eletrônica da AC. As Autoridades de Registro (AR) funcionam apenas como postos avançados de interface burocrática, protocolando biometria e enviando solicitações, mas não operam a geração final das chaves amarradas à raiz. O restante das opções propõe arranjos teóricos incorretos ou inexistentes."
+  },
+  {
+    "id": 46,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "TOGAF 9.2/10 - Fases do ADM",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Com as arquiteturas de Negócios, Sistemas de Informação e Tecnologia do TJ-CE mapeadas e os respectivos gaps identificados, o Escritório de Arquitetura Corporativa iniciou a consolidação técnica dessas lacunas. O objetivo deste estágio do método ADM é agrupar os componentes arquiteturais em frentes de trabalho viáveis, avaliar os custos iniciais, priorizar os requisitos e estruturar os pacotes de trabalho principais que materializarão a transição arquitetural. No ciclo do TOGAF ADM, essas ações são o propósito central da:",
+    "options": {
+      "A": "Fase C - Arquitetura de Sistemas de Informação.",
+      "B": "Fase D - Arquitetura de Tecnologia.",
+      "C": "Fase E - Oportunidades e Soluções.",
+      "D": "Fase F - Planejamento de Migração.",
+      "E": "Fase G - Governança da Implementação."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito real: C) A Fase E (Oportunidades e Soluções) tem o objetivo primário de consolidar os resultados das análises de gap (realizadas nas fases B, C e D), identificar as oportunidades de implementação e organizar logicamente os blocos de construção em 'Pacotes de Trabalho'. A alternativa 'D' foca no refinamento do plano detalhado e na obtenção dos acordos finais para execução."
+  },
+  {
+    "id": 47,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Acessibilidade Digital - Tratamento de Erros",
+    "context": "Cadastro de Cidadãos no Portal da Transparência.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o preenchimento de um formulário de solicitação de certidões no portal público do TJ-CE, um usuário cego, operando um leitor de tela (NVDA), cometeu um erro de validação ao inserir a data de nascimento no formato incorreto. O sistema web simplesmente recarregou a página exibindo o texto do erro em vermelho no topo da tela, sem transferir o foco ou avisar o leitor de tela. Com base nas diretrizes de identificação e recuperação de erros da NBR 17225:2025, qual é a modificação arquitetural correta a ser implementada na camada de apresentação?",
+    "options": {
+      "A": "Execução da validação via JavaScript síncrono e geração de alertas contínuos com bloqueio do navegador até a inserção correta do dado.",
+      "B": "Identificação textual do erro com sugestão de correção e utilização de atributos ARIA para a notificação audível imediata ao usuário do leitor de tela.",
+      "C": "Preenchimento automático do campo com erro utilizando a data atual do servidor web para o impedimento de retenção do usuário na etapa de validação.",
+      "D": "Desativação do recarregamento da página e redirecionamento obrigatório do cidadão para o atendimento humano via chat virtual após um erro consecutivo.",
+      "E": "Manutenção da mensagem de erro em vermelho e intermitência do monitor do usuário em frequência de 5 Hz para o alerta visual a usuários de leitores de tela."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito real: B) Quando um erro de entrada é detectado, a interface não deve apenas mostrar uma cor ou recarregar a tela sem avisos. O erro deve ser identificado em texto, fornecer sugestões de correção e transferir o foco de maneira audível por meio de papéis (roles) ou atributos ARIA, garantindo que o leitor de tela do usuário cego anuncie imediatamente a falha no formulário. A alternativa B é a única arquitetonicamente acessível."
+  },
+  {
+    "id": 48,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Segurança - Criptografia Simétrica",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o expurgo programado de sistemas legados de armazenamento on-premise, determinou-se a aplicação maciça de camada de encriptação em centenas de terabytes de bancos de dados da década de 1990 que serão subidos em disco para uma infraestrutura de cold storage na AWS. Objetivando alto rendimento computacional na rápida ofuscação (encryption) dos dados em estado inativo e na devida recuperação em caso de consultas excepcionais através da entrega da mesma chave criptográfica, o engenheiro de soluções deve selecionar categoricamente o uso de algoritmos:",
+    "options": {
+      "A": "Assimétricos por fatoração de primos, a exemplo do RSA.",
+      "B": "Baseados em dispersão por blocos destrutivos, a exemplo do SHA-256.",
+      "C": "Assimétricos efêmeros de concordância de sessão, a exemplo do Diffie-Hellman.",
+      "D": "Baseados em chaves públicas de emparelhamento elíptico, a exemplo do ECC.",
+      "E": "Simétricos de processamento encadeado, a exemplo do AES."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito: E) A correta é C. A encriptação intensiva de dados persistidos sob volume monumental requer velocidades imbatíveis exclusivas dos algoritmos simétricos (onde chave de abertura é a própria de trancamento), tais como o AES, DES, ChaCha20 e Blowfish. Algoritmos assimétricos (A, D e E) são morosos sendo usados essencialmente em empacotamentos restritos (chaves, senhas, certificados). Algoritmos baseados em funções resumo unidirecionais (B) não admitem a operação de desencriptação inerente a repositórios de dados."
+  },
+  {
+    "id": 49,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Orientação a Objetos - Polimorfismo",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Ceará (TJ-CE) está refatorando o módulo de cálculo de custas processuais do sistema PJe. Originalmente, o sistema utilizava múltiplas estruturas condicionais ('if-else' ou 'switch') para verificar a classe do processo (Cível, Criminal, Fazenda Pública) e invocar a função de cálculo específica. O arquiteto de software determinou a substituição dessas condicionais por uma abordagem orientada a objetos que permita o despacho dinâmico de métodos em tempo de execução, delegando à própria instância do processo o cálculo adequado de suas custas. O conceito de Orientação a Objetos aplicado para resolver esse problema arquitetural é o:",
+    "options": {
+      "A": "Encapsulamento.",
+      "B": "Acoplamento estrutural.",
+      "C": "Herança múltipla.",
+      "D": "Polimorfismo de sobreposição.",
+      "E": "Polimorfismo de sobrecarga."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito: D) A alternativa correta é C. O uso de polimorfismo de sobreposição (overriding) permite que as subclasses forneçam implementações específicas para o método de cálculo de custas. O mecanismo de 'late binding' executa o método correto em tempo de execução. As demais são incorretas: A (encapsulamento oculta estado, não faz despacho dinâmico), B (acoplamento é indesejado e não é um pilar da OO), D (herança múltipla não é o conceito que resolve a estrutura condicional) e E (sobrecarga é polimorfismo em tempo de compilação, e não despachado dinamicamente via instância da subclasse)."
+  },
+  {
+    "id": 50,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Engenharia de Software - BPMN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No mapeamento de processos do TJ-CE, um diagrama BPMN detalha o fluxo de pagamento de precatórios. Em um determinado momento, uma tarefa é interrompida e o processo fica em estado de espera pelo recebimento de um ofício originado pelo Tesouro Estadual, que atua como participante externo. Assim que o ofício é detectado, o fluxo processual interno é retomado automaticamente a partir daquele ponto. O elemento BPMN utilizado para capturar essa espera ativa dentro do fluxo é um Evento:",
+    "options": {
+      "A": "de Início do tipo Temporizador.",
+      "B": "Intermediário de Lançamento de Mensagem.",
+      "C": "de Fim de Lançamento de Sinal.",
+      "D": "Intermediário de Captura de Mensagem.",
+      "E": "de Fim de Cancelamento."
+    },
+    "answer": "D",
+    "explanation": "A alternativa D é correta. Um evento Intermediário ocorre no meio do fluxo, atrasando-o ou reagindo a algo. Sendo Captura de Mensagem (Catch Message), ele paralisa a instância do processo até que uma mensagem (informação de um pool/participante externo) seja recebida. Lançamento (Throw) enviaria a mensagem. Um temporizador seria usado para pausar por um tempo fixo, o que não é o caso."
+  },
+  {
+    "id": 51,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Acessibilidade Digital - Contraste e Tipografia",
+    "context": "Intranet e Sistemas Administrativos.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A área de Recursos Humanos do TJ-CE identificou que servidores com baixa visão (visão subnormal) e daltonismo estão enfrentando dificuldades para operar o novo sistema ERP, cujos painéis (dashboards) utilizam gradientes de cor verde e vermelha para indicar o status dos processos administrativos, além de fontes de tamanho fixo. Segundo os critérios de contraste, cor e redimensionamento da NBR 17225:2025, qual deve ser a solução implementada pela equipe de frontend?",
+    "options": {
+      "A": "Diferenciação dos status unicamente pelas cores em tons pastéis e bloqueio da interface para zoom superior a 150% para a manutenção do layout responsivo.",
+      "B": "Permissão para redimensionamento do texto em até 200% sem perda de funcionalidade e inclusão de ícones ou texto descritivo para não depender exclusivamente da cor nos status.",
+      "C": "Restrição da paleta de cores ao modo de alto contraste na Intranet e padronização obrigatória da fonte do sistema para a tipografia \"Times New Roman\" em tamanho 14pt.",
+      "D": "Supressão automática de todas as imagens de fundo e aplicação de filtros daltônicos diretamente no servidor de aplicação web antes da renderização do DOM.",
+      "E": "Substituição das cores vermelho e verde por azul e amarelo em todo o sistema e fixação do espaçamento entre linhas em exatos três centímetros independentemente do monitor."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito real: B) A regra de ouro da acessibilidade no uso de cores determina que a cor nunca deve ser o único meio visual de transmitir informações ou indicar uma ação. Além disso, a tipografia deve ser escalável até 200% sem o uso de tecnologias assistivas de terceiros e sem que o layout se quebre (perda de funcionalidade). A alternativa B entrega exatamente a mitigação para usuários de baixa visão e daltonismo."
+  },
+  {
+    "id": 52,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Fibras ópticas (Monomodo vs Multimodo)",
+    "context": "Interligação de longa distância entre Datacenters.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para viabilizar a replicação síncrona de armazenamento, o TJ-CE precisa interligar seu datacenter primário a um site de contingência (Disaster Recovery) localizado a 15 km de distância. O enlace óptico metropolitano deve operar com taxas de 100 Gbps sem a necessidade de repetidores ou amplificadores intermediários. Qual arquitetura de fibra e respectiva característica construtiva devem ser implantadas para suportar essa especificação?",
+    "options": {
+      "A": "Fibra monomodo com núcleo de 9 µm e emissão a laser.",
+      "B": "Fibra multimodo com núcleo de 50 µm e tecnologia VCSEL.",
+      "C": "Fibra monomodo com núcleo de 62,5 µm e emissão via LED.",
+      "D": "Fibra multimodo com índice gradual e núcleo de 9 µm.",
+      "E": "Fibra monomodo com dispersão modal alta e núcleo de 125 µm."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito real: A) A correta é a [A]. Distâncias metropolitanas (como 15 km) em altas velocidades (100 Gbps) exigem obrigatoriamente fibras monomodo (Single-mode - SMF). Estas fibras possuem um núcleo extremamente fino (normalmente 8 a 10 µm, sendo 9 µm o padrão clássico) e utilizam emissores de laser de alta potência, permitindo que a luz trafegue em um único modo de propagação com atenuação ínfima. A alternativa B descreve características de fibra multimodo (OM3/OM4), cuja distância limite para altas taxas raramente excede 300 a 550 metros. A C mistura tecnologias, alocando um núcleo multimodo (62,5 µm, típico de OM1) e emissão de LED em uma fibra rotulada como monomodo. A D inverte os conceitos, pois índice gradual é de multimodo e 9 µm de monomodo. A E afirma um erro crasso, pois a dispersão modal afeta a fibra multimodo, e 125 µm refere-se ao diâmetro do revestimento (cladding), não do núcleo."
+  },
+  {
+    "id": 53,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "SOLID - Dependency Inversion Principle",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O módulo de notificação eletrônica do Diário da Justiça foi desenvolvido com uma dependência instanciada estaticamente para a classe de nível inferior 'ServicoSmtpExterno'. Com a transição tecnológica, determinou-se o uso de envios via mensageria na nuvem. Para remover o engessamento estrutural entre as camadas, foi aplicada a injeção via uma interface delimitada. Conforme o Princípio de Inversão de Dependência (DIP) da sigla SOLID, módulos de alto nível (regras de negócios) não devem depender de módulos de baixo nível (infraestrutura de entrega). Em vez disso, ambos devem depender exclusivamente de:",
+    "options": {
+      "A": "Interfaces de execução assíncronas.",
+      "B": "Tipos primitivos estáticos literais.",
+      "C": "Classes base concretas.",
+      "D": "Bibliotecas empacotadas por terceiros.",
+      "E": "Abstrações contratuais."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito: E) A correta é B. A base técnica do Dependency Inversion Principle define categoricamente que módulos superiores e inferiores não devem possuir referências concretas uns dos outros; ambos devem ter seu acoplamento amarrado a abstrações (interfaces e classes puramente abstratas). As alternativas A e D inserem qualificadores externos ao preceito estrutural, e a alternativa C corrompe totalmente o conceito propondo dependência em elementos concretos de código."
+  },
+  {
+    "id": 54,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Banco de Dados - SQL",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para auditar a distribuição de processos, o DBA do tribunal necessita elaborar um script para listar o nome de cada comarca e a respectiva quantidade individual de processos distribuídos e, concomitantemente na mesma linha, projetar a média geral de distribuição de todas as comarcas do estado do Ceará, sem reduzir ou agrupar o número original de linhas retornadas. A cláusula SQL avançada que permite calcular métricas agregadas preservando rigorosamente a granularidade das linhas de detalhe é a função:",
+    "options": {
+      "A": "GROUP BY ROLLUP.",
+      "B": "CONNECT BY PRIOR.",
+      "C": "OVER() acoplada a funções de janela (Window Functions).",
+      "D": "CROSS APPLY.",
+      "E": "HAVING acoplada a funções de subconsulta escalar."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito: C) As Funções de Janela (Window Functions) acopladas à cláusula OVER() permitem a execução de agregações analíticas (AVG, SUM) calculadas ao longo de uma 'janela' do conjunto de dados, sem condensar as linhas afetadas. Ao contrário do GROUP BY, que colapsa várias linhas em uma única, as funções OVER() expõem o cálculo mantendo a linha atômica preservada, satisfazendo o cenário do enunciado (Alternativa B)."
+  },
+  {
+    "id": 55,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Banco de Dados - Normalização",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O esquema relacional de custas judiciais do TJ-CE contém a tabela `Guia_Recolhimento` com os atributos: ID_Guia (Chave Primária), Data_Emissao, ID_Processo, Nome_Requerente, Codigo_Comarca e Descricao_Comarca. Identificou-se que a Descricao_Comarca é determinada unicamente pelo Codigo_Comarca, que não é chave candidata da tabela, gerando anomalias de atualização. Para adequar este modelo à Terceira Forma Normal (3FN), a solução estrutural correta é:",
+    "options": {
+      "A": "Criar uma tabela separada com ID_Guia e Codigo_Comarca para representar o relacionamento de muitos para muitos.",
+      "B": "Decompor a tabela original movendo Codigo_Comarca e Descricao_Comarca para uma nova relação.",
+      "C": "Remover o atributo Nome_Requerente para eliminar as dependências multivaloradas da entidade primária.",
+      "D": "Promover Codigo_Comarca à chave primária composta junto com ID_Guia na mesma tabela.",
+      "E": "Unificar Codigo_Comarca e Descricao_Comarca em um único atributo atômico do tipo texto longo."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito: B) A Terceira Forma Normal (3FN) proíbe dependências transitivas. A Descricao_Comarca depende de Codigo_Comarca, que por sua vez depende da chave primária ID_Guia. A resolução consiste em extrair esses atributos não-chave dependentes em uma nova tabela, mantendo Codigo_Comarca como chave estrangeira na tabela original, eliminando a redundância de dados (Alternativa D). As demais são desvios arquiteturais incorretos."
+  },
+  {
+    "id": 56,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Lei Estadual nº 9.826/1974 - Regime Disciplinar (Penalidades)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante uma minuciosa auditoria de segurança da informação nas instalações corporativas do TJ-CE, descobriu-se que um Técnico de Informática efetivo estava utilizando, de forma contínua e deliberada, os servidores de processamento primários e a banda de internet do tribunal para prestar serviços remunerados de mineração de criptomoedas e hospedagem comercial para sua empresa particular. Instaurado o devido processo administrativo disciplinar e assegurada a ampla defesa, confirmou-se a infração de aplicação indevida dos bens públicos estaduais. De acordo com o rol de penalidades disciplinares previsto expressamente na Lei Estadual nº 9.826/1974, a sanção cabível para este nível de falta grave é a:",
+    "options": {
+      "A": "Suspensão de até 30 dias.",
+      "B": "Suspensão de até 90 dias.",
+      "C": "Destituição de cargo em comissão.",
+      "D": "Demissão.",
+      "E": "Cassação de disponibilidade."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito real: D) A Lei Estadual nº 9.826/74 (Art. 195) prescreve a penalidade de demissão nos casos de aplicação indevida de dinheiros públicos (ou bens materiais), bem como ao servidor que se valer do cargo para lograr proveito pessoal em detrimento da dignidade da função. As alternativas A e B (Suspensão) são aplicáveis a faltas menos gravosas não tipificadas como passíveis de demissão e em casos de reincidência de repreensão."
+  },
+  {
+    "id": 57,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Cálculo de Sub-redes IPv4 (CIDR)",
+    "context": "Isolamento de tráfego de videomonitoramento.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para segregar o tráfego de videomonitoramento das varas criminais, a arquitetura do TJ-CE definiu o uso da super-rede 10.10.0.0/20. O projeto prevê a fragmentação exclusiva deste bloco em sub-redes de máscara /26, sendo cada sub-rede atribuída a um andar diferente do prédio. Quantas sub-redes /26 completas podem ser extraídas deste bloco e qual é a quantidade máxima de hosts úteis por sub-rede?",
+    "options": {
+      "A": "32 sub-redes com 62 hosts úteis.",
+      "B": "16 sub-redes com 126 hosts úteis.",
+      "C": "64 sub-redes com 64 hosts úteis.",
+      "D": "128 sub-redes com 30 hosts úteis.",
+      "E": "64 sub-redes com 62 hosts úteis."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito real: E) A correta é a [B]. A partir do prefixo /20 para o prefixo /26, a variação é de 6 bits (26 - 20 = 6). A quantidade de sub-redes geradas é 2^6, totalizando 64 sub-redes. Em uma máscara /26, restam 6 bits para os hosts (32 - 26 = 6). A quantidade de hosts úteis é 2^6 - 2, o que equivale a 62 hosts por sub-rede (descontando rede e broadcast). A alternativa A erra na matemática das sub-redes. A alternativa C não desconta os endereços reservados (rede e broadcast). A alternativa D reflete o cálculo para máscaras /27 (que fornecem 30 hosts). A E descreve a topologia obtida utilizando máscaras /25."
+  },
+  {
+    "id": 58,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Segurança - Privilégio Mínimo",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em resposta a um incidente interno, uma consultoria identificou que estagiários no setor de infraestrutura do tribunal utilizavam credenciais fixas de sistema vinculadas à permissão 'ROOT' na matriz de acesso aos firewalls, viabilizando capacidade discricionária de apagar todos os volumes de logs forenses. O ajuste dessa matriz de acessos deve pautar-se na diretriz magna de controle de identidade de restringir a concessão de direitos unicamente às prerrogativas funcionais inerentes ao cargo desempenhado. Esse limite rígido reflete de modo estrito o conceito do(a):",
+    "options": {
+      "A": "Separação temporal de ambientes de infraestrutura.",
+      "B": "Autenticação por fator inerente corporativo.",
+      "C": "Princípio do privilégio mínimo.",
+      "D": "Isolamento lateral de segmento de rede.",
+      "E": "Princípio da menor vulnerabilidade."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito: C) A correta é E. O princípio do Least Privilege determina categoricamente a adequação das autorizações fornecidas aos operadores para o nível mais restritivo possível capaz de atender as obrigações da sua rotina laboral. Controles adicionais baseados em separação lógica (VLANs), isolamento e segregação de funções não descrevem primariamente a modelagem atômica de quantificação mínima de autorizações sistêmicas demandadas pelo enunciado analítico."
+  },
+  {
+    "id": 59,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Acessibilidade Digital - Estrutura Semântica e Ordem de Leitura",
+    "context": "Consulta de Jurisprudência.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A nova ferramenta de busca de jurisprudências do TJ-CE adota a renderização assíncrona do lado do cliente (Client-Side Rendering) via React. Após uma auditoria de acessibilidade baseada na NBR 17225:2025, constatou-se que a estrutura do DOM (Document Object Model) apresenta as ementas e os botões de ação fora da ordem lógica de leitura. Quando navegadas com a tecla \"Tab\", as ações de \"Baixar Acórdão\" são focadas antes de o usuário ler os dados do próprio processo. Qual o diagnóstico do problema e a solução técnica para sanar a falha de acessibilidade?",
+    "options": {
+      "A": "Conversão da arquitetura para Server-Side Rendering (SSR) e supressão dos eventos de teclado das ementas na interface gráfica.",
+      "B": "Priorização das ações de download sobre o conteúdo textual no fluxo de navegação do teclado para a otimização de leitores de tela avançados.",
+      "C": "Aplicação de posicionamento CSS absoluto para o reposicionamento visual dos botões de ação com preservação do DOM original.",
+      "D": "Reestruturação do HTML semântico para refletir o fluxo visual de leitura na ordem do DOM e utilização cautelosa do atributo \"tabindex='0'\" sem valores positivos.",
+      "E": "Implementação de paginação server-side com recarregamento total da janela para o reestabelecimento pleno do índice do navegador web."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito real: D) Em aplicações Single Page Application (SPA) ou Client-Side Rendering, o gerenciamento do foco e a estrutura do DOM devem espelhar a ordem lógica e visual da página. O uso de 'tabindex' positivo distorce brutalmente essa ordem lógica de leitura por leitores de tela. A solução é alinhar o HTML semântico ao fluxo da tela e usar 'tabindex=\"0\"' (que insere o elemento na ordem de tabulação natural) apenas em componentes interativos customizados. A alternativa B descreve com precisão a resolução técnica."
+  },
+  {
+    "id": 60,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Engenharia de Software - Requisitos",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o levantamento de requisitos para o novo sistema de Ponto Eletrônico dos servidores do Judiciário, o analista de TI optou por observar presencialmente a rotina dos funcionários no balcão de atendimento, sem intervir em suas atividades diárias, acompanhando os passos tomados e as gambiarras criadas no uso do sistema legado de planilhas. Essa técnica de elicitação de requisitos, altamente eficaz para a descoberta de processos tácitos e práticas operacionais não formalizadas, é conhecida como:",
+    "options": {
+      "A": "Prototipação Rápida.",
+      "B": "Tempestade de Ideias (Brainstorming).",
+      "C": "Etnografia (Observação).",
+      "D": "Análise de Cenários e Casos de Uso.",
+      "E": "Questionário Estático (Survey)."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito: C) A Etnografia, também referida como observação in loco no contexto de engenharia de software (Alternativa A), visa imergir o analista no ambiente real de trabalho para descobrir requisitos ocultos (tácitos) que os usuários raramente verbalizariam em entrevistas convencionais. Brainstorming, Prototipação e Questionários não envolvem observação silenciosa in loco."
+  },
+  {
+    "id": 61,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "SOLID - Interface Segregation Principle",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em um ecossistema Java do Tribunal, a interface central 'IAutenticacao' declarava os métodos obrigatórios 'validarDigitalBiometrica()', 'autenticarSenha()' e 'renovarSessaoMobile()'. O subsistema web para computadores desktop precisava apenas do login por senha comum, mas por implementar a interface obesa, a equipe era forçada a criar blocos de código nulos para a validação biométrica e fluxos de renovação mobile. A decomposição dessa interface monolítica em contratos mais delimitados resolve o problema apontado pelo Princípio:",
+    "options": {
+      "A": "Do Aberto/Fechado.",
+      "B": "De Delegação de Eventos de Tela.",
+      "C": "Da Responsabilidade Única.",
+      "D": "Da Segregação de Interfaces.",
+      "E": "Da Substituição Estrita de Liskov."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito: D) A correta é B. O Princípio de Segregação de Interfaces (ISP) determina categoricamente que os clientes não devem ser forçados a depender de métodos de abstrações que não precisam utilizar. Interfaces volumosas geram acoplamento a artefatos colaterais. A cura baseia-se na entrega de micro-interfaces específicas, alinhando-se aos clientes de maneira estrita."
+  },
+  {
+    "id": 62,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Banco de Dados - Normalização",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de arquitetura de dados e engenharia reversa do TJ-CE auditou criticamente uma tabela antiga denominada `Processo_Advogados`, onde a coluna 'OAB_Advogados' armazenava uma longa string de texto concatenada com os registros de todos os defensores atuantes naquela causa, separados apenas por vírgulas (ex: 'CE123, CE456, SP789'). Para sanar os problemas de busca e para que essa estrutura relacional alcance categoricamente os preceitos da Primeira Forma Normal (1FN), a exigência técnica indispensável a ser aplicada no projeto de dados é:",
+    "options": {
+      "A": "Eliminar os atributos derivados não armazenados fisicamente e dependências transitivas.",
+      "B": "Isolar os determinantes indiretos em robustas matrizes de múltiplas dimensões relacionais.",
+      "C": "Transferir as chaves estrangeiras não essenciais para novas tabelas de domínio secundárias.",
+      "D": "Remover a redundância nociva provocada pelas dependências funcionais totais do sistema.",
+      "E": "Garantir que todos os atributos do modelo se tornem rigorosamente atômicos e indivisíveis."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito: E) A regra definidora central da Primeira Forma Normal (1FN) é que todos os atributos de uma tabela em um banco de dados relacional devem conter apenas valores atômicos (indivisíveis), sem repetições em lista ou matrizes dentro de um mesmo campo. Strings separadas por vírgulas configuram quebra explícita da atomicidade (atributos multivalorados), exigindo refatoração em nova tabela para atingir a 1FN (Alternativa B)."
+  },
+  {
+    "id": 63,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "PMBOK 7ª Edição - Princípios de Gerenciamento",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O desenvolvimento do módulo de inteligência artificial para triagem de jurisprudência no TJ-CE cumpriu com exatidão o cronograma e o orçamento estipulados no termo de abertura. No entanto, após seis meses da homologação técnica, os juízes auxiliares relataram que a ferramenta não impactou o tempo de análise processual, reduzindo a eficiência global das varas. O gerente do projeto reuniu a equipe para instituir uma mudança de paradigma baseada no PMBOK 7ª Edição, deslocando a métrica de sucesso da simples conclusão de entregáveis físicos para a geração de impacto real e utilidade de negócios. Esta diretriz metodológica materializa o princípio de gerenciamento denominado:",
+    "options": {
+      "A": "Adaptar com base no contexto.",
+      "B": "Construir qualidade nos processos e nas entregas.",
+      "C": "Demonstrar comportamentos de liderança.",
+      "D": "Reconhecer, avaliar e responder às interações do sistema.",
+      "E": "Focar no valor."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito real: E) O princípio 'Focar no valor' orienta a equipe a não se limitar ao cumprimento de restrições tradicionais (prazo, custo e escopo), mas a alinhar continuamente o projeto aos benefícios, utilidade prática e retorno de negócios (outcomes e value) esperados pela organização. A alternativa 'B' foca em garantir conformidade técnica e durabilidade do produto gerado, não essencialmente o benefício ao negócio."
+  },
+  {
+    "id": 64,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "COBIT 2019 - Sistema de Governança",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Comitê Diretor de TI do TJ-CE está utilizando as publicações centrais do COBIT 2019 para desenhar um sistema de governança totalmente customizado para o órgão judicial. A equipe técnica precisa considerar características exclusivas do tribunal na modelagem, como o modelo de financiamento orçamentário público, o ambiente de ameaças cibernéticas regionais e o tamanho da organização. No framework COBIT 2019, os elementos ambientais e contextuais que influenciam o projeto de um sistema de governança sob medida são denominados:",
+    "options": {
+      "A": "Fatores de Desenho.",
+      "B": "Componentes do Sistema de Governança.",
+      "C": "Princípios do Sistema de Governança.",
+      "D": "Objetivos de Cascatamento.",
+      "E": "Áreas de Foco."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito real: A) Os 'Fatores de Desenho' (Design Factors) são a grande novidade do COBIT 2019, utilizados para moldar e customizar o sistema de governança de acordo com o contexto da organização (tamanho, ambiente de risco, método de financiamento, cenário de ameaças, etc). A alternativa 'B' engloba processos, pessoas e estruturas. A alternativa 'E' descreve tópicos ou temas específicos abordados (como DevOps, Segurança, PMEs)."
+  },
+  {
+    "id": 65,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Python - Generators",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para migrar o vasto repositório de jurisprudência do TJ-CE, um engenheiro de dados precisou analisar milhões de trechos de documentos textuais. Ao tentar carregar o processamento inteiro de uma vez para uma lista convencional, ocorreu falha crítica por esgotamento de memória no contêiner da aplicação. Como solução nativa da linguagem Python para percorrer grandes datasets sob demanda (lazy evaluation), entregando os dados sequencialmente sem ocupar o limite da RAM, o desenvolvedor implementou uma função geradora assinalada nativamente pelo uso do comando:",
+    "options": {
+      "A": "return.",
+      "B": "await.",
+      "C": "yield.",
+      "D": "lambda.",
+      "E": "defer."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito: C) A correta é D. O comando 'yield' instrui o Python a interromper a execução do escopo da função provendo o valor no momento exato da solicitação da iteração (next), para então preservar todo o estado da pilha (stack e ponteiros) da função até o próximo consumo. Isso elimina o gargalo de arrays inflados. Lambda expressa funções anônimas não relacionadas a memory footprints; Defer (adiamento) remete à linguagem Go."
+  },
+  {
+    "id": 66,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Engenharia de Software - Métodos Ágeis",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Product Owner responsável pelo sistema estratégico de Custas Judiciais do TJ-CE atua na administração permanente e contínua de uma lista emergente, orgânica e rigidamente ordenada que centraliza absolutamente tudo o que foi mapeado como necessário para a construção e o aprimoramento do produto de software em andamento. Essa lista central atua como a única fonte autoritária de trabalho visível assumida pela equipe técnica e sofre refinamentos constantes ao longo de toda a duração temporal do projeto iterativo. De acordo com os fundamentos do framework Scrum, esse artefato cardeal é oficialmente denominado:",
+    "options": {
+      "A": "Sprint Backlog Refinado.",
+      "B": "Product Backlog.",
+      "C": "Quadro Kanban Operacional.",
+      "D": "Incremento de Produto Releasable.",
+      "E": "Documento Unificado de Visão de Requisitos."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito: B) O Product Backlog (Alternativa B) é o artefato no Scrum que atua como a lista emergente, transparente e ordenada das necessidades reais do produto de software. É gerenciado sob responsabilidade absoluta do Product Owner. O Sprint Backlog abrange apenas um subconjunto retirado do Product Backlog direcionado e adaptado para a Sprint corrente, não se caracterizando como o inventário central contínuo."
+  },
+  {
+    "id": 67,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Cabeamento NBR 14565",
+    "context": "Projetos de infraestrutura e instalações físicas de rede.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O plano diretor arquitetônico do novo anexo do Fórum exige conformidade irrestrita com as normas da ABNT NBR 14565. O projeto delimitou um ambiente centralizado no piso térreo, contemplando controle climático rigoroso, sistemas de aterramento dedicados e supressão de incêndios. Esse espaço foi projetado com o propósito exclusivo de abrigar equipamentos de telecomunicações de alta densidade, os switches de núcleo, roteadores institucionais e o principal Distribuidor de Edifício (DE) da estrutura. Qual é a designação normativa apropriada para este ambiente específico?",
+    "options": {
+      "A": "Facilidade de entrada.",
+      "B": "Sala de telecomunicações.",
+      "C": "Armário de telecomunicações.",
+      "D": "Sala de equipamentos.",
+      "E": "Área de trabalho."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito real: D) A correta é a [A]. Pela ABNT NBR 14565 (e normas internacionais equivalentes como a TIA-568), a 'Sala de Equipamentos' (Equipment Room - SEQ ou ER) é o espaço projetado para concentrar equipamentos ativos de rede de grande porte (core, PABX principal, servidores) e abriga os distribuidores centrais, como o Distribuidor de Campus (DC) e/ou Distribuidor de Edifício (DE). A alternativa B ('Sala de Telecomunicações' - SET/TR) é um espaço de menor envergadura, distribuído por andares, destinado primariamente a abrigar o Distribuidor de Andar (DA) e equipamentos ativos de borda (acesso). A alternativa D (Facilidade de entrada - FE) refere-se ao ponto de terminação dos cabos provenientes das operadoras de telecomunicação externas, não o núcleo. As demais referem-se a outros componentes sem relação com o abrigo central do edifício."
+  },
+  {
+    "id": 68,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Banco de Dados - BI",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um desembargador do TJ-CE analisa um cubo OLAP de produtividade processual, visualizando o total de sentenças consolidadas e agrupadas por 'Ano'. Desejando observar o detalhamento minucioso desses mesmos dados fragmentados por 'Mês' e, em seguida, por 'Dia', ele realiza cliques no painel gerencial navegando pelos níveis inferiores da hierarquia natural da dimensão de tempo. Esta operação interativa clássica de exploração em bancos multidimensionais é classificada como:",
+    "options": {
+      "A": "Roll-up.",
+      "B": "Slice.",
+      "C": "Dice.",
+      "D": "Pivot.",
+      "E": "Drill-down."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito: E) Navegar de um nível superior e mais resumido de uma dimensão (Ano) para níveis inferiores e mais detalhados (Mês, Dia) é a operação OLAP denominada Drill-down (Alternativa D). O oposto disso, agrupar e resumir dados indo do específico para o geral, seria o Roll-up (A). Slice extrai uma fatia de uma única dimensão; Dice extrai um subcubo usando várias dimensões."
+  },
+  {
+    "id": 69,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Engenharia de Software - UML",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No Diagrama de Casos de Uso do sistema de plantão judicial eletrônico, o caso de uso 'Autuar Processo' possui um relacionamento com o caso de uso 'Validar Assinatura Digital'. A documentação estabelece que toda vez que um processo é autuado, a validação da assinatura digital deve ocorrer de forma estrita e obrigatória, sendo um comportamento subjacente embutido no fluxo principal. Na notação UML, esse relacionamento deve ser modelado utilizando o estereótipo:",
+    "options": {
+      "A": "«extend», indicando expansão condicional do fluxo principal.",
+      "B": "«generalize», indicando herança de características do ator principal.",
+      "C": "«realize», indicando a implementação da interface do ator.",
+      "D": "«include», indicando incorporação obrigatória do comportamento.",
+      "E": "«invoke», indicando a chamada síncrona do fluxo secundário."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito: D) O estereótipo «include» (Alternativa B) é usado quando o comportamento de um caso de uso é obrigatoriamente inserido (incluído) no fluxo de outro caso de uso básico, geralmente para reaproveitar lógica comum. O «extend» (A) serve para fluxos excepcionais ou condicionais, que não são obrigatórios para o sucesso do fluxo base."
+  },
+  {
+    "id": 70,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Engenharia de Software - Métodos Ágeis",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No setor de sustentação de infraestrutura do TJ-CE, a equipe gerencia o fluxo de chamados de suporte técnico utilizando o método Kanban. Para evitar a sobrecarga cognitiva dos analistas, forçar a conclusão dos itens já iniciados e evidenciar rapidamente os gargalos do fluxo, o gerente de TI implementou uma restrição numérica explícita determinando que no máximo 5 tickets podem coexistir simultaneamente na coluna 'Em Atendimento'. Essa prática essencial e obrigatória do método Kanban é denominada:",
+    "options": {
+      "A": "Definição de Preparo (Definition of Ready).",
+      "B": "Reunião de Retrospectiva.",
+      "C": "Integração Contínua (CI).",
+      "D": "Quadro de Burn-down.",
+      "E": "Limitação do Trabalho em Progresso (WIP Limit)."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito: E) A Limitação do Trabalho em Progresso (Work In Progress - WIP Limit) é um dos pilares centrais do Kanban (Alternativa B). Ao impor um limite fixo para as etapas ativas do quadro, o Kanban gera um sistema de 'puxar' (pull system) que foca na fluidez (flow), ajudando a terminar tarefas em vez de simplesmente iniciá-las continuamente."
+  },
+  {
+    "id": 71,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "TOGAF 9.2/10 - Fases do ADM",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o ciclo de codificação do novo sistema de precatórios do TJ-CE, a equipe de desenvolvimento decidiu alterar a tecnologia de banco de dados especificada na arquitetura corporativa para uma solução não relacional, visando maior escalabilidade horizontal. O Conselho de Arquitetura foi imediatamente acionado para avaliar os impactos e assegurar que as atividades dos projetos ágeis permaneçam em conformidade com as restrições da arquitetura de destino aprovada. No framework TOGAF ADM, a responsabilidade de monitorar o desenvolvimento e gerenciar as dispensas e a conformidade dos projetos pertence à:",
+    "options": {
+      "A": "Fase E - Oportunidades e Soluções.",
+      "B": "Fase F - Planejamento de Migração.",
+      "C": "Fase de Gestão de Requisitos.",
+      "D": "Fase H - Gerenciamento de Mudanças da Arquitetura.",
+      "E": "Fase G - Governança da Implementação."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito real: E) A Fase G (Governança da Implementação) do TOGAF estabelece a ligação crítica entre a arquitetura e as equipes de implementação (fábrica de software). É nela que são realizadas as revisões de conformidade e se delibera sobre desvios arquiteturais dos projetos em andamento. A alternativa 'D' atua após a entrega final, verificando a necessidade de iniciar um novo ciclo ADM."
+  },
+  {
+    "id": 72,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Segurança - ISO 27001",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Secretaria de Tecnologia da Informação busca conformidade em nível internacional visando a certificação audita da infraestrutura processual principal. A direção do TJ-CE necessita estipular documentação de contexto, papéis, recursos e revisões críticas periódicas. O diploma internacional que descreve exclusivamente os requisitos mandatórios para estabelecer, integrar, operar e atestar o aprimoramento contínuo da governança do Sistema de Gestão da Segurança da Informação (SGSI) encontra-se materializado na norma:",
+    "options": {
+      "A": "ISO/IEC 27005.",
+      "B": "ISO/IEC 27002.",
+      "C": "ISO/IEC 27004.",
+      "D": "ISO/IEC 27001.",
+      "E": "ISO/IEC 27035."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito: D) A correta é D. A norma ISO/IEC 27001 contém os requisitos estruturais ('shall') auditáveis formalmente e certificados pelos organismos. A ISO 27002 traz o catálogo orientativo de controles complementares sem estipular o sistema de gestão em si, sendo apenas o anexo de recomendações ('should'). A ISO 27005 é a especialização em metodologias de riscos. A ISO 27035 foca estritamente na gestão formal de incidentes de SI isoladamente."
+  },
+  {
+    "id": 73,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Banco de Dados - SQL",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para gerar indicadores de desempenho processual, o banco de dados relacional do TJ-CE foi consultado para retornar o nome das varas e a quantidade total de processos julgados em 2025. Contudo, a Corregedoria exigiu que o relatório exibisse apenas as varas que atingiram o teto, julgando estritamente mais de 5.000 processos no período consolidado. Após agrupar os dados por vara usando a função COUNT() e a cláusula GROUP BY, o analista deve aplicar a restrição de filtragem dos grupos superiores a 5.000 utilizando a cláusula:",
+    "options": {
+      "A": "WHERE.",
+      "B": "ORDER BY.",
+      "C": "LIMIT.",
+      "D": "HAVING.",
+      "E": "FILTER."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito: D) A cláusula HAVING (Alternativa D) atua de forma análoga ao WHERE, mas é a única que pode filtrar dados baseados em valores agregados (como sum, count, avg) gerados por um GROUP BY. A cláusula WHERE avalia linhas individuais antes do agrupamento, portanto causaria erro de sintaxe se aplicada ao valor de COUNT()."
+  },
+  {
+    "id": 74,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Java - Garbage Collection",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A infraestrutura de servidores do Tribunal tem reportado picos de uso de CPU seguidos por pausas 'stop-the-world' prolongadas na JVM durante a geração em lote de certidões. A análise de heap dump indicou a alocação massiva de objetos de vida curta no espaço 'Eden'. Para otimizar o tempo de pausa do coletor de lixo em uma máquina virtual com vasta quantidade de memória RAM disponível, garantindo previsibilidade de latência em cenários de grandes heaps, o analista deve configurar a JVM para utilizar o coletor:",
+    "options": {
+      "A": "Z Garbage Collector (ZGC).",
+      "B": "Parallel Old GC.",
+      "C": "Serial GC.",
+      "D": "Concurrent Mark Sweep (CMS).",
+      "E": "Epsilon GC."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito: A) A correta é C. O ZGC é projetado para baixíssima latência, escalando para heaps de múltiplos terabytes com pausas mínimas consistentes. CMS está depreciado e foi removido nas versões mais modernas do Java. Parallel GC visa alto throughput máximo, mas sofre com pausas longas e imprevisíveis. Serial é voltado para single-thread/pequenos heaps. Epsilon GC é um coletor puramente de alocação que não libera memória."
+  },
+  {
+    "id": 75,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Orientação a Objetos - Encapsulamento",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No e-SAJ, o módulo de assinaturas digitais possui uma classe 'CertificadoMagistrado'. Os desenvolvedores notaram que os atributos de controle de revogação do certificado estavam sendo acessados e alterados diretamente por classes do módulo de interface com o usuário, gerando estados inconsistentes de validação durante a sessão do juiz. Para sanar essa vulnerabilidade, o arquiteto determinou a restrição do acesso aos atributos apenas para métodos da própria classe, permitindo a modificação do estado por meio de métodos de validação com regras de negócio intrínsecas. A técnica utilizada para impor essa restrição de visibilidade é o:",
+    "options": {
+      "A": "Polimorfismo paramétrico.",
+      "B": "Coesão lógica.",
+      "C": "Encapsulamento.",
+      "D": "Acoplamento aferente.",
+      "E": "Despacho dinâmico."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito: C) A correta é B. O encapsulamento oculta a implementação interna de um objeto, protegendo os atributos com modificadores de acesso (private) e permitindo modificações apenas através de métodos controlados. As outras opções são incorretas: A (polimorfismo paramétrico é uso de Generics); C (coesão indica que a classe tem responsabilidades bem definidas); D (acoplamento aferente é métrica de dependências de entrada); E (despacho dinâmico refere-se à seleção do método polimórfico em runtime)."
+  },
+  {
+    "id": 76,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Engenharia de Software - Requisitos",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante uma auditoria nos sistemas do TJ-CE, o CNJ solicitou a comprovação de que o requisito de negócio 'Bloqueio Automático de Sigilo' está efetivamente implementado e coberto por testes. A equipe de Engenharia de Software apresentou uma matriz que conecta esse requisito de alto nível ao documento de especificação técnica, aos módulos de código-fonte no repositório e aos casos de teste automatizados. O uso dessa matriz caracteriza a aplicação direta da prática de:",
+    "options": {
+      "A": "Engenharia Reversa.",
+      "B": "Elicitação de Casos de Uso.",
+      "C": "Rastreabilidade de Requisitos.",
+      "D": "Análise de Ponto de Função.",
+      "E": "Refatoração de Arquitetura."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito: C) A matriz de Rastreabilidade (Alternativa B) é o artefato que registra os vínculos de dependência bidirecional entre os requisitos e demais elementos do ciclo de vida do software (testes, código, arquitetura). Isso garante que é possível investigar a origem de uma funcionalidade e o impacto de suas mudanças."
+  },
+  {
+    "id": 77,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Python - Global Interpreter Lock",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de Ciência de Dados do Tribunal elaborou um script Python para aplicar transformações matemáticas massivas (CPU-bound) em milhares de acórdãos em formato de texto. Para reduzir o tempo total, os analistas empregaram a biblioteca nativa 'threading' para paralelizar o cálculo em múltiplos núcleos do servidor, contudo não obtiveram ganho real de desempenho computacional. A restrição arquitetural da implementação padrão do Python (CPython) responsável por impedir a execução paralela simultânea de bytecodes em múltiplas threads no mesmo processo é:",
+    "options": {
+      "A": "O Global Interpreter Lock (GIL).",
+      "B": "O coletor de lixo geracional.",
+      "C": "O avaliador assíncrono de Event Loop.",
+      "D": "A restrição de tipagem dinâmica.",
+      "E": "O empacotador de referências fracas (WeakRef)."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito: A) A correta é B. O GIL é o travamento em nível de interpretador do CPython que impossibilita que múltiplas threads executem instruções Python concorrentemente no mesmo processo para proteger o modelo de gerenciamento de memória. Isso anula ganhos em cenários de CPU-bound via threading convencional. As outras alternativas não representam os gargalos diretos que impedem o escalonamento em múltiplos cores para scripts baseados em CPU."
+  },
+  {
+    "id": 78,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Engenharia de Software - UML",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de arquitetura do TJ-CE está documentando rigorosamente o ciclo de vida da entidade 'Mandado Judicial' no sistema corporativo. O diagrama elaborado exibe as condições 'Expedido', 'Em Cumprimento', 'Cumprido Positivo' e 'Cumprido Negativo', conectadas por transições temporais que ocorrem unicamente mediante a execução de métodos gatilhos como `atribuirOficial()` e `registrarCertidao()`. O diagrama da UML adequado para representar essas drásticas mudanças de condição em resposta a eventos é o Diagrama de:",
+    "options": {
+      "A": "Sequência.",
+      "B": "Comunicação.",
+      "C": "Máquina de Estados.",
+      "D": "Atividades.",
+      "E": "Componentes."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito: C) O Diagrama de Máquina de Estados (State Machine Diagram) da UML mapeia o comportamento interno de um único objeto (Mandado) evidenciando todos os estados possíveis que ele pode assumir durante seu ciclo de vida em reação a eventos ou chamadas de métodos (Alternativa C). Diagramas de Sequência e Comunicação mostram a troca de mensagens entre diversos objetos."
+  },
+  {
+    "id": 79,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Banco de Dados - SQL",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O processamento financeiro em lote gerando a folha de pagamento das varas estaduais exige níveis formidáveis de confiabilidade. Se houver ruptura abrupta de hardware ou perda de conectividade no meio técnico de uma transferência envolvendo a subtração de fundos de um centro de custo pagador e a adição correspondente na conta recebedora, o SGBD transacional relacional utilizado atuará revertendo todas as etapas. O banco assegura rigorosamente o preceito de que transações parciais jamais sejam efetivadas: ou o escopo completo da operação processual ocorre com êxito irrestrito e consolidado, ou nenhuma fração dele é retida, invalidando-se sistemicamente o agrupamento. Esse princípio inegociável inerente às transações relacionais clássicas cristaliza a propriedade ACID de:",
+    "options": {
+      "A": "Escalabilidade.",
+      "B": "Consistência.",
+      "C": "Isolamento.",
+      "D": "Durabilidade.",
+      "E": "Atomicidade."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito: E) No acrônimo ACID, a Atomicidade (Alternativa A) se refere à premissa do tudo ou nada. É a diretiva que agrupa operações de manipulação em blocos atômicos indivisíveis perante falhas. A Consistência foca no atendimento de restrições de integridade. O Isolamento lida com concorrência entre múltiplas transações. A Durabilidade garante a persistência mesmo após quedas de energia na infraestrutura, confirmando a retenção."
+  },
+  {
+    "id": 80,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "ITIL v4 - Princípios Orientadores",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A Secretaria de Tecnologia da Informação do TJ-CE está consolidando a adoção do Sistema de Valor de Serviço (SVS) do ITIL v4. Durante o mapeamento dos fluxos de valor do processo judicial eletrônico, os analistas perceberam que muitas práticas legadas, embora não agregassem valor direto aos magistrados, continuavam sendo executadas por mero hábito burocrático. O diretor de TI determinou a eliminação dessas etapas redundantes e a adoção do número mínimo de passos estritamente necessários para realizar os objetivos. O Princípio Orientador do ITIL v4 diretamente aplicado nessa determinação é:",
+    "options": {
+      "A": "Otimizar e automatizar.",
+      "B": "Foco no valor.",
+      "C": "Manter de forma simples e prática.",
+      "D": "Pensar e trabalhar holisticamente.",
+      "E": "Progredir iterativamente com feedback."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito real: C) O princípio 'Manter de forma simples e prática' (Keep it simple and practical) orienta explicitamente a eliminar processos, serviços ou ações que não proveem valor útil, defendendo o uso do número mínimo de passos para realizar os objetivos. A alternativa 'A' é uma armadilha clássica para projetos de TI, pois a automação vem apenas após a simplificação. A alternativa 'C' guia o direcionamento para o cliente, mas a mecânica de enxugar o processo reflete o princípio B."
+  },
+  {
+    "id": 81,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Português - Concordância Verbal e Nominal",
+    "context": "Relatório de auditoria de segurança no TJ-CE.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a auditoria do novo datacenter do TJ-CE, o Analista de TI elaborou um relatório sobre os gargalos na rede e os incidentes de segurança recentes. Em um dos trechos, a coordenação solicitou a adequação à norma-padrão da Língua Portuguesa no que tange à concordância verbal e nominal. O trecho original afirmava que \"Faltou, durante os testes de carga, recursos computacionais adequados\". Considerando o contexto de um relatório formal de arquitetura, assinale a alternativa que apresenta a redação inteiramente correta quanto à concordância.",
+    "options": {
+      "A": "Constatou-se, nos relatórios de tráfego, ocorrências de invasões simultâneas aos servidores.",
+      "B": "Faltavam, durante os testes de carga na infraestrutura, recursos computacionais adequados.",
+      "C": "Tratavam-se de anomalias complexas detectadas no tráfego de dados do tribunal.",
+      "D": "Devem haver políticas de segurança mais rígidas no controle de acesso ao processo eletrônico.",
+      "E": "Fazem dois meses que os gargalos de desempenho afetam o tempo de resposta do sistema."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito real: B) A: Errada. Verbo transitivo direto acompanhado da partícula apassivadora 'se' concorda com o sujeito paciente. O correto seria 'Constataram-se ocorrências'. B: Errada. O verbo 'haver' no sentido de existir é impessoal e transmite essa impessoalidade ao auxiliar 'dever'. O correto seria 'Deve haver'. C: Errada. O verbo 'tratar-se de' é transitivo indireto com pronome indeterminador do sujeito 'se', logo, deve permanecer obrigatoriamente na terceira pessoa do singular ('Tratava-se'). D: Correta. O sujeito de 'Faltavam' é 'recursos computacionais adequados'. Como o sujeito está no plural, o verbo concorda corretamente no plural. A intercalação não afeta a concordância. E: Errada. O verbo 'fazer' indicando tempo decorrido é impessoal e deve ficar no singular. O correto seria 'Faz dois meses'."
+  },
+  {
+    "id": 82,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Fibras ópticas (Monomodo vs Multimodo)",
+    "context": "Identificação de falha em enlaces legados intra-edifício.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma das varas antigas do TJ-CE ainda opera com enlaces legados baseados em fibra óptica multimodo OM1. Em um link estendido de 1,2 km operando a 1 Gbps, observa-se queda intermitente da comunicação. A análise do reflectômetro óptico (OTDR) atesta que a luz sofre reflexões internas variadas, percorrendo diferentes caminhos físicos dentro do amplo núcleo da fibra, o que resulta na chegada assíncrona da energia luminosa no foto-receptor. Qual fenômeno físico causa primordialmente essa distorção em fibras multimodo?",
+    "options": {
+      "A": "Dispersão modal.",
+      "B": "Dispersão cromática.",
+      "C": "Dispersão por espalhamento Brillouin.",
+      "D": "Atenuação por microcurvatura.",
+      "E": "Efeito de refração no revestimento externo."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito real: A) A correta é a [A]. A dispersão modal é o fenômeno característico e o maior limitante de banda e distância das fibras multimodo. Ela decorre do fato de que o núcleo largo (ex: 62,5 µm em OM1) permite a propagação simultânea de múltiplos raios de luz ('modos') incidindo em ângulos diferentes. Os raios que viajam pelo centro do núcleo chegam antes dos raios que ziguezagueiam pelas bordas reflexivas. Essa diferença de tempo na chegada alarga o pulso no receptor. A falsa B (cromática) é típica da fibra monomodo e decorre dos diferentes comprimentos de onda, não dos caminhos físicos múltiplos. A C refere-se a um espalhamento não-linear, D trata de perdas físicas por dobra/estresse no cabo, e E é um absurdo conceitual, pois a reflexão útil para confinar a luz ocorre na interface núcleo/revestimento, e vazamentos resultam em atenuação, não dispersão."
+  },
+  {
+    "id": 83,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Engenharia de Software - Métodos Ágeis",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No contexto da transformação digital ágil do TJ-CE, uma equipe Scrum autogerenciável foi alocada para desenvolver o aplicativo mobile 'Justiça Cidadã'. Foi designado que um dos membros da equipe detivesse a responsabilidade estrita de garantir que os ritos do framework fossem perfeitamente compreendidos, remover ativamente os impedimentos organizacionais que bloqueiam o avanço técnico diário e facilitar os eventos oficiais, atuando como um líder servidor e sem exercer autoridade hierárquica impositiva sobre os desenvolvedores. Este papel insubstituível na dinâmica do Scrum é oficialmente o:",
+    "options": {
+      "A": "Product Owner.",
+      "B": "Project Manager.",
+      "C": "Agile Coach.",
+      "D": "Scrum Master.",
+      "E": "Technical Lead."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito: D) O Scrum Master (Alternativa C) atua na promoção e suporte do Scrum de acordo com o guia oficial. É dele a responsabilidade por atuar como líder servidor para a equipe, blindando-a contra interrupções externas e atuando incansavelmente na remoção de impedimentos, sem ditar as soluções técnicas. O Product Owner foca em priorizar o valor do negócio. Project Manager não é papel do Scrum."
+  },
+  {
+    "id": 84,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Banco de Dados - SQL",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante uma janela planejada de manutenção emergencial no banco de dados de produção do TJ-CE, o Analista de Infraestrutura precisou executar sequencialmente dois comandos SQL distintos: o primeiro instruía o motor de banco a alterar permanentemente o tipo de dado da coluna estrutural 'Valor_Causa' na tabela `Processo` (de INTEGER para NUMERIC); o segundo injetava fisicamente três novos registros vitais de negócio na tabela referencial `Status_Processo`. Esses comandos aplicados pertencem, em estrita ordem lógica e respectivamente, aos seguintes subconjuntos da linguagem SQL padrão ISO:",
+    "options": {
+      "A": "DML (Data Manipulation Language) e DDL (Data Definition Language).",
+      "B": "DDL (Data Definition Language) e DML (Data Manipulation Language).",
+      "C": "DCL (Data Control Language) e DQL (Data Query Language).",
+      "D": "DTL (Data Transaction Language) e DCL (Data Control Language).",
+      "E": "DQL (Data Query Language) e DDL (Data Definition Language)."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito: B) Comandos que alteram, criam ou deletam as estruturas (esquemas) do banco, como o ALTER TABLE usado para modificar a coluna, enquadram-se na DDL (Linguagem de Definição de Dados). Comandos focados nos dados propriamente ditos, operando na manipulação dos registros, como INSERT, UPDATE e DELETE, fazem parte da DML (Linguagem de Manipulação de Dados). Portanto, a ordem correta é DDL e DML (Alternativa B)."
+  },
+  {
+    "id": 85,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Português - Reescrita e Coesão",
+    "context": "Parecer Técnico sobre Adoção de Ferramenta.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um analista do TJ-CE elaborou um parecer técnico justificando a troca da ferramenta de orquestração de contêineres: \"A ferramenta atual não suporta o volume de requisições do Processo Eletrônico. Portanto, o tribunal decidiu migrar para o Kubernetes. O Kubernetes garantirá a alta disponibilidade dos serviços críticos.\" Qual reescrita articula o diagnóstico do problema e a solução arquitetural em um único período com correta coesão, coerência e correção gramatical?",
+    "options": {
+      "A": "O tribunal decidiu migrar para o Kubernetes, o mesmo que garantirá a alta disponibilidade dos serviços críticos em face da incapacidade da ferramenta atual em suportar o volume de requisições do Processo Eletrônico.",
+      "B": "O tribunal decidiu migrar para o Kubernetes, de cujos garantirá a alta disponibilidade dos serviços críticos, suportando o volume de requisições do Processo Eletrônico ignorado pela ferramenta atual.",
+      "C": "A ferramenta atual não suporta o volume de requisições do Processo Eletrônico, no qual o tribunal decidiu migrar para o Kubernetes para a garantia de alta disponibilidade dos serviços críticos.",
+      "D": "Insuportável o volume de requisições do Processo Eletrônico pela ferramenta atual, o tribunal decidiu migrar para o Kubernetes, cuja adoção garantirá a alta disponibilidade dos serviços críticos.",
+      "E": "Devido a ferramenta atual não suportar o volume de requisições do Processo Eletrônico, o tribunal decidiu migrar para o Kubernetes visando a alta disponibilidade dos serviços críticos por ela garantida."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito real: D) A: Correta. A oração absolutiza o particípio (ou no caso, o adjetivo 'Insuportável'), criando uma circunstância causal elegante e direta para a decisão principal. O pronome relativo 'cuja' liga perfeitamente o Kubernetes à ideia de adoção, resolvendo as falhas de coesão. B: Errada. O uso de 'de cujos' é descabido, pois não há relação de posse justificada por essa preposição no contexto. C: Errada. Uso inadequado dos relativos 'no qual' e 'onde'. D: Errada. 'O mesmo' não pode ser utilizado como elemento de coesão para retomar substantivo na função de sujeito na oração seguinte, sendo um vício gravíssimo de linguagem técnica. E: Errada. Falta de crase indicativa da preposição exigida por 'Devido' (Devido à ferramenta)."
+  },
+  {
+    "id": 86,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "TOGAF 9.2/10 - Fases do ADM",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE estabeleceu um programa corporativo para migrar seu ecossistema monolítico de gestão de jurisprudência para uma arquitetura orientada a microsserviços provisionada em nuvem híbrida. Utilizando o método ADM (Architecture Development Method) do TOGAF, os arquitetos finalizaram a elaboração da Visão da Arquitetura e asseguraram o patrocínio executivo da presidência. O próximo passo lógico da equipe, seguindo rigorosamente o ciclo contínuo do ADM, é desenvolver a arquitetura que define a estratégia corporativa, a estrutura organizacional e as principais rotinas funcionais relativas aos processos judiciais. Esta atividade deve ser executada na:",
+    "options": {
+      "A": "Fase A - Visão da Arquitetura.",
+      "B": "Fase D - Arquitetura de Tecnologia.",
+      "C": "Fase C - Arquitetura de Sistemas de Informação.",
+      "D": "Fase B - Arquitetura de Negócios.",
+      "E": "Fase E - Oportunidades e Soluções."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito real: D) O método ADM segue um fluxo progressivo. Após a Fase A (Visão da Arquitetura), o ciclo avança compulsoriamente para a Fase B (Arquitetura de Negócios), que mapeia a estrutura de governança, estratégia e processos organizacionais (linha de base e alvo). Somente após definir o negócio, a equipe avançará para a Fase C (Sistemas/Dados/Aplicações) e Fase D (Tecnologia/Infra)."
+  },
+  {
+    "id": 87,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "SOLID - Open/Closed Principle",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A diretoria de arrecadação do tribunal precisou adicionar o método de pagamento de custas processuais via Pix. A implementação original exigia que, a cada novo formato de pagamento bancário inserido no sistema, o código core da classe 'ProcessadorCustas' sofresse modificações e compilações diretas para incluir novas lógicas condicionais. O arquiteto reestruturou o módulo, criando uma interface polimórfica que abstrai o pagamento, permitindo plugar a classe do Pix sem tocar no núcleo do processador de custas. Essa reestruturação garantiu a aderência ao princípio de que o design deve:",
+    "options": {
+      "A": "Estar aberto para extensão, mas rigidamente fechado para modificação.",
+      "B": "Ter o mínimo conhecimento possível da topologia de classes associadas.",
+      "C": "Depender de implementações concretas em vez de abstrações em tempo de execução.",
+      "D": "Forçar os clientes a implementarem assinaturas de métodos não utilizados.",
+      "E": "Assegurar que subclasses instanciem suas superclasses concretas dinamicamente."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito: A) A correta é C. O Princípio do Aberto/Fechado (OCP) dispõe que as entidades devem ser abertas para a adição de novos comportamentos (extensão criando novas subclasses ou implementações) e fechadas para modificações de seu código-fonte já validado e consolidado (modificação). A alternativa A contraria a Inversão de Dependências. A D viola a Segregação de Interfaces. A B remete à Lei de Demeter."
+  },
+  {
+    "id": 88,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Cálculo de Sub-redes IPv4 (CIDR)",
+    "context": "Divisão de blocos IP no Datacenter do Tribunal.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE iniciou a ampliação de seu datacenter primário e precisa alocar um novo segmento de rede isolado para hospedar servidores de banco de dados. O arquiteto de rede dispõe do bloco agregado 172.16.64.0/22 e recebeu a diretriz de provisionar uma sub-rede que acomode exatamente 500 hosts úteis, minimizando rigorosamente o desperdício de endereços IP. Considerando as técnicas de roteamento interdomínio sem classes (CIDR), qual bloco de endereçamento atende a essa especificação arquitetural?",
+    "options": {
+      "A": "172.16.66.0/24.",
+      "B": "172.16.64.0/24.",
+      "C": "172.16.65.0/23.",
+      "D": "172.16.64.0/23.",
+      "E": "172.16.63.0/22."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito real: D) A correta é a [A]. O requisito exige 500 hosts úteis, o que demanda 9 bits para a porção de host (2^9 - 2 = 510 IPs úteis). Em IPv4, 32 - 9 resulta no prefixo /23. O bloco originário /22 (172.16.64.0 a 172.16.67.255) subdivide-se em exatamente dois blocos /23: 172.16.64.0/23 (que vai até 172.16.65.255) e 172.16.66.0/23. A alternativa A expõe a primeira sub-rede válida. A falsa B oferta um prefixo /24, comportando apenas 254 hosts. A falsa C apresenta 172.16.65.0, que é um IP pertencente ao escopo de host da primeira sub-rede, não um ID de rede válido para /23 (o octeto de rede deve ser múltiplo de 2). A falsa E traz 172.16.63.0, que está fora do bloco originário /22."
+  },
+  {
+    "id": 89,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Segurança - Controles de Segurança",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para conter fluxos de ataques oriundos da internet pública ao portal e-SAJ, implementou-se o dispositivo de Web Application Firewall (WAF) que avalia assinaturas em tempo real nos balanceadores de entrada da topologia de rede. Paralelamente, estabeleceu-se a replicação autônoma das instâncias dos servidores web em nós de contingência de nuvem para prover disponibilidade da massa de dados em caso de exaustão térmica dos hardwares locais. Considerando a categorização clássica das ações de mitigação do evento de crise da informação, o WAF e o plano de contingência operam na taxonomia, respectivamente, em formato de controles:",
+    "options": {
+      "A": "Corretivo e compensatório.",
+      "B": "Detectivo e preventivo.",
+      "C": "Preventivo e corretivo.",
+      "D": "Preventivo e detectivo.",
+      "E": "Dissuasivo e proativo."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito: C) A correta é A. O WAF intercepta o tráfego HTTP avaliando e bloqueando ativamente as requisições, qualificando-se portanto como medida voltada à prevenção pré-dano de explorações de rede e infrações sistêmicas (preventivo). A cópia e plano de contingência (Disaster Recovery), agem acionando o restauro após a destruição efetiva ou inativação do sistema primário em função da anomalia de temperatura, classificando-se perfeitamente como técnica secundária retificadora (corretivo)."
+  },
+  {
+    "id": 90,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Banco de Dados - Normalização",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma tabela `Agendamento_Pericia` no TJ-CE possui os atributos CPF_Perito, Data_Hora e Sala. A chave primária composta é definida pelo conjunto (CPF_Perito, Data_Hora). Sabe-se que a Sala onde a perícia ocorrerá é determinada unicamente por essa chave primária. No entanto, uma restrição negocial impõe que cada Sala só pode abrigar uma única perícia por Data_Hora, fazendo com que o conjunto (Sala, Data_Hora) também atue como determinante em relação ao CPF_Perito. A tabela atende à 3FN, mas apresenta sobreposição anômala de chaves candidatas. A forma normal que soluciona rigorosamente esse cenário, exigindo que todo determinante seja necessariamente uma chave candidata, é a:",
+    "options": {
+      "A": "Forma Normal de Boyce-Codd (FNBC).",
+      "B": "Segunda Forma Normal (2FN).",
+      "C": "Quarta Forma Normal (4FN).",
+      "D": "Primeira Forma Normal (1FN).",
+      "E": "Quinta Forma Normal (5FN)."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito: A) A FNBC (Alternativa D) é uma variação mais rígida da 3FN projetada especificamente para tratar tabelas que possuem múltiplas chaves candidatas sobrepostas. A regra de ouro da FNBC é 'todo determinante deve ser uma chave candidata'. O problema descrito é a clássica anomalia tratada pela FNBC, pois (Sala, Data_Hora) atua como determinante secundário sem ser a chave primária escolhida."
+  },
+  {
+    "id": 91,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Fibras ópticas (Monomodo vs Multimodo)",
+    "context": "Modernização de switches de topo de rack (ToR).",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o mapeamento de infraestrutura do TJ-CE, identificou-se que a comunicação entre os switches de topo de rack (ToR) e o núcleo (Core), situados a 40 metros de distância uns dos outros, utiliza fibras multimodo da classe OM4 operando a 10 Gbps. A equipe técnica sugeriu a substituição compulsória de todas as conexões ópticas deste segmento por fibras monomodo OS2 para otimização da arquitetura. Sobre o impacto e a viabilidade técnica dessa substituição, assinale a afirmação correta.",
+    "options": {
+      "A": "A substituição eleva a taxa de transferência nativa para 40 Gbps na mesma topologia de rede.",
+      "B": "A substituição reduz o diâmetro padronizado do revestimento externo da fibra de 125 µm para 9 µm.",
+      "C": "A substituição elimina a latência originada pela dispersão cromática das fibras multimodo curtas.",
+      "D": "A substituição exige a troca dos transceptores ópticos por modelos compatíveis com fontes de laser de feixe estreito.",
+      "E": "A substituição viabiliza a utilização de emissores LED de baixo custo nas interfaces dos switches centrais."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito real: D) A correta é a [B]. Fibras OM4 (multimodo) operam com transceptores projetados para elas (como os módulos SR, que costumam usar tecnologia VCSEL de 850nm). A fibra OS2 (monomodo) possui um núcleo muito menor e necessita de luz colimada disparada por lasers específicos para monomodo (transceptores do tipo LR, operando em 1310nm ou 1550nm). A falsa A está errada porque a fibra por si só não eleva a taxa de transferência; a velocidade é determinada pelos transceptores e pela porta do switch ativo (ambas suportam 10 Gbps ou mais). A falsa C confunde as dispersões: a fibra multimodo sofre de dispersão modal (múltiplos raios), e a dispersão cromática é a limitação primária da monomodo, não da multimodo. A falsa D confunde núcleo e revestimento; o revestimento (cladding) de ambas as fibras é de 125 µm, o que muda é apenas o núcleo (de 50 para 9 µm). A falsa E propõe emissores de LED, que são defasados e imprestáveis para fibras monomodo em alta velocidade, as quais dependem de laser."
+  },
+  {
+    "id": 92,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Engenharia de Software - UML",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Na modelagem orientada a objetos do sistema de gestão de varas criminais do TJ-CE, foi elaborado um Diagrama de Classes UML onde a classe `Processo` possui uma relação com a classe `Audiencia`. As regras de negócio estipulam que uma audiência não tem existência lógica fora do escopo de um processo judicial específico; se o processo for anulado e excluído da base de dados, todas as audiências associadas a ele devem ser obrigatoriamente destruídas em cascata. O tipo de relacionamento UML que representa corretamente essa restrição arquitetural é:",
+    "options": {
+      "A": "Agregação.",
+      "B": "Realização.",
+      "C": "Generalização.",
+      "D": "Dependência.",
+      "E": "Composição."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito: E) A Composição (Alternativa B) é o relacionamento todo-parte forte na UML, no qual a parte (Audiencia) tem seu ciclo de vida estritamente dependente do todo (Processo). Se o todo é destruído, a parte também é. A alternativa A (Agregação) indica uma relação todo-parte fraca, onde a parte sobrevive sem o todo. A generalização (C) trata de herança. A dependência (D) é um uso transitório. A realização (E) é usada na implementação de interfaces."
+  },
+  {
+    "id": 93,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Orientação a Objetos - Herança x Composição",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a modernização do sistema de controle de mandados de prisão, a equipe de desenvolvimento do TJ-CE identificou que a classe 'MandadoPrisao' estendia a classe 'DocumentoProcessual'. Posteriormente, surgiu o requisito de que um mandado também pudesse agir como um 'ComunicadoExterno' para integração com a Polícia Federal. Em vez de criar uma hierarquia de herança complexa ou utilizar interfaces com implementações default redundantes, o arquiteto propôs que 'MandadoPrisao' contivesse instâncias internas de classes responsáveis pelas funcionalidades de documento e comunicado. Essa decisão arquitetural obedece ao princípio de:",
+    "options": {
+      "A": "Substituição de Liskov.",
+      "B": "Alta coesão de pacotes.",
+      "C": "Favorecer a composição sobre a herança.",
+      "D": "Inversão de controle no tempo de execução.",
+      "E": "Programação orientada a interfaces."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito: C) A alternativa correta é C. A decisão de inserir instâncias de funcionalidades dentro da classe em vez de usar herança baseia-se no princípio 'Favoreça a composição sobre a herança' (Composition over Inheritance). Essa técnica reduz o acoplamento forte da herança. As demais opções são incorretas: A (LSP trata de subtipos substituindo supertipos, não especificamente de trocar herança por composição); B (coesão é outro princípio, não diretamente focado em herança vs instâncias internas); D (Inversão de controle trata do fluxo de dependência); E (orientação a interfaces não define a inclusão de instâncias dentro da classe para reuso)."
+  },
+  {
+    "id": 94,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Cabeamento NBR 14565",
+    "context": "Projetos de engenharia para o novo Fórum.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante o planejamento estrutural do novo Fórum Regional do TJ-CE, os arquitetos de TI definiram as calhas, eletrodutos e feixes de cabos de par trançado U/UTP Categoria 6A. O trajeto desses cabos foi desenhado para conectar fisicamente os painéis de conexão localizados no Distribuidor de Andar (DA) até as Tomadas de Telecomunicações (TO) fixadas nas mesas das varas judiciais. Segundo os preceitos normativos da ABNT NBR 14565, como é formalmente designado esse subsistema de interligação?",
+    "options": {
+      "A": "Cabeamento de backbone de edifício.",
+      "B": "Cabeamento horizontal.",
+      "C": "Cabeamento de backbone de campus.",
+      "D": "Sala de equipamentos.",
+      "E": "Área de trabalho."
+    },
+    "answer": "B",
+    "explanation": "(Gabarito real: B) A correta é a [A]. A NBR 14565 estrutura o cabeamento de edifícios comerciais em subsistemas específicos. O segmento que se estende do Distribuidor de Andar (DA), situado na sala de telecomunicações do andar, até as Tomadas de Telecomunicações (TO) na Área de Trabalho do usuário final, é denominado rigorosamente de 'cabeamento horizontal'. A alternativa B (backbone de edifício) liga os distribuidores de andar ao distribuidor de edifício (interligação vertical entre pavimentos). A C liga vários edifícios em um campus. A D e E são espaços físicos arquitetônicos e não o subsistema de cabeamento em trânsito descrito no enunciado."
+  },
+  {
+    "id": 95,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "SOLID - Injeção de Dependências",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A suíte base do Spring Boot acoplada ao repositório analítico judicial reportou que o construtor da função principal de cálculo atuarial efetuava repetidas criações em hardcode explícito do motor de conversão externa através da inserção repetida da linha 'new ConversorMonetario()'. Constatando a falta de fluidez das integrações de testes focais, optou-se pela exteriorização desse apontamento forçando a camada mestre a absorver o respectivo conversor na abertura da chamada instanciada unicamente pela anotação de escopo via '@Autowired'. Essa medida pragmática implementou estritamente o preceito de design conceitual voltado à(o):",
+    "options": {
+      "A": "Aplicação tática empírica da Injeção de Dependências em repositórios.",
+      "B": "Fornecimento acoplado em blocos por Segregação de Interfaces.",
+      "C": "Submissão controlada do estado dos encapsulamentos limitadores iterativos.",
+      "D": "Sobrecarga sintática de padrões decorativos e envoltórios de interface.",
+      "E": "Substituição Dinâmica focada integralmente em modelos Liskov de empacotamento."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito: A) A correta é C. A quebra da instanciação codificada pela criação direta com o emprego das anotações e externalização para repasse da base ao construtor por autowire materializam a funcionalidade da Injeção de Dependência, que consiste na ação aplicável derivada por essência das metas do Inversion of Control atinentes ao Princípio da Inversão de Dependências. A segregação de interfaces e as hierarquias derivadas de subtipos não compõem e não respondem estritamente à topologia apresentada centrada na eliminação das amarrações intrínsecas fixas do uso em construções."
+  },
+  {
+    "id": 96,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Banco de Dados - NoSQL",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Visando garantir a continuidade de negócios e a alta disponibilidade extrema dos registros de logs de auditoria do sistema judicial, que ultrapassam a marca de 10 terabytes anuais, o TJ-CE optou por implementar um banco de dados NoSQL desenhado para não possuir ponto único de falha (arquitetura totalmente descentralizada, peer-to-peer). O armazenamento subjacente agrupa dados esparsos em extensas partições multidimensionais indexadas por chaves de linha primárias, um modelo arquitetural marcante do Apache Cassandra. Este modelo de SGBD NoSQL classifica-se na família:",
+    "options": {
+      "A": "Orientada a Grafos de Triplas.",
+      "B": "Orientada a Documentos Estruturados.",
+      "C": "Orientada a Objetos Relacionais Puros.",
+      "D": "Chave-Valor em Memória Volátil.",
+      "E": "Orientada a Colunas (Wide-Column)."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito: E) O Apache Cassandra e o HBase são as ferramentas mais proeminentes do mercado na categoria de bancos NoSQL Orientados a Colunas (Wide-Column Stores), herdando conceitos teóricos do Bigtable do Google. Eles otimizam grandes volumes de dados através da clusterização distribuída (peer-to-peer) em estruturas tabulares não densas indexadas pelas row keys e column families (Alternativa C)."
+  },
+  {
+    "id": 97,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Resoluções CNJ (PDPJ-Br)",
+    "context": "Segurança e Governança na exposição de serviços web.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para disponibilizar os serviços de um novo módulo de cálculos judiciais ao ecossistema nacional da PDPJ-Br, os engenheiros de software do TJ-CE precisam expor as APIs da aplicação sob rígidos critérios operacionais. A arquitetura da plataforma unificada do CNJ impõe que as requisições provenientes de outros tribunais sejam filtradas por um ponto focal central. Esse componente é responsável pela aplicação de políticas de segurança centralizadas, limitação de taxa (rate limiting), auditoria e o subsequente roteamento para os microsserviços dos tribunais provedores. Qual é a denominação desse componente arquitetural na topologia da PDPJ-Br?",
+    "options": {
+      "A": "Load Balancer.",
+      "B": "Message Broker.",
+      "C": "Service Mesh.",
+      "D": "Identity Provider.",
+      "E": "API Gateway."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito real: E) A correta é a [A]. Na arquitetura da Plataforma Digital do Poder Judiciário (PDPJ-Br), o API Gateway (nacionalmente operacionalizado com o auxílio do WSO2 ou ferramentas equivalentes na nuvem) desempenha a função de porta de entrada e gestão das interfaces de microsserviços. Ele executa governança, rate limiting, controle de quotas de consumo, logging centralizado e validações de tokens de acesso antes do roteamento das chamadas HTTPS entre os tribunais e o serviço destino. A alternativa B (Message Broker) atua no mensageamento assíncrono interno. A alternativa C (Service Mesh) foca no controle do tráfego leste-oeste (entre os próprios contêineres e pods na nuvem), não sendo o front-door exposto do marketplace. A D trata do fornecimento de identidade (SSO) para usuários, e a E descreve balanceamento bruto nas camadas de rede ou transporte, sem as capacidades lógicas plenas de gestão de APIs exigidas no enunciado."
+  },
+  {
+    "id": 98,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Acessibilidade Digital - Navegação e Foco",
+    "context": "Desenvolvimento do Portal de Peticionamento Eletrônico.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE está migrando o portal de peticionamento eletrônico para uma nova arquitetura web, que deve cumprir rigorosamente as diretrizes da norma ABNT NBR 17225:2025. Durante os testes de usabilidade com usuários com deficiência motora severa, que utilizam apenas o teclado para navegação, constatou-se que o foco visual não era mantido de forma clara ao navegar por menus complexos e que o tempo limite da sessão expirava antes que pudessem anexar os documentos. Com base na NBR 17225:2025, qual é a solução arquitetural exigida para sanar essa inconformidade?",
+    "options": {
+      "A": "A aplicação deve redirecionar os usuários com deficiência motora para uma versão simplificada em texto puro do portal, onde o controle de sessão é gerenciado exclusivamente pelo navegador web.",
+      "B": "O portal deve desativar automaticamente o tempo limite de sessão para usuários logados e aplicar bordas vermelhas intermitentes em todos os campos de formulário quando receberem o foco do mouse.",
+      "C": "O sistema deve fornecer mecanismos para prorrogar o tempo limite da sessão em, pelo menos, dez vezes o tempo padrão e garantir que o indicador de foco do teclado tenha contraste mínimo de 3:1 em relação ao plano de fundo.",
+      "D": "O tempo limite deve ser removido mediante solicitação por e-mail ao administrador do sistema e o foco do teclado deve ser ocultado para não interferir nos leitores de tela acoplados ao terminal.",
+      "E": "O sistema deve emitir um alerta sonoro contínuo dez segundos antes da expiração da sessão, dispensando o tratamento visual de foco, contanto que exista suporte nativo a comandos de voz no tribunal."
+    },
+    "answer": "C",
+    "explanation": "(Gabarito real: C) Segundo os preceitos de acessibilidade aplicáveis em portais críticos (equivalentes às diretrizes WCAG englobadas pela normativa de acessibilidade), usuários com deficiência motora severa precisam de tempo adicional para concluir tarefas (geralmente prorrogável em 10 vezes) e o indicador de foco de teclado deve ter um contraste mínimo (3:1) para ser claramente visível, assegurando a operabilidade. A alternativa A reflete essas exigências essenciais de navegação."
+  },
+  {
+    "id": 99,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Inglês Técnico - Falso Cognato",
+    "context": "Troubleshooting de Banco de Dados.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a investigação de uma queda de performance no sistema de peticionamento eletrônico do TJ-CE, a equipe de TI consultou a base de conhecimento do fabricante do SGBD. A documentação apresentava o seguinte alerta: \"To prevent bottlenecks, ensure the actual configuration of the memory fabric aligns with the comprehensive policy established for legacy records.\" Para o diagnóstico do problema ser exato, como o Analista de TI deve traduzir e interpretar as palavras \"actual\", \"fabric\", \"comprehensive\", \"policy\" e \"legacy\", respectivamente?",
+    "options": {
+      "A": "Real; malha; abrangente; política; legados.",
+      "B": "Atual; fábrica; compreensível; polícia; legação.",
+      "C": "Atual; tecido; completa; norma; herança.",
+      "D": "Verdadeira; fábrica; compreensiva; regra; legais.",
+      "E": "Exata; estrutura; compreensível; apólice; antigos."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito real: A) 'Actual' (real/verdadeiro) é um falso cognato para 'atual' (current). 'Fabric' em TI refere-se à estrutura ou malha (ex: data fabric, memory fabric), e não 'fábrica' (factory). 'Comprehensive' significa abrangente ou completo, e não compreensível (understandable). 'Policy' é política ou diretriz, não polícia (police). 'Legacy' remete a sistemas antigos/legados, não herança (inheritance). A alternativa B traz todas as traduções técnicas precisas."
+  },
+  {
+    "id": 100,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Java - Concorrência",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a distribuição de processos plantonistas em um servidor Java, ocorreu uma condição de corrida. Múltiplas threads liam e atualizavam a variável de controle 'contadorProcessos' simultaneamente, resultando na alocação de processos idênticos para o mesmo juiz. O uso da palavra-chave 'volatile' não solucionou o problema. Para garantir a exclusão mútua em blocos críticos de código de forma nativa e simples, sincronizando os acessos e impedindo leituras sujas, o desenvolvedor deve utilizar a estrutura:",
+    "options": {
+      "A": "ThreadLocal.",
+      "B": "CompletableFuture.",
+      "C": "Executors.newCachedThreadPool().",
+      "D": "Bloco ou método synchronized.",
+      "E": "ForkJoinPool."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito: D) A correta é D. A palavra-chave 'synchronized' fornece exclusão mútua garantida por locks associados ao monitor do objeto, assegurando que apenas uma thread acesse a seção crítica de incremento atômico. ThreadLocal serve para isolar estado por thread (não compartilha). CompletableFuture, Executors e ForkJoinPool servem para paralelizar e organizar execuções assíncronas, mas não tratam as restrições em memória compartilhada mutável de forma nativa e automática."
+  },
+  {
+    "id": 101,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Lei Estadual nº 9.826/1974 - Vacância/Exoneração",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um Analista Judiciário do TJ-CE, no pleno exercício de suas atribuições há mais de oito anos, logrou aprovação em um novo concurso público para o cargo de Auditor Fiscal da Secretaria da Fazenda do Estado do Ceará (SEFAZ). Imediatamente após a publicação de sua nomeação no Diário Oficial, o servidor protocola requerimento formal junto à área de gestão de pessoas do tribunal manifestando o desejo unilateral de deixar sua posição no Judiciário para tomar posse no novo cargo público inacumulável. Consoante o regime estabelecido pela Lei Estadual nº 9.826/1974, a vacância do cargo do TJ-CE neste cenário específico dar-se-á por meio do ato administrativo de:",
+    "options": {
+      "A": "Exoneração.",
+      "B": "Demissão a pedido.",
+      "C": "Licença para trato de interesse particular.",
+      "D": "Remoção definitiva.",
+      "E": "Aposentadoria proporcional."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito real: A) A vacância decorrente do desinteresse voluntário do servidor em permanecer no cargo efetivo (seja para assumir outro inacumulável ou para atuar na iniciativa privada) ocorre mediante a Exoneração a pedido (Art. 60). A alternativa 'A' mistura conceitos, pois a demissão possui caráter exclusivamente punitivo no ordenamento jurídico brasileiro. A alternativa 'C' suspenderia o vínculo temporariamente, não gerando vacância definitiva."
+  },
+  {
+    "id": 102,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Python - Context Managers",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um robô de raspagem escrito em Python realiza a captura de sentenças judiciais para indexação no ElasticSearch do TJ-CE. Durante a execução, verificou-se que o banco de dados esgotava rapidamente o limite de conexões ativas. O erro ocorria devido a exceções não tratadas no meio do processamento, impedindo a chamada de fechamento de conexão. Para garantir de forma idiomática e determinística que recursos abertos sejam sempre liberados em Python, mesmo na ocorrência de exceções, os desenvolvedores devem alocar os recursos dentro do bloco da instrução:",
+    "options": {
+      "A": "await.",
+      "B": "try-catch.",
+      "C": "finally-assert.",
+      "D": "with.",
+      "E": "pass."
+    },
+    "answer": "D",
+    "explanation": "(Gabarito: D) A correta é C. A instrução 'with' aciona o protocolo de Context Managers do Python, evocando os métodos __enter__ e __exit__. O método __exit__ é invocado garantidamente ao sair do bloco delimitado pelo with, independente de finalização limpa ou da geração de erro (exceção), assegurando a liberação dos file descriptors e conexões. O Python não possui uma declaração 'try-catch' literal (utiliza 'try-except'), e a estrutura finalmente-asserta não reflete sintaxe válida para tratamento determinístico automatizado."
+  },
+  {
+    "id": 103,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "COBIT 2019 - Domínios de Gerenciamento",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a expansão do processo eletrônico para as comarcas do interior do estado, o TJ-CE enfrentou interrupções severas nos links de conectividade. A equipe técnica precisou gerenciar preventivamente as configurações físicas dos roteadores, garantir a continuidade mínima dos serviços via redes alternativas e tratar os incidentes de infraestrutura que impactavam os fóruns. Segundo a organização dos objetivos de gerenciamento do COBIT 2019, as práticas relativas ao gerenciamento de operações, incidentes, problemas e continuidade dos serviços estão estritamente alocadas no domínio:",
+    "options": {
+      "A": "Entregar, Servir e Suportar (DSS).",
+      "B": "Construir, Adquirir e Implementar (BAI).",
+      "C": "Alinhar, Planejar e Organizar (APO).",
+      "D": "Monitorar, Avaliar e Analisar (MEA).",
+      "E": "Avaliar, Dirigir e Monitorar (EDM)."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito real: A) O domínio DSS (Entregar, Servir e Suportar) cobre a execução operacional da TI, envolvendo as rotinas diárias. Nele residem os objetivos relacionados a gerenciar as operações (DSS01), solicitações e incidentes (DSS02), problemas (DSS03), continuidade (DSS04) e segurança dos serviços (DSS05). As alternativas A e B tratam das fases de planejamento e construção das soluções de TI."
+  },
+  {
+    "id": 104,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Inglês Técnico - Falso Cognato",
+    "context": "Relatório de Análise de Vulnerabilidades.",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um auditor externo entregou um relatório de segurança da informação ao TJ-CE. Na seção de recomendações, o texto destaca: \"Eventually, the authentication routine must support novel cryptographic arguments to prevent compromised applications.\" Para implementar a solução arquitetural exigida pelo auditor, o Analista de TI deve compreender que os termos \"eventually\", \"routine\", \"novel\", \"arguments\" e \"applications\" significam, neste contexto, respectivamente:",
+    "options": {
+      "A": "Ocasionalmente; hábito; ficção; conflitos; formulários.",
+      "B": "Acidentalmente; programa; novela; temas; inscrições.",
+      "C": "Eventualmente; rotina; romance; discussões; usos.",
+      "D": "De vez em quando; sistema; inovadora; brigas; utilitários.",
+      "E": "Futuramente; rotina; novos; parâmetros; aplicações."
+    },
+    "answer": "E",
+    "explanation": "(Gabarito real: E) 'Eventually' significa finalmente ou no final das contas / futuramente, nunca 'eventualmente' (occasionally). 'Routine' em TI é subprograma ou rotina. 'Novel' significa novo ou inédito, jamais 'novela' (soap opera). 'Arguments' na programação são os parâmetros passados para uma função, não discussões. 'Applications' traduz-se como aplicações ou sistemas. A alternativa B aplica o contexto exato."
+  },
+  {
+    "id": 105,
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO (Tudo em 1)",
+    "theme": "Engenharia de Software - BPMN",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em um fluxograma BPMN 2.0 que modela o rito de um processo cível no TJ-CE, após o recebimento da petição inicial, o fluxo principal sofre uma divisão. As regras ditam que o processo deve seguir para a etapa de 'Citação do Réu' e, simultaneamente, para a etapa de 'Inclusão em Pauta de Conciliação', sendo obrigatória a execução independente e concomitante de ambos os ramos antes que o fluxo seja reunificado na etapa de 'Audiência'. O elemento BPMN que deve ser utilizado para realizar essa ramificação e posterior sincronização é o Gateway:",
+    "options": {
+      "A": "Paralelo (AND).",
+      "B": "Inclusivo (OR).",
+      "C": "Exclusivo (XOR).",
+      "D": "Baseado em Eventos.",
+      "E": "Complexo."
+    },
+    "answer": "A",
+    "explanation": "(Gabarito: A) O Gateway Paralelo (Alternativa C), representado por um losango com um sinal de mais (+), divide o fluxo em múltiplos caminhos paralelos que devem ser todos executados simultaneamente. O Gateway Exclusivo (A) força a escolha de apenas um caminho. O Inclusivo (B) permite um ou mais, mas com base em condições. Aqui não há condição, a execução dupla é obrigatória."
+  }
+]

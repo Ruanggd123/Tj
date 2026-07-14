@@ -12,15 +12,9 @@
     "count": 45
   },
   {
-    "day_id": "dia_10_07",
-    "day_title": "Super Revisão de Fechamento (10/07)",
-    "filename": "dia_10_07_questoes.json",
-    "count": 45
-  },
-  {
-    "day_id": "dia_14_07",
-    "day_title": "Imersão Fase 2: Eng. Software, BD, Linguagens e Seg. Informação (13-14/07)",
-    "filename": "dia_14_07_questoes.json",
-    "count": 60
+    "day_id": "mega_recuperacao",
+    "day_title": "MEGA BATERIA DE RECUPERAÇÃO - TJ-CE (105 Questões)",
+    "filename": "mega_recuperacao.json",
+    "count": 105
   }
 ]
