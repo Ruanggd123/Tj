@@ -542,6 +542,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderPage() {
+        if (window.drawingTool) window.drawingTool.clearCanvas();
         qContainer.innerHTML = '';
         
         // Render day completion banner if filtering a specific day
