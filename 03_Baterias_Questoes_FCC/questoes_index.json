@@ -1,25 +1,13 @@
 [
   {
-    "day_id": "hoje_tjce_parte1",
-    "day_title": "✅ HOJE [TJ-CE] – Revisão: Arq, Redes e Governança (06/07)",
-    "filename": "dia_06_07_questoes.json",
-    "count": 45
-  },
-  {
-    "day_id": "hoje_tjce_parte2",
-    "day_title": "✅ HOJE [TJ-CE] – Revisão: BD, Segurança e Arq (07/07)",
-    "filename": "dia_07_07_questoes.json",
-    "count": 45
-  },
-  {
     "day_id": "hoje_ambos",
-    "day_title": "✅ HOJE [TJ-CE + ALECE] – Python, SQL, NoSQL e Segurança (Sobreposição)",
+    "day_title": "🟣 AGORA [TJ-CE + ALECE] – Python, SQL, NoSQL e Segurança",
     "filename": "mega_recuperacao.json",
     "count": 37
   },
   {
     "day_id": "hoje_alece",
-    "day_title": "✅ HOJE [ALECE] – Bateria IDECAN: Ciência de Dados e Python",
+    "day_title": "🟡 DEPOIS [ALECE] – Ciência de Dados e Python (IDECAN)",
     "filename": "dia_15_07_questoes.json",
     "count": 20
   }
