@@ -1,0 +1,362 @@
+[
+  {
+    "id": 11001,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Ciclo de Vida do Dado",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Tribunal de Justiça do Estado do Ceará (TJ-CE) iniciou um projeto de consolidação de dados oriundos de diversos cartórios espalhados pelas comarcas do interior. Os dados chegam em múltiplos formatos (CSV, XML, JSON) e com diferentes periodicidades. A equipe de engenharia e análise de dados precisa estabelecer uma arquitetura do ciclo de vida dos dados que garanta a transformação e a limpeza desses artefatos antes da disponibilização para os cientistas de dados, evitando a criação de um pantano de dados (data swamp). Para atender a essa necessidade específica na etapa de preparação do ciclo de vida, qual arquitetura ou processo deve ser implementado?",
+    "options": {
+      "A": "Estabelecimento de um fluxo de extração, carga e transformação focado em um repositório relacional centralizado de esquema fixo.",
+      "B": "Implementação de uma camada de processamento distribuído baseada em schema-on-read para ingestão bruta antes da padronização.",
+      "C": "Configuração de um barramento de mensageria de alta latência voltado à sincronização síncrona de sistemas legados.",
+      "D": "Adoção de processos de indexação em tempo real acoplados diretamente às bases de dados transacionais dos cartórios.",
+      "E": "Modelagem de um pipeline de inferência em batch executado em servidores de borda nas infraestruturas locais das comarcas."
+    },
+    "answer": "B",
+    "explanation": "No ciclo de vida do dado, a ingestão de múltiplos formatos e periodicidades exige um Data Lake ou arquitetura similar que permita o armazenamento bruto inicial e posterior tratamento. A alternativa B descreve um Data Lake com processamento distribuído e schema-on-read. A opção A falha ao focar em um esquema fixo (Data Warehouse estrito), inadequado para dados multi-formato imediatos. A C propõe alta latência, contraditório para mensageria eficiente. A D penalizaria os sistemas transacionais. A E foca em inferência (ML), fugindo do escopo de preparação e ingestão."
+  },
+  {
+    "id": 11002,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Python para Dados (Pandas)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a análise do tempo médio de tramitação de processos criminais, um Analista de TI do TJ-CE obteve dois DataFrames distintos no Python. O primeiro, df_processos, contém os dados básicos e a chave id_processo. O segundo, df_movimentacoes, contém o histórico de andamentos e também possui a chave id_processo. O analista precisa criar um novo conjunto de dados que mantenha estritamente todos os registros do df_processos, independentemente de haver movimentação correspondente no df_movimentacoes, preenchendo com valores nulos onde não houver correspondência. Qual operação sintática do Pandas atinge esse resultado arquitetural?",
+    "options": {
+      "A": "df_processos.merge(df_movimentacoes, on='id_processo', how='inner')",
+      "B": "df_processos.join(df_movimentacoes, on='id_processo', how='outer')",
+      "C": "pd.concat([df_processos, df_movimentacoes], axis=1, join='inner')",
+      "D": "df_processos.merge(df_movimentacoes, on='id_processo', how='left')",
+      "E": "df_processos.combine_first(df_movimentacoes).dropna()"
+    },
+    "answer": "D",
+    "explanation": "A operação requerida é um Left Join, que mantém todos os registros da tabela à esquerda (df_processos) e traz os correspondentes da direita, preenchendo com NaN (nulos) os faltantes. A alternativa D implementa exatamente isso. A opção A (inner) descartaria os processos sem movimentação. A opção B (outer) traria também movimentações sem processo correspondente. A opção C concatena as colunas indiscriminadamente. A opção E usa combine_first de forma equivocada."
+  },
+  {
+    "id": 11003,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Python para Dados (Numpy)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O setor de estatística do TJ-CE desenvolveu um algoritmo de cálculo de similaridade de cossenos para agrupar petições iniciais de processos massivos (litigância predatória). Inicialmente, o código iterava sobre listas nativas do Python com o uso de laços for, resultando em um tempo de execução de 45 minutos para um lote de 100 mil documentos. Ao ser acionado para otimizar o gargalo computacional, o Analista de TI decidiu reescrever o cálculo utilizando vetores multidimensionais da biblioteca NumPy. Para garantir a melhoria de performance por meio de operações vetorizadas em C na memória contígua, qual abordagem sintática deve ser evitada na nova arquitetura?",
+    "options": {
+      "A": "Aplicação de funções universais (ufuncs) diretamente sobre as matrizes completas.",
+      "B": "Execução de broadcasting para alinhar tensores de dimensões complementares.",
+      "C": "Iteração das linhas da matriz NumPy utilizando o método np.nditer no nível do Python.",
+      "D": "Transposição prévia das matrizes estruturais por meio do atributo .T do ndarray.",
+      "E": "Fatiamento (slicing) dos arrays para extrair subconjuntos contíguos de memória."
+    },
+    "answer": "C",
+    "explanation": "O objetivo de usar NumPy é evitar a iteração em nível de Python. O método np.nditer, embora otimizado em relação a laços for puros do Python, ainda incorre em overhead de chamada de nível superior em Python se iterar no laço Python, perdendo os benefícios massivos da vetorização em C. As outras opções representam abordagens idiomáticas de alta performance."
+  },
+  {
+    "id": 11004,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Web Scraping Básico",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em um projeto de auditoria externa, o TJ-CE necessita realizar a coleta contínua de publicações de Diários da Justiça de outros tribunais estaduais, os quais disponibilizam os documentos em páginas HTML dinâmicas, mas estruturadas com tabelas de classes CSS específicas. A equipe de coleta de dados definiu o uso da biblioteca BeautifulSoup em Python para realizar a análise sintática do conteúdo textual. O analista precisa isolar especificamente todas as tags div que possuam a classe CSS denominada publicacao-integra. Qual comando implementa essa extração com precisão técnica?",
+    "options": {
+      "A": "soup.extract('div', class_='publicacao-integra')",
+      "B": "soup.find_all('div', class_='publicacao-integra')",
+      "C": "soup.select_node('div.publicacao-integra')",
+      "D": "soup.get_elements_by_class('div', 'publicacao-integra')",
+      "E": "soup.query('div', class_name='publicacao-integra')"
+    },
+    "answer": "B",
+    "explanation": "A função correta do BeautifulSoup para retornar uma lista com todas as ocorrências de uma tag e atributos específicos é find_all. O uso do argumento class_ (com underscore) é o padrão da biblioteca para evitar conflito com a palavra reservada class do Python. As outras alternativas utilizam métodos inexistentes na API padrão do BeautifulSoup ou que realizam outra função (extract destrói a tag)."
+  },
+  {
+    "id": 11005,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Fundamentos de Ciência de Dados",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O laboratório de inovação tecnológica do TJ-CE foi acionado para desenvolver um modelo preditivo focado em estimar o risco de evasão de sentenciados no regime semiaberto. A equipe decidiu adotar a metodologia CRISP-DM para estruturar as fases do projeto. O Cientista de Dados chefe determinou que, no presente momento, o foco total seja a análise rigorosa de valores atípicos (outliers), o tratamento de dados inconsistentes, a combinação de múltiplos datasets do sistema penitenciário e a formatação das colunas para os algoritmos de modelagem. Em qual fase da metodologia CRISP-DM a equipe se encontra atuando?",
+    "options": {
+      "A": "Business Understanding",
+      "B": "Data Understanding",
+      "C": "Data Preparation",
+      "D": "Modeling",
+      "E": "Deployment"
+    },
+    "answer": "C",
+    "explanation": "O tratamento de dados inconsistentes, combinação de datasets (join/merge), formatação e criação de features são etapas centrais da fase de Data Preparation (Preparação de Dados) do CRISP-DM. Business Understanding foca nos objetivos de negócio; Data Understanding na exploração inicial; Modeling na aplicação algorítmica; Deployment na implantação produtiva."
+  },
+  {
+    "id": 11006,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Python para Dados (Pandas)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Banco Nacional de Mandados de Prisão (BNMP) gera relatórios de status em formato tabular contendo milhares de registros. Um engenheiro de dados do TJ-CE carrega esses relatórios em um DataFrame Pandas, porém constata que a coluna data_cumprimento possui muitos valores nulos (NaN) correspondentes a mandados ainda pendentes de cumprimento. Para manter a integridade dos cálculos de tempo e evitar o descarte das linhas, ele recebe a diretriz de substituir exclusivamente os valores nulos dessa coluna por um valor predefinido de data de controle ('1900-01-01'). Qual método aplica essa transformação local adequadamente?",
+    "options": {
+      "A": "df.fillna(value={'data_cumprimento': '1900-01-01'}, inplace=True)",
+      "B": "df.dropna(subset=['data_cumprimento'], replace='1900-01-01')",
+      "C": "df['data_cumprimento'].replace(pd.NA, '1900-01-01', axis=1)",
+      "D": "df.impute(column='data_cumprimento', strategy='1900-01-01')",
+      "E": "df.mask(df['data_cumprimento'].isnull(), '1900-01-01')"
+    },
+    "answer": "A",
+    "explanation": "O método ideal no Pandas para preenchimento de dados faltantes é o fillna(). Ao passar um dicionário para o parâmetro value, ele mapeia o preenchimento apenas à coluna especificada, e o inplace=True garante a modificação no próprio objeto. O dropna remove dados em vez de preencher; o impute não existe na API nativa do DataFrame."
+  },
+  {
+    "id": 11007,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Ciclo de Vida do Dado",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Como parte do plano diretor de TI, o Tribunal aprovou a migração do legado analítico para uma nova arquitetura híbrida. A vice-presidência exige a geração de painéis de BI gerenciais consolidados, estruturados e com latência de resposta inferior a 2 segundos para apresentar ao Conselho Nacional de Justiça (CNJ). Ao mesmo tempo, a equipe de cientistas de dados necessita armazenar terabytes de arquivos de texto de sentenças e áudios de audiências de custódia em formato bruto para treinamentos futuros de IA generativa. Diante desses gargalos divergentes, qual a arquitetura de armazenamento apropriada para endereçar ambos os domínios?",
+    "options": {
+      "A": "Implantação de um Data Mart unificado com modelagem multidimensional em esquema estrela para todo o volume.",
+      "B": "Configuração de um Data Lake baseada em armazenamento de objetos complementada por um Data Warehouse em nuvem.",
+      "C": "Adoção de um Banco de Dados Orientado a Grafos estruturado para ingestão de mídia binária transacional.",
+      "D": "Desenvolvimento de um Operational Data Store configurado com particionamento em nível de bloco de arquivos.",
+      "E": "Centralização da infraestrutura em um SGBD Relacional tradicional equipado com índices de texto completo."
+    },
+    "answer": "B",
+    "explanation": "A necessidade requerida inclui um repositório voltado para BI estruturado de baixa latência (Data Warehouse) e um repositório capaz de acomodar dados brutos não estruturados como áudios e textos (Data Lake). A alternativa B define a arquitetura híbrida Lakehouse apropriada. Outras opções ou forçam a restrição do esquema estruturado sobre áudios (A, E) ou aplicam grafos e ODS inadequadamente."
+  },
+  {
+    "id": 11008,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Web Scraping Básico",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Uma iniciativa de transparência ativa exige que o TJ-CE consuma automaticamente metadados de uma API RESTful pública do Ministério Público. A documentação da referida API exige autenticação rigorosa baseada em tokens Bearer, do contrário o tráfego é bloqueado com status HTTP 401. Para implementar o script de captura com a biblioteca requests no Python, o Analista de Dados precisa enviar o token corretamente durante a chamada ao endpoint (URL). Qual implementação sintática viabiliza a autenticação na requisição GET?",
+    "options": {
+      "A": "requests.get(url, auth='Bearer <token>')",
+      "B": "requests.get(url, params={'Authorization': 'Bearer <token>'})",
+      "C": "requests.get(url, headers={'Authorization': 'Bearer <token>'})",
+      "D": "requests.get(url, cookies={'token': 'Bearer <token>'})",
+      "E": "requests.get(url, data={'Bearer': '<token>'})"
+    },
+    "answer": "C",
+    "explanation": "No protocolo HTTP e uso convencional de APIs RESTful, tokens Bearer devem ser enviados no cabeçalho Authorization da requisição. A biblioteca requests permite a injeção desse cabeçalho através do parâmetro headers recebendo um dicionário. Injetar isso em cookies, data ou params transgride a especificação estrutural da autenticação da API."
+  },
+  {
+    "id": 11009,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Fundamentos de Ciência de Dados",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O TJ-CE implantou um sistema de Inteligência Artificial baseado em Machine Learning para detecção de fraudes em custas judiciais. Quando a IA identifica uma fraude potencial, o processo é bloqueado e enviado para auditoria manual rigorosa. O juiz corregedor criticou o sistema, alegando que uma quantidade excessiva de processos perfeitamente legítimos está sendo bloqueada, sobrecarregando os auditores, ainda que a taxa global de acertos do modelo pareça alta. Para reajustar o modelo e diminuir especificamente os alertas falsos sem focar apenas na exatidão geral, qual métrica o cientista de dados deve maximizar?",
+    "options": {
+      "A": "Recall",
+      "B": "F1-Score",
+      "C": "Precision",
+      "D": "Accuracy",
+      "E": "ROC AUC"
+    },
+    "answer": "C",
+    "explanation": "A alta taxa de processos legítimos bloqueados aponta para um excesso de Falsos Positivos. A Precision (Precisão) é a métrica que mensura a exatidão das previsões positivas (verdadeiros positivos / total classificado como positivo). Maximizar a Precisão diminui a quantidade de alarmes falsos. O Recall foca na diminuição de falsos negativos."
+  },
+  {
+    "id": 11010,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Python para Dados (Pandas)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O painel de monitoramento do plantão judicial recebe um DataFrame denominado df_plantao atualizado a cada hora. Esse objeto possui as colunas assunto_principal, prioridade_idade (booleano) e status. O Analista de TI foi incumbido de extrair um recorte de dados contendo estritamente as linhas onde a prioridade de idade é verdadeira E o status está marcado como Conclusos, além de manter no resultado apenas a coluna assunto_principal. Qual instrução em Python utilizando a biblioteca Pandas cumpre esse escopo sem gerar erros de sobreescrita na memória ou falhas de chave?",
+    "options": {
+      "A": "df_plantao[(df_plantao['prioridade_idade'] == True) and (df_plantao['status'] == 'Conclusos')]['assunto_principal']",
+      "B": "df_plantao.loc[(df_plantao['prioridade_idade']) & (df_plantao['status'] == 'Conclusos'), ['assunto_principal']]",
+      "C": "df_plantao.filter(df_plantao['prioridade_idade'] & df_plantao['status'] == 'Conclusos').select('assunto_principal')",
+      "D": "df_plantao.where(df_plantao['prioridade_idade'] == True & df_plantao['status'] == 'Conclusos')['assunto_principal']",
+      "E": "df_plantao.query(\"prioridade_idade == True and status == 'Conclusos'\").extract('assunto_principal')"
+    },
+    "answer": "B",
+    "explanation": "O indexador .loc permite realizar a seleção tanto nas linhas (via máscaras booleanas) quanto nas colunas numa única operação segura. No Pandas, as múltiplas condições lógicas vetoriais exigem o uso do bitwise & e parênteses. A opção A utiliza and que dispara ValueError. As demais inventam métodos ou aplicam parâmetros inadequados que não pertencem à API do Pandas."
+  },
+  {
+    "id": 11011,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Ciclo de Vida do Dado",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No contexto do ciclo de vida de dados no âmbito judicial, antes do efetivo desenvolvimento de pipelines de ETL para alimentar a plataforma de jurimetria, o setor de engenharia necessitou rodar um processo automatizado de varredura sobre as tabelas brutas das bases de dados primárias. O objetivo da rotina foi identificar valores máximos e mínimos, a cardinalidade das chaves estrangeiras, a contagem de campos nulos e a distribuição estatística básica das variáveis numéricas do sistema de controle processual. Esse procedimento sistêmico é caracterizado como:",
+    "options": {
+      "A": "Data Masking",
+      "B": "Data Wrangling",
+      "C": "Data Profiling",
+      "D": "Data Enrichment",
+      "E": "Data Augmentation"
+    },
+    "answer": "C",
+    "explanation": "A atividade de sondagem analítica inicial nas fontes de dados visando descobrir a estrutura estrutural, o formato, integridade e os limites dos valores (estatística descritiva, nulos, máximos) denomina-se Data Profiling (Perfilamento). Data Wrangling refere-se à ação de curadoria manual/transformação de dados. Masking e Augmentation dizem respeito a anonimização e criação artificial de dados, respectivamente."
+  },
+  {
+    "id": 11012,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Python para Dados (Numpy)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A área de visão computacional da secretaria de segurança de instalações do TJ-CE desenvolveu uma rede neural convolucional para identificar incidentes nas câmeras do fórum. As imagens capturadas são representadas internamente como arrays da biblioteca NumPy no formato (quantidade_imagens, altura, largura, canais_de_cores). Para transferir os tensores extraídos da primeira camada de convolução a uma camada densa conectada em formato vetorial simples, mantendo o total da dimensão inicial dos dados da imagem (batch), o engenheiro precisa achatar as três últimas dimensões. Considerando uma variável de imagem chamada tensor_imagens, qual operação NumPy atinge a matriz bidimensional esperada?",
+    "options": {
+      "A": "tensor_imagens.ravel(axis=1)",
+      "B": "tensor_imagens.flatten()",
+      "C": "tensor_imagens.reshape(tensor_imagens.shape[0], -1)",
+      "D": "np.squeeze(tensor_imagens)",
+      "E": "tensor_imagens.transpose()"
+    },
+    "answer": "C",
+    "explanation": "Para preservar o eixo do batch (quantidade_imagens, que é dimensão 0) e transformar todo o resto da estrutura espacial e canal em um vetor unidimensional por imagem, o uso adequado é de .reshape(size, -1), onde o valor -1 sinaliza ao NumPy para inferir e condensar o restante dos elementos em uma única nova dimensão agregada. Flatten destruiria o isolamento por imagem (juntando tudo em um array 1D global)."
+  },
+  {
+    "id": 11013,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Web Scraping Básico",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Ao programar a raspagem de dados (Web Scraping) da jurisprudência consolidada disponibilizada em portal de transparência externa, o desenvolvedor notou que os resultados dos acórdãos são exibidos de forma fragmentada. A URL utiliza um parâmetro sequencial explícito de consulta, formatado na string de conexão como '?pagina=1', e o rodapé do site HTML expõe as referências das páginas subsequentes. Para automatizar o processo ininterrupto até o esgotamento do repositório, o script precisa garantir o incremento iterativo da paginação controlada pelo protocolo de requisições. Qual lógica estrutural estabelece a implementação contínua até o critério de parada natural do alvo web?",
+    "options": {
+      "A": "Implantação de um laço for fixo balizado pelo tamanho em bytes do primeiro documento retornado na estrutura da resposta HTTP.",
+      "B": "Utilização de um laço while atrelado à extração contínua da URL do botão 'Próxima', interrompendo a execução se a tag não for encontrada na árvore do BeautifulSoup.",
+      "C": "Execução paralela de sub-rotinas vinculadas a números aleatórios de páginas, interceptando falhas de timeout para definir a fronteira total.",
+      "D": "Configuração de um proxy reverso para interceptar o servidor de banco de dados do portal na porta de aplicação das queries REST.",
+      "E": "Configuração de requisições iterativas que adicionam recursividade ao escopo limitando as chamadas a um intervalo especificado no cabeçalho User-Agent."
+    },
+    "answer": "B",
+    "explanation": "Na programação de Web Scraping para navegação paginada finita, o uso de um laço dinâmico condicional, buscando ativamente a existência do elo de hiperlink da página 'Próxima', é a abordagem segura e eficiente. Quando o hiperlink deixar de existir no HTML renderizado, o loop entende o fim do repositório e cessa. Medir bytes, usar paralelismo randômico com timeout ou forçar o User-Agent são metodologias absurdas e distorcidas."
+  },
+  {
+    "id": 11014,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Fundamentos de Ciência de Dados",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No contexto das varas de execuções fiscais, uma massiva quantidade de relatórios patrimoniais de contribuintes precisa ser revisada. O Tribunal requisitou um projeto para que o sistema identifique perfis ocultos de ocultação de bens, criando automaticamente subdivisões lógicas ou grupos (clusters) de empresas com comportamentos transacionais semelhantes, sem dispor de nenhum dado histórico rotulado sobre o que constitui ou não uma ocultação real. Apenas os padrões intrínsecos devem ser expostos. Em arquitetura de Machine Learning, essa solução exige algoritmos categorizados especificamente como:",
+    "options": {
+      "A": "Regressão Linear Múltipla",
+      "B": "Aprendizado por Reforço Profundo",
+      "C": "Aprendizado Supervisionado",
+      "D": "Aprendizado Não Supervisionado",
+      "E": "Redes Neurais Convolucionais"
+    },
+    "answer": "D",
+    "explanation": "A segmentação do conjunto de dados por meio da identificação de padrões emergentes internos sem o emprego de anotações prévias (variáveis-alvo rotuladas) caracteriza intrinsecamente o Aprendizado Não Supervisionado (Unsupervised Learning). Regressões e Aprendizados Supervisionados demandam sempre um rótulo guia histórico explícito."
+  },
+  {
+    "id": 11015,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Python para Dados (Pandas)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um analista judiciário especializado em dados utiliza um DataFrame no Python chamado df_demandas, que cataloga todas as entradas do ano. O conjunto contém as colunas comarca_origem, tipo_acao e valor_causa. A corregedoria solicitou uma consolidação sumária que retorne exatamente a soma total dos valores das causas e a quantidade absoluta de ações protocoladas, ambas calculadas em relação a cada combinação cruzada de 'comarca_origem' e 'tipo_acao'. Qual a sintaxe direta que implementa o agrupamento e a operação de múltiplos agregadores paralelos em uma única linha arquitetural?",
+    "options": {
+      "A": "df_demandas.groupby(['comarca_origem', 'tipo_acao'])['valor_causa'].agg(['sum', 'count'])",
+      "B": "df_demandas.group_by(comarca_origem, tipo_acao).summarize(soma=sum(valor_causa), total=count(valor_causa))",
+      "C": "df_demandas.aggregate(['comarca_origem', 'tipo_acao'], functions={'valor_causa': sum, 'tipo_acao': len})",
+      "D": "df_demandas.groupby(['comarca_origem', 'tipo_acao']).apply(['sum', 'count'], column='valor_causa')",
+      "E": "df_demandas.pivot_table(index=['comarca_origem', 'tipo_acao'], values='valor_causa', method=['sum', 'count'])"
+    },
+    "answer": "A",
+    "explanation": "No Pandas, agrupamentos multiparamétricos necessitam de uma lista injetada no método groupby(). Para realizar agregações distintas e concomitantes em uma coluna mapeada na projeção, aplica-se o método agg() recebendo uma lista com as strings de função estatística, como 'sum' e 'count'. As outras opções usam métodos R-dplyr (summarize), possuem parâmetros inexistentes na API ou subvertem o apply."
+  },
+  {
+    "id": 11016,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Python para Dados (Pandas)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O corpo de análise da central de custódias se deparou com a coluna de dados textuais descricao_historico no DataFrame df_audiencias, recheada de marcações sistêmicas antigas representadas por colchetes explícitos e caracteres sujos (ex: '[SISTEMA_LEGADO] Deferido o pleito'). Para padronizar a linguagem no escopo de Data Wrangling, foi ordenado que todos os valores encadeados contendo '[SISTEMA_LEGADO]' fossem extirpados dos textos para o processamento limpo no Pandas. Qual comando executa essa limpeza em nível de série (coluna) otimizando operações de string vetorizadas?",
+    "options": {
+      "A": "df_audiencias['descricao_historico'].apply(lambda x: x.remove('[SISTEMA_LEGADO]'))",
+      "B": "df_audiencias['descricao_historico'].str.replace('\\[SISTEMA_LEGADO\\]', '', regex=True)",
+      "C": "df_audiencias['descricao_historico'].strip('[SISTEMA_LEGADO]')",
+      "D": "df_audiencias.replace({'descricao_historico': {'[SISTEMA_LEGADO]': None}})",
+      "E": "df_audiencias['descricao_historico'].map(strip_substring='[SISTEMA_LEGADO]')"
+    },
+    "answer": "B",
+    "explanation": "O ambiente Pandas disponibiliza acesso otimizado de vetorização para textos via o acessor de propriedade '.str'. Ao empregar o método str.replace, parametrizado com regex=True e o escape adequado de colchetes, substitui-se o trecho contaminante por uma string vazia globalmente. A opção A injeta apply com um método inexistente em strings isoladas (.remove é de listas). As demais aplicam strip em bloco errôneo ou violam restrições de busca exata."
+  },
+  {
+    "id": 11017,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Ciclo de Vida do Dado",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para compor a arquitetura de Big Data do tribunal e lidar com informações de processos que mudam contínua e massivamente, o arquiteto de software do TJ-CE desenhou o fluxo das fontes sistêmicas primárias. No novo pipeline, todos os dados são extraídos em seu formato bruto direto do cartório e imediatamente carregados em contêineres otimizados de armazenamento em nuvem no repositório final. Somente sob demanda e dentro das capacidades computacionais nativas do repositório final em nuvem é que ocorre a normalização e alteração de formato. Qual paradigma tecnológico essa abordagem implementa?",
+    "options": {
+      "A": "Extract, Transform, Load (ETL) em batch rígido",
+      "B": "Change Data Capture (CDC) em log incremental",
+      "C": "Extract, Load, Transform (ELT)",
+      "D": "Processamento de Stream Assíncrono com Kafka",
+      "E": "Data Cataloging Federativo Integrado"
+    },
+    "answer": "C",
+    "explanation": "A abordagem em que os dados são Extraídos e em seguida Carregados de maneira bruta no repositório de Big Data (Data Lake/Nuwen), postergando a Transformação para ocorrer no próprio ambiente final usando poder computacional elástico, é o paradigma ELT (Extract, Load, Transform). A opção A define o tradicional ETL."
+  },
+  {
+    "id": 11018,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Fundamentos de Ciência de Dados",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de estatística submeteu um modelo de Regressão Logística para classificar se o provimento de recursos de apelação seria aceito ou não nos desembargadores das Câmaras de Direito Público. Durante o treinamento nos dados de 2018 a 2022, o modelo atingiu taxa de precisão milimétrica de 99,8%. Contudo, quando colocado em produção sobre os dados operacionais isolados de 2023, o seu desempenho de precisão despencou tragicamente para 48,1%. Em engenharia de aprendizado de máquina, qual o diagnóstico clássico que representa essa disparidade extrema de erro entre fases?",
+    "options": {
+      "A": "Underfitting por viés extremo de classe.",
+      "B": "Overfitting ocasionado pela alta variância no ajuste da função de decisão.",
+      "C": "Data Leakage proveniente do excesso de regularização Lasso no vetor matricial.",
+      "D": "Feature Scaling imperfeito reduzindo a matriz gradiente para zeros absolutos.",
+      "E": "Cross-Validation excessiva dividindo o plano de convergência."
+    },
+    "answer": "B",
+    "explanation": "Quando um modelo apresenta desempenho de métricas extraordinariamente altas no conjunto de dados de Treinamento, porém sofre uma degradação severa em predições de um conjunto de Teste inexplorado ou produção, diz-se que ocorreu o 'Superajuste' (Overfitting). O Overfitting é sinônimo estatístico de alta Variância da modelagem sobre as amostras."
+  },
+  {
+    "id": 11019,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Web Scraping Básico",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Durante a automação da extração de documentos públicos contidos em sites sob a tutela de autarquias estaduais, os crawlers e scripts de Web Scraping operados pela TI do TJ-CE devem respeitar as diretrizes de governança e ética de raspagem recomendadas pela Web. Especificamente, o analista deve configurar o componente de inicialização para interpretar primeiramente um documento de metadados padronizado, localizado na raiz dos domínios acessados, o qual determina permissões e restrições de diretórios baseadas no User-Agent do robô. Qual é esse artefato padrão?",
+    "options": {
+      "A": "sitemap.xml",
+      "B": "robots.txt",
+      "C": "metadata.json",
+      "D": "web.config",
+      "E": "manifest.json"
+    },
+    "answer": "B",
+    "explanation": "O arquivo robots.txt configura o Protocolo de Exclusão de Robôs e dita aos clientes automatizados de raspagem quais diretórios, URIs e escopos estão vetados ou permitidos para serem extraídos ou listados no domínio. O Sitemap (A) sugere apenas diretrizes de indexação estrutural para ranqueamento."
+  },
+  {
+    "id": 11020,
+    "day_id": "dia_09_06",
+    "day_title": "Terça-feira 09/06",
+    "theme": "Python para Dados (Numpy)",
+    "context": "",
+    "source": "FCC - 2026 - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para compor os indicadores de produtividade jurisdicional, o Conselho Nacional de Justiça demandou que os tribunais calculassem não apenas as médias, mas a dispersão estatística atrelada aos tempos de permanência dos processos nos cartórios cíveis. O setor de análise obteve os dados carregados em uma matriz multidimensional do NumPy designada matriz_tempos_civeis. Qual operação sintática extrai estritamente o desvio padrão da matriz como um todo para balizar o relatório analítico?",
+    "options": {
+      "A": "np.variance(matriz_tempos_civeis, axis=0)",
+      "B": "matriz_tempos_civeis.std()",
+      "C": "matriz_tempos_civeis.stdev()",
+      "D": "np.dispersion(matriz_tempos_civeis)",
+      "E": "np.median(matriz_tempos_civeis, scale=True)"
+    },
+    "answer": "B",
+    "explanation": "O método algorítmico da biblioteca NumPy implementado nativamente para descobrir o desvio padrão global dos valores integrados em uma estrutura de array ndarray sem destinar eixos é invocado sintaticamente através do .std() acoplado à matriz, ou via np.std(matriz_tempos_civeis). O método stdev remonta à base standard do Python e falha em métodos diretos na classe nativa de matrizes C."
+  }
+]
