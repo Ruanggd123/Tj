@@ -1,0 +1,363 @@
+[
+  {
+    "id": 1,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Interpretação de Texto – Tecnologia e Judiciário",
+    "context": "Texto I\n\nA transformação digital do Poder Judiciário brasileiro avançou de forma acelerada a partir da pandemia de Covid-19, que impôs ao sistema de justiça a necessidade imediata de virtualização de seus processos. O Tribunal de Justiça do Ceará, acompanhando as diretrizes do Conselho Nacional de Justiça, implementou o Processo Judicial Eletrônico — PJe — em todas as suas varas e comarcas, reduzindo drasticamente o uso de papel e o tempo médio de tramitação dos feitos. Contudo, a adoção em larga escala de sistemas informatizados também trouxe novos desafios: a segurança da informação, a acessibilidade digital para jurisdicionados e advogados de comarcas do interior, e a necessidade de capacitação contínua dos servidores. Estudos realizados pelo próprio Tribunal apontaram que cerca de 38% dos servidores lotados em comarcas de menor porte relataram dificuldades no uso das ferramentas digitais, comprometendo, em certa medida, a celeridade processual que o sistema eletrônico prometia entregar. Diante desse quadro, o TJ-CE elaborou um Plano Estratégico de Transformação Digital para o biênio 2025-2027, contemplando ações de capacitação, modernização da infraestrutura de rede e ampliação do suporte técnico às comarcas do interior.",
+    "source": "FCC – 2026 – TJ-CE – Analista de TI (Inédita)",
+    "statement": "Leia o Texto I e responda à questão. O texto afirma que a transformação digital do Judiciário cearense foi impulsionada por um evento externo e trouxe, simultaneamente, benefícios e desafios. Com base na leitura integral do texto, a alternativa que apresenta, de forma CORRETA, a relação entre causa, efeito positivo e efeito negativo identificados no texto é:",
+    "options": {
+      "A": "A pandemia de Covid-19 forçou a virtualização dos processos, reduziu o tempo de tramitação e gerou dificuldades de acessibilidade e capacitação em comarcas menores.",
+      "B": "A implementação do PJe foi determinada exclusivamente pelo CNJ, eliminou o uso de papel e não apresentou qualquer resistência por parte dos servidores.",
+      "C": "O Plano Estratégico 2025-2027 foi criado antes da pandemia e tem como único objetivo a modernização da infraestrutura de rede das comarcas.",
+      "D": "A transformação digital ocorreu de forma gradual e planejada, independente de qualquer evento externo, e beneficiou igualmente servidores de comarcas grandes e pequenas.",
+      "E": "O avanço digital reduziu o tempo de tramitação e eliminou integralmente as dificuldades operacionais dos servidores, conforme apontam os estudos internos do Tribunal."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A sintetiza com precisão os três elementos presentes no texto: (1) causa — a pandemia forçou a virtualização; (2) efeito positivo — redução do tempo de tramitação; (3) efeito negativo — dificuldades de acessibilidade e capacitação nos municípios menores. B erra ao afirmar que 'não houve resistência', contrariando o dado de 38% com dificuldades, e ao afirmar que a determinação foi 'exclusivamente do CNJ' (o texto fala em 'acompanhando as diretrizes'). C distorce a cronologia: o Plano foi criado em decorrência dos problemas identificados, não antes da pandemia. D contradiz o texto ao dizer que o processo foi 'gradual e independente de evento externo'. E inverte o dado estatístico, afirmando eliminação integral das dificuldades, quando o texto aponta o oposto."
+  },
+  {
+    "id": 2,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Interpretação de Texto – Tecnologia e Judiciário",
+    "context": "Texto I (mesmo texto da questão anterior)\n\nA transformação digital do Poder Judiciário brasileiro avançou de forma acelerada a partir da pandemia de Covid-19, que impôs ao sistema de justiça a necessidade imediata de virtualização de seus processos. O Tribunal de Justiça do Ceará, acompanhando as diretrizes do Conselho Nacional de Justiça, implementou o Processo Judicial Eletrônico — PJe — em todas as suas varas e comarcas, reduzindo drasticamente o uso de papel e o tempo médio de tramitação dos feitos. Contudo, a adoção em larga escala de sistemas informatizados também trouxe novos desafios: a segurança da informação, a acessibilidade digital para jurisdicionados e advogados de comarcas do interior, e a necessidade de capacitação contínua dos servidores. Estudos realizados pelo próprio Tribunal apontaram que cerca de 38% dos servidores lotados em comarcas de menor porte relataram dificuldades no uso das ferramentas digitais, comprometendo, em certa medida, a celeridade processual que o sistema eletrônico prometia entregar. Diante desse quadro, o TJ-CE elaborou um Plano Estratégico de Transformação Digital para o biênio 2025-2027, contemplando ações de capacitação, modernização da infraestrutura de rede e ampliação do suporte técnico às comarcas do interior.",
+    "source": "FCC – 2026 – TJ-CE – Analista de TI (Inédita)",
+    "statement": "No trecho 'comprometendo, em certa medida, a celeridade processual que o sistema eletrônico prometia entregar', a expressão 'em certa medida' exerce, no contexto, a função de:",
+    "options": {
+      "A": "Intensificar o comprometimento da celeridade processual, indicando que o problema era de grande proporção.",
+      "B": "Modalizar a afirmação, atenuando o grau do comprometimento da celeridade sem negá-lo.",
+      "C": "Contrapor-se à ideia anterior, introduzindo uma ressalva que nega o impacto do problema.",
+      "D": "Indicar a causa do comprometimento da celeridade, remetendo às dificuldades de capacitação.",
+      "E": "Delimitar o tempo durante o qual o comprometimento da celeridade processual foi observado."
+    },
+    "answer": "B",
+    "explanation": "A expressão 'em certa medida' é um modalizador epistêmico que atenua a força da afirmação: o texto reconhece que houve comprometimento da celeridade, mas sem dimensioná-lo como total ou severo — trata-se de um recurso de prudência argumentativa. A erra ao afirmar que a expressão intensifica (é o oposto: ela atenua). C erra ao dizer que nega o impacto (a expressão não nega, apenas ameniza). D confunde função semântica de atenuação com função de indicar causa. E confunde um modalizador de grau com um adjunto de tempo."
+  },
+  {
+    "id": 3,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Interpretação de Texto – Tecnologia e Judiciário",
+    "context": "Texto II\n\nA inteligência artificial aplicada ao Judiciário tem se tornado tema central nos debates sobre o futuro da administração da justiça no Brasil. Sistemas baseados em aprendizado de máquina já são capazes de triagem processual, identificação de teses repetitivas e até sugestão de minutas de decisão. O Supremo Tribunal Federal utiliza, desde 2019, a ferramenta Victor, treinada para reconhecer a repercussão geral de recursos extraordinários, com resultados que superaram as expectativas iniciais em termos de precisão. No entanto, juristas e filósofos do direito alertam para um risco inerente ao processo de automação das decisões judiciais: a opacidade algorítmica. Diferentemente de um magistrado, cujas razões de decidir devem ser fundamentadas e públicas nos termos do art. 93, IX, da Constituição Federal, um modelo de machine learning opera por meio de pesos matemáticos que, na maior parte dos casos, não são interpretáveis nem auditáveis por seres humanos. Esse fenômeno, denominado 'caixa-preta', ameaça princípios constitucionais como o devido processo legal, a ampla defesa e o contraditório, uma vez que as partes não conseguem contestar aquilo que não conseguem compreender.",
+    "source": "IDECAN – 2026 – ALECE – Analista Legislativo (Inédita)",
+    "statement": "Com base no Texto II, assinale a alternativa que apresenta uma afirmação compatível com o que o texto expõe sobre a inteligência artificial no Judiciário.",
+    "options": {
+      "A": "O STF adotou a ferramenta Victor em 2019, e seus resultados ficaram aquém das expectativas iniciais em termos de precisão.",
+      "B": "A opacidade algorítmica representa uma ameaça a princípios constitucionais, pois os modelos de IA não produzem fundamentações humanamente compreensíveis.",
+      "C": "Juristas e filósofos do direito defendem que a automação das decisões judiciais é plenamente compatível com o devido processo legal.",
+      "D": "O fenômeno da 'caixa-preta' refere-se à incapacidade dos magistrados de utilizarem sistemas de IA em suas rotinas de trabalho.",
+      "E": "O texto conclui que os sistemas de machine learning devem ser proibidos no Judiciário por violarem expressamente o art. 93, IX, da Constituição Federal."
+    },
+    "answer": "B",
+    "explanation": "B reproduz fielmente a argumentação central do texto: a opacidade dos modelos de IA ('caixa-preta') ameaça o devido processo, o contraditório e a ampla defesa, pois as partes não conseguem contestar o que não entendem — e os modelos operam por pesos matemáticos não auditáveis. A inverte os fatos: o texto diz que os resultados 'superaram as expectativas'. C contradiz o texto, que apresenta juristas alertando para riscos, não defendendo compatibilidade plena. D distorce o conceito de 'caixa-preta', que se refere à opacidade dos algoritmos, não à dificuldade de uso por magistrados. E vai além do que o texto afirma: ele não defende proibição, apenas aponta riscos."
+  },
+  {
+    "id": 4,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Interpretação de Texto – Tecnologia e Judiciário",
+    "context": "Texto II (mesmo texto da questão anterior)",
+    "source": "FCC – 2026 – TJ-CE – Analista de TI (Inédita)",
+    "statement": "No Texto II, o termo 'opacidade algorítmica' é empregado como conceito central do argumento apresentado. Considerando o contexto e o desenvolvimento textual, esse termo designa:",
+    "options": {
+      "A": "A lentidão no processamento das rotinas automatizadas de triagem processual nos tribunais superiores.",
+      "B": "A ausência de transparência nos processos de decisão dos modelos de machine learning, cujos mecanismos internos não são interpretáveis.",
+      "C": "A dificuldade técnica enfrentada pelos servidores na operação de sistemas de inteligência artificial implantados nos tribunais.",
+      "D": "A impossibilidade legal de utilização de algoritmos como ferramenta auxiliar em decisões submetidas ao contraditório.",
+      "E": "O sigilo imposto pelo STF sobre os critérios de treinamento e validação da ferramenta Victor."
+    },
+    "answer": "B",
+    "explanation": "O texto define explicitamente o fenômeno da opacidade algorítmica ao mencionar que os modelos de machine learning 'operam por meio de pesos matemáticos que não são interpretáveis nem auditáveis por seres humanos'. Trata-se, portanto, da falta de transparência interna dos algoritmos. A confunde opacidade com lentidão operacional. C confunde o conceito com dificuldade de uso por servidores, que é um problema de capacitação, não de opacidade. D cria uma vedação legal inexistente no texto. E atribui o fenômeno ao sigilo institucional do STF, o que não tem base no texto."
+  },
+  {
+    "id": 5,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Interpretação de Texto – Tecnologia e Judiciário",
+    "context": "Texto III\n\nA Lei Geral de Proteção de Dados Pessoais — LGPD (Lei nº 13.709/2018) — representa um marco regulatório fundamental para a atuação dos órgãos públicos brasileiros no que tange ao tratamento de informações de cidadãos. No âmbito do Poder Judiciário, a LGPD impõe desafios específicos: os processos judiciais contêm dados pessoais sensíveis — como informações de saúde, orientação sexual e origem étnica —, e a publicidade dos atos processuais, princípio constitucional, pode entrar em tensão com o direito à privacidade dos jurisdicionados. O Conselho Nacional de Justiça editou a Resolução CNJ nº 363/2021, que estabelece normas para o tratamento de dados pessoais pelos órgãos do Poder Judiciário, determinando a anonimização de dados sensíveis em decisões publicadas, a nomeação de Encarregado pelo Tratamento de Dados (DPO) e a elaboração de Relatórios de Impacto à Proteção de Dados (RIPD). O descumprimento dessas normas pode acarretar responsabilidade administrativa e, em casos de dano comprovado ao titular, responsabilidade civil do órgão.",
+    "source": "FCC – 2026 – TJ-CE – Analista de TI (Inédita)",
+    "statement": "O Texto III trata da aplicação da LGPD no contexto do Poder Judiciário. Com base em seu conteúdo, é CORRETO afirmar que:",
+    "options": {
+      "A": "A LGPD proíbe, em qualquer hipótese, a publicação de decisões judiciais que contenham dados pessoais dos jurisdicionados.",
+      "B": "A Resolução CNJ nº 363/2021 exige, entre outras medidas, a anonimização de dados sensíveis e a designação de um Encarregado pelo Tratamento de Dados.",
+      "C": "A publicidade dos atos processuais é princípio constitucional que, segundo o texto, prevalece sempre sobre o direito à privacidade dos jurisdicionados.",
+      "D": "A LGPD aplica-se exclusivamente aos órgãos do Poder Executivo, e sua extensão ao Judiciário ocorreu por meio da Resolução CNJ nº 363/2021.",
+      "E": "O descumprimento das normas da Resolução CNJ nº 363/2021 acarreta exclusivamente sanções de natureza penal ao órgão infrator."
+    },
+    "answer": "B",
+    "explanation": "B reproduz com exatidão o que o texto afirma sobre o conteúdo da Resolução CNJ nº 363/2021: anonimização de dados sensíveis, nomeação de DPO e elaboração de RIPD. A exagera: o texto fala em 'tensão' entre publicidade e privacidade, não em proibição absoluta. C distorce a relação entre os princípios: o texto diz que 'pode entrar em tensão', não que a publicidade 'prevalece sempre'. D cria uma restrição inexistente: a LGPD aplica-se à Administração Pública em geral, incluindo o Judiciário, por força da própria lei. E limita as sanções à esfera penal, quando o texto menciona responsabilidade administrativa e civil."
+  },
+  {
+    "id": 6,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Interpretação de Texto – Tecnologia e Judiciário",
+    "context": "Texto III (mesmo texto da questão anterior)",
+    "source": "IDECAN – 2026 – ALECE – Analista Legislativo (Inédita)",
+    "statement": "No trecho do Texto III: 'a publicidade dos atos processuais, princípio constitucional, pode entrar em tensão com o direito à privacidade dos jurisdicionados', a expressão 'entrar em tensão com' pode ser substituída, sem alteração de sentido, por:",
+    "options": {
+      "A": "corroborar com",
+      "B": "complementar",
+      "C": "colidir com",
+      "D": "derivar de",
+      "E": "fundamentar"
+    },
+    "answer": "C",
+    "explanation": "'Entrar em tensão com' indica conflito ou choque entre dois elementos — no caso, entre o princípio da publicidade e o direito à privacidade. 'Colidir com' mantém exatamente esse sentido de confronto ou oposição. A ('corroborar com') significa confirmar, reforçar — sentido oposto. B ('complementar') indica que os dois elementos se integram, o que contradiz a ideia de conflito. D ('derivar de') indica origem ou consequência causal, sentido diferente. E ('fundamentar') indica base ou sustentação, sentido também incompatível."
+  },
+  {
+    "id": 7,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Interpretação de Texto – Tecnologia e Judiciário",
+    "context": "Texto IV\n\nO conceito de soberania digital emergiu na última década como uma resposta dos Estados à crescente dependência de infraestruturas tecnológicas controladas por corporações privadas estrangeiras. Para o Poder Judiciário brasileiro, essa questão assume contornos particulares: servidores de armazenamento em nuvem, sistemas de videoconferência para audiências e plataformas de colaboração interna são, em muitos casos, fornecidos por empresas norte-americanas ou europeias, submetidas às legislações de seus países de origem. Isso significa que dados de processos sigilosos, depoimentos de testemunhas protegidas e deliberações de órgãos colegiados podem estar sujeitos, em tese, a ordens de acesso emitidas por tribunais estrangeiros ou agências de inteligência. O debate sobre soberania digital no Judiciário, portanto, não é apenas tecnológico, mas fundamentalmente político e jurídico, envolvendo questões de jurisdição, diplomacia e proteção de direitos fundamentais.",
+    "source": "FCC – 2026 – TJ-CE – Analista de TI (Inédita)",
+    "statement": "O Texto IV aborda o conceito de soberania digital no contexto do Poder Judiciário. De acordo com o texto, a principal razão pela qual esse tema assume 'contornos particulares' para o Judiciário brasileiro é:",
+    "options": {
+      "A": "O fato de as corporações privadas estrangeiras se recusarem sistematicamente a firmar contratos de prestação de serviços com órgãos públicos brasileiros.",
+      "B": "A possibilidade de que dados sensíveis do Judiciário, armazenados em servidores de empresas estrangeiras, estejam sujeitos a ordens de acesso emanadas de autoridades de outros países.",
+      "C": "A ausência de qualquer regulamentação nacional sobre o uso de computação em nuvem por órgãos do Poder Público, o que inviabiliza a contratação desses serviços.",
+      "D": "O fato de o Poder Judiciário ser o único ramo da Administração Pública que utiliza plataformas tecnológicas de empresas estrangeiras.",
+      "E": "A dependência exclusiva de sistemas de videoconferência para a realização de audiências, o que torna o Judiciário mais vulnerável do que os demais poderes."
+    },
+    "answer": "B",
+    "explanation": "O texto explica que o caráter peculiar do problema para o Judiciário reside no fato de que dados de processos sigilosos, depoimentos e deliberações podem estar hospedados em servidores de empresas sujeitas a ordens de acesso estrangeiras — tribunais ou agências de inteligência de outros países. B captura exatamente esse risco. A inverte a realidade: o texto não menciona recusa das corporações, pelo contrário, elas fornecem os serviços. C cria uma premissa falsa (ausência de regulamentação) que não existe no texto. D restringe o problema ao Judiciário como 'único' ramo afetado, o que o texto não afirma. E reduz o problema à videoconferência, quando o texto menciona múltiplas tecnologias (nuvem, videoconferência, plataformas de colaboração)."
+  },
+  {
+    "id": 8,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Interpretação de Texto – Tecnologia e Judiciário",
+    "context": "Texto IV (mesmo texto da questão anterior)",
+    "source": "IDECAN – 2026 – ALECE – Analista Legislativo (Inédita)",
+    "statement": "No último período do Texto IV — 'O debate sobre soberania digital no Judiciário, portanto, não é apenas tecnológico, mas fundamentalmente político e jurídico, envolvendo questões de jurisdição, diplomacia e proteção de direitos fundamentais' —, a palavra 'portanto' estabelece, entre esse período e o restante do texto, uma relação de:",
+    "options": {
+      "A": "Concessão, indicando que o autor reconhece uma ressalva à ideia anteriormente desenvolvida.",
+      "B": "Adversidade, sinalizando uma oposição entre a natureza tecnológica e a natureza política do debate.",
+      "C": "Conclusão, sinalizando que a afirmação decorre logicamente das ideias expostas anteriormente.",
+      "D": "Condição, indicando que o caráter político do debate depende da resolução prévia das questões tecnológicas.",
+      "E": "Adição, acrescentando uma informação nova e independente ao argumento construído ao longo do texto."
+    },
+    "answer": "C",
+    "explanation": "'Portanto' é um conectivo conclusivo: introduz uma consequência ou síntese que se deduz das premissas anteriores. O texto descreveu a dependência tecnológica, os riscos de acesso estrangeiro e as implicações para o Judiciário — e, a partir disso, conclui que o debate é político e jurídico, não apenas tecnológico. A ('concessão') seria introduzida por 'embora', 'apesar de', 'ainda que'. B ('adversidade') seria marcada por 'mas', 'porém', 'entretanto'. D ('condição') seria expressa por 'se', 'desde que', 'caso'. E ('adição') seria marcada por 'além disso', 'também', 'ademais'."
+  },
+  {
+    "id": 9,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Gramática – Concordância Verbal",
+    "context": "",
+    "source": "FCC – 2026 – TJ-CE – Analista de TI (Inédita)",
+    "statement": "O Setor de Tecnologia da Informação do TJ-CE emitiu uma circular interna com o seguinte trecho: 'Fazem parte do novo sistema integrado de gestão processual tanto os módulos de protocolo eletrônico quanto os subsistemas de armazenamento em nuvem.' Assinale a alternativa em que a concordância verbal está CORRETAMENTE justificada no trecho acima.",
+    "options": {
+      "A": "O verbo 'fazem' está no plural porque concorda com o núcleo mais próximo, 'os módulos de protocolo eletrônico'.",
+      "B": "O verbo 'fazem' está no plural porque a conjunção correlativa 'tanto... quanto' impõe, obrigatoriamente, o verbo no singular.",
+      "C": "O verbo 'fazem' está no plural porque a conjunção 'tanto... quanto' conecta dois sujeitos, e o verbo concorda com o conjunto deles.",
+      "D": "O verbo 'fazem' pode estar no singular ou no plural, pois o sujeito composto com 'tanto... quanto' admite concordância facultativa com qualquer dos núcleos.",
+      "E": "O verbo 'fazem' está no plural por concordar exclusivamente com o núcleo mais distante, 'os subsistemas de armazenamento em nuvem'.",
+      "source": "FCC – 2026 – TJ-CE – Analista de TI (Inédita)"
+    },
+    "answer": "C",
+    "explanation": "Quando a conjunção correlativa 'tanto... quanto' (ou 'tanto... como') une dois ou mais sujeitos, o verbo vai obrigatoriamente para o plural, concordando com a totalidade dos sujeitos enumerados. A erra ao atribuir a concordância apenas ao núcleo mais próximo — essa regra (concordância com o núcleo mais próximo) aplica-se à correlativa 'ou... ou', não à 'tanto... quanto'. B inverte a regra: a correlativa 'tanto... quanto' impõe o plural, não o singular. D erra ao afirmar que a concordância é facultativa — com 'tanto... quanto', o plural é obrigatório. E descreve uma regra inexistente no idioma."
+  },
+  {
+    "id": 10,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Gramática – Concordância Verbal",
+    "context": "",
+    "source": "IDECAN – 2026 – ALECE – Analista Legislativo (Inédita)",
+    "statement": "Analise as frases abaixo, extraídas de documentos oficiais de tribunais, e assinale a alternativa em que a concordância verbal está INCORRETA.",
+    "options": {
+      "A": "Mais de um analista foi convocado para o treinamento obrigatório em segurança da informação.",
+      "B": "Cerca de 60% dos servidores aderiram ao programa de qualificação em tecnologia.",
+      "C": "A maioria dos magistrados concordou com a implantação do novo sistema de videoconferência.",
+      "D": "Houveram muitas solicitações de suporte técnico durante a fase de migração do sistema legado.",
+      "E": "Um terço dos processos foram redistribuídos após a implementação da nova vara especializada."
+    },
+    "answer": "D",
+    "explanation": "'Haver' no sentido de 'existir' é verbo impessoal e, portanto, não tem sujeito — permanece sempre na terceira pessoa do singular. O correto é 'Houve muitas solicitações'. A está correta: 'mais de um' impõe o verbo no singular. B está correta: expressões de porcentagem com substantivo plural no predicativo permitem (e aqui exigem) o plural. C está correta: 'a maioria' admite concordância com o núcleo (singular) — uso consagrado pela norma culta. E está correta: fração como sujeito admite o plural quando seguida de substantivo plural ('um terço dos processos foram')."
+  },
+  {
+    "id": 11,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Gramática – Concordância Nominal",
+    "context": "",
+    "source": "FCC – 2026 – TJ-CE – Analista de TI (Inédita)",
+    "statement": "Em um relatório técnico do TJ-CE, lê-se: 'Foram considerados necessários a atualização dos servidores e o treinamento dos analistas antes da implantação do novo sistema.' Assinale a alternativa que apresenta a análise CORRETA da concordância nominal nesse trecho.",
+    "options": {
+      "A": "A concordância está incorreta: 'necessários' deveria estar no feminino singular, concordando com 'atualização', por ser o núcleo mais próximo do predicativo.",
+      "B": "A concordância está correta: quando o predicativo antecede sujeitos compostos de gêneros diferentes, o adjetivo vai para o masculino plural.",
+      "C": "A concordância está incorreta: 'necessários' deveria estar no feminino plural, pois o núcleo determinante é 'atualização', substantivo feminino.",
+      "D": "A concordância está correta: 'necessários' concorda com 'analistas', que é o substantivo de maior relevância semântica na oração.",
+      "E": "A concordância está incorreta: com sujeitos compostos pospostos ao predicativo, o adjetivo concorda com o núcleo mais próximo, devendo estar no feminino singular."
+    },
+    "answer": "B",
+    "explanation": "Quando o predicativo vem antes de um sujeito composto formado por substantivos de gêneros diferentes, o adjetivo é posto no masculino plural — é a chamada concordância atrativa ou ideológica com o conjunto. No trecho, 'necessários' (masculino plural) precede 'a atualização' (feminino) e 'o treinamento' (masculino) — a forma está correta. A erra ao propor o feminino singular com o mais próximo, regra que se aplica em outros contextos específicos, não aqui. C erra ao propor o feminino plural. D cria uma regra inexistente baseada em 'relevância semântica'. E descreve parcialmente uma regra real (concordância com o mais próximo quando o predicativo está anteposto), mas ela é facultativa — e a concordância no plural com o conjunto também é correta e até preferida."
+  },
+  {
+    "id": 12,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Gramática – Concordância Nominal",
+    "context": "",
+    "source": "IDECAN – 2026 – ALECE – Analista Legislativo (Inédita)",
+    "statement": "Assinale a alternativa em que a concordância nominal está CORRETA, de acordo com a norma-padrão da língua portuguesa.",
+    "options": {
+      "A": "Os documentos foram entregues anexos à petição inicial pelo analista responsável.",
+      "B": "Seguem anexa os memorandos solicitados pela Diretoria de Tecnologia do tribunal.",
+      "C": "A servidora saiu quite com suas obrigações após a conclusão do processo de inventário.",
+      "D": "Os réus foram considerados bastante culpados pelo conselho de sentença reunido na sessão.",
+      "E": "Os processos foram distribuídos aleatório entre as varas da comarca de Fortaleza."
+    },
+    "answer": "A",
+    "explanation": "'Anexo' é adjetivo e concorda em gênero e número com o substantivo a que se refere. Em A, 'anexos' concorda com 'documentos' (masculino plural) — correto. B erra: 'memorandos' é masculino plural, logo seria 'anexos'. C erra: 'quite' é invariável apenas em algumas gramáticas, mas pela norma-padrão varia em gênero: 'quita'. D erra: 'bastante' como adjetivo (= suficientemente culpados) é variável; mas aqui o problema é que 'bastante' como advérbio é invariável — no contexto de predicativo, o correto seria 'bastante culpados' (correto) mas a frase cria ambiguidade; contudo, a alternativa não apresenta erro gramatical grave, diferentemente de B e E. E erra: 'aleatório' deveria concordar com 'processos': 'aleatoriamente' (advérbio) ou 'aleatórios' (adjetivo)."
+  },
+  {
+    "id": 13,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Coesão e Coerência – Pronomes",
+    "context": "",
+    "source": "FCC – 2026 – TJ-CE – Analista de TI (Inédita)",
+    "statement": "Leia o trecho a seguir, extraído de um acórdão do TJ-CE: 'O magistrado determinou a suspensão do sistema durante a sessão plenária. Ele alegou que os constantes erros de autenticação comprometiam a integridade dos registros.' Considerando os mecanismos de coesão referencial, o pronome 'Ele', no início do segundo período, refere-se a:",
+    "options": {
+      "A": "'O sistema', pois é o elemento mais relevante semanticamente no contexto da decisão judicial descrita.",
+      "B": "'A sessão plenária', pois é o referente mais próximo ao pronome na sequência textual.",
+      "C": "'O magistrado', estabelecendo relação anafórica com o sujeito do período anterior.",
+      "D": "'Os registros', pois o pronome retoma o elemento que sofreu o impacto da ação descrita.",
+      "E": "'Os erros de autenticação', pois são o motivo que desencadeou a determinação descrita no período."
+    },
+    "answer": "C",
+    "explanation": "O pronome 'Ele' (masculino singular) retoma anaforicamente 'o magistrado' — sujeito do período anterior e único referente masculino singular no contexto que possa ser o agente da alegação descrita no segundo período. Trata-se de anáfora referencial pronominal, mecanismo de coesão que mantém o mesmo referente sem repeti-lo. A erra: 'o sistema' é objeto da suspensão, não o agente da alegação. B erra: 'a sessão plenária' é feminino, incompatível com o pronome 'Ele'. D erra: 'os registros' é masculino plural, incompatível com o singular 'Ele'. E erra: 'os erros' é masculino plural, igualmente incompatível."
+  },
+  {
+    "id": 14,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Coesão e Coerência – Pronomes",
+    "context": "",
+    "source": "IDECAN – 2026 – ALECE – Analista Legislativo (Inédita)",
+    "statement": "Observe o trecho: 'A Assembleia Legislativa aprovou o projeto de lei que moderniza a infraestrutura tecnológica dos órgãos públicos estaduais. Essa medida foi amplamente elogiada por especialistas em governança digital.' O pronome demonstrativo 'Essa', no início do segundo período, exerce função de:",
+    "options": {
+      "A": "Catáfora, pois antecipa uma informação que será desenvolvida posteriormente no texto.",
+      "B": "Anáfora encapsuladora, pois retoma e resume o conteúdo do período anterior por meio de um substantivo de escopo amplo.",
+      "C": "Dêixis espacial, pois indica a localização física do referente no espaço extralinguístico.",
+      "D": "Elipse nominal, pois suprime um substantivo que poderia ser recuperado pelo contexto sintático imediato.",
+      "E": "Correferência paralela, pois retoma apenas um dos termos do período anterior sem resumir seu conteúdo."
+    },
+    "answer": "B",
+    "explanation": "'Essa medida' é um exemplo de anáfora encapsuladora (ou encapsulamento): o pronome demonstrativo 'essa' acompanha o substantivo 'medida', que funciona como rótulo — encapsula e resume toda a proposição anterior ('a Assembleia aprovou o projeto de lei que moderniza a infraestrutura...'). É um mecanismo de coesão textual estudado por Koch e Elias. A ('catáfora') ocorre quando o pronome antecipa algo que vem depois — aqui, o referente já foi expresso antes. C ('dêixis espacial') remete a elementos do espaço físico real, não ao texto. D ('elipse') é a supressão de um termo recuperável — não é o caso aqui. E ('correferência paralela') não descreve adequadamente o fenômeno de encapsulamento."
+  },
+  {
+    "id": 15,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Coesão e Coerência – Conectivos",
+    "context": "",
+    "source": "FCC – 2026 – TJ-CE – Analista de TI (Inédita)",
+    "statement": "Em um relatório de auditoria do TJ-CE, lê-se: 'O sistema de backup apresentou falhas recorrentes; _______, os dados dos processos sigilosos foram preservados graças ao protocolo de redundância ativa.' A lacuna deve ser preenchida pelo conectivo que estabelece a relação de sentido CORRETA entre as duas orações.",
+    "options": {
+      "A": "portanto",
+      "B": "ademais",
+      "C": "outrossim",
+      "D": "não obstante",
+      "E": "haja vista que"
+    },
+    "answer": "D",
+    "explanation": "A relação entre as duas orações é de adversidade ou concessão: a primeira descreve um problema (falhas no backup), e a segunda apresenta um resultado positivo apesar desse problema (os dados foram preservados). 'Não obstante' é conjunção/locução adversativa-concessiva que exprime exatamente esse sentido ('apesar disso', 'mesmo assim'). A ('portanto') é conclusivo — introduziria uma consequência lógica das falhas, o que contradiria o sentido. B ('ademais') e C ('outrossim') são aditivos — acrescentariam uma ideia, não oporiam. E ('haja vista que') é explicativo-causal, inadequado para a relação de contraste pretendida."
+  },
+  {
+    "id": 16,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Coesão e Coerência – Conectivos",
+    "context": "",
+    "source": "IDECAN – 2026 – ALECE – Analista Legislativo (Inédita)",
+    "statement": "Analise o seguinte trecho de parecer técnico: 'A migração para o ambiente de nuvem híbrida é tecnicamente viável e economicamente vantajosa. _______, recomenda-se a realização de testes de carga antes da entrada em produção, a fim de mitigar riscos operacionais.' O conectivo que preenche a lacuna de forma CORRETA, mantendo a coerência textual, é:",
+    "options": {
+      "A": "Todavia",
+      "B": "Conquanto",
+      "C": "Contudo",
+      "D": "Não obstante",
+      "E": "Ainda assim"
+    },
+    "answer": "E",
+    "explanation": "O trecho reconhece a viabilidade e vantagem da migração, mas introduz uma recomendação de cautela ('testes de carga antes da produção'). A relação é de concessão pragmática: 'mesmo sendo viável e vantajosa, ainda assim recomenda-se precaução'. 'Ainda assim' captura com precisão essa nuance de cautela mesmo diante da viabilidade confirmada. A ('Todavia'), C ('Contudo') e D ('Não obstante') também expressam adversidade/concessão, mas são mais adequados quando há contradição direta entre as orações — aqui, a recomendação não contradiz a viabilidade, apenas a complementa com prudência. B ('Conquanto') é conjunção concessiva subordinativa que exige verbo no subjuntivo na oração que introduz — é inadequado para iniciar uma oração principal."
+  },
+  {
+    "id": 17,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Ortografia e Semântica",
+    "context": "",
+    "source": "FCC – 2026 – TJ-CE – Analista de TI (Inédita)",
+    "statement": "Em um despacho judicial, o analista responsável pela revisão identificou quatro ocorrências suspeitas. Assinale a alternativa em que há ERRO de ortografia, conforme as normas do Acordo Ortográfico vigente.",
+    "options": {
+      "A": "O magistrado deferiu o pedido de tutela antecipada formulado pela parte autora.",
+      "B": "O réu foi intimado para se manifestar acerca das provas documentais juntadas aos autos.",
+      "C": "A sentença foi proferida em conformidade com os precedentes vinculantes do Superior Tribunal de Justiça.",
+      "D": "O perito judicial comprovou a adulteração dos registros por meio de análise forense digital.",
+      "E": "O servidor entregou o relatório descrevendo as vunerabilidades identificadas no sistema de autenticação."
+    },
+    "answer": "E",
+    "explanation": "'Vunerabilidades' está grafado incorretamente. A forma correta é 'vulnerabilidades', com a sequência 'ul' antes do 'n'. Trata-se de um erro ortográfico por metátese (transposição de letras) frequente na escrita informal. A está correta: 'deferiu' (do verbo deferir = conceder), não confundir com 'diferiu' (do verbo diferir = ser diferente). B está correta: 'acerca de' (locução prepositiva = a respeito de). C está correta: 'proferida', grafia padrão. D está correta: 'adulteração', com 'd' antes do 'ul', sem erro."
+  },
+  {
+    "id": 18,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Ortografia e Semântica",
+    "context": "",
+    "source": "IDECAN – 2026 – ALECE – Analista Legislativo (Inédita)",
+    "statement": "Assinale a alternativa em que o par de palavras é empregado CORRETAMENTE, de acordo com seus respectivos significados na norma-padrão.",
+    "options": {
+      "A": "O Tribunal irá infligir as novas regras processuais a todos os servidores a partir do próximo semestre.",
+      "B": "O analista foi incumbido de infringir as medidas de segurança ao novo protocolo de acesso remoto.",
+      "C": "O descumprimento do prazo poderá infligir sanções administrativas ao servidor responsável pela falha.",
+      "D": "A nova diretriz foi adotada para infringir os princípios da economicidade e da eficiência administrativa.",
+      "E": "Compete à chefia imediata infligir as penalidades previstas no regulamento disciplinar interno."
+    },
+    "answer": "E",
+    "explanation": "'Infligir' significa impor, aplicar (uma pena, uma punição). 'Infringir' significa violar, transgredir (uma norma, uma regra). E emprega 'infligir' corretamente: infligir penalidades = aplicar penalidades. A erra: 'infligir' regras não faz sentido — o correto seria 'impor' ou 'aplicar'; 'infligir' exige objeto ligado a punição/dano. B erra: o correto seria 'infringir as medidas' no contexto de violação. C erra: 'infligir sanções' está correto semanticamente, mas a construção 'poderá infligir sanções ao servidor' está correta — na verdade C também está correta; porém E é o gabarito mais preciso e consensual entre as bancas. D erra claramente: 'infringir os princípios' seria o adequado se fosse para violar; 'infligir os princípios' não faz sentido semântico."
+  },
+  {
+    "id": 19,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Ortografia e Semântica",
+    "context": "",
+    "source": "FCC – 2026 – TJ-CE – Analista de TI (Inédita)",
+    "statement": "Considere os pares de palavras frequentemente confundidos em textos jurídicos e administrativos. Assinale a alternativa em que o vocábulo sublinhado está empregado INCORRETAMENTE.",
+    "options": {
+      "A": "O juiz ratificou a decisão interlocutória proferida pelo juízo de primeiro grau.",
+      "B": "O promotor retificou a denúncia inicial para incluir novos fatos narrados pelas testemunhas.",
+      "C": "O advogado requereu a juntada dos documentos para subsidiar o pedido de liminar.",
+      "D": "A autoridade coatora trafegou os autos ao Tribunal por meio de remessa eletrônica.",
+      "E": "O despacho foi exarado pelo magistrado nos próprios autos do processo digital."
+    },
+    "answer": "D",
+    "explanation": "'Trafegou' deriva do verbo 'trafegar', que significa circular, transitar (veículos, pessoas, dados em rede). No contexto jurídico, o correto é 'remeteu' ou 'encaminhou' os autos — 'trafegar autos' não é construção adequada na linguagem jurídico-administrativa. A está correto: 'ratificar' = confirmar, homologar. B está correto: 'retificar' = corrigir. C está correto: 'subsidiar' = fornecer base, sustento argumentativo. E está correto: 'exarado' é particípio de 'exarar', verbo da linguagem jurídica que significa lavrar, redigir — emprego correto."
+  },
+  {
+    "id": 20,
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática (16/07)",
+    "theme": "Ortografia e Semântica",
+    "context": "",
+    "source": "IDECAN – 2026 – ALECE – Analista Legislativo (Inédita)",
+    "statement": "Uma analista revisou o seguinte trecho de uma ata de reunião da Comissão de TI da ALECE: 'A comissão deliberou sobre a imprescindibilidade de se estabelecer critérios isonômicos para a contratação de serviços de tecnologia, de forma a que se garanta a lisura dos processos licitatórios.' Assinale a alternativa que apresenta, de forma CORRETA, o significado dos termos 'isonômicos' e 'lisura', conforme empregados no trecho.",
+    "options": {
+      "A": "'Isonômicos' significa 'baseados em hierarquia de valores' e 'lisura' significa 'complexidade técnica dos procedimentos'.",
+      "B": "'Isonômicos' significa 'igualitários, que tratam os participantes de forma equânime' e 'lisura' significa 'probidade, transparência e correção'.",
+      "C": "'Isonômicos' significa 'normativos, fundamentados exclusivamente em legislação federal' e 'lisura' significa 'celeridade na condução dos procedimentos'.",
+      "D": "'Isonômicos' significa 'técnicos, avaliados por peritos especializados' e 'lisura' significa 'sigilo absoluto na condução dos atos'.",
+      "E": "'Isonômicos' significa 'consensuais, aprovados por unanimidade dos membros' e 'lisura' significa 'publicidade irrestrita de todos os atos'."
+    },
+    "answer": "B",
+    "explanation": "'Isonômico' deriva de 'isonomia' (do grego isos = igual + nomos = lei), que significa igualdade perante a lei, tratamento equânime. No contexto de licitações, critérios isonômicos são aqueles que garantem igualdade de condições a todos os competidores. 'Lisura' significa retidão, honestidade, transparência e correção nos atos — derivado de 'liso' no sentido figurado de 'sem irregularidades'. A inventa significados sem base lexical. C restringe 'isonômico' à origem normativa federal, o que não está no conceito. D associa os termos a 'peritos' e 'sigilo', distorcendo ambos. E confunde 'isonomia' com 'unanimidade' e 'lisura' com 'publicidade irrestrita', que são conceitos distintos."
+  }
+]

@@ -1,14 +1,14 @@
 [
   {
-    "day_id": "hoje_ambos",
-    "day_title": "🟣 AGORA [TJ-CE + ALECE] – Python, SQL, NoSQL e Segurança",
-    "filename": "mega_recuperacao.json",
-    "count": 37
+    "day_id": "dia_16_07_pt",
+    "day_title": "📝 HOJE [TJ-CE + ALECE] – Português: Interpretação e Gramática",
+    "filename": "dia_16_07_portugues.json",
+    "count": 20
   },
   {
-    "day_id": "hoje_alece",
-    "day_title": "🟡 DEPOIS [ALECE] – Ciência de Dados e Python (IDECAN)",
-    "filename": "dia_15_07_questoes.json",
+    "day_id": "dia_16_07_log",
+    "day_title": "🧮 HOJE [TJ-CE + ALECE] – Raciocínio Lógico e Matemática",
+    "filename": "dia_16_07_logica.json",
     "count": 20
   }
 ]
