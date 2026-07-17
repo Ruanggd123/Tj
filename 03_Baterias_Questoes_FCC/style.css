@@ -1087,8 +1087,47 @@ tr:hover td {
 
 
 /* ═══════════════════════════════════════════════
-   Drawing Toolbar v2 — Dark Theme
+   Drawing Toolbar v2.1 — Android/Mobile Fix
    ═══════════════════════════════════════════════ */
+
+/* ── Botão toggle (sempre visível, mostra ícone da ferramenta ativa) */
+.dt2-toggle-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(59,130,246,0.15);
+    color: #60a5fa;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    pointer-events: all;
+    -webkit-tap-highlight-color: transparent;
+    transition: all 0.18s ease;
+}
+.dt2-toggle-btn:hover  { background: rgba(59,130,246,0.25); border-color: rgba(59,130,246,0.5); }
+.dt2-toggle-btn:active { transform: scale(0.9); }
+
+/* ── Painel de ferramentas (escondido quando colapsado) */
+.dt2-tools {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow: hidden;
+    max-width: 700px;
+    transition: max-width 0.3s ease, opacity 0.25s ease, padding 0.25s ease;
+    opacity: 1;
+    padding-left: 6px;
+}
+
+.dt2-collapsed .dt2-tools {
+    max-width: 0;
+    opacity: 0;
+    pointer-events: none;
+    padding-left: 0;
+}
 
 .dt2-toolbar {
     position: fixed;
@@ -1097,25 +1136,25 @@ tr:hover td {
     z-index: 1001;
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px 14px;
-    background: rgba(15, 23, 42, 0.92);
+    gap: 0;
+    padding: 8px 10px;
+    background: rgba(15, 23, 42, 0.94);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.04);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
     cursor: grab;
     user-select: none;
-    transition: box-shadow 0.2s ease;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.dt2-toolbar:hover {
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255,255,255,0.08);
-}
+.dt2-toolbar:active { cursor: grabbing; }
 
-.dt2-toolbar:active {
-    cursor: grabbing;
+/* Modo desenho ativo: borda colorida */
+.dt2-drawing-active {
+    border-color: rgba(59,130,246,0.5);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 20px rgba(59,130,246,0.15);
 }
 
 /* Buttons */
@@ -1123,8 +1162,8 @@ tr:hover td {
     width: 38px;
     height: 38px;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.05);
     color: #94a3b8;
     cursor: pointer;
     display: flex;
@@ -1132,71 +1171,46 @@ tr:hover td {
     justify-content: center;
     transition: all 0.18s ease;
     flex-shrink: 0;
-    position: relative;
-    pointer-events: all; /* garante clique dentro da toolbar draggable */
+    pointer-events: all;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.dt2-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #f8fafc;
-    border-color: rgba(255, 255, 255, 0.15);
-    transform: translateY(-1px);
-}
+.dt2-btn:hover  { background: rgba(255,255,255,0.1); color: #f8fafc; border-color: rgba(255,255,255,0.15); transform: translateY(-1px); }
+.dt2-btn:active { transform: scale(0.92); }
 
-.dt2-btn:active {
-    transform: scale(0.92);
-}
+/* ── Cores explícitas por ferramenta — SEM color-mix() (Android incompatível) */
+.dt2-pen-blue        { color: #60a5fa; border-color: rgba(96,165,250,0.25); }
+.dt2-pen-blue:hover  { background: rgba(96,165,250,0.12); border-color: rgba(96,165,250,0.5); box-shadow: 0 0 12px rgba(96,165,250,0.35); color: #60a5fa; }
+.dt2-pen-blue.active { background: rgba(96,165,250,0.2); border-color: #60a5fa; color: #60a5fa; box-shadow: 0 0 14px rgba(96,165,250,0.5); }
 
-/* Botões com cor de ferramenta */
-.dt2-btn[style*="--tool-color"] {
-    color: var(--tool-color);
-    border-color: color-mix(in srgb, var(--tool-color) 25%, transparent);
-}
+.dt2-pen-red        { color: #f87171; border-color: rgba(248,113,113,0.25); }
+.dt2-pen-red:hover  { background: rgba(248,113,113,0.12); border-color: rgba(248,113,113,0.5); box-shadow: 0 0 12px rgba(248,113,113,0.35); color: #f87171; }
+.dt2-pen-red.active { background: rgba(248,113,113,0.2); border-color: #f87171; color: #f87171; box-shadow: 0 0 14px rgba(248,113,113,0.5); }
 
-.dt2-btn[style*="--tool-color"]:hover {
-    background: color-mix(in srgb, var(--tool-color) 15%, transparent);
-    border-color: color-mix(in srgb, var(--tool-color) 50%, transparent);
-    box-shadow: 0 0 12px color-mix(in srgb, var(--tool-color) 40%, transparent);
-}
+.dt2-pen-green        { color: #34d399; border-color: rgba(52,211,153,0.25); }
+.dt2-pen-green:hover  { background: rgba(52,211,153,0.12); border-color: rgba(52,211,153,0.5); box-shadow: 0 0 12px rgba(52,211,153,0.35); color: #34d399; }
+.dt2-pen-green.active { background: rgba(52,211,153,0.2); border-color: #34d399; color: #34d399; box-shadow: 0 0 14px rgba(52,211,153,0.5); }
 
-/* Estado ativo */
+.dt2-highlight        { color: #fde047; border-color: rgba(253,224,71,0.25); }
+.dt2-highlight:hover  { background: rgba(253,224,71,0.1); border-color: rgba(253,224,71,0.5); box-shadow: 0 0 12px rgba(253,224,71,0.3); color: #fde047; }
+.dt2-highlight.active { background: rgba(253,224,71,0.15); border-color: #fde047; color: #fde047; box-shadow: 0 0 14px rgba(253,224,71,0.45); }
+
+/* Cursor / borracha / desfazer (sem cor especial) */
 .dt2-btn.active {
-    background: #3b82f6;
+    background: rgba(59,130,246,0.2);
     border-color: #3b82f6;
-    color: #ffffff;
-    box-shadow: 0 0 14px rgba(59, 130, 246, 0.5);
+    color: #60a5fa;
+    box-shadow: 0 0 14px rgba(59,130,246,0.5);
 }
 
-/* Ativo com cor de ferramenta */
-.dt2-btn.active[style*="--tool-color"] {
-    background: color-mix(in srgb, var(--tool-color) 30%, rgba(15,23,42,0.8));
-    border-color: var(--tool-color);
-    color: var(--tool-color);
-    box-shadow: 0 0 14px color-mix(in srgb, var(--tool-color) 50%, transparent);
-}
-
-/* Botão de perigo (limpar) */
-.dt2-btn.dt2-danger {
-    color: #ef4444;
-    border-color: rgba(239, 68, 68, 0.2);
-}
-.dt2-btn.dt2-danger:hover {
-    background: rgba(239, 68, 68, 0.12);
-    border-color: rgba(239, 68, 68, 0.5);
-    box-shadow: 0 0 12px rgba(239, 68, 68, 0.3);
-    color: #f87171;
-}
+/* Limpar tudo */
+.dt2-btn.dt2-danger { color: #ef4444; border-color: rgba(239,68,68,0.2); }
+.dt2-btn.dt2-danger:hover { background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.5); box-shadow: 0 0 12px rgba(239,68,68,0.3); color: #f87171; }
 
 /* Divisor */
-.dt2-divider {
-    width: 1px;
-    height: 24px;
-    background: rgba(255, 255, 255, 0.08);
-    margin: 0 2px;
-    flex-shrink: 0;
-}
+.dt2-divider { width: 1px; height: 24px; background: rgba(255,255,255,0.08); margin: 0 3px; flex-shrink: 0; }
 
-/* Slider de tamanho */
+/* ── Slider — área de toque maior para Android */
 .dt2-size-wrap {
     display: flex;
     align-items: center;
@@ -1206,49 +1220,54 @@ tr:hover td {
     cursor: default;
 }
 
-.dt2-size-icon {
-    color: #64748b;
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-}
+.dt2-size-icon { color: #64748b; display: flex; align-items: center; flex-shrink: 0; }
 
 .dt2-slider {
     -webkit-appearance: none;
     appearance: none;
     width: 80px;
-    height: 4px;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.12);
+    height: 20px;          /* área de toque ampliada */
+    background: transparent;
     outline: none;
     cursor: pointer;
     pointer-events: all;
+    padding: 8px 0;
+    margin: 0;
 }
 
+.dt2-slider::-webkit-slider-runnable-track {
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.14);
+}
+.dt2-slider::-moz-range-track {
+    height: 4px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.14);
+    border: none;
+}
+
+/* Thumb maior para dedo */
 .dt2-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     background: #3b82f6;
     cursor: pointer;
-    box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+    margin-top: -9px;
+    border: 2px solid rgba(255,255,255,0.25);
+    box-shadow: 0 0 8px rgba(59,130,246,0.6);
     transition: transform 0.15s ease;
 }
-
-.dt2-slider::-webkit-slider-thumb:hover {
-    transform: scale(1.2);
-}
-
+.dt2-slider::-webkit-slider-thumb:active { transform: scale(1.25); }
 .dt2-slider::-moz-range-thumb {
-    width: 16px;
-    height: 16px;
+    width: 22px; height: 22px;
     border-radius: 50%;
     background: #3b82f6;
-    cursor: pointer;
-    border: none;
-    box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+    border: 2px solid rgba(255,255,255,0.25);
+    box-shadow: 0 0 8px rgba(59,130,246,0.6);
 }
 
 .dt2-size-label {
@@ -1259,9 +1278,9 @@ tr:hover td {
     min-width: 28px;
     text-align: center;
     pointer-events: none;
+    white-space: nowrap;
 }
 
-/* Preview do tamanho do cursor */
 .dt2-cursor-preview {
     display: none;
     flex-shrink: 0;
@@ -1269,27 +1288,93 @@ tr:hover td {
     pointer-events: none;
 }
 
-/* Responsivo — compacto em mobile */
-@media (max-width: 600px) {
+/* ── Badge "Modo Desenho" */
+.dt2-mode-badge {
+    position: fixed;
+    bottom: 80px;
+    right: 24px;
+    z-index: 1002;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(15,23,42,0.93);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(59,130,246,0.4);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #94a3b8;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: all;
+}
+.dt2-mode-badge.dt2-hidden { opacity: 0; transform: translateY(8px); pointer-events: none; }
+
+.dt2-badge-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #60a5fa;
+    flex-shrink: 0;
+    animation: dt2pulse 1.5s ease-in-out infinite;
+}
+@keyframes dt2pulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50%      { opacity:0.5; transform:scale(0.8); }
+}
+
+.dt2-badge-text { color: #e2e8f0; }
+
+.dt2-badge-close {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #64748b;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    padding: 0;
+    line-height: 1;
+    transition: all 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: all;
+}
+.dt2-badge-close:hover { background: rgba(239,68,68,0.15); color: #f87171; border-color: rgba(239,68,68,0.4); }
+
+/* ══════════ RESPONSIVO ANDROID / MOBILE ══════════ */
+@media (max-width: 768px) {
     .dt2-toolbar {
-        bottom: 12px;
-        right: 12px;
+        bottom: 16px;
+        right: 16px;
         padding: 8px 10px;
-        gap: 4px;
-        border-radius: 16px;
+        cursor: default; /* sem arrastar no toque */
     }
 
-    .dt2-btn {
-        width: 34px;
-        height: 34px;
-        border-radius: 10px;
-    }
+    .dt2-toggle-btn { width: 46px; height: 46px; }
+    .dt2-btn        { width: 42px; height: 42px; border-radius: 12px; }
+    .dt2-slider     { width: 70px; }
+    .dt2-size-label { display: none; }
+    .dt2-mode-badge { bottom: 82px; right: 16px; }
 
-    .dt2-slider {
-        width: 60px;
-    }
+    /* Remove hover (não existe em touch) */
+    .dt2-btn:hover,
+    .dt2-pen-blue:hover,
+    .dt2-pen-red:hover,
+    .dt2-pen-green:hover,
+    .dt2-highlight:hover { transform: none; box-shadow: none; }
+}
 
-    .dt2-size-label {
-        display: none;
-    }
+@media (max-width: 480px) {
+    .dt2-toolbar  { bottom: 12px; right: 12px; padding: 6px 8px; }
+    .dt2-toggle-btn { width: 44px; height: 44px; }
+    .dt2-btn        { width: 40px; height: 40px; }
+    .dt2-slider     { width: 52px; }
+    .dt2-divider    { display: none; }
+    .dt2-size-icon  { display: none; }
+    .dt2-mode-badge { bottom: 74px; right: 12px; font-size: 0.74rem; }
 }
