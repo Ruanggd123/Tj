@@ -1,362 +1,391 @@
 /**
- * DrawingTool — v2.1 (Android/Mobile Fix)
+ * DrawingTool v3.0 — Definitivo para Android/iOS/Desktop
  *
- * Correções para Android:
- *  - setPointerCapture no canvas: traço não "escapa" durante o desenho
- *  - touch-action: none no canvas apenas enquanto desenha
- *  - pointerout não interrompe mais o traçado (usa window para pointermove/up)
- *  - Toolbar colapsável em mobile (botão de toggle)
- *  - color-mix() substituído por cores explícitas (compatibilidade Android)
- *  - Área de toque do slider ampliada para dedo
- *  - Modo "Desenho Ativo" com badge visual e botão de saída rápida
+ * Bugs corrigidos vs v2.1:
+ *  - touch-action: none aplicado via CSS class (não JS inline) — browser respeita ANTES do toque
+ *  - Rastreio de pointerId — sem saltos em multi-touch
+ *  - Listeners de move/up no document filtrados por pointerId (não no window inteiro)
+ *  - Canvas não apaga ao girar o celular (usa off-screen canvas de backup)
+ *  - Toolbar mobile usa display:none real (não max-width) — mais compatível
+ *  - Badge reposicionado dinamicamente acima da toolbar
+ *  - Botões com touch feedback (active state via CSS class)
+ *  - RAF (requestAnimationFrame) para desenho suave
+ *  - visibilitychange: encerra traçado se app vai para background
  */
 class DrawingTool {
     constructor() {
-        this.currentTool  = 'cursor';
-        this.isDrawing    = false;
-        this.lastX        = 0;
-        this.lastY        = 0;
-        this.undoStack    = [];
-        this.MAX_UNDO     = 20;
-        this.penSize      = 4;
-        this.eraserSize   = 32;
-        this.isMobile     = window.matchMedia('(max-width: 768px)').matches;
-        this.collapsed    = this.isMobile; // começa colapsado no mobile
+        this.tool        = 'cursor';
+        this.isDrawing   = false;
+        this.activePtr   = null;   // pointerId ativo
+        this.lastX       = 0;
+        this.lastY       = 0;
+        this.undoStack   = [];
+        this.MAX_UNDO    = 20;
+        this.penSize     = 4;
+        this.eraserSize  = 30;
+        this.rafPending  = false;
+        this.pendingX    = 0;
+        this.pendingY    = 0;
 
-        this._createCanvas();
-        this._createToolbar();
+        // Off-screen canvas para preservar desenho em resize/rotação
+        this.backupCanvas = document.createElement('canvas');
+        this.backupCtx    = this.backupCanvas.getContext('2d');
+
+        this._isMobile = () => window.innerWidth <= 768;
+
+        this._initCanvas();
+        this._initToolbar();
         this._bindEvents();
     }
 
-    /* ══════════════════ CANVAS ══════════════════ */
-    _createCanvas() {
+    /* ══════════════════════════════════════════════
+       CANVAS
+    ══════════════════════════════════════════════ */
+    _initCanvas() {
         this.canvas = document.createElement('canvas');
-        this.canvas.id = 'drawing-canvas';
+        this.canvas.id = 'dt3-canvas';
+        // CSS class controla touch-action (não JS inline)
+        // .dt3-drawing-mode { touch-action: none; pointer-events: auto; }
+        this.canvas.className = 'dt3-canvas-base';
         this.ctx = this.canvas.getContext('2d');
-
-        Object.assign(this.canvas.style, {
-            position:      'fixed',
-            top:           '0',
-            left:          '0',
-            width:         '100vw',
-            height:        '100vh',
-            pointerEvents: 'none',
-            touchAction:   'auto', // começa sem bloquear scroll
-            zIndex:        '998',
-        });
-
         document.body.appendChild(this.canvas);
         this._resizeCanvas();
-        window.addEventListener('resize', () => this._resizeCanvas(true));
+
+        // Debounce resize — evita múltiplas chamadas seguidas (teclado virtual Android)
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => this._resizeCanvas(true), 120);
+        });
+
+        // Encerra traçado se app vai para background (Android home button)
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) this._stopDraw();
+        });
     }
 
     _resizeCanvas(restore = false) {
-        let snap;
-        if (restore && this.canvas.width > 0) {
-            try { snap = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height); } catch(e) {}
+        // Salva desenho atual no off-screen canvas
+        if (restore && this.canvas.width > 0 && this.canvas.height > 0) {
+            this.backupCanvas.width  = this.canvas.width;
+            this.backupCanvas.height = this.canvas.height;
+            this.backupCtx.clearRect(0, 0, this.backupCanvas.width, this.backupCanvas.height);
+            this.backupCtx.drawImage(this.canvas, 0, 0);
         }
+
         this.canvas.width  = window.innerWidth;
         this.canvas.height = window.innerHeight;
-        if (restore && snap) this.ctx.putImageData(snap, 0, 0);
+
+        // Restaura do off-screen canvas
+        if (restore && this.backupCanvas.width > 0) {
+            this.ctx.drawImage(this.backupCanvas, 0, 0);
+        }
     }
 
-    /* ══════════════════ TOOLBAR ══════════════════ */
-    _createToolbar() {
-        const old = document.querySelector('.drawing-toolbar, .dt2-toolbar');
-        if (old) old.remove();
+    /* ══════════════════════════════════════════════
+       TOOLBAR
+    ══════════════════════════════════════════════ */
+    _initToolbar() {
+        // Remove possíveis toolbars antigas
+        document.querySelectorAll('.dt2-toolbar, .drawing-toolbar, #dt3-toolbar').forEach(el => el.remove());
 
         this.toolbar = document.createElement('div');
-        this.toolbar.className = 'dt2-toolbar';
-        if (this.collapsed) this.toolbar.classList.add('dt2-collapsed');
+        this.toolbar.id = 'dt3-toolbar';
+        this.toolbar.className = 'dt3-tb';
 
-        // Botão de toggle (hambúrguer) — visível em mobile
         this.toolbar.innerHTML = `
-            <button class="dt2-toggle-btn" id="dt2-toggle" title="Ferramentas de anotação">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+            <!-- FAB toggle: sempre visível -->
+            <button class="dt3-fab" id="dt3-fab" aria-label="Ferramentas de anotação">
+                <span class="dt3-fab-icon" id="dt3-fab-icon">
+                    ${this._penSVG(20)}
+                </span>
+                <span class="dt3-fab-ring" id="dt3-fab-ring"></span>
             </button>
 
-            <div class="dt2-tools">
-                <!-- Cursor -->
-                <button class="dt2-btn active" data-tool="cursor" title="Cursor (Ctrl+0)">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M4 0l16 12.279-6.951 1.17 4.325 8.817-3.62 1.734-4.287-8.898-5.467 4.898z"/></svg>
+            <!-- Painel de ferramentas -->
+            <div class="dt3-panel" id="dt3-panel" role="toolbar" aria-label="Ferramentas de desenho">
+                <button class="dt3-btn dt3-cursor active" data-tool="cursor" aria-label="Cursor / Scroll">
+                    ${this._cursorSVG()}
                 </button>
 
-                <div class="dt2-divider"></div>
+                <div class="dt3-sep"></div>
 
-                <!-- Caneta Azul -->
-                <button class="dt2-btn dt2-pen-blue" data-tool="pen-blue" title="Caneta Azul (Ctrl+1)">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                <button class="dt3-btn dt3-blue" data-tool="pen-blue" aria-label="Caneta Azul">
+                    ${this._penSVG()}
+                </button>
+                <button class="dt3-btn dt3-red" data-tool="pen-red" aria-label="Caneta Vermelha">
+                    ${this._penSVG()}
+                </button>
+                <button class="dt3-btn dt3-green" data-tool="pen-green" aria-label="Caneta Verde">
+                    ${this._penSVG()}
                 </button>
 
-                <!-- Caneta Vermelha -->
-                <button class="dt2-btn dt2-pen-red" data-tool="pen-red" title="Caneta Vermelha (Ctrl+2)">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                <div class="dt3-sep"></div>
+
+                <button class="dt3-btn dt3-yellow" data-tool="highlighter" aria-label="Marca-texto">
+                    ${this._highlightSVG()}
                 </button>
 
-                <!-- Caneta Verde -->
-                <button class="dt2-btn dt2-pen-green" data-tool="pen-green" title="Caneta Verde (Ctrl+3)">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                <div class="dt3-sep"></div>
+
+                <button class="dt3-btn dt3-eraser" data-tool="eraser" aria-label="Borracha">
+                    ${this._eraserSVG()}
                 </button>
 
-                <div class="dt2-divider"></div>
+                <div class="dt3-sep"></div>
 
-                <!-- Marca-texto -->
-                <button class="dt2-btn dt2-highlight" data-tool="highlighter" title="Marca-texto (Ctrl+4)">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.5 1.15L17.35 0 10.27 7.08l1.15 1.15L8.35 11.3l-1.15-1.15L6.05 11.3l3.37 3.37 1.15-1.15-1.15-1.15 3.07-3.07 1.15 1.15L18.5 1.15zM5 19h14v2H5z"/></svg>
-                </button>
-
-                <div class="dt2-divider"></div>
-
-                <!-- Borracha -->
-                <button class="dt2-btn" data-tool="eraser" title="Borracha (Ctrl+5)">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16.24 3.56l4.95 4.94c.78.79.78 2.05 0 2.84L12 20.53a4.008 4.008 0 01-5.66 0L2.81 17c-.78-.79-.78-2.05 0-2.84l10.6-10.6c.79-.78 2.05-.78 2.83 0zM4.22 15.58l3.54 3.53c.78.79 2.04.79 2.83 0l3.53-3.53-6.36-6.36-3.54 3.36z"/></svg>
-                </button>
-
-                <div class="dt2-divider"></div>
-
-                <!-- Slider de tamanho -->
-                <div class="dt2-size-wrap" title="Tamanho">
-                    <span class="dt2-size-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><circle cx="12" cy="12" r="5"/></svg>
-                    </span>
-                    <input type="range" class="dt2-slider" id="dt2-slider" min="1" max="40" value="4">
-                    <span class="dt2-size-label" id="dt2-size-label">4px</span>
+                <!-- Slider tamanho -->
+                <div class="dt3-size-wrap">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="4"/></svg>
+                    <input class="dt3-slider" id="dt3-slider" type="range" min="1" max="40" value="4" aria-label="Tamanho">
+                    <span class="dt3-size-lbl" id="dt3-size-lbl">4px</span>
                 </div>
 
-                <div class="dt2-divider"></div>
+                <div class="dt3-sep"></div>
 
-                <!-- Desfazer -->
-                <button class="dt2-btn" data-tool="undo" title="Desfazer (Ctrl+Z)">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>
+                <button class="dt3-btn dt3-undo" data-tool="undo" aria-label="Desfazer">
+                    ${this._undoSVG()}
                 </button>
-
-                <!-- Limpar tudo -->
-                <button class="dt2-btn dt2-danger" data-tool="clear" title="Limpar tudo">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14V4zm-3 16H8a2 2 0 01-2-2l-1-11h14L18 18a2 2 0 01-2 2z"/></svg>
+                <button class="dt3-btn dt3-clear" data-tool="clear" aria-label="Limpar tudo">
+                    ${this._clearSVG()}
                 </button>
-
-                <!-- Preview do cursor -->
-                <div class="dt2-cursor-preview" id="dt2-cursor-preview"></div>
             </div>
         `;
 
         document.body.appendChild(this.toolbar);
-        this.sizeSlider    = this.toolbar.querySelector('#dt2-slider');
-        this.sizeLabel     = this.toolbar.querySelector('#dt2-size-label');
-        this.cursorPreview = this.toolbar.querySelector('#dt2-cursor-preview');
-        this.toolsPanel    = this.toolbar.querySelector('.dt2-tools');
-        this.toggleBtn     = this.toolbar.querySelector('#dt2-toggle');
 
-        // Badge de "modo desenho ativo" (fita flutuante acima da toolbar no mobile)
-        this.modeBadge = document.createElement('div');
-        this.modeBadge.className = 'dt2-mode-badge dt2-hidden';
-        this.modeBadge.innerHTML = `
-            <span class="dt2-badge-dot"></span>
-            <span class="dt2-badge-text">Modo Desenho</span>
-            <button class="dt2-badge-close" title="Sair do modo desenho">✕</button>
-        `;
-        document.body.appendChild(this.modeBadge);
+        this.fab      = this.toolbar.querySelector('#dt3-fab');
+        this.fabIcon  = this.toolbar.querySelector('#dt3-fab-icon');
+        this.fabRing  = this.toolbar.querySelector('#dt3-fab-ring');
+        this.panel    = this.toolbar.querySelector('#dt3-panel');
+        this.slider   = this.toolbar.querySelector('#dt3-slider');
+        this.sizeLbl  = this.toolbar.querySelector('#dt3-size-lbl');
+
+        // Em desktop começa aberto; mobile começa fechado
+        if (!this._isMobile()) {
+            this.panel.classList.add('dt3-open');
+        }
     }
 
-    /* ══════════════════ EVENTOS ══════════════════ */
+    /* SVG helpers */
+    _penSVG(s=18){ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="${s}" height="${s}"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>`; }
+    _cursorSVG(){ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M4 0l16 12.279-6.951 1.17 4.325 8.817-3.62 1.734-4.287-8.898-5.467 4.898z"/></svg>`; }
+    _highlightSVG(){ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18.5 1.15L17.35 0 10.27 7.08l1.15 1.15L8.35 11.3l-1.15-1.15L6.05 11.3l3.37 3.37 1.15-1.15-1.15-1.15 3.07-3.07 1.15 1.15L18.5 1.15zM5 19h14v2H5z"/></svg>`; }
+    _eraserSVG(){ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16.24 3.56l4.95 4.94c.78.79.78 2.05 0 2.84L12 20.53a4.008 4.008 0 01-5.66 0L2.81 17c-.78-.79-.78-2.05 0-2.84l10.6-10.6c.79-.78 2.05-.78 2.83 0zM4.22 15.58l3.54 3.53c.78.79 2.04.79 2.83 0l3.53-3.53-6.36-6.36-3.54 3.36z"/></svg>`; }
+    _undoSVG(){ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12.5 8c-2.65 0-5.05.99-6.9 2.6L2 7v9h9l-3.62-3.62c1.39-1.16 3.16-1.88 5.12-1.88 3.54 0 6.55 2.31 7.6 5.5l2.37-.78C21.08 11.03 17.15 8 12.5 8z"/></svg>`; }
+    _clearSVG(){ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14V4zm-3 16H8a2 2 0 01-2-2l-1-11h14L18 18a2 2 0 01-2 2z"/></svg>`; }
+
+    /* ══════════════════════════════════════════════
+       EVENTOS
+    ══════════════════════════════════════════════ */
     _bindEvents() {
-        // Toggle da toolbar (mobile)
-        this.toggleBtn.addEventListener('pointerdown', e => {
+        /* ─── FAB toggle ─── */
+        this.fab.addEventListener('pointerdown', e => {
             e.preventDefault();
             e.stopPropagation();
-            this._toggleCollapse();
+            this._togglePanel();
         });
 
-        // Botão de fechar o badge de modo desenho
-        this.modeBadge.querySelector('.dt2-badge-close').addEventListener('click', () => {
-            this._setTool('cursor');
-        });
-
-        // Botões da toolbar
-        this.toolbar.querySelectorAll('.dt2-btn[data-tool]').forEach(btn => {
+        /* ─── Botões ─── */
+        this.panel.querySelectorAll('.dt3-btn[data-tool]').forEach(btn => {
             btn.addEventListener('pointerdown', e => {
                 e.preventDefault();
                 e.stopPropagation();
-                const tool = btn.dataset.tool;
-                if (tool === 'clear') { this._clearCanvas(); return; }
-                if (tool === 'undo')  { this._undo(); return; }
-                this._setTool(tool);
-                // Em mobile: colapsa após selecionar ferramenta de desenho
-                if (this.isMobile && tool !== 'cursor') {
-                    setTimeout(() => this._toggleCollapse(true), 150);
+                const t = btn.dataset.tool;
+                if (t === 'clear') { this._clearCanvas(); return; }
+                if (t === 'undo')  { this._undo(); return; }
+                this._setTool(t);
+                // Mobile: fecha o painel após selecionar ferramenta de desenho
+                if (this._isMobile() && t !== 'cursor') {
+                    setTimeout(() => this._closePanel(), 200);
                 }
             });
         });
 
-        // Slider de tamanho
-        this.sizeSlider.addEventListener('input', () => {
-            const v = parseInt(this.sizeSlider.value);
+        /* ─── Slider ─── */
+        this.slider.addEventListener('input', () => {
+            const v = +this.slider.value;
             this.penSize = v;
-            this.sizeLabel.textContent = `${v}px`;
-            this._updateCursorPreview();
+            this.sizeLbl.textContent = v + 'px';
         });
 
-        // Atalhos de teclado (desktop)
+        /* ─── Fechar painel ao clicar fora ─── */
+        document.addEventListener('pointerdown', e => {
+            if (this.panel.classList.contains('dt3-open') &&
+                !this.toolbar.contains(e.target)) {
+                this._closePanel();
+            }
+        }, { passive: true });
+
+        /* ─── Atalhos teclado ─── */
         document.addEventListener('keydown', e => {
-            if (e.ctrlKey || e.metaKey) {
-                if (e.key === 'z' || e.key === 'Z') { e.preventDefault(); this._undo(); return; }
+            const mod = e.ctrlKey || e.metaKey;
+            if (mod && (e.key === 'z' || e.key === 'Z')) { e.preventDefault(); this._undo(); return; }
+            if (mod) {
                 const map = { '0':'cursor','1':'pen-blue','2':'pen-red','3':'pen-green','4':'highlighter','5':'eraser' };
                 if (map[e.key]) { e.preventDefault(); this._setTool(map[e.key]); }
             }
             if (e.key === 'Escape') this._setTool('cursor');
         });
 
-        /* ─── EVENTOS DE DESENHO (corrigido para Android) ───
-         * Estratégia:
-         *  - pointerdown no canvas: inicia traço + captura o ponteiro
-         *  - pointermove no WINDOW: continua traço mesmo se sair do canvas
-         *  - pointerup/cancel no WINDOW: encerra traço com segurança
-         *  - pointerout NÃO encerra mais (bug mobile antigo)
+        /* ─── DESENHO ─────────────────────────────────────────────────
+         * pointerdown no canvas inicia o traço e captura o ponteiro.
+         * pointermove / pointerup escutam no DOCUMENT mas só processam
+         * o pointerId que iniciou o traço — ignora outros dedos/ponteiros.
          */
-        this.canvas.addEventListener('pointerdown', e => this._startDraw(e));
-        window.addEventListener('pointermove',  e => this._continueDraw(e), { passive: false });
-        window.addEventListener('pointerup',    e => this._stopDraw(e));
-        window.addEventListener('pointercancel',e => this._stopDraw(e));
+        this.canvas.addEventListener('pointerdown', e => {
+            if (this.tool === 'cursor') return;
+            if (this.isDrawing) return;           // já tem um traço ativo
+            e.preventDefault();
+            this.isDrawing  = true;
+            this.activePtr  = e.pointerId;
+            this.lastX      = e.clientX;
+            this.lastY      = e.clientY;
+            this._pushUndo();
+            try { this.canvas.setPointerCapture(e.pointerId); } catch(_) {}
+        });
 
+        document.addEventListener('pointermove', e => {
+            if (!this.isDrawing || e.pointerId !== this.activePtr) return;
+            if (e.cancelable) e.preventDefault();
+            // RAF: suaviza o traçado no mobile
+            this.pendingX = e.clientX;
+            this.pendingY = e.clientY;
+            if (!this.rafPending) {
+                this.rafPending = true;
+                requestAnimationFrame(() => {
+                    this._drawSegment(this.pendingX, this.pendingY);
+                    this.rafPending = false;
+                });
+            }
+        }, { passive: false });
+
+        document.addEventListener('pointerup', e => {
+            if (e.pointerId !== this.activePtr) return;
+            this._stopDraw();
+        });
+
+        document.addEventListener('pointercancel', e => {
+            if (e.pointerId !== this.activePtr) return;
+            this._stopDraw();
+        });
+
+        /* ─── Arrastar toolbar (desktop) ─── */
         this._makeDraggable();
     }
 
-    /* ══════════════════ TOGGLE COLLAPSE ══════════════════ */
-    _toggleCollapse(forceCollapse = null) {
-        if (forceCollapse === true) {
-            this.collapsed = true;
-        } else if (forceCollapse === false) {
-            this.collapsed = false;
+    /* ══════════════════════════════════════════════
+       PAINEL
+    ══════════════════════════════════════════════ */
+    _togglePanel() {
+        if (this.panel.classList.contains('dt3-open')) {
+            this._closePanel();
         } else {
-            this.collapsed = !this.collapsed;
+            this._openPanel();
         }
-        this.toolbar.classList.toggle('dt2-collapsed', this.collapsed);
     }
 
-    /* ══════════════════ FERRAMENTAS ══════════════════ */
-    _setTool(tool) {
-        this.currentTool = tool;
-        const isDrawingTool = tool !== 'cursor';
+    _openPanel() {
+        this.panel.classList.add('dt3-open');
+        this.fab.classList.add('dt3-fab-open');
+    }
+
+    _closePanel() {
+        this.panel.classList.remove('dt3-open');
+        this.fab.classList.remove('dt3-fab-open');
+    }
+
+    /* ══════════════════════════════════════════════
+       FERRAMENTAS
+    ══════════════════════════════════════════════ */
+    _setTool(t) {
+        this.tool = t;
+        const isDrawing = t !== 'cursor';
 
         // Atualiza botão ativo
-        this.toolbar.querySelectorAll('.dt2-btn[data-tool]').forEach(b => b.classList.remove('active'));
-        const activeBtn = this.toolbar.querySelector(`.dt2-btn[data-tool="${tool}"]`);
-        if (activeBtn) activeBtn.classList.add('active');
+        this.panel.querySelectorAll('.dt3-btn[data-tool]').forEach(b => b.classList.remove('active'));
+        const btn = this.panel.querySelector(`.dt3-btn[data-tool="${t}"]`);
+        if (btn) btn.classList.add('active');
 
-        // Atualiza ícone do toggle para refletir ferramenta ativa
-        this._updateToggleIcon(tool);
+        // Canvas: class CSS controla touch-action e pointer-events juntos
+        // .dt3-drawing-mode { touch-action: none; pointer-events: auto; }
+        this.canvas.classList.toggle('dt3-drawing-mode', isDrawing);
 
-        // Canvas captura eventos apenas com ferramenta de desenho
-        this.canvas.style.pointerEvents = isDrawingTool ? 'auto' : 'none';
-        // touch-action: none BLOQUEIA scroll — só ativa ao desenhar
-        this.canvas.style.touchAction   = isDrawingTool ? 'none' : 'auto';
+        // FAB: mostra a cor da ferramenta ativa no anel
+        const ringColors = {
+            'pen-blue':    '#60a5fa',
+            'pen-red':     '#f87171',
+            'pen-green':   '#34d399',
+            'highlighter': '#fde047',
+            'eraser':      '#94a3b8',
+            'cursor':      'transparent',
+        };
+        this.fabRing.style.borderColor = ringColors[t] || 'transparent';
+        this.fabRing.style.opacity     = isDrawing ? '1' : '0';
 
-        // Badge de modo desenho (mobile)
-        if (isDrawingTool) {
-            this.modeBadge.classList.remove('dt2-hidden');
-            this._updateBadgeColor(tool);
-        } else {
-            this.modeBadge.classList.add('dt2-hidden');
-        }
-
-        // Toolbar: indica visualmente a ferramenta ativa no ícone toggle
-        this.toolbar.classList.toggle('dt2-drawing-active', isDrawingTool);
+        // FAB: ícone muda para a ferramenta ativa
+        this.fabIcon.innerHTML = isDrawing ? this._toolIcon(t) : this._penSVG(20);
 
         // Ajusta slider
-        if (tool === 'highlighter') {
-            this.sizeSlider.value = Math.max(this.penSize, 20);
-        } else if (tool === 'eraser') {
-            this.sizeSlider.value = this.eraserSize;
-        } else if (isDrawingTool) {
-            this.sizeSlider.value = this.penSize;
+        if (t === 'highlighter') {
+            this.slider.value = Math.max(this.penSize, 18);
+        } else if (t === 'eraser') {
+            this.slider.value = this.eraserSize;
+        } else if (isDrawing) {
+            this.slider.value = this.penSize;
         }
-        this.sizeLabel.textContent = `${this.sizeSlider.value}px`;
+        this.sizeLbl.textContent = this.slider.value + 'px';
 
-        this._updateCursorPreview();
-        this._updateCursor();
+        // Barra de status (badge mobile)
+        this._updateStatusBar(t);
     }
 
-    _updateToggleIcon(tool) {
-        const icons = {
-            cursor:      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>`,
-            'pen-blue':  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>`,
-            'pen-red':   `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>`,
-            'pen-green': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>`,
-            highlighter: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.5 1.15L17.35 0 10.27 7.08l1.15 1.15L8.35 11.3l-1.15-1.15L6.05 11.3l3.37 3.37 1.15-1.15-1.15-1.15 3.07-3.07 1.15 1.15L18.5 1.15zM5 19h14v2H5z"/></svg>`,
-            eraser:      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16.24 3.56l4.95 4.94c.78.79.78 2.05 0 2.84L12 20.53a4.008 4.008 0 01-5.66 0L2.81 17c-.78-.79-.78-2.05 0-2.84l10.6-10.6c.79-.78 2.05-.78 2.83 0zM4.22 15.58l3.54 3.53c.78.79 2.04.79 2.83 0l3.53-3.53-6.36-6.36-3.54 3.36z"/></svg>`,
-        };
-        this.toggleBtn.innerHTML = icons[tool] || icons.cursor;
+    _toolIcon(t) {
+        if (t === 'highlighter') return this._highlightSVG();
+        if (t === 'eraser')      return this._eraserSVG();
+        if (t === 'cursor')      return this._cursorSVG();
+        return this._penSVG(20);
     }
 
-    _updateBadgeColor(tool) {
-        const colors = {
-            'pen-blue':   '#60a5fa',
-            'pen-red':    '#f87171',
-            'pen-green':  '#34d399',
-            highlighter:  '#fde047',
-            eraser:       '#94a3b8',
-        };
-        const dot = this.modeBadge.querySelector('.dt2-badge-dot');
-        if (dot) dot.style.background = colors[tool] || '#fff';
-    }
+    _updateStatusBar(t) {
+        // Remove barra existente
+        const existing = document.getElementById('dt3-status');
+        if (existing) existing.remove();
 
-    _updateCursorPreview() {
-        const tool = this.currentTool;
-        const size = parseInt(this.sizeSlider.value);
-        const preview = this.cursorPreview;
+        if (t === 'cursor') return;
 
-        // Cores explícitas — sem color-mix() para compatibilidade Android
-        const colorMap = {
-            'pen-blue':   '#60a5fa',
-            'pen-red':    '#f87171',
-            'pen-green':  '#34d399',
-            highlighter:  'rgba(253,224,71,0.65)',
-            eraser:       'rgba(255,255,255,0.18)',
+        const labels = {
+            'pen-blue':    '✏️ Caneta Azul',
+            'pen-red':     '✏️ Caneta Vermelha',
+            'pen-green':   '✏️ Caneta Verde',
+            'highlighter': '🖊️ Marca-texto',
+            'eraser':      '🧹 Borracha',
         };
 
-        if (tool === 'cursor' || !colorMap[tool]) {
-            preview.style.display = 'none';
-            return;
-        }
+        const bar = document.createElement('div');
+        bar.id = 'dt3-status';
+        bar.className = 'dt3-status';
+        bar.innerHTML = `
+            <span class="dt3-status-dot" data-tool="${t}"></span>
+            <span>${labels[t] || t} — Toque para desenhar</span>
+            <button class="dt3-status-close" aria-label="Sair do modo desenho">✕ Sair</button>
+        `;
+        document.body.appendChild(bar);
 
-        const displaySize = Math.min(Math.max(size, 8), 40);
-        Object.assign(preview.style, {
-            display:      'block',
-            width:        displaySize + 'px',
-            height:       displaySize + 'px',
-            background:   colorMap[tool],
-            borderRadius: tool === 'eraser' ? '4px' : '50%',
-            border:       tool === 'eraser' ? '1px solid rgba(255,255,255,0.35)' : 'none',
+        bar.querySelector('.dt3-status-close').addEventListener('click', () => {
+            this._setTool('cursor');
         });
+
+        // Anima entrada
+        requestAnimationFrame(() => bar.classList.add('dt3-status-in'));
     }
 
-    _updateCursor() {
-        const t = this.currentTool;
-        this.canvas.style.cursor =
-            t === 'cursor' ? 'default' :
-            t === 'eraser' ? 'cell'    : 'crosshair';
-    }
-
-    /* ══════════════════ DESENHO ══════════════════ */
-    _startDraw(e) {
-        if (this.currentTool === 'cursor') return;
-        this.isDrawing = true;
-        this.lastX = e.clientX;
-        this.lastY = e.clientY;
-        this._pushUndo();
-        // Captura o ponteiro: garante receber pointermove mesmo fora do canvas
-        try { this.canvas.setPointerCapture(e.pointerId); } catch(_) {}
-    }
-
-    _continueDraw(e) {
-        if (!this.isDrawing) return;
-        // Evita scroll enquanto desenha em telas touch
-        if (e.cancelable) e.preventDefault();
-
-        const x   = e.clientX;
-        const y   = e.clientY;
+    /* ══════════════════════════════════════════════
+       DESENHO
+    ══════════════════════════════════════════════ */
+    _drawSegment(x, y) {
         const ctx = this.ctx;
-        const sz  = parseInt(this.sizeSlider.value);
+        const sz  = +this.slider.value;
 
         ctx.beginPath();
         ctx.moveTo(this.lastX, this.lastY);
@@ -364,7 +393,7 @@ class DrawingTool {
         ctx.lineCap  = 'round';
         ctx.lineJoin = 'round';
 
-        switch (this.currentTool) {
+        switch(this.tool) {
             case 'eraser':
                 ctx.globalCompositeOperation = 'destination-out';
                 ctx.strokeStyle = 'rgba(0,0,0,1)';
@@ -372,7 +401,7 @@ class DrawingTool {
                 break;
             case 'highlighter':
                 ctx.globalCompositeOperation = 'source-over';
-                ctx.strokeStyle = 'rgba(253,224,71,0.32)';
+                ctx.strokeStyle = 'rgba(253,224,71,0.30)';
                 ctx.lineWidth   = sz;
                 break;
             case 'pen-blue':
@@ -400,24 +429,24 @@ class DrawingTool {
         this.lastY = y;
     }
 
-    _stopDraw(e) {
+    _stopDraw() {
         if (!this.isDrawing) return;
-        this.isDrawing = false;
+        this.isDrawing  = false;
+        this.activePtr  = null;
+        this.rafPending = false;
         this.ctx.globalCompositeOperation = 'source-over';
-        try {
-            if (e && e.pointerId !== undefined) {
-                this.canvas.releasePointerCapture(e.pointerId);
-            }
-        } catch(_) {}
+        try { this.canvas.releasePointerCapture(this.activePtr); } catch(_) {}
     }
 
-    /* ══════════════════ UNDO / CLEAR ══════════════════ */
+    /* ══════════════════════════════════════════════
+       UNDO / CLEAR
+    ══════════════════════════════════════════════ */
     _pushUndo() {
         try {
             const snap = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height);
             this.undoStack.push(snap);
             if (this.undoStack.length > this.MAX_UNDO) this.undoStack.shift();
-        } catch(e) {}
+        } catch(_) {}
     }
 
     _undo() {
@@ -430,17 +459,20 @@ class DrawingTool {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
 
-    // API pública para app.js
+    // API para app.js
     clearCanvas() { this._clearCanvas(); }
 
-    /* ══════════════════ DRAGGABLE (desktop) ══════════════════ */
+    /* ══════════════════════════════════════════════
+       ARRASTAR TOOLBAR (desktop)
+    ══════════════════════════════════════════════ */
     _makeDraggable() {
-        let dragging = false, sx, sy, origR, origB;
+        let drag = false, sx, sy, origR, origB;
         const h = this.toolbar;
 
         h.addEventListener('pointerdown', e => {
-            if (e.target.closest('.dt2-btn, .dt2-slider, .dt2-size-wrap, .dt2-toggle-btn')) return;
-            dragging = true;
+            if (this._isMobile()) return;
+            if (e.target.closest('.dt3-btn, .dt3-slider, .dt3-size-wrap, .dt3-fab, .dt3-panel')) return;
+            drag = true;
             sx = e.clientX; sy = e.clientY;
             const r = h.getBoundingClientRect();
             origR = window.innerWidth  - r.right;
@@ -450,14 +482,14 @@ class DrawingTool {
         });
 
         h.addEventListener('pointermove', e => {
-            if (!dragging) return;
+            if (!drag) return;
             h.style.right  = (origR + sx - e.clientX) + 'px';
             h.style.bottom = (origB + sy - e.clientY) + 'px';
         });
 
-        const stopDrag = () => { dragging = false; h.style.transition = ''; };
-        h.addEventListener('pointerup',     stopDrag);
-        h.addEventListener('pointercancel', stopDrag);
+        const endDrag = () => { drag = false; h.style.transition = ''; };
+        h.addEventListener('pointerup',     endDrag);
+        h.addEventListener('pointercancel', endDrag);
     }
 }
 

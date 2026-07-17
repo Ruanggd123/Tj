@@ -1086,295 +1086,378 @@ tr:hover td {
 
 
 
-/* ═══════════════════════════════════════════════
-   Drawing Toolbar v2.1 — Android/Mobile Fix
-   ═══════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════════
+   Drawing Tool v3.0 — FAB + Panel (Android/iOS/Desktop)
+   ═══════════════════════════════════════════════════════════════ */
 
-/* ── Botão toggle (sempre visível, mostra ícone da ferramenta ativa) */
-.dt2-toggle-btn {
-    width: 42px;
-    height: 42px;
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(59,130,246,0.15);
-    color: #60a5fa;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    pointer-events: all;
-    -webkit-tap-highlight-color: transparent;
-    transition: all 0.18s ease;
-}
-.dt2-toggle-btn:hover  { background: rgba(59,130,246,0.25); border-color: rgba(59,130,246,0.5); }
-.dt2-toggle-btn:active { transform: scale(0.9); }
-
-/* ── Painel de ferramentas (escondido quando colapsado) */
-.dt2-tools {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    overflow: hidden;
-    max-width: 700px;
-    transition: max-width 0.3s ease, opacity 0.25s ease, padding 0.25s ease;
-    opacity: 1;
-    padding-left: 6px;
+/* ── Canvas overlay ── */
+.dt3-canvas-base {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;   /* cursor mode: passthrough */
+    touch-action: auto;     /* cursor mode: scroll normal */
+    z-index: 998;
 }
 
-.dt2-collapsed .dt2-tools {
-    max-width: 0;
-    opacity: 0;
-    pointer-events: none;
-    padding-left: 0;
+/* Modo desenho: CSS class aplicada ANTES do toque chegar
+   Isso é fundamental no Android — inline JS chega tarde */
+.dt3-drawing-mode {
+    pointer-events: auto !important;
+    touch-action: none !important;  /* bloqueia scroll apenas ao desenhar */
+    cursor: crosshair;
 }
 
-.dt2-toolbar {
+/* ── Toolbar container ── */
+#dt3-toolbar {
     position: fixed;
     bottom: 24px;
-    right: 24px;
+    right: 20px;
     z-index: 1001;
     display: flex;
-    align-items: center;
-    gap: 0;
-    padding: 8px 10px;
-    background: rgba(15, 23, 42, 0.94);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
-    cursor: grab;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
     user-select: none;
-    transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.dt2-toolbar:active { cursor: grabbing; }
-
-/* Modo desenho ativo: borda colorida */
-.dt2-drawing-active {
-    border-color: rgba(59,130,246,0.5);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 0 20px rgba(59,130,246,0.15);
-}
-
-/* Buttons */
-.dt2-btn {
-    width: 38px;
-    height: 38px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.07);
-    background: rgba(255,255,255,0.05);
-    color: #94a3b8;
+/* ── FAB (Floating Action Button) — sempre visível ── */
+.dt3-fab {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e3a5f, #1e40af);
+    border: 2px solid rgba(96,165,250,0.4);
+    color: #60a5fa;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.18s ease;
-    flex-shrink: 0;
-    pointer-events: all;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 0 0 0 rgba(59,130,246,0);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     -webkit-tap-highlight-color: transparent;
+    pointer-events: all;
+    flex-shrink: 0;
 }
 
-.dt2-btn:hover  { background: rgba(255,255,255,0.1); color: #f8fafc; border-color: rgba(255,255,255,0.15); transform: translateY(-1px); }
-.dt2-btn:active { transform: scale(0.92); }
+.dt3-fab:hover  { transform: scale(1.08); box-shadow: 0 6px 24px rgba(0,0,0,0.6), 0 0 16px rgba(59,130,246,0.3); }
+.dt3-fab:active { transform: scale(0.92); }
 
-/* ── Cores explícitas por ferramenta — SEM color-mix() (Android incompatível) */
-.dt2-pen-blue        { color: #60a5fa; border-color: rgba(96,165,250,0.25); }
-.dt2-pen-blue:hover  { background: rgba(96,165,250,0.12); border-color: rgba(96,165,250,0.5); box-shadow: 0 0 12px rgba(96,165,250,0.35); color: #60a5fa; }
-.dt2-pen-blue.active { background: rgba(96,165,250,0.2); border-color: #60a5fa; color: #60a5fa; box-shadow: 0 0 14px rgba(96,165,250,0.5); }
-
-.dt2-pen-red        { color: #f87171; border-color: rgba(248,113,113,0.25); }
-.dt2-pen-red:hover  { background: rgba(248,113,113,0.12); border-color: rgba(248,113,113,0.5); box-shadow: 0 0 12px rgba(248,113,113,0.35); color: #f87171; }
-.dt2-pen-red.active { background: rgba(248,113,113,0.2); border-color: #f87171; color: #f87171; box-shadow: 0 0 14px rgba(248,113,113,0.5); }
-
-.dt2-pen-green        { color: #34d399; border-color: rgba(52,211,153,0.25); }
-.dt2-pen-green:hover  { background: rgba(52,211,153,0.12); border-color: rgba(52,211,153,0.5); box-shadow: 0 0 12px rgba(52,211,153,0.35); color: #34d399; }
-.dt2-pen-green.active { background: rgba(52,211,153,0.2); border-color: #34d399; color: #34d399; box-shadow: 0 0 14px rgba(52,211,153,0.5); }
-
-.dt2-highlight        { color: #fde047; border-color: rgba(253,224,71,0.25); }
-.dt2-highlight:hover  { background: rgba(253,224,71,0.1); border-color: rgba(253,224,71,0.5); box-shadow: 0 0 12px rgba(253,224,71,0.3); color: #fde047; }
-.dt2-highlight.active { background: rgba(253,224,71,0.15); border-color: #fde047; color: #fde047; box-shadow: 0 0 14px rgba(253,224,71,0.45); }
-
-/* Cursor / borracha / desfazer (sem cor especial) */
-.dt2-btn.active {
-    background: rgba(59,130,246,0.2);
-    border-color: #3b82f6;
-    color: #60a5fa;
-    box-shadow: 0 0 14px rgba(59,130,246,0.5);
+.dt3-fab.dt3-fab-open {
+    border-color: rgba(96,165,250,0.7);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5), 0 0 20px rgba(59,130,246,0.35);
 }
 
-/* Limpar tudo */
-.dt2-btn.dt2-danger { color: #ef4444; border-color: rgba(239,68,68,0.2); }
-.dt2-btn.dt2-danger:hover { background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.5); box-shadow: 0 0 12px rgba(239,68,68,0.3); color: #f87171; }
+/* Anel colorido que indica a ferramenta ativa */
+.dt3-fab-ring {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    transition: border-color 0.25s ease, opacity 0.25s ease;
+    opacity: 0;
+    pointer-events: none;
+}
 
-/* Divisor */
-.dt2-divider { width: 1px; height: 24px; background: rgba(255,255,255,0.08); margin: 0 3px; flex-shrink: 0; }
-
-/* ── Slider — área de toque maior para Android */
-.dt2-size-wrap {
+.dt3-fab-icon {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 0 4px;
-    pointer-events: all;
-    cursor: default;
+    justify-content: center;
+    transition: opacity 0.15s ease;
+    pointer-events: none;
 }
 
-.dt2-size-icon { color: #64748b; display: flex; align-items: center; flex-shrink: 0; }
+/* ── Painel de ferramentas ── */
+.dt3-panel {
+    display: none;         /* escondido por padrão (mobile) */
+    align-items: center;
+    gap: 5px;
+    padding: 10px 12px;
+    background: rgba(10, 17, 34, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    animation: dt3FadeIn 0.2s ease;
+}
 
-.dt2-slider {
+/* Aberto: visível */
+.dt3-panel.dt3-open {
+    display: flex;
+}
+
+@keyframes dt3FadeIn {
+    from { opacity: 0; transform: translateY(8px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Botões do painel ── */
+.dt3-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    border: 1.5px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.04);
+    color: #64748b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s;
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: all;
+    position: relative;
+}
+
+.dt3-btn:active { transform: scale(0.88); }
+
+/* Cores por ferramenta — sem color-mix() */
+.dt3-cursor       { color: #94a3b8; }
+.dt3-cursor:hover { background: rgba(255,255,255,0.08); color: #e2e8f0; border-color: rgba(255,255,255,0.18); }
+.dt3-cursor.active { background: rgba(148,163,184,0.15); border-color: #94a3b8; color: #e2e8f0; }
+
+.dt3-blue       { color: #60a5fa; border-color: rgba(96,165,250,0.2); }
+.dt3-blue:hover { background: rgba(96,165,250,0.12); border-color: rgba(96,165,250,0.5); }
+.dt3-blue.active { background: rgba(96,165,250,0.2); border-color: #60a5fa; box-shadow: 0 0 12px rgba(96,165,250,0.45); }
+
+.dt3-red       { color: #f87171; border-color: rgba(248,113,113,0.2); }
+.dt3-red:hover { background: rgba(248,113,113,0.12); border-color: rgba(248,113,113,0.5); }
+.dt3-red.active { background: rgba(248,113,113,0.2); border-color: #f87171; box-shadow: 0 0 12px rgba(248,113,113,0.45); }
+
+.dt3-green       { color: #34d399; border-color: rgba(52,211,153,0.2); }
+.dt3-green:hover { background: rgba(52,211,153,0.12); border-color: rgba(52,211,153,0.5); }
+.dt3-green.active { background: rgba(52,211,153,0.2); border-color: #34d399; box-shadow: 0 0 12px rgba(52,211,153,0.45); }
+
+.dt3-yellow       { color: #fde047; border-color: rgba(253,224,71,0.2); }
+.dt3-yellow:hover { background: rgba(253,224,71,0.10); border-color: rgba(253,224,71,0.5); }
+.dt3-yellow.active { background: rgba(253,224,71,0.15); border-color: #fde047; box-shadow: 0 0 12px rgba(253,224,71,0.4); }
+
+.dt3-eraser       { color: #94a3b8; }
+.dt3-eraser:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); color: #e2e8f0; }
+.dt3-eraser.active { background: rgba(148,163,184,0.15); border-color: #94a3b8; }
+
+.dt3-undo       { color: #a78bfa; border-color: rgba(167,139,250,0.2); }
+.dt3-undo:hover { background: rgba(167,139,250,0.1); border-color: rgba(167,139,250,0.4); }
+
+.dt3-clear       { color: #f87171; border-color: rgba(248,113,113,0.2); }
+.dt3-clear:hover { background: rgba(248,113,113,0.12); border-color: rgba(248,113,113,0.5); }
+
+/* ── Separador ── */
+.dt3-sep {
+    width: 1px;
+    height: 26px;
+    background: rgba(255,255,255,0.07);
+    flex-shrink: 0;
+    margin: 0 2px;
+}
+
+/* ── Slider ── */
+.dt3-size-wrap {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #475569;
+    padding: 0 4px;
+    pointer-events: all;
+}
+
+.dt3-slider {
     -webkit-appearance: none;
     appearance: none;
     width: 80px;
-    height: 20px;          /* área de toque ampliada */
+    height: 24px;           /* área de toque ampliada para dedo */
     background: transparent;
     outline: none;
     cursor: pointer;
-    pointer-events: all;
-    padding: 8px 0;
-    margin: 0;
+    padding: 10px 0;
 }
 
-.dt2-slider::-webkit-slider-runnable-track {
+.dt3-slider::-webkit-slider-runnable-track {
     height: 4px;
     border-radius: 4px;
-    background: rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.12);
 }
-.dt2-slider::-moz-range-track {
+.dt3-slider::-moz-range-track {
     height: 4px;
     border-radius: 4px;
-    background: rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.12);
     border: none;
 }
-
-/* Thumb maior para dedo */
-.dt2-slider::-webkit-slider-thumb {
+.dt3-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    appearance: none;
-    width: 22px;
-    height: 22px;
+    width: 24px; height: 24px;
     border-radius: 50%;
     background: #3b82f6;
     cursor: pointer;
-    margin-top: -9px;
-    border: 2px solid rgba(255,255,255,0.25);
+    margin-top: -10px;
+    border: 2px solid rgba(255,255,255,0.3);
     box-shadow: 0 0 8px rgba(59,130,246,0.6);
-    transition: transform 0.15s ease;
+    transition: transform 0.12s;
 }
-.dt2-slider::-webkit-slider-thumb:active { transform: scale(1.25); }
-.dt2-slider::-moz-range-thumb {
-    width: 22px; height: 22px;
+.dt3-slider::-webkit-slider-thumb:active { transform: scale(1.3); }
+.dt3-slider::-moz-range-thumb {
+    width: 24px; height: 24px;
     border-radius: 50%;
     background: #3b82f6;
-    border: 2px solid rgba(255,255,255,0.25);
+    border: 2px solid rgba(255,255,255,0.3);
     box-shadow: 0 0 8px rgba(59,130,246,0.6);
 }
 
-.dt2-size-label {
+.dt3-size-lbl {
     font-family: 'Outfit', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #64748b;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #475569;
     min-width: 28px;
-    text-align: center;
+    text-align: right;
     pointer-events: none;
     white-space: nowrap;
 }
 
-.dt2-cursor-preview {
-    display: none;
-    flex-shrink: 0;
-    transition: all 0.15s ease;
-    pointer-events: none;
-}
-
-/* ── Badge "Modo Desenho" */
-.dt2-mode-badge {
+/* ── Status bar (barra de modo desenho) ── */
+.dt3-status {
     position: fixed;
-    bottom: 80px;
-    right: 24px;
+    bottom: 90px;
+    right: 20px;
     z-index: 1002;
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 14px;
-    background: rgba(15,23,42,0.93);
+    gap: 10px;
+    padding: 10px 16px;
+    background: rgba(10,17,34,0.95);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(59,130,246,0.4);
     border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #94a3b8;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    color: #cbd5e1;
+    opacity: 0;
+    transform: translateY(6px);
     transition: opacity 0.2s ease, transform 0.2s ease;
     pointer-events: all;
 }
-.dt2-mode-badge.dt2-hidden { opacity: 0; transform: translateY(8px); pointer-events: none; }
 
-.dt2-badge-dot {
-    width: 8px; height: 8px;
+.dt3-status.dt3-status-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dt3-status-dot {
+    width: 9px; height: 9px;
     border-radius: 50%;
-    background: #60a5fa;
     flex-shrink: 0;
-    animation: dt2pulse 1.5s ease-in-out infinite;
+    animation: dt3pulse 1.4s ease-in-out infinite;
 }
-@keyframes dt2pulse {
-    0%,100% { opacity:1; transform:scale(1); }
-    50%      { opacity:0.5; transform:scale(0.8); }
+.dt3-status-dot[data-tool="pen-blue"]    { background: #60a5fa; }
+.dt3-status-dot[data-tool="pen-red"]     { background: #f87171; }
+.dt3-status-dot[data-tool="pen-green"]   { background: #34d399; }
+.dt3-status-dot[data-tool="highlighter"] { background: #fde047; }
+.dt3-status-dot[data-tool="eraser"]      { background: #94a3b8; }
+
+@keyframes dt3pulse {
+    0%,100% { opacity:1; transform:scale(1);    }
+    50%      { opacity:0.4; transform:scale(0.7); }
 }
 
-.dt2-badge-text { color: #e2e8f0; }
+.dt3-status-close {
+    background: rgba(239,68,68,0.1);
+    border: 1px solid rgba(239,68,68,0.3);
+    color: #f87171;
+    padding: 4px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: all;
+    transition: background 0.15s, border-color 0.15s;
+}
+.dt3-status-close:hover { background: rgba(239,68,68,0.2); border-color: rgba(239,68,68,0.6); }
+.dt3-status-close:active { transform: scale(0.95); }
 
-.dt2-badge-close {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: #64748b;
-    width: 24px; height: 24px;
-    border-radius: 50%;
+/* ══════════ RESPONSIVO MOBILE / ANDROID ══════════ */
+@media (max-width: 768px) {
+    /* Botões maiores para toque com dedo */
+    .dt3-btn { width: 46px; height: 46px; border-radius: 14px; }
+    .dt3-fab  { width: 56px; height: 56px; }
+
+    /* Painel empilha verticalmente no mobile */
+    .dt3-panel {
+        flex-direction: column;
+        padding: 12px 10px;
+        gap: 6px;
+        border-radius: 20px;
+        right: 0;
+        bottom: 66px;  /* logo acima do FAB */
+        position: absolute;
+        width: 68px;   /* largura de coluna única */
+    }
+
+    /* Em coluna, o separador vira horizontal */
+    .dt3-sep {
+        width: 100%;
+        height: 1px;
+        margin: 2px 0;
+    }
+
+    /* Slider na coluna */
+    .dt3-size-wrap {
+        flex-direction: column;
+        gap: 4px;
+        width: 100%;
+        align-items: center;
+        padding: 4px 0;
+    }
+
+    .dt3-slider { width: 46px; padding: 8px 0; }
+    .dt3-size-lbl { font-size: 0.68rem; min-width: auto; }
+
+    /* Status bar */
+    .dt3-status {
+        bottom: auto;
+        top: 80px;      /* no topo, não conflita com toolbar */
+        right: 12px;
+        left: 12px;
+        border-radius: 14px;
+        font-size: 0.8rem;
+        justify-content: space-between;
+    }
+
+    /* Remove hover (sem mouse no mobile) */
+    .dt3-btn:hover,
+    .dt3-blue:hover, .dt3-red:hover, .dt3-green:hover,
+    .dt3-yellow:hover, .dt3-eraser:hover, .dt3-cursor:hover,
+    .dt3-undo:hover, .dt3-clear:hover { transform: none; }
+}
+
+@media (max-width: 480px) {
+    #dt3-toolbar { bottom: 16px; right: 14px; }
+    .dt3-fab  { width: 52px; height: 52px; }
+    .dt3-btn  { width: 44px; height: 44px; }
+    .dt3-panel { width: 64px; bottom: 62px; }
+
+    .dt3-status {
+        top: 72px;
+        right: 8px;
+        left: 8px;
+        font-size: 0.76rem;
+        padding: 8px 12px;
+    }
+    color: #60a5fa;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.7rem;
-    padding: 0;
-    line-height: 1;
-    transition: all 0.15s ease;
-    -webkit-tap-highlight-color: transparent;
+    flex-shrink: 0;
     pointer-events: all;
-}
-.dt2-badge-close:hover { background: rgba(239,68,68,0.15); color: #f87171; border-color: rgba(239,68,68,0.4); }
-
-/* ══════════ RESPONSIVO ANDROID / MOBILE ══════════ */
-@media (max-width: 768px) {
-    .dt2-toolbar {
-        bottom: 16px;
-        right: 16px;
-        padding: 8px 10px;
-        cursor: default; /* sem arrastar no toque */
-    }
-
-    .dt2-toggle-btn { width: 46px; height: 46px; }
-    .dt2-btn        { width: 42px; height: 42px; border-radius: 12px; }
-    .dt2-slider     { width: 70px; }
-    .dt2-size-label { display: none; }
-    .dt2-mode-badge { bottom: 82px; right: 16px; }
-
-    /* Remove hover (não existe em touch) */
-    .dt2-btn:hover,
-    .dt2-pen-blue:hover,
-    .dt2-pen-red:hover,
-    .dt2-pen-green:hover,
-    .dt2-highlight:hover { transform: none; box-shadow: none; }
+    -webkit-tap-highlight-color: transparent;
+    transition: all 0.18s ease;
 }
 
-@media (max-width: 480px) {
-    .dt2-toolbar  { bottom: 12px; right: 12px; padding: 6px 8px; }
-    .dt2-toggle-btn { width: 44px; height: 44px; }
-    .dt2-btn        { width: 40px; height: 40px; }
-    .dt2-slider     { width: 52px; }
-    .dt2-divider    { display: none; }
-    .dt2-size-icon  { display: none; }
-    .dt2-mode-badge { bottom: 74px; right: 12px; font-size: 0.74rem; }
-}
