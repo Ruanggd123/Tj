@@ -1,0 +1,542 @@
+[
+  {
+    "id": 1,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Linux — Permissões e chmod",
+    "context": "Administração de Servidores no TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um administrador de sistemas do TJ-CE precisa configurar um arquivo de script chamado backup.sh de forma que o proprietário possa ler, escrever e executar; o grupo possa apenas ler e executar; e outros usuários não tenham nenhuma permissão. O comando chmod com notação octal correto para essa configuração é:",
+    "options": {
+      "A": "chmod 750 backup.sh",
+      "B": "chmod 755 backup.sh",
+      "C": "chmod 640 backup.sh",
+      "D": "chmod 700 backup.sh",
+      "E": "chmod 770 backup.sh"
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. Em notação octal: proprietário (rwx = 4+2+1 = 7), grupo (r-x = 4+0+1 = 5), outros (--- = 0). Logo chmod 750. A alternativa B (755) daria permissão de execução e leitura a 'outros'. A alternativa C (640) não permite execução pelo grupo. A alternativa D (700) nega qualquer acesso ao grupo. A alternativa E (770) concede escrita ao grupo, o que não é o requisito."
+  },
+  {
+    "id": 2,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Linux — Comandos Essenciais",
+    "context": "Análise de Logs no Ambiente Judicial",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "A equipe de infraestrutura do TJ-CE precisa encontrar, dentro do arquivo /var/log/sistema.log, todas as linhas que contenham a palavra 'ERRO' (maiúscula) e redirecionar o resultado para um arquivo chamado erros.txt, sobrescrevendo seu conteúdo anterior. O comando Linux correto é:",
+    "options": {
+      "A": "grep 'ERRO' /var/log/sistema.log >> erros.txt",
+      "B": "grep 'ERRO' /var/log/sistema.log > erros.txt",
+      "C": "find 'ERRO' /var/log/sistema.log > erros.txt",
+      "D": "grep -i 'ERRO' /var/log/sistema.log > erros.txt",
+      "E": "cat /var/log/sistema.log | grep 'ERRO' >> erros.txt"
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O comando grep 'ERRO' busca a string exata no arquivo e o operador > sobrescreve o arquivo de destino. A alternativa A usa >>, que acrescentaria ao final do arquivo em vez de sobrescrever. A alternativa C usa find, que serve para localizar arquivos no sistema, não para buscar conteúdo dentro deles. A alternativa D usa -i (case-insensitive), encontrando também 'erro' em minúsculo, divergindo do requisito de maiúscula exata. A alternativa E usa >> (append) em vez de > (overwrite)."
+  },
+  {
+    "id": 3,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Linux — Gerenciamento de Usuários",
+    "context": "Provisionamento de Acessos no TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O administrador do TJ-CE precisa criar um novo usuário chamado 'tjuser', definir seu diretório home como /home/tjuser, seu shell padrão como /bin/bash e adicioná-lo ao grupo suplementar 'operadores'. O comando useradd correto é:",
+    "options": {
+      "A": "useradd -m -s /bin/bash -G operadores tjuser",
+      "B": "useradd -d /home/tjuser -s /bin/bash tjuser && usermod -G operadores tjuser",
+      "C": "adduser tjuser --home /home/tjuser --group operadores",
+      "D": "useradd -m -s /bin/bash tjuser && passwd operadores tjuser",
+      "E": "useradd --create-home --shell /bin/bash --groups operadores tjuser"
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. As flags: -m cria automaticamente o diretório home (/home/tjuser por padrão), -s define o shell e -G adiciona o grupo suplementar. O diretório home é criado automaticamente com -m. A alternativa B funciona, mas é desnecessariamente longa para o resultado desejado e usa dois comandos separados. A alternativa C utiliza adduser (script de alto nível do Debian), não useradd, e a sintaxe de flags está incorreta. A alternativa D confunde passwd com a operação de grupo. A alternativa E usa --groups (plural) que não é uma flag padrão do useradd."
+  },
+  {
+    "id": 4,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Linux — Processos e Sinais",
+    "context": "Gerenciamento de Processos no Servidor de Aplicação Judicial",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um processo crítico do sistema de peticionamento eletrônico do TJ-CE (PID 4521) está travado e não responde ao sinal padrão de encerramento. O administrador precisa forçar o encerramento imediato do processo, sem possibilidade de o processo tratar ou ignorar o sinal. O comando correto é:",
+    "options": {
+      "A": "kill -15 4521",
+      "B": "kill -9 4521",
+      "C": "kill -1 4521",
+      "D": "kill -2 4521",
+      "E": "kill -18 4521"
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O sinal -9 (SIGKILL) é enviado diretamente pelo kernel, forçando o encerramento imediato do processo sem que este possa interceptá-lo ou ignorá-lo. A alternativa A usa -15 (SIGTERM), o sinal padrão de encerramento 'gentil', que pode ser capturado e ignorado pelo processo. A alternativa C usa -1 (SIGHUP), que normalmente causa recarga de configuração. A alternativa D usa -2 (SIGINT), equivalente ao Ctrl+C, que também pode ser capturado. A alternativa E usa -18 (SIGCONT), que retoma processos pausados."
+  },
+  {
+    "id": 5,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Linux — Sistema de Arquivos",
+    "context": "Estrutura de Diretórios no Red Hat Enterprise Linux",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "De acordo com o Filesystem Hierarchy Standard (FHS) adotado em distribuições Linux como o Red Hat Enterprise Linux, o diretório que contém os binários essenciais ao sistema que precisam estar disponíveis ANTES da montagem do /usr (como ls, cp, mv e bash) é:",
+    "options": {
+      "A": "/sbin",
+      "B": "/usr/bin",
+      "C": "/bin",
+      "D": "/opt",
+      "E": "/usr/local/bin"
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. O diretório /bin contém os binários de usuário essenciais ao sistema que devem estar disponíveis no single-user mode e antes da montagem de filesystems adicionais, como ls, cp, mv e bash. A alternativa A (/sbin) contém binários de administração do sistema (como fdisk, fsck). A alternativa B (/usr/bin) contém binários de usuário não essenciais à inicialização. A alternativa D (/opt) é para softwares de terceiros/opcionais. A alternativa E (/usr/local/bin) é para softwares instalados localmente pelo administrador."
+  },
+  {
+    "id": 6,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Linux — chown e Propriedade",
+    "context": "Transferência de Propriedade de Arquivos Judiciais",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O administrador do TJ-CE precisa alterar recursivamente o proprietário do diretório /dados/processos e todos os seus arquivos e subdiretórios para o usuário 'appuser' e ao grupo 'appgroup'. O comando correto é:",
+    "options": {
+      "A": "chown -R appuser:appgroup /dados/processos",
+      "B": "chown appuser:appgroup /dados/processos",
+      "C": "chmod -R appuser:appgroup /dados/processos",
+      "D": "chown -r appuser appgroup /dados/processos",
+      "E": "chown --recursive appuser /dados/processos && chgrp appgroup /dados/processos"
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. O flag -R do chown aplica a mudança recursivamente ao diretório e a todo seu conteúdo. A sintaxe usuario:grupo define ambos simultaneamente. A alternativa B executa sem recursividade (-R), alterando apenas o diretório raiz. A alternativa C usa chmod (que altera permissões, não propriedade). A alternativa D usa -r (minúsculo), que não é aceito pelo chown padrão, e a sintaxe de passagem de grupo está incorreta. A alternativa E aplica chown apenas ao diretório raiz sem recursividade e depois aplica chgrp também sem recursividade."
+  },
+  {
+    "id": 7,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Windows Server — Active Directory",
+    "context": "Gestão de Identidade no Domínio TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No contexto do Active Directory (AD) do Windows Server, a estrutura lógica que representa um limite de segurança e replicação, possuindo seu próprio banco de dados de objetos (usuários, computadores, grupos) e suas próprias políticas de segurança, sendo a unidade básica de organização e administração, é denominada:",
+    "options": {
+      "A": "Unidade Organizacional (OU)",
+      "B": "Domínio (Domain)",
+      "C": "Floresta (Forest)",
+      "D": "Árvore (Tree)",
+      "E": "Site"
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O Domínio é a unidade fundamental do Active Directory, sendo um limite de segurança e de replicação com seu próprio banco de dados de diretório, políticas de segurança e relacionamentos de confiança. A alternativa A (Unidade Organizacional) é um contêiner dentro de um domínio para organizar objetos, mas não representa limite de segurança independente. A alternativa C (Floresta) é a maior unidade lógica, composta de múltiplas árvores. A alternativa D (Árvore) é um conjunto de domínios com namespace contínuo. A alternativa E (Site) é um conceito de topologia física da rede, usado para controlar a replicação."
+  },
+  {
+    "id": 8,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Windows Server — GPO",
+    "context": "Configuração de Política de Grupo no TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No Windows Server com Active Directory, as Group Policy Objects (GPOs) são aplicadas seguindo uma ordem hierárquica específica. Em caso de conflito entre políticas, qual a ordem correta de precedência (da menor para a maior prioridade)?",
+    "options": {
+      "A": "Local → Site → Domínio → OU",
+      "B": "OU → Domínio → Site → Local",
+      "C": "Domínio → Site → OU → Local",
+      "D": "Local → Domínio → Site → OU",
+      "E": "Site → Domínio → Local → OU"
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. A ordem de aplicação de GPOs é: Local, Site, Domínio e por último OU (Unidade Organizacional). Como as políticas são aplicadas em ordem e a última sobrescreve as anteriores em caso de conflito, a OU possui a maior prioridade. O acrônimo LSDOU (Local, Site, Domain, OU) é a mnemônica padrão. As demais alternativas apresentam sequências incorretas dessa hierarquia de aplicação."
+  },
+  {
+    "id": 9,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Windows Server — PowerShell",
+    "context": "Automação de Tarefas Administrativas no TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um analista do TJ-CE precisa usar PowerShell para listar todos os serviços do Windows que estão com o status 'Running' (em execução). O cmdlet correto para essa tarefa é:",
+    "options": {
+      "A": "Get-Process | Where-Object {$_.Status -eq 'Running'}",
+      "B": "Get-Service | Where-Object {$_.Status -eq 'Running'}",
+      "C": "Get-Service -Status Running",
+      "D": "List-Service | Filter {Status = 'Running'}",
+      "E": "Get-Process -Status 'Running'"
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta e é a forma mais direta e idiomática do PowerShell, usando o parâmetro -Status do cmdlet Get-Service. A alternativa B também funciona, mas é menos eficiente por usar pipeline desnecessário. A alternativa A usa Get-Process (que lista processos, não serviços) com a propriedade Status incorreta para esse cmdlet. A alternativa D usa verbos e sintaxe inexistentes no PowerShell. A alternativa E aplica Get-Process com um parâmetro -Status que não existe nesse cmdlet."
+  },
+  {
+    "id": 10,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Windows Server — WSUS",
+    "context": "Gerenciamento de Atualizações no Parque de Máquinas do TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Windows Server Update Services (WSUS) é utilizado pelo TJ-CE para centralizar a gestão de atualizações do Windows. Sobre o WSUS, é CORRETO afirmar que:",
+    "options": {
+      "A": "O WSUS distribui atualizações diretamente da internet para cada cliente, sem cache local.",
+      "B": "O WSUS permite aprovar ou recusar atualizações específicas antes de distribuí-las aos clientes.",
+      "C": "O WSUS somente funciona em conjunto com o System Center Configuration Manager (SCCM).",
+      "D": "O WSUS não suporta a criação de grupos de computadores para distribuição segmentada.",
+      "E": "O WSUS requer que todos os clientes possuam acesso direto ao Windows Update da Microsoft."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. Uma das principais funções do WSUS é justamente permitir que os administradores aprovem ou recusem atualizações específicas antes de distribuí-las, possibilitando testes em ambiente controlado. A alternativa A é falsa; o WSUS armazena as atualizações em cache local no servidor, reduzindo o consumo de banda. A alternativa C é falsa; o WSUS funciona de forma independente do SCCM. A alternativa D é falsa; o WSUS suporta grupos de computadores para distribuição segmentada. A alternativa E é a negação da principal vantagem do WSUS: os clientes se comunicam com o servidor WSUS interno, não com o Windows Update diretamente."
+  },
+  {
+    "id": 11,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Linux — Agendamento com cron",
+    "context": "Automatização de Backups no TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O administrador do TJ-CE precisa agendar um script de backup (/scripts/backup.sh) para ser executado todos os dias, de segunda a sexta-feira, às 23h30. A entrada correta no crontab é:",
+    "options": {
+      "A": "30 23 * * 1-5 /scripts/backup.sh",
+      "B": "23 30 * * 1-5 /scripts/backup.sh",
+      "C": "30 23 1-5 * * /scripts/backup.sh",
+      "D": "* * * * 1-5 /scripts/backup.sh",
+      "E": "30 23 * 1-5 * /scripts/backup.sh"
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. O formato do crontab é: minuto hora dia-do-mês mês dia-da-semana comando. Portanto: 30 (minuto 30) 23 (hora 23) * (qualquer dia do mês) * (qualquer mês) 1-5 (segunda a sexta, onde 1=segunda e 5=sexta). A alternativa B inverte hora e minuto. A alternativa C coloca '1-5' no campo de dia-do-mês, não de dia-da-semana. A alternativa D usa * em todos os campos de tempo, executando a cada minuto. A alternativa E coloca '1-5' no campo de mês (de janeiro a maio), não de dia-da-semana."
+  },
+  {
+    "id": 12,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Linux — Gerenciamento de Pacotes (RPM/YUM/DNF)",
+    "context": "Instalação de Software no Red Hat Enterprise Linux do TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em um servidor Red Hat Enterprise Linux (RHEL) do TJ-CE, o administrador precisa instalar o pacote 'httpd' (Apache Web Server), garantindo que todas as dependências sejam resolvidas e instaladas automaticamente. O comando correto utilizando o gerenciador de pacotes moderno do RHEL é:",
+    "options": {
+      "A": "rpm -i httpd",
+      "B": "apt-get install httpd",
+      "C": "dnf install httpd",
+      "D": "yum -y update httpd",
+      "E": "pkg install httpd"
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. O DNF (Dandified YUM) é o gerenciador de pacotes moderno do RHEL 8+ e suas variantes, e resolve dependências automaticamente. A alternativa A usa RPM, que instala pacotes individuais mas não resolve dependências automaticamente. A alternativa B usa apt-get, que é o gerenciador de pacotes do Debian/Ubuntu, não do RHEL. A alternativa D usa yum update (para atualizar um pacote já instalado) em vez de install. A alternativa E usa pkg, gerenciador do FreeBSD/OpenBSD, não do Linux."
+  },
+  {
+    "id": 13,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Linux — SSH e Acesso Remoto",
+    "context": "Acesso Seguro a Servidores do TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Para aumentar a segurança do acesso SSH aos servidores do TJ-CE, o administrador deseja desabilitar o login de root via SSH e permitir apenas autenticação por chave pública (desabilitando autenticação por senha). No arquivo de configuração /etc/ssh/sshd_config, as diretivas corretas são:",
+    "options": {
+      "A": "PermitRootLogin yes / PasswordAuthentication no",
+      "B": "PermitRootLogin no / PasswordAuthentication no",
+      "C": "PermitRootLogin no / PasswordAuthentication yes",
+      "D": "DenyRootLogin yes / AllowKeyOnly yes",
+      "E": "PermitRootLogin disabled / KeyAuthentication only"
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. PermitRootLogin no desabilita o login direto como root via SSH, e PasswordAuthentication no desabilita a autenticação por senha, forçando o uso de chave pública. A alternativa A mantém o login de root habilitado. A alternativa C desabilita o root mas mantém a autenticação por senha habilitada, não atendendo ao segundo requisito. As alternativas D e E usam diretivas inválidas que não existem no sshd_config."
+  },
+  {
+    "id": 14,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Linux — Monitoramento de Recursos",
+    "context": "Diagnóstico de Performance no TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O administrador do TJ-CE precisa visualizar em tempo real o consumo de CPU, memória e a lista de processos mais ativos no servidor Linux, com atualização dinâmica a cada segundo. A ferramenta de linha de comando mais adequada para isso é:",
+    "options": {
+      "A": "ps aux",
+      "B": "top",
+      "C": "netstat",
+      "D": "df -h",
+      "E": "lsof"
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O comando top exibe em tempo real e de forma interativa o consumo de CPU, memória, load average e os processos em execução, com atualização dinâmica. A alternativa A (ps aux) exibe um snapshot estático dos processos, sem atualização em tempo real. A alternativa C (netstat) exibe conexões de rede, não consumo de CPU/memória. A alternativa D (df -h) exibe o uso do sistema de arquivos/disco. A alternativa E (lsof) lista arquivos abertos pelos processos."
+  },
+  {
+    "id": 15,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Windows Server — Hardening",
+    "context": "Segurança do Sistema Operacional no TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No processo de hardening de servidores Windows do TJ-CE, uma das práticas recomendadas é desabilitar serviços desnecessários para reduzir a superfície de ataque. Além disso, para garantir trilha de auditoria, deve-se habilitar o registro de eventos de segurança. A ferramenta nativa do Windows Server para gerenciar os tipos de eventos de segurança auditados é:",
+    "options": {
+      "A": "Gerenciador de Dispositivos",
+      "B": "Política de Auditoria (via Diretiva de Segurança Local ou GPO)",
+      "C": "Monitor de Recursos",
+      "D": "Agendador de Tarefas",
+      "E": "Gerenciador de Serviços (services.msc)"
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. A Política de Auditoria, configurada via Diretiva de Segurança Local (secpol.msc) ou via GPO no Active Directory, é a ferramenta nativa para definir quais categorias de eventos de segurança (logon, acesso a objetos, uso de privilégios etc.) são registrados no Log de Segurança do Windows. A alternativa A gerencia drivers de hardware. A alternativa C monitora desempenho em tempo real de CPU, memória e disco. A alternativa D agenda execução de tarefas. A alternativa E gerencia a inicialização e estado de serviços."
+  },
+  {
+    "id": 16,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "COBIT 2019 — Conceitos Fundamentais",
+    "context": "Governança de TI no TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O COBIT 2019 distingue claramente entre Governança e Gerenciamento de TI. Sobre essa distinção, é CORRETO afirmar que:",
+    "options": {
+      "A": "Governança avalia, direciona e monitora; Gerenciamento planeja, constrói, executa e monitora.",
+      "B": "Governança planeja e executa operações de TI; Gerenciamento define objetivos estratégicos.",
+      "C": "Tanto Governança quanto Gerenciamento são responsabilidades exclusivas da área de TI.",
+      "D": "Gerenciamento é responsabilidade do Conselho de Administração; Governança, da diretoria executiva.",
+      "E": "No COBIT 2019, os domínios de Governança e Gerenciamento são idênticos ao COBIT 5."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. No COBIT 2019, Governança (domínio EDM - Evaluate, Direct and Monitor) é responsabilidade dos órgãos de governança (ex.: Conselho), avaliando necessidades, definindo direção e monitorando resultados. Gerenciamento (domínios APO, BAI, DSS, MEA) é responsabilidade da diretoria executiva/gestão, planejando, construindo, executando e monitorando atividades. A alternativa B inverte os papéis. A alternativa C é falsa; governança envolve stakeholders além da TI. A alternativa D inverte as responsabilidades. A alternativa E é falsa; o COBIT 2019 foi reestruturado em relação ao COBIT 5."
+  },
+  {
+    "id": 17,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "COBIT 2019 — Domínios",
+    "context": "Framework de Governança do TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O COBIT 2019 organiza seus objetivos de governança e gerenciamento em domínios. O domínio responsável por garantir a entrega dos serviços de TI em execução, incluindo o suporte ao usuário e o gerenciamento de incidentes e problemas, é:",
+    "options": {
+      "A": "EDM — Evaluate, Direct and Monitor",
+      "B": "APO — Align, Plan and Organise",
+      "C": "BAI — Build, Acquire and Implement",
+      "D": "DSS — Deliver, Service and Support",
+      "E": "MEA — Monitor, Evaluate and Assess"
+    },
+    "answer": "D",
+    "explanation": "A alternativa D está correta. O domínio DSS (Deliver, Service and Support) cobre a entrega e suporte dos serviços de TI em operação, incluindo gerenciamento de operações, incidentes, problemas, requisições de serviço e segurança operacional. A alternativa A (EDM) é o único domínio de Governança, focado em avaliar, dirigir e monitorar. A alternativa B (APO) trata do alinhamento estratégico, planejamento e organização. A alternativa C (BAI) cobre a construção, aquisição e implementação de soluções. A alternativa E (MEA) monitora, avalia e determina a conformidade do desempenho e dos controles."
+  },
+  {
+    "id": 18,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "ITIL v4 — Conceitos Fundamentais",
+    "context": "Gestão de Serviços de TI no TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No ITIL v4, o Sistema de Valor de Serviço (SVS - Service Value System) descreve como os componentes e atividades da organização trabalham juntos para criar valor. O componente central do SVS que descreve as atividades que uma organização realiza para criar valor é denominado:",
+    "options": {
+      "A": "Cadeia de Valor de Serviço (Service Value Chain)",
+      "B": "Práticas ITIL",
+      "C": "Princípios Orientadores",
+      "D": "Governança",
+      "E": "Melhoria Contínua"
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. A Cadeia de Valor de Serviço (Service Value Chain - SVC) é o elemento central do SVS no ITIL v4, composta por seis atividades: Planejar, Melhorar, Engajar, Projetar & Transformar, Obter/Construir e Entregar & Suportar. São essas atividades que transformam a demanda e oportunidades em valor. As alternativas B, C, D e E são também componentes do SVS, mas não o componente central que descreve as atividades de criação de valor."
+  },
+  {
+    "id": 19,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "ITIL v4 — Princípios Orientadores",
+    "context": "Implementação de ITIL no TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O ITIL v4 define 7 Princípios Orientadores que devem guiar as organizações em suas decisões e ações. O princípio que recomenda não começar do zero desnecessariamente, aproveitando o que já existe na organização, é:",
+    "options": {
+      "A": "Foco no Valor",
+      "B": "Começar Onde Você Está",
+      "C": "Progredir Iterativamente com Feedback",
+      "D": "Colaborar e Promover Visibilidade",
+      "E": "Pensar e Trabalhar Holisticamente"
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O princípio 'Começar Onde Você Está' (Start Where You Are) orienta a avaliar o estado atual dos serviços, práticas e ferramentas existentes antes de decidir o que precisa ser melhorado ou descartado, evitando retrabalho desnecessário. A alternativa A (Foco no Valor) trata de garantir que tudo esteja alinhado à geração de valor para stakeholders. A alternativa C trata de trabalhar em iterações pequenas com feedback contínuo. A alternativa D trata de trabalho colaborativo e transparência. A alternativa E trata de considerar o sistema como um todo."
+  },
+  {
+    "id": 20,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "ITIL v4 — Práticas",
+    "context": "Gestão de Incidentes no TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No ITIL v4, a prática que tem como objetivo minimizar o impacto negativo de incidentes restaurando a operação normal do serviço o mais rapidamente possível, sem necessariamente identificar a causa raiz, é:",
+    "options": {
+      "A": "Gerenciamento de Problemas",
+      "B": "Gerenciamento de Mudanças",
+      "C": "Gerenciamento de Incidentes",
+      "D": "Gerenciamento de Eventos",
+      "E": "Central de Serviço (Service Desk)"
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. O Gerenciamento de Incidentes (Incident Management) tem como objetivo restaurar a operação normal do serviço o mais rápido possível, minimizando o impacto negativo nas operações do negócio, sem necessariamente identificar a causa raiz naquele momento. A alternativa A (Gerenciamento de Problemas) foca na identificação e eliminação das causas raiz dos incidentes. A alternativa B (Gerenciamento de Mudanças) controla mudanças no ambiente de TI. A alternativa D (Gerenciamento de Eventos) detecta e responde a eventos no ambiente de TI. A alternativa E (Service Desk) é o ponto único de contato, não uma prática exclusiva de resolução."
+  },
+  {
+    "id": 21,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "ITIL v4 — Gerenciamento de Mudanças",
+    "context": "Controle de Mudanças no Ambiente de Produção do TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No ITIL v4, as mudanças são classificadas por tipo. Uma atualização de emergência aplicada ao sistema de peticionamento eletrônico do TJ-CE para corrigir uma vulnerabilidade crítica de segurança explorada ativamente, que precisa ser implementada imediatamente sem seguir o processo normal de aprovação, é classificada como:",
+    "options": {
+      "A": "Mudança Padrão (Standard Change)",
+      "B": "Mudança Normal (Normal Change)",
+      "C": "Mudança de Emergência (Emergency Change)",
+      "D": "Mudança de Rotina (Routine Change)",
+      "E": "Mudança Autorizada (Authorized Change)"
+    },
+    "answer": "C",
+    "explanation": "A alternativa C está correta. A Mudança de Emergência (Emergency Change) é usada quando é necessário implementar uma mudança urgente para resolver um incidente crítico ou uma ameaça de segurança iminente. Essas mudanças possuem um processo acelerado de aprovação. A alternativa A (Mudança Padrão) é pré-aprovada, de baixo risco e seguida para mudanças rotineiras e conhecidas. A alternativa B (Mudança Normal) segue o processo completo de avaliação e aprovação, com prazo adequado. As alternativas D e E não são classificações formais do ITIL v4."
+  },
+  {
+    "id": 22,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "PMBOK 7ª Edição — Princípios",
+    "context": "Gerenciamento de Projetos de TI no TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Guia PMBOK 7ª edição representa uma mudança paradigmática em relação às edições anteriores. A principal diferença entre a 7ª e a 6ª edição do PMBOK é:",
+    "options": {
+      "A": "A 7ª edição adicionou 3 novas áreas de conhecimento às 10 existentes.",
+      "B": "A 7ª edição substituiu as 10 áreas de conhecimento e 5 grupos de processos por 12 princípios e 8 domínios de desempenho.",
+      "C": "A 7ª edição removeu todas as metodologias ágeis e voltou ao foco exclusivo no modelo preditivo.",
+      "D": "A 7ª edição passou a exigir a certificação PMP como pré-requisito para uso do guia.",
+      "E": "A 7ª edição manteve os mesmos 47 processos da 6ª edição, apenas atualizando terminologias."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. A grande mudança do PMBOK 7ª edição foi a transição de uma abordagem baseada em processos (10 áreas de conhecimento + 5 grupos de processos) para uma abordagem baseada em princípios (12 princípios de gerenciamento de projetos) e domínios de desempenho (8 domínios). Essa mudança torna o guia mais adaptável a diferentes abordagens (preditiva, ágil, híbrida). As demais alternativas contêm afirmações falsas sobre as mudanças entre as edições."
+  },
+  {
+    "id": 23,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "PMBOK 7ª Edição — Domínios de Desempenho",
+    "context": "Projeto de Modernização do TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "No PMBOK 7ª edição, o Domínio de Desempenho responsável por estabelecer e manter a estrutura e os processos necessários para a entrega dos resultados desejados do projeto, cobrindo aspectos como cronograma, orçamento, qualidade, recursos e riscos, é denominado:",
+    "options": {
+      "A": "Domínio de Partes Interessadas",
+      "B": "Domínio de Equipe",
+      "C": "Domínio de Entrega",
+      "D": "Domínio de Planejamento",
+      "E": "Domínio de Trabalho do Projeto"
+    },
+    "answer": "E",
+    "explanation": "A alternativa E está correta. O Domínio de Trabalho do Projeto (Project Work Performance Domain) abrange o estabelecimento dos processos do projeto, gerenciamento de recursos físicos, aquisições, comunicações, lições aprendidas e os processos necessários para manter as entregas do projeto funcionando. A alternativa A foca nas partes interessadas e seu engajamento. A alternativa B foca na equipe do projeto e sua liderança. A alternativa C foca nos artefatos, resultados e entregas produzidos. A alternativa D foca no planejamento de forma iterativa ao longo do ciclo de vida."
+  },
+  {
+    "id": 24,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "COBIT 2019 — Fatores de Design",
+    "context": "Adaptação do Framework de Governança no TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O COBIT 2019 introduziu os Fatores de Design como elementos que influenciam a priorização dos objetivos de governança de uma organização. São exemplos de Fatores de Design do COBIT 2019:",
+    "options": {
+      "A": "Estratégia da empresa, perfil de risco, ameaças de mercado e maturidade dos processos.",
+      "B": "Estratégia empresarial, perfil de risco, regulamentações/conformidade e escala da empresa.",
+      "C": "Apenas a estratégia empresarial e o modelo de lucro da organização.",
+      "D": "Somente o nível de maturidade dos processos de TI e a estrutura organizacional.",
+      "E": "Tecnologias adotadas, certificações obtidas e número de colaboradores de TI."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O COBIT 2019 define 11 fatores de design, incluindo estratégia empresarial, metas empresariais, perfil de risco, questões relacionadas a TI, cenário de ameaças, requisitos de conformidade, papel da TI, modelo de sourcing de TI, métodos de implementação de TI, tamanho da empresa e modelo do setor/indústria. A alternativa A inclui 'ameaças de mercado' que não é um fator exato. As demais alternativas apresentam listagens incompletas, incorretas ou simplificadas demais."
+  },
+  {
+    "id": 25,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "ITIL v4 — Modelo de Quatro Dimensões",
+    "context": "Visão Holística da Gestão de Serviços no TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O ITIL v4 define um Modelo de Quatro Dimensões para garantir uma abordagem holística à gestão de serviços. Quais são as quatro dimensões?",
+    "options": {
+      "A": "Pessoas e Organizações; Informação e Tecnologia; Parceiros e Fornecedores; Fluxos de Valor e Processos.",
+      "B": "Estratégia; Tática; Operação; Melhoria Contínua.",
+      "C": "Pessoas; Processos; Produtos; Parceiros.",
+      "D": "Governança; Gerenciamento; Operações; Inovação.",
+      "E": "Planejamento; Execução; Monitoramento; Avaliação."
+    },
+    "answer": "A",
+    "explanation": "A alternativa A está correta. As quatro dimensões do ITIL v4 são: 1) Organizações e Pessoas; 2) Informação e Tecnologia; 3) Parceiros e Fornecedores; 4) Fluxos de Valor e Processos. Todas as quatro dimensões devem ser consideradas ao projetar, gerenciar e operar serviços. A alternativa C ('4 Ps') era o modelo do ITIL v3, não do v4. As demais alternativas apresentam modelos inexistentes no ITIL v4."
+  },
+  {
+    "id": 26,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Linux — Systemd e Gerenciamento de Serviços",
+    "context": "Controle de Serviços no Servidor Linux do TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Em um servidor RHEL 8 do TJ-CE que utiliza systemd como sistema de init, o administrador precisa iniciar o serviço 'nginx', verificar seu status e configurá-lo para iniciar automaticamente no boot do sistema. Os comandos corretos são, respectivamente:",
+    "options": {
+      "A": "service nginx start / service nginx status / chkconfig nginx on",
+      "B": "systemctl start nginx / systemctl status nginx / systemctl enable nginx",
+      "C": "nginx start / nginx status / nginx autostart",
+      "D": "/etc/init.d/nginx start / /etc/init.d/nginx status / update-rc.d nginx enable",
+      "E": "systemctl run nginx / systemctl check nginx / systemctl boot nginx"
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. Com systemd, os comandos são: systemctl start <serviço> (iniciar), systemctl status <serviço> (verificar status) e systemctl enable <serviço> (habilitar no boot). A alternativa A usa o comando 'service' e 'chkconfig', que eram usados em sistemas SysV init (RHEL 6 e anteriores). A alternativa C usa sintaxe inválida. A alternativa D usa o estilo de scripts SysV init e update-rc.d, que é do Debian/Ubuntu com SysV. A alternativa E usa subcomandos inválidos do systemctl."
+  },
+  {
+    "id": 27,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Windows Server — Active Directory — LDAP",
+    "context": "Integração de Sistemas com o AD do TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O Active Directory utiliza o protocolo LDAP (Lightweight Directory Access Protocol) para comunicação. Sobre o LDAP no contexto do Active Directory, é correto afirmar que:",
+    "options": {
+      "A": "O LDAP opera exclusivamente na porta TCP 636 (LDAPS) para todas as comunicações.",
+      "B": "O LDAP usa a porta TCP/UDP 389 para comunicações não seguras e a porta TCP 636 para LDAPS (LDAP sobre SSL/TLS).",
+      "C": "O LDAP usa a porta 443 para consultas padrão, assim como HTTPS.",
+      "D": "O LDAP no Active Directory só pode ser acessado por aplicações desenvolvidas em .NET.",
+      "E": "O LDAP é um protocolo de autenticação que substitui completamente o Kerberos no AD."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O LDAP padrão utiliza a porta TCP/UDP 389 para comunicações em texto claro, enquanto o LDAPS (LDAP sobre SSL/TLS) utiliza a porta TCP 636 para comunicações criptografadas. A alternativa A afirma incorretamente que o LDAP opera exclusivamente na porta 636. A alternativa C confunde com a porta do HTTPS. A alternativa D é falsa; o LDAP é um protocolo padrão acessível por diversas linguagens e plataformas. A alternativa E é falsa; o LDAP é um protocolo de acesso a diretórios, enquanto o Kerberos é o protocolo de autenticação primário no AD, e ambos coexistem."
+  },
+  {
+    "id": 28,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "PMBOK 7ª Edição — Princípios de Gerenciamento",
+    "context": "Gestão de Projetos no TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O PMBOK 7ª edição estabelece 12 princípios de gerenciamento de projetos. O princípio que afirma que o gerente de projeto e a equipe devem exibir comportamentos, valores e ações alinhados aos do PMI e da organização, servindo de modelo para os demais, é:",
+    "options": {
+      "A": "Foco nos Resultados",
+      "B": "Seja um Administrador Diligente, Respeitoso e Cuidadoso",
+      "C": "Criar um Ambiente Colaborativo para a Equipe do Projeto",
+      "D": "Envolver Efetivamente as Partes Interessadas",
+      "E": "Adotar a Adaptabilidade e a Resiliência"
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O primeiro princípio do PMBOK 7ª edição — 'Seja um Administrador Diligente, Respeitoso e Cuidadoso' (Stewardship) — refere-se à responsabilidade do gerente de projeto de agir como um guardião, demonstrando integridade, cuidado com os recursos e compromisso com os valores organizacionais e éticos. A alternativa A é um princípio diferente. A alternativa C trata da colaboração da equipe. A alternativa D trata do engajamento de stakeholders. A alternativa E trata de adaptabilidade."
+  },
+  {
+    "id": 29,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "Linux — Variáveis de Ambiente e Shell",
+    "context": "Configuração de Ambiente nos Servidores do TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "Um desenvolvedor do TJ-CE precisa definir uma variável de ambiente chamada JAVA_HOME com o valor /usr/lib/jvm/java-17 de forma persistente para todos os usuários do sistema Linux. O local correto para adicionar essa configuração é:",
+    "options": {
+      "A": "No arquivo ~/.bashrc do usuário root",
+      "B": "No arquivo /etc/environment ou em um script no diretório /etc/profile.d/",
+      "C": "No arquivo /etc/hosts",
+      "D": "Executando export JAVA_HOME=/usr/lib/jvm/java-17 no terminal",
+      "E": "No arquivo /etc/passwd"
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. Para definir variáveis de ambiente de forma persistente para todos os usuários do sistema, utiliza-se o arquivo /etc/environment (que é lido pelo PAM na autenticação) ou scripts no diretório /etc/profile.d/ (que são executados pelo shell de login para todos os usuários). A alternativa A define apenas para o usuário root em seu shell interativo. A alternativa C é o arquivo de resolução de nomes de host. A alternativa D define a variável apenas para a sessão atual do terminal, sem persistência. A alternativa E é o arquivo de informações de contas de usuário."
+  },
+  {
+    "id": 30,
+    "day_id": "dia_17_07",
+    "day_title": "17/07 — Sistemas Operacionais e Governança de TI",
+    "theme": "COBIT 2019 — Maturidade e Capacidade",
+    "context": "Avaliação de Maturidade de TI no TJ-CE",
+    "source": "FCC - TJ-CE - Analista de TI (Inédita)",
+    "statement": "O COBIT 2019 utiliza um modelo de capacidade e maturidade baseado no CMMI para avaliar os processos de TI. Sobre esse modelo no COBIT 2019, é correto afirmar que:",
+    "options": {
+      "A": "O COBIT 2019 adota uma escala de maturidade de 0 a 10, com 10 sendo o nível mais elevado.",
+      "B": "O COBIT 2019 utiliza dois modelos: o modelo de capacidade (1-5, para avaliação individual de processos) e o modelo de maturidade (0-5, para avaliação holística organizacional).",
+      "C": "O modelo de maturidade do COBIT 2019 possui apenas 3 níveis: Inicial, Gerenciado e Otimizado.",
+      "D": "O COBIT 2019 aboliu completamente os níveis de maturidade, substituindo por indicadores de KPI.",
+      "E": "No COBIT 2019, a maturidade é avaliada apenas pelo número de políticas documentadas na organização."
+    },
+    "answer": "B",
+    "explanation": "A alternativa B está correta. O COBIT 2019 diferencia dois modelos de avaliação: o Modelo de Capacidade de Processo (baseado na norma ISO/IEC 33000), com escala de 0 a 5 aplicada a processos individuais; e o Modelo de Maturidade, também de 0 a 5, que avalia a capacidade organizacional de forma holística. A alternativa A apresenta uma escala incorreta (0-10). A alternativa C reduz incorretamente os níveis para 3. A alternativa D é falsa; o COBIT 2019 mantém modelos de maturidade/capacidade. A alternativa E apresenta um critério de avaliação simplista e incorreto."
+  }
+]

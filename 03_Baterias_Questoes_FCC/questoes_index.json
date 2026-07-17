@@ -10,5 +10,11 @@
     "day_title": "16/07 [TJ-CE + ALECE] 🧮 Raciocínio Lógico e Matemática",
     "filename": "dia_16_07_logica.json",
     "count": 20
+  },
+  {
+    "day_id": "dia_17_07",
+    "day_title": "17/07 [Semana 9] 🖥️ Sistemas Operacionais e Governança de TI",
+    "filename": "dia_17_07_questoes.json",
+    "count": 30
   }
 ]
